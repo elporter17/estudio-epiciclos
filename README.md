@@ -56,7 +56,7 @@ Junto a cada MP4 queda un `.json` con la figura, la semilla, la duración y el t
 
 **Emoji.** Los presets de animales y cosas son siluetas de emoji, así que el render necesita una fuente de emoji a color. `npm run fonts` descarga Noto Color Emoji desde google/fonts (licencia OFL; no se sube al repo) y con ella el resultado es idéntico en Windows, macOS y Linux. Sin ella se usa la del sistema (Segoe UI Emoji en Windows, Apple Color Emoji en macOS); en un Linux sin fuentes de emoji esos presets fallan con un aviso y `pick` los salta. También puedes apuntar a otra fuente con `CIRCULARTE_EMOJI_FONT=/ruta/fuente.ttf`.
 
-**Descripciones con Claude.** `caption` lee la clave de `ANTHROPIC_API_KEY` (nunca la guardes en el repo). Si no hay clave o la API falla, usa una plantilla local y lo avisa, para que el flujo no se detenga (`--no-fallback` para que falle en su lugar). El modelo se cambia con `CIRCULARTE_CAPTION_MODEL`.
+**Descripciones con Claude.** `caption` lee la clave de `ANTHROPIC_API_KEY`, del entorno o de un `.env` en la raíz (copia `.env.example`; `.env` está en `.gitignore` y nunca se sube). Si no hay clave o la API falla, usa una plantilla local y lo avisa, para que el flujo no se detenga (`--no-fallback` para que falle en su lugar). El modelo se cambia con `CIRCULARTE_CAPTION_MODEL`.
 
 **PowerShell.** Windows PowerShell 5.1 se come el `--` de `npm run render -- --preset …`. Usa `npm.cmd run render -- …` o directamente `node scripts/render.mjs --preset …`.
 

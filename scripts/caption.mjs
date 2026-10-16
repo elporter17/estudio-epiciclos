@@ -8,6 +8,7 @@
 import fs from 'node:fs';
 import { parseCli } from './lib/cli.mjs';
 import { pathToFileURL } from 'node:url';
+import './lib/env-file.mjs';
 import Anthropic from '@anthropic-ai/sdk';
 import { resolveSource, hashSeed } from './lib/catalog.mjs';
 
