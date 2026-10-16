@@ -11,12 +11,20 @@ const SESSION = 'ca_tt', STATE = 'ca_tt_state';
 export function config() {
   const c = {
     key: process.env.TIKTOK_CLIENT_KEY, secret: process.env.TIKTOK_CLIENT_SECRET, redirect: process.env.TIKTOK_REDIRECT_URI,
-    sessionSecret: process.env.SESSION_SECRET, blob: process.env.BLOB_READ_WRITE_TOKEN,
+    sessionSecret: process.env.SESSION_SECRET, blob: blobToken(),
     // Base pública desde la que TikTok descarga el video (dominio verificado en el portal de TikTok)
     mediaBase: process.env.PUBLIC_MEDIA_BASE || 'https://circularte.edav-tech.com/media/'
   };
   c.enabled = !!(c.key && c.secret && c.redirect && c.sessionSecret && c.blob);
   return c;
+}
+
+// Token del almacén Blob público. Vercel lo nombra BLOB_READ_WRITE_TOKEN o, si el almacén se conectó con otro
+// prefijo, <PREFIJO>_READ_WRITE_TOKEN. Se pasa siempre explícito para no usar por error otro almacén del proyecto.
+export function blobToken() {
+  if (process.env.BLOB_READ_WRITE_TOKEN) return process.env.BLOB_READ_WRITE_TOKEN;
+  const found = Object.entries(process.env).find(([k, v]) => k.endsWith('_READ_WRITE_TOKEN') && String(v).startsWith('vercel_blob_rw_'));
+  return found ? found[1] : undefined;
 }
 
 export const json = (data, status = 200, headers = {}) =>

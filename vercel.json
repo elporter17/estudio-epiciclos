@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm install --omit=dev --ignore-scripts",
   "rewrites": [
-    { "source": "/media/:path*", "destination": "https://BLOB_STORE_HOST.public.blob.vercel-storage.com/media/:path*" }
+    { "source": "/media/:path*", "destination": "https://yf5jdkka3x1ssyc6.public.blob.vercel-storage.com/media/:path*" }
   ],
   "headers": [
     { "source": "/api/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }] }

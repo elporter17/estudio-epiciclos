@@ -1,7 +1,7 @@
 // POST: publica en TikTok un video ya subido a Blob (PULL_FROM_URL desde el dominio verificado).
 // Revalida en el servidor lo que eligió el usuario contra creator_info antes de llamar a TikTok.
 import { list, del } from '@vercel/blob';
-import { route, json, session, tiktok, config, seal, sameOrigin, MEDIA_PREFIX, HttpError } from './_tiktok.js';
+import { route, json, session, tiktok, config, seal, sameOrigin, blobToken, MEDIA_PREFIX, HttpError } from './_tiktok.js';
 
 export default { fetch: route(async (request) => {
   if (request.method !== 'POST') return json({ error: 'Usa POST.' }, 405);
@@ -46,7 +46,8 @@ export default { fetch: route(async (request) => {
 }) };
 
 async function cleanupOld() {
-  const { blobs } = await list({ prefix: MEDIA_PREFIX, limit: 100 });
+  const token = blobToken();
+  const { blobs } = await list({ prefix: MEDIA_PREFIX, limit: 100, token });
   const old = blobs.filter((x) => Date.parse(x.uploadedAt) < Date.now() - 24 * 3600e3).map((x) => x.url);
-  if (old.length) await del(old);
+  if (old.length) await del(old, { token });
 }

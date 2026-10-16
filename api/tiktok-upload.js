@@ -2,13 +2,13 @@
 // Solo con una sesión de TikTok válida; solo videos, en la carpeta media/, con nombre aleatorio.
 // La confirmación final la manda Vercel Blob sin cookie, por eso la sesión se valida al generar el token.
 import { handleUpload } from '@vercel/blob/client';
-import { route, json, session, MEDIA_PREFIX, HttpError } from './_tiktok.js';
+import { route, json, session, blobToken, MEDIA_PREFIX, HttpError } from './_tiktok.js';
 
 export default { fetch: route(async (request) => {
   if (request.method !== 'POST') return json({ error: 'Usa POST.' }, 405);
   const body = await request.json();
   const result = await handleUpload({
-    body, request,
+    body, request, token: blobToken(),
     onBeforeGenerateToken: async (pathname) => {
       const { session: s } = await session(request);
       if (!pathname.startsWith(MEDIA_PREFIX) || !/\.(mp4|webm|mov)$/i.test(pathname)) throw new HttpError(400, 'Nombre de archivo no permitido.');
