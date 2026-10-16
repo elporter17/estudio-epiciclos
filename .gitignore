@@ -9,3 +9,4 @@ out/
 assets/fonts/
 data/tiktok-token.json
 data/tiktok-pending.json
+data/history.json
