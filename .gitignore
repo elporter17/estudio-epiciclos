@@ -1,6 +1,9 @@
 *.mp4
 *.webm
 .claude/
+.env
+.env.*
+!.env.example
 node_modules/
 out/
 assets/fonts/
