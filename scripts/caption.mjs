@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Descripción + hashtags para TikTok con la API de Claude (ANTHROPIC_API_KEY en el entorno).
+// Descripción + hashtags para TikTok con la API de OpenAI (clave en OPEN_AI u OPENAI_API_KEY, del entorno o de .env).
 // Sin clave, o si la API falla, usa una plantilla local para que el flujo no se detenga.
 //
 //   npm run caption -- --meta out/circularte-violin-en.json
@@ -9,10 +9,12 @@ import fs from 'node:fs';
 import { parseCli } from './lib/cli.mjs';
 import { pathToFileURL } from 'node:url';
 import './lib/env-file.mjs';
-import Anthropic from '@anthropic-ai/sdk';
+import OpenAI from 'openai';
 import { resolveSource, hashSeed } from './lib/catalog.mjs';
 
-export const MODEL = process.env.CIRCULARTE_CAPTION_MODEL || 'claude-sonnet-5-5';
+// gpt-6-luna: según la guía de modelos de OpenAI, el indicado para tareas acotadas y de alto volumen
+export const MODEL = process.env.CIRCULARTE_CAPTION_MODEL || 'gpt-6-luna';
+const apiKey = () => process.env.OPENAI_API_KEY || process.env.OPEN_AI;
 const SITE = 'circularte.edav-tech.com';
 
 const SCHEMA = {
@@ -54,7 +56,6 @@ function videoFacts(info, lang) {
     const d = info.def; if (d) lines.push(d.mode === 'polar' ? `Función polar: r(t) = ${d.r}` : `Función: x(t) = ${d.x}; y(t) = ${d.y}`);
     if (info.kind === 'random') lines.push('Es una función inventada al azar por la app.');
   }
-  if (info.emoji) lines.push('La figura sale de la silueta de un emoji.');
   if (info.caption) lines.push(`Texto que aparece arriba en el video: «${info.caption}»`);
   if (info.terms) lines.push(`Términos N por etapa: ${info.terms.join(', ')}`);
   if (info.duration) lines.push(`Duración: ${Math.round(info.duration)} s`);
@@ -62,32 +63,29 @@ function videoFacts(info, lang) {
 }
 
 export async function makeCaption(info, { lang = info.lang || 'es', cta = true, fallback = true } = {}) {
-  if (!process.env.ANTHROPIC_API_KEY && !process.env.ANTHROPIC_AUTH_TOKEN) {
-    if (!fallback) throw new Error('Falta ANTHROPIC_API_KEY.');
-    process.stderr.write('Aviso: sin ANTHROPIC_API_KEY, uso la plantilla local.\n');
+  if (!apiKey()) {
+    if (!fallback) throw new Error('Falta la clave de OpenAI (OPEN_AI u OPENAI_API_KEY).');
+    process.stderr.write('Aviso: sin clave de OpenAI, uso la plantilla local.\n');
     return templateCaption(info, lang, cta);
   }
-  const client = new Anthropic();
+  const client = new OpenAI({ apiKey: apiKey() });
   try {
-    const response = await client.beta.messages.create({
+    const response = await client.responses.create({
       model: MODEL,
-      max_tokens: 2000,
-      // Si un clasificador rechaza la petición, la API la reintenta con el modelo recomendado
-      betas: ['server-side-fallback-2026-07-01'],
-      fallbacks: 'default',
-      output_config: { effort: 'low', format: { type: 'json_schema', schema: SCHEMA } },
-      system: SYSTEM,
-      messages: [{ role: 'user', content: `${videoFacts(info, lang)}\n\nInvitación a ${SITE} al final: ${cta ? 'sí' : 'no'}.` }]
+      instructions: SYSTEM,
+      input: `${videoFacts(info, lang)}\n\nInvitación a ${SITE} al final: ${cta ? 'sí' : 'no'}.`,
+      text: { format: { type: 'json_schema', name: 'tiktok_post', schema: SCHEMA, strict: true } }
     });
-    if (response.stop_reason === 'refusal') throw new Error(`el modelo declinó (${response.stop_details?.category ?? 'sin categoría'})`);
-    const text = response.content.filter((b) => b.type === 'text').map((b) => b.text).join('');
-    const out = JSON.parse(text);
+    const message = response.output.find((item) => item.type === 'message');
+    const refusal = message?.content.find((c) => c.type === 'refusal');
+    if (refusal) throw new Error(`el modelo declinó: ${refusal.refusal}`);
+    const out = JSON.parse(response.output_text);
     const hashtags = out.hashtags.map((h) => String(h).replace(/^#/, '').replace(/\s+/g, '')).filter(Boolean).slice(0, 6);
     return { description: out.description.trim(), hashtags, source: response.model };
   } catch (e) {
     if (!fallback) throw e;
-    const why = e instanceof Anthropic.APIError ? `API ${e.status}: ${e.message}` : e.message;
-    process.stderr.write(`Aviso: no pude generar con Claude (${why}); uso la plantilla local.\n`);
+    const why = e instanceof OpenAI.APIError ? `API ${e.status}: ${e.message}` : e.message;
+    process.stderr.write(`Aviso: no pude generar con OpenAI (${why}); uso la plantilla local.\n`);
     return templateCaption(info, lang, cta);
   }
 }
@@ -105,7 +103,7 @@ async function main() {
     console.log(`Uso: npm run caption -- (--meta out/<video>.json | --preset <nombre> | --random <tipo> --seed <n> | --text <texto>)
   --lang es|en   --no-cta (sin invitación a la web)   --json   --save (guarda "post" dentro del .json de --meta)
   --no-fallback  (falla en vez de usar la plantilla si no hay clave o la API falla)
-Modelo: ${MODEL} (cámbialo con CIRCULARTE_CAPTION_MODEL). Clave: ANTHROPIC_API_KEY.`);
+Modelo: ${MODEL} (cámbialo con CIRCULARTE_CAPTION_MODEL). Clave: OPEN_AI u OPENAI_API_KEY (entorno o .env).`);
     return;
   }
   let info;

@@ -7,3 +7,5 @@
 node_modules/
 out/
 assets/fonts/
+data/tiktok-token.json
+data/tiktok-pending.json
