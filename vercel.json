@@ -1,0 +1,4 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "echo 'Sitio estatico: sin npm install (las dependencias solo sirven a los scripts de render)'"
+}

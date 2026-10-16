@@ -8,7 +8,7 @@ Dos cadenas de círculos (una para `x(t)`, otra para `y(t)`) trazan la figura mi
 
 ## Uso
 
-Abre `index.html` en Chrome o Edge. Es un solo archivo, sin instalación ni build.
+Es un sitio estático, sin build: `index.html` más el motor en `src/engine.js` (un módulo ES). Sírvelo con cualquier servidor estático, por ejemplo `npx serve .`, y ábrelo en Chrome o Edge. Por ser un módulo, abrir `index.html` con doble clic (`file://`) ya no funciona. En Vercel se publica tal cual; `vercel.json` evita que instale las dependencias de Node, que solo usan los scripts de render.
 
 - **Funciones**: figuras listas en cuatro grupos: Amor (corazón, LOVE, amor, te amo), Animales (elefante, pulpo, T-Rex, flamenco…), Cosas (guitarra, violín, cohete…) y Matemáticas (copo de Koch, π, espirógrafo, rosas…).
 - **Imagen**: elige, arrastra o pega (Ctrl+V) una imagen. Modo *Silueta* para logos, *Bordes* para fotos.
@@ -25,6 +25,40 @@ Mantén la pestaña visible mientras graba; si queda oculta, el video sale entre
 3. Se calcula la serie de Fourier de `x(t)` y `y(t)` (hasta 500 términos). El error mostrado es la energía que falta según Parseval.
 4. Cada término es un círculo de radio `√(a_k² + b_k²)` que gira a velocidad `k`.
 5. El lienzo se graba con `MediaRecorder`. Las visitas se miden con Vercel Web Analytics.
+
+## Videos automáticos (Node)
+
+Los mismos videos que graba la web, pero renderizados en Node cuadro por cuadro, sin navegador: mismo motor (`src/engine.js`), mismas fuentes y mismo resultado en cada ejecución. Pensado para publicar en TikTok de forma automática.
+
+Requisitos: Node 20 o más reciente. `ffmpeg` viene incluido (`ffmpeg-static`).
+
+```bash
+npm install
+npm run fonts                                   # una vez: descarga Noto Color Emoji (25 MB) a assets/fonts/
+npm run render -- --preset Violín --lang en     # → out/circularte-violin-en.mp4 + .json
+```
+
+| Script | Qué hace |
+|---|---|
+| `npm run render -- …` | Renderiza un MP4 H.264 (High, yuv420p, 1080×1920, 30 fps, pista de audio AAC en silencio) |
+| `npm run pick` | Elige la próxima figura evitando las 12 más recientes y sin repetir grupo seguido; la anota en `data/history.json` (`--dry-run` para no anotar) |
+| `npm run caption -- --meta out/<video>.json` | Escribe la descripción y los hashtags del post con Claude (`claude-sonnet-5-5`) |
+| `npm run daily -- --lang es` | Encadena pick → render → caption y deja el texto del post en el `.json` del video |
+
+Opciones de `render` (`npm run render -- --help` las lista todas):
+
+- Qué dibujar: `--preset <nombre>` (cualquier preset de la web, en español o inglés: `Corazón`, `Heart`, `Violín`…), `--random <tipo>` (`any`, `fourier`, `polar`, `rosa`, `spiro`, `lissa`, `super`) con `--seed <n>` para repetirla, o `--text <texto>` con `--font cursiva|elegante|bloque|clasica|emoji`.
+- Cómo se ve: `--labels full|n|top`, `--style xy|z`, `--fps 30|60`, `--format 9:16|1:1|16:9`, `--quality 1080|720`, `--rev`, `--nseq`, `--accent`, `--no-reveal`, `--no-formulas`, `--no-signature`.
+- Texto gancho de arriba: `--caption auto` (por defecto, elige uno de los de la web según `--lang`), `--caption none` o `--caption "tu texto"`.
+- `--lang es|en` cambia el texto gancho y el nombre del archivo. `--out` cambia la ruta. `--still <segundos>` guarda un PNG de ese instante en lugar del video, útil para revisar el encuadre.
+
+Junto a cada MP4 queda un `.json` con la figura, la semilla, la duración y el texto gancho; `caption` y la fase de publicación lo leen de ahí.
+
+**Emoji.** Los presets de animales y cosas son siluetas de emoji, así que el render necesita una fuente de emoji a color. `npm run fonts` descarga Noto Color Emoji desde google/fonts (licencia OFL; no se sube al repo) y con ella el resultado es idéntico en Windows, macOS y Linux. Sin ella se usa la del sistema (Segoe UI Emoji en Windows, Apple Color Emoji en macOS); en un Linux sin fuentes de emoji esos presets fallan con un aviso y `pick` los salta. También puedes apuntar a otra fuente con `CIRCULARTE_EMOJI_FONT=/ruta/fuente.ttf`.
+
+**Descripciones con Claude.** `caption` lee la clave de `ANTHROPIC_API_KEY` (nunca la guardes en el repo). Si no hay clave o la API falla, usa una plantilla local y lo avisa, para que el flujo no se detenga (`--no-fallback` para que falle en su lugar). El modelo se cambia con `CIRCULARTE_CAPTION_MODEL`.
+
+**PowerShell.** Windows PowerShell 5.1 se come el `--` de `npm run render -- --preset …`. Usa `npm.cmd run render -- …` o directamente `node scripts/render.mjs --preset …`.
 
 ## Créditos
 
