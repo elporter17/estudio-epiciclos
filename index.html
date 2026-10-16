@@ -1,9 +1,24 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Sube una imagen, escribe un texto o inventa una función y mira cómo círculos que giran la dibujan solos. Graba el video y compártelo. Creado por Erick Alvarado.">
+<meta name="author" content="Erick Alvarado · edav-tech.com">
+<meta name="theme-color" content="#0e0c0d">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CirculArte">
+<meta property="og:title" content="CirculArte · Dibuja lo que quieras con círculos que giran">
+<meta property="og:description" content="Cualquier imagen, texto o corazón dibujado solo con círculos girando. Hazlo tú y descarga el video.">
+<meta property="og:image" content="https://estudio-epiciclos.vercel.app/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_LA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CirculArte · Dibuja lo que quieras con círculos que giran">
+<meta name="twitter:image" content="https://estudio-epiciclos.vercel.app/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0c0d'/%3E%3Ccircle cx='26' cy='34' r='14' fill='none' stroke='%23f3eeea' stroke-opacity='.5' stroke-width='3'/%3E%3Ccircle cx='38' cy='26' r='8' fill='none' stroke='%23ff7a52' stroke-width='4'/%3E%3Ccircle cx='44' cy='21' r='4' fill='%23ff7a52'/%3E%3C/svg%3E">
 <!-- Vercel Web Analytics -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head><body>
-<title>Estudio Epiciclos</title>
+<title>CirculArte</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,22 +131,53 @@ code{font-family:var(--mono);font-size:12px;color:var(--fg);background:var(--bg)
 .vid .sub{color:var(--muted);font:12px var(--mono);font-variant-numeric:tabular-nums}
 .empty{color:var(--faint);font-size:13px;border:1px dashed var(--line);border-radius:var(--r);padding:14px;text-align:center}
 
+.brand p a,.credits a:not(.btn){color:var(--accent);text-decoration:none}
+.brand p a:hover,.credits a:not(.btn):hover{text-decoration:underline}
+.credits{display:flex;flex-direction:column;align-items:flex-start;gap:8px;border-top:1px solid var(--line);padding-top:18px}
+.credits p{margin:0}
+.credits .by{font:italic 400 19px/1.2 var(--math)}
+.credits .by a{font-style:normal}
+.credits .links{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:var(--faint)}
+a.btn{text-decoration:none}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--raise);border:1px solid var(--line);border-radius:999px;padding:8px 16px;box-shadow:0 10px 30px #000a;z-index:20;max-width:calc(100vw - 32px)}
+
+.preset-groups{display:flex;flex-direction:column;gap:10px}
+.group-title{margin:6px 0 0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+#capChips .chip{font-size:12px;padding:3px 10px}
 
 @media (max-width:900px){
   html,body{height:auto}
   .app{display:flex;flex-direction:column;height:auto}
-  .brand{border-left:0;padding-left:max(16px,env(safe-area-inset-left,0px))}
-  .stage-wrap{flex:none;height:66svh}
-  .panel{border-left:0;overflow:visible;padding-left:max(16px,env(safe-area-inset-left,0px))}
+  .brand{border-left:0;padding:14px max(16px,env(safe-area-inset-right,0px)) 6px max(16px,env(safe-area-inset-left,0px))}
+  .brand h1{font-size:26px}
+  .brand p{font-size:12.5px}
+  .stage-col{padding-block:10px 14px;padding-right:max(16px,env(safe-area-inset-right,0px));gap:10px}
+  .stage-wrap{flex:none;height:min(60svh,128vw)}
+  .transport{gap:8px 10px}
+  .transport .btn{padding:10px 14px}
+  .progress{order:5;flex-basis:100%}
+  .status{order:6}
+  .panel{border-left:0;overflow:visible;padding-left:max(16px,env(safe-area-inset-left,0px));padding-bottom:calc(32px + env(safe-area-inset-bottom,0px))}
+  .tabs{top:env(safe-area-inset-top,0px)}
+  .presets{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}
+}
+@media (max-width:440px){
+  .two{grid-template-columns:1fr}
+  .seg button{padding:7px 4px;font-size:12.5px}
+  .tabs button{font-size:13px;padding:9px 2px}
+  .preset canvas{width:56px;height:56px}
+  .preset{font-size:12px}
+  .presets{grid-template-columns:repeat(3,1fr);gap:6px}
+  .vid{grid-template-columns:64px minmax(0,1fr)}
+  .vid video,.vid img{width:64px;height:64px}
 }
 @media (prefers-reduced-motion:reduce){.status .dot{animation:none}}
 </style>
 
 <div class="app">
   <header class="brand">
-    <h1>Estudio <b>Epiciclos</b></h1>
-    <p>Cualquier imagen, texto o función dibujada con círculos de Fourier. Cada reproducción se graba como video.</p>
+    <h1>Circul<b>Arte</b></h1>
+    <p>Cualquier imagen, texto o función dibujada solo con círculos que giran. Cada reproducción se graba como video. Por <a href="https://edav-tech.com/" target="_blank" rel="noopener">Erick Alvarado</a>.</p>
   </header>
 
   <section class="stage-col" aria-label="Escenario">
@@ -161,8 +207,8 @@ code{font-family:var(--mono);font-size:12px;color:var(--fg);background:var(--bg)
     </div>
 
     <div class="tabpanel" id="p-funciones" role="tabpanel">
-      <p class="hint">Figuras clásicas listas para dibujar. Toca una y luego Reproducir.</p>
-      <div class="presets" id="presets"></div>
+      <p class="hint">Figuras listas para dibujar. Toca una y luego Reproducir.</p>
+      <div class="preset-groups" id="presets"></div>
     </div>
 
     <div class="tabpanel" id="p-texto" role="tabpanel" hidden>
@@ -251,6 +297,14 @@ code{font-family:var(--mono);font-size:12px;color:var(--fg);background:var(--bg)
         </div>
       </div>
       <div class="field">
+        <span class="lbl">Rótulos mientras dibuja</span>
+        <div class="seg" id="labels">
+          <button type="button" data-v="full">N y error</button>
+          <button type="button" data-v="n">Solo N</button>
+          <button type="button" data-v="top">Fórmulas arriba</button>
+        </div>
+      </div>
+      <div class="field">
         <label for="nseq">Términos N por etapa</label>
         <input type="text" class="mono" id="nseq" value="1, 3, 6, 12, 25, 50, 100, 200" autocomplete="off">
       </div>
@@ -259,10 +313,12 @@ code{font-family:var(--mono);font-size:12px;color:var(--fg);background:var(--bg)
       <div class="row">
         <label class="check"><input type="checkbox" id="reveal" checked> Al final, solo la imagen</label>
         <label class="check"><input type="checkbox" id="formulas" checked> Fórmulas</label>
+        <label class="check"><input type="checkbox" id="signature" checked> Firma en el video</label>
       </div>
       <div class="field">
         <label for="caption">Texto superior del video</label>
-        <input type="text" id="caption" maxlength="60" placeholder="Opcional, por ejemplo: Fourier dibuja amor" autocomplete="off">
+        <input type="text" id="caption" maxlength="60" placeholder="Opcional, por ejemplo: Espera el final" autocomplete="off">
+        <div class="chips" id="capChips" aria-label="Ideas de texto"></div>
       </div>
       <div class="two">
         <div class="field"><span class="lbl">Formato</span>
@@ -280,6 +336,13 @@ code{font-family:var(--mono);font-size:12px;color:var(--fg);background:var(--bg)
       <div class="videos" id="videos"><div class="empty">Tus grabaciones aparecen aquí. Deja marcado «Grabar video» y pulsa Reproducir.</div></div>
       <p class="hint">Mantén la pestaña visible mientras graba. Los videos viven en esta pestaña hasta que la cierres, así que guarda los que quieras conservar.</p>
     </section>
+
+    <footer class="credits" aria-label="Créditos">
+      <p class="by">Creado por <a href="https://edav-tech.com/" target="_blank" rel="noopener">Erick Alvarado</a></p>
+      <p class="hint">Senior Full Stack Dev · Tech Lead. Construyo apps web y móviles a la medida.</p>
+      <a class="btn small primary" href="https://www.edav-tech.com/start-project" target="_blank" rel="noopener">¿Quieres una app así? Hablemos</a>
+      <p class="links"><a href="https://edav-tech.com/" target="_blank" rel="noopener">edav-tech.com</a><span aria-hidden="true">·</span><a href="https://github.com/elporter17" target="_blank" rel="noopener">GitHub</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/edav/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </footer>
   </aside>
 </div>
 <div class="toast" id="toast" role="status" hidden></div>
@@ -303,7 +366,7 @@ const store = {
 
 const settings = Object.assign({
   style: 'xy', nseq: '1, 3, 6, 12, 25, 50, 100, 200', rev: 3, guide: 18, reveal: true, formulas: true,
-  accent: '#ff7a52', caption: '', format: '9:16', quality: 720, record: true
+  accent: '#ff7a52', caption: '', format: '9:16', quality: 720, record: true, signature: true, labels: 'full'
 }, store.get('settings', {}));
 const saveSettings = () => store.set('settings', settings);
 
@@ -584,8 +647,10 @@ const FONTS = {
   cursiva: { family: '"Pacifico", "Segoe Script", cursive', weight: 400, style: 'normal' },
   elegante: { family: '"Playfair Display", Georgia, serif', weight: 700, style: 'normal' },
   bloque: { family: '"Archivo Black", Impact, sans-serif', weight: 400, style: 'normal' },
-  clasica: { family: '"STIX Two Text", "Times New Roman", serif', weight: 400, style: 'italic' }
+  clasica: { family: '"STIX Two Text", "Times New Roman", serif', weight: 400, style: 'italic' },
+  emoji: { family: '"Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif', weight: 400, style: 'normal' }
 };
+const EMOJI = /\p{Extended_Pictographic}/u;
 async function textCanvas(text, fk) {
   const F = FONTS[fk] || FONTS.cursiva, size = 240;
   const font = `${F.style} ${F.weight} ${size}px ${F.family}`;
@@ -596,7 +661,23 @@ async function textCanvas(text, fk) {
   const left = m.actualBoundingBoxLeft || 0, right = m.actualBoundingBoxRight || m.width, pad = size * .12;
   c.width = Math.max(16, Math.ceil(left + right + pad * 2)); c.height = Math.max(16, Math.ceil(asc + desc + pad * 2));
   g.font = font; g.fillStyle = settings.accent; g.fillText(text, pad + left, pad + asc);
+  // Los emoji se vuelven silueta plana del color del trazo, como en los videos virales
+  if (EMOJI.test(text)) { g.globalCompositeOperation = 'source-in'; g.fillRect(0, 0, c.width, c.height); }
   return c;
+}
+
+function kochPts(level) {
+  let pts = [0, 1, 2].map((i) => { const a = -Math.PI / 2 + i * TAU / 3; return [Math.cos(a), Math.sin(a)]; });
+  const c = Math.cos(-Math.PI / 3), s = Math.sin(-Math.PI / 3);
+  for (let l = 0; l < level; l++) {
+    const next = [];
+    for (let i = 0; i < pts.length; i++) {
+      const [ax, ay] = pts[i], [bx, by] = pts[(i + 1) % pts.length], dx = (bx - ax) / 3, dy = (by - ay) / 3;
+      next.push([ax, ay], [ax + dx, ay + dy], [ax + dx + dx * c - dy * s, ay + dy + dx * s + dy * c], [ax + 2 * dx, ay + 2 * dy]);
+    }
+    pts = next;
+  }
+  return Float64Array.from(pts.flat());
 }
 
 /* ---------------- Unir, remuestrear, Fourier ---------------- */
@@ -929,8 +1010,44 @@ function drawLabels(N, a) {
   if (a <= 0.004) return;
   const L = S.L, U = view.U;
   ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = FG;
-  mathLine([['i', 'N'], ['r', ' = '], ['c', String(N)]], L.tx, L.ty, 64 * U, 'center');
-  mathLine([['r', 'error = ' + errFor(N).toFixed(2) + '%']], L.tx, L.ty + 56 * U, 42 * U, 'center');
+  if (settings.labels === 'full') {
+    mathLine([['i', 'N'], ['r', ' = '], ['c', String(N)]], L.tx, L.ty, 64 * U, 'center');
+    mathLine([['r', 'error = ' + errFor(N).toFixed(2) + '%']], L.tx, L.ty + 56 * U, 42 * U, 'center');
+  } else {
+    mathLine([['c', String(N)]], L.tx, L.ty + 20 * U, 60 * U, 'center');
+  }
+  if (settings.labels === 'top') drawTopFormulas();
+  ctx.restore();
+}
+
+// Fórmulas pequeñas en la esquina superior, como en los videos virales
+function drawTopFormulas() {
+  const U = view.U, x = 28 * U, size = 21 * U, maxW = view.W * 0.62;
+  let y = (settings.caption.trim() ? view.H * (settings.format === '9:16' ? 0.1 : 0.14) : 0) + 46 * U;
+  if (settings.style === 'xy') {
+    ctx.fillStyle = FG;
+    mathLine([['i', 'x'], ['r', '('], ['i', 't'], ['r', ') = '], ['S', 'Σ'], ['_', 'k'], ['r', ' ('], ['i', 'a'], ['_', 'k'], ['r', ' cos '], ['i', 'kt'], ['r', ' + '], ['i', 'b'], ['_', 'k'], ['r', ' sin '], ['i', 'kt'], ['r', ')']], x, y, size, 'left', maxW);
+    ctx.fillStyle = GOLD;
+    mathLine([['i', 'y'], ['r', '('], ['i', 't'], ['r', ') = '], ['S', 'Σ'], ['_', 'k'], ['r', ' ('], ['i', 'c'], ['_', 'k'], ['r', ' cos '], ['i', 'kt'], ['r', ' + '], ['i', 'd'], ['_', 'k'], ['r', ' sin '], ['i', 'kt'], ['r', ')']], x, y + 34 * U, size, 'left', maxW);
+  } else {
+    ctx.fillStyle = FG;
+    mathLine([['i', 'z'], ['r', '('], ['i', 't'], ['r', ') = '], ['S', 'Σ'], ['_', 'k'], ['r', ' '], ['i', 'c'], ['_', 'k'], ['r', ' '], ['i', 'e'], ['^', 'ikt']], x, y, size * 1.1, 'left', maxW);
+  }
+  ctx.fillStyle = FG;
+}
+
+function drawSignature() {
+  if (!settings.signature) return;
+  const U = view.U, parts = [
+    ['Circul', `italic 400 ${24 * U}px "STIX Two Text", "Times New Roman", serif`, hexA(FG, .8)],
+    ['Arte', `italic 400 ${24 * U}px "STIX Two Text", "Times New Roman", serif`, settings.accent],
+    ['   edav-tech.com', `500 ${17 * U}px "IBM Plex Sans", system-ui, sans-serif`, hexA(FG, .5)]
+  ];
+  ctx.save(); ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left';
+  let w = 0; for (const [t, f] of parts) { ctx.font = f; w += ctx.measureText(t).width; }
+  let x = settings.format === '16:9' ? view.W - 30 * U - w : (view.W - w) / 2;
+  const y = view.H - 28 * U;
+  for (const [t, f, col] of parts) { ctx.font = f; ctx.fillStyle = col; ctx.fillText(t, x, y); x += ctx.measureText(t).width; }
   ctx.restore();
 }
 
@@ -993,6 +1110,7 @@ function render(st) {
   drawLabels(N, machA);
   drawFormulas(clamp((e - 0.3) / 0.6), N);
   drawCaption();
+  drawSignature();
 }
 
 const poster = () => { if (S) render({ stage: S.stages.length - 1, u: 1, prevA: 0, reveal: 0 }); else render({}); };
@@ -1090,7 +1208,7 @@ const fmtSize = (b) => b > 1e6 ? (b / 1e6).toFixed(1) + ' MB' : Math.round(b / 1
 
 function addVideo(blob, r) {
   const ext = /mp4/.test(blob.type) ? 'mp4' : 'webm';
-  const v = { blob, url: URL.createObjectURL(blob), ext, name: `epiciclos-${slug(r.name)}-${stamp()}.${ext}`, title: r.name, dur: r.dur, thumb: r.thumb, format: r.format, w: r.w, h: r.h };
+  const v = { blob, url: URL.createObjectURL(blob), ext, name: `circularte-${slug(r.name)}-${stamp()}.${ext}`, title: r.name, dur: r.dur, thumb: r.thumb, format: r.format, w: r.w, h: r.h };
   videos.unshift(v); renderVideos();
   toast(`Video listo: ${r.name}. Guárdalo desde «Mis videos».`);
 }
@@ -1137,27 +1255,46 @@ async function saveVideo(v) {
 
 /* ---------------- Fuentes de figura ---------------- */
 const PRESETS = [
-  { name: 'Corazón', expr: { mode: 'xy', x: '16 sin(t)^3', y: '13 cos(t) - 5 cos(2t) - 2 cos(3t) - cos(4t)', periods: 1 }, fill: 'solid' },
-  { name: 'LOVE', text: 'LOVE', font: 'elegante' },
-  { name: 'amor', text: 'amor', font: 'cursiva' },
-  { name: 'te amo', text: 'te amo', font: 'cursiva' },
-  { name: 'Mamá', text: 'Mamá', font: 'cursiva' },
-  { name: 'Infinito', expr: { mode: 'xy', x: 'cos(t) / (1 + sin(t)^2)', y: 'sin(t) cos(t) / (1 + sin(t)^2)', periods: 1 }, fill: 'line' },
-  { name: 'Estrella', text: '★', font: 'bloque' },
-  { name: 'Flor', expr: { mode: 'polar', r: 'cos(4t)', periods: 1 }, fill: 'soft' },
-  { name: 'Mariposa', expr: { mode: 'polar', r: 'exp(sin(t)) - 2 cos(4t) + sin((2t - pi)/24)^5', periods: 6 }, fill: 'line' },
-  { name: 'Nudo trébol', expr: { mode: 'xy', x: 'sin(t) + 2 sin(2t)', y: 'cos(t) - 2 cos(2t)', periods: 1 }, fill: 'line' },
-  { name: 'Espirógrafo', expr: { mode: 'xy', x: '2 cos(t) + 5 cos((2/3)t)', y: '2 sin(t) - 5 sin((2/3)t)', periods: 3 }, fill: 'line' },
-  { name: 'Epiciclo', expr: { mode: 'xy', x: '5 cos(t) - 3 cos((5/2)t)', y: '5 sin(t) - 3 sin((5/2)t)', periods: 2 }, fill: 'soft' },
-  { name: 'Lissajous', expr: { mode: 'xy', x: 'sin(3t + pi/2)', y: 'sin(2t)', periods: 1 }, fill: 'line' },
-  { name: 'Cardioide', expr: { mode: 'polar', r: '1 - sin(t)', periods: 1 }, fill: 'solid' },
-  { name: 'Nota', text: '♪', font: 'clasica' }
+  { group: 'Amor', name: 'Corazón', expr: { mode: 'xy', x: '16 sin(t)^3', y: '13 cos(t) - 5 cos(2t) - 2 cos(3t) - cos(4t)', periods: 1 }, fill: 'solid' },
+  { group: 'Amor', name: 'LOVE', text: 'LOVE', font: 'elegante' },
+  { group: 'Amor', name: 'amor', text: 'amor', font: 'cursiva' },
+  { group: 'Amor', name: 'te amo', text: 'te amo', font: 'cursiva' },
+  { group: 'Amor', name: 'Mamá', text: 'Mamá', font: 'cursiva' },
+  { group: 'Amor', name: 'Rosa', text: '🌹', font: 'emoji' },
+  { group: 'Animales', name: 'Elefante', text: '🐘', font: 'emoji' },
+  { group: 'Animales', name: 'Pulpo', text: '🐙', font: 'emoji' },
+  { group: 'Animales', name: 'Gato', text: '🐈', font: 'emoji' },
+  { group: 'Animales', name: 'Delfín', text: '🐬', font: 'emoji' },
+  { group: 'Animales', name: 'T-Rex', text: '🦖', font: 'emoji' },
+  { group: 'Animales', name: 'Flamenco', text: '🦩', font: 'emoji' },
+  { group: 'Animales', name: 'Caballo', text: '🐎', font: 'emoji' },
+  { group: 'Animales', name: 'Paloma', text: '🕊️', font: 'emoji' },
+  { group: 'Animales', name: 'Mariposa', text: '🦋', font: 'emoji' },
+  { group: 'Cosas', name: 'Guitarra', text: '🎸', font: 'emoji' },
+  { group: 'Cosas', name: 'Violín', text: '🎻', font: 'emoji' },
+  { group: 'Cosas', name: 'Cohete', text: '🚀', font: 'emoji' },
+  { group: 'Cosas', name: 'Manzana', text: '🍎', font: 'emoji' },
+  { group: 'Cosas', name: 'Corona', text: '👑', font: 'emoji' },
+  { group: 'Cosas', name: 'Nota', text: '♪', font: 'clasica' },
+  { group: 'Matemáticas', name: 'Copo de Koch', poly: () => kochPts(4), fill: 'solid' },
+  { group: 'Matemáticas', name: 'π', text: 'π', font: 'clasica' },
+  { group: 'Matemáticas', name: 'Infinito', expr: { mode: 'xy', x: 'cos(t) / (1 + sin(t)^2)', y: 'sin(t) cos(t) / (1 + sin(t)^2)', periods: 1 }, fill: 'line' },
+  { group: 'Matemáticas', name: 'Flor', expr: { mode: 'polar', r: 'cos(4t)', periods: 1 }, fill: 'soft' },
+  { group: 'Matemáticas', name: 'Mariposa polar', expr: { mode: 'polar', r: 'exp(sin(t)) - 2 cos(4t) + sin((2t - pi)/24)^5', periods: 6 }, fill: 'line' },
+  { group: 'Matemáticas', name: 'Nudo trébol', expr: { mode: 'xy', x: 'sin(t) + 2 sin(2t)', y: 'cos(t) - 2 cos(2t)', periods: 1 }, fill: 'line' },
+  { group: 'Matemáticas', name: 'Espirógrafo', expr: { mode: 'xy', x: '2 cos(t) + 5 cos((2/3)t)', y: '2 sin(t) - 5 sin((2/3)t)', periods: 3 }, fill: 'line' },
+  { group: 'Matemáticas', name: 'Epiciclo', expr: { mode: 'xy', x: '5 cos(t) - 3 cos((5/2)t)', y: '5 sin(t) - 3 sin((5/2)t)', periods: 2 }, fill: 'soft' },
+  { group: 'Matemáticas', name: 'Lissajous', expr: { mode: 'xy', x: 'sin(3t + pi/2)', y: 'sin(2t)', periods: 1 }, fill: 'line' },
+  { group: 'Matemáticas', name: 'Cardioide', expr: { mode: 'polar', r: '1 - sin(t)', periods: 1 }, fill: 'solid' },
+  { group: 'Matemáticas', name: 'Rosa 7/4', expr: { mode: 'polar', r: 'cos((7/4)t)', periods: 4 }, fill: 'soft' },
+  { group: 'Matemáticas', name: 'Estrella', text: '★', font: 'bloque' }
 ];
 
 const exprLinesOf = (d) => d.mode === 'polar' ? [`r(t) = ${d.r}`] : [`x(t) = ${d.x}`, `y(t) = ${d.y}`];
 
 async function shapeFor(src) {
   if (src.kind === 'expr') return { shape: exprShape(src.def), meta: { name: src.name, fill: src.fill || 'soft', exprLines: exprLinesOf(src.def) } };
+  if (src.kind === 'poly') return { shape: { contours: [{ pts: src.pts(), len: 1, closed: true }], image: null }, meta: { name: src.name, fill: src.fill || 'solid' } };
   if (src.kind === 'text') {
     const c = await textCanvas(src.text, src.font);
     const maxDim = clamp(Math.max(640, 170 * c.width / c.height), 640, 1600);
@@ -1168,6 +1305,13 @@ async function shapeFor(src) {
 }
 
 let current = null, buildToken = 0;
+// En teléfono, al elegir una figura sube al escenario para ver el resultado y el botón Reproducir
+function revealStage() {
+  if (!matchMedia('(max-width: 900px)').matches) return;
+  const r = $('.stage-col').getBoundingClientRect();
+  if (r.top >= -10 && r.top < 40) return;
+  $('.stage-col').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+}
 async function setSource(src, opts = {}) {
   const token = ++buildToken;
   try {
@@ -1178,6 +1322,7 @@ async function setSource(src, opts = {}) {
     current = src;
     poster(); status();
     if (src.kind === 'image') $('#imgInfo').textContent = `${S.parts} ${S.parts === 1 ? 'curva' : 'curvas'} unidas`;
+    if (opts.reveal) revealStage();
     return true;
   } catch (e) {
     if (opts.errEl) opts.errEl.textContent = e.message; else toast(e.message);
@@ -1298,13 +1443,23 @@ tabs.forEach((t) => t.addEventListener('click', () => showTab(t.dataset.tab)));
 // Funciones (figuras clásicas)
 const presetBox = $('#presets'); const presetBtns = [];
 function markPreset(btn) { presetBtns.forEach((b) => b.setAttribute('aria-pressed', String(b === btn))); }
-function presetSrc(p) { return p.expr ? { kind: 'expr', name: p.name, def: p.expr, fill: p.fill } : { kind: 'text', name: p.name, text: p.text, font: p.font }; }
+function presetSrc(p) {
+  if (p.expr) return { kind: 'expr', name: p.name, def: p.expr, fill: p.fill };
+  if (p.poly) return { kind: 'poly', name: p.name, pts: p.poly, fill: p.fill };
+  return { kind: 'text', name: p.name, text: p.text, font: p.font };
+}
+const groupBoxes = {};
 PRESETS.forEach((p) => {
+  if (!groupBoxes[p.group]) {
+    const h = document.createElement('h3'); h.className = 'group-title'; h.textContent = p.group;
+    const grid = document.createElement('div'); grid.className = 'presets';
+    presetBox.append(h, grid); groupBoxes[p.group] = grid;
+  }
   const b = document.createElement('button'); b.type = 'button'; b.className = 'preset'; b.setAttribute('aria-pressed', 'false');
   const c = document.createElement('canvas'); c.width = 128; c.height = 128;
   const sp = document.createElement('span'); sp.textContent = p.name;
-  b.append(c, sp); presetBox.append(b); presetBtns.push(b); p.thumb = c;
-  b.addEventListener('click', () => { markPreset(b); setSource(presetSrc(p)); });
+  b.append(c, sp); groupBoxes[p.group].append(b); presetBtns.push(b); p.thumb = c;
+  b.addEventListener('click', () => { markPreset(b); setSource(presetSrc(p), { reveal: true }); });
 });
 async function drawThumbs() {
   for (const p of PRESETS) {
@@ -1329,7 +1484,7 @@ segment('txtFont', txtFont, (v) => { txtFont = v; });
   const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = t;
   b.addEventListener('click', () => { $('#txt').value = t; drawText(); }); $('#txtChips').append(b);
 });
-function drawText() { const t = $('#txt').value.trim(); if (!t) { toast('Escribe algo primero'); return; } markPreset(null); setSource({ kind: 'text', name: t, text: t, font: txtFont }); }
+function drawText() { const t = $('#txt').value.trim(); if (!t) { toast('Escribe algo primero'); return; } markPreset(null); setSource({ kind: 'text', name: t, text: t, font: txtFont }, { reveal: true }); }
 $('#txtGo').addEventListener('click', drawText);
 $('#txt').addEventListener('keydown', (e) => { if (e.key === 'Enter') drawText(); });
 
@@ -1344,17 +1499,17 @@ function autoThreshold() {
   imgOpts.thr = imgOpts.mode === 'bordes' ? 22 : (A.hasAlpha ? 50 : Math.round(A.otsu));
   syncImgUI();
 }
-function applyImage(delay = 0) {
+function applyImage(delay = 0, reveal = false) {
   if (!currentImg) return;
   clearTimeout(imgTimer);
-  imgTimer = setTimeout(() => { markPreset(null); setSource({ kind: 'image', img: currentImg, name: currentImgName, opts: { ...imgOpts } }); }, delay);
+  imgTimer = setTimeout(() => { markPreset(null); setSource({ kind: 'image', img: currentImg, name: currentImgName, opts: { ...imgOpts } }, { reveal }); }, delay);
 }
 function loadImageFile(file) {
   if (!file || !/^image\//.test(file.type)) { toast('Ese archivo no es una imagen'); return; }
   const url = URL.createObjectURL(file), im = new Image();
   im.onload = () => {
     currentImg = im; currentImgName = (file.name || 'Imagen').replace(/\.[a-z0-9]+$/i, '') || 'Imagen';
-    imgOpts.invert = false; imgOpts.mode = 'silueta'; setImgMode('silueta'); autoThreshold(); showTab('imagen'); applyImage();
+    imgOpts.invert = false; imgOpts.mode = 'silueta'; setImgMode('silueta'); autoThreshold(); showTab('imagen'); applyImage(0, true);
   };
   im.onerror = () => toast('No pude abrir esa imagen');
   im.src = url;
@@ -1404,7 +1559,7 @@ async function drawDef() {
 $('#genBtn').addEventListener('click', async () => {
   for (let i = 0; i < 6; i++) {
     const d = inventFn($('#genType').value), name = funName(); loadDef(d, name);
-    if (await setSource({ kind: 'expr', name, def: d, fill: d.fill }, { errEl: $('#exprErr') })) { $('#exprErr').textContent = ''; markPreset(null); return; }
+    if (await setSource({ kind: 'expr', name, def: d, fill: d.fill }, { errEl: $('#exprErr'), reveal: true })) { $('#exprErr').textContent = ''; markPreset(null); return; }
   }
 });
 $('#exprGo').addEventListener('click', drawDef);
@@ -1448,6 +1603,18 @@ bindRange('revs', 'rev', (v) => v + ' s');
 bindRange('guide', 'guide', (v) => v + '%');
 $('#reveal').checked = settings.reveal; $('#reveal').addEventListener('change', (e) => { settings.reveal = e.target.checked; saveSettings(); status(); });
 $('#formulas').checked = settings.formulas; $('#formulas').addEventListener('change', (e) => { settings.formulas = e.target.checked; saveSettings(); });
+$('#signature').checked = settings.signature; $('#signature').addEventListener('change', (e) => { settings.signature = e.target.checked; saveSettings(); if (!anim) poster(); });
+segment('labels', settings.labels, (v) => { settings.labels = v; saveSettings(); if (!anim) poster(); });
+const CAPTIONS = ['¿Pueden unos círculos dibujar esto?', 'Espera el final 😳', 'Solo círculos girando', 'Solo círculos dibujando: {x}', 'Matemáticas que parecen magia ✨', 'Nadie me creyó que era solo matemática'];
+CAPTIONS.forEach((t) => {
+  const b = document.createElement('button'); b.type = 'button'; b.className = 'chip';
+  b.textContent = t.replace('{x}', '…');
+  b.addEventListener('click', () => {
+    const c = $('#caption'); c.value = t.replace('{x}', S ? S.name : 'esto');
+    c.dispatchEvent(new Event('input'));
+  });
+  $('#capChips').append(b);
+});
 $('#rec').checked = settings.record; $('#rec').addEventListener('change', (e) => { settings.record = e.target.checked; saveSettings(); });
 $('#caption').value = settings.caption; $('#caption').addEventListener('input', (e) => { settings.caption = e.target.value; saveSettings(); relayout(); if (!anim) poster(); });
 segment('format', settings.format, (v) => { settings.format = v; saveSettings(); stop(true); setCanvasSize(); poster(); status(); });
