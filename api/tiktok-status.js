@@ -4,7 +4,7 @@ import { route, json, session, tiktok, unseal, HttpError } from './_tiktok.js';
 
 const DONE = ['PUBLISH_COMPLETE', 'SEND_TO_USER_INBOX', 'FAILED'];
 
-export default route(async (request) => {
+export default { fetch: route(async (request) => {
   if (request.method !== 'POST') return json({ error: 'Usa POST.' }, 405);
   const { ticket } = await request.json().catch(() => ({}));
   const t = ticket && unseal(ticket);
@@ -15,4 +15,4 @@ export default route(async (request) => {
   const done = DONE.includes(d.status);
   if (done) await del(t.blobUrl).catch(() => {});
   return json({ status: d.status, fail_reason: d.fail_reason || null, done }, 200, cookie ? { 'set-cookie': cookie } : {});
-});
+}) };

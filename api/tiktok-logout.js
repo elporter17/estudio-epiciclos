@@ -1,7 +1,7 @@
 // POST: desconecta la cuenta (revoca el token en TikTok y borra la cookie).
 import { route, json, cookies, unseal, config, clearCookie, sameOrigin, API, SESSION_COOKIE } from './_tiktok.js';
 
-export default route(async (request) => {
+export default { fetch: route(async (request) => {
   if (request.method !== 'POST') return json({ error: 'Usa POST.' }, 405);
   sameOrigin(request);
   const s = unseal(cookies(request)[SESSION_COOKIE] || '');
@@ -13,4 +13,4 @@ export default route(async (request) => {
     }).catch(() => {});
   }
   return json({ connected: false }, 200, { 'set-cookie': clearCookie(SESSION_COOKIE) });
-});
+}) };

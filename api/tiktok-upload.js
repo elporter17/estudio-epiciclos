@@ -4,7 +4,7 @@
 import { handleUpload } from '@vercel/blob/client';
 import { route, json, session, MEDIA_PREFIX, HttpError } from './_tiktok.js';
 
-export default route(async (request) => {
+export default { fetch: route(async (request) => {
   if (request.method !== 'POST') return json({ error: 'Usa POST.' }, 405);
   const body = await request.json();
   const result = await handleUpload({
@@ -23,4 +23,4 @@ export default route(async (request) => {
     onUploadCompleted: async () => {}
   });
   return json(result);
-});
+}) };

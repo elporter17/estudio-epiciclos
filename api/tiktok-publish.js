@@ -3,7 +3,7 @@
 import { list, del } from '@vercel/blob';
 import { route, json, session, tiktok, config, seal, sameOrigin, MEDIA_PREFIX, HttpError } from './_tiktok.js';
 
-export default route(async (request) => {
+export default { fetch: route(async (request) => {
   if (request.method !== 'POST') return json({ error: 'Usa POST.' }, 405);
   sameOrigin(request);
   const b = await request.json().catch(() => ({}));
@@ -43,7 +43,7 @@ export default route(async (request) => {
   // El ticket permite consultar el estado y borrar este video después sin confiar en lo que mande el navegador
   const ticket = seal({ publish_id: d.publish_id, blobUrl: blob.href, open_id: s.open_id, t: Date.now() });
   return json({ ticket }, 200, cookie ? { 'set-cookie': cookie } : {});
-});
+}) };
 
 async function cleanupOld() {
   const { blobs } = await list({ prefix: MEDIA_PREFIX, limit: 100 });
