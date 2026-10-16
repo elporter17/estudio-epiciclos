@@ -8,7 +8,7 @@ Dos cadenas de círculos (una para `x(t)`, otra para `y(t)`) trazan la figura mi
 
 ## Uso
 
-Es un sitio estático, sin build: `index.html` más el motor en `src/engine.js` (un módulo ES). Sírvelo con cualquier servidor estático, por ejemplo `npx serve .`, y ábrelo en Chrome o Edge. Por ser un módulo, abrir `index.html` con doble clic (`file://`) ya no funciona. En Vercel se publica tal cual; `vercel.json` evita que instale las dependencias de Node, que solo usan los scripts de render.
+Es un sitio estático, sin build: `index.html` más el motor en `src/engine.js` (un módulo ES). Sírvelo con cualquier servidor estático, por ejemplo `npx serve .`, y ábrelo en Chrome o Edge. Por ser un módulo, abrir `index.html` con doble clic (`file://`) ya no funciona. En Vercel se publica tal cual, sin build: `vercel.json` instala solo las dependencias de las funciones de `api/` (`@vercel/blob`); las del render (canvas, ffmpeg, fuentes, OpenAI) son `devDependencies` y Vercel las omite. Sin las variables de entorno de TikTok, el sitio funciona igual y simplemente no muestra el botón «Publicar en TikTok».
 
 - **Funciones**: figuras listas en cuatro grupos: Amor (corazón, LOVE, amor, te amo), Animales (elefante, pulpo, T-Rex, flamenco…), Cosas (guitarra, violín, cohete…) y Matemáticas (copo de Koch, π, espirógrafo, rosas…).
 - **Imagen**: elige, arrastra o pega (Ctrl+V) una imagen. Modo *Silueta* para logos, *Bordes* para fotos.
@@ -69,6 +69,50 @@ Usa solo la API oficial de TikTok (Login Kit + Content Posting API); nada de bot
 3. `--mode direct` lo publica directo con la descripción del `.json`. Mientras la app no pase la auditoría de TikTok, todo lo publicado por la API queda privado (`SELF_ONLY`, solo tú lo ves) y la cuenta debe ser privada.
 
 Límites de la API que respeta el script: video de hasta 4 GB, subido en trozos de 5 a 64 MB (uno solo si pesa hasta 64 MB); el enlace de subida dura una hora; 6 inicios de subida por minuto; 30 consultas de estado por minuto; como mucho 5 borradores pendientes cada 24 horas. TikTok acepta MP4/MOV/WebM, H.264, de 23 a 60 fps.
+
+## Publicar desde la web (producción)
+
+Cada video de «Mis videos» tiene un botón **Publicar en TikTok** que publica directo, en un paso, en la cuenta que el visitante conecte. La pantalla cumple las [Content Sharing Guidelines](https://developers.tiktok.com/doc/content-sharing-guidelines) de TikTok, que se revisan en la auditoría: muestra la cuenta, una vista previa, la descripción editable, la privacidad elegida a mano y sin valor por defecto, las interacciones apagadas por defecto (y bloqueadas si la cuenta las desactivó), la divulgación de contenido comercial con sus etiquetas y la declaración de consentimiento.
+
+Cómo funciona: la conexión con TikTok se abre en una ventana emergente (así no se pierden los videos grabados), `tiktok-callback.html` canjea el código en `/api/tiktok-session` y la sesión queda en una cookie cifrada, sin base de datos. El navegador no puede subir a TikTok directamente (su servidor de subida no admite CORS), así que sube el video a **Vercel Blob**, TikTok lo descarga desde `https://circularte.edav-tech.com/media/…` (`PULL_FROM_URL`, dominio verificado) y la copia se borra al terminar o a las 24 horas.
+
+| Función | Para qué |
+|---|---|
+| `api/tiktok-config` | Si la publicación está configurada y hay cuenta conectada |
+| `api/tiktok-login`, `api/tiktok-session`, `api/tiktok-logout` | Conectar (OAuth con *state*) y desconectar (revoca el token) |
+| `api/tiktok-creator` | Nickname, privacidad permitida, interacciones y duración máxima |
+| `api/tiktok-upload` | Token de subida directa a Blob (solo con sesión; solo videos, máx. 300 MB) |
+| `api/tiktok-publish`, `api/tiktok-status` | Publicar (revalida todo contra `creator_info`) y consultar el estado |
+
+### Configurar en Vercel (una vez)
+
+1. **Almacén Blob:** en el proyecto de Vercel → *Storage* → *Create* → *Blob*, con acceso **Public**, conectado a *Production* (y *Preview* si quieres probar ahí). Esto crea `BLOB_READ_WRITE_TOKEN`.
+2. **Proxy de `/media`:** en `vercel.json`, reemplaza `BLOB_STORE_HOST` por el identificador de tu almacén: es la primera parte del dominio de cualquier archivo subido (`<identificador>.public.blob.vercel-storage.com`).
+3. **Variables de entorno** (*Settings* → *Environment Variables*, en *Production*):
+   - `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`: las credenciales de la app (sandbox para probar, producción cuando la aprueben).
+   - `TIKTOK_REDIRECT_URI`: `https://circularte.edav-tech.com/tiktok-callback.html`
+   - `SESSION_SECRET`: una cadena aleatoria larga para cifrar las cookies, por ejemplo la salida de `node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"`.
+   - Opcional: `PUBLIC_MEDIA_BASE` si el sitio vive en otro dominio (por defecto `https://circularte.edav-tech.com/media/`).
+4. **TikTok Developers:** en la app, el dominio `circularte.edav-tech.com` tiene que estar verificado como *URL property* (para `PULL_FROM_URL`) y el redirect URI registrado en Login Kit.
+
+### Auditoría de TikTok
+
+Sin auditoría, todo lo que se publica por la API queda privado («Solo yo») y la cuenta tiene que ser privada; además, como mucho 5 usuarios distintos pueden publicar cada día. Para publicar en público hay que pedir la auditoría en el portal de TikTok Developers (app *Circularte* → *Production* → enviar a revisión con Login Kit y Content Posting API con *Direct Post*), con un video que muestre el flujo completo en la web: grabar un video, «Publicar en TikTok», conectar la cuenta, elegir la privacidad y publicar. Ojo: TikTok aprueba esta API para apps abiertas al público, no para herramientas que solo suben a las cuentas propias; por eso la publicación directa vive en la web, donde cualquiera publica sus propios videos.
+
+## Publicación diaria (GitHub Actions)
+
+`.github/workflows/daily.yml` genera un video cada día a las 10:00 (Honduras) y lo manda a tu bandeja de TikTok como **borrador**: abres la notificación en la app y publicas. Las reglas de TikTok no permiten la publicación directa automática, así que este flujo no la usa. También se puede lanzar a mano desde *Actions* → *Video diario a TikTok* → *Run workflow*, y cada corrida deja el video como artefacto durante 7 días.
+
+Secretos del repositorio (*Settings* → *Secrets and variables* → *Actions*):
+
+| Secreto | Valor |
+|---|---|
+| `OPEN_AI` | La clave de OpenAI |
+| `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TIKTOK_REDIRECT_URI` | Los mismos de tu `.env` |
+| `TIKTOK_TOKEN_SEED` | El contenido completo de `data/tiktok-token.json` después de `npm run tiktok:connect` (solo se usa en la primera corrida) |
+| `STATE_KEY` | Una cadena aleatoria larga: cifra el token y el historial que el flujo guarda en la caché de Actions entre corridas |
+
+El token se renueva solo y el nuevo se guarda cifrado en la caché. Si el flujo deja de correr más de 7 días, GitHub borra la caché: vuelve a conectar con `npm run tiktok:connect` y actualiza `TIKTOK_TOKEN_SEED`.
 
 **PowerShell.** Windows PowerShell 5.1 se come el `--` de `npm run render -- --preset …`. Usa `npm.cmd run render -- …` o directamente `node scripts/render.mjs --preset …`.
 

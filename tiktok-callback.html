@@ -19,19 +19,52 @@
     <button type="button" id="copy">Copiar código</button>
     <p class="meta" id="state"></p>
   </div>
+  <div id="web" hidden>
+    <p id="webMsg">Guardando la conexión…</p>
+  </div>
   <div id="fail" hidden>
     <p id="reason"></p>
-    <p>Vuelve a la terminal y empieza la conexión de nuevo.</p>
+    <p id="retry">Vuelve a la terminal y empieza la conexión de nuevo.</p>
   </div>
   <footer><a href="/">Volver a CirculArte</a><a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a></footer>
 </main>
 <script>
-// El código de autorización solo se muestra aquí; esta página no lo envía a ningún servidor.
-(() => {
+// Dos usos: (1) conexión desde la web: el botón «Publicar en TikTok» dejó su state en localStorage; el código
+// se canjea en /api/tiktok-session y se avisa a la pestaña de CirculArte. (2) Conexión desde la terminal
+// (npm run tiktok:connect): el código solo se muestra aquí para copiarlo y no se envía a ningún servidor.
+(async () => {
   const q = new URLSearchParams(location.search);
   const code = q.get('code'), err = q.get('error'), state = q.get('state');
   history.replaceState(null, '', location.pathname);
   const title = document.getElementById('title');
+  let web = null;
+  try { web = JSON.parse(localStorage.getItem('circularte.tiktokLogin') || 'null'); localStorage.removeItem('circularte.tiktokLogin'); } catch { /* sin almacenamiento */ }
+  if (web && web.state === state && Date.now() - web.t < 15 * 60e3) {
+    const tell = (msg) => { try { const bc = new BroadcastChannel('circularte-tiktok'); bc.postMessage(msg); bc.close(); } catch { /* navegador sin BroadcastChannel */ } };
+    if (!code) {
+      tell({ connected: false });
+      title.textContent = 'No se conectó la cuenta';
+      document.getElementById('fail').hidden = false;
+      document.getElementById('reason').textContent = 'TikTok respondió: ' + (q.get('error_description') || err || 'sin código');
+      document.getElementById('retry').textContent = 'Cierra esta ventana y vuelve a intentarlo desde CirculArte.';
+      return;
+    }
+    document.getElementById('web').hidden = false;
+    try {
+      const r = await fetch('/api/tiktok-session', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ code, state }) });
+      const d = await r.json();
+      if (!r.ok) throw new Error(d.error || 'No se pudo guardar la conexión.');
+      tell({ connected: true });
+      title.textContent = 'Cuenta conectada';
+      document.getElementById('webMsg').textContent = 'Listo. Ya puedes volver a CirculArte y publicar tu video.';
+      setTimeout(() => window.close(), 900);
+    } catch (e) {
+      tell({ connected: false });
+      title.textContent = 'No se conectó la cuenta';
+      document.getElementById('webMsg').textContent = e.message + ' Cierra esta ventana y vuelve a intentarlo.';
+    }
+    return;
+  }
   if (code) {
     title.textContent = 'Cuenta conectada';
     document.getElementById('ok').hidden = false;

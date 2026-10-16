@@ -145,6 +145,35 @@ a.btn{text-decoration:none}
 .group-title{margin:6px 0 0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
 #capChips .chip{font-size:12px;padding:3px 10px}
 
+/* Publicar en TikTok */
+.tt{width:min(560px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--fg);box-shadow:0 30px 80px #000c}
+.tt::backdrop{background:#0009}
+.tt form{display:flex;flex-direction:column;gap:14px;padding:18px 20px 20px}
+.tt-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tt-head h2{margin:0;font:italic 400 22px/1.2 var(--math)}
+.tt-x{appearance:none;border:0;background:transparent;font-size:22px;line-height:1;cursor:pointer;color:var(--muted);padding:4px 8px}
+.tt-account{display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:8px 10px}
+.tt-account img{width:36px;height:36px;border-radius:50%;object-fit:cover}
+.tt-account .who{flex:1;min-width:0;display:flex;flex-direction:column}
+.tt-account .who small{color:var(--muted);font-size:12px}
+.tt-main{display:grid;grid-template-columns:140px minmax(0,1fr);gap:14px;align-items:start}
+.tt-main video{width:140px;max-height:250px;border-radius:8px;background:var(--stage);object-fit:contain}
+.tt textarea{width:100%;min-height:118px;resize:vertical;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;color:inherit}
+.tt fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.tt legend{font-size:12.5px;color:var(--muted);padding:0;margin-bottom:6px}
+.tt-inter{display:flex;flex-wrap:wrap;gap:8px 16px}
+.tt-inter .off{opacity:.45;cursor:not-allowed}
+.tt-sub{display:flex;flex-direction:column;gap:8px;padding:10px 12px;background:var(--bg);border:1px solid var(--line);border-radius:var(--r)}
+.tt-sub .hint b{color:var(--fg);font-weight:500}
+.tt-note{margin:0;color:var(--muted);font-size:12.5px}
+.tt-note a{color:var(--accent)}
+.tt-warn{margin:0;color:#ff8f8f;font-size:12.5px}
+.tt-status{margin:0;font-size:13px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.tt-status.err{color:#ff8f8f}.tt-status.ok{border-color:var(--accent)}
+.tt-actions{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap}
+.tt-actions .hint{flex:1;min-width:160px}
+@media (max-width:520px){.tt-main{grid-template-columns:1fr}.tt-main video{width:100%;max-height:260px}}
+
 @media (max-width:900px){
   html,body{height:auto}
   .app{display:flex;flex-direction:column;height:auto}
@@ -348,6 +377,65 @@ a.btn{text-decoration:none}
 </div>
 <div class="toast" id="toast" role="status" hidden></div>
 
+<dialog class="tt" id="tt" aria-labelledby="ttH">
+  <form id="ttForm" method="dialog">
+    <div class="tt-head"><h2 id="ttH">Publicar en TikTok</h2><button type="button" class="tt-x" id="ttClose" aria-label="Cerrar">×</button></div>
+    <p class="hint" id="ttLoading">Consultando tu cuenta de TikTok…</p>
+    <div id="ttConnect" hidden class="tt-sub">
+      <p class="tt-note" id="ttConnectMsg"></p>
+      <div class="row"><button type="button" class="btn primary" id="ttConnectBtn">Conectar con TikTok</button></div>
+      <p class="tt-note">Se abre una ventana de TikTok para que autorices a CirculArte. Lee nuestra <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
+    </div>
+    <div class="tt-account" id="ttAccount" hidden>
+      <img id="ttAvatar" alt="" referrerpolicy="no-referrer">
+      <div class="who"><span>Publicarás como <b id="ttNick"></b></span><small id="ttUser"></small></div>
+      <button type="button" class="btn small ghost" id="ttSwitch">Cambiar cuenta</button>
+    </div>
+    <div id="ttBody" hidden>
+      <div class="tt-main">
+        <video id="ttPreview" controls muted playsinline preload="metadata" aria-label="Vista previa del video"></video>
+        <div class="field">
+          <label for="ttTitle">Descripción <output id="ttCount"></output></label>
+          <textarea id="ttTitle" maxlength="2200"></textarea>
+          <p class="tt-warn" id="ttDur" hidden></p>
+        </div>
+      </div>
+      <div class="field" style="margin-top:14px">
+        <label for="ttPrivacy">¿Quién puede ver este video?</label>
+        <select id="ttPrivacy" required></select>
+      </div>
+      <fieldset style="margin-top:14px">
+        <legend>Permitir que otros usuarios</legend>
+        <div class="tt-inter">
+          <label class="check"><input type="checkbox" id="ttComment"> Comenten</label>
+          <label class="check"><input type="checkbox" id="ttDuet"> Hagan dúo</label>
+          <label class="check"><input type="checkbox" id="ttStitch"> Hagan stitch</label>
+        </div>
+      </fieldset>
+      <fieldset style="margin-top:14px">
+        <label class="check"><input type="checkbox" id="ttDisclose"> Divulgar contenido comercial</label>
+        <div class="tt-sub" id="ttCommercial" hidden>
+          <p class="tt-note">Indica si este video promociona productos, servicios o marcas a cambio de algo de valor.</p>
+          <label class="check"><input type="checkbox" id="ttYours"> Tu marca</label>
+          <p class="hint">Promocionas tu propio negocio o marca.</p>
+          <label class="check"><input type="checkbox" id="ttBrand"> Contenido de marca</label>
+          <p class="hint">Promocionas a otra marca o a un tercero (colaboración pagada).</p>
+          <p class="tt-note" id="ttBrandNote" hidden>La visibilidad del contenido de marca no puede ser privada.</p>
+          <p class="tt-note" id="ttLabel" hidden></p>
+        </div>
+      </fieldset>
+      <p class="tt-note" style="margin-top:14px">Después de publicar, TikTok puede tardar unos minutos en procesar el video antes de que aparezca en tu perfil.</p>
+    </div>
+    <p class="tt-status" id="ttStatus" hidden></p>
+    <p class="tt-note" id="ttConsent"></p>
+    <div class="tt-actions">
+      <span class="hint" id="ttWhy"></span>
+      <span id="ttGoWrap"><button type="submit" class="btn primary" id="ttGo" disabled>Publicar</button></span>
+      <button type="button" class="btn" id="ttDone" hidden>Listo</button>
+    </div>
+  </form>
+</dialog>
+
 <script type="module">
 // La matemática y el dibujo viven en src/engine.js (compartido con el render de Node, scripts/render.mjs)
 import {
@@ -355,6 +443,7 @@ import {
   refreshStages as refreshStagesOf, relayout as relayoutOf, render as renderFrame, timeline as timelineOf, stateAt,
   PRESETS, presetSrc, shapeFor as shapeForSrc, inventFn, funName, mutateStr, num, kt, CAPTIONS
 } from './src/engine.js';
+import { initTikTok } from './src/tiktok-ui.js';
 const $ = (s) => document.querySelector(s);
 
 const store = {
@@ -492,9 +581,17 @@ function renderVideos() {
       if (del.dataset.armed) { URL.revokeObjectURL(v.url); videos.splice(videos.indexOf(v), 1); renderVideos(); return; }
       del.dataset.armed = '1'; del.textContent = '¿Borrar? Toca otra vez'; setTimeout(() => { if (del.isConnected) { delete del.dataset.armed; del.textContent = 'Borrar'; } }, 3000);
     });
-    acts.append(save, del); meta.append(nm, sub, acts); row.append(media, meta); box.append(row);
+    acts.append(save, del);
+    // «Publicar en TikTok» solo aparece si el sitio tiene configurada la publicación (funciones de Vercel)
+    if (tiktok) {
+      const tt = document.createElement('button'); tt.type = 'button'; tt.className = 'btn small'; tt.textContent = 'Publicar en TikTok';
+      tt.addEventListener('click', () => tiktok.open(v, `${v.title}, dibujado solo con círculos que giran ✨ Haz el tuyo en circularte.edav-tech.com\n\n#matematicas #fourier #epiciclos #circularte`));
+      acts.insertBefore(tt, del);
+    }
+    meta.append(nm, sub, acts); row.append(media, meta); box.append(row);
   }
 }
+let tiktok = null;
 async function saveVideo(v) {
   const dl = await getDownloads();
   if (dl) {
@@ -794,6 +891,7 @@ async function boot() {
   await Promise.race([fontsReady, new Promise((r) => setTimeout(r, 2500))]);
   drawThumbs();
   getDownloads();
+  initTikTok({ toast }).then((t) => { tiktok = t; if (t && videos.length) renderVideos(); }).catch(() => {});
   if (!anim) poster();
   const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduce && !anim) play({ record: false });

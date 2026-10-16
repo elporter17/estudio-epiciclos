@@ -1,4 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "echo 'Sitio estatico: sin npm install (las dependencias solo sirven a los scripts de render)'"
+  "installCommand": "npm install --omit=dev --ignore-scripts",
+  "rewrites": [
+    { "source": "/media/:path*", "destination": "https://BLOB_STORE_HOST.public.blob.vercel-storage.com/media/:path*" }
+  ],
+  "headers": [
+    { "source": "/api/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }] }
+  ]
 }
