@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Conectar TikTok · CirculArte</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&family=STIX+Two+Text:ital@0;1&display=swap">
+<link rel="stylesheet" href="legal.css">
+</head>
+<body>
+<main>
+  <a class="brand" href="/">Circul<b>Arte</b></a>
+  <h1 id="title">Conectando con TikTok…</h1>
+  <div id="ok" hidden>
+    <p>TikTok autorizó la conexión. Copia este código y pégalo en la terminal donde corre el publicador de CirculArte. Vence en unos minutos y solo sirve una vez.</p>
+    <span class="code" id="code"></span>
+    <button type="button" id="copy">Copiar código</button>
+    <p class="meta" id="state"></p>
+  </div>
+  <div id="fail" hidden>
+    <p id="reason"></p>
+    <p>Vuelve a la terminal y empieza la conexión de nuevo.</p>
+  </div>
+  <footer><a href="/">Volver a CirculArte</a><a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a></footer>
+</main>
+<script>
+// El código de autorización solo se muestra aquí; esta página no lo envía a ningún servidor.
+(() => {
+  const q = new URLSearchParams(location.search);
+  const code = q.get('code'), err = q.get('error'), state = q.get('state');
+  history.replaceState(null, '', location.pathname);
+  const title = document.getElementById('title');
+  if (code) {
+    title.textContent = 'Cuenta conectada';
+    document.getElementById('ok').hidden = false;
+    document.getElementById('code').textContent = code;
+    if (state) document.getElementById('state').textContent = 'Verificación (state): ' + state;
+    const btn = document.getElementById('copy');
+    btn.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(code); btn.textContent = 'Copiado'; }
+      catch { const r = document.createRange(); r.selectNodeContents(document.getElementById('code')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selecciónalo y cópialo'; }
+    });
+    return;
+  }
+  title.textContent = 'No se conectó la cuenta';
+  document.getElementById('fail').hidden = false;
+  document.getElementById('reason').textContent = err
+    ? 'TikTok respondió: ' + (q.get('error_description') || err)
+    : 'Esta página no recibió ningún código de TikTok.';
+})();
+</script>
+</body>
+</html>
