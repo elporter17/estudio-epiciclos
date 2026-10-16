@@ -45,7 +45,10 @@ export async function initTikTok({ toast }) {
 
   const $ = (s) => document.querySelector(s);
   const dlg = $('#tt'), form = $('#ttForm');
-  let video = null, creator = null, busy = false;
+  let video = null, creator = null, busy = false, mode = 'direct';
+  // Publicar ahora (video.publish) o enviar a la bandeja de TikTok como borrador (video.upload)
+  const setMode = (m) => { mode = m; document.querySelectorAll('#ttMode button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === m))); sync(); };
+  document.querySelector('#ttMode').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b && !busy) setMode(b.dataset.v); });
 
   /* ---------- Cuenta ---------- */
   async function loadCreator() {
@@ -121,8 +124,12 @@ export async function initTikTok({ toast }) {
     $('#ttConsent').innerHTML = disclose && brand
       ? `Al publicar, aceptas la <a href="${BRANDED}" target="_blank" rel="noopener">Política de contenido de marca</a> y la <a href="${MUSIC}" target="_blank" rel="noopener">Confirmación de uso de música</a> de TikTok.`
       : `Al publicar, aceptas la <a href="${MUSIC}" target="_blank" rel="noopener">Confirmación de uso de música</a> de TikTok.`;
+    const draft = mode === 'draft';
+    $('#ttDirect').hidden = draft; $('#ttDraftNote').hidden = !draft;
+    $('#ttGo').textContent = draft ? 'Enviar a TikTok' : 'Publicar';
     let why = '';
     if (!creator) why = 'Conecta tu cuenta de TikTok.';
+    else if (draft) why = $('#ttDur').hidden ? '' : $('#ttDur').textContent;
     else if (!$('#ttPrivacy').value) why = 'Elige quién puede ver el video.';
     else if (disclose && !yours && !brand) why = 'Debes indicar si tu contenido te promociona a ti, a un tercero o a ambos.';
     else if (!$('#ttDur').hidden) why = $('#ttDur').textContent;
@@ -152,7 +159,7 @@ export async function initTikTok({ toast }) {
       });
       setStatus('Enviando a TikTok…');
       const { ticket } = await api('/api/tiktok-publish', {
-        blobUrl: blob.url, title: $('#ttTitle').value, privacy_level: $('#ttPrivacy').value, duration: video.dur,
+        mode, blobUrl: blob.url, title: $('#ttTitle').value, privacy_level: $('#ttPrivacy').value, duration: video.dur,
         allow_comment: $('#ttComment').checked, allow_duet: $('#ttDuet').checked, allow_stitch: $('#ttStitch').checked,
         disclose: $('#ttDisclose').checked, brand_organic_toggle: $('#ttDisclose').checked && $('#ttYours').checked,
         brand_content_toggle: $('#ttDisclose').checked && $('#ttBrand').checked
@@ -163,7 +170,7 @@ export async function initTikTok({ toast }) {
         await new Promise((r) => setTimeout(r, 5000));
         const s = await api('/api/tiktok-status', { ticket });
         if (s.status === 'FAILED') throw new Error(`${STATUS_TEXT.FAILED} Motivo: ${FAIL_TEXT[s.fail_reason] || s.fail_reason || 'desconocido'}.`);
-        if (s.done) { setStatus(`${STATUS_TEXT[s.status] || s.status} Puede tardar unos minutos en verse en tu perfil.`, 'ok'); toast('Video enviado a TikTok'); break; }
+        if (s.done) { setStatus(s.status === 'SEND_TO_USER_INBOX' ? 'Listo: abre TikTok y toca la notificación para terminar la publicación.' : `${STATUS_TEXT[s.status] || s.status} Puede tardar unos minutos en verse en tu perfil.`, 'ok'); toast('Video enviado a TikTok'); break; }
         if (Date.now() - t0 > 4 * 60e3) { setStatus('TikTok sigue procesando el video. Revisa tu perfil en unos minutos.', 'ok'); break; }
         setStatus(`${STATUS_TEXT[s.status] || 'Procesando…'} Puede tardar unos minutos en aparecer en tu perfil.`);
       }
@@ -180,7 +187,7 @@ export async function initTikTok({ toast }) {
     if (busy) { dlg.showModal(); return; }
     video = v;
     $('#ttPreview').src = v.url; if (v.thumb) $('#ttPreview').poster = v.thumb;
-    $('#ttTitle').value = suggestedTitle;
+    $('#ttTitle').value = suggestedTitle; setMode('direct');
     $('#ttDone').hidden = true; $('#ttGoWrap').hidden = false; setStatus('');
     form.querySelectorAll('input,select,textarea,button').forEach((x) => { x.disabled = false; });
     $('#ttConnectMsg').textContent = 'Para publicar, conecta la cuenta de TikTok donde quieres que aparezca el video.';

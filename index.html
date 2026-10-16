@@ -392,6 +392,11 @@ a.btn{text-decoration:none}
       <button type="button" class="btn small ghost" id="ttSwitch">Cambiar cuenta</button>
     </div>
     <div id="ttBody" hidden>
+      <div class="seg" id="ttMode" role="group" aria-label="Cómo enviarlo" style="margin-bottom:14px">
+        <button type="button" data-v="direct" aria-pressed="true">Publicar ahora</button>
+        <button type="button" data-v="draft" aria-pressed="false">Enviar como borrador</button>
+      </div>
+      <p class="tt-note" id="ttDraftNote" hidden style="margin-bottom:14px">TikTok te mandará una notificación con el video para que lo termines en la app: ahí eliges la descripción, quién puede verlo y lo publicas. Copia la descripción de abajo si quieres usarla.</p>
       <div class="tt-main">
         <video id="ttPreview" controls muted playsinline preload="metadata" aria-label="Vista previa del video"></video>
         <div class="field">
@@ -400,6 +405,7 @@ a.btn{text-decoration:none}
           <p class="tt-warn" id="ttDur" hidden></p>
         </div>
       </div>
+      <div id="ttDirect">
       <div class="field" style="margin-top:14px">
         <label for="ttPrivacy">¿Quién puede ver este video?</label>
         <select id="ttPrivacy" required></select>
@@ -424,6 +430,7 @@ a.btn{text-decoration:none}
           <p class="tt-note" id="ttLabel" hidden></p>
         </div>
       </fieldset>
+      </div>
       <p class="tt-note" style="margin-top:14px">Después de publicar, TikTok puede tardar unos minutos en procesar el video antes de que aparezca en tu perfil.</p>
     </div>
     <p class="tt-status" id="ttStatus" hidden></p>

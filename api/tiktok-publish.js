@@ -14,6 +14,15 @@ export default { fetch: route(async (request) => {
   try { blob = new URL(b.blobUrl); } catch { throw new HttpError(400, 'Falta el video.'); }
   const pathname = decodeURIComponent(blob.pathname.slice(1));
   if (!/\.public\.blob\.vercel-storage\.com$/.test(blob.hostname) || !pathname.startsWith(MEDIA_PREFIX)) throw new HttpError(400, 'Video no válido.');
+  const videoUrl = config().mediaBase + pathname.slice(MEDIA_PREFIX.length);
+
+  // Borrador (video.upload): llega a la bandeja de TikTok y el usuario lo termina en la app
+  if (b.mode === 'draft') {
+    const d = await tiktok('/v2/post/publish/inbox/video/init/', { source_info: { source: 'PULL_FROM_URL', video_url: videoUrl } }, s);
+    cleanupOld().catch((e) => console.error('limpieza de media', e));
+    const ticket = seal({ publish_id: d.publish_id, blobUrl: blob.href, open_id: s.open_id, t: Date.now() });
+    return json({ ticket }, 200, cookie ? { 'set-cookie': cookie } : {});
+  }
 
   const info = await tiktok('/v2/post/publish/creator_info/query/', undefined, s);
   const options = info.privacy_level_options || [];
@@ -34,7 +43,7 @@ export default { fetch: route(async (request) => {
       disable_stitch: info.stitch_disabled || !b.allow_stitch,
       brand_content_toggle: branded, brand_organic_toggle: own
     },
-    source_info: { source: 'PULL_FROM_URL', video_url: config().mediaBase + pathname.slice(MEDIA_PREFIX.length) }
+    source_info: { source: 'PULL_FROM_URL', video_url: videoUrl }
   }, s);
 
   // Limpieza: videos de más de un día que quedaron en el almacén (por ejemplo, si alguien cerró la página)
