@@ -15,7 +15,7 @@ import fs from 'node:fs';
 
 try {
   const o = parseCli({
-    lang: { type: 'string', default: 'es' }, fps: { type: 'string', default: '30' }, labels: { type: 'string', default: 'full' },
+    lang: { type: 'string', default: 'es' }, fps: { type: 'string', default: '30' }, labels: { type: 'string', default: 'eq' },
     seed: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, publish: { type: 'string' }
   });
   if (o.publish && !['draft', 'direct'].includes(o.publish)) throw new Error('--publish debe ser draft o direct');

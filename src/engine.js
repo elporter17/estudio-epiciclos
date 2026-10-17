@@ -26,7 +26,7 @@ export function setEnv(e) { Object.assign(env, e); }
 
 export const DEFAULT_SETTINGS = {
   style: 'xy', nseq: '1, 3, 6, 12, 25, 50, 100, 200', rev: 3, guide: 18, reveal: true, formulas: true,
-  accent: '#ff7a52', caption: '', format: '9:16', quality: 720, record: true, signature: true, labels: 'full'
+  accent: '#ff7a52', caption: '', format: '9:16', quality: 720, record: true, signature: true, labels: 'eq'
 };
 
 // Tamaño del lienzo según formato y calidad, igual que en la web
@@ -476,6 +476,8 @@ export function refreshStages(S, settings) {
 
 export function relayout(S, settings, view) {
   const { W, H } = view, f = settings.format, cap = settings.caption.trim() ? 1 : 0, hx = S.hx, hy = S.hy, L = {};
+  // En 1:1 la ecuación en vivo necesita más espacio abajo: el dibujo se achica un poco
+  const eq = settings.labels === 'eq' && f === '1:1';
   if (settings.style === 'xy') {
     const g = 0.32, rx = S.rhoX, ry = S.rhoY, Wc = 2 * ry + g + 2 * hx, Hc = 2 * rx + g + 2 * hy;
     let left, top;
@@ -485,14 +487,15 @@ export function relayout(S, settings, view) {
       L.tx = (left + Wc * L.s + W) / 2; L.ty = H * 0.47;
     } else {
       const tall = f === '9:16';
-      L.s = Math.min(W * 0.9 / Wc, H * (tall ? (cap ? 0.5 : 0.55) : (cap ? 0.6 : 0.66)) / Hc);
+      L.s = Math.min(W * 0.9 / Wc, H * (tall ? (cap ? 0.5 : 0.55) : eq ? (cap ? 0.5 : 0.56) : (cap ? 0.6 : 0.66)) / Hc);
       left = (W - Wc * L.s) / 2; top = H * (tall ? (cap ? 0.11 : 0.07) : (cap ? 0.1 : 0.05));
-      L.tx = W / 2; L.ty = top + Hc * L.s + H * (tall ? 0.085 : 0.1);
+      L.tx = W / 2; L.ty = top + Hc * L.s + H * (tall ? 0.085 : eq ? 0.08 : 0.1);
     }
     L.cx = left + (2 * ry + g + hx) * L.s; L.cy = top + (2 * rx + g + hy) * L.s;
     L.xChainY = L.cy - (hy + g + rx) * L.s; L.yChainX = L.cx - (hx + g + ry) * L.s;
   } else {
     if (f === '9:16') { L.s = W * 0.33; L.cx = W / 2; L.cy = H * (cap ? 0.38 : 0.36); L.tx = W / 2; L.ty = H * 0.74; }
+    else if (f === '1:1' && eq) { L.s = W * 0.22; L.cx = W / 2; L.cy = H * (cap ? 0.37 : 0.34); L.tx = W / 2; L.ty = H * 0.66; }
     else if (f === '1:1') { L.s = W * 0.28; L.cx = W / 2; L.cy = H * (cap ? 0.44 : 0.41); L.tx = W / 2; L.ty = H * 0.85; }
     else { L.s = H * 0.33; L.cx = W * 0.36; L.cy = H * (cap ? 0.54 : 0.5); L.tx = W * 0.77; L.ty = H * 0.47; }
   }
@@ -531,29 +534,33 @@ const FG = '#f3eeea', GOLD = '#ffd98a', BG = '#141112';
 const hexA = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${a})`; };
 const mathFont = (sz, it) => `${it ? 'italic ' : ''}400 ${sz}px "STIX Two Text", "Cambria Math", "Times New Roman", serif`;
 
+function partsWidth(ctx, parts, sz) {
+  let w = 0;
+  for (const [k, s] of parts) {
+    const fs = k === 'S' ? sz * 1.25 : (k === '_' || k === '^') ? sz * .62 : sz;
+    ctx.font = mathFont(fs, k === 'i' || k === '_'); w += ctx.measureText(s).width;
+  }
+  return w;
+}
+
 function mathLine(R, parts, x, y, size, align, maxW) {
   const { ctx, settings } = R;
-  const measure = (sz) => {
-    let w = 0;
-    for (const [k, s] of parts) {
-      const fs = k === 'S' ? sz * 1.25 : (k === '_' || k === '^') ? sz * .62 : sz;
-      ctx.font = mathFont(fs, k === 'i' || k === '_'); w += ctx.measureText(s).width;
-    }
-    return w;
-  };
+  const measure = (sz) => partsWidth(ctx, parts, sz);
   let w = measure(size);
   if (maxW && w > maxW) { size *= maxW / w; w = measure(size); }
   let cx = align === 'center' ? x - w / 2 : align === 'right' ? x - w : x;
   ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left';
-  const base = ctx.fillStyle;
-  for (const [k, s] of parts) {
+  const base = ctx.fillStyle, baseA = ctx.globalAlpha;
+  // Cada pieza: [tipo, texto, color?, opacidad?]
+  for (const [k, s, col, a] of parts) {
     const fs = k === 'S' ? size * 1.25 : (k === '_' || k === '^') ? size * .62 : size;
     const dy = k === '_' ? size * .28 : k === '^' ? -size * .42 : k === 'S' ? size * .08 : 0;
     ctx.font = mathFont(fs, k === 'i' || k === '_');
-    ctx.fillStyle = k === 'c' ? settings.accent : base;
+    ctx.fillStyle = col || (k === 'c' ? settings.accent : base);
+    ctx.globalAlpha = baseA * (a ?? 1);
     ctx.fillText(s, cx, y + dy); cx += ctx.measureText(s).width;
   }
-  ctx.fillStyle = base;
+  ctx.fillStyle = base; ctx.globalAlpha = baseA;
 }
 
 function drawShapeImage(R, cx, cy, s, alpha) {
@@ -661,12 +668,94 @@ function drawMachinery(R, N, t, alpha) {
   ctx.restore();
 }
 
-function drawLabels(R, N, a) {
+/* ---------------- Ecuación en vivo ---------------- */
+// Coeficiente con dos decimales, o con más cifras si es pequeño
+const coef = (v) => v >= 0.1 ? v.toFixed(2) : v >= 0.01 ? v.toFixed(3) : v.toFixed(4);
+const phaseStr = (p) => {
+  p = ((p + Math.PI) % TAU + TAU) % TAU - Math.PI;
+  return Math.abs(p) < 0.005 ? '' : (p < 0 ? ' − ' : ' + ') + Math.abs(p).toFixed(2);
+};
+const kStr = (k) => (k < 0 ? '−' : '') + (Math.abs(k) === 1 ? '' : Math.abs(k));
+
+// Términos de la serie con N círculos: { parts (piezas de mathLine), fresh (entró en esta etapa) }.
+// xy: x(t) = Σ Rx_k cos(kt − Px_k), igual para y.  z: z(t) = Σ |c_k| e^{i(kt + arg c_k)}, de mayor a menor.
+// Los que valen casi cero no se escriben (figuras como el espirógrafo solo usan unas pocas frecuencias).
+const TINY = 5e-4;
+function seriesTerms(S, style, N, axis, prev) {
+  const ser = S.ser, out = [];
+  if (style === 'xy') {
+    const A = axis === 'x' ? ser.Rx : ser.Ry, P = axis === 'x' ? ser.Px : ser.Py;
+    for (let k = 1; k <= N; k++) {
+      if (A[k] >= TINY) out.push({ fresh: k > prev, parts: [['r', coef(A[k]) + ' cos(' + kStr(k)], ['i', 't'], ['r', phaseStr(-P[k]) + ')']] });
+    }
+  } else {
+    for (let i = 0; i < N; i++) {
+      const T = ser.terms[i];
+      if (T.mag >= TINY) out.push({ fresh: i >= prev, parts: [['r', coef(T.mag) + ' '], ['i', 'e'], ['^', `i(${kStr(T.k)}t${phaseStr(Math.atan2(T.im, T.re))})`]] });
+    }
+  }
+  return out.length ? out : [{ fresh: false, parts: [['r', '0']] }];
+}
+
+// Reparte los términos en hasta maxRows renglones unidos con «+». Si no caben todos, el último renglón
+// termina en «+ ⋯ +» y el término más nuevo. Los que entraron en esta etapa van en newCol con opacidad newA.
+function flowSeries(ctx, lhs, terms, size, maxW, maxRows, col, newCol, newA) {
+  const n = terms.length, fits = (parts) => partsWidth(ctx, parts, size) <= maxW;
+  const item = (i) => {
+    const { fresh, parts } = terms[i];
+    return [...(i ? [['r', ' + ']] : []), ...parts].map(([k, s]) => [k, s, fresh ? newCol : col, fresh ? newA : 1]);
+  };
+  const rows = [[...lhs]];
+  let placed = 0;
+  for (; placed < n; placed++) {
+    const row = rows[rows.length - 1], it = item(placed);
+    if (fits([...row, ...it]) || row.length === lhs.length) row.push(...it);
+    else if (rows.length < maxRows) rows.push(it);
+    else break;
+  }
+  if (placed === n) return rows;
+  // No cupo todo: quita términos del último renglón hasta que entren «+ ⋯» y el más nuevo
+  const tail = [['r', ' + ⋯', col], ...item(n - 1)];
+  const last = rows[rows.length - 1], cut = [];
+  for (let i = 0; i < last.length; i++) if (last[i][1] === ' + ') cut.push(i);
+  while (!fits([...last, ...tail]) && cut.length) last.length = cut.pop();
+  last.push(...tail);
+  return rows;
+}
+
+// N grande, la serie de cada cadena con sus números reales y el error; lo nuevo entra al empezar la etapa
+function drawLiveEquation(R, N, prev, u) {
+  const { ctx, S, settings, view } = R;
+  const L = S.L, U = view.U, size = 27 * U, rowH = size * 1.4;
+  const maxW = settings.format === '16:9' ? 2 * (view.W - L.tx) - 48 * U : view.W * 0.92;
+  const axes = settings.style === 'xy' ? [['x', FG], ['y', GOLD]] : [['z', FG]];
+  // Renglones por cadena según el espacio libre hasta la firma (o el borde)
+  const room = view.H - (settings.signature ? 66 : 28) * U - (L.ty + 50 * U) - 40 * U;
+  const perAxis = clamp(Math.floor(room / rowH / axes.length - 0.2), 1, axes.length === 1 ? 3 : 2);
+  const newA = smooth(0, 0.15, u);
+  mathLine(R, [['i', 'N'], ['r', ' = '], ['c', String(N)]], L.tx, L.ty, 60 * U, 'center');
+  let y = L.ty + 50 * U;
+  for (const [axis, col] of axes) {
+    ctx.fillStyle = col;
+    const lhs = [['i', axis], ['r', '('], ['i', 't'], ['r', ') = ']];
+    for (const row of flowSeries(ctx, lhs, seriesTerms(S, settings.style, N, axis, prev), size, maxW, perAxis, col, settings.accent, newA)) {
+      mathLine(R, row, L.tx, y, size, 'center', maxW); y += rowH;
+    }
+    y += 6 * U;
+  }
+  ctx.fillStyle = hexA(FG, .6);
+  mathLine(R, [['r', 'error = ' + errFor(S, settings.style, N).toFixed(2) + '%']], L.tx, y + 2 * U, 28 * U, 'center');
+  ctx.fillStyle = FG;
+}
+
+function drawLabels(R, N, a, st) {
   const { ctx, S, settings, view } = R;
   if (a <= 0.004) return;
   const L = S.L, U = view.U;
   ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = FG;
-  if (settings.labels === 'full') {
+  if (settings.labels === 'eq') {
+    drawLiveEquation(R, N, st.stage > 0 ? S.stages[st.stage - 1] : 0, clamp(st.u || 0));
+  } else if (settings.labels === 'full') {
     mathLine(R, [['i', 'N'], ['r', ' = '], ['c', String(N)]], L.tx, L.ty, 64 * U, 'center');
     mathLine(R, [['r', 'error = ' + errFor(S, settings.style, N).toFixed(2) + '%']], L.tx, L.ty + 56 * U, 42 * U, 'center');
   } else {
@@ -773,7 +862,7 @@ export function render(R, st) {
   drawCurve(R, curveFor(S, settings.style, N), cx, cy, s, trailA, st.u, pen);
   const machA = 1 - clamp(e * 2.4);
   drawMachinery(R, N, t, machA);
-  drawLabels(R, N, machA);
+  drawLabels(R, N, machA, st);
   drawFormulas(R, clamp((e - 0.3) / 0.6), N);
   drawCaption(R);
   drawSignature(R);

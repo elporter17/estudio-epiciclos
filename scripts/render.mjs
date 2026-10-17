@@ -28,7 +28,7 @@ Figura
 Video
   --lang es|en          Idioma del texto gancho y del nombre del archivo (por defecto es)
   --caption <texto>     Texto superior del video; "auto" (por defecto) elige un gancho, "none" lo quita
-  --labels full|n|top   Rótulos mientras dibuja: N y error | solo N | fórmulas arriba (por defecto full)
+  --labels eq|full|n|top  Rótulos mientras dibuja: ecuación en vivo | N y error | solo N | fórmulas arriba (por defecto eq)
   --style xy|z          Dos cadenas x,y o una cadena compleja (por defecto xy)
   --fps 30|60           Cuadros por segundo (por defecto 30)
   --format 9:16|1:1|16:9  (por defecto 9:16)    --quality 1080|720 (por defecto 1080)
@@ -42,7 +42,7 @@ Video
 const OPTIONS = {
   preset: { type: 'string' }, random: { type: 'string' }, text: { type: 'string' }, font: { type: 'string', default: 'cursiva' },
   seed: { type: 'string' }, lang: { type: 'string', default: 'es' }, caption: { type: 'string', default: 'auto' },
-  labels: { type: 'string', default: 'full' }, style: { type: 'string', default: 'xy' },
+  labels: { type: 'string', default: 'eq' }, style: { type: 'string', default: 'xy' },
   fps: { type: 'string', default: '30' }, format: { type: 'string', default: '9:16' }, quality: { type: 'string', default: '1080' },
   rev: { type: 'string' }, nseq: { type: 'string' }, accent: { type: 'string' },
   reveal: { type: 'boolean', default: true }, formulas: { type: 'boolean', default: true }, signature: { type: 'boolean', default: true },
@@ -68,7 +68,7 @@ export async function renderVideo(o) {
 
   const settings = {
     ...E.DEFAULT_SETTINGS,
-    style: oneOf(o.style || 'xy', ['xy', 'z'], 'style'), labels: oneOf(o.labels || 'full', ['full', 'n', 'top'], 'labels'),
+    style: oneOf(o.style || 'xy', ['xy', 'z'], 'style'), labels: oneOf(o.labels || 'eq', ['eq', 'full', 'n', 'top'], 'labels'),
     format: oneOf(o.format || '9:16', ['9:16', '1:1', '16:9'], 'format'), quality: +oneOf(String(o.quality || 1080), ['1080', '720'], 'quality'),
     reveal: o.reveal !== false, formulas: o.formulas !== false, signature: o.signature !== false
   };

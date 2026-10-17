@@ -339,6 +339,7 @@ a.btn{text-decoration:none}
       <div class="field">
         <span class="lbl" data-en="Labels while drawing">Rótulos mientras dibuja</span>
         <div class="seg" id="labels">
+          <button type="button" data-v="eq" data-en="Equation">Ecuación</button>
           <button type="button" data-v="full" data-en="N and error">N y error</button>
           <button type="button" data-v="n" data-en="N only">Solo N</button>
           <button type="button" data-v="top" data-en="Formulas on top">Fórmulas arriba</button>
@@ -873,7 +874,7 @@ bindRange('guide', 'guide', (v) => v + '%');
 $('#reveal').checked = settings.reveal; $('#reveal').addEventListener('change', (e) => { settings.reveal = e.target.checked; saveSettings(); status(); });
 $('#formulas').checked = settings.formulas; $('#formulas').addEventListener('change', (e) => { settings.formulas = e.target.checked; saveSettings(); });
 $('#signature').checked = settings.signature; $('#signature').addEventListener('change', (e) => { settings.signature = e.target.checked; saveSettings(); if (!anim) poster(); });
-segment('labels', settings.labels, (v) => { settings.labels = v; saveSettings(); if (!anim) poster(); });
+segment('labels', settings.labels, (v) => { settings.labels = v; saveSettings(); relayout(); if (!anim) poster(); });
 function renderCapChips() {
   $('#capChips').textContent = '';
   tr(CAPTIONS, CAPTIONS_EN).forEach((t) => {
