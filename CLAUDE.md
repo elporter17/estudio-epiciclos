@@ -29,4 +29,4 @@ En PowerShell 5.1 usa `npm.cmd run … -- …` (PowerShell se come el `--`).
 
 ## Estado (2026-10-16)
 - App de TikTok «Circularte» **enviada a revisión** (Production). Vercel usa credenciales del **sandbox** (`circularte-dev`; usuario de prueba @potter.play). Al aprobar: poner las de Production en Vercel y redesplegar.
-- Pendiente: secretos de GitHub para `daily.yml`; con 1:1 la firma se encima con la línea N/error (bug de layout previo).
+- Pendiente: secretos de GitHub para `daily.yml`.

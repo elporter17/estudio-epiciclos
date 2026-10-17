@@ -59,7 +59,7 @@ Corre a diario a las 10:00 de Honduras, o a mano. Faltan los secretos: `OPEN_AI`
 1. **Cuando TikTok apruebe**: en Vercel cambiar `TIKTOK_CLIENT_KEY` y `TIKTOK_CLIENT_SECRET` por las de Production y redesplegar; reconectar la cuenta desde la web; poner @potter.play en público si se quiere.
 2. **Si TikTok pide cambios**: llegan en el portal (Review comments).
 3. **Secretos de GitHub** para la publicación diaria (pueden ser las credenciales del sandbox).
-4. Bug previo: en formato 1:1 la firma se encima con la línea «N = … error = …».
+4. ~~Bug previo: en formato 1:1 la firma se encima con la línea «N = … error = …».~~ Resuelto: el bloque de fórmulas se escala si no cabe sobre la firma.
 5. Opcional: borrar el almacén Blob privado sin usar.
 
 ## 5. Para retomar en otra PC

@@ -709,10 +709,14 @@ function drawFormulas(R, a, N) {
   const { ctx, S, settings, view } = R;
   if (a <= 0.004 || !settings.formulas) return;
   const L = S.L, U = view.U, ser = S.ser, maxW = settings.format === '16:9' ? view.W * 0.56 : view.W * 0.9;
-  let y = L.fy; const size = 44 * U, gapY = 62 * U;
-  ctx.save(); ctx.globalAlpha = a;
   const decay = ser.decay;
   const pw = decay == null ? null : Math.abs(decay - 2) < 0.15 ? '2' : Math.abs(decay - 1) < 0.15 ? '' : decay.toFixed(1);
+  // Alto del bloque (de la primera línea base al pie); si no cabe sobre la firma, se escala todo
+  const nf = (settings.style === 'xy' ? 2 : 1) + (pw !== null ? 1 : 0), ne = S.exprLines ? S.exprLines.length : 0;
+  const block = ((nf - 1) * 62 + 62 * .95 + (ne ? 62 * .9 + (ne - 1) * 32 + 8 : 10)) * U;
+  const k = clamp((view.H - (settings.signature ? 62 : 24) * U - L.fy) / block, 0.5, 1);
+  let y = L.fy; const size = 44 * U * k, gapY = 62 * U * k;
+  ctx.save(); ctx.globalAlpha = a;
   if (settings.style === 'xy') {
     ctx.fillStyle = FG;
     mathLine(R, [['i', 'x'], ['r', '('], ['i', 't'], ['r', ') = '], ['S', 'Σ'], ['_', 'k'], ['r', ' ('], ['i', 'a'], ['_', 'k'], ['r', ' cos '], ['i', 'kt'], ['r', ' + '], ['i', 'b'], ['_', 'k'], ['r', ' sin '], ['i', 'kt'], ['r', ')']], L.fx, y, size, L.falign, maxW);
@@ -725,13 +729,13 @@ function drawFormulas(R, a, N) {
     if (pw !== null) { y += gapY; mathLine(R, [['r', '|'], ['i', 'c'], ['_', 'k'], ['r', '|  ∼  1/|'], ['i', 'k'], ['r', '|'], ['^', pw]], L.fx, y, size * .95, L.falign, maxW); }
   }
   y += gapY * .95; ctx.fillStyle = hexA(FG, .55);
-  mathLine(R, [['i', 'N'], ['r', ' = ' + N + '     error = ' + errFor(S, settings.style, N).toFixed(2) + '%']], L.fx, y, 30 * U, L.falign, maxW);
+  mathLine(R, [['i', 'N'], ['r', ' = ' + N + '     error = ' + errFor(S, settings.style, N).toFixed(2) + '%']], L.fx, y, 30 * U * k, L.falign, maxW);
   if (S.exprLines) {
-    y += gapY * .9; ctx.font = `400 ${22 * U}px "IBM Plex Mono", Consolas, monospace`; ctx.textAlign = L.falign; ctx.fillStyle = hexA(FG, .5);
+    y += gapY * .9; ctx.font = `400 ${22 * U * k}px "IBM Plex Mono", Consolas, monospace`; ctx.textAlign = L.falign; ctx.fillStyle = hexA(FG, .5);
     for (const line of S.exprLines) {
       let t = line; while (ctx.measureText(t).width > maxW && t.length > 8) t = t.slice(0, -2);
       if (t !== line) t = t.slice(0, -1) + '…';
-      ctx.fillText(t, L.fx, y); y += 32 * U;
+      ctx.fillText(t, L.fx, y); y += 32 * U * k;
     }
   }
   ctx.restore();
