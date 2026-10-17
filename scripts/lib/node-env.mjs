@@ -11,7 +11,7 @@ export const EMOJI_FONT = path.join(ROOT, 'assets', 'fonts', 'NotoColorEmoji-Reg
 // Las familias de Google Fonts que carga index.html, desde los paquetes @fontsource (woff2)
 const FONTSOURCE = [
   ['stix-two-text', /-(latin|latin-ext|greek)-400-(normal|italic)\.woff2$/],
-  ['ibm-plex-sans', /-(latin|latin-ext)-(400|500|600)-normal\.woff2$/],
+  ['ibm-plex-sans', /-(latin|latin-ext)-(400|500|600|700)-normal\.woff2$/],
   ['ibm-plex-mono', /-(latin|latin-ext)-400-normal\.woff2$/],
   ['pacifico', /-(latin|latin-ext)-400-normal\.woff2$/],
   ['playfair-display', /-(latin|latin-ext)-700-normal\.woff2$/],

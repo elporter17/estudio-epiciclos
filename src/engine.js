@@ -22,7 +22,7 @@ export function setEnv(e) { Object.assign(env, e); }
 
 export const DEFAULT_SETTINGS = {
   style: 'xy', nseq: '1, 3, 6, 12, 25, 50, 100, 200', rev: 3, guide: 18, reveal: true, formulas: true,
-  accent: '#ff7a52', caption: '', format: '9:16', quality: 720, record: true, signature: true, labels: 'full'
+  accent: '#ff7a52', caption: '', format: '9:16', quality: 720, record: true, signature: true, labels: 'full', safeZone: true
 };
 
 // Tamaño del lienzo según formato y calidad, igual que en la web
@@ -470,7 +470,38 @@ export function refreshStages(S, settings) {
   S.rhoX = clamp(rx, 0.3, 1.6); S.rhoY = clamp(ry, 0.3, 1.6);
 }
 
+// Zona segura de TikTok (9:16): fracciones de W y H que no tapan los controles de la app (barra de arriba,
+// columna de botones a la derecha, usuario y descripción abajo).
+export const SAFE = { x0: 0.06, x1: 0.84, cx: 0.45, capTop: 0.16, capW: 0.76, bottom: 0.70, labelsY: 0.73, sigY: 0.775, limit: 0.78 };
+export const safeZone = (settings) => settings.format === '9:16' && settings.safeZone !== false;
+
+function relayoutSafe(S, settings, view) {
+  const { W, H } = view, cap = !!settings.caption.trim(), topLabels = settings.labels === 'top', hx = S.hx, hy = S.hy;
+  const L = { safe: true }, boxW = W * (SAFE.x1 - SAFE.x0), cxz = W * SAFE.cx;
+  // Debajo del gancho (y de las fórmulas pequeñas si van arriba) y por encima de N / error, que a su vez
+  // queda arriba de la firma: con «N y error» son dos renglones y la composición sube un poco
+  const full = settings.labels === 'full';
+  const top = H * (cap ? (topLabels ? 0.335 : 0.28) : (topLabels ? 0.235 : 0.17)), bottom = H * (full ? 0.645 : 0.685);
+  if (settings.style === 'xy') {
+    const g = 0.32, rx = S.rhoX, ry = S.rhoY, Wc = 2 * ry + g + 2 * hx, Hc = 2 * rx + g + 2 * hy;
+    L.s = Math.min(boxW / Wc, (bottom - top) / Hc);
+    const left = cxz - Wc * L.s / 2, topc = top + ((bottom - top) - Hc * L.s) / 2;
+    L.cx = left + (2 * ry + g + hx) * L.s; L.cy = topc + (2 * rx + g + hy) * L.s;
+    L.xChainY = L.cy - (hy + g + rx) * L.s; L.yChainX = L.cx - (hx + g + ry) * L.s;
+  } else {
+    L.s = Math.min(boxW, bottom - top) * 0.36; L.cx = cxz; L.cy = (top + bottom) / 2;
+  }
+  L.tx = cxz; L.ty = H * (full ? 0.698 : SAFE.labelsY - 0.005);
+  // Revelación: figura centrada en la zona libre, fórmulas debajo y todo por encima de la descripción de TikTok
+  L.rcx = cxz; L.rcy = H * (cap ? 0.42 : 0.37);
+  const half = Math.min(L.rcy - H * (cap ? 0.285 : 0.17), H * 0.555 - L.rcy);
+  L.rs = Math.min(boxW / 2 / Math.max(hx, 0.05), half / Math.max(hy, 0.05));
+  L.fx = cxz; L.fy = H * 0.58; L.falign = 'center';
+  S.L = L;
+}
+
 export function relayout(S, settings, view) {
+  if (safeZone(settings)) return relayoutSafe(S, settings, view);
   const { W, H } = view, f = settings.format, cap = settings.caption.trim() ? 1 : 0, hx = S.hx, hy = S.hy, L = {};
   if (settings.style === 'xy') {
     const g = 0.32, rx = S.rhoX, ry = S.rhoY, Wc = 2 * ry + g + 2 * hx, Hc = 2 * rx + g + 2 * hy;
@@ -675,8 +706,10 @@ function drawLabels(R, N, a) {
 // Fórmulas pequeñas en la esquina superior, como en los videos virales
 function drawTopFormulas(R) {
   const { ctx, settings, view } = R;
-  const U = view.U, x = 28 * U, size = 21 * U, maxW = view.W * 0.62;
-  let y = (settings.caption.trim() ? view.H * (settings.format === '9:16' ? 0.1 : 0.14) : 0) + 46 * U;
+  const safe = safeZone(settings);
+  const U = view.U, x = safe ? view.W * (SAFE.x0 + 0.01) : 28 * U, size = 21 * U, maxW = view.W * (safe ? SAFE.capW : 0.62);
+  let y = safe ? view.H * (settings.caption.trim() ? 0.285 : 0.19)
+    : (settings.caption.trim() ? view.H * (settings.format === '9:16' ? 0.1 : 0.14) : 0) + 46 * U;
   if (settings.style === 'xy') {
     ctx.fillStyle = FG;
     mathLine(R, [['i', 'x'], ['r', '('], ['i', 't'], ['r', ') = '], ['S', 'Σ'], ['_', 'k'], ['r', ' ('], ['i', 'a'], ['_', 'k'], ['r', ' cos '], ['i', 'kt'], ['r', ' + '], ['i', 'b'], ['_', 'k'], ['r', ' sin '], ['i', 'kt'], ['r', ')']], x, y, size, 'left', maxW);
@@ -692,15 +725,17 @@ function drawTopFormulas(R) {
 function drawSignature(R) {
   const { ctx, settings, view } = R;
   if (!settings.signature) return;
-  const U = view.U, parts = [
+  // En zona segura va más chica y tenue, encima de donde TikTok pone el usuario y la descripción
+  const safe = safeZone(settings), k = safe ? 0.85 : 1;
+  const U = view.U * k, parts = [
     ['Circul', `italic 400 ${24 * U}px "STIX Two Text", "Times New Roman", serif`, hexA(FG, .8)],
     ['Arte', `italic 400 ${24 * U}px "STIX Two Text", "Times New Roman", serif`, settings.accent],
     ['   edav-tech.com', `500 ${17 * U}px "IBM Plex Sans", system-ui, sans-serif`, hexA(FG, .5)]
   ];
-  ctx.save(); ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left';
+  ctx.save(); ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left'; if (safe) ctx.globalAlpha = 0.75;
   let w = 0; for (const [t, f] of parts) { ctx.font = f; w += ctx.measureText(t).width; }
-  let x = settings.format === '16:9' ? view.W - 30 * U - w : (view.W - w) / 2;
-  const y = view.H - 28 * U;
+  let x = safe ? view.W * SAFE.cx - w / 2 : settings.format === '16:9' ? view.W - 30 * U - w : (view.W - w) / 2;
+  const y = safe ? view.H * SAFE.sigY : view.H - 28 * U;
   for (const [t, f, col] of parts) { ctx.font = f; ctx.fillStyle = col; ctx.fillText(t, x, y); x += ctx.measureText(t).width; }
   ctx.restore();
 }
@@ -708,7 +743,7 @@ function drawSignature(R) {
 function drawFormulas(R, a, N) {
   const { ctx, S, settings, view } = R;
   if (a <= 0.004 || !settings.formulas) return;
-  const L = S.L, U = view.U, ser = S.ser, maxW = settings.format === '16:9' ? view.W * 0.56 : view.W * 0.9;
+  const L = S.L, U = view.U, ser = S.ser, maxW = L.safe ? view.W * SAFE.capW : settings.format === '16:9' ? view.W * 0.56 : view.W * 0.9;
   let y = L.fy; const size = 44 * U, gapY = 62 * U;
   ctx.save(); ctx.globalAlpha = a;
   const decay = ser.decay;
@@ -726,6 +761,8 @@ function drawFormulas(R, a, N) {
   }
   y += gapY * .95; ctx.fillStyle = hexA(FG, .55);
   mathLine(R, [['i', 'N'], ['r', ' = ' + N + '     error = ' + errFor(S, settings.style, N).toFixed(2) + '%']], L.fx, y, 30 * U, L.falign, maxW);
+  // En zona segura, las líneas de la expresión solo van si caben enteras por encima del límite
+  if (S.exprLines && L.safe && y + gapY * .9 + (S.exprLines.length - 1) * 32 * U > view.H * (SAFE.limit - 0.008)) { ctx.restore(); return; }
   if (S.exprLines) {
     y += gapY * .9; ctx.font = `400 ${22 * U}px "IBM Plex Mono", Consolas, monospace`; ctx.textAlign = L.falign; ctx.fillStyle = hexA(FG, .5);
     for (const line of S.exprLines) {
@@ -740,6 +777,7 @@ function drawFormulas(R, a, N) {
 function drawCaption(R) {
   const { ctx, settings, view } = R;
   const c = settings.caption.trim(); if (!c) return;
+  if (safeZone(settings)) { drawCaptionSafe(R, c); return; }
   const U = view.U; ctx.save(); ctx.fillStyle = FG; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
   let size = 34 * U; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${env.fallback}`;
   const y = view.H * (settings.format === '9:16' ? 0.055 : 0.07), maxW = view.W * .9;
@@ -761,6 +799,37 @@ function drawCaption(R) {
   }
   if (w > maxW) { size *= maxW / w; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${env.fallback}`; }
   ctx.fillText(c, view.W / 2, y);
+  ctx.restore();
+}
+
+// Gancho en zona segura: debajo de la barra de TikTok, hasta dos líneas, en negrita sobre una pastilla oscura
+function drawCaptionSafe(R, c) {
+  const { ctx, view } = R;
+  const U = view.U, cx = view.W * SAFE.cx, maxW = view.W * SAFE.capW;
+  let size = 42 * U;
+  const font = () => `700 ${size}px "IBM Plex Sans", system-ui, sans-serif${env.fallback}`;
+  ctx.save(); ctx.font = font();
+  let lines = [c];
+  const words = c.split(/\s+/);
+  if (ctx.measureText(c).width > maxW && words.length > 1) {
+    let best = null;
+    for (let i = 1; i < words.length; i++) {
+      const a = words.slice(0, i).join(' '), b = words.slice(i).join(' ');
+      const wid = Math.max(ctx.measureText(a).width, ctx.measureText(b).width);
+      if (!best || wid < best.wid) best = { a, b, wid };
+    }
+    lines = [best.a, best.b];
+  }
+  const widest = () => Math.max(...lines.map((l) => ctx.measureText(l).width));
+  if (widest() > maxW) { size *= maxW / widest(); ctx.font = font(); }
+  const lh = size * 1.22, padX = 18 * U, padY = 12 * U, top = view.H * SAFE.capTop, w = widest();
+  const boxW = w + padX * 2, boxH = lines.length * lh + padY * 2;
+  ctx.fillStyle = 'rgba(0,0,0,0.5)'; ctx.beginPath();
+  if (ctx.roundRect) ctx.roundRect(cx - boxW / 2, top, boxW, boxH, 16 * U); else ctx.rect(cx - boxW / 2, top, boxW, boxH);
+  ctx.fill();
+  ctx.fillStyle = '#ffffff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.shadowColor = 'rgba(0,0,0,0.7)'; ctx.shadowBlur = 8 * U; ctx.shadowOffsetY = 2 * U;
+  lines.forEach((l, i) => ctx.fillText(l, cx, top + padY + lh * (i + 0.5)));
   ctx.restore();
 }
 

@@ -22,7 +22,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Pacifico&family=Playfair+Display:wght@700&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Pacifico&family=Playfair+Display:wght@700&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap">
 <style>
 /* Layout: estudio a dos columnas. Escenario (el lienzo que se graba) a la izquierda, mesa de control a la derecha; en teléfono se apilan. */
 :root{
@@ -343,6 +343,7 @@ a.btn{text-decoration:none}
         <label class="check"><input type="checkbox" id="reveal" checked> Al final, solo la imagen</label>
         <label class="check"><input type="checkbox" id="formulas" checked> Fórmulas</label>
         <label class="check"><input type="checkbox" id="signature" checked> Firma en el video</label>
+        <label class="check" title="En 9:16, deja el texto y el dibujo fuera de los botones y textos de la app de TikTok"><input type="checkbox" id="safezone" checked> Zona segura de TikTok</label>
       </div>
       <div class="field">
         <label for="caption">Texto superior del video</label>
@@ -849,6 +850,7 @@ bindRange('revs', 'rev', (v) => v + ' s');
 bindRange('guide', 'guide', (v) => v + '%');
 $('#reveal').checked = settings.reveal; $('#reveal').addEventListener('change', (e) => { settings.reveal = e.target.checked; saveSettings(); status(); });
 $('#formulas').checked = settings.formulas; $('#formulas').addEventListener('change', (e) => { settings.formulas = e.target.checked; saveSettings(); });
+$('#safezone').checked = settings.safeZone !== false; $('#safezone').addEventListener('change', (e) => { settings.safeZone = e.target.checked; saveSettings(); relayout(); if (!anim) poster(); });
 $('#signature').checked = settings.signature; $('#signature').addEventListener('change', (e) => { settings.signature = e.target.checked; saveSettings(); if (!anim) poster(); });
 segment('labels', settings.labels, (v) => { settings.labels = v; saveSettings(); if (!anim) poster(); });
 CAPTIONS.forEach((t) => {

@@ -36,6 +36,7 @@ Video
   --nseq "1, 3, 6…"     Términos N por etapa
   --accent <#hex>       Color del trazo (por defecto #ff7a52)
   --guide <0-60>        Opacidad (%) de la imagen guía mientras dibuja (por defecto 18; 0 la oculta)
+  --no-safe-zone        Sin zona segura de TikTok (en 9:16 viene activada: nada importante bajo los controles de la app)
   --caption-wrap        Si el texto gancho no cabe, lo parte en dos líneas en vez de achicarlo
   --post "texto"         Descripción del post (se guarda en el .json; si no, la escribe caption/daily)
   --no-reveal --no-formulas --no-signature
@@ -47,7 +48,7 @@ const OPTIONS = {
   seed: { type: 'string' }, lang: { type: 'string', default: 'es' }, caption: { type: 'string', default: 'auto' },
   labels: { type: 'string', default: 'full' }, style: { type: 'string', default: 'xy' },
   fps: { type: 'string', default: '30' }, format: { type: 'string', default: '9:16' }, quality: { type: 'string', default: '1080' },
-  rev: { type: 'string' }, nseq: { type: 'string' }, accent: { type: 'string' }, guide: { type: 'string' }, post: { type: 'string' }, 'caption-wrap': { type: 'boolean', default: false },
+  rev: { type: 'string' }, nseq: { type: 'string' }, accent: { type: 'string' }, guide: { type: 'string' }, post: { type: 'string' }, 'caption-wrap': { type: 'boolean', default: false }, 'safe-zone': { type: 'boolean', default: true },
   reveal: { type: 'boolean', default: true }, formulas: { type: 'boolean', default: true }, signature: { type: 'boolean', default: true },
   out: { type: 'string' }, still: { type: 'string' }, crf: { type: 'string', default: '18' }, quiet: { type: 'boolean', default: false },
   help: { type: 'boolean', short: 'h', default: false }
@@ -79,6 +80,7 @@ export async function renderVideo(o) {
   if (o.nseq) settings.nseq = o.nseq;
   if (o.accent) settings.accent = o.accent;
   if (o['caption-wrap'] || o.captionWrap) settings.captionWrap = true;
+  settings.safeZone = o['safe-zone'] !== false && o.safeZone !== false;
   if (o.guide != null && o.guide !== '') settings.guide = Math.min(60, Math.max(0, +o.guide));
   const cap = o.caption ?? 'auto';
   settings.caption = cap === 'none' ? '' : cap === 'auto' ? autoCaption(title, lang, seed ?? 0) : cap;
