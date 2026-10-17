@@ -11,7 +11,7 @@ import { spawn } from 'node:child_process';
 import { parseCli } from './lib/cli.mjs';
 import { pathToFileURL } from 'node:url';
 import ffmpegPath from 'ffmpeg-static';
-import { createCanvas } from '@napi-rs/canvas';
+import { createCanvas, loadImage } from '@napi-rs/canvas';
 import * as E from '../src/engine.js';
 import { setupNode, ROOT } from './lib/node-env.mjs';
 import { resolveSource, slug, hashSeed } from './lib/catalog.mjs';
@@ -23,6 +23,7 @@ Figura
   --random <tipo>       Función inventada: any, ${E.INVENT_TYPES.join(', ')}
   --seed <n>            Semilla para --random y para elegir el texto gancho (mismo seed = mismo video)
   --text <texto>        Texto, símbolo o emoji
+  --image <archivo>     Imagen (PNG/JPG; mejor con fondo transparente). Con --name, --image-mode silueta|bordes, --detail 0-100
   --font <letra>        cursiva | elegante | bloque | clasica | emoji (con --text; por defecto cursiva)
 
 Video
@@ -44,7 +45,7 @@ Video
   --still <segundos>    En vez de video, guarda un PNG de ese instante (para revisar el encuadre)`;
 
 const OPTIONS = {
-  preset: { type: 'string' }, random: { type: 'string' }, text: { type: 'string' }, font: { type: 'string', default: 'cursiva' },
+  preset: { type: 'string' }, random: { type: 'string' }, text: { type: 'string' }, image: { type: 'string' }, name: { type: 'string' }, 'image-mode': { type: 'string' }, detail: { type: 'string' }, font: { type: 'string', default: 'cursiva' },
   seed: { type: 'string' }, lang: { type: 'string', default: 'es' }, caption: { type: 'string', default: 'auto' },
   labels: { type: 'string', default: 'full' }, style: { type: 'string', default: 'xy' },
   fps: { type: 'string', default: '30' }, format: { type: 'string', default: '9:16' }, quality: { type: 'string', default: '1080' },
@@ -62,11 +63,25 @@ export function autoCaption(name, lang, seed = 0) {
   return list[hashSeed(`${name}|${seed}`) % list.length].replace('{x}', name);
 }
 
+// Imagen local como figura (igual que la pestaña Imagen de la web): contornos por silueta o por bordes
+async function imageSource(o) {
+  const file = path.resolve(o.image);
+  if (!fs.existsSync(file)) throw new Error(`No existe la imagen ${file}`);
+  const img = await loadImage(fs.readFileSync(file));
+  const name = o.name || path.basename(file).replace(/\.[a-z0-9]+$/i, '');
+  const mode = oneOf(o['image-mode'] || o.imageMode || 'silueta', ['silueta', 'bordes'], 'image-mode');
+  const detail = o.detail != null ? Math.min(100, Math.max(0, +o.detail)) : 60;
+  return {
+    src: { kind: 'image', img, name, opts: { mode, thr: mode === 'bordes' ? 22 : 50, detail, invert: false, cutout: true } },
+    info: { kind: 'image', id: `image:${name}`, name, nameEn: name, group: 'Imagen', emoji: false, def: null, text: null, image: path.basename(file) }
+  };
+}
+
 export async function renderVideo(o) {
   const fx = setupNode();
   const lang = oneOf(o.lang || 'es', ['es', 'en'], 'lang');
   const seed = o.seed != null && o.seed !== '' ? Number(o.seed) >>> 0 : undefined;
-  const { src, info } = resolveSource({ preset: o.preset, random: o.random, text: o.text, font: o.font, seed });
+  const { src, info } = o.image ? await imageSource(o) : resolveSource({ preset: o.preset, random: o.random, text: o.text, font: o.font, seed });
   if (info.emoji && !fx.emoji) throw new Error('Esta figura usa un emoji y no hay fuente de emoji. Ejecuta «npm run fonts» (descarga Noto Color Emoji) o elige otra figura.');
   const title = lang === 'en' ? info.nameEn : info.name;
 

@@ -494,9 +494,9 @@ function relayoutSafe(S, settings, view) {
   L.tx = cxz; L.ty = H * (full ? 0.698 : SAFE.labelsY - 0.005);
   // Revelación: figura centrada en la zona libre, fórmulas debajo y todo por encima de la descripción de TikTok
   L.rcx = cxz; L.rcy = H * (cap ? 0.42 : 0.37);
-  const half = Math.min(L.rcy - H * (cap ? 0.285 : 0.17), H * 0.555 - L.rcy);
+  const half = Math.min(L.rcy - H * (cap ? 0.285 : 0.17), H * 0.545 - L.rcy);
   L.rs = Math.min(boxW / 2 / Math.max(hx, 0.05), half / Math.max(hy, 0.05));
-  L.fx = cxz; L.fy = H * 0.58; L.falign = 'center';
+  L.fx = cxz; L.fy = H * 0.598; L.falign = 'center';
   S.L = L;
 }
 
