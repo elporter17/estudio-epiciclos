@@ -8,9 +8,9 @@ export default { fetch: route(async (request) => {
   if (request.method !== 'POST') return json({ error: 'Usa POST.' }, 405);
   const { ticket } = await request.json().catch(() => ({}));
   const t = ticket && unseal(ticket);
-  if (!t) throw new HttpError(400, 'Publicación desconocida.');
+  if (!t) throw new HttpError(400, ['Publicación desconocida.', 'Unknown post.']);
   const { session: s, cookie } = await session(request);
-  if (s.open_id !== t.open_id) throw new HttpError(403, 'Esta publicación es de otra cuenta.');
+  if (s.open_id !== t.open_id) throw new HttpError(403, ['Esta publicación es de otra cuenta.', 'This post belongs to another account.']);
   const d = await tiktok('/v2/post/publish/status/fetch/', { publish_id: t.publish_id }, s);
   const done = DONE.includes(d.status);
   if (done) await del(t.blobUrl, { token: blobToken() }).catch(() => {});

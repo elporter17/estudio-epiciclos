@@ -20,3 +20,8 @@ code{padding:1px 6px}
 .code{display:block;padding:12px 14px;word-break:break-all;margin:8px 0 12px}
 button{font:inherit;cursor:pointer;background:var(--accent);color:#1d0f0a;border:0;border-radius:8px;padding:9px 16px;font-weight:600}
 footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:6px 14px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.lang{display:flex;gap:2px;padding:2px;border:1px solid var(--line);border-radius:7px}
+.lang button{background:transparent;color:#6f6662;border-radius:5px;padding:3px 8px;font-size:12px;letter-spacing:.04em}
+.lang button:hover{color:var(--muted)}
+.lang button[aria-pressed=true]{background:#221e1f;color:var(--fg)}

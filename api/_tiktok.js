@@ -30,17 +30,21 @@ export function blobToken() {
 export const json = (data, status = 200, headers = {}) =>
   new Response(JSON.stringify(data), { status, headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', ...headers } });
 
-export class HttpError extends Error { constructor(status, message, code) { super(message); this.status = status; this.code = code; } }
+// message: texto o [español, inglés]; la respuesta usa el idioma que pide la página (cabecera x-lang)
+export class HttpError extends Error {
+  constructor(status, message, code) { const m = Array.isArray(message) ? message : [message, message]; super(m[0]); this.msgs = m; this.status = status; this.code = code; }
+}
 
 // Envuelve un handler: errores conocidos → JSON con su estado; el resto → 500 sin filtrar detalles internos
 export const route = (fn) => async (request) => {
+  const en = request.headers.get('x-lang') === 'en' ? 1 : 0;
   try {
-    if (!config().enabled) throw new HttpError(503, 'La publicación en TikTok no está configurada en este sitio.', 'not_configured');
+    if (!config().enabled) throw new HttpError(503, ['La publicación en TikTok no está configurada en este sitio.', 'TikTok posting is not set up on this site.'], 'not_configured');
     return await fn(request);
   } catch (e) {
-    if (e instanceof HttpError) return json({ error: e.message, code: e.code || null }, e.status);
+    if (e instanceof HttpError) return json({ error: e.msgs[en], code: e.code || null }, e.status);
     console.error(e);
-    return json({ error: 'Error inesperado del servidor.' }, 500);
+    return json({ error: ['Error inesperado del servidor.', 'Unexpected server error.'][en] }, 500);
   }
 };
 
@@ -73,7 +77,7 @@ export const STATE_COOKIE = STATE, SESSION_COOKIE = SESSION;
 // Solo peticiones del mismo sitio para las acciones que cambian algo (defensa extra contra CSRF)
 export function sameOrigin(request) {
   const origin = request.headers.get('origin'); if (!origin) return;
-  if (new URL(origin).host !== new URL(request.url).host) throw new HttpError(403, 'Origen no permitido.');
+  if (new URL(origin).host !== new URL(request.url).host) throw new HttpError(403, ['Origen no permitido.', 'Origin not allowed.']);
 }
 
 /* ---------------- OAuth ---------------- */
@@ -85,7 +89,8 @@ export async function tokenRequest(fields) {
     body: new URLSearchParams({ client_key: c.key, client_secret: c.secret, ...fields })
   });
   const t = await res.json().catch(() => ({}));
-  if (!res.ok || t.error || !t.access_token) throw new HttpError(401, `TikTok no autorizó la conexión (${t.error_description || t.error || res.status}).`, 'oauth_failed');
+  const why = t.error_description || t.error || res.status;
+  if (!res.ok || t.error || !t.access_token) throw new HttpError(401, [`TikTok no autorizó la conexión (${why}).`, `TikTok did not authorize the connection (${why}).`], 'oauth_failed');
   const now = Date.now();
   return { open_id: t.open_id, scope: t.scope, at: t.access_token, rt: t.refresh_token, exp: now + t.expires_in * 1000, rexp: now + t.refresh_expires_in * 1000 };
 }
@@ -94,9 +99,9 @@ export async function tokenRequest(fields) {
 export async function session(request) {
   const raw = cookies(request)[SESSION];
   const s = raw && unseal(raw);
-  if (!s) throw new HttpError(401, 'Conecta tu cuenta de TikTok.', 'not_connected');
+  if (!s) throw new HttpError(401, ['Conecta tu cuenta de TikTok.', 'Connect your TikTok account.'], 'not_connected');
   if (s.exp - Date.now() > 60e3) return { session: s };
-  if (s.rexp <= Date.now()) throw new HttpError(401, 'Tu conexión con TikTok venció. Conéctala de nuevo.', 'not_connected');
+  if (s.rexp <= Date.now()) throw new HttpError(401, ['Tu conexión con TikTok venció. Conéctala de nuevo.', 'Your TikTok connection expired. Connect it again.'], 'not_connected');
   const fresh = await tokenRequest({ grant_type: 'refresh_token', refresh_token: s.rt });
   return { session: fresh, cookie: sessionCookie(fresh) };
 }
@@ -112,20 +117,20 @@ export async function tiktok(pathname, body, s) {
   const data = await res.json().catch(() => ({}));
   const err = data.error || {};
   if (!res.ok || (err.code && err.code !== 'ok')) {
-    throw new HttpError(res.status >= 400 && res.status < 600 ? res.status : 502, MESSAGES[err.code] || `TikTok respondió ${err.code || res.status}: ${err.message || 'sin detalle'}`, err.code);
+    throw new HttpError(res.status >= 400 && res.status < 600 ? res.status : 502, MESSAGES[err.code] || [`TikTok respondió ${err.code || res.status}: ${err.message || 'sin detalle'}`, `TikTok answered ${err.code || res.status}: ${err.message || 'no details'}`], err.code);
   }
   return data.data || {};
 }
 
 // Mensajes claros para los errores que un usuario puede ver
 const MESSAGES = {
-  access_token_invalid: 'Tu conexión con TikTok ya no es válida. Conéctala de nuevo.',
-  scope_not_authorized: 'Falta autorizar la publicación de videos. Conecta tu cuenta de nuevo y acepta todos los permisos.',
-  rate_limit_exceeded: 'TikTok recibió demasiadas solicitudes. Espera un minuto e intenta de nuevo.',
-  spam_risk_too_many_posts: 'Llegaste al límite diario de publicaciones de TikTok. Intenta mañana.',
-  spam_risk_user_banned_from_posting: 'TikTok no permite que esta cuenta publique ahora.',
-  reached_active_user_cap: 'CirculArte alcanzó su cupo diario de publicaciones en TikTok. Intenta mañana.',
-  unaudited_client_can_only_post_to_private_accounts: 'Mientras CirculArte está en revisión de TikTok, solo puede publicar en cuentas privadas.',
-  privacy_level_option_mismatch: 'La privacidad elegida no está disponible para tu cuenta.',
-  url_ownership_unverified: 'TikTok no reconoce el dominio desde el que se sirve el video.'
+  access_token_invalid: ['Tu conexión con TikTok ya no es válida. Conéctala de nuevo.', 'Your TikTok connection is no longer valid. Connect it again.'],
+  scope_not_authorized: ['Falta autorizar la publicación de videos. Conecta tu cuenta de nuevo y acepta todos los permisos.', 'Video posting is not authorized. Connect your account again and accept all permissions.'],
+  rate_limit_exceeded: ['TikTok recibió demasiadas solicitudes. Espera un minuto e intenta de nuevo.', 'TikTok received too many requests. Wait a minute and try again.'],
+  spam_risk_too_many_posts: ['Llegaste al límite diario de publicaciones de TikTok. Intenta mañana.', 'You reached the TikTok daily post limit. Try again tomorrow.'],
+  spam_risk_user_banned_from_posting: ['TikTok no permite que esta cuenta publique ahora.', 'TikTok does not allow this account to post right now.'],
+  reached_active_user_cap: ['CirculArte alcanzó su cupo diario de publicaciones en TikTok. Intenta mañana.', 'CirculArte reached its daily TikTok posting quota. Try again tomorrow.'],
+  unaudited_client_can_only_post_to_private_accounts: ['Mientras CirculArte está en revisión de TikTok, solo puede publicar en cuentas privadas.', 'While CirculArte is under TikTok review, it can only post to private accounts.'],
+  privacy_level_option_mismatch: ['La privacidad elegida no está disponible para tu cuenta.', 'The chosen privacy is not available for your account.'],
+  url_ownership_unverified: ['TikTok no reconoce el dominio desde el que se sirve el video.', 'TikTok does not recognize the domain serving the video.']
 };

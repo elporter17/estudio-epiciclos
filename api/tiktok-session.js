@@ -6,7 +6,7 @@ export default { fetch: route(async (request) => {
   sameOrigin(request);
   const { code, state } = await request.json().catch(() => ({}));
   const expected = cookies(request)[STATE_COOKIE];
-  if (!code || !state || !expected || state !== expected) throw new HttpError(400, 'La conexión no coincide o venció. Vuelve a intentarlo desde CirculArte.', 'bad_state');
+  if (!code || !state || !expected || state !== expected) throw new HttpError(400, ['La conexión no coincide o venció. Vuelve a intentarlo desde CirculArte.', 'The connection does not match or expired. Try again from CirculArte.'], 'bad_state');
   const s = await tokenRequest({ code, grant_type: 'authorization_code', redirect_uri: process.env.TIKTOK_REDIRECT_URI });
   const headers = new Headers({ 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' });
   headers.append('set-cookie', sessionCookie(s));

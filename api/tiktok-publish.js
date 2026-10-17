@@ -11,9 +11,9 @@ export default { fetch: route(async (request) => {
 
   // El video tiene que estar en nuestro almacén, dentro de media/
   let blob;
-  try { blob = new URL(b.blobUrl); } catch { throw new HttpError(400, 'Falta el video.'); }
+  try { blob = new URL(b.blobUrl); } catch { throw new HttpError(400, ['Falta el video.', 'The video is missing.']); }
   const pathname = decodeURIComponent(blob.pathname.slice(1));
-  if (!/\.public\.blob\.vercel-storage\.com$/.test(blob.hostname) || !pathname.startsWith(MEDIA_PREFIX)) throw new HttpError(400, 'Video no válido.');
+  if (!/\.public\.blob\.vercel-storage\.com$/.test(blob.hostname) || !pathname.startsWith(MEDIA_PREFIX)) throw new HttpError(400, ['Video no válido.', 'Invalid video.']);
   const videoUrl = config().mediaBase + pathname.slice(MEDIA_PREFIX.length);
 
   // Borrador (video.upload): llega a la bandeja de TikTok y el usuario lo termina en la app
@@ -26,12 +26,12 @@ export default { fetch: route(async (request) => {
 
   const info = await tiktok('/v2/post/publish/creator_info/query/', undefined, s);
   const options = info.privacy_level_options || [];
-  if (!options.includes(b.privacy_level)) throw new HttpError(400, 'Elige quién puede ver el video.');
+  if (!options.includes(b.privacy_level)) throw new HttpError(400, ['Elige quién puede ver el video.', 'Choose who can view the video.']);
   const branded = !!b.brand_content_toggle, own = !!b.brand_organic_toggle;
-  if (b.disclose && !branded && !own) throw new HttpError(400, 'Indica si el contenido promociona tu marca, a un tercero o ambos.');
-  if (branded && b.privacy_level === 'SELF_ONLY') throw new HttpError(400, 'El contenido de marca no puede ser privado.');
+  if (b.disclose && !branded && !own) throw new HttpError(400, ['Indica si el contenido promociona tu marca, a un tercero o ambos.', 'Indicate if the content promotes your brand, a third party, or both.']);
+  if (branded && b.privacy_level === 'SELF_ONLY') throw new HttpError(400, ['El contenido de marca no puede ser privado.', 'Branded content cannot be private.']);
   if (info.max_video_post_duration_sec && b.duration && b.duration > info.max_video_post_duration_sec) {
-    throw new HttpError(400, `Tu cuenta permite videos de hasta ${info.max_video_post_duration_sec} s.`);
+    throw new HttpError(400, [`Tu cuenta permite videos de hasta ${info.max_video_post_duration_sec} s.`, `Your account allows videos up to ${info.max_video_post_duration_sec} s.`]);
   }
 
   const d = await tiktok('/v2/post/publish/video/init/', {

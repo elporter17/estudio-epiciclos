@@ -1,5 +1,5 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Sube una imagen, escribe un texto o inventa una función y mira cómo círculos que giran la dibujan solos. Graba el video y compártelo. Creado por Erick Alvarado.">
+<meta name="description" content="Sube una imagen, escribe un texto o inventa una función y mira cómo círculos que giran la dibujan solos. Graba el video y compártelo. Creado por Erick Alvarado." data-en-content="Upload an image, type some text or invent a function and watch spinning circles draw it on their own. Record the video and share it. Made by Erick Alvarado.">
 <meta name="author" content="Erick Alvarado · edav-tech.com">
 <meta name="theme-color" content="#0e0c0d">
 <meta property="og:type" content="website">
@@ -55,6 +55,11 @@ button,input,select{font:inherit;color:inherit}
 .brand{grid-area:brand;padding:18px max(16px,env(safe-area-inset-right,0px)) 10px 22px;border-left:1px solid var(--line);background:var(--surface)}
 .brand h1{margin:0;font:italic 400 30px/1.05 var(--math);letter-spacing:.2px}
 .brand h1 b{font-style:normal;font-weight:400;color:var(--accent)}
+.brand{position:relative}
+.lang{position:absolute;top:16px;right:max(16px,env(safe-area-inset-right,0px));display:flex;gap:2px;padding:2px;border:1px solid var(--line);border-radius:7px}
+.lang button{appearance:none;border:0;background:transparent;border-radius:5px;padding:3px 7px;cursor:pointer;color:var(--faint);font-size:11.5px;font-weight:600;letter-spacing:.04em}
+.lang button:hover{color:var(--muted)}
+.lang button[aria-pressed=true]{background:var(--raise);color:var(--fg)}
 .brand p{margin:6px 0 0;color:var(--muted);font-size:13px}
 .stage-col{grid-area:stage;min-width:0;min-height:0;display:flex;flex-direction:column;gap:12px;padding-block:18px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:16px;background:radial-gradient(120% 80% at 50% 40%,#1a1617 0%,var(--bg) 70%)}
 .stage-wrap{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
@@ -209,95 +214,96 @@ a.btn{text-decoration:none}
 
 <div class="app">
   <header class="brand">
+    <div class="lang" role="group" aria-label="Idioma" data-en-aria-label="Language"><button type="button" data-l="es">ES</button><button type="button" data-l="en">EN</button></div>
     <h1>Circul<b>Arte</b></h1>
-    <p>Cualquier imagen, texto o función dibujada solo con círculos que giran. Cada reproducción se graba como video. Por <a href="https://edav-tech.com/" target="_blank" rel="noopener">Erick Alvarado</a>.</p>
+    <p data-en-html='Any image, text or function drawn only with spinning circles. Every play is recorded as a video. By <a href="https://edav-tech.com/" target="_blank" rel="noopener">Erick Alvarado</a>.'>Cualquier imagen, texto o función dibujada solo con círculos que giran. Cada reproducción se graba como video. Por <a href="https://edav-tech.com/" target="_blank" rel="noopener">Erick Alvarado</a>.</p>
   </header>
 
-  <section class="stage-col" aria-label="Escenario">
+  <section class="stage-col" aria-label="Escenario" data-en-aria-label="Stage">
     <div class="stage-wrap" id="stageWrap">
-      <canvas id="cv" width="720" height="1280" aria-label="Simulación de epiciclos"></canvas>
-      <div class="drop-hint" id="dropHint" hidden>Suelta la imagen para dibujarla</div>
+      <canvas id="cv" width="720" height="1280" aria-label="Simulación de epiciclos" data-en-aria-label="Epicycle simulation"></canvas>
+      <div class="drop-hint" id="dropHint" hidden data-en="Drop the image to draw it">Suelta la imagen para dibujarla</div>
     </div>
     <div class="transport">
       <button class="btn primary" id="play" type="button">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg><span>Reproducir</span>
       </button>
       <button class="btn" id="stop" type="button" disabled>
-        <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="3.5" width="9" height="9" rx="1" fill="currentColor"/></svg>Detener
+        <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="3.5" width="9" height="9" rx="1" fill="currentColor"/></svg><span data-en="Stop">Detener</span>
       </button>
-      <label class="check"><input type="checkbox" id="rec" checked> Grabar video</label>
+      <label class="check"><input type="checkbox" id="rec" checked> <span data-en="Record video">Grabar video</span></label>
       <div class="progress" aria-hidden="true"><i id="bar"></i></div>
       <div class="status" id="status" aria-live="polite"></div>
-      <p class="legal"><a href="privacidad.html">Privacidad</a><span aria-hidden="true"> · </span><a href="terminos.html">Términos</a></p>
+      <p class="legal"><a href="privacidad.html" data-en="Privacy">Privacidad</a><span aria-hidden="true"> · </span><a href="terminos.html" data-en="Terms">Términos</a></p>
     </div>
   </section>
 
-  <aside class="panel" aria-label="Controles">
+  <aside class="panel" aria-label="Controles" data-en-aria-label="Controls">
     <div class="tabs" role="tablist">
-      <button role="tab" id="t-funciones" aria-selected="true" data-tab="funciones">Funciones</button>
-      <button role="tab" id="t-texto" aria-selected="false" data-tab="texto">Texto</button>
-      <button role="tab" id="t-imagen" aria-selected="false" data-tab="imagen">Imagen</button>
-      <button role="tab" id="t-inventar" aria-selected="false" data-tab="inventar">Inventar</button>
+      <button role="tab" id="t-funciones" aria-selected="true" data-tab="funciones" data-en="Shapes">Funciones</button>
+      <button role="tab" id="t-texto" aria-selected="false" data-tab="texto" data-en="Text">Texto</button>
+      <button role="tab" id="t-imagen" aria-selected="false" data-tab="imagen" data-en="Image">Imagen</button>
+      <button role="tab" id="t-inventar" aria-selected="false" data-tab="inventar" data-en="Invent">Inventar</button>
     </div>
 
     <div class="tabpanel" id="p-funciones" role="tabpanel">
-      <p class="hint">Figuras listas para dibujar. Toca una y luego Reproducir.</p>
+      <p class="hint" data-en="Shapes ready to draw. Tap one, then Play.">Figuras listas para dibujar. Toca una y luego Reproducir.</p>
       <div class="preset-groups" id="presets"></div>
     </div>
 
     <div class="tabpanel" id="p-texto" role="tabpanel" hidden>
       <div class="field">
-        <label for="txt">Texto o símbolo</label>
+        <label for="txt" data-en="Text or symbol">Texto o símbolo</label>
         <input type="text" id="txt" value="amor" maxlength="24" autocomplete="off">
       </div>
       <div class="field">
-        <span class="lbl">Letra</span>
+        <span class="lbl" data-en="Font">Letra</span>
         <div class="seg" id="txtFont">
-          <button type="button" data-v="cursiva">Cursiva</button>
-          <button type="button" data-v="elegante">Elegante</button>
-          <button type="button" data-v="bloque">Bloque</button>
-          <button type="button" data-v="clasica">Clásica</button>
+          <button type="button" data-v="cursiva" data-en="Script">Cursiva</button>
+          <button type="button" data-v="elegante" data-en="Elegant">Elegante</button>
+          <button type="button" data-v="bloque" data-en="Block">Bloque</button>
+          <button type="button" data-v="clasica" data-en="Classic">Clásica</button>
         </div>
       </div>
       <div class="chips" id="txtChips"></div>
-      <div class="row"><button class="btn primary" id="txtGo" type="button">Dibujar este texto</button></div>
+      <div class="row"><button class="btn primary" id="txtGo" type="button" data-en="Draw this text">Dibujar este texto</button></div>
     </div>
 
     <div class="tabpanel" id="p-imagen" role="tabpanel" hidden>
       <label class="drop" for="file">
-        <strong>Elige una imagen</strong>
-        <span>o arrástrala al escenario, o pégala con Ctrl+V</span>
+        <strong data-en="Choose an image">Elige una imagen</strong>
+        <span data-en="or drag it onto the stage, or paste it with Ctrl+V">o arrástrala al escenario, o pégala con Ctrl+V</span>
       </label>
       <input type="file" id="file" accept="image/*" hidden>
-      <div class="row"><button class="btn small ghost" id="sampleLogo" type="button">Usar logo de ejemplo</button><span class="hint" id="imgInfo"></span></div>
+      <div class="row"><button class="btn small ghost" id="sampleLogo" type="button" data-en="Use sample logo">Usar logo de ejemplo</button><span class="hint" id="imgInfo"></span></div>
       <div class="field">
-        <span class="lbl">Cómo leer la imagen</span>
+        <span class="lbl" data-en="How to read the image">Cómo leer la imagen</span>
         <div class="seg" id="imgMode">
-          <button type="button" data-v="silueta">Silueta (logos)</button>
-          <button type="button" data-v="bordes">Bordes (fotos)</button>
+          <button type="button" data-v="silueta" data-en="Silhouette (logos)">Silueta (logos)</button>
+          <button type="button" data-v="bordes" data-en="Edges (photos)">Bordes (fotos)</button>
         </div>
       </div>
-      <div class="field"><label for="thr">Umbral <output id="thrV"></output></label><input type="range" id="thr" min="1" max="99" value="50"></div>
-      <div class="field"><label for="detail">Detalle <output id="detailV"></output></label><input type="range" id="detail" min="0" max="100" value="60"></div>
+      <div class="field"><label for="thr"><span data-en="Threshold">Umbral</span> <output id="thrV"></output></label><input type="range" id="thr" min="1" max="99" value="50"></div>
+      <div class="field"><label for="detail"><span data-en="Detail">Detalle</span> <output id="detailV"></output></label><input type="range" id="detail" min="0" max="100" value="60"></div>
       <div class="row">
-        <label class="check"><input type="checkbox" id="invert"> Invertir</label>
-        <label class="check"><input type="checkbox" id="cutout" checked> Quitar fondo al revelar</label>
+        <label class="check"><input type="checkbox" id="invert"> <span data-en="Invert">Invertir</span></label>
+        <label class="check"><input type="checkbox" id="cutout" checked> <span data-en="Remove background on reveal">Quitar fondo al revelar</span></label>
       </div>
     </div>
 
     <div class="tabpanel" id="p-inventar" role="tabpanel" hidden>
       <div class="row">
-        <select id="genType" class="grow" aria-label="Tipo de función">
-          <option value="any">Sorpréndeme</option>
-          <option value="fourier">Suma de senos y cosenos</option>
-          <option value="polar">Polar ondulada</option>
-          <option value="rosa">Rosa</option>
-          <option value="spiro">Espirógrafo</option>
+        <select id="genType" class="grow" aria-label="Tipo de función" data-en-aria-label="Function type">
+          <option value="any" data-en="Surprise me">Sorpréndeme</option>
+          <option value="fourier" data-en="Sum of sines and cosines">Suma de senos y cosenos</option>
+          <option value="polar" data-en="Wavy polar">Polar ondulada</option>
+          <option value="rosa" data-en="Rose">Rosa</option>
+          <option value="spiro" data-en="Spirograph">Espirógrafo</option>
           <option value="lissa">Lissajous</option>
-          <option value="super">Superfórmula</option>
+          <option value="super" data-en="Superformula">Superfórmula</option>
         </select>
         <button class="btn primary" id="genBtn" type="button">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="5.5" cy="5.5" r="1.2" fill="currentColor"/><circle cx="10.5" cy="10.5" r="1.2" fill="currentColor"/><circle cx="8" cy="8" r="1.2" fill="currentColor"/></svg>Inventar
+          <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="5.5" cy="5.5" r="1.2" fill="currentColor"/><circle cx="10.5" cy="10.5" r="1.2" fill="currentColor"/><circle cx="8" cy="8" r="1.2" fill="currentColor"/></svg><span data-en="Invent">Inventar</span>
         </button>
       </div>
       <div class="fnname" id="fnName"></div>
@@ -310,73 +316,73 @@ a.btn{text-decoration:none}
         <div class="field"><label for="ey">y(t) =</label><input type="text" class="mono" id="ey" autocomplete="off" spellcheck="false"></div>
       </div>
       <div id="rFields" class="field" hidden><label for="er">r(t) =</label><input type="text" class="mono" id="er" autocomplete="off" spellcheck="false"></div>
-      <div class="field"><label for="eper">Vueltas de t (t va de 0 a 2π × vueltas)</label><input type="number" id="eper" min="0.5" max="24" step="0.5" value="1"></div>
+      <div class="field"><label for="eper" data-en="Turns of t (t goes from 0 to 2π × turns)">Vueltas de t (t va de 0 a 2π × vueltas)</label><input type="number" id="eper" min="0.5" max="24" step="0.5" value="1"></div>
       <div class="row">
-        <button class="btn" id="exprGo" type="button">Dibujar</button>
-        <button class="btn" id="mutate" type="button">Mutar</button>
-        <button class="btn ghost" id="favAdd" type="button">Guardar en favoritas</button>
+        <button class="btn" id="exprGo" type="button" data-en="Draw">Dibujar</button>
+        <button class="btn" id="mutate" type="button" data-en="Mutate">Mutar</button>
+        <button class="btn ghost" id="favAdd" type="button" data-en="Save to favorites">Guardar en favoritas</button>
       </div>
       <p class="err" id="exprErr"></p>
-      <p class="hint">Escribe con <code>t</code>, <code>pi</code>, <code>sin</code>, <code>cos</code>, <code>abs</code>, <code>sqrt</code>, <code>exp</code>, <code>^</code>. Ejemplo: <code>16 sin(t)^3</code>. Mutar cambia un poco las amplitudes sin romper la figura.</p>
-      <div class="field"><span class="lbl">Favoritas</span><div class="chips" id="favs"></div></div>
+      <p class="hint" data-en-html="Write with <code>t</code>, <code>pi</code>, <code>sin</code>, <code>cos</code>, <code>abs</code>, <code>sqrt</code>, <code>exp</code>, <code>^</code>. Example: <code>16 sin(t)^3</code>. Mutate tweaks the amplitudes a little without breaking the shape.">Escribe con <code>t</code>, <code>pi</code>, <code>sin</code>, <code>cos</code>, <code>abs</code>, <code>sqrt</code>, <code>exp</code>, <code>^</code>. Ejemplo: <code>16 sin(t)^3</code>. Mutar cambia un poco las amplitudes sin romper la figura.</p>
+      <div class="field"><span class="lbl" data-en="Favorites">Favoritas</span><div class="chips" id="favs"></div></div>
     </div>
 
     <section class="group" aria-labelledby="h-anim">
-      <h2 id="h-anim">Animación</h2>
+      <h2 id="h-anim" data-en="Animation">Animación</h2>
       <div class="field">
-        <span class="lbl">Estilo de epiciclos</span>
+        <span class="lbl" data-en="Epicycle style">Estilo de epiciclos</span>
         <div class="seg" id="style">
-          <button type="button" data-v="xy">Dos cadenas x, y</button>
-          <button type="button" data-v="z">Una cadena compleja</button>
+          <button type="button" data-v="xy" data-en="Two chains x, y">Dos cadenas x, y</button>
+          <button type="button" data-v="z" data-en="One complex chain">Una cadena compleja</button>
         </div>
       </div>
       <div class="field">
-        <span class="lbl">Rótulos mientras dibuja</span>
+        <span class="lbl" data-en="Labels while drawing">Rótulos mientras dibuja</span>
         <div class="seg" id="labels">
-          <button type="button" data-v="full">N y error</button>
-          <button type="button" data-v="n">Solo N</button>
-          <button type="button" data-v="top">Fórmulas arriba</button>
+          <button type="button" data-v="full" data-en="N and error">N y error</button>
+          <button type="button" data-v="n" data-en="N only">Solo N</button>
+          <button type="button" data-v="top" data-en="Formulas on top">Fórmulas arriba</button>
         </div>
       </div>
       <div class="field">
-        <label for="nseq">Términos N por etapa</label>
+        <label for="nseq" data-en="Terms N per stage">Términos N por etapa</label>
         <input type="text" class="mono" id="nseq" value="1, 3, 6, 12, 25, 50, 100, 200" autocomplete="off">
       </div>
-      <div class="field"><label for="revs">Segundos por vuelta <output id="revsV"></output></label><input type="range" id="revs" min="1" max="8" step="0.5" value="3"></div>
-      <div class="field"><label for="guide">Imagen de guía mientras dibuja <output id="guideV"></output></label><input type="range" id="guide" min="0" max="60" value="18"></div>
+      <div class="field"><label for="revs"><span data-en="Seconds per turn">Segundos por vuelta</span> <output id="revsV"></output></label><input type="range" id="revs" min="1" max="8" step="0.5" value="3"></div>
+      <div class="field"><label for="guide"><span data-en="Guide image while drawing">Imagen de guía mientras dibuja</span> <output id="guideV"></output></label><input type="range" id="guide" min="0" max="60" value="18"></div>
       <div class="row">
-        <label class="check"><input type="checkbox" id="reveal" checked> Al final, solo la imagen</label>
-        <label class="check"><input type="checkbox" id="formulas" checked> Fórmulas</label>
-        <label class="check"><input type="checkbox" id="signature" checked> Firma en el video</label>
+        <label class="check"><input type="checkbox" id="reveal" checked> <span data-en="At the end, only the image">Al final, solo la imagen</span></label>
+        <label class="check"><input type="checkbox" id="formulas" checked> <span data-en="Formulas">Fórmulas</span></label>
+        <label class="check"><input type="checkbox" id="signature" checked> <span data-en="Signature on the video">Firma en el video</span></label>
       </div>
       <div class="field">
-        <label for="caption">Texto superior del video</label>
-        <input type="text" id="caption" maxlength="60" placeholder="Opcional, por ejemplo: Espera el final" autocomplete="off">
-        <div class="chips" id="capChips" aria-label="Ideas de texto"></div>
+        <label for="caption" data-en="Top text of the video">Texto superior del video</label>
+        <input type="text" id="caption" maxlength="60" placeholder="Opcional, por ejemplo: Espera el final" data-en-placeholder="Optional, for example: Wait for the end" autocomplete="off">
+        <div class="chips" id="capChips" aria-label="Ideas de texto" data-en-aria-label="Text ideas"></div>
       </div>
       <div class="two">
-        <div class="field"><span class="lbl">Formato</span>
+        <div class="field"><span class="lbl" data-en="Format">Formato</span>
           <div class="seg" id="format"><button type="button" data-v="9:16">9:16</button><button type="button" data-v="1:1">1:1</button><button type="button" data-v="16:9">16:9</button></div>
         </div>
-        <div class="field"><span class="lbl">Calidad</span>
+        <div class="field"><span class="lbl" data-en="Quality">Calidad</span>
           <div class="seg" id="quality"><button type="button" data-v="720">720p</button><button type="button" data-v="1080">1080p</button></div>
         </div>
       </div>
-      <div class="row"><span class="lbl">Color del trazo</span><input type="color" id="accent" value="#ff7a52" aria-label="Color del trazo"></div>
+      <div class="row"><span class="lbl" data-en="Stroke color">Color del trazo</span><input type="color" id="accent" value="#ff7a52" aria-label="Color del trazo" data-en-aria-label="Stroke color"></div>
     </section>
 
     <section class="group" aria-labelledby="h-vids">
-      <h2 id="h-vids">Mis videos</h2>
-      <div class="videos" id="videos"><div class="empty">Tus grabaciones aparecen aquí. Deja marcado «Grabar video» y pulsa Reproducir.</div></div>
-      <p class="hint">Mantén la pestaña visible mientras graba. Los videos viven en esta pestaña hasta que la cierres, así que guarda los que quieras conservar.</p>
+      <h2 id="h-vids" data-en="My videos">Mis videos</h2>
+      <div class="videos" id="videos"></div>
+      <p class="hint" data-en="Keep the tab visible while recording. Videos live in this tab until you close it, so save the ones you want to keep.">Mantén la pestaña visible mientras graba. Los videos viven en esta pestaña hasta que la cierres, así que guarda los que quieras conservar.</p>
     </section>
 
-    <footer class="credits" aria-label="Créditos">
-      <p class="by">Creado por <a href="https://edav-tech.com/" target="_blank" rel="noopener">Erick Alvarado</a></p>
-      <p class="hint">Senior Full Stack Dev · Tech Lead. Construyo apps web y móviles a la medida.</p>
-      <a class="btn small primary" href="https://www.edav-tech.com/start-project" target="_blank" rel="noopener">¿Quieres una app así? Hablemos</a>
+    <footer class="credits" aria-label="Créditos" data-en-aria-label="Credits">
+      <p class="by" data-en-html='Made by <a href="https://edav-tech.com/" target="_blank" rel="noopener">Erick Alvarado</a>'>Creado por <a href="https://edav-tech.com/" target="_blank" rel="noopener">Erick Alvarado</a></p>
+      <p class="hint" data-en="Senior Full Stack Dev · Tech Lead. I build custom web and mobile apps.">Senior Full Stack Dev · Tech Lead. Construyo apps web y móviles a la medida.</p>
+      <a class="btn small primary" href="https://www.edav-tech.com/start-project" target="_blank" rel="noopener" data-en="Want an app like this? Let's talk">¿Quieres una app así? Hablemos</a>
       <p class="links"><a href="https://edav-tech.com/" target="_blank" rel="noopener">edav-tech.com</a><span aria-hidden="true">·</span><a href="https://github.com/elporter17" target="_blank" rel="noopener">GitHub</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/edav/" target="_blank" rel="noopener">LinkedIn</a></p>
-      <p class="links"><a href="privacidad.html">Privacidad</a><span aria-hidden="true">·</span><a href="terminos.html">Términos</a></p>
+      <p class="links"><a href="privacidad.html" data-en="Privacy">Privacidad</a><span aria-hidden="true">·</span><a href="terminos.html" data-en="Terms">Términos</a></p>
     </footer>
   </aside>
 </div>
@@ -384,66 +390,66 @@ a.btn{text-decoration:none}
 
 <dialog class="tt" id="tt" aria-labelledby="ttH">
   <form id="ttForm" method="dialog">
-    <div class="tt-head"><h2 id="ttH">Publicar en TikTok</h2><button type="button" class="tt-x" id="ttClose" aria-label="Cerrar">×</button></div>
-    <p class="hint" id="ttLoading">Consultando tu cuenta de TikTok…</p>
+    <div class="tt-head"><h2 id="ttH" data-en="Post to TikTok">Publicar en TikTok</h2><button type="button" class="tt-x" id="ttClose" aria-label="Cerrar" data-en-aria-label="Close">×</button></div>
+    <p class="hint" id="ttLoading" data-en="Checking your TikTok account…">Consultando tu cuenta de TikTok…</p>
     <div id="ttConnect" hidden class="tt-sub">
       <p class="tt-note" id="ttConnectMsg"></p>
-      <div class="row"><button type="button" class="btn primary" id="ttConnectBtn">Conectar con TikTok</button></div>
-      <p class="tt-note">Se abre una ventana de TikTok para que autorices a CirculArte. Lee nuestra <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
+      <div class="row"><button type="button" class="btn primary" id="ttConnectBtn" data-en="Connect with TikTok">Conectar con TikTok</button></div>
+      <p class="tt-note" data-en-html='A TikTok window opens so you can authorize CirculArte. Read our <a href="privacidad.html" target="_blank" rel="noopener">privacy policy</a>.'>Se abre una ventana de TikTok para que autorices a CirculArte. Lee nuestra <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
     </div>
     <div class="tt-account" id="ttAccount" hidden>
       <img id="ttAvatar" alt="" referrerpolicy="no-referrer">
-      <div class="who"><span>Publicarás como <b id="ttNick"></b></span><small id="ttUser"></small></div>
-      <button type="button" class="btn small ghost" id="ttSwitch">Cambiar cuenta</button>
+      <div class="who"><span><span data-en="Posting as">Publicarás como</span> <b id="ttNick"></b></span><small id="ttUser"></small></div>
+      <button type="button" class="btn small ghost" id="ttSwitch" data-en="Switch account">Cambiar cuenta</button>
     </div>
     <div id="ttBody" hidden>
-      <div class="seg" id="ttMode" role="group" aria-label="Cómo enviarlo" style="margin-bottom:14px">
-        <button type="button" data-v="direct" aria-pressed="true">Publicar ahora</button>
-        <button type="button" data-v="draft" aria-pressed="false">Enviar como borrador</button>
+      <div class="seg" id="ttMode" role="group" aria-label="Cómo enviarlo" data-en-aria-label="How to send it" style="margin-bottom:14px">
+        <button type="button" data-v="direct" aria-pressed="true" data-en="Post now">Publicar ahora</button>
+        <button type="button" data-v="draft" aria-pressed="false" data-en="Send as draft">Enviar como borrador</button>
       </div>
-      <p class="tt-note" id="ttDraftNote" hidden style="margin-bottom:14px">TikTok te mandará una notificación con el video para que lo termines en la app: ahí eliges la descripción, quién puede verlo y lo publicas. Copia la descripción de abajo si quieres usarla.</p>
+      <p class="tt-note" id="ttDraftNote" hidden style="margin-bottom:14px" data-en="TikTok will send you a notification with the video so you can finish it in the app: there you choose the caption and who can see it, and post it. Copy the caption below if you want to use it.">TikTok te mandará una notificación con el video para que lo termines en la app: ahí eliges la descripción, quién puede verlo y lo publicas. Copia la descripción de abajo si quieres usarla.</p>
       <div class="tt-main">
-        <video id="ttPreview" controls muted playsinline preload="metadata" aria-label="Vista previa del video"></video>
+        <video id="ttPreview" controls muted playsinline preload="metadata" aria-label="Vista previa del video" data-en-aria-label="Video preview"></video>
         <div class="field">
-          <label for="ttTitle">Descripción <output id="ttCount"></output></label>
+          <label for="ttTitle"><span data-en="Caption">Descripción</span> <output id="ttCount"></output></label>
           <textarea id="ttTitle" maxlength="2200"></textarea>
           <p class="tt-warn" id="ttDur" hidden></p>
         </div>
       </div>
       <div id="ttDirect">
       <div class="field" style="margin-top:14px">
-        <label for="ttPrivacy">¿Quién puede ver este video?</label>
+        <label for="ttPrivacy" data-en="Who can view this video?">¿Quién puede ver este video?</label>
         <select id="ttPrivacy" required></select>
       </div>
       <fieldset style="margin-top:14px">
-        <legend>Permitir que otros usuarios</legend>
+        <legend data-en="Allow other users to">Permitir que otros usuarios</legend>
         <div class="tt-inter">
-          <label class="check"><input type="checkbox" id="ttComment"> Comenten</label>
-          <label class="check"><input type="checkbox" id="ttDuet"> Hagan dúo</label>
-          <label class="check"><input type="checkbox" id="ttStitch"> Hagan stitch</label>
+          <label class="check"><input type="checkbox" id="ttComment"> <span data-en="Comment">Comenten</span></label>
+          <label class="check"><input type="checkbox" id="ttDuet"> <span data-en="Duet">Hagan dúo</span></label>
+          <label class="check"><input type="checkbox" id="ttStitch"> <span data-en="Stitch">Hagan stitch</span></label>
         </div>
       </fieldset>
       <fieldset style="margin-top:14px">
-        <label class="check"><input type="checkbox" id="ttDisclose"> Divulgar contenido comercial</label>
+        <label class="check"><input type="checkbox" id="ttDisclose"> <span data-en="Disclose commercial content">Divulgar contenido comercial</span></label>
         <div class="tt-sub" id="ttCommercial" hidden>
-          <p class="tt-note">Indica si este video promociona productos, servicios o marcas a cambio de algo de valor.</p>
-          <label class="check"><input type="checkbox" id="ttYours"> Tu marca</label>
-          <p class="hint">Promocionas tu propio negocio o marca.</p>
-          <label class="check"><input type="checkbox" id="ttBrand"> Contenido de marca</label>
-          <p class="hint">Promocionas a otra marca o a un tercero (colaboración pagada).</p>
-          <p class="tt-note" id="ttBrandNote" hidden>La visibilidad del contenido de marca no puede ser privada.</p>
+          <p class="tt-note" data-en="Indicate whether this video promotes goods, services or brands in exchange for something of value.">Indica si este video promociona productos, servicios o marcas a cambio de algo de valor.</p>
+          <label class="check"><input type="checkbox" id="ttYours"> <span data-en="Your brand">Tu marca</span></label>
+          <p class="hint" data-en="You are promoting yourself or your own business.">Promocionas tu propio negocio o marca.</p>
+          <label class="check"><input type="checkbox" id="ttBrand"> <span data-en="Branded content">Contenido de marca</span></label>
+          <p class="hint" data-en="You are promoting another brand or a third party (paid partnership).">Promocionas a otra marca o a un tercero (colaboración pagada).</p>
+          <p class="tt-note" id="ttBrandNote" hidden data-en="Branded content visibility cannot be set to private.">La visibilidad del contenido de marca no puede ser privada.</p>
           <p class="tt-note" id="ttLabel" hidden></p>
         </div>
       </fieldset>
       </div>
-      <p class="tt-note" style="margin-top:14px">Después de publicar, TikTok puede tardar unos minutos en procesar el video antes de que aparezca en tu perfil.</p>
+      <p class="tt-note" style="margin-top:14px" data-en="After posting, TikTok may take a few minutes to process the video before it shows up on your profile.">Después de publicar, TikTok puede tardar unos minutos en procesar el video antes de que aparezca en tu perfil.</p>
     </div>
     <p class="tt-status" id="ttStatus" hidden></p>
     <p class="tt-note" id="ttConsent"></p>
     <div class="tt-actions">
       <span class="hint" id="ttWhy"></span>
       <span id="ttGoWrap"><button type="submit" class="btn primary" id="ttGo" disabled>Publicar</button></span>
-      <button type="button" class="btn" id="ttDone" hidden>Listo</button>
+      <button type="button" class="btn" id="ttDone" hidden data-en="Done">Listo</button>
     </div>
   </form>
 </dialog>
@@ -453,9 +459,11 @@ a.btn{text-decoration:none}
 import {
   TAU, clamp, DEFAULT_SETTINGS, canvasSize, analyze, joinContours, buildScene, parseStages,
   refreshStages as refreshStagesOf, relayout as relayoutOf, render as renderFrame, timeline as timelineOf, stateAt,
-  PRESETS, presetSrc, shapeFor as shapeForSrc, inventFn, funName, mutateStr, num, kt, CAPTIONS
+  PRESETS, GROUP_EN, presetSrc, shapeFor as shapeForSrc, inventFn, funName, mutateStr, num, kt, CAPTIONS, CAPTIONS_EN,
+  setLang as setEngineLang
 } from './src/engine.js';
 import { initTikTok } from './src/tiktok-ui.js';
+import { lang, tr, onLang, initLangSwitch } from './src/i18n.js';
 const $ = (s) => document.querySelector(s);
 
 const store = {
@@ -505,7 +513,7 @@ function play(opts = {}) {
   anim = { el: 0, last: performance.now(), T, raf: 0 };
   render(stateAt(T, 0));
   const wantRec = opts.record ?? settings.record;
-  if (wantRec && canRecord) startRec(T); else if (wantRec && !canRecord) toast('Este navegador no puede grabar el lienzo. Prueba con Chrome o Edge.');
+  if (wantRec && canRecord) startRec(T); else if (wantRec && !canRecord) toast(tr('Este navegador no puede grabar el lienzo. Prueba con Chrome o Edge.', 'This browser cannot record the canvas. Try Chrome or Edge.'));
   setPlaying(true);
   anim.raf = requestAnimationFrame(loop);
 }
@@ -526,7 +534,7 @@ function finish() {
 }
 function stop(silent) {
   if (anim) { cancelAnimationFrame(anim.raf); anim = null; }
-  if (rec) { stopRec(rec, false); if (!silent) toast('Grabación cancelada'); }
+  if (rec) { stopRec(rec, false); if (!silent) toast(tr('Grabación cancelada', 'Recording canceled')); }
   setPlaying(false); $('#bar').style.width = '0%';
   if (!silent) { poster(); status(); }
 }
@@ -536,7 +544,7 @@ function startRec(T) {
   const stream = cv.captureStream(60);
   let mr;
   try { mr = new MediaRecorder(stream, mime ? { mimeType: mime, videoBitsPerSecond: view.W * view.H > 1e6 ? 14e6 : 8e6 } : undefined); }
-  catch (e) { toast('No se pudo iniciar la grabación: ' + e.message); return; }
+  catch (e) { toast(tr('No se pudo iniciar la grabación: ', 'Could not start recording: ') + e.message); return; }
   const r = { mr, chunks: [], keep: false, name: S.name, dur: T.total, mime: mr.mimeType || mime, format: settings.format, w: view.W, h: view.H };
   mr.ondataavailable = (e) => { if (e.data && e.data.size) r.chunks.push(e.data); };
   mr.onstop = () => {
@@ -569,11 +577,11 @@ function addVideo(blob, r) {
   const ext = /mp4/.test(blob.type) ? 'mp4' : 'webm';
   const v = { blob, url: URL.createObjectURL(blob), ext, name: `circularte-${slug(r.name)}-${stamp()}.${ext}`, title: r.name, dur: r.dur, thumb: r.thumb, format: r.format, w: r.w, h: r.h };
   videos.unshift(v); renderVideos();
-  toast(`Video listo: ${r.name}. Guárdalo desde «Mis videos».`);
+  toast(tr(`Video listo: ${r.name}. Guárdalo desde «Mis videos».`, `Video ready: ${r.name}. Save it from “My videos”.`));
 }
 function renderVideos() {
   const box = $('#videos'); box.textContent = '';
-  if (!videos.length) { const e = document.createElement('div'); e.className = 'empty'; e.textContent = 'Tus grabaciones aparecen aquí. Deja marcado «Grabar video» y pulsa Reproducir.'; box.append(e); return; }
+  if (!videos.length) { const e = document.createElement('div'); e.className = 'empty'; e.textContent = tr('Tus grabaciones aparecen aquí. Deja marcado «Grabar video» y pulsa Reproducir.', 'Your recordings show up here. Keep “Record video” checked and press Play.'); box.append(e); return; }
   for (const v of videos) {
     const row = document.createElement('div'); row.className = 'vid';
     const media = document.createElement('video');
@@ -586,18 +594,18 @@ function renderVideos() {
     const nm = document.createElement('div'); nm.className = 'name'; nm.textContent = v.title;
     const sub = document.createElement('div'); sub.className = 'sub'; sub.textContent = `${fmtTime(v.dur)} · ${v.format} · ${v.w}×${v.h} · ${fmtSize(v.blob.size)} · ${v.ext.toUpperCase()}`;
     const acts = document.createElement('div'); acts.className = 'row';
-    const save = document.createElement('button'); save.type = 'button'; save.className = 'btn small primary'; save.textContent = 'Guardar video';
+    const save = document.createElement('button'); save.type = 'button'; save.className = 'btn small primary'; save.textContent = tr('Guardar video', 'Save video');
     save.addEventListener('click', () => saveVideo(v));
-    const del = document.createElement('button'); del.type = 'button'; del.className = 'btn small ghost'; del.textContent = 'Borrar';
+    const del = document.createElement('button'); del.type = 'button'; del.className = 'btn small ghost'; del.textContent = tr('Borrar', 'Delete');
     del.addEventListener('click', () => {
       if (del.dataset.armed) { URL.revokeObjectURL(v.url); videos.splice(videos.indexOf(v), 1); renderVideos(); return; }
-      del.dataset.armed = '1'; del.textContent = '¿Borrar? Toca otra vez'; setTimeout(() => { if (del.isConnected) { delete del.dataset.armed; del.textContent = 'Borrar'; } }, 3000);
+      del.dataset.armed = '1'; del.textContent = tr('¿Borrar? Toca otra vez', 'Delete? Tap again'); setTimeout(() => { if (del.isConnected) { delete del.dataset.armed; del.textContent = tr('Borrar', 'Delete'); } }, 3000);
     });
     acts.append(save, del);
     // «Publicar en TikTok» solo aparece si el sitio tiene configurada la publicación (funciones de Vercel)
     if (tiktok) {
-      const tt = document.createElement('button'); tt.type = 'button'; tt.className = 'btn small'; tt.textContent = 'Publicar en TikTok';
-      tt.addEventListener('click', () => tiktok.open(v, `${v.title}, dibujado solo con círculos que giran ✨ Haz el tuyo en circularte.edav-tech.com\n\n#matematicas #fourier #epiciclos #circularte`));
+      const tt = document.createElement('button'); tt.type = 'button'; tt.className = 'btn small'; tt.textContent = tr('Publicar en TikTok', 'Post to TikTok');
+      tt.addEventListener('click', () => tiktok.open(v, tr(`${v.title}, dibujado solo con círculos que giran ✨ Haz el tuyo en circularte.edav-tech.com\n\n#matematicas #fourier #epiciclos #circularte`, `${v.title}, drawn only with spinning circles ✨ Make yours at circularte.edav-tech.com\n\n#math #fourier #epicycles #circularte`)));
       acts.insertBefore(tt, del);
     }
     meta.append(nm, sub, acts); row.append(media, meta); box.append(row);
@@ -607,21 +615,22 @@ let tiktok = null;
 async function saveVideo(v) {
   const dl = await getDownloads();
   if (dl) {
-    try { await dl.save({ filename: v.name, data: v.blob }); toast('Video guardado'); }
+    try { await dl.save({ filename: v.name, data: v.blob }); toast(tr('Video guardado', 'Video saved')); }
     catch (e) {
       const code = e && e.code;
-      if (code === 'declined') toast('No se guardó el video');
-      else if (code === 'rate_limited') toast('Hay otra descarga pendiente. Intenta en un momento.');
-      else toast('No se pudo guardar: ' + ((e && e.message) || code || 'error desconocido'));
+      if (code === 'declined') toast(tr('No se guardó el video', 'The video was not saved'));
+      else if (code === 'rate_limited') toast(tr('Hay otra descarga pendiente. Intenta en un momento.', 'Another download is pending. Try again in a moment.'));
+      else toast(tr('No se pudo guardar: ', 'Could not save: ') + ((e && e.message) || code || tr('error desconocido', 'unknown error')));
     }
     return;
   }
   const a = document.createElement('a'); a.href = v.url; a.download = v.name; document.body.append(a); a.click(); a.remove();
-  toast('Descarga iniciada: ' + v.name);
+  toast(tr('Descarga iniciada: ', 'Download started: ') + v.name);
 }
 
 /* ---------------- Fuentes de figura ---------------- */
-let current = null, buildToken = 0;
+let current = null, currentPreset = null, buildToken = 0;
+const imgInfo = () => { $('#imgInfo').textContent = tr(`${S.parts} ${S.parts === 1 ? 'curva unida' : 'curvas unidas'}`, `${S.parts} ${S.parts === 1 ? 'curve joined' : 'curves joined'}`); };
 // En teléfono, al elegir una figura sube al escenario para ver el resultado y el botón Reproducir
 function revealStage() {
   if (!matchMedia('(max-width: 900px)').matches) return;
@@ -636,9 +645,9 @@ async function setSource(src, opts = {}) {
     if (token !== buildToken) return false;
     stop(true);
     S = buildScene(shape, meta); refreshStages();
-    current = src;
+    current = src; currentPreset = opts.preset || null;
     poster(); status();
-    if (src.kind === 'image') $('#imgInfo').textContent = `${S.parts} ${S.parts === 1 ? 'curva' : 'curvas'} unidas`;
+    if (src.kind === 'image') imgInfo();
     if (opts.reveal) revealStage();
     return true;
   } catch (e) {
@@ -658,17 +667,18 @@ function status(st) {
   const el = $('#status'); if (!S) { el.textContent = ''; return; }
   if (anim && st) {
     const N = S.stages[st.stage];
-    const phase = st.reveal > 0 ? 'revelando la imagen' : `N = ${N} · etapa ${st.stage + 1} de ${S.stages.length}`;
-    if (rec) { el.textContent = ''; const d = document.createElement('span'); d.className = 'dot'; el.append(d, `Grabando ${fmtTime(anim.el)} de ${fmtTime(anim.T.total)} · ${phase}`); }
-    else el.textContent = `${fmtTime(anim.el)} de ${fmtTime(anim.T.total)} · ${phase}`;
+    const phase = st.reveal > 0 ? tr('revelando la imagen', 'revealing the image') : tr(`N = ${N} · etapa ${st.stage + 1} de ${S.stages.length}`, `N = ${N} · stage ${st.stage + 1} of ${S.stages.length}`);
+    if (rec) { el.textContent = ''; const d = document.createElement('span'); d.className = 'dot'; el.append(d, tr(`Grabando ${fmtTime(anim.el)} de ${fmtTime(anim.T.total)} · ${phase}`, `Recording ${fmtTime(anim.el)} of ${fmtTime(anim.T.total)} · ${phase}`)); }
+    else el.textContent = tr(`${fmtTime(anim.el)} de ${fmtTime(anim.T.total)} · ${phase}`, `${fmtTime(anim.el)} of ${fmtTime(anim.T.total)} · ${phase}`);
     return;
   }
   const T = timeline();
-  el.textContent = `${S.name} · ${S.parts} ${S.parts === 1 ? 'curva' : 'curvas'} · N hasta ${S.stages[S.stages.length - 1]} · video de ${fmtTime(T.total)}`;
+  const nMax = S.stages[S.stages.length - 1], curves = S.parts === 1 ? tr('curva', 'curve') : tr('curvas', 'curves');
+  el.textContent = tr(`${S.name} · ${S.parts} ${curves} · N hasta ${nMax} · video de ${fmtTime(T.total)}`, `${S.name} · ${S.parts} ${curves} · N up to ${nMax} · ${fmtTime(T.total)} video`);
 }
 function setPlaying(on) {
   $('#stop').disabled = !on;
-  $('#play').querySelector('span').textContent = on ? 'Reiniciar' : 'Reproducir';
+  $('#play').querySelector('span').textContent = on ? tr('Reiniciar', 'Restart') : tr('Reproducir', 'Play');
 }
 
 function segment(id, value, onChange) {
@@ -699,19 +709,23 @@ tabs.forEach((t) => t.addEventListener('click', () => showTab(t.dataset.tab)));
 // Funciones (figuras clásicas)
 const presetBox = $('#presets'); const presetBtns = [];
 function markPreset(btn) { presetBtns.forEach((b) => b.setAttribute('aria-pressed', String(b === btn))); }
-const groupBoxes = {};
+const groupBoxes = {}, groupTitles = {};
 PRESETS.forEach((p) => {
   if (!groupBoxes[p.group]) {
-    const h = document.createElement('h3'); h.className = 'group-title'; h.textContent = p.group;
+    const h = document.createElement('h3'); h.className = 'group-title'; groupTitles[p.group] = h;
     const grid = document.createElement('div'); grid.className = 'presets';
     presetBox.append(h, grid); groupBoxes[p.group] = grid;
   }
   const b = document.createElement('button'); b.type = 'button'; b.className = 'preset'; b.setAttribute('aria-pressed', 'false');
   const c = document.createElement('canvas'); c.width = 128; c.height = 128;
-  const sp = document.createElement('span'); sp.textContent = p.name;
+  const sp = document.createElement('span'); p.label = sp;
   b.append(c, sp); groupBoxes[p.group].append(b); presetBtns.push(b); p.thumb = c;
-  b.addEventListener('click', () => { markPreset(b); setSource(presetSrc(p), { reveal: true }); });
+  b.addEventListener('click', () => { markPreset(b); setSource(presetSrc(p, lang), { reveal: true, preset: p }); });
 });
+function labelPresets() {
+  for (const [g, h] of Object.entries(groupTitles)) h.textContent = tr(g, GROUP_EN[g] || g);
+  for (const p of PRESETS) p.label.textContent = tr(p.name, p.en || p.name);
+}
 async function drawThumbs() {
   for (const p of PRESETS) {
     try {
@@ -731,11 +745,14 @@ async function drawThumbs() {
 // Texto
 let txtFont = 'cursiva';
 segment('txtFont', txtFont, (v) => { txtFont = v; });
-['LOVE', 'amor', 'te amo', 'Mamá', '♥', '★', '♪', '∞', '🦋'].forEach((t) => {
-  const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = t;
-  b.addEventListener('click', () => { $('#txt').value = t; drawText(); }); $('#txtChips').append(b);
-});
-function drawText() { const t = $('#txt').value.trim(); if (!t) { toast('Escribe algo primero'); return; } markPreset(null); setSource({ kind: 'text', name: t, text: t, font: txtFont }, { reveal: true }); }
+function renderTxtChips() {
+  $('#txtChips').textContent = '';
+  tr(['LOVE', 'amor', 'te amo', 'Mamá', '♥', '★', '♪', '∞', '🦋'], ['LOVE', 'love', 'I love you', 'Mom', '♥', '★', '♪', '∞', '🦋']).forEach((t) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = t;
+    b.addEventListener('click', () => { $('#txt').value = t; drawText(); }); $('#txtChips').append(b);
+  });
+}
+function drawText() { const t = $('#txt').value.trim(); if (!t) { toast(tr('Escribe algo primero', 'Type something first')); return; } markPreset(null); setSource({ kind: 'text', name: t, text: t, font: txtFont }, { reveal: true }); }
 $('#txtGo').addEventListener('click', drawText);
 $('#txt').addEventListener('keydown', (e) => { if (e.key === 'Enter') drawText(); });
 
@@ -756,13 +773,13 @@ function applyImage(delay = 0, reveal = false) {
   imgTimer = setTimeout(() => { markPreset(null); setSource({ kind: 'image', img: currentImg, name: currentImgName, opts: { ...imgOpts } }, { reveal }); }, delay);
 }
 function loadImageFile(file) {
-  if (!file || !/^image\//.test(file.type)) { toast('Ese archivo no es una imagen'); return; }
+  if (!file || !/^image\//.test(file.type)) { toast(tr('Ese archivo no es una imagen', 'That file is not an image')); return; }
   const url = URL.createObjectURL(file), im = new Image();
   im.onload = () => {
-    currentImg = im; currentImgName = (file.name || 'Imagen').replace(/\.[a-z0-9]+$/i, '') || 'Imagen';
+    currentImg = im; currentImgName = (file.name || tr('Imagen', 'Image')).replace(/\.[a-z0-9]+$/i, '') || tr('Imagen', 'Image');
     imgOpts.invert = false; imgOpts.mode = 'silueta'; setImgMode('silueta'); autoThreshold(); showTab('imagen'); applyImage(0, true);
   };
-  im.onerror = () => toast('No pude abrir esa imagen');
+  im.onerror = () => toast(tr('No pude abrir esa imagen', 'Could not open that image'));
   im.src = url;
 }
 $('#file').addEventListener('change', (e) => { loadImageFile(e.target.files[0]); e.target.value = ''; });
@@ -778,7 +795,7 @@ function sampleLogo() {
   g.fill(p, 'evenodd'); g.beginPath(); g.arc(428, 172, 30, 0, TAU); g.fill();
   return c;
 }
-function useSampleLogo() { currentImg = sampleLogo(); currentImg.isSample = true; currentImgName = 'Logo de ejemplo'; imgOpts.mode = 'silueta'; imgOpts.invert = false; setImgMode('silueta'); autoThreshold(); }
+function useSampleLogo() { currentImg = sampleLogo(); currentImg.isSample = true; currentImgName = tr('Logo de ejemplo', 'Sample logo'); imgOpts.mode = 'silueta'; imgOpts.invert = false; setImgMode('silueta'); autoThreshold(); }
 $('#sampleLogo').addEventListener('click', () => { useSampleLogo(); applyImage(); });
 
 // Arrastrar y pegar
@@ -805,11 +822,11 @@ function loadDef(def, name) {
 function readDef() { return { mode: exprMode, x: $('#ex').value, y: $('#ey').value, r: $('#er').value, periods: +$('#eper').value || 1, fill: fnFill }; }
 async function drawDef() {
   const d = readDef(); $('#exprErr').textContent = ''; markPreset(null);
-  await setSource({ kind: 'expr', name: fnName || 'Mi función', def: d, fill: d.fill }, { errEl: $('#exprErr') });
+  await setSource({ kind: 'expr', name: fnName || tr('Mi función', 'My function'), def: d, fill: d.fill }, { errEl: $('#exprErr') });
 }
 $('#genBtn').addEventListener('click', async () => {
   for (let i = 0; i < 6; i++) {
-    const d = inventFn($('#genType').value), name = funName(); loadDef(d, name);
+    const d = inventFn($('#genType').value), name = funName(undefined, lang); loadDef(d, name);
     if (await setSource({ kind: 'expr', name, def: d, fill: d.fill }, { errEl: $('#exprErr'), reveal: true })) { $('#exprErr').textContent = ''; markPreset(null); return; }
   }
 });
@@ -825,23 +842,24 @@ $('#mutate').addEventListener('click', () => {
     $('#ex').value = x === d.x && y === d.y ? `${x}${extra('cos')}` : x;
     $('#ey').value = x === d.x && y === d.y ? `${y}${extra('sin')}` : y;
   }
-  if (fnName && !fnName.endsWith('· mutada')) fnName = fnName + ' · mutada';
+  const mutated = tr('· mutada', '· mutated');
+  if (fnName && !fnName.endsWith(mutated)) fnName = fnName + ' ' + mutated;
   $('#fnName').textContent = fnName; drawDef();
 });
 let favs = store.get('favs', []);
 function renderFavs() {
   const box = $('#favs'); box.textContent = '';
-  if (!favs.length) { const h = document.createElement('span'); h.className = 'hint'; h.textContent = 'Todavía no guardas ninguna.'; box.append(h); return; }
+  if (!favs.length) { const h = document.createElement('span'); h.className = 'hint'; h.textContent = tr('Todavía no guardas ninguna.', 'None saved yet.'); box.append(h); return; }
   favs.forEach((f, i) => {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = f.name;
-    const x = document.createElement('span'); x.className = 'x'; x.textContent = '×'; x.title = 'Quitar'; x.setAttribute('aria-label', 'Quitar ' + f.name);
+    const x = document.createElement('span'); x.className = 'x'; x.textContent = '×'; x.title = tr('Quitar', 'Remove'); x.setAttribute('aria-label', tr('Quitar ', 'Remove ') + f.name);
     x.addEventListener('click', (e) => { e.stopPropagation(); favs.splice(i, 1); store.set('favs', favs); renderFavs(); });
     b.append(x); b.addEventListener('click', () => { loadDef(f.def, f.name); drawDef(); }); box.append(b);
   });
 }
 $('#favAdd').addEventListener('click', () => {
-  const d = readDef(), name = fnName || 'Mi función';
-  favs = favs.filter((f) => f.name !== name); favs.unshift({ name, def: d }); favs = favs.slice(0, 30); store.set('favs', favs); renderFavs(); toast('Guardada en favoritas');
+  const d = readDef(), name = fnName || tr('Mi función', 'My function');
+  favs = favs.filter((f) => f.name !== name); favs.unshift({ name, def: d }); favs = favs.slice(0, 30); store.set('favs', favs); renderFavs(); toast(tr('Guardada en favoritas', 'Saved to favorites'));
 });
 
 // Animación
@@ -856,15 +874,18 @@ $('#reveal').checked = settings.reveal; $('#reveal').addEventListener('change', 
 $('#formulas').checked = settings.formulas; $('#formulas').addEventListener('change', (e) => { settings.formulas = e.target.checked; saveSettings(); });
 $('#signature').checked = settings.signature; $('#signature').addEventListener('change', (e) => { settings.signature = e.target.checked; saveSettings(); if (!anim) poster(); });
 segment('labels', settings.labels, (v) => { settings.labels = v; saveSettings(); if (!anim) poster(); });
-CAPTIONS.forEach((t) => {
-  const b = document.createElement('button'); b.type = 'button'; b.className = 'chip';
-  b.textContent = t.replace('{x}', '…');
-  b.addEventListener('click', () => {
-    const c = $('#caption'); c.value = t.replace('{x}', S ? S.name : 'esto');
-    c.dispatchEvent(new Event('input'));
+function renderCapChips() {
+  $('#capChips').textContent = '';
+  tr(CAPTIONS, CAPTIONS_EN).forEach((t) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'chip';
+    b.textContent = t.replace('{x}', '…');
+    b.addEventListener('click', () => {
+      const c = $('#caption'); c.value = t.replace('{x}', S ? S.name : tr('esto', 'this'));
+      c.dispatchEvent(new Event('input'));
+    });
+    $('#capChips').append(b);
   });
-  $('#capChips').append(b);
-});
+}
 $('#rec').checked = settings.record; $('#rec').addEventListener('change', (e) => { settings.record = e.target.checked; saveSettings(); });
 $('#caption').value = settings.caption; $('#caption').addEventListener('input', (e) => { settings.caption = e.target.value; saveSettings(); relayout(); if (!anim) poster(); });
 segment('format', settings.format, (v) => { settings.format = v; saveSettings(); stop(true); setCanvasSize(); poster(); status(); });
@@ -886,13 +907,27 @@ document.documentElement.style.setProperty('--accent', settings.accent);
 
 $('#play').addEventListener('click', () => play());
 $('#stop').addEventListener('click', () => stop(false));
-document.addEventListener('visibilitychange', () => { if (document.hidden && rec) toast('La pestaña quedó oculta: la grabación puede salir entrecortada.'); });
+document.addEventListener('visibilitychange', () => { if (document.hidden && rec) toast(tr('La pestaña quedó oculta: la grabación puede salir entrecortada.', 'The tab was hidden: the recording may stutter.')); });
 
 /* ---------------- Arranque ---------------- */
+// Cambio de idioma: los textos fijos los cambia i18n.js; aquí se rehace lo que arma el código
+function applyLang() {
+  setEngineLang(lang);
+  labelPresets(); renderTxtChips(); renderCapChips(); renderFavs(); renderVideos();
+  setPlaying(!!anim); if (S && current?.kind === 'image') imgInfo();
+  // La figura actual toma el nombre del idioma nuevo (sale en el estado, el texto superior y el video)
+  if (!anim && currentPreset) setSource(presetSrc(currentPreset, lang), { preset: currentPreset });
+  else if (!anim && current?.kind === 'image' && current.img.isSample) { useSampleLogo(); applyImage(); }
+  else status();
+}
+onLang(applyLang);
+
 async function boot() {
+  initLangSwitch(); setEngineLang(lang); labelPresets(); renderTxtChips(); renderCapChips();
+  if (lang === 'en') $('#txt').value = 'love';
   syncImgUI(); renderFavs(); renderVideos(); showTab(store.get('tab', 'funciones'));
   setCanvasSize();
-  loadDef({ mode: 'xy', x: 'cos(t) + 0.32 cos(4t + 0.6)', y: 'sin(t) - 0.28 sin(3t)', periods: 1, fill: 'line' }, 'Medusa Tímida #417');
+  loadDef({ mode: 'xy', x: 'cos(t) + 0.32 cos(4t + 0.6)', y: 'sin(t) - 0.28 sin(3t)', periods: 1, fill: 'line' }, tr('Medusa Tímida #417', 'Shy Jellyfish #417'));
   useSampleLogo();
   await setSource({ kind: 'image', img: currentImg, name: currentImgName, opts: { ...imgOpts } });
   const fontsReady = Promise.all([

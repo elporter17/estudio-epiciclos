@@ -3,14 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Términos · CirculArte</title>
-<meta name="description" content="Términos de servicio de CirculArte.">
+<title data-en="Terms · CirculArte">Términos · CirculArte</title>
+<meta name="description" content="Términos de servicio de CirculArte." data-en-content="CirculArte terms of service.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&family=STIX+Two+Text:ital@0;1&display=swap">
 <link rel="stylesheet" href="legal.css">
 </head>
 <body>
 <main>
-  <a class="brand" href="/">Circul<b>Arte</b></a>
+  <div class="top"><a class="brand" href="/">Circul<b>Arte</b></a><div class="lang" role="group" aria-label="Idioma" data-en-aria-label="Language"><button type="button" data-l="es">ES</button><button type="button" data-l="en">EN</button></div></div>
+
+  <div data-lang="es">
   <h1>Términos de servicio</h1>
   <p class="meta">Última actualización: 16 de octubre de 2026</p>
 
@@ -43,8 +45,45 @@
 
   <h2>Contacto</h2>
   <p>Erick Alvarado · <a href="mailto:elporter17@gmail.com">elporter17@gmail.com</a> · <a href="https://edav-tech.com/">edav-tech.com</a></p>
+  </div>
 
-  <footer><a href="/">Volver a CirculArte</a><a href="privacidad.html">Política de privacidad</a></footer>
+  <div data-lang="en" hidden>
+  <h1>Terms of Service</h1>
+  <p class="meta">Last updated: October 16, 2026</p>
+
+  <p>These terms govern the use of CirculArte (<a href="https://circularte.edav-tech.com/">circularte.edav-tech.com</a>), a web application created by Erick Alvarado. By using it you accept these terms.</p>
+
+  <h2>What CirculArte is</h2>
+  <p>A free tool that draws images, text and math functions with spinning circles (Fourier series) and records the result as a video. Optionally, it can post those videos to a TikTok account that authorizes it.</p>
+
+  <h2>Your content</h2>
+  <ul>
+    <li>The videos you create are yours. You can use and share them freely.</li>
+    <li>Only use images, logos and text that belong to you or that you have permission to use. You are responsible for the content you upload to the app and for what you post.</li>
+    <li>By default, videos include a “CirculArte · edav-tech.com” signature that you can turn off.</li>
+  </ul>
+
+  <h2>Posting to TikTok</h2>
+  <p>If you connect your TikTok account, CirculArte only uploads the videos you create, to your own account. What you post on TikTok is also subject to TikTok's <a href="https://www.tiktok.com/legal/terms-of-service" rel="noopener">Terms of Service</a> and Community Guidelines. You can disconnect the app at any time from your TikTok settings.</p>
+
+  <h2>Acceptable use</h2>
+  <p>Do not use CirculArte to create or spread content that is illegal, misleading, infringes the rights of others, or violates the rules of the platforms where you post it.</p>
+
+  <h2>No warranties</h2>
+  <p>CirculArte is provided “as is”, without warranties of any kind. It may change, fail or become unavailable at any time. To the extent permitted by law, the author is not liable for damages arising from its use.</p>
+
+  <h2>Privacy</h2>
+  <p>How data is handled is described in the <a href="privacidad.html">Privacy Policy</a>.</p>
+
+  <h2>Changes</h2>
+  <p>We may update these terms; the current version is always the one published on this page.</p>
+
+  <h2>Contact</h2>
+  <p>Erick Alvarado · <a href="mailto:elporter17@gmail.com">elporter17@gmail.com</a> · <a href="https://edav-tech.com/">edav-tech.com</a></p>
+  </div>
+
+  <footer><a href="/" data-en="Back to CirculArte">Volver a CirculArte</a><a href="privacidad.html" data-en="Privacy Policy">Política de privacidad</a></footer>
 </main>
+<script type="module">import { initLangSwitch } from '/src/i18n.js'; initLangSwitch();</script>
 </body>
 </html>

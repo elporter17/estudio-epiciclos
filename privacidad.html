@@ -3,14 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Privacidad · CirculArte</title>
-<meta name="description" content="Política de privacidad de CirculArte.">
+<title data-en="Privacy · CirculArte">Privacidad · CirculArte</title>
+<meta name="description" content="Política de privacidad de CirculArte." data-en-content="CirculArte privacy policy.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&family=STIX+Two+Text:ital@0;1&display=swap">
 <link rel="stylesheet" href="legal.css">
 </head>
 <body>
 <main>
-  <a class="brand" href="/">Circul<b>Arte</b></a>
+  <div class="top"><a class="brand" href="/">Circul<b>Arte</b></a><div class="lang" role="group" aria-label="Idioma" data-en-aria-label="Language"><button type="button" data-l="es">ES</button><button type="button" data-l="en">EN</button></div></div>
+
+  <div data-lang="es">
   <h1>Política de privacidad</h1>
   <p class="meta">Última actualización: 16 de octubre de 2026</p>
 
@@ -21,7 +23,7 @@
   <p>Cuando pulsas «Publicar» en TikTok, el video se sube a un almacenamiento temporal (Vercel Blob) para que TikTok lo descargue desde circularte.edav-tech.com. Esa copia se borra en cuanto TikTok la recibe, o a más tardar en 24 horas.</p>
 
   <h2>Preferencias guardadas en tu navegador</h2>
-  <p>La app recuerda en el almacenamiento local de tu navegador tus ajustes (formato, color, rótulos) y las funciones que marcas como favoritas. Puedes borrarlos limpiando los datos del sitio en tu navegador.</p>
+  <p>La app recuerda en el almacenamiento local de tu navegador tus ajustes (formato, color, rótulos, idioma) y las funciones que marcas como favoritas. Puedes borrarlos limpiando los datos del sitio en tu navegador.</p>
 
   <h2>Estadísticas de visitas</h2>
   <p>Usamos Vercel Web Analytics para contar visitas y páginas vistas de forma agregada. No usa cookies ni identifica a personas. Más información en la <a href="https://vercel.com/docs/analytics/privacy-policy" rel="noopener">política de privacidad de Vercel Analytics</a>.</p>
@@ -45,8 +47,47 @@
 
   <h2>Contacto</h2>
   <p>Erick Alvarado · <a href="mailto:elporter17@gmail.com">elporter17@gmail.com</a> · <a href="https://edav-tech.com/">edav-tech.com</a></p>
+  </div>
 
-  <footer><a href="/">Volver a CirculArte</a><a href="terminos.html">Términos de servicio</a></footer>
+  <div data-lang="en" hidden>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: October 16, 2026</p>
+
+  <p>CirculArte (<a href="https://circularte.edav-tech.com/">circularte.edav-tech.com</a>) is a web application created by Erick Alvarado that draws images, text and functions with spinning circles (Fourier series) and records the result as a video. This policy explains what data it uses and why.</p>
+
+  <h2>Images, text and videos</h2>
+  <p>All drawing and recording happen in your browser. The images you choose and the text you type are not sent to any CirculArte server. Videos only leave your device when you save, share or post them to TikTok.</p>
+  <p>When you press “Post” to TikTok, the video is uploaded to temporary storage (Vercel Blob) so TikTok can download it from circularte.edav-tech.com. That copy is deleted as soon as TikTok receives it, or within 24 hours at the latest.</p>
+
+  <h2>Preferences saved in your browser</h2>
+  <p>The app remembers your settings (format, color, labels, language) and the functions you mark as favorites in your browser's local storage. You can delete them by clearing the site data in your browser.</p>
+
+  <h2>Visit statistics</h2>
+  <p>We use Vercel Web Analytics to count visits and page views in aggregate. It does not use cookies or identify people. More information in the <a href="https://vercel.com/docs/analytics/privacy-policy" rel="noopener">Vercel Analytics privacy policy</a>.</p>
+
+  <h2>TikTok integration</h2>
+  <p>CirculArte can post the videos it creates to TikTok, only to the account that authorizes it through TikTok's official login (Login Kit). When you authorize it:</p>
+  <ul>
+    <li>We receive your basic profile information from TikTok (account identifier, display name and photo) to show which account is connected.</li>
+    <li>We receive an access token that is only used to upload videos created with CirculArte to that account, as a draft or a post, depending on what you choose.</li>
+    <li>We do not read your messages, followers or other videos, and we do not sell or share this data with third parties.</li>
+    <li>On the web, the token is stored encrypted in a cookie in your own browser (not in a CirculArte database) and is used only for this feature. When you press “Switch account” we revoke the token on TikTok and delete the cookie.</li>
+    <li>Nothing is posted without your action: you choose the caption, who can view it and the allowed interactions before each post.</li>
+  </ul>
+  <p>You can revoke access at any time from TikTok: <em>Settings and privacy → Security → Apps and services</em>. You can also ask us to delete any related data by writing to the contact email.</p>
+
+  <h2>Children</h2>
+  <p>CirculArte is not directed at children under 13 and does not knowingly collect data from them.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, we will publish the new version on this same page with its update date.</p>
+
+  <h2>Contact</h2>
+  <p>Erick Alvarado · <a href="mailto:elporter17@gmail.com">elporter17@gmail.com</a> · <a href="https://edav-tech.com/">edav-tech.com</a></p>
+  </div>
+
+  <footer><a href="/" data-en="Back to CirculArte">Volver a CirculArte</a><a href="terminos.html" data-en="Terms of Service">Términos de servicio</a></footer>
 </main>
+<script type="module">import { initLangSwitch } from '/src/i18n.js'; initLangSwitch();</script>
 </body>
 </html>

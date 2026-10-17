@@ -4,6 +4,10 @@
    Node se reemplaza con setEnv(). */
 export const TAU = Math.PI * 2, M = 2048, P = 1024, KMAX = 500;
 export const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+// Idioma de los mensajes de error que ve el usuario (la web lo cambia con el selector; Node usa español)
+let LANG = 'es';
+export const setLang = (l) => { LANG = l === 'en' ? 'en' : 'es'; };
+const msg = (es, en) => (LANG === 'en' ? en : es);
 export const lerp = (a, b, t) => a + (b - a) * t;
 export const ease = (t) => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 export const smooth = (a, b, v) => { const t = clamp((v - a) / (b - a)); return t * t * (3 - 2 * t); };
@@ -53,7 +57,7 @@ function tokenize(s) {
     if (/\s/.test(c)) { i++; continue; }
     if (/[0-9.]/.test(c)) {
       const m = /^(\d+\.?\d*|\.\d+)(e[+-]?\d+)?/i.exec(s.slice(i));
-      if (!m) throw new Error(`Número mal escrito cerca de «${s.slice(i, i + 6)}»`);
+      if (!m) throw new Error(msg(`Número mal escrito cerca de «${s.slice(i, i + 6)}»`, `Malformed number near “${s.slice(i, i + 6)}”`));
       out.push({ t: 'num', v: parseFloat(m[0]) }); i += m[0].length; continue;
     }
     if (/[a-zA-Zπτθ_]/.test(c)) {
@@ -64,16 +68,16 @@ function tokenize(s) {
     if (c === '·' || c === '×') { out.push({ t: '*' }); i++; continue; }
     if (c === '−') { out.push({ t: '-' }); i++; continue; }
     if (c === '²' || c === '³') { out.push({ t: '^' }, { t: 'num', v: c === '²' ? 2 : 3 }); i++; continue; }
-    throw new Error(`No entiendo el símbolo «${c}»`);
+    throw new Error(msg(`No entiendo el símbolo «${c}»`, `I don't understand the symbol “${c}”`));
   }
   return out;
 }
 
 export function compileExpr(src) {
-  if (!String(src).trim()) throw new Error('Falta escribir la función.');
+  if (!String(src).trim()) throw new Error(msg('Falta escribir la función.', 'Write a function first.'));
   const T = tokenize(String(src)); let p = 0;
   const eat = (t) => (T[p] && T[p].t === t) ? (p++, true) : false;
-  const need = (t) => { if (!eat(t)) throw new Error(t === ')' ? 'Falta cerrar un paréntesis.' : `Esperaba «${t}».`); };
+  const need = (t) => { if (!eat(t)) throw new Error(t === ')' ? msg('Falta cerrar un paréntesis.', 'A parenthesis is not closed.') : msg(`Esperaba «${t}».`, `Expected “${t}”.`)); };
   function expr() {
     let a = term();
     for (;;) {
@@ -104,27 +108,27 @@ export function compileExpr(src) {
   }
   function atom() {
     const k = T[p++];
-    if (!k) throw new Error('La expresión termina antes de tiempo.');
+    if (!k) throw new Error(msg('La expresión termina antes de tiempo.', 'The expression ends too early.'));
     if (k.t === 'num') { const v = k.v; return () => v; }
     if (k.t === '(') { const a = expr(); need(')'); return a; }
     if (k.t === 'id') {
       const n = k.v;
       if (FUNCS[n]) {
-        if (!eat('(')) throw new Error(`Escribe ${n}(...) con paréntesis.`);
+        if (!eat('(')) throw new Error(msg(`Escribe ${n}(...) con paréntesis.`, `Write ${n}(...) with parentheses.`));
         const args = [expr()]; while (eat(',')) args.push(expr()); need(')');
         const f = FUNCS[n];
         if (args.length === 1) { const a = args[0]; return (t) => f(a(t)); }
         if (args.length === 2) { const a = args[0], b = args[1]; return (t) => f(a(t), b(t)); }
-        throw new Error(`${n} recibe demasiados valores.`);
+        throw new Error(msg(`${n} recibe demasiados valores.`, `${n} takes too many values.`));
       }
       if (n === 't' || n === 'θ' || n === 'x') return (t) => t;
       if (CONSTS[n] !== undefined) { const v = CONSTS[n]; return () => v; }
-      throw new Error(`No conozco «${n}». Usa t, pi, e y funciones como sin, cos, abs, sqrt, exp.`);
+      throw new Error(msg(`No conozco «${n}». Usa t, pi, e y funciones como sin, cos, abs, sqrt, exp.`, `I don't know “${n}”. Use t, pi, e and functions like sin, cos, abs, sqrt, exp.`));
     }
-    throw new Error(`Sobra «${k.t}».`);
+    throw new Error(msg(`Sobra «${k.t}».`, `Unexpected “${k.t}”.`));
   }
   const f = expr();
-  if (p < T.length) throw new Error(`Sobra «${T[p].v ?? T[p].t}» al final.`);
+  if (p < T.length) throw new Error(msg(`Sobra «${T[p].v ?? T[p].t}» al final.`, `Unexpected “${T[p].v ?? T[p].t}” at the end.`));
   return f;
 }
 
@@ -269,7 +273,7 @@ export function bitmapShape(img, o) {
   for (let i = 0; i < mask.length; i++) mask[i] = ((A.val[i] > o.thr) ? 1 : 0) ^ (o.invert ? 1 : 0);
   let loops = marching(mask, A.W, A.H).map((p) => { const s = orient(smoothLoop(p, 3)); return { pts: s, len: loopLen(s), closed: true }; });
   loops.sort((a, b) => b.len - a.len);
-  if (!loops.length) throw new Error('No encontré contornos. Mueve el umbral o activa «Invertir».');
+  if (!loops.length) throw new Error(msg('No encontré contornos. Mueve el umbral o activa «Invertir».', 'No contours found. Move the threshold or turn on “Invert”.'));
   const minLen = Math.max(10, loops[0].len * 0.3 * Math.pow(0.02, o.detail / 100));
   loops = loops.filter((l) => l.len >= minLen).slice(0, 90);
   let image = img;
@@ -300,10 +304,10 @@ export function exprShape(def) {
     if (fr) { const r = fr(t); x = r * Math.cos(t); y = r * Math.sin(t); } else { x = fx(t); y = fy(t); }
     if (Number.isFinite(x) && Number.isFinite(y) && Math.abs(x) < 1e7 && Math.abs(y) < 1e7) pts.push(x, -y);
   }
-  if (pts.length < 40) throw new Error('La función casi no da valores válidos. Revisa divisiones entre cero o raíces de negativos.');
+  if (pts.length < 40) throw new Error(msg('La función casi no da valores válidos. Revisa divisiones entre cero o raíces de negativos.', 'The function gives almost no valid values. Check for division by zero or roots of negatives.'));
   let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
   for (let i = 0; i < pts.length; i += 2) { x0 = Math.min(x0, pts[i]); x1 = Math.max(x1, pts[i]); y0 = Math.min(y0, pts[i + 1]); y1 = Math.max(y1, pts[i + 1]); }
-  if (Math.max(x1 - x0, y1 - y0) < 1e-9) throw new Error('La curva se queda en un solo punto.');
+  if (Math.max(x1 - x0, y1 - y0) < 1e-9) throw new Error(msg('La curva se queda en un solo punto.', 'The curve stays at a single point.'));
   return { contours: [{ pts: Float64Array.from(pts), len: 1, closed: false }], image: null };
 }
 
@@ -374,7 +378,7 @@ export function joinContours(cs) {
 export function resample(J) {
   const n = J.x.length, segL = new Float64Array(n); let L = 0;
   for (let i = 0; i < n; i++) { const j = (i + 1) % n; segL[i] = Math.hypot(J.x[j] - J.x[i], J.y[j] - J.y[i]); L += segL[i]; }
-  if (!(L > 0)) throw new Error('La figura no tiene largo.');
+  if (!(L > 0)) throw new Error(msg('La figura no tiene largo.', 'The shape has no length.'));
   const x = new Float64Array(M), y = new Float64Array(M), conn = new Uint8Array(M);
   let i = 0, acc = 0;
   for (let m = 0; m < M; m++) {
@@ -865,7 +869,13 @@ function sumStr(terms) {
 }
 const NOUNS = ['Flor', 'Órbita', 'Galaxia', 'Medusa', 'Estrella', 'Nebulosa', 'Mariposa', 'Corona', 'Concha', 'Llama', 'Ola', 'Rosa', 'Brújula', 'Telaraña', 'Pluma', 'Danza'];
 const ADJS = ['Cuántica', 'Dorada', 'Salvaje', 'Tímida', 'Eléctrica', 'Lunar', 'Hipnótica', 'Rebelde', 'Infinita', 'Secreta', 'Nocturna', 'Caótica', 'Tropical', 'Fractal', 'Mareada', 'Sonámbula'];
-export const funName = (rng) => withRng(rng, () => `${pick(NOUNS)} ${pick(ADJS)} #${rint(100, 999)}`);
+const NOUNS_EN = ['Flower', 'Orbit', 'Galaxy', 'Jellyfish', 'Star', 'Nebula', 'Butterfly', 'Crown', 'Shell', 'Flame', 'Wave', 'Rose', 'Compass', 'Web', 'Feather', 'Dance'];
+const ADJS_EN = ['Quantum', 'Golden', 'Wild', 'Shy', 'Electric', 'Lunar', 'Hypnotic', 'Rebel', 'Infinite', 'Secret', 'Nocturnal', 'Chaotic', 'Tropical', 'Fractal', 'Dizzy', 'Sleepwalking'];
+// Mismos sorteos en los dos idiomas: con la misma semilla sale el mismo nombre traducido
+export const funName = (rng, lang = 'es') => withRng(rng, () => {
+  const i = rint(0, NOUNS.length - 1), j = rint(0, ADJS.length - 1), n = rint(100, 999);
+  return lang === 'en' ? `${ADJS_EN[j]} ${NOUNS_EN[i]} #${n}` : `${NOUNS[i]} ${ADJS[j]} #${n}`;
+});
 
 export const inventFn = (type, rng) => withRng(rng, () => invent(type));
 export const INVENT_TYPES = ['fourier', 'polar', 'rosa', 'spiro', 'lissa', 'super'];
@@ -917,10 +927,13 @@ function mutate(s) {
   });
 }
 
-export function presetSrc(p) {
-  if (p.expr) return { kind: 'expr', name: p.name, def: p.expr, fill: p.fill };
-  if (p.poly) return { kind: 'poly', name: p.name, pts: p.poly, fill: p.fill };
-  return { kind: 'text', name: p.name, text: p.text, font: p.font };
+export const GROUP_EN = { Amor: 'Love', Animales: 'Animals', Cosas: 'Things', 'Matemáticas': 'Math' };
+
+export function presetSrc(p, lang = 'es') {
+  const name = lang === 'en' ? p.en || p.name : p.name;
+  if (p.expr) return { kind: 'expr', name, def: p.expr, fill: p.fill };
+  if (p.poly) return { kind: 'poly', name, pts: p.poly, fill: p.fill };
+  return { kind: 'text', name, text: p.text, font: p.font };
 }
 
 // Textos gancho para la parte superior del video; {x} es el nombre de la figura

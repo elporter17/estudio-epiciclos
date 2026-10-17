@@ -5,30 +5,32 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
 <meta name="referrer" content="no-referrer">
-<title>Conectar TikTok · CirculArte</title>
+<title data-en="Connect TikTok · CirculArte">Conectar TikTok · CirculArte</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&family=STIX+Two+Text:ital@0;1&display=swap">
 <link rel="stylesheet" href="legal.css">
 </head>
 <body>
 <main>
   <a class="brand" href="/">Circul<b>Arte</b></a>
-  <h1 id="title">Conectando con TikTok…</h1>
+  <h1 id="title" data-en="Connecting to TikTok…">Conectando con TikTok…</h1>
   <div id="ok" hidden>
-    <p>TikTok autorizó la conexión. Copia este código y pégalo en la terminal donde corre el publicador de CirculArte. Vence en unos minutos y solo sirve una vez.</p>
+    <p data-en="TikTok authorized the connection. Copy this code and paste it into the terminal running the CirculArte publisher. It expires in a few minutes and works only once.">TikTok autorizó la conexión. Copia este código y pégalo en la terminal donde corre el publicador de CirculArte. Vence en unos minutos y solo sirve una vez.</p>
     <span class="code" id="code"></span>
-    <button type="button" id="copy">Copiar código</button>
+    <button type="button" id="copy" data-en="Copy code">Copiar código</button>
     <p class="meta" id="state"></p>
   </div>
   <div id="web" hidden>
-    <p id="webMsg">Guardando la conexión…</p>
+    <p id="webMsg" data-en="Saving the connection…">Guardando la conexión…</p>
   </div>
   <div id="fail" hidden>
     <p id="reason"></p>
-    <p id="retry">Vuelve a la terminal y empieza la conexión de nuevo.</p>
+    <p id="retry" data-en="Go back to the terminal and start the connection again.">Vuelve a la terminal y empieza la conexión de nuevo.</p>
   </div>
-  <footer><a href="/">Volver a CirculArte</a><a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a></footer>
+  <footer><a href="/" data-en="Back to CirculArte">Volver a CirculArte</a><a href="privacidad.html" data-en="Privacy">Privacidad</a><a href="terminos.html" data-en="Terms">Términos</a></footer>
 </main>
-<script>
+<script type="module">
+import { lang, tr, applyStatic } from '/src/i18n.js';
+applyStatic();
 // Dos usos: (1) conexión desde la web: el botón «Publicar en TikTok» dejó su state en localStorage; el código
 // se canjea en /api/tiktok-session y se avisa a la pestaña de CirculArte. (2) Conexión desde la terminal
 // (npm run tiktok:connect): el código solo se muestra aquí para copiarlo y no se envía a ningún servidor.
@@ -43,45 +45,45 @@
     const tell = (msg) => { try { const bc = new BroadcastChannel('circularte-tiktok'); bc.postMessage(msg); bc.close(); } catch { /* navegador sin BroadcastChannel */ } };
     if (!code) {
       tell({ connected: false });
-      title.textContent = 'No se conectó la cuenta';
+      title.textContent = tr('No se conectó la cuenta', 'The account was not connected');
       document.getElementById('fail').hidden = false;
-      document.getElementById('reason').textContent = 'TikTok respondió: ' + (q.get('error_description') || err || 'sin código');
-      document.getElementById('retry').textContent = 'Cierra esta ventana y vuelve a intentarlo desde CirculArte.';
+      document.getElementById('reason').textContent = tr('TikTok respondió: ', 'TikTok answered: ') + (q.get('error_description') || err || tr('sin código', 'no code'));
+      document.getElementById('retry').textContent = tr('Cierra esta ventana y vuelve a intentarlo desde CirculArte.', 'Close this window and try again from CirculArte.');
       return;
     }
     document.getElementById('web').hidden = false;
     try {
-      const r = await fetch('/api/tiktok-session', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ code, state }) });
+      const r = await fetch('/api/tiktok-session', { method: 'POST', headers: { 'content-type': 'application/json', 'x-lang': lang }, body: JSON.stringify({ code, state }) });
       const d = await r.json();
-      if (!r.ok) throw new Error(d.error || 'No se pudo guardar la conexión.');
+      if (!r.ok) throw new Error(d.error || tr('No se pudo guardar la conexión.', 'Could not save the connection.'));
       tell({ connected: true });
-      title.textContent = 'Cuenta conectada';
-      document.getElementById('webMsg').textContent = 'Listo. Ya puedes volver a CirculArte y publicar tu video.';
+      title.textContent = tr('Cuenta conectada', 'Account connected');
+      document.getElementById('webMsg').textContent = tr('Listo. Ya puedes volver a CirculArte y publicar tu video.', 'Done. You can go back to CirculArte and post your video.');
       setTimeout(() => window.close(), 900);
     } catch (e) {
       tell({ connected: false });
-      title.textContent = 'No se conectó la cuenta';
-      document.getElementById('webMsg').textContent = e.message + ' Cierra esta ventana y vuelve a intentarlo.';
+      title.textContent = tr('No se conectó la cuenta', 'The account was not connected');
+      document.getElementById('webMsg').textContent = e.message + tr(' Cierra esta ventana y vuelve a intentarlo.', ' Close this window and try again.');
     }
     return;
   }
   if (code) {
-    title.textContent = 'Cuenta conectada';
+    title.textContent = tr('Cuenta conectada', 'Account connected');
     document.getElementById('ok').hidden = false;
     document.getElementById('code').textContent = code;
-    if (state) document.getElementById('state').textContent = 'Verificación (state): ' + state;
+    if (state) document.getElementById('state').textContent = tr('Verificación (state): ', 'Verification (state): ') + state;
     const btn = document.getElementById('copy');
     btn.addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText(code); btn.textContent = 'Copiado'; }
-      catch { const r = document.createRange(); r.selectNodeContents(document.getElementById('code')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selecciónalo y cópialo'; }
+      try { await navigator.clipboard.writeText(code); btn.textContent = tr('Copiado', 'Copied'); }
+      catch { const r = document.createRange(); r.selectNodeContents(document.getElementById('code')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = tr('Selecciónalo y cópialo', 'Select it and copy it'); }
     });
     return;
   }
-  title.textContent = 'No se conectó la cuenta';
+  title.textContent = tr('No se conectó la cuenta', 'The account was not connected');
   document.getElementById('fail').hidden = false;
   document.getElementById('reason').textContent = err
-    ? 'TikTok respondió: ' + (q.get('error_description') || err)
-    : 'Esta página no recibió ningún código de TikTok.';
+    ? tr('TikTok respondió: ', 'TikTok answered: ') + (q.get('error_description') || err)
+    : tr('Esta página no recibió ningún código de TikTok.', 'This page did not receive any code from TikTok.');
 })();
 </script>
 </body>
