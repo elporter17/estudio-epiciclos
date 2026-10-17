@@ -742,8 +742,25 @@ function drawCaption(R) {
   const c = settings.caption.trim(); if (!c) return;
   const U = view.U; ctx.save(); ctx.fillStyle = FG; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
   let size = 34 * U; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${env.fallback}`;
-  const w = ctx.measureText(c).width; if (w > view.W * .9) { size *= view.W * .9 / w; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${env.fallback}`; }
-  ctx.fillText(c, view.W / 2, view.H * (settings.format === '9:16' ? 0.055 : 0.07));
+  const y = view.H * (settings.format === '9:16' ? 0.055 : 0.07), maxW = view.W * .9;
+  const w = ctx.measureText(c).width;
+  // captionWrap (opcional, apagado por defecto): si no cabe, dos líneas a tamaño completo en vez de encoger
+  const words = c.split(/\s+/);
+  if (settings.captionWrap && w > maxW && words.length > 1) {
+    let best = null;
+    for (let i = 1; i < words.length; i++) {
+      const a = words.slice(0, i).join(' '), b = words.slice(i).join(' ');
+      const wid = Math.max(ctx.measureText(a).width, ctx.measureText(b).width);
+      if (!best || wid < best.wid) best = { a, b, wid };
+    }
+    if (best.wid > maxW) { size *= maxW / best.wid; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${env.fallback}`; }
+    const gap = size * 0.62;
+    ctx.fillText(best.a, view.W / 2, y - gap); ctx.fillText(best.b, view.W / 2, y + gap);
+    ctx.restore();
+    return;
+  }
+  if (w > maxW) { size *= maxW / w; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${env.fallback}`; }
+  ctx.fillText(c, view.W / 2, y);
   ctx.restore();
 }
 

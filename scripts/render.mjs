@@ -35,6 +35,9 @@ Video
   --rev <s>             Segundos por vuelta (por defecto 3)
   --nseq "1, 3, 6…"     Términos N por etapa
   --accent <#hex>       Color del trazo (por defecto #ff7a52)
+  --guide <0-60>        Opacidad (%) de la imagen guía mientras dibuja (por defecto 18; 0 la oculta)
+  --caption-wrap        Si el texto gancho no cabe, lo parte en dos líneas en vez de achicarlo
+  --post "texto"         Descripción del post (se guarda en el .json; si no, la escribe caption/daily)
   --no-reveal --no-formulas --no-signature
   --out <archivo.mp4>   Por defecto out/circularte-<figura>-<lang>.mp4 (más un .json con los datos)
   --still <segundos>    En vez de video, guarda un PNG de ese instante (para revisar el encuadre)`;
@@ -44,7 +47,7 @@ const OPTIONS = {
   seed: { type: 'string' }, lang: { type: 'string', default: 'es' }, caption: { type: 'string', default: 'auto' },
   labels: { type: 'string', default: 'full' }, style: { type: 'string', default: 'xy' },
   fps: { type: 'string', default: '30' }, format: { type: 'string', default: '9:16' }, quality: { type: 'string', default: '1080' },
-  rev: { type: 'string' }, nseq: { type: 'string' }, accent: { type: 'string' },
+  rev: { type: 'string' }, nseq: { type: 'string' }, accent: { type: 'string' }, guide: { type: 'string' }, post: { type: 'string' }, 'caption-wrap': { type: 'boolean', default: false },
   reveal: { type: 'boolean', default: true }, formulas: { type: 'boolean', default: true }, signature: { type: 'boolean', default: true },
   out: { type: 'string' }, still: { type: 'string' }, crf: { type: 'string', default: '18' }, quiet: { type: 'boolean', default: false },
   help: { type: 'boolean', short: 'h', default: false }
@@ -75,6 +78,8 @@ export async function renderVideo(o) {
   if (o.rev) settings.rev = Math.min(8, Math.max(1, +o.rev));
   if (o.nseq) settings.nseq = o.nseq;
   if (o.accent) settings.accent = o.accent;
+  if (o['caption-wrap'] || o.captionWrap) settings.captionWrap = true;
+  if (o.guide != null && o.guide !== '') settings.guide = Math.min(60, Math.max(0, +o.guide));
   const cap = o.caption ?? 'auto';
   settings.caption = cap === 'none' ? '' : cap === 'auto' ? autoCaption(title, lang, seed ?? 0) : cap;
 
@@ -138,8 +143,10 @@ export async function renderVideo(o) {
   const sidecar = out.replace(/\.mp4$/i, '') + '.json';
   const data = {
     file: path.basename(out), lang, title, caption: settings.caption, duration: +dur.toFixed(3), fps, width: view.W, height: view.H,
-    style: settings.style, labels: settings.labels, accent: settings.accent, terms: S.stages, ...info, createdAt: new Date().toISOString()
+    style: settings.style, labels: settings.labels, accent: settings.accent, rev: settings.rev, guide: settings.guide, terms: S.stages, ...info, createdAt: new Date().toISOString()
   };
+  // Descripción escrita a mano: publish la usa tal cual (y caption/daily no la necesitan)
+  if (o.post) data.post = { text: String(o.post).slice(0, 2200), source: 'manual', lang };
   fs.writeFileSync(sidecar, JSON.stringify(data, null, 2) + '\n');
   log(`MP4: ${out}\nDatos: ${sidecar}\n`);
   return { out, sidecar, info: data, settings };
