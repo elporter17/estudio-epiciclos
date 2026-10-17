@@ -160,6 +160,6 @@ async function main() {
   await renderVideo(values);
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main().catch((e) => { console.error(`\nError: ${e.message}`); process.exit(1); });
 }

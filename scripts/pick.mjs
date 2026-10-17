@@ -59,6 +59,6 @@ async function main() {
   console.log(o.json ? JSON.stringify(item, null, 2) : `${item.name || item.type} (${item.group}) → npm run render -- ${item.args.map((a) => /\s/.test(a) ? `"${a}"` : a).join(' ')}`);
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main().catch((e) => { console.error(`Error: ${e.message}`); process.exit(1); });
 }

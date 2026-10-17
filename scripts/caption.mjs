@@ -116,6 +116,6 @@ Modelo: ${MODEL} (cámbialo con CIRCULARTE_CAPTION_MODEL). Clave: OPEN_AI u OPEN
   console.log(o.json ? JSON.stringify({ ...cap, text: postText(cap), lang }, null, 2) : postText(cap));
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main().catch((e) => { console.error(`Error: ${e.message}`); process.exit(1); });
 }
