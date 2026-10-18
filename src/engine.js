@@ -322,7 +322,7 @@ export async function textCanvas(text, fk, accent) {
   const mg = env.createCanvas(16, 16).getContext('2d');
   mg.font = font; const m = mg.measureText(text);
   const asc = m.actualBoundingBoxAscent || size * .8, desc = m.actualBoundingBoxDescent || size * .25;
-  const left = m.actualBoundingBoxLeft || 0, right = m.actualBoundingBoxRight || m.width, pad = size * .12;
+  const left = m.actualBoundingBoxLeft || 0, right = Math.max(m.actualBoundingBoxRight || 0, m.width), pad = size * .12;
   const c = env.createCanvas(Math.max(16, Math.ceil(left + right + pad * 2)), Math.max(16, Math.ceil(asc + desc + pad * 2))), g = c.getContext('2d');
   g.font = font; g.fillStyle = accent; g.fillText(text, pad + left, pad + asc);
   // Los emoji se vuelven silueta plana del color del trazo, como en los videos virales
