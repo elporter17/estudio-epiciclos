@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.*
+!.env.example
+out/
+work/
+assets/music/*
+!assets/music/.gitkeep
+*.mp4
+*.wav
+*.mp3
+data/tiktok-token.json
+data/tiktok-pending.json
+.claude/
+data/tiktok-log.json
