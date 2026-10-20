@@ -328,6 +328,9 @@ export async function prepare(series, n) {
   return { ep, timeline, captions, violations, render, canvas: cv };
 }
 
+// Hashtags sin repetir (sin distinguir mayúsculas): #Minidrama y #minidrama cuentan como uno
+export const hashtagLine = (tags) => [...new Map(tags.map((h) => [h.toLowerCase(), h])).values()].map((h) => `#${h}`).join(' ');
+
 /* ---------------- música ---------------- */
 function pickMusic(choice, seed) {
   if (choice === 'none') return null;
@@ -400,7 +403,7 @@ export async function assembleEpisode(series, n, { music = 'auto', musicVolume =
   // Datos para publish: descripción con hashtags y aviso de ficción hecha con IA
   const ep = R.ep;
   const disclosure = series.language === 'en' ? 'Fiction · AI-generated' : 'Ficción · hecho con IA';
-  const tags = [...new Set([...ep.hashtags, 'minidrama'])].map((h) => `#${h}`).join(' ');
+  const tags = hashtagLine([...ep.hashtags, 'minidrama']);
   const text = `${ep.post_description}\n${disclosure}\n\n${tags}`.slice(0, 2200);
   const sidecar = out.replace(/\.mp4$/, '.json');
   writeJson(sidecar, {
