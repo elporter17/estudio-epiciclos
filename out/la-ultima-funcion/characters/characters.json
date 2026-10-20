@@ -1,0 +1,74 @@
+{
+  "simon": {
+    "file": "simon.jpg",
+    "usage": {
+      "input_tokens": 207,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 207
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 551
+    },
+    "cost": 0.011355,
+    "at": "2026-10-19T23:18:39.684Z"
+  },
+  "ines": {
+    "file": "ines.jpg",
+    "usage": {
+      "input_tokens": 214,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 214
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 558
+    },
+    "cost": 0.01139,
+    "at": "2026-10-19T23:18:39.702Z"
+  },
+  "alma": {
+    "file": "alma.jpg",
+    "usage": {
+      "input_tokens": 211,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 211
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 555
+    },
+    "cost": 0.011375,
+    "at": "2026-10-19T23:18:40.513Z"
+  },
+  "elena": {
+    "file": "elena.jpg",
+    "usage": {
+      "input_tokens": 212,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 212
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 556
+    },
+    "cost": 0.01138,
+    "at": "2026-10-19T23:18:50.709Z"
+  }
+}

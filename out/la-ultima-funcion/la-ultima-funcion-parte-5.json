@@ -1,0 +1,46 @@
+{
+  "file": "la-ultima-funcion-parte-5.mp4",
+  "series": "la-ultima-funcion",
+  "seriesTitle": "La última función",
+  "episode": 5,
+  "title": "Se encienden las luces",
+  "lang": "es",
+  "duration": 113.76,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "music": null,
+  "ai_generated": true,
+  "hook_text": "¿Quién se quedará con el cine?",
+  "safe_zone": {
+    "x0": 64.8,
+    "x1": 907.1999999999999,
+    "y0": 288,
+    "y1": 1497.6000000000001
+  },
+  "violations": [],
+  "post": {
+    "text": "Alma llega a la reunión con una decisión tomada. Pero salvar el cine no será lo último que descubra.\nFicción · hecho con IA\n\n#minidrama #CineDeBarrio #Traicion #Secretos",
+    "description": "Alma llega a la reunión con una decisión tomada. Pero salvar el cine no será lo último que descubra.",
+    "hashtags": [
+      "Minidrama",
+      "CineDeBarrio",
+      "Traicion",
+      "Secretos"
+    ],
+    "source": "gpt-6-sol"
+  },
+  "createdAt": "2026-10-20T00:01:03.754Z",
+  "tiktok": [
+    {
+      "file": "la-ultima-funcion-parte-5.mp4",
+      "mode": "draft",
+      "publish_id": "v_inbox_file~v2.7698852673680492545",
+      "status": "SEND_TO_USER_INBOX",
+      "fail_reason": null,
+      "privacy": null,
+      "is_aigc": false,
+      "at": "2026-10-20T20:57:13.036Z"
+    }
+  ]
+}

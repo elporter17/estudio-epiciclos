@@ -1,0 +1,1344 @@
+{
+  "series": "la-ultima-funcion",
+  "episode": 3,
+  "duration": 102.65,
+  "audio": "episode.wav",
+  "voiceModel": "gpt-4o-mini-tts",
+  "scenes": [
+    {
+      "id": "s1",
+      "beat": "gancho",
+      "start": 0.08,
+      "end": 9.98
+    },
+    {
+      "id": "s2",
+      "beat": "desarrollo",
+      "start": 10.4,
+      "end": 23.03
+    },
+    {
+      "id": "s3",
+      "beat": "desarrollo",
+      "start": 23.45,
+      "end": 35.27
+    },
+    {
+      "id": "s4",
+      "beat": "desarrollo",
+      "start": 35.69,
+      "end": 50.49
+    },
+    {
+      "id": "s5",
+      "beat": "desarrollo",
+      "start": 50.91,
+      "end": 65.15
+    },
+    {
+      "id": "s6",
+      "beat": "giro",
+      "start": 65.57,
+      "end": 83.37
+    },
+    {
+      "id": "s7",
+      "beat": "cliffhanger",
+      "start": 83.79,
+      "end": 97.8
+    },
+    {
+      "id": "s8",
+      "beat": "cierre",
+      "start": 98.5,
+      "end": 101.05
+    }
+  ],
+  "lines": [
+    {
+      "scene": "s1",
+      "beat": "gancho",
+      "speaker": "narrador",
+      "text": "Mi mejor amiga pagó para quitarme el cine.",
+      "start": 0.08,
+      "end": 3.88,
+      "words": [
+        {
+          "w": "Mi",
+          "start": 0.08,
+          "end": 0.52
+        },
+        {
+          "w": "mejor",
+          "start": 0.52,
+          "end": 1.08
+        },
+        {
+          "w": "amiga",
+          "start": 1.08,
+          "end": 1.6
+        },
+        {
+          "w": "pagó",
+          "start": 1.6,
+          "end": 2.54
+        },
+        {
+          "w": "para",
+          "start": 2.54,
+          "end": 2.8
+        },
+        {
+          "w": "quitarme",
+          "start": 2.8,
+          "end": 3.36
+        },
+        {
+          "w": "el",
+          "start": 3.36,
+          "end": 3.74
+        },
+        {
+          "w": "cine.",
+          "start": 3.74,
+          "end": 3.78
+        }
+      ]
+    },
+    {
+      "scene": "s1",
+      "beat": "gancho",
+      "speaker": "narrador",
+      "text": "Tenía su transferencia abierta en la tableta; Inés se quedó inmóvil detrás de mí.",
+      "start": 4.1,
+      "end": 9.98,
+      "words": [
+        {
+          "w": "Tenía",
+          "start": 4.1,
+          "end": 4.6
+        },
+        {
+          "w": "su",
+          "start": 4.6,
+          "end": 4.86
+        },
+        {
+          "w": "transferencia",
+          "start": 4.86,
+          "end": 5.58
+        },
+        {
+          "w": "abierta",
+          "start": 5.58,
+          "end": 6.14
+        },
+        {
+          "w": "en",
+          "start": 6.14,
+          "end": 6.48
+        },
+        {
+          "w": "la",
+          "start": 6.48,
+          "end": 6.7
+        },
+        {
+          "w": "tableta;",
+          "start": 6.7,
+          "end": 7.26
+        },
+        {
+          "w": "Inés",
+          "start": 8.2,
+          "end": 8.2
+        },
+        {
+          "w": "se",
+          "start": 8.2,
+          "end": 8.42
+        },
+        {
+          "w": "quedó",
+          "start": 8.42,
+          "end": 8.56
+        },
+        {
+          "w": "inmóvil",
+          "start": 8.56,
+          "end": 9.08
+        },
+        {
+          "w": "detrás",
+          "start": 9.08,
+          "end": 9.62
+        },
+        {
+          "w": "de",
+          "start": 9.62,
+          "end": 9.94
+        },
+        {
+          "w": "mí.",
+          "start": 9.94,
+          "end": 9.96
+        }
+      ]
+    },
+    {
+      "scene": "s2",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Le pregunté cuánto le había dado a Simón. Miró la pantalla, no mis ojos.",
+      "start": 10.4,
+      "end": 16.16,
+      "words": [
+        {
+          "w": "Le",
+          "start": 10.4,
+          "end": 10.72
+        },
+        {
+          "w": "pregunté",
+          "start": 10.72,
+          "end": 11.4
+        },
+        {
+          "w": "cuánto",
+          "start": 11.4,
+          "end": 12.06
+        },
+        {
+          "w": "le",
+          "start": 12.06,
+          "end": 12.38
+        },
+        {
+          "w": "había",
+          "start": 12.38,
+          "end": 12.44
+        },
+        {
+          "w": "dado",
+          "start": 12.44,
+          "end": 12.68
+        },
+        {
+          "w": "a",
+          "start": 12.68,
+          "end": 13
+        },
+        {
+          "w": "Simón.",
+          "start": 13,
+          "end": 13.26
+        },
+        {
+          "w": "Miró",
+          "start": 14.18,
+          "end": 14.26
+        },
+        {
+          "w": "la",
+          "start": 14.26,
+          "end": 14.56
+        },
+        {
+          "w": "pantalla,",
+          "start": 14.56,
+          "end": 14.84
+        },
+        {
+          "w": "no",
+          "start": 15.42,
+          "end": 15.48
+        },
+        {
+          "w": "mis",
+          "start": 15.48,
+          "end": 15.72
+        },
+        {
+          "w": "ojos.",
+          "start": 15.72,
+          "end": 15.98
+        }
+      ]
+    },
+    {
+      "scene": "s2",
+      "beat": "desarrollo",
+      "speaker": "ines",
+      "text": "Todo lo que había ahorrado para saldar una deuda.",
+      "start": 16.38,
+      "end": 18.93,
+      "words": [
+        {
+          "w": "Todo",
+          "start": 16.38,
+          "end": 16.64
+        },
+        {
+          "w": "lo",
+          "start": 16.64,
+          "end": 16.84
+        },
+        {
+          "w": "que",
+          "start": 16.84,
+          "end": 16.96
+        },
+        {
+          "w": "había",
+          "start": 16.96,
+          "end": 17.18
+        },
+        {
+          "w": "ahorrado",
+          "start": 17.18,
+          "end": 17.62
+        },
+        {
+          "w": "para",
+          "start": 17.62,
+          "end": 17.92
+        },
+        {
+          "w": "saldar",
+          "start": 17.92,
+          "end": 18.32
+        },
+        {
+          "w": "una",
+          "start": 18.32,
+          "end": 18.54
+        },
+        {
+          "w": "deuda.",
+          "start": 18.54,
+          "end": 18.78
+        }
+      ]
+    },
+    {
+      "scene": "s2",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Sus dedos temblaban sobre el borde de la taquilla.",
+      "start": 19.15,
+      "end": 23.03,
+      "words": [
+        {
+          "w": "Sus",
+          "start": 19.15,
+          "end": 19.61
+        },
+        {
+          "w": "dedos",
+          "start": 19.61,
+          "end": 20.53
+        },
+        {
+          "w": "temblaban",
+          "start": 20.53,
+          "end": 21.29
+        },
+        {
+          "w": "sobre",
+          "start": 21.29,
+          "end": 21.71
+        },
+        {
+          "w": "el",
+          "start": 21.71,
+          "end": 22.11
+        },
+        {
+          "w": "borde",
+          "start": 22.11,
+          "end": 22.19
+        },
+        {
+          "w": "de",
+          "start": 22.19,
+          "end": 22.39
+        },
+        {
+          "w": "la",
+          "start": 22.39,
+          "end": 22.55
+        },
+        {
+          "w": "taquilla.",
+          "start": 22.55,
+          "end": 22.95
+        }
+      ]
+    },
+    {
+      "scene": "s3",
+      "beat": "desarrollo",
+      "speaker": "ines",
+      "text": "Me prometió devolverlo cuando el contrato quedara a su nombre.",
+      "start": 23.45,
+      "end": 27.5,
+      "words": [
+        {
+          "w": "Me",
+          "start": 23.45,
+          "end": 23.71
+        },
+        {
+          "w": "prometió",
+          "start": 23.71,
+          "end": 24.37
+        },
+        {
+          "w": "devolverlo",
+          "start": 24.37,
+          "end": 25.11
+        },
+        {
+          "w": "cuando",
+          "start": 25.11,
+          "end": 25.63
+        },
+        {
+          "w": "el",
+          "start": 25.63,
+          "end": 25.83
+        },
+        {
+          "w": "contrato",
+          "start": 25.83,
+          "end": 26.35
+        },
+        {
+          "w": "quedara",
+          "start": 26.35,
+          "end": 26.79
+        },
+        {
+          "w": "a",
+          "start": 26.79,
+          "end": 27.05
+        },
+        {
+          "w": "su",
+          "start": 27.05,
+          "end": 27.13
+        },
+        {
+          "w": "nombre.",
+          "start": 27.13,
+          "end": 27.37
+        }
+      ]
+    },
+    {
+      "scene": "s3",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Quiso hacerme creer que yo había aceptado perder el cine.",
+      "start": 27.72,
+      "end": 31.48,
+      "words": [
+        {
+          "w": "Quiso",
+          "start": 27.72,
+          "end": 28.1
+        },
+        {
+          "w": "hacerme",
+          "start": 28.1,
+          "end": 28.64
+        },
+        {
+          "w": "creer",
+          "start": 28.64,
+          "end": 29.14
+        },
+        {
+          "w": "que",
+          "start": 29.14,
+          "end": 29.32
+        },
+        {
+          "w": "yo",
+          "start": 29.32,
+          "end": 29.6
+        },
+        {
+          "w": "había",
+          "start": 29.6,
+          "end": 29.82
+        },
+        {
+          "w": "aceptado",
+          "start": 29.82,
+          "end": 30.48
+        },
+        {
+          "w": "perder",
+          "start": 30.48,
+          "end": 30.86
+        },
+        {
+          "w": "el",
+          "start": 30.86,
+          "end": 31.1
+        },
+        {
+          "w": "cine.",
+          "start": 31.1,
+          "end": 31.36
+        }
+      ]
+    },
+    {
+      "scene": "s3",
+      "beat": "desarrollo",
+      "speaker": "ines",
+      "text": "Dijo que tú querías dejar de cargar con este lugar.",
+      "start": 31.7,
+      "end": 35.27,
+      "words": [
+        {
+          "w": "Dijo",
+          "start": 31.7,
+          "end": 32.18
+        },
+        {
+          "w": "que",
+          "start": 32.18,
+          "end": 32.64
+        },
+        {
+          "w": "tú",
+          "start": 32.64,
+          "end": 33
+        },
+        {
+          "w": "querías",
+          "start": 33,
+          "end": 33.42
+        },
+        {
+          "w": "dejar",
+          "start": 33.42,
+          "end": 33.74
+        },
+        {
+          "w": "de",
+          "start": 33.74,
+          "end": 34.04
+        },
+        {
+          "w": "cargar",
+          "start": 34.04,
+          "end": 34.4
+        },
+        {
+          "w": "con",
+          "start": 34.4,
+          "end": 34.64
+        },
+        {
+          "w": "este",
+          "start": 34.64,
+          "end": 34.88
+        },
+        {
+          "w": "lugar.",
+          "start": 34.88,
+          "end": 35.12
+        }
+      ]
+    },
+    {
+      "scene": "s4",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Pensé en las noches que había dormido entre esas butacas para mantenerlo abierto.",
+      "start": 35.69,
+      "end": 42.24,
+      "words": [
+        {
+          "w": "Pensé",
+          "start": 35.69,
+          "end": 36.35
+        },
+        {
+          "w": "en",
+          "start": 36.35,
+          "end": 36.85
+        },
+        {
+          "w": "las",
+          "start": 36.85,
+          "end": 37.21
+        },
+        {
+          "w": "noches",
+          "start": 37.21,
+          "end": 37.57
+        },
+        {
+          "w": "que",
+          "start": 37.57,
+          "end": 37.77
+        },
+        {
+          "w": "había",
+          "start": 37.77,
+          "end": 37.97
+        },
+        {
+          "w": "dormido",
+          "start": 37.97,
+          "end": 38.61
+        },
+        {
+          "w": "entre",
+          "start": 38.61,
+          "end": 39.33
+        },
+        {
+          "w": "esas",
+          "start": 39.33,
+          "end": 39.71
+        },
+        {
+          "w": "butacas",
+          "start": 39.71,
+          "end": 40.29
+        },
+        {
+          "w": "para",
+          "start": 40.29,
+          "end": 41.03
+        },
+        {
+          "w": "mantenerlo",
+          "start": 41.03,
+          "end": 41.79
+        },
+        {
+          "w": "abierto.",
+          "start": 41.79,
+          "end": 42.05
+        }
+      ]
+    },
+    {
+      "scene": "s4",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Le pedí una prueba, no otra disculpa.",
+      "start": 42.46,
+      "end": 45.71,
+      "words": [
+        {
+          "w": "Le",
+          "start": 42.46,
+          "end": 42.76
+        },
+        {
+          "w": "pedí",
+          "start": 42.76,
+          "end": 43.22
+        },
+        {
+          "w": "una",
+          "start": 43.22,
+          "end": 43.54
+        },
+        {
+          "w": "prueba,",
+          "start": 43.54,
+          "end": 43.84
+        },
+        {
+          "w": "no",
+          "start": 44.6,
+          "end": 44.8
+        },
+        {
+          "w": "otra",
+          "start": 44.8,
+          "end": 45.08
+        },
+        {
+          "w": "disculpa.",
+          "start": 45.08,
+          "end": 45.64
+        }
+      ]
+    },
+    {
+      "scene": "s4",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Inés sacó su teléfono. Había guardado una nota de voz.",
+      "start": 45.93,
+      "end": 50.49,
+      "words": [
+        {
+          "w": "Inés",
+          "start": 45.93,
+          "end": 46.45
+        },
+        {
+          "w": "sacó",
+          "start": 46.45,
+          "end": 47.13
+        },
+        {
+          "w": "su",
+          "start": 47.13,
+          "end": 47.35
+        },
+        {
+          "w": "teléfono.",
+          "start": 47.35,
+          "end": 47.97
+        },
+        {
+          "w": "Había",
+          "start": 48.87,
+          "end": 48.95
+        },
+        {
+          "w": "guardado",
+          "start": 48.95,
+          "end": 49.47
+        },
+        {
+          "w": "una",
+          "start": 49.47,
+          "end": 49.73
+        },
+        {
+          "w": "nota",
+          "start": 49.73,
+          "end": 49.97
+        },
+        {
+          "w": "de",
+          "start": 49.97,
+          "end": 50.35
+        },
+        {
+          "w": "voz.",
+          "start": 50.35,
+          "end": 50.41
+        }
+      ]
+    },
+    {
+      "scene": "s5",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Le dio reproducir; reconocí la voz de Simón bajo el zumbido del proyector.",
+      "start": 50.91,
+      "end": 56.74,
+      "words": [
+        {
+          "w": "Le",
+          "start": 50.91,
+          "end": 51.143
+        },
+        {
+          "w": "dio",
+          "start": 51.143,
+          "end": 51.455
+        },
+        {
+          "w": "reproducir;",
+          "start": 51.455,
+          "end": 52.311
+        },
+        {
+          "w": "reconocí",
+          "start": 52.311,
+          "end": 53.011
+        },
+        {
+          "w": "la",
+          "start": 53.011,
+          "end": 53.244
+        },
+        {
+          "w": "voz",
+          "start": 53.244,
+          "end": 53.555
+        },
+        {
+          "w": "de",
+          "start": 53.555,
+          "end": 53.789
+        },
+        {
+          "w": "Simón",
+          "start": 53.789,
+          "end": 54.256
+        },
+        {
+          "w": "bajo",
+          "start": 54.256,
+          "end": 54.645
+        },
+        {
+          "w": "el",
+          "start": 54.645,
+          "end": 54.878
+        },
+        {
+          "w": "zumbido",
+          "start": 54.878,
+          "end": 55.501
+        },
+        {
+          "w": "del",
+          "start": 55.501,
+          "end": 55.812
+        },
+        {
+          "w": "proyector.",
+          "start": 55.812,
+          "end": 56.59
+        }
+      ]
+    },
+    {
+      "scene": "s5",
+      "beat": "desarrollo",
+      "speaker": "simon",
+      "text": "Cuando Alma firme, nos vamos juntos.",
+      "start": 56.96,
+      "end": 59.37,
+      "words": [
+        {
+          "w": "Cuando",
+          "start": 56.96,
+          "end": 57.3
+        },
+        {
+          "w": "Alma",
+          "start": 57.3,
+          "end": 57.6
+        },
+        {
+          "w": "firme,",
+          "start": 57.6,
+          "end": 58.12
+        },
+        {
+          "w": "nos",
+          "start": 58.34,
+          "end": 58.5
+        },
+        {
+          "w": "vamos",
+          "start": 58.5,
+          "end": 58.84
+        },
+        {
+          "w": "juntos.",
+          "start": 58.84,
+          "end": 59.2
+        }
+      ]
+    },
+    {
+      "scene": "s5",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Por un momento, aquel abrazo en la cabina pareció tener otra explicación.",
+      "start": 59.59,
+      "end": 65.15,
+      "words": [
+        {
+          "w": "Por",
+          "start": 59.59,
+          "end": 59.81
+        },
+        {
+          "w": "un",
+          "start": 59.81,
+          "end": 60.07
+        },
+        {
+          "w": "momento,",
+          "start": 60.07,
+          "end": 60.45
+        },
+        {
+          "w": "aquel",
+          "start": 61.25,
+          "end": 61.45
+        },
+        {
+          "w": "abrazo",
+          "start": 61.45,
+          "end": 61.89
+        },
+        {
+          "w": "en",
+          "start": 61.89,
+          "end": 61.99
+        },
+        {
+          "w": "la",
+          "start": 61.99,
+          "end": 62.29
+        },
+        {
+          "w": "cabina",
+          "start": 62.29,
+          "end": 62.57
+        },
+        {
+          "w": "pareció",
+          "start": 62.57,
+          "end": 63.55
+        },
+        {
+          "w": "tener",
+          "start": 63.55,
+          "end": 63.89
+        },
+        {
+          "w": "otra",
+          "start": 63.89,
+          "end": 64.39
+        },
+        {
+          "w": "explicación.",
+          "start": 64.39,
+          "end": 64.97
+        }
+      ]
+    },
+    {
+      "scene": "s6",
+      "beat": "giro",
+      "speaker": "ines",
+      "text": "Nunca acepté irme con él. Me ofreció empezar de cero lejos de aquí.",
+      "start": 65.57,
+      "end": 71.55,
+      "words": [
+        {
+          "w": "Nunca",
+          "start": 65.57,
+          "end": 66.19
+        },
+        {
+          "w": "acepté",
+          "start": 66.19,
+          "end": 66.97
+        },
+        {
+          "w": "irme",
+          "start": 66.97,
+          "end": 67.35
+        },
+        {
+          "w": "con",
+          "start": 67.35,
+          "end": 67.57
+        },
+        {
+          "w": "él.",
+          "start": 67.57,
+          "end": 68.03
+        },
+        {
+          "w": "Me",
+          "start": 68.61,
+          "end": 68.73
+        },
+        {
+          "w": "ofreció",
+          "start": 68.73,
+          "end": 69.29
+        },
+        {
+          "w": "empezar",
+          "start": 69.29,
+          "end": 69.79
+        },
+        {
+          "w": "de",
+          "start": 69.79,
+          "end": 70.13
+        },
+        {
+          "w": "cero",
+          "start": 70.13,
+          "end": 70.39
+        },
+        {
+          "w": "lejos",
+          "start": 70.97,
+          "end": 71.09
+        },
+        {
+          "w": "de",
+          "start": 71.09,
+          "end": 71.33
+        },
+        {
+          "w": "aquí.",
+          "start": 71.33,
+          "end": 71.45
+        }
+      ]
+    },
+    {
+      "scene": "s6",
+      "beat": "giro",
+      "speaker": "narrador",
+      "text": "La nota no probaba una aventura: Simón le prometía a Inés otra vida mientras planeaba casarse conmigo.",
+      "start": 71.77,
+      "end": 79.11,
+      "words": [
+        {
+          "w": "La",
+          "start": 71.77,
+          "end": 72.07
+        },
+        {
+          "w": "nota",
+          "start": 72.07,
+          "end": 72.41
+        },
+        {
+          "w": "no",
+          "start": 72.41,
+          "end": 72.91
+        },
+        {
+          "w": "probaba",
+          "start": 72.91,
+          "end": 73.35
+        },
+        {
+          "w": "una",
+          "start": 73.35,
+          "end": 73.67
+        },
+        {
+          "w": "aventura:",
+          "start": 73.67,
+          "end": 74.13
+        },
+        {
+          "w": "Simón",
+          "start": 74.85,
+          "end": 75.01
+        },
+        {
+          "w": "le",
+          "start": 75.01,
+          "end": 75.29
+        },
+        {
+          "w": "prometía",
+          "start": 75.29,
+          "end": 75.67
+        },
+        {
+          "w": "a",
+          "start": 75.67,
+          "end": 76.15
+        },
+        {
+          "w": "Inés",
+          "start": 76.15,
+          "end": 76.15
+        },
+        {
+          "w": "otra",
+          "start": 76.15,
+          "end": 76.63
+        },
+        {
+          "w": "vida",
+          "start": 76.63,
+          "end": 76.95
+        },
+        {
+          "w": "mientras",
+          "start": 76.95,
+          "end": 77.59
+        },
+        {
+          "w": "planeaba",
+          "start": 77.59,
+          "end": 78.13
+        },
+        {
+          "w": "casarse",
+          "start": 78.13,
+          "end": 78.55
+        },
+        {
+          "w": "conmigo.",
+          "start": 78.55,
+          "end": 78.97
+        }
+      ]
+    },
+    {
+      "scene": "s6",
+      "beat": "giro",
+      "speaker": "narrador",
+      "text": "¿Cuántas versiones de nuestro futuro había vendido?",
+      "start": 79.33,
+      "end": 83.37,
+      "words": [
+        {
+          "w": "¿Cuántas",
+          "start": 79.33,
+          "end": 80.05
+        },
+        {
+          "w": "versiones",
+          "start": 80.05,
+          "end": 80.91
+        },
+        {
+          "w": "de",
+          "start": 80.91,
+          "end": 81.05
+        },
+        {
+          "w": "nuestro",
+          "start": 81.05,
+          "end": 81.53
+        },
+        {
+          "w": "futuro",
+          "start": 81.53,
+          "end": 82.27
+        },
+        {
+          "w": "había",
+          "start": 82.27,
+          "end": 82.75
+        },
+        {
+          "w": "vendido?",
+          "start": 82.75,
+          "end": 83.27
+        }
+      ]
+    },
+    {
+      "scene": "s7",
+      "beat": "cliffhanger",
+      "speaker": "narrador",
+      "text": "Quise creerle, pero aún veía su pago en el trámite y recordaba su silencio cuando le pregunté.",
+      "start": 83.79,
+      "end": 91.25,
+      "words": [
+        {
+          "w": "Quise",
+          "start": 83.79,
+          "end": 84.17
+        },
+        {
+          "w": "creerle,",
+          "start": 84.17,
+          "end": 84.97
+        },
+        {
+          "w": "pero",
+          "start": 85.37,
+          "end": 85.55
+        },
+        {
+          "w": "aún",
+          "start": 85.55,
+          "end": 85.87
+        },
+        {
+          "w": "veía",
+          "start": 85.87,
+          "end": 86.21
+        },
+        {
+          "w": "su",
+          "start": 86.21,
+          "end": 86.53
+        },
+        {
+          "w": "pago",
+          "start": 86.53,
+          "end": 86.81
+        },
+        {
+          "w": "en",
+          "start": 86.81,
+          "end": 86.97
+        },
+        {
+          "w": "el",
+          "start": 86.97,
+          "end": 87.27
+        },
+        {
+          "w": "trámite",
+          "start": 87.27,
+          "end": 87.77
+        },
+        {
+          "w": "y",
+          "start": 88.31,
+          "end": 88.57
+        },
+        {
+          "w": "recordaba",
+          "start": 88.57,
+          "end": 89.03
+        },
+        {
+          "w": "su",
+          "start": 89.03,
+          "end": 89.33
+        },
+        {
+          "w": "silencio",
+          "start": 89.33,
+          "end": 89.89
+        },
+        {
+          "w": "cuando",
+          "start": 89.89,
+          "end": 90.49
+        },
+        {
+          "w": "le",
+          "start": 90.49,
+          "end": 90.71
+        },
+        {
+          "w": "pregunté.",
+          "start": 90.71,
+          "end": 91.23
+        }
+      ]
+    },
+    {
+      "scene": "s7",
+      "beat": "cliffhanger",
+      "speaker": "narrador",
+      "text": "Si Simón también la engañó, ¿cómo sé que Inés no vuelve a mentirme?",
+      "start": 91.47,
+      "end": 97.8,
+      "words": [
+        {
+          "w": "Si",
+          "start": 91.47,
+          "end": 91.89
+        },
+        {
+          "w": "Simón",
+          "start": 92.29,
+          "end": 92.55
+        },
+        {
+          "w": "también",
+          "start": 92.55,
+          "end": 93.33
+        },
+        {
+          "w": "la",
+          "start": 93.33,
+          "end": 93.81
+        },
+        {
+          "w": "engañó,",
+          "start": 93.81,
+          "end": 94.11
+        },
+        {
+          "w": "¿cómo",
+          "start": 95.33,
+          "end": 95.41
+        },
+        {
+          "w": "sé",
+          "start": 95.41,
+          "end": 95.81
+        },
+        {
+          "w": "que",
+          "start": 95.81,
+          "end": 96.13
+        },
+        {
+          "w": "Inés",
+          "start": 96.13,
+          "end": 96.39
+        },
+        {
+          "w": "no",
+          "start": 96.39,
+          "end": 96.75
+        },
+        {
+          "w": "vuelve",
+          "start": 96.75,
+          "end": 97.11
+        },
+        {
+          "w": "a",
+          "start": 97.11,
+          "end": 97.47
+        },
+        {
+          "w": "mentirme?",
+          "start": 97.47,
+          "end": 97.77
+        }
+      ]
+    },
+    {
+      "scene": "s8",
+      "beat": "cierre",
+      "speaker": "narrador",
+      "text": "Parte 4 en mi perfil.",
+      "start": 98.5,
+      "end": 101.05,
+      "words": [
+        {
+          "w": "Parte",
+          "start": 98.5,
+          "end": 98.84
+        },
+        {
+          "w": "4",
+          "start": 98.84,
+          "end": 99.5
+        },
+        {
+          "w": "en",
+          "start": 99.5,
+          "end": 100.24
+        },
+        {
+          "w": "mi",
+          "start": 100.24,
+          "end": 100.46
+        },
+        {
+          "w": "perfil.",
+          "start": 100.46,
+          "end": 101.02
+        }
+      ]
+    }
+  ]
+}

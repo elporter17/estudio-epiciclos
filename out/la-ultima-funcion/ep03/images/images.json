@@ -1,0 +1,218 @@
+{
+  "s1": {
+    "file": "s1.jpg",
+    "refs": [
+      "alma",
+      "ines"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 3435,
+      "input_tokens_details": {
+        "image_tokens": 3016,
+        "text_tokens": 419
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 3779
+    },
+    "cost": 0.036543,
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Inés Duarte. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nInés Duarte (32 years old): Heart-shaped face, warm tan skin, hazel eyes, straight copper-brown hair cut into a blunt chin-length bob. Medium build. Always wears an olive-green utility shirt, dark jeans, and a yellow thread bracelet. A small crescent-shaped birthmark beside her mouth remains visible in every scene.\nShot: medium.\nScene: Vertical 9:16 frame inside a neighborhood cinema ticket booth. Alma stares at a tablet seen from the side, its screen blurred; Inés stands frozen behind her. Their faces fill the upper half, with tense dim lighting and nothing important in the lower third. No legible text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-10-19T23:29:56.621Z"
+  },
+  "s3": {
+    "file": "s3.jpg",
+    "refs": [
+      "alma",
+      "ines"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 3430,
+      "input_tokens_details": {
+        "image_tokens": 3016,
+        "text_tokens": 414
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 3774
+    },
+    "cost": 0.036518,
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Inés Duarte. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nInés Duarte (32 years old): Heart-shaped face, warm tan skin, hazel eyes, straight copper-brown hair cut into a blunt chin-length bob. Medium build. Always wears an olive-green utility shirt, dark jeans, and a yellow thread bracelet. A small crescent-shaped birthmark beside her mouth remains visible in every scene.\nShot: close-up.\nScene: Vertical 9:16 close view of Inés speaking to Alma between worn cinema seats. Inés looks ashamed; Alma listens without softening. Faces occupy the upper half, projector light cuts through the background, lower third uncluttered. No legible text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-10-19T23:29:58.041Z"
+  },
+  "s2": {
+    "file": "s2.jpg",
+    "refs": [
+      "alma",
+      "ines"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 3426,
+      "input_tokens_details": {
+        "image_tokens": 3016,
+        "text_tokens": 410
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 3770
+    },
+    "cost": 0.036498,
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Inés Duarte. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nInés Duarte (32 years old): Heart-shaped face, warm tan skin, hazel eyes, straight copper-brown hair cut into a blunt chin-length bob. Medium build. Always wears an olive-green utility shirt, dark jeans, and a yellow thread bracelet. A small crescent-shaped birthmark beside her mouth remains visible in every scene.\nShot: medium.\nScene: Vertical 9:16 frame at the cinema ticket counter. Alma confronts Inés, who avoids her eyes and grips the counter. Frame both faces in the upper half under cold fluorescent light; keep the lower third empty. No legible text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-10-19T23:29:58.526Z"
+  },
+  "s4": {
+    "file": "s4.jpg",
+    "refs": [
+      "alma",
+      "ines"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 3438,
+      "input_tokens_details": {
+        "image_tokens": 3016,
+        "text_tokens": 422
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 3782
+    },
+    "cost": 0.036558,
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Inés Duarte. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nInés Duarte (32 years old): Heart-shaped face, warm tan skin, hazel eyes, straight copper-brown hair cut into a blunt chin-length bob. Medium build. Always wears an olive-green utility shirt, dark jeans, and a yellow thread bracelet. A small crescent-shaped birthmark beside her mouth remains visible in every scene.\nShot: wide.\nScene: Vertical 9:16 frame in the worn auditorium. Alma looks across the empty seats, then turns toward Inés as she takes a phone from her pocket. Faces stay in the upper half; soft projector glow, clear lower third. The phone screen is angled away and blurred, with no legible text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-10-19T23:30:08.719Z"
+  },
+  "s5": {
+    "file": "s5.jpg",
+    "refs": [
+      "alma",
+      "ines"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 3436,
+      "input_tokens_details": {
+        "image_tokens": 3016,
+        "text_tokens": 420
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 3780
+    },
+    "cost": 0.036548,
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Inés Duarte. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nInés Duarte (32 years old): Heart-shaped face, warm tan skin, hazel eyes, straight copper-brown hair cut into a blunt chin-length bob. Medium build. Always wears an olive-green utility shirt, dark jeans, and a yellow thread bracelet. A small crescent-shaped birthmark beside her mouth remains visible in every scene.\nShot: close-up.\nScene: Vertical 9:16 frame beside the cinema projector. Inés holds her phone sideways between herself and Alma; its screen is out of focus. Alma reacts to a recorded voice as projector light flickers across both faces in the upper half. Keep the lower third clear; no legible text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-10-19T23:30:09.365Z"
+  },
+  "s6": {
+    "file": "s6.jpg",
+    "refs": [
+      "alma",
+      "ines"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 3432,
+      "input_tokens_details": {
+        "image_tokens": 3016,
+        "text_tokens": 416
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 3776
+    },
+    "cost": 0.036528,
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Inés Duarte. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nInés Duarte (32 years old): Heart-shaped face, warm tan skin, hazel eyes, straight copper-brown hair cut into a blunt chin-length bob. Medium build. Always wears an olive-green utility shirt, dark jeans, and a yellow thread bracelet. A small crescent-shaped birthmark beside her mouth remains visible in every scene.\nShot: medium.\nScene: Vertical 9:16 frame in the projection booth. Inés faces Alma with an earnest, distressed expression while Alma studies her. The phone rests turned away and blurred; stark projector light outlines their faces in the upper half, with the lower third empty. No legible text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-10-19T23:30:12.556Z"
+  },
+  "s8": {
+    "file": "s8.jpg",
+    "refs": [
+      "alma",
+      "ines"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 3433,
+      "input_tokens_details": {
+        "image_tokens": 3016,
+        "text_tokens": 417
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 3777
+    },
+    "cost": 0.036533,
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Inés Duarte. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nInés Duarte (32 years old): Heart-shaped face, warm tan skin, hazel eyes, straight copper-brown hair cut into a blunt chin-length bob. Medium build. Always wears an olive-green utility shirt, dark jeans, and a yellow thread bracelet. A small crescent-shaped birthmark beside her mouth remains visible in every scene.\nShot: medium.\nScene: Vertical 9:16 still, tense view of Alma and Inés on opposite sides of the half-open projection booth door. Neither moves closer; their faces remain in the upper half, lit by the projector beam. Keep the lower third free of important details. No legible text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-10-19T23:30:22.805Z"
+  },
+  "s7": {
+    "file": "s7.jpg",
+    "refs": [
+      "alma",
+      "ines"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 3437,
+      "input_tokens_details": {
+        "image_tokens": 3016,
+        "text_tokens": 421
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 3781
+    },
+    "cost": 0.036553,
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Inés Duarte. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nInés Duarte (32 years old): Heart-shaped face, warm tan skin, hazel eyes, straight copper-brown hair cut into a blunt chin-length bob. Medium build. Always wears an olive-green utility shirt, dark jeans, and a yellow thread bracelet. A small crescent-shaped birthmark beside her mouth remains visible in every scene.\nShot: close-up.\nScene: Vertical 9:16 tight frame at the projection booth doorway. Inés takes one cautious step toward Alma, who hesitates without reaching back. Their faces hold the upper half against a dark auditorium; a narrow strip of projector light heightens the tension. Lower third empty, no legible text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-10-19T23:30:25.030Z"
+  }
+}

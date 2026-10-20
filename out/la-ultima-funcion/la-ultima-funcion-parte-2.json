@@ -1,0 +1,46 @@
+{
+  "file": "la-ultima-funcion-parte-2.mp4",
+  "series": "la-ultima-funcion",
+  "seriesTitle": "La última función",
+  "episode": 2,
+  "title": "La amiga que miente",
+  "lang": "es",
+  "duration": 115.35,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "music": null,
+  "ai_generated": true,
+  "hook_text": "¿Por qué Inés escondía esa carpeta?",
+  "safe_zone": {
+    "x0": 64.8,
+    "x1": 907.1999999999999,
+    "y0": 288,
+    "y1": 1497.6000000000001
+  },
+  "violations": [],
+  "post": {
+    "text": "Inés tenía una explicación para la carpeta. Yo necesitaba escuchar a alguien más.\nFicción · hecho con IA\n\n#minidrama #CineDeBarrio #Traicion #PuertoLucero",
+    "description": "Inés tenía una explicación para la carpeta. Yo necesitaba escuchar a alguien más.",
+    "hashtags": [
+      "Minidrama",
+      "CineDeBarrio",
+      "Traicion",
+      "PuertoLucero"
+    ],
+    "source": "gpt-6-sol"
+  },
+  "createdAt": "2026-10-19T23:47:00.559Z",
+  "tiktok": [
+    {
+      "file": "la-ultima-funcion-parte-2.mp4",
+      "mode": "draft",
+      "publish_id": "v_inbox_file~v2.7698547472867526657",
+      "status": "SEND_TO_USER_INBOX",
+      "fail_reason": null,
+      "privacy": null,
+      "is_aigc": false,
+      "at": "2026-10-20T00:58:59.747Z"
+    }
+  ]
+}

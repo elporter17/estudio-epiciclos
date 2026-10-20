@@ -69,6 +69,33 @@ Después pon las claves en `.env`. El archivo está en `.gitignore` y nunca se s
 
 Para comprobar la conexión: `node scripts/tiktok-connect.mjs --status`.
 
+### Correr en otra PC
+
+En el repo ya están el guion, los retratos, las imágenes y la voz por línea de «La última función», así que no hay que volver a pagar la API. Los MP4, las hojas de revisión y `episode.wav` no se suben porque se rehacen gratis.
+
+1. Instala Node 20.12 o más reciente y git. Clona con tu cuenta personal:
+   ```bash
+   git clone -b feat/piloto-amor-traicion git@github-personal:elporter17/minidramas.git
+   ```
+2. Instala las dependencias (descarga ffmpeg en el postinstall):
+   ```bash
+   npm install
+   ```
+3. Copia `.env.example` como `.env` y pon `OPEN_AI` y las tres `TIKTOK_*` de la app Circularte (sandbox «circularte-dev» en developers.tiktok.com). El `.env` no está en git: pásalo a mano o por un gestor de contraseñas, nunca por el repo.
+4. TikTok: deja `TIKTOK_TOKEN_FILE` vacío (o apúntalo al token de CirculArte si clonaste los dos repos lado a lado y ya está conectado) y conecta la cuenta:
+   ```bash
+   node scripts/tiktok-connect.mjs
+   ```
+5. Rehaz el audio completo desde la caché (sin llamadas al TTS) y los videos:
+   ```bash
+   node scripts/voice.mjs --ep all
+   ```
+   ```bash
+   node scripts/assemble.mjs --ep all --music none
+   ```
+
+El estado de la serie y lo que ya se aprendió está en [CLAUDE.md](CLAUDE.md).
+
 ### Música (opcional)
 
 Pon archivos `.mp3`, `.m4a` o `.wav` en `assets/music/`. Cada episodio elige uno de forma estable. La música baja de volumen cuando habla la voz (sidechain), el audio se normaliza a −14 LUFS y la pista se desvanece al final. Usa solo música con licencia para redes. `--music none` la quita y `--music <archivo>` fuerza una pista concreta. Los archivos de música no se suben a git.

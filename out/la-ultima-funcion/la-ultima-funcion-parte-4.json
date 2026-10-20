@@ -1,0 +1,56 @@
+{
+  "file": "la-ultima-funcion-parte-4.mp4",
+  "series": "la-ultima-funcion",
+  "seriesTitle": "La última función",
+  "episode": 4,
+  "title": "La última copia",
+  "lang": "es",
+  "duration": 119.35,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "music": null,
+  "ai_generated": true,
+  "hook_text": "¿Mi firma le entregó el cine?",
+  "safe_zone": {
+    "x0": 64.8,
+    "x1": 907.1999999999999,
+    "y0": 288,
+    "y1": 1497.6000000000001
+  },
+  "violations": [],
+  "post": {
+    "text": "Alma encuentra la copia que Simón le ocultó. Ahora sabe que todavía puede decidir, pero no qué hará Inés.\nFicción · hecho con IA\n\n#LaUltimaFuncion #minidrama #CineDeBarrio #Parte4",
+    "description": "Alma encuentra la copia que Simón le ocultó. Ahora sabe que todavía puede decidir, pero no qué hará Inés.",
+    "hashtags": [
+      "LaUltimaFuncion",
+      "Minidrama",
+      "CineDeBarrio",
+      "Parte4"
+    ],
+    "source": "gpt-6-sol"
+  },
+  "createdAt": "2026-10-19T23:56:39.094Z",
+  "tiktok": [
+    {
+      "file": "la-ultima-funcion-parte-4.mp4",
+      "mode": "draft",
+      "publish_id": "v_inbox_file~v2.7698855664382429185",
+      "status": "SEND_TO_USER_INBOX",
+      "fail_reason": null,
+      "privacy": null,
+      "is_aigc": false,
+      "at": "2026-10-20T20:56:29.013Z"
+    },
+    {
+      "file": "la-ultima-funcion-parte-4.mp4",
+      "mode": "draft",
+      "publish_id": "v_inbox_file~v2.7698858008016734214",
+      "status": "SEND_TO_USER_INBOX",
+      "fail_reason": null,
+      "privacy": null,
+      "is_aigc": false,
+      "at": "2026-10-20T21:02:22.019Z"
+    }
+  ]
+}
