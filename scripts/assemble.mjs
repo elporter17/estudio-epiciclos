@@ -21,9 +21,9 @@ import { loadSeries, episode, imageDir, timelineFile, videoFile, readJson, write
 
 export const W = 1080, H = 1920, FPS = 30;
 export const SAFE = { x0: 0.06 * W, x1: 0.84 * W, y0: 0.15 * H, y1: 0.78 * H };
-const CX = (SAFE.x0 + SAFE.x1) / 2; // el texto se centra en la zona segura, no en el cuadro
+export const CX = (SAFE.x0 + SAFE.x1) / 2; // el texto se centra en la zona segura, no en el cuadro
 const FONT = 'Montserrat';
-const LOOK = {
+export const LOOK = {
   sub: { size: 86, min: 58, y: 0.655 * H, stroke: 15, color: '#FFFFFF', active: '#FFE14D', lineGap: 1.08 },
   part: { size: 44, padX: 30, padY: 16, top: SAFE.y0 + 12, bg: 'rgba(225,29,72,0.94)' },
   hook: { size: 72, min: 54, stroke: 13, gapTop: 34, until: 3.0, fade: 0.35, maxLines: 3 },
@@ -33,7 +33,7 @@ const LOOK = {
 const MUSIC_DIR = path.join(ROOT, 'assets', 'music');
 
 let fontsReady = false;
-function setupFonts() {
+export function setupFonts() {
   if (fontsReady) return;
   const dir = path.join(ROOT, 'node_modules', '@fontsource', 'montserrat', 'files');
   for (const f of fs.readdirSync(dir).filter((f) => /-(latin|latin-ext)-(800|900)-normal\.woff2$/.test(f))) GlobalFonts.registerFromPath(path.join(dir, f), FONT);
@@ -105,7 +105,7 @@ export function buildCaptions(timeline) {
 
 // Coloca palabras en 1 o 2 renglones centrados en CX; achica la letra hasta que quepa en la zona segura.
 // Un renglón solo si cabe a buen tamaño (oneLineMin); si no, dos renglones grandes antes que uno diminuto.
-function layoutWords(ctx, words, { size, min, stroke, weight = 900, maxLines = 2, lineGap = 1.08, oneLineMin = Math.round(size * 0.78) }) {
+export function layoutWords(ctx, words, { size, min, stroke, weight = 900, maxLines = 2, lineGap = 1.08, oneLineMin = Math.round(size * 0.78) }) {
   const maxW = SAFE.x1 - SAFE.x0 - stroke - 8;
   const rowOf = (ws, space) => {
     const widths = ws.map((w) => ctx.measureText(w.text).width);
@@ -141,12 +141,12 @@ function layoutWords(ctx, words, { size, min, stroke, weight = 900, maxLines = 2
 }
 
 // Caja ocupada (con el contorno) de un bloque centrado en (CX, y = primera línea base)
-function boxOf(L, baseY, stroke) {
+export function boxOf(L, baseY, stroke) {
   const w = Math.max(...L.rows.map((r) => r.width));
   return { x0: CX - w / 2 - stroke / 2, x1: CX + w / 2 + stroke / 2, y0: baseY - L.asc - stroke / 2, y1: baseY + (L.rows.length - 1) * L.lineH + L.desc + stroke / 2 };
 }
 
-function drawRows(ctx, L, baseY, { stroke, color, active = -1, activeColor, scale = 1, alpha = 1 }) {
+export function drawRows(ctx, L, baseY, { stroke, color, active = -1, activeColor, scale = 1, alpha = 1 }) {
   ctx.save();
   ctx.globalAlpha = alpha;
   const midY = baseY + ((L.rows.length - 1) * L.lineH) / 2 - (L.asc - L.desc) / 2;
@@ -207,7 +207,7 @@ function shadeLayer() {
   return c;
 }
 
-const ease = (x) => 1 - Math.pow(1 - Math.min(1, Math.max(0, x)), 3);
+export const ease = (x) => 1 - Math.pow(1 - Math.min(1, Math.max(0, x)), 3);
 
 /* ---------------- escena completa ---------------- */
 export async function prepare(series, n) {

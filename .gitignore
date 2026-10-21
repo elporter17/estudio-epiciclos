@@ -15,3 +15,7 @@ data/tiktok-token.json
 data/tiktok-pending.json
 data/tiktok-log.json
 .claude/
+# Formato Veo: los clips y la hoja de personajes cuestan cupo de Gemini o puntos de Flow, se suben
+!out/*/ep*/clips/c*.mp4
+!out/*/characters/sheet.png
+out/**/descartados-flow/

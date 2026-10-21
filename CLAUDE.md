@@ -37,6 +37,17 @@ Guion en `series/la-ultima-funcion/series.json`. En `out/la-ultima-funcion/` est
 
 Cada parte ya pasó la revisión (zona segura OK, subtítulos de 2 a 4 palabras, cada línea a ≤115 ms de su sonido). Costo total del piloto ≈ $2.
 
+## Serie 2: «La boda del Plátano» (formato Veo, frutas, rama `feat/frutas-boda-platano`)
+Clips de video con diálogo hechos a mano en el navegador, sin API: **ChatGPT** hace el primer cuadro de cada clip y **Gemini → Crear vídeo** (Veo, vertical 9:16, unos 10 s) lo anima con el diálogo. Guion y prompts en `series/la-boda-del-platano/veo.json` (`node scripts/veo-prompts.mjs --ep N`). Montaje: `node scripts/veo-assemble.mjs --ep N` (Whisper para los tiempos de los subtítulos, unos $0.006/min).
+- Hoja de personajes: `out/la-boda-del-platano/characters/sheet.png`. Los cuadros salen de una sola conversación de ChatGPT que ya tiene la hoja: https://chatgpt.com/c/6ad7f046-9fec-83e8-b1b0-4f5aea85a997
+- Cuadros: hechos 1-02 a 1-06 y 2-01 a 2-06 (`epNN/frames/`). Faltan los de las partes 3, 4 y 5.
+- Clips: **parte 1 completa** (1-01 a 1-04 de Gemini, 1-05 y 1-06 de Flow con Veo 3.1 Quality). Faltan las partes 2 a 5.
+- TikTok: parte 1 (58,5 s) subida como borrador a @potter.play el 2026-10-20 (`publish_id` en su `.json`). En esta PC el token está en `data/tiktok-token.json` (el `.env` tiene `TIKTOK_TOKEN_FILE` vacío).
+- Cómo pasar archivos: los botones de descarga a veces no bajan nada al primer intento (hay que esperar 10 a 15 s). Para las imágenes sirve «Copy image» en ChatGPT, guardar desde el portapapeles y pegar con Ctrl+V en Gemini (la primera vez Gemini pide permiso del portapapeles).
+- **Límite de Gemini Pro: unos 5 videos por día.** Después «Crear vídeo» queda desactivado.
+- **Google Flow** (flow.google.com, proyecto «oct 20 - 17:14»), solo cuando Gemini se queda sin cupo. Veo 3.1 **Fast** (20 puntos, 8 s) se salió del diseño: puso un cura humano y le dio cara de persona a Piña, y se comió una línea (esos clips están en `ep01/clips/descartados-flow/`). Veo 3.1 **Quality** (100 puntos por clip) sí funciona con un prompt largo: «every character is an anthropomorphic FRUIT, NO humans», cada personaje descrito de nuevo y el diálogo repartido por segundos («0-4 s: … 4-8 s: …»). Hay que pedirle Quality al agente en el mensaje, porque si no usa Fast. Al 2026-10-20 quedan unos 810 puntos de 1.050.
+- Veo a veces mete palabras de relleno. `veo-assemble` alinea las palabras del guion con lo que oye Whisper y deja fuera el relleno; los subtítulos van por línea de diálogo.
+
 ## Pendiente o ideas
 - La parte 5 cierra con «Parte 6 en mi perfil», que todavía no existe: hay que escribir una temporada 2 o cambiar la línea final.
 - No hay música (la carpeta `assets/music/` está vacía). Hay que poner pistas con licencia.
