@@ -1,0 +1,59 @@
+{
+  "text": "Se acabó llorar entre yogures. Quiero la verdad.",
+  "words": [
+    {
+      "word": "Se",
+      "start": 1,
+      "end": 1.7200000286102295
+    },
+    {
+      "word": "acabó",
+      "start": 1.7200000286102295,
+      "end": 2.119999885559082
+    },
+    {
+      "word": "llorar",
+      "start": 2.119999885559082,
+      "end": 2.4000000953674316
+    },
+    {
+      "word": "entre",
+      "start": 2.4000000953674316,
+      "end": 2.700000047683716
+    },
+    {
+      "word": "yogures",
+      "start": 2.700000047683716,
+      "end": 3.240000009536743
+    },
+    {
+      "word": "Quiero",
+      "start": 4.420000076293945,
+      "end": 4.440000057220459
+    },
+    {
+      "word": "la",
+      "start": 4.440000057220459,
+      "end": 5.119999885559082
+    },
+    {
+      "word": "verdad",
+      "start": 5.119999885559082,
+      "end": 5.199999809265137
+    }
+  ],
+  "segments": [
+    {
+      "start": 1,
+      "end": 3.240000009536743,
+      "text": " Se acabó llorar entre yogures.",
+      "no_speech_prob": 0.5499632358551025
+    },
+    {
+      "start": 4.420000076293945,
+      "end": 5.199999809265137,
+      "text": " Quiero la verdad.",
+      "no_speech_prob": 0.5499632358551025
+    }
+  ]
+}

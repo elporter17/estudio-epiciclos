@@ -48,7 +48,7 @@ function alignScript(script, heard) {
   const out = []; let p = 0, matched = 0;
   for (const tok of script) {
     const b = bareWord(tok); let hit = -1;
-    for (let j = p; j < Math.min(heard.length, p + 8); j++) if (close(b, bareWord(heard[j].word))) { hit = j; break; }
+    for (let j = p; j < Math.min(heard.length, p + 16); j++) if (close(b, bareWord(heard[j].word))) { hit = j; break; }
     if (hit >= 0) { out.push({ w: tok, start: heard[hit].start, end: heard[hit].end }); p = hit + 1; matched++; }
     else out.push({ w: tok, start: null, end: null });
   }
