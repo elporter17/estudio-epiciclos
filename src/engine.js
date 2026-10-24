@@ -495,18 +495,19 @@ export function relayout(S, settings, view) {
       L.tx = (left + Wc * L.s + W) / 2; L.ty = H * 0.47;
     } else {
       const tall = f === '9:16';
-      L.s = Math.min(W * 0.9 / Wc, H * (tall ? (cap ? 0.5 : 0.55) : (cap ? 0.6 : 0.66)) / Hc);
-      left = (W - Wc * L.s) / 2; top = H * (tall ? (cap ? 0.11 : 0.07) : (cap ? 0.1 : 0.05));
+      // En 9:16 el texto superior va al 15 % (debajo de los botones de TikTok), así que el dibujo empieza más abajo
+      L.s = Math.min(W * 0.9 / Wc, H * (tall ? (cap ? 0.46 : 0.55) : (cap ? 0.6 : 0.66)) / Hc);
+      left = (W - Wc * L.s) / 2; top = H * (tall ? (cap ? 0.19 : 0.07) : (cap ? 0.1 : 0.05));
       L.tx = W / 2; L.ty = top + Hc * L.s + H * (tall ? 0.085 : 0.1);
     }
     L.cx = left + (2 * ry + g + hx) * L.s; L.cy = top + (2 * rx + g + hy) * L.s;
     L.xChainY = L.cy - (hy + g + rx) * L.s; L.yChainX = L.cx - (hx + g + ry) * L.s;
   } else {
-    if (f === '9:16') { L.s = W * 0.33; L.cx = W / 2; L.cy = H * (cap ? 0.38 : 0.36); L.tx = W / 2; L.ty = H * 0.74; }
+    if (f === '9:16') { L.s = W * 0.33; L.cx = W / 2; L.cy = H * (cap ? 0.43 : 0.36); L.tx = W / 2; L.ty = H * 0.74; }
     else if (f === '1:1') { L.s = W * 0.28; L.cx = W / 2; L.cy = H * (cap ? 0.44 : 0.41); L.tx = W / 2; L.ty = H * 0.85; }
     else { L.s = H * 0.33; L.cx = W * 0.36; L.cy = H * (cap ? 0.54 : 0.5); L.tx = W * 0.77; L.ty = H * 0.47; }
   }
-  if (f === '9:16') { L.rcx = W / 2; L.rcy = H * (cap ? 0.34 : 0.31); L.rs = W * 0.34; L.fx = W / 2; L.fy = H * 0.6; L.falign = 'center'; }
+  if (f === '9:16') { L.rcx = W / 2; L.rcy = H * (cap ? 0.39 : 0.31); L.rs = W * 0.34; L.fx = W / 2; L.fy = H * (cap ? 0.63 : 0.6); L.falign = 'center'; }
   else if (f === '1:1') { L.rcx = W / 2; L.rcy = H * (cap ? 0.37 : 0.34); L.rs = W * 0.24; L.fx = W / 2; L.fy = H * 0.7; L.falign = 'center'; }
   else { L.rcx = W * 0.29; L.rcy = H * (cap ? 0.54 : 0.5); L.rs = H * 0.34; L.fx = W * 0.68; L.fy = H * 0.36; L.falign = 'center'; }
   S.L = L;
@@ -690,7 +691,7 @@ function drawLabels(R, N, a) {
 function drawTopFormulas(R) {
   const { ctx, settings, view } = R;
   const U = view.U, x = 28 * U, size = 21 * U, maxW = view.W * 0.62;
-  let y = (settings.caption.trim() ? view.H * (settings.format === '9:16' ? 0.1 : 0.14) : 0) + 46 * U;
+  let y = (settings.caption.trim() ? view.H * (settings.format === '9:16' ? 0.19 : 0.14) : 0) + 46 * U;
   if (settings.style === 'xy') {
     ctx.fillStyle = FG;
     mathLine(R, [['i', 'x'], ['r', '('], ['i', 't'], ['r', ') = '], ['S', 'Σ'], ['_', 'k'], ['r', ' ('], ['i', 'a'], ['_', 'k'], ['r', ' cos '], ['i', 'kt'], ['r', ' + '], ['i', 'b'], ['_', 'k'], ['r', ' sin '], ['i', 'kt'], ['r', ')']], x, y, size, 'left', maxW);
@@ -761,7 +762,8 @@ function drawCaption(R) {
   const U = view.U; ctx.save(); ctx.fillStyle = FG; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
   let size = 34 * U; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${env.fallback}`;
   const w = ctx.measureText(c).width; if (w > view.W * .9) { size *= view.W * .9 / w; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${env.fallback}`; }
-  ctx.fillText(c, view.W / 2, view.H * (settings.format === '9:16' ? 0.055 : 0.07));
+  // En 9:16 al 15 %: más arriba lo tapan los botones de TikTok (pestañas, «Agregar sonido»)
+  ctx.fillText(c, view.W / 2, view.H * (settings.format === '9:16' ? 0.15 : 0.07));
   ctx.restore();
 }
 

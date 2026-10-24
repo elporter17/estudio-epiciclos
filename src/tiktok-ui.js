@@ -182,7 +182,8 @@ export async function initTikTok({ toast }) {
         if (Date.now() - t0 > 4 * 60e3) { setStatus(tr('TikTok sigue procesando el video. Revisa tu perfil en unos minutos.', 'TikTok is still processing the video. Check your profile in a few minutes.'), 'ok'); break; }
         setStatus(`${pair(STATUS_TEXT[s.status]) || tr('Procesando…', 'Processing…')} ${later}`);
       }
-      $('#ttDone').hidden = false; $('#ttGoWrap').hidden = true;
+      // Todo el formulario quedó desactivado durante el envío; «Listo» y la ✕ tienen que poder cerrar
+      $('#ttDone').hidden = false; $('#ttGoWrap').hidden = true; $('#ttDone').disabled = false; $('#ttClose').disabled = false;
     } catch (e) {
       setStatus(e.message, 'err');
       form.querySelectorAll('input,select,textarea,button').forEach((x) => { x.disabled = x.dataset.was === '1'; });
