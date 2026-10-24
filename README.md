@@ -103,9 +103,9 @@ La app ya pasó la revisión (Production en vivo desde el 23-10-2026). Antes, si
 
 ## Publicación diaria (GitHub Actions)
 
-`.github/workflows/daily.yml` genera un video cada día a las 10:00 (Honduras) y lo **publica directo y en público**, con su descripción y hashtags. Va en **modo suspenso**: elige solo figuras complejas (sin los presets marcados `simple`), no muestra la figura de guía mientras dibuja, ni el texto gancho ni la descripción dicen qué es, y la portada es un cuadro a mitad del dibujo. La figura completa aparece solo al final.
+`.github/workflows/daily.yml` genera un video cada día a las 10:00 (Honduras) y lo manda a tu bandeja de TikTok como **borrador**; la descripción con hashtags queda en el resumen de la corrida (*Actions* → la corrida → *Summary*) para copiarla y pegarla en la app. Va en **modo suspenso**: elige solo figuras complejas (sin los presets marcados `simple`), no muestra la figura de guía mientras dibuja, ni el texto gancho ni la descripción dicen qué es, y la portada es un cuadro a mitad del dibujo. La figura completa aparece solo al final.
 
-Ojo: las reglas de TikTok para desarrolladores no aceptan herramientas que suben contenido a las propias cuentas, y TikTok podría quitarle el permiso a la app (con eso dejaría de funcionar también la web). Se decidió publicar directo de todos modos; para volver a borradores, lanza el flujo con *publish* = `draft` o cambia el valor por defecto en `daily.yml`.
+Va en borrador porque publicar directo necesita la auditoría de Direct Post de TikTok (aparte de la revisión de la app); sin ella da `403 unaudited_client_can_only_post_to_private_accounts`. Cómo pedirla: [docs/AUDITORIA-DIRECT-POST.md](docs/AUDITORIA-DIRECT-POST.md). Cuando la aprueben, se puede pasar a directo cambiando `draft` por `direct` en `daily.yml` (y elegir la privacidad). Ojo: las reglas de TikTok para desarrolladores no aceptan herramientas que suben contenido a las propias cuentas, y TikTok podría quitarle el permiso a la app (con eso dejaría de funcionar también la web).
 
 También se puede lanzar a mano desde *Actions* → *Video diario a TikTok* → *Run workflow* (eliges idioma, `direct`/`draft`/`none` y la privacidad), y cada corrida deja el video como artefacto durante 7 días. En local: `npm run daily -- --publish direct` (o `--spoiler` para el modo anterior, con guía y nombre).
 
