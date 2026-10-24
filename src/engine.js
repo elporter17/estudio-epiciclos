@@ -21,8 +21,7 @@ const env = {
   loadFont: (font, text) => document.fonts.load(font, text),
   fonts: {},
   fallback: '', // familias extra al final del texto gancho (en Node: la fuente de emoji)
-  stix: '', // familias extra tras "STIX Two Text" (en Node: sus subconjuntos griego y latín extendido)
-  sim: '∼' // «del orden de» en las fórmulas; en Node va «~» porque los subconjuntos de STIX no traen U+223C
+  sim: '∼' // «del orden de» en las fórmulas; en Node va «~» porque STIX Two Text no trae U+223C
 };
 export function setEnv(e) { Object.assign(env, e); }
 
@@ -531,7 +530,7 @@ export const errFor = (S, style, N) => {
 /* ---------------- Dibujo ---------------- */
 const FG = '#f3eeea', GOLD = '#ffd98a', BG = '#141112';
 const hexA = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${a})`; };
-const mathFont = (sz, it) => `${it ? 'italic ' : ''}400 ${sz}px "STIX Two Text"${env.stix}, "Cambria Math", "Times New Roman", serif`;
+const mathFont = (sz, it) => `${it ? 'italic ' : ''}400 ${sz}px "STIX Two Text", "Cambria Math", "Times New Roman", serif`;
 
 function mathLine(R, parts, x, y, size, align, maxW) {
   const { ctx, settings } = R;
@@ -699,8 +698,8 @@ function drawSignature(R) {
   const { ctx, settings, view } = R;
   if (!settings.signature) return;
   const U = view.U, parts = [
-    ['Circul', `italic 400 ${24 * U}px "STIX Two Text"${env.stix}, "Times New Roman", serif`, hexA(FG, .8)],
-    ['Arte', `italic 400 ${24 * U}px "STIX Two Text"${env.stix}, "Times New Roman", serif`, settings.accent],
+    ['Circul', `italic 400 ${24 * U}px "STIX Two Text", "Times New Roman", serif`, hexA(FG, .8)],
+    ['Arte', `italic 400 ${24 * U}px "STIX Two Text", "Times New Roman", serif`, settings.accent],
     ['   edav-tech.com', `500 ${17 * U}px "IBM Plex Sans", system-ui, sans-serif`, hexA(FG, .5)]
   ];
   ctx.save(); ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left';

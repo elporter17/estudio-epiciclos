@@ -58,11 +58,11 @@ jobs:
 
       - run: npm ci
 
-      - name: Fuente de emoji (en caché)
+      - name: Fuentes completas: emoji y STIX (en caché)
         uses: actions/cache@v4
         with:
           path: assets/fonts
-          key: noto-color-emoji-v1
+          key: fonts-v2-noto-emoji-stix
       - run: npm run fonts
 
       # Token de TikTok e historial de figuras, cifrados con STATE_KEY entre corridas
