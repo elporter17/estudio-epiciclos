@@ -53,7 +53,7 @@ Commits de esta etapa en `main`: `43f41ca` (merge), `f096348`, `c1ce6b1`, `86a0a
 - Con la app aprobada, @potter.play (conectada con las credenciales de Production el 24-10-2026) admite `PUBLIC_TO_EVERYONE`, `MUTUAL_FOLLOW_FRIENDS` y `SELF_ONLY`. Antes, sin auditoría, todo quedaba en «Solo yo» y la cuenta tenía que ser privada (`unaudited_client_can_only_post_to_private_accounts`).
 
 ### GitHub Actions (`.github/workflows/daily.yml`)
-Corre a diario a las 10:00 de Honduras, o a mano. Secretos (cargados el 24-10-2026, con credenciales de Production): `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TIKTOK_REDIRECT_URI`, `TIKTOK_TOKEN_SEED` (contenido de `data/tiktok-token.json`) y `STATE_KEY`. El token y el historial viajan cifrados en la caché de Actions.
+Corre cada 4 horas (cron `17 */4 * * *`, desde el 24-10-2026; antes a diario a las 10:00) o a mano. GitHub atrasa las corridas programadas: las de las 10:00 llegaban hacia las 13:45. Secretos (cargados el 24-10-2026, con credenciales de Production): `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TIKTOK_REDIRECT_URI`, `TIKTOK_TOKEN_SEED` (contenido de `data/tiktok-token.json`) y `STATE_KEY`. El token y el historial viajan cifrados en la caché de Actions.
 - Las corridas #1 a #7 (17 al 23-10) fallaron a los 20 s con «La cuenta de TikTok no está conectada»: no había ningún secreto. La #8 (a mano, 24-10) funcionó: video «Flamenco» como borrador en @potter.play (`SEND_TO_USER_INBOX`).
 - `scripts/secrets-to-clipboard.ps1` copia los secretos de `.env` y del token al portapapeles uno por uno, sin imprimirlos (`… .ps1 STATE_KEY` para uno solo). En la terminal solo se presiona Enter; el valor se pega en GitHub.
 - Aviso sin urgencia: las actions `@v4` usan Node 20, que GitHub ya marca como obsoleto.
@@ -62,7 +62,7 @@ Corre a diario a las 10:00 de Honduras, o a mano. Secretos (cargados el 24-10-20
 ### Cuadros en Linux y token revocado (24-10-2026, ya en `main`)
 - Registrar los subconjuntos de @fontsource con alias no bastó: en Actions STIX seguía en cuadros (Skia usa el nombre interno de la familia). Ahora `npm run fonts` baja STIX Two Text completa (normal e itálica) de google/fonts, las demás familias usan solo `latin`, y `setupNode` compara cada familia contra el cuadro de U+E000 y falla antes de renderizar si algo sale mal. Probado en Actions (#12) y la caché de fuentes cambió de clave.
 - Al grabar el demo se pulsó «Switch account» en la web, que revoca la autorización: el diario dio 401 `access_token_invalid` (#13). Se reconectó @potter.play, se actualizó `TIKTOK_TOKEN_SEED` y el workflow ganó la opción `reseed` para preferir el secreto sobre el token guardado en la caché. La #14 (main, borrador, reseed) llegó a la bandeja.
-- El diario queda programado a las 10:00 en borrador; el usuario publica a mano pegando la descripción del resumen de la corrida. La auditoría de Direct Post quedó en pausa (formulario lleno hasta el paso 3; demo recortado en `Videos/circularte-demo-direct-post.mp4` en la PC del usuario).
+- El diario queda programado en borrador (cada 4 horas desde el 24-10; máximo 5 borradores pendientes por día en TikTok); el usuario publica a mano pegando la descripción del resumen de la corrida. La auditoría de Direct Post quedó en pausa (formulario lleno hasta el paso 3; demo recortado en `Videos/circularte-demo-direct-post.mp4` en la PC del usuario).
 
 ### Rama `feat/diario-directo-sin-ia` (24-10-2026)
 Lo pidió el usuario después de ver el primer borrador:

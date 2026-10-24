@@ -13,7 +13,7 @@ Web que dibuja imágenes, textos y funciones con círculos que giran (series de 
 - `index.html`: la web (UI). Importa `src/engine.js` (motor: matemática + dibujo, compartido con Node) y `src/tiktok-ui.js` (diálogo «Publicar en TikTok»).
 - `api/`: funciones de Vercel (`export default { fetch(request) }`, Web Request/Response). `_tiktok.js` es compartido (cookies cifradas AES-GCM con `SESSION_SECRET`, cliente TikTok, token de Blob).
 - `scripts/`: render en Node (`render.mjs`), `pick.mjs`, `caption.mjs` (plantillas, sin IA), `daily.mjs`, `publish.mjs` y `tiktok-connect.mjs` (CLI), `fonts.mjs`.
-- `.github/workflows/daily.yml`: video diario como borrador a TikTok (directo cuando se audite Direct Post); la descripción queda en el resumen de la corrida.
+- `.github/workflows/daily.yml`: video cada 4 horas como borrador a TikTok (cron `17 */4 * * *`; máximo 5 borradores pendientes por día) (directo cuando se audite Direct Post); la descripción queda en el resumen de la corrida.
 - Páginas legales: `privacidad.html`, `terminos.html`; callback OAuth: `tiktok-callback.html` (modo web y modo terminal).
 
 ## Comandos

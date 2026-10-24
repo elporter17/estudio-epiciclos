@@ -1,4 +1,4 @@
-# Un video diario de CirculArte: elige figura compleja → renderiza en modo suspenso → descripción con plantillas →
+# Un video de CirculArte cada 4 horas: elige figura compleja → renderiza en modo suspenso → descripción con plantillas →
 # borrador en la bandeja de TikTok (la descripción queda en el resumen de la corrida para pegarla en la app).
 # Todo sale del proyecto: sin IA ni APIs de pago.
 # Por defecto va en borrador hasta que TikTok audite Direct Post: sin auditoría, publicar directo da
@@ -10,7 +10,10 @@ name: Video diario a TikTok
 
 on:
   schedule:
-    - cron: '0 16 * * *' # 10:00 en Honduras (UTC-6)
+    # Cada 4 horas al minuto 17 (GitHub retrasa más las horas en punto; aun así puede llegar con horas de atraso).
+    # En Honduras (UTC-6): 18:17, 22:17, 2:17, 6:17, 10:17 y 14:17.
+    # TikTok admite 5 borradores pendientes cada 24 h por cuenta: si no se publican, el sexto del día falla.
+    - cron: '17 */4 * * *'
   workflow_dispatch:
     inputs:
       lang:
