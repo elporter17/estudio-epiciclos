@@ -49,16 +49,19 @@ Commits de esta etapa en `main`: `43f41ca` (merge), `f096348`, `c1ce6b1`, `86a0a
 
 ### TikTok Developers (app «Circularte»)
 - **Sandbox `circularte-dev`**: Login Kit (redirect web anterior), Content Posting API con Direct Post, permisos `user.info.basic`, `video.upload` y `video.publish`, usuario de prueba **@potter.play**, URL prefix `https://circularte.edav-tech.com/` verificado (archivo `tiktokqyFPVb9B6QLImbWaKsH7UqDIs4NF38YT.txt`).
-- **Production**: importada del sandbox, URL prefix verificado (archivo `tiktoki7iOt9g1qJGR0ExsTyOHhaUfqDLlFaU9.txt`), texto de revisión en inglés y 3 videos demo. **Enviada a revisión el 16-10-2026.**
-- Sin auditoría: todo lo publicado por la API queda en «Solo yo» y la cuenta debe ser **privada** (si no, error `unaudited_client_can_only_post_to_private_accounts`). Como mucho 5 usuarios por día.
+- **Production**: importada del sandbox, URL prefix verificado (archivo `tiktoki7iOt9g1qJGR0ExsTyOHhaUfqDLlFaU9.txt`), texto de revisión en inglés y 3 videos demo. Enviada a revisión el 16-10-2026 y **en vivo desde el 23-10-2026**.
+- Con la app aprobada, @potter.play (conectada con las credenciales de Production el 24-10-2026) admite `PUBLIC_TO_EVERYONE`, `MUTUAL_FOLLOW_FRIENDS` y `SELF_ONLY`. Antes, sin auditoría, todo quedaba en «Solo yo» y la cuenta tenía que ser privada (`unaudited_client_can_only_post_to_private_accounts`).
 
 ### GitHub Actions (`.github/workflows/daily.yml`)
-Corre a diario a las 10:00 de Honduras, o a mano. Faltan los secretos: `OPEN_AI`, `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TIKTOK_REDIRECT_URI`, `TIKTOK_TOKEN_SEED` (contenido de `data/tiktok-token.json`) y `STATE_KEY`. El token y el historial viajan cifrados en la caché de Actions.
+Corre a diario a las 10:00 de Honduras, o a mano. Secretos (todos cargados el 24-10-2026, con credenciales de Production): `OPEN_AI`, `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TIKTOK_REDIRECT_URI`, `TIKTOK_TOKEN_SEED` (contenido de `data/tiktok-token.json`) y `STATE_KEY`. El token y el historial viajan cifrados en la caché de Actions.
+- Las corridas #1 a #7 (17 al 23-10) fallaron a los 20 s con «La cuenta de TikTok no está conectada»: no había ningún secreto. La #8 (a mano, 24-10) funcionó: video «Flamenco» como borrador en @potter.play (`SEND_TO_USER_INBOX`).
+- `scripts/secrets-to-clipboard.ps1` copia los secretos de `.env` y del token al portapapeles uno por uno, sin imprimirlos (`… .ps1 STATE_KEY` para uno solo). En la terminal solo se presiona Enter; el valor se pega en GitHub.
+- Aviso sin urgencia: las actions `@v4` usan Node 20, que GitHub ya marca como obsoleto.
 
 ## 4. Pendientes
-1. **Cuando TikTok apruebe**: en Vercel cambiar `TIKTOK_CLIENT_KEY` y `TIKTOK_CLIENT_SECRET` por las de Production y redesplegar; reconectar la cuenta desde la web; poner @potter.play en público si se quiere.
-2. **Si TikTok pide cambios**: llegan en el portal (Review comments).
-3. **Secretos de GitHub** para la publicación diaria (pueden ser las credenciales del sandbox).
+1. **Vercel**: cambiar `TIKTOK_CLIENT_KEY` y `TIKTOK_CLIENT_SECRET` por las de Production y redesplegar; reconectar la cuenta desde la web.
+2. **Rotar** la clave de OpenAI y el Client secret de TikTok (quedaron a la vista en una terminal el 24-10) y actualizarlos en `.env`, GitHub y Vercel.
+3. **Saldo de OpenAI**: la cuenta respondió 429 (sin créditos); mientras tanto las descripciones usan la plantilla local.
 4. ~~Bug previo: en formato 1:1 la firma se encima con la línea «N = … error = …».~~ Resuelto: el bloque de fórmulas se escala si no cabe sobre la firma.
 5. Opcional: borrar el almacén Blob privado sin usar.
 

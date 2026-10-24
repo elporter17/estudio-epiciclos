@@ -27,6 +27,8 @@ npm run daily -- --publish draft
 ```
 En PowerShell 5.1 usa `npm.cmd run … -- …` (PowerShell se come el `--`).
 
-## Estado (2026-10-16)
-- App de TikTok «Circularte» **enviada a revisión** (Production). Vercel usa credenciales del **sandbox** (`circularte-dev`; usuario de prueba @potter.play). Al aprobar: poner las de Production en Vercel y redesplegar.
-- Pendiente: secretos de GitHub para `daily.yml`.
+## Estado (2026-10-24)
+- App de TikTok «Circularte» **aprobada: Production en vivo desde el 23-10-2026**. El `.env` local y los secretos de GitHub ya usan las credenciales de Production; @potter.play está conectada con ellas (puede publicar en público).
+- `daily.yml` **funciona**: los 6 secretos están en GitHub y la corrida #8 (a mano, 24-10-2026) mandó el borrador «Flamenco» a la bandeja de @potter.play. Para cargar o rotar secretos: `scripts/secrets-to-clipboard.ps1` (los copia al portapapeles uno por uno, sin imprimirlos).
+- La cuenta de OpenAI se quedó sin saldo (429): las descripciones salen de la plantilla local hasta que se recargue.
+- Pendiente: Vercel sigue con las credenciales del **sandbox**; poner las de Production y redesplegar. Rotar la clave de OpenAI y el Client secret de TikTok (quedaron a la vista en una terminal) y actualizarlos en `.env`, GitHub y Vercel.

@@ -112,6 +112,8 @@ Secretos del repositorio (*Settings* → *Secrets and variables* → *Actions*):
 | `TIKTOK_TOKEN_SEED` | El contenido completo de `data/tiktok-token.json` después de `npm run tiktok:connect` (solo se usa en la primera corrida) |
 | `STATE_KEY` | Una cadena aleatoria larga: cifra el token y el historial que el flujo guarda en la caché de Actions entre corridas |
 
+Para cargarlos sin copiarlos a mano: `powershell -ExecutionPolicy Bypass -File scripts/secrets-to-clipboard.ps1` pone cada valor en el portapapeles (de `.env` y del token), tú lo pegas en GitHub y en la terminal solo presionas Enter.
+
 El token se renueva solo y el nuevo se guarda cifrado en la caché. Si el flujo deja de correr más de 7 días, GitHub borra la caché: vuelve a conectar con `npm run tiktok:connect` y actualiza `TIKTOK_TOKEN_SEED`.
 
 **PowerShell.** Windows PowerShell 5.1 se come el `--` de `npm run render -- --preset …`. Usa `npm.cmd run render -- …` o directamente `node scripts/render.mjs --preset …`.
