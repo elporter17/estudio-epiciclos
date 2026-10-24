@@ -1,6 +1,7 @@
 // Qué se puede dibujar: presets de la web, funciones inventadas, texto libre y la biblioteca de la publicación automática.
 import fs from 'node:fs';
 import { PRESETS, INVENT_TYPES, COMPLEX_TYPES, presetSrc, inventFn, funName, makeRng } from '../../src/engine.js';
+import { BOUNCE_MODES, BOUNCE_NAMES } from '../../src/bounce.js';
 
 // data/biblioteca.json: 500 nombres, 100 parejas y 100 figuras de emoji para la publicación automática
 export const BIBLIOTECA = JSON.parse(fs.readFileSync(new URL('../../data/biblioteca.json', import.meta.url), 'utf8'));
@@ -33,6 +34,8 @@ export function catalog({ emoji = true, complex = false } = {}) {
   // Las parejas se escriben apiladas («Ana», «&», «Luis») para que llenen el video vertical
   for (const c of BIBLIOTECA.combinaciones) items.push({ id: `pareja:${c}`, kind: 'text', text: c.replace(' & ', '\n&\n'), font: 'cursiva', name: c, group: 'Parejas', cat: 'combinaciones' });
   for (const t of COMPLEX_TYPES) items.push({ id: `random:${t}`, kind: 'random', type: t, group: 'Inventadas', cat: 'inventadas' });
+  // Pelotas que rebotan dentro de un círculo (scripts/bounce.mjs); cada semilla da una corrida distinta
+  for (const m of BOUNCE_MODES) items.push({ id: `pelotas:${m}`, kind: 'bounce', mode: m, name: BOUNCE_NAMES[m][0], nameEn: BOUNCE_NAMES[m][1], group: 'Pelotas', cat: 'pelotas' });
   return items;
 }
 

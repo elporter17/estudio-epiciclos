@@ -1,0 +1,173 @@
+/* CirculArte · pelotas que rebotan dentro de un círculo (videos «satisfying»), con una nota en cada rebote.
+   Compartido entre la web (pestaña Pelotas) y Node (scripts/bounce.mjs, la publicación automática).
+   La simulación es determinista (misma semilla, mismo video) y se calcula entera antes de dibujar: una foto por
+   cuadro a 60 fps y la lista de rebotes con su nota. El sonido se sintetiza aquí mismo, sin música con derechos.
+   Coordenadas: el círculo tiene centro (0, 0) y radio 1; y crece hacia abajo, como en el lienzo. */
+import { makeRng } from './engine.js';
+
+const TAU = Math.PI * 2;
+export const BOUNCE_FPS = 60;
+export const BOUNCE_MODES = ['crece', 'multiplica', 'escape'];
+export const BOUNCE_NAMES = {
+  crece: ['Crece con cada rebote', 'Grows with every bounce'],
+  multiplica: ['Se multiplica', 'Multiplies'],
+  escape: ['Escapar por el hueco', 'Escape through the gap']
+};
+// Texto de arriba del video
+export const BOUNCE_HOOKS = {
+  crece: { es: ['¿Llenará el círculo? 👀', 'Cada rebote la hace más grande', 'Espera el último rebote 😳'], en: ['Will it fill the circle? 👀', 'Every bounce makes it bigger', 'Wait for the last bounce 😳'] },
+  multiplica: { es: ['Cada rebote suelta otra pelota 🤯', '¿Cuántas caben? 👀', 'Esto se salió de control'], en: ['Every bounce drops another ball 🤯', 'How many fit? 👀', 'This got out of hand'] },
+  escape: { es: ['¿Cuántas logran escapar? 🔴', 'Cada pelota que sale suelta dos más', 'Encuentra el hueco 👀'], en: ['How many escape? 🔴', 'Every ball that gets out releases two more', 'Find the gap 👀'] }
+};
+
+const CFG = {
+  crece: { g: 1.5, r0: 0.05, grow: 0.018, rMax: 0.965, hold: 2, gapNote: 0.045, maxT: 50 },
+  multiplica: { g: 1.25, r: 0.034, cap: 150, spawnEvery: 0.16, hold: 4, gapNote: 0.07, maxT: 40 },
+  escape: { g: 1.6, r: 0.04, gap: 0.95, spin: 1.15, speed: [1.2, 1.8], cap: 220, hold: 4, gapNote: 0.07, maxT: 35 }
+};
+// Pentatónica mayor en tres octavas desde Do4: suena bien en cualquier orden
+const PENTA = [0, 2, 4, 7, 9];
+export const noteFreq = (i) => 261.63 * 2 ** ((12 * (Math.floor(i / 5) % 3) + PENTA[((i % 5) + 5) % 5]) / 12);
+
+// opts: { mode, seed, maxT }; devuelve { mode, seed, frames, events, total, fps }
+export function simulate({ mode = 'crece', seed = 1, maxT } = {}) {
+  if (!CFG[mode]) throw new Error(`Modo de pelotas desconocido «${mode}». Usa ${BOUNCE_MODES.join(', ')}`);
+  const c = CFG[mode], rng = makeRng(seed), rnd = (a, b) => a + rng() * (b - a);
+  maxT ??= c.maxT;
+  const SUB = 8, dt = 1 / (BOUNCE_FPS * SUB), hue0 = Math.floor(rnd(0, 360));
+  const balls = [], frames = [], events = [];
+  let t = 0, ring = rnd(0, TAU), bounces = 0, escaped = 0, born = 0, endAt = null, lastNote = -1, lastSpawn = -1, melody = 0;
+  const spawn = (r, x = rnd(-0.15, 0.15), y = rnd(-0.35, -0.1)) => {
+    const a = rnd(0, TAU), s = rnd(...(c.speed || [0.7, 1.15]));
+    balls.push({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, r, h: (hue0 + born++ * 47) % 360, out: false });
+  };
+  const note = (kind) => {
+    if (t - lastNote < c.gapNote) return;
+    lastNote = t;
+    const i = mode === 'crece' ? melody++ : Math.floor(rnd(0, 15));
+    events.push({ t, f: noteFreq(i), v: kind === 'escape' ? 1 : 0.8, chord: kind === 'escape' });
+  };
+  spawn(mode === 'crece' ? c.r0 : c.r);
+
+  for (let f = 0; f < maxT * BOUNCE_FPS; f++) {
+    for (let s = 0; s < SUB; s++) {
+      t += dt; if (mode === 'escape') ring = (ring + c.spin * dt) % TAU;
+      for (let k = balls.length - 1; k >= 0; k--) {
+        const b = balls[k];
+        b.vy += c.g * dt; b.x += b.vx * dt; b.y += b.vy * dt;
+        if (b.out) { if (b.x * b.x + b.y * b.y > 16) balls.splice(k, 1); continue; }
+        const d = Math.hypot(b.x, b.y);
+        if (d + b.r <= 1) continue;
+        const nx = b.x / d, ny = b.y / d;
+        if (mode === 'escape') {
+          const rel = ((Math.atan2(ny, nx) - ring) % TAU + TAU) % TAU;
+          if (rel < c.gap) {
+            b.out = true; escaped++; note('escape');
+            const alive = balls.filter((q) => !q.out).length;
+            for (let n = 0; n < 2 && alive + n < c.cap; n++) spawn(c.r);
+            continue;
+          }
+        }
+        const vn = b.vx * nx + b.vy * ny;
+        b.x = nx * (1 - b.r); b.y = ny * (1 - b.r);
+        // Solo es rebote si iba hacia la pared; si ya se aleja, basta con dejarla dentro
+        if (vn <= 0) continue;
+        b.vx -= 2 * vn * nx; b.vy -= 2 * vn * ny;
+        // Un giro mínimo al azar evita que caiga en un rebote periódico
+        const a = rnd(-0.04, 0.04), cs = Math.cos(a), sn = Math.sin(a), vx = b.vx;
+        b.vx = vx * cs - b.vy * sn; b.vy = vx * sn + b.vy * cs;
+        // Un roce (la pelota rodando pegada a la pared) no cuenta como rebote: ni suena ni la hace crecer
+        if (vn < 0.15) continue;
+        bounces++; note('bounce');
+        if (mode === 'crece') b.r = Math.min(c.rMax, b.r + c.grow);
+        if (mode === 'multiplica' && balls.length < c.cap && t - lastSpawn >= c.spawnEvery) { lastSpawn = t; spawn(c.r); }
+      }
+    }
+    const snap = new Float32Array(balls.length * 5);
+    balls.forEach((b, i) => { snap.set([b.x, b.y, b.r, b.h, b.out ? 1 : 0], i * 5); });
+    frames.push({ b: snap, ring, bounces, alive: balls.filter((q) => !q.out).length, escaped });
+    if (endAt === null) {
+      if (mode === 'crece' && balls[0].r >= c.rMax) endAt = t + c.hold;
+      if (mode === 'multiplica' && balls.length >= c.cap) endAt = t + c.hold;
+    }
+    if (endAt !== null && t >= endAt) break;
+  }
+  return { mode, seed, frames, events, total: frames.length / BOUNCE_FPS, fps: BOUNCE_FPS, gap: mode === 'escape' ? c.gap : 0 };
+}
+
+/* ---------------- Sonido ---------------- */
+// Una cuerda pulsada corta por rebote (y una quinta encima cuando una pelota escapa), mezcladas y suavizadas
+export function synthAudio(run, sr = 44100) {
+  const n = Math.ceil((run.total + 0.8) * sr), out = new Float32Array(n), len = Math.floor(0.6 * sr);
+  for (const e of run.events) {
+    const i0 = Math.floor(e.t * sr), fs = e.chord ? [e.f, e.f * 1.5] : [e.f];
+    for (const f of fs) {
+      const w = TAU * f / sr, amp = 0.32 * e.v / fs.length;
+      for (let j = 0; j < len && i0 + j < n; j++) {
+        const tt = j / sr, env = Math.exp(-tt / 0.18) * (1 - Math.exp(-tt / 0.004));
+        out[i0 + j] += amp * env * (Math.sin(w * j) + 0.35 * Math.exp(-tt / 0.08) * Math.sin(2 * w * j) + 0.15 * Math.exp(-tt / 0.05) * Math.sin(3 * w * j));
+      }
+    }
+  }
+  for (let i = 0; i < n; i++) out[i] = Math.tanh(out[i] * 1.4) / 1.4;
+  return out;
+}
+
+/* ---------------- Dibujo ---------------- */
+const BG = '#141112', FG = '#f3eeea';
+// view: { W, H, U }; opts: { caption, lang, fonts } (fonts: respaldo de familias, por ejemplo el emoji en Node)
+export function drawBounce(ctx, run, t, view, opts = {}) {
+  const { W, H, U } = view, lang = opts.lang === 'en' ? 'en' : 'es';
+  const fi = Math.max(0, Math.min(run.frames.length - 1, Math.floor(t * run.fps))), fr = run.frames[fi];
+  const cx = W / 2, cy = H * 0.47, R = Math.min(W * 0.42, H * 0.26);
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1;
+  ctx.fillStyle = BG; ctx.fillRect(0, 0, W, H);
+
+  // Estela de la pelota que crece: sus contornos anteriores, cada vez más tenues
+  if (run.mode === 'crece') {
+    ctx.lineWidth = 1.6 * U;
+    for (let k = Math.max(0, fi - 90); k < fi; k += 3) {
+      const p = run.frames[k].b; ctx.globalAlpha = 0.08 + 0.5 * (k - fi + 90) / 90;
+      ctx.strokeStyle = `hsl(${(p[3] + k * 1.2) % 360}, 90%, 60%)`;
+      ctx.beginPath(); ctx.arc(cx + p[0] * R, cy + p[1] * R, p[2] * R, 0, TAU); ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  // Anillo (con hueco en «escape»)
+  ctx.strokeStyle = FG; ctx.lineWidth = 5 * U; ctx.lineCap = 'round'; ctx.beginPath();
+  if (run.mode === 'escape') ctx.arc(cx, cy, R + 2.5 * U, fr.ring + run.gap, fr.ring + TAU); else ctx.arc(cx, cy, R + 2.5 * U, 0, TAU);
+  ctx.stroke();
+
+  const b = fr.b;
+  for (let i = 0; i < b.length; i += 5) {
+    const x = cx + b[i] * R, y = cy + b[i + 1] * R, r = b[i + 2] * R;
+    if (x < -r || x > W + r || y < -r || y > H + r) continue;
+    // En «crece» la pelota cambia de tono con cada rebote
+    const hue = run.mode === 'crece' ? (b[i + 3] + fr.bounces * 9) % 360 : b[i + 3];
+    ctx.fillStyle = `hsl(${hue}, 90%, 60%)`; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,.85)'; ctx.lineWidth = 1.5 * U; ctx.stroke();
+  }
+
+  // Contador debajo del círculo
+  const count = run.mode === 'crece' ? [`Rebotes: ${fr.bounces}`, `Bounces: ${fr.bounces}`]
+    : run.mode === 'multiplica' ? [`Pelotas: ${fr.alive}`, `Balls: ${fr.alive}`]
+    : [`Pelotas: ${fr.alive} · Escaparon: ${fr.escaped}`, `Balls: ${fr.alive} · Escaped: ${fr.escaped}`];
+  ctx.fillStyle = FG; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  ctx.font = `600 ${30 * U}px "IBM Plex Sans", system-ui, sans-serif${opts.fallback || ''}`;
+  ctx.fillText(count[lang === 'en' ? 1 : 0], cx, cy + R + 64 * U);
+
+  // Texto superior al 15 % (más arriba lo tapan los botones de TikTok)
+  const cap = (opts.caption || '').trim();
+  if (cap) {
+    let size = 34 * U; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${opts.fallback || ''}`;
+    const w = ctx.measureText(cap).width; if (w > W * 0.9) { size *= W * 0.9 / w; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${opts.fallback || ''}`; }
+    ctx.textBaseline = 'middle'; ctx.fillText(cap, W / 2, H * 0.15);
+  }
+}
+
+// Texto superior estable para una corrida
+export function bounceHook(mode, lang, seed) {
+  const list = BOUNCE_HOOKS[mode][lang === 'en' ? 'en' : 'es'];
+  return list[(Number(seed) >>> 0) % list.length];
+}

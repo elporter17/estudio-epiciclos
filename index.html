@@ -88,7 +88,7 @@ button,input,select{font:inherit;color:inherit}
 .check input{accent-color:var(--accent);width:16px;height:16px;margin:0}
 
 .panel{grid-area:panel;min-height:0;overflow:auto;background:var(--surface);border-left:1px solid var(--line);padding-block:4px 28px;padding-left:22px;padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:22px}
-.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:var(--bg);padding:4px;border-radius:var(--r);border:1px solid var(--line);position:sticky;top:0;z-index:2}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;background:var(--bg);padding:4px;border-radius:var(--r);border:1px solid var(--line);position:sticky;top:0;z-index:2}
 .tabs button{appearance:none;border:0;background:transparent;padding:8px 4px;border-radius:7px;cursor:pointer;color:var(--muted);font-weight:500}
 .tabs button[aria-selected="true"]{background:var(--raise);color:var(--fg);box-shadow:inset 0 -2px 0 var(--accent)}
 .tabpanel{display:flex;flex-direction:column;gap:12px}
@@ -249,6 +249,7 @@ a.btn{text-decoration:none}
       <button role="tab" id="t-texto" aria-selected="false" data-tab="texto" data-en="Text">Texto</button>
       <button role="tab" id="t-imagen" aria-selected="false" data-tab="imagen" data-en="Image">Imagen</button>
       <button role="tab" id="t-inventar" aria-selected="false" data-tab="inventar" data-en="Invent">Inventar</button>
+      <button role="tab" id="t-pelotas" aria-selected="false" data-tab="pelotas" data-en="Balls">Pelotas</button>
     </div>
 
     <div class="tabpanel" id="p-funciones" role="tabpanel">
@@ -332,6 +333,19 @@ a.btn{text-decoration:none}
       <p class="err" id="exprErr"></p>
       <p class="hint" data-en-html="Write with <code>t</code>, <code>pi</code>, <code>sin</code>, <code>cos</code>, <code>abs</code>, <code>sqrt</code>, <code>exp</code>, <code>^</code>. Example: <code>16 sin(t)^3</code>. Mutate tweaks the amplitudes a little without breaking the shape.">Escribe con <code>t</code>, <code>pi</code>, <code>sin</code>, <code>cos</code>, <code>abs</code>, <code>sqrt</code>, <code>exp</code>, <code>^</code>. Ejemplo: <code>16 sin(t)^3</code>. Mutar cambia un poco las amplitudes sin romper la figura.</p>
       <div class="field"><span class="lbl" data-en="Favorites">Favoritas</span><div class="chips" id="favs"></div></div>
+    </div>
+
+    <div class="tabpanel" id="p-pelotas" role="tabpanel" hidden>
+      <p class="hint" data-en="Balls bouncing inside a circle, with a note on every bounce (turn the sound on). Pick a variant and press Play; each run is different.">Pelotas que rebotan dentro de un círculo, con una nota en cada rebote (sube el volumen). Elige una variante y pulsa Reproducir; cada corrida es distinta.</p>
+      <div class="field">
+        <span class="lbl" data-en="Variant">Variante</span>
+        <div class="seg" id="bounceMode">
+          <button type="button" data-v="crece" data-en="Grows">Crece</button>
+          <button type="button" data-v="multiplica" data-en="Multiplies">Se multiplica</button>
+          <button type="button" data-v="escape" data-en="Escape">Escapar</button>
+        </div>
+      </div>
+      <div class="row"><button class="btn primary" id="bounceNew" type="button" data-en="🎲 New run">🎲 Nueva corrida</button><span class="hint" id="bounceInfo"></span></div>
     </div>
 
     <section class="group" aria-labelledby="h-anim">
@@ -478,6 +492,7 @@ import {
   COMPLEX_TYPES, NSEQ_DETAIL, setLang as setEngineLang
 } from './src/engine.js';
 import { makeCaption, postText } from './src/captions.js';
+import { simulate as simulateBounce, synthAudio, drawBounce, bounceHook, BOUNCE_NAMES } from './src/bounce.js';
 import { initTikTok } from './src/tiktok-ui.js';
 import { lang, tr, onLang, initLangSwitch } from './src/i18n.js';
 const $ = (s) => document.querySelector(s);
@@ -515,22 +530,46 @@ const render = (st) => renderFrame({ ctx, S, settings, view }, st);
 const timeline = () => timelineOf(S, settings);
 const shapeFor = (src) => shapeForSrc(src, settings.accent);
 
-const poster = () => { if (S) render({ stage: S.stages.length - 1, u: 1, prevA: 0, reveal: 0 }); else render({}); };
+/* ---------------- Pelotas (src/bounce.js) ---------------- */
+// Una corrida de pelotas activa reemplaza a la figura en el escenario, la reproducción y la grabación
+let bounceRun = null, bounceMode = 'crece', audioCtx = null, recDest = null, bounceBuf = null, bounceAudio = null;
+const bounceName = () => tr(...BOUNCE_NAMES[bounceRun.mode]);
+const bounceCaption = () => settings.caption.trim() || bounceHook(bounceRun.mode, lang, bounceRun.seed);
+const drawBounceAt = (t) => drawBounce(ctx, bounceRun, t, view, { caption: bounceCaption(), lang });
+// El sonido se sintetiza una vez por corrida (las mismas notas que el video automático) y suena con Web Audio;
+// también entra a la grabación por un MediaStreamDestination
+function startBounceAudio() {
+  try {
+    audioCtx ??= new (window.AudioContext || window.webkitAudioContext)();
+    audioCtx.resume?.();
+    recDest ??= audioCtx.createMediaStreamDestination();
+    if (!bounceBuf || bounceBuf.run !== bounceRun) {
+      const data = synthAudio(bounceRun, audioCtx.sampleRate), b = audioCtx.createBuffer(1, data.length, audioCtx.sampleRate);
+      b.copyToChannel(data, 0); bounceBuf = { run: bounceRun, b };
+    }
+    const src = audioCtx.createBufferSource(); src.buffer = bounceBuf.b; src.connect(audioCtx.destination); src.connect(recDest);
+    const t0 = audioCtx.currentTime + 0.05; src.start(t0); bounceAudio = { src, t0 };
+  } catch { bounceAudio = null; }
+}
+function stopBounceAudio() { if (bounceAudio) { try { bounceAudio.src.stop(); } catch { /* ya detenido */ } bounceAudio = null; } }
+
+const poster = () => { if (bounceRun) drawBounceAt(0); else if (S) render({ stage: S.stages.length - 1, u: 1, prevA: 0, reveal: 0 }); else render({}); };
 
 /* ---------------- Línea de tiempo y grabación ---------------- */
 let anim = null, rec = null;
 const canRecord = typeof MediaRecorder !== 'undefined' && typeof cv.captureStream === 'function';
-function pickMime() {
-  const opts = ['video/mp4;codecs=avc1.640028', 'video/mp4;codecs=avc1.42E01E', 'video/mp4;codecs=avc1', 'video/mp4', 'video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
+function pickMime(audio) {
+  const opts = [...(audio ? ['video/mp4;codecs=avc1.640028,mp4a.40.2', 'video/mp4;codecs=avc1,mp4a.40.2', 'video/webm;codecs=vp9,opus', 'video/webm;codecs=vp8,opus'] : []),
+    'video/mp4;codecs=avc1.640028', 'video/mp4;codecs=avc1.42E01E', 'video/mp4;codecs=avc1', 'video/mp4', 'video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
   return opts.find((m) => { try { return MediaRecorder.isTypeSupported(m); } catch { return false; } }) || '';
 }
 
 function play(opts = {}) {
-  if (!S) return;
+  if (!S && !bounceRun) return;
   stop(true);
-  const T = timeline();
-  anim = { el: 0, last: performance.now(), T, raf: 0 };
-  render(stateAt(T, 0));
+  const T = bounceRun ? { total: bounceRun.total } : timeline();
+  anim = { el: 0, last: performance.now(), T, raf: 0, bounce: !!bounceRun };
+  if (anim.bounce) { drawBounceAt(0); startBounceAudio(); } else render(stateAt(T, 0));
   const wantRec = opts.record ?? settings.record;
   if (wantRec && canRecord) startRec(T); else if (wantRec && !canRecord) toast(tr('Este navegador no puede grabar el lienzo. Prueba con Chrome o Edge.', 'This browser cannot record the canvas. Try Chrome or Edge.'));
   setPlaying(true);
@@ -538,9 +577,11 @@ function play(opts = {}) {
 }
 function loop(now) {
   if (!anim) return;
-  const dt = Math.min(0.05, Math.max(0, (now - anim.last) / 1000)); anim.last = now; anim.el += dt;
-  const T = anim.T, st = stateAt(T, Math.min(anim.el, T.total));
-  render(st);
+  const dt = Math.min(0.05, Math.max(0, (now - anim.last) / 1000)); anim.last = now;
+  // Con pelotas manda el reloj del audio, para que cada nota caiga justo en su rebote
+  anim.el = anim.bounce && bounceAudio ? Math.max(0, audioCtx.currentTime - bounceAudio.t0) : anim.el + dt;
+  const T = anim.T, st = anim.bounce ? null : stateAt(T, Math.min(anim.el, T.total));
+  if (anim.bounce) drawBounceAt(Math.min(anim.el, T.total)); else render(st);
   $('#bar').style.width = (100 * clamp(anim.el / T.total)) + '%';
   if (now - (anim.lastStatus || 0) > 200) { anim.lastStatus = now; status(st); }
   if (anim.el >= T.total) { finish(); return; }
@@ -548,25 +589,30 @@ function loop(now) {
 }
 function finish() {
   anim = null; setPlaying(false);
-  if (rec) { const r = rec; rec = null; setTimeout(() => stopRec(r, true), 200); }
+  if (rec) { const r = rec; rec = null; setTimeout(() => { stopRec(r, true); stopBounceAudio(); }, 200); } else stopBounceAudio();
   status();
 }
 function stop(silent) {
   if (anim) { cancelAnimationFrame(anim.raf); anim = null; }
+  stopBounceAudio();
   if (rec) { stopRec(rec, false); if (!silent) toast(tr('Grabación cancelada', 'Recording canceled')); }
   setPlaying(false); $('#bar').style.width = '0%';
   if (!silent) { poster(); status(); }
 }
 
 function startRec(T) {
-  const mime = pickMime();
+  const withAudio = !!(bounceRun && bounceAudio && recDest);
+  const mime = pickMime(withAudio);
   const stream = cv.captureStream(60);
+  // Copia de la pista: al terminar se detienen las pistas del stream y la original se reutiliza en la próxima grabación
+  if (withAudio) stream.addTrack(recDest.stream.getAudioTracks()[0].clone());
   let mr;
   try { mr = new MediaRecorder(stream, mime ? { mimeType: mime, videoBitsPerSecond: view.W * view.H > 1e6 ? 14e6 : 8e6 } : undefined); }
   catch (e) { toast(tr('No se pudo iniciar la grabación: ', 'Could not start recording: ') + e.message); return; }
-  // En suspenso, la portada de TikTok sale de un cuadro a mitad del dibujo y no de la figura terminada
-  const r = { mr, chunks: [], keep: false, name: S.name, dur: T.total, mime: mr.mimeType || mime, format: settings.format, w: view.W, h: view.H,
-    suspense: !!settings.suspense, coverMs: settings.suspense ? Math.round(T.total * 450) : undefined };
+  // En suspenso (y en las pelotas), la portada de TikTok sale de un cuadro a mitad del video
+  const mid = settings.suspense || bounceRun;
+  const r = { mr, chunks: [], keep: false, name: bounceRun ? bounceName() : S.name, dur: T.total, mime: mr.mimeType || mime, format: settings.format, w: view.W, h: view.H,
+    suspense: !!settings.suspense, coverMs: mid ? Math.round(T.total * 450) : undefined, cat: bounceRun ? `pelotas-${bounceRun.mode}` : undefined };
   mr.ondataavailable = (e) => { if (e.data && e.data.size) r.chunks.push(e.data); };
   mr.onstop = () => {
     stream.getTracks().forEach((t) => t.stop());
@@ -597,7 +643,7 @@ const fmtSize = (b) => b > 1e6 ? (b / 1e6).toFixed(1) + ' MB' : Math.round(b / 1
 function addVideo(blob, r) {
   const ext = /mp4/.test(blob.type) ? 'mp4' : 'webm';
   const v = { blob, url: URL.createObjectURL(blob), ext, name: `circularte-${slug(r.name)}-${stamp()}.${ext}`, title: r.name, dur: r.dur, thumb: r.thumb, format: r.format, w: r.w, h: r.h,
-    suspense: r.suspense, coverMs: r.coverMs, at: Date.now() };
+    suspense: r.suspense, coverMs: r.coverMs, cat: r.cat, at: Date.now() };
   videos.unshift(v); renderVideos();
   toast(tr(`Video listo: ${r.name}. Guárdalo desde «Mis videos».`, `Video ready: ${r.name}. Save it from “My videos”.`));
 }
@@ -628,7 +674,7 @@ function renderVideos() {
     if (tiktok) {
       const tt = document.createElement('button'); tt.type = 'button'; tt.className = 'btn small'; tt.textContent = tr('Publicar en TikTok', 'Post to TikTok');
       // Las mismas plantillas que la publicación automática; en suspenso no dicen qué figura es
-      tt.addEventListener('click', () => tiktok.open(v, postText(makeCaption({ name: v.title, createdAt: v.at }, { lang, spoiler: !v.suspense }))));
+      tt.addEventListener('click', () => tiktok.open(v, postText(makeCaption({ name: v.title, createdAt: v.at, cat: v.cat }, { lang, spoiler: !v.suspense && !v.cat }))));
       acts.insertBefore(tt, del);
     }
     meta.append(nm, sub, acts); row.append(media, meta); box.append(row);
@@ -667,6 +713,7 @@ async function setSource(src, opts = {}) {
     const { shape, meta } = await shapeFor(src);
     if (token !== buildToken) return false;
     stop(true);
+    bounceRun = null; // elegir una figura deja las pelotas
     S = buildScene(shape, meta); refreshStages();
     current = src; currentPreset = opts.preset || null;
     poster(); status();
@@ -687,7 +734,15 @@ const toastEl = $('#toast'); let toastT = 0;
 function toast(msg) { toastEl.textContent = msg; toastEl.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { toastEl.hidden = true; }, 3200); }
 
 function status(st) {
-  const el = $('#status'); if (!S) { el.textContent = ''; return; }
+  const el = $('#status');
+  if (bounceRun) {
+    const total = bounceRun.total;
+    if (!anim) { el.textContent = tr(`${bounceName()} · ${bounceRun.events.length} notas · video de ${fmtTime(total)}`, `${bounceName()} · ${bounceRun.events.length} notes · ${fmtTime(total)} video`); return; }
+    const pos = tr(`${fmtTime(anim.el)} de ${fmtTime(total)}`, `${fmtTime(anim.el)} of ${fmtTime(total)}`);
+    if (rec) { el.textContent = ''; const d = document.createElement('span'); d.className = 'dot'; el.append(d, tr('Grabando ', 'Recording ') + pos); } else el.textContent = pos;
+    return;
+  }
+  if (!S) { el.textContent = ''; return; }
   if (anim && st) {
     const N = S.stages[st.stage];
     const phase = st.reveal > 0 ? tr('revelando la imagen', 'revealing the image') : tr(`N = ${N} · etapa ${st.stage + 1} de ${S.stages.length}`, `N = ${N} · stage ${st.stage + 1} of ${S.stages.length}`);
@@ -724,10 +779,22 @@ new ResizeObserver(fitCanvas).observe($('#stageWrap'));
 const tabs = [...document.querySelectorAll('.tabs [role=tab]')];
 function showTab(name) {
   tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.tab === name)));
-  ['funciones', 'texto', 'imagen', 'inventar'].forEach((n) => { $('#p-' + n).hidden = n !== name; });
+  ['funciones', 'texto', 'imagen', 'inventar', 'pelotas'].forEach((n) => { $('#p-' + n).hidden = n !== name; });
   store.set('tab', name);
 }
-tabs.forEach((t) => t.addEventListener('click', () => showTab(t.dataset.tab)));
+tabs.forEach((t) => t.addEventListener('click', () => { showTab(t.dataset.tab); if (t.dataset.tab === 'pelotas' && !bounceRun) newBounce(); }));
+
+// Pelotas: cada corrida nueva usa otra semilla
+function newBounce() {
+  stop(true); markPreset(null); currentPreset = null;
+  bounceRun = simulateBounce({ mode: bounceMode, seed: Math.floor(Math.random() * 2 ** 31) });
+  const last = bounceRun.frames[bounceRun.frames.length - 1];
+  $('#bounceInfo').textContent = bounceRun.mode === 'crece' ? tr(`${last.bounces} rebotes`, `${last.bounces} bounces`)
+    : bounceRun.mode === 'multiplica' ? tr(`hasta ${last.alive} pelotas`, `up to ${last.alive} balls`) : tr(`${last.escaped} escapes`, `${last.escaped} escapes`);
+  poster(); status(); revealStage();
+}
+segment('bounceMode', bounceMode, (v) => { bounceMode = v; newBounce(); });
+$('#bounceNew').addEventListener('click', newBounce);
 
 // Funciones (figuras clásicas)
 const presetBox = $('#presets'); const presetBtns = [];
@@ -950,7 +1017,7 @@ $('#accent').addEventListener('input', (e) => {
   clearTimeout(accentT);
   accentT = setTimeout(() => {
     drawThumbs();
-    if (!current || anim) return;
+    if (!current || anim || bounceRun) return;
     if (current.kind === 'text') setSource(current);
     else if (current.kind === 'image' && current.img.isSample) { useSampleLogo(); applyImage(); }
   }, 250);
@@ -968,7 +1035,8 @@ function applyLang() {
   labelPresets(); renderTxtChips(); renderCapChips(); renderFavs(); renderVideos();
   setPlaying(!!anim); if (S && current?.kind === 'image') imgInfo();
   // La figura actual toma el nombre del idioma nuevo (sale en el estado, el texto superior y el video)
-  if (!anim && currentPreset) setSource(presetSrc(currentPreset, lang), { preset: currentPreset });
+  if (bounceRun) { if (!anim) poster(); status(); }
+  else if (!anim && currentPreset) setSource(presetSrc(currentPreset, lang), { preset: currentPreset });
   else if (!anim && current?.kind === 'image' && current.img.isSample) { useSampleLogo(); applyImage(); }
   else status();
 }

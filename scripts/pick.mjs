@@ -19,7 +19,7 @@ export function readHistory(file = HISTORY) {
 }
 
 // Reparto de la publicación automática (complex) entre las categorías de la biblioteca
-export const SHARES = { figuras: 0.4, nombres: 0.25, combinaciones: 0.15, inventadas: 0.2 };
+export const SHARES = { figuras: 0.32, nombres: 0.2, combinaciones: 0.12, inventadas: 0.16, pelotas: 0.2 };
 
 // avoid = cuántas publicaciones recientes no se pueden repetir; cada función inventada es distinta gracias a la semilla.
 export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>> 0, emoji = true, complex = false, randomWeight = 0.5 } = {}) {
@@ -27,8 +27,8 @@ export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>>
   // Con la biblioteca (~700 elementos) se evita lo de las últimas 60 corridas: unos 10 días a 6 por día
   avoid ??= complex ? 60 : 12;
   const recent = new Set(history.slice(-Math.min(avoid, items.length - 1)).map((h) => h.id));
-  // Las funciones inventadas no se bloquean: cada semilla da una curva distinta
-  const pool = items.filter((it) => it.kind === 'random' || !recent.has(it.id));
+  // Las funciones inventadas y las pelotas no se bloquean: cada semilla da un video distinto
+  const pool = items.filter((it) => it.kind === 'random' || it.kind === 'bounce' || !recent.has(it.id));
   // Tampoco repetir el mismo grupo dos veces seguidas si hay alternativa
   const lastGroup = history.length ? history[history.length - 1].group : null;
   const varied = pool.filter((it) => it.group !== lastGroup);
@@ -41,7 +41,7 @@ export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>>
   while (i < choices.length - 1 && (r -= weights[i]) > 0) i++;
   const it = choices[i];
   const renderSeed = Math.floor(rng() * 2 ** 31);
-  const args = it.kind === 'preset' ? ['--preset', it.name] : it.kind === 'text' ? ['--text', it.text, '--font', it.font] : ['--random', it.type];
+  const args = it.kind === 'preset' ? ['--preset', it.name] : it.kind === 'text' ? ['--text', it.text, '--font', it.font] : it.kind === 'bounce' ? ['--mode', it.mode] : ['--random', it.type];
   args.push('--seed', String(renderSeed));
   return { ...it, seed: renderSeed, args };
 }

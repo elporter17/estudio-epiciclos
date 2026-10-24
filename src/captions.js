@@ -59,7 +59,22 @@ const MYSTERY_CAT = {
     ]
   }
 };
+// Pelotas que rebotan (src/bounce.js): un cat por variante
+MYSTERY_CAT['pelotas-crece'] = {
+  es: ['Cada rebote la hace más grande. ¿Llenará el círculo? 👀', '¿Cuántos rebotes aguanta antes de llenarlo todo? 🔴', 'Sube el volumen: cada rebote es una nota 🎶'],
+  en: ['Every bounce makes it bigger. Will it fill the circle? 👀', 'How many bounces until it fills everything? 🔴', 'Turn the sound on: every bounce is a note 🎶']
+};
+MYSTERY_CAT['pelotas-multiplica'] = {
+  es: ['Cada rebote suelta otra pelota. Mira cómo termina 🤯', '¿Cuántas pelotas caben en un círculo? 👀', 'Sube el volumen: cada rebote es una nota 🎶'],
+  en: ['Every bounce drops another ball. Watch how it ends 🤯', 'How many balls fit in a circle? 👀', 'Turn the sound on: every bounce is a note 🎶']
+};
+MYSTERY_CAT['pelotas-escape'] = {
+  es: ['Cada pelota que escapa suelta dos más. ¿Cuántas salen? 🔴', 'El círculo gira con un hueco… esto se descontrola 🤯', 'Sube el volumen: cada rebote es una nota 🎶'],
+  en: ['Every ball that escapes releases two more. How many get out? 🔴', 'The circle spins with a gap… this gets out of hand 🤯', 'Turn the sound on: every bounce is a note 🎶']
+};
 const CAT_TAGS = { nombres: { es: 'tunombre', en: 'yourname' }, combinaciones: { es: 'parejas', en: 'couples' } };
+// Las pelotas no son matemáticas de Fourier: llevan sus propios hashtags base
+const BASE_TAGS = { pelotas: { es: ['satisfactorio', 'fisica', 'pelotas'], en: ['satisfying', 'physics', 'balls'] } };
 // Con spoiler: nombran la figura
 const NAMED = {
   es: ['¿Pueden unos círculos girando dibujar esto? {x}, mira cómo baja el error 👀', '{x}, dibujado solo con círculos que giran. Espera el final ✨', 'Una serie de Fourier dibujando: {x} 🌀'],
@@ -80,7 +95,8 @@ export function makeCaption(info, { lang = info.lang || 'es', cta = true, spoile
   const list = spoiler ? NAMED[lang] : MYSTERY_CAT[info.cat]?.[lang] || MYSTERY[lang];
   let description = list[h % list.length].replace('{x}', name);
   if (cta) description += lang === 'en' ? ` Make yours at ${SITE}` : ` Haz el tuyo en ${SITE}`;
-  const { base, extra } = TAGS[lang], catTag = CAT_TAGS[info.cat]?.[lang];
+  const { extra } = TAGS[lang], catTag = CAT_TAGS[info.cat]?.[lang];
+  const base = BASE_TAGS[String(info.cat || '').split('-')[0]]?.[lang] || TAGS[lang].base;
   const hashtags = [...base, ...(catTag ? [catTag] : []), ...[0, 1, 2].map((i) => extra[(h >>> (i * 5)) % extra.length])].filter((t, i, a) => a.indexOf(t) === i);
   return { description, hashtags, source: 'template' };
 }
