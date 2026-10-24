@@ -58,7 +58,7 @@ jobs:
 
       - run: npm ci
 
-      - name: Fuentes completas: emoji y STIX (en caché)
+      - name: Fuentes completas de emoji y STIX (en caché)
         uses: actions/cache@v4
         with:
           path: assets/fonts
