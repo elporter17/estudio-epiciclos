@@ -28,7 +28,7 @@ export function setEnv(e) { Object.assign(env, e); }
 
 export const DEFAULT_SETTINGS = {
   style: 'xy', nseq: '1, 3, 6, 12, 25, 50, 100, 200', rev: 3, guide: 18, reveal: true, formulas: true,
-  accent: '#ff7a52', caption: '', format: '9:16', quality: 720, record: true, signature: true, labels: 'full'
+  accent: '#ff7a52', caption: '', format: '9:16', quality: 720, record: true, signature: false, labels: 'full'
 };
 
 // Tamaño del lienzo según formato y calidad, igual que en la web

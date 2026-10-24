@@ -354,7 +354,7 @@ a.btn{text-decoration:none}
       <div class="row">
         <label class="check"><input type="checkbox" id="reveal" checked> <span data-en="At the end, only the image">Al final, solo la imagen</span></label>
         <label class="check"><input type="checkbox" id="formulas" checked> <span data-en="Formulas">Fórmulas</span></label>
-        <label class="check"><input type="checkbox" id="signature" checked> <span data-en="Signature on the video">Firma en el video</span></label>
+        <label class="check"><input type="checkbox" id="signature"> <span data-en="Signature on the video">Firma en el video</span></label>
       </div>
       <div class="field">
         <label for="caption" data-en="Top text of the video">Texto superior del video</label>
@@ -473,6 +473,9 @@ const store = {
 };
 
 const settings = Object.assign({ ...DEFAULT_SETTINGS }, store.get('settings', {}));
+// La firma va aparte y apagada salvo que la persona la marque: TikTok no acepta marcas ni enlaces dentro del video,
+// y los ajustes guardados antes la tenían encendida por defecto
+settings.signature = store.get('signatureOn', false);
 const saveSettings = () => store.set('settings', settings);
 
 /* ---------------- Escena ---------------- */
@@ -873,7 +876,7 @@ bindRange('revs', 'rev', (v) => v + ' s');
 bindRange('guide', 'guide', (v) => v + '%');
 $('#reveal').checked = settings.reveal; $('#reveal').addEventListener('change', (e) => { settings.reveal = e.target.checked; saveSettings(); status(); });
 $('#formulas').checked = settings.formulas; $('#formulas').addEventListener('change', (e) => { settings.formulas = e.target.checked; saveSettings(); });
-$('#signature').checked = settings.signature; $('#signature').addEventListener('change', (e) => { settings.signature = e.target.checked; saveSettings(); if (!anim) poster(); });
+$('#signature').checked = settings.signature; $('#signature').addEventListener('change', (e) => { settings.signature = e.target.checked; store.set('signatureOn', settings.signature); saveSettings(); if (!anim) poster(); });
 segment('labels', settings.labels, (v) => { settings.labels = v; saveSettings(); if (!anim) poster(); });
 function renderCapChips() {
   $('#capChips').textContent = '';

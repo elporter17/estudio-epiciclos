@@ -65,9 +65,12 @@ Lo pidió el usuario después de ver el primer borrador:
 - **Suspenso**: `render --guide 0` (sin figura de guía mientras dibuja) y `--no-spoiler` (texto gancho sin el nombre); la descripción invita a adivinar y la portada es un cuadro al 45 % del video.
 - **Figuras más complejas**: presets nuevos (dragón, araña, escorpión, langosta, ciervo, gallo, jirafa, águila, canguro, rueda de la fortuna, bicicleta, carrusel, Estatua de la Libertad), `simple: true` en los básicos (corazón, π, infinito…) para que el diario los salte, tipo nuevo `simetria` (curvas misteriosas de Farris, también en la web) y N hasta 500.
 - **Publicación directa y pública** en el diario, con descripción. Decisión consciente del usuario: las reglas de TikTok para desarrolladores no aceptan herramientas que suben a las propias cuentas, y podrían quitarle el permiso a la app.
+- **Resultado**: la corrida #9 (rama, direct + SELF_ONLY) y una prueba local en público dieron `403 unaudited_client_can_only_post_to_private_accounts`. La revisión de la app no incluye Direct Post: hace falta su auditoría aparte (Content Posting API → Direct Post → Apply). Guía: [AUDITORIA-DIRECT-POST.md](AUDITORIA-DIRECT-POST.md).
+- **Firma apagada por defecto** en la web, `render` y el diario, porque las guías de TikTok no aceptan marcas ni enlaces dentro del video (requisito para la auditoría).
+- Vercel pasó a las credenciales de Production y se redesplegó; la web ya pide la client key de Production.
 
 ## 4. Pendientes
-1. **Vercel**: cambiar `TIKTOK_CLIENT_KEY` y `TIKTOK_CLIENT_SECRET` por las de Production y redesplegar; reconectar la cuenta desde la web.
+1. **Auditoría de Direct Post**: pedirla con [AUDITORIA-DIRECT-POST.md](AUDITORIA-DIRECT-POST.md). ~~Vercel con credenciales de Production~~: hecho el 24-10.
 2. **Rotar** el Client secret de TikTok (quedó a la vista en una terminal el 24-10) y actualizarlo en `.env`, GitHub y Vercel. La clave de OpenAI también quedó a la vista; aquí ya no se usa (borrar el secreto `OPEN_AI`), pero sí en minidramas.
 3. ~~Saldo de OpenAI~~: ya no hace falta, el proyecto no usa OpenAI.
 4. ~~Bug previo: en formato 1:1 la firma se encima con la línea «N = … error = …».~~ Resuelto: el bloque de fórmulas se escala si no cabe sobre la firma.

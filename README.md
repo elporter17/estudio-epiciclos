@@ -50,7 +50,7 @@ npm run render -- --preset Violín --lang en     # → out/circularte-violin-en.
 Opciones de `render` (`npm run render -- --help` las lista todas):
 
 - Qué dibujar: `--preset <nombre>` (cualquier preset de la web, en español o inglés: `Corazón`, `Heart`, `Violín`…), `--random <tipo>` (`any`, `fourier`, `polar`, `rosa`, `spiro`, `lissa`, `super`, `simetria`) con `--seed <n>` para repetirla, o `--text <texto>` con `--font cursiva|elegante|bloque|clasica|emoji`.
-- Cómo se ve: `--labels full|n|top`, `--style xy|z`, `--fps 30|60`, `--format 9:16|1:1|16:9`, `--quality 1080|720`, `--rev`, `--nseq`, `--accent`, `--guide 0-60` (opacidad de la figura de guía mientras dibuja; `0` = no se ve hasta el final), `--no-reveal`, `--no-formulas`, `--no-signature`.
+- Cómo se ve: `--labels full|n|top`, `--style xy|z`, `--fps 30|60`, `--format 9:16|1:1|16:9`, `--quality 1080|720`, `--rev`, `--nseq`, `--accent`, `--guide 0-60` (opacidad de la figura de guía mientras dibuja; `0` = no se ve hasta el final), `--no-reveal`, `--no-formulas`, `--signature` (la firma CirculArte + edav-tech.com va apagada por defecto: las guías de TikTok no aceptan marcas, logos ni enlaces dentro del video).
 - Texto gancho de arriba: `--caption auto` (por defecto, elige uno de los de la web según `--lang`; con `--no-spoiler`, solo los que no nombran la figura), `--caption none` o `--caption "tu texto"`.
 - `--lang es|en` cambia el texto gancho y el nombre del archivo. `--out` cambia la ruta. `--still <segundos>` guarda un PNG de ese instante en lugar del video, útil para revisar el encuadre.
 

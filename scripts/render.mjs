@@ -37,7 +37,8 @@ Video
   --no-spoiler          El texto gancho automático no dice qué figura es
   --nseq "1, 3, 6…"     Términos N por etapa
   --accent <#hex>       Color del trazo (por defecto #ff7a52)
-  --no-reveal --no-formulas --no-signature
+  --no-reveal --no-formulas
+  --signature           Firma CirculArte + edav-tech.com abajo (apagada por defecto: TikTok no acepta marcas en el video)
   --out <archivo.mp4>   Por defecto out/circularte-<figura>-<lang>.mp4 (más un .json con los datos)
   --still <segundos>    En vez de video, guarda un PNG de ese instante (para revisar el encuadre)`;
 
@@ -47,7 +48,7 @@ const OPTIONS = {
   labels: { type: 'string', default: 'full' }, style: { type: 'string', default: 'xy' },
   fps: { type: 'string', default: '30' }, format: { type: 'string', default: '9:16' }, quality: { type: 'string', default: '1080' },
   rev: { type: 'string' }, guide: { type: 'string' }, spoiler: { type: 'boolean', default: true }, nseq: { type: 'string' }, accent: { type: 'string' },
-  reveal: { type: 'boolean', default: true }, formulas: { type: 'boolean', default: true }, signature: { type: 'boolean', default: true },
+  reveal: { type: 'boolean', default: true }, formulas: { type: 'boolean', default: true }, signature: { type: 'boolean', default: false },
   out: { type: 'string' }, still: { type: 'string' }, crf: { type: 'string', default: '18' }, quiet: { type: 'boolean', default: false },
   help: { type: 'boolean', short: 'h', default: false }
 };
@@ -72,7 +73,7 @@ export async function renderVideo(o) {
     ...E.DEFAULT_SETTINGS,
     style: oneOf(o.style || 'xy', ['xy', 'z'], 'style'), labels: oneOf(o.labels || 'full', ['full', 'n', 'top'], 'labels'),
     format: oneOf(o.format || '9:16', ['9:16', '1:1', '16:9'], 'format'), quality: +oneOf(String(o.quality || 1080), ['1080', '720'], 'quality'),
-    reveal: o.reveal !== false, formulas: o.formulas !== false, signature: o.signature !== false
+    reveal: o.reveal !== false, formulas: o.formulas !== false, signature: o.signature === true
   };
   if (o.rev) settings.rev = Math.min(8, Math.max(1, +o.rev));
   if (o.guide != null && o.guide !== '') settings.guide = Math.min(60, Math.max(0, +o.guide));
