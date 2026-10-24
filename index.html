@@ -152,6 +152,11 @@ a.btn{text-decoration:none}
 .preset-groups{display:flex;flex-direction:column;gap:10px}
 .group-title{margin:6px 0 0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
 #capChips .chip{font-size:12px;padding:3px 10px}
+.field.suspense{border:1px solid var(--accent);border-radius:10px;padding:8px 10px}
+.field.suspense .hint{margin:4px 0 0}
+.field.suspense>label.check{justify-content:flex-start;font-size:14px;color:var(--fg)}
+#nseqChips{margin-top:6px}
+#nseqChips .chip{font-size:12px;padding:3px 10px}
 
 /* Publicar en TikTok */
 .tt{width:min(560px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--fg);box-shadow:0 30px 80px #000c}
@@ -248,6 +253,7 @@ a.btn{text-decoration:none}
 
     <div class="tabpanel" id="p-funciones" role="tabpanel">
       <p class="hint" data-en="Shapes ready to draw. Tap one, then Play.">Figuras listas para dibujar. Toca una y luego Reproducir.</p>
+      <div class="row"><button class="btn primary" id="randomComplex" type="button" data-en="🎲 Random complex shape">🎲 Figura compleja al azar</button></div>
       <div class="preset-groups" id="presets"></div>
     </div>
 
@@ -330,6 +336,10 @@ a.btn{text-decoration:none}
 
     <section class="group" aria-labelledby="h-anim">
       <h2 id="h-anim" data-en="Animation">Animación</h2>
+      <div class="field suspense">
+        <label class="check"><input type="checkbox" id="suspense"> <strong data-en="Suspense mode">Modo suspenso</strong></label>
+        <p class="hint" data-en="The shape is not shown until the end: no guide image, a top text and a TikTok caption that don't say what it is, and a cover from the middle of the drawing.">La figura no se ve hasta el final: sin imagen de guía, con texto de arriba y descripción para TikTok que no dicen qué es, y portada a mitad del dibujo.</p>
+      </div>
       <div class="field">
         <span class="lbl" data-en="Epicycle style">Estilo de epiciclos</span>
         <div class="seg" id="style">
@@ -348,6 +358,10 @@ a.btn{text-decoration:none}
       <div class="field">
         <label for="nseq" data-en="Terms N per stage">Términos N por etapa</label>
         <input type="text" class="mono" id="nseq" value="1, 3, 6, 12, 25, 50, 100, 200" autocomplete="off">
+        <div class="chips" id="nseqChips">
+          <button type="button" class="chip" id="nseqNormal" data-en="Normal (up to 200)">Normal (hasta 200)</button>
+          <button type="button" class="chip" id="nseqDetail" data-en="Maximum detail (up to 500)">Máximo detalle (hasta 500)</button>
+        </div>
       </div>
       <div class="field"><label for="revs"><span data-en="Seconds per turn">Segundos por vuelta</span> <output id="revsV"></output></label><input type="range" id="revs" min="1" max="8" step="0.5" value="3"></div>
       <div class="field"><label for="guide"><span data-en="Guide image while drawing">Imagen de guía mientras dibuja</span> <output id="guideV"></output></label><input type="range" id="guide" min="0" max="60" value="18"></div>
@@ -461,8 +475,9 @@ import {
   TAU, clamp, DEFAULT_SETTINGS, canvasSize, analyze, joinContours, buildScene, parseStages,
   refreshStages as refreshStagesOf, relayout as relayoutOf, render as renderFrame, timeline as timelineOf, stateAt,
   PRESETS, GROUP_EN, presetSrc, shapeFor as shapeForSrc, inventFn, funName, mutateStr, num, kt, CAPTIONS, CAPTIONS_EN,
-  setLang as setEngineLang
+  COMPLEX_TYPES, NSEQ_DETAIL, setLang as setEngineLang
 } from './src/engine.js';
+import { makeCaption, postText } from './src/captions.js';
 import { initTikTok } from './src/tiktok-ui.js';
 import { lang, tr, onLang, initLangSwitch } from './src/i18n.js';
 const $ = (s) => document.querySelector(s);
@@ -549,7 +564,9 @@ function startRec(T) {
   let mr;
   try { mr = new MediaRecorder(stream, mime ? { mimeType: mime, videoBitsPerSecond: view.W * view.H > 1e6 ? 14e6 : 8e6 } : undefined); }
   catch (e) { toast(tr('No se pudo iniciar la grabación: ', 'Could not start recording: ') + e.message); return; }
-  const r = { mr, chunks: [], keep: false, name: S.name, dur: T.total, mime: mr.mimeType || mime, format: settings.format, w: view.W, h: view.H };
+  // En suspenso, la portada de TikTok sale de un cuadro a mitad del dibujo y no de la figura terminada
+  const r = { mr, chunks: [], keep: false, name: S.name, dur: T.total, mime: mr.mimeType || mime, format: settings.format, w: view.W, h: view.H,
+    suspense: !!settings.suspense, coverMs: settings.suspense ? Math.round(T.total * 450) : undefined };
   mr.ondataavailable = (e) => { if (e.data && e.data.size) r.chunks.push(e.data); };
   mr.onstop = () => {
     stream.getTracks().forEach((t) => t.stop());
@@ -579,7 +596,8 @@ const fmtSize = (b) => b > 1e6 ? (b / 1e6).toFixed(1) + ' MB' : Math.round(b / 1
 
 function addVideo(blob, r) {
   const ext = /mp4/.test(blob.type) ? 'mp4' : 'webm';
-  const v = { blob, url: URL.createObjectURL(blob), ext, name: `circularte-${slug(r.name)}-${stamp()}.${ext}`, title: r.name, dur: r.dur, thumb: r.thumb, format: r.format, w: r.w, h: r.h };
+  const v = { blob, url: URL.createObjectURL(blob), ext, name: `circularte-${slug(r.name)}-${stamp()}.${ext}`, title: r.name, dur: r.dur, thumb: r.thumb, format: r.format, w: r.w, h: r.h,
+    suspense: r.suspense, coverMs: r.coverMs, at: Date.now() };
   videos.unshift(v); renderVideos();
   toast(tr(`Video listo: ${r.name}. Guárdalo desde «Mis videos».`, `Video ready: ${r.name}. Save it from “My videos”.`));
 }
@@ -609,7 +627,8 @@ function renderVideos() {
     // «Publicar en TikTok» solo aparece si el sitio tiene configurada la publicación (funciones de Vercel)
     if (tiktok) {
       const tt = document.createElement('button'); tt.type = 'button'; tt.className = 'btn small'; tt.textContent = tr('Publicar en TikTok', 'Post to TikTok');
-      tt.addEventListener('click', () => tiktok.open(v, tr(`${v.title}, dibujado solo con círculos que giran ✨ Haz el tuyo en circularte.edav-tech.com\n\n#matematicas #fourier #epiciclos #circularte`, `${v.title}, drawn only with spinning circles ✨ Make yours at circularte.edav-tech.com\n\n#math #fourier #epicycles #circularte`)));
+      // Las mismas plantillas que la publicación automática; en suspenso no dicen qué figura es
+      tt.addEventListener('click', () => tiktok.open(v, postText(makeCaption({ name: v.title, createdAt: v.at }, { lang, spoiler: !v.suspense }))));
       acts.insertBefore(tt, del);
     }
     meta.append(nm, sub, acts); row.append(media, meta); box.append(row);
@@ -725,6 +744,21 @@ PRESETS.forEach((p) => {
   const sp = document.createElement('span'); p.label = sp;
   b.append(c, sp); groupBoxes[p.group].append(b); presetBtns.push(b); p.thumb = c;
   b.addEventListener('click', () => { markPreset(b); setSource(presetSrc(p, lang), { reveal: true, preset: p }); });
+});
+// Figura compleja al azar: un preset con detalle (sin los marcados simple) o una de las funciones que salen más
+// complejas, lo mismo que elige la publicación automática
+const complexPresets = PRESETS.filter((p) => !p.simple);
+$('#randomComplex').addEventListener('click', async () => {
+  if (Math.random() < 0.75) {
+    const p = complexPresets[Math.floor(Math.random() * complexPresets.length)];
+    markPreset(presetBtns[PRESETS.indexOf(p)]); setSource(presetSrc(p, lang), { reveal: true, preset: p });
+    return;
+  }
+  const type = COMPLEX_TYPES[Math.floor(Math.random() * COMPLEX_TYPES.length)];
+  for (let i = 0; i < 6; i++) {
+    const d = inventFn(type), name = funName(undefined, lang); loadDef(d, name);
+    if (await setSource({ kind: 'expr', name, def: d, fill: d.fill }, { errEl: $('#exprErr'), reveal: true })) { markPreset(null); return; }
+  }
 });
 function labelPresets() {
   for (const [g, h] of Object.entries(groupTitles)) h.textContent = tr(g, GROUP_EN[g] || g);
@@ -874,13 +908,27 @@ $('#nseq').addEventListener('change', (e) => { settings.nseq = e.target.value; e
 const bindRange = (id, key, fmt) => { const el = $('#' + id), out = $('#' + id + 'V'); el.value = settings[key]; out.textContent = fmt(settings[key]); el.addEventListener('input', () => { settings[key] = +el.value; out.textContent = fmt(settings[key]); saveSettings(); if (!anim) { poster(); status(); } }); };
 bindRange('revs', 'rev', (v) => v + ' s');
 bindRange('guide', 'guide', (v) => v + '%');
+// Modo suspenso, como la publicación automática: sin guía, ganchos que no nombran la figura y portada a mitad del dibujo
+function setGuide(v) { settings.guide = v; $('#guide').value = v; $('#guideV').textContent = v + '%'; }
+$('#suspense').checked = !!settings.suspense;
+$('#suspense').addEventListener('change', (e) => {
+  settings.suspense = e.target.checked;
+  if (settings.suspense) {
+    settings.guideBefore = settings.guide; setGuide(0);
+    const c = $('#caption'); if (S && c.value.includes(S.name)) { c.value = ''; settings.caption = ''; relayout(); }
+  } else setGuide(settings.guideBefore ?? DEFAULT_SETTINGS.guide);
+  saveSettings(); renderCapChips(); if (!anim) { poster(); status(); }
+});
+const setNseq = (v) => { settings.nseq = v; $('#nseq').value = v; saveSettings(); restage(); };
+$('#nseqNormal').addEventListener('click', () => setNseq(DEFAULT_SETTINGS.nseq));
+$('#nseqDetail').addEventListener('click', () => setNseq(NSEQ_DETAIL));
 $('#reveal').checked = settings.reveal; $('#reveal').addEventListener('change', (e) => { settings.reveal = e.target.checked; saveSettings(); status(); });
 $('#formulas').checked = settings.formulas; $('#formulas').addEventListener('change', (e) => { settings.formulas = e.target.checked; saveSettings(); });
 $('#signature').checked = settings.signature; $('#signature').addEventListener('change', (e) => { settings.signature = e.target.checked; store.set('signatureOn', settings.signature); saveSettings(); if (!anim) poster(); });
 segment('labels', settings.labels, (v) => { settings.labels = v; saveSettings(); if (!anim) poster(); });
 function renderCapChips() {
   $('#capChips').textContent = '';
-  tr(CAPTIONS, CAPTIONS_EN).forEach((t) => {
+  tr(CAPTIONS, CAPTIONS_EN).filter((t) => !settings.suspense || !t.includes('{x}')).forEach((t) => {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'chip';
     b.textContent = t.replace('{x}', '…');
     b.addEventListener('click', () => {

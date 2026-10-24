@@ -168,7 +168,8 @@ export async function initTikTok({ toast }) {
         mode, blobUrl: blob.url, title: $('#ttTitle').value, privacy_level: $('#ttPrivacy').value, duration: video.dur,
         allow_comment: $('#ttComment').checked, allow_duet: $('#ttDuet').checked, allow_stitch: $('#ttStitch').checked,
         disclose: $('#ttDisclose').checked, brand_organic_toggle: $('#ttDisclose').checked && $('#ttYours').checked,
-        brand_content_toggle: $('#ttDisclose').checked && $('#ttBrand').checked
+        brand_content_toggle: $('#ttDisclose').checked && $('#ttBrand').checked,
+        cover_ms: video.coverMs // modo suspenso: portada a mitad del dibujo
       });
       const later = tr('Puede tardar unos minutos en aparecer en tu perfil.', 'It may take a few minutes to show up on your profile.');
       setStatus(tr('TikTok está procesando el video. ', 'TikTok is processing the video. ') + later);

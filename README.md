@@ -10,7 +10,8 @@ Dos cadenas de círculos (una para `x(t)`, otra para `y(t)`) trazan la figura mi
 
 Es un sitio estático, sin build: `index.html` más el motor en `src/engine.js` (un módulo ES). Sírvelo con cualquier servidor estático, por ejemplo `npx serve .`, y ábrelo en Chrome o Edge. Por ser un módulo, abrir `index.html` con doble clic (`file://`) ya no funciona. En Vercel se publica tal cual, sin build: `vercel.json` instala solo las dependencias de las funciones de `api/` (`@vercel/blob`); las del render (canvas, ffmpeg, fuentes, OpenAI) son `devDependencies` y Vercel las omite. Sin las variables de entorno de TikTok, el sitio funciona igual y simplemente no muestra el botón «Publicar en TikTok».
 
-- **Funciones**: figuras listas en cuatro grupos: Amor (corazón, LOVE, amor, te amo), Animales (elefante, pulpo, T-Rex, flamenco…), Cosas (guitarra, violín, cohete…) y Matemáticas (copo de Koch, π, espirógrafo, rosas…).
+- **Funciones**: figuras listas en cuatro grupos: Amor (corazón, LOVE, amor, te amo), Animales (elefante, pulpo, dragón, araña, escorpión, jirafa…), Cosas (guitarra, rueda de la fortuna, bicicleta, Estatua de la Libertad…) y Matemáticas (copo de Koch, π, espirógrafo, rosas…). **🎲 Figura compleja al azar** elige entre las que tienen más detalle o inventa una curva compleja, lo mismo que la publicación automática.
+- **Modo suspenso** (en Animación): la figura no se ve hasta el final. Apaga la imagen de guía, deja solo textos de arriba que no dicen qué es, y al publicar en TikTok propone una descripción que invita a adivinar y usa de portada un cuadro a mitad del dibujo. **Máximo detalle** sube los términos hasta N = 500.
 - **Imagen**: elige, arrastra o pega (Ctrl+V) una imagen. Modo *Silueta* para logos, *Bordes* para fotos.
 - **Texto**: cualquier palabra, símbolo o emoji. Los emoji se vuelven silueta plana.
 - **Inventar**: genera funciones aleatorias, edítalas (`16 sin(t)^3`), mútalas y guarda tus favoritas.

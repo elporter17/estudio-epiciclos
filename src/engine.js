@@ -30,6 +30,9 @@ export const DEFAULT_SETTINGS = {
   accent: '#ff7a52', caption: '', format: '9:16', quality: 720, record: true, signature: false, labels: 'full'
 };
 
+// Etapas con más términos (hasta KMAX): las figuras complejas necesitan más círculos para verse nítidas
+export const NSEQ_DETAIL = '1, 3, 8, 20, 50, 120, 250, 500';
+
 // Tamaño del lienzo según formato y calidad, igual que en la web
 export function canvasSize(format, quality) {
   const q = +quality; let W, H;

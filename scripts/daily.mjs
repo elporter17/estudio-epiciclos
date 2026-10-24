@@ -17,10 +17,8 @@ import { makeCaption, postText } from './caption.mjs';
 import { publishVideo } from './publish.mjs';
 import { accessToken } from './lib/tiktok.mjs';
 import { setupNode } from './lib/node-env.mjs';
+import { NSEQ_DETAIL } from '../src/engine.js';
 import fs from 'node:fs';
-
-// Más etapas y hasta 500 términos: las figuras complejas necesitan más círculos para verse nítidas
-const SUSPENSE_NSEQ = '1, 3, 8, 20, 50, 120, 250, 500';
 
 try {
   const o = parseCli({
@@ -37,7 +35,7 @@ try {
   const r = await renderVideo({
     preset: item.kind === 'preset' ? item.name : undefined, random: item.kind === 'random' ? item.type : undefined,
     seed: item.seed, lang: o.lang, fps: o.fps, labels: o.labels,
-    ...(suspense ? { guide: 0, spoiler: false, nseq: o.nseq || SUSPENSE_NSEQ } : o.nseq ? { nseq: o.nseq } : {})
+    ...(suspense ? { guide: 0, spoiler: false, nseq: o.nseq || NSEQ_DETAIL } : o.nseq ? { nseq: o.nseq } : {})
   });
   const cap = makeCaption(r.info, { lang: o.lang, spoiler: !suspense });
   const meta = { ...r.info, post: { ...cap, text: postText(cap), lang: o.lang } };

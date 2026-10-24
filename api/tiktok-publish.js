@@ -34,9 +34,13 @@ export default { fetch: route(async (request) => {
     throw new HttpError(400, [`Tu cuenta permite videos de hasta ${info.max_video_post_duration_sec} s.`, `Your account allows videos up to ${info.max_video_post_duration_sec} s.`]);
   }
 
+  // Portada opcional (modo suspenso): un instante dentro del video, en milisegundos
+  const cover = Number(b.cover_ms), dur = Number(b.duration);
+  const coverMs = Number.isFinite(cover) && cover >= 0 && (!Number.isFinite(dur) || cover <= dur * 1000) ? Math.round(cover) : undefined;
+
   const d = await tiktok('/v2/post/publish/video/init/', {
     post_info: {
-      title: String(b.title || '').slice(0, 2200), privacy_level: b.privacy_level,
+      title: String(b.title || '').slice(0, 2200), privacy_level: b.privacy_level, video_cover_timestamp_ms: coverMs,
       // Una interacción solo queda activa si el usuario la marcó y su cuenta la permite
       disable_comment: info.comment_disabled || !b.allow_comment,
       disable_duet: info.duet_disabled || !b.allow_duet,

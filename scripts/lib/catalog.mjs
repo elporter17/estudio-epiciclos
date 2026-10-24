@@ -6,7 +6,7 @@ export const slug = (s) => norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g,
 export const isEmoji = (p) => p.font === 'emoji';
 
 // Semilla estable a partir de un texto (para que el mismo pedido dé el mismo video)
-export function hashSeed(s) { let h = 2166136261; for (const c of String(s)) { h ^= c.codePointAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+export { hashSeed } from '../../src/captions.js';
 
 export function findPreset(name) {
   const n = norm(name);
