@@ -61,16 +61,16 @@ const MYSTERY_CAT = {
 };
 // Pelotas que rebotan (src/bounce.js): un cat por variante
 MYSTERY_CAT['pelotas-crece'] = {
-  es: ['Cada rebote la hace más grande. ¿Llenará el círculo? 👀', '¿Cuántos rebotes aguanta antes de llenarlo todo? 🔴', 'Sube el volumen: cada rebote es una nota 🎶'],
-  en: ['Every bounce makes it bigger. Will it fill the circle? 👀', 'How many bounces until it fills everything? 🔴', 'Turn the sound on: every bounce is a note 🎶']
+  es: ['Cada rebote la hace más grande. ¿Llenará el círculo? 👀', '¿Cuántos rebotes aguanta antes de llenarlo todo? Comenta tu apuesta 👇', 'Sube el volumen: cada rebote es una nota 🎶', '¿Lo llena o no? Mira hasta el último segundo 😳', 'Apuesto a que no adivinas cuántos rebotes da 🤔', 'Si llegaste al final, comenta «lo vi» 👇'],
+  en: ['Every bounce makes it bigger. Will it fill the circle? 👀', 'How many bounces until it fills everything? Comment your bet 👇', 'Turn the sound on: every bounce is a note 🎶', 'Does it fill it or not? Watch to the very last second 😳', 'Bet you can\'t guess how many bounces it takes 🤔', 'If you made it to the end, comment «I saw it» 👇']
 };
 MYSTERY_CAT['pelotas-multiplica'] = {
-  es: ['Cada rebote suelta otra pelota. Mira cómo termina 🤯', '¿Cuántas pelotas caben en un círculo? 👀', 'Sube el volumen: cada rebote es una nota 🎶'],
-  en: ['Every bounce drops another ball. Watch how it ends 🤯', 'How many balls fit in a circle? 👀', 'Turn the sound on: every bounce is a note 🎶']
+  es: ['Cada rebote suelta otra pelota. Mira cómo termina 🤯', '¿Cuántas pelotas caben en un círculo? Comenta tu número 👇', 'Sube el volumen: cada rebote es una nota 🎶', 'Elige un color y no lo pierdas de vista 👀', '¿En qué segundo ya no cabe ninguna más? 🤔', 'Etiqueta a alguien que se quede viendo esto 👇'],
+  en: ['Every bounce drops another ball. Watch how it ends 🤯', 'How many balls fit in a circle? Comment your number 👇', 'Turn the sound on: every bounce is a note 🎶', 'Pick a color and keep your eyes on it 👀', 'At what second does nothing else fit? 🤔', 'Tag someone who would stare at this 👇']
 };
 MYSTERY_CAT['pelotas-escape'] = {
-  es: ['Cada pelota que escapa suelta dos más. ¿Cuántas salen? 🔴', 'El círculo gira con un hueco… esto se descontrola 🤯', 'Sube el volumen: cada rebote es una nota 🎶'],
-  en: ['Every ball that escapes releases two more. How many get out? 🔴', 'The circle spins with a gap… this gets out of hand 🤯', 'Turn the sound on: every bounce is a note 🎶']
+  es: ['Cada pelota que escapa suelta dos más. ¿Cuántas salen? 🔴', 'El círculo gira con un hueco… esto se descontrola 🤯', 'Sube el volumen: cada rebote es una nota 🎶', '¿Cuántas crees que escapan? Comenta antes de que termine 👇', 'Elige una pelota: ¿logra escapar? 👀', 'Etiqueta a alguien que siempre encuentra la salida 👇'],
+  en: ['Every ball that escapes releases two more. How many get out? 🔴', 'The circle spins with a gap… this gets out of hand 🤯', 'Turn the sound on: every bounce is a note 🎶', 'How many do you think escape? Comment before it ends 👇', 'Pick a ball: does it make it out? 👀', 'Tag someone who always finds the way out 👇']
 };
 const CAT_TAGS = { nombres: { es: 'tunombre', en: 'yourname' }, combinaciones: { es: 'parejas', en: 'couples' } };
 // Las pelotas no son matemáticas de Fourier: llevan sus propios hashtags base

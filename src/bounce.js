@@ -13,11 +13,26 @@ export const BOUNCE_NAMES = {
   multiplica: ['Se multiplica', 'Multiplies'],
   escape: ['Escapar por el hueco', 'Escape through the gap']
 };
-// Texto de arriba del video
+// Texto de arriba del video: preguntas y ganchos (sin cifras, para que se vea hasta el final)
 export const BOUNCE_HOOKS = {
-  crece: { es: ['¿Llenará el círculo? 👀', 'Cada rebote la hace más grande', 'Espera el último rebote 😳'], en: ['Will it fill the circle? 👀', 'Every bounce makes it bigger', 'Wait for the last bounce 😳'] },
-  multiplica: { es: ['Cada rebote suelta otra pelota 🤯', '¿Cuántas caben? 👀', 'Esto se salió de control'], en: ['Every bounce drops another ball 🤯', 'How many fit? 👀', 'This got out of hand'] },
-  escape: { es: ['¿Cuántas logran escapar? 🔴', 'Cada pelota que sale suelta dos más', 'Encuentra el hueco 👀'], en: ['How many escape? 🔴', 'Every ball that gets out releases two more', 'Find the gap 👀'] }
+  crece: {
+    es: ['¿Llenará el círculo? 👀', '¿Cuántos rebotes crees que aguanta? 🤔', 'Espera el último rebote 😳', '¿Llega a llenarlo antes de 30 segundos?', 'Cada rebote la hace más grande… ¿hasta dónde?', 'No despegues los ojos del final 👀', '¿Apuestas a que lo llena? 🎯', 'Sube el volumen y mira hasta el final 🔊'],
+    en: ['Will it fill the circle? 👀', 'How many bounces do you think it lasts? 🤔', 'Wait for the last bounce 😳', 'Will it fill it before 30 seconds?', 'Every bounce makes it bigger… how far?', 'Keep your eyes on the ending 👀', 'Bet it fills it? 🎯', 'Turn the sound up and watch to the end 🔊']
+  },
+  multiplica: {
+    es: ['¿Cuántas pelotas caben en un círculo? 🤯', 'Cada rebote suelta otra… ¿hasta cuándo?', 'Esto se sale de control 😳', '¿En qué segundo ya no cabe ninguna más?', 'Elige un color y síguelo 👀', '¿Cuál es tu pelota favorita? 🎨', 'Sube el volumen: cada rebote es una nota 🔊', 'Mira cómo empieza… y cómo termina 🤯'],
+    en: ['How many balls fit in a circle? 🤯', 'Every bounce drops another… until when?', 'This gets out of hand 😳', 'At what second does nothing else fit?', 'Pick a color and follow it 👀', 'Which ball is your favorite? 🎨', 'Turn the sound up: every bounce is a note 🔊', 'Watch how it starts… and how it ends 🤯']
+  },
+  escape: {
+    es: ['¿Cuántas logran escapar? 🔴', 'Cada pelota que sale suelta dos más 🤯', '¿Encontrarán el hueco? 👀', 'Elige una pelota: ¿escapa o no?', '¿Cuántas escapan antes del final? 🤔', 'El hueco gira… ¿quién sale primero?', 'Esto se descontrola rapidísimo 😳', 'Sube el volumen y mira hasta el final 🔊'],
+    en: ['How many escape? 🔴', 'Every ball that gets out releases two more 🤯', 'Will they find the gap? 👀', 'Pick a ball: does it escape or not?', 'How many escape before the end? 🤔', 'The gap spins… who gets out first?', 'This gets out of hand fast 😳', 'Turn the sound up and watch to the end 🔊']
+  }
+};
+// Frase de abajo (en lugar de un contador): pide comentar o predecir
+export const BOUNCE_PROMPTS = {
+  crece: { es: ['Comenta cuántos rebotes crees que da 👇', 'Escribe tu apuesta antes del final 👇', '¿Lo llena o no? Dímelo en los comentarios', 'Etiqueta a alguien que no aguante el suspenso'], en: ['Comment how many bounces you think it takes 👇', 'Write your bet before the end 👇', 'Does it fill it or not? Tell me in the comments', 'Tag someone who can\'t handle the suspense'] },
+  multiplica: { es: ['Comenta en qué segundo se llena 👇', 'Escribe tu color favorito 👇', '¿Cuántas crees que caben? Comenta 👇', 'Etiqueta a alguien a quien le encante esto'], en: ['Comment at what second it fills up 👇', 'Write your favorite color 👇', 'How many do you think fit? Comment 👇', 'Tag someone who would love this'] },
+  escape: { es: ['Comenta cuántas crees que escapan 👇', 'Escribe tu apuesta antes del final 👇', 'Elige un color y dime si escapó 👇', 'Etiqueta a alguien que necesite ver esto'], en: ['Comment how many you think escape 👇', 'Write your bet before the end 👇', 'Pick a color and tell me if it escaped 👇', 'Tag someone who needs to see this'] }
 };
 
 const CFG = {
@@ -149,13 +164,14 @@ export function drawBounce(ctx, run, t, view, opts = {}) {
     ctx.strokeStyle = 'rgba(255,255,255,.85)'; ctx.lineWidth = 1.5 * U; ctx.stroke();
   }
 
-  // Contador debajo del círculo
-  const count = run.mode === 'crece' ? [`Rebotes: ${fr.bounces}`, `Bounces: ${fr.bounces}`]
-    : run.mode === 'multiplica' ? [`Pelotas: ${fr.alive}`, `Balls: ${fr.alive}`]
-    : [`Pelotas: ${fr.alive} · Escaparon: ${fr.escaped}`, `Balls: ${fr.alive} · Escaped: ${fr.escaped}`];
+  // Frase de enganche debajo del círculo (sin contador: que el final se vea hasta el último segundo)
+  const prompt = (opts.prompt ?? bouncePrompt(run.mode, lang, run.seed)).trim();
   ctx.fillStyle = FG; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
-  ctx.font = `600 ${30 * U}px "IBM Plex Sans", system-ui, sans-serif${opts.fallback || ''}`;
-  ctx.fillText(count[lang === 'en' ? 1 : 0], cx, cy + R + 64 * U);
+  if (prompt) {
+    let size = 28 * U; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${opts.fallback || ''}`;
+    const w = ctx.measureText(prompt).width; if (w > W * 0.9) { size *= W * 0.9 / w; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${opts.fallback || ''}`; }
+    ctx.globalAlpha = 0.85; ctx.fillText(prompt, cx, cy + R + 64 * U); ctx.globalAlpha = 1;
+  }
 
   // Texto superior al 15 % (más arriba lo tapan los botones de TikTok)
   const cap = (opts.caption || '').trim();
@@ -166,8 +182,12 @@ export function drawBounce(ctx, run, t, view, opts = {}) {
   }
 }
 
-// Texto superior estable para una corrida
+// Texto superior y frase de abajo estables para una corrida (la misma semilla da los mismos textos)
 export function bounceHook(mode, lang, seed) {
   const list = BOUNCE_HOOKS[mode][lang === 'en' ? 'en' : 'es'];
   return list[(Number(seed) >>> 0) % list.length];
+}
+export function bouncePrompt(mode, lang, seed) {
+  const list = BOUNCE_PROMPTS[mode][lang === 'en' ? 'en' : 'es'];
+  return list[Math.floor((Number(seed) >>> 0) / 7) % list.length];
 }
