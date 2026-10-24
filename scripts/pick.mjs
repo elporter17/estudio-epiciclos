@@ -20,8 +20,8 @@ export function readHistory(file = HISTORY) {
 
 // avoid = cuántas publicaciones recientes no se pueden repetir; las funciones inventadas pesan menos
 // para que dominen los presets reconocibles, pero cada una es distinta gracias a la semilla.
-export function pickNext({ history = readHistory(), avoid = 12, seed = Date.now() >>> 0, emoji = true, randomWeight = 0.5 } = {}) {
-  const items = catalog({ emoji });
+export function pickNext({ history = readHistory(), avoid = 12, seed = Date.now() >>> 0, emoji = true, complex = false, randomWeight = 0.5 } = {}) {
+  const items = catalog({ emoji, complex });
   const recent = new Set(history.slice(-Math.min(avoid, items.length - 1)).map((h) => h.id));
   const pool = items.filter((it) => !recent.has(it.id));
   // Tampoco repetir el mismo grupo dos veces seguidas si hay alternativa

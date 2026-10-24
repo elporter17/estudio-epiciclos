@@ -33,6 +33,8 @@ Video
   --fps 30|60           Cuadros por segundo (por defecto 30)
   --format 9:16|1:1|16:9  (por defecto 9:16)    --quality 1080|720 (por defecto 1080)
   --rev <s>             Segundos por vuelta (por defecto 3)
+  --guide <0-60>        Opacidad (%) de la figura de guía mientras dibuja; 0 = no se ve hasta el final (por defecto 18)
+  --no-spoiler          El texto gancho automático no dice qué figura es
   --nseq "1, 3, 6…"     Términos N por etapa
   --accent <#hex>       Color del trazo (por defecto #ff7a52)
   --no-reveal --no-formulas --no-signature
@@ -44,7 +46,7 @@ const OPTIONS = {
   seed: { type: 'string' }, lang: { type: 'string', default: 'es' }, caption: { type: 'string', default: 'auto' },
   labels: { type: 'string', default: 'full' }, style: { type: 'string', default: 'xy' },
   fps: { type: 'string', default: '30' }, format: { type: 'string', default: '9:16' }, quality: { type: 'string', default: '1080' },
-  rev: { type: 'string' }, nseq: { type: 'string' }, accent: { type: 'string' },
+  rev: { type: 'string' }, guide: { type: 'string' }, spoiler: { type: 'boolean', default: true }, nseq: { type: 'string' }, accent: { type: 'string' },
   reveal: { type: 'boolean', default: true }, formulas: { type: 'boolean', default: true }, signature: { type: 'boolean', default: true },
   out: { type: 'string' }, still: { type: 'string' }, crf: { type: 'string', default: '18' }, quiet: { type: 'boolean', default: false },
   help: { type: 'boolean', short: 'h', default: false }
@@ -52,9 +54,9 @@ const OPTIONS = {
 
 const oneOf = (v, opts, name) => { if (!opts.includes(v)) throw new Error(`--${name} debe ser ${opts.join(' | ')} (recibí «${v}»)`); return v; };
 
-// Elige el texto gancho de forma estable según la figura y la semilla
-export function autoCaption(name, lang, seed = 0) {
-  const list = lang === 'en' ? E.CAPTIONS_EN : E.CAPTIONS;
+// Elige el texto gancho de forma estable según la figura y la semilla; sin spoiler, solo los que no la nombran
+export function autoCaption(name, lang, seed = 0, spoiler = true) {
+  const list = (lang === 'en' ? E.CAPTIONS_EN : E.CAPTIONS).filter((c) => spoiler || !c.includes('{x}'));
   return list[hashSeed(`${name}|${seed}`) % list.length].replace('{x}', name);
 }
 
@@ -73,10 +75,11 @@ export async function renderVideo(o) {
     reveal: o.reveal !== false, formulas: o.formulas !== false, signature: o.signature !== false
   };
   if (o.rev) settings.rev = Math.min(8, Math.max(1, +o.rev));
+  if (o.guide != null && o.guide !== '') settings.guide = Math.min(60, Math.max(0, +o.guide));
   if (o.nseq) settings.nseq = o.nseq;
   if (o.accent) settings.accent = o.accent;
   const cap = o.caption ?? 'auto';
-  settings.caption = cap === 'none' ? '' : cap === 'auto' ? autoCaption(title, lang, seed ?? 0) : cap;
+  settings.caption = cap === 'none' ? '' : cap === 'auto' ? autoCaption(title, lang, seed ?? 0, o.spoiler !== false) : cap;
 
   const view = E.canvasSize(settings.format, settings.quality);
   const { shape, meta } = await E.shapeFor(src, settings.accent);
@@ -138,7 +141,7 @@ export async function renderVideo(o) {
   const sidecar = out.replace(/\.mp4$/i, '') + '.json';
   const data = {
     file: path.basename(out), lang, title, caption: settings.caption, duration: +dur.toFixed(3), fps, width: view.W, height: view.H,
-    style: settings.style, labels: settings.labels, accent: settings.accent, terms: S.stages, ...info, createdAt: new Date().toISOString()
+    style: settings.style, labels: settings.labels, accent: settings.accent, guide: settings.guide, terms: S.stages, ...info, createdAt: new Date().toISOString()
   };
   fs.writeFileSync(sidecar, JSON.stringify(data, null, 2) + '\n');
   log(`MP4: ${out}\nDatos: ${sidecar}\n`);

@@ -42,23 +42,25 @@ npm run render -- --preset Violín --lang en     # → out/circularte-violin-en.
 |---|---|
 | `npm run render -- …` | Renderiza un MP4 H.264 (High, yuv420p, 1080×1920, 30 fps, pista de audio AAC en silencio) |
 | `npm run pick` | Elige la próxima figura evitando las 12 más recientes y sin repetir grupo seguido; la anota en `data/history.json` (`--dry-run` para no anotar) |
-| `npm run caption -- --meta out/<video>.json` | Escribe la descripción y los hashtags del post con OpenAI (`gpt-6-luna`) |
-| `npm run daily -- --lang es` | Encadena pick → render → caption y deja el texto del post en el `.json` del video; con `--publish draft` (o `direct`) también lo sube a TikTok |
+| `npm run caption -- --meta out/<video>.json` | Escribe la descripción y los hashtags del post con plantillas propias (`--no-spoiler` para no nombrar la figura) |
+| `npm run daily -- --lang es` | Encadena pick → render → caption en modo suspenso y deja el texto del post en el `.json` del video; con `--publish direct` (público por defecto) o `draft` también lo sube a TikTok |
 | `npm run tiktok:connect` | Conecta tu cuenta de TikTok (una vez; `-- --status` muestra la cuenta y cuándo vence) |
-| `npm run publish -- --video out/<video>.mp4 --mode draft` | Sube el video a TikTok como borrador (`--mode direct` lo publica, privado) |
+| `npm run publish -- --video out/<video>.mp4 --mode draft` | Sube el video a TikTok como borrador (`--mode direct --privacy PUBLIC_TO_EVERYONE` lo publica) |
 
 Opciones de `render` (`npm run render -- --help` las lista todas):
 
-- Qué dibujar: `--preset <nombre>` (cualquier preset de la web, en español o inglés: `Corazón`, `Heart`, `Violín`…), `--random <tipo>` (`any`, `fourier`, `polar`, `rosa`, `spiro`, `lissa`, `super`) con `--seed <n>` para repetirla, o `--text <texto>` con `--font cursiva|elegante|bloque|clasica|emoji`.
-- Cómo se ve: `--labels full|n|top`, `--style xy|z`, `--fps 30|60`, `--format 9:16|1:1|16:9`, `--quality 1080|720`, `--rev`, `--nseq`, `--accent`, `--no-reveal`, `--no-formulas`, `--no-signature`.
-- Texto gancho de arriba: `--caption auto` (por defecto, elige uno de los de la web según `--lang`), `--caption none` o `--caption "tu texto"`.
+- Qué dibujar: `--preset <nombre>` (cualquier preset de la web, en español o inglés: `Corazón`, `Heart`, `Violín`…), `--random <tipo>` (`any`, `fourier`, `polar`, `rosa`, `spiro`, `lissa`, `super`, `simetria`) con `--seed <n>` para repetirla, o `--text <texto>` con `--font cursiva|elegante|bloque|clasica|emoji`.
+- Cómo se ve: `--labels full|n|top`, `--style xy|z`, `--fps 30|60`, `--format 9:16|1:1|16:9`, `--quality 1080|720`, `--rev`, `--nseq`, `--accent`, `--guide 0-60` (opacidad de la figura de guía mientras dibuja; `0` = no se ve hasta el final), `--no-reveal`, `--no-formulas`, `--no-signature`.
+- Texto gancho de arriba: `--caption auto` (por defecto, elige uno de los de la web según `--lang`; con `--no-spoiler`, solo los que no nombran la figura), `--caption none` o `--caption "tu texto"`.
 - `--lang es|en` cambia el texto gancho y el nombre del archivo. `--out` cambia la ruta. `--still <segundos>` guarda un PNG de ese instante en lugar del video, útil para revisar el encuadre.
 
 Junto a cada MP4 queda un `.json` con la figura, la semilla, la duración y el texto gancho; `caption` agrega ahí el texto del post y `publish` lo usa como descripción y anota el resultado de cada subida.
 
 **Emoji.** Los presets de animales y cosas son siluetas de emoji, así que el render necesita una fuente de emoji a color. `npm run fonts` descarga Noto Color Emoji desde google/fonts (licencia OFL; no se sube al repo) y con ella el resultado es idéntico en Windows, macOS y Linux. Sin ella se usa la del sistema (Segoe UI Emoji en Windows, Apple Color Emoji en macOS); en un Linux sin fuentes de emoji esos presets fallan con un aviso y `pick` los salta. También puedes apuntar a otra fuente con `CIRCULARTE_EMOJI_FONT=/ruta/fuente.ttf`.
 
-**Descripciones con OpenAI.** `caption` lee la clave de `OPEN_AI` (o `OPENAI_API_KEY`), del entorno o de un `.env` en la raíz (copia `.env.example`; `.env` está en `.gitignore` y nunca se sube). Usa la Responses API con salida JSON estructurada y el modelo `gpt-6-luna`, el que la guía de modelos de OpenAI recomienda para tareas acotadas y de alto volumen; cámbialo con `CIRCULARTE_CAPTION_MODEL` (por ejemplo `gpt-6-astra`). Si no hay clave o la API falla, usa una plantilla local y lo avisa, para que el flujo no se detenga (`--no-fallback` para que falle en su lugar).
+**Descripciones.** `caption` arma la descripción y los hashtags con plantillas propias, sin IA ni APIs de pago: la misma figura y semilla dan siempre el mismo texto. Con `--no-spoiler` no dice qué figura es (invita a adivinar en los comentarios).
+
+**Sin IA.** Todo el video sale del proyecto: las figuras son fórmulas, texto o siluetas de emoji de la fuente Noto Color Emoji, y el dibujo es la serie de Fourier calculada aquí. Por eso las publicaciones no llevan la etiqueta de contenido generado por IA.
 
 ## Publicar en TikTok
 
@@ -66,7 +68,7 @@ Usa solo la API oficial de TikTok (Login Kit + Content Posting API); nada de bot
 
 1. `npm run tiktok:connect` imprime la URL de autorización. Ábrela, autoriza, y la página `tiktok-callback.html` te muestra un código y un *state*: pégalos en la terminal. Los tokens quedan en `data/tiktok-token.json` (en `.gitignore`); el de acceso dura 24 h y se renueva solo con el de refresco, que dura 365 días.
 2. `npm run publish -- --video out/<video>.mp4 --mode draft` lo manda a tu bandeja de TikTok como borrador: abres la notificación en la app, pegas la descripción que imprime el script y publicas.
-3. `--mode direct` lo publica directo con la descripción del `.json`. Mientras la app no pase la auditoría de TikTok, todo lo publicado por la API queda privado (`SELF_ONLY`, solo tú lo ves) y la cuenta debe ser privada.
+3. `--mode direct` lo publica directo con la descripción del `.json` y la privacidad de `--privacy` (`SELF_ONLY` por defecto; `PUBLIC_TO_EVERYONE` para público). La app está aprobada en Production desde el 23-10-2026, así que ya admite público.
 
 Límites de la API que respeta el script: video de hasta 4 GB, subido en trozos de 5 a 64 MB (uno solo si pesa hasta 64 MB); el enlace de subida dura una hora; 6 inicios de subida por minuto; 30 consultas de estado por minuto; como mucho 5 borradores pendientes cada 24 horas. TikTok acepta MP4/MOV/WebM, H.264, de 23 a 60 fps.
 
@@ -97,17 +99,20 @@ Cómo funciona: la conexión con TikTok se abre en una ventana emergente (así n
 
 ### Auditoría de TikTok
 
-Sin auditoría, todo lo que se publica por la API queda privado («Solo yo») y la cuenta tiene que ser privada; además, como mucho 5 usuarios distintos pueden publicar cada día. Para publicar en público hay que pedir la auditoría en el portal de TikTok Developers (app *Circularte* → *Production* → enviar a revisión con Login Kit y Content Posting API con *Direct Post*), con un video que muestre el flujo completo en la web: grabar un video, «Publicar en TikTok», conectar la cuenta, elegir la privacidad y publicar. Ojo: TikTok aprueba esta API para apps abiertas al público, no para herramientas que solo suben a las cuentas propias; por eso la publicación directa vive en la web, donde cualquiera publica sus propios videos.
+La app ya pasó la revisión (Production en vivo desde el 23-10-2026). Antes, sin auditoría, todo lo que se publicaba por la API quedaba privado («Solo yo»), la cuenta tenía que ser privada y como mucho 5 usuarios distintos podían publicar cada día. La revisión se pidió en el portal de TikTok Developers (app *Circularte* → *Production* → enviar a revisión con Login Kit y Content Posting API con *Direct Post*), con un video que muestre el flujo completo en la web: grabar un video, «Publicar en TikTok», conectar la cuenta, elegir la privacidad y publicar. Ojo: TikTok aprueba esta API para apps abiertas al público, no para herramientas que solo suben a las cuentas propias; por eso la publicación directa vive en la web, donde cualquiera publica sus propios videos.
 
 ## Publicación diaria (GitHub Actions)
 
-`.github/workflows/daily.yml` genera un video cada día a las 10:00 (Honduras) y lo manda a tu bandeja de TikTok como **borrador**: abres la notificación en la app y publicas. Las reglas de TikTok no permiten la publicación directa automática, así que este flujo no la usa. También se puede lanzar a mano desde *Actions* → *Video diario a TikTok* → *Run workflow*, y cada corrida deja el video como artefacto durante 7 días.
+`.github/workflows/daily.yml` genera un video cada día a las 10:00 (Honduras) y lo **publica directo y en público**, con su descripción y hashtags. Va en **modo suspenso**: elige solo figuras complejas (sin los presets marcados `simple`), no muestra la figura de guía mientras dibuja, ni el texto gancho ni la descripción dicen qué es, y la portada es un cuadro a mitad del dibujo. La figura completa aparece solo al final.
+
+Ojo: las reglas de TikTok para desarrolladores no aceptan herramientas que suben contenido a las propias cuentas, y TikTok podría quitarle el permiso a la app (con eso dejaría de funcionar también la web). Se decidió publicar directo de todos modos; para volver a borradores, lanza el flujo con *publish* = `draft` o cambia el valor por defecto en `daily.yml`.
+
+También se puede lanzar a mano desde *Actions* → *Video diario a TikTok* → *Run workflow* (eliges idioma, `direct`/`draft`/`none` y la privacidad), y cada corrida deja el video como artefacto durante 7 días. En local: `npm run daily -- --publish direct` (o `--spoiler` para el modo anterior, con guía y nombre).
 
 Secretos del repositorio (*Settings* → *Secrets and variables* → *Actions*):
 
 | Secreto | Valor |
 |---|---|
-| `OPEN_AI` | La clave de OpenAI |
 | `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TIKTOK_REDIRECT_URI` | Los mismos de tu `.env` |
 | `TIKTOK_TOKEN_SEED` | El contenido completo de `data/tiktok-token.json` después de `npm run tiktok:connect` (solo se usa en la primera corrida) |
 | `STATE_KEY` | Una cadena aleatoria larga: cifra el token y el historial que el flujo guarda en la caché de Actions entre corridas |

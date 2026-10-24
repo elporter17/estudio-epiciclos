@@ -15,7 +15,7 @@ foreach ($line in Get-Content $envFile -Encoding UTF8) {
 }
 $vars['TIKTOK_TOKEN_SEED'] = (Get-Content $tokenFile -Raw -Encoding UTF8).Trim()
 
-$names = 'OPEN_AI', 'TIKTOK_CLIENT_KEY', 'TIKTOK_CLIENT_SECRET', 'TIKTOK_REDIRECT_URI', 'TIKTOK_TOKEN_SEED', 'STATE_KEY'
+$names = 'TIKTOK_CLIENT_KEY', 'TIKTOK_CLIENT_SECRET', 'TIKTOK_REDIRECT_URI', 'TIKTOK_TOKEN_SEED', 'STATE_KEY'
 if ($only) { $names = $names | Where-Object { $only -contains $_ } }
 $missing = $names | Where-Object { -not $vars[$_] }
 if ($missing) { throw "Sin valor en .env: $($missing -join ', ')" }

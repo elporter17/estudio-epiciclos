@@ -1,5 +1,7 @@
-# Un video diario de CirculArte: elige figura → renderiza → descripción con OpenAI → borrador en la bandeja de TikTok.
-# La publicación directa automática no está permitida por las reglas de TikTok; desde la web sí se publica directo.
+# Un video diario de CirculArte: elige figura compleja → renderiza en modo suspenso → descripción con plantillas →
+# publicación directa y pública en TikTok, con descripción. Todo sale del proyecto: sin IA ni APIs de pago.
+# Ojo: las reglas de TikTok para desarrolladores no aceptan herramientas que suben a las propias cuentas; el
+# usuario decidió publicar directo igual (24-10-2026). Para volver a borradores: publish = draft.
 # Secretos necesarios (Settings → Secrets and variables → Actions): ver README, sección «Publicación diaria».
 name: Video diario a TikTok
 
@@ -14,10 +16,15 @@ on:
         options: [es, en]
         default: es
       publish:
-        description: Enviar a TikTok como borrador o solo generar el video
+        description: Publicar directo, enviar como borrador o solo generar el video
         type: choice
-        options: [draft, none]
-        default: draft
+        options: [direct, draft, none]
+        default: direct
+      privacy:
+        description: Privacidad de la publicación directa
+        type: choice
+        options: [PUBLIC_TO_EVERYONE, MUTUAL_FOLLOW_FRIENDS, SELF_ONLY]
+        default: PUBLIC_TO_EVERYONE
 
 permissions:
   contents: read
@@ -31,13 +38,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      OPEN_AI: ${{ secrets.OPEN_AI }}
       TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
       TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
       TIKTOK_REDIRECT_URI: ${{ secrets.TIKTOK_REDIRECT_URI }}
       STATE_KEY: ${{ secrets.STATE_KEY }}
       LANG_INPUT: ${{ inputs.lang || 'es' }}
-      PUBLISH_INPUT: ${{ inputs.publish || 'draft' }}
+      PUBLISH_INPUT: ${{ inputs.publish || 'direct' }}
+      PRIVACY_INPUT: ${{ inputs.privacy || 'PUBLIC_TO_EVERYONE' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -76,7 +83,7 @@ jobs:
       - name: Generar y enviar
         run: |
           args=(--lang "$LANG_INPUT")
-          if [ "$PUBLISH_INPUT" = "draft" ]; then args+=(--publish draft); fi
+          if [ "$PUBLISH_INPUT" != "none" ]; then args+=(--publish "$PUBLISH_INPUT" --privacy "$PRIVACY_INPUT"); fi
           npm run daily -- "${args[@]}"
 
       - name: Cifrar estado

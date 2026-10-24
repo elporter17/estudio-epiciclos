@@ -1,5 +1,5 @@
 // Qué se puede dibujar: presets de la web, funciones inventadas y texto libre.
-import { PRESETS, INVENT_TYPES, presetSrc, inventFn, funName, makeRng } from '../../src/engine.js';
+import { PRESETS, INVENT_TYPES, COMPLEX_TYPES, presetSrc, inventFn, funName, makeRng } from '../../src/engine.js';
 
 export const norm = (s) => String(s).normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().trim();
 export const slug = (s) => norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'figura';
@@ -14,9 +14,10 @@ export function findPreset(name) {
 }
 
 // Todo lo que pick.mjs puede elegir. id estable para el historial.
-export function catalog({ emoji = true } = {}) {
-  const items = PRESETS.filter((p) => emoji || !isEmoji(p)).map((p) => ({ id: `preset:${p.name}`, kind: 'preset', name: p.name, group: p.group }));
-  for (const t of INVENT_TYPES) items.push({ id: `random:${t}`, kind: 'random', type: t, group: 'Inventadas' });
+// complex: sin los presets marcados simple (corazón, π, infinito…) y solo las funciones con más detalle.
+export function catalog({ emoji = true, complex = false } = {}) {
+  const items = PRESETS.filter((p) => (emoji || !isEmoji(p)) && !(complex && p.simple)).map((p) => ({ id: `preset:${p.name}`, kind: 'preset', name: p.name, group: p.group }));
+  for (const t of complex ? COMPLEX_TYPES : INVENT_TYPES) items.push({ id: `random:${t}`, kind: 'random', type: t, group: 'Inventadas' });
   return items;
 }
 

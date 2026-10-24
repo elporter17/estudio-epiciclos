@@ -20,7 +20,9 @@ const env = {
   DOMMatrix: globalThis.DOMMatrix,
   loadFont: (font, text) => document.fonts.load(font, text),
   fonts: {},
-  fallback: '' // familias extra al final del texto gancho (en Node: la fuente de emoji)
+  fallback: '', // familias extra al final del texto gancho (en Node: la fuente de emoji)
+  stix: '', // familias extra tras "STIX Two Text" (en Node: sus subconjuntos griego y latín extendido)
+  sim: '∼' // «del orden de» en las fórmulas; en Node va «~» porque los subconjuntos de STIX no traen U+223C
 };
 export function setEnv(e) { Object.assign(env, e); }
 
@@ -529,7 +531,7 @@ export const errFor = (S, style, N) => {
 /* ---------------- Dibujo ---------------- */
 const FG = '#f3eeea', GOLD = '#ffd98a', BG = '#141112';
 const hexA = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${a})`; };
-const mathFont = (sz, it) => `${it ? 'italic ' : ''}400 ${sz}px "STIX Two Text", "Cambria Math", "Times New Roman", serif`;
+const mathFont = (sz, it) => `${it ? 'italic ' : ''}400 ${sz}px "STIX Two Text"${env.stix}, "Cambria Math", "Times New Roman", serif`;
 
 function mathLine(R, parts, x, y, size, align, maxW) {
   const { ctx, settings } = R;
@@ -697,8 +699,8 @@ function drawSignature(R) {
   const { ctx, settings, view } = R;
   if (!settings.signature) return;
   const U = view.U, parts = [
-    ['Circul', `italic 400 ${24 * U}px "STIX Two Text", "Times New Roman", serif`, hexA(FG, .8)],
-    ['Arte', `italic 400 ${24 * U}px "STIX Two Text", "Times New Roman", serif`, settings.accent],
+    ['Circul', `italic 400 ${24 * U}px "STIX Two Text"${env.stix}, "Times New Roman", serif`, hexA(FG, .8)],
+    ['Arte', `italic 400 ${24 * U}px "STIX Two Text"${env.stix}, "Times New Roman", serif`, settings.accent],
     ['   edav-tech.com', `500 ${17 * U}px "IBM Plex Sans", system-ui, sans-serif`, hexA(FG, .5)]
   ];
   ctx.save(); ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left';
@@ -726,11 +728,11 @@ function drawFormulas(R, a, N) {
     mathLine(R, [['i', 'x'], ['r', '('], ['i', 't'], ['r', ') = '], ['S', 'Σ'], ['_', 'k'], ['r', ' ('], ['i', 'a'], ['_', 'k'], ['r', ' cos '], ['i', 'kt'], ['r', ' + '], ['i', 'b'], ['_', 'k'], ['r', ' sin '], ['i', 'kt'], ['r', ')']], L.fx, y, size, L.falign, maxW);
     y += gapY; ctx.fillStyle = GOLD;
     mathLine(R, [['i', 'y'], ['r', '('], ['i', 't'], ['r', ') = '], ['S', 'Σ'], ['_', 'k'], ['r', ' ('], ['i', 'c'], ['_', 'k'], ['r', ' cos '], ['i', 'kt'], ['r', ' + '], ['i', 'd'], ['_', 'k'], ['r', ' sin '], ['i', 'kt'], ['r', ')']], L.fx, y, size, L.falign, maxW);
-    if (pw !== null) { y += gapY; ctx.fillStyle = FG; mathLine(R, [['r', 'arm'], ['_', 'k'], ['r', '  ∼  1/'], ['i', 'k'], ['^', pw]], L.fx, y, size * .95, L.falign, maxW); }
+    if (pw !== null) { y += gapY; ctx.fillStyle = FG; mathLine(R, [['r', 'arm'], ['_', 'k'], ['r', `  ${env.sim}  1/`], ['i', 'k'], ['^', pw]], L.fx, y, size * .95, L.falign, maxW); }
   } else {
     ctx.fillStyle = FG;
     mathLine(R, [['i', 'z'], ['r', '('], ['i', 't'], ['r', ') = '], ['S', 'Σ'], ['_', 'k'], ['r', ' '], ['i', 'c'], ['_', 'k'], ['r', ' '], ['i', 'e'], ['^', 'ikt']], L.fx, y, size * 1.1, L.falign, maxW);
-    if (pw !== null) { y += gapY; mathLine(R, [['r', '|'], ['i', 'c'], ['_', 'k'], ['r', '|  ∼  1/|'], ['i', 'k'], ['r', '|'], ['^', pw]], L.fx, y, size * .95, L.falign, maxW); }
+    if (pw !== null) { y += gapY; mathLine(R, [['r', '|'], ['i', 'c'], ['_', 'k'], ['r', `|  ${env.sim}  1/|`], ['i', 'k'], ['r', '|'], ['^', pw]], L.fx, y, size * .95, L.falign, maxW); }
   }
   y += gapY * .95; ctx.fillStyle = hexA(FG, .55);
   mathLine(R, [['i', 'N'], ['r', ' = ' + N + '     error = ' + errFor(S, settings.style, N).toFixed(2) + '%']], L.fx, y, 30 * U * k, L.falign, maxW);
@@ -798,9 +800,9 @@ export function stateAt(T, el) {
 
 /* ---------------- Fuentes de figura ---------------- */
 export const PRESETS = [
-  { group: 'Amor', name: 'Corazón', en: 'Heart', expr: { mode: 'xy', x: '16 sin(t)^3', y: '13 cos(t) - 5 cos(2t) - 2 cos(3t) - cos(4t)', periods: 1 }, fill: 'solid' },
-  { group: 'Amor', name: 'LOVE', text: 'LOVE', font: 'elegante' },
-  { group: 'Amor', name: 'amor', text: 'amor', font: 'cursiva' },
+  { group: 'Amor', name: 'Corazón', en: 'Heart', expr: { mode: 'xy', x: '16 sin(t)^3', y: '13 cos(t) - 5 cos(2t) - 2 cos(3t) - cos(4t)', periods: 1 }, fill: 'solid', simple: true },
+  { group: 'Amor', name: 'LOVE', text: 'LOVE', font: 'elegante', simple: true },
+  { group: 'Amor', name: 'amor', text: 'amor', font: 'cursiva', simple: true },
   { group: 'Amor', name: 'te amo', text: 'te amo', font: 'cursiva' },
   { group: 'Amor', name: 'Mamá', en: 'Mom', text: 'Mamá', font: 'cursiva' },
   { group: 'Amor', name: 'Rosa', en: 'Rose', text: '🌹', font: 'emoji' },
@@ -813,24 +815,37 @@ export const PRESETS = [
   { group: 'Animales', name: 'Caballo', en: 'Horse', text: '🐎', font: 'emoji' },
   { group: 'Animales', name: 'Paloma', en: 'Dove', text: '🕊️', font: 'emoji' },
   { group: 'Animales', name: 'Mariposa', en: 'Butterfly', text: '🦋', font: 'emoji' },
+  { group: 'Animales', name: 'Dragón', en: 'Dragon', text: '🐉', font: 'emoji' },
+  { group: 'Animales', name: 'Araña', en: 'Spider', text: '🕷️', font: 'emoji' },
+  { group: 'Animales', name: 'Escorpión', en: 'Scorpion', text: '🦂', font: 'emoji' },
+  { group: 'Animales', name: 'Langosta', en: 'Lobster', text: '🦞', font: 'emoji' },
+  { group: 'Animales', name: 'Ciervo', en: 'Deer', text: '🦌', font: 'emoji' },
+  { group: 'Animales', name: 'Gallo', en: 'Rooster', text: '🐓', font: 'emoji' },
+  { group: 'Animales', name: 'Jirafa', en: 'Giraffe', text: '🦒', font: 'emoji' },
+  { group: 'Animales', name: 'Águila', en: 'Eagle', text: '🦅', font: 'emoji' },
+  { group: 'Animales', name: 'Canguro', en: 'Kangaroo', text: '🦘', font: 'emoji' },
   { group: 'Cosas', name: 'Guitarra', en: 'Guitar', text: '🎸', font: 'emoji' },
   { group: 'Cosas', name: 'Violín', en: 'Violin', text: '🎻', font: 'emoji' },
   { group: 'Cosas', name: 'Cohete', en: 'Rocket', text: '🚀', font: 'emoji' },
   { group: 'Cosas', name: 'Manzana', en: 'Apple', text: '🍎', font: 'emoji' },
   { group: 'Cosas', name: 'Corona', en: 'Crown', text: '👑', font: 'emoji' },
-  { group: 'Cosas', name: 'Nota', en: 'Music note', text: '♪', font: 'clasica' },
+  { group: 'Cosas', name: 'Rueda de la fortuna', en: 'Ferris wheel', text: '🎡', font: 'emoji' },
+  { group: 'Cosas', name: 'Bicicleta', en: 'Bicycle', text: '🚲', font: 'emoji' },
+  { group: 'Cosas', name: 'Carrusel', en: 'Carousel', text: '🎠', font: 'emoji' },
+  { group: 'Cosas', name: 'Estatua de la Libertad', en: 'Statue of Liberty', text: '🗽', font: 'emoji' },
+  { group: 'Cosas', name: 'Nota', en: 'Music note', text: '♪', font: 'clasica', simple: true },
   { group: 'Matemáticas', name: 'Copo de Koch', en: 'Koch snowflake', poly: () => kochPts(4), fill: 'solid' },
-  { group: 'Matemáticas', name: 'π', en: 'Pi', text: 'π', font: 'clasica' },
-  { group: 'Matemáticas', name: 'Infinito', en: 'Infinity', expr: { mode: 'xy', x: 'cos(t) / (1 + sin(t)^2)', y: 'sin(t) cos(t) / (1 + sin(t)^2)', periods: 1 }, fill: 'line' },
-  { group: 'Matemáticas', name: 'Flor', en: 'Flower', expr: { mode: 'polar', r: 'cos(4t)', periods: 1 }, fill: 'soft' },
+  { group: 'Matemáticas', name: 'π', en: 'Pi', text: 'π', font: 'clasica', simple: true },
+  { group: 'Matemáticas', name: 'Infinito', en: 'Infinity', expr: { mode: 'xy', x: 'cos(t) / (1 + sin(t)^2)', y: 'sin(t) cos(t) / (1 + sin(t)^2)', periods: 1 }, fill: 'line', simple: true },
+  { group: 'Matemáticas', name: 'Flor', en: 'Flower', expr: { mode: 'polar', r: 'cos(4t)', periods: 1 }, fill: 'soft', simple: true },
   { group: 'Matemáticas', name: 'Mariposa polar', en: 'Butterfly curve', expr: { mode: 'polar', r: 'exp(sin(t)) - 2 cos(4t) + sin((2t - pi)/24)^5', periods: 6 }, fill: 'line' },
-  { group: 'Matemáticas', name: 'Nudo trébol', en: 'Trefoil knot', expr: { mode: 'xy', x: 'sin(t) + 2 sin(2t)', y: 'cos(t) - 2 cos(2t)', periods: 1 }, fill: 'line' },
+  { group: 'Matemáticas', name: 'Nudo trébol', en: 'Trefoil knot', expr: { mode: 'xy', x: 'sin(t) + 2 sin(2t)', y: 'cos(t) - 2 cos(2t)', periods: 1 }, fill: 'line', simple: true },
   { group: 'Matemáticas', name: 'Espirógrafo', en: 'Spirograph', expr: { mode: 'xy', x: '2 cos(t) + 5 cos((2/3)t)', y: '2 sin(t) - 5 sin((2/3)t)', periods: 3 }, fill: 'line' },
-  { group: 'Matemáticas', name: 'Epiciclo', en: 'Epicycle', expr: { mode: 'xy', x: '5 cos(t) - 3 cos((5/2)t)', y: '5 sin(t) - 3 sin((5/2)t)', periods: 2 }, fill: 'soft' },
-  { group: 'Matemáticas', name: 'Lissajous', expr: { mode: 'xy', x: 'sin(3t + pi/2)', y: 'sin(2t)', periods: 1 }, fill: 'line' },
-  { group: 'Matemáticas', name: 'Cardioide', en: 'Cardioid', expr: { mode: 'polar', r: '1 - sin(t)', periods: 1 }, fill: 'solid' },
+  { group: 'Matemáticas', name: 'Epiciclo', en: 'Epicycle', expr: { mode: 'xy', x: '5 cos(t) - 3 cos((5/2)t)', y: '5 sin(t) - 3 sin((5/2)t)', periods: 2 }, fill: 'soft', simple: true },
+  { group: 'Matemáticas', name: 'Lissajous', expr: { mode: 'xy', x: 'sin(3t + pi/2)', y: 'sin(2t)', periods: 1 }, fill: 'line', simple: true },
+  { group: 'Matemáticas', name: 'Cardioide', en: 'Cardioid', expr: { mode: 'polar', r: '1 - sin(t)', periods: 1 }, fill: 'solid', simple: true },
   { group: 'Matemáticas', name: 'Rosa 7/4', en: 'Rose 7/4', expr: { mode: 'polar', r: 'cos((7/4)t)', periods: 4 }, fill: 'soft' },
-  { group: 'Matemáticas', name: 'Estrella', en: 'Star', text: '★', font: 'bloque' }
+  { group: 'Matemáticas', name: 'Estrella', en: 'Star', text: '★', font: 'bloque', simple: true }
 ];
 
 export const exprLinesOf = (d) => d.mode === 'polar' ? [`r(t) = ${d.r}`] : [`x(t) = ${d.x}`, `y(t) = ${d.y}`];
@@ -878,9 +893,22 @@ export const funName = (rng, lang = 'es') => withRng(rng, () => {
 });
 
 export const inventFn = (type, rng) => withRng(rng, () => invent(type));
-export const INVENT_TYPES = ['fourier', 'polar', 'rosa', 'spiro', 'lissa', 'super'];
+export const INVENT_TYPES = ['fourier', 'polar', 'rosa', 'spiro', 'lissa', 'super', 'simetria'];
+// Las que salen con más detalle (lo que usa la publicación diaria)
+export const COMPLEX_TYPES = ['simetria', 'spiro', 'rosa'];
 function invent(type) {
-  if (type === 'any') type = pick(['fourier', 'fourier', 'polar', 'rosa', 'spiro', 'spiro', 'lissa', 'super']);
+  if (type === 'any') type = pick(['fourier', 'fourier', 'polar', 'rosa', 'spiro', 'spiro', 'lissa', 'super', 'simetria', 'simetria']);
+  if (type === 'simetria') {
+    // Curva misteriosa (Frank Farris): z(t) = Σ a·e^{ikt} con todas las k ≡ r (mód m) → simetría de orden m
+    let m, r; do { m = rint(3, 9); r = rint(1, m - 1); } while (gcd(r, m) !== 1);
+    const js = [-4, -3, -2, -1, 1, 2, 3, 4].sort(() => random() - .5).slice(0, rint(2, 4));
+    const parts = [[r, 1, 0], ...js.map((j) => { const k = r + m * j; return [k, rnd(.45, 1) * Math.sqrt(r / Math.abs(k)), random() < .5 ? rnd(-2.8, 2.8) : 0]; })];
+    // cos(kt + φ) y sin(kt + φ); con k < 0: cos(|k|t − φ) y −sin(|k|t − φ)
+    const arg = (k, ph) => { const p = k < 0 ? -ph : ph; return `${kt(Math.abs(k))}${Math.abs(p) < .005 ? '' : ` ${p < 0 ? '-' : '+'} ${num(Math.abs(p))}`}`; };
+    const x = sumStr(parts.map(([k, a, ph]) => [a, `cos(${arg(k, ph)})`]));
+    const y = sumStr(parts.map(([k, a, ph]) => [k < 0 ? -a : a, `sin(${arg(k, ph)})`]));
+    return { mode: 'xy', x, y, periods: 1, fill: 'line' };
+  }
   if (type === 'fourier') {
     const ks = [2, 3, 4, 5, 6, 7, 8, 9].sort(() => random() - .5);
     const mk = (first, off) => {

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Sube un video a TikTok con la Content Posting API oficial (FILE_UPLOAD).
 //   draft  → llega a la bandeja de TikTok como borrador para terminarlo en la app (permiso video.upload)
-//   direct → se publica directo; mientras la app no esté auditada, solo como privado SELF_ONLY (video.publish)
+//   direct → se publica directo con descripción y la privacidad de --privacy (video.publish; la app ya está aprobada,
+//            así que admite PUBLIC_TO_EVERYONE). Por defecto SELF_ONLY; daily usa PUBLIC_TO_EVERYONE.
 //
 //   npm run publish -- --video out/circularte-violin-en.mp4 --mode draft
 //   npm run publish -- --video out/circularte-violin-en.mp4 --mode direct
@@ -20,7 +21,8 @@ function postTitle(meta) {
   return '';
 }
 
-export async function publishVideo({ video, mode = 'draft', privacy = 'SELF_ONLY', title, log = (m) => process.stderr.write(m) }) {
+// coverMs: cuadro de portada; por defecto 1,5 s antes del final (la figura completa)
+export async function publishVideo({ video, mode = 'draft', privacy = 'SELF_ONLY', title, coverMs, log = (m) => process.stderr.write(m) }) {
   if (!['draft', 'direct'].includes(mode)) throw new Error('--mode debe ser draft o direct');
   const file = path.resolve(video);
   if (!fs.existsSync(file)) throw new Error(`No existe el video ${file}`);
@@ -47,7 +49,7 @@ export async function publishVideo({ video, mode = 'draft', privacy = 'SELF_ONLY
       post_info: {
         title: text, privacy_level: privacy,
         disable_comment: !!info.comment_disabled, disable_duet: !!info.duet_disabled, disable_stitch: !!info.stitch_disabled,
-        video_cover_timestamp_ms: meta?.duration ? Math.max(0, Math.round(meta.duration * 1000) - 1500) : undefined,
+        video_cover_timestamp_ms: coverMs != null ? Math.round(coverMs) : meta?.duration ? Math.max(0, Math.round(meta.duration * 1000) - 1500) : undefined,
         brand_content_toggle: false, brand_organic_toggle: false
       },
       source_info: { source: 'FILE_UPLOAD', ...plan }
@@ -64,7 +66,7 @@ export async function publishVideo({ video, mode = 'draft', privacy = 'SELF_ONLY
   if (mode === 'draft') {
     log('Listo: abre TikTok, toca la notificación del borrador y termina la publicación.\n');
     const t = postTitle(meta); if (t) log(`Descripción sugerida para pegar en la app:\n\n${t}\n\n`);
-  } else log('Listo: publicado como privado (solo tú lo ves) mientras la app no esté auditada.\n');
+  } else log(privacy === 'PUBLIC_TO_EVERYONE' ? 'Listo: publicado en público con su descripción.\n' : `Listo: publicado con privacidad ${privacy}.\n`);
   return result;
 }
 

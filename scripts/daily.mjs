@@ -1,9 +1,15 @@
 #!/usr/bin/env node
 // Un video listo para publicar: elige figura (pick) → renderiza (render) → escribe la descripción (caption)
 // → anota el historial. Deja en out/ el .mp4 y un .json con todo, incluido el texto del post.
+// Todo sale del proyecto (matemática, fuentes y plantillas): no usa IA ni APIs de pago.
+//
+// Por defecto, en modo suspenso: solo figuras complejas, sin imagen de guía mientras dibuja y sin
+// decir qué figura es (ni en el video ni en la descripción). --spoiler vuelve al modo anterior.
 //
 //   npm run daily -- --lang es
-//   npm run daily -- --publish draft   (o direct: privado SELF_ONLY mientras la app no esté auditada)
+//   npm run daily -- --publish direct                       (público, con descripción)
+//   npm run daily -- --publish direct --privacy SELF_ONLY   (solo tú lo ves)
+//   npm run daily -- --publish draft                        (a la bandeja; la descripción se pega a mano)
 import { parseCli } from './lib/cli.mjs';
 import { pickNext, readHistory, recordPick } from './pick.mjs';
 import { renderVideo } from './render.mjs';
@@ -13,26 +19,33 @@ import { accessToken } from './lib/tiktok.mjs';
 import { setupNode } from './lib/node-env.mjs';
 import fs from 'node:fs';
 
+// Más etapas y hasta 500 términos: las figuras complejas necesitan más círculos para verse nítidas
+const SUSPENSE_NSEQ = '1, 3, 8, 20, 50, 120, 250, 500';
+
 try {
   const o = parseCli({
     lang: { type: 'string', default: 'es' }, fps: { type: 'string', default: '30' }, labels: { type: 'string', default: 'full' },
-    seed: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, publish: { type: 'string' }
+    seed: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, publish: { type: 'string' },
+    privacy: { type: 'string', default: 'PUBLIC_TO_EVERYONE' }, spoiler: { type: 'boolean', default: false }, nseq: { type: 'string' }
   });
   if (o.publish && !['draft', 'direct'].includes(o.publish)) throw new Error('--publish debe ser draft o direct');
   if (o.publish) await accessToken(); // falla antes de renderizar si la cuenta no está conectada
+  const suspense = !o.spoiler;
   const { emoji } = setupNode();
-  const item = pickNext({ history: readHistory(), emoji: !!emoji, seed: o.seed != null ? Number(o.seed) >>> 0 : undefined });
+  const item = pickNext({ history: readHistory(), emoji: !!emoji, complex: suspense, seed: o.seed != null ? Number(o.seed) >>> 0 : undefined });
   console.error(`Elegido: ${item.name || item.type} (${item.group})`);
   const r = await renderVideo({
     preset: item.kind === 'preset' ? item.name : undefined, random: item.kind === 'random' ? item.type : undefined,
-    seed: item.seed, lang: o.lang, fps: o.fps, labels: o.labels
+    seed: item.seed, lang: o.lang, fps: o.fps, labels: o.labels,
+    ...(suspense ? { guide: 0, spoiler: false, nseq: o.nseq || SUSPENSE_NSEQ } : o.nseq ? { nseq: o.nseq } : {})
   });
-  const cap = await makeCaption(r.info, { lang: o.lang });
+  const cap = makeCaption(r.info, { lang: o.lang, spoiler: !suspense });
   const meta = { ...r.info, post: { ...cap, text: postText(cap), lang: o.lang } };
   fs.writeFileSync(r.sidecar, JSON.stringify(meta, null, 2) + '\n');
   if (!o['dry-run']) recordPick(item, { lang: o.lang, file: meta.file });
   let tiktok = null;
-  if (o.publish) tiktok = await publishVideo({ video: r.out, mode: o.publish });
+  // En suspenso la portada es un cuadro a mitad del dibujo, no la figura terminada
+  if (o.publish) tiktok = await publishVideo({ video: r.out, mode: o.publish, privacy: o.privacy, coverMs: suspense ? r.info.duration * 450 : undefined });
   console.log(JSON.stringify({ video: r.out, meta: r.sidecar, post: meta.post.text, tiktok }, null, 2));
 } catch (e) {
   console.error(`Error: ${e.message}`);

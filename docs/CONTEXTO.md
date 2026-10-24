@@ -24,7 +24,7 @@ También se acordó: publicar en TikTok **solo con la API oficial** (nada de bot
 - **`scripts/pick.mjs`** (elige sin repetir lo reciente, `data/history.json`) y **`scripts/caption.mjs`**.
 
 ### Fase 2: descripciones y publicación
-- **Descripciones con OpenAI** (lo pidió el usuario en lugar de Claude): Responses API con salida JSON estructurada, modelo `gpt-6-luna` (la guía de modelos de OpenAI lo recomienda para tareas acotadas de alto volumen). La clave va en `OPEN_AI` u `OPENAI_API_KEY`. Si no hay clave o la API falla, usa una plantilla local.
+- **Descripciones**: al principio con OpenAI (`gpt-6-luna`); el 24-10-2026 se quitó para no tener gastos y ahora salen de plantillas propias en `caption.mjs`.
 - **CLI de TikTok**: `tiktok:connect` (OAuth con *state*; tokens en `data/tiktok-token.json`, que se renuevan solo al vencer) y `publish` (FILE_UPLOAD por trozos, modo draft o direct). Probado: borrador real a la bandeja de @potter.play.
 
 ### Fase 3: producción (publicar desde la web)
@@ -53,15 +53,23 @@ Commits de esta etapa en `main`: `43f41ca` (merge), `f096348`, `c1ce6b1`, `86a0a
 - Con la app aprobada, @potter.play (conectada con las credenciales de Production el 24-10-2026) admite `PUBLIC_TO_EVERYONE`, `MUTUAL_FOLLOW_FRIENDS` y `SELF_ONLY`. Antes, sin auditoría, todo quedaba en «Solo yo» y la cuenta tenía que ser privada (`unaudited_client_can_only_post_to_private_accounts`).
 
 ### GitHub Actions (`.github/workflows/daily.yml`)
-Corre a diario a las 10:00 de Honduras, o a mano. Secretos (todos cargados el 24-10-2026, con credenciales de Production): `OPEN_AI`, `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TIKTOK_REDIRECT_URI`, `TIKTOK_TOKEN_SEED` (contenido de `data/tiktok-token.json`) y `STATE_KEY`. El token y el historial viajan cifrados en la caché de Actions.
+Corre a diario a las 10:00 de Honduras, o a mano. Secretos (cargados el 24-10-2026, con credenciales de Production): `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TIKTOK_REDIRECT_URI`, `TIKTOK_TOKEN_SEED` (contenido de `data/tiktok-token.json`) y `STATE_KEY`. El token y el historial viajan cifrados en la caché de Actions.
 - Las corridas #1 a #7 (17 al 23-10) fallaron a los 20 s con «La cuenta de TikTok no está conectada»: no había ningún secreto. La #8 (a mano, 24-10) funcionó: video «Flamenco» como borrador en @potter.play (`SEND_TO_USER_INBOX`).
 - `scripts/secrets-to-clipboard.ps1` copia los secretos de `.env` y del token al portapapeles uno por uno, sin imprimirlos (`… .ps1 STATE_KEY` para uno solo). En la terminal solo se presiona Enter; el valor se pega en GitHub.
 - Aviso sin urgencia: las actions `@v4` usan Node 20, que GitHub ya marca como obsoleto.
+- En el borrador de la #8 las fórmulas y la firma salieron en cuadros: en Linux, los subconjuntos de STIX (latín, latín extendido, griego) tenían el mismo nombre de familia y Skia tomó el griego. Ahora cada subconjunto se registra con su alias (`node-env.mjs`) y el motor los pide como respaldo (`env.stix`); `∼` pasa a `~` en Node porque ningún subconjunto lo trae.
+
+### Rama `feat/diario-directo-sin-ia` (24-10-2026)
+Lo pidió el usuario después de ver el primer borrador:
+- **Sin IA ni gastos**: fuera OpenAI (`caption.mjs` con plantillas). Todo el video ya salía del proyecto (fórmulas, texto y siluetas de Noto Color Emoji), así que no se marca `is_aigc`.
+- **Suspenso**: `render --guide 0` (sin figura de guía mientras dibuja) y `--no-spoiler` (texto gancho sin el nombre); la descripción invita a adivinar y la portada es un cuadro al 45 % del video.
+- **Figuras más complejas**: presets nuevos (dragón, araña, escorpión, langosta, ciervo, gallo, jirafa, águila, canguro, rueda de la fortuna, bicicleta, carrusel, Estatua de la Libertad), `simple: true` en los básicos (corazón, π, infinito…) para que el diario los salte, tipo nuevo `simetria` (curvas misteriosas de Farris, también en la web) y N hasta 500.
+- **Publicación directa y pública** en el diario, con descripción. Decisión consciente del usuario: las reglas de TikTok para desarrolladores no aceptan herramientas que suben a las propias cuentas, y podrían quitarle el permiso a la app.
 
 ## 4. Pendientes
 1. **Vercel**: cambiar `TIKTOK_CLIENT_KEY` y `TIKTOK_CLIENT_SECRET` por las de Production y redesplegar; reconectar la cuenta desde la web.
-2. **Rotar** la clave de OpenAI y el Client secret de TikTok (quedaron a la vista en una terminal el 24-10) y actualizarlos en `.env`, GitHub y Vercel.
-3. **Saldo de OpenAI**: la cuenta respondió 429 (sin créditos); mientras tanto las descripciones usan la plantilla local.
+2. **Rotar** el Client secret de TikTok (quedó a la vista en una terminal el 24-10) y actualizarlo en `.env`, GitHub y Vercel. La clave de OpenAI también quedó a la vista; aquí ya no se usa (borrar el secreto `OPEN_AI`), pero sí en minidramas.
+3. ~~Saldo de OpenAI~~: ya no hace falta, el proyecto no usa OpenAI.
 4. ~~Bug previo: en formato 1:1 la firma se encima con la línea «N = … error = …».~~ Resuelto: el bloque de fórmulas se escala si no cabe sobre la firma.
 5. Opcional: borrar el almacén Blob privado sin usar.
 
