@@ -28,6 +28,10 @@ on:
         type: choice
         options: [PUBLIC_TO_EVERYONE, MUTUAL_FOLLOW_FRIENDS, SELF_ONLY]
         default: PUBLIC_TO_EVERYONE
+      reseed:
+        description: Usar el token del secreto TIKTOK_TOKEN_SEED en vez del guardado (tras volver a conectar la cuenta)
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -72,15 +76,20 @@ jobs:
           path: state.enc
           key: tiktok-state-${{ github.run_id }}
           restore-keys: tiktok-state-
+      # El token guardado gana sobre el secreto, salvo con reseed (después de reconectar: desconectar la cuenta
+      # en la web o en TikTok revoca todos sus tokens, también el de aquí). El historial de figuras se conserva.
       - name: Descifrar estado
         env:
           TIKTOK_TOKEN_SEED: ${{ secrets.TIKTOK_TOKEN_SEED }}
+          RESEED: ${{ inputs.reseed || false }}
         run: |
           mkdir -p data
           if [ -f state.enc ]; then
             openssl enc -d -aes-256-cbc -pbkdf2 -in state.enc -pass env:STATE_KEY | tar -xz -C data
-          elif [ -n "$TIKTOK_TOKEN_SEED" ]; then
+          fi
+          if [ -n "$TIKTOK_TOKEN_SEED" ] && { [ "$RESEED" = "true" ] || [ ! -f data/tiktok-token.json ]; }; then
             printf '%s' "$TIKTOK_TOKEN_SEED" > data/tiktok-token.json
+            echo "Token tomado de TIKTOK_TOKEN_SEED"
           fi
 
       - name: Generar y enviar
