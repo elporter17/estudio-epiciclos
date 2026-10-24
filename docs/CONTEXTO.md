@@ -59,6 +59,11 @@ Corre a diario a las 10:00 de Honduras, o a mano. Secretos (cargados el 24-10-20
 - Aviso sin urgencia: las actions `@v4` usan Node 20, que GitHub ya marca como obsoleto.
 - En el borrador de la #8 las fórmulas y la firma salieron en cuadros: en Linux, los subconjuntos de STIX (latín, latín extendido, griego) tenían el mismo nombre de familia y Skia tomó el griego. Ahora cada subconjunto se registra con su alias (`node-env.mjs`) y el motor los pide como respaldo (`env.stix`); `∼` pasa a `~` en Node porque ningún subconjunto lo trae.
 
+### Cuadros en Linux y token revocado (24-10-2026, ya en `main`)
+- Registrar los subconjuntos de @fontsource con alias no bastó: en Actions STIX seguía en cuadros (Skia usa el nombre interno de la familia). Ahora `npm run fonts` baja STIX Two Text completa (normal e itálica) de google/fonts, las demás familias usan solo `latin`, y `setupNode` compara cada familia contra el cuadro de U+E000 y falla antes de renderizar si algo sale mal. Probado en Actions (#12) y la caché de fuentes cambió de clave.
+- Al grabar el demo se pulsó «Switch account» en la web, que revoca la autorización: el diario dio 401 `access_token_invalid` (#13). Se reconectó @potter.play, se actualizó `TIKTOK_TOKEN_SEED` y el workflow ganó la opción `reseed` para preferir el secreto sobre el token guardado en la caché. La #14 (main, borrador, reseed) llegó a la bandeja.
+- El diario queda programado a las 10:00 en borrador; el usuario publica a mano pegando la descripción del resumen de la corrida. La auditoría de Direct Post quedó en pausa (formulario lleno hasta el paso 3; demo recortado en `Videos/circularte-demo-direct-post.mp4` en la PC del usuario).
+
 ### Rama `feat/diario-directo-sin-ia` (24-10-2026)
 Lo pidió el usuario después de ver el primer borrador:
 - **Sin IA ni gastos**: fuera OpenAI (`caption.mjs` con plantillas). Todo el video ya salía del proyecto (fórmulas, texto y siluetas de Noto Color Emoji), así que no se marca `is_aigc`.

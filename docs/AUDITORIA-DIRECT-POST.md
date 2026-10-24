@@ -60,10 +60,42 @@ original creation directly (or send it to their inbox as a draft) without downlo
 
 ---
 
+## Lo que se llenó en el formulario (24-10-2026)
+
+Los pasos 1 a 3 quedaron llenos en el navegador, **sin enviar**. Falta subir el video demo (paso 3) y enviar en
+el paso 4. Si la página se recarga y se pierde, estos son los valores exactos:
+
+- Paso 1: los de la sección «Paso 1» de abajo (TikTok representative email vacío).
+- Paso 2 · *App ID*: `7697354677700134932`.
+- Paso 2 · *Explain the goal of your application…*: el texto de «Describe your use case» de abajo, con este
+  cierre: `Benefit: a faster, higher-quality way for students, teachers and math-art fans to share satisfying
+  educational videos they created, with full control over every post.`
+- Paso 2 · *How many users publish daily*: **Less than 100**.
+- Paso 2 · *Explain how you determined the daily usage estimate*:
+  ```
+  CirculArte is a new, early-stage web app: the website launched in October 2026 and the TikTok integration has
+  only been used in testing so far, so we have no publishing history yet. The estimate comes from our current
+  small audience: only a fraction of visitors record a video, and only some of those will choose to post it to
+  TikTok. We expect well under 100 creators per day to publish through the API in the first months. If usage
+  grows, we will request a higher cap with real usage data.
+  ```
+- Paso 3 · *Screen recording* (hasta 3 MP4 de 50 MB): debe cubrir 1) la página de autorización de TikTok,
+  2) cómo se llega a «Post to TikTok», 3) lo que pasa después de publicar. Ver «Video demo».
+- Paso 3 · *API response data fields saved in database*:
+  ```
+  None. CirculArte has no database of TikTok data. From the OAuth token response we keep open_id, scope,
+  access_token, refresh_token, expires_in and refresh_expires_in only inside the creator's own browser, in an
+  encrypted (AES-GCM), HttpOnly session cookie, so we can post on their behalf when they click Post; it is
+  deleted when they disconnect (we also revoke the token) or when it expires. From creator_info we only use
+  nickname, privacy_level_options, comment/duet/stitch settings and max_video_post_duration_sec to render the
+  post screen, without storing them. From the publish endpoints we keep the publish_id in an encrypted ticket
+  returned to the browser just to poll publish/status/fetch; the temporary video copy is deleted when TikTok
+  finishes or within 24 hours.
+  ```
+
 ## Paso 2 · API client information
 
-Los campos exactos de este paso solo se ven al pasar el paso 1. Estas son las respuestas para lo que suele
-pedir; si un campo no coincide, dime qué dice y lo ajusto.
+Respuestas base de este paso (los campos reales están en la sección anterior).
 
 **App / client** → Circularte (App ID `7697354677700134932`). La client key la elige el formulario o la ves en
 Credentials; no la pegues en ningún otro lado.
