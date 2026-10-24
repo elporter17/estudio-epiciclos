@@ -328,11 +328,17 @@ export async function textCanvas(text, fk, accent) {
   const font = `${F.style} ${F.weight} ${size}px ${env.fonts[fk] || F.family}`;
   try { await env.loadFont(font, text); } catch { /* usa respaldo */ }
   const mg = env.createCanvas(16, 16).getContext('2d');
-  mg.font = font; const m = mg.measureText(text);
-  const asc = m.actualBoundingBoxAscent || size * .8, desc = m.actualBoundingBoxDescent || size * .25;
-  const left = m.actualBoundingBoxLeft || 0, right = m.actualBoundingBoxRight || m.width, pad = size * .12;
-  const c = env.createCanvas(Math.max(16, Math.ceil(left + right + pad * 2)), Math.max(16, Math.ceil(asc + desc + pad * 2))), g = c.getContext('2d');
-  g.font = font; g.fillStyle = accent; g.fillText(text, pad + left, pad + asc);
+  mg.font = font;
+  // Varias líneas («Ana\n&\nLuis»): cada una centrada; con una sola, igual que siempre
+  const lines = String(text).split('\n').map((t) => {
+    const m = mg.measureText(t);
+    return { t, asc: m.actualBoundingBoxAscent || size * .8, desc: m.actualBoundingBoxDescent || size * .25, left: m.actualBoundingBoxLeft || 0, right: m.actualBoundingBoxRight || m.width };
+  });
+  const pad = size * .12, lh = size * 1.2, n = lines.length, W = Math.max(...lines.map((l) => l.left + l.right));
+  const H = lines[0].asc + (n - 1) * lh + lines[n - 1].desc;
+  const c = env.createCanvas(Math.max(16, Math.ceil(W + pad * 2)), Math.max(16, Math.ceil(H + pad * 2))), g = c.getContext('2d');
+  g.font = font; g.fillStyle = accent;
+  lines.forEach((l, i) => g.fillText(l.t, pad + (W - l.left - l.right) / 2 + l.left, pad + lines[0].asc + i * lh));
   // Los emoji se vuelven silueta plana del color del trazo, como en los videos virales
   if (EMOJI.test(text)) { g.globalCompositeOperation = 'source-in'; g.fillRect(0, 0, c.width, c.height); }
   return c;

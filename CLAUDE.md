@@ -12,6 +12,8 @@ Web que dibuja imágenes, textos y funciones con círculos que giran (series de 
 ## Estructura
 - `index.html`: la web (UI). Importa `src/engine.js` (motor: matemática + dibujo, compartido con Node), `src/captions.js` (descripciones y hashtags con plantillas, compartido con `caption.mjs`) y `src/tiktok-ui.js` (diálogo «Publicar en TikTok»).
 - La web tiene lo mismo que la publicación automática: **Modo suspenso** (guía 0, ganchos sin el nombre, descripción sin spoiler, portada al 45 % con `cover_ms` → `video_cover_timestamp_ms`), **Máximo detalle** (`NSEQ_DETAIL`, hasta N = 500) y **🎲 Figura compleja al azar** (presets sin `simple` y `COMPLEX_TYPES`).
+- `data/biblioteca.json` (500 nombres, 100 parejas, 100 figuras de emoji revisadas a ojo) alimenta la publicación automática: `catalog({ complex: true })` usa esas figuras en vez de los presets de emoji, cada elemento lleva `cat` y `pick.mjs` reparte con `SHARES` (40/25/15/20) y evita las últimas 60 corridas (las inventadas no se bloquean). Las parejas van en tres líneas (`textCanvas` admite `
+`) y `captions.js` tiene ganchos propios para nombres y parejas.
 - `api/`: funciones de Vercel (`export default { fetch(request) }`, Web Request/Response). `_tiktok.js` es compartido (cookies cifradas AES-GCM con `SESSION_SECRET`, cliente TikTok, token de Blob).
 - `scripts/`: render en Node (`render.mjs`), `pick.mjs`, `caption.mjs` (plantillas, sin IA), `daily.mjs`, `publish.mjs` y `tiktok-connect.mjs` (CLI), `fonts.mjs`.
 - `.github/workflows/daily.yml`: video cada 4 horas como borrador a TikTok (cron `17 */4 * * *`; máximo 5 borradores pendientes por día) (directo cuando se audite Direct Post); la descripción queda en el resumen de la corrida.

@@ -34,11 +34,13 @@ try {
   console.error(`Elegido: ${item.name || item.type} (${item.group})`);
   const r = await renderVideo({
     preset: item.kind === 'preset' ? item.name : undefined, random: item.kind === 'random' ? item.type : undefined,
+    ...(item.kind === 'text' ? { text: item.text, font: item.font, name: item.name, nameEn: item.nameEn } : {}),
     seed: item.seed, lang: o.lang, fps: o.fps, labels: o.labels,
     ...(suspense ? { guide: 0, spoiler: false, nseq: o.nseq || NSEQ_DETAIL } : o.nseq ? { nseq: o.nseq } : {})
   });
-  const cap = makeCaption(r.info, { lang: o.lang, spoiler: !suspense });
-  const meta = { ...r.info, post: { ...cap, text: postText(cap), lang: o.lang } };
+  // La categoría (nombres, parejas…) elige ganchos propios para la descripción
+  const cap = makeCaption({ ...r.info, cat: item.cat }, { lang: o.lang, spoiler: !suspense });
+  const meta = { ...r.info, cat: item.cat, post: { ...cap, text: postText(cap), lang: o.lang } };
   fs.writeFileSync(r.sidecar, JSON.stringify(meta, null, 2) + '\n');
   if (!o['dry-run']) recordPick(item, { lang: o.lang, file: meta.file });
   let tiktok = null;

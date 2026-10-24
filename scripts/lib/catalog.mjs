@@ -1,5 +1,9 @@
-// Qué se puede dibujar: presets de la web, funciones inventadas y texto libre.
+// Qué se puede dibujar: presets de la web, funciones inventadas, texto libre y la biblioteca de la publicación automática.
+import fs from 'node:fs';
 import { PRESETS, INVENT_TYPES, COMPLEX_TYPES, presetSrc, inventFn, funName, makeRng } from '../../src/engine.js';
+
+// data/biblioteca.json: 500 nombres, 100 parejas y 100 figuras de emoji para la publicación automática
+export const BIBLIOTECA = JSON.parse(fs.readFileSync(new URL('../../data/biblioteca.json', import.meta.url), 'utf8'));
 
 export const norm = (s) => String(s).normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().trim();
 export const slug = (s) => norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'figura';
@@ -14,15 +18,27 @@ export function findPreset(name) {
 }
 
 // Todo lo que pick.mjs puede elegir. id estable para el historial.
-// complex: sin los presets marcados simple (corazón, π, infinito…) y solo las funciones con más detalle.
+// complex (la publicación automática): las figuras de la biblioteca en vez de los presets de emoji, los presets sin
+// emoji que no están marcados simple, nombres y parejas, y solo las funciones con más detalle. Cada elemento lleva
+// su categoría (cat) para repartir las elecciones entre figuras, nombres, parejas e inventadas.
 export function catalog({ emoji = true, complex = false } = {}) {
-  const items = PRESETS.filter((p) => (emoji || !isEmoji(p)) && !(complex && p.simple)).map((p) => ({ id: `preset:${p.name}`, kind: 'preset', name: p.name, group: p.group }));
-  for (const t of complex ? COMPLEX_TYPES : INVENT_TYPES) items.push({ id: `random:${t}`, kind: 'random', type: t, group: 'Inventadas' });
+  if (!complex) {
+    const items = PRESETS.filter((p) => emoji || !isEmoji(p)).map((p) => ({ id: `preset:${p.name}`, kind: 'preset', name: p.name, group: p.group }));
+    for (const t of INVENT_TYPES) items.push({ id: `random:${t}`, kind: 'random', type: t, group: 'Inventadas' });
+    return items;
+  }
+  const items = PRESETS.filter((p) => !p.simple && !isEmoji(p)).map((p) => ({ id: `preset:${p.name}`, kind: 'preset', name: p.name, group: p.group, cat: 'figuras' }));
+  if (emoji) for (const f of BIBLIOTECA.figuras) items.push({ id: `figura:${f.emoji}`, kind: 'text', text: f.emoji, font: 'emoji', name: f.name, nameEn: f.en, group: 'Figuras', cat: 'figuras' });
+  for (const n of BIBLIOTECA.nombres) items.push({ id: `nombre:${n}`, kind: 'text', text: n, font: 'cursiva', name: n, group: 'Nombres', cat: 'nombres' });
+  // Las parejas se escriben apiladas («Ana», «&», «Luis») para que llenen el video vertical
+  for (const c of BIBLIOTECA.combinaciones) items.push({ id: `pareja:${c}`, kind: 'text', text: c.replace(' & ', '\n&\n'), font: 'cursiva', name: c, group: 'Parejas', cat: 'combinaciones' });
+  for (const t of COMPLEX_TYPES) items.push({ id: `random:${t}`, kind: 'random', type: t, group: 'Inventadas', cat: 'inventadas' });
   return items;
 }
 
 // Devuelve { src, info } listo para shapeFor(); info describe la figura para el pie del video y el historial
-export function resolveSource({ preset, random, text, font = 'cursiva', seed }) {
+// name/nameEn: nombre para mostrar de un texto (por ejemplo «Dragón» para 🐉)
+export function resolveSource({ preset, random, text, font = 'cursiva', seed, name, nameEn }) {
   if (preset) {
     const p = findPreset(preset);
     if (!p) throw new Error(`No existe el preset «${preset}». Opciones: ${PRESETS.map((q) => q.name).join(', ')}`);
@@ -36,7 +52,8 @@ export function resolveSource({ preset, random, text, font = 'cursiva', seed }) 
     return { src: { kind: 'expr', name, def, fill: def.fill }, info: { kind: 'random', id: `random:${type}`, type, seed: s, name, nameEn: name, group: 'Inventadas', emoji: false, def, text: null } };
   }
   if (text) {
-    return { src: { kind: 'text', name: text, text, font }, info: { kind: 'text', id: `text:${text}`, name: text, nameEn: text, group: 'Texto', emoji: /\p{Extended_Pictographic}/u.test(text), def: null, text, font } };
+    const nm = name || text;
+    return { src: { kind: 'text', name: nm, text, font }, info: { kind: 'text', id: `text:${text}`, name: nm, nameEn: nameEn || nm, group: 'Texto', emoji: /\p{Extended_Pictographic}/u.test(text), def: null, text, font } };
   }
   throw new Error('Indica qué dibujar: --preset <nombre>, --random <tipo> o --text <texto>.');
 }

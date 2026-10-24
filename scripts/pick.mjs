@@ -18,22 +18,30 @@ export function readHistory(file = HISTORY) {
   try { const h = JSON.parse(fs.readFileSync(file, 'utf8')); return Array.isArray(h) ? h : []; } catch { return []; }
 }
 
-// avoid = cuántas publicaciones recientes no se pueden repetir; las funciones inventadas pesan menos
-// para que dominen los presets reconocibles, pero cada una es distinta gracias a la semilla.
-export function pickNext({ history = readHistory(), avoid = 12, seed = Date.now() >>> 0, emoji = true, complex = false, randomWeight = 0.5 } = {}) {
+// Reparto de la publicación automática (complex) entre las categorías de la biblioteca
+export const SHARES = { figuras: 0.4, nombres: 0.25, combinaciones: 0.15, inventadas: 0.2 };
+
+// avoid = cuántas publicaciones recientes no se pueden repetir; cada función inventada es distinta gracias a la semilla.
+export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>> 0, emoji = true, complex = false, randomWeight = 0.5 } = {}) {
   const items = catalog({ emoji, complex });
+  // Con la biblioteca (~700 elementos) se evita lo de las últimas 60 corridas: unos 10 días a 6 por día
+  avoid ??= complex ? 60 : 12;
   const recent = new Set(history.slice(-Math.min(avoid, items.length - 1)).map((h) => h.id));
-  const pool = items.filter((it) => !recent.has(it.id));
+  // Las funciones inventadas no se bloquean: cada semilla da una curva distinta
+  const pool = items.filter((it) => it.kind === 'random' || !recent.has(it.id));
   // Tampoco repetir el mismo grupo dos veces seguidas si hay alternativa
   const lastGroup = history.length ? history[history.length - 1].group : null;
   const varied = pool.filter((it) => it.group !== lastGroup);
   const choices = varied.length ? varied : pool.length ? pool : items;
-  const rng = makeRng(seed), weights = choices.map((it) => it.kind === 'random' ? randomWeight : 1);
+  // Con categorías, cada una se lleva su parte (SHARES) repartida entre sus elementos disponibles;
+  // sin ellas, las funciones inventadas pesan menos para que dominen los presets reconocibles
+  const perCat = {}; for (const it of choices) if (it.cat) perCat[it.cat] = (perCat[it.cat] || 0) + 1;
+  const rng = makeRng(seed), weights = choices.map((it) => it.cat ? (SHARES[it.cat] ?? 0.1) / perCat[it.cat] : it.kind === 'random' ? randomWeight : 1);
   let r = rng() * weights.reduce((a, b) => a + b, 0), i = 0;
   while (i < choices.length - 1 && (r -= weights[i]) > 0) i++;
   const it = choices[i];
   const renderSeed = Math.floor(rng() * 2 ** 31);
-  const args = it.kind === 'preset' ? ['--preset', it.name] : ['--random', it.type];
+  const args = it.kind === 'preset' ? ['--preset', it.name] : it.kind === 'text' ? ['--text', it.text, '--font', it.font] : ['--random', it.type];
   args.push('--seed', String(renderSeed));
   return { ...it, seed: renderSeed, args };
 }
