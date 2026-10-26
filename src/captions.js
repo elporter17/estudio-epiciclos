@@ -72,9 +72,29 @@ MYSTERY_CAT['pelotas-escape'] = {
   es: ['Cada pelota que escapa suelta dos más. ¿Cuántas salen? 🔴', 'El círculo gira con un hueco… esto se descontrola 🤯', 'Sube el volumen: cada rebote es una nota 🎶', '¿Cuántas crees que escapan? Comenta antes de que termine 👇', 'Elige una pelota: ¿logra escapar? 👀', 'Etiqueta a alguien que siempre encuentra la salida 👇'],
   en: ['Every ball that escapes releases two more. How many get out? 🔴', 'The circle spins with a gap… this gets out of hand 🤯', 'Turn the sound on: every bounce is a note 🎶', 'How many do you think escape? Comment before it ends 👇', 'Pick a ball: does it make it out? 👀', 'Tag someone who always finds the way out 👇']
 };
+// Juegos de física (src/arcade.js)
+MYSTERY_CAT['juegos-embudos'] = {
+  es: ['Cada pelota que sale suelta varias más… ¿cuántas llegan abajo? 🤯', '¿Cuántas crees que escapan? Comenta antes del final 👇', 'Sube el volumen: cada rebote es una nota 🎶', 'Esto se llena más rápido de lo que crees 😳', 'Elige una y síguela hasta la salida 👀'],
+  en: ['Every ball that gets out drops a few more… how many reach the bottom? 🤯', 'How many do you think escape? Comment before the end 👇', 'Turn the sound on: every bounce is a note 🎶', 'This fills up faster than you think 😳', 'Pick one and follow it to the exit 👀']
+};
+MYSTERY_CAT['juegos-anillos'] = {
+  es: ['¿Logra escapar de todos los anillos? 👀', 'Cada anillo gira con un hueco… ¿sale o se queda? Comenta 👇', 'Sube el volumen: cada rebote es una nota 🎶', 'El último anillo es el más difícil 😳', 'Apuesta: ¿en qué anillo se queda? 🎯'],
+  en: ['Can it escape every ring? 👀', 'Every ring spins with a gap… does it get out? Comment 👇', 'Turn the sound on: every bounce is a note 🎶', 'The last ring is the hardest 😳', 'Bet: which ring does it get stuck in? 🎯']
+};
+MYSTERY_CAT['juegos-plinko'] = {
+  es: ['¿En qué casilla caen más? Elige la tuya 👇', 'Mira la forma que aparece al final 😳', 'Sube el volumen: cada choque es una nota 🎶', 'Elige una casilla antes de que empiece 🎯', '¿Izquierda, centro o derecha? Comenta 👇'],
+  en: ['Which slot gets the most? Pick yours 👇', 'Watch the shape that appears at the end 😳', 'Turn the sound on: every hit is a note 🎶', 'Pick a slot before it starts 🎯', 'Left, center or right? Comment 👇']
+};
+MYSTERY_CAT['juegos-carrera'] = {
+  es: ['¿Qué color gana? Elige uno antes de que empiece 👇', 'Carrera de colores: comenta tu favorito 🏁', 'Sube el volumen y elige un color 🎶', 'El último lugar te va a sorprender 😳', '¿Tu color gana o pierde? 🤔'],
+  en: ['Which color wins? Pick one before it starts 👇', 'Color race: comment your favorite 🏁', 'Turn the sound on and pick a color 🎶', 'Last place is going to surprise you 😳', 'Does your color win or lose? 🤔']
+};
 const CAT_TAGS = { nombres: { es: 'tunombre', en: 'yourname' }, combinaciones: { es: 'parejas', en: 'couples' } };
-// Las pelotas no son matemáticas de Fourier: llevan sus propios hashtags base
-const BASE_TAGS = { pelotas: { es: ['satisfactorio', 'fisica', 'pelotas'], en: ['satisfying', 'physics', 'balls'] } };
+// Las pelotas y los juegos no son matemáticas de Fourier: llevan sus propios hashtags base
+const BASE_TAGS = {
+  pelotas: { es: ['satisfactorio', 'fisica', 'pelotas'], en: ['satisfying', 'physics', 'balls'] },
+  juegos: { es: ['satisfactorio', 'fisica', 'asmr'], en: ['satisfying', 'physics', 'asmr'] }
+};
 // Con spoiler: nombran la figura
 const NAMED = {
   es: ['¿Pueden unos círculos girando dibujar esto? {x}, mira cómo baja el error 👀', '{x}, dibujado solo con círculos que giran. Espera el final ✨', 'Una serie de Fourier dibujando: {x} 🌀'],

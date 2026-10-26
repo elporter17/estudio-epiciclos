@@ -1,0 +1,35 @@
+# Videos de física cada 4 horas (pelotas en el círculo y juegos: embudos, anillos que giran, plinko y carrera de
+# colores), con una nota en cada rebote. Reutiliza daily.yml con cats = fisica: mismo token, mismo historial y los
+# dos nunca corren a la vez. Como borrador hasta que TikTok audite Direct Post.
+# Ojo: los dos workflows mandan 12 borradores al día y TikTok admite 5 pendientes cada 24 h por cuenta; los que
+# sobren quedan como artefacto de la corrida (sin fallar) hasta que se publiquen los pendientes.
+name: Videos de física a TikTok
+
+on:
+  schedule:
+    # Intercalado con los dibujos: en Honduras (UTC-6) 20:47, 0:47, 4:47, 8:47, 12:47 y 16:47
+    - cron: '47 2-23/4 * * *'
+  workflow_dispatch:
+    inputs:
+      lang:
+        description: Idioma del video y la descripción
+        type: choice
+        options: [es, en]
+        default: es
+      publish:
+        description: Enviar como borrador, publicar directo (requiere auditoría de Direct Post) o solo generar el video
+        type: choice
+        options: [draft, direct, none]
+        default: draft
+
+permissions:
+  contents: read
+
+jobs:
+  fisica:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: fisica
+      lang: ${{ inputs.lang || 'es' }}
+      publish: ${{ inputs.publish || 'draft' }}
+    secrets: inherit

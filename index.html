@@ -156,6 +156,8 @@ a.btn{text-decoration:none}
 .field.suspense .hint{margin:4px 0 0}
 .field.suspense>label.check{justify-content:flex-start;font-size:14px;color:var(--fg)}
 #nseqChips{margin-top:6px}
+#bounceMode{flex-wrap:wrap}
+#bounceMode button{flex:1 1 30%}
 #nseqChips .chip{font-size:12px;padding:3px 10px}
 
 /* Publicar en TikTok */
@@ -336,13 +338,17 @@ a.btn{text-decoration:none}
     </div>
 
     <div class="tabpanel" id="p-pelotas" role="tabpanel" hidden>
-      <p class="hint" data-en="Balls bouncing inside a circle, with a note on every bounce (turn the sound on). Pick a variant and press Play; each run is different.">Pelotas que rebotan dentro de un círculo, con una nota en cada rebote (sube el volumen). Elige una variante y pulsa Reproducir; cada corrida es distinta.</p>
+      <p class="hint" data-en="Bouncing balls and physics games (funnels, spinning rings, plinko, color race), with a note on every bounce (turn the sound on). Pick a variant and press Play; each run is different.">Pelotas que rebotan y juegos de física (embudos, anillos que giran, plinko, carrera de colores), con una nota en cada rebote (sube el volumen). Elige una variante y pulsa Reproducir; cada corrida es distinta.</p>
       <div class="field">
         <span class="lbl" data-en="Variant">Variante</span>
         <div class="seg" id="bounceMode">
           <button type="button" data-v="crece" data-en="Grows">Crece</button>
           <button type="button" data-v="multiplica" data-en="Multiplies">Se multiplica</button>
           <button type="button" data-v="escape" data-en="Escape">Escapar</button>
+          <button type="button" data-v="embudos" data-en="Funnels">Embudos</button>
+          <button type="button" data-v="anillos" data-en="Rings">Anillos</button>
+          <button type="button" data-v="plinko">Plinko</button>
+          <button type="button" data-v="carrera" data-en="Race">Carrera</button>
         </div>
       </div>
       <div class="row"><button class="btn primary" id="bounceNew" type="button" data-en="🎲 New run">🎲 Nueva corrida</button><span class="hint" id="bounceInfo"></span></div>
@@ -492,7 +498,7 @@ import {
   COMPLEX_TYPES, NSEQ_DETAIL, setLang as setEngineLang
 } from './src/engine.js';
 import { makeCaption, postText } from './src/captions.js';
-import { simulate as simulateBounce, synthAudio, drawBounce, bounceHook, BOUNCE_NAMES } from './src/bounce.js';
+import { simulateFisica, synthAudio, drawFisica, fisicaHook, fisicaCat, FISICA_NAMES } from './src/fisica.js';
 import { initTikTok } from './src/tiktok-ui.js';
 import { lang, tr, onLang, initLangSwitch } from './src/i18n.js';
 const $ = (s) => document.querySelector(s);
@@ -533,9 +539,9 @@ const shapeFor = (src) => shapeForSrc(src, settings.accent);
 /* ---------------- Pelotas (src/bounce.js) ---------------- */
 // Una corrida de pelotas activa reemplaza a la figura en el escenario, la reproducción y la grabación
 let bounceRun = null, bounceMode = 'crece', audioCtx = null, recDest = null, bounceBuf = null, bounceAudio = null;
-const bounceName = () => tr(...BOUNCE_NAMES[bounceRun.mode]);
-const bounceCaption = () => settings.caption.trim() || bounceHook(bounceRun.mode, lang, bounceRun.seed);
-const drawBounceAt = (t) => drawBounce(ctx, bounceRun, t, view, { caption: bounceCaption(), lang });
+const bounceName = () => tr(...FISICA_NAMES[bounceRun.mode]);
+const bounceCaption = () => settings.caption.trim() || fisicaHook(bounceRun, lang);
+const drawBounceAt = (t) => drawFisica(ctx, bounceRun, t, view, { caption: bounceCaption(), lang });
 // El sonido se sintetiza una vez por corrida (las mismas notas que el video automático) y suena con Web Audio;
 // también entra a la grabación por un MediaStreamDestination
 function startBounceAudio() {
@@ -612,7 +618,7 @@ function startRec(T) {
   // En suspenso (y en las pelotas), la portada de TikTok sale de un cuadro a mitad del video
   const mid = settings.suspense || bounceRun;
   const r = { mr, chunks: [], keep: false, name: bounceRun ? bounceName() : S.name, dur: T.total, mime: mr.mimeType || mime, format: settings.format, w: view.W, h: view.H,
-    suspense: !!settings.suspense, coverMs: mid ? Math.round(T.total * 450) : undefined, cat: bounceRun ? `pelotas-${bounceRun.mode}` : undefined };
+    suspense: !!settings.suspense, coverMs: mid ? Math.round(T.total * 450) : undefined, cat: bounceRun ? fisicaCat(bounceRun.mode) : undefined };
   mr.ondataavailable = (e) => { if (e.data && e.data.size) r.chunks.push(e.data); };
   mr.onstop = () => {
     stream.getTracks().forEach((t) => t.stop());
@@ -784,13 +790,11 @@ function showTab(name) {
 }
 tabs.forEach((t) => t.addEventListener('click', () => { showTab(t.dataset.tab); if (t.dataset.tab === 'pelotas' && !bounceRun) newBounce(); }));
 
-// Pelotas: cada corrida nueva usa otra semilla
+// Pelotas y juegos de física (src/fisica.js): cada corrida nueva usa otra semilla
 function newBounce() {
   stop(true); markPreset(null); currentPreset = null;
-  bounceRun = simulateBounce({ mode: bounceMode, seed: Math.floor(Math.random() * 2 ** 31) });
-  const last = bounceRun.frames[bounceRun.frames.length - 1];
-  $('#bounceInfo').textContent = bounceRun.mode === 'crece' ? tr(`${last.bounces} rebotes`, `${last.bounces} bounces`)
-    : bounceRun.mode === 'multiplica' ? tr(`hasta ${last.alive} pelotas`, `up to ${last.alive} balls`) : tr(`${last.escaped} escapes`, `${last.escaped} escapes`);
+  bounceRun = simulateFisica({ mode: bounceMode, seed: Math.floor(Math.random() * 2 ** 31) });
+  $('#bounceInfo').textContent = tr(`${bounceRun.events.length} notas · ${fmtTime(bounceRun.total)}`, `${bounceRun.events.length} notes · ${fmtTime(bounceRun.total)}`);
   poster(); status(); revealStage();
 }
 segment('bounceMode', bounceMode, (v) => { bounceMode = v; newBounce(); });

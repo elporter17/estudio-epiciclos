@@ -3,8 +3,10 @@
 # Todo sale del proyecto: sin IA ni APIs de pago.
 # Por defecto va en borrador hasta que TikTok audite Direct Post: sin auditoría, publicar directo da
 # 403 unaudited_client_can_only_post_to_private_accounts. El usuario quiere pasar a directo y público después
-# (cambiar los dos 'draft' de abajo por 'direct'), sabiendo que las reglas de TikTok no aceptan herramientas
-# que suben a las propias cuentas.
+# (cambiar 'draft' por 'direct' en los valores por defecto), sabiendo que las reglas de TikTok no aceptan
+# herramientas que suben a las propias cuentas.
+# Este workflow hace los dibujos (figuras, nombres, parejas, inventadas); fisica.yml lo reutiliza para los videos
+# de física (pelotas y juegos) con cats = fisica.
 # Secretos necesarios (Settings → Secrets and variables → Actions): ver README, sección «Publicación diaria».
 name: Video diario a TikTok
 
@@ -12,10 +14,16 @@ on:
   schedule:
     # Cada 4 horas al minuto 17 (GitHub retrasa más las horas en punto; aun así puede llegar con horas de atraso).
     # En Honduras (UTC-6): 18:17, 22:17, 2:17, 6:17, 10:17 y 14:17.
-    # TikTok admite 5 borradores pendientes cada 24 h por cuenta: si no se publican, el sexto del día falla.
+    # TikTok admite 5 borradores pendientes cada 24 h por cuenta: si no se publican, los que sobren quedan solo
+    # como artefacto (la corrida no falla).
     - cron: '17 */4 * * *'
   workflow_dispatch:
     inputs:
+      cats:
+        description: Qué tipo de video
+        type: choice
+        options: [dibujos, fisica]
+        default: dibujos
       lang:
         description: Idioma del video y la descripción
         type: choice
@@ -35,23 +43,31 @@ on:
         description: Usar el token del secreto TIKTOK_TOKEN_SEED en vez del guardado (tras volver a conectar la cuenta)
         type: boolean
         default: false
+  workflow_call:
+    inputs:
+      cats: { type: string, default: dibujos }
+      lang: { type: string, default: es }
+      publish: { type: string, default: draft }
+      privacy: { type: string, default: PUBLIC_TO_EVERYONE }
+      reseed: { type: boolean, default: false }
 
 permissions:
   contents: read
-
-concurrency:
-  group: daily-tiktok
-  cancel-in-progress: false
 
 jobs:
   daily:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    # Los dos workflows (dibujos y física) comparten el token de TikTok: nunca corren a la vez
+    concurrency:
+      group: daily-tiktok
+      cancel-in-progress: false
     env:
       TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
       TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
       TIKTOK_REDIRECT_URI: ${{ secrets.TIKTOK_REDIRECT_URI }}
       STATE_KEY: ${{ secrets.STATE_KEY }}
+      CATS_INPUT: ${{ inputs.cats || 'dibujos' }}
       LANG_INPUT: ${{ inputs.lang || 'es' }}
       PUBLISH_INPUT: ${{ inputs.publish || 'draft' }}
       PRIVACY_INPUT: ${{ inputs.privacy || 'PUBLIC_TO_EVERYONE' }}
@@ -97,7 +113,12 @@ jobs:
 
       - name: Generar y enviar
         run: |
-          args=(--lang "$LANG_INPUT")
+          case "$CATS_INPUT" in
+            dibujos) cats=figuras,nombres,combinaciones,inventadas ;;
+            fisica) cats=pelotas,juegos ;;
+            *) cats="$CATS_INPUT" ;;
+          esac
+          args=(--lang "$LANG_INPUT" --cats "$cats")
           if [ "$PUBLISH_INPUT" != "none" ]; then args+=(--publish "$PUBLISH_INPUT" --privacy "$PRIVACY_INPUT"); fi
           npm run daily -- "${args[@]}"
 
@@ -112,8 +133,34 @@ jobs:
               const t = (m.tiktok || []).at(-1);
               const lines = ["### Descripción para pegar en TikTok", "", "```", m.post.text, "```", "",
                 `Figura: ${m.title} · ${Math.round(m.duration)} s` + (t ? ` · TikTok: ${t.status} (${t.mode})` : "")];
+              if (t && t.status === "LIMIT") lines.push("", "TikTok no aceptó más borradores por ahora (5 pendientes cada 24 h): descarga el video del artefacto de esta corrida o publica los pendientes.");
               fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.join("\n") + "\n");
             }' || true
+
+      # Aviso por WhatsApp (CallMeBot, gratis): solo si están los secretos CALLMEBOT_PHONE y CALLMEBOT_APIKEY
+      - name: Aviso por WhatsApp
+        if: always()
+        env:
+          CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
+          CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          if [ -z "$CALLMEBOT_PHONE" ] || [ -z "$CALLMEBOT_APIKEY" ]; then echo "Sin secretos de CallMeBot: no se avisa"; exit 0; fi
+          node -e '
+            const fs = require("fs");
+            const files = fs.existsSync("out") ? fs.readdirSync("out").filter((f) => f.endsWith(".json")) : [];
+            const m = files.length ? JSON.parse(fs.readFileSync("out/" + files[0], "utf8")) : null;
+            const t = m && (m.tiktok || []).at(-1);
+            const estado = !m ? "❌ La corrida falló antes de hacer el video" : !t ? "🎬 Video generado (sin subir)"
+              : t.status === "SEND_TO_USER_INBOX" ? "✅ Borrador listo en tu bandeja de TikTok"
+              : t.status === "LIMIT" ? "⚠️ TikTok no aceptó más borradores: descárgalo del enlace" : `TikTok: ${t.status}`;
+            const msg = [`CirculArte · ${estado}`, m ? `${m.title} · ${Math.round(m.duration)} s` : `Estado: ${process.env.JOB_STATUS}`,
+              m && m.post ? `\nDescripción para pegar:\n${m.post.text}` : "", `\nRevisar: ${process.env.RUN_URL}`].join("\n");
+            fs.writeFileSync("whatsapp.txt", msg);'
+          curl -sS -G "https://api.callmebot.com/whatsapp.php" \
+            --data-urlencode "phone=$CALLMEBOT_PHONE" --data-urlencode "text@whatsapp.txt" --data-urlencode "apikey=$CALLMEBOT_APIKEY" \
+            -o /dev/null -w "CallMeBot respondió %{http_code}\n" || echo "No se pudo avisar por WhatsApp"
 
       - name: Cifrar estado
         if: always()

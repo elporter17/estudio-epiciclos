@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Render de los videos de pelotas que rebotan dentro de un círculo (src/bounce.js), con una nota por rebote.
+// Render de los videos de física (src/fisica.js: pelotas en el círculo y juegos), con una nota por rebote.
 // Mismo formato que render.mjs: MP4 H.264 1080×1920 con audio AAC, más un .json con los datos.
 //
 //   node scripts/bounce.mjs --mode crece --seed 7
@@ -14,7 +14,7 @@ import { createCanvas } from '@napi-rs/canvas';
 import { parseCli } from './lib/cli.mjs';
 import { setupNode, ROOT } from './lib/node-env.mjs';
 import { canvasSize } from '../src/engine.js';
-import { simulate, synthAudio, drawBounce, bounceHook, BOUNCE_MODES, BOUNCE_NAMES } from '../src/bounce.js';
+import { simulateFisica, synthAudio, drawFisica, fisicaHook, fisicaGroup, FISICA_MODES, FISICA_NAMES } from '../src/fisica.js';
 
 const SR = 44100;
 
@@ -32,16 +32,16 @@ function wavBuffer(samples, sr = SR) {
 export async function renderBounce(o) {
   const fx = setupNode();
   const mode = o.mode || 'crece';
-  if (!BOUNCE_MODES.includes(mode)) throw new Error(`--mode debe ser ${BOUNCE_MODES.join(' | ')}`);
+  if (!FISICA_MODES.includes(mode)) throw new Error(`--mode debe ser ${FISICA_MODES.join(' | ')}`);
   const lang = o.lang === 'en' ? 'en' : 'es', seed = o.seed != null && o.seed !== '' ? Number(o.seed) >>> 0 : (Date.now() >>> 0);
   const fps = +(o.fps || 30), log = o.quiet ? () => {} : (m) => process.stderr.write(m);
   const view = canvasSize('9:16', +(o.quality || 1080));
-  const run = simulate({ mode, seed });
-  const caption = o.caption === 'none' ? '' : o.caption && o.caption !== 'auto' ? o.caption : bounceHook(mode, lang, seed);
-  const [nameEs, nameEn] = BOUNCE_NAMES[mode], title = lang === 'en' ? nameEn : nameEs;
+  const run = simulateFisica({ mode, seed });
+  const caption = o.caption === 'none' ? '' : o.caption && o.caption !== 'auto' ? o.caption : fisicaHook(run, lang);
+  const [nameEs, nameEn] = FISICA_NAMES[mode], title = lang === 'en' ? nameEn : nameEs;
   const cv = createCanvas(view.W, view.H), ctx = cv.getContext('2d');
-  const draw = (t) => drawBounce(ctx, run, t, view, { caption, lang, fallback: fx.emoji ? `, "${fx.emoji}"` : '' });
-  const base = `circularte-pelotas-${mode}-${lang}`;
+  const draw = (t) => drawFisica(ctx, run, t, view, { caption, lang, fallback: fx.emoji ? `, "${fx.emoji}"` : '' });
+  const base = `circularte-${fisicaGroup(mode)}-${mode}-${lang}`;
 
   if (o.still != null) {
     const out = path.resolve(o.out || path.join(ROOT, 'out', `${base}-${o.still}s.png`));
@@ -91,8 +91,8 @@ export async function renderBounce(o) {
   const sidecar = out.replace(/\.mp4$/i, '') + '.json';
   const last = run.frames.at(-1);
   const info = {
-    file: path.basename(out), kind: 'bounce', id: `pelotas:${mode}`, mode, seed, lang, title, name: nameEs, nameEn,
-    group: 'Pelotas', caption, duration: +dur.toFixed(3), fps, width: view.W, height: view.H,
+    file: path.basename(out), kind: 'bounce', id: `${fisicaGroup(mode)}:${mode}`, mode, seed, lang, title, name: nameEs, nameEn,
+    group: fisicaGroup(mode) === 'juegos' ? 'Juegos' : 'Pelotas', caption, duration: +dur.toFixed(3), fps, width: view.W, height: view.H,
     bounces: last.bounces, balls: last.alive, escaped: last.escaped, notes: run.events.length, createdAt: new Date().toISOString()
   };
   fs.writeFileSync(sidecar, JSON.stringify(info, null, 2) + '\n');
@@ -107,7 +107,7 @@ async function main() {
     still: { type: 'string' }, out: { type: 'string' }, crf: { type: 'string', default: '18' }, quiet: { type: 'boolean', default: false },
     help: { type: 'boolean', short: 'h', default: false }
   });
-  if (o.help) { console.log(`Uso: node scripts/bounce.mjs --mode ${BOUNCE_MODES.join('|')} [--seed n] [--lang es|en] [--caption auto|none|"texto"] [--still s] [--out archivo.mp4]`); return; }
+  if (o.help) { console.log(`Uso: node scripts/bounce.mjs --mode ${FISICA_MODES.join('|')} [--seed n] [--lang es|en] [--caption auto|none|"texto"] [--still s] [--out archivo.mp4]`); return; }
   await renderBounce(o);
 }
 

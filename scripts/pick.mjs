@@ -18,12 +18,15 @@ export function readHistory(file = HISTORY) {
   try { const h = JSON.parse(fs.readFileSync(file, 'utf8')); return Array.isArray(h) ? h : []; } catch { return []; }
 }
 
-// Reparto de la publicación automática (complex) entre las categorías de la biblioteca
-export const SHARES = { figuras: 0.32, nombres: 0.2, combinaciones: 0.12, inventadas: 0.16, pelotas: 0.2 };
+// Reparto por categoría; cada workflow elige qué categorías usa (cats): los dibujos (figuras, nombres, parejas,
+// inventadas) y la física (pelotas 40 %, juegos 60 %) van en workflows aparte
+export const SHARES = { figuras: 0.32, nombres: 0.2, combinaciones: 0.12, inventadas: 0.16, pelotas: 0.2, juegos: 0.3 };
 
 // avoid = cuántas publicaciones recientes no se pueden repetir; cada función inventada es distinta gracias a la semilla.
-export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>> 0, emoji = true, complex = false, randomWeight = 0.5 } = {}) {
-  const items = catalog({ emoji, complex });
+export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>> 0, emoji = true, complex = false, cats, randomWeight = 0.5 } = {}) {
+  const all = catalog({ emoji, complex });
+  const items = cats?.length ? all.filter((it) => cats.includes(it.cat)) : all;
+  if (!items.length) throw new Error(`Ninguna figura en las categorías ${cats.join(', ')}`);
   // Con la biblioteca (~700 elementos) se evita lo de las últimas 60 corridas: unos 10 días a 6 por día
   avoid ??= complex ? 60 : 12;
   const recent = new Set(history.slice(-Math.min(avoid, items.length - 1)).map((h) => h.id));
