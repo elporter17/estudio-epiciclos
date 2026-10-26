@@ -22,7 +22,7 @@ on:
       cats:
         description: Qué tipo de video
         type: choice
-        options: [dibujos, fisica, juegos, pelotas]
+        options: [dibujos, fisica, juegos, pelotas, nuevos]
         default: dibujos
       lang:
         description: Idioma del video y la descripción
@@ -116,6 +116,8 @@ jobs:
           case "$CATS_INPUT" in
             dibujos) cats=figuras,nombres,combinaciones,inventadas ;;
             fisica) cats=pelotas,juegos ;;
+            # Solo los formatos más nuevos (para probarlos a mano)
+            nuevos) cats=juegos:paises,juegos:muros,juegos:batalla,pelotas:lineas ;;
             # juegos o pelotas: solo esa categoría (útil para lanzar a mano)
             *) cats="$CATS_INPUT" ;;
           esac

@@ -25,7 +25,8 @@ export const SHARES = { figuras: 0.32, nombres: 0.2, combinaciones: 0.12, invent
 // avoid = cuántas publicaciones recientes no se pueden repetir; cada función inventada es distinta gracias a la semilla.
 export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>> 0, emoji = true, complex = false, cats, randomWeight = 0.5 } = {}) {
   const all = catalog({ emoji, complex });
-  const items = cats?.length ? all.filter((it) => cats.includes(it.cat)) : all;
+  // cats acepta categorías (juegos) o elementos sueltos (juegos:batalla)
+  const items = cats?.length ? all.filter((it) => cats.includes(it.cat) || cats.includes(it.id)) : all;
   if (!items.length) throw new Error(`Ninguna figura en las categorías ${cats.join(', ')}`);
   // Con la biblioteca (~700 elementos) se evita lo de las últimas 60 corridas: unos 10 días a 6 por día
   avoid ??= complex ? 60 : 12;
