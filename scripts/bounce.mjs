@@ -14,7 +14,7 @@ import { createCanvas } from '@napi-rs/canvas';
 import { parseCli } from './lib/cli.mjs';
 import { setupNode, ROOT } from './lib/node-env.mjs';
 import { canvasSize } from '../src/engine.js';
-import { simulateFisica, synthAudio, drawFisica, fisicaHook, fisicaGroup, FISICA_MODES, FISICA_NAMES } from '../src/fisica.js';
+import { simulateFisica, synthAudio, drawFisica, fisicaHook, fisicaGroup, FISICA_MODES, FISICA_NAMES, MELODIAS, MELODIA_IDS } from '../src/fisica.js';
 
 const SR = 44100;
 
@@ -36,11 +36,12 @@ export async function renderBounce(o) {
   const lang = o.lang === 'en' ? 'en' : 'es', seed = o.seed != null && o.seed !== '' ? Number(o.seed) >>> 0 : (Date.now() >>> 0);
   const fps = +(o.fps || 30), log = o.quiet ? () => {} : (m) => process.stderr.write(m);
   const view = canvasSize('9:16', +(o.quality || 1080));
-  const run = simulateFisica({ mode, seed });
+  if (o.melody && o.melody !== 'none' && !MELODIAS[o.melody]) throw new Error(`--melody debe ser none | ${MELODIA_IDS.join(' | ')}`);
+  const run = simulateFisica({ mode, seed, melody: o.melody || undefined });
   const caption = o.caption === 'none' ? '' : o.caption && o.caption !== 'auto' ? o.caption : fisicaHook(run, lang);
   const [nameEs, nameEn] = FISICA_NAMES[mode], title = lang === 'en' ? nameEn : nameEs;
   const cv = createCanvas(view.W, view.H), ctx = cv.getContext('2d');
-  const draw = (t) => drawFisica(ctx, run, t, view, { caption, lang, fallback: fx.emoji ? `, "${fx.emoji}"` : '' });
+  const draw = (t) => drawFisica(ctx, run, t, view, { caption, lang, fallback: fx.emoji ? `, "${fx.emoji}"` : '', emojiFont: fx.emoji ? `"${fx.emoji}"` : undefined });
   const base = `circularte-${fisicaGroup(mode)}-${mode}-${lang}`;
 
   if (o.still != null) {
@@ -56,7 +57,7 @@ export async function renderBounce(o) {
   const frames = Math.ceil(run.total * fps), dur = frames / fps;
   const wav = path.join(os.tmpdir(), `circularte-${process.pid}-${Date.now()}.wav`);
   fs.writeFileSync(wav, wavBuffer(synthAudio(run, SR)));
-  log(`${title} · semilla ${seed} · ${run.events.length} notas · ${dur.toFixed(1)} s · ${view.W}x${view.H} @ ${fps} fps\nTexto gancho: ${caption || '(ninguno)'}\n`);
+  log(`${title} · semilla ${seed} · ${run.events.length} notas${run.melody ? ` (${MELODIAS[run.melody].es})` : ''} · ${dur.toFixed(1)} s · ${view.W}x${view.H} @ ${fps} fps\nTexto gancho: ${caption || '(ninguno)'}\n`);
 
   const args = [
     '-hide_banner', '-loglevel', 'error', '-y',
@@ -93,7 +94,7 @@ export async function renderBounce(o) {
   const info = {
     file: path.basename(out), kind: 'bounce', id: `${fisicaGroup(mode)}:${mode}`, mode, seed, lang, title, name: nameEs, nameEn,
     group: fisicaGroup(mode) === 'juegos' ? 'Juegos' : 'Pelotas', caption, duration: +dur.toFixed(3), fps, width: view.W, height: view.H,
-    bounces: last.bounces, balls: last.alive, escaped: last.escaped, notes: run.events.length, createdAt: new Date().toISOString()
+    bounces: last.bounces, balls: last.alive, escaped: last.escaped, notes: run.events.length, melody: run.melody || null, createdAt: new Date().toISOString()
   };
   fs.writeFileSync(sidecar, JSON.stringify(info, null, 2) + '\n');
   log(`MP4: ${out}\nDatos: ${sidecar}\n`);
@@ -104,10 +105,10 @@ async function main() {
   const o = parseCli({
     mode: { type: 'string', default: 'crece' }, seed: { type: 'string' }, lang: { type: 'string', default: 'es' },
     caption: { type: 'string', default: 'auto' }, fps: { type: 'string', default: '30' }, quality: { type: 'string', default: '1080' },
-    still: { type: 'string' }, out: { type: 'string' }, crf: { type: 'string', default: '18' }, quiet: { type: 'boolean', default: false },
+    melody: { type: 'string' }, still: { type: 'string' }, out: { type: 'string' }, crf: { type: 'string', default: '18' }, quiet: { type: 'boolean', default: false },
     help: { type: 'boolean', short: 'h', default: false }
   });
-  if (o.help) { console.log(`Uso: node scripts/bounce.mjs --mode ${FISICA_MODES.join('|')} [--seed n] [--lang es|en] [--caption auto|none|"texto"] [--still s] [--out archivo.mp4]`); return; }
+  if (o.help) { console.log(`Uso: node scripts/bounce.mjs --mode ${FISICA_MODES.join('|')} [--seed n] [--lang es|en] [--caption auto|none|"texto"] [--melody none|${MELODIA_IDS.join('|')}] [--still s] [--out archivo.mp4]`); return; }
   await renderBounce(o);
 }
 

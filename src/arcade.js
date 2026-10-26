@@ -6,14 +6,30 @@ import { makeRng } from './engine.js';
 import { noteFreq } from './bounce.js';
 
 const TAU = Math.PI * 2, FPS = 60, SUB = 8;
-export const ARCADE_MODES = ['embudos', 'anillos', 'plinko', 'carrera'];
+export const ARCADE_MODES = ['embudos', 'anillos', 'plinko', 'carrera', 'paises', 'muros', 'batalla'];
 export const ARCADE_NAMES = {
   embudos: ['Embudos', 'Funnels'],
   anillos: ['Anillos que giran', 'Spinning rings'],
   plinko: ['Plinko', 'Plinko'],
-  carrera: ['Carrera de colores', 'Color race']
+  carrera: ['Carrera de colores', 'Color race'],
+  paises: ['Carrera de países', 'Country race'],
+  muros: ['Muros que se rompen', 'Breaking walls'],
+  batalla: ['Batalla de pelotas', 'Ball battle']
 };
 const RACERS = [['Rojo', 'Red', 0], ['Azul', 'Blue', 215], ['Verde', 'Green', 130], ['Amarillo', 'Yellow', 50], ['Morado', 'Purple', 280], ['Naranja', 'Orange', 25]];
+// Carrera de países: [nombre, nombre en inglés, tono de la pelota, bandera]
+export const COUNTRIES = [
+  ['Honduras', 'Honduras', 205, '🇭🇳'], ['México', 'Mexico', 130, '🇲🇽'], ['Colombia', 'Colombia', 50, '🇨🇴'], ['Argentina', 'Argentina', 195, '🇦🇷'],
+  ['Guatemala', 'Guatemala', 200, '🇬🇹'], ['El Salvador', 'El Salvador', 215, '🇸🇻'], ['Nicaragua', 'Nicaragua', 210, '🇳🇮'], ['Costa Rica', 'Costa Rica', 0, '🇨🇷'],
+  ['Panamá', 'Panama', 0, '🇵🇦'], ['Perú', 'Peru', 355, '🇵🇪'], ['Chile', 'Chile', 0, '🇨🇱'], ['Venezuela', 'Venezuela', 50, '🇻🇪'],
+  ['España', 'Spain', 45, '🇪🇸'], ['Estados Unidos', 'United States', 220, '🇺🇸'], ['Brasil', 'Brazil', 120, '🇧🇷'], ['Ecuador', 'Ecuador', 50, '🇪🇨'],
+  ['República Dominicana', 'Dominican Republic', 220, '🇩🇴'], ['Puerto Rico', 'Puerto Rico', 0, '🇵🇷'], ['Uruguay', 'Uruguay', 200, '🇺🇾'], ['Cuba', 'Cuba', 220, '🇨🇺']
+];
+// Batalla: [nombre, en inglés, artículo, largo del arma, daño, giro (rad/s), tono]
+const WEAPONS = [
+  ['Espada', 'Sword', 'la', 0.3, 10, 2.6, 0], ['Lanza', 'Spear', 'la', 0.4, 7, 2.0, 210], ['Martillo', 'Hammer', 'el', 0.24, 14, 1.8, 30],
+  ['Daga', 'Dagger', 'la', 0.18, 6, 4.2, 130], ['Hacha', 'Axe', 'el', 0.27, 11, 2.3, 280]
+];
 
 // Texto de arriba: preguntas y ganchos ({k}: pelotas que suelta cada escape en «embudos»)
 export const ARCADE_HOOKS = {
@@ -32,6 +48,18 @@ export const ARCADE_HOOKS = {
   carrera: {
     es: ['¿Qué color gana? Elige uno antes de que empiece 👀', 'Carrera de {n} colores: ¿quién llega primero? 🏁', 'Elige tu color y no lo pierdas de vista 🎯', '¿Tu color gana o pierde? 🤔', 'La de último lugar te va a sorprender 😳', 'Sube el volumen y elige un color 🔊'],
     en: ['Which color wins? Pick one before it starts 👀', 'A {n}-color race: who gets there first? 🏁', 'Pick your color and keep your eyes on it 🎯', 'Does your color win or lose? 🤔', 'Last place is going to surprise you 😳', 'Turn the sound up and pick a color 🔊']
+  },
+  paises: {
+    es: ['¿Qué país gana? Comenta el tuyo 👇', 'Carrera de {n} países: ¿quién llega primero? 🏁', 'Si gana tu país, comenta 🙌', '¿Tu país gana o queda último? 😳', 'Elige tu bandera antes de que empiece 🎯', '¿Quién gana esta carrera? 🌎'],
+    en: ['Which country wins? Comment yours 👇', 'A {n}-country race: who gets there first? 🏁', 'If your country wins, comment 🙌', 'Does your country win or come last? 😳', 'Pick your flag before it starts 🎯', 'Who wins this race? 🌎']
+  },
+  muros: {
+    es: ['¿Romperá todos los muros? 💥', 'Cada golpe agrieta un muro… ¿sale? 👀', '¿Cuántos golpes necesita para escapar? 🤔', 'El último muro es el más duro 😳', 'Apuesta: ¿escapa o se queda adentro? 🎯', 'Sube el volumen: cada golpe es una nota 🔊'],
+    en: ['Will it break every wall? 💥', 'Every hit cracks a wall… does it get out? 👀', 'How many hits does it need to escape? 🤔', 'The last wall is the toughest 😳', 'Bet: does it escape or stay inside? 🎯', 'Turn the sound up: every hit is a note 🔊']
+  },
+  batalla: {
+    es: ['¿Quién gana: {a} o {b}? ⚔️', '{a} contra {b}: elige tu bando 👇', 'Cada golpe hace crecer su arma… ¿quién gana? 😳', '¿{a} o {b}? Comenta antes del final 🎯', 'Esta batalla tiene un final inesperado 🤯', 'Sube el volumen y elige un arma 🔊'],
+    en: ['Who wins: {a} or {b}? ⚔️', '{a} vs {b}: pick your side 👇', 'Every hit makes its weapon grow… who wins? 😳', '{a} or {b}? Comment before the end 🎯', 'This battle has an unexpected ending 🤯', 'Turn the sound up and pick a weapon 🔊']
   }
 };
 // Frase de abajo: pide comentar o predecir
@@ -39,7 +67,10 @@ export const ARCADE_PROMPTS = {
   embudos: { es: ['Comenta cuántas crees que salen 👇', 'Escribe tu apuesta antes del final 👇', 'Etiqueta a alguien que necesite ver esto'], en: ['Comment how many you think get out 👇', 'Write your bet before the end 👇', 'Tag someone who needs to see this'] },
   anillos: { es: ['Comenta en qué anillo crees que se queda 👇', 'Escribe «sí» o «no» antes del final 👇', 'Etiqueta a alguien que no aguante el suspenso'], en: ['Comment which ring you think it gets stuck in 👇', 'Write «yes» or «no» before the end 👇', 'Tag someone who can\'t handle the suspense'] },
   plinko: { es: ['Comenta tu casilla 👇', 'Escribe tu número de casilla antes del final 👇', 'Etiqueta a alguien a quien le encante esto'], en: ['Comment your slot 👇', 'Write your slot number before the end 👇', 'Tag someone who would love this'] },
-  carrera: { es: ['Comenta tu color antes del final 👇', '¿Qué color elegiste? Comenta 👇', 'Etiqueta a alguien y que elija un color'], en: ['Comment your color before the end 👇', 'Which color did you pick? Comment 👇', 'Tag someone and make them pick a color'] }
+  carrera: { es: ['Comenta tu color antes del final 👇', '¿Qué color elegiste? Comenta 👇', 'Etiqueta a alguien y que elija un color'], en: ['Comment your color before the end 👇', 'Which color did you pick? Comment 👇', 'Tag someone and make them pick a color'] },
+  paises: { es: ['Comenta tu país antes del final 👇', '¿De qué país me ves? Comenta 👇', 'Etiqueta a alguien de tu país'], en: ['Comment your country before the end 👇', 'Where are you watching from? Comment 👇', 'Tag someone from your country'] },
+  muros: { es: ['Comenta cuántos muros rompe 👇', 'Escribe «sale» o «no sale» antes del final 👇', 'Etiqueta a alguien que no aguante el suspenso'], en: ['Comment how many walls it breaks 👇', 'Write «out» or «stuck» before the end 👇', 'Tag someone who can\'t handle the suspense'] },
+  batalla: { es: ['Comenta tu arma antes del final 👇', '¿Quién crees que gana? Comenta 👇', 'Etiqueta a alguien y que elija bando'], en: ['Comment your weapon before the end 👇', 'Who do you think wins? Comment 👇', 'Tag someone and make them pick a side'] }
 };
 
 /* ---------------- Física ---------------- */
@@ -192,10 +223,10 @@ function simPlinko(seed) {
   return run;
 }
 
-// Carrera: pelotas de colores bajan por plataformas en zigzag y clavos; gana la primera en llegar abajo
-function simCarrera(seed) {
-  const { run, rng, rnd, rint, note } = setup('carrera', seed);
-  const Hh = 1.75, n = rint(4, 6), r = 0.03, e = 0.7, g = 1.4;
+// Carrera: pelotas de colores (o banderas de países) bajan por plataformas en zigzag y clavos; gana la primera
+function simCarrera(seed, flags = false) {
+  const { run, rng, rnd, rint, note } = setup(flags ? 'paises' : 'carrera', seed);
+  const Hh = 1.75, n = rint(4, 6), r = flags ? 0.04 : 0.03, e = 0.7, g = 1.4;
   const segs = [[-0.5, 0, -0.5, Hh], [0.5, 0, 0.5, Hh], [-0.5, 0, 0.5, 0]], pegs = [];
   const levels = 5;
   for (let l = 0; l < levels; l++) {
@@ -206,8 +237,13 @@ function simCarrera(seed) {
     pegs.push([px, py, 0], [px + rnd(0.18, 0.33), y + drop + rnd(0.04, 0.06), 0]);
   }
   run.segs = segs; run.pegs = pegs; run.meta = { Hh, pr: 0.014 };
-  const order = RACERS.slice().sort(() => rng() - 0.5).slice(0, n);
-  const balls = order.map(([es, en, h], i) => ({ x: -0.35 + i * 0.7 / Math.max(1, n - 1), y: 0.06, vx: rnd(-0.2, 0.2), vy: 0, r, h, a: 0, es, en, done: -1 }));
+  // Con banderas, Honduras corre en la mitad de las carreras
+  let order;
+  if (flags) {
+    const pool = COUNTRIES.slice(1).sort(() => rng() - 0.5);
+    order = (rng() < 0.5 ? [COUNTRIES[0], ...pool] : pool).slice(0, n).sort(() => rng() - 0.5);
+  } else order = RACERS.slice().sort(() => rng() - 0.5).slice(0, n);
+  const balls = order.map(([es, en, h, flag], i) => ({ x: -0.35 + i * 0.7 / Math.max(1, n - 1), y: 0.06, vx: rnd(-0.2, 0.2), vy: 0, r, h, a: 0, es, en, flag, done: -1 }));
   const places = []; let t = 0, endAt = null;
   for (let f = 0; f < 45 * FPS; f++) {
     for (let s = 0; s < SUB; s++) {
@@ -236,13 +272,123 @@ function simCarrera(seed) {
     if (endAt === null && places.length === balls.length) endAt = t + 3;
     if (endAt !== null && t >= endAt) break;
   }
-  run.racers = balls.map((q) => [q.es, q.en, q.h]);
+  run.racers = balls.map((q) => [q.es, q.en, q.h, q.flag]);
   run.total = run.frames.length / FPS; run.hookVars = { n, k: places.length };
   return run;
 }
 
+// Muros: anillos partidos en segmentos con vida; cada golpe agrieta uno y al romperse deja pasar a la pelota
+function simMuros(seed) {
+  const { run, rnd, rint, note } = setup('muros', seed);
+  const nr = rint(3, 5), rings = [];
+  for (let k = 0; k < nr; k++) {
+    const nseg = rint(8, 13), hp = 1 + Math.floor(k * 3 / nr);
+    rings.push({ R: 0.32 + 0.68 * k / (nr - 1), nseg, hpMax: hp, hp: new Array(nseg).fill(hp), broke: new Array(nseg).fill(-1), a0: rnd(0, TAU), h: (rint(0, 359) + k * 50) % 360 });
+  }
+  const b = { x: 0, y: 0, vx: rnd(-1, 1), vy: rnd(-1.5, -0.8), r: 0.035, h: 50 };
+  let t = 0, endAt = null, hits = 0; const g = 1.2;
+  for (let f = 0; f < 45 * FPS; f++) {
+    for (let s = 0; s < SUB; s++) {
+      const dt = 1 / (FPS * SUB); t += dt;
+      b.vy += g * dt; b.x += b.vx * dt; b.y += b.vy * dt;
+      const d = Math.hypot(b.x, b.y); if (d === 0) continue;
+      const nx = b.x / d, ny = b.y / d;
+      for (let k = 0; k < nr; k++) {
+        const q = rings[k];
+        if (Math.abs(d - q.R) >= b.r) continue;
+        const seg = Math.floor((((Math.atan2(ny, nx) - q.a0) % TAU + TAU) % TAU) / (TAU / q.nseg));
+        if (q.hp[seg] <= 0) continue;
+        // Normal hacia el lado donde está la pelota (adentro o afuera del anillo)
+        const side = d < q.R ? -1 : 1, mx = nx * side, my = ny * side;
+        b.x = nx * (q.R + side * b.r); b.y = ny * (q.R + side * b.r);
+        const vn = b.vx * mx + b.vy * my; if (vn >= 0) continue;
+        b.vx -= 2 * vn * mx; b.vy -= 2 * vn * my;
+        const sp = Math.hypot(b.vx, b.vy), want = Math.max(sp, 1.5) / sp; b.vx *= want; b.vy *= want;
+        // Pasados 20 s cada choque rompe el segmento entero, para que el video no se alargue
+        if (-vn > 0.2) { q.hp[seg] = t > 20 ? 0 : q.hp[seg] - 1; hits++; if (q.hp[seg] === 0) { q.broke[seg] = t; note(t, 10 + k, true); } else note(t, k * 3 + rint(0, 2)); }
+        break;
+      }
+    }
+    run.frames.push({ b: Float32Array.of(b.x, b.y, b.r, b.h, 0), hp: Int8Array.from(rings.flatMap((q) => q.hp)) });
+    if (endAt === null && Math.hypot(b.x, b.y) > rings[nr - 1].R + 0.08) endAt = t + 2;
+    if (endAt !== null && t >= endAt) break;
+  }
+  run.meta = { rings: rings.map((q) => ({ R: q.R, nseg: q.nseg, hpMax: q.hpMax, a0: q.a0, h: q.h, broke: q.broke })) };
+  run.total = run.frames.length / FPS; run.hookVars = { n: nr, k: hits };
+  return run;
+}
+
+// Batalla: dos pelotas con armas que giran rebotan en una arena; cada golpe baja vida y agranda el arma de quien pega
+function simBatalla(seed) {
+  const { run, rng, rnd, rint, note } = setup('batalla', seed);
+  const pick = WEAPONS.slice().sort(() => rng() - 0.5).slice(0, 2);
+  const fighters = pick.map(([es, en, art, len, dmg, spin, h], i) => ({
+    es, en, art, len, dmg, w: (i ? -1 : 1) * spin, h, a: rnd(0, TAU), hp: 100, cool: 0, flash: -1,
+    x: i ? 0.45 : -0.45, y: rnd(-0.2, 0.2), vx: (i ? -1 : 1) * rnd(0.8, 1.2), vy: rnd(-0.6, 0.6), r: 0.13
+  }));
+  const tip = (p) => [p.x + Math.cos(p.a) * (p.r + p.len), p.y + Math.sin(p.a) * (p.r + p.len)];
+  const base = (p) => [p.x + Math.cos(p.a) * p.r * 0.8, p.y + Math.sin(p.a) * p.r * 0.8];
+  let t = 0, endAt = null, winner = -1; const g = 0.8;
+  for (let f = 0; f < 45 * FPS; f++) {
+    for (let s = 0; s < SUB; s++) {
+      const dt = 1 / (FPS * SUB); t += dt;
+      for (const p of fighters) {
+        p.vy += g * dt; p.x += p.vx * dt; p.y += p.vy * dt; p.a += p.w * dt; p.cool -= dt;
+        const d = Math.hypot(p.x, p.y);
+        if (d + p.r > 1) {
+          const nx = p.x / d, ny = p.y / d; p.x = nx * (1 - p.r); p.y = ny * (1 - p.r);
+          const vn = p.vx * nx + p.vy * ny; if (vn > 0) { p.vx -= 2 * vn * nx; p.vy -= 2 * vn * ny; }
+          const sp = Math.hypot(p.vx, p.vy), want = Math.max(sp, 1.1) / sp; p.vx *= want; p.vy *= want;
+          if (vn > 0.3) note(t, rint(0, 6), false, 0.12);
+        }
+      }
+      const [A, B] = fighters;
+      // Se buscan un poco (más con el tiempo): sin esto, a veces dan vueltas sin tocarse nunca
+      { const dx = B.x - A.x, dy = B.y - A.y, d = Math.hypot(dx, dy) || 1, k = (0.4 + t / 30) * dt;
+        A.vx += dx / d * k; A.vy += dy / d * k; B.vx -= dx / d * k; B.vy -= dy / d * k; }
+      // Choque entre las pelotas
+      { const dx = B.x - A.x, dy = B.y - A.y, d = Math.hypot(dx, dy);
+        if (d > 0 && d < A.r + B.r) { const nx = dx / d, ny = dy / d, o = (A.r + B.r - d) / 2; A.x -= nx * o; A.y -= ny * o; B.x += nx * o; B.y += ny * o;
+          const vn = (B.vx - A.vx) * nx + (B.vy - A.vy) * ny; if (vn < 0) { A.vx += vn * nx; A.vy += vn * ny; B.vx -= vn * nx; B.vy -= vn * ny; } } }
+      // Choque de armas: las dos rebotan y cambian de sentido de giro
+      { const [a0, a1] = [base(A), tip(A)], [b0, b1] = [base(B), tip(B)];
+        if (segCross(a0, a1, b0, b1) && A.cool <= 0 && B.cool <= 0) {
+          // También se empujan para separarse; si no, las armas pueden quedar trabadas para siempre
+          const dx = B.x - A.x, dy = B.y - A.y, d = Math.hypot(dx, dy) || 1;
+          A.vx -= dx / d * 0.8; A.vy -= dy / d * 0.8; B.vx += dx / d * 0.8; B.vy += dy / d * 0.8;
+          A.w = -A.w; B.w = -B.w; A.cool = B.cool = 0.15; note(t, 12, true);
+        } }
+      // Golpes: el arma de uno toca la pelota del otro
+      for (const [P, Q] of [[A, B], [B, A]]) {
+        if (P.cool > 0 || winner >= 0) continue;
+        const h = { x: Q.x, y: Q.y, vx: 0, vy: 0, r: Q.r };
+        const [p0, p1] = [base(P), tip(P)];
+        if (distSeg(h.x, h.y, p0[0], p0[1], p1[0], p1[1]) >= Q.r) continue;
+        Q.hp = Math.max(0, Q.hp - Math.round(P.dmg * (1 + (t / 10) ** 2))); Q.flash = t; P.cool = 0.35; P.len = Math.min(0.75, P.len * 1.08);
+        const dx = Q.x - P.x, dy = Q.y - P.y, d = Math.hypot(dx, dy) || 1; Q.vx += dx / d * 0.9; Q.vy += dy / d * 0.9;
+        note(t, 2 + Math.floor((100 - Q.hp) / 12), true);
+        if (Q.hp <= 0) { winner = fighters.indexOf(P); endAt = t + 2.5; }
+      }
+    }
+    run.frames.push({ b: Float32Array.from(fighters.flatMap((p) => [p.x, p.y, p.r, p.h, p.a, p.len, p.hp, p.flash < 0 ? 99 : t - p.flash])), winner });
+    if (endAt !== null && t >= endAt) break;
+  }
+  if (winner < 0) { winner = fighters[0].hp >= fighters[1].hp ? 0 : 1; run.frames[run.frames.length - 1].winner = winner; }
+  run.fighters = fighters.map((p) => [p.es, p.en, p.art, p.h]);
+  run.total = run.frames.length / FPS; run.hookVars = { a: fighters[0].es, b: fighters[1].es, aEn: fighters[0].en, bEn: fighters[1].en };
+  return run;
+}
+function distSeg(px, py, x0, y0, x1, y1) {
+  const dx = x1 - x0, dy = y1 - y0, u = Math.max(0, Math.min(1, ((px - x0) * dx + (py - y0) * dy) / (dx * dx + dy * dy)));
+  return Math.hypot(px - (x0 + u * dx), py - (y0 + u * dy));
+}
+function segCross(a, b, c, d) {
+  const o = (p, q, r) => Math.sign((q[0] - p[0]) * (r[1] - p[1]) - (q[1] - p[1]) * (r[0] - p[0]));
+  return o(a, b, c) !== o(a, b, d) && o(c, d, a) !== o(c, d, b);
+}
+
 export function simulateArcade({ mode, seed = 1 }) {
-  const fn = { embudos: simEmbudos, anillos: simAnillos, plinko: simPlinko, carrera: simCarrera }[mode];
+  const fn = { embudos: simEmbudos, anillos: simAnillos, plinko: simPlinko, carrera: simCarrera, paises: (s) => simCarrera(s, true), muros: simMuros, batalla: simBatalla }[mode];
   if (!fn) throw new Error(`Juego desconocido «${mode}». Usa ${ARCADE_MODES.join(', ')}`);
   return fn(seed >>> 0);
 }
@@ -265,29 +411,77 @@ function neon(ctx, draw, color, U, width = 3) {
 export function drawArcade(ctx, run, t, view, opts = {}) {
   const { W, H, U } = view, lang = opts.lang === 'en' ? 'en' : 'es', L = lang === 'en' ? 1 : 0;
   const fi = Math.max(0, Math.min(run.frames.length - 1, Math.floor(t * run.fps))), fr = run.frames[fi];
+  const emojiFont = opts.emojiFont || '"Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif';
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.fillStyle = BG; ctx.fillRect(0, 0, W, H);
-  let bottom;
+  let bottom, low = (opts.prompt ?? arcadePrompt(run.mode, lang, run.seed)).trim(), lowColor = FG;
 
-  if (run.mode === 'anillos') {
-    const cx = W / 2, cy = H * 0.47, R = Math.min(W * 0.42, H * 0.26);
-    run.meta.rings.forEach((q, i) => {
-      const a = fr.rings[i * 2], since = fr.rings[i * 2 + 1];
-      if (since >= 0) {
-        // Anillo roto: se agranda y se desvanece
-        if (since > 0.7) return;
-        ctx.globalAlpha = 1 - since / 0.7; ctx.strokeStyle = `hsl(${q.h}, 90%, 65%)`; ctx.lineWidth = 3 * U;
-        ctx.beginPath(); ctx.arc(cx, cy, (q.R + since * 0.25) * R, 0, TAU); ctx.stroke(); ctx.globalAlpha = 1; return;
+  if (run.mode === 'anillos' || run.mode === 'muros' || run.mode === 'batalla') {
+    const cx = W / 2, cy = H * (run.mode === 'batalla' ? 0.5 : 0.47), R = Math.min(W * 0.42, H * 0.26);
+    if (run.mode === 'anillos') {
+      run.meta.rings.forEach((q, i) => {
+        const a = fr.rings[i * 2], since = fr.rings[i * 2 + 1];
+        if (since >= 0) {
+          // Anillo roto: se agranda y se desvanece
+          if (since > 0.7) return;
+          ctx.globalAlpha = 1 - since / 0.7; ctx.strokeStyle = `hsl(${q.h}, 90%, 65%)`; ctx.lineWidth = 3 * U;
+          ctx.beginPath(); ctx.arc(cx, cy, (q.R + since * 0.25) * R, 0, TAU); ctx.stroke(); ctx.globalAlpha = 1; return;
+        }
+        neon(ctx, () => { ctx.beginPath(); ctx.arc(cx, cy, q.R * R, a + q.gap, a + TAU); }, `hsl(${q.h}, 90%, 65%)`, U, 3);
+      });
+    } else if (run.mode === 'muros') {
+      // Cada segmento con vida se ve más tenue a medida que se agrieta; al romperse se aleja y se apaga
+      let i = 0;
+      for (const q of run.meta.rings) {
+        const step = TAU / q.nseg;
+        for (let s = 0; s < q.nseg; s++, i++) {
+          const hp = fr.hp[i], a0 = q.a0 + s * step + 0.04, a1 = q.a0 + (s + 1) * step - 0.04;
+          if (hp > 0) {
+            const k = hp / q.hpMax;
+            ctx.globalAlpha = 0.35 + 0.65 * k;
+            neon(ctx, () => { ctx.beginPath(); ctx.arc(cx, cy, q.R * R, a0, a1); }, `hsl(${q.h}, 90%, ${45 + 25 * k}%)`, U, 2 + 2 * k);
+            ctx.globalAlpha = 1;
+          } else {
+            const since = t - q.broke[s]; if (since < 0 || since > 0.6) continue;
+            ctx.globalAlpha = 1 - since / 0.6; ctx.strokeStyle = `hsl(${q.h}, 90%, 70%)`; ctx.lineWidth = 3 * U;
+            ctx.beginPath(); ctx.arc(cx, cy, (q.R + since * 0.3) * R, a0, a1); ctx.stroke(); ctx.globalAlpha = 1;
+          }
+        }
       }
-      neon(ctx, () => { ctx.beginPath(); ctx.arc(cx, cy, q.R * R, a + q.gap, a + TAU); }, `hsl(${q.h}, 90%, 65%)`, U, 3);
-    });
-    const b = fr.b; ctx.fillStyle = `hsl(${b[3]}, 95%, 62%)`; ctx.beginPath(); ctx.arc(cx + b[0] * R, cy + b[1] * R, b[2] * R, 0, TAU); ctx.fill();
-    ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.5 * U; ctx.stroke();
+    } else {
+      neon(ctx, () => { ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU); }, FG, U, 3);
+    }
+    if (run.mode === 'batalla') {
+      // Dos peleadores: arma (línea gruesa) y pelota, con destello al recibir un golpe; vida arriba
+      const b = fr.b;
+      for (let p = 0; p < 2; p++) {
+        const o = p * 8, x = cx + b[o] * R, y = cy + b[o + 1] * R, r = b[o + 2] * R, h = b[o + 3], a = b[o + 4], len = b[o + 5] * R, hp = b[o + 6], since = b[o + 7];
+        if (hp <= 0 && since > 0.4) ctx.globalAlpha = 0.35;
+        const x0 = x + Math.cos(a) * r * 0.8, y0 = y + Math.sin(a) * r * 0.8, x1 = x + Math.cos(a) * (r + len), y1 = y + Math.sin(a) * (r + len);
+        neon(ctx, () => { ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); }, `hsl(${h}, 95%, 70%)`, U, 5);
+        ctx.fillStyle = since < 0.12 ? '#ffffff' : `hsl(${h}, 85%, 55%)`;
+        ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.strokeStyle = '#fff'; ctx.lineWidth = 2 * U; ctx.stroke();
+        ctx.globalAlpha = 1;
+        // Barra de vida
+        const bw = W * 0.38, bx = p ? W * 0.56 : W * 0.06, by = H * 0.205;
+        ctx.fillStyle = 'rgba(255,255,255,.15)'; ctx.fillRect(bx, by, bw, 14 * U);
+        ctx.fillStyle = `hsl(${h}, 85%, 58%)`; ctx.fillRect(bx, by, bw * Math.max(0, hp) / 100, 14 * U);
+        ctx.fillStyle = FG; ctx.textAlign = p ? 'right' : 'left'; ctx.textBaseline = 'bottom';
+        fitText(ctx, `${run.fighters[p][L]} · ${Math.max(0, Math.round(hp))}`, p ? bx + bw : bx, by - 6 * U, 24 * U, bw, opts);
+      }
+      if (fr.winner >= 0) {
+        const w = run.fighters[fr.winner];
+        low = lang === 'en' ? `🏆 ${w[1]} wins!` : `🏆 ¡Ganó ${w[2]} ${w[0]}!`; lowColor = `hsl(${w[3]}, 90%, 65%)`;
+      }
+    } else {
+      const b = fr.b; ctx.fillStyle = `hsl(${b[3]}, 95%, 62%)`; ctx.beginPath(); ctx.arc(cx + b[0] * R, cy + b[1] * R, b[2] * R, 0, TAU); ctx.fill();
+      ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.5 * U; ctx.stroke();
+    }
     bottom = cy + R + 64 * U;
   } else {
     const Hh = run.meta.Hh, s = Math.min(W * 0.84, H * 0.52 / Hh), ox = W / 2, oy = H * 0.2;
-    const X = (x) => ox + x * s, Y = (y) => oy + y * s;
+    const X = (x) => ox + x * s, Y = (y) => oy + y * s, race = run.mode === 'carrera' || run.mode === 'paises';
     if (run.mode === 'embudos') { const [a, b] = run.meta.exit; ctx.fillStyle = 'rgba(46, 204, 113, .85)'; ctx.fillRect(X(a), Y(Hh) - 2 * U, X(b) - X(a), 40 * U); }
-    if (run.mode === 'carrera') { ctx.fillStyle = 'rgba(255,255,255,.9)'; for (let i = 0; i < 12; i++) if (i % 2 === 0) ctx.fillRect(X(-0.5 + i / 12), Y(Hh) - 4 * U, s / 12, 8 * U); }
+    if (race) { ctx.fillStyle = 'rgba(255,255,255,.9)'; for (let i = 0; i < 12; i++) if (i % 2 === 0) ctx.fillRect(X(-0.5 + i / 12), Y(Hh) - 4 * U, s / 12, 8 * U); }
     neon(ctx, () => { ctx.beginPath(); for (const g of run.segs) { ctx.moveTo(X(g[0]), Y(g[1])); ctx.lineTo(X(g[2]), Y(g[3])); } }, FG, U, run.mode === 'plinko' ? 2 : 3);
     if (run.pegs.length) { ctx.fillStyle = FG; const pr = (run.meta.pr || 0.012) * s; ctx.beginPath(); for (const p of run.pegs) { ctx.moveTo(X(p[0]) + pr, Y(p[1])); ctx.arc(X(p[0]), Y(p[1]), pr, 0, TAU); } ctx.fill(); }
     const b = fr.b;
@@ -296,28 +490,37 @@ export function drawArcade(ctx, run, t, view, opts = {}) {
       // Las que ya salieron por abajo (o cruzaron la meta) no se dibujan
       if (b[i + 1] > Hh + 0.06) continue;
       ctx.fillStyle = `hsl(${b[i + 3]}, 90%, 60%)`;
-      if (run.mode === 'embudos' && opts.squares !== false && run.seed % 2) {
+      if (run.mode === 'paises') {
+        // Bandera sobre un disco de su color
+        ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill();
+        ctx.save(); ctx.translate(x, y); ctx.rotate(b[i + 4] * 0.3); ctx.font = `${r * 1.5}px ${emojiFont}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(run.racers[i / 5][3], 0, r * 0.08); ctx.restore();
+      } else if (run.mode === 'embudos' && opts.squares !== false && run.seed % 2) {
         // La mitad de las corridas usa cuadros que giran, como los videos virales
         ctx.save(); ctx.translate(x, y); ctx.rotate(b[i + 4]); ctx.fillRect(-r, -r, 2 * r, 2 * r); ctx.restore();
       } else { ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); }
     }
+    // Carrera: al llegar la primera se anuncia la ganadora (el resto del video sigue)
+    if (race && fr.places.length) {
+      const w = run.racers[fr.places[0]];
+      low = run.mode === 'paises' ? (lang === 'en' ? `🏆 ${w[1]} wins! ${w[3]}` : `🏆 ¡Ganó ${w[0]}! ${w[3]}`) : (lang === 'en' ? `🏆 ${w[1]} wins!` : `🏆 ¡Ganó el ${w[0]}!`);
+      lowColor = `hsl(${w[2]}, 90%, 65%)`;
+    }
     bottom = Y(Hh) + 64 * U;
   }
 
-  ctx.fillStyle = FG; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
-  // Carrera: al llegar la primera se anuncia la ganadora (el resto del video sigue)
-  let low = (opts.prompt ?? arcadePrompt(run.mode, lang, run.seed)).trim();
-  if (run.mode === 'carrera' && fr.places.length) { const w = run.racers[fr.places[0]]; low = lang === 'en' ? `🏆 ${w[1]} wins!` : `🏆 ¡Ganó el ${w[0]}!`; ctx.fillStyle = `hsl(${w[2]}, 90%, 65%)`; }
-  if (low) { ctx.globalAlpha = 0.9; fitText(ctx, low, W / 2, Math.min(bottom, H * 0.8), 28 * U, W * 0.9, opts); ctx.globalAlpha = 1; }
+  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  if (low) { ctx.fillStyle = lowColor; ctx.globalAlpha = 0.9; fitText(ctx, low, W / 2, Math.min(bottom, H * 0.8), 28 * U, W * 0.9, opts); ctx.globalAlpha = 1; }
   const cap = (opts.caption ?? arcadeHook(run, lang)).trim();
   if (cap) { ctx.fillStyle = FG; ctx.textBaseline = 'middle'; fitText(ctx, cap, W / 2, H * 0.15, 34 * U, W * 0.9, opts); }
 }
 
 // Texto superior y frase de abajo estables para una corrida
 export function arcadeHook(run, lang) {
-  const list = ARCADE_HOOKS[run.mode][lang === 'en' ? 'en' : 'es'];
+  const en = lang === 'en', list = ARCADE_HOOKS[run.mode][en ? 'en' : 'es'];
   const v = run.hookVars || {};
-  return list[(run.seed >>> 0) % list.length].replace('{k}', v.k ?? '').replace('{n}', v.n ?? '');
+  return list[(run.seed >>> 0) % list.length].replace('{k}', v.k ?? '').replace('{n}', v.n ?? '')
+    .replace('{a}', (en ? v.aEn : v.a) ?? '').replace('{b}', (en ? v.bEn : v.b) ?? '');
 }
 export function arcadePrompt(mode, lang, seed) {
   const list = ARCADE_PROMPTS[mode][lang === 'en' ? 'en' : 'es'];

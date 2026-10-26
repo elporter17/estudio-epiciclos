@@ -7,11 +7,12 @@ import { makeRng } from './engine.js';
 
 const TAU = Math.PI * 2;
 export const BOUNCE_FPS = 60;
-export const BOUNCE_MODES = ['crece', 'multiplica', 'escape'];
+export const BOUNCE_MODES = ['crece', 'multiplica', 'escape', 'lineas'];
 export const BOUNCE_NAMES = {
   crece: ['Crece con cada rebote', 'Grows with every bounce'],
   multiplica: ['Se multiplica', 'Multiplies'],
-  escape: ['Escapar por el hueco', 'Escape through the gap']
+  escape: ['Escapar por el hueco', 'Escape through the gap'],
+  lineas: ['Líneas en cada rebote', 'Lines on every bounce']
 };
 // Texto de arriba del video: preguntas y ganchos (sin cifras, para que se vea hasta el final)
 export const BOUNCE_HOOKS = {
@@ -26,19 +27,26 @@ export const BOUNCE_HOOKS = {
   escape: {
     es: ['¿Cuántas logran escapar? 🔴', 'Cada pelota que sale suelta dos más 🤯', '¿Encontrarán el hueco? 👀', 'Elige una pelota: ¿escapa o no?', '¿Cuántas escapan antes del final? 🤔', 'El hueco gira… ¿quién sale primero?', 'Esto se descontrola rapidísimo 😳', 'Sube el volumen y mira hasta el final 🔊'],
     en: ['How many escape? 🔴', 'Every ball that gets out releases two more 🤯', 'Will they find the gap? 👀', 'Pick a ball: does it escape or not?', 'How many escape before the end? 🤔', 'The gap spins… who gets out first?', 'This gets out of hand fast 😳', 'Turn the sound up and watch to the end 🔊']
+  },
+  lineas: {
+    es: ['Cada rebote dibuja una línea… mira la figura final ✨', '¿Qué figura se forma al final? 👀', 'Arte con una sola pelota 🎨', 'Cada rebote va más rápido… ¿hasta dónde? 😳', 'Mira cómo una pelota dibuja esto 🤯', 'Sube el volumen: cada rebote es una nota 🔊'],
+    en: ['Every bounce draws a line… watch the final shape ✨', 'What shape forms at the end? 👀', 'Art with a single ball 🎨', 'Every bounce gets faster… how far? 😳', 'Watch one ball draw this 🤯', 'Turn the sound up: every bounce is a note 🔊']
   }
 };
 // Frase de abajo (en lugar de un contador): pide comentar o predecir
 export const BOUNCE_PROMPTS = {
   crece: { es: ['Comenta cuántos rebotes crees que da 👇', 'Escribe tu apuesta antes del final 👇', '¿Lo llena o no? Dímelo en los comentarios', 'Etiqueta a alguien que no aguante el suspenso'], en: ['Comment how many bounces you think it takes 👇', 'Write your bet before the end 👇', 'Does it fill it or not? Tell me in the comments', 'Tag someone who can\'t handle the suspense'] },
   multiplica: { es: ['Comenta en qué segundo se llena 👇', 'Escribe tu color favorito 👇', '¿Cuántas crees que caben? Comenta 👇', 'Etiqueta a alguien a quien le encante esto'], en: ['Comment at what second it fills up 👇', 'Write your favorite color 👇', 'How many do you think fit? Comment 👇', 'Tag someone who would love this'] },
-  escape: { es: ['Comenta cuántas crees que escapan 👇', 'Escribe tu apuesta antes del final 👇', 'Elige un color y dime si escapó 👇', 'Etiqueta a alguien que necesite ver esto'], en: ['Comment how many you think escape 👇', 'Write your bet before the end 👇', 'Pick a color and tell me if it escaped 👇', 'Tag someone who needs to see this'] }
+  escape: { es: ['Comenta cuántas crees que escapan 👇', 'Escribe tu apuesta antes del final 👇', 'Elige un color y dime si escapó 👇', 'Etiqueta a alguien que necesite ver esto'], en: ['Comment how many you think escape 👇', 'Write your bet before the end 👇', 'Pick a color and tell me if it escaped 👇', 'Tag someone who needs to see this'] },
+  lineas: { es: ['Comenta qué figura ves 👇', 'Escribe a qué se parece al final 👇', 'Etiqueta a alguien a quien le encante esto'], en: ['Comment what shape you see 👇', 'Write what it looks like at the end 👇', 'Tag someone who would love this'] }
 };
 
 const CFG = {
   crece: { g: 1.5, r0: 0.05, grow: 0.018, rMax: 0.965, hold: 2, gapNote: 0.045, maxT: 50 },
   multiplica: { g: 1.25, r: 0.034, cap: 150, spawnEvery: 0.16, hold: 4, gapNote: 0.07, maxT: 40 },
-  escape: { g: 1.6, r: 0.04, gap: 0.95, spin: 1.15, speed: [1.2, 1.8], cap: 220, hold: 4, gapNote: 0.07, maxT: 35 }
+  escape: { g: 1.6, r: 0.04, gap: 0.95, spin: 1.15, speed: [1.2, 1.8], cap: 220, hold: 4, gapNote: 0.07, maxT: 35 },
+  // Cada rebote sube la velocidad un poco (hasta vmax): las líneas se van cerrando en una figura
+  lineas: { g: 0.7, r: 0.03, speed: [1.6, 2.1], speedUp: 1.035, vmax: 8, hold: 0, gapNote: 0.05, maxT: 32 }
 };
 // Pentatónica mayor en tres octavas desde Do4: suena bien en cualquier orden
 const PENTA = [0, 2, 4, 7, 9];
@@ -50,7 +58,7 @@ export function simulate({ mode = 'crece', seed = 1, maxT } = {}) {
   const c = CFG[mode], rng = makeRng(seed), rnd = (a, b) => a + rng() * (b - a);
   maxT ??= c.maxT;
   const SUB = 8, dt = 1 / (BOUNCE_FPS * SUB), hue0 = Math.floor(rnd(0, 360));
-  const balls = [], frames = [], events = [];
+  const balls = [], frames = [], events = [], points = [];
   let t = 0, ring = rnd(0, TAU), bounces = 0, escaped = 0, born = 0, endAt = null, lastNote = -1, lastSpawn = -1, melody = 0;
   const spawn = (r, x = rnd(-0.15, 0.15), y = rnd(-0.35, -0.1)) => {
     const a = rnd(0, TAU), s = rnd(...(c.speed || [0.7, 1.15]));
@@ -94,6 +102,10 @@ export function simulate({ mode = 'crece', seed = 1, maxT } = {}) {
         // Un roce (la pelota rodando pegada a la pared) no cuenta como rebote: ni suena ni la hace crecer
         if (vn < 0.15) continue;
         bounces++; note('bounce');
+        if (mode === 'lineas') {
+          points.push([t, nx, ny]);
+          const sp = Math.hypot(b.vx, b.vy), k = Math.min(c.vmax, sp * c.speedUp) / sp; b.vx *= k; b.vy *= k;
+        }
         if (mode === 'crece') b.r = Math.min(c.rMax, b.r + c.grow);
         if (mode === 'multiplica' && balls.length < c.cap && t - lastSpawn >= c.spawnEvery) { lastSpawn = t; spawn(c.r); }
       }
@@ -107,7 +119,7 @@ export function simulate({ mode = 'crece', seed = 1, maxT } = {}) {
     }
     if (endAt !== null && t >= endAt) break;
   }
-  return { mode, seed, frames, events, total: frames.length / BOUNCE_FPS, fps: BOUNCE_FPS, gap: mode === 'escape' ? c.gap : 0 };
+  return { mode, seed, frames, events, points, total: frames.length / BOUNCE_FPS, fps: BOUNCE_FPS, gap: mode === 'escape' ? c.gap : 0 };
 }
 
 /* ---------------- Sonido ---------------- */
@@ -145,6 +157,22 @@ export function drawBounce(ctx, run, t, view, opts = {}) {
       const p = run.frames[k].b; ctx.globalAlpha = 0.08 + 0.5 * (k - fi + 90) / 90;
       ctx.strokeStyle = `hsl(${(p[3] + k * 1.2) % 360}, 90%, 60%)`;
       ctx.beginPath(); ctx.arc(cx + p[0] * R, cy + p[1] * R, p[2] * R, 0, TAU); ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  // Líneas: cada rebote une su punto de la pared con el anterior; la última sigue a la pelota
+  if (run.mode === 'lineas') {
+    const pts = run.points, n = pts.findIndex((p) => p[0] > t), upto = n < 0 ? pts.length : n, hue0 = (run.seed >>> 0) % 360;
+    const P = (p) => [cx + p[1] * R, cy + p[2] * R];
+    ctx.lineWidth = 1.8 * U; ctx.lineCap = 'round'; ctx.globalAlpha = 0.85;
+    for (let i = 1; i < upto; i++) {
+      const [x0, y0] = P(pts[i - 1]), [x1, y1] = P(pts[i]);
+      ctx.strokeStyle = `hsl(${(hue0 + i * 9) % 360}, 90%, 62%)`; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+    }
+    if (upto > 0 && fr.b.length) {
+      const [x0, y0] = P(pts[upto - 1]);
+      ctx.strokeStyle = `hsl(${(hue0 + upto * 9) % 360}, 90%, 62%)`; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(cx + fr.b[0] * R, cy + fr.b[1] * R); ctx.stroke();
     }
     ctx.globalAlpha = 1;
   }

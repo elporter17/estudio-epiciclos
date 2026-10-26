@@ -89,6 +89,22 @@ MYSTERY_CAT['juegos-carrera'] = {
   es: ['¿Qué color gana? Elige uno antes de que empiece 👇', 'Carrera de colores: comenta tu favorito 🏁', 'Sube el volumen y elige un color 🎶', 'El último lugar te va a sorprender 😳', '¿Tu color gana o pierde? 🤔'],
   en: ['Which color wins? Pick one before it starts 👇', 'Color race: comment your favorite 🏁', 'Turn the sound on and pick a color 🎶', 'Last place is going to surprise you 😳', 'Does your color win or lose? 🤔']
 };
+MYSTERY_CAT['juegos-paises'] = {
+  es: ['¿Qué país gana? Comenta el tuyo antes de que empiece 👇', 'Carrera de banderas: ¿llega primero tu país? 🏁', 'Sube el volumen y elige un país 🎶', 'El último lugar te va a sorprender 😳', 'Si gana tu país, comenta su bandera 👇'],
+  en: ['Which country wins? Comment yours before it starts 👇', 'Flag race: does your country finish first? 🏁', 'Turn the sound on and pick a country 🎶', 'Last place is going to surprise you 😳', 'If your country wins, comment its flag 👇']
+};
+MYSTERY_CAT['juegos-muros'] = {
+  es: ['Cada choque rompe un poco el muro. ¿Logra salir? 🧱', '¿Cuántos rebotes para romper todos los muros? Comenta tu número 👇', 'Sube el volumen: cada choque es una nota 🎶', 'El último muro es el más duro 😳', 'Mira hasta el final: ¿escapa o no? 👀'],
+  en: ['Every hit cracks the wall a little. Does it get out? 🧱', 'How many bounces to break every wall? Comment your number 👇', 'Turn the sound on: every hit is a note 🎶', 'The last wall is the toughest 😳', 'Watch to the end: does it escape? 👀']
+};
+MYSTERY_CAT['juegos-batalla'] = {
+  es: ['¿Quién gana esta pelea? Elige tu color antes de que empiece ⚔️', 'Batalla de pelotas: comenta tu apuesta 👇', 'Sube el volumen: cada golpe es una nota 🎶', 'El final está más reñido de lo que crees 😳', '¿Izquierda o derecha? Comenta quién gana 👇'],
+  en: ['Who wins this fight? Pick your color before it starts ⚔️', 'Ball battle: comment your bet 👇', 'Turn the sound on: every hit is a note 🎶', 'The ending is closer than you think 😳', 'Left or right? Comment who wins 👇']
+};
+MYSTERY_CAT['pelotas-lineas'] = {
+  es: ['Cada rebote deja una línea… mira el dibujo que sale 😳', 'Sube el volumen: cada rebote es una nota 🎶', '¿Qué forma ves al final? Comenta 👇', 'No es magia, es física. Espera el final ✨', 'Si te relajó, comenta «otra» 👇'],
+  en: ['Every bounce leaves a line… watch the drawing it makes 😳', 'Turn the sound on: every bounce is a note 🎶', 'What shape do you see at the end? Comment 👇', 'It is not magic, it is physics. Wait for the end ✨', 'If it relaxed you, comment «another» 👇']
+};
 const CAT_TAGS = { nombres: { es: 'tunombre', en: 'yourname' }, combinaciones: { es: 'parejas', en: 'couples' } };
 // Las pelotas y los juegos no son matemáticas de Fourier: llevan sus propios hashtags base
 const BASE_TAGS = {

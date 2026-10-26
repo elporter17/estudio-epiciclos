@@ -338,17 +338,21 @@ a.btn{text-decoration:none}
     </div>
 
     <div class="tabpanel" id="p-pelotas" role="tabpanel" hidden>
-      <p class="hint" data-en="Bouncing balls and physics games (funnels, spinning rings, plinko, color race), with a note on every bounce (turn the sound on). Pick a variant and press Play; each run is different.">Pelotas que rebotan y juegos de física (embudos, anillos que giran, plinko, carrera de colores), con una nota en cada rebote (sube el volumen). Elige una variante y pulsa Reproducir; cada corrida es distinta.</p>
+      <p class="hint" data-en="Bouncing balls and physics games (funnels, spinning rings, plinko, color and country races, breaking walls, battles), with a note on every bounce (turn the sound on). Pick a variant and press Play; each run is different.">Pelotas que rebotan y juegos de física (embudos, anillos que giran, plinko, carreras de colores y de países, muros que se rompen, batallas), con una nota en cada rebote (sube el volumen). Elige una variante y pulsa Reproducir; cada corrida es distinta.</p>
       <div class="field">
         <span class="lbl" data-en="Variant">Variante</span>
         <div class="seg" id="bounceMode">
           <button type="button" data-v="crece" data-en="Grows">Crece</button>
           <button type="button" data-v="multiplica" data-en="Multiplies">Se multiplica</button>
           <button type="button" data-v="escape" data-en="Escape">Escapar</button>
+          <button type="button" data-v="lineas" data-en="Lines">Líneas</button>
           <button type="button" data-v="embudos" data-en="Funnels">Embudos</button>
           <button type="button" data-v="anillos" data-en="Rings">Anillos</button>
           <button type="button" data-v="plinko">Plinko</button>
           <button type="button" data-v="carrera" data-en="Race">Carrera</button>
+          <button type="button" data-v="paises" data-en="Countries">Países</button>
+          <button type="button" data-v="muros" data-en="Walls">Muros</button>
+          <button type="button" data-v="batalla" data-en="Battle">Batalla</button>
         </div>
       </div>
       <div class="row"><button class="btn primary" id="bounceNew" type="button" data-en="🎲 New run">🎲 Nueva corrida</button><span class="hint" id="bounceInfo"></span></div>
@@ -498,7 +502,7 @@ import {
   COMPLEX_TYPES, NSEQ_DETAIL, setLang as setEngineLang
 } from './src/engine.js';
 import { makeCaption, postText } from './src/captions.js';
-import { simulateFisica, synthAudio, drawFisica, fisicaHook, fisicaCat, FISICA_NAMES } from './src/fisica.js';
+import { simulateFisica, synthAudio, drawFisica, fisicaHook, fisicaCat, FISICA_NAMES, FLAGS } from './src/fisica.js';
 import { initTikTok } from './src/tiktok-ui.js';
 import { lang, tr, onLang, initLangSwitch } from './src/i18n.js';
 const $ = (s) => document.querySelector(s);
@@ -541,7 +545,19 @@ const shapeFor = (src) => shapeForSrc(src, settings.accent);
 let bounceRun = null, bounceMode = 'crece', audioCtx = null, recDest = null, bounceBuf = null, bounceAudio = null;
 const bounceName = () => tr(...FISICA_NAMES[bounceRun.mode]);
 const bounceCaption = () => settings.caption.trim() || fisicaHook(bounceRun, lang);
-const drawBounceAt = (t) => drawFisica(ctx, bounceRun, t, view, { caption: bounceCaption(), lang });
+// La fuente de emoji de Windows no trae banderas: para la carrera de países se carga solo ese pedazo de Noto Color Emoji
+const FLAG_FONT = '"Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", sans-serif';
+let flagsReady = null;
+function loadFlags() {
+  if (!flagsReady) {
+    const l = document.createElement('link'); l.rel = 'stylesheet';
+    l.href = `https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&text=${encodeURIComponent(FLAGS)}`;
+    flagsReady = new Promise((r) => { l.onload = l.onerror = r; document.head.appendChild(l); })
+      .then(() => document.fonts.load('40px "Noto Color Emoji"', FLAGS)).catch(() => {});
+  }
+  return flagsReady;
+}
+const drawBounceAt = (t) => drawFisica(ctx, bounceRun, t, view, { caption: bounceCaption(), lang, emojiFont: FLAG_FONT });
 // El sonido se sintetiza una vez por corrida (las mismas notas que el video automático) y suena con Web Audio;
 // también entra a la grabación por un MediaStreamDestination
 function startBounceAudio() {
@@ -796,6 +812,7 @@ function newBounce() {
   bounceRun = simulateFisica({ mode: bounceMode, seed: Math.floor(Math.random() * 2 ** 31) });
   $('#bounceInfo').textContent = tr(`${bounceRun.events.length} notas · ${fmtTime(bounceRun.total)}`, `${bounceRun.events.length} notes · ${fmtTime(bounceRun.total)}`);
   poster(); status(); revealStage();
+  if (bounceMode === 'paises') { const run = bounceRun; loadFlags().then(() => { if (bounceRun === run && !anim) poster(); }); }
 }
 segment('bounceMode', bounceMode, (v) => { bounceMode = v; newBounce(); });
 $('#bounceNew').addEventListener('click', newBounce);
