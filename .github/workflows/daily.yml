@@ -22,7 +22,7 @@ on:
       cats:
         description: Qué tipo de video
         type: choice
-        options: [dibujos, fisica]
+        options: [dibujos, fisica, juegos, pelotas]
         default: dibujos
       lang:
         description: Idioma del video y la descripción
@@ -116,6 +116,7 @@ jobs:
           case "$CATS_INPUT" in
             dibujos) cats=figuras,nombres,combinaciones,inventadas ;;
             fisica) cats=pelotas,juegos ;;
+            # juegos o pelotas: solo esa categoría (útil para lanzar a mano)
             *) cats="$CATS_INPUT" ;;
           esac
           args=(--lang "$LANG_INPUT" --cats "$cats")
