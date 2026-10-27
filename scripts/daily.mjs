@@ -16,7 +16,9 @@ import { renderVideo } from './render.mjs';
 import { renderBounce } from './bounce.mjs';
 import { renderArte } from './arte.mjs';
 import { ARTE_MODES, styleHook } from '../src/nombres-arte.js';
-import { famosoHook } from '../src/captions.js';
+import { famosoHook, coverText } from '../src/captions.js';
+// Los videos de TikTok empiezan con forma (N = 8) en vez de casi vacíos (N = 1): mejor vista previa y mejores primeros segundos
+const NSEQ_TIKTOK = '8, 20, 50, 120, 250, 500';
 import { makeCaption, postText } from './caption.mjs';
 import { publishVideo } from './publish.mjs';
 import { accessToken } from './lib/tiktok.mjs';
@@ -45,13 +47,15 @@ try {
   const estilos = o.estilos === 'nuevos' ? ['espejo', 'mandala', 'hilos', 'anillos', 'costura'] : o.estilos ? o.estilos.split(',').map((s) => s.trim()) : undefined;
   const item = pickNext({ history: readHistory(), emoji: !!emoji, complex: suspense, cats, styles: estilos, seed: o.seed != null ? Number(o.seed) >>> 0 : undefined });
   const style = item.style && item.style !== 'clasico' ? item.style : null;
+  // Portada en el primer cuadro (nombres, parejas y famosos): el dibujo avanzado con una pregunta grande
+  const cover = ['nombres', 'combinaciones', 'famosos'].includes(item.cat) ? coverText(item.cat, item.tipo, o.lang) : undefined;
   console.error(`Elegido: ${item.name || item.type} (${item.group}${style ? `, estilo ${style}` : ''})`);
   // Física (pelotas y juegos) y nombres con hilos o anillos: su propio render, con sonido; lo demás, el dibujo con
   // epiciclos (espejo y mandala también, con una sola cadena de círculos para que la figura salga grande)
   const r = item.kind === 'bounce'
     ? await renderBounce({ mode: item.mode, seed: item.seed, lang: o.lang, fps: o.fps, mute: o.mute })
     : ARTE_MODES.includes(style)
-    ? await renderArte({ mode: style, text: item.text, font: item.font, name: item.name, nameEn: item.nameEn, id: item.id, seed: item.seed, lang: o.lang, fps: o.fps, mute: o.mute, pair: item.cat === 'combinaciones' })
+    ? await renderArte({ mode: style, text: item.text, font: item.font, name: item.name, nameEn: item.nameEn, id: item.id, seed: item.seed, lang: o.lang, fps: o.fps, mute: o.mute, cover, pair: item.cat === 'combinaciones' })
     : await renderVideo({
       preset: item.kind === 'preset' ? item.name : undefined, random: item.kind === 'random' ? item.type : undefined,
       ...(item.kind === 'text' ? { text: item.text, font: item.font, name: item.name, nameEn: item.nameEn } : {}),
@@ -59,7 +63,8 @@ try {
       // Famosos: la silueta con una sola cadena de círculos y el nombre del jugador al final
       ...(item.kind === 'image' ? { image: item.image, name: item.name, nameEn: item.nameEn, revealText: item.name, style: 'z', caption: famosoHook(item.tipo, o.lang, item.seed) } : {}),
       seed: item.seed, lang: o.lang, fps: o.fps, labels: o.labels,
-      ...(suspense ? { guide: 0, spoiler: false, nseq: o.nseq || NSEQ_DETAIL } : o.nseq ? { nseq: o.nseq } : {})
+      ...(suspense ? { guide: 0, spoiler: false, nseq: o.nseq || (cover ? NSEQ_TIKTOK : NSEQ_DETAIL) } : o.nseq ? { nseq: o.nseq } : {}),
+      cover
     });
   // La categoría (nombres, parejas, pelotas, juegos…) elige ganchos propios para la descripción
   const cat = item.kind === 'bounce' ? fisicaCat(item.mode) : item.kind === 'image' ? `${item.cat}-${item.tipo}` : style ? `${item.cat}-${style}` : item.cat;
@@ -70,7 +75,7 @@ try {
   let tiktok = null;
   // En suspenso la portada es un cuadro a mitad del dibujo, no la figura terminada
   if (o.publish) {
-    try { tiktok = await publishVideo({ video: r.out, mode: o.publish, privacy: o.privacy, coverMs: suspense ? r.info.duration * 450 : undefined }); }
+    try { tiktok = await publishVideo({ video: r.out, mode: o.publish, privacy: o.privacy, coverMs: r.info.cover ? 0 : suspense ? r.info.duration * 450 : undefined }); }
     catch (e) {
       // Límite de borradores pendientes (5 cada 24 h por cuenta): el video queda como artefacto y la corrida no falla
       if (!/spam_risk|pending/i.test(`${e.code || ''} ${e.message}`)) throw e;

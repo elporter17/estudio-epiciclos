@@ -15,7 +15,7 @@ import { parseCli } from './lib/cli.mjs';
 import { setupNode, ROOT } from './lib/node-env.mjs';
 import { slug } from './lib/catalog.mjs';
 import { wavBuffer } from './bounce.mjs';
-import { canvasSize } from '../src/engine.js';
+import { canvasSize, drawCoverText, COVER_SECONDS } from '../src/engine.js';
 import { synthAudio } from '../src/bounce.js';
 import { buildArte, drawArte, styleHook, ARTE_MODES, NAME_STYLE_NAMES } from '../src/nombres-arte.js';
 import { MELODIAS } from '../src/melodias.js';
@@ -36,20 +36,25 @@ export async function renderArte(o) {
   const caption = o.caption === 'none' ? '' : o.caption && o.caption !== 'auto' ? o.caption : styleHook(mode, lang, seed, pair);
   const name = o.name || text.replace(/\n/g, ' ');
   const cv = createCanvas(view.W, view.H), ctx = cv.getContext('2d');
-  const draw = (t) => drawArte(ctx, run, t, view, { caption, lang, guide: Math.min(60, Math.max(0, +(o.guide || 0))) / 100, fallback: fx.emoji ? `, "${fx.emoji}"` : '' });
+  // --cover: el primer instante del video es una portada (la animación bastante avanzada + un texto grande)
+  const coverDur = o.cover ? COVER_SECONDS : 0, coverAt = run.mode === 'anillos' ? 2.2 : (run.drawT || run.total) * 0.7;
+  if (coverDur) for (const e of run.events) e.t += coverDur;
+  const draw = (t) => { if (t < coverDur) { drawRaw(coverAt); drawCoverText(ctx, view, o.cover, run.accent); } else drawRaw(t - coverDur); };
+  const drawRaw = (t) => drawArte(ctx, run, t, view, { caption, lang, guide: Math.min(60, Math.max(0, +(o.guide || 0))) / 100, fallback: fx.emoji ? `, "${fx.emoji}"` : '' });
   const base = `circularte-${slug(name)}-${mode}-${lang}`;
 
   if (o.still != null) {
     const out = path.resolve(o.out || path.join(ROOT, 'out', `${base}-${o.still}s.png`));
     fs.mkdirSync(path.dirname(out), { recursive: true });
-    draw(Math.min(+o.still, run.total)); fs.writeFileSync(out, cv.toBuffer('image/png'));
+    if (o.still === 'cover') draw(0); else drawRaw(Math.min(+o.still, run.total));
+    fs.writeFileSync(out, cv.toBuffer('image/png'));
     log(`PNG: ${out}\n`);
     return { out, run };
   }
 
   const out = path.resolve(o.out || path.join(ROOT, 'out', `${base}.mp4`));
   fs.mkdirSync(path.dirname(out), { recursive: true });
-  const frames = Math.ceil(run.total * fps), dur = frames / fps;
+  const frames = Math.ceil((run.total + coverDur) * fps), dur = frames / fps;
   // --mute: pista de audio en silencio (para ponerle en TikTok una canción del momento)
   const wav = o.mute ? null : path.join(os.tmpdir(), `circularte-${process.pid}-${Date.now()}.wav`);
   if (wav) fs.writeFileSync(wav, wavBuffer(synthAudio(run, SR)));
@@ -88,7 +93,7 @@ export async function renderArte(o) {
   const sidecar = out.replace(/\.mp4$/i, '') + '.json';
   const info = {
     file: path.basename(out), kind: 'text', style: mode, id: o.id || `text:${text}`, seed, lang, title: name, name, nameEn: o.nameEn || name,
-    text, font, caption, duration: +dur.toFixed(3), fps, width: view.W, height: view.H, notes: run.events.length, melody: o.mute ? null : run.melody, sound: !o.mute,
+    text, font, caption, duration: +dur.toFixed(3), fps, width: view.W, height: view.H, cover: o.cover || null, notes: run.events.length, melody: o.mute ? null : run.melody, sound: !o.mute,
     createdAt: new Date().toISOString()
   };
   fs.writeFileSync(sidecar, JSON.stringify(info, null, 2) + '\n');
@@ -101,7 +106,7 @@ async function main() {
     mode: { type: 'string', default: 'hilos' }, text: { type: 'string' }, font: { type: 'string', default: 'cursiva' }, name: { type: 'string' },
     seed: { type: 'string' }, lang: { type: 'string', default: 'es' }, caption: { type: 'string', default: 'auto' }, melody: { type: 'string' },
     fps: { type: 'string', default: '30' }, quality: { type: 'string', default: '1080' }, still: { type: 'string' }, out: { type: 'string' },
-    crf: { type: 'string', default: '18' }, mute: { type: 'boolean', default: false }, guide: { type: 'string', default: '0' }, quiet: { type: 'boolean', default: false }, help: { type: 'boolean', short: 'h', default: false }
+    crf: { type: 'string', default: '18' }, mute: { type: 'boolean', default: false }, cover: { type: 'string' }, guide: { type: 'string', default: '0' }, quiet: { type: 'boolean', default: false }, help: { type: 'boolean', short: 'h', default: false }
   });
   if (o.help) { console.log(`Uso: node scripts/arte.mjs --mode ${ARTE_MODES.join('|')} --text "Andrea" [--font cursiva|bloque|elegante] [--seed n] [--lang es|en] [--melody id] [--mute] [--still s] [--out archivo.mp4]`); return; }
   await renderArte(o);

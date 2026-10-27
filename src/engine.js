@@ -711,7 +711,7 @@ function drawMachinery(R, N, t, alpha) {
 
 function drawLabels(R, N, a) {
   const { ctx, S, settings, view } = R;
-  if (a <= 0.004) return;
+  if (a <= 0.004 || R.noLabels) return; // noLabels: el cuadro de portada, donde iría la píldora
   const L = S.L, U = view.U;
   ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = FG;
   if (settings.labels === 'full') {
@@ -814,6 +814,23 @@ function drawCaption(R) {
   const w = ctx.measureText(c).width; if (w > view.W * .9) { size *= view.W * .9 / w; ctx.font = `600 ${size}px "IBM Plex Sans", system-ui, sans-serif${env.fallback}`; }
   // En 9:16 al 15 %: más arriba lo tapan los botones de TikTok (pestañas, «Agregar sonido»)
   ctx.fillText(c, view.W / 2, view.H * (settings.format === '9:16' ? 0.15 : 0.07));
+  ctx.restore();
+}
+
+// Portada: texto grande en una píldora del color del trazo, en la franja que se ve en la cuadrícula del perfil de
+// TikTok (recorta arriba y abajo). Se dibuja sobre el primer cuadro del video, que es el que TikTok usa de vista previa.
+export const COVER_SECONDS = 0.6;
+export function drawCoverText(ctx, view, text, accent, y = 0.7) {
+  if (!text) return;
+  const { W, H, U } = view, fam = `"Archivo Black", Impact, sans-serif${env.fallback}`;
+  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1;
+  let size = 76 * U; ctx.font = `400 ${size}px ${fam}`;
+  const w = ctx.measureText(text).width; if (w > W * 0.82) { size *= W * 0.82 / w; ctx.font = `400 ${size}px ${fam}`; }
+  const tw = ctx.measureText(text).width, ph = size * 1.55, pw = tw + size * 1.1, x = (W - pw) / 2, cy = H * y;
+  ctx.shadowColor = 'rgba(0,0,0,.55)'; ctx.shadowBlur = 30 * U; ctx.fillStyle = accent;
+  ctx.beginPath(); ctx.roundRect(x, cy - ph / 2, pw, ph, ph / 2); ctx.fill();
+  ctx.shadowBlur = 0; ctx.fillStyle = '#ffffff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText(text, W / 2, cy + size * 0.04);
   ctx.restore();
 }
 

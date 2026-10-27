@@ -159,6 +159,17 @@ const FAMOSO_HOOKS = {
   pose: { es: ['¿Quién celebraba así? ⚽', '¿Reconoces esta celebración? 👀', 'Si sabes quién es, comenta 👇', 'Solo círculos… ¿de quién es esta celebración? 🤔'], en: ['Who celebrated like this? ⚽', 'Do you recognize this celebration? 👀', 'If you know who it is, comment 👇', 'Just circles… whose celebration is this? 🤔'] },
   gol: { es: ['¿Reconoces este gol histórico? ⚽', '¿Quién hizo esta jugada? 👀', 'Un momento icónico del fútbol, solo con círculos ⚽', 'Comenta de quién es antes del final 👇'], en: ['Do you recognize this historic goal? ⚽', 'Who made this play? 👀', 'An iconic football moment, only with circles ⚽', 'Comment whose it is before the end 👇'] }
 };
+// Texto grande de la portada (primer cuadro del video, el que TikTok muestra en el perfil). cat: nombres,
+// combinaciones, famosos…; tipo: el de los famosos (cara, pose, gol, logo)
+const COVERS = {
+  nombres: { es: '¿QUÉ NOMBRE ES? 👀', en: 'WHAT NAME IS IT? 👀' },
+  combinaciones: { es: '¿QUÉ PAREJA ES? 💞', en: 'WHICH COUPLE? 💞' },
+  cara: { es: '¿QUIÉN ES? ⚽', en: 'WHO IS IT? ⚽' },
+  pose: { es: '¿QUIÉN CELEBRA ASÍ? ⚽', en: 'WHO CELEBRATES LIKE THIS? ⚽' },
+  gol: { es: '¿DE QUIÉN ES ESTE GOL? ⚽', en: 'WHOSE GOAL IS THIS? ⚽' },
+  logo: { es: '¿QUÉ EQUIPO ES? ⚽', en: 'WHICH TEAM IS IT? ⚽' }
+};
+export const coverText = (cat, tipo, lang) => (COVERS[cat === 'famosos' ? tipo : cat] || COVERS.nombres)[lang === 'en' ? 'en' : 'es'];
 export const famosoHook = (tipo, lang, seed) => { const l = (FAMOSO_HOOKS[tipo] || FAMOSO_HOOKS.cara)[lang === 'en' ? 'en' : 'es']; return l[(seed >>> 0) % l.length]; };
 const ARTE_TAGS = { hilos: 1, anillos: 1, costura: 1 }, ARTE_BASE = { es: ['satisfactorio', 'arte', 'nombres'], en: ['satisfying', 'art', 'names'] };
 const CAT_TAGS = { nombres: { es: 'tunombre', en: 'yourname' }, combinaciones: { es: 'parejas', en: 'couples' } };

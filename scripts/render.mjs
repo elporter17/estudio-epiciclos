@@ -43,6 +43,7 @@ Video
   --accent <#hex>       Color del trazo (por defecto #ff7a52)
   --no-reveal --no-formulas
   --signature           Firma CirculArte + edav-tech.com abajo (apagada por defecto: TikTok no acepta marcas en el video)
+  --cover <texto>       Portada: el primer instante muestra el dibujo avanzado con este texto grande (vista previa de TikTok)
   --out <archivo.mp4>   Por defecto out/circularte-<figura>-<lang>.mp4 (más un .json con los datos)
   --still <segundos>    En vez de video, guarda un PNG de ese instante (para revisar el encuadre)`;
 
@@ -54,7 +55,7 @@ const OPTIONS = {
   fps: { type: 'string', default: '30' }, format: { type: 'string', default: '9:16' }, quality: { type: 'string', default: '1080' },
   rev: { type: 'string' }, guide: { type: 'string' }, spoiler: { type: 'boolean', default: true }, nseq: { type: 'string' }, accent: { type: 'string' },
   reveal: { type: 'boolean', default: true }, formulas: { type: 'boolean', default: true }, signature: { type: 'boolean', default: false },
-  out: { type: 'string' }, still: { type: 'string' }, crf: { type: 'string', default: '18' }, quiet: { type: 'boolean', default: false },
+  cover: { type: 'string' }, out: { type: 'string' }, still: { type: 'string' }, crf: { type: 'string', default: '18' }, quiet: { type: 'boolean', default: false },
   help: { type: 'boolean', short: 'h', default: false }
 };
 
@@ -95,6 +96,12 @@ export async function renderVideo(o) {
   const cv = createCanvas(view.W, view.H), ctx = cv.getContext('2d');
   const R = { ctx, S, settings, view };
   const T = E.timeline(S, settings);
+  // --cover: el primer instante del video es una portada (el dibujo bastante avanzado + un texto grande)
+  const coverDur = o.cover ? E.COVER_SECONDS : 0, coverState = E.stateAt(T, T.draw * 0.72);
+  const drawAt = (t) => {
+    if (t < coverDur) { R.noLabels = true; E.render(R, coverState); R.noLabels = false; E.drawCoverText(ctx, view, o.cover, settings.accent); }
+    else E.render(R, E.stateAt(T, Math.min(t - coverDur, T.total)));
+  };
   const fps = +oneOf(String(o.fps || 30), ['24', '25', '30', '50', '60'], 'fps');
   const log = o.quiet ? () => {} : (m) => process.stderr.write(m);
 
@@ -102,7 +109,7 @@ export async function renderVideo(o) {
   if (o.still != null) {
     const out = path.resolve(o.out || path.join(ROOT, 'out', `${base}-${o.still}s.png`));
     fs.mkdirSync(path.dirname(out), { recursive: true });
-    E.render(R, E.stateAt(T, Math.min(+o.still, T.total)));
+    if (o.still === 'cover') drawAt(0); else E.render(R, E.stateAt(T, Math.min(+o.still, T.total)));
     fs.writeFileSync(out, cv.toBuffer('image/png'));
     log(`PNG: ${out}\n`);
     return { out, info, settings };
@@ -110,7 +117,7 @@ export async function renderVideo(o) {
 
   const out = path.resolve(o.out || path.join(ROOT, 'out', `${base}.mp4`));
   fs.mkdirSync(path.dirname(out), { recursive: true });
-  const frames = Math.ceil(T.total * fps), dur = frames / fps;
+  const frames = Math.ceil((T.total + coverDur) * fps), dur = frames / fps;
   log(`${info.name} · ${S.parts} curva(s) · N hasta ${S.stages[S.stages.length - 1]} · ${dur.toFixed(1)} s · ${view.W}x${view.H} @ ${fps} fps\n`);
   log(`Texto gancho: ${settings.caption || '(ninguno)'} · emoji: ${fx.emoji || 'no disponible'}\n`);
 
@@ -136,7 +143,7 @@ export async function renderVideo(o) {
 
   const t0 = Date.now(); let lastPct = -1;
   for (let i = 0; i < frames; i++) {
-    E.render(R, E.stateAt(T, Math.min(i / fps, T.total)));
+    drawAt(i / fps);
     if (!ff.stdin.write(Buffer.from(cv.data()))) await new Promise((r) => ff.stdin.once('drain', r));
     const pct = Math.floor(100 * (i + 1) / frames);
     if (pct !== lastPct && pct % 5 === 0) { lastPct = pct; log(`\r  ${pct}% · cuadro ${i + 1}/${frames}`); }
@@ -148,7 +155,7 @@ export async function renderVideo(o) {
   const sidecar = out.replace(/\.mp4$/i, '') + '.json';
   const data = {
     file: path.basename(out), lang, title, caption: settings.caption, duration: +dur.toFixed(3), fps, width: view.W, height: view.H,
-    style: settings.style, labels: settings.labels, accent: settings.accent, guide: settings.guide, terms: S.stages, ...info, createdAt: new Date().toISOString()
+    style: settings.style, labels: settings.labels, accent: settings.accent, guide: settings.guide, terms: S.stages, cover: o.cover || null, ...info, createdAt: new Date().toISOString()
   };
   fs.writeFileSync(sidecar, JSON.stringify(data, null, 2) + '\n');
   log(`MP4: ${out}\nDatos: ${sidecar}\n`);
