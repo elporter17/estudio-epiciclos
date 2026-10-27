@@ -36,7 +36,7 @@ export async function renderArte(o) {
   const caption = o.caption === 'none' ? '' : o.caption && o.caption !== 'auto' ? o.caption : styleHook(mode, lang, seed, pair);
   const name = o.name || text.replace(/\n/g, ' ');
   const cv = createCanvas(view.W, view.H), ctx = cv.getContext('2d');
-  const draw = (t) => drawArte(ctx, run, t, view, { caption, lang, fallback: fx.emoji ? `, "${fx.emoji}"` : '' });
+  const draw = (t) => drawArte(ctx, run, t, view, { caption, lang, guide: Math.min(60, Math.max(0, +(o.guide || 0))) / 100, fallback: fx.emoji ? `, "${fx.emoji}"` : '' });
   const base = `circularte-${slug(name)}-${mode}-${lang}`;
 
   if (o.still != null) {
@@ -50,14 +50,15 @@ export async function renderArte(o) {
   const out = path.resolve(o.out || path.join(ROOT, 'out', `${base}.mp4`));
   fs.mkdirSync(path.dirname(out), { recursive: true });
   const frames = Math.ceil(run.total * fps), dur = frames / fps;
-  const wav = path.join(os.tmpdir(), `circularte-${process.pid}-${Date.now()}.wav`);
-  fs.writeFileSync(wav, wavBuffer(synthAudio(run, SR)));
+  // --mute: pista de audio en silencio (para ponerle en TikTok una canción del momento)
+  const wav = o.mute ? null : path.join(os.tmpdir(), `circularte-${process.pid}-${Date.now()}.wav`);
+  if (wav) fs.writeFileSync(wav, wavBuffer(synthAudio(run, SR)));
   log(`${name} · ${NAME_STYLE_NAMES[mode][0]} · semilla ${seed} · ${run.events.length} notas (${MELODIAS[run.melody].es}) · ${dur.toFixed(1)} s\nTexto gancho: ${caption || '(ninguno)'}\n`);
 
   const args = [
     '-hide_banner', '-loglevel', 'error', '-y',
     '-f', 'rawvideo', '-pix_fmt', 'rgba', '-s', `${view.W}x${view.H}`, '-r', String(fps), '-i', 'pipe:0',
-    '-i', wav, '-map', '0:v', '-map', '1:a',
+    ...(wav ? ['-i', wav] : ['-f', 'lavfi', '-t', dur.toFixed(3), '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100']), '-map', '0:v', '-map', '1:a',
     '-vf', 'scale=out_color_matrix=bt709:out_range=tv,format=yuv420p',
     '-c:v', 'libx264', '-preset', 'medium', '-crf', String(o.crf || 18), '-profile:v', 'high', '-level:v', '4.2',
     '-g', String(fps * 2), '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-color_range', 'tv',
@@ -81,13 +82,13 @@ export async function renderArte(o) {
     }
     ff.stdin.end();
     await done;
-  } finally { fs.rmSync(wav, { force: true }); }
+  } finally { if (wav) fs.rmSync(wav, { force: true }); }
   log(`  listo en ${((Date.now() - t0) / 1000).toFixed(1)} s\n`);
 
   const sidecar = out.replace(/\.mp4$/i, '') + '.json';
   const info = {
     file: path.basename(out), kind: 'text', style: mode, id: o.id || `text:${text}`, seed, lang, title: name, name, nameEn: o.nameEn || name,
-    text, font, caption, duration: +dur.toFixed(3), fps, width: view.W, height: view.H, notes: run.events.length, melody: run.melody,
+    text, font, caption, duration: +dur.toFixed(3), fps, width: view.W, height: view.H, notes: run.events.length, melody: o.mute ? null : run.melody, sound: !o.mute,
     createdAt: new Date().toISOString()
   };
   fs.writeFileSync(sidecar, JSON.stringify(info, null, 2) + '\n');
@@ -100,9 +101,9 @@ async function main() {
     mode: { type: 'string', default: 'hilos' }, text: { type: 'string' }, font: { type: 'string', default: 'cursiva' }, name: { type: 'string' },
     seed: { type: 'string' }, lang: { type: 'string', default: 'es' }, caption: { type: 'string', default: 'auto' }, melody: { type: 'string' },
     fps: { type: 'string', default: '30' }, quality: { type: 'string', default: '1080' }, still: { type: 'string' }, out: { type: 'string' },
-    crf: { type: 'string', default: '18' }, quiet: { type: 'boolean', default: false }, help: { type: 'boolean', short: 'h', default: false }
+    crf: { type: 'string', default: '18' }, mute: { type: 'boolean', default: false }, guide: { type: 'string', default: '0' }, quiet: { type: 'boolean', default: false }, help: { type: 'boolean', short: 'h', default: false }
   });
-  if (o.help) { console.log(`Uso: node scripts/arte.mjs --mode ${ARTE_MODES.join('|')} --text "Andrea" [--font cursiva|bloque|elegante] [--seed n] [--lang es|en] [--melody id] [--still s] [--out archivo.mp4]`); return; }
+  if (o.help) { console.log(`Uso: node scripts/arte.mjs --mode ${ARTE_MODES.join('|')} --text "Andrea" [--font cursiva|bloque|elegante] [--seed n] [--lang es|en] [--melody id] [--mute] [--still s] [--out archivo.mp4]`); return; }
   await renderArte(o);
 }
 

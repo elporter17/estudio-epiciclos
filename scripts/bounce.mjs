@@ -55,14 +55,15 @@ export async function renderBounce(o) {
   const out = path.resolve(o.out || path.join(ROOT, 'out', `${base}.mp4`));
   fs.mkdirSync(path.dirname(out), { recursive: true });
   const frames = Math.ceil(run.total * fps), dur = frames / fps;
-  const wav = path.join(os.tmpdir(), `circularte-${process.pid}-${Date.now()}.wav`);
-  fs.writeFileSync(wav, wavBuffer(synthAudio(run, SR)));
+  // --mute: pista de audio en silencio (para ponerle en TikTok una canción del momento)
+  const wav = o.mute ? null : path.join(os.tmpdir(), `circularte-${process.pid}-${Date.now()}.wav`);
+  if (wav) fs.writeFileSync(wav, wavBuffer(synthAudio(run, SR)));
   log(`${title} · semilla ${seed} · ${run.events.length} notas${run.melody ? ` (${MELODIAS[run.melody].es})` : ''} · ${dur.toFixed(1)} s · ${view.W}x${view.H} @ ${fps} fps\nTexto gancho: ${caption || '(ninguno)'}\n`);
 
   const args = [
     '-hide_banner', '-loglevel', 'error', '-y',
     '-f', 'rawvideo', '-pix_fmt', 'rgba', '-s', `${view.W}x${view.H}`, '-r', String(fps), '-i', 'pipe:0',
-    '-i', wav, '-map', '0:v', '-map', '1:a',
+    ...(wav ? ['-i', wav] : ['-f', 'lavfi', '-t', dur.toFixed(3), '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100']), '-map', '0:v', '-map', '1:a',
     '-vf', 'scale=out_color_matrix=bt709:out_range=tv,format=yuv420p',
     '-c:v', 'libx264', '-preset', 'medium', '-crf', String(o.crf || 18), '-profile:v', 'high', '-level:v', '4.2',
     '-g', String(fps * 2), '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-color_range', 'tv',
@@ -86,7 +87,7 @@ export async function renderBounce(o) {
     }
     ff.stdin.end();
     await done;
-  } finally { fs.rmSync(wav, { force: true }); }
+  } finally { if (wav) fs.rmSync(wav, { force: true }); }
   log(`  listo en ${((Date.now() - t0) / 1000).toFixed(1)} s\n`);
 
   const sidecar = out.replace(/\.mp4$/i, '') + '.json';
@@ -94,7 +95,7 @@ export async function renderBounce(o) {
   const info = {
     file: path.basename(out), kind: 'bounce', id: `${fisicaGroup(mode)}:${mode}`, mode, seed, lang, title, name: nameEs, nameEn,
     group: fisicaGroup(mode) === 'juegos' ? 'Juegos' : 'Pelotas', caption, duration: +dur.toFixed(3), fps, width: view.W, height: view.H,
-    bounces: last.bounces, balls: last.alive, escaped: last.escaped, notes: run.events.length, melody: run.melody || null, createdAt: new Date().toISOString()
+    bounces: last.bounces, balls: last.alive, escaped: last.escaped, notes: run.events.length, melody: o.mute ? null : run.melody || null, sound: !o.mute, createdAt: new Date().toISOString()
   };
   fs.writeFileSync(sidecar, JSON.stringify(info, null, 2) + '\n');
   log(`MP4: ${out}\nDatos: ${sidecar}\n`);
@@ -105,7 +106,7 @@ async function main() {
   const o = parseCli({
     mode: { type: 'string', default: 'crece' }, seed: { type: 'string' }, lang: { type: 'string', default: 'es' },
     caption: { type: 'string', default: 'auto' }, fps: { type: 'string', default: '30' }, quality: { type: 'string', default: '1080' },
-    melody: { type: 'string' }, still: { type: 'string' }, out: { type: 'string' }, crf: { type: 'string', default: '18' }, quiet: { type: 'boolean', default: false },
+    melody: { type: 'string' }, still: { type: 'string' }, out: { type: 'string' }, crf: { type: 'string', default: '18' }, mute: { type: 'boolean', default: false }, quiet: { type: 'boolean', default: false },
     help: { type: 'boolean', short: 'h', default: false }
   });
   if (o.help) { console.log(`Uso: node scripts/bounce.mjs --mode ${FISICA_MODES.join('|')} [--seed n] [--lang es|en] [--caption auto|none|"texto"] [--melody none|${MELODIA_IDS.join('|')}] [--still s] [--out archivo.mp4]`); return; }

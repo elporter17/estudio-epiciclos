@@ -239,6 +239,7 @@ a.btn{text-decoration:none}
         <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="3.5" width="9" height="9" rx="1" fill="currentColor"/></svg><span data-en="Stop">Detener</span>
       </button>
       <label class="check"><input type="checkbox" id="rec" checked> <span data-en="Record video">Grabar video</span></label>
+      <label class="check" title="Para ponerle en TikTok una canción del momento" data-en-title="To add a trending song in TikTok"><input type="checkbox" id="recMute"> <span data-en="Without sound">Sin sonido</span></label>
       <div class="progress" aria-hidden="true"><i id="bar"></i></div>
       <div class="status" id="status" aria-live="polite"></div>
       <p class="legal"><a href="privacidad.html" data-en="Privacy">Privacidad</a><span aria-hidden="true"> · </span><a href="terminos.html" data-en="Terms">Términos</a></p>
@@ -572,7 +573,7 @@ function loadFlags() {
   return flagsReady;
 }
 const drawBounceAt = (t) => bounceRun.arte
-  ? drawArte(ctx, bounceRun, t, view, { caption: bounceCaption(), lang, accent: settings.accent })
+  ? drawArte(ctx, bounceRun, t, view, { caption: bounceCaption(), lang, accent: settings.accent, guide: settings.guide / 100 })
   : drawFisica(ctx, bounceRun, t, view, { caption: bounceCaption(), lang, emojiFont: FLAG_FONT });
 // El sonido se sintetiza una vez por corrida (las mismas notas que el video automático) y suena con Web Audio;
 // también entra a la grabación por un MediaStreamDestination
@@ -639,7 +640,8 @@ function stop(silent) {
 }
 
 function startRec(T) {
-  const withAudio = !!(bounceRun && bounceAudio && recDest);
+  // «Sin sonido»: el video se graba sin las notas (se siguen oyendo mientras se reproduce)
+  const withAudio = !!(bounceRun && bounceAudio && recDest) && !$('#recMute').checked;
   const mime = pickMime(withAudio);
   const stream = cv.captureStream(60);
   // Copia de la pista: al terminar se detienen las pistas del stream y la original se reutiliza en la próxima grabación

@@ -128,6 +128,9 @@ async function buildHilos(run, text, font, rng) {
   // Al principio el hilo va despacio (se ve cómo pasa de clavo en clavo) y después acelera
   const Td = 22, n = segs.length;
   run.pins = pins; run.segs = segs; run.drawT = Td; run.total = Td + 4.5;
+  // Primera vez que el hilo pasa por cada clavo: antes de eso el clavo es parte de la guía
+  run.pinFirst = new Int32Array(pins.length).fill(segs.length);
+  segs.forEach(([a, b], i) => { if (run.pinFirst[a] > i) run.pinFirst[a] = i; if (run.pinFirst[b] > i) run.pinFirst[b] = i; });
   run.lineAt = (t) => n * Math.pow(clamp(t / Td), 2.2);
   for (let i = 1; i <= n; i++) run.events.push({ t: Td * Math.pow(i / n, 1 / 2.2), f: 440, v: 0.55 });
   run.text = text;
@@ -148,10 +151,10 @@ function drawHilos(ctx, run, t, view, o) {
   for (let i = 0; i < 96; i++) { const a = TAU * i / 96, x = cx + Math.cos(a) * R, y = cy + Math.sin(a) * R; ctx.moveTo(x + 2.2 * U, y); ctx.arc(x, y, 2.2 * U, 0, TAU); }
   ctx.fill();
   ctx.drawImage(cache.cv, 0, 0);
-  // Clavos de las letras y el tramo que se está poniendo, en el color del trazo
-  ctx.fillStyle = 'rgba(243, 238, 234, 0.75)'; ctx.beginPath();
-  for (let i = 0; i < run.pins.length; i++) { ctx.moveTo(X(i) + 1.3 * U, Y(i)); ctx.arc(X(i), Y(i), 1.3 * U, 0, TAU); }
-  ctx.fill();
+  // Clavos de las letras: los que el hilo ya tocó; los demás solo se ven si hay guía (si no, delatarían el nombre)
+  const pinsAt = (used) => { ctx.beginPath(); for (let i = 0; i < run.pins.length; i++) if ((run.pinFirst[i] < full) === used) { ctx.moveTo(X(i) + 1.3 * U, Y(i)); ctx.arc(X(i), Y(i), 1.3 * U, 0, TAU); } ctx.fill(); };
+  ctx.fillStyle = 'rgba(243, 238, 234, 0.75)'; pinsAt(true);
+  if (o.guide > 0) { ctx.fillStyle = `rgba(243, 238, 234, ${0.75 * o.guide})`; pinsAt(false); }
   if (full < run.segs.length) {
     const [a, b] = run.segs[full], u = nl - full, hx = X(a) + (X(b) - X(a)) * u, hy = Y(a) + (Y(b) - Y(a)) * u;
     ctx.strokeStyle = o.accent; ctx.lineWidth = 2.4 * U; ctx.beginPath(); ctx.moveTo(X(a), Y(a)); ctx.lineTo(hx, hy); ctx.stroke();
@@ -253,6 +256,8 @@ function drawCostura(ctx, run, t, view, o) {
     for (let i = a; i < b; i++) { const [x0, y0, x1, y1] = run.stitches[i], mx = (x1 - x0) * 0.08, my = (y1 - y0) * 0.08; ctx.moveTo(X(x0 + mx) + dx, Y(y0 + my) + dy); ctx.lineTo(X(x1 - mx) + dx, Y(y1 - my) + dy); }
     ctx.stroke();
   };
+  // Guía: el calco a lápiz de las letras sobre la tela, como se hace antes de bordar
+  if (o.guide > 0) draw(0, run.stitches.length, `rgba(80, 70, 60, ${Math.min(0.8, o.guide * 1.6)})`, 1.4 * U);
   draw(0, full, 'rgba(60, 30, 20, 0.35)', 5 * U, 1.2 * U, 1.8 * U);
   draw(0, full, o.accent, 4.4 * U);
   draw(0, full, 'rgba(255, 255, 255, 0.28)', 1.3 * U, -0.7 * U, -0.7 * U);
@@ -287,9 +292,9 @@ export async function buildArte({ mode, text, font = 'cursiva', seed = 1, accent
   if (mode === 'hilos') await buildHilos(run, text, font, rng); else if (mode === 'costura') await buildCostura(run, text, font); else await buildAnillos(run, text, font, rng);
   return applyMelody(run, melody || MELODIA_IDS[(seed >>> 0) % MELODIA_IDS.length], mode === 'hilos' ? 0.16 : 0.12);
 }
-// opts: { caption, prompt, lang, accent, fallback, nameFamily }
+// opts: { caption, prompt, lang, accent, fallback, nameFamily, guide } (guide 0–1: clavos de Hilos y calco de Costura; por defecto 0)
 export function drawArte(ctx, run, t, view, opts = {}) {
-  const lang = opts.lang === 'en' ? 'en' : 'es', o = { accent: opts.accent || run.accent, nameFamily: opts.nameFamily || '"Pacifico", "Segoe Script", cursive' };
+  const lang = opts.lang === 'en' ? 'en' : 'es', o = { accent: opts.accent || run.accent, guide: opts.guide || 0, nameFamily: opts.nameFamily || '"Pacifico", "Segoe Script", cursive' };
   const bottom = run.mode === 'hilos' ? drawHilos(ctx, run, t, view, o) : run.mode === 'costura' ? drawCostura(ctx, run, t, view, o) : drawAnillos(ctx, run, t, view, o);
   const { W, H, U } = view, fam = '"IBM Plex Sans", system-ui, sans-serif';
   ctx.textAlign = 'center'; ctx.globalAlpha = 1;

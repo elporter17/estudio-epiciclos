@@ -39,6 +39,11 @@ on:
         type: choice
         options: [PUBLIC_TO_EVERYONE, MUTUAL_FOLLOW_FRIENDS, SELF_ONLY]
         default: PUBLIC_TO_EVERYONE
+      sonido:
+        description: Sonido del video (sin = audio en silencio, para ponerle en TikTok una canción del momento)
+        type: choice
+        options: [sin, con]
+        default: sin
       reseed:
         description: Usar el token del secreto TIKTOK_TOKEN_SEED en vez del guardado (tras volver a conectar la cuenta)
         type: boolean
@@ -49,6 +54,7 @@ on:
       lang: { type: string, default: es }
       publish: { type: string, default: draft }
       privacy: { type: string, default: PUBLIC_TO_EVERYONE }
+      sonido: { type: string, default: sin }
       reseed: { type: boolean, default: false }
 
 permissions:
@@ -71,6 +77,8 @@ jobs:
       LANG_INPUT: ${{ inputs.lang || 'es' }}
       PUBLISH_INPUT: ${{ inputs.publish || 'draft' }}
       PRIVACY_INPUT: ${{ inputs.privacy || 'PUBLIC_TO_EVERYONE' }}
+      # Las corridas programadas no tienen inputs: salen sin sonido
+      SOUND_INPUT: ${{ inputs.sonido || 'sin' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -124,6 +132,7 @@ jobs:
             *) cats="$CATS_INPUT" ;;
           esac
           args=(--lang "$LANG_INPUT" --cats "$cats")
+          if [ "$SOUND_INPUT" = "sin" ]; then args+=(--mute); fi
           if [ "$PUBLISH_INPUT" != "none" ]; then args+=(--publish "$PUBLISH_INPUT" --privacy "$PRIVACY_INPUT"); fi
           npm run daily -- "${args[@]}"
 

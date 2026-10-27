@@ -30,7 +30,9 @@ try {
     seed: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, publish: { type: 'string' },
     privacy: { type: 'string', default: 'PUBLIC_TO_EVERYONE' }, spoiler: { type: 'boolean', default: false }, nseq: { type: 'string' },
     // Categorías a elegir, separadas por comas (por ejemplo «pelotas,juegos»); sin esto, todas
-    cats: { type: 'string' }
+    cats: { type: 'string' },
+    // Sin sonido: pelotas, juegos, hilos, anillos y costura salen con audio en silencio (los epiciclos ya lo son)
+    mute: { type: 'boolean', default: false }
   });
   const cats = o.cats ? o.cats.split(',').map((c) => c.trim()).filter(Boolean) : undefined;
   if (o.publish && !['draft', 'direct'].includes(o.publish)) throw new Error('--publish debe ser draft o direct');
@@ -43,9 +45,9 @@ try {
   // Física (pelotas y juegos) y nombres con hilos o anillos: su propio render, con sonido; lo demás, el dibujo con
   // epiciclos (espejo y mandala también, con una sola cadena de círculos para que la figura salga grande)
   const r = item.kind === 'bounce'
-    ? await renderBounce({ mode: item.mode, seed: item.seed, lang: o.lang, fps: o.fps })
+    ? await renderBounce({ mode: item.mode, seed: item.seed, lang: o.lang, fps: o.fps, mute: o.mute })
     : ARTE_MODES.includes(style)
-    ? await renderArte({ mode: style, text: item.text, font: item.font, name: item.name, nameEn: item.nameEn, id: item.id, seed: item.seed, lang: o.lang, fps: o.fps, pair: item.cat === 'combinaciones' })
+    ? await renderArte({ mode: style, text: item.text, font: item.font, name: item.name, nameEn: item.nameEn, id: item.id, seed: item.seed, lang: o.lang, fps: o.fps, mute: o.mute, pair: item.cat === 'combinaciones' })
     : await renderVideo({
       preset: item.kind === 'preset' ? item.name : undefined, random: item.kind === 'random' ? item.type : undefined,
       ...(item.kind === 'text' ? { text: item.text, font: item.font, name: item.name, nameEn: item.nameEn } : {}),
