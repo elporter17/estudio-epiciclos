@@ -116,9 +116,11 @@ jobs:
           TIKTOK_TOKEN_SEED: ${{ secrets.TIKTOK_TOKEN_SEED }}
           RESEED: ${{ inputs.reseed || false }}
         run: |
-          mkdir -p data
+          mkdir -p data state-tmp
           if [ -f state.enc ]; then
-            openssl enc -d -aes-256-cbc -pbkdf2 -in state.enc -pass env:STATE_KEY | tar -xz -C data
+            openssl enc -d -aes-256-cbc -pbkdf2 -in state.enc -pass env:STATE_KEY | tar -xz -C state-tmp
+            # Solo lo que no está en git (token, historial, pendientes): lo del repo (biblioteca, famosos) manda siempre
+            for f in state-tmp/*; do [ -e "$f" ] || continue; n=$(basename "$f"); git ls-files --error-unmatch "data/$n" >/dev/null 2>&1 || cp -r "$f" "data/$n"; done
           fi
           if [ -n "$TIKTOK_TOKEN_SEED" ] && { [ "$RESEED" = "true" ] || [ ! -f data/tiktok-token.json ]; }; then
             printf '%s' "$TIKTOK_TOKEN_SEED" > data/tiktok-token.json
@@ -187,8 +189,10 @@ jobs:
       - name: Cifrar estado
         if: always()
         run: |
-          if [ -d data ] && [ -n "$(ls -A data)" ]; then
-            tar -cz -C data . | openssl enc -aes-256-cbc -pbkdf2 -salt -pass env:STATE_KEY -out state.enc
+          # Solo los archivos que no están en git (ver «Descifrar estado»)
+          files=$(cd data 2>/dev/null && for f in *; do [ -e "$f" ] || continue; git ls-files --error-unmatch "$f" >/dev/null 2>&1 || echo "$f"; done)
+          if [ -n "$files" ]; then
+            tar -cz -C data $files | openssl enc -aes-256-cbc -pbkdf2 -salt -pass env:STATE_KEY -out state.enc
           fi
       - name: Guardar estado
         if: always() && hashFiles('state.enc') != ''
