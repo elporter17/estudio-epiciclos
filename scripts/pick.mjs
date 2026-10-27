@@ -18,9 +18,12 @@ export function readHistory(file = HISTORY) {
   try { const h = JSON.parse(fs.readFileSync(file, 'utf8')); return Array.isArray(h) ? h : []; } catch { return []; }
 }
 
-// Reparto por categoría; cada workflow elige qué categorías usa (cats): los dibujos (figuras, nombres, parejas,
-// inventadas) y la física (pelotas 40 %, juegos 60 %) van en workflows aparte
-export const SHARES = { figuras: 0.32, nombres: 0.2, combinaciones: 0.12, inventadas: 0.16, pelotas: 0.2, juegos: 0.3 };
+// Reparto por categoría; cada workflow elige qué categorías usa (cats): en los dibujos, nombres y parejas son
+// dos de cada tres videos (50 % y 17 %), figuras 20 % e inventadas 13 %; la física (pelotas 40 %, juegos 60 %) va aparte
+export const SHARES = { figuras: 0.2, nombres: 0.5, combinaciones: 0.17, inventadas: 0.13, pelotas: 0.2, juegos: 0.3 };
+// Estilo de cada nombre o pareja (clásico, espejo y mandala con epiciclos; hilos y anillos en src/nombres-arte.js).
+// Las parejas van en tres líneas: clásico, anillos o costura
+export const NAME_STYLES_BY_CAT = { nombres: ['clasico', 'espejo', 'mandala', 'hilos', 'anillos', 'costura'], combinaciones: ['clasico', 'anillos', 'costura'] };
 
 // avoid = cuántas publicaciones recientes no se pueden repetir; cada función inventada es distinta gracias a la semilla.
 export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>> 0, emoji = true, complex = false, cats, randomWeight = 0.5 } = {}) {
@@ -35,7 +38,8 @@ export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>>
   const pool = items.filter((it) => it.kind === 'random' || it.kind === 'bounce' || !recent.has(it.id));
   // Tampoco repetir el mismo grupo dos veces seguidas si hay alternativa
   const lastGroup = history.length ? history[history.length - 1].group : null;
-  const varied = pool.filter((it) => it.group !== lastGroup);
+  // (los nombres sí pueden seguir a otro nombre: cambian de estilo y son la mayoría)
+  const varied = pool.filter((it) => it.group !== lastGroup || it.group === 'Nombres');
   const choices = varied.length ? varied : pool.length ? pool : items;
   // Con categorías, cada una se lleva su parte (SHARES) repartida entre sus elementos disponibles;
   // sin ellas, las funciones inventadas pesan menos para que dominen los presets reconocibles
@@ -45,9 +49,13 @@ export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>>
   while (i < choices.length - 1 && (r -= weights[i]) > 0) i++;
   const it = choices[i];
   const renderSeed = Math.floor(rng() * 2 ** 31);
+  // Estilo al azar, sin repetir el del último nombre si hay alternativa
+  const lastStyle = [...history].reverse().find((h) => h.style && h.group === it.group)?.style;
+  const styles = (NAME_STYLES_BY_CAT[it.cat] || []).filter((s, _, a) => a.length < 2 || s !== lastStyle);
+  const style = styles.length ? styles[Math.floor(rng() * styles.length)] : undefined;
   const args = it.kind === 'preset' ? ['--preset', it.name] : it.kind === 'text' ? ['--text', it.text, '--font', it.font] : it.kind === 'bounce' ? ['--mode', it.mode] : ['--random', it.type];
   args.push('--seed', String(renderSeed));
-  return { ...it, seed: renderSeed, args };
+  return { ...it, seed: renderSeed, args, ...(style ? { style } : {}) };
 }
 
 export function recordPick(item, extra = {}, file = HISTORY) {

@@ -156,8 +156,8 @@ a.btn{text-decoration:none}
 .field.suspense .hint{margin:4px 0 0}
 .field.suspense>label.check{justify-content:flex-start;font-size:14px;color:var(--fg)}
 #nseqChips{margin-top:6px}
-#bounceMode{flex-wrap:wrap}
-#bounceMode button{flex:1 1 30%}
+#bounceMode,#txtStyle{flex-wrap:wrap}
+#bounceMode button,#txtStyle button{flex:1 1 30%}
 #nseqChips .chip{font-size:12px;padding:3px 10px}
 
 /* Publicar en TikTok */
@@ -274,6 +274,18 @@ a.btn{text-decoration:none}
           <button type="button" data-v="clasica" data-en="Classic">Clásica</button>
         </div>
       </div>
+      <div class="field">
+        <span class="lbl" data-en="Style">Estilo</span>
+        <div class="seg" id="txtStyle">
+          <button type="button" data-v="clasico" data-en="Classic">Clásico</button>
+          <button type="button" data-v="espejo" data-en="Mirror">Espejo</button>
+          <button type="button" data-v="mandala">Mandala</button>
+          <button type="button" data-v="hilos" data-en="Threads">Hilos</button>
+          <button type="button" data-v="anillos" data-en="Rings">Anillos</button>
+          <button type="button" data-v="costura" data-en="Stitching">Costura</button>
+        </div>
+      </div>
+      <p class="hint" data-en="Mirror and Mandala are still drawn by spinning circles; Threads, Rings and Stitching have their own animation with a melody. For a couple, write «Ana & Luis».">Espejo y Mandala los siguen dibujando los círculos; Hilos, Anillos y Costura tienen su propia animación con melodía. Para una pareja escribe «Ana & Luis».</p>
       <div class="chips" id="txtChips"></div>
       <div class="row"><button class="btn primary" id="txtGo" type="button" data-en="Draw this text">Dibujar este texto</button></div>
     </div>
@@ -503,6 +515,7 @@ import {
 } from './src/engine.js';
 import { makeCaption, postText } from './src/captions.js';
 import { simulateFisica, synthAudio, drawFisica, fisicaHook, fisicaCat, FISICA_NAMES, FLAGS } from './src/fisica.js';
+import { buildArte, drawArte, styleHook, ARTE_MODES, NAME_STYLE_NAMES } from './src/nombres-arte.js';
 import { initTikTok } from './src/tiktok-ui.js';
 import { lang, tr, onLang, initLangSwitch } from './src/i18n.js';
 const $ = (s) => document.querySelector(s);
@@ -543,8 +556,9 @@ const shapeFor = (src) => shapeForSrc(src, settings.accent);
 /* ---------------- Pelotas (src/bounce.js) ---------------- */
 // Una corrida de pelotas activa reemplaza a la figura en el escenario, la reproducción y la grabación
 let bounceRun = null, bounceMode = 'crece', audioCtx = null, recDest = null, bounceBuf = null, bounceAudio = null;
-const bounceName = () => tr(...FISICA_NAMES[bounceRun.mode]);
-const bounceCaption = () => settings.caption.trim() || fisicaHook(bounceRun, lang);
+// bounceRun también puede ser un nombre con hilos, anillos o costura (src/nombres-arte.js): se reproduce igual, con sonido
+const bounceName = () => bounceRun.arte ? `${bounceRun.text.replace(/\n/g, ' ')} · ${tr(...NAME_STYLE_NAMES[bounceRun.mode])}` : tr(...FISICA_NAMES[bounceRun.mode]);
+const bounceCaption = () => settings.caption.trim() || (bounceRun.arte ? styleHook(bounceRun.mode, lang, bounceRun.seed, bounceRun.pair) : fisicaHook(bounceRun, lang));
 // La fuente de emoji de Windows no trae banderas: para la carrera de países se carga solo ese pedazo de Noto Color Emoji
 const FLAG_FONT = '"Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", sans-serif';
 let flagsReady = null;
@@ -557,7 +571,9 @@ function loadFlags() {
   }
   return flagsReady;
 }
-const drawBounceAt = (t) => drawFisica(ctx, bounceRun, t, view, { caption: bounceCaption(), lang, emojiFont: FLAG_FONT });
+const drawBounceAt = (t) => bounceRun.arte
+  ? drawArte(ctx, bounceRun, t, view, { caption: bounceCaption(), lang, accent: settings.accent })
+  : drawFisica(ctx, bounceRun, t, view, { caption: bounceCaption(), lang, emojiFont: FLAG_FONT });
 // El sonido se sintetiza una vez por corrida (las mismas notas que el video automático) y suena con Web Audio;
 // también entra a la grabación por un MediaStreamDestination
 function startBounceAudio() {
@@ -634,7 +650,7 @@ function startRec(T) {
   // En suspenso (y en las pelotas), la portada de TikTok sale de un cuadro a mitad del video
   const mid = settings.suspense || bounceRun;
   const r = { mr, chunks: [], keep: false, name: bounceRun ? bounceName() : S.name, dur: T.total, mime: mr.mimeType || mime, format: settings.format, w: view.W, h: view.H,
-    suspense: !!settings.suspense, coverMs: mid ? Math.round(T.total * 450) : undefined, cat: bounceRun ? fisicaCat(bounceRun.mode) : undefined };
+    suspense: !!settings.suspense, coverMs: mid ? Math.round(T.total * 450) : undefined, cat: bounceRun ? (bounceRun.arte ? `${bounceRun.pair ? 'combinaciones' : 'nombres'}-${bounceRun.mode}` : fisicaCat(bounceRun.mode)) : current?.variant ? `nombres-${current.variant}` : undefined };
   mr.ondataavailable = (e) => { if (e.data && e.data.size) r.chunks.push(e.data); };
   mr.onstop = () => {
     stream.getTracks().forEach((t) => t.stop());
@@ -804,7 +820,7 @@ function showTab(name) {
   ['funciones', 'texto', 'imagen', 'inventar', 'pelotas'].forEach((n) => { $('#p-' + n).hidden = n !== name; });
   store.set('tab', name);
 }
-tabs.forEach((t) => t.addEventListener('click', () => { showTab(t.dataset.tab); if (t.dataset.tab === 'pelotas' && !bounceRun) newBounce(); }));
+tabs.forEach((t) => t.addEventListener('click', () => { showTab(t.dataset.tab); if (t.dataset.tab === 'pelotas' && (!bounceRun || bounceRun.arte)) newBounce(); }));
 
 // Pelotas y juegos de física (src/fisica.js): cada corrida nueva usa otra semilla
 function newBounce() {
@@ -878,7 +894,23 @@ function renderTxtChips() {
     b.addEventListener('click', () => { $('#txt').value = t; drawText(); }); $('#txtChips').append(b);
   });
 }
-function drawText() { const t = $('#txt').value.trim(); if (!t) { toast(tr('Escribe algo primero', 'Type something first')); return; } markPreset(null); setSource({ kind: 'text', name: t, text: t, font: txtFont }, { reveal: true }); }
+let txtStyle = 'clasico';
+segment('txtStyle', txtStyle, (v) => { txtStyle = v; });
+async function drawText() {
+  const t = $('#txt').value.trim(); if (!t) { toast(tr('Escribe algo primero', 'Type something first')); return; }
+  markPreset(null);
+  // «Ana & Luis» se escribe en tres líneas, como las parejas de la publicación automática
+  const text = t.includes(' & ') ? t.replace(' & ', '\n&\n') : t;
+  if (!ARTE_MODES.includes(txtStyle)) { setSource({ kind: 'text', name: t, text, font: txtFont, variant: txtStyle === 'clasico' ? undefined : txtStyle }, { reveal: true }); return; }
+  const token = ++buildToken;
+  try {
+    const run = await buildArte({ mode: txtStyle, text, font: txtFont, seed: Math.floor(Math.random() * 2 ** 31), accent: settings.accent, pair: text !== t });
+    if (token !== buildToken) return;
+    stop(true); currentPreset = null;
+    run.arte = true; bounceRun = run;
+    poster(); status(); revealStage();
+  } catch (e) { toast(e.message); }
+}
 $('#txtGo').addEventListener('click', drawText);
 $('#txt').addEventListener('keydown', (e) => { if (e.key === 'Enter') drawText(); });
 

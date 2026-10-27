@@ -105,6 +105,37 @@ MYSTERY_CAT['pelotas-lineas'] = {
   es: ['Cada rebote deja una línea… mira el dibujo que sale 😳', 'Sube el volumen: cada rebote es una nota 🎶', '¿Qué forma ves al final? Comenta 👇', 'No es magia, es física. Espera el final ✨', 'Si te relajó, comenta «otra» 👇'],
   en: ['Every bounce leaves a line… watch the drawing it makes 😳', 'Turn the sound on: every bounce is a note 🎶', 'What shape do you see at the end? Comment 👇', 'It is not magic, it is physics. Wait for the end ✨', 'If it relaxed you, comment «another» 👇']
 };
+// Nombres y parejas con otros estilos (src/nombres-arte.js): <cat>-<estilo>
+MYSTERY_CAT['nombres-espejo'] = {
+  es: ['Escribí un nombre y lo reflejé… ¿qué criatura salió? 👀', 'Tu nombre en espejo también forma una figura. Comenta el tuyo 👇', '¿Adivinaste el nombre antes de que apareciera abajo? 🤔', 'Etiqueta a alguien con este nombre 👇', 'Solo círculos girando dibujando un nombre en espejo ✨'],
+  en: ['I wrote a name and mirrored it… what creature came out? 👀', 'Your name in a mirror makes a figure too. Comment yours 👇', 'Did you guess the name before it showed up below? 🤔', 'Tag someone with this name 👇', 'Just spinning circles drawing a mirrored name ✨']
+};
+MYSTERY_CAT['nombres-mandala'] = {
+  es: ['Un nombre convertido en mandala, solo con círculos 🌀', '¿Lo leíste antes de que se completara? 👀', 'Etiqueta a alguien con este nombre 👇', 'Si es tu nombre, comenta ✨', 'Espera el mandala completo 😳'],
+  en: ['A name turned into a mandala, only with circles 🌀', 'Did you read it before it was complete? 👀', 'Tag someone with this name 👇', 'If it is your name, comment ✨', 'Wait for the full mandala 😳']
+};
+MYSTERY_CAT['nombres-hilos'] = {
+  es: ['Un hilo, cientos de clavos y un nombre 🧵', '¿En qué segundo leíste el nombre? Comenta 👇', 'Sube el volumen: cada hilo es una nota 🎶', 'Etiqueta a alguien con este nombre 👇', 'Si es tu nombre, comenta 🧵'],
+  en: ['One thread, hundreds of pins and a name 🧵', 'At what second did you read the name? Comment 👇', 'Turn the sound on: every thread is a note 🎶', 'Tag someone with this name 👇', 'If it is your name, comment 🧵']
+};
+MYSTERY_CAT['nombres-anillos'] = {
+  es: ['Los anillos giran hasta que aparece un nombre 🔒', '¿Lo adivinaste antes del último anillo? Comenta 👇', 'Sube el volumen: cada clic es una nota 🎶', 'Etiqueta a alguien con este nombre 👇', 'Si es tu nombre, comenta 🔐'],
+  en: ['The rings spin until a name appears 🔒', 'Did you guess it before the last ring? Comment 👇', 'Turn the sound on: every click is a note 🎶', 'Tag someone with this name 👇', 'If it is your name, comment 🔐']
+};
+MYSTERY_CAT['combinaciones-anillos'] = {
+  es: ['Los anillos giran hasta que aparece una pareja 💞', '¿Adivinaste la pareja antes del último anillo? 👀', 'Etiqueta a tu pareja 👇', 'Si son ustedes, comenten 💘', 'Sube el volumen: cada clic es una nota 🎶'],
+  en: ['The rings spin until a couple appears 💞', 'Did you guess the couple before the last ring? 👀', 'Tag your partner 👇', 'If it is you two, comment 💘', 'Turn the sound on: every click is a note 🎶']
+};
+MYSTERY_CAT['nombres-costura'] = {
+  es: ['Bordado a mano, puntada por puntada 🪡', '¿En qué puntada leíste el nombre? Comenta 👇', 'Sube el volumen: cada puntada es una nota 🎶', 'Etiqueta a alguien con este nombre 👇', 'Si es tu nombre, comenta 🧵'],
+  en: ['Stitched by hand, one stitch at a time 🪡', 'At which stitch did you read the name? Comment 👇', 'Turn the sound on: every stitch is a note 🎶', 'Tag someone with this name 👇', 'If it is your name, comment 🧵']
+};
+MYSTERY_CAT['combinaciones-costura'] = {
+  es: ['Una pareja bordada a mano, puntada por puntada 🪡💞', '¿Adivinaste la pareja antes de la última puntada? 👀', 'Etiqueta a tu pareja 👇', 'Si son ustedes, comenten 💘', 'Sube el volumen: cada puntada es una nota 🎶'],
+  en: ['A couple stitched by hand, one stitch at a time 🪡💞', 'Did you guess the couple before the last stitch? 👀', 'Tag your partner 👇', 'If it is you two, comment 💘', 'Turn the sound on: every stitch is a note 🎶']
+};
+const STYLE_TAGS = { espejo: { es: 'espejo', en: 'mirror' }, mandala: { es: 'mandala', en: 'mandala' }, hilos: { es: 'stringart', en: 'stringart' }, anillos: { es: 'acertijo', en: 'puzzle' }, costura: { es: 'bordado', en: 'embroidery' } };
+const ARTE_TAGS = { hilos: 1, anillos: 1, costura: 1 }, ARTE_BASE = { es: ['satisfactorio', 'arte', 'nombres'], en: ['satisfying', 'art', 'names'] };
 const CAT_TAGS = { nombres: { es: 'tunombre', en: 'yourname' }, combinaciones: { es: 'parejas', en: 'couples' } };
 // Las pelotas y los juegos no son matemáticas de Fourier: llevan sus propios hashtags base
 const BASE_TAGS = {
@@ -131,9 +162,11 @@ export function makeCaption(info, { lang = info.lang || 'es', cta = true, spoile
   const list = spoiler ? NAMED[lang] : MYSTERY_CAT[info.cat]?.[lang] || MYSTERY[lang];
   let description = list[h % list.length].replace('{x}', name);
   if (cta) description += lang === 'en' ? ` Make yours at ${SITE}` : ` Haz el tuyo en ${SITE}`;
-  const { extra } = TAGS[lang], catTag = CAT_TAGS[info.cat]?.[lang];
-  const base = BASE_TAGS[String(info.cat || '').split('-')[0]]?.[lang] || TAGS[lang].base;
-  const hashtags = [...base, ...(catTag ? [catTag] : []), ...[0, 1, 2].map((i) => extra[(h >>> (i * 5)) % extra.length])].filter((t, i, a) => a.indexOf(t) === i);
+  const [catBase, style] = String(info.cat || '').split('-'), { extra } = TAGS[lang];
+  const catTag = (CAT_TAGS[info.cat] || CAT_TAGS[catBase])?.[lang], styleTag = STYLE_TAGS[style]?.[lang];
+  // Hilos, anillos y costura no son epiciclos: no llevan #fourier ni #epiciclos
+  const base = BASE_TAGS[catBase]?.[lang] || (ARTE_TAGS[style] ? ARTE_BASE[lang] : TAGS[lang].base);
+  const hashtags = [...base, ...(catTag ? [catTag] : []), ...(styleTag ? [styleTag] : []), ...[0, 1, 2].map((i) => extra[(h >>> (i * 5)) % extra.length])].filter((t, i, a) => a.indexOf(t) === i);
   return { description, hashtags, source: 'template' };
 }
 

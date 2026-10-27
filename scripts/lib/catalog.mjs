@@ -41,7 +41,7 @@ export function catalog({ emoji = true, complex = false } = {}) {
 
 // Devuelve { src, info } listo para shapeFor(); info describe la figura para el pie del video y el historial
 // name/nameEn: nombre para mostrar de un texto (por ejemplo «Dragón» para 🐉)
-export function resolveSource({ preset, random, text, font = 'cursiva', seed, name, nameEn }) {
+export function resolveSource({ preset, random, text, font = 'cursiva', seed, name, nameEn, variant }) {
   if (preset) {
     const p = findPreset(preset);
     if (!p) throw new Error(`No existe el preset «${preset}». Opciones: ${PRESETS.map((q) => q.name).join(', ')}`);
@@ -56,7 +56,7 @@ export function resolveSource({ preset, random, text, font = 'cursiva', seed, na
   }
   if (text) {
     const nm = name || text;
-    return { src: { kind: 'text', name: nm, text, font }, info: { kind: 'text', id: `text:${text}`, name: nm, nameEn: nameEn || nm, group: 'Texto', emoji: /\p{Extended_Pictographic}/u.test(text), def: null, text, font } };
+    return { src: { kind: 'text', name: nm, text, font, variant }, info: { kind: 'text', id: `text:${text}`, name: nm, nameEn: nameEn || nm, group: 'Texto', emoji: /\p{Extended_Pictographic}/u.test(text), def: null, text, font, ...(variant ? { variant } : {}) } };
   }
   throw new Error('Indica qué dibujar: --preset <nombre>, --random <tipo> o --text <texto>.');
 }

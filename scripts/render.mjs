@@ -24,6 +24,7 @@ Figura
   --seed <n>            Semilla para --random y para elegir el texto gancho (mismo seed = mismo video)
   --text <texto>        Texto, símbolo o emoji
   --font <letra>        cursiva | elegante | bloque | clasica | emoji (con --text; por defecto cursiva)
+  --variant <estilo>    espejo | mandala (con --text): el nombre en espejo o repetido como mandala
   --name <nombre>       Nombre para mostrar del texto (por ejemplo Escorpión para 🦂; sale en el estado y el archivo)
 
 Video
@@ -44,7 +45,7 @@ Video
   --still <segundos>    En vez de video, guarda un PNG de ese instante (para revisar el encuadre)`;
 
 const OPTIONS = {
-  preset: { type: 'string' }, random: { type: 'string' }, text: { type: 'string' }, font: { type: 'string', default: 'cursiva' }, name: { type: 'string' },
+  preset: { type: 'string' }, random: { type: 'string' }, text: { type: 'string' }, font: { type: 'string', default: 'cursiva' }, name: { type: 'string' }, variant: { type: 'string' },
   seed: { type: 'string' }, lang: { type: 'string', default: 'es' }, caption: { type: 'string', default: 'auto' },
   labels: { type: 'string', default: 'full' }, style: { type: 'string', default: 'xy' },
   fps: { type: 'string', default: '30' }, format: { type: 'string', default: '9:16' }, quality: { type: 'string', default: '1080' },
@@ -66,7 +67,7 @@ export async function renderVideo(o) {
   const fx = setupNode();
   const lang = oneOf(o.lang || 'es', ['es', 'en'], 'lang');
   const seed = o.seed != null && o.seed !== '' ? Number(o.seed) >>> 0 : undefined;
-  const { src, info } = resolveSource({ preset: o.preset, random: o.random, text: o.text, font: o.font, seed, name: o.name, nameEn: o.nameEn });
+  const { src, info } = resolveSource({ preset: o.preset, random: o.random, text: o.text, font: o.font, seed, name: o.name, nameEn: o.nameEn, variant: o.variant ? oneOf(o.variant, E.NAME_VARIANTS, 'variant') : undefined });
   if (info.emoji && !fx.emoji) throw new Error('Esta figura usa un emoji y no hay fuente de emoji. Ejecuta «npm run fonts» (descarga Noto Color Emoji) o elige otra figura.');
   const title = lang === 'en' ? info.nameEn : info.name;
 
@@ -93,7 +94,7 @@ export async function renderVideo(o) {
   const fps = +oneOf(String(o.fps || 30), ['24', '25', '30', '50', '60'], 'fps');
   const log = o.quiet ? () => {} : (m) => process.stderr.write(m);
 
-  const base = `circularte-${slug(title)}-${lang}`;
+  const base = `circularte-${slug(title)}${info.variant ? `-${info.variant}` : ''}-${lang}`;
   if (o.still != null) {
     const out = path.resolve(o.out || path.join(ROOT, 'out', `${base}-${o.still}s.png`));
     fs.mkdirSync(path.dirname(out), { recursive: true });

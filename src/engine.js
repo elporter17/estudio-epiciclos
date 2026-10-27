@@ -24,6 +24,7 @@ const env = {
   sim: '∼' // «del orden de» en las fórmulas; en Node va «~» porque STIX Two Text no trae U+223C
 };
 export function setEnv(e) { Object.assign(env, e); }
+export const newCanvas = (w, h) => env.createCanvas(w, h);
 
 export const DEFAULT_SETTINGS = {
   style: 'xy', nseq: '1, 3, 6, 12, 25, 50, 100, 200', rev: 3, guide: 18, reveal: true, formulas: true,
@@ -359,6 +360,42 @@ export function kochPts(level) {
 }
 
 /* ---------------- Unir, remuestrear, Fourier ---------------- */
+// Estilos de nombre que siguen siendo epiciclos: cambian la silueta del texto antes de calcular la serie.
+// espejo: el nombre en vertical pegado a su reflejo (la tendencia «tu nombre en espejo forma una criatura»).
+// mandala: el nombre repetido como rayos alrededor de un anillo, como un caleidoscopio.
+export const NAME_VARIANTS = ['espejo', 'mandala'];
+export function cropAlpha(c) {
+  const g = c.getContext('2d'), { data } = g.getImageData(0, 0, c.width, c.height);
+  let x0 = c.width, x1 = -1, y0 = c.height, y1 = -1;
+  for (let y = 0; y < c.height; y++) for (let x = 0; x < c.width; x++) {
+    if (data[(y * c.width + x) * 4 + 3] > 40) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+  }
+  if (x1 < 0) return c;
+  const o = env.createCanvas(x1 - x0 + 1, y1 - y0 + 1); o.getContext('2d').drawImage(c, -x0, -y0); return o;
+}
+export function variantCanvas(src, variant, accent, copies) {
+  const c = cropAlpha(src), w = c.width, h = c.height;
+  if (variant === 'espejo') {
+    // De lado (se lee de abajo hacia arriba, con la base de las letras a la derecha) y su reflejo a la derecha,
+    // un poco encimados para que formen una sola figura
+    const ov = Math.round(h * 0.16), pad = Math.round(h * 0.1), W = 2 * h - ov + 2 * pad, H = w + 2 * pad;
+    const o = env.createCanvas(W, H), g = o.getContext('2d');
+    const side = (flip) => { g.save(); g.translate(W / 2, pad); if (flip) g.scale(-1, 1); g.translate(-h + ov / 2, w); g.rotate(-Math.PI / 2); g.drawImage(c, 0, 0); g.restore(); };
+    side(false); side(true);
+    return o;
+  }
+  if (variant === 'mandala') {
+    const n = copies || (w / h > 3.2 ? 6 : 8), r0 = Math.max(w * 0.22, h * 0.75), R = r0 + w + h * 0.15, D = Math.ceil(2 * R + 2 * h * 0.2);
+    const o = env.createCanvas(D, D), g = o.getContext('2d');
+    g.translate(D / 2, D / 2);
+    for (let i = 0; i < n; i++) { g.save(); g.rotate(TAU * i / n); g.drawImage(c, r0, -h / 2); g.restore(); }
+    // Anillo que une los rayos por dentro
+    g.strokeStyle = accent; g.lineWidth = h * 0.16; g.beginPath(); g.arc(0, 0, r0 - h * 0.12, 0, TAU); g.stroke();
+    return o;
+  }
+  return src;
+}
+
 export function joinContours(cs) {
   const xs = [], ys = [], fl = [];
   const push = (x, y, flag) => { if (xs.length) fl.push(flag); xs.push(x); ys.push(y); };
@@ -456,7 +493,7 @@ export function buildScene(shape, meta) {
   fillPath.closePath();
   const ir = shape.imgRect;
   return {
-    name: meta.name, fill: meta.fill || 'soft', exprLines: meta.exprLines || null,
+    name: meta.name, fill: meta.fill || 'soft', exprLines: meta.exprLines || null, revealText: meta.revealText || null, revealFont: meta.font || 'cursiva',
     image: shape.image, imgRect: ir ? { x: (ir.x - bcx) / half, y: (ir.y - bcy) / half, w: ir.w / half, h: ir.h / half } : null,
     samples: R, ser, connP, fillPath, linePath, curves: new Map(), parts: shape.contours.length,
     hx: (J.box.x1 - J.box.x0) / 2 / half, hy: (J.box.y1 - J.box.y0) / 2 / half
@@ -720,6 +757,19 @@ function drawSignature(R) {
   ctx.restore();
 }
 
+// El nombre escondido (estilo espejo), grande, donde irían las fórmulas
+function drawRevealText(R, a) {
+  const { ctx, S, settings, view } = R;
+  if (a <= 0.004) return;
+  const F = FONTS[S.revealFont] || FONTS.cursiva, text = S.revealText.replace(/\n/g, ' ');
+  let size = 92 * view.U; const font = (sz) => `${F.style} ${F.weight} ${sz}px ${env.fonts[S.revealFont] || F.family}${env.fallback}`;
+  ctx.save(); ctx.globalAlpha = a; ctx.font = font(size);
+  const w = ctx.measureText(text).width; if (w > view.W * 0.86) { size *= view.W * 0.86 / w; ctx.font = font(size); }
+  ctx.fillStyle = settings.accent; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText(text, S.L.fx, S.L.fy + 50 * view.U);
+  ctx.restore();
+}
+
 function drawFormulas(R, a, N) {
   const { ctx, S, settings, view } = R;
   if (a <= 0.004 || !settings.formulas) return;
@@ -786,7 +836,7 @@ export function render(R, st) {
   const machA = 1 - clamp(e * 2.4);
   drawMachinery(R, N, t, machA);
   drawLabels(R, N, machA);
-  drawFormulas(R, clamp((e - 0.3) / 0.6), N);
+  if (S.revealText) drawRevealText(R, clamp((e - 0.3) / 0.6)); else drawFormulas(R, clamp((e - 0.3) / 0.6), N);
   drawCaption(R);
   drawSignature(R);
 }
@@ -864,9 +914,11 @@ export async function shapeFor(src, accent) {
   if (src.kind === 'expr') return { shape: exprShape(src.def), meta: { name: src.name, fill: src.fill || 'soft', exprLines: exprLinesOf(src.def) } };
   if (src.kind === 'poly') return { shape: { contours: [{ pts: src.pts(), len: 1, closed: true }], image: null }, meta: { name: src.name, fill: src.fill || 'solid' } };
   if (src.kind === 'text') {
-    const c = await textCanvas(src.text, src.font, accent);
-    const maxDim = clamp(Math.max(640, 170 * c.width / c.height), 640, 1600);
-    return { shape: bitmapShape(c, { mode: 'silueta', thr: 50, detail: 88, invert: false, cutout: false, maxDim }), meta: { name: src.name || src.text } };
+    const t = await textCanvas(src.text, src.font, accent);
+    const c = src.variant ? variantCanvas(t, src.variant, accent, src.copies) : t;
+    const maxDim = src.variant ? 1000 : clamp(Math.max(640, 170 * c.width / c.height), 640, 1600);
+    // En espejo el nombre no se lee en la figura: al final se escribe abajo
+    return { shape: bitmapShape(c, { mode: 'silueta', thr: 50, detail: 88, invert: false, cutout: false, maxDim }), meta: { name: src.name || src.text, revealText: src.variant === 'espejo' ? src.text : null, font: src.font } };
   }
   const o = src.opts;
   return { shape: bitmapShape(src.img, { mode: o.mode, thr: o.thr, detail: o.detail, invert: o.invert, cutout: o.cutout && o.mode === 'silueta', maxDim: 420 }), meta: { name: src.name } };

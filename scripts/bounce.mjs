@@ -19,7 +19,7 @@ import { simulateFisica, synthAudio, drawFisica, fisicaHook, fisicaGroup, FISICA
 const SR = 44100;
 
 // PCM de 16 bits, mono
-function wavBuffer(samples, sr = SR) {
+export function wavBuffer(samples, sr = SR) {
   const b = Buffer.alloc(44 + samples.length * 2);
   b.write('RIFF', 0); b.writeUInt32LE(36 + samples.length * 2, 4); b.write('WAVE', 8);
   b.write('fmt ', 12); b.writeUInt32LE(16, 16); b.writeUInt16LE(1, 20); b.writeUInt16LE(1, 22);
