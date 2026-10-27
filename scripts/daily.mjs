@@ -32,6 +32,8 @@ try {
     privacy: { type: 'string', default: 'PUBLIC_TO_EVERYONE' }, spoiler: { type: 'boolean', default: false }, nseq: { type: 'string' },
     // Categorías a elegir, separadas por comas (por ejemplo «pelotas,juegos»); sin esto, todas
     cats: { type: 'string' },
+    // Estilos de nombre permitidos, separados por comas; «nuevos» = espejo, mandala, hilos, anillos y costura
+    estilos: { type: 'string' },
     // Sin sonido: pelotas, juegos, hilos, anillos y costura salen con audio en silencio (los epiciclos ya lo son)
     mute: { type: 'boolean', default: false }
   });
@@ -40,7 +42,8 @@ try {
   if (o.publish) await accessToken(); // falla antes de renderizar si la cuenta no está conectada
   const suspense = !o.spoiler;
   const { emoji } = setupNode();
-  const item = pickNext({ history: readHistory(), emoji: !!emoji, complex: suspense, cats, seed: o.seed != null ? Number(o.seed) >>> 0 : undefined });
+  const estilos = o.estilos === 'nuevos' ? ['espejo', 'mandala', 'hilos', 'anillos', 'costura'] : o.estilos ? o.estilos.split(',').map((s) => s.trim()) : undefined;
+  const item = pickNext({ history: readHistory(), emoji: !!emoji, complex: suspense, cats, styles: estilos, seed: o.seed != null ? Number(o.seed) >>> 0 : undefined });
   const style = item.style && item.style !== 'clasico' ? item.style : null;
   console.error(`Elegido: ${item.name || item.type} (${item.group}${style ? `, estilo ${style}` : ''})`);
   // Física (pelotas y juegos) y nombres con hilos o anillos: su propio render, con sonido; lo demás, el dibujo con

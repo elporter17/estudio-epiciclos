@@ -5,18 +5,13 @@
 # 403 unaudited_client_can_only_post_to_private_accounts. El usuario quiere pasar a directo y público después
 # (cambiar 'draft' por 'direct' en los valores por defecto), sabiendo que las reglas de TikTok no aceptan
 # herramientas que suben a las propias cuentas.
-# Este workflow hace los dibujos (figuras, nombres, parejas, inventadas); fisica.yml lo reutiliza para los videos
-# de física (pelotas y juegos) con cats = fisica.
+# Base de todas las publicaciones: nombres.yml (nombres y parejas con los estilos nuevos), famosos.yml (futbolistas) y
+# fisica.yml (pelotas y juegos) lo reutilizan con su propio horario. Este ya no corre solo (las figuras e inventadas
+# se dejaron de priorizar el 2026-10-27); se puede lanzar a mano con cualquier tipo de video.
 # Secretos necesarios (Settings → Secrets and variables → Actions): ver README, sección «Publicación diaria».
 name: Video diario a TikTok
 
 on:
-  schedule:
-    # Cada 4 horas al minuto 17 (GitHub retrasa más las horas en punto; aun así puede llegar con horas de atraso).
-    # En Honduras (UTC-6): 18:17, 22:17, 2:17, 6:17, 10:17 y 14:17.
-    # TikTok admite 5 borradores pendientes cada 24 h por cuenta: si no se publican, los que sobren quedan solo
-    # como artefacto (la corrida no falla).
-    - cron: '17 */4 * * *'
   workflow_dispatch:
     inputs:
       cats:
@@ -60,6 +55,7 @@ on:
       privacy: { type: string, default: PUBLIC_TO_EVERYONE }
       sonido: { type: string, default: sin }
       figura: { type: string, default: '' }
+      estilos: { type: string, default: '' }
       reseed: { type: boolean, default: false }
 
 permissions:
@@ -85,6 +81,7 @@ jobs:
       # Las corridas programadas no tienen inputs: salen sin sonido
       SOUND_INPUT: ${{ inputs.sonido || 'sin' }}
       FIGURA_INPUT: ${{ inputs.figura || '' }}
+      ESTILOS_INPUT: ${{ inputs.estilos || '' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -143,6 +140,7 @@ jobs:
           if [ -n "$FIGURA_INPUT" ]; then cats="$FIGURA_INPUT"; fi
           args=(--lang "$LANG_INPUT" --cats "$cats")
           if [ "$SOUND_INPUT" = "sin" ]; then args+=(--mute); fi
+          if [ -n "$ESTILOS_INPUT" ]; then args+=(--estilos "$ESTILOS_INPUT"); fi
           if [ "$PUBLISH_INPUT" != "none" ]; then args+=(--publish "$PUBLISH_INPUT" --privacy "$PRIVACY_INPUT"); fi
           npm run daily -- "${args[@]}"
 

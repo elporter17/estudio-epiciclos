@@ -1,0 +1,42 @@
+# Nombres y parejas con los estilos nuevos (espejo, mandala, hilos, anillos y costura; las parejas en anillos o
+# costura), cada 4 horas. Reutiliza daily.yml: mismo token, mismo historial y nunca corre a la vez que los futbolistas.
+# Sin sonido salvo que al lanzarlo a mano elijas «con».
+# Ojo: con los futbolistas (6 al día) son 12 borradores diarios y TikTok admite 5 pendientes cada 24 h por cuenta;
+# los que sobren quedan como artefacto de la corrida (sin fallar) hasta que se publiquen los pendientes.
+name: Nombres a TikTok
+
+on:
+  schedule:
+    # Minuto 17 (GitHub retrasa más las horas en punto). En Honduras (UTC-6): 18:17, 22:17, 2:17, 6:17, 10:17 y 14:17
+    - cron: '17 */4 * * *'
+  workflow_dispatch:
+    inputs:
+      lang:
+        description: Idioma del video y la descripción
+        type: choice
+        options: [es, en]
+        default: es
+      publish:
+        description: Enviar como borrador, publicar directo (requiere auditoría de Direct Post) o solo generar el video
+        type: choice
+        options: [draft, direct, none]
+        default: draft
+      sonido:
+        description: Sonido del video (sin = audio en silencio, para ponerle en TikTok una canción del momento)
+        type: choice
+        options: [sin, con]
+        default: sin
+
+permissions:
+  contents: read
+
+jobs:
+  nombres:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: nombres
+      estilos: nuevos
+      lang: ${{ inputs.lang || 'es' }}
+      publish: ${{ inputs.publish || 'draft' }}
+      sonido: ${{ inputs.sonido || 'sin' }}
+    secrets: inherit

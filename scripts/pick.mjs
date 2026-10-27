@@ -26,7 +26,8 @@ export const SHARES = { figuras: 0.2, nombres: 0.5, combinaciones: 0.17, inventa
 export const NAME_STYLES_BY_CAT = { nombres: ['clasico', 'espejo', 'mandala', 'hilos', 'anillos', 'costura'], combinaciones: ['clasico', 'anillos', 'costura'] };
 
 // avoid = cuántas publicaciones recientes no se pueden repetir; cada función inventada es distinta gracias a la semilla.
-export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>> 0, emoji = true, complex = false, cats, randomWeight = 0.5 } = {}) {
+// styles: estilos de nombre permitidos (por ejemplo solo los nuevos); si ninguno sirve para la categoría, se usan todos
+export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>> 0, emoji = true, complex = false, cats, styles: allowed, randomWeight = 0.5 } = {}) {
   const all = catalog({ emoji, complex });
   // cats acepta categorías (juegos) o elementos sueltos (juegos:batalla)
   const items = cats?.length ? all.filter((it) => cats.includes(it.cat) || cats.includes(it.id)) : all;
@@ -51,7 +52,8 @@ export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>>
   const renderSeed = Math.floor(rng() * 2 ** 31);
   // Estilo al azar, sin repetir el del último nombre si hay alternativa
   const lastStyle = [...history].reverse().find((h) => h.style && h.group === it.group)?.style;
-  const styles = (NAME_STYLES_BY_CAT[it.cat] || []).filter((s, _, a) => a.length < 2 || s !== lastStyle);
+  const byCat = NAME_STYLES_BY_CAT[it.cat] || [], ok = allowed?.length ? byCat.filter((s) => allowed.includes(s)) : byCat;
+  const styles = (ok.length ? ok : byCat).filter((s, _, a) => a.length < 2 || s !== lastStyle);
   const style = styles.length ? styles[Math.floor(rng() * styles.length)] : undefined;
   const args = it.kind === 'preset' ? ['--preset', it.name] : it.kind === 'text' ? ['--text', it.text, '--font', it.font] : it.kind === 'bounce' ? ['--mode', it.mode] : it.kind === 'image' ? ['--image', it.image, '--reveal-text', it.name] : ['--random', it.type];
   args.push('--seed', String(renderSeed));
