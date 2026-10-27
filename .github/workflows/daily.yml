@@ -39,6 +39,10 @@ on:
         type: choice
         options: [PUBLIC_TO_EVERYONE, MUTUAL_FOLLOW_FRIENDS, SELF_ONLY]
         default: PUBLIC_TO_EVERYONE
+      figura:
+        description: Una figura concreta por su id (por ejemplo famoso:kane-balondeoro o nombre:Andrea); vacío = al azar
+        type: string
+        default: ''
       sonido:
         description: Sonido del video (sin = audio en silencio, para ponerle en TikTok una canción del momento)
         type: choice
@@ -55,6 +59,7 @@ on:
       publish: { type: string, default: draft }
       privacy: { type: string, default: PUBLIC_TO_EVERYONE }
       sonido: { type: string, default: sin }
+      figura: { type: string, default: '' }
       reseed: { type: boolean, default: false }
 
 permissions:
@@ -79,6 +84,7 @@ jobs:
       PRIVACY_INPUT: ${{ inputs.privacy || 'PUBLIC_TO_EVERYONE' }}
       # Las corridas programadas no tienen inputs: salen sin sonido
       SOUND_INPUT: ${{ inputs.sonido || 'sin' }}
+      FIGURA_INPUT: ${{ inputs.figura || '' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -131,6 +137,8 @@ jobs:
             # juegos o pelotas: solo esa categoría (útil para lanzar a mano)
             *) cats="$CATS_INPUT" ;;
           esac
+          # Una figura concreta (su id de catálogo) manda sobre el tipo de video
+          if [ -n "$FIGURA_INPUT" ]; then cats="$FIGURA_INPUT"; fi
           args=(--lang "$LANG_INPUT" --cats "$cats")
           if [ "$SOUND_INPUT" = "sin" ]; then args+=(--mute); fi
           if [ "$PUBLISH_INPUT" != "none" ]; then args+=(--publish "$PUBLISH_INPUT" --privacy "$PRIVACY_INPUT"); fi

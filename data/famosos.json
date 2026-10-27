@@ -400,6 +400,14 @@
       "prompt": "Pelé's iconic celebration: jumping high in the air with his right fist punching up to the sky",
       "imagen": "assets/famosos/pele-1958.png",
       "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "kane-balondeoro",
+      "nombre": "Harry Kane",
+      "tipo": "pose",
+      "prompt": "Harry Kane, English striker in his football kit, triumphantly raising the Ballon d'Or trophy above his head with both hands: a large golden ball sitting on a tall tapered base, clearly separated from his head",
+      "imagen": "assets/famosos/kane-balondeoro.png",
+      "origen": "gpt-image-2.5-flare"
     }
   ]
 }
