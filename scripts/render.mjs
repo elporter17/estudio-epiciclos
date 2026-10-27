@@ -11,7 +11,7 @@ import { spawn } from 'node:child_process';
 import { parseCli } from './lib/cli.mjs';
 import { pathToFileURL } from 'node:url';
 import ffmpegPath from 'ffmpeg-static';
-import { createCanvas } from '@napi-rs/canvas';
+import { createCanvas, loadImage } from '@napi-rs/canvas';
 import * as E from '../src/engine.js';
 import { setupNode, ROOT } from './lib/node-env.mjs';
 import { resolveSource, slug, hashSeed } from './lib/catalog.mjs';
@@ -24,6 +24,8 @@ Figura
   --seed <n>            Semilla para --random y para elegir el texto gancho (mismo seed = mismo video)
   --text <texto>        Texto, símbolo o emoji
   --font <letra>        cursiva | elegante | bloque | clasica | emoji (con --text; por defecto cursiva)
+  --image <archivo.png> Silueta (mejor limpia con scripts/silueta.mjs); --detail 0-100 (por defecto 85)
+  --reveal-text <texto> Texto grande al final (por ejemplo el nombre del jugador)
   --variant <estilo>    espejo | mandala (con --text): el nombre en espejo o repetido como mandala
   --name <nombre>       Nombre para mostrar del texto (por ejemplo Escorpión para 🦂; sale en el estado y el archivo)
 
@@ -46,6 +48,7 @@ Video
 
 const OPTIONS = {
   preset: { type: 'string' }, random: { type: 'string' }, text: { type: 'string' }, font: { type: 'string', default: 'cursiva' }, name: { type: 'string' }, variant: { type: 'string' },
+  image: { type: 'string' }, 'reveal-text': { type: 'string' }, detail: { type: 'string' },
   seed: { type: 'string' }, lang: { type: 'string', default: 'es' }, caption: { type: 'string', default: 'auto' },
   labels: { type: 'string', default: 'full' }, style: { type: 'string', default: 'xy' },
   fps: { type: 'string', default: '30' }, format: { type: 'string', default: '9:16' }, quality: { type: 'string', default: '1080' },
@@ -67,7 +70,7 @@ export async function renderVideo(o) {
   const fx = setupNode();
   const lang = oneOf(o.lang || 'es', ['es', 'en'], 'lang');
   const seed = o.seed != null && o.seed !== '' ? Number(o.seed) >>> 0 : undefined;
-  const { src, info } = resolveSource({ preset: o.preset, random: o.random, text: o.text, font: o.font, seed, name: o.name, nameEn: o.nameEn, variant: o.variant ? oneOf(o.variant, E.NAME_VARIANTS, 'variant') : undefined });
+  const { src, info } = resolveSource({ preset: o.preset, random: o.random, text: o.text, font: o.font, seed, name: o.name, nameEn: o.nameEn, image: o.image, revealText: o['reveal-text'] || o.revealText, detail: o.detail != null ? +o.detail : undefined, variant: o.variant ? oneOf(o.variant, E.NAME_VARIANTS, 'variant') : undefined });
   if (info.emoji && !fx.emoji) throw new Error('Esta figura usa un emoji y no hay fuente de emoji. Ejecuta «npm run fonts» (descarga Noto Color Emoji) o elige otra figura.');
   const title = lang === 'en' ? info.nameEn : info.name;
 
@@ -85,6 +88,7 @@ export async function renderVideo(o) {
   settings.caption = cap === 'none' ? '' : cap === 'auto' ? autoCaption(title, lang, seed ?? 0, o.spoiler !== false) : cap;
 
   const view = E.canvasSize(settings.format, settings.quality);
+  if (src.kind === 'image' && !src.img) src.img = await loadImage(path.resolve(src.file));
   const { shape, meta } = await E.shapeFor(src, settings.accent);
   const S = E.buildScene(shape, meta);
   E.refreshStages(S, settings); E.relayout(S, settings, view);

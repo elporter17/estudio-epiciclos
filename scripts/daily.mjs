@@ -16,6 +16,7 @@ import { renderVideo } from './render.mjs';
 import { renderBounce } from './bounce.mjs';
 import { renderArte } from './arte.mjs';
 import { ARTE_MODES, styleHook } from '../src/nombres-arte.js';
+import { famosoHook } from '../src/captions.js';
 import { makeCaption, postText } from './caption.mjs';
 import { publishVideo } from './publish.mjs';
 import { accessToken } from './lib/tiktok.mjs';
@@ -52,11 +53,13 @@ try {
       preset: item.kind === 'preset' ? item.name : undefined, random: item.kind === 'random' ? item.type : undefined,
       ...(item.kind === 'text' ? { text: item.text, font: item.font, name: item.name, nameEn: item.nameEn } : {}),
       ...(style ? { variant: style, style: 'z', caption: styleHook(style, o.lang, item.seed, item.cat === 'combinaciones') } : {}),
+      // Famosos: la silueta con una sola cadena de círculos y el nombre del jugador al final
+      ...(item.kind === 'image' ? { image: item.image, name: item.name, nameEn: item.nameEn, revealText: item.name, style: 'z', caption: famosoHook(item.tipo, o.lang, item.seed) } : {}),
       seed: item.seed, lang: o.lang, fps: o.fps, labels: o.labels,
       ...(suspense ? { guide: 0, spoiler: false, nseq: o.nseq || NSEQ_DETAIL } : o.nseq ? { nseq: o.nseq } : {})
     });
   // La categoría (nombres, parejas, pelotas, juegos…) elige ganchos propios para la descripción
-  const cat = item.kind === 'bounce' ? fisicaCat(item.mode) : style ? `${item.cat}-${style}` : item.cat;
+  const cat = item.kind === 'bounce' ? fisicaCat(item.mode) : item.kind === 'image' ? `${item.cat}-${item.tipo}` : style ? `${item.cat}-${style}` : item.cat;
   const cap = makeCaption({ ...r.info, cat }, { lang: o.lang, spoiler: !suspense });
   const meta = { ...r.info, cat: item.cat, post: { ...cap, text: postText(cap), lang: o.lang } };
   fs.writeFileSync(r.sidecar, JSON.stringify(meta, null, 2) + '\n');

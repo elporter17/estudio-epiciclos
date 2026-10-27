@@ -135,11 +135,37 @@ MYSTERY_CAT['combinaciones-costura'] = {
   en: ['A couple stitched by hand, one stitch at a time 🪡💞', 'Did you guess the couple before the last stitch? 👀', 'Tag your partner 👇', 'If it is you two, comment 💘', 'Turn the sound on: every stitch is a note 🎶']
 };
 const STYLE_TAGS = { espejo: { es: 'espejo', en: 'mirror' }, mandala: { es: 'mandala', en: 'mandala' }, hilos: { es: 'stringart', en: 'stringart' }, anillos: { es: 'acertijo', en: 'puzzle' }, costura: { es: 'bordado', en: 'embroidery' } };
+// Futbolistas (data/famosos.json): famosos-<tipo>; no dicen quién es (el nombre sale al final del video)
+MYSTERY_CAT['famosos-cara'] = {
+  es: ['¿Quién es? Comenta antes de que aparezca el nombre ⚽👇', 'Solo círculos girando… ¿lo reconociste? 👀', 'Si lo adivinaste antes del final, comenta «lo sabía» ⚽', 'Etiqueta a un fan de este jugador 👇', '¿Cuál jugador quieres que dibuje ahora? Comenta 👇'],
+  en: ['Who is it? Comment before the name shows up ⚽👇', 'Just spinning circles… did you recognize him? 👀', 'If you guessed before the end, comment «I knew it» ⚽', 'Tag a fan of this player 👇', 'Which player should I draw next? Comment 👇']
+};
+MYSTERY_CAT['famosos-pose'] = {
+  es: ['¿Quién celebraba así? Comenta antes del final ⚽👇', 'Una celebración que todos conocen… ¿de quién es? 👀', 'Si la reconociste en el primer segundo, comenta 🔥', 'Etiqueta a alguien que celebra así sus goles 👇', '¿Qué celebración dibujo ahora? Comenta 👇'],
+  en: ['Who celebrated like this? Comment before the end ⚽👇', 'A celebration everyone knows… whose is it? 👀', 'If you recognized it in the first second, comment 🔥', 'Tag someone who celebrates goals like this 👇', 'Which celebration should I draw next? Comment 👇']
+};
+MYSTERY_CAT['famosos-gol'] = {
+  es: ['¿Reconoces este momento histórico del fútbol? ⚽👀', '¿De quién es esta jugada? Comenta antes del final 👇', 'Un gol que nadie olvida, solo con círculos ⚽', 'Etiqueta a alguien que vio esto en vivo 👇', '¿Qué gol icónico dibujo ahora? Comenta 👇'],
+  en: ['Do you recognize this historic football moment? ⚽👀', 'Whose play is this? Comment before the end 👇', 'A goal nobody forgets, only with circles ⚽', 'Tag someone who watched this live 👇', 'Which iconic goal should I draw next? Comment 👇']
+};
+MYSTERY_CAT['famosos-logo'] = {
+  es: ['¿De qué equipo es este escudo? Comenta antes del final ⚽👇', 'Solo círculos girando… ¿lo reconociste? 👀', 'Si es tu equipo, comenta 🔥', 'Etiqueta a un hincha de este equipo 👇', '¿Qué escudo dibujo ahora? Comenta 👇'],
+  en: ['Which team is this crest? Comment before the end ⚽👇', 'Just spinning circles… did you recognize it? 👀', 'If it is your team, comment 🔥', 'Tag a fan of this team 👇', 'Which crest should I draw next? Comment 👇']
+};
+// Texto de arriba del video
+const FAMOSO_HOOKS = {
+  logo: { es: ['¿De qué equipo es este escudo? ⚽', '¿Lo reconoces antes del final? 👀', 'Solo círculos girando… ¿qué equipo es? 🤔', 'Comenta el equipo antes de que termine 👇'], en: ['Which team is this crest? ⚽', 'Can you recognize it before the end? 👀', 'Just spinning circles… which team is it? 🤔', 'Comment the team before it ends 👇'] },
+  cara: { es: ['¿Quién es este jugador? ⚽👀', '¿Lo reconoces antes del final? ⚽', 'Solo círculos girando… ¿quién es? 🤔', 'Comenta quién es antes de que termine 👇'], en: ['Who is this player? ⚽👀', 'Can you recognize him before the end? ⚽', 'Just spinning circles… who is it? 🤔', 'Comment who it is before it ends 👇'] },
+  pose: { es: ['¿Quién celebraba así? ⚽', '¿Reconoces esta celebración? 👀', 'Si sabes quién es, comenta 👇', 'Solo círculos… ¿de quién es esta celebración? 🤔'], en: ['Who celebrated like this? ⚽', 'Do you recognize this celebration? 👀', 'If you know who it is, comment 👇', 'Just circles… whose celebration is this? 🤔'] },
+  gol: { es: ['¿Reconoces este gol histórico? ⚽', '¿Quién hizo esta jugada? 👀', 'Un momento icónico del fútbol, solo con círculos ⚽', 'Comenta de quién es antes del final 👇'], en: ['Do you recognize this historic goal? ⚽', 'Who made this play? 👀', 'An iconic football moment, only with circles ⚽', 'Comment whose it is before the end 👇'] }
+};
+export const famosoHook = (tipo, lang, seed) => { const l = (FAMOSO_HOOKS[tipo] || FAMOSO_HOOKS.cara)[lang === 'en' ? 'en' : 'es']; return l[(seed >>> 0) % l.length]; };
 const ARTE_TAGS = { hilos: 1, anillos: 1, costura: 1 }, ARTE_BASE = { es: ['satisfactorio', 'arte', 'nombres'], en: ['satisfying', 'art', 'names'] };
 const CAT_TAGS = { nombres: { es: 'tunombre', en: 'yourname' }, combinaciones: { es: 'parejas', en: 'couples' } };
 // Las pelotas y los juegos no son matemáticas de Fourier: llevan sus propios hashtags base
 const BASE_TAGS = {
   pelotas: { es: ['satisfactorio', 'fisica', 'pelotas'], en: ['satisfying', 'physics', 'balls'] },
+  famosos: { es: ['futbol', 'satisfactorio', 'arte', 'adivina'], en: ['football', 'soccer', 'satisfying', 'art'] },
   juegos: { es: ['satisfactorio', 'fisica', 'asmr'], en: ['satisfying', 'physics', 'asmr'] }
 };
 // Con spoiler: nombran la figura

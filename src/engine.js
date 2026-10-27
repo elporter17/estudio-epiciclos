@@ -921,7 +921,13 @@ export async function shapeFor(src, accent) {
     return { shape: bitmapShape(c, { mode: 'silueta', thr: 50, detail: 88, invert: false, cutout: false, maxDim }), meta: { name: src.name || src.text, revealText: src.variant === 'espejo' ? src.text : null, font: src.font } };
   }
   const o = src.opts;
-  return { shape: bitmapShape(src.img, { mode: o.mode, thr: o.thr, detail: o.detail, invert: o.invert, cutout: o.cutout && o.mode === 'silueta', maxDim: 420 }), meta: { name: src.name } };
+  const shape = bitmapShape(src.img, { mode: o.mode, thr: o.thr, detail: o.detail, invert: o.invert, cutout: o.cutout && o.mode === 'silueta', maxDim: o.maxDim || 420 });
+  // tint: la figura final en el color del trazo (las siluetas limpias son negras y no se verían sobre el fondo)
+  if (o.tint && shape.image) {
+    const iw = shape.image.naturalWidth || shape.image.width, ih = shape.image.naturalHeight || shape.image.height, c = env.createCanvas(iw, ih), g = c.getContext('2d');
+    g.drawImage(shape.image, 0, 0); g.globalCompositeOperation = 'source-in'; g.fillStyle = accent; g.fillRect(0, 0, iw, ih); shape.image = c;
+  }
+  return { shape, meta: { name: src.name, revealText: src.revealText || null, font: 'bloque' } };
 }
 
 /* ---------------- Funciones inventadas ---------------- */

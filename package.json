@@ -14,7 +14,8 @@
     "daily": "node scripts/daily.mjs",
     "fonts": "node scripts/fonts.mjs",
     "tiktok:connect": "node scripts/tiktok-connect.mjs",
-    "publish": "node scripts/publish.mjs"
+    "publish": "node scripts/publish.mjs",
+    "silueta": "node scripts/silueta.mjs"
   },
   "dependencies": {
     "@vercel/blob": "^2.8.2"

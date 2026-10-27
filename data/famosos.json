@@ -1,0 +1,405 @@
+{
+  "_nota": "Figuras de futbolistas para el workflow de famosos. tipo: cara (retrato en stencil), pose (celebración) o gol (jugada icónica). Las imágenes las genera scripts/famosos-imagenes.mjs (OpenAI) o se agregan a mano con scripts/silueta.mjs; quedan limpias en assets/famosos/<id>.png. prompt describe solo lo que se pide al modelo.",
+  "figuras": [
+    {
+      "id": "cristiano",
+      "nombre": "Cristiano Ronaldo",
+      "tipo": "cara",
+      "prompt": "Cristiano Ronaldo, Portuguese footballer",
+      "imagen": "assets/famosos/cristiano.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "messi",
+      "nombre": "Lionel Messi",
+      "tipo": "cara",
+      "prompt": "Lionel Messi, Argentine footballer, with his beard",
+      "imagen": "assets/famosos/messi.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "neymar",
+      "nombre": "Neymar",
+      "tipo": "cara",
+      "prompt": "Neymar Jr, Brazilian footballer",
+      "imagen": "assets/famosos/neymar.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "mbappe",
+      "nombre": "Kylian Mbappé",
+      "tipo": "cara",
+      "prompt": "Kylian Mbappé, French footballer",
+      "imagen": "assets/famosos/mbappe.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "haaland",
+      "nombre": "Erling Haaland",
+      "tipo": "cara",
+      "prompt": "Erling Haaland, Norwegian footballer with long hair tied back",
+      "imagen": "assets/famosos/haaland.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "vinicius",
+      "nombre": "Vinícius Júnior",
+      "tipo": "cara",
+      "prompt": "Vinícius Júnior, Brazilian footballer",
+      "imagen": "assets/famosos/vinicius.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "bellingham",
+      "nombre": "Jude Bellingham",
+      "tipo": "cara",
+      "prompt": "Jude Bellingham, English footballer",
+      "imagen": "assets/famosos/bellingham.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "lamine",
+      "nombre": "Lamine Yamal",
+      "tipo": "cara",
+      "prompt": "Lamine Yamal, young Spanish footballer",
+      "imagen": "assets/famosos/lamine.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "salah",
+      "nombre": "Mohamed Salah",
+      "tipo": "cara",
+      "prompt": "Mohamed Salah, Egyptian footballer with curly hair and beard",
+      "imagen": "assets/famosos/salah.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "debruyne",
+      "nombre": "Kevin De Bruyne",
+      "tipo": "cara",
+      "prompt": "Kevin De Bruyne, Belgian footballer",
+      "imagen": "assets/famosos/debruyne.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "modric",
+      "nombre": "Luka Modrić",
+      "tipo": "cara",
+      "prompt": "Luka Modrić, Croatian footballer with long hair",
+      "imagen": "assets/famosos/modric.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "lewandowski",
+      "nombre": "Robert Lewandowski",
+      "tipo": "cara",
+      "prompt": "Robert Lewandowski, Polish footballer",
+      "imagen": "assets/famosos/lewandowski.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "kane",
+      "nombre": "Harry Kane",
+      "tipo": "cara",
+      "prompt": "Harry Kane, English footballer",
+      "imagen": "assets/famosos/kane.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "zlatan",
+      "nombre": "Zlatan Ibrahimović",
+      "tipo": "cara",
+      "prompt": "Zlatan Ibrahimović, Swedish footballer with long hair in a bun",
+      "imagen": "assets/famosos/zlatan.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "ronaldinho",
+      "nombre": "Ronaldinho",
+      "tipo": "cara",
+      "prompt": "Ronaldinho, Brazilian footballer, smiling with his famous big smile and long hair with headband",
+      "imagen": "assets/famosos/ronaldinho.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "ronaldo-nazario",
+      "nombre": "Ronaldo Nazário",
+      "tipo": "cara",
+      "prompt": "Ronaldo Nazário, Brazilian striker, in 2002 with the half-moon haircut",
+      "imagen": "assets/famosos/ronaldo-nazario.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "maradona",
+      "nombre": "Diego Maradona",
+      "tipo": "cara",
+      "prompt": "Diego Maradona, Argentine footballer, in the 1986 era with curly hair",
+      "imagen": "assets/famosos/maradona.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "pele",
+      "nombre": "Pelé",
+      "tipo": "cara",
+      "prompt": "Pelé, Brazilian footballer, in the 1970 era",
+      "imagen": "assets/famosos/pele.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "zidane",
+      "nombre": "Zinedine Zidane",
+      "tipo": "cara",
+      "prompt": "Zinedine Zidane, French footballer, bald",
+      "imagen": "assets/famosos/zidane.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "beckham",
+      "nombre": "David Beckham",
+      "tipo": "cara",
+      "prompt": "David Beckham, English footballer",
+      "imagen": "assets/famosos/beckham.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "ramos",
+      "nombre": "Sergio Ramos",
+      "tipo": "cara",
+      "prompt": "Sergio Ramos, Spanish footballer with beard",
+      "imagen": "assets/famosos/ramos.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "griezmann",
+      "nombre": "Antoine Griezmann",
+      "tipo": "cara",
+      "prompt": "Antoine Griezmann, French footballer",
+      "imagen": "assets/famosos/griezmann.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "suarez",
+      "nombre": "Luis Suárez",
+      "tipo": "cara",
+      "prompt": "Luis Suárez, Uruguayan footballer",
+      "imagen": "assets/famosos/suarez.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "benzema",
+      "nombre": "Karim Benzema",
+      "tipo": "cara",
+      "prompt": "Karim Benzema, French footballer with beard",
+      "imagen": "assets/famosos/benzema.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "iniesta",
+      "nombre": "Andrés Iniesta",
+      "tipo": "cara",
+      "prompt": "Andrés Iniesta, Spanish footballer, bald",
+      "imagen": "assets/famosos/iniesta.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "siuuu",
+      "nombre": "Cristiano Ronaldo",
+      "tipo": "pose",
+      "prompt": "Cristiano Ronaldo's famous 'Siuuu' goal celebration: landing from a jump with legs wide apart, arms stretched down and back, chest out",
+      "imagen": "assets/famosos/siuuu.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "messi-cielo",
+      "nombre": "Lionel Messi",
+      "tipo": "pose",
+      "prompt": "Lionel Messi's goal celebration: both index fingers pointing up to the sky, looking up",
+      "imagen": "assets/famosos/messi-cielo.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "messi-camiseta",
+      "nombre": "Lionel Messi",
+      "tipo": "pose",
+      "prompt": "a footballer seen from behind holding up his shirt with both hands to show it to the crowd, number 10 on the back, short hair",
+      "imagen": "assets/famosos/messi-camiseta.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "messi-copa",
+      "nombre": "Lionel Messi",
+      "tipo": "gol",
+      "prompt": "a short bearded footballer lifting a golden World Cup style trophy above his head with both hands, wearing a cape",
+      "imagen": "assets/famosos/messi-copa.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "mbappe-brazos",
+      "nombre": "Kylian Mbappé",
+      "tipo": "pose",
+      "prompt": "Kylian Mbappé's celebration: standing still with arms crossed over his chest, hands tucked under his armpits",
+      "imagen": "assets/famosos/mbappe-brazos.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "haaland-zen",
+      "nombre": "Erling Haaland",
+      "tipo": "pose",
+      "prompt": "Erling Haaland's meditation celebration: sitting cross-legged on the ground in a zen pose, hands resting on knees",
+      "imagen": "assets/famosos/haaland-zen.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "bellingham-hey",
+      "nombre": "Jude Bellingham",
+      "tipo": "pose",
+      "prompt": "Jude Bellingham's celebration: standing with both arms stretched wide open to the sides, chest out",
+      "imagen": "assets/famosos/bellingham-hey.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "vinicius-baile",
+      "nombre": "Vinícius Júnior",
+      "tipo": "pose",
+      "prompt": "Vinícius Júnior dancing samba by the corner flag after a goal, one knee up, arms in the air",
+      "imagen": "assets/famosos/vinicius-baile.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "griezmann-baile",
+      "nombre": "Antoine Griezmann",
+      "tipo": "pose",
+      "prompt": "Antoine Griezmann's 'Take the L' dance celebration: hand making an L on the forehead, one leg kicking to the side",
+      "imagen": "assets/famosos/griezmann-baile.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "ronaldinho-surf",
+      "nombre": "Ronaldinho",
+      "tipo": "pose",
+      "prompt": "Ronaldinho's celebration: both hands making the 'hang loose' shaka sign, big smile, leaning forward",
+      "imagen": "assets/famosos/ronaldinho-surf.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "bebeto-cuna",
+      "nombre": "Bebeto",
+      "tipo": "pose",
+      "prompt": "Bebeto's 1994 World Cup 'rocking the baby' celebration: three players side by side swinging their arms as if rocking a baby",
+      "imagen": "assets/famosos/bebeto-cuna.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "milla-banderin",
+      "nombre": "Roger Milla",
+      "tipo": "pose",
+      "prompt": "Roger Milla's 1990 World Cup corner flag dance: dancing with hips swaying next to the corner flag, one hand on his belly",
+      "imagen": "assets/famosos/milla-banderin.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "cristiano-calma",
+      "nombre": "Cristiano Ronaldo",
+      "tipo": "pose",
+      "prompt": "Cristiano Ronaldo's 'calm down' celebration: both palms facing down, pushing slowly towards the ground",
+      "imagen": "assets/famosos/cristiano-calma.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "zlatan-patada",
+      "nombre": "Zlatan Ibrahimović",
+      "tipo": "gol",
+      "prompt": "Zlatan Ibrahimović's famous bicycle kick goal against England: body horizontal in the air, upside down, leg striking the ball",
+      "imagen": "assets/famosos/zlatan-patada.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "cristiano-chilena",
+      "nombre": "Cristiano Ronaldo",
+      "tipo": "gol",
+      "prompt": "Cristiano Ronaldo's famous bicycle kick goal against Juventus: body high in the air, almost horizontal, kicking the ball overhead",
+      "imagen": "assets/famosos/cristiano-chilena.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "maradona-mano",
+      "nombre": "Diego Maradona",
+      "tipo": "gol",
+      "prompt": "Diego Maradona's 'Hand of God' goal in 1986: jumping with one fist raised above his head touching the ball, goalkeeper jumping next to him",
+      "imagen": "assets/famosos/maradona-mano.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "maradona-siglo",
+      "nombre": "Diego Maradona",
+      "tipo": "gol",
+      "prompt": "Diego Maradona's 'goal of the century' 1986: dribbling the ball at full speed, low centre of gravity, ball at his left foot",
+      "imagen": "assets/famosos/maradona-siglo.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "zidane-volea",
+      "nombre": "Zinedine Zidane",
+      "tipo": "gol",
+      "prompt": "Zinedine Zidane's left-foot volley in the 2002 Champions League final: leaning sideways, left leg high striking the ball in mid air",
+      "imagen": "assets/famosos/zidane-volea.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "vanpersie-palomita",
+      "nombre": "Robin van Persie",
+      "tipo": "gol",
+      "prompt": "Robin van Persie's flying diving header in the 2014 World Cup: body fully stretched horizontally in the air, arms back, heading the ball",
+      "imagen": "assets/famosos/vanpersie-palomita.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "robertocarlos-falta",
+      "nombre": "Roberto Carlos",
+      "tipo": "gol",
+      "prompt": "Roberto Carlos's famous 1997 free kick: long run-up, striking the ball with the outside of his left foot, powerful thighs",
+      "imagen": "assets/famosos/robertocarlos-falta.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "panenka",
+      "nombre": "Antonín Panenka",
+      "tipo": "gol",
+      "prompt": "the Panenka penalty: player gently chipping the ball softly down the middle while the goalkeeper dives to one side",
+      "imagen": "assets/famosos/panenka.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "higuita-escorpion",
+      "nombre": "René Higuita",
+      "tipo": "gol",
+      "prompt": "René Higuita's scorpion kick save: goalkeeper diving forward face down, kicking the ball with both heels over his back",
+      "imagen": "assets/famosos/higuita-escorpion.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "iniesta-final",
+      "nombre": "Andrés Iniesta",
+      "tipo": "gol",
+      "prompt": "Andrés Iniesta celebrating his 2010 World Cup final goal: running with his shirt off, holding it in one hand",
+      "imagen": "assets/famosos/iniesta-final.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "rooney-chilena",
+      "nombre": "Wayne Rooney",
+      "tipo": "gol",
+      "prompt": "Wayne Rooney's famous overhead bicycle kick in the Manchester derby: in the air, back to the goal, striking the ball",
+      "imagen": "assets/famosos/rooney-chilena.png",
+      "origen": "gpt-image-2.5-flare"
+    },
+    {
+      "id": "pele-1958",
+      "nombre": "Pelé",
+      "tipo": "pose",
+      "prompt": "Pelé's iconic celebration: jumping high in the air with his right fist punching up to the sky",
+      "imagen": "assets/famosos/pele-1958.png",
+      "origen": "gpt-image-2.5-flare"
+    }
+  ]
+}

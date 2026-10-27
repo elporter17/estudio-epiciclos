@@ -20,7 +20,7 @@ export function readHistory(file = HISTORY) {
 
 // Reparto por categoría; cada workflow elige qué categorías usa (cats): en los dibujos, nombres y parejas son
 // dos de cada tres videos (50 % y 17 %), figuras 20 % e inventadas 13 %; la física (pelotas 40 %, juegos 60 %) va aparte
-export const SHARES = { figuras: 0.2, nombres: 0.5, combinaciones: 0.17, inventadas: 0.13, pelotas: 0.2, juegos: 0.3 };
+export const SHARES = { figuras: 0.2, nombres: 0.5, combinaciones: 0.17, inventadas: 0.13, pelotas: 0.2, juegos: 0.3, famosos: 1 };
 // Estilo de cada nombre o pareja (clásico, espejo y mandala con epiciclos; hilos y anillos en src/nombres-arte.js).
 // Las parejas van en tres líneas: clásico, anillos o costura
 export const NAME_STYLES_BY_CAT = { nombres: ['clasico', 'espejo', 'mandala', 'hilos', 'anillos', 'costura'], combinaciones: ['clasico', 'anillos', 'costura'] };
@@ -53,7 +53,7 @@ export function pickNext({ history = readHistory(), avoid, seed = Date.now() >>>
   const lastStyle = [...history].reverse().find((h) => h.style && h.group === it.group)?.style;
   const styles = (NAME_STYLES_BY_CAT[it.cat] || []).filter((s, _, a) => a.length < 2 || s !== lastStyle);
   const style = styles.length ? styles[Math.floor(rng() * styles.length)] : undefined;
-  const args = it.kind === 'preset' ? ['--preset', it.name] : it.kind === 'text' ? ['--text', it.text, '--font', it.font] : it.kind === 'bounce' ? ['--mode', it.mode] : ['--random', it.type];
+  const args = it.kind === 'preset' ? ['--preset', it.name] : it.kind === 'text' ? ['--text', it.text, '--font', it.font] : it.kind === 'bounce' ? ['--mode', it.mode] : it.kind === 'image' ? ['--image', it.image, '--reveal-text', it.name] : ['--random', it.type];
   args.push('--seed', String(renderSeed));
   return { ...it, seed: renderSeed, args, ...(style ? { style } : {}) };
 }

@@ -917,7 +917,7 @@ $('#txtGo').addEventListener('click', drawText);
 $('#txt').addEventListener('keydown', (e) => { if (e.key === 'Enter') drawText(); });
 
 // Imagen
-const imgOpts = { mode: 'silueta', thr: 50, detail: 60, invert: false, cutout: true };
+const imgOpts = { mode: 'silueta', thr: 50, detail: 60, invert: false, cutout: true, maxDim: 800 }; // 800 px: con menos, los logos pierden detalle
 let currentImg = null, currentImgName = 'Imagen', imgTimer = 0;
 const setImgMode = segment('imgMode', imgOpts.mode, (v) => { imgOpts.mode = v; autoThreshold(); applyImage(); });
 function syncImgUI() { $('#thr').value = imgOpts.thr; $('#thrV').textContent = imgOpts.thr; $('#detail').value = imgOpts.detail; $('#detailV').textContent = imgOpts.detail; $('#invert').checked = imgOpts.invert; }

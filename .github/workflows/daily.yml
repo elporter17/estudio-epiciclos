@@ -22,7 +22,7 @@ on:
       cats:
         description: Qué tipo de video
         type: choice
-        options: [dibujos, nombres, fisica, juegos, pelotas, nuevos]
+        options: [dibujos, nombres, famosos, fisica, juegos, pelotas, nuevos]
         default: dibujos
       lang:
         description: Idioma del video y la descripción
