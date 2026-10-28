@@ -10,5 +10,6 @@ assets/fonts/
 data/tiktok-token.json
 data/tiktok-pending.json
 data/history.json
+data/tiktok-log.json
 # Bandeja de imágenes por agregar (npm run silueta): las limpias quedan en assets/famosos/
 siluetas/
