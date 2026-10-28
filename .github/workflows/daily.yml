@@ -174,12 +174,12 @@ jobs:
               const lines = ["### Descripción para pegar en TikTok", "", "```", m.post.text, "```", "",
                 `Figura: ${m.title} · ${Math.round(m.duration)} s` + (t ? ` · TikTok: ${t.status} (${t.mode})` : "")];
               if (t && t.status === "LIMIT") lines.push("", "TikTok no aceptó más borradores por ahora (5 pendientes cada 24 h): descarga el video del artefacto de esta corrida o publica los pendientes.");
-              if (m.videoUrl) lines.push("", `**[Descargar el video (MP4)](${m.videoUrl})**`);
+              if (m.videoUrl) lines.push("", `**[⬇️ Descargar el video (MP4)](${m.videoDownload || m.videoUrl + "?download=1"})** · [▶️ Verlo](${m.videoUrl})`);
               if (t && t.account) lines.push("", `Cuenta de TikTok: ${t.account}`);
               fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.join("\n") + "\n");
               // Aviso de la corrida (se ve arriba en la página de la corrida y en la app de GitHub): descripción y enlace
               const esc = (s) => s.replace(/%/g, "%25").replace(/\r/g, "").replace(/\n/g, "%0A");
-              const aviso = [m.post.text, "", `${m.title} · ${t ? t.status : "sin subir"}`, m.videoUrl ? `Video: ${m.videoUrl}` : ""].join("\n");
+              const aviso = [m.post.text, "", `${m.title} · ${t ? t.status : "sin subir"}`, m.videoUrl ? `Descargar: ${m.videoDownload || m.videoUrl + "?download=1"}` : ""].join("\n");
               console.log(`::notice title=Descripción para pegar en TikTok::${esc(aviso)}`);
             }' || true
 
@@ -198,7 +198,7 @@ jobs:
               const m = JSON.parse(fs.readFileSync("out/" + f, "utf8")); if (!m.post) continue;
               const t = (m.tiktok || []).at(-1), st = t ? t.status : "sin subir";
               const nota = st === "LIMIT" ? "\n\n⚠️ TikTok no lo aceptó (5 borradores pendientes): bájalo y súbelo a mano." : st === "SEND_TO_USER_INBOX" ? "\n\nEnviado a la bandeja de TikTok (aviso «Tu contenido de Circularte está listo»)." : "";
-              parts.push(`### 🎬 ${m.title} · ${st}\n\n\`\`\`\n${m.post.text}\n\`\`\`\n\n` + (m.videoUrl ? `[⬇️ Descargar el video](${m.videoUrl}) · ` : "") + `[Ver la corrida](${process.env.RUN_URL})` + nota);
+              parts.push(`### 🎬 ${m.title} · ${st}\n\n\`\`\`\n${m.post.text}\n\`\`\`\n\n` + (m.videoUrl ? `[⬇️ Descargar el video](${m.videoDownload || m.videoUrl + "?download=1"}) · [▶️ Verlo](${m.videoUrl}) · ` : "") + `[Ver la corrida](${process.env.RUN_URL})` + nota);
             }
             if (parts.length) fs.writeFileSync("aviso.md", parts.join("\n\n---\n\n") + "\n");' || true
           [ -f aviso.md ] || exit 0

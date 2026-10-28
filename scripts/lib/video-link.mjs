@@ -12,7 +12,8 @@ export const blobToken = () => process.env.BLOB_READ_WRITE_TOKEN
 export async function publicarEnlace(file, { days = 7, log = (m) => process.stderr.write(m) } = {}) {
   const token = blobToken();
   if (!token) { log('Sin BLOB_READ_WRITE_TOKEN: no hay enlace directo al video\n'); return null; }
-  const { url } = await put(PREFIX + path.basename(file), fs.readFileSync(file), { access: 'public', token, addRandomSuffix: true, contentType: 'video/mp4' });
+  // downloadUrl (?download=1) hace que el teléfono lo descargue en vez de solo reproducirlo
+  const { url, downloadUrl } = await put(PREFIX + path.basename(file), fs.readFileSync(file), { access: 'public', token, addRandomSuffix: true, contentType: 'video/mp4' });
   try {
     const viejos = [], limite = Date.now() - days * 864e5;
     let cursor;
@@ -24,5 +25,5 @@ export async function publicarEnlace(file, { days = 7, log = (m) => process.stde
     if (viejos.length) { await del(viejos, { token }); log(`Borrados ${viejos.length} video(s) de más de ${days} días del almacén\n`); }
   } catch (e) { log(`No se pudieron borrar videos viejos: ${e.message}\n`); }
   log(`Enlace directo al video: ${url}\n`);
-  return url;
+  return { url, downloadUrl: downloadUrl || `${url}?download=1` };
 }

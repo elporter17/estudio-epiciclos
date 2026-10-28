@@ -73,7 +73,10 @@ try {
   const cap = makeCaption({ ...r.info, cat }, { lang: o.lang, spoiler: !suspense });
   const meta = { ...r.info, cat: item.cat, post: { ...cap, text: postText(cap), lang: o.lang } };
   // Enlace directo al MP4 (si hay almacén Blob): sirve aunque TikTok no entregue el borrador
-  if (!o['dry-run']) meta.videoUrl = await publicarEnlace(r.out).catch((e) => { console.error(`No se pudo subir el video al almacén: ${e.message}`); return null; });
+  if (!o['dry-run']) {
+    const link = await publicarEnlace(r.out).catch((e) => { console.error(`No se pudo subir el video al almacén: ${e.message}`); return null; });
+    if (link) { meta.videoUrl = link.url; meta.videoDownload = link.downloadUrl; }
+  }
   fs.writeFileSync(r.sidecar, JSON.stringify(meta, null, 2) + '\n');
   if (!o['dry-run']) recordPick(item, { lang: o.lang, file: meta.file, ...(item.style ? { style: item.style } : {}) });
   let tiktok = null;
