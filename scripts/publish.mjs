@@ -22,6 +22,12 @@ function postTitle(meta) {
 }
 
 // coverMs: cuadro de portada; por defecto 1,5 s antes del final (la figura completa)
+// Nombre visible de la cuenta conectada (user.info.basic)
+async function userName(token) {
+  const res = await fetch('https://open.tiktokapis.com/v2/user/info/?fields=display_name', { headers: { Authorization: `Bearer ${token.access_token}` } });
+  const d = await res.json(); return d?.data?.user?.display_name || null;
+}
+
 export async function publishVideo({ video, mode = 'draft', privacy = 'SELF_ONLY', title, coverMs, log = (m) => process.stderr.write(m) }) {
   if (!['draft', 'direct'].includes(mode)) throw new Error('--mode debe ser draft o direct');
   const file = path.resolve(video);
@@ -33,6 +39,9 @@ export async function publishVideo({ video, mode = 'draft', privacy = 'SELF_ONLY
   const size = fs.statSync(file).size, plan = chunkPlan(size);
   const token = await accessToken();
 
+  // A qué cuenta va el borrador (nombre visible): ayuda a saber por qué no aparece en la bandeja
+  const account = await userName(token).catch(() => null);
+  if (account) log(`Cuenta de TikTok: ${account}\n`);
   let init, text = '';
   if (mode === 'draft') {
     // Bandeja: máximo 5 borradores pendientes cada 24 h; la descripción se escribe en la app
@@ -59,7 +68,7 @@ export async function publishVideo({ video, mode = 'draft', privacy = 'SELF_ONLY
   await uploadFile(init.upload_url, file, plan, mime, log);
   const st = await waitForStatus(init.publish_id, token, { until: mode === 'draft' ? ['SEND_TO_USER_INBOX', 'PUBLISH_COMPLETE', 'FAILED'] : ['PUBLISH_COMPLETE', 'FAILED'], log });
 
-  const result = { mode, publish_id: init.publish_id, status: st.status, fail_reason: st.fail_reason || null, privacy: mode === 'direct' ? privacy : null, at: new Date().toISOString() };
+  const result = { mode, account, publish_id: init.publish_id, status: st.status, fail_reason: st.fail_reason || null, privacy: mode === 'direct' ? privacy : null, at: new Date().toISOString() };
   if (meta) { meta.tiktok = [...(meta.tiktok || []), result]; fs.writeFileSync(sidecar, JSON.stringify(meta, null, 2) + '\n'); }
   if (st.status === 'FAILED') throw new Error(`TikTok rechazó el video: ${st.fail_reason || 'sin motivo'}`);
   if (st.timedOut) log('TikTok sigue procesando; revisa la app en unos minutos.\n');

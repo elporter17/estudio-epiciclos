@@ -26,6 +26,7 @@ import { setupNode } from './lib/node-env.mjs';
 import { NSEQ_DETAIL } from '../src/engine.js';
 import { fisicaCat } from '../src/fisica.js';
 import fs from 'node:fs';
+import { publicarEnlace } from './lib/video-link.mjs';
 
 try {
   const o = parseCli({
@@ -70,6 +71,8 @@ try {
   const cat = item.kind === 'bounce' ? fisicaCat(item.mode) : item.kind === 'image' ? `${item.cat}-${item.tipo}` : style ? `${item.cat}-${style}` : item.cat;
   const cap = makeCaption({ ...r.info, cat }, { lang: o.lang, spoiler: !suspense });
   const meta = { ...r.info, cat: item.cat, post: { ...cap, text: postText(cap), lang: o.lang } };
+  // Enlace directo al MP4 (si hay almacén Blob): sirve aunque TikTok no entregue el borrador
+  if (!o['dry-run']) meta.videoUrl = await publicarEnlace(r.out).catch((e) => { console.error(`No se pudo subir el video al almacén: ${e.message}`); return null; });
   fs.writeFileSync(r.sidecar, JSON.stringify(meta, null, 2) + '\n');
   if (!o['dry-run']) recordPick(item, { lang: o.lang, file: meta.file, ...(item.style ? { style: item.style } : {}) });
   let tiktok = null;
