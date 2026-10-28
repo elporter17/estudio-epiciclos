@@ -27,6 +27,7 @@ import { NSEQ_DETAIL } from '../src/engine.js';
 import { fisicaCat } from '../src/fisica.js';
 import fs from 'node:fs';
 import { publicarEnlace } from './lib/video-link.mjs';
+import { logUpload } from './tiktok-status.mjs';
 
 try {
   const o = parseCli({
@@ -86,6 +87,7 @@ try {
       meta.tiktok = [...(meta.tiktok || []), tiktok]; fs.writeFileSync(r.sidecar, JSON.stringify(meta, null, 2) + '\n');
       console.error(`Aviso: TikTok no aceptó más borradores por ahora (${e.message}). El video queda como artefacto de la corrida.`);
     }
+    logUpload({ at: new Date().toISOString(), title: meta.title, publish_id: tiktok?.publish_id || null, status: tiktok?.status, run: process.env.GITHUB_RUN_ID || null });
   }
   console.log(JSON.stringify({ video: r.out, meta: r.sidecar, post: meta.post.text, tiktok }, null, 2));
 } catch (e) {

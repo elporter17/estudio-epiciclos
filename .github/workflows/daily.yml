@@ -42,6 +42,10 @@ on:
         description: Estilos de nombre permitidos, separados por comas (espejo, mandala, hilos, anillos, costura, clasico) o «nuevos»; vacío = todos
         type: string
         default: ''
+      estado:
+        description: Solo consultar en TikTok el estado de subidas anteriores (publish_id separados por espacios, o «ultimos»); no genera video
+        type: string
+        default: ''
       sonido:
         description: Sonido del video (sin = audio en silencio, para ponerle en TikTok una canción del momento)
         type: choice
@@ -60,10 +64,12 @@ on:
       sonido: { type: string, default: sin }
       figura: { type: string, default: '' }
       estilos: { type: string, default: '' }
+      estado: { type: string, default: '' }
       reseed: { type: boolean, default: false }
 
 permissions:
   contents: read
+  issues: write # comentario «Videos para publicar»: llega por correo con la descripción
 
 jobs:
   daily:
@@ -88,6 +94,7 @@ jobs:
       # Almacén Blob de Vercel (opcional): enlace directo al MP4 en el resumen y en el aviso de la corrida
       BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
       ESTILOS_INPUT: ${{ inputs.estilos || '' }}
+      ESTADO_INPUT: ${{ inputs.estado || '' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -132,6 +139,11 @@ jobs:
 
       - name: Generar y enviar
         run: |
+          # Solo consultar el estado de subidas anteriores
+          if [ -n "$ESTADO_INPUT" ]; then
+            if [ "$ESTADO_INPUT" = "ultimos" ]; then node scripts/tiktok-status.mjs; else node scripts/tiktok-status.mjs $ESTADO_INPUT; fi
+            exit 0
+          fi
           case "$CATS_INPUT" in
             dibujos) cats=figuras,nombres,combinaciones,inventadas ;;
             fisica) cats=pelotas,juegos ;;
@@ -170,6 +182,31 @@ jobs:
               const aviso = [m.post.text, "", `${m.title} · ${t ? t.status : "sin subir"}`, m.videoUrl ? `Video: ${m.videoUrl}` : ""].join("\n");
               console.log(`::notice title=Descripción para pegar en TikTok::${esc(aviso)}`);
             }' || true
+
+      # Aviso por correo: un comentario en el issue «Videos para publicar» con la descripción y el enlace. GitHub manda
+      # cada comentario por correo (y a la app) con el texto completo, cosa que no hace con el correo de la corrida.
+      - name: Aviso por correo con la descripción
+        if: always() && env.ESTADO_INPUT == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          node -e '
+            const fs = require("fs"); if (!fs.existsSync("out")) process.exit(0);
+            const parts = [];
+            for (const f of fs.readdirSync("out").filter((f) => f.endsWith(".json"))) {
+              const m = JSON.parse(fs.readFileSync("out/" + f, "utf8")); if (!m.post) continue;
+              const t = (m.tiktok || []).at(-1), st = t ? t.status : "sin subir";
+              const nota = st === "LIMIT" ? "\n\n⚠️ TikTok no lo aceptó (5 borradores pendientes): bájalo y súbelo a mano." : st === "SEND_TO_USER_INBOX" ? "\n\nEnviado a la bandeja de TikTok (aviso «Tu contenido de Circularte está listo»)." : "";
+              parts.push(`### 🎬 ${m.title} · ${st}\n\n\`\`\`\n${m.post.text}\n\`\`\`\n\n` + (m.videoUrl ? `[⬇️ Descargar el video](${m.videoUrl}) · ` : "") + `[Ver la corrida](${process.env.RUN_URL})` + nota);
+            }
+            if (parts.length) fs.writeFileSync("aviso.md", parts.join("\n\n---\n\n") + "\n");' || true
+          [ -f aviso.md ] || exit 0
+          n=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "Videos para publicar in:title" --json number --jq '.[0].number // empty')
+          if [ -z "$n" ]; then
+            n=$(gh issue create --repo "$GITHUB_REPOSITORY" --title "Videos para publicar" --body "@${{ github.repository_owner }} cada corrida deja aquí la descripción para pegar en TikTok y el enlace al video. Te llega por correo con cada comentario." | grep -o '[0-9]*$')
+          fi
+          gh issue comment "$n" --repo "$GITHUB_REPOSITORY" --body-file aviso.md || echo "No se pudo comentar en el issue"
 
       # Aviso por WhatsApp (CallMeBot, gratis): solo si están los secretos CALLMEBOT_PHONE y CALLMEBOT_APIKEY
       - name: Aviso por WhatsApp
