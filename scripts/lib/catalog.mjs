@@ -4,7 +4,7 @@ import path from 'node:path';
 import { PRESETS, INVENT_TYPES, COMPLEX_TYPES, presetSrc, inventFn, funName, makeRng } from '../../src/engine.js';
 import { FISICA_MODES, FISICA_NAMES, fisicaGroup } from '../../src/fisica.js';
 
-// data/biblioteca.json: 500 nombres, 100 parejas y 100 figuras de emoji para la publicación automática
+// data/biblioteca.json: 221 nombres latinos comunes, 100 parejas y 100 figuras de emoji para la publicación automática
 export const BIBLIOTECA = JSON.parse(fs.readFileSync(new URL('../../data/biblioteca.json', import.meta.url), 'utf8'));
 // data/famosos.json: futbolistas (caras, poses y goles) con su silueta en assets/famosos/; las que no tienen imagen no entran
 const FAMOSOS_DATA = JSON.parse(fs.readFileSync(new URL('../../data/famosos.json', import.meta.url), 'utf8'));
