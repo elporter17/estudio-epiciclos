@@ -38,6 +38,10 @@ on:
         description: Una figura concreta por su id (por ejemplo famoso:kane-balondeoro o nombre:Andrea); vacío = al azar
         type: string
         default: ''
+      estilos:
+        description: Estilos de nombre permitidos, separados por comas (espejo, mandala, hilos, anillos, costura, clasico) o «nuevos»; vacío = todos
+        type: string
+        default: ''
       sonido:
         description: Sonido del video (sin = audio en silencio, para ponerle en TikTok una canción del momento)
         type: choice
