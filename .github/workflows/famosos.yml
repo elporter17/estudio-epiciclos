@@ -1,14 +1,13 @@
 # Futbolistas dibujados con círculos: caras, celebraciones, goles icónicos y escudos (data/famosos.json, siluetas en
 # assets/famosos/). Reutiliza daily.yml con cats = famosos: mismo token, mismo historial y nunca corre a la vez que
 # los dibujos. Sin sonido salvo que al lanzarlo a mano elijas «con».
-# Ojo: con los nombres (6 al día) son 12 borradores diarios y TikTok admite 5 pendientes cada 24 h por cuenta; los
-# que sobren quedan como artefacto de la corrida (sin fallar) hasta que se publiquen los pendientes.
+# Con los nombres (3 al día) son 5 borradores diarios: justo el máximo de TikTok (5 pendientes cada 24 h por cuenta).
 name: Futbolistas a TikTok
 
 on:
   schedule:
-    # Cada 4 horas, media hora después de los nombres: en Honduras (UTC-6) 18:47, 22:47, 2:47, 6:47, 10:47 y 14:47
-    - cron: '47 */4 * * *'
+    # 2 al día, entre los nombres: en Honduras (UTC-6) 10:47 y 16:47
+    - cron: '47 16,22 * * *'
   workflow_dispatch:
     inputs:
       lang:

@@ -21,7 +21,7 @@ Web que dibuja imágenes, textos y funciones con círculos que giran (series de 
 `) y `captions.js` tiene ganchos propios para nombres y parejas.
 - `api/`: funciones de Vercel (`export default { fetch(request) }`, Web Request/Response). `_tiktok.js` es compartido (cookies cifradas AES-GCM con `SESSION_SECRET`, cliente TikTok, token de Blob).
 - `scripts/`: render en Node (`render.mjs`), `pick.mjs`, `caption.mjs` (plantillas, sin IA), `daily.mjs`, `publish.mjs` y `tiktok-connect.mjs` (CLI), `fonts.mjs`.
-- `.github/workflows/daily.yml`: base reutilizable (solo se lanza a mano). Programados: `nombres.yml` (`cats: nombres`, `estilos: nuevos` → `pickNext({ styles })` sin el clásico; cron `17 */4 * * *`) y `famosos.yml` (cron `47 */4 * * *`); `fisica.yml` desactivado por el usuario. Cada corrida, un borrador a TikTok (máximo 5 pendientes por día) (directo cuando se audite Direct Post); la descripción queda en el resumen de la corrida.
+- `.github/workflows/daily.yml`: base reutilizable (solo se lanza a mano). Programados: `nombres.yml` (`cats: nombres`, `estilos: nuevos` → `pickNext({ styles })` sin el clásico; cron `17 1,13,19 * * *`, 3 al día) y `famosos.yml` (cron `47 16,22 * * *`, 2 al día): 5 en total, el máximo de borradores pendientes de TikTok (`spam_risk_too_many_pending_share`; los avisos que no llegan igual cuentan 24 h); `fisica.yml` desactivado por el usuario. Cada corrida, un borrador a TikTok (máximo 5 pendientes por día) (directo cuando se audite Direct Post); la descripción queda en el resumen de la corrida.
 - Páginas legales: `privacidad.html`, `terminos.html`; callback OAuth: `tiktok-callback.html` (modo web y modo terminal).
 
 ## Comandos
