@@ -1,0 +1,64 @@
+#!/usr/bin/env node
+// Publica un video como Reel en una página de Facebook (Graph API, video_reels): start → subir los bytes → finish.
+// Necesita FB_PAGE_ID y FB_PAGE_TOKEN (token de página de larga duración con pages_manage_posts,
+// pages_read_engagement, pages_show_list y publish_video). Nunca imprime el token.
+//
+//   node scripts/facebook.mjs --video out/<video>.mp4 [--description "texto"] [--draft]
+import fs from 'node:fs';
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { parseCli } from './lib/cli.mjs';
+
+const V = process.env.FB_GRAPH_VERSION || 'v23.0';
+const GRAPH = `https://graph.facebook.com/${V}`;
+export const facebookReady = () => !!(process.env.FB_PAGE_ID && process.env.FB_PAGE_TOKEN);
+
+async function graph(method, pathname, params = {}) {
+  const u = new URL(GRAPH + pathname);
+  for (const [k, v] of Object.entries({ ...params, access_token: process.env.FB_PAGE_TOKEN })) if (v != null) u.searchParams.set(k, v);
+  const res = await fetch(u, { method });
+  const d = await res.json().catch(() => ({}));
+  if (!res.ok || d.error) {
+    const e = new Error(`Facebook ${pathname} → ${res.status} ${d.error?.code ?? ''}: ${d.error?.message || 'sin detalle'}`);
+    e.code = d.error?.code; throw e;
+  }
+  return d;
+}
+
+// draft: queda como borrador en Meta Business Suite en vez de publicarse
+export async function publishReel({ video, description = '', draft = false, log = (m) => process.stderr.write(m) }) {
+  if (!facebookReady()) throw new Error('Faltan FB_PAGE_ID o FB_PAGE_TOKEN');
+  const page = process.env.FB_PAGE_ID, file = path.resolve(video), bytes = fs.readFileSync(file);
+  const { video_id, upload_url } = await graph('POST', `/${page}/video_reels`, { upload_phase: 'start' });
+  log(`Facebook: subiendo ${path.basename(file)} (${(bytes.length / 1e6).toFixed(1)} MB) como Reel…\n`);
+  const up = await fetch(upload_url || `https://rupload.facebook.com/video-upload/${V}/${video_id}`, {
+    method: 'POST', body: bytes,
+    headers: { Authorization: `OAuth ${process.env.FB_PAGE_TOKEN}`, offset: '0', file_size: String(bytes.length) }
+  });
+  const upd = await up.json().catch(() => ({}));
+  if (!up.ok || !upd.success) throw new Error(`Facebook no recibió el video: ${up.status} ${upd.debug_info?.message || JSON.stringify(upd).slice(0, 200)}`);
+  await graph('POST', `/${page}/video_reels`, { upload_phase: 'finish', video_id, video_state: draft ? 'DRAFT' : 'PUBLISHED', description: description.slice(0, 2200) });
+  // Facebook procesa el video unos segundos o minutos; se espera un poco para reportar el estado
+  let status = 'processing', permalink = null;
+  for (let i = 0; i < 24; i++) {
+    await new Promise((r) => setTimeout(r, 5000));
+    const s = await graph('GET', `/${video_id}`, { fields: 'status,permalink_url' }).catch(() => null);
+    const st = s?.status || {};
+    permalink = s?.permalink_url ? `https://www.facebook.com${s.permalink_url}` : permalink;
+    if (st.video_status === 'error' || st.processing_phase?.status === 'error') { status = 'error'; break; }
+    if (st.publishing_phase?.status === 'complete' || (draft && st.processing_phase?.status === 'complete')) { status = draft ? 'draft' : 'published'; break; }
+  }
+  log(`Facebook: ${status}${permalink ? ` · ${permalink}` : ''}\n`);
+  return { video_id, status, permalink, draft, at: new Date().toISOString() };
+}
+
+async function main() {
+  const o = parseCli({ video: { type: 'string' }, description: { type: 'string' }, draft: { type: 'boolean', default: false } });
+  if (!o.video) { console.log('Uso: node scripts/facebook.mjs --video out/<video>.mp4 [--description "texto"] [--draft]'); return; }
+  const meta = (() => { try { return JSON.parse(fs.readFileSync(o.video.replace(/\.mp4$/i, '.json'), 'utf8')); } catch { return null; } })();
+  console.log(JSON.stringify(await publishReel({ video: o.video, description: o.description ?? meta?.post?.text ?? '', draft: o.draft }), null, 2));
+}
+
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((e) => { console.error(`Error: ${e.message}`); process.exit(1); });
+}

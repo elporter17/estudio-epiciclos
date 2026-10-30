@@ -27,6 +27,16 @@ import { NSEQ_DETAIL } from '../src/engine.js';
 import { fisicaCat } from '../src/fisica.js';
 import fs from 'node:fs';
 import { publicarEnlace } from './lib/video-link.mjs';
+import { publishReel, facebookReady } from './facebook.mjs';
+import { spawnSync } from 'node:child_process';
+import ffmpegPath from 'ffmpeg-static';
+
+// Copia del video con el audio en silencio (para TikTok, donde se le pone una canción del momento)
+function muteCopy(src, dst) {
+  const r = spawnSync(ffmpegPath, ['-hide_banner', '-loglevel', 'error', '-y', '-i', src, '-f', 'lavfi', '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100',
+    '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-shortest', '-movflags', '+faststart', dst]);
+  if (r.status !== 0) throw new Error(`ffmpeg no pudo quitar el sonido: ${String(r.stderr).slice(-300)}`);
+}
 import { logUpload } from './tiktok-status.mjs';
 
 try {
@@ -39,7 +49,9 @@ try {
     // Estilos de nombre permitidos, separados por comas; «nuevos» = espejo, mandala, hilos, anillos y costura
     estilos: { type: 'string' },
     // Sin sonido: pelotas, juegos, hilos, anillos y costura salen con audio en silencio (los epiciclos ya lo son)
-    mute: { type: 'boolean', default: false }
+    mute: { type: 'boolean', default: false },
+    // Facebook (Reel en la página, si hay FB_PAGE_ID y FB_PAGE_TOKEN): si | no | borrador. Va con melodía aunque TikTok vaya sin sonido
+    facebook: { type: 'string', default: 'si' }
   });
   const cats = o.cats ? o.cats.split(',').map((c) => c.trim()).filter(Boolean) : undefined;
   if (o.publish && !['draft', 'direct'].includes(o.publish)) throw new Error('--publish debe ser draft o direct');
@@ -49,15 +61,18 @@ try {
   const estilos = o.estilos === 'nuevos' ? ['espejo', 'mandala', 'hilos', 'anillos', 'costura'] : o.estilos ? o.estilos.split(',').map((s) => s.trim()) : undefined;
   const item = pickNext({ history: readHistory(), emoji: !!emoji, complex: suspense, cats, styles: estilos, seed: o.seed != null ? Number(o.seed) >>> 0 : undefined });
   const style = item.style && item.style !== 'clasico' ? item.style : null;
+  const fb = !o['dry-run'] && o.facebook !== 'no' && facebookReady();
+  // Con Facebook, los videos con melodía se hacen con sonido y TikTok recibe una copia muda
+  const conSonido = item.kind === 'bounce' || ARTE_MODES.includes(style), mute = o.mute && !(fb && conSonido);
   // Portada en el primer cuadro (nombres, parejas y famosos): el dibujo avanzado con una pregunta grande
   const cover = ['nombres', 'combinaciones', 'famosos'].includes(item.cat) ? coverText(item.cat, item.tipo, o.lang) : undefined;
   console.error(`Elegido: ${item.name || item.type} (${item.group}${style ? `, estilo ${style}` : ''})`);
   // Física (pelotas y juegos) y nombres con hilos o anillos: su propio render, con sonido; lo demás, el dibujo con
   // epiciclos (espejo y mandala también, con una sola cadena de círculos para que la figura salga grande)
   const r = item.kind === 'bounce'
-    ? await renderBounce({ mode: item.mode, seed: item.seed, lang: o.lang, fps: o.fps, mute: o.mute })
+    ? await renderBounce({ mode: item.mode, seed: item.seed, lang: o.lang, fps: o.fps, mute })
     : ARTE_MODES.includes(style)
-    ? await renderArte({ mode: style, text: item.text, font: item.font, name: item.name, nameEn: item.nameEn, id: item.id, seed: item.seed, lang: o.lang, fps: o.fps, mute: o.mute, cover, pair: item.cat === 'combinaciones' })
+    ? await renderArte({ mode: style, text: item.text, font: item.font, name: item.name, nameEn: item.nameEn, id: item.id, seed: item.seed, lang: o.lang, fps: o.fps, mute, cover, pair: item.cat === 'combinaciones' })
     : await renderVideo({
       preset: item.kind === 'preset' ? item.name : undefined, random: item.kind === 'random' ? item.type : undefined,
       ...(item.kind === 'text' ? { text: item.text, font: item.font, name: item.name, nameEn: item.nameEn } : {}),
@@ -68,6 +83,8 @@ try {
       ...(suspense ? { guide: 0, spoiler: false, nseq: o.nseq || (cover ? NSEQ_TIKTOK : NSEQ_DETAIL) } : o.nseq ? { nseq: o.nseq } : {}),
       cover
     });
+  let fbVideo = r.out;
+  if (o.mute && !mute) { fbVideo = r.out.replace(/\.mp4$/i, '-con-sonido.mp4'); fs.renameSync(r.out, fbVideo); muteCopy(fbVideo, r.out); }
   // La categoría (nombres, parejas, pelotas, juegos…) elige ganchos propios para la descripción
   const cat = item.kind === 'bounce' ? fisicaCat(item.mode) : item.kind === 'image' ? `${item.cat}-${item.tipo}` : style ? `${item.cat}-${style}` : item.cat;
   const cap = makeCaption({ ...r.info, cat }, { lang: o.lang, spoiler: !suspense });
@@ -91,6 +108,13 @@ try {
       console.error(`Aviso: TikTok no aceptó más borradores por ahora (${e.message}). El video queda como artefacto de la corrida.`);
     }
     logUpload({ at: new Date().toISOString(), title: meta.title, publish_id: tiktok?.publish_id || null, status: tiktok?.status, run: process.env.GITHUB_RUN_ID || null });
+  }
+  // Facebook: Reel en la página, con la misma descripción (si falla, la corrida no falla)
+  if (fb) {
+    const m = JSON.parse(fs.readFileSync(r.sidecar, 'utf8'));
+    try { m.facebook = await publishReel({ video: fbVideo, description: meta.post.text, draft: o.facebook === 'borrador' }); }
+    catch (e) { m.facebook = { status: 'error', error: e.message, at: new Date().toISOString() }; console.error(`Aviso: Facebook no publicó el video: ${e.message}`); }
+    fs.writeFileSync(r.sidecar, JSON.stringify(m, null, 2) + '\n');
   }
   console.log(JSON.stringify({ video: r.out, meta: r.sidecar, post: meta.post.text, tiktok }, null, 2));
 } catch (e) {
