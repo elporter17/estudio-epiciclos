@@ -9,13 +9,25 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { parseCli } from './lib/cli.mjs';
 
-const V = process.env.FB_GRAPH_VERSION || 'v23.0';
+const V = process.env.FB_GRAPH_VERSION || 'v26.0';
 const GRAPH = `https://graph.facebook.com/${V}`;
 export const facebookReady = () => !!(process.env.FB_PAGE_ID && process.env.FB_PAGE_TOKEN);
 
+// FB_PAGE_TOKEN puede ser el token de la página o el de un usuario del sistema del portafolio con acceso a la página
+// (no vence): en ese caso se pide el de la página una vez por corrida
+let pageToken = null;
+async function tokenDePagina() {
+  if (pageToken) return pageToken;
+  const u = new URL(`${GRAPH}/${process.env.FB_PAGE_ID}`);
+  u.searchParams.set('fields', 'access_token'); u.searchParams.set('access_token', process.env.FB_PAGE_TOKEN);
+  const d = await fetch(u).then((r) => r.json()).catch(() => ({}));
+  pageToken = d.access_token || process.env.FB_PAGE_TOKEN;
+  return pageToken;
+}
+
 async function graph(method, pathname, params = {}) {
   const u = new URL(GRAPH + pathname);
-  for (const [k, v] of Object.entries({ ...params, access_token: process.env.FB_PAGE_TOKEN })) if (v != null) u.searchParams.set(k, v);
+  for (const [k, v] of Object.entries({ ...params, access_token: await tokenDePagina() })) if (v != null) u.searchParams.set(k, v);
   const res = await fetch(u, { method });
   const d = await res.json().catch(() => ({}));
   if (!res.ok || d.error) {
@@ -33,7 +45,7 @@ export async function publishReel({ video, description = '', draft = false, log 
   log(`Facebook: subiendo ${path.basename(file)} (${(bytes.length / 1e6).toFixed(1)} MB) como Reel…\n`);
   const up = await fetch(upload_url || `https://rupload.facebook.com/video-upload/${V}/${video_id}`, {
     method: 'POST', body: bytes,
-    headers: { Authorization: `OAuth ${process.env.FB_PAGE_TOKEN}`, offset: '0', file_size: String(bytes.length) }
+    headers: { Authorization: `OAuth ${await tokenDePagina()}`, offset: '0', file_size: String(bytes.length) }
   });
   const upd = await up.json().catch(() => ({}));
   if (!up.ok || !upd.success) throw new Error(`Facebook no recibió el video: ${up.status} ${upd.debug_info?.message || JSON.stringify(upd).slice(0, 200)}`);
