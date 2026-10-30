@@ -64,6 +64,15 @@ export async function publishReel({ video, description = '', draft = false, log 
   return { video_id, status, permalink, draft, at: new Date().toISOString() };
 }
 
+// Foto publicada en la página (curiosidades y noticias): url pública de la imagen y el texto del post
+export async function publishPhoto({ url, caption = '', log = (m) => process.stderr.write(m) }) {
+  if (!facebookReady()) throw new Error('Faltan FB_PAGE_ID o FB_PAGE_TOKEN');
+  const d = await graph('POST', `/${process.env.FB_PAGE_ID}/photos`, { url, caption: caption.slice(0, 63000), published: 'true' });
+  const permalink = d.post_id ? `https://www.facebook.com/${d.post_id}` : null;
+  log(`Facebook: foto publicada${permalink ? ` · ${permalink}` : ''}\n`);
+  return { photo_id: d.id, post_id: d.post_id, status: 'published', permalink, at: new Date().toISOString() };
+}
+
 async function main() {
   const o = parseCli({ video: { type: 'string' }, description: { type: 'string' }, draft: { type: 'boolean', default: false } });
   if (!o.video) { console.log('Uso: node scripts/facebook.mjs --video out/<video>.mp4 [--description "texto"] [--draft]'); return; }

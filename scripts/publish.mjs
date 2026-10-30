@@ -28,6 +28,21 @@ async function userName(token) {
   const d = await res.json(); return d?.data?.user?.display_name || null;
 }
 
+// Foto como borrador en TikTok (curiosidades): TikTok la descarga de la url, que debe estar en el dominio verificado
+// (circularte.edav-tech.com/media/… redirige al almacén Blob). Cuenta para el límite de 5 borradores pendientes.
+export async function publishPhotoDraft({ url, title = '', description = '', log = (m) => process.stderr.write(m) }) {
+  const token = await accessToken();
+  const init = await api('/v2/post/publish/content/init/', {
+    post_info: { title: title.slice(0, 90), description: description.slice(0, 4000) },
+    source_info: { source: 'PULL_FROM_URL', photo_cover_index: 0, photo_images: [url] },
+    post_mode: 'MEDIA_UPLOAD', media_type: 'PHOTO'
+  }, token);
+  const st = await waitForStatus(init.publish_id, token, { log });
+  if (st.status === 'FAILED') throw new Error(`TikTok rechazó la foto: ${st.fail_reason || 'sin motivo'}`);
+  log(`TikTok: ${st.status}\n`);
+  return { mode: 'draft', publish_id: init.publish_id, status: st.status, at: new Date().toISOString() };
+}
+
 export async function publishVideo({ video, mode = 'draft', privacy = 'SELF_ONLY', title, coverMs, log = (m) => process.stderr.write(m) }) {
   if (!['draft', 'direct'].includes(mode)) throw new Error('--mode debe ser draft o direct');
   const file = path.resolve(video);

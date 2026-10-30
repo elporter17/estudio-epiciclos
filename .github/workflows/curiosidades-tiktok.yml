@@ -1,0 +1,22 @@
+# Imágenes de curiosidades y noticias como foto en borrador de TikTok. 2 al día.
+# Ojo: cuentan para el mismo límite de TikTok que los videos (5 borradores pendientes cada 24 h); con los 5 videos
+# del día, si no publicas los pendientes, estas corridas terminan en LIMIT (la imagen igual queda en el correo).
+name: Curiosidades a TikTok
+
+on:
+  schedule:
+    # En Honduras (UTC-6): 12:37 y 20:37
+    - cron: '37 2,18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  curiosidades:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: curiosidades-tiktok
+      publish: none
+    secrets: inherit
