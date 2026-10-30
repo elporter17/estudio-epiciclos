@@ -37,18 +37,24 @@ async function graph(method, pathname, params = {}) {
   return d;
 }
 
-// draft: queda como borrador en Meta Business Suite en vez de publicarse
-export async function publishReel({ video, description = '', draft = false, log = (m) => process.stderr.write(m) }) {
-  if (!facebookReady()) throw new Error('Faltan FB_PAGE_ID o FB_PAGE_TOKEN');
-  const page = process.env.FB_PAGE_ID, file = path.resolve(video), bytes = fs.readFileSync(file);
-  const { video_id, upload_url } = await graph('POST', `/${page}/video_reels`, { upload_phase: 'start' });
-  log(`Facebook: subiendo ${path.basename(file)} (${(bytes.length / 1e6).toFixed(1)} MB) como Reel…\n`);
+// Sube los bytes de un video a una sesión de video_reels o video_stories (start → rupload); devuelve su video_id
+async function subirVideo(edge, file, como, log) {
+  const page = process.env.FB_PAGE_ID, bytes = fs.readFileSync(file);
+  const { video_id, upload_url } = await graph('POST', `/${page}/${edge}`, { upload_phase: 'start' });
+  log(`Facebook: subiendo ${path.basename(file)} (${(bytes.length / 1e6).toFixed(1)} MB) como ${como}…\n`);
   const up = await fetch(upload_url || `https://rupload.facebook.com/video-upload/${V}/${video_id}`, {
     method: 'POST', body: bytes,
     headers: { Authorization: `OAuth ${await tokenDePagina()}`, offset: '0', file_size: String(bytes.length) }
   });
   const upd = await up.json().catch(() => ({}));
   if (!up.ok || !upd.success) throw new Error(`Facebook no recibió el video: ${up.status} ${upd.debug_info?.message || JSON.stringify(upd).slice(0, 200)}`);
+  return video_id;
+}
+
+// draft: queda como borrador en Meta Business Suite en vez de publicarse
+export async function publishReel({ video, description = '', draft = false, log = (m) => process.stderr.write(m) }) {
+  if (!facebookReady()) throw new Error('Faltan FB_PAGE_ID o FB_PAGE_TOKEN');
+  const page = process.env.FB_PAGE_ID, video_id = await subirVideo('video_reels', path.resolve(video), 'Reel', log);
   await graph('POST', `/${page}/video_reels`, { upload_phase: 'finish', video_id, video_state: draft ? 'DRAFT' : 'PUBLISHED', description: description.slice(0, 2200) });
   // Facebook procesa el video unos segundos o minutos; se espera un poco para reportar el estado
   let status = 'processing', permalink = null;
@@ -62,6 +68,16 @@ export async function publishReel({ video, description = '', draft = false, log 
   }
   log(`Facebook: ${status}${permalink ? ` · ${permalink}` : ''}\n`);
   return { video_id, status, permalink, draft, at: new Date().toISOString() };
+}
+
+// Historia de la página con el mismo video (hasta 60 s). Facebook no deja reusar el medio de otra publicación, así
+// que se sube otra vez; las historias no llevan texto.
+export async function publishStory({ video, log = (m) => process.stderr.write(m) }) {
+  if (!facebookReady()) throw new Error('Faltan FB_PAGE_ID o FB_PAGE_TOKEN');
+  const video_id = await subirVideo('video_stories', path.resolve(video), 'historia', log);
+  const d = await graph('POST', `/${process.env.FB_PAGE_ID}/video_stories`, { upload_phase: 'finish', video_id });
+  log(`Facebook: historia ${d.success ? 'publicada' : 'enviada'}\n`);
+  return { video_id, post_id: d.post_id || null, status: d.success ? 'published' : 'sent', at: new Date().toISOString() };
 }
 
 // Foto publicada en la página (curiosidades y noticias): url pública de la imagen y el texto del post

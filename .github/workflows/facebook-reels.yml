@@ -1,0 +1,41 @@
+# Reels solo para la página de Facebook: 8 al día (6 nombres y parejas con los estilos nuevos y 2 futbolistas), con
+# sonido, publicados directo como Reel y además como historia de la página. No tocan TikTok (su límite de 5
+# borradores ya lo llenan nombres.yml, famosos.yml y curiosidades-tiktok.yml) ni mandan el aviso por correo.
+# Reutiliza daily.yml: mismo historial (no repite lo ya publicado) y nunca corre a la vez que los demás.
+name: Reels a Facebook
+
+on:
+  schedule:
+    # Minuto 27, lejos de los otros workflows. En Honduras (UTC-6): nombres a las 8:27, 10:27, 14:27, 16:27, 18:27
+    # y 22:27
+    - cron: '27 0,4,14,16,20,22 * * *'
+    # Futbolistas a las 12:27 y 20:27 (el mismo texto se compara abajo)
+    - cron: '27 2,18 * * *'
+  workflow_dispatch:
+    inputs:
+      cats:
+        description: Qué tipo de video
+        type: choice
+        options: [nombres, famosos]
+        default: nombres
+      historia:
+        description: Publicar también como historia de la página
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  reels:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: ${{ inputs.cats || (github.event.schedule == '27 2,18 * * *' && 'famosos' || 'nombres') }}
+      estilos: nuevos
+      publish: none
+      sonido: con
+      facebook: si
+      historia: ${{ github.event_name != 'workflow_dispatch' || inputs.historia }}
+      aviso: false
+    secrets: inherit

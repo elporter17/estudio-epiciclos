@@ -47,6 +47,14 @@ on:
         type: choice
         options: [si, no, borrador]
         default: si
+      historia:
+        description: Publicar también el video como historia de la página de Facebook (hasta 60 s)
+        type: boolean
+        default: false
+      aviso:
+        description: Comentar en el issue «Videos para publicar» (te llega por correo con la descripción)
+        type: boolean
+        default: true
       estado:
         description: Solo consultar en TikTok el estado de subidas anteriores (publish_id separados por espacios, o «ultimos»); no genera video
         type: string
@@ -71,6 +79,9 @@ on:
       estilos: { type: string, default: '' }
       estado: { type: string, default: '' }
       facebook: { type: string, default: si }
+      historia: { type: boolean, default: false }
+      # Comentario en el issue «Videos para publicar» (llega por correo); los Reels solo de Facebook no lo necesitan
+      aviso: { type: boolean, default: true }
       reseed: { type: boolean, default: false }
 
 permissions:
@@ -102,6 +113,7 @@ jobs:
       ESTILOS_INPUT: ${{ inputs.estilos || '' }}
       ESTADO_INPUT: ${{ inputs.estado || '' }}
       FACEBOOK_INPUT: ${{ inputs.facebook || 'si' }}
+      HISTORIA_INPUT: ${{ inputs.historia && 'si' || '' }}
       # Página de Facebook (opcional): Reel publicado con la misma descripción
       FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
       FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
@@ -175,6 +187,7 @@ jobs:
           if [ "$SOUND_INPUT" = "sin" ]; then args+=(--mute); fi
           if [ -n "$ESTILOS_INPUT" ]; then args+=(--estilos "$ESTILOS_INPUT"); fi
           args+=(--facebook "$FACEBOOK_INPUT")
+          if [ -n "$HISTORIA_INPUT" ]; then args+=(--historia); fi
           if [ "$PUBLISH_INPUT" != "none" ]; then args+=(--publish "$PUBLISH_INPUT" --privacy "$PRIVACY_INPUT"); fi
           npm run daily -- "${args[@]}"
 
@@ -194,6 +207,7 @@ jobs:
               if (m.imageUrl) lines.push("", `**[🖼️ Ver la imagen](${m.imageUrl})** · [⬇️ Descargarla](${m.imageUrl}?download=1)`);
               if (t && t.account) lines.push("", `Cuenta de TikTok: ${t.account}`);
               if (m.facebook) lines.push("", `Facebook: ${m.facebook.status}` + (m.facebook.permalink ? ` · [${m.imageUrl ? "ver la publicación" : "ver el Reel"}](${m.facebook.permalink})` : "") + (m.facebook.error ? ` · ${m.facebook.error}` : ""));
+              if (m.facebookStory) lines.push("", `Historia de Facebook: ${m.facebookStory.status}` + (m.facebookStory.error ? ` · ${m.facebookStory.error}` : ""));
               fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.join("\n") + "\n");
               // Aviso de la corrida (se ve arriba en la página de la corrida y en la app de GitHub): descripción y enlace
               const esc = (s) => s.replace(/%/g, "%25").replace(/\r/g, "").replace(/\n/g, "%0A");
@@ -204,7 +218,7 @@ jobs:
       # Aviso por correo: un comentario en el issue «Videos para publicar» con la descripción y el enlace. GitHub manda
       # cada comentario por correo (y a la app) con el texto completo, cosa que no hace con el correo de la corrida.
       - name: Aviso por correo con la descripción
-        if: always() && env.ESTADO_INPUT == ''
+        if: always() && env.ESTADO_INPUT == '' && inputs.aviso != false
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}

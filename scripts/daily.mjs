@@ -27,7 +27,7 @@ import { NSEQ_DETAIL } from '../src/engine.js';
 import { fisicaCat } from '../src/fisica.js';
 import fs from 'node:fs';
 import { publicarEnlace } from './lib/video-link.mjs';
-import { publishReel, facebookReady } from './facebook.mjs';
+import { publishReel, publishStory, facebookReady } from './facebook.mjs';
 import { spawnSync } from 'node:child_process';
 import ffmpegPath from 'ffmpeg-static';
 
@@ -51,7 +51,9 @@ try {
     // Sin sonido: pelotas, juegos, hilos, anillos y costura salen con audio en silencio (los epiciclos ya lo son)
     mute: { type: 'boolean', default: false },
     // Facebook (Reel en la página, si hay FB_PAGE_ID y FB_PAGE_TOKEN): si | no | borrador. Va con melodía aunque TikTok vaya sin sonido
-    facebook: { type: 'string', default: 'si' }
+    facebook: { type: 'string', default: 'si' },
+    // Además del Reel, el mismo video como historia de la página (solo si dura hasta 60 s)
+    historia: { type: 'boolean', default: false }
   });
   const cats = o.cats ? o.cats.split(',').map((c) => c.trim()).filter(Boolean) : undefined;
   if (o.publish && !['draft', 'direct'].includes(o.publish)) throw new Error('--publish debe ser draft o direct');
@@ -115,6 +117,13 @@ try {
     const m = JSON.parse(fs.readFileSync(r.sidecar, 'utf8'));
     try { m.facebook = await publishReel({ video: fbVideo, description: meta.post.text, draft: o.facebook === 'borrador' }); }
     catch (e) { m.facebook = { status: 'error', error: e.message, at: new Date().toISOString() }; console.error(`Aviso: Facebook no publicó el video: ${e.message}`); }
+    if (o.historia && o.facebook === 'si') {
+      if (r.info.duration > 60) m.facebookStory = { status: 'omitida', error: `dura ${Math.round(r.info.duration)} s y las historias admiten hasta 60 s` };
+      else {
+        try { m.facebookStory = await publishStory({ video: fbVideo }); }
+        catch (e) { m.facebookStory = { status: 'error', error: e.message, at: new Date().toISOString() }; console.error(`Aviso: Facebook no publicó la historia: ${e.message}`); }
+      }
+    }
     fs.writeFileSync(r.sidecar, JSON.stringify(m, null, 2) + '\n');
   }
   console.log(JSON.stringify({ video: r.out, meta: r.sidecar, post: meta.post.text, tiktok }, null, 2));
