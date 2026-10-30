@@ -193,13 +193,28 @@ const TAGS = {
 export function hashSeed(s) { let h = 2166136261; for (const c of String(s)) { h ^= c.codePointAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
 
 // info: { name, nameEn?, id?, seed?, createdAt?, cat? } (cat: nombres | combinaciones | figuras | inventadas)
-export function makeCaption(info, { lang = info.lang || 'es', cta = true, spoiler = true } = {}) {
+// Cierre de las descripciones largas (publicación automática en TikTok y Facebook): invita a comentar y a seguir
+const CLOSINGS = {
+  nombres: { es: ['Comenta tu nombre y quizá sea el próximo ✨', '¿Quieres ver el tuyo? Déjalo en los comentarios 👇', 'Cada día sale un nombre nuevo: síguenos para ver si te toca 💫'], en: ['Comment your name, it might be the next one ✨', 'Want to see yours? Leave it in the comments 👇', 'A new name every day: follow to see if it is yours 💫'] },
+  combinaciones: { es: ['Comenta tu nombre y el de tu pareja, quizá sean los próximos 💞', 'Etiqueta a esa persona y dile que la próxima puede ser su pareja 💘', 'Cada día sale una pareja nueva: síguenos para ver si son ustedes 💫'], en: ['Comment your name and your partner’s, you might be next 💞', 'Tag that person and tell them the next couple could be you 💘', 'A new couple every day: follow to see if it is you two 💫'] },
+  famosos: { es: ['¿Qué jugador o qué gol quieres ver después? Comenta 👇⚽', 'Síguenos: cada día dibujamos un momento del fútbol con círculos ⚽', 'Etiqueta a un amigo que lo adivine más rápido que tú 👀'], en: ['Which player or goal should be next? Comment 👇⚽', 'Follow: every day we draw a football moment with circles ⚽', 'Tag a friend who would guess it faster than you 👀'] }
+};
+const CLOSING_DEFAULT = { es: ['Síguenos para ver uno nuevo cada día ✨'], en: ['Follow for a new one every day ✨'] };
+
+// cta: agrega «Haz el tuyo en circularte…» (la web). largo: segunda frase y un cierre (publicación automática)
+export function makeCaption(info, { lang = info.lang || 'es', cta = true, spoiler = true, largo = false } = {}) {
   const name = lang === 'en' ? info.nameEn || info.name : info.name;
   const h = hashSeed(`${info.id || name}|${info.seed ?? ''}|${info.createdAt ?? ''}`);
   const list = spoiler ? NAMED[lang] : MYSTERY_CAT[info.cat]?.[lang] || MYSTERY[lang];
   let description = list[h % list.length].replace('{x}', name);
-  if (cta) description += lang === 'en' ? ` Make yours at ${SITE}` : ` Haz el tuyo en ${SITE}`;
   const [catBase, style] = String(info.cat || '').split('-'), { extra } = TAGS[lang];
+  if (largo) {
+    // Otra frase de la misma lista (distinta a la primera) y un cierre según el tipo de video
+    if (list.length > 1) description += '\n\n' + list[(h % list.length + 1 + (h >>> 7) % (list.length - 1)) % list.length].replace('{x}', name);
+    const cl = (CLOSINGS[catBase] || CLOSING_DEFAULT)[lang === 'en' ? 'en' : 'es'];
+    description += '\n\n' + cl[(h >>> 11) % cl.length];
+  }
+  if (cta) description += lang === 'en' ? ` Make yours at ${SITE}` : ` Haz el tuyo en ${SITE}`;
   const catTag = (CAT_TAGS[info.cat] || CAT_TAGS[catBase])?.[lang], styleTag = STYLE_TAGS[style]?.[lang];
   // Hilos, anillos y costura no son epiciclos: no llevan #fourier ni #epiciclos
   const base = BASE_TAGS[catBase]?.[lang] || (ARTE_TAGS[style] ? ARTE_BASE[lang] : TAGS[lang].base);

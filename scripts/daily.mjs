@@ -87,7 +87,8 @@ try {
   if (o.mute && !mute) { fbVideo = r.out.replace(/\.mp4$/i, '-con-sonido.mp4'); fs.renameSync(r.out, fbVideo); muteCopy(fbVideo, r.out); }
   // La categoría (nombres, parejas, pelotas, juegos…) elige ganchos propios para la descripción
   const cat = item.kind === 'bounce' ? fisicaCat(item.mode) : item.kind === 'image' ? `${item.cat}-${item.tipo}` : style ? `${item.cat}-${style}` : item.cat;
-  const cap = makeCaption({ ...r.info, cat }, { lang: o.lang, spoiler: !suspense });
+  // Sin el enlace a la web y con texto más largo (TikTok y Facebook)
+  const cap = makeCaption({ ...r.info, cat }, { lang: o.lang, spoiler: !suspense, cta: false, largo: true });
   const meta = { ...r.info, cat: item.cat, post: { ...cap, text: postText(cap), lang: o.lang } };
   // Enlace directo al MP4 (si hay almacén Blob): sirve aunque TikTok no entregue el borrador
   if (!o['dry-run']) {
