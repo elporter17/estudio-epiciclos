@@ -1,13 +1,16 @@
 # Futbolistas dibujados con círculos: caras, celebraciones, goles icónicos y escudos (data/famosos.json, siluetas en
 # assets/famosos/). Reutiliza daily.yml con cats = famosos: mismo token, mismo historial y nunca corre a la vez que
 # los dibujos. Sin sonido salvo que al lanzarlo a mano elijas «con».
-# Con los nombres (3 al día) son 5 borradores diarios: justo el máximo de TikTok (5 pendientes cada 24 h por cuenta).
+# TikTok admite 5 borradores pendientes cada 24 h por cuenta, fotos de curiosidades incluidas: 2 nombres + 1 futbolista
+# + 2 curiosidades = 5. Por eso la corrida de las 16:47 va solo a Facebook.
 name: Futbolistas a TikTok
 
 on:
   schedule:
-    # 2 al día, entre los nombres: en Honduras (UTC-6) 10:47 y 16:47
-    - cron: '47 16,22 * * *'
+    # 2 al día, entre los nombres. En Honduras (UTC-6): 10:47 a TikTok y Facebook
+    - cron: '47 16 * * *'
+    # 16:47 solo a Facebook (el mismo texto se compara abajo)
+    - cron: '47 22 * * *'
   workflow_dispatch:
     inputs:
       lang:
@@ -36,6 +39,6 @@ jobs:
     with:
       cats: famosos
       lang: ${{ inputs.lang || 'es' }}
-      publish: ${{ inputs.publish || 'draft' }}
-      sonido: ${{ inputs.sonido || 'sin' }}
+      publish: ${{ inputs.publish || (github.event.schedule == '47 22 * * *' && 'none' || 'draft') }}
+      sonido: ${{ inputs.sonido || (github.event.schedule == '47 22 * * *' && 'con' || 'sin') }}
     secrets: inherit

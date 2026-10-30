@@ -1,6 +1,7 @@
 # Imágenes de curiosidades y noticias como foto en borrador de TikTok. 2 al día.
-# Ojo: cuentan para el mismo límite de TikTok que los videos (5 borradores pendientes cada 24 h); con los 5 videos
-# del día, si no publicas los pendientes, estas corridas terminan en LIMIT (la imagen igual queda en el correo).
+# Ojo: cuentan para el mismo límite de TikTok que los videos (5 borradores pendientes cada 24 h). Con estas 2 fotos,
+# 2 nombres y 1 futbolista son 5; las otras corridas de videos van solo a Facebook. Si no publicas los pendientes, la
+# corrida termina en LIMIT (la imagen igual queda en el correo).
 name: Curiosidades a TikTok
 
 on:
