@@ -28,6 +28,7 @@ import { fisicaCat } from '../src/fisica.js';
 import fs from 'node:fs';
 import { publicarEnlace } from './lib/video-link.mjs';
 import { publishReel, publishStory, facebookReady } from './facebook.mjs';
+import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
 import { spawnSync } from 'node:child_process';
 import ffmpegPath from 'ffmpeg-static';
 
@@ -53,7 +54,9 @@ try {
     // Facebook (Reel en la página, si hay FB_PAGE_ID y FB_PAGE_TOKEN): si | no | borrador. Va con melodía aunque TikTok vaya sin sonido
     facebook: { type: 'string', default: 'si' },
     // Además del Reel, el mismo video como historia de la página (solo si dura hasta 60 s)
-    historia: { type: 'boolean', default: false }
+    historia: { type: 'boolean', default: false },
+    // Instagram (cuenta vinculada a la página): el mismo Reel, y la historia si va --historia. si | no
+    instagram: { type: 'string', default: 'si' }
   });
   const cats = o.cats ? o.cats.split(',').map((c) => c.trim()).filter(Boolean) : undefined;
   if (o.publish && !['draft', 'direct'].includes(o.publish)) throw new Error('--publish debe ser draft o direct');
@@ -123,6 +126,14 @@ try {
         try { m.facebookStory = await publishStory({ video: fbVideo }); }
         catch (e) { m.facebookStory = { status: 'error', error: e.message, at: new Date().toISOString() }; console.error(`Aviso: Facebook no publicó la historia: ${e.message}`); }
       }
+    }
+    // Instagram: necesita una URL pública del video con sonido (el mismo que va a Facebook)
+    if (o.instagram !== 'no' && o.facebook === 'si' && await instagramReady()) {
+      const url = fbVideo === r.out ? meta.videoUrl : (await publicarEnlace(fbVideo).catch(() => null))?.url;
+      if (url) {
+        m.instagram = await publishInstagramSeguro({ tipo: 'reel', url, caption: meta.post.text });
+        if (o.historia && r.info.duration <= 60) m.instagramStory = await publishInstagramSeguro({ tipo: 'historia', url });
+      } else m.instagram = { status: 'error', error: 'sin URL pública del video (almacén Blob)' };
     }
     fs.writeFileSync(r.sidecar, JSON.stringify(m, null, 2) + '\n');
   }

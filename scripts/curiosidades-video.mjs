@@ -15,6 +15,7 @@ import { TEMAS } from './lib/tarjetas.mjs';
 import { renderQuiz } from './lib/quiz-video.mjs';
 import { publicarEnlace } from './lib/video-link.mjs';
 import { publishReel, publishStory, facebookReady } from './facebook.mjs';
+import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
 import { MELODIA_IDS } from '../src/melodias.js';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades');
@@ -172,7 +173,7 @@ function banderas(hist) {
 async function main() {
   const o = parseCli({
     formato: { type: 'string', default: 'auto' }, tema: { type: 'string' }, facebook: { type: 'string', default: 'si' },
-    historia: { type: 'boolean', default: false }, 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' }
+    historia: { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' }, 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' }
   });
   const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
   const hist = { ids: [], retos: [], banderas: [], formatos: [], total: 0, ...leer(HIST, {}) };
@@ -207,6 +208,11 @@ async function main() {
         else try { meta.facebookStory = await publishStory({ video }); }
         catch (e) { meta.facebookStory = { status: 'error', error: e.message }; console.error(`Aviso: Facebook no publicó la historia: ${e.message}`); }
       }
+    }
+    // Instagram (cuenta vinculada a la página): el mismo video desde el almacén, como Reel y como historia
+    if (o.instagram !== 'no' && meta.videoUrl && await instagramReady()) {
+      meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: meta.videoUrl, caption: pieza.texto });
+      if (o.historia && r.duration <= 60) meta.instagramStory = await publishInstagramSeguro({ tipo: 'historia', url: meta.videoUrl });
     }
     hist.ids.push(...(pieza.ids || [])); hist.retos.push(...(pieza.retos || [])); hist.banderas.push(...(pieza.banderas || []));
     hist.formatos.push(pieza.formato); hist.total++;

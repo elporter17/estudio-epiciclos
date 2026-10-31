@@ -210,6 +210,7 @@ jobs:
               if (t && t.account) lines.push("", `Cuenta de TikTok: ${t.account}`);
               if (m.facebook) lines.push("", `Facebook: ${m.facebook.status}` + (m.facebook.permalink ? ` · [${m.imageUrl ? "ver la publicación" : "ver el Reel"}](${m.facebook.permalink})` : "") + (m.facebook.error ? ` · ${m.facebook.error}` : ""));
               if (m.facebookStory) lines.push("", `Historia de Facebook: ${m.facebookStory.status}` + (m.facebookStory.error ? ` · ${m.facebookStory.error}` : ""));
+              for (const [k, v] of [["Instagram", m.instagram], ["Historia de Instagram", m.instagramStory]]) if (v) lines.push("", `${k}: ${v.status}` + (v.permalink ? ` · [verla](${v.permalink})` : "") + (v.error ? ` · ${v.error}` : ""));
               fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.join("\n") + "\n");
               // Aviso de la corrida (se ve arriba en la página de la corrida y en la app de GitHub): descripción y enlace
               const esc = (s) => s.replace(/%/g, "%25").replace(/\r/g, "").replace(/\n/g, "%0A");

@@ -15,6 +15,7 @@ import { ultimaNoticia, CAT_NOMBRE } from './lib/noticias.mjs';
 import { blobToken } from './lib/video-link.mjs';
 import { publishPhoto, facebookReady } from './facebook.mjs';
 import { publishPhotoDraft } from './publish.mjs';
+import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades'), HIST = path.join(ROOT, 'data', 'curiosidades-historial.json');
 const SITE_MEDIA = 'https://circularte.edav-tech.com/media/'; // dominio verificado en TikTok (redirige al almacén)
@@ -84,7 +85,8 @@ function armarNoticia(n) {
 // Sube la imagen al almacén (prefijo media/: también se ve en circularte.edav-tech.com/media/…) y borra las de +7 días
 async function subirImagen(file) {
   const token = blobToken(); if (!token) return null;
-  const { url, pathname } = await put(`media/curiosidades/${path.basename(file)}`, fs.readFileSync(file), { access: 'public', token, addRandomSuffix: true, contentType: 'image/png' });
+  const contentType = /\.jpe?g$/i.test(file) ? 'image/jpeg' : 'image/png';
+  const { url, pathname } = await put(`media/curiosidades/${path.basename(file)}`, fs.readFileSync(file), { access: 'public', token, addRandomSuffix: true, contentType });
   try {
     const viejos = (await list({ prefix: 'media/curiosidades/', token })).blobs.filter((b) => Date.parse(b.uploadedAt) < Date.now() - 7 * 864e5).map((b) => b.url);
     if (viejos.length) await del(viejos, { token });
@@ -95,7 +97,7 @@ async function subirImagen(file) {
 async function main() {
   const o = parseCli({
     red: { type: 'string', default: 'facebook' }, tipo: { type: 'string', default: 'auto' }, 'noticia-cada': { type: 'string', default: '4' },
-    formato: { type: 'string' }, id: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }
+    formato: { type: 'string' }, id: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' }
   });
   const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
   const hist = { ids: [], temas: [], noticias: [], total: 0, ...leer(HIST, {}) };
@@ -118,6 +120,8 @@ async function main() {
   for (const red of redes) {
     const cv = dibujarTarjeta(pieza.tarjeta, { H: red === 'tiktok' ? 1920 : 1350, emojiFont });
     archivos[red] = path.join(outDir, `curiosidad-${nombre}-${red}.png`); fs.writeFileSync(archivos[red], cv.toBuffer('image/png'));
+    // Instagram solo acepta JPEG: la misma tarjeta 4:5 de Facebook
+    if (red === 'facebook') { archivos.instagram = path.join(outDir, `curiosidad-${nombre}-instagram.jpg`); fs.writeFileSync(archivos.instagram, cv.toBuffer('image/jpeg', 92)); }
   }
   const sidecar = path.join(outDir, `curiosidad-${nombre}.json`);
   const meta = { kind: 'imagen', title: noticia ? noticia.titulo.slice(0, 80) : `${TEMAS[x.tema].nombre} · ${pieza.formato}`, id: x?.id || noticia.link, formato: pieza.formato, post: { text: pieza.texto }, createdAt: new Date().toISOString() };
@@ -129,6 +133,11 @@ async function main() {
       if (red === 'facebook' && facebookReady()) {
         try { meta.facebook = await publishPhoto({ url: img.url, caption: pieza.texto }); }
         catch (e) { meta.facebook = { status: 'error', error: e.message }; console.error(`Aviso: Facebook: ${e.message}`); }
+        // Instagram (cuenta vinculada a la página): la misma imagen en JPEG
+        if (o.instagram !== 'no' && await instagramReady()) {
+          const jpg = await subirImagen(archivos.instagram).catch(() => null);
+          meta.instagram = jpg ? await publishInstagramSeguro({ tipo: 'imagen', url: jpg.url, caption: pieza.texto }) : { status: 'error', error: 'no se pudo subir el JPEG' };
+        }
       }
       if (red === 'tiktok') {
         try { meta.tiktok = [await publishPhotoDraft({ url: img.sitio, title: noticia ? 'Noticia' : '¿Sabías que…?', description: pieza.texto })]; }

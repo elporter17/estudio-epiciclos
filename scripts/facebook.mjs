@@ -25,7 +25,7 @@ async function tokenDePagina() {
   return pageToken;
 }
 
-async function graph(method, pathname, params = {}) {
+export async function graph(method, pathname, params = {}) {
   const u = new URL(GRAPH + pathname);
   for (const [k, v] of Object.entries({ ...params, access_token: await tokenDePagina() })) if (v != null) u.searchParams.set(k, v);
   const res = await fetch(u, { method });
