@@ -45,7 +45,7 @@ export async function publishInstagram({ tipo = 'reel', url, caption = '', log =
   await esperar(id, log);
   const r = await graph('POST', `/${ig}/media_publish`, { creation_id: id });
   const info = await graph('GET', `/${r.id}`, { fields: 'permalink' }).catch(() => ({}));
-  log(`Instagram: ${tipo} publicado${info.permalink ? ` · ${info.permalink}` : ''}\n`);
+  log(`Instagram: ${tipo} publicad${tipo === 'reel' ? 'o' : 'a'}${info.permalink ? ` · ${info.permalink}` : ''}\n`);
   return { media_id: r.id, tipo, status: 'published', permalink: info.permalink || null, at: new Date().toISOString() };
 }
 
