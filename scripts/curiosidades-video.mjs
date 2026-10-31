@@ -26,7 +26,7 @@ const entre = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
 const OCULTAR = '\n\n.\n.\n.\n\n'; // lo que sigue queda debajo de «Ver más»
 // Orden de los formatos (se repite): dos top 10 por cada quiz y cada banderas
 const ROTACION = ['top10', 'quiz', 'top10', 'banderas'];
-const TEMAS_DATOS = ['animales', 'ciencia', 'historia', 'deportes', 'inventos'];
+const TEMAS_DATOS = ['animales', 'cuerpo', 'ciencia', 'geografia', 'historia', 'comida', 'deportes', 'tecnologia', 'inventos'];
 
 // ---------- banderas ----------
 // Países por continente (código ISO; el emoji y el nombre en español salen del código)

@@ -1,0 +1,602 @@
+[
+  {
+    "id": "tecnologia-001",
+    "tema": "tecnologia",
+    "icono": "🟡",
+    "dato": "Pac-Man salió en Japón en 1980 con el nombre de «Puck Man», y en Estados Unidos se lo cambiaron.",
+    "falso": "Pac-Man salió en Japón en 1980 con el nombre de «Pizza Man», y en Estados Unidos se lo cambiaron.",
+    "explicacion": "Se llamaba «Puck Man». En Estados Unidos lo cambiaron por miedo a que alguien rayara la P de las máquinas para formar una grosería."
+  },
+  {
+    "id": "tecnologia-002",
+    "tema": "tecnologia",
+    "icono": "🔍",
+    "dato": "El nombre Google viene de «googol», el número que se escribe con un 1 seguido de 100 ceros.",
+    "falso": "El nombre Google viene de «googol», el número que se escribe con un 1 seguido de 1000 ceros.",
+    "explicacion": "Un googol es un 1 seguido de 100 ceros. Los fundadores de Google eligieron el nombre para sugerir una enorme cantidad de información."
+  },
+  {
+    "id": "tecnologia-003",
+    "tema": "tecnologia",
+    "icono": "🍄",
+    "dato": "En el arcade Donkey Kong, de 1981, Mario todavía no se llamaba Mario: su nombre era «Jumpman».",
+    "falso": "En el arcade Donkey Kong, de 1981, Mario todavía no se llamaba Mario: su nombre era «Hammerman».",
+    "explicacion": "En Donkey Kong el personaje se llamaba Jumpman, «el hombre que salta». Poco después Nintendo lo bautizó como Mario."
+  },
+  {
+    "id": "tecnologia-004",
+    "tema": "tecnologia",
+    "icono": "🍎",
+    "dato": "Ronald Wayne, el tercer fundador de Apple en 1976, vendió su 10 % de la empresa a los pocos días por 800 dólares.",
+    "falso": "Ronald Wayne, el tercer fundador de Apple en 1976, vendió su 10 % de la empresa a los pocos días por 8 millones de dólares.",
+    "explicacion": "Wayne cedió su parte por apenas 800 dólares, 12 días después de fundar Apple con Steve Jobs y Steve Wozniak."
+  },
+  {
+    "id": "tecnologia-005",
+    "tema": "tecnologia",
+    "icono": "🎴",
+    "dato": "Nintendo se fundó en 1889 en Kioto, Japón, y al principio fabricaba naipes japoneses llamados hanafuda.",
+    "falso": "Nintendo se fundó en 1889 en Kioto, Japón, y al principio fabricaba relojes de bolsillo para trenes.",
+    "explicacion": "Nintendo empezó haciendo cartas hanafuda a mano. Pasaron casi 100 años antes de que fuera famosa por sus videojuegos."
+  },
+  {
+    "id": "tecnologia-006",
+    "tema": "tecnologia",
+    "icono": "😀",
+    "dato": "Shigetaka Kurita diseñó los primeros emojis en 1999 para celulares japoneses: 176 dibujos de 12 × 12 píxeles.",
+    "falso": "Shigetaka Kurita diseñó los primeros emojis en 1999 para celulares japoneses: 176 dibujos de 64 × 64 píxeles.",
+    "explicacion": "Eran diminutos: apenas 12 por 12 píxeles cada uno. Kurita los creó para el servicio móvil i-mode de NTT DoCoMo."
+  },
+  {
+    "id": "tecnologia-007",
+    "tema": "tecnologia",
+    "icono": "🍕",
+    "dato": "Toru Iwatani, el creador de Pac-Man, contó que se inspiró en una pizza a la que le faltaba una rebanada.",
+    "falso": "Toru Iwatani, el creador de Pac-Man, contó que se inspiró en un queso redondo al que le faltaba un trozo.",
+    "explicacion": "Según Iwatani, la idea surgió al ver una pizza sin una rebanada. El queso no tiene nada que ver con la forma de Pac-Man."
+  },
+  {
+    "id": "tecnologia-008",
+    "tema": "tecnologia",
+    "icono": "🈶",
+    "dato": "La palabra «emoji» no viene de «emoción»: une las palabras japonesas «e» (dibujo) y «moji» (letra o carácter).",
+    "falso": "La palabra «emoji» viene del inglés «emotion» (emoción) y de la palabra japonesa «ji» (letra o carácter).",
+    "explicacion": "Su parecido con «emoción» es pura casualidad. En japonés, «e» significa dibujo y «moji», carácter."
+  },
+  {
+    "id": "tecnologia-009",
+    "tema": "tecnologia",
+    "icono": "🏚️",
+    "dato": "El nombre de Mario viene de Mario Segale, el dueño de la bodega que Nintendo alquilaba en Estados Unidos.",
+    "falso": "El nombre de Mario viene de Mario Segale, el primer jugador que logró terminar Donkey Kong en Estados Unidos.",
+    "explicacion": "Se cuenta que Segale, el casero de Nintendo of America, reclamó la renta atrasada, y los empleados bautizaron al personaje en su honor."
+  },
+  {
+    "id": "tecnologia-010",
+    "tema": "tecnologia",
+    "icono": "🙂",
+    "dato": "La carita :-) la propuso el profesor Scott Fahlman en 1982, en un foro de la Universidad Carnegie Mellon.",
+    "falso": "La carita :-) la propuso el profesor Scott Fahlman en 1995, en un foro de la Universidad Carnegie Mellon.",
+    "explicacion": "Fahlman la sugirió en 1982 para marcar los mensajes en broma, mucho antes de que existieran los emojis."
+  },
+  {
+    "id": "tecnologia-011",
+    "tema": "tecnologia",
+    "icono": "👻",
+    "dato": "Los cuatro fantasmas de Pac-Man se llaman Blinky, Pinky, Inky y Clyde, y cada uno persigue de forma distinta.",
+    "falso": "Los cuatro fantasmas de Pac-Man se llaman Blinky, Pinky, Inky y Clyde, y todos persiguen exactamente igual.",
+    "explicacion": "Cada fantasma tiene su estrategia: Blinky va directo a Pac-Man, Pinky intenta adelantarse y los otros dos son menos predecibles."
+  },
+  {
+    "id": "tecnologia-012",
+    "tema": "tecnologia",
+    "icono": "💬",
+    "dato": "El primer mensaje de texto SMS se envió en 1992 desde una computadora a un celular y decía «Merry Christmas».",
+    "falso": "El primer mensaje de texto SMS se envió en 1992 desde una computadora a un celular y decía «Happy New Year».",
+    "explicacion": "El mensaje, enviado el 3 de diciembre de 1992 en el Reino Unido, deseaba «Feliz Navidad», no «Feliz Año Nuevo»."
+  },
+  {
+    "id": "tecnologia-013",
+    "tema": "tecnologia",
+    "icono": "👨",
+    "dato": "Mario tiene bigote y gorra porque, con tan pocos píxeles, era más fácil dibujarlos que una boca y un peinado.",
+    "falso": "Mario tiene bigote y gorra porque su creador quiso que se pareciera a su propio abuelo, que era fontanero.",
+    "explicacion": "Shigeru Miyamoto explicó que fue un truco técnico: el bigote evitaba dibujar la boca y la gorra, animar el pelo."
+  },
+  {
+    "id": "tecnologia-014",
+    "tema": "tecnologia",
+    "icono": "🖥️",
+    "dato": "El primer servidor web del mundo fue una computadora NeXT, de la empresa que Steve Jobs fundó al salir de Apple.",
+    "falso": "El primer servidor web del mundo fue una computadora IBM, de la empresa que Steve Jobs fundó al salir de Apple.",
+    "explicacion": "Steve Jobs fundó NeXT en 1985. En el CERN, una computadora NeXT alojó la primera página web de la historia."
+  },
+  {
+    "id": "tecnologia-015",
+    "tema": "tecnologia",
+    "icono": "☁️",
+    "dato": "En Super Mario Bros. (1985), las nubes y los arbustos son el mismo dibujo, solo que pintado de otro color.",
+    "falso": "En Super Mario Bros. (1985), las nubes y los bloques de ladrillo son el mismo dibujo, solo que pintado de otro color.",
+    "explicacion": "Para ahorrar memoria, los arbustos verdes reutilizan el dibujo de las nubes blancas. Los ladrillos son un dibujo aparte."
+  },
+  {
+    "id": "tecnologia-016",
+    "tema": "tecnologia",
+    "icono": "📶",
+    "dato": "Wi-Fi no significa «Wireless Fidelity»: es una marca inventada en 1999 por una agencia de publicidad.",
+    "falso": "Wi-Fi significa «Wireless Fidelity» y es un término técnico creado por ingenieros en 1999.",
+    "explicacion": "La agencia Interbrand creó el nombre Wi-Fi porque sonaba bien. Lo de «Wireless Fidelity» se dijo después y no es oficial."
+  },
+  {
+    "id": "tecnologia-017",
+    "tema": "tecnologia",
+    "icono": "🦍",
+    "dato": "Universal demandó a Nintendo en 1983, al decir que Donkey Kong copiaba a King Kong, y perdió el juicio.",
+    "falso": "Universal demandó a Nintendo en 1983, al decir que Donkey Kong copiaba a King Kong, y ganó el juicio.",
+    "explicacion": "El juez falló a favor de Nintendo en 1984 y hasta se demostró que Universal no tenía todos los derechos de King Kong."
+  },
+  {
+    "id": "tecnologia-018",
+    "tema": "tecnologia",
+    "icono": "🐍",
+    "dato": "El lenguaje de programación Python no se llama así por la serpiente, sino por el grupo de comedia Monty Python.",
+    "falso": "El lenguaje de programación Python se llama así por la serpiente pitón, por lo rápido que «atrapa» los errores.",
+    "explicacion": "Su creador, Guido van Rossum, era fan del programa «Monty Python's Flying Circus» y eligió el nombre por él."
+  },
+  {
+    "id": "tecnologia-019",
+    "tema": "tecnologia",
+    "icono": "🫏",
+    "dato": "Shigeru Miyamoto llamó «Donkey Kong» a su gorila porque creía que «donkey» (burro) significaba «terco» en inglés.",
+    "falso": "Shigeru Miyamoto llamó «Donkey Kong» a su gorila porque en el juego original el gorila montaba un burro.",
+    "explicacion": "Miyamoto buscó una palabra para «terco» y eligió «donkey». En el juego no aparece ningún burro."
+  },
+  {
+    "id": "tecnologia-020",
+    "tema": "tecnologia",
+    "icono": "📧",
+    "dato": "La palabra «spam» para el correo basura viene de un sketch de Monty Python donde todos repiten «Spam» sin parar.",
+    "falso": "La palabra «spam» para el correo basura viene de las siglas de «Sending Pointless Advertising Messages».",
+    "explicacion": "«Spam» era una marca de carne enlatada. En un sketch de 1970 de Monty Python la repiten tanto que se volvió sinónimo de exceso."
+  },
+  {
+    "id": "tecnologia-021",
+    "tema": "tecnologia",
+    "icono": "🎮",
+    "dato": "La cruceta de control la inventó Gunpei Yokoi, de Nintendo, para la consola portátil Game & Watch de 1982.",
+    "falso": "La cruceta de control la inventó Sony para el primer control de PlayStation, presentado en 1994.",
+    "explicacion": "La cruz direccional apareció en el Game & Watch de Donkey Kong en 1982, más de una década antes que la PlayStation."
+  },
+  {
+    "id": "tecnologia-022",
+    "tema": "tecnologia",
+    "icono": "☕",
+    "dato": "El lenguaje Java se llamaba al principio «Oak» (roble), por un árbol que su creador veía desde su oficina.",
+    "falso": "El lenguaje Java se llamaba al principio «Coffee» (café), por una cafetera que su creador veía desde su oficina.",
+    "explicacion": "James Gosling lo llamó Oak por un roble que veía desde su oficina. Lo cambiaron a Java en 1995 por problemas con la marca."
+  },
+  {
+    "id": "tecnologia-023",
+    "tema": "tecnologia",
+    "icono": "🧱",
+    "dato": "En 1989, el Game Boy se vendía en Estados Unidos con Tetris incluido en la caja.",
+    "falso": "En 1989, el Game Boy se vendía en Estados Unidos con Pac-Man incluido en la caja.",
+    "explicacion": "Nintendo incluyó Tetris con el Game Boy en Norteamérica. La combinación fue un éxito enorme y popularizó la consola."
+  },
+  {
+    "id": "tecnologia-024",
+    "tema": "tecnologia",
+    "icono": "🐧",
+    "dato": "Linus Torvalds empezó a crear Linux en 1991, cuando era un estudiante finlandés de 21 años.",
+    "falso": "Linus Torvalds empezó a crear Linux en 1991, cuando era un ingeniero sueco de 41 años.",
+    "explicacion": "Torvalds estudiaba en la Universidad de Helsinki, en Finlandia, y tenía 21 años cuando anunció su proyecto."
+  },
+  {
+    "id": "tecnologia-025",
+    "tema": "tecnologia",
+    "icono": "🎵",
+    "dato": "La música más famosa de Tetris es «Korobéiniki», una canción popular rusa del siglo XIX.",
+    "falso": "La música más famosa de Tetris fue compuesta en 1989 por un músico japonés de Nintendo.",
+    "explicacion": "Korobéiniki es una canción tradicional rusa basada en un poema de 1861. Nintendo la usó en el Tetris del Game Boy."
+  },
+  {
+    "id": "tecnologia-026",
+    "tema": "tecnologia",
+    "icono": "💾",
+    "dato": "El primer disquete, presentado por IBM en 1971, medía 8 pulgadas: unos 20 cm de lado.",
+    "falso": "El primer disquete, presentado por IBM en 1971, medía 3,5 pulgadas: unos 9 cm de lado.",
+    "explicacion": "El disquete de 8 pulgadas fue el primero. El de 3,5 pulgadas, el del ícono de «guardar», llegó en los años 80."
+  },
+  {
+    "id": "tecnologia-027",
+    "tema": "tecnologia",
+    "icono": "🔋",
+    "dato": "El Game Boy original de 1989 funcionaba con cuatro pilas AA y su pantalla solo mostraba tonos verdosos.",
+    "falso": "El Game Boy original de 1989 funcionaba con una batería recargable y su pantalla ya mostraba colores.",
+    "explicacion": "El Game Boy usaba 4 pilas AA y una pantalla monocromática. El color llegó en 1998 con el Game Boy Color."
+  },
+  {
+    "id": "tecnologia-028",
+    "tema": "tecnologia",
+    "icono": "🗄️",
+    "dato": "El primer disco duro, el IBM 350 de 1956, guardaba menos de 4 megabytes y pesaba cerca de una tonelada.",
+    "falso": "El primer disco duro, el IBM 350 de 1956, guardaba unos 4 gigabytes y pesaba cerca de una tonelada.",
+    "explicacion": "El IBM 350 guardaba unos 3,75 megabytes, mil veces menos que 4 gigabytes, en 50 discos enormes."
+  },
+  {
+    "id": "tecnologia-029",
+    "tema": "tecnologia",
+    "icono": "🟦",
+    "dato": "Todas las piezas de Tetris están formadas por cuatro cuadrados, y hay exactamente siete formas distintas.",
+    "falso": "Todas las piezas de Tetris están formadas por cinco cuadrados, y hay exactamente doce formas distintas.",
+    "explicacion": "Las piezas son tetrominós: cuatro cuadrados unidos. De ahí el «tetra» del nombre Tetris. Con cinco cuadrados serían pentominós."
+  },
+  {
+    "id": "tecnologia-030",
+    "tema": "tecnologia",
+    "icono": "📈",
+    "dato": "En 1965, Gordon Moore predijo que la cantidad de transistores en un chip se duplicaría cada cierto tiempo.",
+    "falso": "En 1965, Bill Gates predijo que la cantidad de transistores en un chip se duplicaría cada cierto tiempo.",
+    "explicacion": "Es la famosa «ley de Moore». Gordon Moore cofundó Intel en 1968. Bill Gates tenía apenas 9 años en 1965."
+  },
+  {
+    "id": "tecnologia-031",
+    "tema": "tecnologia",
+    "icono": "👸",
+    "dato": "La princesa Zelda debe su nombre a Zelda Fitzgerald, la esposa del escritor estadounidense F. Scott Fitzgerald.",
+    "falso": "La princesa Zelda debe su nombre a la hija mayor de Shigeru Miyamoto, que también se llamaba Zelda.",
+    "explicacion": "Los creadores del juego tomaron el nombre de Zelda Fitzgerald, una escritora famosa de los años 20."
+  },
+  {
+    "id": "tecnologia-032",
+    "tema": "tecnologia",
+    "icono": "🔲",
+    "dato": "El primer microprocesador comercial, el Intel 4004 de 1971, se hizo para una calculadora de una empresa japonesa.",
+    "falso": "El primer microprocesador comercial, el Intel 4004 de 1971, se hizo para una computadora de la NASA.",
+    "explicacion": "Intel lo diseñó por encargo de Busicom, una fábrica japonesa de calculadoras. Cabía en un chip del tamaño de una uña."
+  },
+  {
+    "id": "tecnologia-033",
+    "tema": "tecnologia",
+    "icono": "🗡️",
+    "dato": "En The Legend of Zelda, el héroe que controla el jugador se llama Link; Zelda es la princesa.",
+    "falso": "En The Legend of Zelda, el héroe que controla el jugador se llama Zelda; Link es el rey.",
+    "explicacion": "Es una confusión muy común. El protagonista es Link y la princesa Zelda es quien da nombre a la saga, desde 1986."
+  },
+  {
+    "id": "tecnologia-034",
+    "tema": "tecnologia",
+    "icono": "🌲",
+    "dato": "Nokia empezó en 1865 como una fábrica de papel en Finlandia, más de un siglo antes de hacer celulares.",
+    "falso": "Nokia empezó en 1865 como una fábrica de relojes en Suiza, más de un siglo antes de hacer celulares.",
+    "explicacion": "Nokia nació como un molino de papel finlandés y tomó su nombre del pueblo de Nokia, donde se instaló."
+  },
+  {
+    "id": "tecnologia-035",
+    "tema": "tecnologia",
+    "icono": "🐛",
+    "dato": "Satoshi Tajiri creó Pokémon inspirado en su afición de niño: coleccionar insectos.",
+    "falso": "Satoshi Tajiri creó Pokémon inspirado en su afición de niño: coleccionar estampillas.",
+    "explicacion": "De niño, Tajiri atrapaba insectos en los campos cerca de Tokio. Los primeros juegos de Pokémon salieron en 1996."
+  },
+  {
+    "id": "tecnologia-036",
+    "tema": "tecnologia",
+    "icono": "⭐",
+    "dato": "Samsung, que significa «tres estrellas» en coreano, empezó en 1938 vendiendo pescado seco y fideos.",
+    "falso": "Samsung, que significa «tres estrellas» en coreano, empezó en 1938 fabricando radios de bulbos.",
+    "explicacion": "Samsung nació como una pequeña empresa comercial en Daegu, Corea. La electrónica llegó hasta finales de los años 60."
+  },
+  {
+    "id": "tecnologia-037",
+    "tema": "tecnologia",
+    "icono": "⚡",
+    "dato": "El nombre Pikachu une dos sonidos en japonés: «pika», el chispazo eléctrico, y «chu», el chillido de un ratón.",
+    "falso": "El nombre Pikachu une dos sonidos en japonés: «pika», el sonido de un trueno, y «chu», el maullido de un gato.",
+    "explicacion": "«Chu» imita el chillido de un ratón, no un maullido. Pikachu es un Pokémon ratón de tipo eléctrico."
+  },
+  {
+    "id": "tecnologia-038",
+    "tema": "tecnologia",
+    "icono": "🔊",
+    "dato": "El nombre Sony mezcla «sonus», «sonido» en latín, con «sonny», como se les decía a los muchachos en inglés.",
+    "falso": "El nombre Sony mezcla «sonus», «sonido» en latín, con «sun», «sol» en inglés, por el sol de Japón.",
+    "explicacion": "Los fundadores buscaban un nombre corto y fácil en cualquier idioma. Sony lo empezó a usar en los años 50."
+  },
+  {
+    "id": "tecnologia-039",
+    "tema": "tecnologia",
+    "icono": "✨",
+    "dato": "Mew, el Pokémon 151, se agregó en secreto casi al final, en un pequeño espacio libre de memoria del juego.",
+    "falso": "Mew, el Pokémon 151, fue el primero que se diseñó y aparecía en la portada de los primeros juegos.",
+    "explicacion": "El programador Shigeki Morimoto lo metió a última hora, sin que lo supiera casi nadie del equipo."
+  },
+  {
+    "id": "tecnologia-040",
+    "tema": "tecnologia",
+    "icono": "📱",
+    "dato": "El Motorola DynaTAC 8000X, el primer celular portátil a la venta, costaba 3995 dólares en 1983.",
+    "falso": "El Motorola DynaTAC 8000X, el primer celular portátil a la venta, costaba 399 dólares en 1983.",
+    "explicacion": "Costaba 3995 dólares, una fortuna en esa época. Su batería daba unos 30 minutos de conversación."
+  },
+  {
+    "id": "tecnologia-041",
+    "tema": "tecnologia",
+    "icono": "🗺️",
+    "dato": "Pokémon GO nació de una broma del Día de los Inocentes de Google Maps en 2014 y salió en julio de 2016.",
+    "falso": "Pokémon GO nació de una broma del Día de los Inocentes de Facebook en 2014 y salió en julio de 2016.",
+    "explicacion": "La broma de Google Maps escondía Pokémon en el mapa. Niantic, la empresa que la hizo, desarrolló después el juego."
+  },
+  {
+    "id": "tecnologia-042",
+    "tema": "tecnologia",
+    "icono": "🧠",
+    "dato": "En 1950, Alan Turing propuso una prueba para saber si una máquina puede pensar: hoy se llama test de Turing.",
+    "falso": "En 1990, Alan Turing propuso una prueba para saber si una máquina puede pensar: hoy se llama test de Turing.",
+    "explicacion": "Turing la publicó en 1950 con el nombre de «el juego de la imitación». Él murió en 1954."
+  },
+  {
+    "id": "tecnologia-043",
+    "tema": "tecnologia",
+    "icono": "🦔",
+    "dato": "Sonic es azul porque Sega quiso que tuviera el mismo color que su logotipo; debutó en 1991.",
+    "falso": "Sonic es azul porque Sega quiso que se pareciera al cielo de Japón; debutó en 1991.",
+    "explicacion": "Sega eligió el azul de su propio logo para que Sonic se volviera la cara de la marca frente a Mario."
+  },
+  {
+    "id": "tecnologia-044",
+    "tema": "tecnologia",
+    "icono": "📜",
+    "dato": "Ada Lovelace publicó en 1843 lo que se considera el primer programa de computadora de la historia.",
+    "falso": "Ada Lovelace publicó en 1943 lo que se considera el primer programa de computadora de la historia.",
+    "explicacion": "Lo escribió en 1843 para la máquina analítica de Charles Babbage, un siglo antes de las computadoras electrónicas."
+  },
+  {
+    "id": "tecnologia-045",
+    "tema": "tecnologia",
+    "icono": "🎰",
+    "dato": "El nombre Sega viene de «Service Games», una empresa que llevaba máquinas de juego a bases militares en Japón.",
+    "falso": "El nombre Sega viene de «Speed Games», una empresa que fabricaba autos de carreras de juguete en Japón.",
+    "explicacion": "Sega son las primeras letras de «SErvice GAmes». Antes de las consolas, vendía máquinas de monedas."
+  },
+  {
+    "id": "tecnologia-046",
+    "tema": "tecnologia",
+    "icono": "🌐",
+    "dato": "El primer nombre de dominio .com registrado en la historia fue symbolics.com, el 15 de marzo de 1985.",
+    "falso": "El primer nombre de dominio .com registrado en la historia fue google.com, el 15 de marzo de 1985.",
+    "explicacion": "Symbolics era una empresa de computadoras. Google.com se registró recién en 1997."
+  },
+  {
+    "id": "tecnologia-047",
+    "tema": "tecnologia",
+    "icono": "⚫",
+    "dato": "Atari tomó su nombre de un término del juego de mesa japonés Go, parecido al «jaque» del ajedrez.",
+    "falso": "Atari tomó su nombre de un término del ajedrez japonés, parecido al «jaque mate» de las damas.",
+    "explicacion": "En el juego Go, «atari» avisa que unas piedras están a punto de ser capturadas. Atari se fundó en 1972."
+  },
+  {
+    "id": "tecnologia-048",
+    "tema": "tecnologia",
+    "icono": "📚",
+    "dato": "Wikipedia nació en enero de 2001, y «wiki» es una palabra hawaiana que significa «rápido».",
+    "falso": "Wikipedia nació en enero de 2001, y «wiki» es una palabra hawaiana que significa «saber».",
+    "explicacion": "En hawaiano, «wiki wiki» significa rápido. El nombre une «wiki» con «enciclopedia»."
+  },
+  {
+    "id": "tecnologia-049",
+    "tema": "tecnologia",
+    "icono": "🏓",
+    "dato": "El primer Pong de Atari, puesto en un bar en 1972, dejó de funcionar porque se llenó de monedas.",
+    "falso": "El primer Pong de Atari, puesto en un bar en 1972, dejó de funcionar porque se le quemó la pantalla.",
+    "explicacion": "El dueño del bar llamó por una falla, y el técnico descubrió que el recipiente de monedas estaba lleno a reventar."
+  },
+  {
+    "id": "tecnologia-050",
+    "tema": "tecnologia",
+    "icono": "⌨️",
+    "dato": "El comando Ctrl+Alt+Supr lo creó el ingeniero David Bradley, de IBM, para reiniciar las computadoras rápido.",
+    "falso": "El comando Ctrl+Alt+Supr lo creó Bill Gates, de Microsoft, para reiniciar las computadoras rápido.",
+    "explicacion": "David Bradley lo ideó a principios de los años 80 para la IBM PC. Al principio era un atajo para los programadores."
+  },
+  {
+    "id": "tecnologia-051",
+    "tema": "tecnologia",
+    "icono": "🎾",
+    "dato": "Uno de los primeros videojuegos, «Tennis for Two», se creó en 1958 y se jugaba en la pantalla de un osciloscopio.",
+    "falso": "Uno de los primeros videojuegos, «Tennis for Two», se creó en 1958 y se jugaba en la pantalla de un televisor a color.",
+    "explicacion": "William Higinbotham lo creó en un laboratorio de Nueva York con un osciloscopio, un aparato para ver señales eléctricas."
+  },
+  {
+    "id": "tecnologia-052",
+    "tema": "tecnologia",
+    "icono": "✂️",
+    "dato": "Las funciones de cortar, copiar y pegar las popularizó Larry Tesler en el centro Xerox PARC, en los años 70.",
+    "falso": "Las funciones de cortar, copiar y pegar las popularizó Larry Tesler en el centro de Microsoft, en los años 90.",
+    "explicacion": "Tesler trabajaba en Xerox PARC en los años 70; más tarde llevó sus ideas a Apple."
+  },
+  {
+    "id": "tecnologia-053",
+    "tema": "tecnologia",
+    "icono": "📺",
+    "dato": "La Magnavox Odyssey, de 1972, fue la primera consola casera, no tenía sonido y usaba láminas pegadas a la tele.",
+    "falso": "La Magnavox Odyssey, de 1972, fue la primera consola casera, y ya tenía sonido y gráficos a color.",
+    "explicacion": "La Odyssey, creada por Ralph Baer, solo mostraba puntos y líneas; unas láminas de plástico en la pantalla ponían el «decorado»."
+  },
+  {
+    "id": "tecnologia-054",
+    "tema": "tecnologia",
+    "icono": "☕",
+    "dato": "Una de las primeras cámaras web vigilaba una cafetera en la Universidad de Cambridge desde 1991.",
+    "falso": "Una de las primeras cámaras web vigilaba una pecera en la Universidad de Harvard desde 1991.",
+    "explicacion": "Los investigadores de Cambridge querían saber si quedaba café sin caminar hasta la cafetera. En 1993 la pusieron en internet."
+  },
+  {
+    "id": "tecnologia-055",
+    "tema": "tecnologia",
+    "icono": "👽",
+    "dato": "En 1983 Atari enterró miles de cartuchos de E.T. en un desierto de Nuevo México; se desenterraron en 2014.",
+    "falso": "En 1983 Atari enterró miles de cartuchos de E.T. en un desierto de Nuevo México; nunca se encontraron.",
+    "explicacion": "Durante años se creyó una leyenda, pero en 2014 una excavación en Alamogordo encontró los cartuchos."
+  },
+  {
+    "id": "tecnologia-056",
+    "tema": "tecnologia",
+    "icono": "🤖",
+    "dato": "Android se creó al principio como sistema para cámaras digitales; Google compró la empresa en 2005.",
+    "falso": "Android se creó al principio como sistema para relojes digitales; Apple compró la empresa en 2005.",
+    "explicacion": "Android Inc. pensaba en cámaras digitales y luego cambió a teléfonos. Google la compró en 2005."
+  },
+  {
+    "id": "tecnologia-057",
+    "tema": "tecnologia",
+    "icono": "👾",
+    "dato": "En Space Invaders (1978), los marcianos se aceleraban al quedar pocos porque la máquina tenía menos que dibujar.",
+    "falso": "En Space Invaders (1978), los marcianos se frenaban al quedar pocos porque la máquina tenía menos que dibujar.",
+    "explicacion": "Con menos enemigos en pantalla, el procesador los movía más rápido. Fue un accidente que hizo el juego más emocionante."
+  },
+  {
+    "id": "tecnologia-058",
+    "tema": "tecnologia",
+    "icono": "📨",
+    "dato": "Gmail se presentó el 1 de abril de 2004 con 1 GB gratis, y mucha gente creyó que era una broma.",
+    "falso": "Gmail se presentó el 1 de abril de 2004 con 100 GB gratis, y mucha gente creyó que era una broma.",
+    "explicacion": "Ofrecía 1 GB, muchísimo para la época, y la fecha del Día de los Inocentes hizo pensar que era una broma."
+  },
+  {
+    "id": "tecnologia-059",
+    "tema": "tecnologia",
+    "icono": "🕹️",
+    "dato": "La PlayStation nació de un acuerdo fallido entre Sony y Nintendo para un lector de CD; salió en 1994.",
+    "falso": "La PlayStation nació de un acuerdo fallido entre Sony y Sega para un lector de CD; salió en 1994.",
+    "explicacion": "Sony iba a fabricar un lector de CD para la consola de Nintendo. El trato se cayó y Sony hizo su propia consola."
+  },
+  {
+    "id": "tecnologia-060",
+    "tema": "tecnologia",
+    "icono": "🦾",
+    "dato": "La palabra «robot» la popularizó el escritor checo Karel Čapek en una obra de teatro de 1920.",
+    "falso": "La palabra «robot» la popularizó el escritor ruso Isaac Asimov en una novela de 1920.",
+    "explicacion": "Viene del checo «robota», trabajo forzado. Su hermano Josef le sugirió la palabra. Asimov nació en 1920."
+  },
+  {
+    "id": "tecnologia-061",
+    "tema": "tecnologia",
+    "icono": "❎",
+    "dato": "El nombre Xbox viene de «DirectX Box», porque la consola de Microsoft se basaba en su tecnología DirectX.",
+    "falso": "El nombre Xbox viene de «Xtreme Box», porque la consola de Microsoft iba a ser para deportes extremos.",
+    "explicacion": "DirectX era el conjunto de herramientas de Microsoft para juegos en Windows. La primera Xbox salió en 2001."
+  },
+  {
+    "id": "tecnologia-062",
+    "tema": "tecnologia",
+    "icono": "🔎",
+    "dato": "Google empezó en 1996 en la Universidad de Stanford con otro nombre: «BackRub».",
+    "falso": "Google empezó en 1996 en la Universidad de Harvard con otro nombre: «PageRank».",
+    "explicacion": "Larry Page y Sergey Brin lo llamaron BackRub en Stanford. PageRank es el nombre de su método para ordenar páginas."
+  },
+  {
+    "id": "tecnologia-063",
+    "tema": "tecnologia",
+    "icono": "⬆️",
+    "dato": "El famoso código Konami (arriba, arriba, abajo, abajo…) lo inventó un programador para probar más fácil el juego Gradius.",
+    "falso": "El famoso código Konami (arriba, arriba, abajo, abajo…) lo inventó un jugador de 12 años que lo descubrió en el juego Contra.",
+    "explicacion": "Kazuhisa Hashimoto lo creó para obtener todas las mejoras al probar Gradius. Luego Contra lo hizo famoso."
+  },
+  {
+    "id": "tecnologia-064",
+    "tema": "tecnologia",
+    "icono": "📦",
+    "dato": "Amazon se fundó en 1994 como una librería en línea, y su primer nombre fue «Cadabra».",
+    "falso": "Amazon se fundó en 1994 como una tienda de discos en línea, y su primer nombre fue «Cadabra».",
+    "explicacion": "Amazon empezó vendiendo libros. El nombre Cadabra se cambió porque sonaba parecido a «cadáver» en inglés."
+  },
+  {
+    "id": "tecnologia-065",
+    "tema": "tecnologia",
+    "icono": "💥",
+    "dato": "El Creeper de Minecraft nació de un error: el creador intentaba hacer un cerdo y confundió el alto con el largo.",
+    "falso": "El Creeper de Minecraft nació de un error: el creador intentaba hacer un árbol y confundió el alto con el ancho.",
+    "explicacion": "Al cambiar las medidas del cerdo, salió una figura alta y delgada. Le pusieron color verde y se volvió el Creeper."
+  },
+  {
+    "id": "tecnologia-066",
+    "tema": "tecnologia",
+    "icono": "🎧",
+    "dato": "El iPod se presentó en 2001 con la promesa de llevar «1000 canciones en tu bolsillo».",
+    "falso": "El iPod se presentó en 2001 con la promesa de llevar «100 000 canciones en tu bolsillo».",
+    "explicacion": "El primer iPod tenía 5 GB, suficientes para unas 1000 canciones. Fue un éxito enorme para Apple."
+  },
+  {
+    "id": "tecnologia-067",
+    "tema": "tecnologia",
+    "icono": "🏠",
+    "dato": "Will Wright tuvo la idea de Los Sims después de perder su casa en un incendio en California, en 1991.",
+    "falso": "Will Wright tuvo la idea de Los Sims después de mudarse a una casa nueva en California, en 1991.",
+    "explicacion": "Al reconstruir su vida tras el incendio de Oakland, Wright pensó en un juego sobre las cosas de la casa. Los Sims salió en 2000."
+  },
+  {
+    "id": "tecnologia-068",
+    "tema": "tecnologia",
+    "icono": "📲",
+    "dato": "Steve Jobs presentó el primer iPhone el 9 de enero de 2007, y salió a la venta en junio de ese año.",
+    "falso": "Steve Jobs presentó el primer iPhone el 9 de enero de 2010, y salió a la venta en junio de ese año.",
+    "explicacion": "El iPhone se anunció en 2007, en la feria Macworld de San Francisco. En 2010 Apple presentó el iPad."
+  },
+  {
+    "id": "tecnologia-069",
+    "tema": "tecnologia",
+    "icono": "🐦",
+    "dato": "El juego Angry Birds lo creó en 2009 Rovio, una pequeña empresa de videojuegos de Finlandia.",
+    "falso": "El juego Angry Birds lo creó en 2009 Rovio, una pequeña empresa de videojuegos de Japón.",
+    "explicacion": "Rovio es finlandesa, de la ciudad de Espoo. Angry Birds salió para iPhone en diciembre de 2009."
+  },
+  {
+    "id": "tecnologia-070",
+    "tema": "tecnologia",
+    "icono": "💻",
+    "dato": "Microsoft se fundó en 1975 en Albuquerque, Nuevo México, y su nombre une «microcomputer» y «software».",
+    "falso": "Microsoft se fundó en 1975 en Seattle, Washington, y su nombre une «microscope» y «software».",
+    "explicacion": "Bill Gates y Paul Allen la fundaron en Albuquerque. Años después mudaron la empresa a la zona de Seattle."
+  },
+  {
+    "id": "tecnologia-071",
+    "tema": "tecnologia",
+    "icono": "🚀",
+    "dato": "Spacewar!, uno de los primeros videojuegos de computadora, lo crearon estudiantes del MIT en 1962.",
+    "falso": "Spacewar!, uno de los primeros videojuegos de computadora, lo crearon ingenieros de la NASA en 1962.",
+    "explicacion": "Steve Russell y otros estudiantes lo programaron en una computadora PDP-1 del MIT. Dos naves espaciales se disparaban."
+  },
+  {
+    "id": "tecnologia-072",
+    "tema": "tecnologia",
+    "icono": "🎦",
+    "dato": "El primer video de YouTube, «Me at the zoo», se subió en 2005, dura 19 segundos y muestra unos elefantes.",
+    "falso": "El primer video de YouTube, «Me at the zoo», se subió en 2005, dura 19 segundos y muestra unos pingüinos.",
+    "explicacion": "Lo subió Jawed Karim, uno de los fundadores, el 23 de abril de 2005, frente a los elefantes del zoológico de San Diego."
+  },
+  {
+    "id": "tecnologia-073",
+    "tema": "tecnologia",
+    "icono": "💀",
+    "dato": "El nivel 256 de Pac-Man no se puede terminar: un error llena media pantalla de símbolos sin sentido.",
+    "falso": "El nivel 100 de Pac-Man no se puede terminar: un error llena media pantalla de símbolos sin sentido.",
+    "explicacion": "El contador de niveles solo llegaba a 255. Al pasar de ahí, el juego se confunde y dibuja basura en la mitad derecha."
+  },
+  {
+    "id": "tecnologia-074",
+    "tema": "tecnologia",
+    "icono": "🎌",
+    "dato": "La consola NES se lanzó en Japón en 1983 con el nombre Famicom, abreviatura de «Family Computer».",
+    "falso": "La consola NES se lanzó en Japón en 1983 con el nombre Famicom, abreviatura de «Famous Console».",
+    "explicacion": "Famicom viene de «Family Computer», computadora familiar. En América y Europa se llamó Nintendo Entertainment System."
+  },
+  {
+    "id": "tecnologia-075",
+    "tema": "tecnologia",
+    "icono": "🖼️",
+    "dato": "En 2016, el Museo de Arte Moderno de Nueva York agregó a su colección los 176 emojis originales de 1999.",
+    "falso": "En 2016, el Museo del Louvre de París agregó a su colección los 176 emojis originales de 1999.",
+    "explicacion": "El MoMA de Nueva York los adquirió en 2016 por su importancia en el diseño y la comunicación."
+  }
+]

@@ -1,0 +1,602 @@
+[
+  {
+    "id": "cuerpo-001",
+    "tema": "cuerpo",
+    "icono": "👁️",
+    "dato": "Parpadeamos unas 15 a 20 veces por minuto: más de 14 000 veces en un día normal.",
+    "falso": "Parpadeamos unas 2 o 3 veces por minuto: menos de 3000 veces en un día normal.",
+    "explicacion": "Lo normal es parpadear unas 15 a 20 veces por minuto para mantener el ojo húmedo y limpio; 2 o 3 veces sería muy poco."
+  },
+  {
+    "id": "cuerpo-002",
+    "tema": "cuerpo",
+    "icono": "🔵",
+    "dato": "Los ojos azules no tienen pigmento azul: se ven así por la forma en que el iris dispersa la luz.",
+    "falso": "Los ojos azules tienen un pigmento azul propio, distinto de la melanina de los ojos cafés.",
+    "explicacion": "El iris azul tiene poca melanina y dispersa la luz azul, como pasa con el cielo. No existe un pigmento azul en el ojo humano."
+  },
+  {
+    "id": "cuerpo-003",
+    "tema": "cuerpo",
+    "icono": "🙃",
+    "dato": "La imagen que se forma en la retina está de cabeza, y el cerebro se encarga de que la veamos al derecho.",
+    "falso": "La imagen que se forma en la retina sale al derecho, igual que la vemos, sin que el cerebro la corrija.",
+    "explicacion": "El cristalino invierte la imagen, como el lente de una cámara. El cerebro interpreta esa señal y vemos el mundo al derecho."
+  },
+  {
+    "id": "cuerpo-004",
+    "tema": "cuerpo",
+    "icono": "🌈",
+    "dato": "Vemos los colores gracias a tres tipos de conos en la retina, sensibles sobre todo al rojo, al verde y al azul.",
+    "falso": "Vemos los colores gracias a siete tipos de conos en la retina, uno para cada color del arcoíris.",
+    "explicacion": "La mayoría de las personas tiene tres tipos de conos. Todos los colores que vemos salen de combinar sus señales."
+  },
+  {
+    "id": "cuerpo-005",
+    "tema": "cuerpo",
+    "icono": "👀",
+    "dato": "La córnea, la capa transparente del ojo, no tiene vasos sanguíneos: toma el oxígeno directamente del aire.",
+    "falso": "La córnea, la capa transparente del ojo, tiene más vasos sanguíneos que cualquier otra parte del ojo.",
+    "explicacion": "La córnea no tiene vasos sanguíneos para mantenerse transparente; recibe oxígeno del aire y nutrientes de las lágrimas."
+  },
+  {
+    "id": "cuerpo-006",
+    "tema": "cuerpo",
+    "icono": "😢",
+    "dato": "Las lágrimas no son solo agua: llevan sal, grasas y proteínas que ayudan a proteger el ojo de los microbios.",
+    "falso": "Las lágrimas son solo agua pura: no llevan sal, grasas, proteínas ni ninguna otra sustancia disuelta.",
+    "explicacion": "Las lágrimas tienen sal, aceites y proteínas como la lisozima, que combate bacterias. Por eso saben saladas."
+  },
+  {
+    "id": "cuerpo-007",
+    "tema": "cuerpo",
+    "icono": "👃",
+    "dato": "Gran parte del sabor de la comida viene del olfato: por eso todo sabe a poco con la nariz tapada.",
+    "falso": "El olfato no influye en el sabor de la comida: con la nariz tapada todo sabe exactamente igual.",
+    "explicacion": "La lengua detecta unos pocos sabores básicos; los aromas que llegan a la nariz aportan la mayor parte del sabor."
+  },
+  {
+    "id": "cuerpo-008",
+    "tema": "cuerpo",
+    "icono": "👅",
+    "dato": "Las células que detectan los sabores en la lengua se renuevan sin parar: cada una vive cerca de 10 días.",
+    "falso": "Las células que detectan los sabores en la lengua no se renuevan nunca: son las mismas toda la vida.",
+    "explicacion": "Las células receptoras del gusto viven en promedio unos 10 días y se reemplazan continuamente."
+  },
+  {
+    "id": "cuerpo-009",
+    "tema": "cuerpo",
+    "icono": "😋",
+    "dato": "La lengua no tiene zonas exclusivas para cada sabor: casi toda su superficie detecta dulce, salado, ácido y amargo.",
+    "falso": "La lengua tiene zonas exclusivas para cada sabor: lo dulce solo se detecta en la punta y lo amargo, al fondo.",
+    "explicacion": "El famoso «mapa de la lengua» es un mito. Los receptores de cada sabor están repartidos por casi toda la lengua."
+  },
+  {
+    "id": "cuerpo-010",
+    "tema": "cuerpo",
+    "icono": "👂",
+    "dato": "Dentro del oído hay tres canales con líquido que no sirven para oír, sino para mantener el equilibrio.",
+    "falso": "Dentro del oído hay tres canales con líquido que no sirven para oír, sino para regular la temperatura del cuerpo.",
+    "explicacion": "Los canales semicirculares del oído interno detectan los giros de la cabeza y ayudan al equilibrio. La temperatura la regula el cerebro."
+  },
+  {
+    "id": "cuerpo-011",
+    "tema": "cuerpo",
+    "icono": "🎤",
+    "dato": "Tu voz te suena distinta en una grabación porque al hablar también la oyes a través de los huesos del cráneo.",
+    "falso": "Tu voz te suena distinta en una grabación porque los micrófonos vuelven más aguda cualquier voz humana.",
+    "explicacion": "Al hablar, el sonido también te llega vibrando por los huesos y suena más grave. La grabación muestra cómo te oyen los demás."
+  },
+  {
+    "id": "cuerpo-012",
+    "tema": "cuerpo",
+    "icono": "🤸",
+    "dato": "Tenemos más de cinco sentidos: también percibimos el equilibrio, la temperatura y la posición del cuerpo.",
+    "falso": "Tenemos exactamente cinco sentidos: vista, oído, olfato, gusto y tacto, y ninguno más.",
+    "explicacion": "Además de los cinco clásicos, el cuerpo percibe equilibrio, temperatura, dolor y dónde están sus partes sin mirarlas."
+  },
+  {
+    "id": "cuerpo-013",
+    "tema": "cuerpo",
+    "icono": "☝️",
+    "dato": "Las yemas de los dedos tienen muchos más receptores del tacto que la espalda: por eso son tan sensibles.",
+    "falso": "La espalda tiene muchos más receptores del tacto que las yemas de los dedos: por eso es tan sensible.",
+    "explicacion": "Las yemas concentran muchísimos receptores del tacto; la espalda, en cambio, es de las zonas menos sensibles del cuerpo."
+  },
+  {
+    "id": "cuerpo-014",
+    "tema": "cuerpo",
+    "icono": "🦶",
+    "dato": "Más de la mitad de los huesos del cuerpo están en manos y pies: 106 de los 206 de un adulto.",
+    "falso": "Menos de una décima parte de los huesos del cuerpo están en manos y pies: solo 18 de los 206.",
+    "explicacion": "Cada mano tiene 27 huesos y cada pie 26: en total 106, más de la mitad de los 206 huesos de un adulto."
+  },
+  {
+    "id": "cuerpo-015",
+    "tema": "cuerpo",
+    "icono": "🦴",
+    "dato": "El hueso hioides, en el cuello, es el único hueso del cuerpo que no se une a ningún otro hueso.",
+    "falso": "La rótula, en la rodilla, es el único hueso del cuerpo que no se une a ningún otro hueso.",
+    "explicacion": "El hioides queda suspendido por músculos y ligamentos y sostiene la lengua. La rótula sí se articula con el fémur."
+  },
+  {
+    "id": "cuerpo-016",
+    "tema": "cuerpo",
+    "icono": "🔄",
+    "dato": "Los huesos son tejido vivo: el esqueleto de un adulto se renueva casi por completo en unos 10 años.",
+    "falso": "Los huesos son tejido sin vida: el esqueleto de un adulto nunca se renueva después de los 18 años.",
+    "explicacion": "Hay células que deshacen hueso viejo y otras que forman hueso nuevo todo el tiempo; el esqueleto se renueva en unos 10 años."
+  },
+  {
+    "id": "cuerpo-017",
+    "tema": "cuerpo",
+    "icono": "🦵",
+    "dato": "Al nacer, la rótula de la rodilla es de cartílago; empieza a volverse hueso entre los 3 y los 5 años.",
+    "falso": "Al nacer, la rótula de la rodilla ya es un hueso duro, casi tan grande como la de un adulto.",
+    "explicacion": "La rótula del bebé es de cartílago blando y se vuelve hueso poco a poco durante la infancia."
+  },
+  {
+    "id": "cuerpo-018",
+    "tema": "cuerpo",
+    "icono": "🏭",
+    "dato": "La médula de los huesos fabrica unos 2 millones de glóbulos rojos nuevos cada segundo.",
+    "falso": "La médula de los huesos fabrica unos 2 millones de glóbulos rojos nuevos cada año.",
+    "explicacion": "Para reemplazar a los que envejecen, la médula ósea produce millones de glóbulos rojos por segundo, no por año."
+  },
+  {
+    "id": "cuerpo-019",
+    "tema": "cuerpo",
+    "icono": "🥛",
+    "dato": "Cerca del 99 % del calcio del cuerpo está guardado en los huesos y los dientes.",
+    "falso": "Cerca del 10 % del calcio del cuerpo está en los huesos; el resto circula en la sangre.",
+    "explicacion": "Huesos y dientes guardan casi todo el calcio; la sangre lleva solo una pequeña parte, que el cuerpo mantiene estable."
+  },
+  {
+    "id": "cuerpo-020",
+    "tema": "cuerpo",
+    "icono": "😁",
+    "dato": "Los niños tienen 20 dientes de leche, y los adultos llegan a 32 contando las muelas del juicio.",
+    "falso": "Los niños tienen 32 dientes de leche, y los adultos se quedan con 20 al perder los primeros.",
+    "explicacion": "La dentadura de leche tiene 20 piezas y la permanente 32, incluidas las cuatro muelas del juicio."
+  },
+  {
+    "id": "cuerpo-021",
+    "tema": "cuerpo",
+    "icono": "🦷",
+    "dato": "El esmalte de los dientes no se regenera: una vez que se pierde, el cuerpo no puede volver a fabricarlo.",
+    "falso": "El esmalte de los dientes se regenera solo: el cuerpo lo vuelve a fabricar cada pocos meses.",
+    "explicacion": "Las células que forman el esmalte desaparecen cuando el diente sale. Por eso el esmalte perdido no vuelve a crecer."
+  },
+  {
+    "id": "cuerpo-022",
+    "tema": "cuerpo",
+    "icono": "🏃",
+    "dato": "El músculo más grande del cuerpo humano es el glúteo mayor, que forma la mayor parte de las nalgas.",
+    "falso": "El músculo más grande del cuerpo humano es el bíceps, en la parte delantera del brazo.",
+    "explicacion": "El glúteo mayor es el músculo más voluminoso: nos ayuda a estar de pie, subir escaleras y correr. El bíceps es mucho menor."
+  },
+  {
+    "id": "cuerpo-023",
+    "tema": "cuerpo",
+    "icono": "🔍",
+    "dato": "El músculo más pequeño del cuerpo es el estapedio, en el oído medio, de alrededor de 1 mm de largo.",
+    "falso": "El músculo más pequeño del cuerpo es el estapedio, en el oído medio, de alrededor de 5 cm de largo.",
+    "explicacion": "El estapedio mide cerca de 1 mm y amortigua las vibraciones ante sonidos fuertes. Algo de 5 cm no cabría en el oído medio."
+  },
+  {
+    "id": "cuerpo-024",
+    "tema": "cuerpo",
+    "icono": "😛",
+    "dato": "La lengua no es un solo músculo: está formada por ocho músculos que trabajan juntos.",
+    "falso": "La lengua es un solo músculo, el más fuerte de todo el cuerpo en relación con su tamaño.",
+    "explicacion": "La lengua tiene ocho músculos: cuatro cambian su forma y cuatro la mueven. Lo de «el músculo más fuerte» es un mito."
+  },
+  {
+    "id": "cuerpo-025",
+    "tema": "cuerpo",
+    "icono": "💪",
+    "dato": "Los músculos solo pueden jalar, nunca empujar: por eso trabajan en pares, como el bíceps y el tríceps.",
+    "falso": "Los músculos pueden jalar y empujar por igual: por eso cada movimiento lo hace un solo músculo.",
+    "explicacion": "Un músculo solo se contrae y tira del hueso. Para regresar a la posición inicial, otro músculo tira en sentido contrario."
+  },
+  {
+    "id": "cuerpo-026",
+    "tema": "cuerpo",
+    "icono": "🏋️",
+    "dato": "Los músculos que movemos a voluntad forman entre un 30 y un 40 % del peso de un adulto.",
+    "falso": "Los músculos que movemos a voluntad forman apenas un 5 % del peso de un adulto.",
+    "explicacion": "Los músculos esqueléticos son de las partes más pesadas del cuerpo: cerca de un tercio del peso total."
+  },
+  {
+    "id": "cuerpo-027",
+    "tema": "cuerpo",
+    "icono": "🖐️",
+    "dato": "Los dedos de la mano no tienen músculos: los mueven tendones unidos a músculos de la palma y el antebrazo.",
+    "falso": "Cada dedo de la mano tiene más de 10 músculos propios que lo mueven desde adentro, sin ayuda de tendones.",
+    "explicacion": "Dentro de los dedos hay huesos, tendones, nervios y vasos. Los músculos que los mueven están en la palma y el antebrazo."
+  },
+  {
+    "id": "cuerpo-028",
+    "tema": "cuerpo",
+    "icono": "❤️",
+    "dato": "El corazón de un adulto bombea unos 7000 litros de sangre al día, aunque solo pesa unos 300 gramos.",
+    "falso": "El corazón de un adulto bombea unos 70 litros de sangre al día, aunque pesa unos 3 kilos.",
+    "explicacion": "En reposo el corazón mueve unos 5 litros por minuto, más de 7000 al día, y pesa cerca de 300 g, no 3 kg."
+  },
+  {
+    "id": "cuerpo-029",
+    "tema": "cuerpo",
+    "icono": "🫀",
+    "dato": "El corazón tiene cuatro cavidades: dos aurículas que reciben la sangre y dos ventrículos que la impulsan.",
+    "falso": "El corazón tiene seis cavidades: tres aurículas que reciben la sangre y tres ventrículos que la impulsan.",
+    "explicacion": "El corazón humano tiene cuatro cavidades, dos de cada lado. Ningún corazón de mamífero tiene seis."
+  },
+  {
+    "id": "cuerpo-030",
+    "tema": "cuerpo",
+    "icono": "⚡",
+    "dato": "El corazón tiene su propio marcapasos natural, el nodo sinusal, que crea la señal eléctrica de cada latido.",
+    "falso": "El corazón no crea sus latidos: cada uno lo ordena el cerebro con una señal que viaja por los nervios.",
+    "explicacion": "El nodo sinusal produce los impulsos eléctricos del latido. El sistema nervioso solo acelera o frena ese ritmo."
+  },
+  {
+    "id": "cuerpo-031",
+    "tema": "cuerpo",
+    "icono": "✊",
+    "dato": "El corazón de una persona tiene más o menos el tamaño de su propio puño cerrado.",
+    "falso": "El corazón de una persona tiene más o menos el tamaño de su propia cabeza.",
+    "explicacion": "El corazón de un adulto mide unos 12 cm de largo, parecido a un puño cerrado; es mucho más pequeño que la cabeza."
+  },
+  {
+    "id": "cuerpo-032",
+    "tema": "cuerpo",
+    "icono": "🩸",
+    "dato": "Un adulto tiene en su cuerpo unos 5 litros de sangre, cerca del 7 % de su peso total.",
+    "falso": "Un adulto tiene en su cuerpo unos 20 litros de sangre, cerca de la mitad de su peso total.",
+    "explicacion": "Un adulto promedio tiene entre 4,5 y 5,5 litros de sangre. Con 20 litros, la sangre pesaría más que todos sus músculos."
+  },
+  {
+    "id": "cuerpo-033",
+    "tema": "cuerpo",
+    "icono": "🔴",
+    "dato": "La sangre es roja por la hemoglobina, una proteína con hierro que lleva el oxígeno a todo el cuerpo.",
+    "falso": "La sangre es roja por la hemoglobina, una proteína con cobre que lleva el oxígeno a todo el cuerpo.",
+    "explicacion": "La hemoglobina usa hierro, que le da el color rojo. La sangre que usa cobre es azulada, como la de las langostas."
+  },
+  {
+    "id": "cuerpo-034",
+    "tema": "cuerpo",
+    "icono": "🟥",
+    "dato": "La sangre de las venas no es azul: siempre es roja, solo que más oscura cuando lleva poco oxígeno.",
+    "falso": "La sangre de las venas es azul y solo se vuelve roja cuando entra en contacto con el aire.",
+    "explicacion": "Las venas se ven azuladas por cómo la piel filtra la luz, pero la sangre en su interior es de color rojo oscuro."
+  },
+  {
+    "id": "cuerpo-035",
+    "tema": "cuerpo",
+    "icono": "🔬",
+    "dato": "Los glóbulos rojos maduros no tienen núcleo: así les queda más espacio para transportar oxígeno.",
+    "falso": "Los glóbulos rojos maduros tienen dos núcleos: así pueden dividirse y multiplicarse más rápido.",
+    "explicacion": "Al madurar, los glóbulos rojos pierden su núcleo y no se dividen: la médula ósea fabrica otros nuevos."
+  },
+  {
+    "id": "cuerpo-036",
+    "tema": "cuerpo",
+    "icono": "💧",
+    "dato": "Un microlitro de sangre, mucho menos que una gota, contiene unos 5 millones de glóbulos rojos.",
+    "falso": "Un microlitro de sangre, mucho menos que una gota, contiene unos 500 glóbulos rojos.",
+    "explicacion": "Cada microlitro de sangre tiene entre 4 y 6 millones de glóbulos rojos, no unos cientos."
+  },
+  {
+    "id": "cuerpo-037",
+    "tema": "cuerpo",
+    "icono": "🅰️",
+    "dato": "Los cuatro grupos sanguíneos principales son A, B, AB y O, y cada uno puede ser positivo o negativo.",
+    "falso": "Los cuatro grupos sanguíneos principales son A, B, C y D, y cada uno puede ser positivo o negativo.",
+    "explicacion": "El sistema ABO tiene los grupos A, B, AB y O; el positivo o negativo viene del factor Rh. No hay grupos C ni D."
+  },
+  {
+    "id": "cuerpo-038",
+    "tema": "cuerpo",
+    "icono": "🧠",
+    "dato": "El cerebro humano tiene unos 86 000 millones de neuronas, unidas por billones de conexiones.",
+    "falso": "El cerebro humano tiene unos 86 millones de neuronas, unidas por apenas unos miles de conexiones.",
+    "explicacion": "Se estima que hay unos 86 000 millones de neuronas, cada una con miles de conexiones: billones en total."
+  },
+  {
+    "id": "cuerpo-039",
+    "tema": "cuerpo",
+    "icono": "💡",
+    "dato": "Usamos todo el cerebro: las imágenes de su actividad muestran que todas sus zonas trabajan a lo largo del día.",
+    "falso": "Solo usamos el 10 % del cerebro: las imágenes muestran que el 90 % restante casi nunca se activa.",
+    "explicacion": "Lo del 10 % es un mito. Los escáneres muestran actividad en todo el cerebro, aunque no todas las zonas a la vez."
+  },
+  {
+    "id": "cuerpo-040",
+    "tema": "cuerpo",
+    "icono": "🤕",
+    "dato": "El tejido del cerebro no tiene receptores de dolor, aunque es el órgano que interpreta el dolor de todo el cuerpo.",
+    "falso": "El tejido del cerebro tiene más receptores de dolor que cualquier otro órgano, por eso interpreta todo el dolor.",
+    "explicacion": "El cerebro en sí no siente dolor. Los dolores de cabeza vienen de las membranas, vasos y músculos que lo rodean."
+  },
+  {
+    "id": "cuerpo-041",
+    "tema": "cuerpo",
+    "icono": "↔️",
+    "dato": "El lado izquierdo del cerebro controla los movimientos del lado derecho del cuerpo, y viceversa.",
+    "falso": "El lado izquierdo del cerebro controla los movimientos del lado izquierdo del cuerpo, y lo mismo el derecho.",
+    "explicacion": "Las vías nerviosas que van a los músculos se cruzan en la base del cerebro, así que cada mitad maneja el lado opuesto."
+  },
+  {
+    "id": "cuerpo-042",
+    "tema": "cuerpo",
+    "icono": "🚰",
+    "dato": "Cerca de tres cuartas partes del cerebro son agua; el resto es sobre todo grasa y proteínas.",
+    "falso": "Cerca de tres cuartas partes del cerebro son grasa; el agua es apenas un 5 % de su peso.",
+    "explicacion": "El cerebro tiene alrededor de 75 % de agua. La grasa abunda en el resto de su peso, pero no llega a tres cuartos."
+  },
+  {
+    "id": "cuerpo-043",
+    "tema": "cuerpo",
+    "icono": "⚖️",
+    "dato": "El cerebro de un adulto pesa cerca de 1,4 kilos, pero controla cada movimiento, pensamiento y recuerdo.",
+    "falso": "El cerebro de un adulto pesa cerca de 5 kilos, por eso controla cada movimiento, pensamiento y recuerdo.",
+    "explicacion": "Un cerebro adulto pesa entre 1,2 y 1,5 kilos. Con 5 kilos sería más de tres veces más pesado de lo normal."
+  },
+  {
+    "id": "cuerpo-044",
+    "tema": "cuerpo",
+    "icono": "🔥",
+    "dato": "Si tocas algo muy caliente, la médula espinal ordena retirar la mano antes de que el cerebro sienta el dolor.",
+    "falso": "Si tocas algo muy caliente, primero el cerebro siente el dolor y solo después ordena retirar la mano.",
+    "explicacion": "Es un reflejo: la señal va y vuelve por la médula espinal en milisegundos, y el cerebro registra el dolor un instante después."
+  },
+  {
+    "id": "cuerpo-045",
+    "tema": "cuerpo",
+    "icono": "✨",
+    "dato": "Cada minuto se desprenden de tu piel decenas de miles de células muertas, sin que lo notes.",
+    "falso": "Las células muertas de la piel solo se desprenden al bañarnos; el resto del día se quedan pegadas.",
+    "explicacion": "La piel suelta células muertas todo el tiempo, se calcula que decenas de miles por minuto, no solo con el baño."
+  },
+  {
+    "id": "cuerpo-046",
+    "tema": "cuerpo",
+    "icono": "🧴",
+    "dato": "La capa externa de la piel se renueva por completo más o menos cada cuatro a seis semanas.",
+    "falso": "La capa externa de la piel se renueva por completo más o menos cada cuatro a seis años.",
+    "explicacion": "Las células nuevas nacen en el fondo de la epidermis y suben a la superficie en unas semanas, donde se desprenden."
+  },
+  {
+    "id": "cuerpo-047",
+    "tema": "cuerpo",
+    "icono": "🎨",
+    "dato": "El color de la piel, el pelo y los ojos depende sobre todo de un mismo pigmento: la melanina.",
+    "falso": "El color de la piel, el pelo y los ojos depende sobre todo de un mismo pigmento: la queratina.",
+    "explicacion": "La melanina da los tonos cafés y negros. La queratina es la proteína que forma el pelo y las uñas, pero no les da color."
+  },
+  {
+    "id": "cuerpo-048",
+    "tema": "cuerpo",
+    "icono": "🥶",
+    "dato": "La piel de gallina la producen músculos diminutos que levantan cada vello cuando sentimos frío o emoción.",
+    "falso": "La piel de gallina la produce la sangre, que se acumula bajo la piel cuando sentimos frío o emoción.",
+    "explicacion": "Cada vello tiene un pequeño músculo, el erector del pelo, que se contrae y lo levanta. La sangre no tiene que ver."
+  },
+  {
+    "id": "cuerpo-049",
+    "tema": "cuerpo",
+    "icono": "💦",
+    "dato": "La piel tiene entre 2 y 4 millones de glándulas del sudor, que ayudan a enfriar el cuerpo.",
+    "falso": "La piel tiene unas 2000 glándulas del sudor, y casi todas están concentradas en las axilas.",
+    "explicacion": "Las glándulas del sudor están repartidas por casi toda la piel y se cuentan por millones; abundan en palmas y plantas."
+  },
+  {
+    "id": "cuerpo-050",
+    "tema": "cuerpo",
+    "icono": "💅",
+    "dato": "Las uñas de las manos crecen unos 3 mm al mes, cerca del doble de rápido que las de los pies.",
+    "falso": "Las uñas de los pies crecen unos 3 mm al mes, cerca del doble de rápido que las de las manos.",
+    "explicacion": "Las uñas de las manos crecen unos 3 a 3,5 mm al mes; las de los pies, la mitad o menos. Por eso se cortan menos seguido."
+  },
+  {
+    "id": "cuerpo-051",
+    "tema": "cuerpo",
+    "icono": "💇",
+    "dato": "El cabello de la cabeza crece cerca de 1 centímetro al mes: unos 12 a 15 centímetros al año.",
+    "falso": "El cabello de la cabeza crece cerca de 1 centímetro al día: unos 3 metros y medio al año.",
+    "explicacion": "El pelo de la cabeza crece en promedio poco más de 1 cm al mes. A 1 cm por día, crecería más de 3 metros al año."
+  },
+  {
+    "id": "cuerpo-052",
+    "tema": "cuerpo",
+    "icono": "👱",
+    "dato": "Una persona tiene en promedio unos 100 000 cabellos en la cabeza, y pierde entre 50 y 100 al día.",
+    "falso": "Una persona tiene en promedio unos 10 millones de cabellos en la cabeza, y pierde entre 50 y 100 al día.",
+    "explicacion": "Una cabeza tiene en promedio unos 100 000 cabellos. Perder unos 50 a 100 al día es normal: luego vuelven a crecer."
+  },
+  {
+    "id": "cuerpo-053",
+    "tema": "cuerpo",
+    "icono": "🌀",
+    "dato": "El intestino delgado es mucho más largo que el grueso: se llama «delgado» porque es más angosto.",
+    "falso": "El intestino delgado es mucho más corto que el grueso: se llama «delgado» porque es más pequeño.",
+    "explicacion": "El intestino delgado mide varios metros, unas cuatro veces más que el grueso, que mide cerca de 1,5 m pero es más ancho."
+  },
+  {
+    "id": "cuerpo-054",
+    "tema": "cuerpo",
+    "icono": "🥣",
+    "dato": "El estómago renueva su capa interna cada pocos días para protegerse de su propio ácido.",
+    "falso": "El estómago nunca renueva su capa interna, porque su propio ácido no le hace ningún daño.",
+    "explicacion": "Una capa de moco y la renovación constante de sus células, cada pocos días, protegen la pared del estómago del ácido."
+  },
+  {
+    "id": "cuerpo-055",
+    "tema": "cuerpo",
+    "icono": "🍞",
+    "dato": "La digestión empieza en la boca: la saliva tiene una enzima, la amilasa, que comienza a deshacer el almidón.",
+    "falso": "La digestión empieza en el intestino: la saliva solo humedece la comida y no tiene ninguna enzima.",
+    "explicacion": "La amilasa de la saliva empieza a convertir el almidón en azúcares; por eso el pan sabe más dulce si lo masticas un rato."
+  },
+  {
+    "id": "cuerpo-056",
+    "tema": "cuerpo",
+    "icono": "🌱",
+    "dato": "El hígado puede volver a crecer: aunque pierda más de la mitad de su tamaño, recupera su volumen en meses.",
+    "falso": "El hígado no puede volver a crecer: cualquier parte que pierda queda perdida para siempre.",
+    "explicacion": "El hígado tiene una gran capacidad de regeneración y recupera su tamaño en semanas o meses, algo muy raro entre los órganos."
+  },
+  {
+    "id": "cuerpo-057",
+    "tema": "cuerpo",
+    "icono": "🏆",
+    "dato": "El hígado es el órgano interno más grande del cuerpo: pesa cerca de 1,5 kilos y cumple cientos de funciones.",
+    "falso": "El corazón es el órgano interno más grande del cuerpo: pesa cerca de 1,5 kilos y cumple cientos de funciones.",
+    "explicacion": "El hígado es el órgano interno más grande y pesado. El corazón pesa unos 300 gramos, cinco veces menos."
+  },
+  {
+    "id": "cuerpo-058",
+    "tema": "cuerpo",
+    "icono": "🦠",
+    "dato": "En tu cuerpo viven unos 38 billones de bacterias, casi la misma cantidad que tus propias células.",
+    "falso": "En tu cuerpo viven unas diez bacterias por cada célula propia: te superan diez a uno.",
+    "explicacion": "Un cálculo de 2016 estimó unos 38 billones de bacterias y unos 30 billones de células humanas. Lo de «diez a uno» era una cifra antigua."
+  },
+  {
+    "id": "cuerpo-059",
+    "tema": "cuerpo",
+    "icono": "🫁",
+    "dato": "Un adulto en reposo respira de 12 a 20 veces por minuto: más de 20 000 veces al día sin pensarlo.",
+    "falso": "Un adulto en reposo respira de 2 a 3 veces por minuto: unas 4000 veces al día sin pensarlo.",
+    "explicacion": "En reposo respiramos entre 12 y 20 veces por minuto, lo que suma más de 20 000 respiraciones al día."
+  },
+  {
+    "id": "cuerpo-060",
+    "tema": "cuerpo",
+    "icono": "🎈",
+    "dato": "Desplegados, los diminutos sacos de aire de los pulmones, los alvéolos, cubrirían unos 70 metros cuadrados.",
+    "falso": "Desplegados, los diminutos sacos de aire de los pulmones, los alvéolos, cubrirían unos 70 centímetros cuadrados.",
+    "explicacion": "Los pulmones tienen cientos de millones de alvéolos que juntos suman una superficie enorme para captar oxígeno."
+  },
+  {
+    "id": "cuerpo-061",
+    "tema": "cuerpo",
+    "icono": "🗯️",
+    "dato": "El hipo es una contracción repentina del diafragma, el músculo que está debajo de los pulmones.",
+    "falso": "El hipo es una contracción repentina del estómago, que empuja aire de golpe hacia la garganta.",
+    "explicacion": "En el hipo el diafragma se contrae de golpe y las cuerdas vocales se cierran, lo que produce el típico «hip»."
+  },
+  {
+    "id": "cuerpo-062",
+    "tema": "cuerpo",
+    "icono": "🥱",
+    "dato": "Bostezar es contagioso: ver, oír o incluso leer sobre alguien que bosteza puede hacernos bostezar.",
+    "falso": "Bostezar no es contagioso: ver u oír a alguien bostezar nunca hace que otra persona bostece.",
+    "explicacion": "El bostezo contagioso es muy común en personas y también se ha observado en chimpancés y perros."
+  },
+  {
+    "id": "cuerpo-063",
+    "tema": "cuerpo",
+    "icono": "🧪",
+    "dato": "Los riñones filtran unos 180 litros de líquido de la sangre al día, y devuelven casi todo al cuerpo.",
+    "falso": "Los riñones filtran unos 2 litros de líquido de la sangre al día, y lo expulsan todo como orina.",
+    "explicacion": "De los cerca de 180 litros filtrados, más del 99 % se reabsorbe; solo alrededor de 1,5 litros salen como orina."
+  },
+  {
+    "id": "cuerpo-064",
+    "tema": "cuerpo",
+    "icono": "😴",
+    "dato": "Pasamos cerca de un tercio de la vida durmiendo: unos 25 años en una vida de 75.",
+    "falso": "Pasamos cerca de una décima parte de la vida durmiendo: unos 7 años en una vida de 75.",
+    "explicacion": "Un adulto duerme unas 7 a 9 horas diarias, casi un tercio del día. A lo largo de la vida eso suma décadas de sueño."
+  },
+  {
+    "id": "cuerpo-065",
+    "tema": "cuerpo",
+    "icono": "💤",
+    "dato": "Los sueños más vívidos ocurren en la fase REM, cuando los ojos se mueven rápido bajo los párpados.",
+    "falso": "Los sueños solo ocurren en la fase de sueño profundo, cuando los ojos están completamente quietos.",
+    "explicacion": "REM significa «movimientos oculares rápidos». En esa fase los sueños son más vívidos y es cuando más se recuerdan."
+  },
+  {
+    "id": "cuerpo-066",
+    "tema": "cuerpo",
+    "icono": "🛌",
+    "dato": "Durante el sueño REM casi todos los músculos quedan relajados al máximo, lo que evita que actuemos lo que soñamos.",
+    "falso": "Durante el sueño REM los músculos se tensan al máximo, por eso solemos movernos mientras soñamos.",
+    "explicacion": "En el sueño REM el cerebro bloquea casi todos los músculos voluntarios, menos los de los ojos y la respiración."
+  },
+  {
+    "id": "cuerpo-067",
+    "tema": "cuerpo",
+    "icono": "👶",
+    "dato": "Un recién nacido duerme entre 14 y 17 horas al día, repartidas en muchos ratos cortos.",
+    "falso": "Un recién nacido duerme entre 6 y 8 horas al día, igual que un adulto, todas de un solo tirón.",
+    "explicacion": "Los recién nacidos duermen la mayor parte del día en tramos de pocas horas, y despiertan para comer."
+  },
+  {
+    "id": "cuerpo-068",
+    "tema": "cuerpo",
+    "icono": "🌙",
+    "dato": "Durante el sueño profundo el cuerpo libera buena parte de la hormona del crecimiento.",
+    "falso": "El cuerpo libera la hormona del crecimiento solo mientras estamos despiertos y en movimiento.",
+    "explicacion": "El mayor pico de hormona del crecimiento ocurre en el sueño profundo, sobre todo al inicio de la noche."
+  },
+  {
+    "id": "cuerpo-069",
+    "tema": "cuerpo",
+    "icono": "🧬",
+    "dato": "Casi todas las células humanas tienen 46 cromosomas, organizados en 23 pares: una mitad viene de cada padre.",
+    "falso": "Casi todas las células humanas tienen 48 cromosomas, organizados en 24 pares: una mitad viene de cada padre.",
+    "explicacion": "Los humanos tenemos 46 cromosomas. 48 es el número de los chimpancés y otros grandes simios."
+  },
+  {
+    "id": "cuerpo-070",
+    "tema": "cuerpo",
+    "icono": "🌾",
+    "dato": "El ser humano tiene unos 20 000 genes, menos que una planta de arroz, que tiene más de 30 000.",
+    "falso": "El ser humano tiene unos 2 millones de genes, muchos más que cualquier planta o animal.",
+    "explicacion": "El genoma humano tiene unos 20 000 genes que fabrican proteínas. La complejidad no depende solo de cuántos genes hay."
+  },
+  {
+    "id": "cuerpo-071",
+    "tema": "cuerpo",
+    "icono": "🐒",
+    "dato": "Compartimos cerca del 98 % de nuestro ADN con los chimpancés, nuestros parientes vivos más cercanos.",
+    "falso": "Compartimos apenas un 50 % de nuestro ADN con los chimpancés, aunque sean nuestros parientes más cercanos.",
+    "explicacion": "Chimpancés y bonobos son nuestros parientes vivos más cercanos; las comparaciones dan cerca de un 98 a 99 % de ADN en común."
+  },
+  {
+    "id": "cuerpo-072",
+    "tema": "cuerpo",
+    "icono": "📚",
+    "dato": "El genoma humano, el juego completo de instrucciones del ADN, tiene unos 3000 millones de pares de «letras».",
+    "falso": "El genoma humano, el juego completo de instrucciones del ADN, tiene unos 3000 pares de «letras».",
+    "explicacion": "El genoma humano tiene unos 3000 millones de pares de bases. Con solo 3000 no alcanzaría ni para un gen promedio."
+  },
+  {
+    "id": "cuerpo-073",
+    "tema": "cuerpo",
+    "icono": "🌊",
+    "dato": "Cerca del 60 % del cuerpo de un adulto es agua; en un bebé recién nacido llega a cerca del 75 %.",
+    "falso": "Cerca del 20 % del cuerpo de un adulto es agua; en un bebé recién nacido apenas llega al 10 %.",
+    "explicacion": "El agua es el principal componente del cuerpo: alrededor del 60 % en adultos y todavía más en los bebés."
+  },
+  {
+    "id": "cuerpo-074",
+    "tema": "cuerpo",
+    "icono": "🌡️",
+    "dato": "La temperatura normal del cuerpo ronda los 37 °C y sube y baja un poco a lo largo del día.",
+    "falso": "La temperatura normal del cuerpo es siempre exactamente 37 °C, sin cambiar a lo largo del día.",
+    "explicacion": "La temperatura varía unas décimas de grado durante el día: suele ser más baja de madrugada y más alta por la tarde."
+  },
+  {
+    "id": "cuerpo-075",
+    "tema": "cuerpo",
+    "icono": "📏",
+    "dato": "Somos cerca de 1 cm más altos al despertar que en la noche: los discos de la columna se aplastan de día.",
+    "falso": "Somos cerca de 10 cm más altos al despertar que en la noche: los discos de la columna se aplastan de día.",
+    "explicacion": "Al estar de pie, los discos entre las vértebras se comprimen un poco y perdemos alrededor de 1 cm, que se recupera al dormir."
+  }
+]

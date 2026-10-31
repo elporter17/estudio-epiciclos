@@ -1,13 +1,14 @@
 # Reels de quiz y curiosidades para la página de Facebook (scripts/curiosidades-video.mjs, sin IA), de 50 a 59 s:
 # «10 cosas que no sabías hace 1 minuto», «5 preguntas: ¿cuántas aciertas?» y «Adivina las 10 banderas», en ese
-# orden: top 10, quiz, top 10, banderas. 4 al día, publicados como Reel y como historia, sin TikTok ni aviso por correo.
+# orden: top 10, quiz, top 10, banderas. 6 al día, publicados como Reel y como historia, sin TikTok ni aviso por correo.
 # Reutiliza daily.yml (estado cifrado: historial para no repetir datos ni banderas) y nunca corre a la vez que los demás.
 name: Quiz y curiosidades en video a Facebook
 
 on:
   schedule:
-    # Minuto 57, lejos de los otros workflows. En Honduras (UTC-6): 9:57, 13:57, 17:57 y 21:57
-    - cron: '57 3,15,19,23 * * *'
+    # Minuto 57, lejos de los otros workflows; más en las horas pico (mediodía y noche). En Honduras (UTC-6): 7:57,
+    # 12:57, 13:57, 18:57, 19:57 y 21:57
+    - cron: '57 0,1,3,13,18,19 * * *'
   workflow_dispatch:
     inputs:
       formato:

@@ -9,13 +9,17 @@ export const TEMAS = {
   deportes: { nombre: 'Fútbol y deportes', a: '#0b5d2a', b: '#062814', acento: '#c6f36b', tags: ['futbol', 'deportes'] },
   inventos: { nombre: 'Inventos', a: '#5b1f6b', b: '#240b2b', acento: '#f0a6ff', tags: ['inventos', 'ciencia'] },
   matematicas: { nombre: 'Matemáticas', a: '#7a1f2b', b: '#2e0b10', acento: '#ff9aa8', tags: ['matematicas', 'retos'] },
+  cuerpo: { nombre: 'Cuerpo humano', a: '#7a1f4f', b: '#2b0b1c', acento: '#ff9ed2', tags: ['cuerpohumano', 'ciencia'] },
+  geografia: { nombre: 'Geografía', a: '#0b4f6c', b: '#06202e', acento: '#7fd8ff', tags: ['geografia', 'mundo'] },
+  comida: { nombre: 'Comida y bebidas', a: '#8a2f0f', b: '#2e1004', acento: '#ffe066', tags: ['comida', 'cultura'] },
+  tecnologia: { nombre: 'Tecnología y videojuegos', a: '#0f4c4c', b: '#051f1f', acento: '#6ff0d0', tags: ['tecnologia', 'videojuegos'] },
   noticias: { nombre: 'Noticias', a: '#1b1b1f', b: '#0a0a0c', acento: '#ffd166', tags: ['noticias'] }
 };
 export const FORMATOS = {
   sabias: '¿SABÍAS QUE…?', vf: '¿VERDADERO O FALSO?', error: '¿CUÁL ES FALSO?', reto: 'RETO MENTAL 🧠', noticia: '📰 NOTICIA'
 };
 
-const SANS = '"IBM Plex Sans", system-ui, sans-serif', BLACK = '"Archivo Black", Impact, sans-serif';
+const SANS = '"IBM Plex Sans", "STIX Two Text", system-ui, sans-serif', BLACK = '"Archivo Black", Impact, sans-serif';
 
 function wrap(ctx, text, maxW) {
   const words = String(text).split(/\s+/), lines = []; let cur = '';

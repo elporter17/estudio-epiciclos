@@ -1,0 +1,562 @@
+[
+  {
+    "id": "retos-numeros-001",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔢",
+    "pregunta": "¿Qué número sigue en la serie? 1, 4, 9, 16, 25, …",
+    "opciones": [
+      "30",
+      "36",
+      "35"
+    ],
+    "respuesta": 1,
+    "explicacion": "Son los cuadrados: 1², 2², 3², 4², 5². El que sigue es 6² = 36."
+  },
+  {
+    "id": "retos-numeros-002",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🐚",
+    "pregunta": "¿Qué número sigue en la serie? 1, 1, 2, 3, 5, 8, 13, …",
+    "opciones": [
+      "21",
+      "18",
+      "26"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada número es la suma de los dos anteriores (serie de Fibonacci): 8 + 13 = 21."
+  },
+  {
+    "id": "retos-numeros-003",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🍕",
+    "pregunta": "Una pizza tiene 8 porciones. Tú comes 1/4 de la pizza y tu amigo 3 porciones. ¿Cuántas porciones quedan?",
+    "opciones": [
+      "4",
+      "5",
+      "3"
+    ],
+    "respuesta": 2,
+    "explicacion": "1/4 de 8 porciones son 2. Entre los dos comen 2 + 3 = 5, así que quedan 8 − 5 = 3."
+  },
+  {
+    "id": "retos-numeros-004",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🛍️",
+    "pregunta": "En una oferta «lleva 3 y paga 2», ¿qué descuento obtienes sobre el total?",
+    "opciones": [
+      "La mitad (50 %)",
+      "Dos tercios (67 %)",
+      "Un tercio (33 %)"
+    ],
+    "respuesta": 2,
+    "explicacion": "De 3 productos, uno sale gratis: ahorras 1 de cada 3, o sea un tercio del total (cerca del 33 %). No es la mitad."
+  },
+  {
+    "id": "retos-numeros-005",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🥔",
+    "pregunta": "100 kg de papas tienen 99 % de agua. Se secan hasta tener 98 % de agua. ¿Cuánto pesan ahora?",
+    "opciones": [
+      "99 kg",
+      "50 kg",
+      "98 kg"
+    ],
+    "respuesta": 1,
+    "explicacion": "La parte seca es 1 kg y no cambia. Si ahora es el 2 % del peso total, las papas pesan 1 ÷ 0.02 = 50 kg."
+  },
+  {
+    "id": "retos-numeros-006",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🎂",
+    "pregunta": "Hace 5 años, Sara tenía 20 años. ¿Cuántos años tendrá dentro de 5 años?",
+    "opciones": [
+      "30",
+      "25",
+      "35"
+    ],
+    "respuesta": 0,
+    "explicacion": "Hoy tiene 20 + 5 = 25 años. Dentro de 5 años tendrá 25 + 5 = 30."
+  },
+  {
+    "id": "retos-numeros-007",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🪙",
+    "pregunta": "Tengo el doble de monedas que tú. Si te doy 5, tenemos las mismas. ¿Cuántas monedas tengo?",
+    "opciones": [
+      "10",
+      "15",
+      "20"
+    ],
+    "respuesta": 2,
+    "explicacion": "Si tú tienes x y yo 2x: 2x − 5 = x + 5, así que x = 10. Yo tengo 20; al darte 5 quedamos con 15 cada uno."
+  },
+  {
+    "id": "retos-numeros-008",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "✖️",
+    "pregunta": "Si multiplicas todos los números enteros del 0 al 9, ¿qué resultado obtienes?",
+    "opciones": [
+      "362880",
+      "0",
+      "45"
+    ],
+    "respuesta": 1,
+    "explicacion": "Uno de los factores es 0, y cualquier número por 0 da 0. Sin el 0 daría 362 880; 45 es la suma."
+  },
+  {
+    "id": "retos-numeros-009",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🚰",
+    "pregunta": "Un grifo llena un tanque en 3 horas y otro en 6 horas. Si abres los dos a la vez, ¿cuánto tardan?",
+    "opciones": [
+      "2 horas",
+      "4.5 horas",
+      "1.5 horas"
+    ],
+    "respuesta": 0,
+    "explicacion": "En 1 hora uno llena 1/3 y el otro 1/6: juntos 1/3 + 1/6 = 1/2 del tanque por hora. Lo llenan en 2 horas."
+  },
+  {
+    "id": "retos-numeros-010",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🍞",
+    "pregunta": "Ana aporta 3 panes y Beto 5. Los comen a partes iguales con Carlos, que paga $8. ¿Cuánto es para Ana?",
+    "opciones": [
+      "$3",
+      "$1",
+      "$4"
+    ],
+    "respuesta": 1,
+    "explicacion": "Cada uno come 8/3. Ana cede 3 − 8/3 = 1/3 y Beto 5 − 8/3 = 7/3. Los $8 se reparten 1 a 7: $1 para Ana."
+  },
+  {
+    "id": "retos-numeros-011",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "⏳",
+    "pregunta": "¿Cuánto tiempo es 1.25 horas?",
+    "opciones": [
+      "1 h 25 min",
+      "1 h 20 min",
+      "1 h 15 min"
+    ],
+    "respuesta": 2,
+    "explicacion": "0.25 horas es un cuarto de hora: 60 ÷ 4 = 15 minutos. Así que 1.25 h = 1 h 15 min, no 1 h 25 min."
+  },
+  {
+    "id": "retos-numeros-012",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "➗",
+    "pregunta": "¿Cuánto es 12 ÷ 3 × 2?",
+    "opciones": [
+      "8",
+      "2",
+      "6"
+    ],
+    "respuesta": 0,
+    "explicacion": "Dividir y multiplicar tienen la misma prioridad y se hacen de izquierda a derecha: 12 ÷ 3 = 4 y 4 × 2 = 8."
+  },
+  {
+    "id": "retos-numeros-013",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🏷️",
+    "pregunta": "Una prenda de $80 tiene 15 % de descuento. ¿Cuánto pagas?",
+    "opciones": [
+      "$65",
+      "$68",
+      "$72"
+    ],
+    "respuesta": 1,
+    "explicacion": "El 15 % de $80 es $12 (el 10 % es $8 y el 5 % es $4). Pagas $80 − $12 = $68."
+  },
+  {
+    "id": "retos-numeros-014",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔄",
+    "pregunta": "¿Qué número sigue en la serie? 61, 52, 63, 94, 46, …",
+    "opciones": [
+      "81",
+      "37",
+      "18"
+    ],
+    "respuesta": 2,
+    "explicacion": "Son los cuadrados 16, 25, 36, 49 y 64 escritos al revés. Sigue 81, que al revés es 18."
+  },
+  {
+    "id": "retos-numeros-015",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔍",
+    "pregunta": "¿Qué número sigue en la serie? 2, 3, 5, 7, 11, 13, …",
+    "opciones": [
+      "17",
+      "15",
+      "19"
+    ],
+    "respuesta": 0,
+    "explicacion": "Son los números primos (solo se dividen entre 1 y entre sí mismos). 15 no es primo (3 × 5), así que sigue 17."
+  },
+  {
+    "id": "retos-numeros-016",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🧔",
+    "pregunta": "Hoy Luis tiene 8 años y su papá 36. Cuando Luis tenga 30, ¿cuántos años tendrá su papá?",
+    "opciones": [
+      "135",
+      "60",
+      "58"
+    ],
+    "respuesta": 2,
+    "explicacion": "La diferencia de edad nunca cambia: 36 − 8 = 28 años. Cuando Luis tenga 30, su papá tendrá 30 + 28 = 58."
+  },
+  {
+    "id": "retos-numeros-017",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "👛",
+    "pregunta": "Gasté 1/3 de mi dinero y después 1/4 de lo que me quedaba. Me quedan $30. ¿Cuánto tenía?",
+    "opciones": [
+      "$72",
+      "$60",
+      "$90"
+    ],
+    "respuesta": 1,
+    "explicacion": "Tras gastar 1/3 queda 2/3, y luego 3/4 de eso: 2/3 × 3/4 = 1/2. Si la mitad es $30, tenías $60."
+  },
+  {
+    "id": "retos-numeros-018",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🌉",
+    "pregunta": "Un tren de 100 m va a 36 km/h. ¿Cuánto tarda en pasar por completo un puente de 200 m?",
+    "opciones": [
+      "30 segundos",
+      "20 segundos",
+      "10 segundos"
+    ],
+    "respuesta": 0,
+    "explicacion": "36 km/h son 10 m/s. El tren recorre los 200 m del puente más sus 100 m de largo: 300 ÷ 10 = 30 segundos."
+  },
+  {
+    "id": "retos-numeros-019",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "⬇️",
+    "pregunta": "¿Qué número sigue en la serie? 16, 8, 4, 2, 1, …",
+    "opciones": [
+      "0",
+      "−1",
+      "0.5"
+    ],
+    "respuesta": 2,
+    "explicacion": "Cada número es la mitad del anterior: 1 ÷ 2 = 0.5. No se resta lo mismo: de 16 a 8 bajan 8, de 8 a 4 solo 4."
+  },
+  {
+    "id": "retos-numeros-020",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "💸",
+    "pregunta": "Un artículo tiene 50 % de descuento y en caja te dan 20 % extra sobre ese precio. ¿Descuento total?",
+    "opciones": [
+      "70 %",
+      "60 %",
+      "65 %"
+    ],
+    "respuesta": 1,
+    "explicacion": "Pagas el 50 % y luego el 80 % de eso: 0.5 × 0.8 = 0.4. Pagas el 40 % del precio, o sea un descuento total de 60 %."
+  },
+  {
+    "id": "retos-numeros-021",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📜",
+    "pregunta": "Tres hermanos se reparten $900: el mayor recibe la mitad y el segundo, un tercio. ¿Cuánto recibe el menor?",
+    "opciones": [
+      "$150",
+      "$300",
+      "$100"
+    ],
+    "respuesta": 0,
+    "explicacion": "La mitad de $900 es $450 y un tercio es $300. Al menor le quedan $900 − $450 − $300 = $150."
+  },
+  {
+    "id": "retos-numeros-022",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "0️⃣",
+    "pregunta": "Si multiplicas todos los números del 1 al 20, ¿en cuántos ceros termina el resultado?",
+    "opciones": [
+      "2",
+      "4",
+      "3"
+    ],
+    "respuesta": 1,
+    "explicacion": "Cada cero sale de un 2 × 5. Hay cuatro 5 (en 5, 10, 15 y 20) y sobran los 2, así que termina en 4 ceros."
+  },
+  {
+    "id": "retos-numeros-023",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🧠",
+    "pregunta": "¿Cuánto es 2 × 3²?",
+    "opciones": [
+      "36",
+      "12",
+      "18"
+    ],
+    "respuesta": 2,
+    "explicacion": "La potencia va primero: 3² = 9 y luego 2 × 9 = 18. Hacer (2 × 3)² = 36 es el error típico."
+  },
+  {
+    "id": "retos-numeros-024",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "👪",
+    "pregunta": "Tres hermanos suman 30 años entre los tres. ¿Cuánto sumarán sus edades dentro de 5 años?",
+    "opciones": [
+      "45",
+      "35",
+      "40"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada uno cumple 5 años más: 3 × 5 = 15. Sus edades sumarán 30 + 15 = 45, no 35."
+  },
+  {
+    "id": "retos-numeros-025",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🚲",
+    "pregunta": "Compras una bici a $50, la vendes a $60, la recompras a $70 y la vendes a $80. ¿Cuánto ganaste?",
+    "opciones": [
+      "$10",
+      "$0",
+      "$20"
+    ],
+    "respuesta": 2,
+    "explicacion": "Pagaste $50 + $70 = $120 y cobraste $60 + $80 = $140. Ganancia: $140 − $120 = $20."
+  },
+  {
+    "id": "retos-numeros-026",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "👴",
+    "pregunta": "Tengo tantos meses de edad como años tiene mi abuelo. Juntos sumamos 65 años. ¿Cuántos años tengo?",
+    "opciones": [
+      "6",
+      "5",
+      "12"
+    ],
+    "respuesta": 1,
+    "explicacion": "Mis meses son sus años, así que él tiene 12 veces mi edad: x + 12x = 65, 13x = 65 y x = 5. Él tiene 60."
+  },
+  {
+    "id": "retos-numeros-027",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🥚",
+    "pregunta": "Una docena de huevos cuesta $3. ¿Cuánto cuestan 30 huevos?",
+    "opciones": [
+      "$7.50",
+      "$9",
+      "$10"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada huevo cuesta $3 ÷ 12 = $0.25. Entonces 30 huevos cuestan 30 × $0.25 = $7.50."
+  },
+  {
+    "id": "retos-numeros-028",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "⏰",
+    "pregunta": "Un reloj se atrasa 2 minutos cada hora. Lo pones en hora a las 12:00. ¿Qué marca a las 18:00 reales?",
+    "opciones": [
+      "17:52",
+      "18:12",
+      "17:48"
+    ],
+    "respuesta": 2,
+    "explicacion": "De 12:00 a 18:00 pasan 6 horas, así que se atrasa 6 × 2 = 12 minutos. Marca 18:00 − 12 min = 17:48."
+  },
+  {
+    "id": "retos-numeros-029",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🍰",
+    "pregunta": "¿Cuánto es 1/2 + 1/3?",
+    "opciones": [
+      "2/5",
+      "5/6",
+      "1/6"
+    ],
+    "respuesta": 1,
+    "explicacion": "Con denominador común 6: 1/2 = 3/6 y 1/3 = 2/6, que suman 5/6. Sumar arriba y abajo (2/5) es el error típico."
+  },
+  {
+    "id": "retos-numeros-030",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🪰",
+    "pregunta": "Dos bicis a 30 km se acercan a 15 km/h cada una. Una mosca vuela entre ellas a 40 km/h hasta que se juntan. ¿Cuántos km vuela?",
+    "opciones": [
+      "40 km",
+      "30 km",
+      "20 km"
+    ],
+    "respuesta": 0,
+    "explicacion": "Se acercan a 15 + 15 = 30 km/h, así que se juntan en 1 hora. La mosca vuela esa hora entera a 40 km/h: 40 km."
+  },
+  {
+    "id": "retos-numeros-031",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📈",
+    "pregunta": "¿Qué número sigue en la serie? 3, 6, 18, 72, …",
+    "opciones": [
+      "144",
+      "288",
+      "360"
+    ],
+    "respuesta": 2,
+    "explicacion": "Se multiplica por 2, luego por 3, luego por 4. Ahora toca por 5: 72 × 5 = 360."
+  },
+  {
+    "id": "retos-numeros-032",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🕗",
+    "pregunta": "Sales a las 8:15 y llegas a las 10:05. ¿Cuánto duró el viaje?",
+    "opciones": [
+      "2 h 10 min",
+      "1 h 50 min",
+      "1 h 40 min"
+    ],
+    "respuesta": 1,
+    "explicacion": "De 8:15 a 10:15 son 2 horas. Llegaste 10 minutos antes de las 10:15, así que el viaje duró 1 h 50 min."
+  },
+  {
+    "id": "retos-numeros-033",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📉",
+    "pregunta": "Un precio bajó de $250 a $200. ¿En qué porcentaje bajó?",
+    "opciones": [
+      "20 %",
+      "25 %",
+      "50 %"
+    ],
+    "respuesta": 0,
+    "explicacion": "Bajó $50, y el porcentaje se calcula sobre el precio original: 50 ÷ 250 = 0.2, o sea 20 %. El 25 % sería sobre $200."
+  },
+  {
+    "id": "retos-numeros-034",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🗣️",
+    "pregunta": "¿Qué número sigue en la serie? 1, 11, 21, 1211, …",
+    "opciones": [
+      "1221",
+      "2211",
+      "111221"
+    ],
+    "respuesta": 2,
+    "explicacion": "Cada número describe el anterior: 1211 tiene «un 1, un 2, dos 1», que se escribe 11 12 21: 111221."
+  },
+  {
+    "id": "retos-numeros-035",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🚶",
+    "pregunta": "Si caminas a 4 km/h, ¿cuántos minutos tardas en recorrer 1 km?",
+    "opciones": [
+      "25 minutos",
+      "15 minutos",
+      "10 minutos"
+    ],
+    "respuesta": 1,
+    "explicacion": "A 4 km/h recorres 4 km en 60 minutos, o sea 1 km cada 60 ÷ 4 = 15 minutos."
+  },
+  {
+    "id": "retos-numeros-036",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🛢️",
+    "pregunta": "Un tanque está a 1/3 de su capacidad. Le agregas 30 litros y queda a la mitad. ¿Cuál es su capacidad?",
+    "opciones": [
+      "90 litros",
+      "60 litros",
+      "180 litros"
+    ],
+    "respuesta": 2,
+    "explicacion": "De 1/3 a 1/2 hay 1/2 − 1/3 = 1/6 del tanque. Si 1/6 son 30 litros, el tanque completo tiene 6 × 30 = 180 litros."
+  },
+  {
+    "id": "retos-numeros-037",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🧮",
+    "pregunta": "¿Cuánto da la suma de todos los números del 1 al 100?",
+    "opciones": [
+      "5050",
+      "5000",
+      "10100"
+    ],
+    "respuesta": 0,
+    "explicacion": "Junta los extremos: 1 + 100, 2 + 99, 3 + 98… Cada par suma 101 y hay 50 pares: 50 × 101 = 5050."
+  },
+  {
+    "id": "retos-numeros-038",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📄",
+    "pregunta": "Doblas una hoja de papel por la mitad 5 veces seguidas. ¿Cuántas capas de papel quedan?",
+    "opciones": [
+      "10",
+      "32",
+      "25"
+    ],
+    "respuesta": 1,
+    "explicacion": "Cada doblez duplica las capas: 2, 4, 8, 16, 32. Son 2⁵ = 32 capas, no 5 × 2 = 10."
+  },
+  {
+    "id": "retos-numeros-039",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🏦",
+    "pregunta": "Inviertes $1000 al 10 % anual y los intereses se suman cada año. ¿Cuánto tienes a los 2 años?",
+    "opciones": [
+      "$1200",
+      "$1220",
+      "$1210"
+    ],
+    "respuesta": 2,
+    "explicacion": "Primer año: $1000 + $100 = $1100. Segundo año el 10 % es de $1100, o sea $110: total $1210."
+  },
+  {
+    "id": "retos-numeros-040",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🎯",
+    "pregunta": "Un tercio de un número es 4 más que su cuarta parte. ¿Qué número es?",
+    "opciones": [
+      "48",
+      "24",
+      "12"
+    ],
+    "respuesta": 0,
+    "explicacion": "1/3 − 1/4 = 1/12 del número, y eso vale 4. El número es 12 × 4 = 48 (48 ÷ 3 = 16 y 48 ÷ 4 = 12)."
+  }
+]

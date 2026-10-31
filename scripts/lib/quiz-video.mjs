@@ -13,7 +13,7 @@ import { TEMAS } from './tarjetas.mjs';
 
 export const W = 1080, H = 1920;
 const SR = 44100, FPS = 30;
-const SANS = '"IBM Plex Sans", system-ui, sans-serif', BLACK = '"Archivo Black", Impact, sans-serif';
+const SANS = '"IBM Plex Sans", "STIX Two Text", system-ui, sans-serif', BLACK = '"Archivo Black", Impact, sans-serif';
 const VERDE = '#2fbf71', ROJO = '#ff5a5f';
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 // Opacidad de la escena (FADE es el fundido de salida)

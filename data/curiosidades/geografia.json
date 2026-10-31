@@ -1,0 +1,562 @@
+[
+  {
+    "id": "geografia-003",
+    "tema": "geografia",
+    "icono": "🇭🇳",
+    "dato": "Con unos 112 000 km², Honduras es el segundo país más grande de Centroamérica, después de Nicaragua.",
+    "falso": "Con unos 112 000 km², Honduras es el segundo país más grande de Centroamérica, después de Guatemala.",
+    "explicacion": "Nicaragua es el más grande, con unos 130 000 km². Guatemala, con unos 109 000 km², es un poco más pequeña que Honduras."
+  },
+  {
+    "id": "geografia-005",
+    "tema": "geografia",
+    "icono": "🌊",
+    "dato": "Ningún río lleva tanta agua como el Amazonas: aporta cerca de una quinta parte del agua dulce que llega al mar.",
+    "falso": "Ningún río lleva tanta agua como el Nilo: aporta cerca de una quinta parte del agua dulce que llega al mar.",
+    "explicacion": "El Amazonas tiene el mayor caudal del mundo. El Nilo lleva mucha menos agua porque atraviesa largas zonas desérticas."
+  },
+  {
+    "id": "geografia-006",
+    "tema": "geografia",
+    "icono": "🕐",
+    "dato": "Las islas Diómedes, una rusa y otra de EE. UU., están a unos 4 km, pero tienen casi un día de diferencia horaria.",
+    "falso": "Las islas Diómedes, una rusa y otra de EE. UU., están a unos 400 km, pero tienen casi un día de diferencia horaria.",
+    "explicacion": "Las separan menos de 4 km de mar, pero entre ellas pasa la línea internacional de cambio de fecha, así que sus relojes difieren casi un día."
+  },
+  {
+    "id": "geografia-007",
+    "tema": "geografia",
+    "icono": "🌽",
+    "dato": "El volcán Paricutín, en Michoacán, México, nació en 1943 en medio de un campo de maíz.",
+    "falso": "El volcán Paricutín, en Michoacán, México, nació en 1843 en medio de un campo de maíz.",
+    "explicacion": "Un campesino vio abrirse la tierra en su milpa en febrero de 1943. En un año, el nuevo volcán ya superaba los 300 m de altura."
+  },
+  {
+    "id": "geografia-008",
+    "tema": "geografia",
+    "icono": "🇦🇺",
+    "dato": "Australia mide unos 4000 km de este a oeste: más que el diámetro de la Luna, de unos 3475 km.",
+    "falso": "Australia mide unos 2000 km de este a oeste: menos que el diámetro de la Luna, de unos 3475 km.",
+    "explicacion": "De oeste a este Australia ronda los 4000 km, así que es más ancha que la Luna, cuyo diámetro es de unos 3475 km."
+  },
+  {
+    "id": "geografia-010",
+    "tema": "geografia",
+    "icono": "🔥",
+    "dato": "El Cinturón de Fuego del Pacífico reúne cerca del 75 % de los volcanes del planeta.",
+    "falso": "El Cinturón de Fuego del Pacífico reúne cerca del 5 % de los volcanes del planeta.",
+    "explicacion": "Rodea el océano Pacífico, de Chile a Japón y Nueva Zelanda. Allí chocan placas tectónicas, por eso concentra tantos volcanes y sismos."
+  },
+  {
+    "id": "geografia-011",
+    "tema": "geografia",
+    "icono": "🏔️",
+    "dato": "El Aconcagua, en Argentina, mide unos 6960 m: es la montaña más alta de América y de todo el hemisferio sur.",
+    "falso": "El Aconcagua, en Chile, mide unos 6960 m: es la montaña más alta de América y de todo el hemisferio sur.",
+    "explicacion": "El Aconcagua está completamente en territorio argentino, en la provincia de Mendoza, aunque muy cerca de la frontera con Chile."
+  },
+  {
+    "id": "geografia-012",
+    "tema": "geografia",
+    "icono": "🇭🇳",
+    "dato": "Honduras tiene costa en dos océanos: en el Atlántico, por el mar Caribe, y en el Pacífico, por el golfo de Fonseca.",
+    "falso": "Honduras solo tiene costa en un océano: en el Atlántico, por el mar Caribe, y no tiene salida al Pacífico.",
+    "explicacion": "Además de su larga costa caribeña, Honduras tiene una salida al Pacífico por el golfo de Fonseca, en el sur del país."
+  },
+  {
+    "id": "geografia-014",
+    "tema": "geografia",
+    "icono": "🌐",
+    "dato": "Por la forma de la Tierra, la cima del Chimborazo, en Ecuador, es el punto más alejado del centro del planeta.",
+    "falso": "Por la forma de la Tierra, la cima del Everest, en Asia, es el punto más alejado del centro del planeta.",
+    "explicacion": "La Tierra es más ancha en el ecuador y el Chimborazo está casi sobre esa línea: su cima queda unos 2 km más lejos del centro que la del Everest."
+  },
+  {
+    "id": "geografia-015",
+    "tema": "geografia",
+    "icono": "🇨🇦",
+    "dato": "Canadá tiene más lagos que todos los demás países del mundo juntos: más de la mitad del total.",
+    "falso": "Rusia tiene más lagos que todos los demás países del mundo juntos: más de la mitad del total.",
+    "explicacion": "Según estudios con satélites, Canadá tiene más del 60 % de los lagos grandes del planeta, excavados por los glaciares de la última era de hielo."
+  },
+  {
+    "id": "geografia-016",
+    "tema": "geografia",
+    "icono": "🏙️",
+    "dato": "La Ciudad de México se construyó sobre un antiguo lago y algunas zonas se hunden decenas de centímetros cada año.",
+    "falso": "La Ciudad de México se construyó sobre una montaña de roca y algunas zonas se elevan decenas de centímetros cada año.",
+    "explicacion": "La ciudad está sobre el lecho del lago de Texcoco. Al extraer agua del subsuelo, el suelo se compacta y algunas zonas se hunden rápido."
+  },
+  {
+    "id": "geografia-017",
+    "tema": "geografia",
+    "icono": "♨️",
+    "dato": "El parque Yellowstone, en EE. UU., está sobre un supervolcán y tiene cerca de la mitad de los géiseres del mundo.",
+    "falso": "El parque Yellowstone, en Canadá, está sobre un supervolcán y tiene cerca de la mitad de los géiseres del mundo.",
+    "explicacion": "Yellowstone está en Estados Unidos, sobre todo en Wyoming. El calor de su cámara de magma alimenta cientos de géiseres, como el Old Faithful."
+  },
+  {
+    "id": "geografia-018",
+    "tema": "geografia",
+    "icono": "⛵",
+    "dato": "El lago Titicaca, entre Perú y Bolivia, está a unos 3800 m sobre el mar y se considera el lago navegable más alto.",
+    "falso": "El lago Titicaca, entre Perú y Ecuador, está a unos 3800 m sobre el mar y se considera el lago navegable más alto.",
+    "explicacion": "El Titicaca está repartido entre Perú y Bolivia, a unos 3812 m de altura en el altiplano andino. Ecuador no tiene costa en ese lago."
+  },
+  {
+    "id": "geografia-019",
+    "tema": "geografia",
+    "icono": "🤿",
+    "dato": "En la grieta de Silfra, en Islandia, se puede bucear entre las placas tectónicas de Norteamérica y Eurasia.",
+    "falso": "En la grieta de Silfra, en Islandia, se puede bucear entre las placas tectónicas de África y Sudamérica.",
+    "explicacion": "Islandia está sobre la dorsal del Atlántico, donde se separan las placas norteamericana y euroasiática. Silfra es una grieta llena de agua de glaciar."
+  },
+  {
+    "id": "geografia-020",
+    "tema": "geografia",
+    "icono": "🏙️",
+    "dato": "La Paz, sede del gobierno de Bolivia, está a unos 3600 m sobre el mar: ninguna sede de gobierno está más alta.",
+    "falso": "Bogotá, sede del gobierno de Colombia, está a unos 3600 m sobre el mar: ninguna sede de gobierno está más alta.",
+    "explicacion": "Bogotá está a unos 2600 m. La Paz, a unos 3600 m, es la sede de gobierno más alta del mundo; la capital constitucional de Bolivia es Sucre."
+  },
+  {
+    "id": "geografia-021",
+    "tema": "geografia",
+    "icono": "☀️",
+    "dato": "En Svalbard, Noruega, el sol no se pone durante unos cuatro meses del verano: es el sol de medianoche.",
+    "falso": "En Svalbard, Noruega, el sol no se pone durante unos cuatro días del verano: es el sol de medianoche.",
+    "explicacion": "En Longyearbyen el sol no se oculta de finales de abril a finales de agosto. En invierno pasa lo contrario: meses sin ver el sol."
+  },
+  {
+    "id": "geografia-022",
+    "tema": "geografia",
+    "icono": "🌉",
+    "dato": "En todo su cauce principal, el río Amazonas no tiene ni un solo puente que lo cruce.",
+    "falso": "El río Amazonas tiene más de 50 puentes que lo cruzan a lo largo de su cauce principal.",
+    "explicacion": "Gran parte del Amazonas corre por selva poco poblada y sus orillas se inundan y cambian; por eso se cruza en barco y no hay puentes sobre él."
+  },
+  {
+    "id": "geografia-023",
+    "tema": "geografia",
+    "icono": "🇧🇷",
+    "dato": "Brasil tiene frontera con todos los países de Sudamérica, excepto con Chile y Ecuador.",
+    "falso": "Brasil tiene frontera con todos los países de Sudamérica, excepto con Chile y Uruguay.",
+    "explicacion": "Brasil sí limita con Uruguay, al sur. Los únicos países sudamericanos que no tocan Brasil son Chile y Ecuador."
+  },
+  {
+    "id": "geografia-024",
+    "tema": "geografia",
+    "icono": "🇫🇮",
+    "dato": "Finlandia tiene cerca de 188 000 lagos; por eso la llaman «el país de los mil lagos».",
+    "falso": "Finlandia tiene cerca de 1000 lagos; por eso la llaman «el país de los mil lagos».",
+    "explicacion": "El apodo se queda corto: Finlandia tiene unos 188 000 lagos, formados por los glaciares de la última era de hielo."
+  },
+  {
+    "id": "geografia-025",
+    "tema": "geografia",
+    "icono": "🌋",
+    "dato": "El Pico de Orizaba, de unos 5600 m, es la montaña más alta de México y el volcán más alto de Norteamérica.",
+    "falso": "El Popocatépetl, de unos 5600 m, es la montaña más alta de México y el volcán más alto de Norteamérica.",
+    "explicacion": "El Popocatépetl mide unos 5400 m. El Pico de Orizaba o Citlaltépetl, entre Puebla y Veracruz, es más alto: unos 5636 m."
+  },
+  {
+    "id": "geografia-026",
+    "tema": "geografia",
+    "icono": "🇱🇸",
+    "dato": "Lesoto, rodeado por completo por Sudáfrica, tiene todo su territorio a más de 1400 m de altura.",
+    "falso": "Lesoto, rodeado por completo por Sudáfrica, tiene todo su territorio por debajo del nivel del mar.",
+    "explicacion": "El punto más bajo de Lesoto está a unos 1400 m sobre el mar: ningún otro país tiene su punto más bajo a tanta altura."
+  },
+  {
+    "id": "geografia-027",
+    "tema": "geografia",
+    "icono": "🇨🇱",
+    "dato": "Chile mide más de 4000 km de norte a sur, pero en promedio solo unos 180 km de ancho.",
+    "falso": "Chile mide más de 4000 km de norte a sur y en promedio unos 1500 km de ancho.",
+    "explicacion": "Chile es una franja larguísima entre los Andes y el Pacífico: su ancho promedio ronda los 180 km y en ningún punto llega a 1500 km."
+  },
+  {
+    "id": "geografia-028",
+    "tema": "geografia",
+    "icono": "🌊",
+    "dato": "Hace unos 6 millones de años, el mar Mediterráneo se secó casi por completo al cerrarse su paso al Atlántico.",
+    "falso": "Hace unos 600 años, el mar Mediterráneo se secó casi por completo al cerrarse su paso al Atlántico.",
+    "explicacion": "Ocurrió hace unos 6 millones de años, en la crisis salina del Messiniense. Luego el Atlántico volvió a entrar por Gibraltar y lo llenó de nuevo."
+  },
+  {
+    "id": "geografia-029",
+    "tema": "geografia",
+    "icono": "🇭🇳",
+    "dato": "El lago de Yojoa, rodeado por Cortés, Comayagua y Santa Bárbara, es el lago natural más grande de Honduras.",
+    "falso": "El lago de Yojoa, rodeado por Cortés, Comayagua y Santa Bárbara, es el lago natural más grande de Centroamérica.",
+    "explicacion": "Yojoa es el mayor lago natural de Honduras, pero el más grande de Centroamérica es el lago de Nicaragua, muchísimo más extenso."
+  },
+  {
+    "id": "geografia-030",
+    "tema": "geografia",
+    "icono": "💨",
+    "dato": "Las cataratas Victoria, entre Zambia y Zimbabue, se llaman en lengua local «el humo que truena».",
+    "falso": "Las cataratas Victoria, entre Zambia y Zimbabue, se llaman en lengua local «el agua que canta».",
+    "explicacion": "Su nombre local, Mosi-oa-Tunya, describe la nube de rocío y el estruendo de la caída, que se ven y se oyen desde muy lejos."
+  },
+  {
+    "id": "geografia-031",
+    "tema": "geografia",
+    "icono": "💧",
+    "dato": "La península de Yucatán casi no tiene ríos en la superficie: el agua corre bajo tierra y aflora en los cenotes.",
+    "falso": "La península de Yucatán tiene los ríos más caudalosos de México, y por eso casi no hay cenotes.",
+    "explicacion": "Su suelo de roca caliza deja que la lluvia se filtre. El agua corre por cuevas subterráneas y aparece en miles de cenotes."
+  },
+  {
+    "id": "geografia-032",
+    "tema": "geografia",
+    "icono": "🦒",
+    "dato": "Hace unos 8000 años, gran parte del Sahara era verde, con pastizales, lagos y animales como jirafas.",
+    "falso": "Hace unos 8000 años, el Sahara ya era tan seco como hoy, sin lagos ni pastizales.",
+    "explicacion": "En el periodo húmedo africano el Sahara tuvo lluvias, lagos y sabanas. Las pinturas rupestres de la zona muestran jirafas y ganado."
+  },
+  {
+    "id": "geografia-033",
+    "tema": "geografia",
+    "icono": "🇬🇹",
+    "dato": "El volcán Tajumulco, en Guatemala, con unos 4200 m, es la cima más alta de toda Centroamérica.",
+    "falso": "El volcán Tajumulco, en El Salvador, con unos 4200 m, es la cima más alta de toda Centroamérica.",
+    "explicacion": "Está en el departamento de San Marcos, en Guatemala. Mide unos 4220 m y supera a cualquier otra montaña de Centroamérica."
+  },
+  {
+    "id": "geografia-034",
+    "tema": "geografia",
+    "icono": "🏜️",
+    "dato": "El desierto de Namib, en el sur de África, se considera el más antiguo del mundo: tiene unos 55 millones de años.",
+    "falso": "El desierto de Namib, en el sur de África, se considera el más joven del mundo: tiene unos 5000 años.",
+    "explicacion": "Se calcula que el Namib es árido desde hace entre 55 y 80 millones de años, mucho antes de que se formara el Sahara."
+  },
+  {
+    "id": "geografia-035",
+    "tema": "geografia",
+    "icono": "🌋",
+    "dato": "El lago de Atitlán, en Guatemala, ocupa la caldera de un antiguo volcán y lo rodean tres volcanes.",
+    "falso": "El lago de Atitlán, en Guatemala, ocupa un valle excavado por un glaciar y no tiene ningún volcán cerca.",
+    "explicacion": "Atitlán se formó en una enorme caldera volcánica hace unos 84 000 años. En su orilla están los volcanes Atitlán, Tolimán y San Pedro."
+  },
+  {
+    "id": "geografia-036",
+    "tema": "geografia",
+    "icono": "🌍",
+    "dato": "El valle del Rift, en el este de África, se abre poco a poco y en millones de años podría partir el continente.",
+    "falso": "El valle del Rift, en el este de África, lo excavó un río y hoy está totalmente quieto.",
+    "explicacion": "Allí la placa africana se está separando en dos. Se abre unos milímetros al año y en millones de años podría nacer un nuevo océano."
+  },
+  {
+    "id": "geografia-037",
+    "tema": "geografia",
+    "icono": "🚢",
+    "dato": "En el canal de Panamá, la entrada por el océano Pacífico está más al este que la entrada por el Atlántico.",
+    "falso": "En el canal de Panamá, la entrada por el océano Pacífico está más al oeste que la entrada por el Atlántico.",
+    "explicacion": "El istmo se curva como una S acostada, así que el canal va de noroeste a sureste: desde el Caribe baja hacia el Pacífico, que queda al este."
+  },
+  {
+    "id": "geografia-038",
+    "tema": "geografia",
+    "icono": "🏔️",
+    "dato": "Las 14 montañas del mundo que superan los 8000 m de altura están todas en Asia.",
+    "falso": "Las 14 montañas del mundo que superan los 8000 m de altura están repartidas entre Asia, África y Sudamérica.",
+    "explicacion": "Todos los ochomiles están en el Himalaya y el Karakórum, en Asia. Fuera de Asia ninguna montaña llega a 7000 m."
+  },
+  {
+    "id": "geografia-039",
+    "tema": "geografia",
+    "icono": "🇸🇻",
+    "dato": "El Salvador es el único país de Centroamérica que no tiene costa en el mar Caribe.",
+    "falso": "Nicaragua es el único país de Centroamérica que no tiene costa en el mar Caribe.",
+    "explicacion": "Nicaragua tiene una larga costa caribeña. El Salvador solo tiene costa en el océano Pacífico."
+  },
+  {
+    "id": "geografia-040",
+    "tema": "geografia",
+    "icono": "📈",
+    "dato": "El Himalaya sigue creciendo unos milímetros al año porque la India sigue empujando contra el resto de Asia.",
+    "falso": "El Himalaya se encoge unos metros al año porque la India se está alejando del resto de Asia.",
+    "explicacion": "La placa india choca contra la euroasiática desde hace unos 50 millones de años, y ese choque todavía levanta la cordillera."
+  },
+  {
+    "id": "geografia-041",
+    "tema": "geografia",
+    "icono": "🕳️",
+    "dato": "El Gran Agujero Azul, en Belice, es un hoyo marino circular de unos 300 m de ancho y unos 125 m de hondo.",
+    "falso": "El Gran Agujero Azul, en Belice, es un hoyo marino circular de unos 3 km de ancho y unos 1000 m de hondo.",
+    "explicacion": "Es una antigua cueva cuyo techo se hundió cuando el mar estaba más bajo. Mide unos 300 m de ancho y cerca de 125 m de profundidad."
+  },
+  {
+    "id": "geografia-042",
+    "tema": "geografia",
+    "icono": "🌧️",
+    "dato": "Mawsynram, en la India, es uno de los lugares más lluviosos del mundo: recibe cerca de 11 000 mm de lluvia al año.",
+    "falso": "Mawsynram, en la India, es uno de los lugares más secos del mundo: recibe menos de 10 mm de lluvia al año.",
+    "explicacion": "Los monzones descargan allí lluvias enormes: el promedio ronda los 11 000 mm al año, más de 10 metros de agua."
+  },
+  {
+    "id": "geografia-043",
+    "tema": "geografia",
+    "icono": "🏝️",
+    "dato": "Ometepe, en el lago de Nicaragua, es una isla formada por dos volcanes unidos por un istmo de tierra.",
+    "falso": "Ometepe, en el lago de Nicaragua, es una isla formada por cinco volcanes unidos por istmos de tierra.",
+    "explicacion": "La isla tiene dos volcanes, Concepción y Maderas, unidos por un istmo. Su nombre viene del náhuatl y significa «dos cerros»."
+  },
+  {
+    "id": "geografia-044",
+    "tema": "geografia",
+    "icono": "🥶",
+    "dato": "Oymyakón, en Siberia, es uno de los pueblos habitados más fríos del mundo: ha llegado a unos −68 °C.",
+    "falso": "Oymyakón, en Alaska, es uno de los pueblos habitados más fríos del mundo: ha llegado a unos −68 °C.",
+    "explicacion": "Oymyakón está en la república de Sajá, en Siberia, Rusia. Su récord de unos −67,7 °C es de los más bajos en un lugar habitado."
+  },
+  {
+    "id": "geografia-045",
+    "tema": "geografia",
+    "icono": "🇨🇴",
+    "dato": "Colombia es el único país de Sudamérica con costa en el océano Pacífico y en el mar Caribe.",
+    "falso": "Venezuela es el único país de Sudamérica con costa en el océano Pacífico y en el mar Caribe.",
+    "explicacion": "Venezuela solo tiene costa en el Caribe y el Atlántico. Colombia es el único país sudamericano que toca el Pacífico y el Caribe."
+  },
+  {
+    "id": "geografia-046",
+    "tema": "geografia",
+    "icono": "🏝️",
+    "dato": "Maldivas es el país más bajo del mundo: su terreno está en promedio a solo 1,5 m sobre el nivel del mar.",
+    "falso": "Nepal es el país más bajo del mundo: su terreno está en promedio a solo 1,5 m sobre el nivel del mar.",
+    "explicacion": "Nepal es de los países más altos. Maldivas, en el océano Índico, es el más bajo: su punto natural más alto ronda los 2,4 m."
+  },
+  {
+    "id": "geografia-047",
+    "tema": "geografia",
+    "icono": "🌈",
+    "dato": "Caño Cristales, en Colombia, se tiñe de rojo, amarillo y verde gracias a una planta acuática de su fondo.",
+    "falso": "Caño Cristales, en Colombia, se tiñe de rojo, amarillo y verde gracias a minerales tóxicos disueltos en el agua.",
+    "explicacion": "El rojo intenso viene de la Macarenia clavigera, una planta que crece en el lecho. Por eso lo llaman «el río de los cinco colores»."
+  },
+  {
+    "id": "geografia-048",
+    "tema": "geografia",
+    "icono": "🌊",
+    "dato": "El océano Atlántico se ensancha unos pocos centímetros cada año, más o menos lo que crecen tus uñas.",
+    "falso": "El océano Atlántico se encoge unos pocos metros cada año, mucho más de lo que crecen tus uñas.",
+    "explicacion": "En la dorsal del Atlántico se forma nuevo fondo marino que separa a América de Europa y África unos 2 a 5 cm al año."
+  },
+  {
+    "id": "geografia-049",
+    "tema": "geografia",
+    "icono": "⚡",
+    "dato": "La zona del lago de Maracaibo, en Venezuela, es el lugar de la Tierra donde caen más rayos por año.",
+    "falso": "La zona del lago de Nicaragua, en Centroamérica, es el lugar de la Tierra donde caen más rayos por año.",
+    "explicacion": "Un estudio con satélites de la NASA ubicó el récord en el lago de Maracaibo, donde el relámpago del Catatumbo ilumina muchas noches."
+  },
+  {
+    "id": "geografia-050",
+    "tema": "geografia",
+    "icono": "💧",
+    "dato": "Cerca del 97 % del agua de la Tierra es salada; menos del 3 % es agua dulce.",
+    "falso": "Cerca del 50 % del agua de la Tierra es salada; el otro 50 % es agua dulce.",
+    "explicacion": "Casi toda el agua está en los océanos. Y de la poca agua dulce que hay, la mayor parte está congelada en glaciares y casquetes polares."
+  },
+  {
+    "id": "geografia-051",
+    "tema": "geografia",
+    "icono": "💦",
+    "dato": "Las cataratas del Iguazú, entre Argentina y Brasil, están formadas por unos 275 saltos de agua.",
+    "falso": "Las cataratas del Iguazú, entre Argentina y Brasil, están formadas por unos 12 saltos de agua.",
+    "explicacion": "No es una sola caída: son unos 275 saltos a lo largo de casi 3 km. El más famoso es la Garganta del Diablo."
+  },
+  {
+    "id": "geografia-052",
+    "tema": "geografia",
+    "icono": "⛰️",
+    "dato": "La cordillera más larga del mundo está bajo el mar: la dorsal oceánica recorre unos 65 000 km.",
+    "falso": "La cordillera más larga del mundo está bajo el mar: la dorsal oceánica recorre unos 650 km.",
+    "explicacion": "La dorsal oceánica rodea el planeta como la costura de una pelota de béisbol: mide unos 65 000 km, mucho más que los Andes."
+  },
+  {
+    "id": "geografia-053",
+    "tema": "geografia",
+    "icono": "🐢",
+    "dato": "Las islas Galápagos, que pertenecen a Ecuador, están a casi 1000 km de la costa del continente.",
+    "falso": "Las islas Galápagos, que pertenecen a Ecuador, están a unos 50 km de la costa del continente.",
+    "explicacion": "Las Galápagos están en pleno Pacífico, a unos 1000 km de Ecuador continental. Ese aislamiento explica sus especies únicas."
+  },
+  {
+    "id": "geografia-054",
+    "tema": "geografia",
+    "icono": "❄️",
+    "dato": "Bajo casi 4 km de hielo de la Antártida hay un gran lago de agua líquida: el lago Vostok.",
+    "falso": "Bajo casi 4 km de hielo de Groenlandia hay un gran lago de agua líquida: el lago Vostok.",
+    "explicacion": "El lago Vostok está en la Antártida, bajo unos 3,7 km de hielo. La presión y el calor del interior de la Tierra impiden que se congele."
+  },
+  {
+    "id": "geografia-055",
+    "tema": "geografia",
+    "icono": "🏞️",
+    "dato": "El cañón del Colca, en Perú, tiene más del doble de profundidad que el Gran Cañón de Estados Unidos.",
+    "falso": "El cañón del Colca, en Perú, tiene la mitad de profundidad que el Gran Cañón de Estados Unidos.",
+    "explicacion": "El Colca supera los 3000 m de profundidad en algunos puntos; el Gran Cañón llega a unos 1800 m."
+  },
+  {
+    "id": "geografia-056",
+    "tema": "geografia",
+    "icono": "🌡️",
+    "dato": "La temperatura más baja medida con termómetro en la Tierra fue de −89,2 °C, en la Antártida, en 1983.",
+    "falso": "La temperatura más baja medida con termómetro en la Tierra fue de −89,2 °C, en Siberia, en 1983.",
+    "explicacion": "Se midió en la estación Vostok, en la Antártida, el 21 de julio de 1983. En Siberia los récords rondan los −68 °C."
+  },
+  {
+    "id": "geografia-057",
+    "tema": "geografia",
+    "icono": "⛰️",
+    "dato": "Los Andes son la cordillera continental más larga del mundo: recorren unos 7000 km por Sudamérica.",
+    "falso": "El Himalaya es la cordillera continental más larga del mundo: recorre unos 7000 km por Asia.",
+    "explicacion": "El Himalaya tiene las montañas más altas, pero mide unos 2400 km. Los Andes, con unos 7000 km, son la cordillera continental más larga."
+  },
+  {
+    "id": "geografia-058",
+    "tema": "geografia",
+    "icono": "📍",
+    "dato": "El punto Nemo, en el Pacífico sur, es el más alejado de tierra firme: la costa más cercana está a unos 2700 km.",
+    "falso": "El punto Nemo, en el Pacífico sur, es el más alejado de tierra firme: la costa más cercana está a unos 27 km.",
+    "explicacion": "Está tan aislado que a veces los humanos más cercanos son los astronautas de la Estación Espacial, a unos 400 km de altura."
+  },
+  {
+    "id": "geografia-059",
+    "tema": "geografia",
+    "icono": "⛰️",
+    "dato": "Honduras es uno de los países más montañosos de Centroamérica: la mayor parte de su territorio es montaña.",
+    "falso": "Honduras es uno de los países más planos de Centroamérica: la mayor parte de su territorio es llanura.",
+    "explicacion": "La mayor parte de Honduras está cubierta por sierras y montañas; las grandes llanuras están sobre todo en la costa norte y la Mosquitia."
+  },
+  {
+    "id": "geografia-060",
+    "tema": "geografia",
+    "icono": "🏝️",
+    "dato": "Tristán de Acuña, en el Atlántico sur, es el archipiélago habitado más remoto: su vecino está a unos 2400 km.",
+    "falso": "Tristán de Acuña, en el Atlántico sur, es el archipiélago habitado más remoto: su vecino está a unos 24 km.",
+    "explicacion": "La isla poblada más cercana es Santa Elena, a unos 2400 km. Sudáfrica está a unos 2800 km y solo se llega en barco."
+  },
+  {
+    "id": "geografia-061",
+    "tema": "geografia",
+    "icono": "🔄",
+    "dato": "Hace millones de años, el Amazonas corría al revés: iba hacia el oeste, rumbo al océano Pacífico.",
+    "falso": "Hace apenas 500 años, el Amazonas corría al revés: iba hacia el oeste, rumbo al océano Pacífico.",
+    "explicacion": "El cambio ocurrió hace millones de años: el levantamiento de los Andes bloqueó la salida al oeste y el río giró hacia el Atlántico."
+  },
+  {
+    "id": "geografia-062",
+    "tema": "geografia",
+    "icono": "🌊",
+    "dato": "El río Congo, en África, es el río más profundo del mundo: en algunos tramos supera los 200 m de profundidad.",
+    "falso": "El río Nilo, en África, es el río más profundo del mundo: en algunos tramos supera los 200 m de profundidad.",
+    "explicacion": "El Nilo es larguísimo pero poco profundo. En los rápidos del bajo Congo se han medido profundidades de más de 200 m."
+  },
+  {
+    "id": "geografia-063",
+    "tema": "geografia",
+    "icono": "🏞️",
+    "dato": "La laguna de Caratasca, en Gracias a Dios, es la laguna costera más grande de Honduras y se une al mar Caribe.",
+    "falso": "La laguna de Caratasca, en Gracias a Dios, es la laguna costera más grande de Honduras y se une al océano Pacífico.",
+    "explicacion": "Caratasca está en la Mosquitia, en el noreste del país, y se comunica con el Caribe. Honduras solo toca el Pacífico en el golfo de Fonseca."
+  },
+  {
+    "id": "geografia-064",
+    "tema": "geografia",
+    "icono": "💗",
+    "dato": "El lago Hillier, en Australia, es de color rosa intenso por unas microalgas que viven en su agua muy salada.",
+    "falso": "El lago Hillier, en Australia, es de color rosa intenso por un mineral rosado de las rocas que lo rodean.",
+    "explicacion": "El color viene de organismos como el alga Dunaliella salina, que producen pigmentos rojizos en agua con muchísima sal."
+  },
+  {
+    "id": "geografia-065",
+    "tema": "geografia",
+    "icono": "💎",
+    "dato": "En la cueva de los Cristales de Naica, en Chihuahua, México, hay cristales de yeso de hasta unos 12 m de largo.",
+    "falso": "En la cueva de los Cristales de Naica, en Chihuahua, México, hay cristales de yeso de hasta unos 100 m de largo.",
+    "explicacion": "Son de los cristales naturales más grandes conocidos: el mayor mide cerca de 12 m. La cueva es tan caliente que se entra con trajes especiales."
+  },
+  {
+    "id": "geografia-066",
+    "tema": "geografia",
+    "icono": "💥",
+    "dato": "La explosión del volcán Krakatoa, en Indonesia, en 1883, se oyó a casi 5000 km de distancia.",
+    "falso": "La explosión del volcán Krakatoa, en Indonesia, en 1883, se oyó a casi 50 km de distancia.",
+    "explicacion": "Se oyó hasta la isla Rodrigues, en el océano Índico, a unos 4800 km. Se considera uno de los sonidos más fuertes de la historia."
+  },
+  {
+    "id": "geografia-067",
+    "tema": "geografia",
+    "icono": "📏",
+    "dato": "El Nilo y el Amazonas se disputan el título de río más largo del mundo: ambos miden más de 6400 km.",
+    "falso": "El Misisipi y el Amazonas se disputan el título de río más largo del mundo: ambos miden más de 6400 km.",
+    "explicacion": "El Misisipi mide unos 3700 km. Entre el Nilo y el Amazonas sigue el debate, porque es difícil fijar dónde nace un río."
+  },
+  {
+    "id": "geografia-068",
+    "tema": "geografia",
+    "icono": "🏘️",
+    "dato": "En Baarle, entre Bélgica y Países Bajos, la frontera pasa por dentro de casas, cafés y tiendas.",
+    "falso": "En Baarle, entre Bélgica y Países Bajos, la frontera es un muro que divide el pueblo en dos.",
+    "explicacion": "Baarle-Hertog (Bélgica) y Baarle-Nassau (Países Bajos) forman un rompecabezas de enclaves; la frontera se marca con cruces en el suelo."
+  },
+  {
+    "id": "geografia-069",
+    "tema": "geografia",
+    "icono": "🌋",
+    "dato": "El Ojos del Salado, entre Chile y Argentina, mide unos 6890 m y es el volcán más alto del mundo.",
+    "falso": "El Cotopaxi, en Ecuador, mide unos 6890 m y es el volcán más alto del mundo.",
+    "explicacion": "El Cotopaxi mide unos 5900 m. El Ojos del Salado, en los Andes, supera los 6800 m y es el volcán más alto del planeta."
+  },
+  {
+    "id": "geografia-070",
+    "tema": "geografia",
+    "icono": "🇫🇷",
+    "dato": "La frontera terrestre más larga de Francia no está en Europa: es la que comparte con Brasil.",
+    "falso": "La frontera terrestre más larga de Francia está en Europa: es la que comparte con España.",
+    "explicacion": "Por la Guayana Francesa, Francia comparte unos 730 km de frontera con Brasil, más que con España, su vecino europeo con más frontera."
+  },
+  {
+    "id": "geografia-071",
+    "tema": "geografia",
+    "icono": "🌍",
+    "dato": "El terremoto más fuerte jamás registrado ocurrió en Valdivia, Chile, en 1960, con magnitud 9,5.",
+    "falso": "El terremoto más fuerte jamás registrado ocurrió en Tokio, Japón, en 1960, con magnitud 9,5.",
+    "explicacion": "El gran terremoto de Valdivia, del 22 de mayo de 1960, alcanzó una magnitud de 9,5, la mayor medida con instrumentos."
+  },
+  {
+    "id": "geografia-072",
+    "tema": "geografia",
+    "icono": "🗺️",
+    "dato": "Alaska es a la vez el estado más occidental y el más oriental de EE. UU.: sus islas cruzan el meridiano 180.",
+    "falso": "Maine es a la vez el estado más occidental y el más oriental de EE. UU.: sus islas cruzan el meridiano 180.",
+    "explicacion": "Las islas Aleutianas de Alaska pasan al otro lado del meridiano 180, así que algunas quedan en el hemisferio oriental."
+  },
+  {
+    "id": "geografia-073",
+    "tema": "geografia",
+    "icono": "🧭",
+    "dato": "La ciudad de Reno, en Nevada, está más al oeste que Los Ángeles, en la costa de California.",
+    "falso": "La ciudad de Las Vegas, en Nevada, está más al oeste que Los Ángeles, en la costa de California.",
+    "explicacion": "La costa de California se inclina hacia el este al bajar. Reno está a unos 119,8° O; Los Ángeles, a unos 118,2° O; Las Vegas, a 115,1° O."
+  },
+  {
+    "id": "geografia-074",
+    "tema": "geografia",
+    "icono": "🌐",
+    "dato": "Kiribati es el único país del mundo con territorio en los cuatro hemisferios: norte, sur, este y oeste.",
+    "falso": "Ecuador es el único país del mundo con territorio en los cuatro hemisferios: norte, sur, este y oeste.",
+    "explicacion": "Las islas de Kiribati quedan a ambos lados del ecuador y del meridiano 180. Ecuador solo está en el hemisferio occidental."
+  },
+  {
+    "id": "geografia-075",
+    "tema": "geografia",
+    "icono": "🇮🇹",
+    "dato": "Roma, en Italia, está más al norte que Nueva York, aunque su clima suele ser más templado.",
+    "falso": "Roma, en Italia, está más al sur que Nueva York, y por eso su clima suele ser más templado.",
+    "explicacion": "Roma está a unos 41,9° de latitud norte y Nueva York a unos 40,7°. El clima suave de Roma se debe al mar Mediterráneo, no a estar más al sur."
+  }
+]

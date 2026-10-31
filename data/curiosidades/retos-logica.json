@@ -1,0 +1,548 @@
+[
+  {
+    "id": "retos-logica-001",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🐑",
+    "pregunta": "Un granjero tiene 17 ovejas y se le mueren todas menos 9. ¿Cuántas ovejas le quedan vivas?",
+    "opciones": [
+      "9",
+      "8",
+      "0"
+    ],
+    "respuesta": 0,
+    "explicacion": "«Todas menos 9» significa que sobreviven 9. El error típico es restar 17 − 9 = 8."
+  },
+  {
+    "id": "retos-logica-002",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🏃",
+    "pregunta": "En una carrera adelantas a la persona que va en segundo lugar. ¿En qué lugar vas ahora?",
+    "opciones": [
+      "Primero",
+      "Segundo",
+      "Tercero"
+    ],
+    "respuesta": 1,
+    "explicacion": "Ocupas el lugar de quien adelantaste: el segundo. Para ir primero tendrías que adelantar al que va en primer lugar."
+  },
+  {
+    "id": "retos-logica-003",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📅",
+    "pregunta": "Si anteayer fue jueves, ¿qué día de la semana será pasado mañana?",
+    "opciones": [
+      "Domingo",
+      "Sábado",
+      "Lunes"
+    ],
+    "respuesta": 2,
+    "explicacion": "Si anteayer fue jueves, hoy es sábado. Pasado mañana es dos días después de hoy: lunes."
+  },
+  {
+    "id": "retos-logica-004",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "⚖️",
+    "pregunta": "¿Qué pesa más: un kilo de plumas o un kilo de hierro?",
+    "opciones": [
+      "Pesan lo mismo",
+      "El hierro",
+      "Las plumas"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los dos pesan un kilo. El hierro es más denso y ocupa mucho menos espacio, pero el peso es el mismo."
+  },
+  {
+    "id": "retos-logica-005",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🕐",
+    "pregunta": "En un día (24 horas), ¿cuántas veces se superponen exactamente la aguja de las horas y la de los minutos?",
+    "opciones": [
+      "24",
+      "22",
+      "12"
+    ],
+    "respuesta": 1,
+    "explicacion": "El minutero alcanza al horario 11 veces cada 12 horas, no 12: entre las 11 y la 1 solo coinciden a las 12. 11 × 2 = 22."
+  },
+  {
+    "id": "retos-logica-006",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🧊",
+    "pregunta": "Un cubo pintado por fuera se corta en 27 cubitos iguales (3 × 3 × 3). ¿Cuántos cubitos quedan sin pintura?",
+    "opciones": [
+      "0",
+      "8",
+      "1"
+    ],
+    "respuesta": 2,
+    "explicacion": "Solo el cubito del centro no toca el exterior. Los otros 26 tocan alguna cara del cubo grande y tienen pintura."
+  },
+  {
+    "id": "retos-logica-007",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🧩",
+    "pregunta": "Ana es más alta que Bea, y Bea es más alta que Carla. ¿Quién es la más baja de las tres?",
+    "opciones": [
+      "Carla",
+      "Bea",
+      "Ana"
+    ],
+    "respuesta": 0,
+    "explicacion": "De mayor a menor estatura: Ana, Bea, Carla. Carla es más baja que Bea, que a su vez es más baja que Ana."
+  },
+  {
+    "id": "retos-logica-008",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "👨‍👧",
+    "pregunta": "Tengo 4 hijas y cada una tiene un solo hermano varón. ¿Cuántos hijos tengo en total, contando a todos?",
+    "opciones": [
+      "8",
+      "5",
+      "6"
+    ],
+    "respuesta": 1,
+    "explicacion": "Todas comparten el mismo hermano. Son 4 hijas y 1 hijo: 5 en total. El error típico es darle un hermano distinto a cada una."
+  },
+  {
+    "id": "retos-logica-009",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🍕",
+    "pregunta": "¿Cuántos trozos como máximo puedes sacar de una pizza con 3 cortes rectos, sin mover ni apilar los trozos?",
+    "opciones": [
+      "6",
+      "8",
+      "7"
+    ],
+    "respuesta": 2,
+    "explicacion": "Si cada corte cruza a los anteriores en puntos distintos, suma 1, 2 y 3 trozos: 1 + 1 + 2 + 3 = 7. Por el centro solo salen 6."
+  },
+  {
+    "id": "retos-logica-010",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🧊",
+    "pregunta": "¿Cuántas aristas (bordes) tiene un cubo?",
+    "opciones": [
+      "12",
+      "8",
+      "6"
+    ],
+    "respuesta": 0,
+    "explicacion": "Un cubo tiene 4 aristas arriba, 4 abajo y 4 verticales: 12. Los 8 son sus vértices y los 6, sus caras."
+  },
+  {
+    "id": "retos-logica-011",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "⏰",
+    "pregunta": "En un reloj digital de 24 horas, ¿cuántas veces al día se ven los cuatro dígitos iguales, como en 11:11?",
+    "opciones": [
+      "4",
+      "3",
+      "6"
+    ],
+    "respuesta": 1,
+    "explicacion": "Solo 00:00, 11:11 y 22:22. Las 33:33 o 44:44 no existen, porque las horas llegan hasta 23 y los minutos hasta 59."
+  },
+  {
+    "id": "retos-logica-012",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🪙",
+    "pregunta": "Lanzas una moneda normal 5 veces y las 5 sale cara. ¿Qué probabilidad hay de que la 6.ª también sea cara?",
+    "opciones": [
+      "Menos de 1/2",
+      "Más de 1/2",
+      "1/2"
+    ],
+    "respuesta": 2,
+    "explicacion": "La moneda no tiene memoria: cada lanzamiento es independiente. La probabilidad de cara sigue siendo 1/2."
+  },
+  {
+    "id": "retos-logica-013",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📐",
+    "pregunta": "Un rectángulo mide 6 cm de largo y 4 cm de ancho. ¿Cuál es su perímetro?",
+    "opciones": [
+      "20 cm",
+      "24 cm",
+      "10 cm"
+    ],
+    "respuesta": 0,
+    "explicacion": "El perímetro es la suma de los 4 lados: 6 + 4 + 6 + 4 = 20 cm. El 24 sería su área, en cm²."
+  },
+  {
+    "id": "retos-logica-014",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🖼️",
+    "pregunta": "Un hombre sin hermanos mira un retrato y dice: «El padre de ese hombre es el hijo de mi padre». ¿Quién es?",
+    "opciones": [
+      "Él mismo",
+      "Su hijo",
+      "Su padre"
+    ],
+    "respuesta": 1,
+    "explicacion": "Sin hermanos, «el hijo de mi padre» es él mismo. Entonces él es el padre del retratado: en el retrato está su hijo."
+  },
+  {
+    "id": "retos-logica-015",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🎲",
+    "pregunta": "Si lanzas dos dados normales y sumas los puntos, ¿qué resultado es el más probable?",
+    "opciones": [
+      "12",
+      "7",
+      "6"
+    ],
+    "respuesta": 1,
+    "explicacion": "El 7 sale de 6 formas: 1+6, 2+5, 3+4, 4+3, 5+2 y 6+1. Ninguna otra suma tiene tantas; el 12 solo sale con 6+6."
+  },
+  {
+    "id": "retos-logica-016",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🕐",
+    "pregunta": "¿Cuántos grados gira la aguja de los minutos de un reloj en 20 minutos?",
+    "opciones": [
+      "20°",
+      "60°",
+      "120°"
+    ],
+    "respuesta": 2,
+    "explicacion": "En 60 minutos da una vuelta completa de 360°. 20 minutos son un tercio de hora: 360° ÷ 3 = 120°."
+  },
+  {
+    "id": "retos-logica-017",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔮",
+    "pregunta": "Bolsa: 5 canicas rojas, 3 azules y 2 verdes. Sin mirar, ¿cuántas sacas como mínimo para asegurar una verde?",
+    "opciones": [
+      "9",
+      "3",
+      "8"
+    ],
+    "respuesta": 0,
+    "explicacion": "En el peor caso salen primero las 5 rojas y las 3 azules: 8 canicas. La siguiente, la 9.ª, tiene que ser verde."
+  },
+  {
+    "id": "retos-logica-018",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📅",
+    "pregunta": "¿Cuántos meses del año tienen 31 días?",
+    "opciones": [
+      "6",
+      "7",
+      "5"
+    ],
+    "respuesta": 1,
+    "explicacion": "Enero, marzo, mayo, julio, agosto, octubre y diciembre: 7 meses. Julio y agosto van seguidos y los dos tienen 31."
+  },
+  {
+    "id": "retos-logica-019",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🟦",
+    "pregunta": "Una tira tiene 4 casillas en fila. ¿Cuántos rectángulos hay en total, contando también los cuadrados?",
+    "opciones": [
+      "4",
+      "7",
+      "10"
+    ],
+    "respuesta": 2,
+    "explicacion": "De 1 casilla hay 4, de 2 casillas hay 3, de 3 hay 2 y de 4 hay 1: 4 + 3 + 2 + 1 = 10 rectángulos."
+  },
+  {
+    "id": "retos-logica-020",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "👨‍👩‍👧‍👦",
+    "pregunta": "Cada niño tiene tantos hermanos como hermanas; cada niña, el doble de hermanos que hermanas. ¿Cuántos son?",
+    "opciones": [
+      "7",
+      "5",
+      "6"
+    ],
+    "respuesta": 0,
+    "explicacion": "Son 4 niños y 3 niñas. Cada niño tiene 3 hermanos y 3 hermanas; cada niña, 4 hermanos y 2 hermanas. Total: 7."
+  },
+  {
+    "id": "retos-logica-021",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔤",
+    "pregunta": "¿Cuántas vocales distintas tiene la palabra «murciélago»?",
+    "opciones": [
+      "5",
+      "4",
+      "3"
+    ],
+    "respuesta": 0,
+    "explicacion": "Tiene u, i, e, a y o: las cinco vocales, una vez cada una. Por eso es famosa entre los acertijos de palabras."
+  },
+  {
+    "id": "retos-logica-022",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🧦",
+    "pregunta": "Un cajón oscuro tiene 10 calcetines negros y 10 blancos. ¿Cuántos sacas como mínimo para asegurar 2 iguales?",
+    "opciones": [
+      "11",
+      "3",
+      "2"
+    ],
+    "respuesta": 1,
+    "explicacion": "Con 2 podrías tener uno de cada color. El 3.º calcetín tiene que repetir uno de los dos colores, así que 3 bastan."
+  },
+  {
+    "id": "retos-logica-023",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📅",
+    "pregunta": "Un año de 365 días empieza un lunes. ¿Qué día de la semana es su último día, el 31 de diciembre?",
+    "opciones": [
+      "Martes",
+      "Domingo",
+      "Lunes"
+    ],
+    "respuesta": 2,
+    "explicacion": "El 31 de diciembre llega 364 días después del 1 de enero, y 364 son 52 semanas exactas. Así que también es lunes."
+  },
+  {
+    "id": "retos-logica-024",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔤",
+    "pregunta": "¿Qué letra sigue en la serie? A, C, E, G, …",
+    "opciones": [
+      "H",
+      "I",
+      "J"
+    ],
+    "respuesta": 1,
+    "explicacion": "Se salta una letra cada vez: A (b) C (d) E (f) G (h) I. La siguiente es la I."
+  },
+  {
+    "id": "retos-logica-025",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🎂",
+    "pregunta": "¿Cuántas personas debe haber, como mínimo, para asegurar que dos cumplen años en el mismo mes?",
+    "opciones": [
+      "12",
+      "13",
+      "24"
+    ],
+    "respuesta": 1,
+    "explicacion": "Con 12 personas, cada una podría nacer en un mes distinto. La persona 13 tiene que repetir mes, sí o sí."
+  },
+  {
+    "id": "retos-logica-026",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "⚖️",
+    "pregunta": "De 8 monedas iguales, una pesa más. Con una balanza de platillos, ¿cuál es el mínimo de pesadas para hallarla?",
+    "opciones": [
+      "3",
+      "2",
+      "4"
+    ],
+    "respuesta": 1,
+    "explicacion": "Pesa 3 contra 3. Si equilibran, compara las 2 que sobran. Si no, del lado pesado pon 1 contra 1; si equilibran, es la 3.ª."
+  },
+  {
+    "id": "retos-logica-027",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🎲",
+    "pregunta": "En un dado normal, las caras opuestas suman 7. Si arriba se ve un 2, ¿qué número queda abajo?",
+    "opciones": [
+      "5",
+      "4",
+      "6"
+    ],
+    "respuesta": 0,
+    "explicacion": "Las parejas opuestas son 1-6, 2-5 y 3-4. Si arriba está el 2, abajo tiene que estar el 5, porque 2 + 5 = 7."
+  },
+  {
+    "id": "retos-logica-028",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔤",
+    "pregunta": "¿Qué letra sigue en la serie? U, D, T, C, C, S, …",
+    "opciones": [
+      "O",
+      "N",
+      "S"
+    ],
+    "respuesta": 2,
+    "explicacion": "Son las iniciales de los números: uno, dos, tres, cuatro, cinco, seis… El siguiente es siete: S."
+  },
+  {
+    "id": "retos-logica-029",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🎲",
+    "pregunta": "Si lanzas dos dados normales, ¿qué probabilidad hay de que salga al menos un 6?",
+    "opciones": [
+      "1/3",
+      "11/36",
+      "1/6"
+    ],
+    "respuesta": 1,
+    "explicacion": "Sin ningún 6 hay 5 × 5 = 25 de 36 casos; con al menos uno, 36 − 25 = 11. Sumar 1/6 + 1/6 cuenta dos veces el 6-6."
+  },
+  {
+    "id": "retos-logica-030",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔺",
+    "pregunta": "¿Cuántas caras tiene una pirámide de base cuadrada, contando la base?",
+    "opciones": [
+      "4",
+      "5",
+      "6"
+    ],
+    "respuesta": 1,
+    "explicacion": "Tiene 4 caras triangulares que suben hasta la punta, más la base cuadrada: 5 caras en total."
+  },
+  {
+    "id": "retos-logica-031",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🌧️",
+    "pregunta": "Si llueve, la calle se moja. Hoy la calle está mojada. ¿Se puede asegurar que llovió?",
+    "opciones": [
+      "Sí, seguro",
+      "No, no llovió",
+      "No necesariamente"
+    ],
+    "respuesta": 2,
+    "explicacion": "La calle también puede mojarse por otras causas, como un riego o una fuga. La lluvia moja la calle, pero no al revés."
+  },
+  {
+    "id": "retos-logica-032",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🍎",
+    "pregunta": "Hay 3 manzanas en la mesa y tú tomas 2. ¿Cuántas manzanas tienes tú?",
+    "opciones": [
+      "2",
+      "1",
+      "3"
+    ],
+    "respuesta": 0,
+    "explicacion": "La pregunta es cuántas tienes tú, no cuántas quedan en la mesa. Tomaste 2, así que tienes 2. En la mesa queda 1."
+  },
+  {
+    "id": "retos-logica-033",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🤥",
+    "pregunta": "Juan dice: «Ana miente». Ana dice: «Luis miente». Luis dice: «Juan y Ana mienten». ¿Quién dice la verdad?",
+    "opciones": [
+      "Juan",
+      "Luis",
+      "Ana"
+    ],
+    "respuesta": 2,
+    "explicacion": "Si Luis dijera la verdad, Juan mentiría y Ana sería sincera: contradicción. Luis miente, Ana acierta y Juan miente."
+  },
+  {
+    "id": "retos-logica-034",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🚆",
+    "pregunta": "Un tren eléctrico va hacia el norte y el viento sopla hacia el sur. ¿Hacia dónde va el humo del tren?",
+    "opciones": [
+      "Hacia el norte",
+      "Hacia el sur",
+      "No echa humo"
+    ],
+    "respuesta": 2,
+    "explicacion": "Es un tren eléctrico: no quema combustible, así que no echa humo. La dirección del viento es solo para distraer."
+  },
+  {
+    "id": "retos-logica-035",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📄",
+    "pregunta": "Doblas una hoja 3 veces a la mitad y la perforas lejos de los bordes. Al abrirla, ¿cuántos agujeros ves?",
+    "opciones": [
+      "8",
+      "3",
+      "6"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada doblez duplica las capas: 2, 4 y 8. La perforación atraviesa las 8 capas, así que al abrirla hay 8 agujeros."
+  },
+  {
+    "id": "retos-logica-036",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📅",
+    "pregunta": "Un mes tiene 5 viernes, 5 sábados y 5 domingos. ¿Cuántos días tiene ese mes?",
+    "opciones": [
+      "30",
+      "29",
+      "31"
+    ],
+    "respuesta": 2,
+    "explicacion": "En 28 días cada día de la semana sale 4 veces. Para que 3 de ellos salgan 5 veces faltan 3 días más: 28 + 3 = 31."
+  },
+  {
+    "id": "retos-logica-037",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📅",
+    "pregunta": "Si el 1 de marzo es lunes, ¿qué día de la semana es el 1 de abril?",
+    "opciones": [
+      "Jueves",
+      "Lunes",
+      "Miércoles"
+    ],
+    "respuesta": 0,
+    "explicacion": "Marzo tiene 31 días: 4 semanas y 3 días. El 1 de abril cae 3 días de la semana después del lunes: jueves."
+  },
+  {
+    "id": "retos-logica-038",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🏆",
+    "pregunta": "Un torneo de eliminación directa tiene 32 equipos, sin partido por el 3.er lugar. ¿Cuántos partidos se juegan?",
+    "opciones": [
+      "31",
+      "16",
+      "32"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada partido elimina exactamente a un equipo. Para que quede un solo campeón hay que eliminar a 31: se juegan 31 partidos."
+  },
+  {
+    "id": "retos-logica-039",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🥚",
+    "pregunta": "¿Cuántas unidades hay en una docena de docenas?",
+    "opciones": [
+      "24",
+      "144",
+      "120"
+    ],
+    "respuesta": 1,
+    "explicacion": "Una docena son 12. Una docena de docenas son 12 grupos de 12: 12 × 12 = 144 unidades, lo que se llama una gruesa."
+  }
+]

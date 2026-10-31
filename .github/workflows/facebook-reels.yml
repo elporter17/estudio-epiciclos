@@ -6,11 +6,11 @@ name: Reels a Facebook
 
 on:
   schedule:
-    # Minuto 27, lejos de los otros workflows. En Honduras (UTC-6): nombres a las 8:27, 10:27, 14:27, 16:27, 18:27
-    # y 22:27
-    - cron: '27 0,4,14,16,20,22 * * *'
-    # Futbolistas a las 12:27 y 20:27 (el mismo texto se compara abajo)
-    - cron: '27 2,18 * * *'
+    # Más en las horas pico de Facebook en Latinoamérica (mediodía y noche). En Honduras (UTC-6): nombres a las 8:27,
+    # 12:27, 18:27, 20:27, 21:27 y 22:27
+    - cron: '27 0,2,3,4,14,18 * * *'
+    # Futbolistas a las 13:37 y 19:37 (el mismo texto se compara abajo)
+    - cron: '37 1,19 * * *'
   workflow_dispatch:
     inputs:
       cats:
@@ -31,7 +31,7 @@ jobs:
   reels:
     uses: ./.github/workflows/daily.yml
     with:
-      cats: ${{ inputs.cats || (github.event.schedule == '27 2,18 * * *' && 'famosos' || 'nombres') }}
+      cats: ${{ inputs.cats || (github.event.schedule == '37 1,19 * * *' && 'famosos' || 'nombres') }}
       estilos: nuevos
       publish: none
       sonido: con
