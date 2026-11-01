@@ -5,7 +5,8 @@
     "icono": "🏛️",
     "dato": "Las ruinas mayas de Copán, en Honduras, fueron declaradas Patrimonio de la Humanidad por la UNESCO en 1980.",
     "falso": "Las ruinas mayas de Copán, en Honduras, fueron declaradas Patrimonio de la Humanidad por la UNESCO en 2005.",
-    "explicacion": "La UNESCO inscribió el sitio maya de Copán en su lista de Patrimonio de la Humanidad en 1980, no en 2005."
+    "explicacion": "La UNESCO inscribió el sitio maya de Copán en su lista de Patrimonio de la Humanidad en 1980, no en 2005.",
+    "foto": "mayan ruins jungle"
   },
   {
     "id": "historia-002",
@@ -13,7 +14,8 @@
     "icono": "🔺",
     "dato": "La Gran Pirámide de Giza es la única de las siete maravillas del mundo antiguo que sigue en pie.",
     "falso": "El Coloso de Rodas es la única de las siete maravillas del mundo antiguo que sigue en pie.",
-    "explicacion": "El Coloso de Rodas cayó por un terremoto hace más de 2000 años. La única maravilla antigua que sigue en pie es la Gran Pirámide de Giza."
+    "explicacion": "El Coloso de Rodas cayó por un terremoto hace más de 2000 años. La única maravilla antigua que sigue en pie es la Gran Pirámide de Giza.",
+    "foto": "egypt pyramids desert"
   },
   {
     "id": "historia-003",
@@ -21,7 +23,8 @@
     "icono": "🔍",
     "dato": "Champollion descifró los jeroglíficos egipcios en 1822 gracias a la piedra de Rosetta.",
     "falso": "Champollion descifró los jeroglíficos egipcios en 1922 gracias a la piedra de Rosetta.",
-    "explicacion": "Jean-François Champollion anunció su desciframiento en 1822, un siglo antes de lo que dice la versión falsa."
+    "explicacion": "Jean-François Champollion anunció su desciframiento en 1822, un siglo antes de lo que dice la versión falsa.",
+    "foto": "ancient hieroglyphs carving"
   },
   {
     "id": "historia-004",
@@ -29,7 +32,8 @@
     "icono": "👑",
     "dato": "Cleopatra vivió más cerca en el tiempo de la llegada del ser humano a la Luna que de la construcción de la Gran Pirámide.",
     "falso": "Cleopatra vivió más cerca en el tiempo de la construcción de la Gran Pirámide que de la llegada del ser humano a la Luna.",
-    "explicacion": "La Gran Pirámide es de hacia 2560 a. C. y Cleopatra murió en 30 a. C.: unos 2500 años de diferencia, frente a unos 2000 hasta 1969."
+    "explicacion": "La Gran Pirámide es de hacia 2560 a. C. y Cleopatra murió en 30 a. C.: unos 2500 años de diferencia, frente a unos 2000 hasta 1969.",
+    "foto": "great pyramid giza"
   },
   {
     "id": "historia-005",
@@ -37,7 +41,8 @@
     "icono": "📜",
     "dato": "La Escalinata de los Jeroglíficos de Copán tiene más de 2000 glifos: es el texto maya tallado más largo que se conoce.",
     "falso": "La Escalinata de los Jeroglíficos de Copán tiene apenas unos 20 glifos tallados en piedra.",
-    "explicacion": "La escalinata de Copán reúne cerca de 2200 glifos en sus escalones, por eso es el texto jeroglífico maya más largo conocido."
+    "explicacion": "La escalinata de Copán reúne cerca de 2200 glifos en sus escalones, por eso es el texto jeroglífico maya más largo conocido.",
+    "foto": "mayan stone carvings"
   },
   {
     "id": "historia-006",
@@ -45,7 +50,8 @@
     "icono": "🌙",
     "dato": "La Gran Muralla China no se puede ver a simple vista desde la Luna.",
     "falso": "La Gran Muralla China se puede ver a simple vista desde la Luna.",
-    "explicacion": "Es un mito: la muralla es muy angosta y desde la Luna, a unos 384 000 km, no se distingue a simple vista. Así lo confirman los astronautas."
+    "explicacion": "Es un mito: la muralla es muy angosta y desde la Luna, a unos 384 000 km, no se distingue a simple vista. Así lo confirman los astronautas.",
+    "foto": "great wall china"
   },
   {
     "id": "historia-007",
@@ -53,7 +59,8 @@
     "icono": "🕰️",
     "dato": "Rusia, el país más grande del mundo, abarca 11 husos horarios.",
     "falso": "Rusia, el país más grande del mundo, abarca solo 4 husos horarios.",
-    "explicacion": "Rusia se extiende de Europa al Pacífico y tiene 11 husos horarios, no 4."
+    "explicacion": "Rusia se extiende de Europa al Pacífico y tiene 11 husos horarios, no 4.",
+    "foto": "moscow kremlin aerial"
   },
   {
     "id": "historia-008",
@@ -61,7 +68,8 @@
     "icono": "💵",
     "dato": "La moneda de Honduras, el lempira, lleva el nombre de Lempira, un líder lenca que resistió a los conquistadores españoles.",
     "falso": "La moneda de Honduras, el lempira, lleva el nombre de un río de la costa norte del país.",
-    "explicacion": "El lempira se llama así en honor al líder indígena lenca Lempira, que vivió en el siglo XVI; no por un río."
+    "explicacion": "El lempira se llama así en honor al líder indígena lenca Lempira, que vivió en el siglo XVI; no por un río.",
+    "foto": "banknotes close up"
   },
   {
     "id": "historia-009",
@@ -69,7 +77,8 @@
     "icono": "📍",
     "dato": "La Ciudad del Vaticano es el país más pequeño del mundo, con menos de medio kilómetro cuadrado.",
     "falso": "Mónaco es el país más pequeño del mundo, con menos de medio kilómetro cuadrado.",
-    "explicacion": "Mónaco mide unos 2 km². El país más pequeño del mundo es la Ciudad del Vaticano, con cerca de 0,44 km²."
+    "explicacion": "Mónaco mide unos 2 km². El país más pequeño del mundo es la Ciudad del Vaticano, con cerca de 0,44 km².",
+    "foto": "vatican st peters"
   },
   {
     "id": "historia-010",
@@ -77,7 +86,8 @@
     "icono": "🌊",
     "dato": "Canadá es el país con la costa más larga del mundo.",
     "falso": "Australia es el país con la costa más larga del mundo.",
-    "explicacion": "Canadá tiene la costa más larga del planeta, con más de 200 000 km gracias a sus miles de islas árticas. Australia queda muy por detrás."
+    "explicacion": "Canadá tiene la costa más larga del planeta, con más de 200 000 km gracias a sus miles de islas árticas. Australia queda muy por detrás.",
+    "foto": "canada rocky coastline"
   },
   {
     "id": "historia-011",
@@ -85,7 +95,8 @@
     "icono": "🦘",
     "dato": "La capital de Australia es Canberra, una ciudad planificada para ese fin.",
     "falso": "La capital de Australia es Sídney, su ciudad más poblada.",
-    "explicacion": "Sídney es la ciudad más grande de Australia, pero la capital es Canberra, construida a propósito para ser sede del gobierno."
+    "explicacion": "Sídney es la ciudad más grande de Australia, pero la capital es Canberra, construida a propósito para ser sede del gobierno.",
+    "foto": "canberra city aerial"
   },
   {
     "id": "historia-012",
@@ -93,7 +104,8 @@
     "icono": "🏙️",
     "dato": "La capital de Honduras es el Distrito Central, formado por las ciudades gemelas de Tegucigalpa y Comayagüela.",
     "falso": "La capital de Honduras es San Pedro Sula, la ciudad industrial del valle de Sula.",
-    "explicacion": "San Pedro Sula es el centro industrial del país, pero la capital es el Distrito Central, que une a Tegucigalpa y Comayagüela."
+    "explicacion": "San Pedro Sula es el centro industrial del país, pero la capital es el Distrito Central, que une a Tegucigalpa y Comayagüela.",
+    "foto": "hillside city aerial"
   },
   {
     "id": "historia-013",
@@ -101,7 +113,8 @@
     "icono": "🌉",
     "dato": "Estambul, antes llamada Constantinopla, está a ambos lados del estrecho del Bósforo, entre Europa y Asia.",
     "falso": "Estambul, antes llamada Constantinopla, está completamente en Asia, lejos del estrecho del Bósforo.",
-    "explicacion": "Estambul se extiende a ambos lados del Bósforo: una parte está en Europa y otra en Asia."
+    "explicacion": "Estambul se extiende a ambos lados del Bósforo: una parte está en Europa y otra en Asia.",
+    "foto": "istanbul bosphorus"
   },
   {
     "id": "historia-014",
@@ -109,7 +122,8 @@
     "icono": "🏯",
     "dato": "Antes de 1868, la ciudad de Tokio se llamaba Edo.",
     "falso": "Antes de 1868, la ciudad de Kioto se llamaba Edo.",
-    "explicacion": "Edo es el antiguo nombre de Tokio. Kioto siempre se llamó así y fue la capital imperial hasta 1868."
+    "explicacion": "Edo es el antiguo nombre de Tokio. Kioto siempre se llamó así y fue la capital imperial hasta 1868.",
+    "foto": "tokyo city night"
   },
   {
     "id": "historia-015",
@@ -117,7 +131,8 @@
     "icono": "🕰️",
     "dato": "Comayagua fue la capital de Honduras hasta 1880, cuando el gobierno se trasladó a Tegucigalpa.",
     "falso": "Comayagua fue la capital de Honduras hasta 1980, cuando el gobierno se trasladó a Tegucigalpa.",
-    "explicacion": "El traslado de la capital de Comayagua a Tegucigalpa ocurrió en 1880, durante el gobierno de Marco Aurelio Soto, no en 1980."
+    "explicacion": "El traslado de la capital de Comayagua a Tegucigalpa ocurrió en 1880, durante el gobierno de Marco Aurelio Soto, no en 1980.",
+    "foto": "colonial cathedral facade"
   },
   {
     "id": "historia-016",
@@ -125,7 +140,8 @@
     "icono": "🐊",
     "dato": "El río Nilo desemboca en el mar Mediterráneo, en el norte de Egipto.",
     "falso": "El río Nilo desemboca en el mar Rojo, en el este de Egipto.",
-    "explicacion": "El Nilo corre de sur a norte y forma un gran delta al desembocar en el mar Mediterráneo, no en el mar Rojo."
+    "explicacion": "El Nilo corre de sur a norte y forma un gran delta al desembocar en el mar Mediterráneo, no en el mar Rojo.",
+    "foto": "nile river boats"
   },
   {
     "id": "historia-017",
@@ -133,7 +149,8 @@
     "icono": "🏔️",
     "dato": "El monte Everest, entre Nepal y China, mide cerca de 8849 m: es la montaña más alta sobre el nivel del mar.",
     "falso": "El monte Everest, entre Nepal y China, mide cerca de 6500 m sobre el nivel del mar.",
-    "explicacion": "La medición oficial de 2020 dio al Everest unos 8849 m, más de 2300 m por encima de lo que dice la versión falsa."
+    "explicacion": "La medición oficial de 2020 dio al Everest unos 8849 m, más de 2300 m por encima de lo que dice la versión falsa.",
+    "foto": "snowy mountain peak"
   },
   {
     "id": "historia-018",
@@ -141,7 +158,8 @@
     "icono": "🧭",
     "dato": "El Everest lleva el nombre de George Everest, un geógrafo británico que dirigió mediciones en la India.",
     "falso": "El Everest lleva el nombre de la primera persona que llegó a su cumbre.",
-    "explicacion": "Los primeros en llegar a la cumbre fueron Edmund Hillary y Tenzing Norgay en 1953. El nombre honra al geógrafo George Everest."
+    "explicacion": "Los primeros en llegar a la cumbre fueron Edmund Hillary y Tenzing Norgay en 1953. El nombre honra al geógrafo George Everest.",
+    "foto": "old map close up"
   },
   {
     "id": "historia-019",
@@ -149,7 +167,8 @@
     "icono": "🌊",
     "dato": "El río Coco o Segovia marca gran parte de la frontera entre Honduras y Nicaragua.",
     "falso": "El río Coco o Segovia marca gran parte de la frontera entre Honduras y El Salvador.",
-    "explicacion": "El río Coco corre hacia el Caribe y separa Honduras de Nicaragua. La frontera con El Salvador sigue otros ríos, como el Lempa y el Goascorán."
+    "explicacion": "El río Coco corre hacia el Caribe y separa Honduras de Nicaragua. La frontera con El Salvador sigue otros ríos, como el Lempa y el Goascorán.",
+    "foto": "tropical river aerial"
   },
   {
     "id": "historia-020",
@@ -157,7 +176,8 @@
     "icono": "💦",
     "dato": "La orilla del mar Muerto, a unos 430 m bajo el nivel del mar, es el punto más bajo en tierra firme del planeta.",
     "falso": "El Valle de la Muerte, en Estados Unidos, es el punto más bajo en tierra firme del planeta.",
-    "explicacion": "El Valle de la Muerte llega a unos 86 m bajo el nivel del mar. La orilla del mar Muerto está a unos 430 m bajo ese nivel."
+    "explicacion": "El Valle de la Muerte llega a unos 86 m bajo el nivel del mar. La orilla del mar Muerto está a unos 430 m bajo ese nivel.",
+    "foto": "dead sea salt shore"
   },
   {
     "id": "historia-021",
@@ -165,7 +185,8 @@
     "icono": "🦭",
     "dato": "El lago Baikal, en Siberia, es el lago más profundo del mundo, con más de 1600 m de profundidad.",
     "falso": "El lago Superior, en Norteamérica, es el lago más profundo del mundo.",
-    "explicacion": "El lago Superior no llega a los 410 m de profundidad. El más profundo es el Baikal, en Rusia, con más de 1600 m."
+    "explicacion": "El lago Superior no llega a los 410 m de profundidad. El más profundo es el Baikal, en Rusia, con más de 1600 m.",
+    "foto": "lake baikal ice"
   },
   {
     "id": "historia-022",
@@ -173,7 +194,8 @@
     "icono": "🏜️",
     "dato": "El desierto del Sahara, en el norte de África, ocupa unos 9 millones de km².",
     "falso": "El desierto del Sahara, en el centro de Asia, ocupa unos 9 millones de km².",
-    "explicacion": "El Sahara está en el norte de África, no en Asia. Abarca partes de unos diez países, como Argelia, Libia, Egipto y Mali."
+    "explicacion": "El Sahara está en el norte de África, no en Asia. Abarca partes de unos diez países, como Argelia, Libia, Egipto y Mali.",
+    "foto": "desert dunes aerial"
   },
   {
     "id": "historia-023",
@@ -181,7 +203,8 @@
     "icono": "🌳",
     "dato": "La Reserva de la Biosfera del Río Plátano, en la Mosquitia hondureña, es Patrimonio de la Humanidad desde 1982.",
     "falso": "La Reserva de la Biosfera del Río Plátano, en la Mosquitia hondureña, es Patrimonio de la Humanidad desde 2012.",
-    "explicacion": "La UNESCO inscribió la Reserva del Río Plátano como Patrimonio de la Humanidad en 1982, no en 2012."
+    "explicacion": "La UNESCO inscribió la Reserva del Río Plátano como Patrimonio de la Humanidad en 1982, no en 2012.",
+    "foto": "rainforest canopy aerial"
   },
   {
     "id": "historia-024",
@@ -189,7 +212,8 @@
     "icono": "🏝️",
     "dato": "Indonesia está formada por más de 17 000 islas.",
     "falso": "Indonesia está formada por unas 1700 islas.",
-    "explicacion": "Indonesia es el mayor archipiélago del mundo: tiene más de 17 000 islas, unas diez veces lo que dice la versión falsa."
+    "explicacion": "Indonesia es el mayor archipiélago del mundo: tiene más de 17 000 islas, unas diez veces lo que dice la versión falsa.",
+    "foto": "indonesia islands aerial"
   },
   {
     "id": "historia-025",
@@ -197,7 +221,8 @@
     "icono": "🏛️",
     "dato": "El Althing de Islandia, fundado en el año 930, es uno de los parlamentos más antiguos del mundo que siguen funcionando.",
     "falso": "El Althing de Islandia, fundado en el año 1930, es uno de los parlamentos más antiguos del mundo que siguen funcionando.",
-    "explicacion": "El Althing se reunió por primera vez en el año 930, mil años antes de la fecha falsa."
+    "explicacion": "El Althing se reunió por primera vez en el año 930, mil años antes de la fecha falsa.",
+    "foto": "iceland green landscape"
   },
   {
     "id": "historia-026",
@@ -205,7 +230,8 @@
     "icono": "🗣️",
     "dato": "El chino mandarín es el idioma con más hablantes nativos del mundo.",
     "falso": "El inglés es el idioma con más hablantes nativos del mundo.",
-    "explicacion": "El inglés es muy usado como segunda lengua, pero el chino mandarín tiene más del doble de hablantes nativos."
+    "explicacion": "El inglés es muy usado como segunda lengua, pero el chino mandarín tiene más del doble de hablantes nativos.",
+    "foto": "chinese calligraphy brush"
   },
   {
     "id": "historia-027",
@@ -213,7 +239,8 @@
     "icono": "🗓️",
     "dato": "Honduras, Guatemala, El Salvador, Nicaragua y Costa Rica celebran su independencia el 15 de septiembre.",
     "falso": "Honduras, Guatemala, El Salvador, Nicaragua y Costa Rica celebran su independencia el 4 de julio.",
-    "explicacion": "El 4 de julio es la independencia de Estados Unidos. Estos cinco países celebran el 15 de septiembre, por el Acta de Independencia de 1821."
+    "explicacion": "El 4 de julio es la independencia de Estados Unidos. Estos cinco países celebran el 15 de septiembre, por el Acta de Independencia de 1821.",
+    "foto": "flags waving wind"
   },
   {
     "id": "historia-028",
@@ -221,7 +248,8 @@
     "icono": "🌴",
     "dato": "En Papúa Nueva Guinea se hablan más de 800 idiomas, más que en ningún otro país.",
     "falso": "En Papúa Nueva Guinea se hablan unos 80 idiomas, más que en ningún otro país.",
-    "explicacion": "Papúa Nueva Guinea tiene más de 800 lenguas vivas, diez veces lo que dice la versión falsa. Es el país con más idiomas del mundo."
+    "explicacion": "Papúa Nueva Guinea tiene más de 800 lenguas vivas, diez veces lo que dice la versión falsa. Es el país con más idiomas del mundo.",
+    "foto": "tropical island village"
   },
   {
     "id": "historia-029",
@@ -229,7 +257,8 @@
     "icono": "💶",
     "dato": "Los billetes y monedas de euro empezaron a circular el 1 de enero de 2002.",
     "falso": "Los billetes y monedas de euro empezaron a circular el 1 de enero de 1992.",
-    "explicacion": "En 1992 se firmó el Tratado de Maastricht, pero los billetes y monedas de euro llegaron a los bolsillos el 1 de enero de 2002."
+    "explicacion": "En 1992 se firmó el Tratado de Maastricht, pero los billetes y monedas de euro llegaron a los bolsillos el 1 de enero de 2002.",
+    "foto": "euro coins banknotes"
   },
   {
     "id": "historia-030",
@@ -237,7 +266,8 @@
     "icono": "💴",
     "dato": "Los primeros billetes de papel moneda se usaron en China hace unos mil años.",
     "falso": "Los primeros billetes de papel moneda se usaron en Italia hace unos mil años.",
-    "explicacion": "El papel moneda nació en China, en tiempos de la dinastía Song, siglos antes de que Europa usara billetes."
+    "explicacion": "El papel moneda nació en China, en tiempos de la dinastía Song, siglos antes de que Europa usara billetes.",
+    "foto": "old paper money"
   },
   {
     "id": "historia-031",
@@ -245,7 +275,8 @@
     "icono": "🏔️",
     "dato": "El punto más alto de Honduras es el cerro Las Minas, en el Parque Nacional Celaque, a cerca de 2850 m.",
     "falso": "El punto más alto de Honduras es el cerro Las Minas, en el Parque Nacional Celaque, a más de 4500 m.",
-    "explicacion": "El cerro Las Minas, en Celaque, mide cerca de 2850 m sobre el nivel del mar; ninguna montaña de Honduras supera los 3000 m."
+    "explicacion": "El cerro Las Minas, en Celaque, mide cerca de 2850 m sobre el nivel del mar; ninguna montaña de Honduras supera los 3000 m.",
+    "foto": "cloud forest mountains"
   },
   {
     "id": "historia-033",
@@ -253,7 +284,8 @@
     "icono": "🏟️",
     "dato": "El Coliseo de Roma se inauguró en el año 80 d. C. y en sus gradas cabían unas 50 000 personas.",
     "falso": "El Coliseo de Roma se inauguró en el año 800 d. C. y en sus gradas cabían unas 50 000 personas.",
-    "explicacion": "El Coliseo se inauguró en el año 80 d. C., bajo el emperador Tito, más de 700 años antes de la fecha falsa."
+    "explicacion": "El Coliseo se inauguró en el año 80 d. C., bajo el emperador Tito, más de 700 años antes de la fecha falsa.",
+    "foto": "roman colosseum"
   },
   {
     "id": "historia-034",
@@ -261,7 +293,8 @@
     "icono": "🌋",
     "dato": "La ciudad romana de Pompeya quedó sepultada por la erupción del volcán Vesubio en el año 79 d. C.",
     "falso": "La ciudad romana de Pompeya quedó sepultada por la erupción del volcán Etna en el año 79 d. C.",
-    "explicacion": "El Etna está en Sicilia. Pompeya, cerca de Nápoles, quedó bajo las cenizas del Vesubio en el año 79 d. C."
+    "explicacion": "El Etna está en Sicilia. Pompeya, cerca de Nápoles, quedó bajo las cenizas del Vesubio en el año 79 d. C.",
+    "foto": "pompeii ruins vesuvius"
   },
   {
     "id": "historia-035",
@@ -269,7 +302,8 @@
     "icono": "🐠",
     "dato": "El Arrecife Mesoamericano, que rodea las Islas de la Bahía de Honduras, es el segundo sistema de arrecifes más grande del mundo.",
     "falso": "El Arrecife Mesoamericano, que rodea las Islas de la Bahía de Honduras, es el sistema de arrecifes más grande del mundo.",
-    "explicacion": "El sistema de arrecifes más grande del mundo es la Gran Barrera de Coral de Australia. El Mesoamericano es el segundo."
+    "explicacion": "El sistema de arrecifes más grande del mundo es la Gran Barrera de Coral de Australia. El Mesoamericano es el segundo.",
+    "foto": "coral reef fish"
   },
   {
     "id": "historia-036",
@@ -277,7 +311,8 @@
     "icono": "🏅",
     "dato": "Los Juegos Olímpicos de la Antigüedad se celebraban en Olimpia, Grecia, desde el año 776 a. C.",
     "falso": "Los Juegos Olímpicos de la Antigüedad se celebraban en Roma, Italia, desde el año 776 a. C.",
-    "explicacion": "Los juegos antiguos se celebraban en el santuario de Olimpia, en Grecia, y de ahí viene su nombre. Roma no era su sede."
+    "explicacion": "Los juegos antiguos se celebraban en el santuario de Olimpia, en Grecia, y de ahí viene su nombre. Roma no era su sede.",
+    "foto": "ancient greek ruins"
   },
   {
     "id": "historia-038",
@@ -285,7 +320,8 @@
     "icono": "🪨",
     "dato": "Stonehenge, el famoso círculo de piedras de Inglaterra, empezó a construirse hace unos 5000 años.",
     "falso": "Stonehenge, el famoso círculo de piedras de Irlanda, empezó a construirse hace unos 5000 años.",
-    "explicacion": "Stonehenge está en la llanura de Salisbury, en el sur de Inglaterra, no en Irlanda."
+    "explicacion": "Stonehenge está en la llanura de Salisbury, en el sur de Inglaterra, no en Irlanda.",
+    "foto": "stonehenge stone circle"
   },
   {
     "id": "historia-039",
@@ -293,7 +329,8 @@
     "icono": "🦜",
     "dato": "La guara roja, o guacamaya roja, es el ave nacional de Honduras.",
     "falso": "El quetzal es el ave nacional de Honduras.",
-    "explicacion": "El quetzal es el ave nacional de Guatemala. La de Honduras es la guara roja, declarada ave nacional en 1993."
+    "explicacion": "El quetzal es el ave nacional de Guatemala. La de Honduras es la guara roja, declarada ave nacional en 1993.",
+    "foto": "scarlet macaw flying"
   },
   {
     "id": "historia-040",
@@ -301,7 +338,8 @@
     "icono": "🐫",
     "dato": "La antigua ciudad de Petra, tallada en roca por los nabateos, está en Jordania.",
     "falso": "La antigua ciudad de Petra, tallada en roca por los nabateos, está en Egipto.",
-    "explicacion": "Petra está en el sur de Jordania, no en Egipto. Es Patrimonio de la Humanidad y una de las Nuevas Siete Maravillas."
+    "explicacion": "Petra está en el sur de Jordania, no en Egipto. Es Patrimonio de la Humanidad y una de las Nuevas Siete Maravillas.",
+    "foto": "petra jordan"
   },
   {
     "id": "historia-041",
@@ -309,7 +347,8 @@
     "icono": "🛕",
     "dato": "El templo de Angkor Wat, en Camboya, aparece dibujado en la bandera de ese país.",
     "falso": "El templo de Angkor Wat, en Tailandia, aparece dibujado en la bandera de ese país.",
-    "explicacion": "Angkor Wat está en Camboya y su silueta aparece en la bandera camboyana. La bandera de Tailandia solo tiene franjas."
+    "explicacion": "Angkor Wat está en Camboya y su silueta aparece en la bandera camboyana. La bandera de Tailandia solo tiene franjas.",
+    "foto": "angkor wat temple"
   },
   {
     "id": "historia-042",
@@ -317,7 +356,8 @@
     "icono": "🤍",
     "dato": "El Taj Mahal, en la India, es un mausoleo que el emperador Shah Jahan mandó construir en memoria de su esposa.",
     "falso": "El Taj Mahal, en la India, es el palacio donde vivía el emperador Shah Jahan con su esposa.",
-    "explicacion": "El Taj Mahal no fue una residencia: es un mausoleo de mármol blanco construido en memoria de Mumtaz Mahal, esposa de Shah Jahan."
+    "explicacion": "El Taj Mahal no fue una residencia: es un mausoleo de mármol blanco construido en memoria de Mumtaz Mahal, esposa de Shah Jahan.",
+    "foto": "taj mahal"
   },
   {
     "id": "historia-043",
@@ -325,7 +365,8 @@
     "icono": "⚓",
     "dato": "Cristóbal Colón llegó a la isla de Guanaja, en Honduras, en 1502, durante su cuarto viaje.",
     "falso": "Cristóbal Colón llegó a la isla de Guanaja, en Honduras, en 1492, durante su primer viaje.",
-    "explicacion": "En su primer viaje, en 1492, Colón llegó al Caribe pero no a Honduras. A Guanaja llegó en 1502, en su cuarto y último viaje."
+    "explicacion": "En su primer viaje, en 1492, Colón llegó al Caribe pero no a Honduras. A Guanaja llegó en 1502, en su cuarto y último viaje.",
+    "foto": "old sailing ship"
   },
   {
     "id": "historia-044",
@@ -333,7 +374,8 @@
     "icono": "🗼",
     "dato": "La torre Eiffel se construyó para la Exposición Universal de París de 1889.",
     "falso": "La torre Eiffel se construyó para la Exposición Universal de París de 1929.",
-    "explicacion": "La torre Eiffel se inauguró en 1889, para la Exposición Universal que celebraba el centenario de la Revolución francesa."
+    "explicacion": "La torre Eiffel se inauguró en 1889, para la Exposición Universal que celebraba el centenario de la Revolución francesa.",
+    "foto": "eiffel tower paris"
   },
   {
     "id": "historia-045",
@@ -341,7 +383,8 @@
     "icono": "🗽",
     "dato": "La Estatua de la Libertad fue un regalo de Francia a Estados Unidos y se inauguró en 1886.",
     "falso": "La Estatua de la Libertad fue un regalo de Inglaterra a Estados Unidos y se inauguró en 1886.",
-    "explicacion": "La estatua fue un regalo del pueblo de Francia; la diseñó el escultor francés Bartholdi y su estructura interna es obra de Gustave Eiffel."
+    "explicacion": "La estatua fue un regalo del pueblo de Francia; la diseñó el escultor francés Bartholdi y su estructura interna es obra de Gustave Eiffel.",
+    "foto": "statue of liberty"
   },
   {
     "id": "historia-046",
@@ -349,7 +392,8 @@
     "icono": "🚣",
     "dato": "La ciudad de Venecia está construida sobre más de 100 pequeñas islas unidas por puentes.",
     "falso": "La ciudad de Venecia está construida sobre una sola isla grande rodeada de canales.",
-    "explicacion": "Venecia ocupa más de un centenar de islitas en una laguna, separadas por canales y unidas por cientos de puentes."
+    "explicacion": "Venecia ocupa más de un centenar de islitas en una laguna, separadas por canales y unidas por cientos de puentes.",
+    "foto": "venice canals gondola"
   },
   {
     "id": "historia-047",
@@ -357,7 +401,8 @@
     "icono": "🛶",
     "dato": "Los garífunas llegaron a la isla de Roatán, en Honduras, en 1797.",
     "falso": "Los garífunas llegaron a la isla de Roatán, en Honduras, en 1897.",
-    "explicacion": "Los garífunas desembarcaron en Roatán en abril de 1797, un siglo antes de la fecha falsa, y luego se extendieron por la costa caribeña."
+    "explicacion": "Los garífunas desembarcaron en Roatán en abril de 1797, un siglo antes de la fecha falsa, y luego se extendieron por la costa caribeña.",
+    "foto": "caribbean island beach"
   },
   {
     "id": "historia-048",
@@ -365,7 +410,8 @@
     "icono": "🌷",
     "dato": "Cerca de una cuarta parte del territorio de los Países Bajos está por debajo del nivel del mar.",
     "falso": "Ninguna parte del territorio de los Países Bajos está por debajo del nivel del mar.",
-    "explicacion": "Alrededor de una cuarta parte de los Países Bajos está bajo el nivel del mar, protegida por diques, dunas y bombas de agua."
+    "explicacion": "Alrededor de una cuarta parte de los Países Bajos está bajo el nivel del mar, protegida por diques, dunas y bombas de agua.",
+    "foto": "dutch windmills canal"
   },
   {
     "id": "historia-049",
@@ -373,7 +419,8 @@
     "icono": "🐎",
     "dato": "Mongolia es el país independiente con menos habitantes por kilómetro cuadrado del mundo.",
     "falso": "Canadá es el país independiente con menos habitantes por kilómetro cuadrado del mundo.",
-    "explicacion": "Canadá tiene unos 4 habitantes por km², pero Mongolia tiene unos 2: es el país soberano menos densamente poblado."
+    "explicacion": "Canadá tiene unos 4 habitantes por km², pero Mongolia tiene unos 2: es el país soberano menos densamente poblado.",
+    "foto": "mongolia steppe horses"
   },
   {
     "id": "historia-050",
@@ -381,7 +428,8 @@
     "icono": "🛥️",
     "dato": "Mónaco es el país con más habitantes por kilómetro cuadrado del mundo.",
     "falso": "La India es el país con más habitantes por kilómetro cuadrado del mundo.",
-    "explicacion": "La India es muy poblada, pero Mónaco tiene unas 18 000 personas por km², la mayor densidad de todos los países."
+    "explicacion": "La India es muy poblada, pero Mónaco tiene unas 18 000 personas por km², la mayor densidad de todos los países.",
+    "foto": "monaco harbor aerial"
   },
   {
     "id": "historia-051",
@@ -389,7 +437,8 @@
     "icono": "🏞️",
     "dato": "El lago de Nicaragua, o Cocibolca, es el lago más grande de Centroamérica.",
     "falso": "El lago de Yojoa, en Honduras, es el lago más grande de Centroamérica.",
-    "explicacion": "El lago de Yojoa mide menos de 100 km²; el lago de Nicaragua supera los 8000 km² y es el mayor de Centroamérica."
+    "explicacion": "El lago de Yojoa mide menos de 100 km²; el lago de Nicaragua supera los 8000 km² y es el mayor de Centroamérica.",
+    "foto": "nicaragua lake volcano"
   },
   {
     "id": "historia-052",
@@ -397,7 +446,8 @@
     "icono": "🗺️",
     "dato": "Liechtenstein y Uzbekistán son los únicos países doblemente sin litoral: todos sus vecinos tampoco tienen mar.",
     "falso": "Suiza y Bolivia son los únicos países doblemente sin litoral: todos sus vecinos tampoco tienen mar.",
-    "explicacion": "Suiza y Bolivia no tienen mar, pero sus vecinos sí. Los únicos países doblemente sin litoral son Liechtenstein y Uzbekistán."
+    "explicacion": "Suiza y Bolivia no tienen mar, pero sus vecinos sí. Los únicos países doblemente sin litoral son Liechtenstein y Uzbekistán.",
+    "foto": "alpine village mountains"
   },
   {
     "id": "historia-053",
@@ -405,7 +455,8 @@
     "icono": "🐟",
     "dato": "El mar Caspio, entre Europa y Asia, es en realidad el lago más grande del mundo.",
     "falso": "El lago Victoria, en África, es el lago más grande del mundo.",
-    "explicacion": "El Victoria es el lago más grande de África, pero el mayor del mundo es el Caspio, con unos 370 000 km²."
+    "explicacion": "El Victoria es el lago más grande de África, pero el mayor del mundo es el Caspio, con unos 370 000 km².",
+    "foto": "caspian sea shore"
   },
   {
     "id": "historia-054",
@@ -413,7 +464,8 @@
     "icono": "🧊",
     "dato": "Groenlandia es la isla más grande del mundo.",
     "falso": "Madagascar es la isla más grande del mundo.",
-    "explicacion": "Madagascar ocupa el cuarto lugar. La isla más grande es Groenlandia, con más de 2 millones de km² (Australia se considera continente)."
+    "explicacion": "Madagascar ocupa el cuarto lugar. La isla más grande es Groenlandia, con más de 2 millones de km² (Australia se considera continente).",
+    "foto": "greenland icebergs"
   },
   {
     "id": "historia-055",
@@ -421,7 +473,8 @@
     "icono": "🔺",
     "dato": "La pirámide maya de Kukulkán, en Chichén Itzá, fue elegida una de las Nuevas Siete Maravillas del Mundo en 2007.",
     "falso": "La pirámide maya de Kukulkán, en Chichén Itzá, fue elegida una de las Nuevas Siete Maravillas del Mundo en 1997.",
-    "explicacion": "La votación de las Nuevas Siete Maravillas se anunció el 7 de julio de 2007, y Chichén Itzá fue una de las elegidas."
+    "explicacion": "La votación de las Nuevas Siete Maravillas se anunció el 7 de julio de 2007, y Chichén Itzá fue una de las elegidas.",
+    "foto": "chichen itza pyramid"
   },
   {
     "id": "historia-056",
@@ -429,7 +482,8 @@
     "icono": "✍️",
     "dato": "La escritura cuneiforme nació en Mesopotamia, en el actual Irak, hace más de 5000 años.",
     "falso": "La escritura cuneiforme nació en Grecia hace unos 1000 años.",
-    "explicacion": "La cuneiforme la crearon los sumerios en Mesopotamia hacia el 3200 a. C., una de las escrituras más antiguas del mundo."
+    "explicacion": "La cuneiforme la crearon los sumerios en Mesopotamia hacia el 3200 a. C., una de las escrituras más antiguas del mundo.",
+    "foto": "ancient clay tablet"
   },
   {
     "id": "historia-057",
@@ -437,7 +491,8 @@
     "icono": "⚱️",
     "dato": "La tumba del faraón Tutankamón fue descubierta por Howard Carter en 1922.",
     "falso": "La tumba del faraón Tutankamón fue descubierta por Howard Carter en 1822.",
-    "explicacion": "Howard Carter halló la tumba en el Valle de los Reyes en noviembre de 1922, cien años después de la fecha falsa."
+    "explicacion": "Howard Carter halló la tumba en el Valle de los Reyes en noviembre de 1922, cien años después de la fecha falsa.",
+    "foto": "golden pharaoh mask"
   },
   {
     "id": "historia-058",
@@ -445,7 +500,8 @@
     "icono": "⛵",
     "dato": "Los vikingos llegaron a Norteamérica hacia el año 1000, casi cinco siglos antes que Colón.",
     "falso": "Los vikingos llegaron a Norteamérica hacia el año 1700, más de dos siglos después que Colón.",
-    "explicacion": "En L'Anse aux Meadows, Terranova (Canadá), hay restos de un asentamiento vikingo de hacia el año 1000."
+    "explicacion": "En L'Anse aux Meadows, Terranova (Canadá), hay restos de un asentamiento vikingo de hacia el año 1000.",
+    "foto": "viking ship museum"
   },
   {
     "id": "historia-059",
@@ -453,7 +509,8 @@
     "icono": "⭐",
     "dato": "Las cinco estrellas de la bandera de Honduras representan a los países de la antigua República Federal de Centroamérica.",
     "falso": "Las cinco estrellas de la bandera de Honduras representan a los cinco primeros departamentos del país.",
-    "explicacion": "Las estrellas simbolizan a Honduras, Guatemala, El Salvador, Nicaragua y Costa Rica, que formaron la República Federal de Centroamérica."
+    "explicacion": "Las estrellas simbolizan a Honduras, Guatemala, El Salvador, Nicaragua y Costa Rica, que formaron la República Federal de Centroamérica.",
+    "foto": "honduras flag waving"
   },
   {
     "id": "historia-060",
@@ -461,7 +518,8 @@
     "icono": "🧭",
     "dato": "La expedición de Magallanes y Elcano completó la primera vuelta al mundo entre 1519 y 1522.",
     "falso": "La expedición de Magallanes y Elcano completó la primera vuelta al mundo entre 1719 y 1722.",
-    "explicacion": "La expedición salió de España en 1519 y volvió en 1522 al mando de Juan Sebastián Elcano, dos siglos antes de la fecha falsa."
+    "explicacion": "La expedición salió de España en 1519 y volvió en 1522 al mando de Juan Sebastián Elcano, dos siglos antes de la fecha falsa.",
+    "foto": "antique globe spinning"
   },
   {
     "id": "historia-061",
@@ -469,7 +527,8 @@
     "icono": "🛳️",
     "dato": "El canal de Suez, en Egipto, se inauguró en 1869 y une el mar Mediterráneo con el mar Rojo.",
     "falso": "El canal de Suez, en Egipto, se inauguró en 1969 y une el mar Mediterráneo con el mar Rojo.",
-    "explicacion": "El canal de Suez se inauguró en noviembre de 1869, cien años antes de la fecha falsa."
+    "explicacion": "El canal de Suez se inauguró en noviembre de 1869, cien años antes de la fecha falsa.",
+    "foto": "cargo ship canal"
   },
   {
     "id": "historia-062",
@@ -477,7 +536,8 @@
     "icono": "🚢",
     "dato": "El canal de Panamá, que une los océanos Atlántico y Pacífico, se inauguró en 1914.",
     "falso": "El canal de Panamá, que une los océanos Atlántico y Pacífico, se inauguró en 1954.",
-    "explicacion": "El primer barco cruzó oficialmente el canal de Panamá el 15 de agosto de 1914, cuarenta años antes de la fecha falsa."
+    "explicacion": "El primer barco cruzó oficialmente el canal de Panamá el 15 de agosto de 1914, cuarenta años antes de la fecha falsa.",
+    "foto": "panama canal locks"
   },
   {
     "id": "historia-063",
@@ -485,7 +545,8 @@
     "icono": "🚀",
     "dato": "Los primeros seres humanos caminaron sobre la Luna en julio de 1969, con la misión Apolo 11.",
     "falso": "Los primeros seres humanos caminaron sobre la Luna en julio de 1979, con la misión Apolo 11.",
-    "explicacion": "Neil Armstrong y Buzz Aldrin pisaron la Luna el 20 de julio de 1969. La última misión tripulada, Apolo 17, fue en 1972."
+    "explicacion": "Neil Armstrong y Buzz Aldrin pisaron la Luna el 20 de julio de 1969. La última misión tripulada, Apolo 17, fue en 1972.",
+    "foto": "moon surface"
   },
   {
     "id": "historia-064",
@@ -493,7 +554,8 @@
     "icono": "🎓",
     "dato": "La Universidad de Bolonia, en Italia, fundada en 1088, es la universidad más antigua del mundo occidental.",
     "falso": "La Universidad de Bolonia, en Italia, fundada en 1588, es la universidad más antigua del mundo occidental.",
-    "explicacion": "La Universidad de Bolonia se fundó en 1088, cinco siglos antes de la fecha falsa, y sigue funcionando hoy."
+    "explicacion": "La Universidad de Bolonia se fundó en 1088, cinco siglos antes de la fecha falsa, y sigue funcionando hoy.",
+    "foto": "old university library"
   },
   {
     "id": "historia-065",
@@ -501,7 +563,8 @@
     "icono": "🐦",
     "dato": "El quetzal es la moneda de Guatemala y lleva el nombre de un ave sagrada para los mayas.",
     "falso": "El quetzal es la moneda de Costa Rica y lleva el nombre de un ave sagrada para los mayas.",
-    "explicacion": "La moneda de Costa Rica es el colón. El quetzal es la moneda de Guatemala desde 1925."
+    "explicacion": "La moneda de Costa Rica es el colón. El quetzal es la moneda de Guatemala desde 1925.",
+    "foto": "quetzal bird"
   },
   {
     "id": "historia-066",
@@ -509,7 +572,8 @@
     "icono": "🐪",
     "dato": "La Ruta de la Seda era una red de caminos comerciales que unía China con el Mediterráneo.",
     "falso": "La Ruta de la Seda era una red de caminos comerciales que unía China con el sur de África.",
-    "explicacion": "La Ruta de la Seda cruzaba Asia Central y Persia para llegar hasta el Mediterráneo; no llegaba al sur de África."
+    "explicacion": "La Ruta de la Seda cruzaba Asia Central y Persia para llegar hasta el Mediterráneo; no llegaba al sur de África.",
+    "foto": "camel caravan desert"
   },
   {
     "id": "historia-067",
@@ -517,7 +581,8 @@
     "icono": "📚",
     "dato": "La famosa Biblioteca de Alejandría estaba en Egipto, en la ciudad fundada por Alejandro Magno.",
     "falso": "La famosa Biblioteca de Alejandría estaba en Grecia, en la ciudad fundada por Alejandro Magno.",
-    "explicacion": "Alejandría está en la costa norte de Egipto. Allí estuvo su biblioteca, la más famosa del mundo antiguo."
+    "explicacion": "Alejandría está en la costa norte de Egipto. Allí estuvo su biblioteca, la más famosa del mundo antiguo.",
+    "foto": "old books library"
   },
   {
     "id": "historia-068",
@@ -525,7 +590,8 @@
     "icono": "🗻",
     "dato": "El monte Fuji, de unos 3776 m, es la montaña más alta de Japón.",
     "falso": "El monte Fuji, de unos 3776 m, es la segunda montaña más alta de Japón.",
-    "explicacion": "El Fuji es la cumbre más alta de Japón y uno de sus símbolos más conocidos."
+    "explicacion": "El Fuji es la cumbre más alta de Japón y uno de sus símbolos más conocidos.",
+    "foto": "mount fuji"
   },
   {
     "id": "historia-069",
@@ -533,7 +599,8 @@
     "icono": "🗣️",
     "dato": "Belice es el único país de Centroamérica cuyo idioma oficial es el inglés.",
     "falso": "Panamá es el único país de Centroamérica cuyo idioma oficial es el inglés.",
-    "explicacion": "El idioma oficial de Panamá es el español. Belice, antigua colonia británica, es el único país centroamericano con el inglés como oficial."
+    "explicacion": "El idioma oficial de Panamá es el español. Belice, antigua colonia británica, es el único país centroamericano con el inglés como oficial.",
+    "foto": "belize caribbean coast"
   },
   {
     "id": "historia-070",
@@ -541,7 +608,8 @@
     "icono": "🦒",
     "dato": "El Kilimanjaro, la montaña más alta de África con unos 5895 m, está en Tanzania.",
     "falso": "El Kilimanjaro, la montaña más alta de África con unos 5895 m, está en Kenia.",
-    "explicacion": "El Kilimanjaro se ve desde Kenia, pero está por completo dentro de Tanzania, cerca de la frontera."
+    "explicacion": "El Kilimanjaro se ve desde Kenia, pero está por completo dentro de Tanzania, cerca de la frontera.",
+    "foto": "kilimanjaro mountain"
   },
   {
     "id": "historia-071",
@@ -549,7 +617,8 @@
     "icono": "🏞️",
     "dato": "El río Danubio atraviesa o bordea 10 países, más que cualquier otro río del mundo.",
     "falso": "El río Danubio atraviesa o bordea solo 3 países de Europa.",
-    "explicacion": "El Danubio pasa por 10 países, de Alemania a Ucrania, y cruza cuatro capitales: Viena, Bratislava, Budapest y Belgrado."
+    "explicacion": "El Danubio pasa por 10 países, de Alemania a Ucrania, y cruza cuatro capitales: Viena, Bratislava, Budapest y Belgrado.",
+    "foto": "danube river budapest"
   },
   {
     "id": "historia-072",
@@ -557,7 +626,8 @@
     "icono": "🌊",
     "dato": "El océano Pacífico es el océano más grande del planeta.",
     "falso": "El océano Atlántico es el océano más grande del planeta.",
-    "explicacion": "El Atlántico es el segundo. El Pacífico ocupa cerca de un tercio de la superficie de la Tierra."
+    "explicacion": "El Atlántico es el segundo. El Pacífico ocupa cerca de un tercio de la superficie de la Tierra.",
+    "foto": "pacific ocean waves"
   },
   {
     "id": "historia-073",
@@ -565,7 +635,8 @@
     "icono": "🤿",
     "dato": "La fosa de las Marianas, en el océano Pacífico, tiene casi 11 000 m de profundidad.",
     "falso": "La fosa de las Marianas, en el océano Pacífico, tiene unos 3000 m de profundidad.",
-    "explicacion": "Su punto más hondo, el abismo Challenger, ronda los 11 000 m: si el Everest se hundiera allí, su cima no saldría del agua."
+    "explicacion": "Su punto más hondo, el abismo Challenger, ronda los 11 000 m: si el Everest se hundiera allí, su cima no saldría del agua.",
+    "foto": "deep ocean dive"
   },
   {
     "id": "historia-074",
@@ -573,7 +644,8 @@
     "icono": "🌋",
     "dato": "El Salvador es el país más pequeño de América Central continental.",
     "falso": "Belice es el país más pequeño de América Central continental.",
-    "explicacion": "Belice tiene unos 23 000 km² y El Salvador unos 21 000 km², así que el más pequeño es El Salvador."
+    "explicacion": "Belice tiene unos 23 000 km² y El Salvador unos 21 000 km², así que el más pequeño es El Salvador.",
+    "foto": "el salvador landscape"
   },
   {
     "id": "historia-075",
@@ -581,7 +653,8 @@
     "icono": "🚂",
     "dato": "El Transiberiano, entre Moscú y Vladivostok, recorre unos 9300 km: es la línea de tren más larga del mundo.",
     "falso": "El Transiberiano, entre Moscú y Vladivostok, recorre unos 3000 km de vías.",
-    "explicacion": "El Transiberiano cruza Rusia de oeste a este en unos 9300 km, más del triple de lo que dice la versión falsa."
+    "explicacion": "El Transiberiano cruza Rusia de oeste a este en unos 9300 km, más del triple de lo que dice la versión falsa.",
+    "foto": "train snowy landscape"
   },
   {
     "id": "historia-076",
@@ -589,7 +662,8 @@
     "icono": "🚇",
     "dato": "El metro de Londres, inaugurado en 1863, fue el primer ferrocarril subterráneo del mundo.",
     "falso": "El metro de Nueva York, inaugurado en 1863, fue el primer ferrocarril subterráneo del mundo.",
-    "explicacion": "El metro de Nueva York abrió en 1904. El primero del mundo fue el de Londres, en 1863."
+    "explicacion": "El metro de Nueva York abrió en 1904. El primero del mundo fue el de Londres, en 1863.",
+    "foto": "london underground train"
   },
   {
     "id": "historia-077",
@@ -597,7 +671,8 @@
     "icono": "🏙️",
     "dato": "El Burj Khalifa, en Dubái, mide unos 828 m y es el edificio más alto del mundo desde 2010.",
     "falso": "El Burj Khalifa, en Abu Dabi, mide unos 828 m y es el edificio más alto del mundo desde 2010.",
-    "explicacion": "El Burj Khalifa está en Dubái, no en Abu Dabi, aunque ambas ciudades son de los Emiratos Árabes Unidos."
+    "explicacion": "El Burj Khalifa está en Dubái, no en Abu Dabi, aunque ambas ciudades son de los Emiratos Árabes Unidos.",
+    "foto": "burj khalifa dubai"
   },
   {
     "id": "historia-079",
@@ -605,7 +680,8 @@
     "icono": "✒️",
     "dato": "El alfabeto coreano, el hangul, fue creado en el siglo XV por orden del rey Sejong.",
     "falso": "El alfabeto coreano, el hangul, fue creado en el siglo XX por orden del rey Sejong.",
-    "explicacion": "El rey Sejong el Grande presentó el hangul en el siglo XV (hacia 1443-1446), no en el siglo XX."
+    "explicacion": "El rey Sejong el Grande presentó el hangul en el siglo XV (hacia 1443-1446), no en el siglo XX.",
+    "foto": "seoul city street"
   },
   {
     "id": "historia-080",
@@ -613,7 +689,8 @@
     "icono": "💬",
     "dato": "El euskera, que se habla en el País Vasco, no tiene parentesco demostrado con ninguna otra lengua del mundo.",
     "falso": "El euskera, que se habla en el País Vasco, es una lengua derivada del latín, como el español.",
-    "explicacion": "El euskera es una lengua aislada: no viene del latín y es anterior a la llegada de los romanos a la península ibérica."
+    "explicacion": "El euskera es una lengua aislada: no viene del latín y es anterior a la llegada de los romanos a la península ibérica.",
+    "foto": "basque country coast"
   },
   {
     "id": "historia-081",
@@ -621,7 +698,8 @@
     "icono": "⛰️",
     "dato": "La ciudadela inca de Machu Picchu, en Perú, fue construida en el siglo XV.",
     "falso": "La ciudadela de Machu Picchu, en Perú, fue construida por los aztecas en el siglo XV.",
-    "explicacion": "Los aztecas vivían en el centro de México. Machu Picchu la construyeron los incas, probablemente bajo el inca Pachacútec."
+    "explicacion": "Los aztecas vivían en el centro de México. Machu Picchu la construyeron los incas, probablemente bajo el inca Pachacútec.",
+    "foto": "machu picchu"
   },
   {
     "id": "historia-082",
@@ -629,7 +707,8 @@
     "icono": "🧀",
     "dato": "Suiza tiene cuatro idiomas nacionales: alemán, francés, italiano y romanche.",
     "falso": "Suiza tiene un solo idioma nacional: el alemán.",
-    "explicacion": "El alemán es el más hablado, pero Suiza reconoce cuatro idiomas nacionales: alemán, francés, italiano y romanche."
+    "explicacion": "El alemán es el más hablado, pero Suiza reconoce cuatro idiomas nacionales: alemán, francés, italiano y romanche.",
+    "foto": "swiss alps village"
   },
   {
     "id": "historia-083",
@@ -637,7 +716,8 @@
     "icono": "🍇",
     "dato": "En España es tradición comer 12 uvas al ritmo de las campanadas de medianoche para recibir el Año Nuevo.",
     "falso": "En España es tradición comer 12 aceitunas al ritmo de las campanadas de medianoche para recibir el Año Nuevo.",
-    "explicacion": "La costumbre española es comer 12 uvas, una por cada campanada, para atraer la buena suerte en el año que empieza."
+    "explicacion": "La costumbre española es comer 12 uvas, una por cada campanada, para atraer la buena suerte en el año que empieza.",
+    "foto": "green grapes bowl"
   },
   {
     "id": "historia-084",
@@ -645,7 +725,8 @@
     "icono": "🗿",
     "dato": "En Rapa Nui, la isla de Pascua, que pertenece a Chile, hay cerca de 900 estatuas moái.",
     "falso": "En Rapa Nui, la isla de Pascua, que pertenece a Perú, hay cerca de 900 estatuas moái.",
-    "explicacion": "Rapa Nui es territorio de Chile desde 1888. Sus moáis fueron tallados por el pueblo rapanui hace siglos."
+    "explicacion": "Rapa Nui es territorio de Chile desde 1888. Sus moáis fueron tallados por el pueblo rapanui hace siglos.",
+    "foto": "easter island moai"
   },
   {
     "id": "historia-085",
@@ -653,7 +734,8 @@
     "icono": "🦄",
     "dato": "El animal nacional de Escocia es el unicornio.",
     "falso": "El animal nacional de Escocia es el oso pardo.",
-    "explicacion": "Escocia eligió como símbolo al unicornio, un animal mítico que aparece en su escudo real desde hace siglos."
+    "explicacion": "Escocia eligió como símbolo al unicornio, un animal mítico que aparece en su escudo real desde hace siglos.",
+    "foto": "scotland highlands castle"
   },
   {
     "id": "historia-086",
@@ -661,7 +743,8 @@
     "icono": "☕",
     "dato": "El café arábica es originario de Etiopía, en el este de África.",
     "falso": "El café arábica es originario de Colombia, en Sudamérica.",
-    "explicacion": "Colombia es un gran productor, pero el café arábica viene de las tierras altas de Etiopía; llegó a América en el siglo XVIII."
+    "explicacion": "Colombia es un gran productor, pero el café arábica viene de las tierras altas de Etiopía; llegó a América en el siglo XVIII.",
+    "foto": "coffee plant beans"
   },
   {
     "id": "historia-088",
@@ -669,7 +752,8 @@
     "icono": "⛏️",
     "dato": "El ejército de terracota de China, con miles de figuras de tamaño real, fue descubierto por unos campesinos en 1974.",
     "falso": "El ejército de terracota de China, con miles de figuras de tamaño real, fue descubierto por unos campesinos en 1874.",
-    "explicacion": "Unos campesinos que cavaban un pozo cerca de Xi'an lo encontraron en 1974, cien años después de la fecha falsa."
+    "explicacion": "Unos campesinos que cavaban un pozo cerca de Xi'an lo encontraron en 1974, cien años después de la fecha falsa.",
+    "foto": "terracotta warriors"
   },
   {
     "id": "historia-089",
@@ -677,7 +761,8 @@
     "icono": "🧂",
     "dato": "El salar de Uyuni, en Bolivia, es el desierto de sal más grande del mundo, con más de 10 000 km².",
     "falso": "El salar de Uyuni, en Chile, es el desierto de sal más grande del mundo, con más de 10 000 km².",
-    "explicacion": "El salar de Uyuni está en el suroeste de Bolivia, en el altiplano, no en Chile."
+    "explicacion": "El salar de Uyuni está en el suroeste de Bolivia, en el altiplano, no en Chile.",
+    "foto": "salt flat reflection"
   },
   {
     "id": "historia-090",
@@ -685,6 +770,7 @@
     "icono": "🌍",
     "dato": "África tiene 54 países reconocidos por la ONU, más que cualquier otro continente.",
     "falso": "África tiene 24 países reconocidos por la ONU, menos que Europa.",
-    "explicacion": "África tiene 54 países miembros de la ONU, el mayor número de cualquier continente; Europa tiene unos 44."
+    "explicacion": "África tiene 54 países miembros de la ONU, el mayor número de cualquier continente; Europa tiene unos 44.",
+    "foto": "africa map globe"
   }
 ]

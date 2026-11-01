@@ -117,6 +117,8 @@ jobs:
       # Página de Facebook (opcional): Reel publicado con la misma descripción
       FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
       FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      # Fotos y videos reales de Pixabay para los Reels (opcional: sin la clave, fondo de color)
+      PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
     steps:
       - uses: actions/checkout@v4
 

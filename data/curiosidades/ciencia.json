@@ -1,92 +1,812 @@
 [
-  { "id": "ciencia-001", "tema": "ciencia", "icono": "🪐", "dato": "Saturno es tan poco denso que su densidad media es menor que la del agua.", "falso": "Júpiter es tan poco denso que su densidad media es menor que la del agua.", "explicacion": "Júpiter tiene una densidad de unos 1,3 g/cm³, mayor que la del agua. El único planeta menos denso que el agua es Saturno (unos 0,7 g/cm³)." },
-  { "id": "ciencia-002", "tema": "ciencia", "icono": "🌞", "dato": "La luz del Sol tarda unos 8 minutos en llegar a la Tierra.", "falso": "La luz del Sol tarda unos 8 segundos en llegar a la Tierra.", "explicacion": "El Sol está a unos 150 millones de km; a la velocidad de la luz, ese viaje toma cerca de 8 minutos y 20 segundos, no segundos." },
-  { "id": "ciencia-003", "tema": "ciencia", "icono": "🌕", "dato": "La Luna se aleja de la Tierra unos 3,8 cm cada año.", "falso": "La Luna se acerca a la Tierra unos 3,8 cm cada año.", "explicacion": "Las mediciones con láser muestran que la Luna se aleja, no se acerca, unos 3,8 cm por año por efecto de las mareas." },
-  { "id": "ciencia-004", "tema": "ciencia", "icono": "⏳", "dato": "Venus tarda más en girar sobre su eje, unos 243 días, que en dar una vuelta al Sol, unos 225 días.", "falso": "Marte tarda más en girar sobre su eje que en dar una vuelta al Sol.", "explicacion": "Marte gira sobre sí mismo en unas 24,6 horas y tarda unos 687 días en rodear el Sol. El caso raro es Venus." },
-  { "id": "ciencia-005", "tema": "ciencia", "icono": "🔥", "dato": "Venus es el planeta más caliente del sistema solar, con unos 465 °C, aunque Mercurio está más cerca del Sol.", "falso": "Mercurio es el planeta más caliente del sistema solar porque es el más cercano al Sol.", "explicacion": "Mercurio llega a unos 430 °C de día, pero Venus, con su densa atmósfera de dióxido de carbono, ronda los 465 °C día y noche." },
-  { "id": "ciencia-006", "tema": "ciencia", "icono": "🔴", "dato": "En Marte está el Monte Olimpo, un volcán de unos 22 km de altura: unas 2,5 veces el Everest.", "falso": "En Venus está el Monte Olimpo, un volcán de unos 22 km de altura: unas 2,5 veces el Everest.", "explicacion": "El Monte Olimpo está en Marte, no en Venus. Es un enorme volcán en escudo de unos 22 km de altura." },
-  { "id": "ciencia-007", "tema": "ciencia", "icono": "🌀", "dato": "La Gran Mancha Roja de Júpiter es una tormenta más ancha que la Tierra, observada desde hace más de 150 años.", "falso": "La Gran Mancha Roja de Saturno es una tormenta más ancha que la Tierra, observada desde hace más de 150 años.", "explicacion": "La Gran Mancha Roja está en Júpiter, no en Saturno. Es un gigantesco anticiclón que se observa desde el siglo XIX." },
-  { "id": "ciencia-008", "tema": "ciencia", "icono": "🌍", "dato": "La Tierra no es una esfera perfecta: es un poco más ancha en el ecuador que de polo a polo.", "falso": "La Tierra no es una esfera perfecta: es un poco más ancha de polo a polo que en el ecuador.", "explicacion": "Al girar, la Tierra se achata en los polos: su diámetro en el ecuador supera al de polo a polo en unos 43 km." },
-  { "id": "ciencia-009", "tema": "ciencia", "icono": "🔄", "dato": "Urano gira prácticamente acostado: su eje está inclinado unos 98°.", "falso": "Neptuno gira prácticamente acostado: su eje está inclinado unos 98°.", "explicacion": "Neptuno tiene una inclinación de unos 28°, parecida a la de la Tierra (23°). El que gira de lado es Urano." },
-  { "id": "ciencia-010", "tema": "ciencia", "icono": "💨", "dato": "Neptuno tiene los vientos más rápidos medidos en el sistema solar: hasta unos 2000 km/h.", "falso": "Mercurio tiene los vientos más rápidos medidos en el sistema solar: hasta unos 2000 km/h.", "explicacion": "Mercurio casi no tiene atmósfera, así que no tiene vientos de ese tipo. El récord es de Neptuno, con unos 2000 km/h." },
-  { "id": "ciencia-011", "tema": "ciencia", "icono": "⭐", "dato": "Después del Sol, la estrella más cercana a la Tierra es Próxima Centauri, a unos 4,2 años luz.", "falso": "Después del Sol, la estrella más cercana a la Tierra es Sirio, a unos 4,2 años luz.", "explicacion": "Sirio es la estrella más brillante del cielo nocturno, pero está a unos 8,6 años luz. La más cercana es Próxima Centauri." },
-  { "id": "ciencia-012", "tema": "ciencia", "icono": "🌌", "dato": "Se calcula que la Vía Láctea tiene más de 100 000 millones de estrellas.", "falso": "Se calcula que la Vía Láctea tiene unas 100 000 estrellas.", "explicacion": "Las estimaciones van de unos 100 000 a 400 000 millones de estrellas en nuestra galaxia, no apenas 100 000." },
-  { "id": "ciencia-013", "tema": "ciencia", "icono": "⚫", "dato": "Un agujero negro atrae con tanta fuerza que ni la luz puede escapar después de cruzar su horizonte de sucesos.", "falso": "La luz puede escapar de un agujero negro aunque haya cruzado su horizonte de sucesos.", "explicacion": "Una vez cruzado el horizonte de sucesos, nada sale, ni siquiera la luz. Por eso los agujeros negros no se ven directamente." },
-  { "id": "ciencia-014", "tema": "ciencia", "icono": "🌗", "dato": "Siempre vemos la misma cara de la Luna porque tarda lo mismo en girar sobre sí misma que en rodear la Tierra.", "falso": "Siempre vemos la misma cara de la Luna porque la Luna no gira sobre sí misma.", "explicacion": "La Luna sí rota: tarda unos 27 días en girar sobre sí misma, justo lo mismo que en dar la vuelta a la Tierra." },
-  { "id": "ciencia-015", "tema": "ciencia", "icono": "🚀", "dato": "Entre 1969 y 1972, 12 astronautas caminaron sobre la Luna en seis misiones Apolo.", "falso": "Entre 1969 y 1972, 24 astronautas caminaron sobre la Luna en seis misiones Apolo.", "explicacion": "24 astronautas viajaron hacia la Luna con el programa Apolo, pero solo 12 bajaron y caminaron sobre ella." },
-  { "id": "ciencia-016", "tema": "ciencia", "icono": "🌞", "dato": "El Sol reúne cerca del 99,8 % de toda la masa del sistema solar.", "falso": "El Sol reúne cerca del 50 % de toda la masa del sistema solar.", "explicacion": "Planetas, lunas y asteroides juntos apenas suman un 0,2 %. El Sol tiene cerca del 99,8 % de la masa del sistema solar." },
-  { "id": "ciencia-017", "tema": "ciencia", "icono": "🔆", "dato": "Dentro del Sol cabrían cerca de 1,3 millones de planetas como la Tierra.", "falso": "Dentro del Sol cabrían cerca de 1300 planetas como la Tierra.", "explicacion": "El volumen del Sol es unas 1,3 millones de veces el de la Tierra: mil veces más de lo que dice esa cifra." },
-  { "id": "ciencia-018", "tema": "ciencia", "icono": "🪐", "dato": "Júpiter tiene más del doble de masa que todos los demás planetas del sistema solar juntos.", "falso": "Saturno tiene más del doble de masa que todos los demás planetas del sistema solar juntos.", "explicacion": "Saturno tiene menos de un tercio de la masa de Júpiter. El que supera a todos los demás planetas juntos es Júpiter." },
-  { "id": "ciencia-019", "tema": "ciencia", "icono": "🧊", "dato": "Los anillos de Saturno están formados sobre todo por trozos de hielo de agua.", "falso": "Los anillos de Saturno están formados sobre todo por trozos de hierro.", "explicacion": "Más del 90 % del material de los anillos de Saturno es hielo de agua, con algo de polvo y roca; no son de hierro." },
-  { "id": "ciencia-020", "tema": "ciencia", "icono": "🌙", "dato": "Ganímedes, una luna de Júpiter, es más grande que el planeta Mercurio.", "falso": "Europa, una luna de Júpiter, es más grande que el planeta Mercurio.", "explicacion": "Europa mide unos 3100 km de diámetro y Mercurio unos 4900 km. La luna que supera a Mercurio es Ganímedes, con unos 5300 km." },
-  { "id": "ciencia-021", "tema": "ciencia", "icono": "🌋", "dato": "Ío, una luna de Júpiter, es el cuerpo con más actividad volcánica conocido del sistema solar.", "falso": "Titán, una luna de Saturno, es el cuerpo con más actividad volcánica conocido del sistema solar.", "explicacion": "Titán es famoso por sus lagos de metano, no por volcanes de lava. El récord lo tiene Ío, con cientos de volcanes activos." },
-  { "id": "ciencia-022", "tema": "ciencia", "icono": "🌊", "dato": "Titán, la mayor luna de Saturno, tiene lagos y mares de metano y etano líquidos en su superficie.", "falso": "Titán, la mayor luna de Saturno, tiene lagos y mares de agua líquida en su superficie.", "explicacion": "En la superficie de Titán hace unos −180 °C y el agua está congelada. Sus lagos y mares son de metano y etano." },
-  { "id": "ciencia-023", "tema": "ciencia", "icono": "💧", "dato": "Encélado, una luna de Saturno, lanza al espacio chorros de vapor de agua y hielo.", "falso": "Fobos, una luna de Marte, lanza al espacio chorros de vapor de agua y hielo.", "explicacion": "Fobos es una roca seca sin actividad. Los géiseres de agua los descubrió la sonda Cassini en Encélado, luna de Saturno." },
-  { "id": "ciencia-024", "tema": "ciencia", "icono": "🔴", "dato": "Marte tiene dos lunas pequeñas y de forma irregular: Fobos y Deimos.", "falso": "Marte tiene cuatro lunas pequeñas y de forma irregular.", "explicacion": "Marte tiene solo dos lunas, Fobos y Deimos, descubiertas en 1877. Parecen asteroides por su forma irregular." },
-  { "id": "ciencia-025", "tema": "ciencia", "icono": "🟠", "dato": "Marte se ve rojo porque su polvo y sus rocas tienen mucho óxido de hierro.", "falso": "Marte se ve rojo porque su superficie está cubierta de lava ardiente.", "explicacion": "La superficie de Marte es fría, con un promedio de unos −60 °C. Su color viene del óxido de hierro, parecido a la herrumbre." },
-  { "id": "ciencia-026", "tema": "ciencia", "icono": "❄️", "dato": "Los casquetes polares de Marte tienen hielo de agua y hielo de dióxido de carbono.", "falso": "Los casquetes polares de Marte están hechos solo de hielo de metano.", "explicacion": "Los casquetes de Marte combinan hielo de agua y hielo seco (dióxido de carbono congelado); no son de metano." },
-  { "id": "ciencia-027", "tema": "ciencia", "icono": "📅", "dato": "Un año en Mercurio dura unos 88 días terrestres.", "falso": "Un año en Mercurio dura unos 365 días terrestres, igual que en la Tierra.", "explicacion": "Mercurio es el planeta más cercano al Sol y el más rápido: completa su órbita en unos 88 días terrestres." },
-  { "id": "ciencia-028", "tema": "ciencia", "icono": "🔵", "dato": "Neptuno tarda unos 165 años terrestres en dar una vuelta completa al Sol.", "falso": "Neptuno tarda unos 16 años terrestres en dar una vuelta completa al Sol.", "explicacion": "Neptuno está unas 30 veces más lejos del Sol que la Tierra y su órbita le toma unos 165 años, no 16." },
-  { "id": "ciencia-029", "tema": "ciencia", "icono": "🧮", "dato": "Neptuno fue el primer planeta descubierto gracias a cálculos matemáticos, en 1846.", "falso": "Urano fue el primer planeta descubierto gracias a cálculos matemáticos, en 1846.", "explicacion": "Urano lo encontró William Herschel con un telescopio en 1781. Neptuno se halló en 1846 donde lo predecían los cálculos." },
-  { "id": "ciencia-030", "tema": "ciencia", "icono": "🏷️", "dato": "Plutón dejó de considerarse planeta en 2006 y hoy se clasifica como planeta enano.", "falso": "Plutón dejó de considerarse planeta en 1996 y hoy se clasifica como planeta enano.", "explicacion": "La Unión Astronómica Internacional reclasificó a Plutón como planeta enano en agosto de 2006, no en 1996." },
-  { "id": "ciencia-031", "tema": "ciencia", "icono": "☄️", "dato": "El cometa Halley se acerca al Sol cada 75 o 76 años; su próxima visita será en 2061.", "falso": "El cometa Halley se acerca al Sol cada 7 años; su próxima visita será en 2061.", "explicacion": "La órbita del Halley dura unos 76 años. Pasó en 1986 y volverá a verse desde la Tierra hacia 2061." },
-  { "id": "ciencia-032", "tema": "ciencia", "icono": "🌠", "dato": "Las estrellas fugaces no son estrellas: son granos de polvo o roca que arden al entrar en la atmósfera.", "falso": "Las estrellas fugaces son estrellas lejanas que se apagan y caen.", "explicacion": "Son meteoros: pedacitos del espacio, a menudo del tamaño de un grano de arena, que se queman a gran velocidad en el aire." },
-  { "id": "ciencia-033", "tema": "ciencia", "icono": "🛰️", "dato": "La Estación Espacial Internacional da una vuelta completa a la Tierra en unos 90 minutos.", "falso": "La Estación Espacial Internacional da una vuelta completa a la Tierra en unas 24 horas.", "explicacion": "La estación viaja a unos 28 000 km/h y completa unas 16 vueltas al día: una cada 90 minutos, más o menos." },
-  { "id": "ciencia-034", "tema": "ciencia", "icono": "🌌", "dato": "La galaxia de Andrómeda se ve a simple vista en cielos oscuros y está a unos 2,5 millones de años luz.", "falso": "La galaxia de Andrómeda se ve a simple vista en cielos oscuros y está a unos 2500 años luz.", "explicacion": "2500 años luz ni siquiera nos sacaría de la Vía Láctea. Andrómeda está a unos 2,5 millones de años luz." },
-  { "id": "ciencia-035", "tema": "ciencia", "icono": "✨", "dato": "Al mirar las estrellas vemos el pasado: su luz salió de ellas hace años, siglos o más.", "falso": "La luz de las estrellas llega a la Tierra al instante, así que las vemos tal como son hoy.", "explicacion": "La luz tarda en viajar: la de Próxima Centauri tarda unos 4 años y la de otras estrellas, siglos o milenios." },
-  { "id": "ciencia-036", "tema": "ciencia", "icono": "🌟", "dato": "El color de una estrella revela su temperatura: las azules son más calientes que las rojas.", "falso": "El color de una estrella revela su temperatura: las rojas son más calientes que las azules.", "explicacion": "Es al revés: las estrellas rojas rondan los 3000 °C en su superficie y las azules pueden superar los 20 000 °C." },
-  { "id": "ciencia-037", "tema": "ciencia", "icono": "🌞", "dato": "El Sol se formó hace unos 4600 millones de años.", "falso": "El Sol se formó hace unos 46 millones de años.", "explicacion": "Hace 46 millones de años ya había mamíferos en la Tierra. El Sol y los planetas se formaron hace unos 4600 millones de años." },
-  { "id": "ciencia-038", "tema": "ciencia", "icono": "🌡️", "dato": "La temperatura en el núcleo del Sol ronda los 15 millones de °C.", "falso": "La temperatura en el núcleo del Sol ronda los 15 000 °C.", "explicacion": "La superficie del Sol está a unos 5500 °C, pero en el núcleo, donde ocurre la fusión nuclear, hay cerca de 15 millones de °C." },
-  { "id": "ciencia-039", "tema": "ciencia", "icono": "👑", "dato": "La corona, la capa más externa del Sol, supera el millón de °C: mucho más que su superficie.", "falso": "La corona, la capa más externa del Sol, es su parte más fría: está a unos 1000 °C.", "explicacion": "La corona supera el millón de grados, mientras la superficie ronda los 5500 °C. Por qué está tan caliente aún se investiga." },
-  { "id": "ciencia-040", "tema": "ciencia", "icono": "🌈", "dato": "Isaac Newton mostró con un prisma que la luz blanca del Sol contiene todos los colores del arcoíris.", "falso": "Galileo Galilei mostró con un prisma que la luz blanca del Sol contiene todos los colores del arcoíris.", "explicacion": "Fue Isaac Newton quien, hacia 1666, separó la luz blanca con un prisma y demostró que está hecha de todos los colores." },
-  { "id": "ciencia-041", "tema": "ciencia", "icono": "🌤️", "dato": "El cielo se ve azul porque el aire dispersa la luz azul del Sol mucho más que la roja.", "falso": "El cielo se ve azul porque refleja el color de los océanos.", "explicacion": "El azul viene de la dispersión de Rayleigh: las moléculas del aire desvían más la luz azul. El mar no tiene nada que ver." },
-  { "id": "ciencia-042", "tema": "ciencia", "icono": "🌅", "dato": "En Marte los atardeceres se ven azulados, al revés que en la Tierra.", "falso": "En Marte los atardeceres se ven verdes, al revés que en la Tierra.", "explicacion": "Los robots de la NASA han fotografiado atardeceres azulados en Marte: su polvo fino deja pasar más luz azul cerca del Sol." },
-  { "id": "ciencia-043", "tema": "ciencia", "icono": "💡", "dato": "La luz viaja a cerca de 300 000 km por segundo en el vacío.", "falso": "La luz viaja a cerca de 300 000 km por hora en el vacío.", "explicacion": "La velocidad de la luz en el vacío es de unos 299 792 km por segundo, no por hora: le daría más de 7 vueltas a la Tierra en un segundo." },
-  { "id": "ciencia-044", "tema": "ciencia", "icono": "⚡", "dato": "Un rayo puede calentar el aire hasta unos 30 000 °C, unas cinco veces más que la superficie del Sol.", "falso": "Un rayo puede calentar el aire hasta unos 300 °C, como un horno de cocina.", "explicacion": "En una fracción de segundo, el canal de un rayo llega a unos 30 000 °C. Ese calentamiento brusco del aire produce el trueno." },
-  { "id": "ciencia-045", "tema": "ciencia", "icono": "🐋", "dato": "El sonido viaja unas cuatro veces más rápido en el agua que en el aire.", "falso": "El sonido viaja unas cuatro veces más rápido en el aire que en el agua.", "explicacion": "En el aire el sonido va a unos 340 m/s y en el agua a unos 1500 m/s: en el agua es más rápido, no al revés." },
-  { "id": "ciencia-046", "tema": "ciencia", "icono": "🔇", "dato": "En el espacio no hay sonido: sin aire ni otro medio que vibre, el sonido no puede viajar.", "falso": "En el espacio el sonido viaja más rápido que en la Tierra porque no hay aire que lo frene.", "explicacion": "El sonido es una vibración que necesita un medio, como aire o agua. En el vacío del espacio no se propaga." },
-  { "id": "ciencia-047", "tema": "ciencia", "icono": "🌩️", "dato": "Vemos el relámpago antes de oír el trueno porque la luz viaja muchísimo más rápido que el sonido.", "falso": "Vemos el relámpago antes de oír el trueno porque el trueno se produce varios segundos después del rayo.", "explicacion": "El trueno nace al mismo tiempo que el rayo; llega después porque el sonido va a unos 340 m/s y la luz a unos 300 000 km/s." },
-  { "id": "ciencia-048", "tema": "ciencia", "icono": "👂", "dato": "El oído humano capta sonidos de entre unas 20 y 20 000 vibraciones por segundo (hercios).", "falso": "El oído humano capta sonidos de entre unas 20 y 200 000 vibraciones por segundo (hercios).", "explicacion": "Por encima de unos 20 000 Hz están los ultrasonidos, que oyen murciélagos o delfines, pero no las personas." },
-  { "id": "ciencia-049", "tema": "ciencia", "icono": "🧊", "dato": "El hielo flota porque es menos denso que el agua líquida, algo poco común en otras sustancias.", "falso": "El hielo flota porque es más denso que el agua líquida.", "explicacion": "Si el hielo fuera más denso se hundiría. Flota porque al congelarse el agua forma una red que ocupa más espacio." },
-  { "id": "ciencia-050", "tema": "ciencia", "icono": "🍾", "dato": "El agua aumenta cerca de un 9 % su volumen al congelarse; por eso puede reventar botellas.", "falso": "El agua reduce cerca de un 9 % su volumen al congelarse.", "explicacion": "Al congelarse, el agua se expande cerca de un 9 %. Por eso una botella llena de agua puede romperse en el congelador." },
-  { "id": "ciencia-051", "tema": "ciencia", "icono": "🪙", "dato": "El oro es tan maleable que un solo gramo puede extenderse en una lámina de cerca de 1 m².", "falso": "El oro es tan maleable que un solo gramo puede extenderse en una lámina de cerca de 1 km².", "explicacion": "Un gramo de oro se puede batir hasta una lámina finísima de alrededor de 1 m², pero no de 1 km², que es un millón de veces más." },
-  { "id": "ciencia-052", "tema": "ciencia", "icono": "💎", "dato": "El diamante y la mina de grafito de un lápiz están hechos del mismo elemento: el carbono.", "falso": "El diamante y la mina de grafito de un lápiz están hechos del mismo elemento: el silicio.", "explicacion": "Ambos son carbono puro; cambian por cómo se ordenan sus átomos. El silicio forma la arena y los chips, no el diamante." },
-  { "id": "ciencia-053", "tema": "ciencia", "icono": "🎈", "dato": "El helio se descubrió primero en el Sol, en 1868, al estudiar su luz, y años después en la Tierra.", "falso": "El helio se descubrió primero en la Luna, en 1868, al estudiar su luz, y años después en la Tierra.", "explicacion": "Su nombre viene de Helios, el Sol en griego: se detectó en la luz solar durante un eclipse y en la Tierra se halló en 1895." },
-  { "id": "ciencia-054", "tema": "ciencia", "icono": "🔬", "dato": "El núcleo de un átomo es decenas de miles de veces más pequeño que el átomo completo.", "falso": "El núcleo de un átomo ocupa cerca de la mitad del tamaño del átomo completo.", "explicacion": "Casi todo el átomo es espacio vacío alrededor de un núcleo diminuto, aunque ese núcleo concentra más del 99,9 % de su masa." },
-  { "id": "ciencia-055", "tema": "ciencia", "icono": "🧲", "dato": "La Tierra actúa como un imán gigante gracias al hierro líquido que se mueve en su núcleo externo.", "falso": "La Tierra actúa como un imán gigante gracias al hierro líquido que se mueve en su núcleo interno.", "explicacion": "El núcleo interno de la Tierra es sólido. El campo magnético se genera por el movimiento del hierro líquido del núcleo externo." },
-  { "id": "ciencia-056", "tema": "ciencia", "icono": "🧭", "dato": "Los polos magnéticos de la Tierra se han invertido cientos de veces a lo largo de su historia.", "falso": "Los polos magnéticos de la Tierra nunca se han invertido desde que se formó el planeta.", "explicacion": "Las rocas guardan la huella del campo magnético y muestran cientos de inversiones; la última fue hace unos 780 000 años." },
-  { "id": "ciencia-057", "tema": "ciencia", "icono": "🥶", "dato": "El cero absoluto, la temperatura más baja posible, equivale a unos −273 °C.", "falso": "El cero absoluto, la temperatura más baja posible, equivale a unos −100 °C.", "explicacion": "El cero absoluto es −273,15 °C (0 kelvin). En la Antártida se han medido casi −90 °C, así que −100 °C no es el límite." },
-  { "id": "ciencia-058", "tema": "ciencia", "icono": "🌕", "dato": "En la Luna pesarías cerca de una sexta parte de lo que pesas en la Tierra.", "falso": "En la Luna pesarías cerca del doble de lo que pesas en la Tierra.", "explicacion": "La gravedad de la Luna es cerca de un sexto de la terrestre: quien pesa 60 kg en la Tierra marcaría unos 10 kg allá." },
-  { "id": "ciencia-059", "tema": "ciencia", "icono": "🪐", "dato": "Si pudieras pararte en las nubes de Júpiter, pesarías unas 2,5 veces más que en la Tierra.", "falso": "Si pudieras pararte en las nubes de Júpiter, pesarías la mitad que en la Tierra.", "explicacion": "Júpiter tiene unas 318 veces la masa de la Tierra; en la parte alta de sus nubes la gravedad es unas 2,5 veces la nuestra." },
-  { "id": "ciencia-060", "tema": "ciencia", "icono": "🪶", "dato": "En la Luna, un astronauta soltó un martillo y una pluma en 1971 y ambos cayeron a la vez.", "falso": "En la Luna, un astronauta soltó un martillo y una pluma en 1971 y el martillo cayó primero.", "explicacion": "Sin aire que frene la pluma, todo cae con la misma aceleración. Lo demostró David Scott en la misión Apolo 15." },
-  { "id": "ciencia-061", "tema": "ciencia", "icono": "🔭", "dato": "El telescopio espacial James Webb observa el universo sobre todo en luz infrarroja.", "falso": "El telescopio espacial James Webb observa el universo sobre todo en luz ultravioleta.", "explicacion": "El Webb está diseñado para el infrarrojo, que atraviesa el polvo cósmico y deja ver galaxias muy lejanas y antiguas." },
-  { "id": "ciencia-062", "tema": "ciencia", "icono": "💙", "dato": "El oxígeno líquido es de color azul claro.", "falso": "El oxígeno líquido es de color rojo intenso.", "explicacion": "El oxígeno, que es incoloro como gas, se vuelve un líquido azul pálido por debajo de unos −183 °C." },
-  { "id": "ciencia-063", "tema": "ciencia", "icono": "🧂", "dato": "La sal de mesa se forma con sodio, un metal muy reactivo, y cloro, un gas tóxico.", "falso": "La sal de mesa se forma con sodio, un metal muy reactivo, y flúor, un gas tóxico.", "explicacion": "La sal común es cloruro de sodio (NaCl): sodio y cloro. El flúor forma otros compuestos, como los fluoruros." },
-  { "id": "ciencia-064", "tema": "ciencia", "icono": "📡", "dato": "La sonda Voyager 1, lanzada en 1977, es el objeto hecho por humanos más lejano: está a más de 20 000 millones de km.", "falso": "La sonda Voyager 2, lanzada en 1977, es el objeto hecho por humanos más lejano: está a más de 20 000 millones de km.", "explicacion": "La Voyager 2 también está muy lejos, pero la Voyager 1 viaja más rápido y es la que está más lejos de la Tierra." },
-  { "id": "ciencia-065", "tema": "ciencia", "icono": "🧪", "dato": "El mercurio es un metal que se mantiene líquido incluso a −30 °C.", "falso": "El hierro es un metal que se mantiene líquido incluso a −30 °C.", "explicacion": "El hierro se funde a unos 1538 °C. El mercurio, en cambio, sigue líquido hasta unos −39 °C, cuando se congela." },
-  { "id": "ciencia-066", "tema": "ciencia", "icono": "🌑", "dato": "Un eclipse de Sol solo puede ocurrir en luna nueva.", "falso": "Un eclipse de Sol solo puede ocurrir en luna llena.", "explicacion": "En un eclipse solar la Luna pasa entre el Sol y la Tierra, y eso solo sucede en luna nueva. En luna llena hay eclipses de Luna." },
-  { "id": "ciencia-067", "tema": "ciencia", "icono": "⚗️", "dato": "Hoy la tabla periódica tiene 118 elementos químicos confirmados.", "falso": "Hoy la tabla periódica tiene 92 elementos químicos confirmados.", "explicacion": "Hay 118 elementos confirmados. Unos 90 se encuentran en la naturaleza y el resto se ha creado en laboratorios." },
-  { "id": "ciencia-068", "tema": "ciencia", "icono": "💫", "dato": "El hidrógeno es el elemento más abundante del universo: forma cerca de tres cuartas partes de la materia común.", "falso": "El oxígeno es el elemento más abundante del universo: forma cerca de tres cuartas partes de la materia común.", "explicacion": "El oxígeno ocupa el tercer lugar. El hidrógeno forma cerca del 74 % de la materia común y el helio casi todo el resto." },
-  { "id": "ciencia-069", "tema": "ciencia", "icono": "🪨", "dato": "El oxígeno es el elemento más abundante de la corteza terrestre: cerca de la mitad de su masa.", "falso": "El hierro es el elemento más abundante de la corteza terrestre: cerca de la mitad de su masa.", "explicacion": "En la corteza, el hierro es solo un 5 %. El oxígeno, unido al silicio y otros elementos en las rocas, ronda el 46 %." },
-  { "id": "ciencia-070", "tema": "ciencia", "icono": "🌬️", "dato": "El aire que respiramos es cerca de un 78 % nitrógeno y solo un 21 % oxígeno.", "falso": "El aire que respiramos es cerca de un 78 % oxígeno y solo un 21 % nitrógeno.", "explicacion": "Es al revés: el gas más abundante del aire es el nitrógeno (78 %), seguido del oxígeno (21 %) y un poco de argón." },
-  { "id": "ciencia-071", "tema": "ciencia", "icono": "👶", "dato": "Un bebé nace con más huesos que un adulto: muchos se fusionan al crecer hasta quedar en 206.", "falso": "Un bebé nace con menos huesos que un adulto: se van formando nuevos hasta llegar a 206.", "explicacion": "Los recién nacidos tienen bastante más de 206 huesos, muchos aún en parte de cartílago. Al crecer, varios se unen y quedan 206." },
-  { "id": "ciencia-072", "tema": "ciencia", "icono": "👂", "dato": "El hueso más pequeño del cuerpo humano es el estribo, en el oído, de apenas unos 3 mm.", "falso": "El hueso más pequeño del cuerpo humano está en el dedo meñique del pie y mide unos 3 mm.", "explicacion": "El hueso más pequeño es el estribo, dentro del oído medio, y ayuda a transmitir el sonido. Los del meñique son más grandes." },
-  { "id": "ciencia-073", "tema": "ciencia", "icono": "🦴", "dato": "El fémur, el hueso del muslo, es el más largo y fuerte del cuerpo humano.", "falso": "La tibia, en la pierna, es el hueso más largo y fuerte del cuerpo humano.", "explicacion": "La tibia es el segundo hueso más largo. El primero es el fémur, que mide cerca de un cuarto de la estatura de una persona." },
-  { "id": "ciencia-074", "tema": "ciencia", "icono": "🫀", "dato": "El corazón de un adulto late unas 100 000 veces al día.", "falso": "El corazón de un adulto late unas 10 000 veces al día.", "explicacion": "A unos 70 latidos por minuto, el corazón suma cerca de 100 000 latidos diarios: unas diez veces más que esa cifra." },
-  { "id": "ciencia-075", "tema": "ciencia", "icono": "🩸", "dato": "Un glóbulo rojo vive unos 120 días antes de que el cuerpo lo reemplace.", "falso": "Un glóbulo rojo vive unos 12 años antes de que el cuerpo lo reemplace.", "explicacion": "Los glóbulos rojos duran unos cuatro meses. El cuerpo fabrica millones nuevos cada segundo en la médula ósea." },
-  { "id": "ciencia-076", "tema": "ciencia", "icono": "🧬", "dato": "Si se estirara el ADN de una sola célula humana, mediría cerca de 2 metros.", "falso": "Si se estirara el ADN de una sola célula humana, mediría cerca de 2 milímetros.", "explicacion": "El ADN de cada célula mide cerca de 2 m, pero está tan enrollado que cabe en un núcleo de pocas milésimas de milímetro." },
-  { "id": "ciencia-077", "tema": "ciencia", "icono": "🤝", "dato": "Dos personas cualesquiera comparten cerca del 99,9 % de su ADN.", "falso": "Dos personas cualesquiera comparten cerca del 50 % de su ADN.", "explicacion": "Las diferencias en el ADN entre dos personas son muy pequeñas, de apenas un 0,1 %. Por eso compartimos cerca del 99,9 %." },
-  { "id": "ciencia-078", "tema": "ciencia", "icono": "🧬", "dato": "La molécula de ADN tiene forma de doble hélice, como una escalera retorcida.", "falso": "La molécula de ADN tiene forma de triple hélice, como una escalera retorcida.", "explicacion": "El ADN tiene dos cadenas enrolladas. Su estructura se describió en 1953 gracias a Watson, Crick, Franklin y Wilkins." },
-  { "id": "ciencia-079", "tema": "ciencia", "icono": "🔤", "dato": "El ADN guarda la información con solo cuatro «letras» químicas: A, T, C y G.", "falso": "El ADN guarda la información con cinco «letras» químicas: A, T, C, G y U.", "explicacion": "La U (uracilo) aparece en el ARN, no en el ADN. El ADN usa adenina, timina, citosina y guanina." },
-  { "id": "ciencia-080", "tema": "ciencia", "icono": "🧠", "dato": "El cerebro pesa cerca del 2 % del cuerpo, pero consume cerca del 20 % de su energía.", "falso": "El cerebro pesa cerca del 2 % del cuerpo y consume solo cerca del 2 % de su energía.", "explicacion": "El cerebro es uno de los órganos que más energía usan: cerca de una quinta parte del total, aunque pese poco." },
-  { "id": "ciencia-081", "tema": "ciencia", "icono": "👀", "dato": "Cada ojo tiene un punto ciego sin receptores de luz, y el cerebro rellena ese hueco sin que lo notes.", "falso": "Solo el ojo izquierdo tiene un punto ciego sin receptores de luz.", "explicacion": "Ambos ojos tienen un punto ciego donde el nervio óptico sale de la retina; el cerebro completa la imagen." },
-  { "id": "ciencia-082", "tema": "ciencia", "icono": "🦷", "dato": "El esmalte de los dientes es la sustancia más dura del cuerpo humano.", "falso": "El hueso del cráneo es la sustancia más dura del cuerpo humano.", "explicacion": "El esmalte, formado casi todo por minerales, es más duro que cualquier hueso, incluido el cráneo." },
-  { "id": "ciencia-083", "tema": "ciencia", "icono": "👆", "dato": "Ni los gemelos idénticos tienen las mismas huellas dactilares.", "falso": "Los gemelos idénticos tienen exactamente las mismas huellas dactilares.", "explicacion": "Aunque comparten ADN, las huellas se forman en el vientre según la presión y el movimiento de cada bebé, y salen distintas." },
-  { "id": "ciencia-084", "tema": "ciencia", "icono": "🫁", "dato": "El pulmón derecho es un poco más grande que el izquierdo, que deja espacio para el corazón.", "falso": "El pulmón izquierdo es un poco más grande que el derecho, que deja espacio para el corazón.", "explicacion": "El corazón se inclina a la izquierda, así que el pulmón izquierdo es más pequeño: tiene dos lóbulos y el derecho, tres." },
-  { "id": "ciencia-085", "tema": "ciencia", "icono": "💪", "dato": "El cuerpo humano tiene más de 600 músculos.", "falso": "El cuerpo humano tiene unos 60 músculos.", "explicacion": "Según cómo se cuenten, los músculos del cuerpo humano superan los 600: unas diez veces más que esa cifra." },
-  { "id": "ciencia-086", "tema": "ciencia", "icono": "🤚", "dato": "La piel es el órgano más grande del cuerpo humano.", "falso": "El hígado es el órgano más grande del cuerpo humano.", "explicacion": "El hígado es el órgano interno más grande, pero la piel lo supera: en un adulto cubre cerca de 2 m²." },
-  { "id": "ciencia-087", "tema": "ciencia", "icono": "🧪", "dato": "El jugo gástrico del estómago contiene ácido clorhídrico.", "falso": "El jugo gástrico del estómago contiene ácido sulfúrico.", "explicacion": "El estómago produce ácido clorhídrico (HCl), que ayuda a digerir. El ácido sulfúrico no forma parte del jugo gástrico." },
-  { "id": "ciencia-088", "tema": "ciencia", "icono": "🏎️", "dato": "Las señales de algunas neuronas viajan a más de 100 metros por segundo.", "falso": "Las señales de algunas neuronas viajan a más de 100 000 km por segundo.", "explicacion": "Las señales nerviosas más rápidas van a unos 120 m/s, unos 430 km/h. Esa otra cifra es un tercio de la velocidad de la luz." },
-  { "id": "ciencia-089", "tema": "ciencia", "icono": "📏", "dato": "Los astronautas pueden crecer unos centímetros en el espacio porque su columna se estira sin gravedad.", "falso": "Los astronautas se encogen unos centímetros en el espacio porque la falta de gravedad aplasta su columna.", "explicacion": "Sin gravedad, los discos de la columna se expanden y los astronautas crecen hasta un 3 %. Al volver recuperan su estatura." },
-  { "id": "ciencia-090", "tema": "ciencia", "icono": "🌎", "dato": "En el ecuador, la Tierra gira a unos 1670 km/h, aunque no lo sintamos.", "falso": "En el ecuador, la Tierra gira a unos 167 km/h, aunque no lo sintamos.", "explicacion": "La circunferencia del ecuador mide unos 40 000 km y la Tierra la recorre en un día: cerca de 1670 km por hora." }
+  {
+    "id": "ciencia-001",
+    "tema": "ciencia",
+    "icono": "🪐",
+    "dato": "Saturno es tan poco denso que su densidad media es menor que la del agua.",
+    "falso": "Júpiter es tan poco denso que su densidad media es menor que la del agua.",
+    "explicacion": "Júpiter tiene una densidad de unos 1,3 g/cm³, mayor que la del agua. El único planeta menos denso que el agua es Saturno (unos 0,7 g/cm³).",
+    "foto": "saturn rings"
+  },
+  {
+    "id": "ciencia-002",
+    "tema": "ciencia",
+    "icono": "🌞",
+    "dato": "La luz del Sol tarda unos 8 minutos en llegar a la Tierra.",
+    "falso": "La luz del Sol tarda unos 8 segundos en llegar a la Tierra.",
+    "explicacion": "El Sol está a unos 150 millones de km; a la velocidad de la luz, ese viaje toma cerca de 8 minutos y 20 segundos, no segundos.",
+    "foto": "sunrise over earth"
+  },
+  {
+    "id": "ciencia-003",
+    "tema": "ciencia",
+    "icono": "🌕",
+    "dato": "La Luna se aleja de la Tierra unos 3,8 cm cada año.",
+    "falso": "La Luna se acerca a la Tierra unos 3,8 cm cada año.",
+    "explicacion": "Las mediciones con láser muestran que la Luna se aleja, no se acerca, unos 3,8 cm por año por efecto de las mareas.",
+    "foto": "full moon rising"
+  },
+  {
+    "id": "ciencia-004",
+    "tema": "ciencia",
+    "icono": "⏳",
+    "dato": "Venus tarda más en girar sobre su eje, unos 243 días, que en dar una vuelta al Sol, unos 225 días.",
+    "falso": "Marte tarda más en girar sobre su eje que en dar una vuelta al Sol.",
+    "explicacion": "Marte gira sobre sí mismo en unas 24,6 horas y tarda unos 687 días en rodear el Sol. El caso raro es Venus.",
+    "foto": "venus planet"
+  },
+  {
+    "id": "ciencia-005",
+    "tema": "ciencia",
+    "icono": "🔥",
+    "dato": "Venus es el planeta más caliente del sistema solar, con unos 465 °C, aunque Mercurio está más cerca del Sol.",
+    "falso": "Mercurio es el planeta más caliente del sistema solar porque es el más cercano al Sol.",
+    "explicacion": "Mercurio llega a unos 430 °C de día, pero Venus, con su densa atmósfera de dióxido de carbono, ronda los 465 °C día y noche.",
+    "foto": "planet venus clouds"
+  },
+  {
+    "id": "ciencia-006",
+    "tema": "ciencia",
+    "icono": "🔴",
+    "dato": "En Marte está el Monte Olimpo, un volcán de unos 22 km de altura: unas 2,5 veces el Everest.",
+    "falso": "En Venus está el Monte Olimpo, un volcán de unos 22 km de altura: unas 2,5 veces el Everest.",
+    "explicacion": "El Monte Olimpo está en Marte, no en Venus. Es un enorme volcán en escudo de unos 22 km de altura.",
+    "foto": "mars surface"
+  },
+  {
+    "id": "ciencia-007",
+    "tema": "ciencia",
+    "icono": "🌀",
+    "dato": "La Gran Mancha Roja de Júpiter es una tormenta más ancha que la Tierra, observada desde hace más de 150 años.",
+    "falso": "La Gran Mancha Roja de Saturno es una tormenta más ancha que la Tierra, observada desde hace más de 150 años.",
+    "explicacion": "La Gran Mancha Roja está en Júpiter, no en Saturno. Es un gigantesco anticiclón que se observa desde el siglo XIX.",
+    "foto": "jupiter planet"
+  },
+  {
+    "id": "ciencia-008",
+    "tema": "ciencia",
+    "icono": "🌍",
+    "dato": "La Tierra no es una esfera perfecta: es un poco más ancha en el ecuador que de polo a polo.",
+    "falso": "La Tierra no es una esfera perfecta: es un poco más ancha de polo a polo que en el ecuador.",
+    "explicacion": "Al girar, la Tierra se achata en los polos: su diámetro en el ecuador supera al de polo a polo en unos 43 km.",
+    "foto": "earth rotating space"
+  },
+  {
+    "id": "ciencia-009",
+    "tema": "ciencia",
+    "icono": "🔄",
+    "dato": "Urano gira prácticamente acostado: su eje está inclinado unos 98°.",
+    "falso": "Neptuno gira prácticamente acostado: su eje está inclinado unos 98°.",
+    "explicacion": "Neptuno tiene una inclinación de unos 28°, parecida a la de la Tierra (23°). El que gira de lado es Urano.",
+    "foto": "uranus planet"
+  },
+  {
+    "id": "ciencia-010",
+    "tema": "ciencia",
+    "icono": "💨",
+    "dato": "Neptuno tiene los vientos más rápidos medidos en el sistema solar: hasta unos 2000 km/h.",
+    "falso": "Mercurio tiene los vientos más rápidos medidos en el sistema solar: hasta unos 2000 km/h.",
+    "explicacion": "Mercurio casi no tiene atmósfera, así que no tiene vientos de ese tipo. El récord es de Neptuno, con unos 2000 km/h.",
+    "foto": "neptune planet"
+  },
+  {
+    "id": "ciencia-011",
+    "tema": "ciencia",
+    "icono": "⭐",
+    "dato": "Después del Sol, la estrella más cercana a la Tierra es Próxima Centauri, a unos 4,2 años luz.",
+    "falso": "Después del Sol, la estrella más cercana a la Tierra es Sirio, a unos 4,2 años luz.",
+    "explicacion": "Sirio es la estrella más brillante del cielo nocturno, pero está a unos 8,6 años luz. La más cercana es Próxima Centauri.",
+    "foto": "starry night sky"
+  },
+  {
+    "id": "ciencia-012",
+    "tema": "ciencia",
+    "icono": "🌌",
+    "dato": "Se calcula que la Vía Láctea tiene más de 100 000 millones de estrellas.",
+    "falso": "Se calcula que la Vía Láctea tiene unas 100 000 estrellas.",
+    "explicacion": "Las estimaciones van de unos 100 000 a 400 000 millones de estrellas en nuestra galaxia, no apenas 100 000.",
+    "foto": "milky way galaxy"
+  },
+  {
+    "id": "ciencia-013",
+    "tema": "ciencia",
+    "icono": "⚫",
+    "dato": "Un agujero negro atrae con tanta fuerza que ni la luz puede escapar después de cruzar su horizonte de sucesos.",
+    "falso": "La luz puede escapar de un agujero negro aunque haya cruzado su horizonte de sucesos.",
+    "explicacion": "Una vez cruzado el horizonte de sucesos, nada sale, ni siquiera la luz. Por eso los agujeros negros no se ven directamente.",
+    "foto": "black hole animation"
+  },
+  {
+    "id": "ciencia-014",
+    "tema": "ciencia",
+    "icono": "🌗",
+    "dato": "Siempre vemos la misma cara de la Luna porque tarda lo mismo en girar sobre sí misma que en rodear la Tierra.",
+    "falso": "Siempre vemos la misma cara de la Luna porque la Luna no gira sobre sí misma.",
+    "explicacion": "La Luna sí rota: tarda unos 27 días en girar sobre sí misma, justo lo mismo que en dar la vuelta a la Tierra.",
+    "foto": "moon close up"
+  },
+  {
+    "id": "ciencia-015",
+    "tema": "ciencia",
+    "icono": "🚀",
+    "dato": "Entre 1969 y 1972, 12 astronautas caminaron sobre la Luna en seis misiones Apolo.",
+    "falso": "Entre 1969 y 1972, 24 astronautas caminaron sobre la Luna en seis misiones Apolo.",
+    "explicacion": "24 astronautas viajaron hacia la Luna con el programa Apolo, pero solo 12 bajaron y caminaron sobre ella.",
+    "foto": "astronaut on moon"
+  },
+  {
+    "id": "ciencia-016",
+    "tema": "ciencia",
+    "icono": "🌞",
+    "dato": "El Sol reúne cerca del 99,8 % de toda la masa del sistema solar.",
+    "falso": "El Sol reúne cerca del 50 % de toda la masa del sistema solar.",
+    "explicacion": "Planetas, lunas y asteroides juntos apenas suman un 0,2 %. El Sol tiene cerca del 99,8 % de la masa del sistema solar.",
+    "foto": "sun solar flares"
+  },
+  {
+    "id": "ciencia-017",
+    "tema": "ciencia",
+    "icono": "🔆",
+    "dato": "Dentro del Sol cabrían cerca de 1,3 millones de planetas como la Tierra.",
+    "falso": "Dentro del Sol cabrían cerca de 1300 planetas como la Tierra.",
+    "explicacion": "El volumen del Sol es unas 1,3 millones de veces el de la Tierra: mil veces más de lo que dice esa cifra.",
+    "foto": "sun surface"
+  },
+  {
+    "id": "ciencia-018",
+    "tema": "ciencia",
+    "icono": "🪐",
+    "dato": "Júpiter tiene más del doble de masa que todos los demás planetas del sistema solar juntos.",
+    "falso": "Saturno tiene más del doble de masa que todos los demás planetas del sistema solar juntos.",
+    "explicacion": "Saturno tiene menos de un tercio de la masa de Júpiter. El que supera a todos los demás planetas juntos es Júpiter.",
+    "foto": "jupiter rotating"
+  },
+  {
+    "id": "ciencia-019",
+    "tema": "ciencia",
+    "icono": "🧊",
+    "dato": "Los anillos de Saturno están formados sobre todo por trozos de hielo de agua.",
+    "falso": "Los anillos de Saturno están formados sobre todo por trozos de hierro.",
+    "explicacion": "Más del 90 % del material de los anillos de Saturno es hielo de agua, con algo de polvo y roca; no son de hierro.",
+    "foto": "saturn planet space"
+  },
+  {
+    "id": "ciencia-020",
+    "tema": "ciencia",
+    "icono": "🌙",
+    "dato": "Ganímedes, una luna de Júpiter, es más grande que el planeta Mercurio.",
+    "falso": "Europa, una luna de Júpiter, es más grande que el planeta Mercurio.",
+    "explicacion": "Europa mide unos 3100 km de diámetro y Mercurio unos 4900 km. La luna que supera a Mercurio es Ganímedes, con unos 5300 km.",
+    "foto": "jupiter moons"
+  },
+  {
+    "id": "ciencia-021",
+    "tema": "ciencia",
+    "icono": "🌋",
+    "dato": "Ío, una luna de Júpiter, es el cuerpo con más actividad volcánica conocido del sistema solar.",
+    "falso": "Titán, una luna de Saturno, es el cuerpo con más actividad volcánica conocido del sistema solar.",
+    "explicacion": "Titán es famoso por sus lagos de metano, no por volcanes de lava. El récord lo tiene Ío, con cientos de volcanes activos.",
+    "foto": "volcano eruption lava"
+  },
+  {
+    "id": "ciencia-022",
+    "tema": "ciencia",
+    "icono": "🌊",
+    "dato": "Titán, la mayor luna de Saturno, tiene lagos y mares de metano y etano líquidos en su superficie.",
+    "falso": "Titán, la mayor luna de Saturno, tiene lagos y mares de agua líquida en su superficie.",
+    "explicacion": "En la superficie de Titán hace unos −180 °C y el agua está congelada. Sus lagos y mares son de metano y etano.",
+    "foto": "alien planet landscape"
+  },
+  {
+    "id": "ciencia-023",
+    "tema": "ciencia",
+    "icono": "💧",
+    "dato": "Encélado, una luna de Saturno, lanza al espacio chorros de vapor de agua y hielo.",
+    "falso": "Fobos, una luna de Marte, lanza al espacio chorros de vapor de agua y hielo.",
+    "explicacion": "Fobos es una roca seca sin actividad. Los géiseres de agua los descubrió la sonda Cassini en Encélado, luna de Saturno.",
+    "foto": "geyser eruption"
+  },
+  {
+    "id": "ciencia-024",
+    "tema": "ciencia",
+    "icono": "🔴",
+    "dato": "Marte tiene dos lunas pequeñas y de forma irregular: Fobos y Deimos.",
+    "falso": "Marte tiene cuatro lunas pequeñas y de forma irregular.",
+    "explicacion": "Marte tiene solo dos lunas, Fobos y Deimos, descubiertas en 1877. Parecen asteroides por su forma irregular.",
+    "foto": "mars moons"
+  },
+  {
+    "id": "ciencia-025",
+    "tema": "ciencia",
+    "icono": "🟠",
+    "dato": "Marte se ve rojo porque su polvo y sus rocas tienen mucho óxido de hierro.",
+    "falso": "Marte se ve rojo porque su superficie está cubierta de lava ardiente.",
+    "explicacion": "La superficie de Marte es fría, con un promedio de unos −60 °C. Su color viene del óxido de hierro, parecido a la herrumbre.",
+    "foto": "red planet mars"
+  },
+  {
+    "id": "ciencia-026",
+    "tema": "ciencia",
+    "icono": "❄️",
+    "dato": "Los casquetes polares de Marte tienen hielo de agua y hielo de dióxido de carbono.",
+    "falso": "Los casquetes polares de Marte están hechos solo de hielo de metano.",
+    "explicacion": "Los casquetes de Marte combinan hielo de agua y hielo seco (dióxido de carbono congelado); no son de metano.",
+    "foto": "mars polar ice"
+  },
+  {
+    "id": "ciencia-027",
+    "tema": "ciencia",
+    "icono": "📅",
+    "dato": "Un año en Mercurio dura unos 88 días terrestres.",
+    "falso": "Un año en Mercurio dura unos 365 días terrestres, igual que en la Tierra.",
+    "explicacion": "Mercurio es el planeta más cercano al Sol y el más rápido: completa su órbita en unos 88 días terrestres.",
+    "foto": "mercury planet"
+  },
+  {
+    "id": "ciencia-028",
+    "tema": "ciencia",
+    "icono": "🔵",
+    "dato": "Neptuno tarda unos 165 años terrestres en dar una vuelta completa al Sol.",
+    "falso": "Neptuno tarda unos 16 años terrestres en dar una vuelta completa al Sol.",
+    "explicacion": "Neptuno está unas 30 veces más lejos del Sol que la Tierra y su órbita le toma unos 165 años, no 16.",
+    "foto": "neptune blue planet"
+  },
+  {
+    "id": "ciencia-029",
+    "tema": "ciencia",
+    "icono": "🧮",
+    "dato": "Neptuno fue el primer planeta descubierto gracias a cálculos matemáticos, en 1846.",
+    "falso": "Urano fue el primer planeta descubierto gracias a cálculos matemáticos, en 1846.",
+    "explicacion": "Urano lo encontró William Herschel con un telescopio en 1781. Neptuno se halló en 1846 donde lo predecían los cálculos.",
+    "foto": "math equations chalkboard"
+  },
+  {
+    "id": "ciencia-030",
+    "tema": "ciencia",
+    "icono": "🏷️",
+    "dato": "Plutón dejó de considerarse planeta en 2006 y hoy se clasifica como planeta enano.",
+    "falso": "Plutón dejó de considerarse planeta en 1996 y hoy se clasifica como planeta enano.",
+    "explicacion": "La Unión Astronómica Internacional reclasificó a Plutón como planeta enano en agosto de 2006, no en 1996.",
+    "foto": "pluto dwarf planet"
+  },
+  {
+    "id": "ciencia-031",
+    "tema": "ciencia",
+    "icono": "☄️",
+    "dato": "El cometa Halley se acerca al Sol cada 75 o 76 años; su próxima visita será en 2061.",
+    "falso": "El cometa Halley se acerca al Sol cada 7 años; su próxima visita será en 2061.",
+    "explicacion": "La órbita del Halley dura unos 76 años. Pasó en 1986 y volverá a verse desde la Tierra hacia 2061.",
+    "foto": "comet night sky"
+  },
+  {
+    "id": "ciencia-032",
+    "tema": "ciencia",
+    "icono": "🌠",
+    "dato": "Las estrellas fugaces no son estrellas: son granos de polvo o roca que arden al entrar en la atmósfera.",
+    "falso": "Las estrellas fugaces son estrellas lejanas que se apagan y caen.",
+    "explicacion": "Son meteoros: pedacitos del espacio, a menudo del tamaño de un grano de arena, que se queman a gran velocidad en el aire.",
+    "foto": "shooting star night"
+  },
+  {
+    "id": "ciencia-033",
+    "tema": "ciencia",
+    "icono": "🛰️",
+    "dato": "La Estación Espacial Internacional da una vuelta completa a la Tierra en unos 90 minutos.",
+    "falso": "La Estación Espacial Internacional da una vuelta completa a la Tierra en unas 24 horas.",
+    "explicacion": "La estación viaja a unos 28 000 km/h y completa unas 16 vueltas al día: una cada 90 minutos, más o menos.",
+    "foto": "international space station"
+  },
+  {
+    "id": "ciencia-034",
+    "tema": "ciencia",
+    "icono": "🌌",
+    "dato": "La galaxia de Andrómeda se ve a simple vista en cielos oscuros y está a unos 2,5 millones de años luz.",
+    "falso": "La galaxia de Andrómeda se ve a simple vista en cielos oscuros y está a unos 2500 años luz.",
+    "explicacion": "2500 años luz ni siquiera nos sacaría de la Vía Láctea. Andrómeda está a unos 2,5 millones de años luz.",
+    "foto": "andromeda galaxy"
+  },
+  {
+    "id": "ciencia-035",
+    "tema": "ciencia",
+    "icono": "✨",
+    "dato": "Al mirar las estrellas vemos el pasado: su luz salió de ellas hace años, siglos o más.",
+    "falso": "La luz de las estrellas llega a la Tierra al instante, así que las vemos tal como son hoy.",
+    "explicacion": "La luz tarda en viajar: la de Próxima Centauri tarda unos 4 años y la de otras estrellas, siglos o milenios.",
+    "foto": "stars time lapse"
+  },
+  {
+    "id": "ciencia-036",
+    "tema": "ciencia",
+    "icono": "🌟",
+    "dato": "El color de una estrella revela su temperatura: las azules son más calientes que las rojas.",
+    "falso": "El color de una estrella revela su temperatura: las rojas son más calientes que las azules.",
+    "explicacion": "Es al revés: las estrellas rojas rondan los 3000 °C en su superficie y las azules pueden superar los 20 000 °C.",
+    "foto": "blue star space"
+  },
+  {
+    "id": "ciencia-037",
+    "tema": "ciencia",
+    "icono": "🌞",
+    "dato": "El Sol se formó hace unos 4600 millones de años.",
+    "falso": "El Sol se formó hace unos 46 millones de años.",
+    "explicacion": "Hace 46 millones de años ya había mamíferos en la Tierra. El Sol y los planetas se formaron hace unos 4600 millones de años.",
+    "foto": "sun in space"
+  },
+  {
+    "id": "ciencia-038",
+    "tema": "ciencia",
+    "icono": "🌡️",
+    "dato": "La temperatura en el núcleo del Sol ronda los 15 millones de °C.",
+    "falso": "La temperatura en el núcleo del Sol ronda los 15 000 °C.",
+    "explicacion": "La superficie del Sol está a unos 5500 °C, pero en el núcleo, donde ocurre la fusión nuclear, hay cerca de 15 millones de °C.",
+    "foto": "sun burning plasma"
+  },
+  {
+    "id": "ciencia-039",
+    "tema": "ciencia",
+    "icono": "👑",
+    "dato": "La corona, la capa más externa del Sol, supera el millón de °C: mucho más que su superficie.",
+    "falso": "La corona, la capa más externa del Sol, es su parte más fría: está a unos 1000 °C.",
+    "explicacion": "La corona supera el millón de grados, mientras la superficie ronda los 5500 °C. Por qué está tan caliente aún se investiga.",
+    "foto": "solar eclipse corona"
+  },
+  {
+    "id": "ciencia-040",
+    "tema": "ciencia",
+    "icono": "🌈",
+    "dato": "Isaac Newton mostró con un prisma que la luz blanca del Sol contiene todos los colores del arcoíris.",
+    "falso": "Galileo Galilei mostró con un prisma que la luz blanca del Sol contiene todos los colores del arcoíris.",
+    "explicacion": "Fue Isaac Newton quien, hacia 1666, separó la luz blanca con un prisma y demostró que está hecha de todos los colores.",
+    "foto": "prism light rainbow"
+  },
+  {
+    "id": "ciencia-041",
+    "tema": "ciencia",
+    "icono": "🌤️",
+    "dato": "El cielo se ve azul porque el aire dispersa la luz azul del Sol mucho más que la roja.",
+    "falso": "El cielo se ve azul porque refleja el color de los océanos.",
+    "explicacion": "El azul viene de la dispersión de Rayleigh: las moléculas del aire desvían más la luz azul. El mar no tiene nada que ver.",
+    "foto": "blue sky clouds"
+  },
+  {
+    "id": "ciencia-042",
+    "tema": "ciencia",
+    "icono": "🌅",
+    "dato": "En Marte los atardeceres se ven azulados, al revés que en la Tierra.",
+    "falso": "En Marte los atardeceres se ven verdes, al revés que en la Tierra.",
+    "explicacion": "Los robots de la NASA han fotografiado atardeceres azulados en Marte: su polvo fino deja pasar más luz azul cerca del Sol.",
+    "foto": "sunset sky"
+  },
+  {
+    "id": "ciencia-043",
+    "tema": "ciencia",
+    "icono": "💡",
+    "dato": "La luz viaja a cerca de 300 000 km por segundo en el vacío.",
+    "falso": "La luz viaja a cerca de 300 000 km por hora en el vacío.",
+    "explicacion": "La velocidad de la luz en el vacío es de unos 299 792 km por segundo, no por hora: le daría más de 7 vueltas a la Tierra en un segundo.",
+    "foto": "fiber optic light"
+  },
+  {
+    "id": "ciencia-044",
+    "tema": "ciencia",
+    "icono": "⚡",
+    "dato": "Un rayo puede calentar el aire hasta unos 30 000 °C, unas cinco veces más que la superficie del Sol.",
+    "falso": "Un rayo puede calentar el aire hasta unos 300 °C, como un horno de cocina.",
+    "explicacion": "En una fracción de segundo, el canal de un rayo llega a unos 30 000 °C. Ese calentamiento brusco del aire produce el trueno.",
+    "foto": "lightning storm night"
+  },
+  {
+    "id": "ciencia-045",
+    "tema": "ciencia",
+    "icono": "🐋",
+    "dato": "El sonido viaja unas cuatro veces más rápido en el agua que en el aire.",
+    "falso": "El sonido viaja unas cuatro veces más rápido en el aire que en el agua.",
+    "explicacion": "En el aire el sonido va a unos 340 m/s y en el agua a unos 1500 m/s: en el agua es más rápido, no al revés.",
+    "foto": "underwater bubbles"
+  },
+  {
+    "id": "ciencia-046",
+    "tema": "ciencia",
+    "icono": "🔇",
+    "dato": "En el espacio no hay sonido: sin aire ni otro medio que vibre, el sonido no puede viajar.",
+    "falso": "En el espacio el sonido viaja más rápido que en la Tierra porque no hay aire que lo frene.",
+    "explicacion": "El sonido es una vibración que necesita un medio, como aire o agua. En el vacío del espacio no se propaga.",
+    "foto": "astronaut spacewalk"
+  },
+  {
+    "id": "ciencia-047",
+    "tema": "ciencia",
+    "icono": "🌩️",
+    "dato": "Vemos el relámpago antes de oír el trueno porque la luz viaja muchísimo más rápido que el sonido.",
+    "falso": "Vemos el relámpago antes de oír el trueno porque el trueno se produce varios segundos después del rayo.",
+    "explicacion": "El trueno nace al mismo tiempo que el rayo; llega después porque el sonido va a unos 340 m/s y la luz a unos 300 000 km/s.",
+    "foto": "thunderstorm lightning"
+  },
+  {
+    "id": "ciencia-048",
+    "tema": "ciencia",
+    "icono": "👂",
+    "dato": "El oído humano capta sonidos de entre unas 20 y 20 000 vibraciones por segundo (hercios).",
+    "falso": "El oído humano capta sonidos de entre unas 20 y 200 000 vibraciones por segundo (hercios).",
+    "explicacion": "Por encima de unos 20 000 Hz están los ultrasonidos, que oyen murciélagos o delfines, pero no las personas.",
+    "foto": "speaker sound waves"
+  },
+  {
+    "id": "ciencia-049",
+    "tema": "ciencia",
+    "icono": "🧊",
+    "dato": "El hielo flota porque es menos denso que el agua líquida, algo poco común en otras sustancias.",
+    "falso": "El hielo flota porque es más denso que el agua líquida.",
+    "explicacion": "Si el hielo fuera más denso se hundiría. Flota porque al congelarse el agua forma una red que ocupa más espacio.",
+    "foto": "ice cubes water"
+  },
+  {
+    "id": "ciencia-050",
+    "tema": "ciencia",
+    "icono": "🍾",
+    "dato": "El agua aumenta cerca de un 9 % su volumen al congelarse; por eso puede reventar botellas.",
+    "falso": "El agua reduce cerca de un 9 % su volumen al congelarse.",
+    "explicacion": "Al congelarse, el agua se expande cerca de un 9 %. Por eso una botella llena de agua puede romperse en el congelador.",
+    "foto": "water freezing ice"
+  },
+  {
+    "id": "ciencia-051",
+    "tema": "ciencia",
+    "icono": "🪙",
+    "dato": "El oro es tan maleable que un solo gramo puede extenderse en una lámina de cerca de 1 m².",
+    "falso": "El oro es tan maleable que un solo gramo puede extenderse en una lámina de cerca de 1 km².",
+    "explicacion": "Un gramo de oro se puede batir hasta una lámina finísima de alrededor de 1 m², pero no de 1 km², que es un millón de veces más.",
+    "foto": "gold leaf"
+  },
+  {
+    "id": "ciencia-052",
+    "tema": "ciencia",
+    "icono": "💎",
+    "dato": "El diamante y la mina de grafito de un lápiz están hechos del mismo elemento: el carbono.",
+    "falso": "El diamante y la mina de grafito de un lápiz están hechos del mismo elemento: el silicio.",
+    "explicacion": "Ambos son carbono puro; cambian por cómo se ordenan sus átomos. El silicio forma la arena y los chips, no el diamante.",
+    "foto": "diamond sparkle"
+  },
+  {
+    "id": "ciencia-053",
+    "tema": "ciencia",
+    "icono": "🎈",
+    "dato": "El helio se descubrió primero en el Sol, en 1868, al estudiar su luz, y años después en la Tierra.",
+    "falso": "El helio se descubrió primero en la Luna, en 1868, al estudiar su luz, y años después en la Tierra.",
+    "explicacion": "Su nombre viene de Helios, el Sol en griego: se detectó en la luz solar durante un eclipse y en la Tierra se halló en 1895.",
+    "foto": "helium balloons"
+  },
+  {
+    "id": "ciencia-054",
+    "tema": "ciencia",
+    "icono": "🔬",
+    "dato": "El núcleo de un átomo es decenas de miles de veces más pequeño que el átomo completo.",
+    "falso": "El núcleo de un átomo ocupa cerca de la mitad del tamaño del átomo completo.",
+    "explicacion": "Casi todo el átomo es espacio vacío alrededor de un núcleo diminuto, aunque ese núcleo concentra más del 99,9 % de su masa.",
+    "foto": "atom animation"
+  },
+  {
+    "id": "ciencia-055",
+    "tema": "ciencia",
+    "icono": "🧲",
+    "dato": "La Tierra actúa como un imán gigante gracias al hierro líquido que se mueve en su núcleo externo.",
+    "falso": "La Tierra actúa como un imán gigante gracias al hierro líquido que se mueve en su núcleo interno.",
+    "explicacion": "El núcleo interno de la Tierra es sólido. El campo magnético se genera por el movimiento del hierro líquido del núcleo externo.",
+    "foto": "northern lights aurora"
+  },
+  {
+    "id": "ciencia-056",
+    "tema": "ciencia",
+    "icono": "🧭",
+    "dato": "Los polos magnéticos de la Tierra se han invertido cientos de veces a lo largo de su historia.",
+    "falso": "Los polos magnéticos de la Tierra nunca se han invertido desde que se formó el planeta.",
+    "explicacion": "Las rocas guardan la huella del campo magnético y muestran cientos de inversiones; la última fue hace unos 780 000 años.",
+    "foto": "compass needle"
+  },
+  {
+    "id": "ciencia-057",
+    "tema": "ciencia",
+    "icono": "🥶",
+    "dato": "El cero absoluto, la temperatura más baja posible, equivale a unos −273 °C.",
+    "falso": "El cero absoluto, la temperatura más baja posible, equivale a unos −100 °C.",
+    "explicacion": "El cero absoluto es −273,15 °C (0 kelvin). En la Antártida se han medido casi −90 °C, así que −100 °C no es el límite.",
+    "foto": "frozen ice crystals"
+  },
+  {
+    "id": "ciencia-058",
+    "tema": "ciencia",
+    "icono": "🌕",
+    "dato": "En la Luna pesarías cerca de una sexta parte de lo que pesas en la Tierra.",
+    "falso": "En la Luna pesarías cerca del doble de lo que pesas en la Tierra.",
+    "explicacion": "La gravedad de la Luna es cerca de un sexto de la terrestre: quien pesa 60 kg en la Tierra marcaría unos 10 kg allá.",
+    "foto": "astronaut moon walk"
+  },
+  {
+    "id": "ciencia-059",
+    "tema": "ciencia",
+    "icono": "🪐",
+    "dato": "Si pudieras pararte en las nubes de Júpiter, pesarías unas 2,5 veces más que en la Tierra.",
+    "falso": "Si pudieras pararte en las nubes de Júpiter, pesarías la mitad que en la Tierra.",
+    "explicacion": "Júpiter tiene unas 318 veces la masa de la Tierra; en la parte alta de sus nubes la gravedad es unas 2,5 veces la nuestra.",
+    "foto": "jupiter clouds"
+  },
+  {
+    "id": "ciencia-060",
+    "tema": "ciencia",
+    "icono": "🪶",
+    "dato": "En la Luna, un astronauta soltó un martillo y una pluma en 1971 y ambos cayeron a la vez.",
+    "falso": "En la Luna, un astronauta soltó un martillo y una pluma en 1971 y el martillo cayó primero.",
+    "explicacion": "Sin aire que frene la pluma, todo cae con la misma aceleración. Lo demostró David Scott en la misión Apolo 15.",
+    "foto": "feather falling"
+  },
+  {
+    "id": "ciencia-061",
+    "tema": "ciencia",
+    "icono": "🔭",
+    "dato": "El telescopio espacial James Webb observa el universo sobre todo en luz infrarroja.",
+    "falso": "El telescopio espacial James Webb observa el universo sobre todo en luz ultravioleta.",
+    "explicacion": "El Webb está diseñado para el infrarrojo, que atraviesa el polvo cósmico y deja ver galaxias muy lejanas y antiguas.",
+    "foto": "space telescope"
+  },
+  {
+    "id": "ciencia-062",
+    "tema": "ciencia",
+    "icono": "💙",
+    "dato": "El oxígeno líquido es de color azul claro.",
+    "falso": "El oxígeno líquido es de color rojo intenso.",
+    "explicacion": "El oxígeno, que es incoloro como gas, se vuelve un líquido azul pálido por debajo de unos −183 °C.",
+    "foto": "blue liquid flask"
+  },
+  {
+    "id": "ciencia-063",
+    "tema": "ciencia",
+    "icono": "🧂",
+    "dato": "La sal de mesa se forma con sodio, un metal muy reactivo, y cloro, un gas tóxico.",
+    "falso": "La sal de mesa se forma con sodio, un metal muy reactivo, y flúor, un gas tóxico.",
+    "explicacion": "La sal común es cloruro de sodio (NaCl): sodio y cloro. El flúor forma otros compuestos, como los fluoruros.",
+    "foto": "salt crystals"
+  },
+  {
+    "id": "ciencia-064",
+    "tema": "ciencia",
+    "icono": "📡",
+    "dato": "La sonda Voyager 1, lanzada en 1977, es el objeto hecho por humanos más lejano: está a más de 20 000 millones de km.",
+    "falso": "La sonda Voyager 2, lanzada en 1977, es el objeto hecho por humanos más lejano: está a más de 20 000 millones de km.",
+    "explicacion": "La Voyager 2 también está muy lejos, pero la Voyager 1 viaja más rápido y es la que está más lejos de la Tierra.",
+    "foto": "space probe"
+  },
+  {
+    "id": "ciencia-065",
+    "tema": "ciencia",
+    "icono": "🧪",
+    "dato": "El mercurio es un metal que se mantiene líquido incluso a −30 °C.",
+    "falso": "El hierro es un metal que se mantiene líquido incluso a −30 °C.",
+    "explicacion": "El hierro se funde a unos 1538 °C. El mercurio, en cambio, sigue líquido hasta unos −39 °C, cuando se congela.",
+    "foto": "liquid metal drops"
+  },
+  {
+    "id": "ciencia-066",
+    "tema": "ciencia",
+    "icono": "🌑",
+    "dato": "Un eclipse de Sol solo puede ocurrir en luna nueva.",
+    "falso": "Un eclipse de Sol solo puede ocurrir en luna llena.",
+    "explicacion": "En un eclipse solar la Luna pasa entre el Sol y la Tierra, y eso solo sucede en luna nueva. En luna llena hay eclipses de Luna.",
+    "foto": "total solar eclipse"
+  },
+  {
+    "id": "ciencia-067",
+    "tema": "ciencia",
+    "icono": "⚗️",
+    "dato": "Hoy la tabla periódica tiene 118 elementos químicos confirmados.",
+    "falso": "Hoy la tabla periódica tiene 92 elementos químicos confirmados.",
+    "explicacion": "Hay 118 elementos confirmados. Unos 90 se encuentran en la naturaleza y el resto se ha creado en laboratorios.",
+    "foto": "chemistry lab"
+  },
+  {
+    "id": "ciencia-068",
+    "tema": "ciencia",
+    "icono": "💫",
+    "dato": "El hidrógeno es el elemento más abundante del universo: forma cerca de tres cuartas partes de la materia común.",
+    "falso": "El oxígeno es el elemento más abundante del universo: forma cerca de tres cuartas partes de la materia común.",
+    "explicacion": "El oxígeno ocupa el tercer lugar. El hidrógeno forma cerca del 74 % de la materia común y el helio casi todo el resto.",
+    "foto": "nebula space"
+  },
+  {
+    "id": "ciencia-069",
+    "tema": "ciencia",
+    "icono": "🪨",
+    "dato": "El oxígeno es el elemento más abundante de la corteza terrestre: cerca de la mitad de su masa.",
+    "falso": "El hierro es el elemento más abundante de la corteza terrestre: cerca de la mitad de su masa.",
+    "explicacion": "En la corteza, el hierro es solo un 5 %. El oxígeno, unido al silicio y otros elementos en las rocas, ronda el 46 %.",
+    "foto": "rocks minerals"
+  },
+  {
+    "id": "ciencia-070",
+    "tema": "ciencia",
+    "icono": "🌬️",
+    "dato": "El aire que respiramos es cerca de un 78 % nitrógeno y solo un 21 % oxígeno.",
+    "falso": "El aire que respiramos es cerca de un 78 % oxígeno y solo un 21 % nitrógeno.",
+    "explicacion": "Es al revés: el gas más abundante del aire es el nitrógeno (78 %), seguido del oxígeno (21 %) y un poco de argón.",
+    "foto": "clouds time lapse"
+  },
+  {
+    "id": "ciencia-071",
+    "tema": "ciencia",
+    "icono": "👶",
+    "dato": "Un bebé nace con más huesos que un adulto: muchos se fusionan al crecer hasta quedar en 206.",
+    "falso": "Un bebé nace con menos huesos que un adulto: se van formando nuevos hasta llegar a 206.",
+    "explicacion": "Los recién nacidos tienen bastante más de 206 huesos, muchos aún en parte de cartílago. Al crecer, varios se unen y quedan 206.",
+    "foto": "baby feet"
+  },
+  {
+    "id": "ciencia-072",
+    "tema": "ciencia",
+    "icono": "👂",
+    "dato": "El hueso más pequeño del cuerpo humano es el estribo, en el oído, de apenas unos 3 mm.",
+    "falso": "El hueso más pequeño del cuerpo humano está en el dedo meñique del pie y mide unos 3 mm.",
+    "explicacion": "El hueso más pequeño es el estribo, dentro del oído medio, y ayuda a transmitir el sonido. Los del meñique son más grandes.",
+    "foto": "human ear close up"
+  },
+  {
+    "id": "ciencia-073",
+    "tema": "ciencia",
+    "icono": "🦴",
+    "dato": "El fémur, el hueso del muslo, es el más largo y fuerte del cuerpo humano.",
+    "falso": "La tibia, en la pierna, es el hueso más largo y fuerte del cuerpo humano.",
+    "explicacion": "La tibia es el segundo hueso más largo. El primero es el fémur, que mide cerca de un cuarto de la estatura de una persona.",
+    "foto": "runner legs"
+  },
+  {
+    "id": "ciencia-074",
+    "tema": "ciencia",
+    "icono": "🫀",
+    "dato": "El corazón de un adulto late unas 100 000 veces al día.",
+    "falso": "El corazón de un adulto late unas 10 000 veces al día.",
+    "explicacion": "A unos 70 latidos por minuto, el corazón suma cerca de 100 000 latidos diarios: unas diez veces más que esa cifra.",
+    "foto": "heartbeat monitor hospital"
+  },
+  {
+    "id": "ciencia-075",
+    "tema": "ciencia",
+    "icono": "🩸",
+    "dato": "Un glóbulo rojo vive unos 120 días antes de que el cuerpo lo reemplace.",
+    "falso": "Un glóbulo rojo vive unos 12 años antes de que el cuerpo lo reemplace.",
+    "explicacion": "Los glóbulos rojos duran unos cuatro meses. El cuerpo fabrica millones nuevos cada segundo en la médula ósea.",
+    "foto": "blood cells flowing"
+  },
+  {
+    "id": "ciencia-076",
+    "tema": "ciencia",
+    "icono": "🧬",
+    "dato": "Si se estirara el ADN de una sola célula humana, mediría cerca de 2 metros.",
+    "falso": "Si se estirara el ADN de una sola célula humana, mediría cerca de 2 milímetros.",
+    "explicacion": "El ADN de cada célula mide cerca de 2 m, pero está tan enrollado que cabe en un núcleo de pocas milésimas de milímetro.",
+    "foto": "dna double helix"
+  },
+  {
+    "id": "ciencia-077",
+    "tema": "ciencia",
+    "icono": "🤝",
+    "dato": "Dos personas cualesquiera comparten cerca del 99,9 % de su ADN.",
+    "falso": "Dos personas cualesquiera comparten cerca del 50 % de su ADN.",
+    "explicacion": "Las diferencias en el ADN entre dos personas son muy pequeñas, de apenas un 0,1 %. Por eso compartimos cerca del 99,9 %.",
+    "foto": "crowd of people"
+  },
+  {
+    "id": "ciencia-078",
+    "tema": "ciencia",
+    "icono": "🧬",
+    "dato": "La molécula de ADN tiene forma de doble hélice, como una escalera retorcida.",
+    "falso": "La molécula de ADN tiene forma de triple hélice, como una escalera retorcida.",
+    "explicacion": "El ADN tiene dos cadenas enrolladas. Su estructura se describió en 1953 gracias a Watson, Crick, Franklin y Wilkins.",
+    "foto": "dna helix rotating"
+  },
+  {
+    "id": "ciencia-079",
+    "tema": "ciencia",
+    "icono": "🔤",
+    "dato": "El ADN guarda la información con solo cuatro «letras» químicas: A, T, C y G.",
+    "falso": "El ADN guarda la información con cinco «letras» químicas: A, T, C, G y U.",
+    "explicacion": "La U (uracilo) aparece en el ARN, no en el ADN. El ADN usa adenina, timina, citosina y guanina.",
+    "foto": "dna sequencing lab"
+  },
+  {
+    "id": "ciencia-080",
+    "tema": "ciencia",
+    "icono": "🧠",
+    "dato": "El cerebro pesa cerca del 2 % del cuerpo, pero consume cerca del 20 % de su energía.",
+    "falso": "El cerebro pesa cerca del 2 % del cuerpo y consume solo cerca del 2 % de su energía.",
+    "explicacion": "El cerebro es uno de los órganos que más energía usan: cerca de una quinta parte del total, aunque pese poco.",
+    "foto": "brain neurons"
+  },
+  {
+    "id": "ciencia-081",
+    "tema": "ciencia",
+    "icono": "👀",
+    "dato": "Cada ojo tiene un punto ciego sin receptores de luz, y el cerebro rellena ese hueco sin que lo notes.",
+    "falso": "Solo el ojo izquierdo tiene un punto ciego sin receptores de luz.",
+    "explicacion": "Ambos ojos tienen un punto ciego donde el nervio óptico sale de la retina; el cerebro completa la imagen.",
+    "foto": "eye close up"
+  },
+  {
+    "id": "ciencia-082",
+    "tema": "ciencia",
+    "icono": "🦷",
+    "dato": "El esmalte de los dientes es la sustancia más dura del cuerpo humano.",
+    "falso": "El hueso del cráneo es la sustancia más dura del cuerpo humano.",
+    "explicacion": "El esmalte, formado casi todo por minerales, es más duro que cualquier hueso, incluido el cráneo.",
+    "foto": "smiling white teeth"
+  },
+  {
+    "id": "ciencia-083",
+    "tema": "ciencia",
+    "icono": "👆",
+    "dato": "Ni los gemelos idénticos tienen las mismas huellas dactilares.",
+    "falso": "Los gemelos idénticos tienen exactamente las mismas huellas dactilares.",
+    "explicacion": "Aunque comparten ADN, las huellas se forman en el vientre según la presión y el movimiento de cada bebé, y salen distintas.",
+    "foto": "fingerprint scan"
+  },
+  {
+    "id": "ciencia-084",
+    "tema": "ciencia",
+    "icono": "🫁",
+    "dato": "El pulmón derecho es un poco más grande que el izquierdo, que deja espacio para el corazón.",
+    "falso": "El pulmón izquierdo es un poco más grande que el derecho, que deja espacio para el corazón.",
+    "explicacion": "El corazón se inclina a la izquierda, así que el pulmón izquierdo es más pequeño: tiene dos lóbulos y el derecho, tres.",
+    "foto": "lungs anatomy"
+  },
+  {
+    "id": "ciencia-085",
+    "tema": "ciencia",
+    "icono": "💪",
+    "dato": "El cuerpo humano tiene más de 600 músculos.",
+    "falso": "El cuerpo humano tiene unos 60 músculos.",
+    "explicacion": "Según cómo se cuenten, los músculos del cuerpo humano superan los 600: unas diez veces más que esa cifra.",
+    "foto": "athlete muscles training"
+  },
+  {
+    "id": "ciencia-086",
+    "tema": "ciencia",
+    "icono": "🤚",
+    "dato": "La piel es el órgano más grande del cuerpo humano.",
+    "falso": "El hígado es el órgano más grande del cuerpo humano.",
+    "explicacion": "El hígado es el órgano interno más grande, pero la piel lo supera: en un adulto cubre cerca de 2 m².",
+    "foto": "skin texture macro"
+  },
+  {
+    "id": "ciencia-087",
+    "tema": "ciencia",
+    "icono": "🧪",
+    "dato": "El jugo gástrico del estómago contiene ácido clorhídrico.",
+    "falso": "El jugo gástrico del estómago contiene ácido sulfúrico.",
+    "explicacion": "El estómago produce ácido clorhídrico (HCl), que ayuda a digerir. El ácido sulfúrico no forma parte del jugo gástrico.",
+    "foto": "eating salad"
+  },
+  {
+    "id": "ciencia-088",
+    "tema": "ciencia",
+    "icono": "🏎️",
+    "dato": "Las señales de algunas neuronas viajan a más de 100 metros por segundo.",
+    "falso": "Las señales de algunas neuronas viajan a más de 100 000 km por segundo.",
+    "explicacion": "Las señales nerviosas más rápidas van a unos 120 m/s, unos 430 km/h. Esa otra cifra es un tercio de la velocidad de la luz.",
+    "foto": "neurons firing"
+  },
+  {
+    "id": "ciencia-089",
+    "tema": "ciencia",
+    "icono": "📏",
+    "dato": "Los astronautas pueden crecer unos centímetros en el espacio porque su columna se estira sin gravedad.",
+    "falso": "Los astronautas se encogen unos centímetros en el espacio porque la falta de gravedad aplasta su columna.",
+    "explicacion": "Sin gravedad, los discos de la columna se expanden y los astronautas crecen hasta un 3 %. Al volver recuperan su estatura.",
+    "foto": "astronauts space station"
+  },
+  {
+    "id": "ciencia-090",
+    "tema": "ciencia",
+    "icono": "🌎",
+    "dato": "En el ecuador, la Tierra gira a unos 1670 km/h, aunque no lo sintamos.",
+    "falso": "En el ecuador, la Tierra gira a unos 167 km/h, aunque no lo sintamos.",
+    "explicacion": "La circunferencia del ecuador mide unos 40 000 km y la Tierra la recorre en un día: cerca de 1670 km por hora.",
+    "foto": "earth rotating day night"
+  }
 ]

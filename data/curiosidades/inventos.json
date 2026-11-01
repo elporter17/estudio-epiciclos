@@ -5,7 +5,8 @@
     "icono": "🧫",
     "dato": "Alexander Fleming descubrió la penicilina en 1928 al ver que un moho había matado las bacterias de una de sus placas.",
     "falso": "Louis Pasteur descubrió la penicilina en 1928 al ver que un moho había matado las bacterias de una de sus placas.",
-    "explicacion": "Pasteur murió en 1895. La penicilina la descubrió el escocés Alexander Fleming en Londres, en 1928."
+    "explicacion": "Pasteur murió en 1895. La penicilina la descubrió el escocés Alexander Fleming en Londres, en 1928.",
+    "foto": "petri dish bacteria"
   },
   {
     "id": "inventos-002",
@@ -13,7 +14,8 @@
     "icono": "🍫",
     "dato": "El horno de microondas surgió cuando Percy Spencer notó que un magnetrón de radar derritió una barra de chocolate en su bolsillo.",
     "falso": "El horno de microondas surgió cuando Percy Spencer notó que una lámpara de rayos X derritió una barra de chocolate en su bolsillo.",
-    "explicacion": "No fue una lámpara de rayos X: fue un magnetrón, el tubo que genera las microondas en los radares, en la empresa Raytheon."
+    "explicacion": "No fue una lámpara de rayos X: fue un magnetrón, el tubo que genera las microondas en los radares, en la empresa Raytheon.",
+    "foto": "melting chocolate bar"
   },
   {
     "id": "inventos-003",
@@ -21,7 +23,8 @@
     "icono": "📝",
     "dato": "Las notas Post-it nacieron de un adhesivo débil que Spencer Silver creó en 1968 en la empresa 3M.",
     "falso": "Las notas Post-it nacieron de un adhesivo débil que Spencer Silver creó en 1968 en la empresa Kodak.",
-    "explicacion": "Spencer Silver trabajaba en 3M, no en Kodak. Su colega Art Fry tuvo después la idea de usar el adhesivo en papelitos."
+    "explicacion": "Spencer Silver trabajaba en 3M, no en Kodak. Su colega Art Fry tuvo después la idea de usar el adhesivo en papelitos.",
+    "foto": "sticky notes wall"
   },
   {
     "id": "inventos-004",
@@ -29,7 +32,8 @@
     "icono": "🐕",
     "dato": "El velcro se inspiró en los abrojos que se pegaban al pelo del perro del ingeniero suizo George de Mestral.",
     "falso": "El velcro se inspiró en las patas de los geckos que observó el ingeniero suizo George de Mestral.",
-    "explicacion": "No fueron geckos: De Mestral vio al microscopio los ganchitos de los abrojos que se pegaban a su perro tras un paseo."
+    "explicacion": "No fueron geckos: De Mestral vio al microscopio los ganchitos de los abrojos que se pegaban a su perro tras un paseo.",
+    "foto": "velcro strap close up"
   },
   {
     "id": "inventos-005",
@@ -37,7 +41,8 @@
     "icono": "🦴",
     "dato": "Wilhelm Röntgen descubrió los rayos X en 1895 y ganó por ello el primer Premio Nobel de Física, en 1901.",
     "falso": "Marie Curie descubrió los rayos X en 1895 y ganó por ello el primer Premio Nobel de Física, en 1901.",
-    "explicacion": "Los rayos X los descubrió el alemán Wilhelm Röntgen. Marie Curie ganó el Nobel de Física en 1903, por la radiactividad."
+    "explicacion": "Los rayos X los descubrió el alemán Wilhelm Röntgen. Marie Curie ganó el Nobel de Física en 1903, por la radiactividad.",
+    "foto": "x ray hand image"
   },
   {
     "id": "inventos-006",
@@ -45,7 +50,8 @@
     "icono": "🧪",
     "dato": "Henri Becquerel descubrió la radiactividad en 1896, cuando unas sales de uranio velaron una placa fotográfica guardada.",
     "falso": "Henri Becquerel descubrió la radiactividad en 1936, cuando unas sales de uranio velaron una placa fotográfica guardada.",
-    "explicacion": "Fue en 1896, no en 1936. Becquerel compartió el Nobel de Física de 1903 con Marie y Pierre Curie."
+    "explicacion": "Fue en 1896, no en 1936. Becquerel compartió el Nobel de Física de 1903 con Marie y Pierre Curie.",
+    "foto": "laboratory glassware vintage"
   },
   {
     "id": "inventos-007",
@@ -53,7 +59,8 @@
     "icono": "📞",
     "dato": "Alexander Graham Bell recibió en 1876 la patente estadounidense del teléfono.",
     "falso": "Alexander Graham Bell recibió en 1906 la patente estadounidense del teléfono.",
-    "explicacion": "La patente de Bell es de marzo de 1876, treinta años antes. En 1906 el teléfono ya llevaba décadas en uso."
+    "explicacion": "La patente de Bell es de marzo de 1876, treinta años antes. En 1906 el teléfono ya llevaba décadas en uso.",
+    "foto": "antique telephone"
   },
   {
     "id": "inventos-008",
@@ -61,7 +68,8 @@
     "icono": "📖",
     "dato": "Johannes Gutenberg imprimió su famosa Biblia hacia 1455 en Maguncia, Alemania, con tipos móviles de metal.",
     "falso": "Johannes Gutenberg imprimió su famosa Biblia hacia 1455 en París, Francia, con tipos móviles de metal.",
-    "explicacion": "Gutenberg trabajó en Maguncia (Mainz), su ciudad natal en Alemania, no en París."
+    "explicacion": "Gutenberg trabajó en Maguncia (Mainz), su ciudad natal en Alemania, no en París.",
+    "foto": "old printing press"
   },
   {
     "id": "inventos-009",
@@ -69,7 +77,8 @@
     "icono": "📜",
     "dato": "Hacia 1040, el artesano chino Bi Sheng creó tipos móviles de arcilla, unos 400 años antes que Gutenberg.",
     "falso": "Hacia 1040, el artesano japonés Bi Sheng creó tipos móviles de arcilla, unos 400 años antes que Gutenberg.",
-    "explicacion": "Bi Sheng era chino, de la dinastía Song. Su invento lo describió el sabio chino Shen Kuo en el siglo XI."
+    "explicacion": "Bi Sheng era chino, de la dinastía Song. Su invento lo describió el sabio chino Shen Kuo en el siglo XI.",
+    "foto": "chinese calligraphy characters"
   },
   {
     "id": "inventos-010",
@@ -77,7 +86,8 @@
     "icono": "💉",
     "dato": "Edward Jenner desarrolló en 1796 la primera vacuna, contra la viruela, usando material de la viruela de las vacas.",
     "falso": "Edward Jenner desarrolló en 1796 la primera vacuna, contra la rabia, usando material de la viruela de las vacas.",
-    "explicacion": "La vacuna de Jenner fue contra la viruela. La de la rabia llegó en 1885, de la mano de Louis Pasteur."
+    "explicacion": "La vacuna de Jenner fue contra la viruela. La de la rabia llegó en 1885, de la mano de Louis Pasteur.",
+    "foto": "cows grazing pasture"
   },
   {
     "id": "inventos-011",
@@ -85,7 +95,8 @@
     "icono": "🐶",
     "dato": "Louis Pasteur aplicó por primera vez su vacuna contra la rabia a un niño en 1885, y el niño sobrevivió.",
     "falso": "Louis Pasteur aplicó por primera vez su vacuna contra la rabia a un niño en 1785, y el niño sobrevivió.",
-    "explicacion": "Pasteur nació en 1822, así que no pudo ser en 1785. Fue en 1885, con el niño Joseph Meister."
+    "explicacion": "Pasteur nació en 1822, así que no pudo ser en 1785. Fue en 1885, con el niño Joseph Meister.",
+    "foto": "vaccine syringe vial"
   },
   {
     "id": "inventos-012",
@@ -93,7 +104,8 @@
     "icono": "🍷",
     "dato": "La pasteurización se ideó en la década de 1860 para evitar que el vino y la cerveza se echaran a perder.",
     "falso": "La pasteurización se ideó en la década de 1960 para evitar que el vino y la cerveza se echaran a perder.",
-    "explicacion": "Louis Pasteur desarrolló el método en la década de 1860, un siglo antes. Murió en 1895."
+    "explicacion": "Louis Pasteur desarrolló el método en la década de 1860, un siglo antes. Murió en 1895.",
+    "foto": "wine barrels cellar"
   },
   {
     "id": "inventos-013",
@@ -101,7 +113,8 @@
     "icono": "😴",
     "dato": "En 1846, William Morton hizo en Boston la primera demostración pública de una operación con anestesia de éter.",
     "falso": "En 1946, William Morton hizo en Boston la primera demostración pública de una operación con anestesia de éter.",
-    "explicacion": "Fue en 1846, en el Hospital General de Massachusetts. Un siglo después la anestesia ya era rutina en los quirófanos."
+    "explicacion": "Fue en 1846, en el Hospital General de Massachusetts. Un siglo después la anestesia ya era rutina en los quirófanos.",
+    "foto": "vintage operating room"
   },
   {
     "id": "inventos-014",
@@ -109,7 +122,8 @@
     "icono": "🩺",
     "dato": "El médico francés René Laennec inventó el estetoscopio en 1816; el primero fue un tubo de papel enrollado.",
     "falso": "El médico inglés René Laennec inventó el estetoscopio en 1916; el primero fue un tubo de papel enrollado.",
-    "explicacion": "Laennec era francés y lo inventó en 1816, un siglo antes. Luego lo fabricó como un cilindro de madera."
+    "explicacion": "Laennec era francés y lo inventó en 1816, un siglo antes. Luego lo fabricó como un cilindro de madera.",
+    "foto": "doctor stethoscope heartbeat"
   },
   {
     "id": "inventos-015",
@@ -117,7 +131,8 @@
     "icono": "🧼",
     "dato": "En 1847, Ignaz Semmelweis redujo las muertes de parturientas en Viena haciendo que los médicos se lavaran las manos.",
     "falso": "En 1947, Ignaz Semmelweis redujo las muertes de parturientas en Viena haciendo que los médicos se lavaran las manos.",
-    "explicacion": "Semmelweis murió en 1865. Su descubrimiento fue en 1847, aunque muchos médicos de su época lo rechazaron."
+    "explicacion": "Semmelweis murió en 1865. Su descubrimiento fue en 1847, aunque muchos médicos de su época lo rechazaron.",
+    "foto": "washing hands soap"
   },
   {
     "id": "inventos-016",
@@ -125,7 +140,8 @@
     "icono": "💉",
     "dato": "Frederick Banting y Charles Best aislaron la insulina en 1921 en la Universidad de Toronto, Canadá.",
     "falso": "Frederick Banting y Charles Best aislaron la insulina en 1921 en la Universidad de Oxford, Inglaterra.",
-    "explicacion": "El trabajo se hizo en la Universidad de Toronto, en Canadá. En 1922 se trató al primer paciente con diabetes."
+    "explicacion": "El trabajo se hizo en la Universidad de Toronto, en Canadá. En 1922 se trató al primer paciente con diabetes.",
+    "foto": "medical vials laboratory"
   },
   {
     "id": "inventos-017",
@@ -133,7 +149,8 @@
     "icono": "🩸",
     "dato": "Karl Landsteiner descubrió los grupos sanguíneos A, B y O en 1901, lo que hizo seguras las transfusiones.",
     "falso": "Karl Landsteiner descubrió los grupos sanguíneos A, B y O en 1801, lo que hizo seguras las transfusiones.",
-    "explicacion": "Landsteiner nació en 1868; el hallazgo es de 1901. Por él recibió el Nobel de Medicina en 1930."
+    "explicacion": "Landsteiner nació en 1868; el hallazgo es de 1901. Por él recibió el Nobel de Medicina en 1930.",
+    "foto": "blood donation bags"
   },
   {
     "id": "inventos-018",
@@ -141,7 +158,8 @@
     "icono": "🧬",
     "dato": "En 1953, Watson y Crick publicaron que el ADN tiene forma de doble hélice, con ayuda de datos de Rosalind Franklin.",
     "falso": "En 1953, Watson y Crick publicaron que el ADN tiene forma de triple hélice, con ayuda de datos de Rosalind Franklin.",
-    "explicacion": "El modelo correcto es una doble hélice. Linus Pauling sí propuso una triple hélice ese año, pero era errónea."
+    "explicacion": "El modelo correcto es una doble hélice. Linus Pauling sí propuso una triple hélice ese año, pero era errónea.",
+    "foto": "dna double helix"
   },
   {
     "id": "inventos-019",
@@ -149,7 +167,8 @@
     "icono": "💊",
     "dato": "El químico Felix Hoffmann, de la empresa alemana Bayer, sintetizó en 1897 el ácido acetilsalicílico: la aspirina.",
     "falso": "El químico Felix Hoffmann, de la empresa estadounidense Pfizer, sintetizó en 1897 el ácido acetilsalicílico.",
-    "explicacion": "Hoffmann trabajaba en Bayer, en Alemania. Bayer registró la marca Aspirin en 1899."
+    "explicacion": "Hoffmann trabajaba en Bayer, en Alemania. Bayer registró la marca Aspirin en 1899.",
+    "foto": "white pills tablets"
   },
   {
     "id": "inventos-020",
@@ -157,7 +176,8 @@
     "icono": "🔪",
     "dato": "Joseph Lister introdujo la cirugía antiséptica en 1867, desinfectando heridas e instrumentos con ácido carbólico.",
     "falso": "Joseph Lister introdujo la cirugía antiséptica en 1967, desinfectando heridas e instrumentos con ácido carbólico.",
-    "explicacion": "Lister publicó su método en 1867 y murió en 1912. El ácido carbólico que usaba es el fenol."
+    "explicacion": "Lister publicó su método en 1867 y murió en 1912. El ácido carbólico que usaba es el fenol.",
+    "foto": "surgical instruments tray"
   },
   {
     "id": "inventos-021",
@@ -165,7 +185,8 @@
     "icono": "💓",
     "dato": "El primer marcapasos implantado en un paciente se colocó en Suecia en 1958.",
     "falso": "El primer marcapasos implantado en un paciente se colocó en Japón en 1958.",
-    "explicacion": "Fue en Estocolmo, Suecia: lo crearon Rune Elmqvist y Åke Senning, y el paciente fue Arne Larsson."
+    "explicacion": "Fue en Estocolmo, Suecia: lo crearon Rune Elmqvist y Åke Senning, y el paciente fue Arne Larsson.",
+    "foto": "heart monitor screen"
   },
   {
     "id": "inventos-022",
@@ -173,7 +194,8 @@
     "icono": "👓",
     "dato": "Los primeros anteojos para leer aparecieron en Italia a finales del siglo XIII.",
     "falso": "Los primeros anteojos para leer aparecieron en Italia a finales del siglo XVIII.",
-    "explicacion": "Ya se usaban en Italia hacia 1290, cinco siglos antes. En el siglo XVIII Benjamin Franklin ideó los bifocales."
+    "explicacion": "Ya se usaban en Italia hacia 1290, cinco siglos antes. En el siglo XVIII Benjamin Franklin ideó los bifocales.",
+    "foto": "reading glasses book"
   },
   {
     "id": "inventos-023",
@@ -181,7 +203,8 @@
     "icono": "🔭",
     "dato": "En 1608, el fabricante de lentes Hans Lipperhey pidió en los Países Bajos la primera patente conocida de un telescopio.",
     "falso": "En 1608, Galileo Galilei pidió en los Países Bajos la primera patente conocida de un telescopio.",
-    "explicacion": "La solicitud fue del neerlandés Hans Lipperhey. Galileo construyó su propio telescopio en 1609, al saber del invento."
+    "explicacion": "La solicitud fue del neerlandés Hans Lipperhey. Galileo construyó su propio telescopio en 1609, al saber del invento.",
+    "foto": "antique brass telescope"
   },
   {
     "id": "inventos-024",
@@ -189,7 +212,8 @@
     "icono": "🪐",
     "dato": "En 1610, Galileo descubrió con su telescopio las cuatro lunas más grandes de Júpiter.",
     "falso": "En 1610, Galileo descubrió con su telescopio las cuatro lunas más grandes de Saturno.",
-    "explicacion": "Fueron las de Júpiter: Ío, Europa, Ganímedes y Calisto. La primera luna de Saturno, Titán, la halló Huygens en 1655."
+    "explicacion": "Fueron las de Júpiter: Ío, Europa, Ganímedes y Calisto. La primera luna de Saturno, Titán, la halló Huygens en 1655.",
+    "foto": "jupiter planet space"
   },
   {
     "id": "inventos-025",
@@ -197,7 +221,8 @@
     "icono": "🔬",
     "dato": "Antonie van Leeuwenhoek, un comerciante de telas neerlandés, fue el primero en observar bacterias, con microscopios hechos por él.",
     "falso": "Antonie van Leeuwenhoek, un relojero italiano, fue el primero en observar bacterias, con microscopios hechos por él.",
-    "explicacion": "Leeuwenhoek era neerlandés, de Delft, y se dedicaba al comercio de telas. Describió bacterias en la década de 1670."
+    "explicacion": "Leeuwenhoek era neerlandés, de Delft, y se dedicaba al comercio de telas. Describió bacterias en la década de 1670.",
+    "foto": "bacteria under microscope"
   },
   {
     "id": "inventos-026",
@@ -205,7 +230,8 @@
     "icono": "🔬",
     "dato": "Robert Hooke usó la palabra «célula» en 1665, al ver al microscopio las celdillas de un trozo de corcho.",
     "falso": "Robert Hooke usó la palabra «célula» en 1665, al ver al microscopio las celdillas de una gota de sangre.",
-    "explicacion": "Hooke observó corcho, cuyas celdillas le recordaron cuartos pequeños. Lo publicó en su libro Micrographia."
+    "explicacion": "Hooke observó corcho, cuyas celdillas le recordaron cuartos pequeños. Lo publicó en su libro Micrographia.",
+    "foto": "microscope lab close up"
   },
   {
     "id": "inventos-027",
@@ -213,7 +239,8 @@
     "icono": "🎵",
     "dato": "Thomas Edison inventó en 1877 el fonógrafo, el primer aparato capaz de grabar sonido y reproducirlo.",
     "falso": "Thomas Edison inventó en 1927 el fonógrafo, el primer aparato capaz de grabar sonido y reproducirlo.",
-    "explicacion": "El fonógrafo es de 1877. Para 1927 ya existían el gramófono, la radio y el cine sonoro."
+    "explicacion": "El fonógrafo es de 1877. Para 1927 ya existían el gramófono, la radio y el cine sonoro.",
+    "foto": "vintage phonograph horn"
   },
   {
     "id": "inventos-028",
@@ -221,7 +248,8 @@
     "icono": "🧨",
     "dato": "El químico sueco Alfred Nobel patentó la dinamita en 1867; su fortuna financió después los Premios Nobel.",
     "falso": "El químico noruego Alfred Nobel patentó la dinamita en 1867; su fortuna financió después los Premios Nobel.",
-    "explicacion": "Alfred Nobel era sueco, nacido en Estocolmo. Solo el Nobel de la Paz se entrega en Noruega."
+    "explicacion": "Alfred Nobel era sueco, nacido en Estocolmo. Solo el Nobel de la Paz se entrega en Noruega.",
+    "foto": "rock quarry explosion"
   },
   {
     "id": "inventos-029",
@@ -229,7 +257,8 @@
     "icono": "🎆",
     "dato": "La pólvora se inventó en China; su fórmula escrita más antigua conocida es de 1044.",
     "falso": "La pólvora se inventó en la India; su fórmula escrita más antigua conocida es de 1044.",
-    "explicacion": "La pólvora es un invento chino. La fórmula de 1044 aparece en el Wujing Zongyao, un tratado militar chino."
+    "explicacion": "La pólvora es un invento chino. La fórmula de 1044 aparece en el Wujing Zongyao, un tratado militar chino.",
+    "foto": "chinese fireworks night"
   },
   {
     "id": "inventos-030",
@@ -237,7 +266,8 @@
     "icono": "🛫",
     "dato": "El primer vuelo de los hermanos Wright, el 17 de diciembre de 1903, duró unos 12 segundos.",
     "falso": "El primer vuelo de los hermanos Wright, el 17 de diciembre de 1903, duró unos 12 minutos.",
-    "explicacion": "Duró solo unos 12 segundos y recorrió 37 metros. El vuelo más largo de ese día duró 59 segundos."
+    "explicacion": "Duró solo unos 12 segundos y recorrió 37 metros. El vuelo más largo de ese día duró 59 segundos.",
+    "foto": "vintage biplane flying"
   },
   {
     "id": "inventos-031",
@@ -245,7 +275,8 @@
     "icono": "🛫",
     "dato": "En 1906, el brasileño Alberto Santos-Dumont voló unos 60 metros en París con su avión 14-bis, ante el público.",
     "falso": "En 1906, el argentino Alberto Santos-Dumont voló unos 60 metros en París con su avión 14-bis, ante el público.",
-    "explicacion": "Santos-Dumont era brasileño, nacido en Minas Gerais, aunque hizo sus vuelos en Francia."
+    "explicacion": "Santos-Dumont era brasileño, nacido en Minas Gerais, aunque hizo sus vuelos en Francia.",
+    "foto": "old airplane flying"
   },
   {
     "id": "inventos-032",
@@ -253,7 +284,8 @@
     "icono": "📱",
     "dato": "Martin Cooper, de Motorola, hizo la primera llamada desde un teléfono celular portátil en 1973, en Nueva York.",
     "falso": "Martin Cooper, de Nokia, hizo la primera llamada desde un teléfono celular portátil en 1973, en Nueva York.",
-    "explicacion": "Cooper trabajaba en Motorola, empresa estadounidense. Su teléfono pesaba más de un kilo."
+    "explicacion": "Cooper trabajaba en Motorola, empresa estadounidense. Su teléfono pesaba más de un kilo.",
+    "foto": "phone call city street"
   },
   {
     "id": "inventos-033",
@@ -261,7 +293,8 @@
     "icono": "🌐",
     "dato": "Tim Berners-Lee propuso la World Wide Web en 1989 mientras trabajaba en el CERN, en Suiza.",
     "falso": "Tim Berners-Lee propuso la World Wide Web en 1989 mientras trabajaba en la NASA, en Estados Unidos.",
-    "explicacion": "Berners-Lee trabajaba en el CERN, el laboratorio europeo de física de partículas cerca de Ginebra."
+    "explicacion": "Berners-Lee trabajaba en el CERN, el laboratorio europeo de física de partículas cerca de Ginebra.",
+    "foto": "internet network globe"
   },
   {
     "id": "inventos-034",
@@ -269,7 +302,8 @@
     "icono": "💻",
     "dato": "El primer mensaje entre computadoras de ARPANET, en 1969, fue «LO»: el sistema falló al intentar escribir «LOGIN».",
     "falso": "El primer mensaje entre computadoras de ARPANET, en 1969, fue «HOLA MUNDO», escrito completo sin fallas.",
-    "explicacion": "Solo llegaron las letras «LO» antes de que el sistema se cayera. Querían escribir «LOGIN»."
+    "explicacion": "Solo llegaron las letras «LO» antes de que el sistema se cayera. Querían escribir «LOGIN».",
+    "foto": "old computer terminal"
   },
   {
     "id": "inventos-035",
@@ -277,7 +311,8 @@
     "icono": "📧",
     "dato": "El programador Ray Tomlinson eligió en 1971 el símbolo @ para las direcciones de correo electrónico.",
     "falso": "Bill Gates eligió en 1985 el símbolo @ para las direcciones de correo electrónico.",
-    "explicacion": "Fue Ray Tomlinson en 1971, al enviar los primeros correos entre computadoras de ARPANET."
+    "explicacion": "Fue Ray Tomlinson en 1971, al enviar los primeros correos entre computadoras de ARPANET.",
+    "foto": "at symbol keyboard"
   },
   {
     "id": "inventos-036",
@@ -285,7 +320,8 @@
     "icono": "🔌",
     "dato": "El transistor se inventó en 1947 en los Laboratorios Bell, en Estados Unidos.",
     "falso": "El transistor se inventó en 1947 en los laboratorios de Sony, en Japón.",
-    "explicacion": "Lo crearon Bardeen, Brattain y Shockley en los Laboratorios Bell. Ganaron el Nobel de Física en 1956."
+    "explicacion": "Lo crearon Bardeen, Brattain y Shockley en los Laboratorios Bell. Ganaron el Nobel de Física en 1956.",
+    "foto": "electronic components circuit"
   },
   {
     "id": "inventos-037",
@@ -293,7 +329,8 @@
     "icono": "💻",
     "dato": "El primer ratón de computadora, creado por Douglas Engelbart en los años 60, tenía carcasa de madera.",
     "falso": "El primer ratón de computadora, creado por Apple en los años 80, tenía carcasa de madera.",
-    "explicacion": "Lo creó Douglas Engelbart en el Instituto de Investigación de Stanford y lo presentó en 1968."
+    "explicacion": "Lo creó Douglas Engelbart en el Instituto de Investigación de Stanford y lo presentó en 1968.",
+    "foto": "computer mouse desk"
   },
   {
     "id": "inventos-038",
@@ -301,7 +338,8 @@
     "icono": "🧮",
     "dato": "La computadora ENIAC, presentada en 1946, ocupaba una sala entera y pesaba unas 27 toneladas.",
     "falso": "La computadora ENIAC, presentada en 1946, cabía sobre un escritorio y pesaba unos 27 kilos.",
-    "explicacion": "La ENIAC usaba unos 18.000 tubos de vacío, ocupaba una gran sala y pesaba alrededor de 27 toneladas."
+    "explicacion": "La ENIAC usaba unos 18.000 tubos de vacío, ocupaba una gran sala y pesaba alrededor de 27 toneladas.",
+    "foto": "vintage computer cables"
   },
   {
     "id": "inventos-039",
@@ -309,7 +347,8 @@
     "icono": "🐛",
     "dato": "En 1947, el equipo de Grace Hopper halló una polilla atrapada en la computadora Harvard Mark II y la pegó en la bitácora.",
     "falso": "En 1947, el equipo de Grace Hopper halló una cucaracha atrapada en la computadora Harvard Mark II.",
-    "explicacion": "Fue una polilla, que aún se conserva pegada en la bitácora, en el Museo Nacional de Historia Estadounidense."
+    "explicacion": "Fue una polilla, que aún se conserva pegada en la bitácora, en el Museo Nacional de Historia Estadounidense.",
+    "foto": "moth on wall"
   },
   {
     "id": "inventos-040",
@@ -317,7 +356,8 @@
     "icono": "📲",
     "dato": "El código QR lo creó en 1994 Masahiro Hara, de la empresa japonesa Denso Wave, para rastrear piezas de autos.",
     "falso": "El código QR lo creó en 1994 Masahiro Hara, de una empresa surcoreana, para hacer pagos con el celular.",
-    "explicacion": "Denso Wave es japonesa, filial de Denso, y el QR se ideó para la industria automotriz."
+    "explicacion": "Denso Wave es japonesa, filial de Denso, y el QR se ideó para la industria automotriz.",
+    "foto": "scanning qr code"
   },
   {
     "id": "inventos-041",
@@ -325,7 +365,8 @@
     "icono": "🛒",
     "dato": "El primer producto vendido con lectura de código de barras fue un paquete de chicles Wrigley's, en 1974 en Ohio.",
     "falso": "El primer producto vendido con lectura de código de barras fue una lata de Coca-Cola, en 1974 en Ohio.",
-    "explicacion": "Fue un paquete de chicles Wrigley's, escaneado el 26 de junio de 1974 en un supermercado de Troy, Ohio."
+    "explicacion": "Fue un paquete de chicles Wrigley's, escaneado el 26 de junio de 1974 en un supermercado de Troy, Ohio.",
+    "foto": "barcode scanner supermarket"
   },
   {
     "id": "inventos-042",
@@ -333,7 +374,8 @@
     "icono": "📻",
     "dato": "Guglielmo Marconi compartió el Nobel de Física de 1909 con Ferdinand Braun por la telegrafía inalámbrica.",
     "falso": "Guglielmo Marconi compartió el Nobel de Física de 1909 con Nikola Tesla por la telegrafía inalámbrica.",
-    "explicacion": "Tesla nunca ganó un Nobel. Marconi lo compartió con el físico alemán Ferdinand Braun."
+    "explicacion": "Tesla nunca ganó un Nobel. Marconi lo compartió con el físico alemán Ferdinand Braun.",
+    "foto": "radio tower antenna"
   },
   {
     "id": "inventos-043",
@@ -341,7 +383,8 @@
     "icono": "📠",
     "dato": "Samuel Morse envió en 1844 un telegrama de Washington a Baltimore que decía «¿Qué ha hecho Dios?».",
     "falso": "Samuel Morse envió en 1844 un telegrama de Nueva York a Boston que decía «¿Qué ha hecho Dios?».",
-    "explicacion": "La línea de 1844 unía Washington con Baltimore. El mensaje en inglés era «What hath God wrought»."
+    "explicacion": "La línea de 1844 unía Washington con Baltimore. El mensaje en inglés era «What hath God wrought».",
+    "foto": "morse code telegraph"
   },
   {
     "id": "inventos-044",
@@ -349,7 +392,8 @@
     "icono": "📺",
     "dato": "El escocés John Logie Baird hizo en Londres, en 1926, la primera demostración pública de televisión.",
     "falso": "El escocés John Logie Baird hizo en Londres, en 1956, la primera demostración pública de televisión.",
-    "explicacion": "Baird la hizo en enero de 1926 con un sistema mecánico. Para 1956 la TV ya estaba en millones de hogares."
+    "explicacion": "Baird la hizo en enero de 1926 con un sistema mecánico. Para 1956 la TV ya estaba en millones de hogares.",
+    "foto": "vintage television static"
   },
   {
     "id": "inventos-045",
@@ -357,7 +401,8 @@
     "icono": "📺",
     "dato": "El mexicano Guillermo González Camarena patentó en 1940 un sistema de televisión a color.",
     "falso": "El chileno Guillermo González Camarena patentó en 1940 un sistema de televisión a color.",
-    "explicacion": "González Camarena era mexicano, nacido en Guadalajara. Patentó su sistema en México en 1940."
+    "explicacion": "González Camarena era mexicano, nacido en Guadalajara. Patentó su sistema en México en 1940.",
+    "foto": "color tv test pattern"
   },
   {
     "id": "inventos-046",
@@ -365,7 +410,8 @@
     "icono": "📷",
     "dato": "La fotografía más antigua que se conserva la tomó Nicéphore Niépce hacia 1826 desde una ventana, en Francia.",
     "falso": "La fotografía más antigua que se conserva la tomó Nicéphore Niépce hacia 1926 desde una ventana, en Francia.",
-    "explicacion": "Niépce murió en 1833. Su imagen «Vista desde la ventana en Le Gras» es de hacia 1826 o 1827."
+    "explicacion": "Niépce murió en 1833. Su imagen «Vista desde la ventana en Le Gras» es de hacia 1826 o 1827.",
+    "foto": "rooftops from window"
   },
   {
     "id": "inventos-047",
@@ -373,7 +419,8 @@
     "icono": "🥤",
     "dato": "La Coca-Cola la creó en 1886 el farmacéutico John Pemberton en Atlanta, y al principio se vendía como tónico.",
     "falso": "La Coca-Cola la creó en 1886 el farmacéutico John Pemberton en Nueva York, y al principio se vendía como tónico.",
-    "explicacion": "Pemberton era de Atlanta, Georgia, donde se vendió por primera vez en una farmacia."
+    "explicacion": "Pemberton era de Atlanta, Georgia, donde se vendió por primera vez en una farmacia.",
+    "foto": "cola glass ice"
   },
   {
     "id": "inventos-048",
@@ -381,7 +428,8 @@
     "icono": "🥫",
     "dato": "Nicolas Appert ganó en 1810 un premio del gobierno francés por su método para conservar alimentos en frascos sellados.",
     "falso": "Nicolas Appert ganó en 1810 un premio del gobierno británico por su método para conservar alimentos en frascos sellados.",
-    "explicacion": "Appert era francés y el premio lo dio el gobierno de Napoleón, que buscaba alimentar a sus tropas."
+    "explicacion": "Appert era francés y el premio lo dio el gobierno de Napoleón, que buscaba alimentar a sus tropas.",
+    "foto": "glass jars preserves"
   },
   {
     "id": "inventos-049",
@@ -389,7 +437,8 @@
     "icono": "📝",
     "dato": "El húngaro László Bíró perfeccionó el bolígrafo moderno en Argentina, donde lo patentó en 1943.",
     "falso": "El húngaro László Bíró perfeccionó el bolígrafo moderno en Chile, donde lo patentó en 1943.",
-    "explicacion": "Bíró emigró a Argentina y allí lo patentó. Por eso en Argentina al bolígrafo se le dice «birome»."
+    "explicacion": "Bíró emigró a Argentina y allí lo patentó. Por eso en Argentina al bolígrafo se le dice «birome».",
+    "foto": "ballpoint pen writing"
   },
   {
     "id": "inventos-050",
@@ -397,7 +446,8 @@
     "icono": "🚦",
     "dato": "El primer semáforo se instaló en Londres en 1868, frente al Parlamento, y funcionaba con gas.",
     "falso": "El primer semáforo se instaló en Nueva York en 1868, frente al Ayuntamiento, y funcionaba con gas.",
-    "explicacion": "El primero fue el de Londres, en 1868. Los semáforos eléctricos llegaron a Estados Unidos en la década de 1910."
+    "explicacion": "El primero fue el de Londres, en 1868. Los semáforos eléctricos llegaron a Estados Unidos en la década de 1910.",
+    "foto": "traffic light changing"
   },
   {
     "id": "inventos-051",
@@ -405,7 +455,8 @@
     "icono": "🛗",
     "dato": "Elisha Otis demostró en 1854, en Nueva York, un freno que impedía que un ascensor cayera si se cortaba el cable.",
     "falso": "Elisha Otis demostró en 1954, en Nueva York, un freno que impedía que un ascensor cayera si se cortaba el cable.",
-    "explicacion": "Otis murió en 1861. Su demostración fue en 1854 y permitió después construir rascacielos."
+    "explicacion": "Otis murió en 1861. Su demostración fue en 1854 y permitió después construir rascacielos.",
+    "foto": "elevator going up"
   },
   {
     "id": "inventos-052",
@@ -413,7 +464,8 @@
     "icono": "🚗",
     "dato": "Karl Benz patentó en 1886 su Motorwagen, un vehículo de tres ruedas con motor de gasolina.",
     "falso": "Karl Benz patentó en 1886 su Motorwagen, un vehículo de seis ruedas con motor de gasolina.",
-    "explicacion": "El Motorwagen de 1886 tenía tres ruedas: dos atrás y una adelante para la dirección."
+    "explicacion": "El Motorwagen de 1886 tenía tres ruedas: dos atrás y una adelante para la dirección.",
+    "foto": "vintage car driving"
   },
   {
     "id": "inventos-053",
@@ -421,7 +473,8 @@
     "icono": "🚂",
     "dato": "James Watt no inventó la máquina de vapor: la mejoró con un condensador separado, que patentó en 1769.",
     "falso": "James Watt inventó en 1769 la primera máquina de vapor de la historia.",
-    "explicacion": "Ya existían las máquinas de Savery (1698) y Newcomen (1712). Watt las hizo mucho más eficientes."
+    "explicacion": "Ya existían las máquinas de Savery (1698) y Newcomen (1712). Watt las hizo mucho más eficientes.",
+    "foto": "steam engine train"
   },
   {
     "id": "inventos-054",
@@ -429,7 +482,8 @@
     "icono": "⚡",
     "dato": "Benjamin Franklin inventó el pararrayos a mediados del siglo XVIII.",
     "falso": "Thomas Edison inventó el pararrayos a mediados del siglo XIX.",
-    "explicacion": "El pararrayos es de Benjamin Franklin, hacia 1750. Edison nació en 1847."
+    "explicacion": "El pararrayos es de Benjamin Franklin, hacia 1750. Edison nació en 1847.",
+    "foto": "lightning storm night"
   },
   {
     "id": "inventos-055",
@@ -437,7 +491,8 @@
     "icono": "🔋",
     "dato": "Alessandro Volta presentó en 1800 la pila voltaica, la primera batería capaz de dar corriente continua.",
     "falso": "Luigi Galvani presentó en 1800 la pila voltaica, la primera batería capaz de dar corriente continua.",
-    "explicacion": "La pila es de Alessandro Volta, y por eso el voltio lleva su nombre. Galvani estudió la electricidad en ranas."
+    "explicacion": "La pila es de Alessandro Volta, y por eso el voltio lleva su nombre. Galvani estudió la electricidad en ranas.",
+    "foto": "battery cells close up"
   },
   {
     "id": "inventos-056",
@@ -445,7 +500,8 @@
     "icono": "🧪",
     "dato": "Marie y Pierre Curie descubrieron el polonio y el radio en 1898; el polonio lleva el nombre de Polonia.",
     "falso": "Marie y Pierre Curie descubrieron el polonio y el radio en 1898; el polonio lleva el nombre de un río francés.",
-    "explicacion": "Marie Curie lo nombró en honor a Polonia, su país natal, que entonces no existía como Estado independiente."
+    "explicacion": "Marie Curie lo nombró en honor a Polonia, su país natal, que entonces no existía como Estado independiente.",
+    "foto": "glowing laboratory flasks"
   },
   {
     "id": "inventos-057",
@@ -453,7 +509,8 @@
     "icono": "🍳",
     "dato": "El teflón se descubrió por accidente en 1938, cuando Roy Plunkett, de DuPont, investigaba gases refrigerantes.",
     "falso": "El teflón se descubrió por accidente en 1938, cuando un científico de la NASA investigaba gases refrigerantes.",
-    "explicacion": "Lo descubrió Roy Plunkett en DuPont. La NASA se fundó en 1958, veinte años después."
+    "explicacion": "Lo descubrió Roy Plunkett en DuPont. La NASA se fundó en 1958, veinte años después.",
+    "foto": "nonstick frying pan"
   },
   {
     "id": "inventos-058",
@@ -461,7 +518,8 @@
     "icono": "🍬",
     "dato": "La sacarina se descubrió en 1879 cuando el químico Constantin Fahlberg notó un sabor dulce en sus manos.",
     "falso": "La sacarina se descubrió en 1979 cuando el químico Constantin Fahlberg notó un sabor dulce en sus manos.",
-    "explicacion": "Fue en 1879, un siglo antes, en la Universidad Johns Hopkins. Fahlberg murió en 1910."
+    "explicacion": "Fue en 1879, un siglo antes, en la Universidad Johns Hopkins. Fahlberg murió en 1910.",
+    "foto": "sugar cubes close up"
   },
   {
     "id": "inventos-059",
@@ -469,7 +527,8 @@
     "icono": "🚙",
     "dato": "Charles Goodyear descubrió la vulcanización del caucho en 1839, pero no fundó la empresa Goodyear: se creó en 1898.",
     "falso": "Charles Goodyear descubrió la vulcanización del caucho en 1839 y fundó la empresa de llantas Goodyear.",
-    "explicacion": "Goodyear murió en 1860. La empresa nació en 1898 y tomó su apellido como homenaje."
+    "explicacion": "Goodyear murió en 1860. La empresa nació en 1898 y tomó su apellido como homenaje.",
+    "foto": "rubber tires stack"
   },
   {
     "id": "inventos-060",
@@ -477,7 +536,8 @@
     "icono": "🎸",
     "dato": "El primer tomógrafo computarizado lo creó Godfrey Hounsfield en EMI, la discográfica de los Beatles, y se usó en 1971.",
     "falso": "El primer tomógrafo computarizado lo creó Godfrey Hounsfield en Sony, la empresa japonesa, y se usó en 1971.",
-    "explicacion": "Hounsfield trabajaba en la británica EMI. Ganó el Nobel de Medicina de 1979 junto con Allan Cormack."
+    "explicacion": "Hounsfield trabajaba en la británica EMI. Ganó el Nobel de Medicina de 1979 junto con Allan Cormack.",
+    "foto": "ct scanner hospital"
   },
   {
     "id": "inventos-061",
@@ -485,7 +545,8 @@
     "icono": "🧦",
     "dato": "El nailon lo creó en 1935 el equipo de Wallace Carothers en DuPont; las medias de nailon causaron furor en 1940.",
     "falso": "El nailon lo creó en 1935 el equipo de Wallace Carothers en Bayer; las medias de nailon causaron furor en 1940.",
-    "explicacion": "Carothers trabajaba en la empresa estadounidense DuPont, no en la alemana Bayer."
+    "explicacion": "Carothers trabajaba en la empresa estadounidense DuPont, no en la alemana Bayer.",
+    "foto": "sewing thread spools"
   },
   {
     "id": "inventos-062",
@@ -493,7 +554,8 @@
     "icono": "👖",
     "dato": "Levi Strauss y el sastre Jacob Davis patentaron en 1873 los pantalones de mezclilla reforzados con remaches.",
     "falso": "Levi Strauss y el sastre Jacob Davis patentaron en 1973 los pantalones de mezclilla reforzados con remaches.",
-    "explicacion": "La patente es de mayo de 1873. Levi Strauss murió en 1902."
+    "explicacion": "La patente es de mayo de 1873. Levi Strauss murió en 1902.",
+    "foto": "denim jeans rivets"
   },
   {
     "id": "inventos-063",
@@ -501,7 +563,8 @@
     "icono": "🧥",
     "dato": "El ingeniero Gideon Sundback diseñó en 1913 la cremallera moderna, con dientes que encajan entre sí.",
     "falso": "El ingeniero Gideon Sundback diseñó en 1813 la cremallera moderna, con dientes que encajan entre sí.",
-    "explicacion": "Sundback nació en 1880 en Suecia; su diseño es de 1913, en Estados Unidos."
+    "explicacion": "Sundback nació en 1880 en Suecia; su diseño es de 1913, en Estados Unidos.",
+    "foto": "zipper close up"
   },
   {
     "id": "inventos-064",
@@ -509,7 +572,8 @@
     "icono": "💊",
     "dato": "El sildenafilo, conocido como Viagra, se estudiaba en un principio como tratamiento para la angina de pecho.",
     "falso": "El sildenafilo, conocido como Viagra, se estudiaba en un principio como tratamiento para la caída del cabello.",
-    "explicacion": "Pfizer lo probaba para la angina de pecho, un problema del corazón. Su otro efecto apareció en los ensayos."
+    "explicacion": "Pfizer lo probaba para la angina de pecho, un problema del corazón. Su otro efecto apareció en los ensayos.",
+    "foto": "medicine pills bottle"
   },
   {
     "id": "inventos-065",
@@ -517,7 +581,8 @@
     "icono": "🚘",
     "dato": "Mary Anderson patentó en 1903 un limpiaparabrisas que se movía con una palanca desde dentro del vehículo.",
     "falso": "Henry Ford patentó en 1903 un limpiaparabrisas que se movía con una palanca desde dentro del vehículo.",
-    "explicacion": "La patente de 1903 es de Mary Anderson, de Alabama, Estados Unidos. Ford no lo inventó."
+    "explicacion": "La patente de 1903 es de Mary Anderson, de Alabama, Estados Unidos. Ford no lo inventó.",
+    "foto": "windshield wipers rain"
   },
   {
     "id": "inventos-066",
@@ -525,7 +590,8 @@
     "icono": "🧪",
     "dato": "Dmitri Mendeléyev publicó su tabla periódica en 1869 y dejó huecos para elementos que aún no se conocían.",
     "falso": "Dmitri Mendeléyev publicó su tabla periódica en 1869 y ya incluía todos los elementos que existen hoy.",
-    "explicacion": "Mendeléyev predijo elementos aún desconocidos, como el galio y el germanio, que se hallaron años después."
+    "explicacion": "Mendeléyev predijo elementos aún desconocidos, como el galio y el germanio, que se hallaron años después.",
+    "foto": "chemistry periodic table"
   },
   {
     "id": "inventos-067",
@@ -533,7 +599,8 @@
     "icono": "🚀",
     "dato": "Robert Goddard lanzó en 1926, en Massachusetts, el primer cohete de combustible líquido.",
     "falso": "Robert Goddard lanzó en 1926, en Massachusetts, el primer cohete de combustible sólido.",
-    "explicacion": "Los cohetes de pólvora, que es combustible sólido, existían desde hacía siglos. Lo nuevo fue el combustible líquido."
+    "explicacion": "Los cohetes de pólvora, que es combustible sólido, existían desde hacía siglos. Lo nuevo fue el combustible líquido.",
+    "foto": "rocket launch smoke"
   },
   {
     "id": "inventos-068",
@@ -541,7 +608,8 @@
     "icono": "📡",
     "dato": "El Sputnik 1, lanzado por la Unión Soviética el 4 de octubre de 1957, fue el primer satélite artificial.",
     "falso": "El Sputnik 1, lanzado por Estados Unidos el 4 de octubre de 1957, fue el primer satélite artificial.",
-    "explicacion": "El Sputnik fue soviético. El primer satélite de Estados Unidos, el Explorer 1, se lanzó en 1958."
+    "explicacion": "El Sputnik fue soviético. El primer satélite de Estados Unidos, el Explorer 1, se lanzó en 1958.",
+    "foto": "satellite orbiting earth"
   },
   {
     "id": "inventos-069",
@@ -549,7 +617,8 @@
     "icono": "🌍",
     "dato": "El GPS lo creó el Departamento de Defensa de Estados Unidos; su primer satélite de prueba se lanzó en 1978.",
     "falso": "El GPS lo creó la Agencia Espacial Europea; su primer satélite de prueba se lanzó en 1978.",
-    "explicacion": "El GPS es un sistema militar estadounidense. El sistema europeo equivalente se llama Galileo."
+    "explicacion": "El GPS es un sistema militar estadounidense. El sistema europeo equivalente se llama Galileo.",
+    "foto": "gps navigation car"
   },
   {
     "id": "inventos-070",
@@ -557,7 +626,8 @@
     "icono": "💉",
     "dato": "Jonas Salk anunció en 1955 su vacuna contra la polio y decidió no patentarla.",
     "falso": "Jonas Salk anunció en 1955 su vacuna contra la polio, la patentó y se hizo millonario con ella.",
-    "explicacion": "Salk no la patentó. Cuando le preguntaron de quién era la patente, respondió que «de la gente»."
+    "explicacion": "Salk no la patentó. Cuando le preguntaron de quién era la patente, respondió que «de la gente».",
+    "foto": "child vaccine doctor"
   },
   {
     "id": "inventos-071",
@@ -565,7 +635,8 @@
     "icono": "👆",
     "dato": "Louis Braille, ciego desde niño, ideó su sistema de lectura con puntos en relieve hacia 1824, cuando tenía 15 años.",
     "falso": "Louis Braille, ciego desde niño, ideó su sistema de lectura con puntos en relieve hacia 1824, cuando tenía 50 años.",
-    "explicacion": "Braille nació en 1809, así que en 1824 tenía 15 años. Murió en 1852, con 43."
+    "explicacion": "Braille nació en 1809, así que en 1824 tenía 15 años. Murió en 1852, con 43.",
+    "foto": "braille reading fingers"
   },
   {
     "id": "inventos-072",
@@ -573,7 +644,8 @@
     "icono": "⏰",
     "dato": "Christiaan Huygens construyó en 1656 el primer reloj de péndulo.",
     "falso": "Galileo Galilei construyó en 1656 el primer reloj de péndulo.",
-    "explicacion": "Galileo murió en 1642. Estudió el péndulo, pero el primer reloj de péndulo fue del neerlandés Huygens."
+    "explicacion": "Galileo murió en 1642. Estudió el péndulo, pero el primer reloj de péndulo fue del neerlandés Huygens.",
+    "foto": "pendulum clock swinging"
   },
   {
     "id": "inventos-073",
@@ -581,7 +653,8 @@
     "icono": "🎲",
     "dato": "Ernő Rubik, profesor de arquitectura en Budapest, creó su famoso cubo en 1974.",
     "falso": "Ernő Rubik, profesor de arquitectura en Tokio, creó su famoso cubo en 1974.",
-    "explicacion": "Rubik es húngaro y creó el cubo en Budapest. Al principio lo usaba para enseñar a pensar en tres dimensiones."
+    "explicacion": "Rubik es húngaro y creó el cubo en Budapest. Al principio lo usaba para enseñar a pensar en tres dimensiones.",
+    "foto": "colorful puzzle cube"
   },
   {
     "id": "inventos-074",
@@ -589,7 +662,8 @@
     "icono": "🧩",
     "dato": "El Tetris lo creó Alekséi Pázhitnov en 1984, en un centro de computación de Moscú.",
     "falso": "El Tetris lo creó Alekséi Pázhitnov en 1984, en las oficinas de Nintendo en Kioto.",
-    "explicacion": "Pázhitnov trabajaba en la Academia de Ciencias de la Unión Soviética, en Moscú. Nintendo lo popularizó después."
+    "explicacion": "Pázhitnov trabajaba en la Academia de Ciencias de la Unión Soviética, en Moscú. Nintendo lo popularizó después.",
+    "foto": "retro computer game"
   },
   {
     "id": "inventos-075",
@@ -597,7 +671,8 @@
     "icono": "🔋",
     "dato": "Las baterías de ion de litio les dieron a Goodenough, Whittingham y Yoshino el Nobel de Química de 2019.",
     "falso": "Las baterías de ion de litio les dieron a Goodenough, Whittingham y Yoshino el Nobel de Física de 2019.",
-    "explicacion": "El premio fue el de Química. John Goodenough lo recibió con 97 años, el ganador más anciano de un Nobel."
+    "explicacion": "El premio fue el de Química. John Goodenough lo recibió con 97 años, el ganador más anciano de un Nobel.",
+    "foto": "phone battery charging"
   },
   {
     "id": "inventos-076",
@@ -605,7 +680,8 @@
     "icono": "🧬",
     "dato": "Emmanuelle Charpentier y Jennifer Doudna ganaron el Nobel de Química de 2020 por la técnica CRISPR para editar genes.",
     "falso": "Emmanuelle Charpentier y Jennifer Doudna ganaron el Nobel de Química de 1990 por la técnica CRISPR para editar genes.",
-    "explicacion": "Su trabajo sobre CRISPR es de 2012 y el Nobel llegó en 2020. En 1990 esa técnica no existía."
+    "explicacion": "Su trabajo sobre CRISPR es de 2012 y el Nobel llegó en 2020. En 1990 esa técnica no existía.",
+    "foto": "scientist pipette lab"
   },
   {
     "id": "inventos-077",
@@ -613,7 +689,8 @@
     "icono": "💉",
     "dato": "Katalin Karikó y Drew Weissman ganaron el Nobel de Medicina de 2023 por sus avances que permitieron vacunas de ARNm.",
     "falso": "Katalin Karikó y Drew Weissman ganaron el Nobel de Medicina de 2003 por sus avances que permitieron vacunas de ARNm.",
-    "explicacion": "El premio fue en 2023, tras el éxito de las vacunas de ARNm contra la COVID-19."
+    "explicacion": "El premio fue en 2023, tras el éxito de las vacunas de ARNm contra la COVID-19.",
+    "foto": "vaccine vials lab"
   },
   {
     "id": "inventos-078",
@@ -621,7 +698,8 @@
     "icono": "🔦",
     "dato": "Theodore Maiman construyó en 1960 el primer láser que funcionó, usando un cristal de rubí.",
     "falso": "Theodore Maiman construyó en 1960 el primer láser que funcionó, usando un cristal de diamante.",
-    "explicacion": "El primer láser usó un cilindro de rubí sintético y emitía luz roja."
+    "explicacion": "El primer láser usó un cilindro de rubí sintético y emitía luz roja.",
+    "foto": "red laser beam"
   },
   {
     "id": "inventos-079",
@@ -629,7 +707,8 @@
     "icono": "📶",
     "dato": "Bluetooth debe su nombre a Harald «Diente Azul», un rey vikingo de Dinamarca del siglo X.",
     "falso": "Bluetooth debe su nombre a Harald «Diente Azul», un rey de Escocia del siglo XV.",
-    "explicacion": "Harald Blåtand fue rey de Dinamarca en el siglo X. El logo de Bluetooth une sus iniciales en runas."
+    "explicacion": "Harald Blåtand fue rey de Dinamarca en el siglo X. El logo de Bluetooth une sus iniciales en runas.",
+    "foto": "viking ship sea"
   },
   {
     "id": "inventos-080",
@@ -637,6 +716,7 @@
     "icono": "🐑",
     "dato": "La oveja Dolly, el primer mamífero clonado a partir de una célula adulta, nació en 1996 en Escocia.",
     "falso": "La oveja Dolly, el primer mamífero clonado a partir de una célula adulta, nació en 1996 en Nueva Zelanda.",
-    "explicacion": "Dolly nació en el Instituto Roslin, cerca de Edimburgo, Escocia, y vivió hasta 2003."
+    "explicacion": "Dolly nació en el Instituto Roslin, cerca de Edimburgo, Escocia, y vivió hasta 2003.",
+    "foto": "sheep in field"
   }
 ]

@@ -18,6 +18,7 @@ import { publishReel, publishStory, facebookReady } from './facebook.mjs';
 import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
 import { publishVideo } from './publish.mjs';
 import { logUpload } from './tiktok-status.mjs';
+import { ponerFondos, guardarStock, creditoStock } from './lib/stock.mjs';
 
 const o = parseCli({ 'dry-run': { type: 'boolean', default: false }, 'solo-lanzamiento': { type: 'boolean', default: false }, tiktok: { type: 'string', default: 'draft' }, hoy: { type: 'string' } });
 const D = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'gta6.json'), 'utf8'));
@@ -41,10 +42,10 @@ if (faltan > 0) {
   datos = mezclar(D.datos.filter((d) => !usados.has(d.id))).concat(mezclar(D.datos)).filter((d, i, a) => a.indexOf(d) === i).slice(0, 4);
   titulo = `Faltan ${faltan} días para GTA VI`;
   escenas = [
-    { tipo: 'intro', dur: INTRO, tema: 'gta', portada: true, sonidos: son, iconos: ['🌴', '🏙️', '🚗', '🌅'],
+    { tipo: 'intro', dur: INTRO, tema: 'gta', portada: true, consulta: 'miami skyline night aerial', sonidos: son, iconos: ['🌴', '🏙️', '🚗', '🌅'],
       lineas: [{ texto: 'FALTAN', size: 100 }, { texto: `${faltan} ${faltan === 1 ? 'DÍA' : 'DÍAS'}`, size: 190, color: TEMAS.gta.acento }, { texto: 'PARA GTA VI', size: 110 }] },
-    ...datos.map((d, i) => ({ tipo: 'dato', dur: DATO, tema: 'gta', idx: i, total: datos.length, n: i + 1, icono: d.icono, texto: d.dato, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
-    { tipo: 'cierre', dur: CIERRE, tema: 'gta', sonidos: [[0, 'final']],
+    ...datos.map((d, i) => ({ tipo: 'dato', dur: DATO, tema: 'gta', idx: i, total: datos.length, n: i + 1, icono: d.icono, texto: d.dato, consulta: d.foto || 'miami beach palm trees', sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
+    { tipo: 'cierre', dur: CIERRE, tema: 'gta', consulta: 'miami sunset palm trees', sonidos: [[0, 'final']],
       lineas: [{ texto: 'SALE EL 19 DE NOVIEMBRE', size: 96, color: TEMAS.gta.acento }, { texto: `En ${plataformas}`, size: 60 }, { texto: 'Cada día, más datos en Potter Play', size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
   texto = `🌴 ${titulo}. Mientras llega el 19 de noviembre, ${datos.length} datos que quizá no sabías:\n\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n¿Cuál te sorprendió más?\n.\n.\n.\nFuentes: ${[...new Set(datos.map((d) => new URL(d.fuente).hostname.replace(/^www\./, '')))].join(', ')}\n\n#gta6 #gtavi #gta #videojuegos #gaming #rockstar #reels #potterplay`;
@@ -52,15 +53,18 @@ if (faltan > 0) {
   datos = D.especial;
   titulo = '¡Hoy sale GTA VI!';
   escenas = [
-    { tipo: 'intro', dur: INTRO, tema: 'gta', portada: true, sonidos: son, iconos: ['🎮', '🌴', '🔥', '🏙️'],
+    { tipo: 'intro', dur: INTRO, tema: 'gta', portada: true, consulta: 'miami ocean drive neon night', sonidos: son, iconos: ['🎮', '🌴', '🔥', '🏙️'],
       lineas: [{ texto: '¡HOY SALE', size: 130 }, { texto: 'GTA VI!', size: 200, color: TEMAS.gta.acento }, { texto: 'Lo que tienes que saber', size: 60, color: 'rgba(255,255,255,0.85)' }] },
-    ...datos.map((d, i) => ({ tipo: 'dato', dur: DATO, tema: 'gta', idx: i, total: datos.length, n: i + 1, icono: d.icono, texto: d.dato, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
-    { tipo: 'cierre', dur: CIERRE, tema: 'gta', sonidos: [[0, 'final']],
+    ...datos.map((d, i) => ({ tipo: 'dato', dur: DATO, tema: 'gta', idx: i, total: datos.length, n: i + 1, icono: d.icono, texto: d.dato, consulta: d.foto || 'miami beach palm trees', sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
+    { tipo: 'cierre', dur: CIERRE, tema: 'gta', consulta: 'miami night highway lights', sonidos: [[0, 'final']],
       lineas: [{ texto: '¿YA LO TIENES?', size: 120, color: TEMAS.gta.acento }, { texto: `Disponible en ${plataformas}`, size: 60 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
   texto = `🎮 ${titulo} Llegó el día: esto es lo que tienes que saber para jugar.\n\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n¿Ya lo tienes o lo vas a esperar?\n.\n.\n.\nFuentes: ${[...new Set(datos.map((d) => new URL(d.fuente).hostname.replace(/^www\./, '')))].join(', ')}\n\n#gta6 #gtavi #gta #videojuegos #gaming #lanzamiento #reels #potterplay`;
 }
 
+const fondos = await ponerFondos(escenas);
+if (fondos) { texto += creditoStock(); console.error(`Videos reales: ${fondos}`); }
+guardarStock();
 const fx = setupNode(), outDir = path.join(ROOT, 'out'); fs.mkdirSync(outDir, { recursive: true });
 const video = path.join(outDir, `gta6-${faltan > 0 ? `faltan-${faltan}` : 'lanzamiento'}.mp4`);
 const r = await renderQuiz({ escenas, out: video, emojiFont: fx.emoji ? `"${fx.emoji}"` : '', melodia: 'canon' });

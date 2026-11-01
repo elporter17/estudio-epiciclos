@@ -5,7 +5,9 @@
     "a": "Poder volar",
     "icono_a": "🕊️",
     "b": "Ser invisible",
-    "icono_b": "👻"
+    "icono_b": "👻",
+    "foto_a": "paraglider above clouds",
+    "foto_b": "empty room mysterious light"
   },
   {
     "id": "prefieres-002",
@@ -13,7 +15,9 @@
     "a": "Leer la mente",
     "icono_a": "🧠",
     "b": "Ver el futuro",
-    "icono_b": "🔮"
+    "icono_b": "🔮",
+    "foto_a": "woman deep in thought",
+    "foto_b": "crystal ball glowing"
   },
   {
     "id": "prefieres-003",
@@ -21,7 +25,9 @@
     "a": "Teletransportarte",
     "icono_a": "🌀",
     "b": "Detener el tiempo",
-    "icono_b": "⏳"
+    "icono_b": "⏳",
+    "foto_a": "light trails long exposure",
+    "foto_b": "hourglass sand closeup"
   },
   {
     "id": "prefieres-004",
@@ -29,7 +35,9 @@
     "a": "Hablar con los animales",
     "icono_a": "🐾",
     "b": "Hablar todos los idiomas",
-    "icono_b": "🗣️"
+    "icono_b": "🗣️",
+    "foto_a": "girl talking to dog",
+    "foto_b": "world flags colorful"
   },
   {
     "id": "prefieres-005",
@@ -37,7 +45,9 @@
     "a": "Respirar bajo el agua",
     "icono_a": "🐠",
     "b": "Correr a súper velocidad",
-    "icono_b": "⚡"
+    "icono_b": "⚡",
+    "foto_a": "scuba diver coral reef",
+    "foto_b": "sprinter running track"
   },
   {
     "id": "prefieres-006",
@@ -45,7 +55,9 @@
     "a": "Tener súper fuerza",
     "icono_a": "💪",
     "b": "Nunca sentir cansancio",
-    "icono_b": "🔋"
+    "icono_b": "🔋",
+    "foto_a": "weightlifter lifting barbell",
+    "foto_b": "runner at sunrise"
   },
   {
     "id": "prefieres-007",
@@ -53,7 +65,9 @@
     "a": "Controlar el clima",
     "icono_a": "⛅",
     "b": "Controlar el fuego",
-    "icono_b": "🔥"
+    "icono_b": "🔥",
+    "foto_a": "lightning storm sky",
+    "foto_b": "campfire flames night"
   },
   {
     "id": "prefieres-008",
@@ -61,7 +75,9 @@
     "a": "Encogerte como una hormiga",
     "icono_a": "🐜",
     "b": "Crecer alto como un edificio",
-    "icono_b": "🏢"
+    "icono_b": "🏢",
+    "foto_a": "ant macro closeup",
+    "foto_b": "skyscraper looking up"
   },
   {
     "id": "prefieres-009",
@@ -69,7 +85,9 @@
     "a": "Copiar cualquier talento al verlo",
     "icono_a": "🎭",
     "b": "Aprender todo con solo leerlo",
-    "icono_b": "📚"
+    "icono_b": "📚",
+    "foto_a": "artist painting canvas",
+    "foto_b": "stack of library books"
   },
   {
     "id": "prefieres-010",
@@ -77,7 +95,9 @@
     "a": "Ser elástico como chicle",
     "icono_a": "🤸",
     "b": "Cambiar de forma a voluntad",
-    "icono_b": "🦎"
+    "icono_b": "🦎",
+    "foto_a": "colorful bubble gum bubble",
+    "foto_b": "chameleon on branch"
   },
   {
     "id": "prefieres-011",
@@ -85,7 +105,9 @@
     "a": "Atravesar paredes",
     "icono_a": "🧱",
     "b": "Saltar edificios de un brinco",
-    "icono_b": "🦘"
+    "icono_b": "🦘",
+    "foto_a": "old brick wall",
+    "foto_b": "parkour rooftop jump"
   },
   {
     "id": "prefieres-012",
@@ -93,7 +115,9 @@
     "a": "Mover objetos con la mente",
     "icono_a": "🪄",
     "b": "Que lo que dibujes se vuelva real",
-    "icono_b": "✏️"
+    "icono_b": "✏️",
+    "foto_a": "floating objects levitation",
+    "foto_b": "child drawing colorful crayons"
   },
   {
     "id": "prefieres-013",
@@ -101,7 +125,9 @@
     "a": "Tener visión de rayos X",
     "icono_a": "👁️",
     "b": "Oír todo a un kilómetro",
-    "icono_b": "👂"
+    "icono_b": "👂",
+    "foto_a": "x ray skeleton hand",
+    "foto_b": "person cupping ear"
   },
   {
     "id": "prefieres-014",
@@ -109,7 +135,9 @@
     "a": "Baleadas para siempre",
     "icono_a": "🌯",
     "b": "Tacos para siempre",
-    "icono_b": "🌮"
+    "icono_b": "🌮",
+    "foto_a": "tortilla street food",
+    "foto_b": "street tacos closeup"
   },
   {
     "id": "prefieres-015",
@@ -117,7 +145,9 @@
     "a": "Pupusas de queso con loroco",
     "icono_a": "🫓",
     "b": "Tamales recién hechos",
-    "icono_b": "🫔"
+    "icono_b": "🫔",
+    "foto_a": "corn tortillas griddle cheese",
+    "foto_b": "tamales banana leaf"
   },
   {
     "id": "prefieres-016",
@@ -125,7 +155,9 @@
     "a": "Solo comida dulce de por vida",
     "icono_a": "🍰",
     "b": "Solo comida salada de por vida",
-    "icono_b": "🧂"
+    "icono_b": "🧂",
+    "foto_a": "colorful desserts table",
+    "foto_b": "potato chips bowl"
   },
   {
     "id": "prefieres-017",
@@ -133,7 +165,9 @@
     "a": "Pizza con piña",
     "icono_a": "🍍",
     "b": "Pizza sin queso",
-    "icono_b": "🍕"
+    "icono_b": "🍕",
+    "foto_a": "hawaiian pizza pineapple",
+    "foto_b": "pizza dough tomato sauce"
   },
   {
     "id": "prefieres-018",
@@ -141,7 +175,9 @@
     "a": "Renunciar al arroz para siempre",
     "icono_a": "🍚",
     "b": "Renunciar al pan para siempre",
-    "icono_b": "🍞"
+    "icono_b": "🍞",
+    "foto_a": "bowl of white rice",
+    "foto_b": "fresh bread loaves"
   },
   {
     "id": "prefieres-019",
@@ -149,7 +185,9 @@
     "a": "Aguacate en todo",
     "icono_a": "🥑",
     "b": "Chile picante en todo",
-    "icono_b": "🌶️"
+    "icono_b": "🌶️",
+    "foto_a": "sliced avocado toast",
+    "foto_b": "red chili peppers closeup"
   },
   {
     "id": "prefieres-020",
@@ -157,7 +195,9 @@
     "a": "Renunciar al café",
     "icono_a": "☕",
     "b": "Renunciar al chocolate",
-    "icono_b": "🍫"
+    "icono_b": "🍫",
+    "foto_a": "coffee cup morning",
+    "foto_b": "dark chocolate pieces"
   },
   {
     "id": "prefieres-021",
@@ -165,7 +205,9 @@
     "a": "Desayuno típico con plátano frito",
     "icono_a": "🍳",
     "b": "Panqueques con miel",
-    "icono_b": "🥞"
+    "icono_b": "🥞",
+    "foto_a": "fried plantains breakfast plate",
+    "foto_b": "pancakes with honey"
   },
   {
     "id": "prefieres-022",
@@ -173,7 +215,9 @@
     "a": "Cocinar como chef pero muy lento",
     "icono_a": "🍲",
     "b": "Cocinar rápido pero solo regular",
-    "icono_b": "⏱️"
+    "icono_b": "⏱️",
+    "foto_a": "chef plating dish",
+    "foto_b": "frying pan quick cooking"
   },
   {
     "id": "prefieres-023",
@@ -181,7 +225,9 @@
     "a": "Solo frutas por una semana",
     "icono_a": "🍉",
     "b": "Solo verduras por una semana",
-    "icono_b": "🥦"
+    "icono_b": "🥦",
+    "foto_a": "fresh fruit bowl",
+    "foto_b": "fresh vegetables market"
   },
   {
     "id": "prefieres-024",
@@ -189,7 +235,9 @@
     "a": "Mango verde con sal y limón",
     "icono_a": "🥭",
     "b": "Elote con mayonesa y queso",
-    "icono_b": "🌽"
+    "icono_b": "🌽",
+    "foto_a": "green mango slices",
+    "foto_b": "grilled corn on cob"
   },
   {
     "id": "prefieres-025",
@@ -197,7 +245,9 @@
     "a": "Ceviche fresquito en la playa",
     "icono_a": "🐟",
     "b": "Carne asada en el patio",
-    "icono_b": "🥩"
+    "icono_b": "🥩",
+    "foto_a": "fresh ceviche bowl",
+    "foto_b": "backyard barbecue grill"
   },
   {
     "id": "prefieres-026",
@@ -205,7 +255,9 @@
     "a": "Sopa caliente en pleno calor",
     "icono_a": "🥣",
     "b": "Helado bajo la lluvia fría",
-    "icono_b": "🍦"
+    "icono_b": "🍦",
+    "foto_a": "hot soup bowl steam",
+    "foto_b": "ice cream rainy day"
   },
   {
     "id": "prefieres-027",
@@ -213,7 +265,9 @@
     "a": "Vacaciones en la playa",
     "icono_a": "🏖️",
     "b": "Vacaciones en la montaña",
-    "icono_b": "🏔️"
+    "icono_b": "🏔️",
+    "foto_a": "tropical beach turquoise",
+    "foto_b": "mountain cabin forest"
   },
   {
     "id": "prefieres-028",
@@ -221,7 +275,9 @@
     "a": "Conocer todo tu país",
     "icono_a": "🗺️",
     "b": "Conocer un país lejano",
-    "icono_b": "🌍"
+    "icono_b": "🌍",
+    "foto_a": "countryside road trip",
+    "foto_b": "airplane window clouds"
   },
   {
     "id": "prefieres-029",
@@ -229,7 +285,9 @@
     "a": "Viajar solo con mochila",
     "icono_a": "🎒",
     "b": "Viajar con toda la familia",
-    "icono_b": "🚐"
+    "icono_b": "🚐",
+    "foto_a": "backpacker hiking trail",
+    "foto_b": "family road trip car"
   },
   {
     "id": "prefieres-030",
@@ -237,7 +295,9 @@
     "a": "Vivir en una isla tranquila",
     "icono_a": "🏝️",
     "b": "Vivir en una ciudad que nunca duerme",
-    "icono_b": "🌃"
+    "icono_b": "🌃",
+    "foto_a": "small tropical island aerial",
+    "foto_b": "city lights night street"
   },
   {
     "id": "prefieres-031",
@@ -245,7 +305,9 @@
     "a": "Una noche en hotel de lujo",
     "icono_a": "🏨",
     "b": "Una semana acampando",
-    "icono_b": "⛺"
+    "icono_b": "⛺",
+    "foto_a": "luxury hotel room",
+    "foto_b": "tent camping forest"
   },
   {
     "id": "prefieres-032",
@@ -253,7 +315,9 @@
     "a": "Ver la nieve por primera vez",
     "icono_a": "❄️",
     "b": "Ver una aurora boreal",
-    "icono_b": "🌌"
+    "icono_b": "🌌",
+    "foto_a": "snow falling forest",
+    "foto_b": "northern lights sky"
   },
   {
     "id": "prefieres-033",
@@ -261,7 +325,9 @@
     "a": "Recorrer Sudamérica en tren",
     "icono_a": "🚆",
     "b": "Recorrer Centroamérica en carro",
-    "icono_b": "🚗"
+    "icono_b": "🚗",
+    "foto_a": "train through andes mountains",
+    "foto_b": "car driving jungle road"
   },
   {
     "id": "prefieres-034",
@@ -269,7 +335,9 @@
     "a": "Que se pierda tu maleta",
     "icono_a": "🧳",
     "b": "Que se te vaya el avión",
-    "icono_b": "🛫"
+    "icono_b": "🛫",
+    "foto_a": "airport baggage carousel",
+    "foto_b": "airplane taking off"
   },
   {
     "id": "prefieres-035",
@@ -277,7 +345,9 @@
     "a": "Viajar gratis a destino sorpresa",
     "icono_a": "🎁",
     "b": "Pagar el viaje y elegir destino",
-    "icono_b": "🧭"
+    "icono_b": "🧭",
+    "foto_a": "airport departure board",
+    "foto_b": "planning trip map"
   },
   {
     "id": "prefieres-036",
@@ -285,7 +355,9 @@
     "a": "Un día en un parque acuático",
     "icono_a": "🌊",
     "b": "Un día en un parque de diversiones",
-    "icono_b": "🎢"
+    "icono_b": "🎢",
+    "foto_a": "water park slides",
+    "foto_b": "roller coaster amusement park"
   },
   {
     "id": "prefieres-037",
@@ -293,7 +365,9 @@
     "a": "Explorar ruinas mayas",
     "icono_a": "🏛️",
     "b": "Bucear en un arrecife de coral",
-    "icono_b": "🐠"
+    "icono_b": "🐠",
+    "foto_a": "mayan pyramid jungle",
+    "foto_b": "coral reef tropical fish"
   },
   {
     "id": "prefieres-038",
@@ -301,7 +375,9 @@
     "a": "Subir a un volcán",
     "icono_a": "🌋",
     "b": "Navegar un río en la selva",
-    "icono_b": "🛶"
+    "icono_b": "🛶",
+    "foto_a": "volcano hiking summit",
+    "foto_b": "boat jungle river"
   },
   {
     "id": "prefieres-039",
@@ -309,7 +385,9 @@
     "a": "Ganar 1000 dólares hoy",
     "icono_a": "💵",
     "b": "Ganar 100 dólares al mes por un año",
-    "icono_b": "📅"
+    "icono_b": "📅",
+    "foto_a": "dollar bills cash",
+    "foto_b": "piggy bank coins"
   },
   {
     "id": "prefieres-040",
@@ -317,7 +395,9 @@
     "a": "Ganar mucho en un trabajo aburrido",
     "icono_a": "💼",
     "b": "Ganar poco en el trabajo de tus sueños",
-    "icono_b": "🌟"
+    "icono_b": "🌟",
+    "foto_a": "office desk paperwork",
+    "foto_b": "potter shaping clay"
   },
   {
     "id": "prefieres-041",
@@ -325,7 +405,9 @@
     "a": "Encontrar 20 dólares cada día",
     "icono_a": "💰",
     "b": "Encontrar 5000 dólares una vez",
-    "icono_b": "💎"
+    "icono_b": "💎",
+    "foto_a": "twenty dollar bill",
+    "foto_b": "stack of hundred dollars"
   },
   {
     "id": "prefieres-042",
@@ -333,7 +415,9 @@
     "a": "Casa propia pequeña",
     "icono_a": "🏠",
     "b": "Rentar una mansión",
-    "icono_b": "🏰"
+    "icono_b": "🏰",
+    "foto_a": "small cozy house",
+    "foto_b": "luxury mansion pool"
   },
   {
     "id": "prefieres-043",
@@ -341,7 +425,9 @@
     "a": "No pagar la luz nunca más",
     "icono_a": "💡",
     "b": "No pagar internet nunca más",
-    "icono_b": "📶"
+    "icono_b": "📶",
+    "foto_a": "light bulb glowing",
+    "foto_b": "wifi router lights"
   },
   {
     "id": "prefieres-044",
@@ -349,7 +435,9 @@
     "a": "Comida gratis de por vida",
     "icono_a": "🍔",
     "b": "Ropa gratis de por vida",
-    "icono_b": "👕"
+    "icono_b": "👕",
+    "foto_a": "buffet food table",
+    "foto_b": "clothing rack boutique"
   },
   {
     "id": "prefieres-045",
@@ -357,7 +445,9 @@
     "a": "Ahorrar todo para el futuro",
     "icono_a": "🐷",
     "b": "Disfrutar tu dinero hoy",
-    "icono_b": "🎉"
+    "icono_b": "🎉",
+    "foto_a": "saving coins jar",
+    "foto_b": "friends dinner celebration"
   },
   {
     "id": "prefieres-046",
@@ -365,7 +455,9 @@
     "a": "Duplicar tu sueldo",
     "icono_a": "📈",
     "b": "Trabajar la mitad de horas",
-    "icono_b": "⏰"
+    "icono_b": "⏰",
+    "foto_a": "counting cash money",
+    "foto_b": "relaxing hammock beach"
   },
   {
     "id": "prefieres-047",
@@ -373,7 +465,9 @@
     "a": "Ganarte un carro nuevo",
     "icono_a": "🚙",
     "b": "Ganarte un año de viajes",
-    "icono_b": "✈️"
+    "icono_b": "✈️",
+    "foto_a": "new car showroom",
+    "foto_b": "traveler suitcase airport"
   },
   {
     "id": "prefieres-048",
@@ -381,7 +475,9 @@
     "a": "Un millón de dólares ya",
     "icono_a": "🤑",
     "b": "Diez millones cuando cumplas 60",
-    "icono_b": "👴"
+    "icono_b": "👴",
+    "foto_a": "pile of cash money",
+    "foto_b": "happy retired couple"
   },
   {
     "id": "prefieres-049",
@@ -389,7 +485,9 @@
     "a": "Tener tu propio negocio",
     "icono_a": "🏪",
     "b": "Tener un empleo estable",
-    "icono_b": "🏦"
+    "icono_b": "🏦",
+    "foto_a": "small business owner shop",
+    "foto_b": "office team meeting"
   },
   {
     "id": "prefieres-050",
@@ -397,7 +495,9 @@
     "a": "Renta gratis por un año",
     "icono_a": "🔑",
     "b": "Transporte gratis por un año",
-    "icono_b": "🚌"
+    "icono_b": "🚌",
+    "foto_a": "apartment keys hand",
+    "foto_b": "city bus street"
   },
   {
     "id": "prefieres-051",
@@ -405,7 +505,9 @@
     "a": "Un mes sin redes sociales",
     "icono_a": "📱",
     "b": "Un mes sin series ni películas",
-    "icono_b": "🎬"
+    "icono_b": "🎬",
+    "foto_a": "scrolling phone social media",
+    "foto_b": "watching tv couch"
   },
   {
     "id": "prefieres-052",
@@ -413,7 +515,9 @@
     "a": "Celular con batería infinita",
     "icono_a": "🔋",
     "b": "Internet gratis en todo el mundo",
-    "icono_b": "🌐"
+    "icono_b": "🌐",
+    "foto_a": "smartphone battery charging",
+    "foto_b": "earth night lights space"
   },
   {
     "id": "prefieres-053",
@@ -421,7 +525,9 @@
     "a": "Que todos vean tus búsquedas",
     "icono_a": "🔍",
     "b": "Que todos lean tus chats",
-    "icono_b": "💬"
+    "icono_b": "💬",
+    "foto_a": "typing search laptop",
+    "foto_b": "texting on smartphone"
   },
   {
     "id": "prefieres-054",
@@ -429,7 +535,9 @@
     "a": "Un robot que limpie la casa",
     "icono_a": "🤖",
     "b": "Un robot que cocine todo",
-    "icono_b": "🍳"
+    "icono_b": "🍳",
+    "foto_a": "robot vacuum cleaner",
+    "foto_b": "robot arm kitchen"
   },
   {
     "id": "prefieres-055",
@@ -437,7 +545,9 @@
     "a": "Consola de videojuegos nueva",
     "icono_a": "🎮",
     "b": "Computadora potente nueva",
-    "icono_b": "💻"
+    "icono_b": "💻",
+    "foto_a": "video game controller",
+    "foto_b": "gaming pc rgb lights"
   },
   {
     "id": "prefieres-056",
@@ -445,7 +555,9 @@
     "a": "Celular con la pantalla rajada",
     "icono_a": "📱",
     "b": "Celular que dura dos horas",
-    "icono_b": "🔌"
+    "icono_b": "🔌",
+    "foto_a": "cracked phone screen",
+    "foto_b": "low battery phone"
   },
   {
     "id": "prefieres-057",
@@ -453,7 +565,9 @@
     "a": "Solo comunicarte con audios",
     "icono_a": "🎤",
     "b": "Solo comunicarte por texto",
-    "icono_b": "✍️"
+    "icono_b": "✍️",
+    "foto_a": "recording voice message phone",
+    "foto_b": "typing text message"
   },
   {
     "id": "prefieres-058",
@@ -461,7 +575,9 @@
     "a": "Carro que se maneja solo",
     "icono_a": "🚘",
     "b": "Patineta que flota",
-    "icono_b": "🛹"
+    "icono_b": "🛹",
+    "foto_a": "self driving car",
+    "foto_b": "skateboard sunset street"
   },
   {
     "id": "prefieres-059",
@@ -469,7 +585,9 @@
     "a": "Wifi lento para siempre",
     "icono_a": "🐢",
     "b": "Sin wifi pero datos ilimitados",
-    "icono_b": "📡"
+    "icono_b": "📡",
+    "foto_a": "loading screen laptop",
+    "foto_b": "cell tower sunset"
   },
   {
     "id": "prefieres-060",
@@ -477,7 +595,9 @@
     "a": "Lentes de realidad virtual",
     "icono_a": "🥽",
     "b": "Reloj inteligente que hace todo",
-    "icono_b": "⌚"
+    "icono_b": "⌚",
+    "foto_a": "virtual reality headset",
+    "foto_b": "smartwatch on wrist"
   },
   {
     "id": "prefieres-061",
@@ -485,7 +605,9 @@
     "a": "Celular de teclas por un año",
     "icono_a": "☎️",
     "b": "Computadora de hace 20 años",
-    "icono_b": "🖥️"
+    "icono_b": "🖥️",
+    "foto_a": "old keypad cell phone",
+    "foto_b": "old computer monitor"
   },
   {
     "id": "prefieres-062",
@@ -493,7 +615,9 @@
     "a": "Que tus fotos salgan perfectas",
     "icono_a": "📸",
     "b": "Que tus videos se hagan virales",
-    "icono_b": "🎥"
+    "icono_b": "🎥",
+    "foto_a": "photographer camera sunset",
+    "foto_b": "filming video smartphone"
   },
   {
     "id": "prefieres-063",
@@ -501,7 +625,9 @@
     "a": "Despertar siempre a las 5 a. m.",
     "icono_a": "🌅",
     "b": "Dormirte siempre a las 3 a. m.",
-    "icono_b": "🌙"
+    "icono_b": "🌙",
+    "foto_a": "alarm clock early morning",
+    "foto_b": "night owl laptop dark"
   },
   {
     "id": "prefieres-064",
@@ -509,7 +635,9 @@
     "a": "Vivir con calor todo el año",
     "icono_a": "☀️",
     "b": "Vivir con frío todo el año",
-    "icono_b": "🥶"
+    "icono_b": "🥶",
+    "foto_a": "hot summer sun",
+    "foto_b": "snowy winter landscape"
   },
   {
     "id": "prefieres-065",
@@ -517,7 +645,9 @@
     "a": "Bañarte con agua helada siempre",
     "icono_a": "🧊",
     "b": "Dormir siempre sin ventilador",
-    "icono_b": "🥵"
+    "icono_b": "🥵",
+    "foto_a": "cold shower water",
+    "foto_b": "sweating hot summer night"
   },
   {
     "id": "prefieres-066",
@@ -525,7 +655,9 @@
     "a": "Lavar los trastes para siempre",
     "icono_a": "🍽️",
     "b": "Doblar la ropa para siempre",
-    "icono_b": "👚"
+    "icono_b": "👚",
+    "foto_a": "washing dishes sink",
+    "foto_b": "folding laundry clothes"
   },
   {
     "id": "prefieres-067",
@@ -533,7 +665,9 @@
     "a": "Vivir sin espejos",
     "icono_a": "🪞",
     "b": "Vivir sin relojes",
-    "icono_b": "🕰️"
+    "icono_b": "🕰️",
+    "foto_a": "bathroom mirror reflection",
+    "foto_b": "vintage clocks wall"
   },
   {
     "id": "prefieres-068",
@@ -541,7 +675,9 @@
     "a": "Una hora de tráfico cada día",
     "icono_a": "🚦",
     "b": "Caminar 40 minutos cada día",
-    "icono_b": "🚶"
+    "icono_b": "🚶",
+    "foto_a": "traffic jam city",
+    "foto_b": "walking city sidewalk"
   },
   {
     "id": "prefieres-069",
@@ -549,7 +685,9 @@
     "a": "Llegar siempre 15 minutos antes",
     "icono_a": "⏰",
     "b": "Llegar siempre 5 minutos tarde",
-    "icono_b": "⌛"
+    "icono_b": "⌛",
+    "foto_a": "man checking watch",
+    "foto_b": "running late street"
   },
   {
     "id": "prefieres-070",
@@ -557,7 +695,9 @@
     "a": "Vecino con música a todo volumen",
     "icono_a": "🔊",
     "b": "Vecino con un perro que no calla",
-    "icono_b": "🐕"
+    "icono_b": "🐕",
+    "foto_a": "loud speaker party",
+    "foto_b": "dog barking fence"
   },
   {
     "id": "prefieres-071",
@@ -565,7 +705,9 @@
     "a": "Siesta de una hora cada tarde",
     "icono_a": "😴",
     "b": "Una hora más de sueño en la mañana",
-    "icono_b": "🛏️"
+    "icono_b": "🛏️",
+    "foto_a": "afternoon nap sofa",
+    "foto_b": "sleeping in bed morning"
   },
   {
     "id": "prefieres-072",
@@ -573,7 +715,9 @@
     "a": "Casa con patio grande",
     "icono_a": "🌳",
     "b": "Apartamento con vista a la ciudad",
-    "icono_b": "🏙️"
+    "icono_b": "🏙️",
+    "foto_a": "house with big garden",
+    "foto_b": "apartment city view window"
   },
   {
     "id": "prefieres-073",
@@ -581,7 +725,9 @@
     "a": "Nunca más hacer filas",
     "icono_a": "🧍",
     "b": "Nunca más esperar el bus",
-    "icono_b": "🚏"
+    "icono_b": "🚏",
+    "foto_a": "long line people",
+    "foto_b": "waiting bus stop"
   },
   {
     "id": "prefieres-074",
@@ -589,7 +735,9 @@
     "a": "Bañarte en la noche",
     "icono_a": "🌛",
     "b": "Bañarte en la mañana",
-    "icono_b": "🌞"
+    "icono_b": "🌞",
+    "foto_a": "bathtub candles night",
+    "foto_b": "morning shower bathroom"
   },
   {
     "id": "prefieres-075",
@@ -597,7 +745,9 @@
     "a": "Sábado sin planes en casa",
     "icono_a": "🛋️",
     "b": "Sábado lleno de planes afuera",
-    "icono_b": "🎈"
+    "icono_b": "🎈",
+    "foto_a": "relaxing sofa blanket",
+    "foto_b": "friends outdoor picnic"
   },
   {
     "id": "prefieres-076",
@@ -605,7 +755,9 @@
     "a": "Solo exámenes orales",
     "icono_a": "🗣️",
     "b": "Solo exámenes escritos",
-    "icono_b": "📝"
+    "icono_b": "📝",
+    "foto_a": "student presenting class",
+    "foto_b": "student writing exam"
   },
   {
     "id": "prefieres-077",
@@ -613,7 +765,9 @@
     "a": "Trabajar desde casa siempre",
     "icono_a": "🏠",
     "b": "Ir a la oficina con tus amigos",
-    "icono_b": "🏢"
+    "icono_b": "🏢",
+    "foto_a": "working from home laptop",
+    "foto_b": "coworkers laughing office"
   },
   {
     "id": "prefieres-078",
@@ -621,7 +775,9 @@
     "a": "Clases que empiezan a las 6 a. m.",
     "icono_a": "🌄",
     "b": "Clases que terminan a las 8 p. m.",
-    "icono_b": "🌆"
+    "icono_b": "🌆",
+    "foto_a": "early morning classroom",
+    "foto_b": "university campus night"
   },
   {
     "id": "prefieres-079",
@@ -629,7 +785,9 @@
     "a": "Hacer todo en equipo",
     "icono_a": "👥",
     "b": "Hacer todo tú solo",
-    "icono_b": "🙋"
+    "icono_b": "🙋",
+    "foto_a": "team high five",
+    "foto_b": "person working alone desk"
   },
   {
     "id": "prefieres-080",
@@ -637,7 +795,9 @@
     "a": "Trabajar 4 días de 10 horas",
     "icono_a": "📆",
     "b": "Trabajar 5 días de 8 horas",
-    "icono_b": "🗓️"
+    "icono_b": "🗓️",
+    "foto_a": "long workday office night",
+    "foto_b": "calendar planner desk"
   },
   {
     "id": "prefieres-081",
@@ -645,7 +805,9 @@
     "a": "Ser jefe con mucho estrés",
     "icono_a": "👔",
     "b": "Ser empleado sin presiones",
-    "icono_b": "😌"
+    "icono_b": "😌",
+    "foto_a": "stressed businessman desk",
+    "foto_b": "relaxed worker coffee break"
   },
   {
     "id": "prefieres-082",
@@ -653,7 +815,9 @@
     "a": "Exponer frente a toda la escuela",
     "icono_a": "🎤",
     "b": "Escribir un trabajo de 50 páginas",
-    "icono_b": "📄"
+    "icono_b": "📄",
+    "foto_a": "school auditorium stage",
+    "foto_b": "stack of papers writing"
   },
   {
     "id": "prefieres-083",
@@ -661,7 +825,9 @@
     "a": "Tarea pequeña todos los días",
     "icono_a": "📚",
     "b": "Un solo examen enorme al final",
-    "icono_b": "🧪"
+    "icono_b": "🧪",
+    "foto_a": "kid doing homework",
+    "foto_b": "students exam hall"
   },
   {
     "id": "prefieres-084",
@@ -669,7 +835,9 @@
     "a": "Profe estricto que explica bien",
     "icono_a": "📏",
     "b": "Profe relajado que explica poco",
-    "icono_b": "😎"
+    "icono_b": "😎",
+    "foto_a": "teacher explaining blackboard",
+    "foto_b": "relaxed teacher classroom"
   },
   {
     "id": "prefieres-085",
@@ -677,7 +845,9 @@
     "a": "Recreo de una hora",
     "icono_a": "⚽",
     "b": "Salir una hora antes a casa",
-    "icono_b": "🏃"
+    "icono_b": "🏃",
+    "foto_a": "children playing playground",
+    "foto_b": "students leaving school"
   },
   {
     "id": "prefieres-086",
@@ -685,7 +855,9 @@
     "a": "Usar uniforme todos los días",
     "icono_a": "👕",
     "b": "Elegir qué ponerte cada mañana",
-    "icono_b": "👗"
+    "icono_b": "👗",
+    "foto_a": "school uniforms students",
+    "foto_b": "open wardrobe clothes"
   },
   {
     "id": "prefieres-087",
@@ -693,7 +865,9 @@
     "a": "Una reunión de dos horas diaria",
     "icono_a": "🗂️",
     "b": "Responder 100 correos al día",
-    "icono_b": "📧"
+    "icono_b": "📧",
+    "foto_a": "business meeting room",
+    "foto_b": "email inbox laptop"
   },
   {
     "id": "prefieres-088",
@@ -701,7 +875,9 @@
     "a": "Tener un perro",
     "icono_a": "🐶",
     "b": "Tener un gato",
-    "icono_b": "🐱"
+    "icono_b": "🐱",
+    "foto_a": "happy dog portrait",
+    "foto_b": "cute cat portrait"
   },
   {
     "id": "prefieres-089",
@@ -709,7 +885,9 @@
     "a": "Ser un águila",
     "icono_a": "🦅",
     "b": "Ser un delfín",
-    "icono_b": "🐬"
+    "icono_b": "🐬",
+    "foto_a": "eagle flying sky",
+    "foto_b": "dolphin jumping ocean"
   },
   {
     "id": "prefieres-090",
@@ -717,7 +895,9 @@
     "a": "Perro del tamaño de un gato",
     "icono_a": "🐕",
     "b": "Gato del tamaño de un perro",
-    "icono_b": "🐈"
+    "icono_b": "🐈",
+    "foto_a": "small dog chihuahua",
+    "foto_b": "maine coon cat"
   },
   {
     "id": "prefieres-091",
@@ -725,7 +905,9 @@
     "a": "Un loro que habla",
     "icono_a": "🦜",
     "b": "Una tortuga que vive 100 años",
-    "icono_b": "🐢"
+    "icono_b": "🐢",
+    "foto_a": "colorful parrot closeup",
+    "foto_b": "old tortoise walking"
   },
   {
     "id": "prefieres-092",
@@ -733,7 +915,9 @@
     "a": "Montar a caballo por la playa",
     "icono_a": "🐎",
     "b": "Nadar junto a una ballena",
-    "icono_b": "🐋"
+    "icono_b": "🐋",
+    "foto_a": "horse riding beach",
+    "foto_b": "swimming with whale"
   },
   {
     "id": "prefieres-093",
@@ -741,7 +925,9 @@
     "a": "Zancudo zumbando toda la noche",
     "icono_a": "🦟",
     "b": "Cucaracha voladora en el cuarto",
-    "icono_b": "🪳"
+    "icono_b": "🪳",
+    "foto_a": "mosquito closeup macro",
+    "foto_b": "cockroach closeup"
   },
   {
     "id": "prefieres-094",
@@ -749,7 +935,9 @@
     "a": "Tener una granja con animales",
     "icono_a": "🐄",
     "b": "Tener un acuario gigante",
-    "icono_b": "🐠"
+    "icono_b": "🐠",
+    "foto_a": "farm animals barn",
+    "foto_b": "giant aquarium fish"
   },
   {
     "id": "prefieres-095",
@@ -757,7 +945,9 @@
     "a": "Vivir como perezoso",
     "icono_a": "🦥",
     "b": "Vivir como colibrí",
-    "icono_b": "🐦"
+    "icono_b": "🐦",
+    "foto_a": "sloth hanging tree",
+    "foto_b": "hummingbird flower"
   },
   {
     "id": "prefieres-096",
@@ -765,7 +955,9 @@
     "a": "Que tu mascota hable",
     "icono_a": "🗨️",
     "b": "Que tu mascota haga quehaceres",
-    "icono_b": "🧹"
+    "icono_b": "🧹",
+    "foto_a": "dog tilting head",
+    "foto_b": "dog carrying basket"
   },
   {
     "id": "prefieres-097",
@@ -773,7 +965,9 @@
     "a": "Gato que te ignora todo el día",
     "icono_a": "😼",
     "b": "Perro que te sigue hasta al baño",
-    "icono_b": "🐾"
+    "icono_b": "🐾",
+    "foto_a": "cat sleeping sofa",
+    "foto_b": "dog following owner"
   },
   {
     "id": "prefieres-098",
@@ -781,7 +975,9 @@
     "a": "Tener alas de mariposa",
     "icono_a": "🦋",
     "b": "Tener aletas de pez",
-    "icono_b": "🐟"
+    "icono_b": "🐟",
+    "foto_a": "butterfly wings closeup",
+    "foto_b": "colorful fish fins"
   },
   {
     "id": "prefieres-099",
@@ -789,7 +985,9 @@
     "a": "Ver un jaguar en la selva",
     "icono_a": "🐆",
     "b": "Ver una guacamaya roja de cerca",
-    "icono_b": "🪶"
+    "icono_b": "🪶",
+    "foto_a": "jaguar in jungle",
+    "foto_b": "scarlet macaw closeup"
   },
   {
     "id": "prefieres-100",
@@ -797,7 +995,9 @@
     "a": "La memoria de un elefante",
     "icono_a": "🐘",
     "b": "La vista de un águila",
-    "icono_b": "🦅"
+    "icono_b": "🦅",
+    "foto_a": "elephant family savanna",
+    "foto_b": "eagle eye closeup"
   },
   {
     "id": "prefieres-101",
@@ -805,7 +1005,9 @@
     "a": "Viajar al pasado",
     "icono_a": "🏛️",
     "b": "Viajar al futuro",
-    "icono_b": "🚀"
+    "icono_b": "🚀",
+    "foto_a": "vintage black white street",
+    "foto_b": "futuristic city night"
   },
   {
     "id": "prefieres-102",
@@ -813,7 +1015,9 @@
     "a": "Un dragón de mascota",
     "icono_a": "🐉",
     "b": "Un unicornio de mascota",
-    "icono_b": "🦄"
+    "icono_b": "🦄",
+    "foto_a": "fantasy dragon sculpture",
+    "foto_b": "white horse fantasy"
   },
   {
     "id": "prefieres-103",
@@ -821,7 +1025,9 @@
     "a": "Vivir en un castillo",
     "icono_a": "🏰",
     "b": "Vivir en una nave espacial",
-    "icono_b": "🛸"
+    "icono_b": "🛸",
+    "foto_a": "medieval castle hill",
+    "foto_b": "space station earth orbit"
   },
   {
     "id": "prefieres-104",
@@ -829,7 +1035,9 @@
     "a": "Ser sirena o tritón",
     "icono_a": "🧜",
     "b": "Ser un hada del bosque",
-    "icono_b": "🧚"
+    "icono_b": "🧚",
+    "foto_a": "mermaid underwater",
+    "foto_b": "enchanted forest fairy lights"
   },
   {
     "id": "prefieres-105",
@@ -837,7 +1045,9 @@
     "a": "Un genio con tres deseos",
     "icono_a": "🪔",
     "b": "Una varita con hechizos infinitos",
-    "icono_b": "🪄"
+    "icono_b": "🪄",
+    "foto_a": "golden oil lamp",
+    "foto_b": "magic wand sparkles"
   },
   {
     "id": "prefieres-106",
@@ -845,7 +1055,9 @@
     "a": "Entrar a tu videojuego favorito",
     "icono_a": "🎮",
     "b": "Entrar a tu película favorita",
-    "icono_b": "🎬"
+    "icono_b": "🎬",
+    "foto_a": "gamer neon room",
+    "foto_b": "movie theater screen"
   },
   {
     "id": "prefieres-107",
@@ -853,7 +1065,9 @@
     "a": "Vivir en un mundo de caricaturas",
     "icono_a": "🖍️",
     "b": "Vivir dentro de un cuento de hadas",
-    "icono_b": "📖"
+    "icono_b": "📖",
+    "foto_a": "colorful toys bright",
+    "foto_b": "fairy tale castle"
   },
   {
     "id": "prefieres-108",
@@ -861,7 +1075,9 @@
     "a": "Conocer extraterrestres",
     "icono_a": "👽",
     "b": "Ver dinosaurios de verdad",
-    "icono_b": "🦖"
+    "icono_b": "🦖",
+    "foto_a": "ufo night sky",
+    "foto_b": "dinosaur skeleton museum"
   },
   {
     "id": "prefieres-109",
@@ -869,7 +1085,9 @@
     "a": "Viajar en alfombra voladora",
     "icono_a": "🧞",
     "b": "Viajar en escoba voladora",
-    "icono_b": "🧹"
+    "icono_b": "🧹",
+    "foto_a": "desert night stars",
+    "foto_b": "broomstick full moon"
   },
   {
     "id": "prefieres-110",
@@ -877,7 +1095,9 @@
     "a": "Ser un robot gigante",
     "icono_a": "🤖",
     "b": "Ser un mago poderoso",
-    "icono_b": "🧙"
+    "icono_b": "🧙",
+    "foto_a": "giant robot toy",
+    "foto_b": "magician smoke"
   },
   {
     "id": "prefieres-111",
@@ -885,7 +1105,9 @@
     "a": "Mochila con espacio infinito",
     "icono_a": "🎒",
     "b": "Bolsillo que saca lo que pidas",
-    "icono_b": "👖"
+    "icono_b": "👖",
+    "foto_a": "backpack full of things",
+    "foto_b": "jeans pocket closeup"
   },
   {
     "id": "prefieres-112",
@@ -893,7 +1115,9 @@
     "a": "Vivir en la Luna",
     "icono_a": "🌕",
     "b": "Vivir en una ciudad bajo el mar",
-    "icono_b": "🌊"
+    "icono_b": "🌊",
+    "foto_a": "moon surface closeup",
+    "foto_b": "deep blue ocean underwater"
   },
   {
     "id": "prefieres-113",
@@ -901,7 +1125,9 @@
     "a": "Ganar el Mundial como jugador",
     "icono_a": "⚽",
     "b": "Ganar una medalla olímpica",
-    "icono_b": "🥇"
+    "icono_b": "🥇",
+    "foto_a": "soccer stadium crowd",
+    "foto_b": "gold medal athlete"
   },
   {
     "id": "prefieres-114",
@@ -909,7 +1135,9 @@
     "a": "Jugar fútbol toda la vida",
     "icono_a": "🥅",
     "b": "Jugar básquet toda la vida",
-    "icono_b": "🏀"
+    "icono_b": "🏀",
+    "foto_a": "soccer ball field",
+    "foto_b": "basketball hoop"
   },
   {
     "id": "prefieres-115",
@@ -917,7 +1145,9 @@
     "a": "Correr un maratón",
     "icono_a": "🏃",
     "b": "Nadar 5 kilómetros en el mar",
-    "icono_b": "🏊"
+    "icono_b": "🏊",
+    "foto_a": "marathon runners street",
+    "foto_b": "open water swimming"
   },
   {
     "id": "prefieres-116",
@@ -925,7 +1155,9 @@
     "a": "Ser portero estrella",
     "icono_a": "🧤",
     "b": "Ser delantero goleador",
-    "icono_b": "⚽"
+    "icono_b": "⚽",
+    "foto_a": "goalkeeper diving save",
+    "foto_b": "soccer player scoring goal"
   },
   {
     "id": "prefieres-117",
@@ -933,7 +1165,9 @@
     "a": "Ver el partido en el estadio",
     "icono_a": "🏟️",
     "b": "Verlo en casa con tu gente",
-    "icono_b": "📺"
+    "icono_b": "📺",
+    "foto_a": "fans cheering stadium",
+    "foto_b": "friends watching tv"
   },
   {
     "id": "prefieres-118",
@@ -941,7 +1175,9 @@
     "a": "Surfear olas gigantes",
     "icono_a": "🏄",
     "b": "Escalar una montaña",
-    "icono_b": "🧗"
+    "icono_b": "🧗",
+    "foto_a": "surfer big wave",
+    "foto_b": "mountain climber summit"
   },
   {
     "id": "prefieres-119",
@@ -949,7 +1185,9 @@
     "a": "Ser campeón de ajedrez",
     "icono_a": "♟️",
     "b": "Ser campeón de ping-pong",
-    "icono_b": "🏓"
+    "icono_b": "🏓",
+    "foto_a": "chess board pieces",
+    "foto_b": "table tennis match"
   },
   {
     "id": "prefieres-120",
@@ -957,7 +1195,9 @@
     "a": "Ganar un partido aburrido 1-0",
     "icono_a": "🥱",
     "b": "Perder un partido épico 4-5",
-    "icono_b": "🔥"
+    "icono_b": "🔥",
+    "foto_a": "empty soccer field",
+    "foto_b": "soccer fans celebrating"
   },
   {
     "id": "prefieres-121",
@@ -965,7 +1205,9 @@
     "a": "Entrenar al amanecer",
     "icono_a": "🌄",
     "b": "Entrenar de noche",
-    "icono_b": "🌃"
+    "icono_b": "🌃",
+    "foto_a": "running at sunrise",
+    "foto_b": "night workout gym"
   },
   {
     "id": "prefieres-122",
@@ -973,7 +1215,9 @@
     "a": "Patinar sobre hielo",
     "icono_a": "⛸️",
     "b": "Esquiar en la nieve",
-    "icono_b": "🎿"
+    "icono_b": "🎿",
+    "foto_a": "ice skating rink",
+    "foto_b": "skiing snowy mountain"
   },
   {
     "id": "prefieres-123",
@@ -981,7 +1225,9 @@
     "a": "Jugar béisbol en el barrio",
     "icono_a": "⚾",
     "b": "Jugar vóleibol en la playa",
-    "icono_b": "🏐"
+    "icono_b": "🏐",
+    "foto_a": "kids playing baseball",
+    "foto_b": "beach volleyball"
   },
   {
     "id": "prefieres-124",
@@ -989,7 +1235,9 @@
     "a": "Ser estrella de un equipo malo",
     "icono_a": "🌟",
     "b": "Ser suplente del mejor equipo",
-    "icono_b": "🪑"
+    "icono_b": "🪑",
+    "foto_a": "lone basketball player",
+    "foto_b": "players on bench"
   },
   {
     "id": "prefieres-125",
@@ -997,7 +1245,9 @@
     "a": "Solo reguetón para siempre",
     "icono_a": "🎧",
     "b": "Solo bachata para siempre",
-    "icono_b": "💃"
+    "icono_b": "💃",
+    "foto_a": "party dancing club",
+    "foto_b": "couple dancing bachata"
   },
   {
     "id": "prefieres-126",
@@ -1005,7 +1255,9 @@
     "a": "Bailar salsa toda la noche",
     "icono_a": "🎺",
     "b": "Bailar cumbia toda la noche",
-    "icono_b": "🪗"
+    "icono_b": "🪗",
+    "foto_a": "salsa dancing couple",
+    "foto_b": "latin dance party"
   },
   {
     "id": "prefieres-127",
@@ -1013,7 +1265,9 @@
     "a": "Cantar como estrella",
     "icono_a": "🎤",
     "b": "Bailar como profesional",
-    "icono_b": "🕺"
+    "icono_b": "🕺",
+    "foto_a": "singer on stage",
+    "foto_b": "professional dancer studio"
   },
   {
     "id": "prefieres-128",
@@ -1021,7 +1275,9 @@
     "a": "Solo películas de comedia",
     "icono_a": "😂",
     "b": "Solo películas de aventura",
-    "icono_b": "🧭"
+    "icono_b": "🧭",
+    "foto_a": "people laughing cinema",
+    "foto_b": "explorer jungle adventure"
   },
   {
     "id": "prefieres-129",
@@ -1029,7 +1285,9 @@
     "a": "Leer el libro primero",
     "icono_a": "📖",
     "b": "Ver la película primero",
-    "icono_b": "🍿"
+    "icono_b": "🍿",
+    "foto_a": "reading book cozy",
+    "foto_b": "popcorn movie night"
   },
   {
     "id": "prefieres-130",
@@ -1037,7 +1295,9 @@
     "a": "Tocar guitarra como experto",
     "icono_a": "🎸",
     "b": "Tocar piano como experto",
-    "icono_b": "🎹"
+    "icono_b": "🎹",
+    "foto_a": "playing acoustic guitar",
+    "foto_b": "playing grand piano"
   },
   {
     "id": "prefieres-131",
@@ -1045,7 +1305,9 @@
     "a": "Ir al cine cada semana",
     "icono_a": "🎟️",
     "b": "Maratón de pelis en casa",
-    "icono_b": "🛋️"
+    "icono_b": "🛋️",
+    "foto_a": "cinema seats theater",
+    "foto_b": "movie night popcorn couch"
   },
   {
     "id": "prefieres-132",
@@ -1053,7 +1315,9 @@
     "a": "Ver telenovelas todo el año",
     "icono_a": "📺",
     "b": "Ver series de superhéroes todo el año",
-    "icono_b": "🦸"
+    "icono_b": "🦸",
+    "foto_a": "woman watching tv emotional",
+    "foto_b": "superhero costume kid"
   },
   {
     "id": "prefieres-133",
@@ -1061,7 +1325,9 @@
     "a": "Que te cuenten el final de tu serie",
     "icono_a": "🙉",
     "b": "Esperar un año el nuevo capítulo",
-    "icono_b": "⏳"
+    "icono_b": "⏳",
+    "foto_a": "surprised face shocked",
+    "foto_b": "waiting calendar pages"
   },
   {
     "id": "prefieres-134",
@@ -1069,7 +1335,9 @@
     "a": "Ser cantante famoso",
     "icono_a": "🎶",
     "b": "Ser actor famoso",
-    "icono_b": "🎬"
+    "icono_b": "🎬",
+    "foto_a": "singer microphone spotlight",
+    "foto_b": "red carpet camera flashes"
   },
   {
     "id": "prefieres-135",
@@ -1077,7 +1345,9 @@
     "a": "Concierto en primera fila",
     "icono_a": "🎫",
     "b": "Conocer a tu artista favorito",
-    "icono_b": "🤝"
+    "icono_b": "🤝",
+    "foto_a": "concert crowd front row",
+    "foto_b": "autograph signing"
   },
   {
     "id": "prefieres-136",
@@ -1085,7 +1355,9 @@
     "a": "Una canción pegada un mes entero",
     "icono_a": "🔁",
     "b": "Un mes sin escuchar música",
-    "icono_b": "🔇"
+    "icono_b": "🔇",
+    "foto_a": "woman listening headphones",
+    "foto_b": "silent empty room"
   },
   {
     "id": "prefieres-137",
@@ -1093,7 +1365,9 @@
     "a": "Marimba en vivo en tu fiesta",
     "icono_a": "🪘",
     "b": "Mariachi en tu cumpleaños",
-    "icono_b": "🎂"
+    "icono_b": "🎂",
+    "foto_a": "marimba instrument",
+    "foto_b": "mariachi musicians"
   },
   {
     "id": "prefieres-138",
@@ -1101,7 +1375,9 @@
     "a": "Saber siempre si te mienten",
     "icono_a": "🤥",
     "b": "Saber siempre qué piensan de ti",
-    "icono_b": "💭"
+    "icono_b": "💭",
+    "foto_a": "fingers crossed behind back",
+    "foto_b": "people whispering"
   },
   {
     "id": "prefieres-139",
@@ -1109,7 +1385,9 @@
     "a": "Recordarlo absolutamente todo",
     "icono_a": "🧠",
     "b": "Poder olvidar lo que quieras",
-    "icono_b": "🧽"
+    "icono_b": "🧽",
+    "foto_a": "photo album memories",
+    "foto_b": "fading old photograph"
   },
   {
     "id": "prefieres-140",
@@ -1117,7 +1395,9 @@
     "a": "Que todos te digan lo que piensan",
     "icono_a": "📣",
     "b": "No saber nunca qué opinan de ti",
-    "icono_b": "🙈"
+    "icono_b": "🙈",
+    "foto_a": "group conversation cafe",
+    "foto_b": "person alone thinking"
   },
   {
     "id": "prefieres-141",
@@ -1125,7 +1405,9 @@
     "a": "Volver a tener 10 años",
     "icono_a": "🧒",
     "b": "Saltar 10 años al futuro",
-    "icono_b": "🔭"
+    "icono_b": "🔭",
+    "foto_a": "kids playing outside",
+    "foto_b": "calendar pages flying"
   },
   {
     "id": "prefieres-142",
@@ -1133,7 +1415,9 @@
     "a": "Repetir tu mejor día para siempre",
     "icono_a": "🌈",
     "b": "Vivir cada día como sorpresa",
-    "icono_b": "❓"
+    "icono_b": "❓",
+    "foto_a": "friends summer celebration",
+    "foto_b": "surprise gift box"
   },
   {
     "id": "prefieres-143",
@@ -1141,7 +1425,9 @@
     "a": "Ser el más inteligente del mundo",
     "icono_a": "🎓",
     "b": "Ser feliz siempre sin razón",
-    "icono_b": "😊"
+    "icono_b": "😊",
+    "foto_a": "genius chalkboard equations",
+    "foto_b": "happy person laughing"
   },
   {
     "id": "prefieres-144",
@@ -1149,7 +1435,9 @@
     "a": "Mucho tiempo libre sin dinero",
     "icono_a": "🏖️",
     "b": "Mucho dinero sin tiempo libre",
-    "icono_b": "⌛"
+    "icono_b": "⌛",
+    "foto_a": "lazy afternoon park",
+    "foto_b": "busy businessman rushing"
   },
   {
     "id": "prefieres-145",
@@ -1157,7 +1445,9 @@
     "a": "Mudarte a otro país para siempre",
     "icono_a": "✈️",
     "b": "Nunca salir de tu ciudad",
-    "icono_b": "🏘️"
+    "icono_b": "🏘️",
+    "foto_a": "airport departure suitcase",
+    "foto_b": "hometown street view"
   },
   {
     "id": "prefieres-146",
@@ -1165,7 +1455,9 @@
     "a": "Solo poder susurrar",
     "icono_a": "🤫",
     "b": "Solo poder gritar",
-    "icono_b": "📢"
+    "icono_b": "📢",
+    "foto_a": "woman whispering secret",
+    "foto_b": "man shouting megaphone"
   },
   {
     "id": "prefieres-147",
@@ -1173,7 +1465,9 @@
     "a": "Perder todas tus fotos",
     "icono_a": "🖼️",
     "b": "Perder todos tus chats guardados",
-    "icono_b": "💬"
+    "icono_b": "💬",
+    "foto_a": "old printed photos",
+    "foto_b": "phone chat messages"
   },
   {
     "id": "prefieres-148",
@@ -1181,7 +1475,9 @@
     "a": "Ser famoso sin privacidad",
     "icono_a": "🌟",
     "b": "Ser un genio que nadie conoce",
-    "icono_b": "🎨"
+    "icono_b": "🎨",
+    "foto_a": "paparazzi camera flashes",
+    "foto_b": "scientist working lab"
   },
   {
     "id": "prefieres-149",
@@ -1189,7 +1485,9 @@
     "a": "Tener siempre la razón",
     "icono_a": "🏆",
     "b": "Caerle bien a todo el mundo",
-    "icono_b": "🤗"
+    "icono_b": "🤗",
+    "foto_a": "debate argument people",
+    "foto_b": "friends hugging laughing"
   },
   {
     "id": "prefieres-150",
@@ -1197,6 +1495,8 @@
     "a": "Pausar la vida cuando quieras",
     "icono_a": "⏯️",
     "b": "Rebobinar un día una vez al año",
-    "icono_b": "⏪"
+    "icono_b": "⏪",
+    "foto_a": "pause button",
+    "foto_b": "vintage cassette tape"
   }
 ]

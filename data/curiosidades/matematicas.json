@@ -1,73 +1,832 @@
 [
-  { "id": "matematicas-001", "tema": "matematicas", "icono": "🥧", "dato": "π tiene infinitas cifras decimales que nunca se repiten en un patrón fijo, porque es un número irracional.", "falso": "π tiene exactamente 1000 cifras decimales y después termina.", "explicacion": "π es irracional: sus decimales son infinitos y no periódicos. Ya se han calculado más de 100 billones de cifras y no termina." },
-  { "id": "matematicas-002", "tema": "matematicas", "icono": "🔢", "dato": "El matemático indio Brahmagupta escribió en el año 628 las reglas para operar con el cero como un número más.", "falso": "El cero como número lo inventaron los antiguos griegos hacia el año 1500 a. C.", "explicacion": "Los griegos no usaban el cero como número. Brahmagupta, en la India, fijó sus reglas de cálculo en el año 628." },
-  { "id": "matematicas-003", "tema": "matematicas", "icono": "🐚", "dato": "Los mayas usaban un símbolo para el cero, con forma de concha, siglos antes de que el cero llegara a Europa.", "falso": "Los mayas no conocían el cero: su sistema de numeración solo tenía números del 1 al 20.", "explicacion": "El sistema maya era de base 20 y sí tenía cero, dibujado como una concha. Lo usaron siglos antes que los europeos." },
-  { "id": "matematicas-004", "tema": "matematicas", "icono": "🥈", "dato": "El 2 es el único número primo par.", "falso": "El 2 no es primo porque es par: todos los números primos son impares.", "explicacion": "El 2 solo se divide entre 1 y entre 2, así que es primo. Es el único primo par: los demás pares se dividen entre 2." },
-  { "id": "matematicas-005", "tema": "matematicas", "icono": "📜", "dato": "Los números primos son infinitos. Euclides lo demostró hace más de 2000 años.", "falso": "El número primo más grande que existe se descubrió en 2018 y ya no hay otro mayor.", "explicacion": "No hay un primo más grande: Euclides demostró que son infinitos. Lo que se descubre es el mayor primo conocido hasta ese momento." },
-  { "id": "matematicas-006", "tema": "matematicas", "icono": "🔺", "dato": "Los tres ángulos internos de cualquier triángulo dibujado en un plano suman 180°.", "falso": "Los tres ángulos internos de cualquier triángulo dibujado en un plano suman 360°.", "explicacion": "En un plano suman 180°. Los que suman 360° son los ángulos internos de un cuadrilátero, como el cuadrado." },
-  { "id": "matematicas-007", "tema": "matematicas", "icono": "🪞", "dato": "111 111 111 × 111 111 111 = 12 345 678 987 654 321, un número capicúa que sube del 1 al 9 y vuelve a bajar.", "falso": "111 111 111 × 111 111 111 = 123 456 789 123 456 789, un número que repite dos veces del 1 al 9.", "explicacion": "El resultado sube del 1 al 9 y baja otra vez: 12 345 678 987 654 321. Se lee igual de izquierda a derecha que al revés." },
-  { "id": "matematicas-008", "tema": "matematicas", "icono": "🔍", "dato": "Un gúgol (googol) es un 1 seguido de 100 ceros. El nombre lo inventó un niño de 9 años, sobrino del matemático Edward Kasner.", "falso": "Un gúgol es un 1 seguido de 1000 ceros, y el nombre lo inventaron los fundadores de Google.", "explicacion": "Un gúgol es 10 elevado a 100. Lo bautizó Milton Sirotta, de 9 años; Google tomó su nombre de esa palabra, no al revés." },
-  { "id": "matematicas-009", "tema": "matematicas", "icono": "📏", "dato": "El signo «=» lo inventó el galés Robert Recorde en 1557: dos rayas paralelas, porque nada es más igual que ellas.", "falso": "El signo «=» lo inventó Isaac Newton en 1687 y lo usó por primera vez en su libro Principia.", "explicacion": "Lo creó Robert Recorde en 1557, en su libro «The Whetstone of Witte», 130 años antes de los Principia de Newton." },
-  { "id": "matematicas-010", "tema": "matematicas", "icono": "🧩", "dato": "Solo tres polígonos regulares cubren un plano sin dejar huecos: el triángulo, el cuadrado y el hexágono.", "falso": "El pentágono regular cubre un plano sin dejar huecos, igual que los azulejos cuadrados.", "explicacion": "Cada ángulo del pentágono mide 108°, y 108 no divide a 360: siempre queda un hueco. Solo encajan triángulos, cuadrados y hexágonos." },
-  { "id": "matematicas-011", "tema": "matematicas", "icono": "🐝", "dato": "Las celdas hexagonales de los panales dividen el espacio en partes iguales usando la menor cantidad de cera posible.", "falso": "Las abejas hacen celdas hexagonales porque el hexágono es la figura que más cera necesita.", "explicacion": "Es al revés: el hexágono divide el plano en celdas iguales con el menor perímetro. Thomas Hales lo demostró en 1999." },
-  { "id": "matematicas-012", "tema": "matematicas", "icono": "🌻", "dato": "En la sucesión de Fibonacci (1, 1, 2, 3, 5, 8, 13…) cada número es la suma de los dos anteriores.", "falso": "En la sucesión de Fibonacci (1, 2, 4, 8, 16…) cada número es el doble del anterior.", "explicacion": "Esa es la serie de las potencias de 2. En la de Fibonacci se suman los dos anteriores: 1, 1, 2, 3, 5, 8, 13, 21…" },
-  { "id": "matematicas-013", "tema": "matematicas", "icono": "📖", "dato": "Fibonacci difundió en Europa las cifras del 0 al 9 con su libro Liber Abaci, escrito en 1202.", "falso": "Las cifras del 0 al 9 las inventaron los árabes en el siglo XV.", "explicacion": "Las cifras nacieron en la India y los árabes las llevaron a Occidente. Fibonacci las popularizó en Europa en 1202, no en el siglo XV." },
-  { "id": "matematicas-014", "tema": "matematicas", "icono": "🎂", "dato": "Con solo 23 personas en un salón, hay más de un 50 % de probabilidad de que dos cumplan años el mismo día.", "falso": "Se necesitan al menos 183 personas para que haya un 50 % de probabilidad de que dos cumplan años el mismo día.", "explicacion": "Bastan 23, porque se comparan todas las parejas posibles (253), no cada persona con una fecha fija. Es la «paradoja del cumpleaños»." },
-  { "id": "matematicas-015", "tema": "matematicas", "icono": "🤯", "dato": "0.999… (con infinitos nueves) es exactamente igual a 1.", "falso": "0.999… (con infinitos nueves) es el número más cercano a 1, pero siempre es un poco menor.", "explicacion": "Son el mismo número: 1/3 = 0.333…, y 3 × 1/3 = 0.999… = 1. No existe ningún número entre los dos." },
-  { "id": "matematicas-016", "tema": "matematicas", "icono": "🃏", "dato": "Hay más formas de ordenar un mazo de 52 cartas que átomos en la Tierra: 52! es un número de 68 cifras.", "falso": "Un mazo de 52 cartas se puede ordenar de unas 5000 formas distintas.", "explicacion": "Son 52! = 52 × 51 × 50 × … × 1, un número de 68 cifras. Cada buena barajada casi seguro da un orden que nadie ha visto antes." },
-  { "id": "matematicas-017", "tema": "matematicas", "icono": "📐", "dato": "En un triángulo rectángulo, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos.", "falso": "En un triángulo rectángulo, la hipotenusa mide lo mismo que la suma de los dos catetos.", "explicacion": "Es con cuadrados. Con catetos de 3 y 4, la hipotenusa mide 5 (9 + 16 = 25), no 7." },
-  { "id": "matematicas-018", "tema": "matematicas", "icono": "🌍", "dato": "Hacia el 240 a. C., Eratóstenes calculó el tamaño de la Tierra midiendo sombras en dos ciudades de Egipto.", "falso": "El tamaño de la Tierra no se calculó hasta que la expedición de Magallanes le dio la vuelta en 1522.", "explicacion": "Eratóstenes comparó las sombras en Siena y Alejandría y estimó la circunferencia de la Tierra unos 1700 años antes que Magallanes." },
-  { "id": "matematicas-019", "tema": "matematicas", "icono": "🥇", "dato": "El 1 no es un número primo: un primo debe tener exactamente dos divisores distintos.", "falso": "El 1 es el primer número primo, porque solo se divide entre 1 y entre sí mismo.", "explicacion": "El 1 tiene un solo divisor. Si fuera primo, un número podría descomponerse en primos de muchas formas (6 = 2 × 3 = 1 × 2 × 3)." },
-  { "id": "matematicas-020", "tema": "matematicas", "icono": "🎨", "dato": "Cuatro colores bastan para pintar cualquier mapa sin que dos países vecinos tengan el mismo color.", "falso": "Para pintar cualquier mapa sin que dos países vecinos repitan color hacen falta al menos 7 colores.", "explicacion": "Bastan 4. El teorema de los cuatro colores se demostró en 1976 con ayuda de una computadora, una de las primeras pruebas así." },
-  { "id": "matematicas-021", "tema": "matematicas", "icono": "👩", "dato": "Hipatia de Alejandría, nacida en el siglo IV, es una de las primeras mujeres matemáticas de las que hay registro.", "falso": "La primera mujer matemática de la que hay registro vivió en Francia en el siglo XIX.", "explicacion": "Hipatia enseñaba matemáticas y astronomía en Alejandría hace más de 1600 años, mucho antes del siglo XIX." },
-  { "id": "matematicas-022", "tema": "matematicas", "icono": "✨", "dato": "El 6 es un número perfecto: sus divisores 1, 2 y 3 suman 6. El siguiente número perfecto es el 28.", "falso": "El 10 es un número perfecto: sus divisores 1, 2 y 5 suman 10.", "explicacion": "1 + 2 + 5 = 8, no 10. Después del 6, el siguiente perfecto es el 28: 1 + 2 + 4 + 7 + 14 = 28." },
-  { "id": "matematicas-023", "tema": "matematicas", "icono": "🧒", "dato": "Se cuenta que Gauss, de niño, sumó del 1 al 100 en segundos: formó 50 parejas que suman 101 y obtuvo 5050.", "falso": "La suma de todos los números del 1 al 100 da 10 000.", "explicacion": "Se forman 50 parejas (1 + 100, 2 + 99, 3 + 98…) que suman 101 cada una: 50 × 101 = 5050." },
-  { "id": "matematicas-024", "tema": "matematicas", "icono": "🔵", "dato": "Entre todas las formas con el mismo volumen, la esfera es la que tiene menos superficie. Por eso las burbujas son redondas.", "falso": "Las burbujas son redondas por casualidad: el cubo es la forma con menos superficie para un mismo volumen.", "explicacion": "La forma con menor superficie para un volumen dado es la esfera, y la tensión superficial empuja a la burbuja hacia ella." },
-  { "id": "matematicas-025", "tema": "matematicas", "icono": "🌀", "dato": "Hay infinitos más grandes que otros: Georg Cantor demostró que hay más números reales que números naturales.", "falso": "Todos los infinitos son del mismo tamaño: Georg Cantor demostró que no se pueden comparar.", "explicacion": "Con su argumento diagonal, Cantor probó que los reales no se pueden contar uno a uno: su infinito es mayor que el de los naturales." },
-  { "id": "matematicas-026", "tema": "matematicas", "icono": "💡", "dato": "Si un número es múltiplo de 9, la suma de sus cifras también lo es: 729 da 7 + 2 + 9 = 18.", "falso": "Un número es múltiplo de 7 cuando la suma de sus cifras es múltiplo de 7.", "explicacion": "Esa regla solo vale para el 3 y el 9. El 16 suma 7 y no es múltiplo de 7; el 14 sí lo es y sus cifras suman 5." },
-  { "id": "matematicas-027", "tema": "matematicas", "icono": "📝", "dato": "El símbolo π para la razón entre la circunferencia y el diámetro se hizo popular gracias a Leonhard Euler en el siglo XVIII.", "falso": "El símbolo π lo usó por primera vez Arquímedes en el siglo III a. C.", "explicacion": "Arquímedes calculó valores de π, pero no usó el símbolo. William Jones lo empleó en 1706 y Euler lo popularizó después." },
-  { "id": "matematicas-028", "tema": "matematicas", "icono": "📅", "dato": "El Día de π es el 14 de marzo (3/14 en formato mes/día), que también es el cumpleaños de Albert Einstein.", "falso": "El Día de π se celebra el 3 de enero, porque π empieza con 3.", "explicacion": "Es el 14 de marzo: en formato mes/día se escribe 3/14, como las primeras cifras de π (3.14)." },
-  { "id": "matematicas-029", "tema": "matematicas", "icono": "🔄", "dato": "La banda de Möbius tiene una sola cara y un solo borde. Se hace girando media vuelta una tira de papel y pegando sus puntas.", "falso": "La banda de Möbius tiene cuatro caras y se hace pegando dos tiras de papel en forma de cruz.", "explicacion": "Basta una tira girada media vuelta. Si trazas una línea por el centro con un lápiz, pasas por «ambos lados» sin levantarlo." },
-  { "id": "matematicas-030", "tema": "matematicas", "icono": "🏆", "dato": "El último teorema de Fermat tardó 358 años en demostrarse: Andrew Wiles publicó la prueba completa en 1995.", "falso": "El último teorema de Fermat lo demostró el propio Fermat en el margen de un libro.", "explicacion": "Fermat escribió que tenía una prueba que no cabía en el margen, pero nunca apareció. Andrew Wiles lo demostró en 1995." },
-
-  { "id": "matematicas-031", "tema": "matematicas", "tipo": "reto", "icono": "🧮", "pregunta": "¿Qué número sigue en la serie? 2, 6, 12, 20, 30, …", "opciones": ["40", "44", "42"], "respuesta": 2, "explicacion": "Las diferencias suben de 2 en 2: +4, +6, +8, +10. Sigue +12: 30 + 12 = 42. También es n × (n + 1): 6 × 7 = 42." },
-  { "id": "matematicas-032", "tema": "matematicas", "tipo": "reto", "icono": "🐱", "pregunta": "Si 5 gatos cazan 5 ratones en 5 minutos, ¿cuántos gatos hacen falta para cazar 100 ratones en 100 minutos?", "opciones": ["20", "5", "100"], "respuesta": 1, "explicacion": "Cada gato caza 1 ratón cada 5 minutos. En 100 minutos, cada gato caza 20 ratones, así que 5 gatos cazan 100." },
-  { "id": "matematicas-033", "tema": "matematicas", "tipo": "reto", "icono": "⚾", "pregunta": "Un bate y una pelota cuestan $1.10 juntos. El bate cuesta $1 más que la pelota. ¿Cuánto cuesta la pelota?", "opciones": ["$0.05", "$0.10", "$0.55"], "respuesta": 0, "explicacion": "Con $0.10, el bate costaría $1.10 y el total $1.20. Con $0.05, el bate cuesta $1.05 y juntos suman $1.10." },
-  { "id": "matematicas-034", "tema": "matematicas", "tipo": "reto", "icono": "👧", "pregunta": "Cuando yo tenía 6 años, mi hermana tenía la mitad de mi edad. Ahora tengo 70. ¿Cuántos años tiene ella?", "opciones": ["35", "73", "67"], "respuesta": 2, "explicacion": "A tus 6 años ella tenía 3: le llevas 3 años. Esa diferencia no cambia, así que con 70 años tú, ella tiene 67." },
-  { "id": "matematicas-035", "tema": "matematicas", "tipo": "reto", "icono": "🛒", "pregunta": "Un producto sube 50 % y después baja 50 %. ¿Cómo queda su precio comparado con el original?", "opciones": ["25 % más barato", "Igual que antes", "50 % más barato"], "respuesta": 0, "explicacion": "Si costaba 100, sube a 150. El 50 % de 150 es 75, así que queda en 75: un 25 % menos que al principio." },
-  { "id": "matematicas-036", "tema": "matematicas", "tipo": "reto", "icono": "🐸", "pregunta": "Unos nenúfares duplican su área cada día y cubren todo el estanque en 48 días. ¿En qué día cubrían la mitad?", "opciones": ["El día 24", "El día 46", "El día 47"], "respuesta": 2, "explicacion": "Si el área se duplica cada día, el día anterior a cubrirlo todo tapaban justo la mitad: el día 47." },
-  { "id": "matematicas-037", "tema": "matematicas", "tipo": "reto", "icono": "🧠", "pregunta": "¿Cuánto es 3 + 3 × 3 − 3 + 3?", "opciones": ["12", "18", "15"], "respuesta": 0, "explicacion": "Primero la multiplicación: 3 × 3 = 9. Luego, de izquierda a derecha: 3 + 9 − 3 + 3 = 12." },
-  { "id": "matematicas-038", "tema": "matematicas", "tipo": "reto", "icono": "➗", "pregunta": "Divide 30 entre 1/2 y al resultado súmale 10. ¿Cuánto da?", "opciones": ["25", "70", "40"], "respuesta": 1, "explicacion": "Dividir entre 1/2 es multiplicar por 2: 30 ÷ 1/2 = 60. Luego 60 + 10 = 70. La trampa es dividir entre 2." },
-  { "id": "matematicas-039", "tema": "matematicas", "tipo": "reto", "icono": "🐌", "pregunta": "Un caracol está al fondo de un pozo de 10 m. Sube 3 m cada día y resbala 2 m cada noche. ¿En cuántos días sale?", "opciones": ["10 días", "8 días", "7 días"], "respuesta": 1, "explicacion": "Avanza 1 m por cada día con su noche. Tras 7 días y 7 noches está a 7 m; el día 8 sube 3 m, llega a 10 y sale." },
-  { "id": "matematicas-040", "tema": "matematicas", "tipo": "reto", "icono": "🔩", "pregunta": "Si 3 máquinas hacen 3 tornillos en 3 minutos, ¿cuánto tardan 100 máquinas en hacer 100 tornillos?", "opciones": ["100 minutos", "33 minutos", "3 minutos"], "respuesta": 2, "explicacion": "Cada máquina hace 1 tornillo en 3 minutos. Trabajando a la vez, 100 máquinas hacen 100 tornillos en los mismos 3 minutos." },
-  { "id": "matematicas-041", "tema": "matematicas", "tipo": "reto", "icono": "🚆", "pregunta": "Un tren sale a las 10:00 y viaja a 80 km/h sin parar. ¿Cuántos km lleva recorridos a las 11:45?", "opciones": ["140 km", "116 km", "120 km"], "respuesta": 0, "explicacion": "De 10:00 a 11:45 pasan 1 h 45 min, que es 1.75 h (no 1.45 h). Entonces 80 × 1.75 = 140 km." },
-  { "id": "matematicas-042", "tema": "matematicas", "tipo": "reto", "icono": "📆", "pregunta": "Si hoy es lunes, ¿qué día de la semana será dentro de 100 días?", "opciones": ["Martes", "Jueves", "Miércoles"], "respuesta": 2, "explicacion": "Cada 7 días vuelve a ser lunes. 100 = 98 + 2, y 98 es múltiplo de 7. Lunes más 2 días es miércoles." },
-  { "id": "matematicas-043", "tema": "matematicas", "tipo": "reto", "icono": "🟦", "pregunta": "¿Cuántos cuadrados hay en total en un tablero de 2 × 2 casillas?", "opciones": ["4", "5", "8"], "respuesta": 1, "explicacion": "Hay 4 cuadrados pequeños de 1 × 1 y un cuadrado grande de 2 × 2 que los contiene a todos: 5 en total." },
-  { "id": "matematicas-044", "tema": "matematicas", "tipo": "reto", "icono": "🔔", "pregunta": "Un reloj da 6 campanadas en 5 segundos. A ese ritmo, ¿cuánto tarda en dar 12 campanadas?", "opciones": ["11 segundos", "10 segundos", "12 segundos"], "respuesta": 0, "explicacion": "Entre 6 campanadas hay 5 espacios de 1 segundo. Entre 12 campanadas hay 11 espacios: 11 segundos." },
-  { "id": "matematicas-045", "tema": "matematicas", "tipo": "reto", "icono": "🎈", "pregunta": "Pedro tiene el doble de edad que Ana. Dentro de 10 años, sus edades sumarán 50. ¿Cuántos años tiene Ana hoy?", "opciones": ["10", "15", "20"], "respuesta": 0, "explicacion": "Si Ana tiene x, Pedro tiene 2x. En 10 años: x + 10 + 2x + 10 = 50, así que 3x = 30 y x = 10. Pedro tiene 20." },
-  { "id": "matematicas-046", "tema": "matematicas", "tipo": "reto", "icono": "💯", "pregunta": "¿Qué es mayor: el 20 % de 50 o el 50 % de 20?", "opciones": ["El 20 % de 50", "El 50 % de 20", "Son iguales"], "respuesta": 2, "explicacion": "El 20 % de 50 es 0.2 × 50 = 10, y el 50 % de 20 es 0.5 × 20 = 10. El a % de b siempre es igual al b % de a." },
-  { "id": "matematicas-047", "tema": "matematicas", "tipo": "reto", "icono": "📈", "pregunta": "¿Qué número sigue en la serie? 3, 5, 9, 17, 33, …", "opciones": ["49", "65", "66"], "respuesta": 1, "explicacion": "Las diferencias se duplican: +2, +4, +8, +16. Sigue +32: 33 + 32 = 65. También es el doble del anterior menos 1." },
-  { "id": "matematicas-048", "tema": "matematicas", "tipo": "reto", "icono": "👕", "pregunta": "Una camisa con 25 % de descuento cuesta $60. ¿Cuál era su precio original?", "opciones": ["$75", "$80", "$85"], "respuesta": 1, "explicacion": "$60 es el 75 % del precio original: 60 ÷ 0.75 = 80. Sumarle a $60 su 25 % da $75, y esa es la trampa." },
-  { "id": "matematicas-049", "tema": "matematicas", "tipo": "reto", "icono": "🔢", "pregunta": "¿Cuál es el menor número mayor que 1 que, al dividirlo entre 2, 3, 4 o 5, siempre deja residuo 1?", "opciones": ["31", "121", "61"], "respuesta": 2, "explicacion": "El número menos 1 debe dividirse entre 2, 3, 4 y 5. El menor múltiplo común de los cuatro es 60, así que el número es 61." },
-  { "id": "matematicas-050", "tema": "matematicas", "tipo": "reto", "icono": "🐔", "pregunta": "En una granja hay gallinas y vacas. En total cuentas 10 cabezas y 28 patas. ¿Cuántas vacas hay?", "opciones": ["4", "6", "3"], "respuesta": 0, "explicacion": "Si las 10 fueran gallinas habría 20 patas. Faltan 8, y cada vaca aporta 2 patas más: 8 ÷ 2 = 4 vacas (y 6 gallinas)." },
-  { "id": "matematicas-051", "tema": "matematicas", "tipo": "reto", "icono": "💰", "pregunta": "Ana, Beto y Carla se reparten $70. Ana recibe el doble que Beto y Beto el doble que Carla. ¿Cuánto recibe Ana?", "opciones": ["$30", "$40", "$20"], "respuesta": 1, "explicacion": "Si Carla recibe x, Beto recibe 2x y Ana 4x. Juntos suman 7x = 70, así que x = 10 y Ana recibe 4 × 10 = $40." },
-  { "id": "matematicas-052", "tema": "matematicas", "tipo": "reto", "icono": "📐", "pregunta": "Un triángulo tiene un ángulo de 90° y otro de 35°. ¿Cuánto mide el tercer ángulo?", "opciones": ["55°", "45°", "65°"], "respuesta": 0, "explicacion": "Los ángulos de un triángulo suman 180°. Entonces 180° − 90° − 35° = 55°." },
-  { "id": "matematicas-053", "tema": "matematicas", "tipo": "reto", "icono": "🚀", "pregunta": "¿Qué número sigue en la serie? 1, 2, 6, 24, 120, …", "opciones": ["240", "600", "720"], "respuesta": 2, "explicacion": "Cada número se multiplica por el siguiente entero: ×2, ×3, ×4, ×5. Ahora toca ×6: 120 × 6 = 720." },
-  { "id": "matematicas-054", "tema": "matematicas", "tipo": "reto", "icono": "📒", "pregunta": "Si escribes todos los números del 1 al 100, ¿cuántas veces escribes el dígito 9?", "opciones": ["19", "20", "10"], "respuesta": 1, "explicacion": "Aparece 10 veces en las unidades (9, 19… 99) y 10 en las decenas (90 a 99). El 99 lo tiene dos veces: 20 en total." },
-  { "id": "matematicas-055", "tema": "matematicas", "tipo": "reto", "icono": "🕞", "pregunta": "¿Cuánto mide el ángulo menor que forman las agujas de un reloj a las 3:30?", "opciones": ["90°", "60°", "75°"], "respuesta": 2, "explicacion": "El minutero apunta al 6 (180°). El horario está a mitad de camino entre el 3 y el 4 (105°). La diferencia es 75°." },
-  { "id": "matematicas-056", "tema": "matematicas", "tipo": "reto", "icono": "👥", "pregunta": "En un salón, el 60 % son mujeres y hay 12 hombres. ¿Cuántas personas hay en total?", "opciones": ["30", "20", "36"], "respuesta": 0, "explicacion": "Si el 60 % son mujeres, los hombres son el 40 %. Si el 40 % son 12, el 10 % son 3 y el 100 % son 30 personas." },
-  { "id": "matematicas-057", "tema": "matematicas", "tipo": "reto", "icono": "🎳", "pregunta": "¿Qué número sigue en la serie? 1, 3, 6, 10, 15, …", "opciones": ["20", "21", "25"], "respuesta": 1, "explicacion": "Cada vez se suma uno más: +2, +3, +4, +5. Ahora toca +6: 15 + 6 = 21." },
-  { "id": "matematicas-058", "tema": "matematicas", "tipo": "reto", "icono": "🧱", "pregunta": "Un ladrillo pesa 1 kg más medio ladrillo. ¿Cuánto pesa un ladrillo entero?", "opciones": ["1.5 kg", "1 kg", "2 kg"], "respuesta": 2, "explicacion": "El ladrillo es «1 kg» más «medio ladrillo», así que ese 1 kg es la otra mitad. Medio ladrillo pesa 1 kg y el entero, 2 kg." },
-  { "id": "matematicas-059", "tema": "matematicas", "tipo": "reto", "icono": "🔁", "pregunta": "Un número de dos cifras: sus cifras suman 9 y, si las inviertes, el número aumenta 27. ¿Cuál es?", "opciones": ["36", "45", "27"], "respuesta": 0, "explicacion": "Al invertir, el número cambia 9 veces la diferencia de sus cifras: 27 ÷ 9 = 3. Cifras que suman 9 y difieren en 3: 3 y 6. 63 − 36 = 27." },
-  { "id": "matematicas-060", "tema": "matematicas", "tipo": "reto", "icono": "☕", "pregunta": "Si A = 1, B = 2, C = 3, y así con todo el abecedario, ¿cuánto suman las letras de CAFE?", "opciones": ["14", "16", "15"], "respuesta": 2, "explicacion": "C = 3, A = 1, F = 6 y E = 5. La suma es 3 + 1 + 6 + 5 = 15." },
-  { "id": "matematicas-061", "tema": "matematicas", "tipo": "reto", "icono": "🔷", "pregunta": "¿Cuántas diagonales tiene un hexágono?", "opciones": ["6", "9", "12"], "respuesta": 1, "explicacion": "De cada vértice salen 3 diagonales (no van a él mismo ni a sus 2 vecinos): 6 × 3 = 18. Cada una se contó 2 veces: 9." },
-  { "id": "matematicas-062", "tema": "matematicas", "tipo": "reto", "icono": "🚗", "pregunta": "Un auto va a una ciudad a 60 km de distancia a 60 km/h y regresa a 30 km/h. ¿Cuál fue su velocidad promedio?", "opciones": ["40 km/h", "45 km/h", "50 km/h"], "respuesta": 0, "explicacion": "Ida: 60 km en 1 h. Vuelta: 60 km en 2 h. Son 120 km en 3 h, o sea 40 km/h. Las velocidades no se promedian directo." },
-  { "id": "matematicas-063", "tema": "matematicas", "tipo": "reto", "icono": "🍰", "pregunta": "¿Cuánto es el 25 % del 25 % de 1600?", "opciones": ["400", "100", "50"], "respuesta": 1, "explicacion": "El 25 % es la cuarta parte: 1600 ÷ 4 = 400, y la cuarta parte de 400 es 100." },
-  { "id": "matematicas-064", "tema": "matematicas", "tipo": "reto", "icono": "🚶", "pregunta": "En una fila, Luis es el 5.º contando desde adelante y el 8.º contando desde atrás. ¿Cuántas personas hay en la fila?", "opciones": ["13", "11", "12"], "respuesta": 2, "explicacion": "Delante de Luis hay 4 personas y detrás 7. Con él: 4 + 1 + 7 = 12. Sumar 5 + 8 cuenta a Luis dos veces." },
-  { "id": "matematicas-065", "tema": "matematicas", "tipo": "reto", "icono": "👨", "pregunta": "Un padre tiene 40 años y su hijo 10. ¿Dentro de cuántos años el padre tendrá el doble de la edad del hijo?", "opciones": ["10", "20", "30"], "respuesta": 1, "explicacion": "La diferencia siempre es de 30 años. El padre tendrá el doble cuando el hijo tenga 30: dentro de 20 años (60 y 30)." },
-  { "id": "matematicas-066", "tema": "matematicas", "tipo": "reto", "icono": "🤝", "pregunta": "En una reunión de 6 personas, cada una le da la mano una vez a cada una de las demás. ¿Cuántos apretones hay?", "opciones": ["15", "30", "36"], "respuesta": 0, "explicacion": "Cada persona saluda a las otras 5: 6 × 5 = 30, pero así cada apretón se cuenta dos veces. 30 ÷ 2 = 15." },
-  { "id": "matematicas-067", "tema": "matematicas", "tipo": "reto", "icono": "🤔", "pregunta": "¿Qué número sigue en la serie? 2, 4, 8, 14, 22, …", "opciones": ["30", "44", "32"], "respuesta": 2, "explicacion": "Las diferencias suben de 2 en 2: +2, +4, +6, +8. Ahora toca +10: 22 + 10 = 32. No se duplica, por eso no es 44." },
-  { "id": "matematicas-068", "tema": "matematicas", "tipo": "reto", "icono": "📚", "pregunta": "Juan lee 20 páginas el lunes y cada día lee 5 más que el día anterior. ¿Cuántas lee en total de lunes a miércoles?", "opciones": ["75", "60", "90"], "respuesta": 0, "explicacion": "Lunes 20, martes 25 y miércoles 30. En total: 20 + 25 + 30 = 75 páginas." },
-  { "id": "matematicas-069", "tema": "matematicas", "tipo": "reto", "icono": "🎯", "pregunta": "¿Qué número, sumado a su doble y a su triple, da 60?", "opciones": ["12", "10", "15"], "respuesta": 1, "explicacion": "El número más su doble más su triple es 6 veces el número: 6x = 60, así que x = 10 (10 + 20 + 30 = 60)." },
-  { "id": "matematicas-070", "tema": "matematicas", "tipo": "reto", "icono": "⬛", "pregunta": "Un cuadrado tiene un área de 36 cm². Si duplicas la medida de su lado, ¿cuál es la nueva área?", "opciones": ["72 cm²", "108 cm²", "144 cm²"], "respuesta": 2, "explicacion": "El lado mide 6 cm. Al duplicarlo mide 12 cm, y el área es 12 × 12 = 144 cm²: 4 veces la original, no el doble." }
+  {
+    "id": "matematicas-001",
+    "tema": "matematicas",
+    "icono": "🥧",
+    "dato": "π tiene infinitas cifras decimales que nunca se repiten en un patrón fijo, porque es un número irracional.",
+    "falso": "π tiene exactamente 1000 cifras decimales y después termina.",
+    "explicacion": "π es irracional: sus decimales son infinitos y no periódicos. Ya se han calculado más de 100 billones de cifras y no termina.",
+    "foto": "math chalkboard equations"
+  },
+  {
+    "id": "matematicas-002",
+    "tema": "matematicas",
+    "icono": "🔢",
+    "dato": "El matemático indio Brahmagupta escribió en el año 628 las reglas para operar con el cero como un número más.",
+    "falso": "El cero como número lo inventaron los antiguos griegos hacia el año 1500 a. C.",
+    "explicacion": "Los griegos no usaban el cero como número. Brahmagupta, en la India, fijó sus reglas de cálculo en el año 628.",
+    "foto": "ancient indian temple"
+  },
+  {
+    "id": "matematicas-003",
+    "tema": "matematicas",
+    "icono": "🐚",
+    "dato": "Los mayas usaban un símbolo para el cero, con forma de concha, siglos antes de que el cero llegara a Europa.",
+    "falso": "Los mayas no conocían el cero: su sistema de numeración solo tenía números del 1 al 20.",
+    "explicacion": "El sistema maya era de base 20 y sí tenía cero, dibujado como una concha. Lo usaron siglos antes que los europeos.",
+    "foto": "mayan pyramid jungle"
+  },
+  {
+    "id": "matematicas-004",
+    "tema": "matematicas",
+    "icono": "🥈",
+    "dato": "El 2 es el único número primo par.",
+    "falso": "El 2 no es primo porque es par: todos los números primos son impares.",
+    "explicacion": "El 2 solo se divide entre 1 y entre 2, así que es primo. Es el único primo par: los demás pares se dividen entre 2.",
+    "foto": "wooden number blocks"
+  },
+  {
+    "id": "matematicas-005",
+    "tema": "matematicas",
+    "icono": "📜",
+    "dato": "Los números primos son infinitos. Euclides lo demostró hace más de 2000 años.",
+    "falso": "El número primo más grande que existe se descubrió en 2018 y ya no hay otro mayor.",
+    "explicacion": "No hay un primo más grande: Euclides demostró que son infinitos. Lo que se descubre es el mayor primo conocido hasta ese momento.",
+    "foto": "numbers on chalkboard"
+  },
+  {
+    "id": "matematicas-006",
+    "tema": "matematicas",
+    "icono": "🔺",
+    "dato": "Los tres ángulos internos de cualquier triángulo dibujado en un plano suman 180°.",
+    "falso": "Los tres ángulos internos de cualquier triángulo dibujado en un plano suman 360°.",
+    "explicacion": "En un plano suman 180°. Los que suman 360° son los ángulos internos de un cuadrilátero, como el cuadrado.",
+    "foto": "geometry triangle ruler"
+  },
+  {
+    "id": "matematicas-007",
+    "tema": "matematicas",
+    "icono": "🪞",
+    "dato": "111 111 111 × 111 111 111 = 12 345 678 987 654 321, un número capicúa que sube del 1 al 9 y vuelve a bajar.",
+    "falso": "111 111 111 × 111 111 111 = 123 456 789 123 456 789, un número que repite dos veces del 1 al 9.",
+    "explicacion": "El resultado sube del 1 al 9 y baja otra vez: 12 345 678 987 654 321. Se lee igual de izquierda a derecha que al revés.",
+    "foto": "calculator numbers close up"
+  },
+  {
+    "id": "matematicas-008",
+    "tema": "matematicas",
+    "icono": "🔍",
+    "dato": "Un gúgol (googol) es un 1 seguido de 100 ceros. El nombre lo inventó un niño de 9 años, sobrino del matemático Edward Kasner.",
+    "falso": "Un gúgol es un 1 seguido de 1000 ceros, y el nombre lo inventaron los fundadores de Google.",
+    "explicacion": "Un gúgol es 10 elevado a 100. Lo bautizó Milton Sirotta, de 9 años; Google tomó su nombre de esa palabra, no al revés.",
+    "foto": "child writing numbers"
+  },
+  {
+    "id": "matematicas-009",
+    "tema": "matematicas",
+    "icono": "📏",
+    "dato": "El signo «=» lo inventó el galés Robert Recorde en 1557: dos rayas paralelas, porque nada es más igual que ellas.",
+    "falso": "El signo «=» lo inventó Isaac Newton en 1687 y lo usó por primera vez en su libro Principia.",
+    "explicacion": "Lo creó Robert Recorde en 1557, en su libro «The Whetstone of Witte», 130 años antes de los Principia de Newton.",
+    "foto": "parallel lines pattern"
+  },
+  {
+    "id": "matematicas-010",
+    "tema": "matematicas",
+    "icono": "🧩",
+    "dato": "Solo tres polígonos regulares cubren un plano sin dejar huecos: el triángulo, el cuadrado y el hexágono.",
+    "falso": "El pentágono regular cubre un plano sin dejar huecos, igual que los azulejos cuadrados.",
+    "explicacion": "Cada ángulo del pentágono mide 108°, y 108 no divide a 360: siempre queda un hueco. Solo encajan triángulos, cuadrados y hexágonos.",
+    "foto": "hexagon tiles floor"
+  },
+  {
+    "id": "matematicas-011",
+    "tema": "matematicas",
+    "icono": "🐝",
+    "dato": "Las celdas hexagonales de los panales dividen el espacio en partes iguales usando la menor cantidad de cera posible.",
+    "falso": "Las abejas hacen celdas hexagonales porque el hexágono es la figura que más cera necesita.",
+    "explicacion": "Es al revés: el hexágono divide el plano en celdas iguales con el menor perímetro. Thomas Hales lo demostró en 1999.",
+    "foto": "bees on honeycomb"
+  },
+  {
+    "id": "matematicas-012",
+    "tema": "matematicas",
+    "icono": "🌻",
+    "dato": "En la sucesión de Fibonacci (1, 1, 2, 3, 5, 8, 13…) cada número es la suma de los dos anteriores.",
+    "falso": "En la sucesión de Fibonacci (1, 2, 4, 8, 16…) cada número es el doble del anterior.",
+    "explicacion": "Esa es la serie de las potencias de 2. En la de Fibonacci se suman los dos anteriores: 1, 1, 2, 3, 5, 8, 13, 21…",
+    "foto": "nautilus shell spiral"
+  },
+  {
+    "id": "matematicas-013",
+    "tema": "matematicas",
+    "icono": "📖",
+    "dato": "Fibonacci difundió en Europa las cifras del 0 al 9 con su libro Liber Abaci, escrito en 1202.",
+    "falso": "Las cifras del 0 al 9 las inventaron los árabes en el siglo XV.",
+    "explicacion": "Las cifras nacieron en la India y los árabes las llevaron a Occidente. Fibonacci las popularizó en Europa en 1202, no en el siglo XV.",
+    "foto": "old book pages"
+  },
+  {
+    "id": "matematicas-014",
+    "tema": "matematicas",
+    "icono": "🎂",
+    "dato": "Con solo 23 personas en un salón, hay más de un 50 % de probabilidad de que dos cumplan años el mismo día.",
+    "falso": "Se necesitan al menos 183 personas para que haya un 50 % de probabilidad de que dos cumplan años el mismo día.",
+    "explicacion": "Bastan 23, porque se comparan todas las parejas posibles (253), no cada persona con una fecha fija. Es la «paradoja del cumpleaños».",
+    "foto": "birthday party cake"
+  },
+  {
+    "id": "matematicas-015",
+    "tema": "matematicas",
+    "icono": "🤯",
+    "dato": "0.999… (con infinitos nueves) es exactamente igual a 1.",
+    "falso": "0.999… (con infinitos nueves) es el número más cercano a 1, pero siempre es un poco menor.",
+    "explicacion": "Son el mismo número: 1/3 = 0.333…, y 3 × 1/3 = 0.999… = 1. No existe ningún número entre los dos.",
+    "foto": "student solving math"
+  },
+  {
+    "id": "matematicas-016",
+    "tema": "matematicas",
+    "icono": "🃏",
+    "dato": "Hay más formas de ordenar un mazo de 52 cartas que átomos en la Tierra: 52! es un número de 68 cifras.",
+    "falso": "Un mazo de 52 cartas se puede ordenar de unas 5000 formas distintas.",
+    "explicacion": "Son 52! = 52 × 51 × 50 × … × 1, un número de 68 cifras. Cada buena barajada casi seguro da un orden que nadie ha visto antes.",
+    "foto": "shuffling playing cards"
+  },
+  {
+    "id": "matematicas-017",
+    "tema": "matematicas",
+    "icono": "📐",
+    "dato": "En un triángulo rectángulo, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos.",
+    "falso": "En un triángulo rectángulo, la hipotenusa mide lo mismo que la suma de los dos catetos.",
+    "explicacion": "Es con cuadrados. Con catetos de 3 y 4, la hipotenusa mide 5 (9 + 16 = 25), no 7.",
+    "foto": "geometry drawing compass"
+  },
+  {
+    "id": "matematicas-018",
+    "tema": "matematicas",
+    "icono": "🌍",
+    "dato": "Hacia el 240 a. C., Eratóstenes calculó el tamaño de la Tierra midiendo sombras en dos ciudades de Egipto.",
+    "falso": "El tamaño de la Tierra no se calculó hasta que la expedición de Magallanes le dio la vuelta en 1522.",
+    "explicacion": "Eratóstenes comparó las sombras en Siena y Alejandría y estimó la circunferencia de la Tierra unos 1700 años antes que Magallanes.",
+    "foto": "sundial shadow moving"
+  },
+  {
+    "id": "matematicas-019",
+    "tema": "matematicas",
+    "icono": "🥇",
+    "dato": "El 1 no es un número primo: un primo debe tener exactamente dos divisores distintos.",
+    "falso": "El 1 es el primer número primo, porque solo se divide entre 1 y entre sí mismo.",
+    "explicacion": "El 1 tiene un solo divisor. Si fuera primo, un número podría descomponerse en primos de muchas formas (6 = 2 × 3 = 1 × 2 × 3).",
+    "foto": "counting wooden blocks"
+  },
+  {
+    "id": "matematicas-020",
+    "tema": "matematicas",
+    "icono": "🎨",
+    "dato": "Cuatro colores bastan para pintar cualquier mapa sin que dos países vecinos tengan el mismo color.",
+    "falso": "Para pintar cualquier mapa sin que dos países vecinos repitan color hacen falta al menos 7 colores.",
+    "explicacion": "Bastan 4. El teorema de los cuatro colores se demostró en 1976 con ayuda de una computadora, una de las primeras pruebas así.",
+    "foto": "colorful world map"
+  },
+  {
+    "id": "matematicas-021",
+    "tema": "matematicas",
+    "icono": "👩",
+    "dato": "Hipatia de Alejandría, nacida en el siglo IV, es una de las primeras mujeres matemáticas de las que hay registro.",
+    "falso": "La primera mujer matemática de la que hay registro vivió en Francia en el siglo XIX.",
+    "explicacion": "Hipatia enseñaba matemáticas y astronomía en Alejandría hace más de 1600 años, mucho antes del siglo XIX.",
+    "foto": "ancient library scrolls"
+  },
+  {
+    "id": "matematicas-022",
+    "tema": "matematicas",
+    "icono": "✨",
+    "dato": "El 6 es un número perfecto: sus divisores 1, 2 y 3 suman 6. El siguiente número perfecto es el 28.",
+    "falso": "El 10 es un número perfecto: sus divisores 1, 2 y 5 suman 10.",
+    "explicacion": "1 + 2 + 5 = 8, no 10. Después del 6, el siguiente perfecto es el 28: 1 + 2 + 4 + 7 + 14 = 28.",
+    "foto": "abacus beads counting"
+  },
+  {
+    "id": "matematicas-023",
+    "tema": "matematicas",
+    "icono": "🧒",
+    "dato": "Se cuenta que Gauss, de niño, sumó del 1 al 100 en segundos: formó 50 parejas que suman 101 y obtuvo 5050.",
+    "falso": "La suma de todos los números del 1 al 100 da 10 000.",
+    "explicacion": "Se forman 50 parejas (1 + 100, 2 + 99, 3 + 98…) que suman 101 cada una: 50 × 101 = 5050.",
+    "foto": "child doing math"
+  },
+  {
+    "id": "matematicas-024",
+    "tema": "matematicas",
+    "icono": "🔵",
+    "dato": "Entre todas las formas con el mismo volumen, la esfera es la que tiene menos superficie. Por eso las burbujas son redondas.",
+    "falso": "Las burbujas son redondas por casualidad: el cubo es la forma con menos superficie para un mismo volumen.",
+    "explicacion": "La forma con menor superficie para un volumen dado es la esfera, y la tensión superficial empuja a la burbuja hacia ella.",
+    "foto": "soap bubbles floating"
+  },
+  {
+    "id": "matematicas-025",
+    "tema": "matematicas",
+    "icono": "🌀",
+    "dato": "Hay infinitos más grandes que otros: Georg Cantor demostró que hay más números reales que números naturales.",
+    "falso": "Todos los infinitos son del mismo tamaño: Georg Cantor demostró que no se pueden comparar.",
+    "explicacion": "Con su argumento diagonal, Cantor probó que los reales no se pueden contar uno a uno: su infinito es mayor que el de los naturales.",
+    "foto": "starry night sky"
+  },
+  {
+    "id": "matematicas-026",
+    "tema": "matematicas",
+    "icono": "💡",
+    "dato": "Si un número es múltiplo de 9, la suma de sus cifras también lo es: 729 da 7 + 2 + 9 = 18.",
+    "falso": "Un número es múltiplo de 7 cuando la suma de sus cifras es múltiplo de 7.",
+    "explicacion": "Esa regla solo vale para el 3 y el 9. El 16 suma 7 y no es múltiplo de 7; el 14 sí lo es y sus cifras suman 5.",
+    "foto": "handwritten math notebook"
+  },
+  {
+    "id": "matematicas-027",
+    "tema": "matematicas",
+    "icono": "📝",
+    "dato": "El símbolo π para la razón entre la circunferencia y el diámetro se hizo popular gracias a Leonhard Euler en el siglo XVIII.",
+    "falso": "El símbolo π lo usó por primera vez Arquímedes en el siglo III a. C.",
+    "explicacion": "Arquímedes calculó valores de π, pero no usó el símbolo. William Jones lo empleó en 1706 y Euler lo popularizó después.",
+    "foto": "circle compass drawing"
+  },
+  {
+    "id": "matematicas-028",
+    "tema": "matematicas",
+    "icono": "📅",
+    "dato": "El Día de π es el 14 de marzo (3/14 en formato mes/día), que también es el cumpleaños de Albert Einstein.",
+    "falso": "El Día de π se celebra el 3 de enero, porque π empieza con 3.",
+    "explicacion": "Es el 14 de marzo: en formato mes/día se escribe 3/14, como las primeras cifras de π (3.14).",
+    "foto": "fresh baked pie"
+  },
+  {
+    "id": "matematicas-029",
+    "tema": "matematicas",
+    "icono": "🔄",
+    "dato": "La banda de Möbius tiene una sola cara y un solo borde. Se hace girando media vuelta una tira de papel y pegando sus puntas.",
+    "falso": "La banda de Möbius tiene cuatro caras y se hace pegando dos tiras de papel en forma de cruz.",
+    "explicacion": "Basta una tira girada media vuelta. Si trazas una línea por el centro con un lápiz, pasas por «ambos lados» sin levantarlo.",
+    "foto": "paper strip twisting"
+  },
+  {
+    "id": "matematicas-030",
+    "tema": "matematicas",
+    "icono": "🏆",
+    "dato": "El último teorema de Fermat tardó 358 años en demostrarse: Andrew Wiles publicó la prueba completa en 1995.",
+    "falso": "El último teorema de Fermat lo demostró el propio Fermat en el margen de un libro.",
+    "explicacion": "Fermat escribió que tenía una prueba que no cabía en el margen, pero nunca apareció. Andrew Wiles lo demostró en 1995.",
+    "foto": "blackboard full equations"
+  },
+  {
+    "id": "matematicas-031",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🧮",
+    "pregunta": "¿Qué número sigue en la serie? 2, 6, 12, 20, 30, …",
+    "opciones": [
+      "40",
+      "44",
+      "42"
+    ],
+    "respuesta": 2,
+    "explicacion": "Las diferencias suben de 2 en 2: +4, +6, +8, +10. Sigue +12: 30 + 12 = 42. También es n × (n + 1): 6 × 7 = 42."
+  },
+  {
+    "id": "matematicas-032",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🐱",
+    "pregunta": "Si 5 gatos cazan 5 ratones en 5 minutos, ¿cuántos gatos hacen falta para cazar 100 ratones en 100 minutos?",
+    "opciones": [
+      "20",
+      "5",
+      "100"
+    ],
+    "respuesta": 1,
+    "explicacion": "Cada gato caza 1 ratón cada 5 minutos. En 100 minutos, cada gato caza 20 ratones, así que 5 gatos cazan 100."
+  },
+  {
+    "id": "matematicas-033",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "⚾",
+    "pregunta": "Un bate y una pelota cuestan $1.10 juntos. El bate cuesta $1 más que la pelota. ¿Cuánto cuesta la pelota?",
+    "opciones": [
+      "$0.05",
+      "$0.10",
+      "$0.55"
+    ],
+    "respuesta": 0,
+    "explicacion": "Con $0.10, el bate costaría $1.10 y el total $1.20. Con $0.05, el bate cuesta $1.05 y juntos suman $1.10."
+  },
+  {
+    "id": "matematicas-034",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "👧",
+    "pregunta": "Cuando yo tenía 6 años, mi hermana tenía la mitad de mi edad. Ahora tengo 70. ¿Cuántos años tiene ella?",
+    "opciones": [
+      "35",
+      "73",
+      "67"
+    ],
+    "respuesta": 2,
+    "explicacion": "A tus 6 años ella tenía 3: le llevas 3 años. Esa diferencia no cambia, así que con 70 años tú, ella tiene 67."
+  },
+  {
+    "id": "matematicas-035",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🛒",
+    "pregunta": "Un producto sube 50 % y después baja 50 %. ¿Cómo queda su precio comparado con el original?",
+    "opciones": [
+      "25 % más barato",
+      "Igual que antes",
+      "50 % más barato"
+    ],
+    "respuesta": 0,
+    "explicacion": "Si costaba 100, sube a 150. El 50 % de 150 es 75, así que queda en 75: un 25 % menos que al principio."
+  },
+  {
+    "id": "matematicas-036",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🐸",
+    "pregunta": "Unos nenúfares duplican su área cada día y cubren todo el estanque en 48 días. ¿En qué día cubrían la mitad?",
+    "opciones": [
+      "El día 24",
+      "El día 46",
+      "El día 47"
+    ],
+    "respuesta": 2,
+    "explicacion": "Si el área se duplica cada día, el día anterior a cubrirlo todo tapaban justo la mitad: el día 47."
+  },
+  {
+    "id": "matematicas-037",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🧠",
+    "pregunta": "¿Cuánto es 3 + 3 × 3 − 3 + 3?",
+    "opciones": [
+      "12",
+      "18",
+      "15"
+    ],
+    "respuesta": 0,
+    "explicacion": "Primero la multiplicación: 3 × 3 = 9. Luego, de izquierda a derecha: 3 + 9 − 3 + 3 = 12."
+  },
+  {
+    "id": "matematicas-038",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "➗",
+    "pregunta": "Divide 30 entre 1/2 y al resultado súmale 10. ¿Cuánto da?",
+    "opciones": [
+      "25",
+      "70",
+      "40"
+    ],
+    "respuesta": 1,
+    "explicacion": "Dividir entre 1/2 es multiplicar por 2: 30 ÷ 1/2 = 60. Luego 60 + 10 = 70. La trampa es dividir entre 2."
+  },
+  {
+    "id": "matematicas-039",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🐌",
+    "pregunta": "Un caracol está al fondo de un pozo de 10 m. Sube 3 m cada día y resbala 2 m cada noche. ¿En cuántos días sale?",
+    "opciones": [
+      "10 días",
+      "8 días",
+      "7 días"
+    ],
+    "respuesta": 1,
+    "explicacion": "Avanza 1 m por cada día con su noche. Tras 7 días y 7 noches está a 7 m; el día 8 sube 3 m, llega a 10 y sale."
+  },
+  {
+    "id": "matematicas-040",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔩",
+    "pregunta": "Si 3 máquinas hacen 3 tornillos en 3 minutos, ¿cuánto tardan 100 máquinas en hacer 100 tornillos?",
+    "opciones": [
+      "100 minutos",
+      "33 minutos",
+      "3 minutos"
+    ],
+    "respuesta": 2,
+    "explicacion": "Cada máquina hace 1 tornillo en 3 minutos. Trabajando a la vez, 100 máquinas hacen 100 tornillos en los mismos 3 minutos."
+  },
+  {
+    "id": "matematicas-041",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🚆",
+    "pregunta": "Un tren sale a las 10:00 y viaja a 80 km/h sin parar. ¿Cuántos km lleva recorridos a las 11:45?",
+    "opciones": [
+      "140 km",
+      "116 km",
+      "120 km"
+    ],
+    "respuesta": 0,
+    "explicacion": "De 10:00 a 11:45 pasan 1 h 45 min, que es 1.75 h (no 1.45 h). Entonces 80 × 1.75 = 140 km."
+  },
+  {
+    "id": "matematicas-042",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📆",
+    "pregunta": "Si hoy es lunes, ¿qué día de la semana será dentro de 100 días?",
+    "opciones": [
+      "Martes",
+      "Jueves",
+      "Miércoles"
+    ],
+    "respuesta": 2,
+    "explicacion": "Cada 7 días vuelve a ser lunes. 100 = 98 + 2, y 98 es múltiplo de 7. Lunes más 2 días es miércoles."
+  },
+  {
+    "id": "matematicas-043",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🟦",
+    "pregunta": "¿Cuántos cuadrados hay en total en un tablero de 2 × 2 casillas?",
+    "opciones": [
+      "4",
+      "5",
+      "8"
+    ],
+    "respuesta": 1,
+    "explicacion": "Hay 4 cuadrados pequeños de 1 × 1 y un cuadrado grande de 2 × 2 que los contiene a todos: 5 en total."
+  },
+  {
+    "id": "matematicas-044",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔔",
+    "pregunta": "Un reloj da 6 campanadas en 5 segundos. A ese ritmo, ¿cuánto tarda en dar 12 campanadas?",
+    "opciones": [
+      "11 segundos",
+      "10 segundos",
+      "12 segundos"
+    ],
+    "respuesta": 0,
+    "explicacion": "Entre 6 campanadas hay 5 espacios de 1 segundo. Entre 12 campanadas hay 11 espacios: 11 segundos."
+  },
+  {
+    "id": "matematicas-045",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🎈",
+    "pregunta": "Pedro tiene el doble de edad que Ana. Dentro de 10 años, sus edades sumarán 50. ¿Cuántos años tiene Ana hoy?",
+    "opciones": [
+      "10",
+      "15",
+      "20"
+    ],
+    "respuesta": 0,
+    "explicacion": "Si Ana tiene x, Pedro tiene 2x. En 10 años: x + 10 + 2x + 10 = 50, así que 3x = 30 y x = 10. Pedro tiene 20."
+  },
+  {
+    "id": "matematicas-046",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "💯",
+    "pregunta": "¿Qué es mayor: el 20 % de 50 o el 50 % de 20?",
+    "opciones": [
+      "El 20 % de 50",
+      "El 50 % de 20",
+      "Son iguales"
+    ],
+    "respuesta": 2,
+    "explicacion": "El 20 % de 50 es 0.2 × 50 = 10, y el 50 % de 20 es 0.5 × 20 = 10. El a % de b siempre es igual al b % de a."
+  },
+  {
+    "id": "matematicas-047",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📈",
+    "pregunta": "¿Qué número sigue en la serie? 3, 5, 9, 17, 33, …",
+    "opciones": [
+      "49",
+      "65",
+      "66"
+    ],
+    "respuesta": 1,
+    "explicacion": "Las diferencias se duplican: +2, +4, +8, +16. Sigue +32: 33 + 32 = 65. También es el doble del anterior menos 1."
+  },
+  {
+    "id": "matematicas-048",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "👕",
+    "pregunta": "Una camisa con 25 % de descuento cuesta $60. ¿Cuál era su precio original?",
+    "opciones": [
+      "$75",
+      "$80",
+      "$85"
+    ],
+    "respuesta": 1,
+    "explicacion": "$60 es el 75 % del precio original: 60 ÷ 0.75 = 80. Sumarle a $60 su 25 % da $75, y esa es la trampa."
+  },
+  {
+    "id": "matematicas-049",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔢",
+    "pregunta": "¿Cuál es el menor número mayor que 1 que, al dividirlo entre 2, 3, 4 o 5, siempre deja residuo 1?",
+    "opciones": [
+      "31",
+      "121",
+      "61"
+    ],
+    "respuesta": 2,
+    "explicacion": "El número menos 1 debe dividirse entre 2, 3, 4 y 5. El menor múltiplo común de los cuatro es 60, así que el número es 61."
+  },
+  {
+    "id": "matematicas-050",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🐔",
+    "pregunta": "En una granja hay gallinas y vacas. En total cuentas 10 cabezas y 28 patas. ¿Cuántas vacas hay?",
+    "opciones": [
+      "4",
+      "6",
+      "3"
+    ],
+    "respuesta": 0,
+    "explicacion": "Si las 10 fueran gallinas habría 20 patas. Faltan 8, y cada vaca aporta 2 patas más: 8 ÷ 2 = 4 vacas (y 6 gallinas)."
+  },
+  {
+    "id": "matematicas-051",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "💰",
+    "pregunta": "Ana, Beto y Carla se reparten $70. Ana recibe el doble que Beto y Beto el doble que Carla. ¿Cuánto recibe Ana?",
+    "opciones": [
+      "$30",
+      "$40",
+      "$20"
+    ],
+    "respuesta": 1,
+    "explicacion": "Si Carla recibe x, Beto recibe 2x y Ana 4x. Juntos suman 7x = 70, así que x = 10 y Ana recibe 4 × 10 = $40."
+  },
+  {
+    "id": "matematicas-052",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📐",
+    "pregunta": "Un triángulo tiene un ángulo de 90° y otro de 35°. ¿Cuánto mide el tercer ángulo?",
+    "opciones": [
+      "55°",
+      "45°",
+      "65°"
+    ],
+    "respuesta": 0,
+    "explicacion": "Los ángulos de un triángulo suman 180°. Entonces 180° − 90° − 35° = 55°."
+  },
+  {
+    "id": "matematicas-053",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🚀",
+    "pregunta": "¿Qué número sigue en la serie? 1, 2, 6, 24, 120, …",
+    "opciones": [
+      "240",
+      "600",
+      "720"
+    ],
+    "respuesta": 2,
+    "explicacion": "Cada número se multiplica por el siguiente entero: ×2, ×3, ×4, ×5. Ahora toca ×6: 120 × 6 = 720."
+  },
+  {
+    "id": "matematicas-054",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📒",
+    "pregunta": "Si escribes todos los números del 1 al 100, ¿cuántas veces escribes el dígito 9?",
+    "opciones": [
+      "19",
+      "20",
+      "10"
+    ],
+    "respuesta": 1,
+    "explicacion": "Aparece 10 veces en las unidades (9, 19… 99) y 10 en las decenas (90 a 99). El 99 lo tiene dos veces: 20 en total."
+  },
+  {
+    "id": "matematicas-055",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🕞",
+    "pregunta": "¿Cuánto mide el ángulo menor que forman las agujas de un reloj a las 3:30?",
+    "opciones": [
+      "90°",
+      "60°",
+      "75°"
+    ],
+    "respuesta": 2,
+    "explicacion": "El minutero apunta al 6 (180°). El horario está a mitad de camino entre el 3 y el 4 (105°). La diferencia es 75°."
+  },
+  {
+    "id": "matematicas-056",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "👥",
+    "pregunta": "En un salón, el 60 % son mujeres y hay 12 hombres. ¿Cuántas personas hay en total?",
+    "opciones": [
+      "30",
+      "20",
+      "36"
+    ],
+    "respuesta": 0,
+    "explicacion": "Si el 60 % son mujeres, los hombres son el 40 %. Si el 40 % son 12, el 10 % son 3 y el 100 % son 30 personas."
+  },
+  {
+    "id": "matematicas-057",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🎳",
+    "pregunta": "¿Qué número sigue en la serie? 1, 3, 6, 10, 15, …",
+    "opciones": [
+      "20",
+      "21",
+      "25"
+    ],
+    "respuesta": 1,
+    "explicacion": "Cada vez se suma uno más: +2, +3, +4, +5. Ahora toca +6: 15 + 6 = 21."
+  },
+  {
+    "id": "matematicas-058",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🧱",
+    "pregunta": "Un ladrillo pesa 1 kg más medio ladrillo. ¿Cuánto pesa un ladrillo entero?",
+    "opciones": [
+      "1.5 kg",
+      "1 kg",
+      "2 kg"
+    ],
+    "respuesta": 2,
+    "explicacion": "El ladrillo es «1 kg» más «medio ladrillo», así que ese 1 kg es la otra mitad. Medio ladrillo pesa 1 kg y el entero, 2 kg."
+  },
+  {
+    "id": "matematicas-059",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔁",
+    "pregunta": "Un número de dos cifras: sus cifras suman 9 y, si las inviertes, el número aumenta 27. ¿Cuál es?",
+    "opciones": [
+      "36",
+      "45",
+      "27"
+    ],
+    "respuesta": 0,
+    "explicacion": "Al invertir, el número cambia 9 veces la diferencia de sus cifras: 27 ÷ 9 = 3. Cifras que suman 9 y difieren en 3: 3 y 6. 63 − 36 = 27."
+  },
+  {
+    "id": "matematicas-060",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "☕",
+    "pregunta": "Si A = 1, B = 2, C = 3, y así con todo el abecedario, ¿cuánto suman las letras de CAFE?",
+    "opciones": [
+      "14",
+      "16",
+      "15"
+    ],
+    "respuesta": 2,
+    "explicacion": "C = 3, A = 1, F = 6 y E = 5. La suma es 3 + 1 + 6 + 5 = 15."
+  },
+  {
+    "id": "matematicas-061",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🔷",
+    "pregunta": "¿Cuántas diagonales tiene un hexágono?",
+    "opciones": [
+      "6",
+      "9",
+      "12"
+    ],
+    "respuesta": 1,
+    "explicacion": "De cada vértice salen 3 diagonales (no van a él mismo ni a sus 2 vecinos): 6 × 3 = 18. Cada una se contó 2 veces: 9."
+  },
+  {
+    "id": "matematicas-062",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🚗",
+    "pregunta": "Un auto va a una ciudad a 60 km de distancia a 60 km/h y regresa a 30 km/h. ¿Cuál fue su velocidad promedio?",
+    "opciones": [
+      "40 km/h",
+      "45 km/h",
+      "50 km/h"
+    ],
+    "respuesta": 0,
+    "explicacion": "Ida: 60 km en 1 h. Vuelta: 60 km en 2 h. Son 120 km en 3 h, o sea 40 km/h. Las velocidades no se promedian directo."
+  },
+  {
+    "id": "matematicas-063",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🍰",
+    "pregunta": "¿Cuánto es el 25 % del 25 % de 1600?",
+    "opciones": [
+      "400",
+      "100",
+      "50"
+    ],
+    "respuesta": 1,
+    "explicacion": "El 25 % es la cuarta parte: 1600 ÷ 4 = 400, y la cuarta parte de 400 es 100."
+  },
+  {
+    "id": "matematicas-064",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🚶",
+    "pregunta": "En una fila, Luis es el 5.º contando desde adelante y el 8.º contando desde atrás. ¿Cuántas personas hay en la fila?",
+    "opciones": [
+      "13",
+      "11",
+      "12"
+    ],
+    "respuesta": 2,
+    "explicacion": "Delante de Luis hay 4 personas y detrás 7. Con él: 4 + 1 + 7 = 12. Sumar 5 + 8 cuenta a Luis dos veces."
+  },
+  {
+    "id": "matematicas-065",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "👨",
+    "pregunta": "Un padre tiene 40 años y su hijo 10. ¿Dentro de cuántos años el padre tendrá el doble de la edad del hijo?",
+    "opciones": [
+      "10",
+      "20",
+      "30"
+    ],
+    "respuesta": 1,
+    "explicacion": "La diferencia siempre es de 30 años. El padre tendrá el doble cuando el hijo tenga 30: dentro de 20 años (60 y 30)."
+  },
+  {
+    "id": "matematicas-066",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🤝",
+    "pregunta": "En una reunión de 6 personas, cada una le da la mano una vez a cada una de las demás. ¿Cuántos apretones hay?",
+    "opciones": [
+      "15",
+      "30",
+      "36"
+    ],
+    "respuesta": 0,
+    "explicacion": "Cada persona saluda a las otras 5: 6 × 5 = 30, pero así cada apretón se cuenta dos veces. 30 ÷ 2 = 15."
+  },
+  {
+    "id": "matematicas-067",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🤔",
+    "pregunta": "¿Qué número sigue en la serie? 2, 4, 8, 14, 22, …",
+    "opciones": [
+      "30",
+      "44",
+      "32"
+    ],
+    "respuesta": 2,
+    "explicacion": "Las diferencias suben de 2 en 2: +2, +4, +6, +8. Ahora toca +10: 22 + 10 = 32. No se duplica, por eso no es 44."
+  },
+  {
+    "id": "matematicas-068",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "📚",
+    "pregunta": "Juan lee 20 páginas el lunes y cada día lee 5 más que el día anterior. ¿Cuántas lee en total de lunes a miércoles?",
+    "opciones": [
+      "75",
+      "60",
+      "90"
+    ],
+    "respuesta": 0,
+    "explicacion": "Lunes 20, martes 25 y miércoles 30. En total: 20 + 25 + 30 = 75 páginas."
+  },
+  {
+    "id": "matematicas-069",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "🎯",
+    "pregunta": "¿Qué número, sumado a su doble y a su triple, da 60?",
+    "opciones": [
+      "12",
+      "10",
+      "15"
+    ],
+    "respuesta": 1,
+    "explicacion": "El número más su doble más su triple es 6 veces el número: 6x = 60, así que x = 10 (10 + 20 + 30 = 60)."
+  },
+  {
+    "id": "matematicas-070",
+    "tema": "matematicas",
+    "tipo": "reto",
+    "icono": "⬛",
+    "pregunta": "Un cuadrado tiene un área de 36 cm². Si duplicas la medida de su lado, ¿cuál es la nueva área?",
+    "opciones": [
+      "72 cm²",
+      "108 cm²",
+      "144 cm²"
+    ],
+    "respuesta": 2,
+    "explicacion": "El lado mide 6 cm. Al duplicarlo mide 12 cm, y el área es 12 × 12 = 144 cm²: 4 veces la original, no el doble."
+  }
 ]

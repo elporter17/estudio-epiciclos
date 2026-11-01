@@ -20,6 +20,7 @@ import { registrarRespuesta } from './lib/respuestas.mjs';
 import { MELODIA_IDS } from '../src/melodias.js';
 import { crearVisual, VISUALES } from './lib/retos-visuales.mjs';
 import { juntarNoticias } from './noticias.mjs';
+import { ponerFondos, guardarStock, creditoStock } from './lib/stock.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades');
 const HIST = path.join(ROOT, 'data', 'curiosidades-video-historial.json'), HIST_IMG = path.join(ROOT, 'data', 'curiosidades-historial.json');
@@ -103,10 +104,10 @@ function top10(base, hist, temaPedido) {
   if (datos.length < 10) datos = [...datos, ...tomar(disponibles(base, hist, (x) => !datos.includes(x)), 10 - datos.length, 115)];
   const T = tema ? TEMAS[tema] : null, temaFondo = tema || 'ciencia';
   const escenas = [
-    { tipo: 'intro', dur: INTRO, tema: temaFondo, portada: true, sonidos: introSonidos, iconos: datos.slice(0, 5).map((d) => d.icono),
+    { tipo: 'intro', dur: INTRO, tema: temaFondo, portada: true, consulta: datos[0]?.foto, sonidos: introSonidos, iconos: datos.slice(0, 5).map((d) => d.icono),
       lineas: [{ texto: '10 COSAS', size: 150, color: (T || TEMAS.ciencia).acento }, { texto: 'QUE NO SABÍAS', size: 96 }, { texto: 'HACE 1 MINUTO', size: 96 }, ...(T ? [{ texto: T.nombre.toUpperCase(), size: 50, color: 'rgba(255,255,255,0.8)' }] : [])] },
-    ...datos.map((d, i) => ({ tipo: 'dato', dur: DATO, tema: d.tema, idx: i, total: 10, n: i + 1, icono: d.icono, texto: d.dato, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
-    { tipo: 'cierre', dur: CIERRE, tema: temaFondo, sonidos: [[0, 'final']],
+    ...datos.map((d, i) => ({ tipo: 'dato', dur: DATO, tema: d.tema, idx: i, total: 10, n: i + 1, icono: d.icono, texto: d.dato, consulta: d.foto, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
+    { tipo: 'cierre', dur: CIERRE, tema: temaFondo, consulta: datos.at(-1)?.foto, sonidos: [[0, 'final']],
       lineas: [{ texto: '¿CUÁNTAS SABÍAS?', size: 110, color: (T || TEMAS.ciencia).acento }, { texto: '¿Cuántas de las 10 ya sabías?', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
   const tags = ['curiosidades', 'sabiasque', 'datoscuriosos', 'aprende', ...(T ? T.tags : ['cultura']), 'reels', 'potterplay'];
@@ -131,7 +132,7 @@ function quiz(base, hist) {
       if (p.tipo === 'vf') {
         const verdadero = Math.random() < 0.5, piensa = 6;
         respuestas.push(`${i + 1}. ${verdadero ? 'Verdadero' : 'Falso'}: ${p.d.dato}`);
-        return { ...comun, tipo: 'vf', dur: piensa + 3.4, piensa, tema: p.d.tema, icono: p.d.icono, texto: verdadero ? p.d.dato : p.d.falso, real: p.d.dato, verdadero, sonidos: cuenta(piensa, verdadero ? 'bien' : 'mal') };
+        return { ...comun, tipo: 'vf', dur: piensa + 3.4, piensa, tema: p.d.tema, consulta: p.d.foto, icono: p.d.icono, texto: verdadero ? p.d.dato : p.d.falso, real: p.d.dato, verdadero, sonidos: cuenta(piensa, verdadero ? 'bien' : 'mal') };
       }
       if (p.tipo === 'reto') {
         const piensa = 7;
@@ -199,7 +200,7 @@ function prefieresVideo(hist) {
   const escenas = [
     { tipo: 'intro', dur: INTRO, tema: 'prefieres', portada: true, sonidos: introSonidos, iconos: elegidos.slice(0, 3).flatMap((x) => [x.icono_a, x.icono_b]).slice(0, 5),
       lineas: [{ texto: '¿QUÉ', size: 150, color: TEMAS.prefieres.acento }, { texto: 'PREFIERES?', size: 130 }, { texto: '6 decisiones imposibles', size: 58, color: 'rgba(255,255,255,0.85)' }] },
-    ...elegidos.map((x, i) => ({ tipo: 'prefieres', dur: 6.3, piensa: 4.5, idx: i, total: 6, tema: 'prefieres', a: x.a, b: x.b, icono_a: x.icono_a, icono_b: x.icono_b, sonidos: cuenta(4.5, 'bien') })),
+    ...elegidos.map((x, i) => ({ tipo: 'prefieres', dur: 6.3, piensa: 4.5, idx: i, total: 6, tema: 'prefieres', a: x.a, b: x.b, icono_a: x.icono_a, icono_b: x.icono_b, consultaA: x.foto_a, consultaB: x.foto_b, sonidos: cuenta(4.5, 'bien') })),
     cierre('prefieres', '¿CUÁL FUE LA MÁS DIFÍCIL?', 'Seguro hubo una que te hizo dudar 🤔')
   ];
   const texto = `🤔 ¿Qué prefieres? 6 decisiones imposibles en menos de un minuto.\n\n${elegidos.map((x, i) => `${i + 1}. ${x.icono_a} ${x.a} o ${x.icono_b} ${x.b}`).join('\n')}\n\n¿Cuál fue la más difícil para ti?\n\n${tags('queprefieres', 'dilemas', 'preguntas', 'juegos')}`;
@@ -223,6 +224,7 @@ function emojisVideo(hist) {
 }
 
 const ETIQUETA_NOTICIA = { videojuegos: '🎮 VIDEOJUEGOS', futbol: '⚽ FÚTBOL', ciencia: '🔭 CIENCIA' };
+const FONDO_NOTICIA = { videojuegos: ['video game controller', 'gamer neon room', 'arcade lights'], futbol: ['soccer stadium crowd', 'soccer ball grass', 'football fans stadium'], ciencia: ['galaxy stars space', 'science laboratory', 'earth from space'] };
 async function noticiasVideo(hist) {
   // Las del día las junta noticias.yml (scripts/noticias.mjs); si no están, se leen ahora
   let lista = leer(path.join(ROOT, 'data', 'noticias-hoy.json'), {}).items || [];
@@ -236,9 +238,9 @@ async function noticiasVideo(hist) {
   const hoy = new Date(Date.now() - 6 * 3600e3).toLocaleDateString('es-HN', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
   const corta = (f) => new Date(f).toLocaleDateString('es-HN', { day: 'numeric', month: 'short', timeZone: 'America/Tegucigalpa' });
   const escenas = [
-    { tipo: 'intro', dur: INTRO, tema: 'noticias', portada: true, sonidos: introSonidos, iconos: ['📰', '🎮', '⚽', '🔭'],
+    { tipo: 'intro', dur: INTRO, tema: 'noticias', portada: true, consulta: 'city timelapse morning', sonidos: introSonidos, iconos: ['📰', '🎮', '⚽', '🔭'],
       lineas: [{ texto: 'NOTICIAS', size: 140, color: TEMAS.noticias.acento }, { texto: 'DE HOY', size: 120 }, { texto: hoy, size: 56, color: 'rgba(255,255,255,0.85)' }] },
-    ...elegidas.map((n, i) => ({ tipo: 'noticia', dur: 8.5, idx: i, total: elegidas.length, tema: 'noticias', etiqueta: ETIQUETA_NOTICIA[n.cat] || '📰 NOTICIA', icono: n.icono, titular: n.titulo, pie: `${n.medio} · ${corta(n.fecha)}`, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
+    ...elegidas.map((n, i) => ({ tipo: 'noticia', dur: 8.5, idx: i, total: elegidas.length, tema: 'noticias', etiqueta: ETIQUETA_NOTICIA[n.cat] || '📰 NOTICIA', consulta: azar(FONDO_NOTICIA[n.cat] || ['newspaper printing']), icono: n.icono, titular: n.titulo, pie: `${n.medio} · ${corta(n.fecha)}`, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
     cierre('noticias', '¿CUÁL TE SORPRENDIÓ MÁS?', 'Las noticias del día en menos de un minuto')
   ];
   const texto = `📰 Las noticias de hoy en menos de un minuto: videojuegos, fútbol y ciencia.\n\n${elegidas.map((n, i) => `${i + 1}. ${n.titulo} (${n.medio})`).join('\n')}${OCULTAR}Fuentes:\n${elegidas.map((n) => `${n.medio}: ${n.link}`).join('\n')}\n\n${tags('noticias', 'ultimahora', 'videojuegos', 'futbol', 'ciencia')}`;
@@ -263,6 +265,9 @@ async function main() {
   // Si un formato no tiene material (sin noticias frescas, por ejemplo), sale un quiz
   const pieza = (await hacer[formato]()) || quiz(base, hist);
   console.error(`Formato: ${pieza.titulo}`);
+  const fondos = await ponerFondos(pieza.escenas);
+  if (fondos) { pieza.texto += creditoStock(); console.error(`Fotos y videos reales: ${fondos}`); }
+  guardarStock();
 
   const outDir = path.join(ROOT, 'out'); fs.mkdirSync(outDir, { recursive: true });
   const nombre = `quiz-${pieza.formato}-${new Date().toISOString().slice(0, 10)}-${(hist.total + 1)}`;

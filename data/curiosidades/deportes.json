@@ -1,82 +1,722 @@
 [
-  { "id": "deportes-001", "tema": "deportes", "icono": "⚽", "dato": "El primer Mundial de fútbol se jugó en Uruguay en 1930 y el campeón fue el propio Uruguay.", "falso": "El primer Mundial de fútbol se jugó en Italia en 1930 y el campeón fue Italia.", "explicacion": "El Mundial de 1930 fue en Uruguay y lo ganó Uruguay, 4-2 a Argentina en la final. Italia organizó y ganó el de 1934." },
-  { "id": "deportes-002", "tema": "deportes", "icono": "🏆", "dato": "Italia fue la primera selección en ganar dos Mundiales seguidos: 1934 y 1938.", "falso": "Brasil fue la primera selección en ganar dos Mundiales seguidos: 1934 y 1938.", "explicacion": "Brasil ganó su primer Mundial en 1958. Los de 1934 y 1938 fueron de Italia, la primera en repetir título." },
-  { "id": "deportes-003", "tema": "deportes", "icono": "🏆", "dato": "Brasil ganó 5 Mundiales hasta 2022: 1958, 1962, 1970, 1994 y 2002.", "falso": "Brasil ganó 6 Mundiales hasta 2022: 1958, 1962, 1970, 1986, 1994 y 2002.", "explicacion": "El Mundial de 1986 lo ganó Argentina. Al terminar 2022, Brasil tenía 5 títulos." },
-  { "id": "deportes-004", "tema": "deportes", "icono": "👑", "dato": "Pelé ganó tres Mundiales con Brasil: 1958, 1962 y 1970.", "falso": "Pelé ganó cuatro Mundiales con Brasil: 1958, 1962, 1970 y 1974.", "explicacion": "El Mundial de 1974 lo ganó Alemania Federal y Pelé ya no lo jugó. Sus títulos fueron 1958, 1962 y 1970." },
-  { "id": "deportes-005", "tema": "deportes", "icono": "⚽", "dato": "Pelé tenía 17 años cuando marcó dos goles en la final del Mundial de 1958 ante Suecia.", "falso": "Pelé tenía 15 años cuando marcó dos goles en la final del Mundial de 1958 ante Suecia.", "explicacion": "Pelé nació en octubre de 1940, así que en la final de junio de 1958 (Brasil 5-2 Suecia) tenía 17 años." },
-  { "id": "deportes-006", "tema": "deportes", "icono": "⚽", "dato": "Honduras jugó su primer Mundial en España 1982.", "falso": "Honduras jugó su primer Mundial en México 1970.", "explicacion": "Honduras quedó fuera de México 1970 tras perder la eliminatoria con El Salvador. Debutó en un Mundial en España 1982." },
-  { "id": "deportes-007", "tema": "deportes", "icono": "⚽", "dato": "Just Fontaine marcó 13 goles con Francia en un solo Mundial, el de Suecia 1958.", "falso": "Just Fontaine marcó 13 goles con Francia en un solo Mundial, el de Inglaterra 1966.", "explicacion": "Los 13 goles de Fontaine fueron en Suecia 1958. En 1966 ya se había retirado por una lesión." },
-  { "id": "deportes-008", "tema": "deportes", "icono": "⚽", "dato": "Al terminar Qatar 2022, el alemán Miroslav Klose era el máximo goleador de la historia de los Mundiales, con 16 goles.", "falso": "Al terminar Qatar 2022, el brasileño Ronaldo era el máximo goleador de la historia de los Mundiales, con 16 goles.", "explicacion": "Ronaldo Nazário sumó 15 goles en Mundiales. El récord al cierre de 2022 era de Klose, con 16." },
-  { "id": "deportes-009", "tema": "deportes", "icono": "✋", "dato": "La «Mano de Dios» de Maradona fue ante Inglaterra, en los cuartos de final de México 1986.", "falso": "La «Mano de Dios» de Maradona fue ante Alemania Federal, en la final de México 1986.", "explicacion": "Ese gol con la mano fue contra Inglaterra en cuartos (2-1). En la final Argentina venció 3-2 a Alemania Federal sin gol de Maradona." },
-  { "id": "deportes-010", "tema": "deportes", "icono": "🏆", "dato": "Argentina ganó el Mundial en 1978, 1986 y 2022.", "falso": "Argentina ganó el Mundial en 1978, 1990 y 2022.", "explicacion": "En 1990 Argentina perdió la final 1-0 ante Alemania Federal. Sus títulos fueron en 1978, 1986 y 2022." },
-  { "id": "deportes-011", "tema": "deportes", "icono": "🏆", "dato": "La final de Qatar 2022 terminó 3-3 y Argentina venció a Francia 4-2 en penales.", "falso": "La final de Qatar 2022 terminó 2-2 y Argentina venció a Francia 4-2 en penales.", "explicacion": "Fue 3-3 tras la prórroga: dos goles de Messi, uno de Di María y un triplete de Mbappé." },
-  { "id": "deportes-012", "tema": "deportes", "icono": "⚽", "dato": "Geoff Hurst marcó tres goles en la final de 1966, que Inglaterra ganó 4-2 a Alemania Federal.", "falso": "Bobby Charlton marcó tres goles en la final de 1966, que Inglaterra ganó 4-2 a Alemania Federal.", "explicacion": "El triplete fue de Geoff Hurst y el otro gol inglés lo hizo Martin Peters. Bobby Charlton no marcó en esa final." },
-  { "id": "deportes-013", "tema": "deportes", "icono": "⚽", "dato": "En el «Maracanazo» de 1950, Uruguay le ganó 2-1 a Brasil en Río de Janeiro y se coronó campeón del mundo.", "falso": "En el «Maracanazo» de 1950, Argentina le ganó 2-1 a Brasil en Río de Janeiro y se coronó campeón del mundo.", "explicacion": "Argentina no jugó el Mundial de 1950. El Maracanazo fue el 2-1 de Uruguay a Brasil, que le dio a Uruguay su segundo título." },
-  { "id": "deportes-014", "tema": "deportes", "icono": "⚽", "dato": "En su debut mundialista, en 1982, Honduras empató 1-1 con España, el anfitrión.", "falso": "En su debut mundialista, en 1982, Honduras le ganó 1-0 a España, el anfitrión.", "explicacion": "Fue 1-1 en Valencia: Héctor Zelaya marcó para Honduras y España empató de penal." },
-  { "id": "deportes-015", "tema": "deportes", "icono": "⚽", "dato": "No hubo Mundial de fútbol en 1942 ni en 1946 por la Segunda Guerra Mundial.", "falso": "No hubo Mundial de fútbol en 1938 ni en 1942 por la Segunda Guerra Mundial.", "explicacion": "El Mundial de 1938 sí se jugó, en Francia, y lo ganó Italia. Los que no se jugaron fueron los de 1942 y 1946." },
-  { "id": "deportes-016", "tema": "deportes", "icono": "🌏", "dato": "Corea del Sur y Japón organizaron en 2002 el primer Mundial con dos países sede y el primero en Asia.", "falso": "China y Japón organizaron en 2002 el primer Mundial con dos países sede y el primero en Asia.", "explicacion": "Los anfitriones de 2002 fueron Corea del Sur y Japón. China jugó ese Mundial, pero no fue sede." },
-  { "id": "deportes-017", "tema": "deportes", "icono": "🌍", "dato": "Sudáfrica 2010 fue el primer Mundial de fútbol que se jugó en África.", "falso": "Egipto 1990 fue el primer Mundial de fútbol que se jugó en África.", "explicacion": "El Mundial de 1990 fue en Italia; Egipto solo participó. El primero en África fue Sudáfrica 2010." },
-  { "id": "deportes-018", "tema": "deportes", "icono": "🏆", "dato": "España ganó su primer Mundial en 2010 con un gol de Andrés Iniesta en la prórroga ante Países Bajos.", "falso": "España ganó su primer Mundial en 2010 con un gol de David Villa en la prórroga ante Países Bajos.", "explicacion": "Villa fue el goleador de España en ese torneo, pero el gol de la final (1-0, minuto 116) lo marcó Iniesta." },
-  { "id": "deportes-019", "tema": "deportes", "icono": "⚽", "dato": "En la semifinal de Brasil 2014, Alemania goleó 7-1 a Brasil en Belo Horizonte.", "falso": "En la final de Brasil 2014, Alemania goleó 7-1 a Brasil en Río de Janeiro.", "explicacion": "El 7-1 fue en semifinales, en el Mineirão de Belo Horizonte. La final la ganó Alemania 1-0 a Argentina en el Maracaná." },
-  { "id": "deportes-020", "tema": "deportes", "icono": "🥈", "dato": "Países Bajos perdió las finales del Mundial de 1974, 1978 y 2010.", "falso": "Países Bajos ganó la final del Mundial de 1974 ante Alemania Federal.", "explicacion": "En 1974 Alemania Federal venció 2-1 a Países Bajos en Múnich. Los neerlandeses también perdieron las finales de 1978 y 2010." },
-  { "id": "deportes-021", "tema": "deportes", "icono": "⚽", "dato": "Hasta 2022, Honduras jugó tres Mundiales: España 1982, Sudáfrica 2010 y Brasil 2014.", "falso": "Hasta 2022, Honduras jugó cuatro Mundiales: España 1982, Francia 1998, Sudáfrica 2010 y Brasil 2014.", "explicacion": "Honduras no fue a Francia 1998. Sus Mundiales hasta 2022 fueron España 1982, Sudáfrica 2010 y Brasil 2014." },
-  { "id": "deportes-022", "tema": "deportes", "icono": "🏆", "dato": "La Copa Jules Rimet original fue robada en Brasil en 1983 y nunca se recuperó.", "falso": "La Copa Jules Rimet original fue robada en Brasil en 1983 y se recuperó un mes después.", "explicacion": "Tras el robo en Río en 1983 la copa nunca apareció; se cree que la fundieron. Brasil la tenía en propiedad desde 1970." },
-  { "id": "deportes-023", "tema": "deportes", "icono": "🐕", "dato": "En 1966 la Copa Jules Rimet fue robada en Londres y la encontró un perro llamado Pickles.", "falso": "En 1966 la Copa Jules Rimet fue robada en Londres y la encontró un perro llamado Lassie.", "explicacion": "El perro que halló la copa envuelta en papel periódico, en un jardín de Londres, se llamaba Pickles." },
-  { "id": "deportes-024", "tema": "deportes", "icono": "🏆", "dato": "El trofeo actual de la Copa del Mundo se entregó por primera vez en 1974, a Alemania Federal.", "falso": "El trofeo actual de la Copa del Mundo se entregó por primera vez en 1970, a Brasil.", "explicacion": "En 1970 Brasil ganó la Jules Rimet y se la quedó. El trofeo actual, de Silvio Gazzaniga, se estrenó en 1974." },
-  { "id": "deportes-025", "tema": "deportes", "icono": "🟨", "dato": "Las tarjetas amarilla y roja se usaron por primera vez en un Mundial en México 1970.", "falso": "Las tarjetas amarilla y roja se usaron por primera vez en un Mundial en Inglaterra 1966.", "explicacion": "En 1966 no existían: el árbitro Ken Aston tuvo la idea después de ese torneo. Debutaron en México 1970." },
-  { "id": "deportes-026", "tema": "deportes", "icono": "🔄", "dato": "Los cambios de jugadores se permitieron por primera vez en un Mundial en México 1970.", "falso": "Los cambios de jugadores se permitieron por primera vez en un Mundial en Suiza 1954.", "explicacion": "Hasta 1966 no había sustituciones en los Mundiales. Se permitieron por primera vez en México 1970." },
-  { "id": "deportes-027", "tema": "deportes", "icono": "📺", "dato": "El VAR se usó por primera vez en un Mundial en Rusia 2018.", "falso": "El VAR se usó por primera vez en un Mundial en Brasil 2014.", "explicacion": "En Brasil 2014 se estrenó la tecnología de línea de gol, no el VAR. El VAR debutó en Rusia 2018." },
-  { "id": "deportes-028", "tema": "deportes", "icono": "⚽", "dato": "En Sudáfrica 2010, Honduras empató 0-0 con Suiza y no marcó goles en todo el torneo.", "falso": "En Sudáfrica 2010, Honduras le ganó 1-0 a Suiza en su último partido del torneo.", "explicacion": "Ante Suiza fue 0-0. Honduras perdió 1-0 con Chile y 2-0 con España, y no marcó goles en ese Mundial." },
-  { "id": "deportes-029", "tema": "deportes", "icono": "⚽", "dato": "En 1994, el camerunés Roger Milla le marcó un gol a Rusia en el Mundial con 42 años.", "falso": "En 1994, el camerunés Roger Milla le marcó un gol a Rusia en el Mundial con 35 años.", "explicacion": "Milla nació en mayo de 1952, así que en el Camerún-Rusia de junio de 1994 tenía 42 años." },
-  { "id": "deportes-030", "tema": "deportes", "icono": "🟥", "dato": "En la final del Mundial 2006, Zinedine Zidane fue expulsado por darle un cabezazo a Marco Materazzi.", "falso": "En la final del Mundial 2006, Zinedine Zidane fue expulsado por darle un cabezazo a Fabio Cannavaro.", "explicacion": "El cabezazo fue a Materazzi, quien además marcó el gol de Italia. Italia ganó por penales en Berlín." },
-  { "id": "deportes-031", "tema": "deportes", "icono": "⚽", "dato": "Ronaldo marcó los dos goles de Brasil en la final del Mundial 2002 ante Alemania.", "falso": "Rivaldo marcó los dos goles de Brasil en la final del Mundial 2002 ante Alemania.", "explicacion": "Los dos goles del 2-0 en Yokohama fueron de Ronaldo, que terminó como goleador del torneo con 8." },
-  { "id": "deportes-032", "tema": "deportes", "icono": "🧤", "dato": "En 1963, el soviético Lev Yashin ganó el Balón de Oro siendo portero.", "falso": "En 1963, el italiano Dino Zoff ganó el Balón de Oro siendo portero.", "explicacion": "Zoff nunca ganó el Balón de Oro. El portero que lo ganó en 1963 fue Lev Yashin, de la Unión Soviética." },
-  { "id": "deportes-033", "tema": "deportes", "icono": "🏆", "dato": "El primer Balón de Oro, en 1956, lo ganó el inglés Stanley Matthews.", "falso": "El primer Balón de Oro, en 1956, lo ganó Alfredo Di Stéfano.", "explicacion": "Di Stéfano lo ganó en 1957 y 1959. El primero, en 1956, fue para Stanley Matthews, del Blackpool." },
-  { "id": "deportes-034", "tema": "deportes", "icono": "🏆", "dato": "El Real Madrid ganó las primeras cinco Copas de Europa, de 1956 a 1960.", "falso": "El Barcelona ganó las primeras cinco Copas de Europa, de 1956 a 1960.", "explicacion": "El Barcelona ganó su primera Copa de Europa en 1992. Las cinco primeras (1956–1960) fueron del Real Madrid." },
-  { "id": "deportes-035", "tema": "deportes", "icono": "⚽", "dato": "En la final de la Copa de Europa de 1960, el Real Madrid le ganó 7-3 al Eintracht Fráncfort.", "falso": "En la final de la Copa de Europa de 1960, el Real Madrid le ganó 7-3 al Milan.", "explicacion": "El rival fue el Eintracht Fráncfort, en Glasgow. Puskás marcó 4 goles y Di Stéfano otros 3." },
-  { "id": "deportes-036", "tema": "deportes", "icono": "⚽", "dato": "En Brasil 2014, Carlo Costly marcó el gol de Honduras en la derrota 2-1 ante Ecuador.", "falso": "En Brasil 2014, Carlo Costly marcó el gol de Honduras en la derrota 2-1 ante Francia.", "explicacion": "Ante Francia, Honduras perdió 3-0. El gol de Costly fue ante Ecuador, que ganó 2-1 con dos goles de Enner Valencia." },
-  { "id": "deportes-037", "tema": "deportes", "icono": "🏆", "dato": "La primera Copa Libertadores, en 1960, la ganó el Peñarol de Uruguay.", "falso": "La primera Copa Libertadores, en 1960, la ganó el Santos de Brasil.", "explicacion": "El Santos de Pelé ganó en 1962 y 1963. La primera, en 1960, fue de Peñarol, que venció en la final a Olimpia." },
-  { "id": "deportes-038", "tema": "deportes", "icono": "🏆", "dato": "Independiente de Argentina ganó la Copa Libertadores cuatro años seguidos, de 1972 a 1975.", "falso": "Boca Juniors ganó la Copa Libertadores cuatro años seguidos, de 1972 a 1975.", "explicacion": "Boca ganó sus primeras Libertadores en 1977 y 1978. La racha de 1972 a 1975 fue de Independiente." },
-  { "id": "deportes-039", "tema": "deportes", "icono": "🏆", "dato": "La primera Copa América (Campeonato Sudamericano) se jugó en Argentina en 1916 y la ganó Uruguay.", "falso": "La primera Copa América (Campeonato Sudamericano) se jugó en Argentina en 1916 y la ganó Brasil.", "explicacion": "Uruguay fue campeón, Argentina segunda y Brasil tercero. Brasil ganó su primer título sudamericano en 1919." },
-  { "id": "deportes-040", "tema": "deportes", "icono": "🏆", "dato": "La primera Eurocopa, en 1960, la ganó la Unión Soviética ante Yugoslavia.", "falso": "La primera Eurocopa, en 1960, la ganó Yugoslavia ante la Unión Soviética.", "explicacion": "La Unión Soviética venció 2-1 a Yugoslavia en la prórroga de la final, jugada en París." },
-  { "id": "deportes-041", "tema": "deportes", "icono": "🏆", "dato": "Grecia ganó la Eurocopa 2004 venciendo en la final al anfitrión, Portugal.", "falso": "Grecia ganó la Eurocopa 2004 venciendo en la final a Francia.", "explicacion": "La final fue 1-0 a Portugal en Lisboa, con gol de Angelos Charisteas. A Francia, Grecia la eliminó en cuartos." },
-  { "id": "deportes-042", "tema": "deportes", "icono": "🏆", "dato": "Dinamarca ganó la Eurocopa 1992 después de entrar a última hora en lugar de Yugoslavia.", "falso": "Dinamarca ganó la Eurocopa 1992 después de entrar a última hora en lugar de Checoslovaquia.", "explicacion": "Yugoslavia fue excluida por la guerra y Dinamarca ocupó su lugar. Luego venció 2-0 a Alemania en la final." },
-  { "id": "deportes-043", "tema": "deportes", "icono": "⚽", "dato": "En 1969, Honduras y El Salvador tuvieron un conflicto armado conocido como la «Guerra del Fútbol».", "falso": "En 1969, Honduras y Guatemala tuvieron un conflicto armado conocido como la «Guerra del Fútbol».", "explicacion": "Fue con El Salvador, en julio de 1969, poco después de que ambos se enfrentaran en la eliminatoria rumbo a México 1970." },
-  { "id": "deportes-044", "tema": "deportes", "icono": "🦊", "dato": "El Leicester City ganó la Premier League 2015-16, cuando las apuestas lo pagaban 5000 a 1.", "falso": "El Leicester City ganó la Premier League 2005-06, cuando las apuestas lo pagaban 5000 a 1.", "explicacion": "En 2005-06 el Leicester ni siquiera estaba en la Premier. Su título inesperado fue en 2015-16, con Claudio Ranieri." },
-  { "id": "deportes-045", "tema": "deportes", "icono": "⚽", "dato": "El Arsenal ganó la Premier League 2003-04 sin perder ninguno de sus 38 partidos.", "falso": "El Manchester United ganó la Premier League 2003-04 sin perder ninguno de sus 38 partidos.", "explicacion": "Ese invicto fue del Arsenal de Arsène Wenger: 26 victorias y 12 empates. El Manchester United terminó tercero." },
-  { "id": "deportes-046", "tema": "deportes", "icono": "⚽", "dato": "El Sheffield FC, fundado en Inglaterra en 1857, es reconocido por la FIFA como el club de fútbol más antiguo.", "falso": "El Sheffield FC, fundado en Escocia en 1857, es reconocido por la FIFA como el club de fútbol más antiguo.", "explicacion": "El Sheffield FC es de Sheffield, Inglaterra, no de Escocia. Fue fundado en 1857." },
-  { "id": "deportes-047", "tema": "deportes", "icono": "⚽", "dato": "El primer partido oficial entre selecciones fue Escocia contra Inglaterra, en 1872, y terminó 0-0.", "falso": "El primer partido oficial entre selecciones fue Escocia contra Inglaterra, en 1872, y terminó 2-1 para Inglaterra.", "explicacion": "Se jugó en Glasgow el 30 de noviembre de 1872 y terminó sin goles." },
-  { "id": "deportes-048", "tema": "deportes", "icono": "🥅", "dato": "El penal se agregó a las reglas del fútbol en 1891, idea del portero irlandés William McCrum.", "falso": "El penal se agregó a las reglas del fútbol en 1930, para el primer Mundial.", "explicacion": "El penal existe desde 1891; lo propuso el portero irlandés William McCrum, casi 40 años antes del primer Mundial." },
-  { "id": "deportes-049", "tema": "deportes", "icono": "👑", "dato": "Pelé marcó su gol número 1000, según su conteo, de penal ante el Vasco da Gama en el Maracaná, en 1969.", "falso": "Pelé marcó su gol número 1000, según su conteo, de penal ante el Flamengo en el Maracaná, en 1969.", "explicacion": "Fue el 19 de noviembre de 1969, de penal, ante el Vasco da Gama. Pelé jugaba para el Santos." },
-  { "id": "deportes-050", "tema": "deportes", "icono": "⚽", "dato": "Con Maradona, el Napoli ganó en la temporada 1986-87 su primer título de la liga italiana.", "falso": "Con Maradona, el Napoli ganó en la temporada 1983-84 su primer título de la liga italiana.", "explicacion": "Maradona llegó al Napoli en el verano de 1984. El primer scudetto del club llegó en la temporada 1986-87." },
-  { "id": "deportes-051", "tema": "deportes", "icono": "⚽", "dato": "Honduras le ganó 2-0 a Brasil en los cuartos de final de la Copa América 2001.", "falso": "Honduras le ganó 2-0 a Argentina en los cuartos de final de la Copa América 2001.", "explicacion": "Argentina no jugó esa Copa en Colombia. Honduras, invitada, eliminó 2-0 a Brasil y terminó tercera." },
-  { "id": "deportes-052", "tema": "deportes", "icono": "🏆", "dato": "Johan Cruyff ganó el Balón de Oro tres veces: 1971, 1973 y 1974.", "falso": "Johan Cruyff ganó el Balón de Oro cuatro veces: 1971, 1973, 1974 y 1978.", "explicacion": "Cruyff ganó solo tres, el último en 1974. El Balón de Oro de 1978 fue para el inglés Kevin Keegan." },
-  { "id": "deportes-053", "tema": "deportes", "icono": "🥇", "dato": "Uruguay ganó el torneo de fútbol de los Juegos Olímpicos de 1924 y 1928.", "falso": "Argentina ganó el torneo de fútbol de los Juegos Olímpicos de 1924 y 1928.", "explicacion": "Argentina perdió la final de 1928 ante Uruguay. Su primer oro olímpico en fútbol llegó en Atenas 2004." },
-  { "id": "deportes-054", "tema": "deportes", "icono": "⚽", "dato": "México fue el primer país en organizar dos Mundiales: 1970 y 1986.", "falso": "Italia fue el primer país en organizar dos Mundiales: 1934 y 1990.", "explicacion": "Italia organizó su segundo Mundial en 1990, cuatro años después de que México organizara el de 1986." },
-  { "id": "deportes-055", "tema": "deportes", "icono": "⚽", "dato": "Brasil jugó todos los Mundiales desde 1930 hasta 2022.", "falso": "Argentina jugó todos los Mundiales desde 1930 hasta 2022.", "explicacion": "Argentina no jugó, por ejemplo, en 1938, 1950, 1954 ni 1970. Brasil fue la única selección presente en todos hasta 2022." },
-  { "id": "deportes-056", "tema": "deportes", "icono": "⚽", "dato": "En 1990, Camerún le ganó 1-0 a Argentina, el campeón vigente, en el partido inaugural del Mundial.", "falso": "En 1990, Camerún le ganó 1-0 a Brasil, el campeón vigente, en el partido inaugural del Mundial.", "explicacion": "El campeón vigente era Argentina (1986), no Brasil. Camerún la venció 1-0 en Milán, con gol de Omam-Biyik." },
-  { "id": "deportes-057", "tema": "deportes", "icono": "⚽", "dato": "Marruecos fue en Qatar 2022 la primera selección africana en llegar a semifinales de un Mundial.", "falso": "Senegal fue en Qatar 2022 la primera selección africana en llegar a semifinales de un Mundial.", "explicacion": "Senegal cayó en octavos ante Inglaterra. Marruecos llegó a semifinales y perdió 2-0 con Francia." },
-  { "id": "deportes-058", "tema": "deportes", "icono": "🏆", "dato": "Honduras ganó el Campeonato de la CONCACAF de 1981, que daba boletos al Mundial de España 1982.", "falso": "Honduras ganó el Campeonato de la CONCACAF de 1981, que daba boletos al Mundial de México 1986.", "explicacion": "Ese torneo, jugado en Tegucigalpa, clasificó a Honduras y a El Salvador al Mundial de España 1982." },
-  { "id": "deportes-059", "tema": "deportes", "icono": "⚽", "dato": "En Brasil 2014, Costa Rica ganó su grupo por delante de Uruguay, Italia e Inglaterra.", "falso": "En Brasil 2014, Costa Rica ganó su grupo por delante de Uruguay, Italia y Alemania.", "explicacion": "El grupo D lo formaban Costa Rica, Uruguay, Italia e Inglaterra. Costa Rica lo ganó y llegó a cuartos de final." },
-  { "id": "deportes-060", "tema": "deportes", "icono": "🏆", "dato": "España ganó tres torneos seguidos: la Eurocopa 2008, el Mundial 2010 y la Eurocopa 2012.", "falso": "España ganó tres torneos seguidos: el Mundial 2006, la Eurocopa 2008 y el Mundial 2010.", "explicacion": "El Mundial 2006 lo ganó Italia. La racha española fue Eurocopa 2008, Mundial 2010 y Eurocopa 2012." },
-  { "id": "deportes-061", "tema": "deportes", "icono": "⚽", "dato": "Mario Kempes fue el goleador del Mundial de 1978, con 6 goles, y marcó dos en la final.", "falso": "Mario Kempes fue el goleador del Mundial de 1978, con 6 goles, y marcó tres en la final.", "explicacion": "Argentina le ganó 3-1 a Países Bajos en la final: Kempes hizo dos goles y Daniel Bertoni el otro." },
-  { "id": "deportes-062", "tema": "deportes", "icono": "⚽", "dato": "Paolo Rossi le marcó tres goles a Brasil en el Mundial de 1982, en el triunfo 3-2 de Italia.", "falso": "Paolo Rossi le marcó tres goles a Argentina en el Mundial de 1982, en el triunfo 3-2 de Italia.", "explicacion": "El 3-2 con triplete de Rossi fue ante Brasil, en Barcelona. A Argentina, Italia le ganó 2-1 en ese Mundial." },
-  { "id": "deportes-063", "tema": "deportes", "icono": "⚽", "dato": "El colombiano James Rodríguez fue el goleador del Mundial 2014, con 6 goles.", "falso": "El colombiano Radamel Falcao fue el goleador del Mundial 2014, con 6 goles.", "explicacion": "Falcao se perdió Brasil 2014 por una lesión de rodilla. El goleador del torneo fue James, con 6 goles." },
-  { "id": "deportes-064", "tema": "deportes", "icono": "🥇", "dato": "México ganó el oro olímpico en fútbol en Londres 2012, venciendo 2-1 a Brasil en la final.", "falso": "México ganó el oro olímpico en fútbol en Londres 2012, venciendo 2-1 a Argentina en la final.", "explicacion": "Argentina no clasificó a Londres 2012. México le ganó 2-1 a Brasil en Wembley, con dos goles de Oribe Peralta." },
-  { "id": "deportes-065", "tema": "deportes", "icono": "⚽", "dato": "En 2001, Australia le ganó 31-0 a Samoa Americana en una eliminatoria mundialista.", "falso": "En 2001, Australia le ganó 31-0 a Fiyi en una eliminatoria mundialista.", "explicacion": "El 31-0 fue ante Samoa Americana, y Archie Thompson anotó 13 de esos goles." },
-  { "id": "deportes-066", "tema": "deportes", "icono": "⚽", "dato": "En el Mundial de España 1982, Hungría le ganó 10-1 a El Salvador.", "falso": "En el Mundial de España 1982, Hungría le ganó 10-1 a Honduras.", "explicacion": "El 10-1 fue ante El Salvador. Honduras empató con España e Irlanda del Norte y cayó 1-0 ante Yugoslavia." },
-  { "id": "deportes-067", "tema": "deportes", "icono": "🥇", "dato": "Michael Phelps ganó 8 medallas de oro en los Juegos Olímpicos de Pekín 2008.", "falso": "Michael Phelps ganó 8 medallas de oro en los Juegos Olímpicos de Atenas 2004.", "explicacion": "En Atenas 2004 ganó 6 oros y 2 bronces. Los 8 oros en unos mismos Juegos fueron en Pekín 2008." },
-  { "id": "deportes-068", "tema": "deportes", "icono": "🏊", "dato": "Michael Phelps se retiró con 23 medallas de oro olímpicas.", "falso": "Michael Phelps se retiró con 30 medallas de oro olímpicas.", "explicacion": "Phelps sumó 28 medallas olímpicas en total, y 23 de ellas fueron de oro." },
-  { "id": "deportes-069", "tema": "deportes", "icono": "🏃", "dato": "En 2009, en Berlín, Usain Bolt corrió los 100 metros planos en 9,58 segundos.", "falso": "En 2009, en Berlín, Usain Bolt corrió los 100 metros planos en 9,48 segundos.", "explicacion": "La marca de Bolt en el Mundial de Atletismo de Berlín 2009 fue de 9,58 s, nuevo récord mundial en ese momento." },
-  { "id": "deportes-070", "tema": "deportes", "icono": "🤸", "dato": "En Montreal 1976, Nadia Comăneci logró el primer 10 perfecto de la gimnasia olímpica, con 14 años.", "falso": "En Moscú 1980, Nadia Comăneci logró el primer 10 perfecto de la gimnasia olímpica, con 14 años.", "explicacion": "El primer 10 olímpico fue en Montreal 1976, en barras asimétricas. El marcador no podía mostrarlo y marcó 1.00." },
-  { "id": "deportes-071", "tema": "deportes", "icono": "🏅", "dato": "Los primeros Juegos Olímpicos modernos se celebraron en Atenas en 1896.", "falso": "Los primeros Juegos Olímpicos modernos se celebraron en París en 1896.", "explicacion": "París organizó los de 1900. Los primeros Juegos modernos fueron en Atenas, en 1896, impulsados por Pierre de Coubertin." },
-  { "id": "deportes-072", "tema": "deportes", "icono": "🏃", "dato": "Jesse Owens ganó 4 medallas de oro en los Juegos Olímpicos de Berlín 1936.", "falso": "Jesse Owens ganó 4 medallas de oro en los Juegos Olímpicos de Londres 1948.", "explicacion": "Owens ganó 100 m, 200 m, salto largo y relevo 4×100 en Berlín 1936. No compitió en 1948." },
-  { "id": "deportes-073", "tema": "deportes", "icono": "🦶", "dato": "El etíope Abebe Bikila ganó el maratón olímpico de Roma 1960 corriendo descalzo.", "falso": "El etíope Abebe Bikila ganó el maratón olímpico de Tokio 1964 corriendo descalzo.", "explicacion": "En Roma 1960 corrió descalzo. Volvió a ganar el maratón en Tokio 1964, pero esa vez con zapatillas." },
-  { "id": "deportes-074", "tema": "deportes", "icono": "🏅", "dato": "En México 1968, Bob Beamon saltó 8,90 metros y superó el récord mundial de salto largo por 55 cm.", "falso": "En México 1968, Bob Beamon saltó 8,90 metros y superó el récord mundial de salto largo por 5 cm.", "explicacion": "El récord anterior era de 8,35 m, así que Beamon lo superó por 55 cm en un solo salto." },
-  { "id": "deportes-075", "tema": "deportes", "icono": "🏀", "dato": "El baloncesto lo inventó el canadiense James Naismith en 1891, en Springfield, Estados Unidos.", "falso": "El baloncesto lo inventó el canadiense James Naismith en 1931, en Springfield, Estados Unidos.", "explicacion": "Naismith lo creó en diciembre de 1891 en una escuela de Springfield, Massachusetts, con canastas de duraznos." },
-  { "id": "deportes-076", "tema": "deportes", "icono": "🏐", "dato": "El voleibol lo inventó William G. Morgan en 1895 y al principio se llamaba «mintonette».", "falso": "El voleibol lo inventó James Naismith en 1895 y al principio se llamaba «mintonette».", "explicacion": "Lo creó William G. Morgan en Holyoke, Estados Unidos, en 1895. Naismith había inventado el baloncesto en 1891." },
-  { "id": "deportes-077", "tema": "deportes", "icono": "🏀", "dato": "Michael Jordan ganó seis títulos de la NBA, todos con los Chicago Bulls.", "falso": "Michael Jordan ganó siete títulos de la NBA, todos con los Chicago Bulls.", "explicacion": "Jordan ganó 6: de 1991 a 1993 y de 1996 a 1998, todos con Chicago. Con los Wizards no llegó a playoffs." },
-  { "id": "deportes-078", "tema": "deportes", "icono": "🏁", "dato": "El primer Campeonato Mundial de Fórmula 1, en 1950, lo ganó el italiano Giuseppe Farina.", "falso": "El primer Campeonato Mundial de Fórmula 1, en 1950, lo ganó el argentino Juan Manuel Fangio.", "explicacion": "Fangio fue subcampeón en 1950 y luego ganó cinco títulos (1951 y 1954–1957). El primero fue de Farina, con Alfa Romeo." },
-  { "id": "deportes-079", "tema": "deportes", "icono": "🚴", "dato": "El primer Tour de Francia se corrió en 1903 y lo ganó el francés Maurice Garin.", "falso": "El primer Tour de Francia se corrió en 1923 y lo ganó el francés Maurice Garin.", "explicacion": "El Tour nació en 1903, organizado por el diario L'Auto, y Maurice Garin fue su primer campeón." },
-  { "id": "deportes-080", "tema": "deportes", "icono": "⛳", "dato": "En 1971, el astronauta Alan Shepard golpeó pelotas de golf en la Luna durante la misión Apolo 14.", "falso": "En 1969, el astronauta Alan Shepard golpeó pelotas de golf en la Luna durante la misión Apolo 11.", "explicacion": "Shepard no viajó en el Apolo 11. Jugó golf en la Luna en el Apolo 14, en febrero de 1971, con un palo improvisado." }
+  {
+    "id": "deportes-001",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "El primer Mundial de fútbol se jugó en Uruguay en 1930 y el campeón fue el propio Uruguay.",
+    "falso": "El primer Mundial de fútbol se jugó en Italia en 1930 y el campeón fue Italia.",
+    "explicacion": "El Mundial de 1930 fue en Uruguay y lo ganó Uruguay, 4-2 a Argentina en la final. Italia organizó y ganó el de 1934.",
+    "foto": "vintage soccer ball"
+  },
+  {
+    "id": "deportes-002",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "Italia fue la primera selección en ganar dos Mundiales seguidos: 1934 y 1938.",
+    "falso": "Brasil fue la primera selección en ganar dos Mundiales seguidos: 1934 y 1938.",
+    "explicacion": "Brasil ganó su primer Mundial en 1958. Los de 1934 y 1938 fueron de Italia, la primera en repetir título.",
+    "foto": "soccer trophy celebration"
+  },
+  {
+    "id": "deportes-003",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "Brasil ganó 5 Mundiales hasta 2022: 1958, 1962, 1970, 1994 y 2002.",
+    "falso": "Brasil ganó 6 Mundiales hasta 2022: 1958, 1962, 1970, 1986, 1994 y 2002.",
+    "explicacion": "El Mundial de 1986 lo ganó Argentina. Al terminar 2022, Brasil tenía 5 títulos.",
+    "foto": "soccer fans celebrating"
+  },
+  {
+    "id": "deportes-004",
+    "tema": "deportes",
+    "icono": "👑",
+    "dato": "Pelé ganó tres Mundiales con Brasil: 1958, 1962 y 1970.",
+    "falso": "Pelé ganó cuatro Mundiales con Brasil: 1958, 1962, 1970 y 1974.",
+    "explicacion": "El Mundial de 1974 lo ganó Alemania Federal y Pelé ya no lo jugó. Sus títulos fueron 1958, 1962 y 1970.",
+    "foto": "golden trophy close up"
+  },
+  {
+    "id": "deportes-005",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Pelé tenía 17 años cuando marcó dos goles en la final del Mundial de 1958 ante Suecia.",
+    "falso": "Pelé tenía 15 años cuando marcó dos goles en la final del Mundial de 1958 ante Suecia.",
+    "explicacion": "Pelé nació en octubre de 1940, así que en la final de junio de 1958 (Brasil 5-2 Suecia) tenía 17 años.",
+    "foto": "soccer ball stadium"
+  },
+  {
+    "id": "deportes-006",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Honduras jugó su primer Mundial en España 1982.",
+    "falso": "Honduras jugó su primer Mundial en México 1970.",
+    "explicacion": "Honduras quedó fuera de México 1970 tras perder la eliminatoria con El Salvador. Debutó en un Mundial en España 1982.",
+    "foto": "soccer stadium crowd"
+  },
+  {
+    "id": "deportes-007",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Just Fontaine marcó 13 goles con Francia en un solo Mundial, el de Suecia 1958.",
+    "falso": "Just Fontaine marcó 13 goles con Francia en un solo Mundial, el de Inglaterra 1966.",
+    "explicacion": "Los 13 goles de Fontaine fueron en Suecia 1958. En 1966 ya se había retirado por una lesión.",
+    "foto": "soccer goal net"
+  },
+  {
+    "id": "deportes-008",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Al terminar Qatar 2022, el alemán Miroslav Klose era el máximo goleador de la historia de los Mundiales, con 16 goles.",
+    "falso": "Al terminar Qatar 2022, el brasileño Ronaldo era el máximo goleador de la historia de los Mundiales, con 16 goles.",
+    "explicacion": "Ronaldo Nazário sumó 15 goles en Mundiales. El récord al cierre de 2022 era de Klose, con 16.",
+    "foto": "striker kicking soccer ball"
+  },
+  {
+    "id": "deportes-009",
+    "tema": "deportes",
+    "icono": "✋",
+    "dato": "La «Mano de Dios» de Maradona fue ante Inglaterra, en los cuartos de final de México 1986.",
+    "falso": "La «Mano de Dios» de Maradona fue ante Alemania Federal, en la final de México 1986.",
+    "explicacion": "Ese gol con la mano fue contra Inglaterra en cuartos (2-1). En la final Argentina venció 3-2 a Alemania Federal sin gol de Maradona.",
+    "foto": "soccer match action"
+  },
+  {
+    "id": "deportes-010",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "Argentina ganó el Mundial en 1978, 1986 y 2022.",
+    "falso": "Argentina ganó el Mundial en 1978, 1990 y 2022.",
+    "explicacion": "En 1990 Argentina perdió la final 1-0 ante Alemania Federal. Sus títulos fueron en 1978, 1986 y 2022.",
+    "foto": "fans waving flags"
+  },
+  {
+    "id": "deportes-011",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "La final de Qatar 2022 terminó 3-3 y Argentina venció a Francia 4-2 en penales.",
+    "falso": "La final de Qatar 2022 terminó 2-2 y Argentina venció a Francia 4-2 en penales.",
+    "explicacion": "Fue 3-3 tras la prórroga: dos goles de Messi, uno de Di María y un triplete de Mbappé.",
+    "foto": "penalty kick soccer"
+  },
+  {
+    "id": "deportes-012",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Geoff Hurst marcó tres goles en la final de 1966, que Inglaterra ganó 4-2 a Alemania Federal.",
+    "falso": "Bobby Charlton marcó tres goles en la final de 1966, que Inglaterra ganó 4-2 a Alemania Federal.",
+    "explicacion": "El triplete fue de Geoff Hurst y el otro gol inglés lo hizo Martin Peters. Bobby Charlton no marcó en esa final.",
+    "foto": "soccer ball scoring goal"
+  },
+  {
+    "id": "deportes-013",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "En el «Maracanazo» de 1950, Uruguay le ganó 2-1 a Brasil en Río de Janeiro y se coronó campeón del mundo.",
+    "falso": "En el «Maracanazo» de 1950, Argentina le ganó 2-1 a Brasil en Río de Janeiro y se coronó campeón del mundo.",
+    "explicacion": "Argentina no jugó el Mundial de 1950. El Maracanazo fue el 2-1 de Uruguay a Brasil, que le dio a Uruguay su segundo título.",
+    "foto": "huge stadium aerial view"
+  },
+  {
+    "id": "deportes-014",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "En su debut mundialista, en 1982, Honduras empató 1-1 con España, el anfitrión.",
+    "falso": "En su debut mundialista, en 1982, Honduras le ganó 1-0 a España, el anfitrión.",
+    "explicacion": "Fue 1-1 en Valencia: Héctor Zelaya marcó para Honduras y España empató de penal.",
+    "foto": "soccer players shaking hands"
+  },
+  {
+    "id": "deportes-015",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "No hubo Mundial de fútbol en 1942 ni en 1946 por la Segunda Guerra Mundial.",
+    "falso": "No hubo Mundial de fútbol en 1938 ni en 1942 por la Segunda Guerra Mundial.",
+    "explicacion": "El Mundial de 1938 sí se jugó, en Francia, y lo ganó Italia. Los que no se jugaron fueron los de 1942 y 1946.",
+    "foto": "empty old stadium"
+  },
+  {
+    "id": "deportes-016",
+    "tema": "deportes",
+    "icono": "🌏",
+    "dato": "Corea del Sur y Japón organizaron en 2002 el primer Mundial con dos países sede y el primero en Asia.",
+    "falso": "China y Japón organizaron en 2002 el primer Mundial con dos países sede y el primero en Asia.",
+    "explicacion": "Los anfitriones de 2002 fueron Corea del Sur y Japón. China jugó ese Mundial, pero no fue sede.",
+    "foto": "asian city skyline night"
+  },
+  {
+    "id": "deportes-017",
+    "tema": "deportes",
+    "icono": "🌍",
+    "dato": "Sudáfrica 2010 fue el primer Mundial de fútbol que se jugó en África.",
+    "falso": "Egipto 1990 fue el primer Mundial de fútbol que se jugó en África.",
+    "explicacion": "El Mundial de 1990 fue en Italia; Egipto solo participó. El primero en África fue Sudáfrica 2010.",
+    "foto": "african savanna sunset"
+  },
+  {
+    "id": "deportes-018",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "España ganó su primer Mundial en 2010 con un gol de Andrés Iniesta en la prórroga ante Países Bajos.",
+    "falso": "España ganó su primer Mundial en 2010 con un gol de David Villa en la prórroga ante Países Bajos.",
+    "explicacion": "Villa fue el goleador de España en ese torneo, pero el gol de la final (1-0, minuto 116) lo marcó Iniesta.",
+    "foto": "soccer player celebrating goal"
+  },
+  {
+    "id": "deportes-019",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "En la semifinal de Brasil 2014, Alemania goleó 7-1 a Brasil en Belo Horizonte.",
+    "falso": "En la final de Brasil 2014, Alemania goleó 7-1 a Brasil en Río de Janeiro.",
+    "explicacion": "El 7-1 fue en semifinales, en el Mineirão de Belo Horizonte. La final la ganó Alemania 1-0 a Argentina en el Maracaná.",
+    "foto": "stadium scoreboard night"
+  },
+  {
+    "id": "deportes-020",
+    "tema": "deportes",
+    "icono": "🥈",
+    "dato": "Países Bajos perdió las finales del Mundial de 1974, 1978 y 2010.",
+    "falso": "Países Bajos ganó la final del Mundial de 1974 ante Alemania Federal.",
+    "explicacion": "En 1974 Alemania Federal venció 2-1 a Países Bajos en Múnich. Los neerlandeses también perdieron las finales de 1978 y 2010.",
+    "foto": "disappointed soccer player"
+  },
+  {
+    "id": "deportes-021",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Hasta 2022, Honduras jugó tres Mundiales: España 1982, Sudáfrica 2010 y Brasil 2014.",
+    "falso": "Hasta 2022, Honduras jugó cuatro Mundiales: España 1982, Francia 1998, Sudáfrica 2010 y Brasil 2014.",
+    "explicacion": "Honduras no fue a Francia 1998. Sus Mundiales hasta 2022 fueron España 1982, Sudáfrica 2010 y Brasil 2014.",
+    "foto": "soccer stadium lights"
+  },
+  {
+    "id": "deportes-022",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "La Copa Jules Rimet original fue robada en Brasil en 1983 y nunca se recuperó.",
+    "falso": "La Copa Jules Rimet original fue robada en Brasil en 1983 y se recuperó un mes después.",
+    "explicacion": "Tras el robo en Río en 1983 la copa nunca apareció; se cree que la fundieron. Brasil la tenía en propiedad desde 1970.",
+    "foto": "gold trophy display case"
+  },
+  {
+    "id": "deportes-023",
+    "tema": "deportes",
+    "icono": "🐕",
+    "dato": "En 1966 la Copa Jules Rimet fue robada en Londres y la encontró un perro llamado Pickles.",
+    "falso": "En 1966 la Copa Jules Rimet fue robada en Londres y la encontró un perro llamado Lassie.",
+    "explicacion": "El perro que halló la copa envuelta en papel periódico, en un jardín de Londres, se llamaba Pickles.",
+    "foto": "dog sniffing bushes"
+  },
+  {
+    "id": "deportes-024",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "El trofeo actual de la Copa del Mundo se entregó por primera vez en 1974, a Alemania Federal.",
+    "falso": "El trofeo actual de la Copa del Mundo se entregó por primera vez en 1970, a Brasil.",
+    "explicacion": "En 1970 Brasil ganó la Jules Rimet y se la quedó. El trofeo actual, de Silvio Gazzaniga, se estrenó en 1974.",
+    "foto": "golden trophy close up"
+  },
+  {
+    "id": "deportes-025",
+    "tema": "deportes",
+    "icono": "🟨",
+    "dato": "Las tarjetas amarilla y roja se usaron por primera vez en un Mundial en México 1970.",
+    "falso": "Las tarjetas amarilla y roja se usaron por primera vez en un Mundial en Inglaterra 1966.",
+    "explicacion": "En 1966 no existían: el árbitro Ken Aston tuvo la idea después de ese torneo. Debutaron en México 1970.",
+    "foto": "referee showing card"
+  },
+  {
+    "id": "deportes-026",
+    "tema": "deportes",
+    "icono": "🔄",
+    "dato": "Los cambios de jugadores se permitieron por primera vez en un Mundial en México 1970.",
+    "falso": "Los cambios de jugadores se permitieron por primera vez en un Mundial en Suiza 1954.",
+    "explicacion": "Hasta 1966 no había sustituciones en los Mundiales. Se permitieron por primera vez en México 1970.",
+    "foto": "soccer players on bench"
+  },
+  {
+    "id": "deportes-027",
+    "tema": "deportes",
+    "icono": "📺",
+    "dato": "El VAR se usó por primera vez en un Mundial en Rusia 2018.",
+    "falso": "El VAR se usó por primera vez en un Mundial en Brasil 2014.",
+    "explicacion": "En Brasil 2014 se estrenó la tecnología de línea de gol, no el VAR. El VAR debutó en Rusia 2018.",
+    "foto": "referee watching monitor"
+  },
+  {
+    "id": "deportes-028",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "En Sudáfrica 2010, Honduras empató 0-0 con Suiza y no marcó goles en todo el torneo.",
+    "falso": "En Sudáfrica 2010, Honduras le ganó 1-0 a Suiza en su último partido del torneo.",
+    "explicacion": "Ante Suiza fue 0-0. Honduras perdió 1-0 con Chile y 2-0 con España, y no marcó goles en ese Mundial.",
+    "foto": "soccer ball rolling grass"
+  },
+  {
+    "id": "deportes-029",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "En 1994, el camerunés Roger Milla le marcó un gol a Rusia en el Mundial con 42 años.",
+    "falso": "En 1994, el camerunés Roger Milla le marcó un gol a Rusia en el Mundial con 35 años.",
+    "explicacion": "Milla nació en mayo de 1952, así que en el Camerún-Rusia de junio de 1994 tenía 42 años.",
+    "foto": "older man playing soccer"
+  },
+  {
+    "id": "deportes-030",
+    "tema": "deportes",
+    "icono": "🟥",
+    "dato": "En la final del Mundial 2006, Zinedine Zidane fue expulsado por darle un cabezazo a Marco Materazzi.",
+    "falso": "En la final del Mundial 2006, Zinedine Zidane fue expulsado por darle un cabezazo a Fabio Cannavaro.",
+    "explicacion": "El cabezazo fue a Materazzi, quien además marcó el gol de Italia. Italia ganó por penales en Berlín.",
+    "foto": "soccer players arguing"
+  },
+  {
+    "id": "deportes-031",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Ronaldo marcó los dos goles de Brasil en la final del Mundial 2002 ante Alemania.",
+    "falso": "Rivaldo marcó los dos goles de Brasil en la final del Mundial 2002 ante Alemania.",
+    "explicacion": "Los dos goles del 2-0 en Yokohama fueron de Ronaldo, que terminó como goleador del torneo con 8.",
+    "foto": "soccer player kicking ball"
+  },
+  {
+    "id": "deportes-032",
+    "tema": "deportes",
+    "icono": "🧤",
+    "dato": "En 1963, el soviético Lev Yashin ganó el Balón de Oro siendo portero.",
+    "falso": "En 1963, el italiano Dino Zoff ganó el Balón de Oro siendo portero.",
+    "explicacion": "Zoff nunca ganó el Balón de Oro. El portero que lo ganó en 1963 fue Lev Yashin, de la Unión Soviética.",
+    "foto": "goalkeeper diving save"
+  },
+  {
+    "id": "deportes-033",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "El primer Balón de Oro, en 1956, lo ganó el inglés Stanley Matthews.",
+    "falso": "El primer Balón de Oro, en 1956, lo ganó Alfredo Di Stéfano.",
+    "explicacion": "Di Stéfano lo ganó en 1957 y 1959. El primero, en 1956, fue para Stanley Matthews, del Blackpool.",
+    "foto": "gold award trophy"
+  },
+  {
+    "id": "deportes-034",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "El Real Madrid ganó las primeras cinco Copas de Europa, de 1956 a 1960.",
+    "falso": "El Barcelona ganó las primeras cinco Copas de Europa, de 1956 a 1960.",
+    "explicacion": "El Barcelona ganó su primera Copa de Europa en 1992. Las cinco primeras (1956–1960) fueron del Real Madrid.",
+    "foto": "trophy cabinet silver cups"
+  },
+  {
+    "id": "deportes-035",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "En la final de la Copa de Europa de 1960, el Real Madrid le ganó 7-3 al Eintracht Fráncfort.",
+    "falso": "En la final de la Copa de Europa de 1960, el Real Madrid le ganó 7-3 al Milan.",
+    "explicacion": "El rival fue el Eintracht Fráncfort, en Glasgow. Puskás marcó 4 goles y Di Stéfano otros 3.",
+    "foto": "soccer match night stadium"
+  },
+  {
+    "id": "deportes-036",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "En Brasil 2014, Carlo Costly marcó el gol de Honduras en la derrota 2-1 ante Ecuador.",
+    "falso": "En Brasil 2014, Carlo Costly marcó el gol de Honduras en la derrota 2-1 ante Francia.",
+    "explicacion": "Ante Francia, Honduras perdió 3-0. El gol de Costly fue ante Ecuador, que ganó 2-1 con dos goles de Enner Valencia.",
+    "foto": "soccer header goal"
+  },
+  {
+    "id": "deportes-037",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "La primera Copa Libertadores, en 1960, la ganó el Peñarol de Uruguay.",
+    "falso": "La primera Copa Libertadores, en 1960, la ganó el Santos de Brasil.",
+    "explicacion": "El Santos de Pelé ganó en 1962 y 1963. La primera, en 1960, fue de Peñarol, que venció en la final a Olimpia.",
+    "foto": "south american stadium fans"
+  },
+  {
+    "id": "deportes-038",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "Independiente de Argentina ganó la Copa Libertadores cuatro años seguidos, de 1972 a 1975.",
+    "falso": "Boca Juniors ganó la Copa Libertadores cuatro años seguidos, de 1972 a 1975.",
+    "explicacion": "Boca ganó sus primeras Libertadores en 1977 y 1978. La racha de 1972 a 1975 fue de Independiente.",
+    "foto": "silver cup trophy"
+  },
+  {
+    "id": "deportes-039",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "La primera Copa América (Campeonato Sudamericano) se jugó en Argentina en 1916 y la ganó Uruguay.",
+    "falso": "La primera Copa América (Campeonato Sudamericano) se jugó en Argentina en 1916 y la ganó Brasil.",
+    "explicacion": "Uruguay fue campeón, Argentina segunda y Brasil tercero. Brasil ganó su primer título sudamericano en 1919.",
+    "foto": "vintage soccer ball"
+  },
+  {
+    "id": "deportes-040",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "La primera Eurocopa, en 1960, la ganó la Unión Soviética ante Yugoslavia.",
+    "falso": "La primera Eurocopa, en 1960, la ganó Yugoslavia ante la Unión Soviética.",
+    "explicacion": "La Unión Soviética venció 2-1 a Yugoslavia en la prórroga de la final, jugada en París.",
+    "foto": "vintage football match"
+  },
+  {
+    "id": "deportes-041",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "Grecia ganó la Eurocopa 2004 venciendo en la final al anfitrión, Portugal.",
+    "falso": "Grecia ganó la Eurocopa 2004 venciendo en la final a Francia.",
+    "explicacion": "La final fue 1-0 a Portugal en Lisboa, con gol de Angelos Charisteas. A Francia, Grecia la eliminó en cuartos.",
+    "foto": "greek flag waving"
+  },
+  {
+    "id": "deportes-042",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "Dinamarca ganó la Eurocopa 1992 después de entrar a última hora en lugar de Yugoslavia.",
+    "falso": "Dinamarca ganó la Eurocopa 1992 después de entrar a última hora en lugar de Checoslovaquia.",
+    "explicacion": "Yugoslavia fue excluida por la guerra y Dinamarca ocupó su lugar. Luego venció 2-0 a Alemania en la final.",
+    "foto": "fans waving flags"
+  },
+  {
+    "id": "deportes-043",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "En 1969, Honduras y El Salvador tuvieron un conflicto armado conocido como la «Guerra del Fútbol».",
+    "falso": "En 1969, Honduras y Guatemala tuvieron un conflicto armado conocido como la «Guerra del Fútbol».",
+    "explicacion": "Fue con El Salvador, en julio de 1969, poco después de que ambos se enfrentaran en la eliminatoria rumbo a México 1970.",
+    "foto": "stadium crowd cheering"
+  },
+  {
+    "id": "deportes-044",
+    "tema": "deportes",
+    "icono": "🦊",
+    "dato": "El Leicester City ganó la Premier League 2015-16, cuando las apuestas lo pagaban 5000 a 1.",
+    "falso": "El Leicester City ganó la Premier League 2005-06, cuando las apuestas lo pagaban 5000 a 1.",
+    "explicacion": "En 2005-06 el Leicester ni siquiera estaba en la Premier. Su título inesperado fue en 2015-16, con Claudio Ranieri.",
+    "foto": "rolling dice close up"
+  },
+  {
+    "id": "deportes-045",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "El Arsenal ganó la Premier League 2003-04 sin perder ninguno de sus 38 partidos.",
+    "falso": "El Manchester United ganó la Premier League 2003-04 sin perder ninguno de sus 38 partidos.",
+    "explicacion": "Ese invicto fue del Arsenal de Arsène Wenger: 26 victorias y 12 empates. El Manchester United terminó tercero.",
+    "foto": "soccer team celebration"
+  },
+  {
+    "id": "deportes-046",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "El Sheffield FC, fundado en Inglaterra en 1857, es reconocido por la FIFA como el club de fútbol más antiguo.",
+    "falso": "El Sheffield FC, fundado en Escocia en 1857, es reconocido por la FIFA como el club de fútbol más antiguo.",
+    "explicacion": "El Sheffield FC es de Sheffield, Inglaterra, no de Escocia. Fue fundado en 1857.",
+    "foto": "old english town street"
+  },
+  {
+    "id": "deportes-047",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "El primer partido oficial entre selecciones fue Escocia contra Inglaterra, en 1872, y terminó 0-0.",
+    "falso": "El primer partido oficial entre selecciones fue Escocia contra Inglaterra, en 1872, y terminó 2-1 para Inglaterra.",
+    "explicacion": "Se jugó en Glasgow el 30 de noviembre de 1872 y terminó sin goles.",
+    "foto": "old grass football field"
+  },
+  {
+    "id": "deportes-048",
+    "tema": "deportes",
+    "icono": "🥅",
+    "dato": "El penal se agregó a las reglas del fútbol en 1891, idea del portero irlandés William McCrum.",
+    "falso": "El penal se agregó a las reglas del fútbol en 1930, para el primer Mundial.",
+    "explicacion": "El penal existe desde 1891; lo propuso el portero irlandés William McCrum, casi 40 años antes del primer Mundial.",
+    "foto": "penalty spot soccer field"
+  },
+  {
+    "id": "deportes-049",
+    "tema": "deportes",
+    "icono": "👑",
+    "dato": "Pelé marcó su gol número 1000, según su conteo, de penal ante el Vasco da Gama en el Maracaná, en 1969.",
+    "falso": "Pelé marcó su gol número 1000, según su conteo, de penal ante el Flamengo en el Maracaná, en 1969.",
+    "explicacion": "Fue el 19 de noviembre de 1969, de penal, ante el Vasco da Gama. Pelé jugaba para el Santos.",
+    "foto": "penalty kick soccer"
+  },
+  {
+    "id": "deportes-050",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Con Maradona, el Napoli ganó en la temporada 1986-87 su primer título de la liga italiana.",
+    "falso": "Con Maradona, el Napoli ganó en la temporada 1983-84 su primer título de la liga italiana.",
+    "explicacion": "Maradona llegó al Napoli en el verano de 1984. El primer scudetto del club llegó en la temporada 1986-87.",
+    "foto": "italian coastal city"
+  },
+  {
+    "id": "deportes-051",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Honduras le ganó 2-0 a Brasil en los cuartos de final de la Copa América 2001.",
+    "falso": "Honduras le ganó 2-0 a Argentina en los cuartos de final de la Copa América 2001.",
+    "explicacion": "Argentina no jugó esa Copa en Colombia. Honduras, invitada, eliminó 2-0 a Brasil y terminó tercera.",
+    "foto": "players hugging celebration"
+  },
+  {
+    "id": "deportes-052",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "Johan Cruyff ganó el Balón de Oro tres veces: 1971, 1973 y 1974.",
+    "falso": "Johan Cruyff ganó el Balón de Oro cuatro veces: 1971, 1973, 1974 y 1978.",
+    "explicacion": "Cruyff ganó solo tres, el último en 1974. El Balón de Oro de 1978 fue para el inglés Kevin Keegan.",
+    "foto": "golden award trophies"
+  },
+  {
+    "id": "deportes-053",
+    "tema": "deportes",
+    "icono": "🥇",
+    "dato": "Uruguay ganó el torneo de fútbol de los Juegos Olímpicos de 1924 y 1928.",
+    "falso": "Argentina ganó el torneo de fútbol de los Juegos Olímpicos de 1924 y 1928.",
+    "explicacion": "Argentina perdió la final de 1928 ante Uruguay. Su primer oro olímpico en fútbol llegó en Atenas 2004.",
+    "foto": "vintage stadium crowd"
+  },
+  {
+    "id": "deportes-054",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "México fue el primer país en organizar dos Mundiales: 1970 y 1986.",
+    "falso": "Italia fue el primer país en organizar dos Mundiales: 1934 y 1990.",
+    "explicacion": "Italia organizó su segundo Mundial en 1990, cuatro años después de que México organizara el de 1986.",
+    "foto": "mexico city aerial"
+  },
+  {
+    "id": "deportes-055",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Brasil jugó todos los Mundiales desde 1930 hasta 2022.",
+    "falso": "Argentina jugó todos los Mundiales desde 1930 hasta 2022.",
+    "explicacion": "Argentina no jugó, por ejemplo, en 1938, 1950, 1954 ni 1970. Brasil fue la única selección presente en todos hasta 2022.",
+    "foto": "yellow soccer jersey"
+  },
+  {
+    "id": "deportes-056",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "En 1990, Camerún le ganó 1-0 a Argentina, el campeón vigente, en el partido inaugural del Mundial.",
+    "falso": "En 1990, Camerún le ganó 1-0 a Brasil, el campeón vigente, en el partido inaugural del Mundial.",
+    "explicacion": "El campeón vigente era Argentina (1986), no Brasil. Camerún la venció 1-0 en Milán, con gol de Omam-Biyik.",
+    "foto": "stadium fireworks celebration"
+  },
+  {
+    "id": "deportes-057",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Marruecos fue en Qatar 2022 la primera selección africana en llegar a semifinales de un Mundial.",
+    "falso": "Senegal fue en Qatar 2022 la primera selección africana en llegar a semifinales de un Mundial.",
+    "explicacion": "Senegal cayó en octavos ante Inglaterra. Marruecos llegó a semifinales y perdió 2-0 con Francia.",
+    "foto": "fans celebrating street night"
+  },
+  {
+    "id": "deportes-058",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "Honduras ganó el Campeonato de la CONCACAF de 1981, que daba boletos al Mundial de España 1982.",
+    "falso": "Honduras ganó el Campeonato de la CONCACAF de 1981, que daba boletos al Mundial de México 1986.",
+    "explicacion": "Ese torneo, jugado en Tegucigalpa, clasificó a Honduras y a El Salvador al Mundial de España 1982.",
+    "foto": "soccer team trophy lift"
+  },
+  {
+    "id": "deportes-059",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "En Brasil 2014, Costa Rica ganó su grupo por delante de Uruguay, Italia e Inglaterra.",
+    "falso": "En Brasil 2014, Costa Rica ganó su grupo por delante de Uruguay, Italia y Alemania.",
+    "explicacion": "El grupo D lo formaban Costa Rica, Uruguay, Italia e Inglaterra. Costa Rica lo ganó y llegó a cuartos de final.",
+    "foto": "soccer fans painted faces"
+  },
+  {
+    "id": "deportes-060",
+    "tema": "deportes",
+    "icono": "🏆",
+    "dato": "España ganó tres torneos seguidos: la Eurocopa 2008, el Mundial 2010 y la Eurocopa 2012.",
+    "falso": "España ganó tres torneos seguidos: el Mundial 2006, la Eurocopa 2008 y el Mundial 2010.",
+    "explicacion": "El Mundial 2006 lo ganó Italia. La racha española fue Eurocopa 2008, Mundial 2010 y Eurocopa 2012.",
+    "foto": "confetti trophy celebration"
+  },
+  {
+    "id": "deportes-061",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Mario Kempes fue el goleador del Mundial de 1978, con 6 goles, y marcó dos en la final.",
+    "falso": "Mario Kempes fue el goleador del Mundial de 1978, con 6 goles, y marcó tres en la final.",
+    "explicacion": "Argentina le ganó 3-1 a Países Bajos en la final: Kempes hizo dos goles y Daniel Bertoni el otro.",
+    "foto": "soccer player running ball"
+  },
+  {
+    "id": "deportes-062",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "Paolo Rossi le marcó tres goles a Brasil en el Mundial de 1982, en el triunfo 3-2 de Italia.",
+    "falso": "Paolo Rossi le marcó tres goles a Argentina en el Mundial de 1982, en el triunfo 3-2 de Italia.",
+    "explicacion": "El 3-2 con triplete de Rossi fue ante Brasil, en Barcelona. A Argentina, Italia le ganó 2-1 en ese Mundial.",
+    "foto": "soccer striker shooting"
+  },
+  {
+    "id": "deportes-063",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "El colombiano James Rodríguez fue el goleador del Mundial 2014, con 6 goles.",
+    "falso": "El colombiano Radamel Falcao fue el goleador del Mundial 2014, con 6 goles.",
+    "explicacion": "Falcao se perdió Brasil 2014 por una lesión de rodilla. El goleador del torneo fue James, con 6 goles.",
+    "foto": "soccer volley kick"
+  },
+  {
+    "id": "deportes-064",
+    "tema": "deportes",
+    "icono": "🥇",
+    "dato": "México ganó el oro olímpico en fútbol en Londres 2012, venciendo 2-1 a Brasil en la final.",
+    "falso": "México ganó el oro olímpico en fútbol en Londres 2012, venciendo 2-1 a Argentina en la final.",
+    "explicacion": "Argentina no clasificó a Londres 2012. México le ganó 2-1 a Brasil en Wembley, con dos goles de Oribe Peralta.",
+    "foto": "gold medal close up"
+  },
+  {
+    "id": "deportes-065",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "En 2001, Australia le ganó 31-0 a Samoa Americana en una eliminatoria mundialista.",
+    "falso": "En 2001, Australia le ganó 31-0 a Fiyi en una eliminatoria mundialista.",
+    "explicacion": "El 31-0 fue ante Samoa Americana, y Archie Thompson anotó 13 de esos goles.",
+    "foto": "stadium scoreboard numbers"
+  },
+  {
+    "id": "deportes-066",
+    "tema": "deportes",
+    "icono": "⚽",
+    "dato": "En el Mundial de España 1982, Hungría le ganó 10-1 a El Salvador.",
+    "falso": "En el Mundial de España 1982, Hungría le ganó 10-1 a Honduras.",
+    "explicacion": "El 10-1 fue ante El Salvador. Honduras empató con España e Irlanda del Norte y cayó 1-0 ante Yugoslavia.",
+    "foto": "soccer goal celebration"
+  },
+  {
+    "id": "deportes-067",
+    "tema": "deportes",
+    "icono": "🥇",
+    "dato": "Michael Phelps ganó 8 medallas de oro en los Juegos Olímpicos de Pekín 2008.",
+    "falso": "Michael Phelps ganó 8 medallas de oro en los Juegos Olímpicos de Atenas 2004.",
+    "explicacion": "En Atenas 2004 ganó 6 oros y 2 bronces. Los 8 oros en unos mismos Juegos fueron en Pekín 2008.",
+    "foto": "swimmer butterfly stroke"
+  },
+  {
+    "id": "deportes-068",
+    "tema": "deportes",
+    "icono": "🏊",
+    "dato": "Michael Phelps se retiró con 23 medallas de oro olímpicas.",
+    "falso": "Michael Phelps se retiró con 30 medallas de oro olímpicas.",
+    "explicacion": "Phelps sumó 28 medallas olímpicas en total, y 23 de ellas fueron de oro.",
+    "foto": "gold medals hanging"
+  },
+  {
+    "id": "deportes-069",
+    "tema": "deportes",
+    "icono": "🏃",
+    "dato": "En 2009, en Berlín, Usain Bolt corrió los 100 metros planos en 9,58 segundos.",
+    "falso": "En 2009, en Berlín, Usain Bolt corrió los 100 metros planos en 9,48 segundos.",
+    "explicacion": "La marca de Bolt en el Mundial de Atletismo de Berlín 2009 fue de 9,58 s, nuevo récord mundial en ese momento.",
+    "foto": "sprinter running track"
+  },
+  {
+    "id": "deportes-070",
+    "tema": "deportes",
+    "icono": "🤸",
+    "dato": "En Montreal 1976, Nadia Comăneci logró el primer 10 perfecto de la gimnasia olímpica, con 14 años.",
+    "falso": "En Moscú 1980, Nadia Comăneci logró el primer 10 perfecto de la gimnasia olímpica, con 14 años.",
+    "explicacion": "El primer 10 olímpico fue en Montreal 1976, en barras asimétricas. El marcador no podía mostrarlo y marcó 1.00.",
+    "foto": "gymnast balance beam"
+  },
+  {
+    "id": "deportes-071",
+    "tema": "deportes",
+    "icono": "🏅",
+    "dato": "Los primeros Juegos Olímpicos modernos se celebraron en Atenas en 1896.",
+    "falso": "Los primeros Juegos Olímpicos modernos se celebraron en París en 1896.",
+    "explicacion": "París organizó los de 1900. Los primeros Juegos modernos fueron en Atenas, en 1896, impulsados por Pierre de Coubertin.",
+    "foto": "ancient greek ruins"
+  },
+  {
+    "id": "deportes-072",
+    "tema": "deportes",
+    "icono": "🏃",
+    "dato": "Jesse Owens ganó 4 medallas de oro en los Juegos Olímpicos de Berlín 1936.",
+    "falso": "Jesse Owens ganó 4 medallas de oro en los Juegos Olímpicos de Londres 1948.",
+    "explicacion": "Owens ganó 100 m, 200 m, salto largo y relevo 4×100 en Berlín 1936. No compitió en 1948.",
+    "foto": "athletes running track race"
+  },
+  {
+    "id": "deportes-073",
+    "tema": "deportes",
+    "icono": "🦶",
+    "dato": "El etíope Abebe Bikila ganó el maratón olímpico de Roma 1960 corriendo descalzo.",
+    "falso": "El etíope Abebe Bikila ganó el maratón olímpico de Tokio 1964 corriendo descalzo.",
+    "explicacion": "En Roma 1960 corrió descalzo. Volvió a ganar el maratón en Tokio 1964, pero esa vez con zapatillas.",
+    "foto": "barefoot runner road"
+  },
+  {
+    "id": "deportes-074",
+    "tema": "deportes",
+    "icono": "🏅",
+    "dato": "En México 1968, Bob Beamon saltó 8,90 metros y superó el récord mundial de salto largo por 55 cm.",
+    "falso": "En México 1968, Bob Beamon saltó 8,90 metros y superó el récord mundial de salto largo por 5 cm.",
+    "explicacion": "El récord anterior era de 8,35 m, así que Beamon lo superó por 55 cm en un solo salto.",
+    "foto": "long jump sand pit"
+  },
+  {
+    "id": "deportes-075",
+    "tema": "deportes",
+    "icono": "🏀",
+    "dato": "El baloncesto lo inventó el canadiense James Naismith en 1891, en Springfield, Estados Unidos.",
+    "falso": "El baloncesto lo inventó el canadiense James Naismith en 1931, en Springfield, Estados Unidos.",
+    "explicacion": "Naismith lo creó en diciembre de 1891 en una escuela de Springfield, Massachusetts, con canastas de duraznos.",
+    "foto": "basketball hoop swish"
+  },
+  {
+    "id": "deportes-076",
+    "tema": "deportes",
+    "icono": "🏐",
+    "dato": "El voleibol lo inventó William G. Morgan en 1895 y al principio se llamaba «mintonette».",
+    "falso": "El voleibol lo inventó James Naismith en 1895 y al principio se llamaba «mintonette».",
+    "explicacion": "Lo creó William G. Morgan en Holyoke, Estados Unidos, en 1895. Naismith había inventado el baloncesto en 1891.",
+    "foto": "volleyball match beach"
+  },
+  {
+    "id": "deportes-077",
+    "tema": "deportes",
+    "icono": "🏀",
+    "dato": "Michael Jordan ganó seis títulos de la NBA, todos con los Chicago Bulls.",
+    "falso": "Michael Jordan ganó siete títulos de la NBA, todos con los Chicago Bulls.",
+    "explicacion": "Jordan ganó 6: de 1991 a 1993 y de 1996 a 1998, todos con Chicago. Con los Wizards no llegó a playoffs.",
+    "foto": "basketball player dunking"
+  },
+  {
+    "id": "deportes-078",
+    "tema": "deportes",
+    "icono": "🏁",
+    "dato": "El primer Campeonato Mundial de Fórmula 1, en 1950, lo ganó el italiano Giuseppe Farina.",
+    "falso": "El primer Campeonato Mundial de Fórmula 1, en 1950, lo ganó el argentino Juan Manuel Fangio.",
+    "explicacion": "Fangio fue subcampeón en 1950 y luego ganó cinco títulos (1951 y 1954–1957). El primero fue de Farina, con Alfa Romeo.",
+    "foto": "race car track"
+  },
+  {
+    "id": "deportes-079",
+    "tema": "deportes",
+    "icono": "🚴",
+    "dato": "El primer Tour de Francia se corrió en 1903 y lo ganó el francés Maurice Garin.",
+    "falso": "El primer Tour de Francia se corrió en 1923 y lo ganó el francés Maurice Garin.",
+    "explicacion": "El Tour nació en 1903, organizado por el diario L'Auto, y Maurice Garin fue su primer campeón.",
+    "foto": "road cycling race"
+  },
+  {
+    "id": "deportes-080",
+    "tema": "deportes",
+    "icono": "⛳",
+    "dato": "En 1971, el astronauta Alan Shepard golpeó pelotas de golf en la Luna durante la misión Apolo 14.",
+    "falso": "En 1969, el astronauta Alan Shepard golpeó pelotas de golf en la Luna durante la misión Apolo 11.",
+    "explicacion": "Shepard no viajó en el Apolo 11. Jugó golf en la Luna en el Apolo 14, en febrero de 1971, con un palo improvisado.",
+    "foto": "astronaut moon surface"
+  }
 ]

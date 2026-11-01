@@ -4,9 +4,10 @@
 // de la zona que tapan la descripción y los botones de Facebook.
 import fs from 'node:fs';
 import os from 'node:os';
-import { spawn } from 'node:child_process';
+import path from 'node:path';
+import { spawn, spawnSync } from 'node:child_process';
 import ffmpegPath from 'ffmpeg-static';
-import { createCanvas } from '@napi-rs/canvas';
+import { createCanvas, loadImage } from '@napi-rs/canvas';
 import { wavBuffer } from '../bounce.mjs';
 import { MELODIAS, midiFreq } from '../../src/melodias.js';
 import { TEMAS } from './tarjetas.mjs';
@@ -18,7 +19,7 @@ const SANS = '"IBM Plex Sans", "STIX Two Text", system-ui, sans-serif', BLACK = 
 const VERDE = '#2fbf71', ROJO = '#ff5a5f';
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 // Opacidad de la escena (FADE es el fundido de salida)
-let FADE = 1;
+let FADE = 1, SOMBRA = false;
 const alfa = (ctx, v) => { ctx.globalAlpha = clamp(v) * FADE; };
 const ease = (x) => 1 - (1 - clamp(x)) ** 3;
 const back = (x) => { x = clamp(x); const c = 1.70158; return 1 + (c + 1) * (x - 1) ** 3 + c * (x - 1) ** 2; };
@@ -52,8 +53,23 @@ function fit(ctx, text, maxW, maxH, { from = 80, to = 34, peso = 700, fam = SANS
 // Texto centrado en una caja (cx, y0..y0+h)
 function bloque(ctx, f, cx, y0, h, color = '#fff') {
   ctx.font = font(f.peso, f.size, f.fam); ctx.fillStyle = color; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  if (SOMBRA) { ctx.shadowColor = 'rgba(0,0,0,0.75)'; ctx.shadowBlur = 18; ctx.shadowOffsetY = 3; }
   const top = y0 + (h - f.lines.length * f.lh) / 2 + f.size * 0.86;
   f.lines.forEach((l, i) => ctx.fillText(l, cx, top + i * f.lh));
+  ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
+}
+// Caja de texto: translúcida clara sobre los fondos de color, oscura sobre video
+const panel = (e) => e.fondo ? 'rgba(0,0,0,0.52)' : 'rgba(255,255,255,0.09)';
+// Velo sobre el video: más oscuro arriba y abajo, donde van el texto y la interfaz de Facebook
+function velo(ctx) {
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, 'rgba(0,0,0,0.62)'); g.addColorStop(0.3, 'rgba(0,0,0,0.30)'); g.addColorStop(0.7, 'rgba(0,0,0,0.38)'); g.addColorStop(1, 'rgba(0,0,0,0.72)');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+}
+// Imagen que cubre un rectángulo (recortada al centro), dentro de un marco redondeado
+function cubrir(ctx, img, x, y, w, h, r) {
+  const k = Math.max(w / img.width, h / img.height), iw = img.width * k, ih = img.height * k;
+  ctx.save(); ctx.beginPath(); ctx.roundRect(x, y, w, h, r); ctx.clip(); ctx.drawImage(img, x + (w - iw) / 2, y + (h - ih) / 2, iw, ih); ctx.restore();
 }
 function caja(ctx, x, y, w, h, r, fill, stroke, lw = 4) {
   ctx.beginPath(); ctx.roundRect(x, y, w, h, r);
@@ -151,12 +167,12 @@ const ESCENAS = {
       ctx.font = font(400, 84, BLACK); ctx.fillStyle = '#111'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(`#${e.n}`, W / 2, 446);
     });
     const si = back((lt - 0.1) / 0.4);
-    if (si > 0.01) escala(ctx, si, W / 2, 680, () => emoji(ctx, e.icono, W / 2, 680 + 10 * Math.sin(lt * 3), 180));
+    if (si > 0.01 && !e.fondo) escala(ctx, si, W / 2, 680, () => emoji(ctx, e.icono, W / 2, 680 + 10 * Math.sin(lt * 3), 180));
     const a = ease((lt - 0.15) / 0.35);
     alfa(ctx, a);
-    const dy = (1 - a) * 60;
-    caja(ctx, 70, 820 + dy, W - 140, 560, 36, 'rgba(255,255,255,0.09)', 'rgba(255,255,255,0.16)', 3);
-    bloque(ctx, fit(ctx, e.texto, W - 220, 500, { from: 72, to: 40, peso: 700 }), W / 2, 850 + dy, 500);
+    const dy = (1 - a) * 60, y0 = e.fondo ? 860 : 820;
+    caja(ctx, 70, y0 + dy, W - 140, 520, 36, panel(e), 'rgba(255,255,255,0.16)', 3);
+    bloque(ctx, fit(ctx, e.texto, W - 220, 470, { from: 72, to: 40, peso: 700 }), W / 2, y0 + 25 + dy, 470);
     alfa(ctx, 1);
   },
   // Verdadero o falso: la afirmación, dos botones, cuenta atrás y la respuesta
@@ -166,7 +182,7 @@ const ESCENAS = {
     const a = ease(lt / 0.3);
     alfa(ctx, a);
     const borde = revela ? (e.verdadero ? VERDE : ROJO) : 'rgba(255,255,255,0.16)';
-    caja(ctx, 70, 420, W - 140, 580, 36, 'rgba(255,255,255,0.09)', borde, revela ? 7 : 3);
+    caja(ctx, 70, 420, W - 140, 580, 36, panel(e), borde, revela ? 7 : 3);
     if (!revela || e.verdadero) {
       emoji(ctx, e.icono, W / 2, 505, 110);
       bloque(ctx, fit(ctx, `«${e.texto}»`, W - 220, 400, { from: 68, to: 38, peso: 700 }), W / 2, 570, 400);
@@ -202,7 +218,7 @@ const ESCENAS = {
       escala(ctx, s, W / 2, 610, () => emoji(ctx, e.bandera, W / 2, 610, 300));
       yOp = 850;
     } else {
-      caja(ctx, 70, 420, W - 140, 370, 36, 'rgba(255,255,255,0.09)', 'rgba(255,255,255,0.16)', 3);
+      caja(ctx, 70, 420, W - 140, 370, 36, panel(e), 'rgba(255,255,255,0.16)', 3);
       if (revela && e.explicacion) {
         alfa(ctx, a * ease(rt / 0.3));
         bloque(ctx, fit(ctx, e.explicacion, W - 220, 320, { from: 54, to: 32, peso: 600 }), W / 2, 445, 320);
@@ -249,10 +265,20 @@ const ESCENAS = {
     [[e.a, e.icono_a, 400, '#2f6fb5'], [e.b, e.icono_b, 900, '#c2324a']].forEach(([txt, ic, y, color], i) => {
       const s = back((lt - 0.1 - i * 0.15) / 0.4); if (s <= 0.01) return;
       const pulso = fin ? 1 + 0.025 * Math.sin((lt - e.piensa) * 7 + i * Math.PI) : 1;
+      const img = i === 0 ? e.imgA : e.imgB;
       escala(ctx, s * pulso, W / 2, y + 200, () => {
         caja(ctx, 70, y, W - 140, 400, 40, color, 'rgba(255,255,255,0.35)', 4);
-        emoji(ctx, ic, W / 2, y + 115, 130);
-        bloque(ctx, fit(ctx, txt, W - 220, 190, { from: 70, to: 40, peso: 700 }), W / 2, y + 190, 190);
+        if (img) {
+          // Foto real con un degradado del color de la opción abajo, para que el texto se lea
+          cubrir(ctx, img, 74, y + 4, W - 148, 392, 36);
+          const g = ctx.createLinearGradient(0, y + 120, 0, y + 400); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, color);
+          ctx.fillStyle = g; ctx.beginPath(); ctx.roundRect(74, y + 4, W - 148, 392, 36); ctx.fill();
+          emoji(ctx, ic, 150, y + 75, 70);
+          SOMBRA = true; bloque(ctx, fit(ctx, txt, W - 220, 150, { from: 70, to: 40, peso: 700 }), W / 2, y + 235, 150); SOMBRA = false;
+        } else {
+          emoji(ctx, ic, W / 2, y + 115, 130);
+          bloque(ctx, fit(ctx, txt, W - 220, 190, { from: 70, to: 40, peso: 700 }), W / 2, y + 190, 190);
+        }
       });
     });
     const so = back((lt - 0.4) / 0.3);
@@ -288,7 +314,7 @@ const ESCENAS = {
     if (si > 0.01) escala(ctx, si, W / 2, 480, () => emoji(ctx, e.icono, W / 2, 480, 120));
     const a = ease((lt - 0.15) / 0.35), dy = (1 - a) * 50;
     alfa(ctx, a);
-    caja(ctx, 70, 570 + dy, W - 140, 620, 36, 'rgba(255,255,255,0.09)', 'rgba(255,255,255,0.16)', 3);
+    caja(ctx, 70, 570 + dy, W - 140, 620, 36, panel(e), 'rgba(255,255,255,0.16)', 3);
     bloque(ctx, fit(ctx, e.titular, W - 220, 560, { from: 74, to: 40, peso: 700 }), W / 2, 600 + dy, 560);
     ctx.font = font(600, 40); ctx.fillStyle = e.tema.acento; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(e.pie, W / 2, 1255 + dy);
     alfa(ctx, 1);
@@ -349,16 +375,29 @@ export async function renderQuiz({ escenas, out, melodia, emojiFont = '', still,
   const lista = escenas.map((e) => { const r = { ...e, t0, tema: TEMAS[e.tema] || TEMAS.noticias }; t0 += e.dur; return r; });
   const dur = t0, frames = Math.ceil(dur * FPS);
   const cv = createCanvas(W, H), ctx = cv.getContext('2d');
-  const dibujar = (t) => {
+  for (const e of lista) for (const k of ['A', 'B']) if (e[`foto${k}`]) e[`img${k}`] = await loadImage(fs.readFileSync(e[`foto${k}`])).catch(() => null);
+  const conVideo = lista.filter((e) => e.fondo);
+  const dibujar = (t, debajo) => {
     const e = lista.find((x) => t < x.t0 + x.dur) || lista.at(-1), lt = t - e.t0;
-    fondo(ctx, e.tema, t);
+    // Con video, el canvas es una capa transparente (velo y texto) que ffmpeg pone encima del clip
+    if (e.fondo) { ctx.clearRect(0, 0, W, H); if (debajo) ctx.drawImage(debajo, 0, 0, W, H); velo(ctx); } else fondo(ctx, e.tema, t);
+    SOMBRA = !!e.fondo;
     if (e.idx != null) cabecera(ctx, e.tema, e.idx, e.total, lt / e.dur); else marca(ctx, e.tema, 235);
     // Salida: las escenas se desvanecen el último cuarto de segundo
     FADE = e === lista.at(-1) ? 1 : clamp((e.dur - lt) / 0.22);
     alfa(ctx, 1); ESCENAS[e.tipo](ctx, e, lt);
-    FADE = 1; ctx.globalAlpha = 1;
+    FADE = 1; ctx.globalAlpha = 1; SOMBRA = false;
   };
-  if (still != null) { dibujar(+still); fs.writeFileSync(out, cv.toBuffer('image/png')); return { out, duration: dur }; }
+  if (still != null) {
+    // Vista previa: el cuadro del clip en ese instante debajo del texto
+    const e = lista.find((x) => +still < x.t0 + x.dur) || lista.at(-1); let debajo = null;
+    if (e.fondo) {
+      const png = path.join(os.tmpdir(), `cuadro-${process.pid}.png`);
+      spawnSync(ffmpegPath, ['-hide_banner', '-loglevel', 'error', '-y', '-ss', String(Math.max(0, +still - e.t0)), '-i', e.fondo, '-frames:v', '1', '-vf', `scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H}`, png]);
+      debajo = await loadImage(fs.readFileSync(png)).catch(() => null); fs.rmSync(png, { force: true });
+    }
+    dibujar(+still, debajo); fs.writeFileSync(out, cv.toBuffer('image/png')); return { out, duration: dur };
+  }
 
   // Audio: música de fondo + efectos de cada escena; limitador suave al final
   const buf = new Float32Array(Math.ceil((dur + 0.5) * SR));
@@ -368,9 +407,22 @@ export async function renderQuiz({ escenas, out, melodia, emojiFont = '', still,
   const wav = `${os.tmpdir()}/quiz-${process.pid}-${Date.now()}.wav`;
   fs.writeFileSync(wav, wavBuffer(buf, SR));
 
+  // Sin video: el canvas es el cuadro entero. Con video: cada escena aporta su clip (o negro), se concatenan y el
+  // canvas (con transparencia) va encima
+  const color = 'scale=out_color_matrix=bt709:out_range=tv,format=yuv420p';
+  const entradas = []; let mapa = ['-map', '0:v', '-map', '1:a', '-vf', color];
+  if (conVideo.length) {
+    const partes = lista.map((e, i) => {
+      const d = e.dur.toFixed(3);
+      if (!e.fondo) return `color=c=black:s=${W}x${H}:r=${FPS}:d=${d},format=yuv420p,setsar=1[b${i}]`;
+      const k = 2 + conVideo.indexOf(e); entradas.push('-stream_loop', '-1', '-t', d, '-i', e.fondo);
+      return `[${k}:v]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=${FPS},trim=duration=${d},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[b${i}]`;
+    });
+    const filtro = `${partes.join(';')};${lista.map((_, i) => `[b${i}]`).join('')}concat=n=${lista.length}:v=1:a=0[fondo];[0:v]format=rgba[capa];[fondo][capa]overlay=0:0:format=auto,${color}[v]`;
+    mapa = ['-filter_complex', filtro, '-map', '[v]', '-map', '1:a'];
+  }
   const args = ['-hide_banner', '-loglevel', 'error', '-y',
-    '-f', 'rawvideo', '-pix_fmt', 'rgba', '-s', `${W}x${H}`, '-r', String(FPS), '-i', 'pipe:0', '-i', wav, '-map', '0:v', '-map', '1:a',
-    '-vf', 'scale=out_color_matrix=bt709:out_range=tv,format=yuv420p',
+    '-f', 'rawvideo', '-pix_fmt', 'rgba', '-s', `${W}x${H}`, '-r', String(FPS), '-i', 'pipe:0', '-i', wav, ...entradas, ...mapa,
     '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-profile:v', 'high', '-level:v', '4.2', '-g', String(FPS * 2),
     '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-color_range', 'tv',
     '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11', '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-ac', '2', '-t', dur.toFixed(3), '-movflags', '+faststart', out];

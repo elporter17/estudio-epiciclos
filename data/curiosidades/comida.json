@@ -5,7 +5,8 @@
     "icono": "🍫",
     "dato": "Los aztecas usaban semillas de cacao como moneda: con ellas se pagaban productos en los mercados.",
     "falso": "Los aztecas usaban granos de café como moneda: con ellos se pagaban productos en los mercados.",
-    "explicacion": "El café no llegó a América hasta el siglo XVIII. Los aztecas sí pagaban con semillas de cacao, que eran valiosas y fáciles de contar."
+    "explicacion": "El café no llegó a América hasta el siglo XVIII. Los aztecas sí pagaban con semillas de cacao, que eran valiosas y fáciles de contar.",
+    "foto": "cocoa beans hands"
   },
   {
     "id": "comida-002",
@@ -13,7 +14,8 @@
     "icono": "🌶️",
     "dato": "El chocolate de los aztecas era una bebida amarga y espumosa, sin azúcar y a veces con chile.",
     "falso": "El chocolate de los aztecas era una bebida muy dulce y espumosa, endulzada con azúcar de caña.",
-    "explicacion": "La caña de azúcar no existía en el México antiguo. El cacao se bebía amargo, con chile o vainilla; el chocolate dulce se popularizó en Europa."
+    "explicacion": "La caña de azúcar no existía en el México antiguo. El cacao se bebía amargo, con chile o vainilla; el chocolate dulce se popularizó en Europa.",
+    "foto": "hot chocolate pouring"
   },
   {
     "id": "comida-003",
@@ -21,7 +23,8 @@
     "icono": "🥛",
     "dato": "El chocolate con leche lo creó el chocolatero suizo Daniel Peter, que lo lanzó en 1875.",
     "falso": "El chocolate con leche lo creó el chocolatero belga Daniel Peter, que lo lanzó en 1875.",
-    "explicacion": "Daniel Peter era suizo y trabajaba en Vevey, Suiza. Usó la leche condensada de su vecino Henri Nestlé para lograrlo."
+    "explicacion": "Daniel Peter era suizo y trabajaba en Vevey, Suiza. Usó la leche condensada de su vecino Henri Nestlé para lograrlo.",
+    "foto": "milk chocolate bar"
   },
   {
     "id": "comida-004",
@@ -29,7 +32,8 @@
     "icono": "🍫",
     "dato": "El chocolate blanco no lleva pasta de cacao: se hace con manteca de cacao, azúcar y leche.",
     "falso": "El chocolate blanco se hace con pasta de cacao a la que se le quita el color con leche y azúcar.",
-    "explicacion": "Al chocolate blanco no se le quita el color: simplemente no lleva la pasta oscura del cacao, solo su grasa, la manteca de cacao."
+    "explicacion": "Al chocolate blanco no se le quita el color: simplemente no lleva la pasta oscura del cacao, solo su grasa, la manteca de cacao.",
+    "foto": "white chocolate pieces"
   },
   {
     "id": "comida-005",
@@ -37,7 +41,8 @@
     "icono": "🌱",
     "dato": "Los rastros más antiguos del uso del cacao, de hace unos 5300 años, se hallaron en la Amazonía de Ecuador.",
     "falso": "Los rastros más antiguos del uso del cacao, de hace unos 5300 años, se hallaron en la península de Yucatán.",
-    "explicacion": "Los mayas y aztecas hicieron famoso el cacao, pero los restos más antiguos están en Santa Ana-La Florida, en la Amazonía ecuatoriana."
+    "explicacion": "Los mayas y aztecas hicieron famoso el cacao, pero los restos más antiguos están en Santa Ana-La Florida, en la Amazonía ecuatoriana.",
+    "foto": "cacao pod tree"
   },
   {
     "id": "comida-006",
@@ -45,7 +50,8 @@
     "icono": "☕",
     "dato": "Brasil es el mayor productor de café del mundo: cosecha cerca de un tercio de todo el café del planeta.",
     "falso": "Colombia es el mayor productor de café del mundo: cosecha cerca de un tercio de todo el café del planeta.",
-    "explicacion": "Colombia es famosa por su café, pero Brasil lleva más de 150 años como el mayor productor, muy por delante de Vietnam y Colombia."
+    "explicacion": "Colombia es famosa por su café, pero Brasil lleva más de 150 años como el mayor productor, muy por delante de Vietnam y Colombia.",
+    "foto": "coffee plantation harvest"
   },
   {
     "id": "comida-007",
@@ -53,7 +59,8 @@
     "icono": "🍒",
     "dato": "Los granos de café son las semillas de un fruto rojo parecido a una cereza, que crece en un arbusto.",
     "falso": "Los granos de café son las semillas de una vaina parecida a la del frijol, que crece en una enredadera.",
-    "explicacion": "El café no es una legumbre. Sus granos son las semillas de la «cereza» del cafeto, un arbusto: cada fruto suele tener dos."
+    "explicacion": "El café no es una legumbre. Sus granos son las semillas de la «cereza» del cafeto, un arbusto: cada fruto suele tener dos.",
+    "foto": "red coffee cherries"
   },
   {
     "id": "comida-008",
@@ -61,7 +68,8 @@
     "icono": "☕",
     "dato": "Honduras es el mayor productor de café de Centroamérica y está entre los diez mayores del mundo.",
     "falso": "Costa Rica es el mayor productor de café de Centroamérica y está entre los diez mayores del mundo.",
-    "explicacion": "Costa Rica tiene un café muy apreciado, pero Honduras produce varias veces más y es el primer productor de la región."
+    "explicacion": "Costa Rica tiene un café muy apreciado, pero Honduras produce varias veces más y es el primer productor de la región.",
+    "foto": "coffee farm mountains"
   },
   {
     "id": "comida-009",
@@ -69,7 +77,8 @@
     "icono": "🌽",
     "dato": "El maíz se domesticó en el sur de México hace unos 9000 años, a partir de una hierba silvestre: el teocintle.",
     "falso": "El maíz se domesticó en los Andes de Perú hace unos 9000 años, a partir de una hierba silvestre: el teocintle.",
-    "explicacion": "El teocintle crece en México. Los estudios genéticos ubican el origen del maíz en la cuenca del río Balsas; luego se extendió por América."
+    "explicacion": "El teocintle crece en México. Los estudios genéticos ubican el origen del maíz en la cuenca del río Balsas; luego se extendió por América.",
+    "foto": "corn field"
   },
   {
     "id": "comida-010",
@@ -77,7 +86,8 @@
     "icono": "🍿",
     "dato": "Las palomitas revientan porque el agua dentro del grano de maíz se vuelve vapor y rompe la cáscara.",
     "falso": "Las palomitas revientan porque el aceite dentro del grano de maíz se vuelve gas y rompe la cáscara.",
-    "explicacion": "Es el agua: cada grano guarda un poco de humedad que, al calentarse, se vuelve vapor a presión hasta que la cáscara dura estalla."
+    "explicacion": "Es el agua: cada grano guarda un poco de humedad que, al calentarse, se vuelve vapor a presión hasta que la cáscara dura estalla.",
+    "foto": "popcorn popping"
   },
   {
     "id": "comida-011",
@@ -85,7 +95,8 @@
     "icono": "🌽",
     "dato": "El maíz para tortillas se cuece con cal: la nixtamalización, una técnica mesoamericana de hace miles de años.",
     "falso": "El maíz para tortillas se cuece con vinagre: la nixtamalización, una técnica mesoamericana de hace miles de años.",
-    "explicacion": "La nixtamalización usa cal (o ceniza), no vinagre. Ablanda la cáscara del grano y permite hacer una masa que se puede moldear."
+    "explicacion": "La nixtamalización usa cal (o ceniza), no vinagre. Ablanda la cáscara del grano y permite hacer una masa que se puede moldear.",
+    "foto": "corn tortillas comal"
   },
   {
     "id": "comida-012",
@@ -93,7 +104,8 @@
     "icono": "📜",
     "dato": "Según el Popol Vuh, libro sagrado de los mayas k'iche', los dioses formaron a los humanos con masa de maíz.",
     "falso": "Según el Popol Vuh, libro sagrado de los mayas k'iche', los dioses formaron a los humanos con granos de cacao.",
-    "explicacion": "En el Popol Vuh los dioses prueban primero con barro y luego con madera; los humanos verdaderos los hacen al fin con maíz."
+    "explicacion": "En el Popol Vuh los dioses prueban primero con barro y luego con madera; los humanos verdaderos los hacen al fin con maíz.",
+    "foto": "corn masa hands"
   },
   {
     "id": "comida-013",
@@ -101,7 +113,8 @@
     "icono": "🥔",
     "dato": "La papa se domesticó en los Andes, cerca del lago Titicaca, hace más de 7000 años.",
     "falso": "La papa se domesticó en Irlanda, cerca del río Shannon, hace más de 7000 años.",
-    "explicacion": "Irlanda llegó a depender de la papa, pero esta es americana: nació entre Perú y Bolivia y llegó a Europa en el siglo XVI."
+    "explicacion": "Irlanda llegó a depender de la papa, pero esta es americana: nació entre Perú y Bolivia y llegó a Europa en el siglo XVI.",
+    "foto": "potato harvest field"
   },
   {
     "id": "comida-014",
@@ -109,7 +122,8 @@
     "icono": "🥔",
     "dato": "En Perú se cultivan más de 3000 variedades de papa, de colores que van del amarillo al morado.",
     "falso": "En Perú se cultivan solo unas 30 variedades de papa, de colores que van del amarillo al morado.",
-    "explicacion": "Perú es el país con más variedades de papa del mundo: se cuentan por miles, muchas cultivadas solo por comunidades de los Andes."
+    "explicacion": "Perú es el país con más variedades de papa del mundo: se cuentan por miles, muchas cultivadas solo por comunidades de los Andes.",
+    "foto": "colorful potatoes market"
   },
   {
     "id": "comida-015",
@@ -117,7 +131,8 @@
     "icono": "❄️",
     "dato": "En los Andes se hace chuño: papa que se congela de noche y se seca al sol hasta que dura años.",
     "falso": "En los Andes se hace chuño: papa que se hierve en agua con sal hasta que dura años.",
-    "explicacion": "El chuño se hace congelando y secando la papa una y otra vez a gran altura. Es una forma muy antigua de secado en frío."
+    "explicacion": "El chuño se hace congelando y secando la papa una y otra vez a gran altura. Es una forma muy antigua de secado en frío.",
+    "foto": "andes farmers field"
   },
   {
     "id": "comida-016",
@@ -125,7 +140,8 @@
     "icono": "🍅",
     "dato": "La palabra tomate viene del náhuatl tomatl, la lengua que hablaban los aztecas en México.",
     "falso": "La palabra tomate viene del latín tomatum, la lengua que hablaban los romanos en Italia.",
-    "explicacion": "Los romanos nunca vieron un tomate: la planta es americana y llegó a Europa en el siglo XVI con su nombre náhuatl."
+    "explicacion": "Los romanos nunca vieron un tomate: la planta es americana y llegó a Europa en el siglo XVI con su nombre náhuatl.",
+    "foto": "fresh tomatoes vine"
   },
   {
     "id": "comida-017",
@@ -133,7 +149,8 @@
     "icono": "🍅",
     "dato": "En Italia el tomate se llama pomodoro, de «pomo d'oro»: manzana de oro.",
     "falso": "En Italia el tomate se llama pomodoro, de «pomo d'amore»: manzana del amor.",
-    "explicacion": "Pomodoro viene de «pomo d'oro», manzana de oro, quizá porque los primeros tomates en llegar eran amarillos. «Manzana del amor» es francés."
+    "explicacion": "Pomodoro viene de «pomo d'oro», manzana de oro, quizá porque los primeros tomates en llegar eran amarillos. «Manzana del amor» es francés.",
+    "foto": "italian tomato sauce"
   },
   {
     "id": "comida-018",
@@ -141,7 +158,8 @@
     "icono": "⚖️",
     "dato": "En 1893, la Corte Suprema de EE. UU. declaró que el tomate era una verdura para cobrarle impuestos.",
     "falso": "En 1893, la Corte Suprema de EE. UU. declaró que el tomate era una fruta para no cobrarle impuestos.",
-    "explicacion": "En botánica el tomate es un fruto, pero en el caso Nix contra Hedden la corte lo trató como verdura, que pagaba aranceles."
+    "explicacion": "En botánica el tomate es un fruto, pero en el caso Nix contra Hedden la corte lo trató como verdura, que pagaba aranceles.",
+    "foto": "tomatoes vegetables market"
   },
   {
     "id": "comida-019",
@@ -149,7 +167,8 @@
     "icono": "🍅",
     "dato": "En la Tomatina de Buñol, España, miles de personas se lanzan tomates el último miércoles de agosto.",
     "falso": "En la Tomatina de Buñol, Italia, miles de personas se lanzan tomates el último miércoles de agosto.",
-    "explicacion": "Buñol es un pueblo de Valencia, en España. La Tomatina se celebra allí desde mediados del siglo XX."
+    "explicacion": "Buñol es un pueblo de Valencia, en España. La Tomatina se celebra allí desde mediados del siglo XX.",
+    "foto": "tomatoes falling slow motion"
   },
   {
     "id": "comida-020",
@@ -157,7 +176,8 @@
     "icono": "🥑",
     "dato": "La palabra guacamole viene del náhuatl ahuacamolli, que significa salsa de aguacate.",
     "falso": "La palabra guacamole viene del náhuatl ahuacamolli, que significa salsa de tomate verde.",
-    "explicacion": "En náhuatl, ahuacatl es aguacate y molli es salsa. La salsa de tomate verde se llama salsa verde."
+    "explicacion": "En náhuatl, ahuacatl es aguacate y molli es salsa. La salsa de tomate verde se llama salsa verde.",
+    "foto": "guacamole making"
   },
   {
     "id": "comida-021",
@@ -165,7 +185,8 @@
     "icono": "🥑",
     "dato": "México es el mayor productor de aguacate del mundo, muy por delante de cualquier otro país.",
     "falso": "España es el mayor productor de aguacate del mundo, muy por delante de cualquier otro país.",
-    "explicacion": "España cultiva algo de aguacate, pero México, su tierra de origen, produce varias veces más que cualquier otro país."
+    "explicacion": "España cultiva algo de aguacate, pero México, su tierra de origen, produce varias veces más que cualquier otro país.",
+    "foto": "avocado cut half"
   },
   {
     "id": "comida-022",
@@ -173,7 +194,8 @@
     "icono": "🌼",
     "dato": "La vainilla es el fruto de una orquídea trepadora originaria de México y Centroamérica.",
     "falso": "La vainilla es la corteza de un árbol originario de la isla de Madagascar, en África.",
-    "explicacion": "Hoy Madagascar produce la mayor parte, pero la vainilla es la vaina de una orquídea americana que ya usaban los totonacas."
+    "explicacion": "Hoy Madagascar produce la mayor parte, pero la vainilla es la vaina de una orquídea americana que ya usaban los totonacas.",
+    "foto": "vanilla orchid flower"
   },
   {
     "id": "comida-023",
@@ -181,7 +203,8 @@
     "icono": "🌼",
     "dato": "En 1841, Edmond Albius, un niño esclavizado de 12 años en la isla Reunión, ideó cómo polinizar la vainilla a mano.",
     "falso": "En 1841, un famoso botánico de París ideó cómo polinizar la vainilla a mano con un pincel.",
-    "explicacion": "Fuera de México la vainilla casi no daba frutos. El método rápido con una varita lo ideó el niño Edmond Albius, y aún se usa."
+    "explicacion": "Fuera de México la vainilla casi no daba frutos. El método rápido con una varita lo ideó el niño Edmond Albius, y aún se usa.",
+    "foto": "vanilla pods close up"
   },
   {
     "id": "comida-024",
@@ -189,7 +212,8 @@
     "icono": "🌮",
     "dato": "La baleada, una tortilla de harina de trigo con frijoles, mantequilla y queso, es un plato típico de Honduras.",
     "falso": "La baleada, una tortilla de harina de trigo con frijoles, mantequilla y queso, es un plato típico de Chile.",
-    "explicacion": "La baleada es hondureña: se dice que nació en la costa norte, en La Ceiba, y hoy se vende en todo el país."
+    "explicacion": "La baleada es hondureña: se dice que nació en la costa norte, en La Ceiba, y hoy se vende en todo el país.",
+    "foto": "flour tortilla cooking"
   },
   {
     "id": "comida-025",
@@ -197,7 +221,8 @@
     "icono": "🐚",
     "dato": "La sopa de caracol con leche de coco se hizo famosa en 1991 por una canción de la Banda Blanca, de Honduras.",
     "falso": "La sopa de caracol con leche de coco se hizo famosa en 1991 por una canción de una banda de Puerto Rico.",
-    "explicacion": "«Sopa de caracol» la popularizó la agrupación hondureña Banda Blanca. Es un plato típico de la costa caribe de Honduras."
+    "explicacion": "«Sopa de caracol» la popularizó la agrupación hondureña Banda Blanca. Es un plato típico de la costa caribe de Honduras.",
+    "foto": "seafood coconut soup"
   },
   {
     "id": "comida-026",
@@ -205,7 +230,8 @@
     "icono": "🫓",
     "dato": "El Salvador celebra el Día Nacional de la Pupusa el segundo domingo de noviembre.",
     "falso": "Guatemala celebra el Día Nacional de la Pupusa el segundo domingo de noviembre.",
-    "explicacion": "La pupusa es el plato nacional de El Salvador, y una ley de 2005 le dedicó un día de fiesta cada año."
+    "explicacion": "La pupusa es el plato nacional de El Salvador, y una ley de 2005 le dedicó un día de fiesta cada año.",
+    "foto": "pupusas griddle"
   },
   {
     "id": "comida-027",
@@ -213,7 +239,8 @@
     "icono": "🍃",
     "dato": "La palabra nacatamal viene del náhuatl: nacatl significa carne y tamalli, tamal. Se envuelve en hoja de plátano.",
     "falso": "La palabra nacatamal viene del náhuatl: nacatl significa maíz y tamalli, tamal. Se envuelve en hoja de plátano.",
-    "explicacion": "Nacatl es carne en náhuatl: el nacatamal de Honduras y Nicaragua es un tamal grande relleno de carne. Maíz se dice tlaolli o centli."
+    "explicacion": "Nacatl es carne en náhuatl: el nacatamal de Honduras y Nicaragua es un tamal grande relleno de carne. Maíz se dice tlaolli o centli.",
+    "foto": "tamales banana leaves"
   },
   {
     "id": "comida-028",
@@ -221,7 +248,8 @@
     "icono": "🍞",
     "dato": "Los garífunas de Honduras hacen casabe: un pan plano y crujiente de yuca rallada, cocido en comal y secado al sol.",
     "falso": "Los garífunas de Honduras hacen casabe: un pan plano y crujiente de trigo molido, cocido en comal y secado al sol.",
-    "explicacion": "El casabe se hace con yuca, a la que se le exprime el jugo antes de cocinarla. Es un alimento de origen indígena caribeño."
+    "explicacion": "El casabe se hace con yuca, a la que se le exprime el jugo antes de cocinarla. Es un alimento de origen indígena caribeño.",
+    "foto": "cassava root"
   },
   {
     "id": "comida-029",
@@ -229,7 +257,8 @@
     "icono": "🍌",
     "dato": "El banano Cavendish, el más vendido hoy, reemplazó al Gros Michel, que un hongo arrasó a mediados del siglo XX.",
     "falso": "El banano Cavendish, el más vendido hoy, reemplazó al Gros Michel, que una plaga de langostas arrasó a mediados del siglo XX.",
-    "explicacion": "Fue un hongo del suelo, el mal de Panamá, el que acabó con las plantaciones de Gros Michel en Centroamérica y otros lugares."
+    "explicacion": "Fue un hongo del suelo, el mal de Panamá, el que acabó con las plantaciones de Gros Michel en Centroamérica y otros lugares.",
+    "foto": "banana plantation"
   },
   {
     "id": "comida-030",
@@ -237,7 +266,8 @@
     "icono": "🍓",
     "dato": "En botánica, el banano y el aguacate son bayas, pero la fresa no lo es.",
     "falso": "En botánica, la fresa y la frambuesa son bayas, pero el banano no lo es.",
-    "explicacion": "Una baya nace de un solo ovario con las semillas dentro, como el banano. La fresa y la frambuesa son otros tipos de fruto."
+    "explicacion": "Una baya nace de un solo ovario con las semillas dentro, como el banano. La fresa y la frambuesa son otros tipos de fruto.",
+    "foto": "strawberries close up"
   },
   {
     "id": "comida-031",
@@ -245,7 +275,8 @@
     "icono": "🌮",
     "dato": "La UNESCO declaró la cocina tradicional mexicana Patrimonio Cultural Inmaterial de la Humanidad en 2010.",
     "falso": "La UNESCO declaró la cocina tradicional mexicana Patrimonio Cultural Inmaterial de la Humanidad en 1950.",
-    "explicacion": "La lista de Patrimonio Inmaterial de la UNESCO se creó en este siglo. La cocina mexicana entró en ella en 2010."
+    "explicacion": "La lista de Patrimonio Inmaterial de la UNESCO se creó en este siglo. La cocina mexicana entró en ella en 2010.",
+    "foto": "mexican food table"
   },
   {
     "id": "comida-032",
@@ -253,7 +284,8 @@
     "icono": "🌶️",
     "dato": "Los chiles en nogada, verdes, blancos y rojos como la bandera de México, son un plato típico de Puebla.",
     "falso": "Los chiles en nogada, verdes, blancos y rojos como la bandera de México, son un plato típico de Sonora.",
-    "explicacion": "Es un plato poblano de temporada: se prepara a finales del verano, cuando hay nueces frescas y granadas."
+    "explicacion": "Es un plato poblano de temporada: se prepara a finales del verano, cuando hay nueces frescas y granadas.",
+    "foto": "stuffed peppers plate"
   },
   {
     "id": "comida-033",
@@ -261,7 +293,8 @@
     "icono": "🌶️",
     "dato": "Los chiles son de América: llegaron a la India y a Tailandia después de 1492, con los portugueses.",
     "falso": "Los chiles son de la India: llegaron a México y a Perú después de 1492, con los portugueses.",
-    "explicacion": "Antes de Colón, en la India no había chile. Hoy es básico en la cocina asiática, pero se domesticó en América hace miles de años."
+    "explicacion": "Antes de Colón, en la India no había chile. Hoy es básico en la cocina asiática, pero se domesticó en América hace miles de años.",
+    "foto": "red chili peppers"
   },
   {
     "id": "comida-034",
@@ -269,7 +302,8 @@
     "icono": "🍲",
     "dato": "El mole poblano puede llevar más de 20 ingredientes, entre ellos varios chiles, especias y chocolate.",
     "falso": "El mole poblano lleva solo 3 ingredientes: chile, ajo y sal, y nunca chocolate.",
-    "explicacion": "El mole poblano es famoso por su larga lista de ingredientes: chiles secos, especias, semillas, pan o tortilla y chocolate."
+    "explicacion": "El mole poblano es famoso por su larga lista de ingredientes: chiles secos, especias, semillas, pan o tortilla y chocolate.",
+    "foto": "mole sauce"
   },
   {
     "id": "comida-035",
@@ -277,7 +311,8 @@
     "icono": "🌳",
     "dato": "El chicle original se hacía con la savia del árbol de chicozapote, que los mayas ya masticaban.",
     "falso": "El chicle original se hacía con la savia del árbol de caucho de Asia, que los chinos ya masticaban.",
-    "explicacion": "El chicozapote crece en México y Centroamérica. Los mayas y aztecas mascaban su resina, y de su nombre náhuatl, tzictli, viene «chicle»."
+    "explicacion": "El chicozapote crece en México y Centroamérica. Los mayas y aztecas mascaban su resina, y de su nombre náhuatl, tzictli, viene «chicle».",
+    "foto": "chewing gum bubble"
   },
   {
     "id": "comida-036",
@@ -285,7 +320,8 @@
     "icono": "🐟",
     "dato": "La UNESCO declaró en 2023 la preparación del ceviche peruano Patrimonio Cultural Inmaterial de la Humanidad.",
     "falso": "La UNESCO declaró en 2023 la preparación del ceviche chileno Patrimonio Cultural Inmaterial de la Humanidad.",
-    "explicacion": "El ceviche se prepara en varios países, pero el reconocimiento de la UNESCO de 2023 fue para el ceviche de Perú."
+    "explicacion": "El ceviche se prepara en varios países, pero el reconocimiento de la UNESCO de 2023 fue para el ceviche de Perú.",
+    "foto": "ceviche fish lime"
   },
   {
     "id": "comida-037",
@@ -293,7 +329,8 @@
     "icono": "🌾",
     "dato": "La ONU declaró 2013 el Año Internacional de la Quinua, un grano que se cultiva en los Andes hace miles de años.",
     "falso": "La ONU declaró 2013 el Año Internacional de la Quinua, un grano que llegó a los Andes desde Asia en el siglo XIX.",
-    "explicacion": "La quinua es andina: se domesticó cerca del lago Titicaca hace miles de años. Bolivia y Perú son sus mayores productores."
+    "explicacion": "La quinua es andina: se domesticó cerca del lago Titicaca hace miles de años. Bolivia y Perú son sus mayores productores.",
+    "foto": "quinoa grains"
   },
   {
     "id": "comida-038",
@@ -301,7 +338,8 @@
     "icono": "🧉",
     "dato": "En Argentina, Uruguay y Paraguay se comparte el mate: yerba en una calabacita que se bebe con bombilla.",
     "falso": "En Colombia, Venezuela y Ecuador se comparte el mate: yerba en una calabacita que se bebe con bombilla.",
-    "explicacion": "El mate es típico del Cono Sur y del sur de Brasil. Su origen está en los guaraníes, que ya tomaban la yerba mate."
+    "explicacion": "El mate es típico del Cono Sur y del sur de Brasil. Su origen está en los guaraníes, que ya tomaban la yerba mate.",
+    "foto": "mate tea gourd"
   },
   {
     "id": "comida-039",
@@ -309,7 +347,8 @@
     "icono": "🍍",
     "dato": "Los españoles llamaron piña a esta fruta americana porque les recordó a las piñas de los pinos.",
     "falso": "Los españoles llamaron piña a esta fruta americana porque les recordó a las granadas de España.",
-    "explicacion": "Su forma escamosa recordaba a las piñas de los pinos. En inglés pasó lo mismo: pineapple significaba antes «piña de pino»."
+    "explicacion": "Su forma escamosa recordaba a las piñas de los pinos. En inglés pasó lo mismo: pineapple significaba antes «piña de pino».",
+    "foto": "pineapple fruit"
   },
   {
     "id": "comida-040",
@@ -317,7 +356,8 @@
     "icono": "🥜",
     "dato": "El maní, o cacahuate, no es una nuez: es una legumbre sudamericana cuyas vainas maduran bajo tierra.",
     "falso": "El maní, o cacahuate, no es una legumbre: es la nuez de un árbol africano que madura en sus ramas.",
-    "explicacion": "El maní es pariente del frijol. Se domesticó en Sudamérica y, tras florecer, la planta entierra sus vainas para que maduren."
+    "explicacion": "El maní es pariente del frijol. Se domesticó en Sudamérica y, tras florecer, la planta entierra sus vainas para que maduren.",
+    "foto": "peanuts shell"
   },
   {
     "id": "comida-041",
@@ -325,7 +365,8 @@
     "icono": "🍓",
     "dato": "La fresa grande actual nació en Francia en el siglo XVIII al cruzar una fresa de Chile con una de Norteamérica.",
     "falso": "La fresa grande actual nació en Japón en el siglo XX al cruzar una fresa de China con una de Corea.",
-    "explicacion": "La fresa de jardín es un cruce de la fresa chilena, traída a Francia en 1714, y la fresa silvestre de Norteamérica."
+    "explicacion": "La fresa de jardín es un cruce de la fresa chilena, traída a Francia en 1714, y la fresa silvestre de Norteamérica.",
+    "foto": "strawberry field"
   },
   {
     "id": "comida-042",
@@ -333,7 +374,8 @@
     "icono": "🦃",
     "dato": "El pavo, o guajolote, fue domesticado en Mesoamérica; los europeos lo conocieron después de 1492.",
     "falso": "El pavo, o guajolote, fue domesticado en Turquía; los americanos lo conocieron después de 1492.",
-    "explicacion": "El guajolote ya se criaba en México antes de los españoles. En inglés se llama turkey por una confusión de nombres, no por su origen."
+    "explicacion": "El guajolote ya se criaba en México antes de los españoles. En inglés se llama turkey por una confusión de nombres, no por su origen.",
+    "foto": "wild turkey"
   },
   {
     "id": "comida-043",
@@ -341,7 +383,8 @@
     "icono": "🍝",
     "dato": "En 1154 ya se fabricaba pasta seca en Sicilia, más de un siglo antes de los viajes de Marco Polo a China.",
     "falso": "La pasta llegó a Italia en 1295, cuando Marco Polo volvió de China con la receta de los fideos.",
-    "explicacion": "Que Marco Polo trajo la pasta es un mito. El geógrafo al-Idrisi describió en 1154 una fábrica de pasta seca en Sicilia."
+    "explicacion": "Que Marco Polo trajo la pasta es un mito. El geógrafo al-Idrisi describió en 1154 una fábrica de pasta seca en Sicilia.",
+    "foto": "fresh pasta making"
   },
   {
     "id": "comida-044",
@@ -349,7 +392,8 @@
     "icono": "🍜",
     "dato": "En Lajia, China, se hallaron fideos de mijo de unos 4000 años: los más antiguos que se conocen.",
     "falso": "En Pompeya, Italia, se hallaron fideos de trigo de unos 4000 años: los más antiguos que se conocen.",
-    "explicacion": "Los fideos más antiguos aparecieron en 2005 en Lajia, China, bajo un tazón volcado y enterrado. Eran de mijo, no de trigo."
+    "explicacion": "Los fideos más antiguos aparecieron en 2005 en Lajia, China, bajo un tazón volcado y enterrado. Eran de mijo, no de trigo.",
+    "foto": "noodles chopsticks"
   },
   {
     "id": "comida-045",
@@ -357,7 +401,8 @@
     "icono": "🍕",
     "dato": "La pizza hawaiana no es de Hawái: la inventó en 1962, en Canadá, Sam Panopoulos, un inmigrante griego.",
     "falso": "La pizza hawaiana es de Hawái: la inventó en 1962, en Honolulu, un cocinero del puerto.",
-    "explicacion": "La pizza con piña nació en un restaurante de Chatham, Ontario, en Canadá. Su nombre viene de la marca de la piña enlatada."
+    "explicacion": "La pizza con piña nació en un restaurante de Chatham, Ontario, en Canadá. Su nombre viene de la marca de la piña enlatada.",
+    "foto": "pineapple pizza"
   },
   {
     "id": "comida-046",
@@ -365,7 +410,8 @@
     "icono": "🍣",
     "dato": "En su origen, el arroz del sushi servía para fermentar y conservar el pescado, y luego se desechaba.",
     "falso": "En su origen, el sushi se hacía sin arroz: solo pescado crudo cortado en láminas finas.",
-    "explicacion": "El sushi antiguo, o narezushi, guardaba el pescado en arroz que fermentaba por meses. Las láminas solas de pescado son el sashimi."
+    "explicacion": "El sushi antiguo, o narezushi, guardaba el pescado en arroz que fermentaba por meses. Las láminas solas de pescado son el sashimi.",
+    "foto": "sushi chef"
   },
   {
     "id": "comida-047",
@@ -373,7 +419,8 @@
     "icono": "🍵",
     "dato": "El té verde, el negro y el blanco salen de la misma planta, Camellia sinensis; lo que cambia es el procesado.",
     "falso": "El té verde, el negro y el blanco salen de tres plantas distintas que crecen en tres países diferentes.",
-    "explicacion": "Son las mismas hojas: el té negro se deja oxidar por completo, el verde casi nada y el blanco se hace con brotes jóvenes."
+    "explicacion": "Son las mismas hojas: el té negro se deja oxidar por completo, el verde casi nada y el blanco se hace con brotes jóvenes.",
+    "foto": "tea plantation hills"
   },
   {
     "id": "comida-048",
@@ -381,7 +428,8 @@
     "icono": "🌸",
     "dato": "El azafrán es la especia más cara del mundo: para un kilo se necesitan unas 150 000 flores.",
     "falso": "El azafrán es la especia más cara del mundo: para un kilo se necesitan unas 150 flores.",
-    "explicacion": "Cada flor da solo tres estigmas finísimos que se recogen a mano. Por eso hacen falta cientos de miles de flores por kilo."
+    "explicacion": "Cada flor da solo tres estigmas finísimos que se recogen a mano. Por eso hacen falta cientos de miles de flores por kilo.",
+    "foto": "saffron flowers"
   },
   {
     "id": "comida-049",
@@ -389,7 +437,8 @@
     "icono": "🧂",
     "dato": "La pimienta negra, la blanca y la verde son el mismo fruto de una planta de la India, cosechado o tratado distinto.",
     "falso": "La pimienta negra, la blanca y la verde son frutos de tres plantas distintas de la India, Brasil y México.",
-    "explicacion": "Todas vienen de la planta Piper nigrum: la verde se cosecha inmadura, la negra se seca entera y la blanca se pela."
+    "explicacion": "Todas vienen de la planta Piper nigrum: la verde se cosecha inmadura, la negra se seca entera y la blanca se pela.",
+    "foto": "black peppercorns"
   },
   {
     "id": "comida-050",
@@ -397,7 +446,8 @@
     "icono": "🍂",
     "dato": "La canela es la corteza interna de un árbol de Sri Lanka, que se enrolla sola al secarse.",
     "falso": "La canela es la raíz de una planta de Sri Lanka, que se enrolla sola al secarse.",
-    "explicacion": "La canela verdadera es la corteza interior del canelo. Al secarse forma los típicos rollitos o «ramas»."
+    "explicacion": "La canela verdadera es la corteza interior del canelo. Al secarse forma los típicos rollitos o «ramas».",
+    "foto": "cinnamon sticks"
   },
   {
     "id": "comida-051",
@@ -405,7 +455,8 @@
     "icono": "🌰",
     "dato": "La nuez moscada y el macis salen del mismo fruto: uno es la semilla y el otro, la red roja que la envuelve.",
     "falso": "La nuez moscada y el macis salen de dos árboles distintos: uno de la India y el otro de África.",
-    "explicacion": "Ambas especias vienen del mismo árbol, originario de las islas Banda, en Indonesia: la semilla y su cubierta roja."
+    "explicacion": "Ambas especias vienen del mismo árbol, originario de las islas Banda, en Indonesia: la semilla y su cubierta roja.",
+    "foto": "nutmeg spice"
   },
   {
     "id": "comida-052",
@@ -413,7 +464,8 @@
     "icono": "🍯",
     "dato": "La miel bien sellada puede durar siglos sin echarse a perder, gracias a su poca agua y su acidez.",
     "falso": "La miel bien sellada se echa a perder en unas pocas semanas, por su mucha agua y su azúcar.",
-    "explicacion": "La miel tiene muy poca agua y es ácida, así que casi ningún microbio puede crecer en ella. Puede cristalizarse, pero no se daña."
+    "explicacion": "La miel tiene muy poca agua y es ácida, así que casi ningún microbio puede crecer en ella. Puede cristalizarse, pero no se daña.",
+    "foto": "honey dripping"
   },
   {
     "id": "comida-053",
@@ -421,7 +473,8 @@
     "icono": "🧀",
     "dato": "Los agujeros del queso Emmental los forma el gas que liberan unas bacterias mientras el queso madura.",
     "falso": "Los agujeros del queso Emmental los hacen a mano los queseros con un molde de metal.",
-    "explicacion": "Unas bacterias del queso producen dióxido de carbono durante la maduración, y el gas queda atrapado formando los «ojos»."
+    "explicacion": "Unas bacterias del queso producen dióxido de carbono durante la maduración, y el gas queda atrapado formando los «ojos».",
+    "foto": "swiss cheese holes"
   },
   {
     "id": "comida-054",
@@ -429,7 +482,8 @@
     "icono": "🍞",
     "dato": "En Jordania se hallaron restos de pan de hace unos 14 400 años, miles de años antes de la agricultura.",
     "falso": "En Jordania se hallaron restos de pan de hace unos 1400 años, de la época de los primeros molinos de viento.",
-    "explicacion": "Las migas quemadas de Shubayqa 1, en Jordania, son de unos 14 400 años: el pan se hacía ya con cereales silvestres."
+    "explicacion": "Las migas quemadas de Shubayqa 1, en Jordania, son de unos 14 400 años: el pan se hacía ya con cereales silvestres.",
+    "foto": "bread baking oven"
   },
   {
     "id": "comida-055",
@@ -437,7 +491,8 @@
     "icono": "🍔",
     "dato": "La hamburguesa debe su nombre a Hamburgo, una ciudad portuaria del norte de Alemania.",
     "falso": "La hamburguesa debe su nombre a Hamburg, un cocinero estadounidense de Nueva York.",
-    "explicacion": "El «bistec al estilo de Hamburgo», de carne picada, viajó con los migrantes alemanes a Estados Unidos y dio nombre a la hamburguesa."
+    "explicacion": "El «bistec al estilo de Hamburgo», de carne picada, viajó con los migrantes alemanes a Estados Unidos y dio nombre a la hamburguesa.",
+    "foto": "burger grill"
   },
   {
     "id": "comida-056",
@@ -445,7 +500,8 @@
     "icono": "🍎",
     "dato": "Las manzanas flotan en el agua porque cerca de una cuarta parte de su volumen es aire.",
     "falso": "Las manzanas flotan en el agua porque cerca de una cuarta parte de su volumen es aceite.",
-    "explicacion": "Entre las células de la manzana hay muchos espacios llenos de aire, que la hacen menos densa que el agua."
+    "explicacion": "Entre las células de la manzana hay muchos espacios llenos de aire, que la hacen menos densa que el agua.",
+    "foto": "apples water splash"
   },
   {
     "id": "comida-057",
@@ -453,7 +509,8 @@
     "icono": "🍏",
     "dato": "La manzana cultivada desciende de un manzano silvestre de las montañas de Kazajistán, en Asia Central.",
     "falso": "La manzana cultivada desciende de un manzano silvestre de los bosques de Inglaterra, en Europa.",
-    "explicacion": "Su principal ancestro es Malus sieversii, de los montes Tian Shan, en Kazajistán. La Ruta de la Seda la llevó hacia Europa."
+    "explicacion": "Su principal ancestro es Malus sieversii, de los montes Tian Shan, en Kazajistán. La Ruta de la Seda la llevó hacia Europa.",
+    "foto": "apple orchard"
   },
   {
     "id": "comida-058",
@@ -461,7 +518,8 @@
     "icono": "🍉",
     "dato": "La sandía es originaria de África y cerca del 92 % de su peso es agua.",
     "falso": "La sandía es originaria de América y cerca del 50 % de su peso es agua.",
-    "explicacion": "La sandía viene del noreste de África, donde ya se cultivaba en el antiguo Egipto. Es casi toda agua, de ahí su nombre en inglés."
+    "explicacion": "La sandía viene del noreste de África, donde ya se cultivaba en el antiguo Egipto. Es casi toda agua, de ahí su nombre en inglés.",
+    "foto": "watermelon slice"
   },
   {
     "id": "comida-059",
@@ -469,7 +527,8 @@
     "icono": "🥕",
     "dato": "Las primeras zanahorias eran moradas o amarillas; las naranjas se afianzaron en Países Bajos hacia el siglo XVII.",
     "falso": "Las zanahorias siempre fueron naranjas: así ya las cultivaban en Asia Central hace más de 5000 años.",
-    "explicacion": "Las zanahorias antiguas de Asia Central eran moradas o amarillas. Los agricultores neerlandeses afianzaron las variedades naranjas."
+    "explicacion": "Las zanahorias antiguas de Asia Central eran moradas o amarillas. Los agricultores neerlandeses afianzaron las variedades naranjas.",
+    "foto": "purple carrots"
   },
   {
     "id": "comida-060",
@@ -477,7 +536,8 @@
     "icono": "🧅",
     "dato": "Al cortar cebolla se libera un compuesto volátil que irrita los ojos y hace que lloremos.",
     "falso": "Al cortar cebolla se libera un jugo con sal que salpica los ojos y hace que lloremos.",
-    "explicacion": "Al romperse sus células, la cebolla forma un gas con azufre que llega a los ojos; las lágrimas intentan lavarlo."
+    "explicacion": "Al romperse sus células, la cebolla forma un gas con azufre que llega a los ojos; las lágrimas intentan lavarlo.",
+    "foto": "cutting onion"
   },
   {
     "id": "comida-061",
@@ -485,7 +545,8 @@
     "icono": "🥭",
     "dato": "El mango es la fruta nacional de la India, de Pakistán y de Filipinas.",
     "falso": "El mango es la fruta nacional de Japón, de Corea del Sur y de Mongolia.",
-    "explicacion": "El mango es originario del sur de Asia y se cultiva allí desde hace miles de años; tres países lo tienen como fruta nacional."
+    "explicacion": "El mango es originario del sur de Asia y se cultiva allí desde hace miles de años; tres países lo tienen como fruta nacional.",
+    "foto": "mango fruit"
   },
   {
     "id": "comida-062",
@@ -493,7 +554,8 @@
     "icono": "🥝",
     "dato": "El kiwi se llamaba «grosella china»; en Nueva Zelanda lo rebautizaron como el ave símbolo del país.",
     "falso": "El kiwi se llamaba «grosella australiana»; en Nueva Zelanda lo rebautizaron como el ave símbolo del país.",
-    "explicacion": "La planta del kiwi es originaria de China. Los neozelandeses la cultivaron y en 1959 la vendieron con el nombre de su ave, el kiwi."
+    "explicacion": "La planta del kiwi es originaria de China. Los neozelandeses la cultivaron y en 1959 la vendieron con el nombre de su ave, el kiwi.",
+    "foto": "kiwi fruit sliced"
   },
   {
     "id": "comida-063",
@@ -501,7 +563,8 @@
     "icono": "🎃",
     "dato": "La calabaza más pesada registrada superó los 1200 kg: más que un auto pequeño.",
     "falso": "La calabaza más pesada registrada superó los 120 kg: más o menos lo que pesa una persona grande.",
-    "explicacion": "En los concursos de calabazas gigantes, los récords superan la tonelada. En 2023 una cultivada en EE. UU. pasó de 1200 kg."
+    "explicacion": "En los concursos de calabazas gigantes, los récords superan la tonelada. En 2023 una cultivada en EE. UU. pasó de 1200 kg.",
+    "foto": "giant pumpkin"
   },
   {
     "id": "comida-064",
@@ -509,7 +572,8 @@
     "icono": "🍳",
     "dato": "El dorado y el aroma del pan tostado o la carne asada vienen de la reacción de Maillard, descrita en 1912.",
     "falso": "El dorado y el aroma del pan tostado o la carne asada vienen de la grasa quemada, que se vuelve negra.",
-    "explicacion": "Al calentarse, azúcares y proteínas reaccionan y forman cientos de compuestos de sabor. La describió el químico francés Louis Maillard."
+    "explicacion": "Al calentarse, azúcares y proteínas reaccionan y forman cientos de compuestos de sabor. La describió el químico francés Louis Maillard.",
+    "foto": "bread toasting"
   },
   {
     "id": "comida-065",
@@ -517,7 +581,8 @@
     "icono": "🏔️",
     "dato": "En La Paz, Bolivia, a unos 3600 m de altura, el agua hierve a cerca de 88 °C y no a 100 °C.",
     "falso": "En La Paz, Bolivia, a unos 3600 m de altura, el agua hierve a cerca de 112 °C y no a 100 °C.",
-    "explicacion": "Con la altura baja la presión del aire, y el agua hierve antes. Por eso cocinar papas o frijoles allí toma más tiempo."
+    "explicacion": "Con la altura baja la presión del aire, y el agua hierve antes. Por eso cocinar papas o frijoles allí toma más tiempo.",
+    "foto": "boiling water pot"
   },
   {
     "id": "comida-066",
@@ -525,7 +590,8 @@
     "icono": "🥚",
     "dato": "Un huevo fresco se hunde en el agua y uno viejo flota, porque su burbuja de aire crece con los días.",
     "falso": "Un huevo fresco flota en el agua y uno viejo se hunde, porque su yema se pone más pesada con los días.",
-    "explicacion": "Con el tiempo el huevo pierde agua por los poros de la cáscara y entra aire en su cámara. Así se vuelve más liviano."
+    "explicacion": "Con el tiempo el huevo pierde agua por los poros de la cáscara y entra aire en su cámara. Así se vuelve más liviano.",
+    "foto": "egg in water"
   },
   {
     "id": "comida-067",
@@ -533,7 +599,8 @@
     "icono": "🍜",
     "dato": "Momofuku Ando inventó en Japón los fideos instantáneos en 1958, con su «Chikin Ramen».",
     "falso": "Momofuku Ando inventó en Estados Unidos los fideos instantáneos en 1988, con su «Chikin Ramen».",
-    "explicacion": "Ando presentó en Japón, en 1958, sus fideos fritos que se preparaban solo con agua caliente. En 1971 creó los de vaso."
+    "explicacion": "Ando presentó en Japón, en 1958, sus fideos fritos que se preparaban solo con agua caliente. En 1971 creó los de vaso.",
+    "foto": "instant ramen bowl"
   },
   {
     "id": "comida-068",
@@ -541,7 +608,8 @@
     "icono": "🥖",
     "dato": "El saber hacer y la cultura de la baguette francesa son Patrimonio Inmaterial de la UNESCO desde 2022.",
     "falso": "El saber hacer y la cultura del cruasán francés son Patrimonio Inmaterial de la UNESCO desde 2022.",
-    "explicacion": "En 2022 la UNESCO reconoció la baguette, el pan alargado que en Francia se compra fresco cada día, no el cruasán."
+    "explicacion": "En 2022 la UNESCO reconoció la baguette, el pan alargado que en Francia se compra fresco cada día, no el cruasán.",
+    "foto": "french baguette bakery"
   },
   {
     "id": "comida-069",
@@ -549,7 +617,8 @@
     "icono": "🚇",
     "dato": "En el metro de Singapur está prohibido llevar durián, una fruta famosa por su olor muy fuerte.",
     "falso": "En el metro de Singapur está prohibido llevar mangos, una fruta famosa por su olor muy fuerte.",
-    "explicacion": "El durián, del sudeste asiático, huele tan fuerte que tiene carteles de prohibición en el metro y en muchos hoteles."
+    "explicacion": "El durián, del sudeste asiático, huele tan fuerte que tiene carteles de prohibición en el metro y en muchos hoteles.",
+    "foto": "durian fruit"
   },
   {
     "id": "comida-070",
@@ -557,7 +626,8 @@
     "icono": "🥫",
     "dato": "Las primeras recetas inglesas de kétchup no llevaban tomate: se hacían con hongos, nueces o pescado.",
     "falso": "Las primeras recetas inglesas de kétchup ya llevaban tomate, que se cultivaba en Inglaterra desde la Edad Media.",
-    "explicacion": "El tomate, americano, no se conocía en la Edad Media. El kétchup de tomate se volvió común en Estados Unidos en el siglo XIX."
+    "explicacion": "El tomate, americano, no se conocía en la Edad Media. El kétchup de tomate se volvió común en Estados Unidos en el siglo XIX.",
+    "foto": "ketchup pouring"
   },
   {
     "id": "comida-071",
@@ -565,7 +635,8 @@
     "icono": "🍽️",
     "dato": "En Etiopía, la injera, un pan esponjoso de teff, sirve a la vez de plato y de cubierto.",
     "falso": "En Etiopía, la injera, un pan esponjoso de arroz, se sirve siempre en platos de cerámica con cubiertos.",
-    "explicacion": "La injera se hace con teff, un grano etíope. Los guisos se sirven encima y se comen con trozos de la misma injera."
+    "explicacion": "La injera se hace con teff, un grano etíope. Los guisos se sirven encima y se comen con trozos de la misma injera.",
+    "foto": "injera ethiopian food"
   },
   {
     "id": "comida-072",
@@ -573,7 +644,8 @@
     "icono": "🍭",
     "dato": "La máquina de algodón de azúcar la inventaron en 1897 un dentista, William Morrison, y un confitero.",
     "falso": "La máquina de algodón de azúcar la inventaron en 1897 un panadero, William Morrison, y un herrero.",
-    "explicacion": "El dentista William Morrison y el confitero John Wharton la crearon, y se hizo famosa en la Feria Mundial de San Luis de 1904."
+    "explicacion": "El dentista William Morrison y el confitero John Wharton la crearon, y se hizo famosa en la Feria Mundial de San Luis de 1904.",
+    "foto": "cotton candy"
   },
   {
     "id": "comida-073",
@@ -581,7 +653,8 @@
     "icono": "🌮",
     "dato": "Los tacos al pastor nacieron en México de la técnica del shawarma que trajeron inmigrantes libaneses.",
     "falso": "Los tacos al pastor nacieron en México de la técnica del asado que trajeron inmigrantes argentinos.",
-    "explicacion": "Los libaneses llegados a Puebla asaban carne en un trompo vertical. Los taqueros cambiaron el cordero por cerdo adobado."
+    "explicacion": "Los libaneses llegados a Puebla asaban carne en un trompo vertical. Los taqueros cambiaron el cordero por cerdo adobado.",
+    "foto": "tacos al pastor"
   },
   {
     "id": "comida-074",
@@ -589,7 +662,8 @@
     "icono": "🌿",
     "dato": "A algunas personas el cilantro les sabe a jabón, en parte por una variante de sus genes del olfato.",
     "falso": "A algunas personas el cilantro les sabe a jabón porque se lava con detergente antes de venderse.",
-    "explicacion": "El cilantro tiene compuestos parecidos a los del jabón, y ciertas variantes genéticas del olfato hacen que se noten mucho más."
+    "explicacion": "El cilantro tiene compuestos parecidos a los del jabón, y ciertas variantes genéticas del olfato hacen que se noten mucho más.",
+    "foto": "fresh cilantro"
   },
   {
     "id": "comida-075",
@@ -597,6 +671,7 @@
     "icono": "🍌",
     "dato": "Los bananos maduros liberan etileno, un gas que acelera la maduración de las frutas que tienen cerca.",
     "falso": "Los bananos maduros liberan oxígeno, un gas que frena la maduración de las frutas que tienen cerca.",
-    "explicacion": "El etileno es una hormona vegetal en forma de gas. Por eso un aguacate verde madura más rápido en una bolsa con un banano."
+    "explicacion": "El etileno es una hormona vegetal en forma de gas. Por eso un aguacate verde madura más rápido en una bolsa con un banano.",
+    "foto": "ripe bananas"
   }
 ]

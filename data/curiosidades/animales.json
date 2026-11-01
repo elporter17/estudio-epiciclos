@@ -5,7 +5,8 @@
     "icono": "🐋",
     "dato": "La ballena azul es el animal más grande que vive hoy en la Tierra: puede medir unos 30 metros de largo.",
     "falso": "La ballena azul es el animal más grande que vive hoy en la Tierra: puede medir unos 80 metros de largo.",
-    "explicacion": "Las ballenas azules más grandes registradas rondan los 30 metros. Ningún animal vivo se acerca a 80 metros de largo."
+    "explicacion": "Las ballenas azules más grandes registradas rondan los 30 metros. Ningún animal vivo se acerca a 80 metros de largo.",
+    "foto": "blue whale underwater"
   },
   {
     "id": "animales-002",
@@ -13,7 +14,8 @@
     "icono": "🐙",
     "dato": "El pulpo tiene tres corazones: dos bombean sangre a las branquias y uno al resto del cuerpo.",
     "falso": "El pulpo tiene cinco corazones: cuatro bombean sangre a las branquias y uno al resto del cuerpo.",
-    "explicacion": "El pulpo tiene tres corazones, no cinco: dos branquiales y uno sistémico que lleva la sangre al resto del cuerpo."
+    "explicacion": "El pulpo tiene tres corazones, no cinco: dos branquiales y uno sistémico que lleva la sangre al resto del cuerpo.",
+    "foto": "octopus swimming"
   },
   {
     "id": "animales-003",
@@ -21,7 +23,8 @@
     "icono": "🦒",
     "dato": "A pesar de su largo cuello, la jirafa tiene siete vértebras cervicales, las mismas que un ser humano.",
     "falso": "Gracias a su largo cuello, la jirafa tiene unas 40 vértebras cervicales, casi seis veces más que un ser humano.",
-    "explicacion": "La jirafa tiene solo siete vértebras en el cuello, como casi todos los mamíferos. Lo que cambia es su tamaño: cada una puede medir más de 25 cm."
+    "explicacion": "La jirafa tiene solo siete vértebras en el cuello, como casi todos los mamíferos. Lo que cambia es su tamaño: cada una puede medir más de 25 cm.",
+    "foto": "giraffe savanna"
   },
   {
     "id": "animales-004",
@@ -29,7 +32,8 @@
     "icono": "🐨",
     "dato": "Los koalas tienen huellas dactilares tan parecidas a las humanas que cuesta distinguirlas incluso con microscopio.",
     "falso": "Los koalas no tienen huellas dactilares: las yemas de sus dedos son completamente lisas.",
-    "explicacion": "Los koalas sí tienen huellas dactilares, y se parecen muchísimo a las humanas en sus curvas y crestas."
+    "explicacion": "Los koalas sí tienen huellas dactilares, y se parecen muchísimo a las humanas en sus curvas y crestas.",
+    "foto": "koala eucalyptus tree"
   },
   {
     "id": "animales-005",
@@ -37,7 +41,8 @@
     "icono": "🦩",
     "dato": "Los flamencos son rosados por los pigmentos de las algas y crustáceos que comen; sus polluelos nacen grises.",
     "falso": "Los flamencos nacen con plumas de un rosado intenso que se va aclarando a medida que crecen.",
-    "explicacion": "Los polluelos de flamenco nacen grises o blancos. El color rosado aparece después, por los carotenoides de su alimentación."
+    "explicacion": "Los polluelos de flamenco nacen grises o blancos. El color rosado aparece después, por los carotenoides de su alimentación.",
+    "foto": "flamingos pink lake"
   },
   {
     "id": "animales-006",
@@ -45,7 +50,8 @@
     "icono": "🐝",
     "dato": "Las abejas melíferas indican a su colmena dónde hay flores con una danza en forma de ocho llamada «danza del meneo».",
     "falso": "Las abejas melíferas indican a su colmena dónde hay flores cambiando el color de su cuerpo.",
-    "explicacion": "Las abejas no cambian de color. Comunican la dirección y la distancia de las flores con la danza del meneo."
+    "explicacion": "Las abejas no cambian de color. Comunican la dirección y la distancia de las flores con la danza del meneo.",
+    "foto": "honeybee flowers"
   },
   {
     "id": "animales-007",
@@ -53,7 +59,8 @@
     "icono": "🐌",
     "dato": "Los caracoles tienen miles de dientes diminutos ordenados en una especie de lengua llamada rádula.",
     "falso": "Los caracoles no tienen ningún tipo de diente y solo pueden chupar el jugo de las plantas.",
-    "explicacion": "Los caracoles raspan la comida con la rádula, una cinta cubierta de miles de dientes microscópicos."
+    "explicacion": "Los caracoles raspan la comida con la rádula, una cinta cubierta de miles de dientes microscópicos.",
+    "foto": "snail close up"
   },
   {
     "id": "animales-008",
@@ -61,7 +68,8 @@
     "icono": "🦈",
     "dato": "Los tiburones existen desde hace más de 400 millones de años: aparecieron antes que los primeros árboles.",
     "falso": "Los tiburones aparecieron hace unos 10 millones de años, mucho después de que se extinguieran los dinosaurios.",
-    "explicacion": "Los tiburones tienen más de 400 millones de años de historia: son más antiguos que los dinosaurios y que los árboles."
+    "explicacion": "Los tiburones tienen más de 400 millones de años de historia: son más antiguos que los dinosaurios y que los árboles.",
+    "foto": "shark swimming ocean"
   },
   {
     "id": "animales-009",
@@ -69,7 +77,8 @@
     "icono": "🐆",
     "dato": "El guepardo es el animal terrestre más rápido: en carreras cortas puede acercarse a los 100 km/h.",
     "falso": "El guepardo es el animal terrestre más rápido: en carreras cortas puede alcanzar los 250 km/h.",
-    "explicacion": "El guepardo llega a cerca de 100 km/h y solo por unos segundos. Ningún animal terrestre se acerca a 250 km/h."
+    "explicacion": "El guepardo llega a cerca de 100 km/h y solo por unos segundos. Ningún animal terrestre se acerca a 250 km/h.",
+    "foto": "cheetah running"
   },
   {
     "id": "animales-010",
@@ -77,7 +86,8 @@
     "icono": "🦅",
     "dato": "El halcón peregrino es el animal más veloz del planeta: en picada puede superar los 300 km/h.",
     "falso": "El halcón peregrino es el animal más veloz del planeta: en picada puede superar los 1000 km/h.",
-    "explicacion": "La velocidad máxima medida de un halcón peregrino en picada ronda los 380 km/h, muy lejos de 1000 km/h."
+    "explicacion": "La velocidad máxima medida de un halcón peregrino en picada ronda los 380 km/h, muy lejos de 1000 km/h.",
+    "foto": "peregrine falcon flying"
   },
   {
     "id": "animales-011",
@@ -85,7 +95,8 @@
     "icono": "🐘",
     "dato": "El embarazo de una elefanta dura unos 22 meses, el más largo de todos los mamíferos terrestres.",
     "falso": "El embarazo de una elefanta dura unos 3 meses, el más corto de todos los mamíferos terrestres.",
-    "explicacion": "La gestación de la elefanta dura cerca de 22 meses, casi dos años, y es la más larga entre los mamíferos terrestres."
+    "explicacion": "La gestación de la elefanta dura cerca de 22 meses, casi dos años, y es la más larga entre los mamíferos terrestres.",
+    "foto": "elephant mother calf"
   },
   {
     "id": "animales-012",
@@ -93,7 +104,8 @@
     "icono": "🐧",
     "dato": "En el pingüino emperador, el macho incuba el huevo sobre sus patas durante unos dos meses de invierno antártico.",
     "falso": "En el pingüino emperador, el macho se va al mar y la hembra incuba sola el huevo durante todo el invierno.",
-    "explicacion": "Es al revés: la hembra pone el huevo y se va a alimentarse al mar, y el macho lo incuba sobre sus patas sin comer."
+    "explicacion": "Es al revés: la hembra pone el huevo y se va a alimentarse al mar, y el macho lo incuba sobre sus patas sin comer.",
+    "foto": "emperor penguin chick"
   },
   {
     "id": "animales-013",
@@ -101,7 +113,8 @@
     "icono": "🦇",
     "dato": "Los murciélagos son los únicos mamíferos capaces de volar de verdad, batiendo sus alas.",
     "falso": "Las ardillas voladoras son los únicos mamíferos capaces de volar de verdad, batiendo sus alas.",
-    "explicacion": "Las ardillas voladoras solo planean con una membrana de piel. Los únicos mamíferos que vuelan batiendo alas son los murciélagos."
+    "explicacion": "Las ardillas voladoras solo planean con una membrana de piel. Los únicos mamíferos que vuelan batiendo alas son los murciélagos.",
+    "foto": "bats flying dusk"
   },
   {
     "id": "animales-014",
@@ -109,7 +122,8 @@
     "icono": "🐬",
     "dato": "Los delfines duermen con la mitad del cerebro a la vez; la otra mitad sigue alerta para respirar y vigilar.",
     "falso": "Los delfines duermen con todo el cerebro apagado a la vez durante unas 12 horas seguidas.",
-    "explicacion": "Los delfines tienen sueño unihemisférico: descansa una mitad del cerebro mientras la otra los mantiene respirando y atentos."
+    "explicacion": "Los delfines tienen sueño unihemisférico: descansa una mitad del cerebro mientras la otra los mantiene respirando y atentos.",
+    "foto": "dolphins swimming"
   },
   {
     "id": "animales-015",
@@ -117,7 +131,8 @@
     "icono": "🦉",
     "dato": "Los búhos no pueden mover los ojos dentro de sus cuencas, así que giran la cabeza hasta unos 270 grados.",
     "falso": "Los búhos pueden girar la cabeza 360 grados completos, dando una vuelta entera sobre su cuello.",
-    "explicacion": "Un búho gira la cabeza hasta unos 270 grados, no una vuelta completa. Lo compensa con un cuello de 14 vértebras."
+    "explicacion": "Un búho gira la cabeza hasta unos 270 grados, no una vuelta completa. Lo compensa con un cuello de 14 vértebras.",
+    "foto": "owl turning head"
   },
   {
     "id": "animales-016",
@@ -125,7 +140,8 @@
     "icono": "🐜",
     "dato": "Las hormigas cortadoras de hojas no se comen las hojas: las usan para cultivar un hongo que es su alimento.",
     "falso": "Las hormigas cortadoras de hojas se comen todas las hojas que cortan apenas llegan al hormiguero.",
-    "explicacion": "Estas hormigas son agricultoras: mastican las hojas para alimentar un hongo, y es ese hongo lo que comen."
+    "explicacion": "Estas hormigas son agricultoras: mastican las hojas para alimentar un hongo, y es ese hongo lo que comen.",
+    "foto": "leafcutter ants"
   },
   {
     "id": "animales-017",
@@ -133,7 +149,8 @@
     "icono": "🌲",
     "dato": "El árbol más alto conocido es una secuoya roja de California llamada Hyperion: mide unos 116 metros.",
     "falso": "El árbol más alto conocido es una secuoya roja de California llamada Hyperion: mide unos 300 metros.",
-    "explicacion": "Hyperion mide cerca de 116 metros, más o menos un edificio de 35 pisos. Ningún árbol conocido llega a 300 metros."
+    "explicacion": "Hyperion mide cerca de 116 metros, más o menos un edificio de 35 pisos. Ningún árbol conocido llega a 300 metros.",
+    "foto": "redwood forest"
   },
   {
     "id": "animales-018",
@@ -141,7 +158,8 @@
     "icono": "🌵",
     "dato": "El cactus saguaro, del desierto de Sonora, puede vivir más de 150 años y superar los 12 metros de altura.",
     "falso": "El cactus saguaro, del desierto de Sonora, vive solo unos 5 años y nunca pasa de un metro de altura.",
-    "explicacion": "El saguaro crece muy despacio y vive mucho: puede pasar de 150 años y alcanzar más de 12 metros."
+    "explicacion": "El saguaro crece muy despacio y vive mucho: puede pasar de 150 años y alcanzar más de 12 metros.",
+    "foto": "saguaro cactus desert"
   },
   {
     "id": "animales-019",
@@ -149,7 +167,8 @@
     "icono": "🎋",
     "dato": "Algunas especies de bambú pueden crecer hasta unos 90 cm en un solo día.",
     "falso": "Algunas especies de bambú pueden crecer hasta unos 10 metros en un solo día.",
-    "explicacion": "El récord de crecimiento del bambú ronda los 90 cm diarios. Diez metros en un día es imposible para cualquier planta."
+    "explicacion": "El récord de crecimiento del bambú ronda los 90 cm diarios. Diez metros en un día es imposible para cualquier planta.",
+    "foto": "bamboo forest"
   },
   {
     "id": "animales-020",
@@ -157,7 +176,8 @@
     "icono": "🌻",
     "dato": "Los girasoles jóvenes siguen al sol de este a oeste durante el día y en la noche vuelven a mirar hacia el este.",
     "falso": "Los girasoles jóvenes permanecen quietos todo el día y nunca se orientan hacia el sol.",
-    "explicacion": "Los girasoles jóvenes sí siguen al sol. Al madurar dejan de moverse y quedan mirando hacia el este."
+    "explicacion": "Los girasoles jóvenes sí siguen al sol. Al madurar dejan de moverse y quedan mirando hacia el este.",
+    "foto": "sunflower field"
   },
   {
     "id": "animales-022",
@@ -165,7 +185,8 @@
     "icono": "🦥",
     "dato": "El perezoso baja de su árbol más o menos una vez por semana, casi solo para hacer sus necesidades.",
     "falso": "El perezoso baja de su árbol unas 20 veces al día para buscar comida en el suelo.",
-    "explicacion": "El perezoso pasa casi toda su vida en los árboles y baja alrededor de una vez por semana, sobre todo para defecar."
+    "explicacion": "El perezoso pasa casi toda su vida en los árboles y baja alrededor de una vez por semana, sobre todo para defecar.",
+    "foto": "sloth hanging tree"
   },
   {
     "id": "animales-023",
@@ -173,7 +194,8 @@
     "icono": "🐢",
     "dato": "Las tortugas gigantes de Galápagos y Aldabra pueden vivir más de 100 años.",
     "falso": "Las tortugas gigantes de Galápagos y Aldabra viven en promedio unos 10 años.",
-    "explicacion": "Las tortugas gigantes están entre los animales más longevos: superan con frecuencia los 100 años de vida."
+    "explicacion": "Las tortugas gigantes están entre los animales más longevos: superan con frecuencia los 100 años de vida.",
+    "foto": "giant tortoise"
   },
   {
     "id": "animales-024",
@@ -181,7 +203,8 @@
     "icono": "🦋",
     "dato": "La mariposa monarca migra más de 4000 km entre Canadá y Estados Unidos y los bosques de México.",
     "falso": "La mariposa monarca migra más de 4000 km entre México y Australia, cruzando el océano Pacífico.",
-    "explicacion": "La gran migración de la monarca va de Canadá y Estados Unidos a los bosques de Michoacán y el Estado de México, no a Australia."
+    "explicacion": "La gran migración de la monarca va de Canadá y Estados Unidos a los bosques de Michoacán y el Estado de México, no a Australia.",
+    "foto": "monarch butterflies"
   },
   {
     "id": "animales-025",
@@ -189,7 +212,8 @@
     "icono": "🐊",
     "dato": "El cocodrilo de agua salada tiene una de las mordidas más fuertes medidas en un animal vivo.",
     "falso": "El cocodrilo de agua salada tiene una mordida más débil que la de un gato doméstico.",
-    "explicacion": "Las mediciones científicas ubican la mordida del cocodrilo de agua salada entre las más potentes de los animales vivos."
+    "explicacion": "Las mediciones científicas ubican la mordida del cocodrilo de agua salada entre las más potentes de los animales vivos.",
+    "foto": "saltwater crocodile"
   },
   {
     "id": "animales-026",
@@ -197,7 +221,8 @@
     "icono": "🐳",
     "dato": "El cachalote tiene el cerebro más grande del reino animal: pesa unos 8 kg.",
     "falso": "El ser humano tiene el cerebro más grande del reino animal: pesa unos 8 kg.",
-    "explicacion": "El cerebro humano pesa cerca de 1,4 kg. El más grande es el del cachalote, con unos 8 kg."
+    "explicacion": "El cerebro humano pesa cerca de 1,4 kg. El más grande es el del cachalote, con unos 8 kg.",
+    "foto": "sperm whale"
   },
   {
     "id": "animales-027",
@@ -205,7 +230,8 @@
     "icono": "🦘",
     "dato": "Un canguro recién nacido mide unos 2 cm, como un frijol, y termina de desarrollarse dentro de la bolsa de su mamá.",
     "falso": "Un canguro recién nacido es del tamaño de un gato y salta solo desde el primer día.",
-    "explicacion": "Los canguros nacen diminutos, de unos 2 cm, y pasan varios meses en la bolsa materna antes de salir."
+    "explicacion": "Los canguros nacen diminutos, de unos 2 cm, y pasan varios meses en la bolsa materna antes de salir.",
+    "foto": "kangaroo joey pouch"
   },
   {
     "id": "animales-028",
@@ -213,7 +239,8 @@
     "icono": "🐻",
     "dato": "El oso polar tiene la piel negra, y los pelos de su pelaje son transparentes, aunque se ven blancos.",
     "falso": "El oso polar tiene la piel blanca como la nieve, igual que el color de su pelaje.",
-    "explicacion": "Bajo el pelaje, la piel del oso polar es negra. Sus pelos son transparentes y reflejan la luz, por eso se ven blancos."
+    "explicacion": "Bajo el pelaje, la piel del oso polar es negra. Sus pelos son transparentes y reflejan la luz, por eso se ven blancos.",
+    "foto": "polar bear snow"
   },
   {
     "id": "animales-029",
@@ -221,7 +248,8 @@
     "icono": "🦑",
     "dato": "El calamar colosal tiene los ojos más grandes del reino animal: unos 27 cm de diámetro.",
     "falso": "El calamar colosal tiene los ojos más pequeños del reino animal: del tamaño de una cabeza de alfiler.",
-    "explicacion": "Los ojos del calamar colosal miden cerca de 27 cm, como un balón. Le ayudan a ver en la oscuridad del océano profundo."
+    "explicacion": "Los ojos del calamar colosal miden cerca de 27 cm, como un balón. Le ayudan a ver en la oscuridad del océano profundo.",
+    "foto": "squid deep sea"
   },
   {
     "id": "animales-030",
@@ -229,7 +257,8 @@
     "icono": "🐸",
     "dato": "Muchas ranas casi no beben con la boca: absorben el agua que necesitan a través de la piel.",
     "falso": "Las ranas necesitan beber agua con la boca varias veces al día, como los perros.",
-    "explicacion": "La piel de las ranas es permeable: la mayoría toma el agua a través de ella, sobre todo por la zona del vientre."
+    "explicacion": "La piel de las ranas es permeable: la mayoría toma el agua a través de ella, sobre todo por la zona del vientre.",
+    "foto": "frog in rain"
   },
   {
     "id": "animales-031",
@@ -237,7 +266,8 @@
     "icono": "🦎",
     "dato": "Los camaleones cambian de color, en parte, reorganizando diminutos cristales en su piel que reflejan la luz.",
     "falso": "Los camaleones cambian de color porque su sangre cambia de tono según el lugar donde están.",
-    "explicacion": "El color del camaleón depende de células con pigmentos y de nanocristales en la piel, no del color de su sangre."
+    "explicacion": "El color del camaleón depende de células con pigmentos y de nanocristales en la piel, no del color de su sangre.",
+    "foto": "chameleon close up"
   },
   {
     "id": "animales-032",
@@ -245,7 +275,8 @@
     "icono": "🐦",
     "dato": "El corazón de un colibrí puede latir más de 1000 veces por minuto cuando está activo.",
     "falso": "El corazón de un colibrí late unas 10 veces por minuto, más despacio que el de un elefante.",
-    "explicacion": "Por su metabolismo acelerado, el corazón del colibrí puede pasar de 1000 latidos por minuto. El de un elefante late unas 30 veces."
+    "explicacion": "Por su metabolismo acelerado, el corazón del colibrí puede pasar de 1000 latidos por minuto. El de un elefante late unas 30 veces.",
+    "foto": "hummingbird flower"
   },
   {
     "id": "animales-033",
@@ -253,7 +284,8 @@
     "icono": "🦜",
     "dato": "Un loro gris africano llamado Alex aprendió más de 100 palabras y podía nombrar colores y formas.",
     "falso": "Los loros grises africanos solo pueden imitar el canto de otras aves y nunca palabras humanas.",
-    "explicacion": "Los loros grises son grandes imitadores de la voz humana. Alex, estudiado por décadas, usaba más de 100 palabras."
+    "explicacion": "Los loros grises son grandes imitadores de la voz humana. Alex, estudiado por décadas, usaba más de 100 palabras.",
+    "foto": "african grey parrot"
   },
   {
     "id": "animales-034",
@@ -261,7 +293,8 @@
     "icono": "🌍",
     "dato": "El agua cubre cerca del 71 % de la superficie de la Tierra.",
     "falso": "El agua cubre apenas un 30 % de la superficie de la Tierra.",
-    "explicacion": "Es al revés: alrededor del 71 % de la superficie es agua y solo cerca del 29 % es tierra firme."
+    "explicacion": "Es al revés: alrededor del 71 % de la superficie es agua y solo cerca del 29 % es tierra firme.",
+    "foto": "planet earth rotating"
   },
   {
     "id": "animales-035",
@@ -269,7 +302,8 @@
     "icono": "🐫",
     "dato": "La joroba del camello no guarda agua: almacena grasa que le sirve de reserva de energía.",
     "falso": "La joroba del camello es un depósito de agua que puede guardar hasta 100 litros.",
-    "explicacion": "La joroba es grasa. El camello aguanta sin beber gracias a que su cuerpo ahorra agua de forma muy eficiente."
+    "explicacion": "La joroba es grasa. El camello aguanta sin beber gracias a que su cuerpo ahorra agua de forma muy eficiente.",
+    "foto": "camel desert"
   },
   {
     "id": "animales-036",
@@ -277,7 +311,8 @@
     "icono": "🦔",
     "dato": "Un erizo adulto tiene entre unas 5000 y 7000 púas en el lomo.",
     "falso": "Un erizo adulto tiene apenas unas 50 púas en el lomo.",
-    "explicacion": "Los erizos tienen miles de púas, no unas decenas: un adulto suele tener entre 5000 y 7000."
+    "explicacion": "Los erizos tienen miles de púas, no unas decenas: un adulto suele tener entre 5000 y 7000.",
+    "foto": "hedgehog close up"
   },
   {
     "id": "animales-037",
@@ -285,7 +320,8 @@
     "icono": "🐼",
     "dato": "Un panda gigante puede pasar más de 10 horas al día comiendo bambú.",
     "falso": "Un panda gigante come bambú solo una vez por semana y pasa el resto del tiempo durmiendo.",
-    "explicacion": "El bambú aporta poca energía, así que el panda come muchas horas al día, todos los días."
+    "explicacion": "El bambú aporta poca energía, así que el panda come muchas horas al día, todos los días.",
+    "foto": "giant panda eating bamboo"
   },
   {
     "id": "animales-038",
@@ -293,7 +329,8 @@
     "icono": "🐱",
     "dato": "Los gatos no pueden percibir el sabor dulce: les falta el receptor que lo detecta.",
     "falso": "Los gatos son especialmente sensibles al sabor dulce, más que cualquier otro mamífero.",
-    "explicacion": "Los gatos tienen inactivo el gen del receptor del dulce, así que no lo perciben. Son carnívoros estrictos."
+    "explicacion": "Los gatos tienen inactivo el gen del receptor del dulce, así que no lo perciben. Son carnívoros estrictos.",
+    "foto": "cat close up"
   },
   {
     "id": "animales-039",
@@ -301,7 +338,8 @@
     "icono": "🐶",
     "dato": "La nariz de un perro puede tener hasta unos 300 millones de receptores del olfato; la humana, unos 6 millones.",
     "falso": "La nariz humana tiene más receptores del olfato que la de un perro.",
-    "explicacion": "Los perros tienen decenas de veces más receptores olfativos que las personas, por eso rastrean olores tan bien."
+    "explicacion": "Los perros tienen decenas de veces más receptores olfativos que las personas, por eso rastrean olores tan bien.",
+    "foto": "dog sniffing"
   },
   {
     "id": "animales-040",
@@ -309,7 +347,8 @@
     "icono": "🐄",
     "dato": "El estómago de la vaca tiene cuatro compartimentos, que le permiten digerir pasto.",
     "falso": "El estómago de la vaca tiene un solo compartimento, igual que el de los seres humanos.",
-    "explicacion": "La vaca es rumiante: su estómago se divide en rumen, retículo, omaso y abomaso."
+    "explicacion": "La vaca es rumiante: su estómago se divide en rumen, retículo, omaso y abomaso.",
+    "foto": "cows grazing pasture"
   },
   {
     "id": "animales-041",
@@ -317,7 +356,8 @@
     "icono": "🐴",
     "dato": "Los caballos pueden dormitar de pie gracias a un sistema de tendones que les bloquea las patas.",
     "falso": "Los caballos no pueden dormir de pie: siempre tienen que acostarse para descansar.",
-    "explicacion": "Los caballos dormitan de pie con las patas «trabadas». Solo se acuestan para el sueño más profundo."
+    "explicacion": "Los caballos dormitan de pie con las patas «trabadas». Solo se acuestan para el sueño más profundo.",
+    "foto": "horse standing field"
   },
   {
     "id": "animales-042",
@@ -325,7 +365,8 @@
     "icono": "🦓",
     "dato": "No hay dos cebras con el mismo patrón de rayas: cada una tiene un diseño único.",
     "falso": "Todas las cebras de una misma manada tienen exactamente el mismo patrón de rayas.",
-    "explicacion": "El patrón de rayas de cada cebra es único, algo parecido a una huella dactilar."
+    "explicacion": "El patrón de rayas de cada cebra es único, algo parecido a una huella dactilar.",
+    "foto": "zebras savanna"
   },
   {
     "id": "animales-043",
@@ -333,7 +374,8 @@
     "icono": "🍯",
     "dato": "Una abeja obrera produce en toda su vida apenas una pequeña fracción de una cucharadita de miel.",
     "falso": "Una abeja obrera produce en toda su vida un frasco entero de miel ella sola.",
-    "explicacion": "Cada abeja aporta muy poca miel: cerca de 1/12 de cucharadita. Un frasco es trabajo de miles de abejas."
+    "explicacion": "Cada abeja aporta muy poca miel: cerca de 1/12 de cucharadita. Un frasco es trabajo de miles de abejas.",
+    "foto": "honey dripping"
   },
   {
     "id": "animales-044",
@@ -341,7 +383,8 @@
     "icono": "🐜",
     "dato": "Muchas hormigas pueden cargar objetos que pesan decenas de veces su propio peso.",
     "falso": "Las hormigas solo pueden cargar objetos que pesan la mitad de su propio peso.",
-    "explicacion": "Por su tamaño pequeño y músculos proporcionalmente fuertes, muchas hormigas cargan varias decenas de veces su peso."
+    "explicacion": "Por su tamaño pequeño y músculos proporcionalmente fuertes, muchas hormigas cargan varias decenas de veces su peso.",
+    "foto": "ants carrying leaf"
   },
   {
     "id": "animales-045",
@@ -349,7 +392,8 @@
     "icono": "🦗",
     "dato": "Los grillos tienen los oídos en las patas delanteras, justo debajo de las rodillas.",
     "falso": "Los grillos tienen los oídos a los lados de la cabeza, igual que los perros.",
-    "explicacion": "Los órganos auditivos de los grillos son membranas ubicadas en las patas delanteras, no en la cabeza."
+    "explicacion": "Los órganos auditivos de los grillos son membranas ubicadas en las patas delanteras, no en la cabeza.",
+    "foto": "cricket insect close up"
   },
   {
     "id": "animales-046",
@@ -357,7 +401,8 @@
     "icono": "🦟",
     "dato": "Solo las hembras de mosquito pican: necesitan proteínas de la sangre para producir sus huevos.",
     "falso": "Solo los machos de mosquito pican: necesitan sangre para tener fuerza durante el apareamiento.",
-    "explicacion": "Los machos se alimentan del néctar de las flores. Son las hembras las que pican para formar sus huevos."
+    "explicacion": "Los machos se alimentan del néctar de las flores. Son las hembras las que pican para formar sus huevos.",
+    "foto": "mosquito close up"
   },
   {
     "id": "animales-047",
@@ -365,7 +410,8 @@
     "icono": "🐞",
     "dato": "Una mariquita puede comer miles de pulgones a lo largo de su vida, por eso protege los cultivos.",
     "falso": "Una mariquita come como máximo unos 10 pulgones en toda su vida.",
-    "explicacion": "Las mariquitas son voraces cazadoras de pulgones: pueden comer decenas al día y miles en su vida."
+    "explicacion": "Las mariquitas son voraces cazadoras de pulgones: pueden comer decenas al día y miles en su vida.",
+    "foto": "ladybug leaf"
   },
   {
     "id": "animales-048",
@@ -373,7 +419,8 @@
     "icono": "🕸️",
     "dato": "A igual peso, la seda de algunas arañas es más resistente que el acero.",
     "falso": "A igual peso, la seda de araña es más frágil que un hilo de algodón.",
-    "explicacion": "La seda de araña combina fuerza y elasticidad: a igual peso, algunas resisten más tensión que el acero."
+    "explicacion": "La seda de araña combina fuerza y elasticidad: a igual peso, algunas resisten más tensión que el acero.",
+    "foto": "spider web dew"
   },
   {
     "id": "animales-049",
@@ -381,7 +428,8 @@
     "icono": "✨",
     "dato": "Las luciérnagas son escarabajos que producen luz con una reacción química que casi no genera calor.",
     "falso": "Las luciérnagas brillan de noche porque guardan la luz del sol que absorben durante el día.",
-    "explicacion": "La luz de las luciérnagas es bioluminiscencia: una reacción química de la luciferina, no luz solar almacenada."
+    "explicacion": "La luz de las luciérnagas es bioluminiscencia: una reacción química de la luciferina, no luz solar almacenada.",
+    "foto": "fireflies night forest"
   },
   {
     "id": "animales-050",
@@ -389,7 +437,8 @@
     "icono": "🐠",
     "dato": "En un grupo de peces payaso, si muere la hembra, el macho más grande se convierte en hembra.",
     "falso": "En un grupo de peces payaso, si muere la hembra, el grupo ya no puede volver a reproducirse nunca.",
-    "explicacion": "Los peces payaso pueden cambiar de sexo: el macho dominante se transforma en hembra y el grupo sigue reproduciéndose."
+    "explicacion": "Los peces payaso pueden cambiar de sexo: el macho dominante se transforma en hembra y el grupo sigue reproduciéndose.",
+    "foto": "clownfish anemone"
   },
   {
     "id": "animales-051",
@@ -397,7 +446,8 @@
     "icono": "🐟",
     "dato": "En los caballitos de mar es el macho el que queda embarazado: lleva los huevos en una bolsa hasta que nacen.",
     "falso": "En los caballitos de mar la hembra lleva los huevos en una bolsa mientras el macho busca comida.",
-    "explicacion": "La hembra deposita los huevos en la bolsa del macho, y él los incuba hasta que nacen las crías."
+    "explicacion": "La hembra deposita los huevos en la bolsa del macho, y él los incuba hasta que nacen las crías.",
+    "foto": "seahorse underwater"
   },
   {
     "id": "animales-052",
@@ -405,7 +455,8 @@
     "icono": "🌊",
     "dato": "La Gran Barrera de Coral, en Australia, se extiende por unos 2300 km: es el mayor sistema de arrecifes del mundo.",
     "falso": "La Gran Barrera de Coral, en Australia, se extiende por apenas unos 23 km.",
-    "explicacion": "La Gran Barrera de Coral mide unos 2300 km y está formada por miles de arrecifes e islas."
+    "explicacion": "La Gran Barrera de Coral mide unos 2300 km y está formada por miles de arrecifes e islas.",
+    "foto": "coral reef fish"
   },
   {
     "id": "animales-053",
@@ -413,7 +464,8 @@
     "icono": "🌊",
     "dato": "El océano Pacífico es tan grande que cubre más superficie que todos los continentes juntos.",
     "falso": "El océano Atlántico es el más grande del mundo y cubre más superficie que el Pacífico.",
-    "explicacion": "El Pacífico es el océano más grande: casi duplica al Atlántico y supera la superficie de toda la tierra firme."
+    "explicacion": "El Pacífico es el océano más grande: casi duplica al Atlántico y supera la superficie de toda la tierra firme.",
+    "foto": "pacific ocean aerial"
   },
   {
     "id": "animales-054",
@@ -421,7 +473,8 @@
     "icono": "🤿",
     "dato": "El punto más profundo del océano, en la fosa de las Marianas, está a casi 11 000 metros bajo el mar.",
     "falso": "El punto más profundo del océano, en la fosa de las Marianas, está a unos 1100 metros bajo el mar.",
-    "explicacion": "El abismo Challenger, en la fosa de las Marianas, tiene cerca de 11 000 metros: cabría el Everest con espacio de sobra."
+    "explicacion": "El abismo Challenger, en la fosa de las Marianas, tiene cerca de 11 000 metros: cabría el Everest con espacio de sobra.",
+    "foto": "deep sea underwater"
   },
   {
     "id": "animales-055",
@@ -429,7 +482,8 @@
     "icono": "🦈",
     "dato": "El tiburón ballena es el pez más grande del mundo, supera los 12 metros y se alimenta de plancton.",
     "falso": "El tiburón ballena es el pez más grande del mundo y se alimenta principalmente de focas.",
-    "explicacion": "A pesar de su tamaño, el tiburón ballena filtra el agua y come plancton, peces pequeños y huevos."
+    "explicacion": "A pesar de su tamaño, el tiburón ballena filtra el agua y come plancton, peces pequeños y huevos.",
+    "foto": "whale shark"
   },
   {
     "id": "animales-056",
@@ -437,7 +491,8 @@
     "icono": "🐡",
     "dato": "El pez globo se infla tragando grandes cantidades de agua cuando se siente amenazado.",
     "falso": "El pez globo se infla llenándose de un gas que fabrica dentro de su estómago.",
-    "explicacion": "El pez globo traga agua (o aire si está fuera de ella) para inflarse. No fabrica ningún gas."
+    "explicacion": "El pez globo traga agua (o aire si está fuera de ella) para inflarse. No fabrica ningún gas.",
+    "foto": "pufferfish underwater"
   },
   {
     "id": "animales-057",
@@ -445,7 +500,8 @@
     "icono": "🦀",
     "dato": "Los cangrejos ermitaños usan conchas vacías de caracoles y se mudan a una más grande cuando crecen.",
     "falso": "Los cangrejos ermitaños fabrican su propia concha y la llevan toda la vida.",
-    "explicacion": "El cangrejo ermitaño no produce concha: ocupa conchas abandonadas y las cambia a medida que crece."
+    "explicacion": "El cangrejo ermitaño no produce concha: ocupa conchas abandonadas y las cambia a medida que crece.",
+    "foto": "hermit crab beach"
   },
   {
     "id": "animales-058",
@@ -453,7 +509,8 @@
     "icono": "🦞",
     "dato": "La sangre de las langostas es azulada porque usa cobre en lugar de hierro para transportar el oxígeno.",
     "falso": "La sangre de las langostas es verde porque contiene clorofila, como las plantas.",
-    "explicacion": "La sangre de la langosta contiene hemocianina, una proteína con cobre que se vuelve azulada con el oxígeno."
+    "explicacion": "La sangre de la langosta contiene hemocianina, una proteína con cobre que se vuelve azulada con el oxígeno.",
+    "foto": "lobster underwater"
   },
   {
     "id": "animales-059",
@@ -461,7 +518,8 @@
     "icono": "🐋",
     "dato": "Los machos de ballena jorobada cantan canciones de hasta unos 20 minutos que repiten durante horas.",
     "falso": "Solo las hembras de ballena jorobada cantan; los machos son completamente silenciosos.",
-    "explicacion": "Las famosas canciones largas de la ballena jorobada las cantan los machos, sobre todo en temporada de reproducción."
+    "explicacion": "Las famosas canciones largas de la ballena jorobada las cantan los machos, sobre todo en temporada de reproducción.",
+    "foto": "humpback whale breaching"
   },
   {
     "id": "animales-060",
@@ -469,7 +527,8 @@
     "icono": "🦭",
     "dato": "La foca de Weddell, de la Antártida, puede bucear más de una hora sin salir a respirar.",
     "falso": "La foca de Weddell, de la Antártida, solo aguanta unos 30 segundos bajo el agua.",
-    "explicacion": "La foca de Weddell es una gran buceadora: sus inmersiones pueden pasar de una hora y llegar a cientos de metros."
+    "explicacion": "La foca de Weddell es una gran buceadora: sus inmersiones pueden pasar de una hora y llegar a cientos de metros.",
+    "foto": "seal swimming under ice"
   },
   {
     "id": "animales-061",
@@ -477,7 +536,8 @@
     "icono": "🌲",
     "dato": "Un pino longevo de California llamado Matusalén tiene más de 4800 años.",
     "falso": "El árbol vivo más antiguo conocido tiene unos 500 años.",
-    "explicacion": "Hay árboles mucho más antiguos: el pino Matusalén, en las montañas de California, supera los 4800 años."
+    "explicacion": "Hay árboles mucho más antiguos: el pino Matusalén, en las montañas de California, supera los 4800 años.",
+    "foto": "ancient pine tree"
   },
   {
     "id": "animales-062",
@@ -485,7 +545,8 @@
     "icono": "🌳",
     "dato": "El Árbol del Tule, un ahuehuete de Oaxaca, México, tiene un tronco de más de 40 metros de contorno.",
     "falso": "El Árbol del Tule, un ahuehuete de Oaxaca, México, tiene un tronco de apenas 4 metros de contorno.",
-    "explicacion": "El Árbol del Tule tiene uno de los troncos más gruesos del mundo: su contorno ronda los 42 metros."
+    "explicacion": "El Árbol del Tule tiene uno de los troncos más gruesos del mundo: su contorno ronda los 42 metros.",
+    "foto": "giant tree trunk"
   },
   {
     "id": "animales-063",
@@ -493,7 +554,8 @@
     "icono": "🍌",
     "dato": "La planta del banano no es un árbol: es una hierba gigante, y su «tronco» está hecho de hojas enrolladas.",
     "falso": "La planta del banano es un árbol con un tronco de madera dura, como el de un roble.",
-    "explicacion": "El banano no tiene madera. Su falso tronco está formado por las bases de las hojas apretadas entre sí."
+    "explicacion": "El banano no tiene madera. Su falso tronco está formado por las bases de las hojas apretadas entre sí.",
+    "foto": "banana plant"
   },
   {
     "id": "animales-064",
@@ -501,7 +563,8 @@
     "icono": "🍓",
     "dato": "Los puntitos de la superficie de la fresa son sus verdaderos frutos, y cada uno lleva una semilla.",
     "falso": "La fresa no tiene semillas: los puntitos de su superficie son solo poros para respirar.",
-    "explicacion": "Cada puntito de la fresa es un fruto pequeño llamado aquenio, con una semilla adentro."
+    "explicacion": "Cada puntito de la fresa es un fruto pequeño llamado aquenio, con una semilla adentro.",
+    "foto": "strawberries close up"
   },
   {
     "id": "animales-065",
@@ -509,7 +572,8 @@
     "icono": "🌺",
     "dato": "La Rafflesia, de las selvas del sudeste asiático, tiene la flor individual más grande: cerca de 1 metro de ancho.",
     "falso": "La Rafflesia, de las selvas del sudeste asiático, tiene la flor individual más pequeña: cabe en una uña.",
-    "explicacion": "La flor de la Rafflesia arnoldii puede medir cerca de un metro y pesar varios kilos. Además, huele a carne podrida."
+    "explicacion": "La flor de la Rafflesia arnoldii puede medir cerca de un metro y pesar varios kilos. Además, huele a carne podrida.",
+    "foto": "rainforest jungle flower"
   },
   {
     "id": "animales-066",
@@ -517,7 +581,8 @@
     "icono": "🌿",
     "dato": "Cerca de la mitad del oxígeno de la Tierra lo producen el fitoplancton y las algas del océano.",
     "falso": "Casi todo el oxígeno de la Tierra lo producen los bosques tropicales; el océano no produce nada.",
-    "explicacion": "El océano aporta alrededor de la mitad del oxígeno del planeta gracias a algas y organismos microscópicos que hacen fotosíntesis."
+    "explicacion": "El océano aporta alrededor de la mitad del oxígeno del planeta gracias a algas y organismos microscópicos que hacen fotosíntesis.",
+    "foto": "green algae sea"
   },
   {
     "id": "animales-067",
@@ -525,7 +590,8 @@
     "icono": "🍄",
     "dato": "Uno de los organismos más grandes del mundo es un hongo en Oregón que ocupa unos 9 km² bajo tierra.",
     "falso": "Uno de los organismos más grandes del mundo es un hongo en Oregón que ocupa apenas un metro cuadrado.",
-    "explicacion": "Ese hongo Armillaria se extiende bajo tierra por cerca de 9 km² y tendría miles de años."
+    "explicacion": "Ese hongo Armillaria se extiende bajo tierra por cerca de 9 km² y tendría miles de años.",
+    "foto": "mushrooms forest floor"
   },
   {
     "id": "animales-068",
@@ -533,7 +599,8 @@
     "icono": "🍄",
     "dato": "Los hongos están más emparentados con los animales que con las plantas.",
     "falso": "Los hongos son plantas sin hojas que fabrican su comida con la luz del sol.",
-    "explicacion": "Los hongos no hacen fotosíntesis: se alimentan absorbiendo materia orgánica y forman un reino propio, más cercano a los animales."
+    "explicacion": "Los hongos no hacen fotosíntesis: se alimentan absorbiendo materia orgánica y forman un reino propio, más cercano a los animales.",
+    "foto": "mushroom time lapse"
   },
   {
     "id": "animales-069",
@@ -541,7 +608,8 @@
     "icono": "🌱",
     "dato": "La Venus atrapamoscas cierra su trampa cuando una presa toca dos veces sus pelos sensibles en unos 20 segundos.",
     "falso": "La Venus atrapamoscas cierra su trampa con un solo roce de cualquier cosa, incluso una gota de lluvia.",
-    "explicacion": "La planta necesita dos estímulos seguidos para cerrarse. Así evita gastar energía con gotas o basuritas."
+    "explicacion": "La planta necesita dos estímulos seguidos para cerrarse. Así evita gastar energía con gotas o basuritas.",
+    "foto": "venus flytrap"
   },
   {
     "id": "animales-070",
@@ -549,7 +617,8 @@
     "icono": "🌧️",
     "dato": "Las gotas de lluvia no tienen forma de lágrima: al caer se parecen más a un pan de hamburguesa.",
     "falso": "Las gotas de lluvia caen con forma de lágrima, redondas abajo y puntiagudas arriba.",
-    "explicacion": "Las gotas pequeñas son casi esféricas y las grandes se aplanan por la resistencia del aire. Nunca tienen punta."
+    "explicacion": "Las gotas pequeñas son casi esféricas y las grandes se aplanan por la resistencia del aire. Nunca tienen punta.",
+    "foto": "raindrops slow motion"
   },
   {
     "id": "animales-071",
@@ -557,7 +626,8 @@
     "icono": "❄️",
     "dato": "Los cristales de nieve tienen simetría de seis lados por la forma en que se ordenan las moléculas de agua.",
     "falso": "Los cristales de nieve suelen tener ocho brazos por la forma en que se ordenan las moléculas de agua.",
-    "explicacion": "Al congelarse, las moléculas de agua forman una red hexagonal. Por eso los copos tienen seis lados o seis brazos."
+    "explicacion": "Al congelarse, las moléculas de agua forman una red hexagonal. Por eso los copos tienen seis lados o seis brazos.",
+    "foto": "snowflake macro"
   },
   {
     "id": "animales-072",
@@ -565,7 +635,8 @@
     "icono": "🌈",
     "dato": "Desde un avión a veces se puede ver un arcoíris como un círculo completo.",
     "falso": "Un arcoíris siempre es un semicírculo, incluso visto desde un avión.",
-    "explicacion": "El arcoíris es un círculo. Desde el suelo el horizonte tapa la mitad, pero desde lo alto puede verse completo."
+    "explicacion": "El arcoíris es un círculo. Desde el suelo el horizonte tapa la mitad, pero desde lo alto puede verse completo.",
+    "foto": "rainbow sky"
   },
   {
     "id": "animales-073",
@@ -573,7 +644,8 @@
     "icono": "🌋",
     "dato": "Medido desde su base en el fondo del mar, el volcán Mauna Kea, en Hawái, supera los 10 000 metros.",
     "falso": "Medido desde su base en el fondo del mar, el volcán Mauna Kea, en Hawái, mide unos 2000 metros.",
-    "explicacion": "Mauna Kea sobresale unos 4200 m del mar, pero desde su base submarina pasa de 10 000 m, más que el Everest."
+    "explicacion": "Mauna Kea sobresale unos 4200 m del mar, pero desde su base submarina pasa de 10 000 m, más que el Everest.",
+    "foto": "hawaii volcano"
   },
   {
     "id": "animales-074",
@@ -581,7 +653,8 @@
     "icono": "🏔️",
     "dato": "El monte Everest sigue creciendo unos milímetros al año por el choque de las placas de India y Asia.",
     "falso": "El monte Everest crece unos 2 metros al año por el choque de las placas de India y Asia.",
-    "explicacion": "El Everest se eleva apenas unos milímetros por año. Dos metros anuales lo harían crecer 2 km en mil años."
+    "explicacion": "El Everest se eleva apenas unos milímetros por año. Dos metros anuales lo harían crecer 2 km en mil años.",
+    "foto": "mount everest"
   },
   {
     "id": "animales-075",
@@ -589,7 +662,8 @@
     "icono": "🏜️",
     "dato": "El desierto de Atacama, en Chile, es el desierto no polar más seco del mundo.",
     "falso": "El desierto de Atacama, en Chile, es el lugar más lluvioso de Sudamérica.",
-    "explicacion": "En algunas zonas de Atacama casi nunca llueve. Es tan seco que la NASA lo usa para probar equipos para Marte."
+    "explicacion": "En algunas zonas de Atacama casi nunca llueve. Es tan seco que la NASA lo usa para probar equipos para Marte.",
+    "foto": "atacama desert"
   },
   {
     "id": "animales-076",
@@ -597,7 +671,8 @@
     "icono": "🧊",
     "dato": "La Antártida es el desierto más grande del mundo: allí casi no cae precipitación.",
     "falso": "La Antártida no puede ser un desierto porque es el continente donde más llueve y nieva.",
-    "explicacion": "Un desierto se define por la poca precipitación, no por el calor. La Antártida recibe muy poca y es el desierto más grande."
+    "explicacion": "Un desierto se define por la poca precipitación, no por el calor. La Antártida recibe muy poca y es el desierto más grande.",
+    "foto": "antarctica ice"
   },
   {
     "id": "animales-077",
@@ -605,7 +680,8 @@
     "icono": "🌎",
     "dato": "El río Amazonas es el río más caudaloso del mundo: lleva más agua que cualquier otro río.",
     "falso": "El río Nilo es el más caudaloso del mundo y lleva más agua que el Amazonas.",
-    "explicacion": "El Amazonas lleva muchísima más agua que el Nilo: su caudal supera al de los siguientes ríos más grandes juntos."
+    "explicacion": "El Amazonas lleva muchísima más agua que el Nilo: su caudal supera al de los siguientes ríos más grandes juntos.",
+    "foto": "amazon river aerial"
   },
   {
     "id": "animales-078",
@@ -613,7 +689,8 @@
     "icono": "💧",
     "dato": "El Salto Ángel, en Venezuela, es la cascada más alta del mundo: tiene unos 979 metros de caída.",
     "falso": "El Salto Ángel, en Venezuela, es la cascada más alta del mundo: tiene unos 97 metros de caída.",
-    "explicacion": "El Salto Ángel cae cerca de 979 metros desde el tepuy Auyantepui, casi diez veces más que 97 metros."
+    "explicacion": "El Salto Ángel cae cerca de 979 metros desde el tepuy Auyantepui, casi diez veces más que 97 metros.",
+    "foto": "tall waterfall aerial"
   },
   {
     "id": "animales-079",
@@ -621,7 +698,8 @@
     "icono": "🌙",
     "dato": "Las mareas del océano se deben principalmente a la atracción de la gravedad de la Luna.",
     "falso": "Las mareas del océano se deben principalmente a la fuerza del viento sobre el mar.",
-    "explicacion": "La gravedad de la Luna, y en menor medida la del Sol, levanta el agua de los océanos y produce las mareas."
+    "explicacion": "La gravedad de la Luna, y en menor medida la del Sol, levanta el agua de los océanos y produce las mareas.",
+    "foto": "ocean tide beach"
   },
   {
     "id": "animales-080",
@@ -629,7 +707,8 @@
     "icono": "🍂",
     "dato": "En otoño, las hojas cambian de color porque dejan de producir clorofila y se ven otros pigmentos.",
     "falso": "En otoño, las hojas se vuelven rojas y amarillas porque el frío las quema.",
-    "explicacion": "Al acortarse los días, la clorofila verde se degrada y aparecen pigmentos amarillos, naranjas y rojos."
+    "explicacion": "Al acortarse los días, la clorofila verde se degrada y aparecen pigmentos amarillos, naranjas y rojos.",
+    "foto": "autumn leaves falling"
   },
   {
     "id": "animales-081",
@@ -637,7 +716,8 @@
     "icono": "🐘",
     "dato": "Los elefantes se comunican con sonidos tan graves que los humanos no oímos y que viajan varios kilómetros.",
     "falso": "Los elefantes solo se comunican con barritos fuertes que se escuchan a pocos metros.",
-    "explicacion": "Además de barritar, los elefantes emiten infrasonidos que se propagan kilómetros por el aire y el suelo."
+    "explicacion": "Además de barritar, los elefantes emiten infrasonidos que se propagan kilómetros por el aire y el suelo.",
+    "foto": "elephants herd"
   },
   {
     "id": "animales-082",
@@ -645,7 +725,8 @@
     "icono": "🐆",
     "dato": "El jaguar es el felino más grande de América y el tercero más grande del mundo.",
     "falso": "El jaguar es el felino más pequeño de América, más pequeño que un gato doméstico.",
-    "explicacion": "El jaguar solo es superado por el tigre y el león. Es el felino más grande del continente americano."
+    "explicacion": "El jaguar solo es superado por el tigre y el león. Es el felino más grande del continente americano.",
+    "foto": "jaguar jungle"
   },
   {
     "id": "animales-083",
@@ -653,7 +734,8 @@
     "icono": "🦦",
     "dato": "La nutria marina tiene el pelaje más denso del reino animal: hasta unos 150 000 pelos por centímetro cuadrado.",
     "falso": "La nutria marina tiene un pelaje muy escaso: unos 150 pelos por centímetro cuadrado.",
-    "explicacion": "La nutria marina no tiene una gruesa capa de grasa; se protege del frío con un pelaje densísimo, de miles de pelos por cm²."
+    "explicacion": "La nutria marina no tiene una gruesa capa de grasa; se protege del frío con un pelaje densísimo, de miles de pelos por cm².",
+    "foto": "sea otter floating"
   },
   {
     "id": "animales-084",
@@ -661,7 +743,8 @@
     "icono": "🦅",
     "dato": "El cóndor andino tiene una envergadura de hasta unos 3,3 metros, de las mayores entre las aves terrestres.",
     "falso": "El cóndor andino tiene una envergadura de apenas un metro, como la de una paloma grande.",
-    "explicacion": "Con las alas extendidas, el cóndor andino puede pasar de 3 metros y planear horas aprovechando las corrientes de aire."
+    "explicacion": "Con las alas extendidas, el cóndor andino puede pasar de 3 metros y planear horas aprovechando las corrientes de aire.",
+    "foto": "andean condor flying"
   },
   {
     "id": "animales-085",
@@ -669,7 +752,8 @@
     "icono": "🦖",
     "dato": "Las aves descienden de los dinosaurios: una gallina es pariente lejana del Tyrannosaurus rex.",
     "falso": "Los parientes vivos más cercanos del Tyrannosaurus rex son las lagartijas y las iguanas.",
-    "explicacion": "Los fósiles y el ADN muestran que las aves son dinosaurios terópodos. Las lagartijas son parientes mucho más lejanas."
+    "explicacion": "Los fósiles y el ADN muestran que las aves son dinosaurios terópodos. Las lagartijas son parientes mucho más lejanas.",
+    "foto": "hen walking farm"
   },
   {
     "id": "animales-086",
@@ -677,7 +761,8 @@
     "icono": "🦚",
     "dato": "En los pavos reales, la cola larga y llena de colores la tienen los machos, para atraer a las hembras.",
     "falso": "En los pavos reales, la cola larga y llena de colores la tienen las hembras, para atraer a los machos.",
-    "explicacion": "Las hembras de pavo real tienen colores más discretos. El macho despliega su cola en abanico para cortejarlas."
+    "explicacion": "Las hembras de pavo real tienen colores más discretos. El macho despliega su cola en abanico para cortejarlas.",
+    "foto": "peacock feathers"
   },
   {
     "id": "animales-087",
@@ -685,7 +770,8 @@
     "icono": "🦢",
     "dato": "No todos los cisnes son blancos: en Australia vive el cisne negro, de plumaje oscuro y pico rojo.",
     "falso": "Todos los cisnes del mundo son blancos; nunca se ha encontrado una especie de cisne negro.",
-    "explicacion": "El cisne negro es una especie nativa de Australia. Su plumaje es negro y su pico, rojo intenso."
+    "explicacion": "El cisne negro es una especie nativa de Australia. Su plumaje es negro y su pico, rojo intenso.",
+    "foto": "black swan"
   },
   {
     "id": "animales-088",
@@ -693,7 +779,8 @@
     "icono": "🐺",
     "dato": "Los lobos aúllan para comunicarse con su manada a distancia y marcar su territorio.",
     "falso": "Los lobos aúllan solo en las noches de luna llena y nunca en otros momentos.",
-    "explicacion": "Los lobos aúllan en cualquier fase de la Luna. El aullido sirve para reunir a la manada y avisar a otros grupos."
+    "explicacion": "Los lobos aúllan en cualquier fase de la Luna. El aullido sirve para reunir a la manada y avisar a otros grupos.",
+    "foto": "wolf howling"
   },
   {
     "id": "animales-089",
@@ -701,7 +788,8 @@
     "icono": "🐿️",
     "dato": "Las ardillas entierran semillas para el invierno, y muchas de las que no recuperan germinan y se hacen árboles.",
     "falso": "Las ardillas siempre recuperan todas las semillas que entierran, sin dejar ni una.",
-    "explicacion": "Las ardillas no recuperan todas sus semillas. Las que quedan bajo tierra pueden germinar, así que ayudan a plantar bosques."
+    "explicacion": "Las ardillas no recuperan todas sus semillas. Las que quedan bajo tierra pueden germinar, así que ayudan a plantar bosques.",
+    "foto": "squirrel burying nut"
   },
   {
     "id": "animales-090",
@@ -709,6 +797,7 @@
     "icono": "🦙",
     "dato": "Las llamas y las alpacas son parientes de los camellos y fueron domesticadas en los Andes.",
     "falso": "Las llamas y las alpacas son parientes de las ovejas y fueron domesticadas en Europa.",
-    "explicacion": "Llamas, alpacas, vicuñas y guanacos son camélidos sudamericanos, de la misma familia que los camellos."
+    "explicacion": "Llamas, alpacas, vicuñas y guanacos son camélidos sudamericanos, de la misma familia que los camellos.",
+    "foto": "llamas andes mountains"
   }
 ]
