@@ -5,7 +5,10 @@ import { json, diaConEstado, lanzar, claveCorrecta, ACTIVO } from './_panel.js';
 
 export default { async fetch(request) {
   const url = new URL(request.url);
-  if (!claveCorrecta(url.searchParams.get('clave') || request.headers.get('x-relojero'), 'RELOJ_CLAVE')) return json({ error: 'Clave incorrecta.' }, 401);
+  // La clave va en la cabecera «X-Relojero» (en la URL quedaría en los registros). La de la URL se acepta mientras
+  // RELOJ_SOLO_CABECERA no sea «si», para cambiar cron-job.org sin perder corridas.
+  const enUrl = process.env.RELOJ_SOLO_CABECERA === 'si' ? null : url.searchParams.get('clave');
+  if (!claveCorrecta(request.headers.get('x-relojero') || enUrl, 'RELOJ_CLAVE')) return json({ error: 'Clave incorrecta.' }, 401);
   try {
     const { fecha, min, lista, corridas } = await diaConEstado();
     const esperando = corridas.filter((c) => ACTIVO.includes(c.estado) && c.estado !== 'in_progress');
