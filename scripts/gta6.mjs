@@ -15,10 +15,10 @@ import { TEMAS } from './lib/tarjetas.mjs';
 import { renderQuiz } from './lib/quiz-video.mjs';
 import { publicarEnlace } from './lib/video-link.mjs';
 import { publishReel, publishStory, facebookReady } from './facebook.mjs';
-import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
+import { publishInstagramSeguro, instagramReady, musicaTendencia } from './instagram.mjs';
 import { publishVideo } from './publish.mjs';
 import { logUpload } from './tiktok-status.mjs';
-import { ponerFondos, guardarStock, creditoStock } from './lib/stock.mjs';
+import { ponerFondos, guardarStock } from './lib/stock.mjs';
 
 const o = parseCli({ 'dry-run': { type: 'boolean', default: false }, 'solo-lanzamiento': { type: 'boolean', default: false }, tiktok: { type: 'string', default: 'draft' }, hoy: { type: 'string' } });
 const D = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'gta6.json'), 'utf8'));
@@ -48,7 +48,7 @@ if (faltan > 0) {
     { tipo: 'cierre', dur: CIERRE, tema: 'gta', consulta: 'miami sunset palm trees', sonidos: [[0, 'final']],
       lineas: [{ texto: 'SALE EL 19 DE NOVIEMBRE', size: 96, color: TEMAS.gta.acento }, { texto: `En ${plataformas}`, size: 60 }, { texto: 'Cada día, más datos en Potter Play', size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
-  texto = `🌴 ${titulo}. Mientras llega el 19 de noviembre, ${datos.length} datos que quizá no sabías:\n\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n¿Cuál te sorprendió más?\n.\n.\n.\nFuentes: ${[...new Set(datos.map((d) => new URL(d.fuente).hostname.replace(/^www\./, '')))].join(', ')}\n\n#gta6 #gtavi #gta #videojuegos #gaming #rockstar #reels #potterplay`;
+  texto = `🌴 ${titulo}. Mientras llega el 19 de noviembre, ${datos.length} datos que quizá no sabías:\n\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n¿Cuál te sorprendió más?\n\n#gta6 #gtavi #gta #videojuegos #gaming #rockstar #reels #potterplay`;
 } else {
   datos = D.especial;
   titulo = '¡Hoy sale GTA VI!';
@@ -59,15 +59,16 @@ if (faltan > 0) {
     { tipo: 'cierre', dur: CIERRE, tema: 'gta', consulta: 'miami night highway lights', sonidos: [[0, 'final']],
       lineas: [{ texto: '¿YA LO TIENES?', size: 120, color: TEMAS.gta.acento }, { texto: `Disponible en ${plataformas}`, size: 60 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
-  texto = `🎮 ${titulo} Llegó el día: esto es lo que tienes que saber para jugar.\n\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n¿Ya lo tienes o lo vas a esperar?\n.\n.\n.\nFuentes: ${[...new Set(datos.map((d) => new URL(d.fuente).hostname.replace(/^www\./, '')))].join(', ')}\n\n#gta6 #gtavi #gta #videojuegos #gaming #lanzamiento #reels #potterplay`;
+  texto = `🎮 ${titulo} Llegó el día: esto es lo que tienes que saber para jugar.\n\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n¿Ya lo tienes o lo vas a esperar?\n\n#gta6 #gtavi #gta #videojuegos #gaming #lanzamiento #reels #potterplay`;
 }
 
 const fondos = await ponerFondos(escenas);
-if (fondos) { texto += creditoStock(); console.error(`Videos reales: ${fondos}`); }
+if (fondos) console.error(`Videos reales: ${fondos}`);
 guardarStock();
 const fx = setupNode(), outDir = path.join(ROOT, 'out'); fs.mkdirSync(outDir, { recursive: true });
 const video = path.join(outDir, `gta6-${faltan > 0 ? `faltan-${faltan}` : 'lanzamiento'}.mp4`);
-const r = await renderQuiz({ escenas, out: video, emojiFont: fx.emoji ? `"${fx.emoji}"` : '', melodia: 'canon' });
+// Synthwave: el ambiente de Miami de noche
+const r = await renderQuiz({ escenas, out: video, emojiFont: fx.emoji ? `"${fx.emoji}"` : '', estilo: 'synthwave', semilla: faltan * 131, outIG: video.replace(/\.mp4$/, '-ig.mp4') });
 console.error(`${titulo} · ${r.duration.toFixed(1)} s · ${video}`);
 const meta = { kind: 'gta6', title: titulo, file: path.basename(video), duration: r.duration, post: { text: texto }, createdAt: new Date().toISOString() };
 
@@ -79,7 +80,10 @@ if (!o['dry-run']) {
     try { meta.facebookStory = await publishStory({ video }); } catch (e) { meta.facebookStory = { status: 'error', error: e.message }; }
   }
   if (meta.videoUrl && await instagramReady()) {
-    meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: meta.videoUrl, caption: texto });
+    // Instagram: la copia con solo efectos + una canción en tendencia del catálogo autorizado de Meta
+      const cancion = r.outIG ? await musicaTendencia() : null, urlIG = cancion ? (await publicarEnlace(r.outIG).catch(() => null))?.url : null;
+      meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: urlIG || meta.videoUrl, caption: texto, audio: urlIG ? cancion.id : undefined });
+      if (urlIG) meta.instagram.cancion = cancion.nombre;
     meta.instagramStory = await publishInstagramSeguro({ tipo: 'historia', url: meta.videoUrl });
   }
   // TikTok: borrador sin sonido (ahí se le pone una canción del momento); la descripción llega por el resumen

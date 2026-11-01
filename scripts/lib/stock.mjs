@@ -1,5 +1,5 @@
 // Fotos y videos reales de Pixabay (Pixabay Content License: uso comercial permitido, sin atribución obligatoria;
-// igual se acredita a Pixabay en la descripción, como pide su API). Necesita PIXABAY_API_KEY; sin ella todo devuelve
+// la API pide mostrar el origen solo cuando se muestran resultados de búsqueda, así que el video no lleva créditos). Necesita PIXABAY_API_KEY; sin ella todo devuelve
 // null y los Reels usan el fondo de color. Pixabay pide guardar las búsquedas 24 h y descargar los archivos (no enlazarlos):
 // las búsquedas y los clips ya usados quedan en data/stock.json (estado de Actions); los archivos, en una caché temporal.
 import fs from 'node:fs';
@@ -79,4 +79,3 @@ export function guardarStock() {
   for (const [k, c] of Object.entries(estado.busquedas)) if (Date.now() - c.t > 24 * 3600e3) delete estado.busquedas[k];
   fs.mkdirSync(path.dirname(ESTADO), { recursive: true }); fs.writeFileSync(ESTADO, JSON.stringify(estado) + '\n');
 }
-export const creditoStock = () => autores.size ? `\n\n🎥 Videos e imágenes: Pixabay (${[...autores].filter(Boolean).slice(0, 6).join(', ')})` : '';

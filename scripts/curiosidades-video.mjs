@@ -15,12 +15,12 @@ import { TEMAS } from './lib/tarjetas.mjs';
 import { renderQuiz } from './lib/quiz-video.mjs';
 import { publicarEnlace } from './lib/video-link.mjs';
 import { publishReel, publishStory, facebookReady } from './facebook.mjs';
-import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
+import { publishInstagramSeguro, instagramReady, musicaTendencia } from './instagram.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
 import { MELODIA_IDS } from '../src/melodias.js';
 import { crearVisual, VISUALES } from './lib/retos-visuales.mjs';
 import { juntarNoticias } from './noticias.mjs';
-import { ponerFondos, guardarStock, creditoStock } from './lib/stock.mjs';
+import { ponerFondos, guardarStock } from './lib/stock.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades');
 const HIST = path.join(ROOT, 'data', 'curiosidades-video-historial.json'), HIST_IMG = path.join(ROOT, 'data', 'curiosidades-historial.json');
@@ -32,6 +32,8 @@ const OCULTAR = '\n\n.\n.\n.\n\n'; // lo que sigue queda debajo de «Ver más»
 // Orden de los formatos (se repite cada 10; con 10 corridas al día que no son noticias, cada día cae en otro orden).
 // Las banderas, lo que más vistas tuvo (informe del 2026-11-01), salen 2 de cada 10. Las noticias las pide el
 // workflow en sus horarios (--formato noticias).
+// Música propia (scripts/lib/musica.mjs) según el formato; dentro de cada lista, al azar
+const ESTILO = { banderas: ['pop', 'dembow', 'electro'], retos: ['electro', 'synthwave'], quiz: ['pop', 'electro'], prefieres: ['lofi', 'pop'], emojis: ['dembow', 'pop'], top10: ['lofi', 'pop', 'synthwave'], noticias: ['electro', 'synthwave'] };
 const ROTACION = ['banderas', 'retos', 'quiz', 'prefieres', 'emojis', 'banderas', 'top10', 'retos', 'prefieres', 'quiz'];
 const TEMAS_DATOS = ['animales', 'cuerpo', 'ciencia', 'geografia', 'historia', 'comida', 'deportes', 'tecnologia', 'inventos'];
 
@@ -243,7 +245,7 @@ async function noticiasVideo(hist) {
     ...elegidas.map((n, i) => ({ tipo: 'noticia', dur: 8.5, idx: i, total: elegidas.length, tema: 'noticias', etiqueta: ETIQUETA_NOTICIA[n.cat] || '📰 NOTICIA', consulta: azar(FONDO_NOTICIA[n.cat] || ['newspaper printing']), icono: n.icono, titular: n.titulo, pie: `${n.medio} · ${corta(n.fecha)}`, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
     cierre('noticias', '¿CUÁL TE SORPRENDIÓ MÁS?', 'Las noticias del día en menos de un minuto')
   ];
-  const texto = `📰 Las noticias de hoy en menos de un minuto: videojuegos, fútbol y ciencia.\n\n${elegidas.map((n, i) => `${i + 1}. ${n.titulo} (${n.medio})`).join('\n')}${OCULTAR}Fuentes:\n${elegidas.map((n) => `${n.medio}: ${n.link}`).join('\n')}\n\n${tags('noticias', 'ultimahora', 'videojuegos', 'futbol', 'ciencia')}`;
+  const texto = `📰 Las noticias de hoy en menos de un minuto: videojuegos, fútbol y ciencia.\n\n${elegidas.map((n, i) => `${i + 1}. ${n.titulo} (${n.medio})`).join('\n')}\n\n¿Cuál te sorprendió más?\n\n${tags('noticias', 'ultimahora', 'videojuegos', 'futbol', 'ciencia')}`;
   return { formato: 'noticias', titulo: 'Noticias de hoy', escenas, texto, noticias: elegidas.map((n) => n.link) };
 }
 
@@ -266,7 +268,7 @@ async function main() {
   const pieza = (await hacer[formato]()) || quiz(base, hist);
   console.error(`Formato: ${pieza.titulo}`);
   const fondos = await ponerFondos(pieza.escenas);
-  if (fondos) { pieza.texto += creditoStock(); console.error(`Fotos y videos reales: ${fondos}`); }
+  if (fondos) console.error(`Fotos y videos reales: ${fondos}`);
   guardarStock();
 
   const outDir = path.join(ROOT, 'out'); fs.mkdirSync(outDir, { recursive: true });
@@ -278,7 +280,9 @@ async function main() {
     console.log(png); return;
   }
   const video = path.join(outDir, `${nombre}.mp4`);
-  const r = await renderQuiz({ escenas: pieza.escenas, out: video, emojiFont, melodia });
+  const estilo = azar(ESTILO[pieza.formato] || ['pop']);
+  const r = await renderQuiz({ escenas: pieza.escenas, out: video, emojiFont, estilo, semilla: hist.total * 7919 + Date.now() % 1000, outIG: video.replace(/\.mp4$/, '-ig.mp4') });
+  console.error(`Música: ${estilo}`);
   console.error(`${pieza.titulo} · ${r.duration.toFixed(1)} s · ${video}`);
   const meta = { kind: 'quiz', formato: pieza.formato, title: pieza.titulo, file: path.basename(video), duration: r.duration, post: { text: pieza.texto }, createdAt: new Date().toISOString() };
   const sidecar = video.replace(/\.mp4$/, '.json');
@@ -301,7 +305,10 @@ async function main() {
     registrarRespuesta({ red: 'facebook', id: meta.facebook?.video_id, clave, titulo: pieza.titulo });
     // Instagram (cuenta vinculada a la página): el mismo video desde el almacén, como Reel y como historia
     if (o.instagram !== 'no' && meta.videoUrl && await instagramReady()) {
-      meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: meta.videoUrl, caption: pieza.texto });
+      // Instagram: la copia con solo efectos + una canción en tendencia del catálogo autorizado de Meta
+      const cancion = r.outIG ? await musicaTendencia() : null, urlIG = cancion ? (await publicarEnlace(r.outIG).catch(() => null))?.url : null;
+      meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: urlIG || meta.videoUrl, caption: pieza.texto, audio: urlIG ? cancion.id : undefined });
+      if (urlIG) meta.instagram.cancion = cancion.nombre;
       registrarRespuesta({ red: 'instagram', id: meta.instagram.media_id, clave, titulo: pieza.titulo });
       if (o.historia && r.duration <= 60) meta.instagramStory = await publishInstagramSeguro({ tipo: 'historia', url: meta.videoUrl });
     }

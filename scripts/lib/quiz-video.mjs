@@ -9,9 +9,10 @@ import { spawn, spawnSync } from 'node:child_process';
 import ffmpegPath from 'ffmpeg-static';
 import { createCanvas, loadImage } from '@napi-rs/canvas';
 import { wavBuffer } from '../bounce.mjs';
-import { MELODIAS, midiFreq } from '../../src/melodias.js';
+import { midiFreq } from '../../src/melodias.js';
 import { TEMAS } from './tarjetas.mjs';
 import { tituloVisual, marcaVisual } from './retos-visuales.mjs';
+import { pistaMusical } from './musica.mjs';
 
 export const W = 1080, H = 1920;
 const SR = 44100, FPS = 30;
@@ -357,19 +358,12 @@ const SONIDOS = {
   mal: (b, t) => { tono(b, t, 220, 0.35, 0.22, { tipo: 'tri', barrido: -80, caida: 0.15 }); },
   final: (b, t) => [72, 76, 79, 84].forEach((m, i) => tono(b, t + i * 0.11, midiFreq(m), 0.9, 0.2, { caida: 0.3 }))
 };
-// Melodía de fondo suave (dominio público, src/melodias.js) más un bajo, durante todo el video
-function musica(buf, dur, melodia) {
-  const mel = MELODIAS[melodia] || MELODIAS.estrellita, paso = 0.34;
-  for (let k = 0, t = 0.2; t < dur - 0.5; k++, t += paso) {
-    const m = mel.notes[k % mel.notes.length];
-    tono(buf, t, midiFreq(m), 0.6, 0.08, { tipo: 'tri', caida: 0.22 });
-    if (k % 4 === 0) tono(buf, t, midiFreq(m - 24), 1.3, 0.05, { caida: 0.5 });
-  }
-}
 
 // ---------- render ----------
 // escenas: [{ tipo, dur, tema: id de TEMAS, idx?, total?, sonidos?: [[t, nombre]] }]
-export async function renderQuiz({ escenas, out, melodia, emojiFont = '', still, log = (m) => process.stderr.write(m) }) {
+// estilo: pop | dembow | lofi | electro | synthwave (scripts/lib/musica.mjs). outIG: además, una copia con solo los
+// efectos (sin música), para ponerle en Instagram una canción del catálogo autorizado de Meta
+export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semilla = Date.now(), outIG, emojiFont = '', still, log = (m) => process.stderr.write(m) }) {
   EMOJI = emojiFont ? `, ${emojiFont}` : '';
   let t0 = 0;
   const lista = escenas.map((e) => { const r = { ...e, t0, tema: TEMAS[e.tema] || TEMAS.noticias }; t0 += e.dur; return r; });
@@ -399,13 +393,15 @@ export async function renderQuiz({ escenas, out, melodia, emojiFont = '', still,
     dibujar(+still, debajo); fs.writeFileSync(out, cv.toBuffer('image/png')); return { out, duration: dur };
   }
 
-  // Audio: música de fondo + efectos de cada escena; limitador suave al final
-  const buf = new Float32Array(Math.ceil((dur + 0.5) * SR));
-  musica(buf, dur, melodia);
-  for (const e of lista) for (const [t, s] of e.sonidos || []) SONIDOS[s]?.(buf, e.t0 + t);
-  for (let i = 0; i < buf.length; i++) buf[i] = Math.tanh(buf[i] * 1.2) * 0.9;
+  // Audio: música propia + efectos de cada escena (por separado, para la copia de Instagram); limitador suave al final
+  const largo = Math.ceil((dur + 0.5) * SR), efectos = new Float32Array(largo), mus = new Float32Array(largo);
+  for (const e of lista) for (const [t, s] of e.sonidos || []) SONIDOS[s]?.(efectos, e.t0 + t);
+  pistaMusical(mus, dur, { estilo, semilla, SR });
+  const buf = efectos.map((x, i) => Math.tanh((x + 0.75 * mus[i]) * 1.2) * 0.9);
   const wav = `${os.tmpdir()}/quiz-${process.pid}-${Date.now()}.wav`;
   fs.writeFileSync(wav, wavBuffer(buf, SR));
+  const wavIG = outIG ? wav.replace(/\.wav$/, '-efectos.wav') : null;
+  if (wavIG) fs.writeFileSync(wavIG, wavBuffer(efectos.map((x) => Math.tanh(x * 1.2) * 0.9), SR));
 
   // Sin video: el canvas es el cuadro entero. Con video: cada escena aporta su clip (o negro), se concatenan y el
   // canvas (con transparencia) va encima
@@ -438,7 +434,12 @@ export async function renderQuiz({ escenas, out, melodia, emojiFont = '', still,
       if (i % (FPS * 10) === 0) log(`  ${Math.round(100 * i / frames)}%\n`);
     }
     ff.stdin.end(); await fin;
-  } finally { fs.rmSync(wav, { force: true }); }
+    // Copia para Instagram: el mismo video, con solo los efectos
+    if (wavIG) {
+      const r = spawnSync(ffmpegPath, ['-hide_banner', '-loglevel', 'error', '-y', '-i', out, '-i', wavIG, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-ar', '48000', '-ac', '2', '-t', dur.toFixed(3), '-movflags', '+faststart', outIG]);
+      if (r.status !== 0) log(`No se pudo hacer la copia para Instagram: ${String(r.stderr).slice(-200)}\n`);
+    }
+  } finally { fs.rmSync(wav, { force: true }); if (wavIG) fs.rmSync(wavIG, { force: true }); }
   log(`  listo en ${((Date.now() - ti) / 1000).toFixed(1)} s\n`);
-  return { out, duration: +dur.toFixed(3) };
+  return { out, outIG: outIG && fs.existsSync(outIG) ? outIG : null, duration: +dur.toFixed(3) };
 }

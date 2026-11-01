@@ -25,9 +25,10 @@ async function tokenDePagina() {
   return pageToken;
 }
 
-export async function graph(method, pathname, params = {}) {
+// usuario: con el token del usuario del sistema tal cual (lo pide la Audio API de Instagram), no el de la página
+export async function graph(method, pathname, params = {}, { usuario = false } = {}) {
   const u = new URL(GRAPH + pathname);
-  for (const [k, v] of Object.entries({ ...params, access_token: await tokenDePagina() })) if (v != null) u.searchParams.set(k, v);
+  for (const [k, v] of Object.entries({ ...params, access_token: usuario ? process.env.FB_PAGE_TOKEN : await tokenDePagina() })) if (v != null) u.searchParams.set(k, v);
   const res = await fetch(u, { method });
   const d = await res.json().catch(() => ({}));
   if (!res.ok || d.error) {
