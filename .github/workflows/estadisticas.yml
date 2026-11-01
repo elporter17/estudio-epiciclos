@@ -1,0 +1,31 @@
+# Informe de rendimiento de Facebook e Instagram (scripts/estadisticas.mjs): vistas, reacciones, comentarios y
+# compartidos por formato y por hora. Solo a mano; el informe queda en el resumen de la corrida.
+name: Estadísticas de Facebook e Instagram
+
+on:
+  workflow_dispatch:
+    inputs:
+      dias:
+        description: Cuántos días hacia atrás
+        type: string
+        default: '7'
+
+permissions:
+  contents: read
+
+jobs:
+  informe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Informe
+        run: node scripts/estadisticas.mjs --dias "${{ inputs.dias || '7' }}" | tee -a "$GITHUB_STEP_SUMMARY"
