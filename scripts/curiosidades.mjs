@@ -111,7 +111,8 @@ async function carrusel(o, hist, base, emojiFont) {
       const x = elegirCuriosidad(base, { ...hist, ids: [...hist.ids, ...ids] }, { formato: 'sabias' }); ids.push(x.id);
       cv = dibujarTarjeta({ formato: 'sabias', tema: x.tema, icono: x.icono, texto: x.dato }, { H: 1920, emojiFont }); lineas.push(`${i + 1}. ${x.dato}`);
     }
-    const f = path.join(outDir, `carrusel-${tipo}-${marca}-${i + 1}.png`); fs.writeFileSync(f, cv.toBuffer('image/png')); archivos.push(f);
+    // TikTok solo acepta fotos JPG o WEBP (con PNG responde file_format_check_failed)
+    const f = path.join(outDir, `carrusel-${tipo}-${marca}-${i + 1}.jpg`); fs.writeFileSync(f, cv.toBuffer('image/jpeg', 92)); archivos.push(f);
   }
   const titulo = tipo === 'retos' ? `${n} retos visuales: ¿cuántos resuelves?` : `${n} cosas que no sabías`;
   const texto = tipo === 'retos'
@@ -172,7 +173,8 @@ async function main() {
   const archivos = {};
   for (const red of redes) {
     const H = red === 'tiktok' ? 1920 : 1350, cv = visual ? dibujarVisual(visual, { H, emojiFont }) : dibujarTarjeta(pieza.tarjeta, { H, emojiFont });
-    archivos[red] = path.join(outDir, `curiosidad-${nombre}-${red}.png`); fs.writeFileSync(archivos[red], cv.toBuffer('image/png'));
+    // TikTok solo acepta JPG o WEBP; Facebook va en PNG
+    archivos[red] = path.join(outDir, `curiosidad-${nombre}-${red}.${red === 'tiktok' ? 'jpg' : 'png'}`); fs.writeFileSync(archivos[red], red === 'tiktok' ? cv.toBuffer('image/jpeg', 92) : cv.toBuffer('image/png'));
     // Instagram solo acepta JPEG: la misma tarjeta 4:5 de Facebook
     if (red === 'facebook') { archivos.instagram = path.join(outDir, `curiosidad-${nombre}-instagram.jpg`); fs.writeFileSync(archivos.instagram, cv.toBuffer('image/jpeg', 92)); }
   }
