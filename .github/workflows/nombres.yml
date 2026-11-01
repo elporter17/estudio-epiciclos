@@ -2,16 +2,15 @@
 # costura), 3 al día. Reutiliza daily.yml: mismo token, mismo historial y nunca corre a la vez que los futbolistas.
 # Sin sonido salvo que al lanzarlo a mano elijas «con».
 # TikTok admite 5 borradores pendientes cada 24 h por cuenta (error spam_risk_too_many_pending_share) y los cuentan
-# también las fotos de curiosidades: 2 nombres + 1 futbolista + 2 curiosidades = 5. Por eso la corrida de las 19:17
-# va solo a Facebook (Reel con sonido). Si un aviso no llega, ese borrador igual cuenta hasta 24 h.
+# también las fotos de curiosidades: 2 nombres + 1 futbolista + 2 curiosidades = 5. Si un aviso no llega, ese
+# borrador igual cuenta hasta 24 h. Solo TikTok: en Facebook e Instagram los nombres casi no tuvieron interacción
+# (informe del 2026-11-01).
 name: Nombres a TikTok
 
 on:
   schedule:
-    # Minuto 17 (GitHub retrasa más las horas en punto). En Honduras (UTC-6): 7:17 y 13:17 a TikTok y Facebook
+    # Minuto 17 (GitHub retrasa más las horas en punto). En Honduras (UTC-6): 7:17 y 13:17
     - cron: '17 13,19 * * *'
-    # 19:17 solo a Facebook (el mismo texto se compara abajo)
-    - cron: '17 1 * * *'
   workflow_dispatch:
     inputs:
       lang:
@@ -41,6 +40,7 @@ jobs:
       cats: nombres
       estilos: nuevos
       lang: ${{ inputs.lang || 'es' }}
-      publish: ${{ inputs.publish || (github.event.schedule == '17 1 * * *' && 'none' || 'draft') }}
-      sonido: ${{ inputs.sonido || (github.event.schedule == '17 1 * * *' && 'con' || 'sin') }}
+      publish: ${{ inputs.publish || 'draft' }}
+      sonido: ${{ inputs.sonido || 'sin' }}
+      facebook: 'no'
     secrets: inherit

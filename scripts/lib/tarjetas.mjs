@@ -91,7 +91,7 @@ export function dibujarTarjeta(t, { W = 1080, H = 1350, emojiFont = '' } = {}) {
   }
 
   // Llamado a comentar
-  const cta = t.formato === 'vf' ? '✅ Verdadero  o  ❌ Falso · Comenta 👇' : t.formato === 'error' || t.formato === 'reto' ? '¿A, B o C? Comenta 👇' : t.pie || '¿Lo sabías? Comenta 👇';
+  const cta = t.formato === 'vf' ? '✅ ¿Verdadero o falso? ❌' : t.formato === 'error' || t.formato === 'reto' ? '¿A, B o C?' : t.pie || '¿Lo sabías? 🤯';
   ctx.textAlign = 'center'; ctx.fillStyle = tema.acento; ctx.font = `600 40px ${SANS}${E}`;
   ctx.fillText(cta, W / 2, H - (H > 1500 ? 220 : 120));
   // Pie: tema a la izquierda, marca a la derecha con su sello de círculos

@@ -25,18 +25,19 @@ const azar = (a) => a[Math.floor(Math.random() * a.length)];
 const mezclar = (a) => a.map((x) => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map((p) => p[1]);
 const entre = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
 const OCULTAR = '\n\n.\n.\n.\n\n'; // lo que sigue queda debajo de «Ver más»
-// Orden de los formatos (se repite): dos top 10 por cada quiz y cada banderas
-const ROTACION = ['top10', 'quiz', 'top10', 'banderas'];
+// Orden de los formatos (se repite): las banderas fueron lo que más vistas tuvo en Facebook e Instagram (informe del
+// 2026-11-01), así que salen la mitad de las veces
+const ROTACION = ['banderas', 'quiz', 'banderas', 'top10'];
 const TEMAS_DATOS = ['animales', 'cuerpo', 'ciencia', 'geografia', 'historia', 'comida', 'deportes', 'tecnologia', 'inventos'];
 
 // ---------- banderas ----------
 // Países por continente (código ISO; el emoji y el nombre en español salen del código)
 const CONTINENTES = {
-  america: 'AR BO BR CL CO CR CU DO EC SV GT HN MX NI PA PY PE PR UY VE US CA JM HT TT BS BB BZ GY SR',
-  europa: 'ES FR DE IT PT GB IE NL BE CH AT SE NO DK FI PL CZ SK HU RO BG GR HR RS SI BA ME AL MK UA LT LV EE IS LU MT CY MD',
-  asia: 'JP CN KR IN PK BD ID PH VN TH MY SG KH LA MM NP LK MN KZ UZ TR IR SA AE QA KW JO LB',
-  africa: 'MA DZ TN EG NG GH CI SN CM KE ET TZ UG ZA ZW ZM AO MZ MG CD CG RW ML NE BF',
-  oceania: 'AU NZ FJ PG WS TO'
+  america: 'AR BO BR CL CO CR CU DO EC SV GT HN MX NI PA PY PE PR UY VE US CA JM HT TT BS BB BZ GY SR AG DM GD KN LC VC',
+  europa: 'ES FR DE IT PT GB IE NL BE CH AT SE NO DK FI PL CZ SK HU RO BG GR HR RS SI BA ME AL MK UA LT LV EE IS LU MT CY MD RU BY AM GE AZ AD LI MC SM VA',
+  asia: 'JP CN KR IN PK BD ID PH VN TH MY SG KH LA MM NP LK MN KZ UZ TR IR SA AE QA KW JO LB IQ OM YE BH BT MV BN TL TJ KG TM',
+  africa: 'MA DZ TN EG NG GH CI SN CM KE ET TZ UG ZA ZW ZM AO MZ MG CD CG RW ML NE BF SO SD ER DJ LY MR GM GN GW SL LR TG BJ GA GQ CF TD BI MW LS SZ BW NA CV ST KM SC MU',
+  oceania: 'AU NZ FJ PG WS TO SB VU KI TV NR PW FM MH'
 };
 const FACILES = 'MX AR BR ES US CA JP FR IT DE CO GB PT CN KR CL PE HN'.split(' ');
 const MEDIOS = 'BO CR CU DO EC SV GT NI PA PY UY VE IE NL BE CH SE NO GR TR IN AU EG MA ZA RU'.split(' ');
@@ -102,10 +103,10 @@ function top10(base, hist, temaPedido) {
       lineas: [{ texto: '10 COSAS', size: 150, color: (T || TEMAS.ciencia).acento }, { texto: 'QUE NO SABÍAS', size: 96 }, { texto: 'HACE 1 MINUTO', size: 96 }, ...(T ? [{ texto: T.nombre.toUpperCase(), size: 50, color: 'rgba(255,255,255,0.8)' }] : [])] },
     ...datos.map((d, i) => ({ tipo: 'dato', dur: DATO, tema: d.tema, idx: i, total: 10, n: i + 1, icono: d.icono, texto: d.dato, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
     { tipo: 'cierre', dur: CIERRE, tema: temaFondo, sonidos: [[0, 'final']],
-      lineas: [{ texto: '¿CUÁNTAS SABÍAS?', size: 110, color: (T || TEMAS.ciencia).acento }, { texto: 'Comenta tu número del 0 al 10 👇', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
+      lineas: [{ texto: '¿CUÁNTAS SABÍAS?', size: 110, color: (T || TEMAS.ciencia).acento }, { texto: '¿Cuántas de las 10 ya sabías?', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
   const tags = ['curiosidades', 'sabiasque', 'datoscuriosos', 'aprende', ...(T ? T.tags : ['cultura']), 'reels', 'potterplay'];
-  const texto = `🤯 10 cosas que no sabías hace 1 minuto${T ? ` · ${T.nombre}` : ''}\n\n¿Cuántas sabías? Comenta tu número del 0 al 10 👇 y compártelo con alguien que se cree muy listo.${OCULTAR}Las 10 de hoy:\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n${[...new Set(tags)].map((t) => `#${t}`).join(' ')}`;
+  const texto = `🤯 10 cosas que no sabías hace 1 minuto${T ? ` · ${T.nombre}` : ''}\n\n¿Cuántas de las 10 ya sabías? Seguro hay una que te sorprendió.${OCULTAR}Las 10 de hoy:\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n${[...new Set(tags)].map((t) => `#${t}`).join(' ')}`;
   return { formato: 'top10', titulo: `10 cosas que no sabías${T ? ` · ${T.nombre}` : ''}`, escenas, texto, ids: datos.map((d) => d.id) };
 }
 
@@ -138,9 +139,9 @@ function quiz(base, hist) {
       return { ...comun, tipo: 'opciones', dur: piensa + 3.2, piensa, tema: 'matematicas', etiqueta: 'CÁLCULO MENTAL ⚡', texto: p.d.texto, opciones: p.d.opciones, respuesta: p.d.respuesta, explicacion: p.d.explicacion, sonidos: cuenta(piensa, 'bien') };
     }),
     { tipo: 'cierre', dur: CIERRE, tema: 'inventos', sonidos: [[0, 'final']],
-      lineas: [{ texto: '¿CUÁNTAS ACERTASTE?', size: 104, color: TEMAS.inventos.acento }, { texto: 'Comenta tu puntaje de 0 a 5 👇', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
+      lineas: [{ texto: '¿CUÁNTAS ACERTASTE?', size: 104, color: TEMAS.inventos.acento }, { texto: '¿Cuántas de las 5 acertaste?', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
-  const texto = `🧠 5 preguntas: ¿cuántas aciertas?\n\nVerdadero o falso, un reto y cálculo mental, con 5 segundos para pensar. Comenta tu puntaje de 0 a 5 👇 y reta a un amigo.${OCULTAR}Respuestas:\n${respuestas.join('\n')}\n\n#quiz #trivia #preguntas #curiosidades #retomental #sabiasque #reels #potterplay`;
+  const texto = `🧠 5 preguntas: ¿cuántas aciertas?\n\nVerdadero o falso, un reto y cálculo mental, con 5 segundos para pensar. ¿Cuántas de las 5 acertaste?${OCULTAR}Respuestas:\n${respuestas.join('\n')}\n\n#quiz #trivia #preguntas #curiosidades #retomental #sabiasque #reels #potterplay`;
   return { formato: 'quiz', titulo: '5 preguntas: ¿cuántas aciertas?', escenas, texto, ids: vf.map((d) => d.id), retos: [reto.id] };
 }
 
@@ -163,9 +164,9 @@ function banderas(hist) {
         bandera: bandera(c), opciones: ops.map(nombrePais), respuesta: ops.indexOf(c), sonidos: cuenta(piensa, 'bien') };
     }),
     { tipo: 'cierre', dur: CIERRE, tema: 'historia', sonidos: [[0, 'final']],
-      lineas: [{ texto: '¿CUÁNTAS ADIVINASTE?', size: 100, color: TEMAS.historia.acento }, { texto: 'Comenta tu puntaje de 0 a 10 👇', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
+      lineas: [{ texto: '¿CUÁNTAS ADIVINASTE?', size: 100, color: TEMAS.historia.acento }, { texto: '¿Cuántas de las 10 sacaste?', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
-  const texto = `🌎 Adivina las 10 banderas: de fácil a imposible\n\nTienes 3 segundos por bandera. ¿Cuántas sacaste? Comenta tu puntaje de 0 a 10 👇 y etiqueta a quien sabe más de geografía.${OCULTAR}Respuestas:\n${paises.map((c, i) => `${i + 1}. ${bandera(c)} ${nombrePais(c)}`).join('\n')}\n\n#banderas #geografia #quiz #trivia #paises #curiosidades #reels #potterplay`;
+  const texto = `🌎 Adivina las 10 banderas: de fácil a imposible\n\nTienes 3 segundos por bandera. ¿Cuántas sacaste de 10? La última es la más difícil.${OCULTAR}Respuestas:\n${paises.map((c, i) => `${i + 1}. ${bandera(c)} ${nombrePais(c)}`).join('\n')}\n\n#banderas #geografia #quiz #trivia #paises #curiosidades #reels #potterplay`;
   return { formato: 'banderas', titulo: 'Adivina las 10 banderas', escenas, texto, banderas: paises };
 }
 
@@ -177,7 +178,10 @@ async function main() {
   });
   const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
   const hist = { ids: [], retos: [], banderas: [], formatos: [], total: 0, ...leer(HIST, {}) };
-  const formato = o.formato !== 'auto' ? o.formato : ROTACION[hist.total % ROTACION.length];
+  // Nunca dos formatos iguales seguidos (por ejemplo, después de una prueba a mano)
+  let paso = hist.total;
+  if (ROTACION[paso % ROTACION.length] === hist.formatos.at(-1)) paso++;
+  const formato = o.formato !== 'auto' ? o.formato : ROTACION[paso % ROTACION.length];
   const base = cargarDatos();
   const pieza = formato === 'top10' ? top10(base, hist, o.tema) : formato === 'quiz' ? quiz(base, hist) : formato === 'banderas' ? banderas(hist) : null;
   if (!pieza) throw new Error('--formato debe ser top10, quiz, banderas o auto');

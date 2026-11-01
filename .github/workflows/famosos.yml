@@ -2,15 +2,13 @@
 # assets/famosos/). Reutiliza daily.yml con cats = famosos: mismo token, mismo historial y nunca corre a la vez que
 # los dibujos. Sin sonido salvo que al lanzarlo a mano elijas «con».
 # TikTok admite 5 borradores pendientes cada 24 h por cuenta, fotos de curiosidades incluidas: 2 nombres + 1 futbolista
-# + 2 curiosidades = 5. Por eso la corrida de las 16:47 va solo a Facebook.
+# + 2 curiosidades = 5. Solo TikTok: en Facebook casi no tuvieron vistas (informe del 2026-11-01).
 name: Futbolistas a TikTok
 
 on:
   schedule:
-    # 2 al día, entre los nombres. En Honduras (UTC-6): 10:47 a TikTok y Facebook
+    # Entre los nombres. En Honduras (UTC-6): 10:47
     - cron: '47 16 * * *'
-    # 16:47 solo a Facebook (el mismo texto se compara abajo)
-    - cron: '47 22 * * *'
   workflow_dispatch:
     inputs:
       lang:
@@ -39,6 +37,7 @@ jobs:
     with:
       cats: famosos
       lang: ${{ inputs.lang || 'es' }}
-      publish: ${{ inputs.publish || (github.event.schedule == '47 22 * * *' && 'none' || 'draft') }}
-      sonido: ${{ inputs.sonido || (github.event.schedule == '47 22 * * *' && 'con' || 'sin') }}
+      publish: ${{ inputs.publish || 'draft' }}
+      sonido: ${{ inputs.sonido || 'sin' }}
+      facebook: 'no'
     secrets: inherit

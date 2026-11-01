@@ -16,6 +16,7 @@ import { blobToken } from './lib/video-link.mjs';
 import { publishPhoto, facebookReady } from './facebook.mjs';
 import { publishPhotoDraft } from './publish.mjs';
 import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
+import { crearVisual, dibujarVisual, VISUALES } from './lib/retos-visuales.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades'), HIST = path.join(ROOT, 'data', 'curiosidades-historial.json');
 const SITE_MEDIA = 'https://circularte.edav-tech.com/media/'; // dominio verificado en TikTok (redirige al almacén)
@@ -47,7 +48,7 @@ function armar(x, base, formatoPedido) {
     const ok = x.opciones[x.respuesta];
     return {
       formato: 'reto', tarjeta: { formato: 'reto', tema: x.tema, icono: x.icono, texto: x.pregunta, opciones: x.opciones },
-      texto: `🧠 ${x.pregunta}\n\nA) ${x.opciones[0]}\nB) ${x.opciones[1]}\nC) ${x.opciones[2]}\n\nComenta tu respuesta antes de ver la solución 👇${OCULTAR}✅ Respuesta: ${'ABC'[x.respuesta]}) ${ok}\n${x.explicacion}${ht(['reto', 'acertijo'])}`
+      texto: `🧠 ${x.pregunta}\n\nA) ${x.opciones[0]}\nB) ${x.opciones[1]}\nC) ${x.opciones[2]}\n\n¿Cuál elegirías? Piénsalo antes de ver la solución.${OCULTAR}✅ Respuesta: ${'ABC'[x.respuesta]}) ${ok}\n${x.explicacion}${ht(['reto', 'acertijo'])}`
     };
   }
   const formato = formatoPedido || azar(['sabias', 'sabias', 'sabias', 'vf', 'vf', 'vf', 'error', 'error']);
@@ -55,7 +56,7 @@ function armar(x, base, formatoPedido) {
     const verdadero = Math.random() < 0.5, afirm = verdadero ? x.dato : x.falso;
     return {
       formato, verdadero, tarjeta: { formato, tema: x.tema, icono: x.icono, texto: afirm },
-      texto: `¿Verdadero o falso? 🤔\n\n«${afirm}»\n\nComenta ✅ o ❌ antes de ver la respuesta 👇${OCULTAR}${verdadero ? `✅ VERDADERO.\n${x.dato}` : `❌ FALSO.\n${x.explicacion}`}${ht(['verdaderoofalso'])}`
+      texto: `¿Verdadero o falso? 🤔\n\n«${afirm}»\n\n¿Tú qué dices? Piénsalo antes de ver la respuesta.${OCULTAR}${verdadero ? `✅ VERDADERO.\n${x.dato}` : `❌ FALSO.\n${x.explicacion}`}${ht(['verdaderoofalso'])}`
     };
   }
   if (formato === 'error') {
@@ -64,12 +65,12 @@ function armar(x, base, formatoPedido) {
     const items = mezclar([{ t: x.falso, f: true }, ...otros.map((o) => ({ t: o.dato, f: false }))]), letra = 'ABC'[items.findIndex((i) => i.f)];
     return {
       formato, tarjeta: { formato, tema: x.tema, icono: x.icono, items: items.map((i) => i.t) },
-      texto: `Dos son verdad y uno es FALSO. ¿Cuál es? 🧐\n\n${items.map((i, k) => `${'ABC'[k]}) ${i.t}`).join('\n')}\n\nComenta A, B o C 👇${OCULTAR}❌ El falso es la ${letra}.\n${x.explicacion}${ht(['adivina'])}`
+      texto: `Dos son verdad y uno es FALSO. ¿Cuál es? 🧐\n\n${items.map((i, k) => `${'ABC'[k]}) ${i.t}`).join('\n')}\n\n¿Cuál crees que es el falso?${OCULTAR}❌ El falso es la ${letra}.\n${x.explicacion}${ht(['adivina'])}`
     };
   }
   return {
     formato: 'sabias', tarjeta: { formato: 'sabias', tema: x.tema, icono: x.icono, texto: x.dato },
-    texto: `¿Sabías que…? 🤯\n\n${x.dato}\n\n¿Lo sabías? Comenta 👇 y comparte con alguien que no lo sepa.${ht()}`
+    texto: `¿Sabías que…? 🤯\n\n${x.dato}\n\n¿Lo sabías?${ht()}`
   };
 }
 
@@ -78,7 +79,7 @@ function armarNoticia(n) {
   const cat = CAT_NOMBRE[n.cat];
   return {
     formato: 'noticia', tarjeta: { formato: 'noticia', tema: 'noticias', icono: n.icono, texto: n.titulo, pie: `Fuente: ${n.medio} · ${fecha}` },
-    texto: `📰 ${cat}: ${n.titulo}\n\n¿Qué opinas? Comenta 👇\n\nFuente: ${n.medio}\n${n.link}\n\n#noticias #${n.cat} #ultimahora #potterplay`
+    texto: `📰 ${cat}: ${n.titulo}\n\n¿Qué opinas?\n\nFuente: ${n.medio}\n${n.link}\n\n#noticias #${n.cat} #ultimahora #potterplay`
   };
 }
 
@@ -96,8 +97,10 @@ async function subirImagen(file) {
 
 async function main() {
   const o = parseCli({
-    red: { type: 'string', default: 'facebook' }, tipo: { type: 'string', default: 'auto' }, 'noticia-cada': { type: 'string', default: '4' },
-    formato: { type: 'string' }, id: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' }
+    red: { type: 'string', default: 'facebook' }, tipo: { type: 'string', default: 'auto' }, 'noticia-cada': { type: 'string', default: '6' },
+    formato: { type: 'string' }, id: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' },
+    // Un reto visual concreto: duplicado | nombre | diferente | fraccion | operacion
+    visual: { type: 'string' }
   });
   const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
   const hist = { ids: [], temas: [], noticias: [], total: 0, ...leer(HIST, {}) };
@@ -110,21 +113,29 @@ async function main() {
     noticia = await ultimaNoticia({ vistos: new Set(hist.noticias), preferir }).catch(() => null);
     if (noticia) pieza = armarNoticia(noticia);
   }
+  // Retos visuales (duplicado, nombre, letra escondida, fracción, operación): 2 de cada 3 publicaciones que no son
+  // noticia, porque son el tipo de imagen que más comentarios junta. Rotan en orden.
+  let visual = null;
+  if (!pieza && !o.id && (o.tipo === 'visual' || o.visual || (o.tipo === 'auto' && !o.formato && hist.total % 3 !== 2))) {
+    const tipo = o.visual || VISUALES[(hist.visuales || []).length % VISUALES.length];
+    visual = crearVisual(tipo);
+    pieza = { formato: `visual-${tipo}`, texto: visual.texto };
+  }
   if (!pieza) { x = elegirCuriosidad(base, hist, { formato: o.formato, id: o.id }); pieza = armar(x, base, o.formato); }
-  const nombre = noticia ? `noticia-${noticia.cat}` : `${x.id}-${pieza.formato}`;
+  const nombre = noticia ? `noticia-${noticia.cat}` : visual ? `${pieza.formato}-${Date.now().toString(36)}` : `${x.id}-${pieza.formato}`;
   console.error(`Elegido: ${nombre}`);
 
   const outDir = path.join(ROOT, 'out'); fs.mkdirSync(outDir, { recursive: true });
   const redes = o.red === 'ambas' ? ['facebook', 'tiktok'] : [o.red];
   const archivos = {};
   for (const red of redes) {
-    const cv = dibujarTarjeta(pieza.tarjeta, { H: red === 'tiktok' ? 1920 : 1350, emojiFont });
+    const H = red === 'tiktok' ? 1920 : 1350, cv = visual ? dibujarVisual(visual, { H, emojiFont }) : dibujarTarjeta(pieza.tarjeta, { H, emojiFont });
     archivos[red] = path.join(outDir, `curiosidad-${nombre}-${red}.png`); fs.writeFileSync(archivos[red], cv.toBuffer('image/png'));
     // Instagram solo acepta JPEG: la misma tarjeta 4:5 de Facebook
     if (red === 'facebook') { archivos.instagram = path.join(outDir, `curiosidad-${nombre}-instagram.jpg`); fs.writeFileSync(archivos.instagram, cv.toBuffer('image/jpeg', 92)); }
   }
   const sidecar = path.join(outDir, `curiosidad-${nombre}.json`);
-  const meta = { kind: 'imagen', title: noticia ? noticia.titulo.slice(0, 80) : `${TEMAS[x.tema].nombre} · ${pieza.formato}`, id: x?.id || noticia.link, formato: pieza.formato, post: { text: pieza.texto }, createdAt: new Date().toISOString() };
+  const meta = { kind: 'imagen', title: noticia ? noticia.titulo.slice(0, 80) : visual ? `Reto visual · ${visual.tipo}` : `${TEMAS[x.tema].nombre} · ${pieza.formato}`, id: x?.id || noticia?.link || nombre, formato: pieza.formato, post: { text: pieza.texto }, createdAt: new Date().toISOString() };
   if (!o['dry-run']) {
     for (const red of redes) {
       const img = await subirImagen(archivos[red]).catch((e) => { console.error(`No se pudo subir la imagen: ${e.message}`); return null; });
@@ -140,7 +151,7 @@ async function main() {
         }
       }
       if (red === 'tiktok') {
-        try { meta.tiktok = [await publishPhotoDraft({ url: img.sitio, title: noticia ? 'Noticia' : '¿Sabías que…?', description: pieza.texto })]; }
+        try { meta.tiktok = [await publishPhotoDraft({ url: img.sitio, title: noticia ? 'Noticia' : visual ? 'Reto visual' : '¿Sabías que…?', description: pieza.texto })]; }
         catch (e) {
           const limite = /spam_risk|pending/i.test(e.message);
           meta.tiktok = [{ mode: 'draft', status: limite ? 'LIMIT' : 'error', fail_reason: e.message }];
@@ -151,6 +162,7 @@ async function main() {
     // Historial: lo publicado no se repite
     if (x) { hist.ids.push(x.id); hist.temas.push(x.tema); }
     if (noticia) hist.noticias.push(noticia.link);
+    if (visual) hist.visuales = [...(hist.visuales || []), visual.tipo].slice(-100);
     hist.total++; hist.ids = hist.ids.slice(-600); hist.temas = hist.temas.slice(-50); hist.noticias = hist.noticias.slice(-300);
     fs.mkdirSync(path.dirname(HIST), { recursive: true }); fs.writeFileSync(HIST, JSON.stringify(hist, null, 2) + '\n');
   }

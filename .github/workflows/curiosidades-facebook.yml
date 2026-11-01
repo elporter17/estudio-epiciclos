@@ -1,12 +1,13 @@
 # Imágenes de curiosidades («¿Sabías que…?», «¿Verdadero o falso?», «¿Cuál es falso?», retos) y noticias recientes,
-# publicadas directo en la página de Facebook. 8 al día; una de cada 4 es una noticia (si hay una fresca).
+# publicadas directo en la página de Facebook (y en Instagram). 10 al día: 2 de cada 3 son retos visuales (número
+# duplicado, nombre de N letras, letra escondida, fracción, operación) y una de cada 6 es una noticia, si hay una fresca.
 # Reutiliza daily.yml (mismo estado: historial para no repetir) y nunca corre a la vez que los videos.
 name: Curiosidades a Facebook
 
 on:
   schedule:
-    # En Honduras (UTC-6): 7:07, 9:07, 11:07, 13:07, 15:07, 17:07, 19:07 y 21:07
-    - cron: '7 1,3,13,15,17,19,21,23 * * *'
+    # En Honduras (UTC-6): 7:07, 9:07, 11:07, 12:07, 13:07, 15:07, 17:07, 19:07, 20:07 y 21:07
+    - cron: '7 1,2,3,13,15,17,18,19,21,23 * * *'
   workflow_dispatch:
 
 permissions:
