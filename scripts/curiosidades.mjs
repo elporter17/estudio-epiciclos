@@ -96,16 +96,57 @@ async function subirImagen(file) {
   return { url, sitio: SITE_MEDIA + pathname.replace(/^media\//, '') };
 }
 
+// Carrusel para TikTok: varias imágenes que se deslizan, en una sola publicación. Día por medio:
+// «N retos visuales» (uno de cada tipo, con las respuestas en la descripción) o «N cosas que no sabías».
+async function carrusel(o, hist, base, emojiFont) {
+  const n = Math.min(10, Math.max(2, +o.carrusel)), tipo = (hist.carruseles || 0) % 2 === 0 ? 'retos' : 'datos';
+  const outDir = path.join(ROOT, 'out'); fs.mkdirSync(outDir, { recursive: true });
+  const marca = Date.now().toString(36), archivos = [], lineas = [], ids = [];
+  for (let i = 0; i < n; i++) {
+    let cv;
+    if (tipo === 'retos') {
+      const v = crearVisual(VISUALES[i % VISUALES.length]);
+      cv = dibujarVisual(v, { H: 1920, emojiFont }); lineas.push(`${i + 1}. ${v.corta.replace(/[¡!]/g, '')}`);
+    } else {
+      const x = elegirCuriosidad(base, { ...hist, ids: [...hist.ids, ...ids] }, { formato: 'sabias' }); ids.push(x.id);
+      cv = dibujarTarjeta({ formato: 'sabias', tema: x.tema, icono: x.icono, texto: x.dato }, { H: 1920, emojiFont }); lineas.push(`${i + 1}. ${x.dato}`);
+    }
+    const f = path.join(outDir, `carrusel-${tipo}-${marca}-${i + 1}.png`); fs.writeFileSync(f, cv.toBuffer('image/png')); archivos.push(f);
+  }
+  const titulo = tipo === 'retos' ? `${n} retos visuales: ¿cuántos resuelves?` : `${n} cosas que no sabías`;
+  const texto = tipo === 'retos'
+    ? `👀 ${n} retos visuales: desliza y resuelve cada uno antes de ver la respuesta. ¿Cuántos sacaste?${OCULTAR}Respuestas:\n${lineas.join('\n')}\n\n#retos #acertijos #retovisual #juegosmentales #potterplay`
+    : `🤯 ${n} cosas que no sabías. Desliza 👉 ¿Cuál te sorprendió más?\n\n${lineas.join('\n')}\n\n#curiosidades #sabiasque #datoscuriosos #aprende #potterplay`;
+  console.error(`Carrusel: ${titulo}`);
+  const meta = { kind: 'imagen', title: titulo, id: `carrusel-${marca}`, formato: `carrusel-${tipo}`, post: { text: texto }, createdAt: new Date().toISOString() };
+  if (!o['dry-run']) {
+    const subidas = [];
+    for (const f of archivos) { const img = await subirImagen(f).catch((e) => { console.error(`No se pudo subir la imagen: ${e.message}`); return null; }); if (img) subidas.push(img); }
+    if (subidas.length >= 2) {
+      meta.imageUrl = subidas[0].url;
+      try { meta.tiktok = [await publishPhotoDraft({ url: subidas.map((x) => x.sitio), title: titulo, description: texto })]; }
+      catch (e) { meta.tiktok = [{ mode: 'draft', status: /spam_risk|pending/i.test(e.message) ? 'LIMIT' : 'error', fail_reason: e.message }]; console.error(`Aviso: TikTok: ${e.message}`); }
+    }
+    hist.ids.push(...ids); hist.carruseles = (hist.carruseles || 0) + 1;
+    fs.mkdirSync(path.dirname(HIST), { recursive: true }); fs.writeFileSync(HIST, JSON.stringify(hist, null, 2) + '\n');
+  }
+  fs.writeFileSync(path.join(outDir, `carrusel-${marca}.json`), JSON.stringify(meta, null, 2) + '\n');
+  console.log(JSON.stringify({ imagenes: archivos, texto, tiktok: meta.tiktok }, null, 2));
+}
+
 async function main() {
   const o = parseCli({
     red: { type: 'string', default: 'facebook' }, tipo: { type: 'string', default: 'auto' }, 'noticia-cada': { type: 'string', default: '6' },
     formato: { type: 'string' }, id: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' },
     // Un reto visual concreto: duplicado | nombre | diferente | fraccion | operacion
-    visual: { type: 'string' }
+    visual: { type: 'string' },
+    // TikTok: un carrusel de N imágenes en lugar de una sola
+    carrusel: { type: 'string' }
   });
   const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
   const hist = { ids: [], temas: [], noticias: [], total: 0, ...leer(HIST, {}) };
   const base = cargarBase();
+  if (o.red === 'tiktok' && +o.carrusel > 1) return carrusel(o, hist, base, emojiFont);
   // Cada «noticia-cada» publicaciones va una noticia (si hay una fresca); si no, una curiosidad
   const tocaNoticia = o.tipo === 'noticia' || (o.tipo === 'auto' && (hist.total + 1) % Math.max(1, +o['noticia-cada']) === 0);
   let pieza = null, x = null, noticia = null;

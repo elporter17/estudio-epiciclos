@@ -28,13 +28,14 @@ async function userName(token) {
   const d = await res.json(); return d?.data?.user?.display_name || null;
 }
 
-// Foto como borrador en TikTok (curiosidades): TikTok la descarga de la url, que debe estar en el dominio verificado
-// (circularte.edav-tech.com/media/… redirige al almacén Blob). Cuenta para el límite de 5 borradores pendientes.
+// Foto (o carrusel: url puede ser una lista, hasta 35) como borrador en TikTok: TikTok las descarga de las url, que deben
+// estar en el dominio verificado (circularte.edav-tech.com/media/… redirige al almacén Blob). Cuenta como 1 de los 5
+// borradores pendientes.
 export async function publishPhotoDraft({ url, title = '', description = '', log = (m) => process.stderr.write(m) }) {
   const token = await accessToken();
   const init = await api('/v2/post/publish/content/init/', {
     post_info: { title: title.slice(0, 90), description: description.slice(0, 4000) },
-    source_info: { source: 'PULL_FROM_URL', photo_cover_index: 0, photo_images: [url] },
+    source_info: { source: 'PULL_FROM_URL', photo_cover_index: 0, photo_images: Array.isArray(url) ? url : [url] },
     post_mode: 'MEDIA_UPLOAD', media_type: 'PHOTO'
   }, token);
   const st = await waitForStatus(init.publish_id, token, { log });

@@ -5,7 +5,7 @@
 const R = 'curiosidades-reels.yml';
 export const HORARIO = [
   { hora: '06:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
-  { hora: '07:17', workflow: 'nombres.yml', que: 'Nombre con círculos → TikTok' },
+  { hora: '07:17', workflow: 'nombres.yml', que: 'Nombre o pareja con círculos → TikTok' },
   { hora: '07:57', workflow: R, que: 'Reel: noticias de hoy', inputs: { formato: 'noticias' } },
   { hora: '08:07', workflow: 'curiosidades-facebook.yml', que: 'Imagen: reto visual o curiosidad' },
   { hora: '08:47', workflow: 'comentarios.yml', que: 'Responder comentarios' },
@@ -15,11 +15,13 @@ export const HORARIO = [
   { hora: '11:47', workflow: 'comentarios.yml', que: 'Responder comentarios' },
   { hora: '11:57', workflow: R, que: 'Reel de quiz y curiosidades' },
   { hora: '12:07', workflow: 'curiosidades-facebook.yml', que: 'Imagen: reto visual o curiosidad' },
-  { hora: '12:37', workflow: 'curiosidades-tiktok.yml', que: 'Foto de curiosidad → TikTok' },
-  { hora: '12:57', workflow: R, que: 'Reel de quiz y curiosidades' },
+  { hora: '12:37', workflow: 'curiosidades-tiktok.yml', que: 'Carrusel de 5 imágenes → TikTok' },
+  { hora: '12:57', workflow: R, que: 'Reel de quiz y curiosidades → también TikTok', inputs: { tiktok: 'si' } },
+  { hora: '13:17', workflow: 'nombres.yml', que: 'Nombre o pareja con círculos → TikTok' },
   { hora: '13:57', workflow: R, que: 'Reel de quiz y curiosidades' },
   { hora: '14:47', workflow: 'comentarios.yml', que: 'Responder comentarios' },
   { hora: '15:57', workflow: R, que: 'Reel de quiz y curiosidades' },
+  { hora: '16:47', workflow: 'famosos.yml', que: 'Futbolista con círculos → TikTok' },
   { hora: '17:07', workflow: 'curiosidades-facebook.yml', que: 'Imagen: reto visual o curiosidad' },
   { hora: '17:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
   { hora: '17:47', workflow: 'comentarios.yml', que: 'Responder comentarios' },
@@ -28,9 +30,9 @@ export const HORARIO = [
   { hora: '19:27', workflow: 'gta6.yml', que: 'Reel GTA VI «Faltan N días» → FB, IG y TikTok' },
   { hora: '19:57', workflow: R, que: 'Reel de quiz y curiosidades' },
   { hora: '20:07', workflow: 'curiosidades-facebook.yml', que: 'Imagen: reto visual o curiosidad' },
-  { hora: '20:37', workflow: 'curiosidades-tiktok.yml', que: 'Foto de curiosidad → TikTok' },
+  { hora: '20:37', workflow: 'curiosidades-tiktok.yml', que: 'Carrusel de 5 imágenes → TikTok' },
   { hora: '20:47', workflow: 'comentarios.yml', que: 'Responder comentarios' },
-  { hora: '20:57', workflow: R, que: 'Reel de quiz y curiosidades' },
+  { hora: '20:57', workflow: R, que: 'Reel de quiz y curiosidades → también TikTok', inputs: { tiktok: 'si' } },
   { hora: '21:57', workflow: R, que: 'Reel de quiz y curiosidades' },
   { hora: '22:47', workflow: 'comentarios.yml', que: 'Responder comentarios' },
   { hora: '22:57', workflow: R, que: 'Reel de quiz y curiosidades' }
@@ -39,7 +41,7 @@ export const HORARIO = [
 export const HASTA = { 'gta6.yml': '2026-11-19' };
 
 export const NOMBRES = {
-  [R]: 'Reels de quiz y curiosidades', 'curiosidades-facebook.yml': 'Imágenes a Facebook e Instagram', 'curiosidades-tiktok.yml': 'Fotos a TikTok',
+  [R]: 'Reels de quiz y curiosidades', 'curiosidades-facebook.yml': 'Imágenes a Facebook e Instagram', 'curiosidades-tiktok.yml': 'Carruseles a TikTok',
   'nombres.yml': 'Nombres a TikTok', 'famosos.yml': 'Futbolistas a TikTok', 'gta6.yml': 'Especial GTA VI', 'noticias.yml': 'Noticias del día',
   'comentarios.yml': 'Respuestas a comentarios', 'estadisticas.yml': 'Estadísticas'
 };

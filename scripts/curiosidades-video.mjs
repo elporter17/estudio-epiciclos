@@ -17,6 +17,8 @@ import { publicarEnlace } from './lib/video-link.mjs';
 import { publishReel, publishStory, facebookReady } from './facebook.mjs';
 import { publishInstagramSeguro, instagramReady, musicaTendencia } from './instagram.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
+import { publishVideo } from './publish.mjs';
+import { logUpload } from './tiktok-status.mjs';
 import { MELODIA_IDS } from '../src/melodias.js';
 import { crearVisual, VISUALES } from './lib/retos-visuales.mjs';
 import { juntarNoticias } from './noticias.mjs';
@@ -253,7 +255,9 @@ async function noticiasVideo(hist) {
 async function main() {
   const o = parseCli({
     formato: { type: 'string', default: 'auto' }, tema: { type: 'string' }, facebook: { type: 'string', default: 'si' },
-    historia: { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' }, 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' }
+    historia: { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' },
+    // TikTok: draft = también como borrador (la copia con solo efectos: allí se le pone la canción del momento)
+    tiktok: { type: 'string', default: 'no' }, 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' }
   });
   const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
   const hist = { ids: [], retos: [], banderas: [], formatos: [], prefieres: [], emojis: [], noticias: [], total: 0, ...leer(HIST, {}) };
@@ -311,6 +315,14 @@ async function main() {
       if (urlIG) meta.instagram.cancion = cancion.nombre;
       registrarRespuesta({ red: 'instagram', id: meta.instagram.media_id, clave, titulo: pieza.titulo });
       if (o.historia && r.duration <= 60) meta.instagramStory = await publishInstagramSeguro({ tipo: 'historia', url: meta.videoUrl });
+    }
+    if (o.tiktok === 'draft') {
+      const tt = r.outIG || video;
+      fs.writeFileSync(tt.replace(/\.mp4$/, '.json'), JSON.stringify({ ...meta, file: path.basename(tt) }, null, 2) + '\n');
+      try { meta.tiktok = [await publishVideo({ video: tt, mode: 'draft', coverMs: 0 })]; }
+      catch (e) { meta.tiktok = [{ mode: 'draft', status: /spam_risk|pending/i.test(e.message) ? 'LIMIT' : 'error', fail_reason: e.message }]; console.error(`Aviso: TikTok: ${e.message}`); }
+      logUpload({ at: new Date().toISOString(), title: pieza.titulo, publish_id: meta.tiktok[0]?.publish_id || null, status: meta.tiktok[0]?.status, run: process.env.GITHUB_RUN_ID || null });
+      fs.rmSync(tt.replace(/\.mp4$/, '.json'), { force: true });
     }
     hist.ids.push(...(pieza.ids || [])); hist.retos.push(...(pieza.retos || [])); hist.banderas.push(...(pieza.banderas || []));
     hist.prefieres.push(...(pieza.prefieres || [])); hist.emojis.push(...(pieza.emojis || [])); hist.noticias.push(...(pieza.noticias || []));

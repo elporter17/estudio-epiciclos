@@ -166,14 +166,15 @@ jobs:
           # Imágenes de curiosidades y noticias (curiosidades-facebook.yml y curiosidades-tiktok.yml)
           case "$CATS_INPUT" in
             curiosidades-facebook) node scripts/curiosidades.mjs --red facebook; exit 0 ;;
-            curiosidades-tiktok) node scripts/curiosidades.mjs --red tiktok; exit 0 ;;
+            # TikTok: carrusel de 5 imágenes (retos visuales o datos, día por medio)
+            curiosidades-tiktok) node scripts/curiosidades.mjs --red tiktok --carrusel 5; exit 0 ;;
             # Reels de quiz y curiosidades (curiosidades-reels.yml); «figura» elige el formato: top10, quiz o banderas
             # Contestar los comentarios de los retos (comentarios.yml); out/ vacío para los pasos de resumen
             comentarios) mkdir -p out; node scripts/comentarios.mjs; exit 0 ;;
             # Noticias del día para los Reels (noticias.yml) y especial GTA VI (gta6.yml; «figura» = lanzamiento en la mañana)
             noticias) mkdir -p out; node scripts/noticias.mjs; exit 0 ;;
             gta6) if [ "$FIGURA_INPUT" = "lanzamiento" ]; then node scripts/gta6.mjs --solo-lanzamiento; else node scripts/gta6.mjs; fi; exit 0 ;;
-            curiosidades-video) node scripts/curiosidades-video.mjs --facebook "$FACEBOOK_INPUT" --formato "${FIGURA_INPUT:-auto}" ${HISTORIA_INPUT:+--historia}; exit 0 ;;
+            curiosidades-video) node scripts/curiosidades-video.mjs --facebook "$FACEBOOK_INPUT" --formato "${FIGURA_INPUT:-auto}" ${HISTORIA_INPUT:+--historia} --tiktok "$( [ "$PUBLISH_INPUT" = draft ] && echo draft || echo no )"; exit 0 ;;
           esac
           # Solo consultar el estado de subidas anteriores
           if [ -n "$ESTADO_INPUT" ]; then

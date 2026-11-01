@@ -15,6 +15,11 @@ on:
         type: choice
         options: [auto, banderas, retos, quiz, prefieres, emojis, top10, noticias]
         default: auto
+      tiktok:
+        description: También como borrador en TikTok (cuenta para los 5 borradores pendientes)
+        type: choice
+        options: ['no', 'si']
+        default: 'no'
       historia:
         description: Publicar también como historia de la página
         type: boolean
@@ -31,8 +36,9 @@ jobs:
       cats: curiosidades-video
       # El formato viaja en «figura»; los horarios de noticias lo fijan, los demás siguen la rotación
       figura: ${{ inputs.formato != 'auto' && inputs.formato || '' }}
-      publish: none
+      publish: ${{ inputs.tiktok == 'si' && 'draft' || 'none' }}
       facebook: si
       historia: ${{ github.event_name != 'workflow_dispatch' || inputs.historia }}
-      aviso: false
+      # El correo con la descripción solo hace falta cuando va a TikTok (allí se pega a mano)
+      aviso: ${{ inputs.tiktok == 'si' }}
     secrets: inherit

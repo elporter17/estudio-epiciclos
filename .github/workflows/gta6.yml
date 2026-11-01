@@ -25,5 +25,6 @@ jobs:
       cats: gta6
       figura: ${{ inputs.lanzamiento && 'lanzamiento' || '' }}
       publish: none
-      aviso: false
+      # Va a TikTok: el correo trae la descripción para pegarla
+      aviso: true
     secrets: inherit
