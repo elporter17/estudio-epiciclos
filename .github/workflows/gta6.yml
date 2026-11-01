@@ -1,0 +1,27 @@
+# Especial GTA VI (scripts/gta6.mjs): un Reel diario «Faltan N días» con curiosidades confirmadas hasta el lanzamiento
+# (19 de noviembre de 2026) y, ese día, un especial con lo que hay que saber para jugar. Facebook e Instagram (Reel +
+# historia) y TikTok (borrador sin sonido: ocupa el lugar de un nombre en los 5 borradores diarios).
+# Después del lanzamiento el script no publica nada: se puede desactivar el workflow.
+name: Especial GTA VI
+
+on:
+  schedule:
+    # En Honduras (UTC-6): 19:27 cada día (cuenta atrás)
+    - cron: '27 1 * * *'
+    # 9:27: solo el día del lanzamiento publica (el especial); los demás días termina sin hacer nada
+    - cron: '27 15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  gta6:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: gta6
+      figura: ${{ github.event.schedule == '27 15 * * *' && 'lanzamiento' || '' }}
+      publish: none
+      aviso: false
+    secrets: inherit
