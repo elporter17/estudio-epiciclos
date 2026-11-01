@@ -43,19 +43,24 @@ async function facebook() {
       reacciones: r.likes?.summary?.total_count || 0, comentarios: r.comments?.summary?.total_count || 0, compartidos: num(valor(ins, 'post_video_social_actions')?.SHARE)
     });
   }
-  const posts = await graph('GET', `/${page}/published_posts`, { since: desde, limit: 100, fields: 'id,message,created_time,permalink_url,shares,reactions.summary(true).limit(0),comments.summary(true).limit(0),attachments{media_type}' }).catch((e) => ({ data: [], error: e.message }));
-  if (posts.error) console.error(`Publicaciones: ${posts.error}`);
-  for (const p of posts.data || []) {
-    if (p.attachments?.data?.[0]?.media_type !== 'photo') continue;
-    let ins = [];
-    for (const metric of ['post_media_view', 'post_impressions_unique', 'post_impressions']) {
-      const d = await graph('GET', `/${p.id}/insights`, { metric }).catch(() => null);
-      if (d?.data?.length) { ins = d.data; break; }
+  // Imágenes: el borde /photos no pide pages_read_user_content (published_posts sí); las métricas van por la publicación
+  const fotos = await graph('GET', `/${page}/photos`, { type: 'uploaded', limit: 100, fields: 'id,name,created_time,link,page_story_id,likes.summary(true).limit(0),comments.summary(true).limit(0)' }).catch((e) => ({ data: [], error: e.message }));
+  if (fotos.error) console.error(`Fotos: ${fotos.error}`);
+  let avisado = false;
+  for (const p of fotos.data || []) {
+    if (Date.parse(p.created_time) / 1000 < desde) continue;
+    let ins = [], post = {};
+    if (p.page_story_id) {
+      post = await graph('GET', `/${p.page_story_id}`, { fields: 'shares,reactions.summary(true).limit(0)' }).catch(() => ({}));
+      for (const metric of ['post_media_view', 'post_impressions_unique', 'post_impressions']) {
+        const d = await graph('GET', `/${p.page_story_id}/insights`, { metric }).catch((e) => { if (!avisado) { console.error(`Métricas de foto: ${e.message}`); avisado = true; } return null; });
+        if (d?.data?.length) { ins = d.data; break; }
+      }
     }
     filas.push({
-      red: 'Facebook', tipo: 'imagen', fecha: p.created_time, texto: p.message || '', enlace: p.permalink_url || '',
+      red: 'Facebook', tipo: 'imagen', fecha: p.created_time, texto: p.name || '', enlace: p.link || '',
       vistas: num(valor(ins, 'post_media_view', 'post_impressions')), alcance: num(valor(ins, 'post_impressions_unique')),
-      reacciones: p.reactions?.summary?.total_count || 0, comentarios: p.comments?.summary?.total_count || 0, compartidos: p.shares?.count || 0
+      reacciones: post.reactions?.summary?.total_count ?? p.likes?.summary?.total_count ?? 0, comentarios: p.comments?.summary?.total_count || 0, compartidos: post.shares?.count || 0
     });
   }
   return filas;
@@ -64,10 +69,15 @@ async function facebook() {
 async function instagram() {
   const ig = await instagramReady(); if (!ig) return [];
   const media = await graph('GET', `/${ig}/media`, { limit: 100, fields: 'id,caption,media_type,media_product_type,timestamp,permalink,like_count,comments_count' }).catch(() => ({ data: [] }));
-  const filas = [];
+  const filas = [], errIG = new Set();
   for (const m of media.data || []) {
     if (Date.parse(m.timestamp) / 1000 < desde) continue;
-    const ins = (await graph('GET', `/${m.id}/insights`, { metric: 'views,reach,shares,saved' }).catch(() => ({ data: [] }))).data || [];
+    // Una métrica por consulta: si una no existe para ese tipo de publicación, las demás igual llegan
+    const ins = [];
+    for (const metric of ['views', 'reach', 'shares']) {
+      const d = await graph('GET', `/${m.id}/insights`, { metric }).catch((e) => { if (!errIG.has(metric)) { console.error(`Instagram ${metric}: ${e.message}`); errIG.add(metric); } return null; });
+      if (d?.data) ins.push(...d.data);
+    }
     const tipo = m.media_type === 'VIDEO' ? 'video' : 'imagen';
     filas.push({
       red: 'Instagram', tipo, fecha: m.timestamp, texto: m.caption || '', enlace: m.permalink,
