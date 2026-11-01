@@ -2,7 +2,7 @@
 // Lanza workflows de GitHub Actions con un token fino (GITHUB_PANEL_TOKEN: solo este repo, Actions de lectura y escritura)
 // que vive únicamente en las variables de Vercel. El horario sale de scripts/lib/horario.mjs.
 import crypto from 'node:crypto';
-import { delDia, ahoraHN, minutos, instante, NOMBRES } from '../scripts/lib/horario.mjs';
+import { delDia, ahoraHN, minutos, instante, NOMBRES, redesDe } from '../scripts/lib/horario.mjs';
 
 export const REPO = 'elporter17/estudio-epiciclos';
 export const VENTANA = 150; // minutos: lo que se atrasó más que esto ya no se lanza (sería una ráfaga de publicaciones)
@@ -47,7 +47,7 @@ export async function diaConEstado(ahora = new Date()) {
     if (r) usadas.add(r.id);
     const m = minutos(s.hora);
     const estado = r ? (ACTIVO.includes(r.estado) ? 'en-curso' : 'hecho') : m > min ? 'proximo' : min - m <= VENTANA ? 'pendiente' : 'perdido';
-    return { ...s, nombre: NOMBRES[s.workflow] || s.workflow, estado, corrida: r || null };
+    return { ...s, nombre: NOMBRES[s.workflow] || s.workflow, redes: redesDe(s.workflow, s.inputs), estado, corrida: r || null };
   });
   // Si ya salió un horario posterior del mismo workflow, los pendientes anteriores ya no se lanzan
   lista.forEach((s, i) => { if (s.estado === 'pendiente' && lista.slice(i + 1).some((x) => x.workflow === s.workflow && x.corrida)) s.estado = 'perdido'; });

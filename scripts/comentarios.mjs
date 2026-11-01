@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // Contesta los comentarios de los retos y quiz de los últimos 3 días en Facebook e Instagram: «¡Correcto! ✅» a quien
 // acierta (y en Facebook le da «me gusta»), un ánimo a quien falla y el puntaje a quien lo comparte en los quiz.
+// Las respuestas se arman con partes al azar (lib/respuestas.mjs): ninguna se repite en un mismo video y las últimas
+// 400 de todos los videos tampoco (data/respuestas-usadas.json, en el estado cifrado).
 // Cada comentario se mira una sola vez (data/comentarios-respondidos.json) y no se contesta lo que no es una respuesta.
 // Permisos del token: pages_read_user_content y pages_manage_engagement (Facebook), instagram_manage_comments.
 //   node --env-file=.env scripts/comentarios.mjs [--max 25] [--dry-run]
@@ -10,25 +12,36 @@ import { parseCli } from './lib/cli.mjs';
 import { ROOT } from './lib/node-env.mjs';
 import { graph, facebookReady } from './facebook.mjs';
 import { instagramReady } from './instagram.mjs';
-import { publicacionesRecientes, evaluar, mensaje, inferirClave, comentarioNormal } from './lib/respuestas.mjs';
+import { publicacionesRecientes, evaluar, mensaje, firma, inferirClave, comentarioNormal } from './lib/respuestas.mjs';
 
 const o = parseCli({ max: { type: 'string', default: '25' }, 'dry-run': { type: 'boolean', default: false }, diagnostico: { type: 'boolean', default: false } });
 const VISTOS = path.join(ROOT, 'data', 'comentarios-respondidos.json');
 const vistos = new Set((() => { try { return JSON.parse(fs.readFileSync(VISTOS, 'utf8')); } catch { return []; } })());
+const USADAS = path.join(ROOT, 'data', 'respuestas-usadas.json');
+const recientes = (() => { try { return JSON.parse(fs.readFileSync(USADAS, 'utf8')); } catch { return []; } })();
 const pausa = () => new Promise((r) => setTimeout(r, 3000 + Math.random() * 3000)); // sin ráfagas: parece menos automático
 
 if (!facebookReady()) { console.log('Faltan FB_PAGE_ID o FB_PAGE_TOKEN'); process.exit(0); }
 const page = process.env.FB_PAGE_ID, ig = await instagramReady();
 const igUser = ig ? (await graph('GET', `/${ig}`, { fields: 'username' }).catch(() => ({}))).username : null;
 
-// Cada comentario de otra persona, con «respondido» si la cuenta ya le contestó (así nunca se contesta dos veces)
+// Cada comentario de otra persona, con «respondido» si la cuenta ya le contestó (así nunca se contesta dos veces),
+// «usuario» (@usuario en Instagram, nombre de pila en Facebook si la API lo da) y «propias»: lo que la cuenta ya contestó
+// en ese hilo, para no repetir frases dentro del mismo video
+const pila = (n) => (n || '').trim().split(/\s+/)[0] || null;
 async function comentarios(p) {
   if (p.red === 'facebook') {
-    const d = await graph('GET', `/${p.id}/comments`, { filter: 'toplevel', limit: 100, fields: 'id,message,from{id},created_time,comments.limit(25){from{id}}' });
-    return (d.data || []).filter((c) => c.from?.id !== page).map((c) => ({ id: c.id, texto: c.message || '', respondido: (c.comments?.data || []).some((r) => r.from?.id === page) }));
+    const d = await graph('GET', `/${p.id}/comments`, { filter: 'toplevel', limit: 100, fields: 'id,message,from{id,name},created_time,comments.limit(25){from{id},message}' });
+    return (d.data || []).filter((c) => c.from?.id !== page).map((c) => {
+      const propias = (c.comments?.data || []).filter((r) => r.from?.id === page);
+      return { id: c.id, texto: c.message || '', usuario: pila(c.from?.name), respondido: propias.length > 0, propias: propias.map((r) => r.message || '') };
+    });
   }
-  const d = await graph('GET', `/${p.id}/comments`, { limit: 100, fields: 'id,text,username,timestamp,replies{username}' });
-  return (d.data || []).filter((c) => c.username !== igUser).map((c) => ({ id: c.id, texto: c.text || '', respondido: (c.replies?.data || []).some((r) => r.username === igUser) }));
+  const d = await graph('GET', `/${p.id}/comments`, { limit: 100, fields: 'id,text,username,timestamp,replies{username,text}' });
+  return (d.data || []).filter((c) => c.username !== igUser).map((c) => {
+    const propias = (c.replies?.data || []).filter((r) => r.username === igUser);
+    return { id: c.id, texto: c.text || '', usuario: c.username ? `@${c.username}` : null, respondido: propias.length > 0, propias: propias.map((r) => r.text || '') };
+  });
 }
 async function contestar(p, c, msg, bien) {
   if (p.red === 'facebook') {
@@ -78,22 +91,30 @@ for (const p of publicaciones) {
   if (p.red === 'instagram' && !ig) continue;
   let lista;
   try { lista = await comentarios(p); } catch (e) { errores.set(`${p.red}: leer`, e.message); continue; }
+  // Lo ya dicho en este video y lo reciente de todos: la respuesta nueva no puede ser ninguna de esas
+  const usadas = new Set([...recientes, ...lista.flatMap((c) => c.propias.map(firma))]);
   for (const c of lista) {
     if (hechas >= +o.max) break;
     // Ya contestado, o ignorado antes y sigue sin ser algo que se conteste (spam, vacío)
     if (c.respondido) continue;
     revisados++;
     // Si no es una respuesta al reto pero es un comentario normal, se agradece igual (más conversación)
-    const v = evaluar(p.clave, c.texto) || (comentarioNormal(c.texto) ? { charla: true } : null), msg = v && mensaje(v, p.clave);
+    const v = evaluar(p.clave, c.texto) || (comentarioNormal(c.texto) ? { charla: true } : null);
+    const msg = v && mensaje(v, p.clave, { usadas, usuario: c.usuario, contexto: p.titulo });
     if (!msg) { if (!vistos.has(c.id)) vistos.add(c.id); continue; }
-    console.log(`${p.red} · ${p.titulo} → ${msg}`); // sin el texto del comentario: los registros son públicos
+    // Sin el texto ni el nombre de quien comentó: los registros son públicos
+    console.log(`${p.red} · ${p.titulo} → ${c.usuario ? msg.replace(c.usuario, '[nombre]') : msg}`);
     if (!o['dry-run']) {
       try { await contestar(p, c, msg, v === 'bien' || !!v.bien); hechas++; await pausa(); }
       catch (e) { errores.set(`${p.red}: contestar`, e.message); continue; } // sin permiso: se reintenta en la próxima corrida
     }
     vistos.add(c.id);
+    recientes.push(firma(msg));
   }
 }
-if (!o['dry-run']) fs.writeFileSync(VISTOS, JSON.stringify([...vistos].slice(-5000)) + '\n');
+if (!o['dry-run']) {
+  fs.writeFileSync(VISTOS, JSON.stringify([...vistos].slice(-5000)) + '\n');
+  fs.writeFileSync(USADAS, JSON.stringify(recientes.slice(-400)) + '\n');
+}
 console.log(`Comentarios nuevos revisados: ${revisados} · respuestas: ${hechas}`);
 for (const [k, e] of errores) console.log(`Aviso (${k}): ${e}`);

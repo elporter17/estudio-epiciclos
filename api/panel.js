@@ -1,14 +1,14 @@
 // /api/panel — datos y acciones del panel privado (/panel.html). Acceso con contraseña (PANEL_CLAVE) y código de 6
 // dígitos de una app de autenticación (PANEL_TOTP). Todas las peticiones POST llevan la cabecera «x-panel: 1» (una
 // página de otro sitio no puede ponerla sin permiso del navegador: así no se puede usar la sesión desde afuera).
-//   GET                                      el día: horario con el estado de cada corrida, y las últimas corridas
+//   GET                                      el día: horario con el estado y las redes de cada corrida, y las últimas corridas
 //   POST {accion:'entrar', clave, codigo}     abre la sesión (cookie de 12 horas)
 //   POST {accion:'nuevo-2fa'}                 (solo sin 2FA y con sesión) un secreto nuevo para la app de autenticación
 //   POST {accion:'probar-2fa', secreto, codigo} comprueba que la app da códigos válidos para ese secreto
 //   POST {accion:'correr', workflow, inputs}  lanza ya un workflow en GitHub Actions (necesita el 2FA configurado)
 //   POST {accion:'salir'}
 import { json, diaConEstado, lanzar, cookieSesion, cookieSalir, autorizado, claveCorrecta, hay2fa, codigoValido, nuevoSecreto, ipDe, bloqueado, fallo, acierto } from './_panel.js';
-import { NOMBRES } from '../scripts/lib/horario.mjs';
+import { NOMBRES, redesDe } from '../scripts/lib/horario.mjs';
 
 const PERMITIDOS = new Set(Object.keys(NOMBRES));
 
@@ -42,6 +42,8 @@ export default { async fetch(request) {
     }
     if (!autorizado(request)) return json({ error: 'Inicia sesión.', dosPasos: hay2fa() }, 401);
     const { fecha, min, lista, corridas } = await diaConEstado();
-    return json({ fecha, min, horario: lista, corridas: corridas.slice(-25).reverse(), workflows: NOMBRES, dosPasos: hay2fa() });
+    // redes: dónde publica cada workflow (fb, ig, tt), para las etiquetas y los filtros del panel
+    const redes = Object.fromEntries(Object.keys(NOMBRES).map((w) => [w, redesDe(w)]));
+    return json({ fecha, min, horario: lista, corridas: corridas.slice(-25).reverse(), workflows: NOMBRES, redes, dosPasos: hay2fa() });
   } catch (e) { return json({ error: e.message }, 500); }
 } };

@@ -62,19 +62,58 @@ export function evaluar(clave, texto) {
   }
 }
 
-const BIEN = ['¡Correcto! ✅', '¡Exacto! 👏', '¡Bien visto! 🔎 Es correcto.', '¡Eso es! 🎯', '¡Muy bien! ✅ No todos lo sacan.', '¡Respuesta correcta! 🙌'];
-const MAL = ['Mmm, no es esa 🤔 ¡Inténtalo otra vez!', 'Casi 😅 Fíjate bien y vuelve a intentarlo.', 'Todavía no 👀 ¡Tú puedes!', 'No es esa, pero vas cerca 💪 Mira otra vez.'];
-const CHARLA = ['¡Gracias por comentar! 🙌', '¡Qué buena! 🔥', '¡Gracias por jugar! 💪', '¡Así se habla! 👏', '😄 ¡Gracias por estar aquí!', '¡Gracias! Mañana hay más 🎯'];
+// ---------- respuestas que suenan a persona ----------
+// Cada respuesta se arma con partes al azar: una apertura (a veces ninguna), la frase según el caso y el formato, a veces
+// un cierre, un emoji (o ninguno) y, a veces, el nombre de quien comentó. Se descartan las que ya se usaron en ese mismo
+// video o hace poco (ver «usadas»), así no hay dos iguales en un video y casi nunca entre videos.
+const P = {
+  apertura: ['', '', '', '', 'Uff, ', 'Wow, ', 'Ey, ', 'Oye, ', 'Jaja, ', 'Mira nada más, ', 'Qué bien, ', 'Bueno bueno, '],
+  perfecto: ['{n} de {max}, no se te escapó ni una', 'puntaje perfecto', 'todas bien, eso es tener nivel', '{n}/{max}, impresionante', 'las {max}, qué crack', 'ni una mala, así se juega', 'perfecto, ¿cuál te costó más?', '{n} de {max}, vienes entrenado', 'pleno, no cualquiera lo logra'],
+  alto: ['{n} de {max}, muy bien', '{n}/{max} está buenísimo', 'casi perfecto con {n}', '{n} de {max}, la próxima sacas las {max}', 'con {n} ya eres de los buenos', '{n}, nada mal', '{n} de {max}, te faltó poquito', '{n}, muy buen ojo'],
+  medio: ['{n} de {max}, vas bien', '{n}/{max}, nada mal', 'con {n} ya pasaste', '{n} de {max}, el próximo te sale mejor', 'buen intento, {n} está bien', '{n}, y la próxima más', '{n} de {max}, no estaba fácil'],
+  bajo: ['lo importante es jugar', 'el próximo te sale mejor, seguro', 'gracias por animarte', 'esta estaba difícil, hay revancha', 'para eso son los retos', 'nadie nace sabiendo, a la próxima', 'tranqui, el siguiente es más fácil'],
+  bien: ['correcto', 'exacto, esa era', 'bien visto', 'lo encontraste', 'eso es, ojo de águila', 'respuesta correcta, pocos la sacan', 'esa es, qué rápido', 'sí, esa era', 'justo esa', 'bingo'],
+  mal: ['casi, pero no es esa', 'uy, cerca', 'no es esa, mira otra vez', 'todavía no, tú puedes', 'esa no, pero vas bien', 'mmm, revisa de nuevo', 'casi casi, fíjate bien', 'esa no es, pero no te rindas'],
+  nombre: ['{N} cumple: {L} letras y {modo} {pista}', '{N}, perfecto, cumple con todo', 'sí, {N} tiene {L} letras', '{N} va perfecto', '{N}, ese no lo había pensado', '{N}, muy bien', 'claro, {N}'],
+  charla: {
+    banderas: ['¿cuál bandera te costó más?', 'gracias por jugar', 'las del final siempre engañan', 'qué bueno que te gustó', 'hay banderas que se parecen demasiado'],
+    prefieres: ['esa estaba difícil', 'buena elección', 'yo también dudé con esa', 'difícil decidir, ¿verdad?', 'tremendo dilema', 'esa la discutimos toda la tarde'],
+    gta: ['ya falta poco', 'se viene con todo', 'la cuenta atrás sigue', 'qué ganas de jugarlo', 'cada día falta menos'],
+    noticias: ['gracias por leer', 'interesante, ¿verdad?', 'mañana traemos más'],
+    generico: ['gracias por comentar', 'qué bueno verte por aquí', 'gracias por jugar', 'así se habla', 'gracias, mañana hay más', 'qué bueno que te gustó', 'gracias por pasar']
+  },
+  cierre: ['', '', '', '', ' Mañana hay otro.', ' Más tarde sale otro.', ' ¿Te animas con el siguiente?', ' Gracias por jugar.'],
+  emoji: ['', '', '🔥', '👏', '💪', '😄', '🙌', '🎯', '✨', '😎', '🤩', '👀', '🫡']
+};
 const cap = (s) => s[0].toUpperCase() + s.slice(1);
+const llenar = (s, d) => s.replace(/\{(\w+)\}/g, (_, k) => d[k] ?? '');
+// La «firma» de una respuesta (sin nombres, emojis ni signos) para comparar si ya se usó
+export const firma = (s) => norm(s).replace(/@\S+/g, '').replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, ' ').trim();
+const formatoDe = (contexto = '') => { const t = norm(contexto); return t.includes('bandera') ? 'banderas' : t.includes('prefieres') ? 'prefieres' : t.includes('gta') ? 'gta' : t.includes('noticia') ? 'noticias' : 'generico'; };
 
-export function mensaje(v, clave) {
-  if (v === 'bien') return azar(BIEN);
-  if (v === 'mal') return azar(MAL);
-  if (v.charla) return azar(CHARLA);
-  if (v.bien) return `¡${cap(v.bien.toLowerCase())} cumple! ✅ ${clave.largo} letras y ${clave.empieza ? 'empieza con' : 'termina en'} ${clave.pista}.`;
-  if (v.puntaje != null) {
-    const r = v.puntaje / clave.max;
-    return r === 1 ? `¡${v.puntaje} de ${clave.max}, perfecto! 🏆` : r >= 0.7 ? `¡${v.puntaje} de ${clave.max}, muy bien! 🔥` : r >= 0.4 ? `¡${v.puntaje} de ${clave.max}, nada mal! 👏 En el próximo sacas más.` : `¡Gracias por jugar! 💪 El próximo seguro te sale mejor.`;
+// usadas: firmas ya usadas (en ese video y recientes); usuario: «@nombre» (Instagram) o nombre de pila (Facebook)
+export function mensaje(v, clave, { usadas = new Set(), usuario = null, contexto = '' } = {}) {
+  let nucleo, datos = {};
+  if (v === 'bien') nucleo = P.bien;
+  else if (v === 'mal') nucleo = P.mal;
+  else if (v.charla) nucleo = P.charla[formatoDe(contexto)].concat(P.charla.generico);
+  else if (v.bien) { nucleo = P.nombre; datos = { N: cap(v.bien.toLowerCase()), L: clave.largo, modo: clave.empieza ? 'empieza con' : 'termina en', pista: clave.pista }; }
+  else if (v.puntaje != null) { const r = v.puntaje / clave.max; nucleo = r === 1 ? P.perfecto : r >= 0.7 ? P.alto : r >= 0.4 ? P.medio : P.bajo; datos = { n: v.puntaje, max: clave.max }; }
+  else return null;
+  let ultima = null;
+  for (let i = 0; i < 40; i++) {
+    const n = azar(nucleo), ap = azar(P.apertura), ci = azar(P.cierre);
+    // Sin ecos: «Qué bien, qué bueno…» ni «gracias… Gracias por jugar»
+    let s = llenar((/^qu[eé]/i.test(n) && /^Qu[eé]/.test(ap) ? '' : ap) + n, datos);
+    const pregunta = /\?$/.test(s);
+    s = Math.random() < 0.45 && !pregunta ? `¡${cap(s)}!` : cap(s) + (pregunta ? '' : '.');
+    if (!pregunta && !(/gracias/i.test(n) && /gracias/i.test(ci))) s += ci;
+    const e = azar(P.emoji); if (e) s += ` ${e}`;
+    // A veces se nombra a la persona, como haría alguien que contesta a mano
+    if (usuario && Math.random() < 0.35) s = usuario.startsWith('@') ? `${usuario} ${s}` : `${usuario}, ${s[0] === '¡' ? s : s[0].toLowerCase() + s.slice(1)}`;
+    ultima = s;
+    if (!usadas.has(firma(s))) break;
   }
-  return null;
+  usadas.add(firma(ultima));
+  return ultima;
 }
