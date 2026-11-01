@@ -12,7 +12,7 @@ import { graph, facebookReady } from './facebook.mjs';
 import { instagramReady } from './instagram.mjs';
 import { publicacionesRecientes, evaluar, mensaje } from './lib/respuestas.mjs';
 
-const o = parseCli({ max: { type: 'string', default: '25' }, 'dry-run': { type: 'boolean', default: false } });
+const o = parseCli({ max: { type: 'string', default: '25' }, 'dry-run': { type: 'boolean', default: false }, diagnostico: { type: 'boolean', default: false } });
 const VISTOS = path.join(ROOT, 'data', 'comentarios-respondidos.json');
 const vistos = new Set((() => { try { return JSON.parse(fs.readFileSync(VISTOS, 'utf8')); } catch { return []; } })());
 const pausa = () => new Promise((r) => setTimeout(r, 3000 + Math.random() * 3000)); // sin ráfagas: parece menos automático
@@ -36,6 +36,29 @@ async function contestar(p, c, msg, bien) {
   } else await graph('POST', `/${c.id}/replies`, { message: msg });
 }
 
+// Diagnóstico: cruza las publicaciones recientes de Instagram con las registradas y cuenta qué pasaría con cada
+// comentario. Solo números: los registros de Actions son públicos, así que nunca se imprime quién comentó ni qué dijo.
+if (o.diagnostico) {
+  const reg = publicacionesRecientes(7);
+  console.log(`Registradas (7 días): ${reg.length} · Facebook ${reg.filter((x) => x.red === 'facebook').length} · Instagram ${reg.filter((x) => x.red === 'instagram').length}`);
+  if (!ig) { console.log('Instagram no disponible'); process.exit(0); }
+  const media = await graph('GET', `/${ig}/media`, { limit: 30, fields: 'id,timestamp,comments_count,media_product_type,caption' });
+  for (const m of media.data || []) {
+    const r = reg.find((x) => x.red === 'instagram' && x.id === m.id), cuenta = {};
+    if (m.comments_count) {
+      try {
+        for (const c of await comentarios({ red: 'instagram', id: m.id })) {
+          const v = r ? evaluar(r.clave, c.texto) : null;
+          const k = !r ? 'sin-registrar' : vistos.has(c.id) ? 'ya-visto' : !v ? 'no-es-respuesta' : v.puntaje != null ? 'puntaje' : v.bien ? 'bien' : v;
+          cuenta[k] = (cuenta[k] || 0) + 1;
+        }
+      } catch (e) { cuenta.error = e.message.slice(0, 120); }
+    }
+    console.log(`${m.timestamp.slice(0, 16)} ${m.media_product_type.padEnd(5)} comentarios=${m.comments_count} registrada=${r ? r.clave.modo : 'no'} ${JSON.stringify(cuenta)} «${(m.caption || '').slice(0, 28).replace(/\n/g, ' ')}»`);
+  }
+  process.exit(0);
+}
+
 let hechas = 0, revisados = 0;
 const errores = new Map();
 for (const p of publicacionesRecientes(3)) {
@@ -49,7 +72,7 @@ for (const p of publicacionesRecientes(3)) {
     revisados++;
     const v = evaluar(p.clave, c.texto), msg = v && mensaje(v, p.clave);
     if (!msg) { vistos.add(c.id); continue; }
-    console.log(`${p.red} · ${p.titulo}: «${c.texto.slice(0, 60)}» → ${msg}`);
+    console.log(`${p.red} · ${p.titulo} → ${msg}`); // sin el texto del comentario: los registros son públicos
     if (!o['dry-run']) {
       try { await contestar(p, c, msg, v === 'bien' || !!v.bien); hechas++; await pausa(); }
       catch (e) { errores.set(`${p.red}: contestar`, e.message); continue; } // sin permiso: se reintenta en la próxima corrida

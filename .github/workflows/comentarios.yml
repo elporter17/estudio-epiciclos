@@ -8,6 +8,11 @@ on:
   # Horario: lo lanza el relojero (/api/relojero, llamado por cron-job.org cada 10 min) según scripts/lib/horario.mjs.
   # Los «schedule» de GitHub se perdían o llegaban con horas de atraso (2026-11-01).
   workflow_dispatch:
+    inputs:
+      diagnostico:
+        description: Solo revisar (cuántos comentarios hay y por qué se responden o no), sin contestar
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -18,6 +23,7 @@ jobs:
     uses: ./.github/workflows/daily.yml
     with:
       cats: comentarios
+      figura: ${{ inputs.diagnostico && 'diagnostico' || '' }}
       publish: none
       aviso: false
     secrets: inherit

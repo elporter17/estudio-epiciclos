@@ -170,7 +170,7 @@ jobs:
             curiosidades-tiktok) node scripts/curiosidades.mjs --red tiktok --carrusel 5; exit 0 ;;
             # Reels de quiz y curiosidades (curiosidades-reels.yml); «figura» elige el formato: top10, quiz o banderas
             # Contestar los comentarios de los retos (comentarios.yml); out/ vacío para los pasos de resumen
-            comentarios) mkdir -p out; node scripts/comentarios.mjs; exit 0 ;;
+            comentarios) mkdir -p out; if [ "$FIGURA_INPUT" = diagnostico ]; then node scripts/comentarios.mjs --diagnostico; else node scripts/comentarios.mjs; fi; exit 0 ;;
             # Noticias del día para los Reels (noticias.yml) y especial GTA VI (gta6.yml; «figura» = lanzamiento en la mañana)
             noticias) mkdir -p out; node scripts/noticias.mjs; exit 0 ;;
             gta6) if [ "$FIGURA_INPUT" = "lanzamiento" ]; then node scripts/gta6.mjs --solo-lanzamiento; else node scripts/gta6.mjs; fi; exit 0 ;;
