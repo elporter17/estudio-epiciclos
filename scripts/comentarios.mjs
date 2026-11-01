@@ -45,7 +45,8 @@ if (o.diagnostico) {
   if (!ig) { console.log('Instagram no disponible'); process.exit(0); }
   const media = await graph('GET', `/${ig}/media`, { limit: 30, fields: 'id,timestamp,comments_count,media_product_type,caption' });
   for (const m of media.data || []) {
-    const r = reg.find((x) => x.red === 'instagram' && x.id === m.id), cuenta = {};
+    // Lo no registrado se reconoce por su descripción, igual que en la corrida normal
+    const r = reg.find((x) => x.red === 'instagram' && x.id === m.id) || { clave: inferirClave(m.caption), inferida: true }, cuenta = {};
     if (m.comments_count) {
       try {
         for (const c of await comentarios({ red: 'instagram', id: m.id })) {
@@ -55,7 +56,7 @@ if (o.diagnostico) {
         }
       } catch (e) { cuenta.error = e.message.slice(0, 120); }
     }
-    console.log(`${m.timestamp.slice(0, 16)} ${m.media_product_type.padEnd(5)} comentarios=${m.comments_count} registrada=${r ? r.clave.modo : 'no'} ${JSON.stringify(cuenta)} «${(m.caption || '').slice(0, 28).replace(/\n/g, ' ')}»`);
+    console.log(`${m.timestamp.slice(0, 16)} ${m.media_product_type.padEnd(5)} comentarios=${m.comments_count} clave=${r.clave.modo}${r.inferida ? ' (por descripción)' : ''} ${JSON.stringify(cuenta)} «${(m.caption || '').slice(0, 28).replace(/\n/g, ' ')}»`);
   }
   process.exit(0);
 }
