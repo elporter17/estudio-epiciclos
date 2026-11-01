@@ -18,6 +18,8 @@ import { publishReel, publishStory, facebookReady } from './facebook.mjs';
 import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
 import { MELODIA_IDS } from '../src/melodias.js';
+import { crearVisual, VISUALES } from './lib/retos-visuales.mjs';
+import { juntarNoticias } from './noticias.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades');
 const HIST = path.join(ROOT, 'data', 'curiosidades-video-historial.json'), HIST_IMG = path.join(ROOT, 'data', 'curiosidades-historial.json');
@@ -26,9 +28,10 @@ const azar = (a) => a[Math.floor(Math.random() * a.length)];
 const mezclar = (a) => a.map((x) => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map((p) => p[1]);
 const entre = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
 const OCULTAR = '\n\n.\n.\n.\n\n'; // lo que sigue queda debajo de «Ver más»
-// Orden de los formatos (se repite): las banderas fueron lo que más vistas tuvo en Facebook e Instagram (informe del
-// 2026-11-01), así que salen la mitad de las veces
-const ROTACION = ['banderas', 'quiz', 'banderas', 'top10'];
+// Orden de los formatos (se repite cada 10; con 10 corridas al día que no son noticias, cada día cae en otro orden).
+// Las banderas, lo que más vistas tuvo (informe del 2026-11-01), salen 2 de cada 10. Las noticias las pide el
+// workflow en sus horarios (--formato noticias).
+const ROTACION = ['banderas', 'retos', 'quiz', 'prefieres', 'emojis', 'banderas', 'top10', 'retos', 'prefieres', 'quiz'];
 const TEMAS_DATOS = ['animales', 'cuerpo', 'ciencia', 'geografia', 'historia', 'comida', 'deportes', 'tecnologia', 'inventos'];
 
 // ---------- banderas ----------
@@ -171,6 +174,77 @@ function banderas(hist) {
   return { formato: 'banderas', titulo: 'Adivina las 10 banderas', escenas, texto, banderas: paises };
 }
 
+// ---------- retos visuales, ¿qué prefieres?, emojis y noticias (2026-11-01) ----------
+const cierre = (tema, l1, l2) => ({ tipo: 'cierre', dur: CIERRE, tema, sonidos: [[0, 'final']],
+  lineas: [{ texto: l1, size: 100, color: TEMAS[tema].acento }, { texto: l2, size: 62 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] });
+const tags = (...t) => [...t, 'reels', 'potterplay'].map((x) => `#${x}`).join(' ');
+
+function retosVideo() {
+  const vs = mezclar(VISUALES).map(crearVisual);
+  const escenas = [
+    { tipo: 'intro', dur: INTRO, tema: 'matematicas', portada: true, sonidos: introSonidos, iconos: ['👀', '🔎', '🧮', '✍️', '🟢'],
+      lineas: [{ texto: '5 RETOS', size: 150, color: TEMAS.matematicas.acento }, { texto: 'VISUALES', size: 120 }, { texto: '¿Cuántos resuelves a tiempo?', size: 58, color: 'rgba(255,255,255,0.85)' }] },
+    // Los de buscar (número repetido, letra escondida) tienen más tiempo
+    ...vs.map((v, i) => { const piensa = ['duplicado', 'diferente'].includes(v.tipo) ? 8 : 6; return { tipo: 'visual', dur: piensa + 2.6, piensa, idx: i, total: vs.length, tema: 'matematicas', visual: v, sonidos: cuenta(piensa, 'bien') }; }),
+    cierre('matematicas', '¿CUÁNTOS RESOLVISTE?', '¿Cuántos de los 5 te salieron?')
+  ];
+  const texto = `👀 5 retos visuales: número repetido, letra escondida, fracción, operación y nombre. ¿Cuántos resuelves antes de que se acabe el tiempo?${OCULTAR}Respuestas:\n${vs.map((v, i) => `${i + 1}. ${v.corta.replace(/[¡!]/g, '')}`).join('\n')}\n\n${tags('retos', 'acertijos', 'retovisual', 'juegosmentales', 'agilidadmental')}`;
+  return { formato: 'retos', titulo: '5 retos visuales', escenas, texto, clave: { modo: 'puntaje', max: vs.length } };
+}
+
+function prefieresVideo(hist) {
+  const base = leer(path.join(ROOT, 'data', 'prefieres.json'), []), usados = new Set(hist.prefieres.slice(-120));
+  const elegidos = mezclar(base.filter((x) => !usados.has(x.id))).concat(mezclar(base)).filter((x, i, a) => a.indexOf(x) === i).slice(0, 6);
+  if (elegidos.length < 6) return null;
+  const escenas = [
+    { tipo: 'intro', dur: INTRO, tema: 'prefieres', portada: true, sonidos: introSonidos, iconos: elegidos.slice(0, 3).flatMap((x) => [x.icono_a, x.icono_b]).slice(0, 5),
+      lineas: [{ texto: '¿QUÉ', size: 150, color: TEMAS.prefieres.acento }, { texto: 'PREFIERES?', size: 130 }, { texto: '6 decisiones imposibles', size: 58, color: 'rgba(255,255,255,0.85)' }] },
+    ...elegidos.map((x, i) => ({ tipo: 'prefieres', dur: 6.3, piensa: 4.5, idx: i, total: 6, tema: 'prefieres', a: x.a, b: x.b, icono_a: x.icono_a, icono_b: x.icono_b, sonidos: cuenta(4.5, 'bien') })),
+    cierre('prefieres', '¿CUÁL FUE LA MÁS DIFÍCIL?', 'Seguro hubo una que te hizo dudar 🤔')
+  ];
+  const texto = `🤔 ¿Qué prefieres? 6 decisiones imposibles en menos de un minuto.\n\n${elegidos.map((x, i) => `${i + 1}. ${x.icono_a} ${x.a} o ${x.icono_b} ${x.b}`).join('\n')}\n\n¿Cuál fue la más difícil para ti?\n\n${tags('queprefieres', 'dilemas', 'preguntas', 'juegos')}`;
+  return { formato: 'prefieres', titulo: '¿Qué prefieres?', escenas, texto, prefieres: elegidos.map((x) => x.id) };
+}
+
+const CATEGORIA_EMOJI = { pelicula: '🎬 PELÍCULA', serie: '📺 SERIE', cancion: '🎵 CANCIÓN', pais: '🌎 PAÍS', personaje: '🦸 PERSONAJE', refran: '💬 REFRÁN' };
+function emojisVideo(hist) {
+  const base = leer(path.join(ROOT, 'data', 'emojis.json'), []), usados = new Set(hist.emojis.slice(-130));
+  // De más fácil a más difícil
+  const elegidos = mezclar(base.filter((x) => !usados.has(x.id))).concat(mezclar(base)).filter((x, i, a) => a.indexOf(x) === i).slice(0, 8).sort((a, b) => a.dificultad - b.dificultad);
+  if (elegidos.length < 8) return null;
+  const escenas = [
+    { tipo: 'intro', dur: INTRO, tema: 'emojis', portada: true, sonidos: introSonidos, iconos: ['🎬', '🎵', '🌎', '🦸', '💬'],
+      lineas: [{ texto: 'ADIVINA', size: 130 }, { texto: 'CON EMOJIS', size: 130, color: TEMAS.emojis.acento }, { texto: 'Películas, canciones, países…', size: 56, color: 'rgba(255,255,255,0.85)' }] },
+    ...elegidos.map((x, i) => ({ tipo: 'emoji', dur: 6.2, piensa: 4, idx: i, total: 8, tema: 'emojis', etiqueta: CATEGORIA_EMOJI[x.categoria] || '🤔 ADIVINA', emojis: x.emojis, respuesta: x.respuesta, sonidos: cuenta(4, 'bien') })),
+    cierre('emojis', '¿CUÁNTAS ADIVINASTE?', '¿Cuántas de las 8 sacaste?')
+  ];
+  const texto = `🤔 Adivina con emojis: películas, canciones, países y más. 4 segundos para cada una. ¿Cuántas sacas de 8?${OCULTAR}Respuestas:\n${elegidos.map((x, i) => `${i + 1}. ${x.emojis} → ${x.respuesta}`).join('\n')}\n\n${tags('adivina', 'emojis', 'retos', 'peliculas', 'juegos')}`;
+  return { formato: 'emojis', titulo: 'Adivina con emojis', escenas, texto, emojis: elegidos.map((x) => x.id), clave: { modo: 'puntaje', max: 8 } };
+}
+
+const ETIQUETA_NOTICIA = { videojuegos: '🎮 VIDEOJUEGOS', futbol: '⚽ FÚTBOL', ciencia: '🔭 CIENCIA' };
+async function noticiasVideo(hist) {
+  // Las del día las junta noticias.yml (scripts/noticias.mjs); si no están, se leen ahora
+  let lista = leer(path.join(ROOT, 'data', 'noticias-hoy.json'), {}).items || [];
+  if (lista.length < 4) lista = await juntarNoticias().catch(() => []);
+  const vistas = new Set(hist.noticias.slice(-300)), frescas = lista.filter((n) => !vistas.has(n.link));
+  // Una de cada categoría primero, luego las más recientes
+  const elegidas = [];
+  for (const cat of Object.keys(ETIQUETA_NOTICIA)) { const n = frescas.find((x) => x.cat === cat); if (n) elegidas.push(n); }
+  for (const n of frescas) if (elegidas.length < 4 && !elegidas.includes(n)) elegidas.push(n);
+  if (elegidas.length < 2) return null;
+  const hoy = new Date(Date.now() - 6 * 3600e3).toLocaleDateString('es-HN', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+  const corta = (f) => new Date(f).toLocaleDateString('es-HN', { day: 'numeric', month: 'short', timeZone: 'America/Tegucigalpa' });
+  const escenas = [
+    { tipo: 'intro', dur: INTRO, tema: 'noticias', portada: true, sonidos: introSonidos, iconos: ['📰', '🎮', '⚽', '🔭'],
+      lineas: [{ texto: 'NOTICIAS', size: 140, color: TEMAS.noticias.acento }, { texto: 'DE HOY', size: 120 }, { texto: hoy, size: 56, color: 'rgba(255,255,255,0.85)' }] },
+    ...elegidas.map((n, i) => ({ tipo: 'noticia', dur: 8.5, idx: i, total: elegidas.length, tema: 'noticias', etiqueta: ETIQUETA_NOTICIA[n.cat] || '📰 NOTICIA', icono: n.icono, titular: n.titulo, pie: `${n.medio} · ${corta(n.fecha)}`, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
+    cierre('noticias', '¿CUÁL TE SORPRENDIÓ MÁS?', 'Las noticias del día en menos de un minuto')
+  ];
+  const texto = `📰 Las noticias de hoy en menos de un minuto: videojuegos, fútbol y ciencia.\n\n${elegidas.map((n, i) => `${i + 1}. ${n.titulo} (${n.medio})`).join('\n')}${OCULTAR}Fuentes:\n${elegidas.map((n) => `${n.medio}: ${n.link}`).join('\n')}\n\n${tags('noticias', 'ultimahora', 'videojuegos', 'futbol', 'ciencia')}`;
+  return { formato: 'noticias', titulo: 'Noticias de hoy', escenas, texto, noticias: elegidas.map((n) => n.link) };
+}
+
 // ---------- principal ----------
 async function main() {
   const o = parseCli({
@@ -178,14 +252,16 @@ async function main() {
     historia: { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' }, 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' }
   });
   const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
-  const hist = { ids: [], retos: [], banderas: [], formatos: [], total: 0, ...leer(HIST, {}) };
+  const hist = { ids: [], retos: [], banderas: [], formatos: [], prefieres: [], emojis: [], noticias: [], total: 0, ...leer(HIST, {}) };
   // Nunca dos formatos iguales seguidos (por ejemplo, después de una prueba a mano)
   let paso = hist.total;
   if (ROTACION[paso % ROTACION.length] === hist.formatos.at(-1)) paso++;
   const formato = o.formato !== 'auto' ? o.formato : ROTACION[paso % ROTACION.length];
   const base = cargarDatos();
-  const pieza = formato === 'top10' ? top10(base, hist, o.tema) : formato === 'quiz' ? quiz(base, hist) : formato === 'banderas' ? banderas(hist) : null;
-  if (!pieza) throw new Error('--formato debe ser top10, quiz, banderas o auto');
+  const hacer = { top10: () => top10(base, hist, o.tema), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
+  if (!hacer[formato]) throw new Error(`--formato debe ser ${Object.keys(hacer).join(', ')} o auto`);
+  // Si un formato no tiene material (sin noticias frescas, por ejemplo), sale un quiz
+  const pieza = (await hacer[formato]()) || quiz(base, hist);
   console.error(`Formato: ${pieza.titulo}`);
 
   const outDir = path.join(ROOT, 'out'); fs.mkdirSync(outDir, { recursive: true });
@@ -215,7 +291,8 @@ async function main() {
       }
     }
     // Puntaje máximo, para contestar los comentarios con su puntaje (scripts/comentarios.mjs)
-    const clave = { modo: 'puntaje', max: pieza.formato === 'quiz' ? 5 : 10 };
+    // Los «¿Qué prefieres?» y las noticias no tienen respuesta correcta: no se registran
+    const clave = pieza.clave || ({ quiz: { modo: 'puntaje', max: 5 }, top10: { modo: 'puntaje', max: 10 }, banderas: { modo: 'puntaje', max: 10 } })[pieza.formato];
     registrarRespuesta({ red: 'facebook', id: meta.facebook?.video_id, clave, titulo: pieza.titulo });
     // Instagram (cuenta vinculada a la página): el mismo video desde el almacén, como Reel y como historia
     if (o.instagram !== 'no' && meta.videoUrl && await instagramReady()) {
@@ -224,6 +301,8 @@ async function main() {
       if (o.historia && r.duration <= 60) meta.instagramStory = await publishInstagramSeguro({ tipo: 'historia', url: meta.videoUrl });
     }
     hist.ids.push(...(pieza.ids || [])); hist.retos.push(...(pieza.retos || [])); hist.banderas.push(...(pieza.banderas || []));
+    hist.prefieres.push(...(pieza.prefieres || [])); hist.emojis.push(...(pieza.emojis || [])); hist.noticias.push(...(pieza.noticias || []));
+    hist.prefieres = hist.prefieres.slice(-150); hist.emojis = hist.emojis.slice(-160); hist.noticias = hist.noticias.slice(-300);
     hist.formatos.push(pieza.formato); hist.total++;
     hist.ids = hist.ids.slice(-500); hist.retos = hist.retos.slice(-60); hist.banderas = hist.banderas.slice(-150); hist.formatos = hist.formatos.slice(-100);
     fs.writeFileSync(HIST, JSON.stringify(hist, null, 2) + '\n');

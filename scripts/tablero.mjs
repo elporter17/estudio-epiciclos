@@ -17,7 +17,9 @@ const gh = (args) => { if (o['sin-gh']) return null; try { return execFileSync('
 
 // Qué hace cada workflow programado y adónde va (lo demás sale del archivo)
 const WF = {
-  'curiosidades-reels.yml': { que: 'Quiz en video', detalle: 'Rota: banderas, 5 preguntas, banderas, top 10', fb: 'Reel + historia', ig: 'Reel + historia', reel: true },
+  'curiosidades-reels.yml': { que: 'Reel de quiz y curiosidades', detalle: 'Rota: banderas, retos visuales, 5 preguntas, ¿qué prefieres?, emojis, top 10; noticias a las 7:57 y 18:57', fb: 'Reel + historia', ig: 'Reel + historia', reel: true },
+  'gta6.yml': { que: 'Especial GTA VI', detalle: 'Cuenta atrás hasta el 19 de noviembre; ese día, especial a las 9:27', fb: 'Reel + historia', ig: 'Reel + historia', tt: 'Borrador', reel: true },
+  'noticias.yml': { que: 'Juntar noticias del día', detalle: 'No publica: deja los titulares para los Reels de noticias', mantenimiento: true },
   'curiosidades-facebook.yml': { que: 'Imagen', detalle: 'Reto visual (2 de cada 3), curiosidad o noticia', fb: 'Imagen', ig: 'Imagen' },
   'curiosidades-tiktok.yml': { que: 'Foto', detalle: 'Reto visual o curiosidad', tt: 'Borrador' },
   'nombres.yml': { que: 'Nombre con círculos', detalle: 'Espejo, mandala, hilos, anillos o costura', tt: 'Borrador' },
@@ -48,17 +50,19 @@ for (const f of fs.readdirSync(DIR).filter((f) => f.endsWith('.yml'))) {
     const [m, h] = c.split(/\s+/);
     for (const hu of expandir(h, 23)) for (const mi of expandir(m, 59)) {
       const hh = (hu + UTC_HN + 24) % 24;
-      horario.push({ min: hh * 60 + mi, hora: `${String(hh).padStart(2, '0')}:${String(mi).padStart(2, '0')}`, f, activo, ...meta });
+      // La corrida de la mañana de GTA VI solo publica el día del lanzamiento: no cuenta en el día normal
+      const ocasional = f === 'gta6.yml' && hu === 15;
+      horario.push({ min: hh * 60 + mi, hora: `${String(hh).padStart(2, '0')}:${String(mi).padStart(2, '0')}`, f, activo, ocasional, ...meta, ...(ocasional ? { detalle: 'Solo el 19 de noviembre: especial del lanzamiento' } : {}) });
     }
   }
 }
 horario.sort((a, b) => a.min - b.min);
-const activos = horario.filter((x) => x.activo);
+const activos = horario.filter((x) => x.activo && !x.ocasional);
 const cuenta = (fn) => activos.filter(fn).length;
 const tot = {
   fbReels: cuenta((x) => x.fb?.startsWith('Reel')), fbImg: cuenta((x) => x.fb === 'Imagen'), fbHist: cuenta((x) => x.fb?.includes('historia')),
   igReels: cuenta((x) => x.ig?.startsWith('Reel')), igImg: cuenta((x) => x.ig === 'Imagen'), igHist: cuenta((x) => x.ig?.includes('historia')),
-  tt: cuenta((x) => x.tt), resp: cuenta((x) => x.mantenimiento)
+  tt: cuenta((x) => x.tt), resp: cuenta((x) => x.f === 'comentarios.yml')
 };
 
 // Cifras: el último informe de GitHub (artefacto «estadisticas») o la copia guardada de Business Suite
@@ -90,7 +94,7 @@ const filasRend = [...rend.filas].sort((a, b) => b.vistas_prom - a.vistas_prom).
 const x = (min) => (100 * (min - 360) / (24 * 60 - 360)).toFixed(2);
 const carril = (titulo, cls, fn) => `<div class="carril"><span class="c-tit">${titulo}</span><div class="c-pista">${[7, 9, 11, 13, 15, 17, 19, 21, 23].map((h) => `<span class="c-hora" style="left:${x(h * 60)}%">${h}</span>`).join('')}${activos.filter(fn).map((p) => `<span class="punto ${cls}${p.reel || p.tt ? ' grande' : ''}" style="left:${x(p.min)}%" title="${esc(`${p.hora} · ${p.que}`)}"></span>`).join('')}</div></div>`;
 const filasHor = horario.filter((p) => !p.mantenimiento).map((p) => `<tr class="${p.activo ? '' : 'apagado'}"><td class="num"><b>${p.hora}</b></td><td><div>${esc(p.que)}</div><div class="sub">${esc(p.detalle)}</div></td><td>${chip(p.tt, 'tt')}</td><td>${chip(p.fb, 'fb')}</td><td>${chip(p.ig, 'ig')}</td><td class="sub">${esc(p.f)}${p.activo ? '' : ' · desactivado'}</td></tr>`).join('');
-const resp = horario.filter((p) => p.mantenimiento && p.activo).map((p) => p.hora);
+const resp = horario.filter((p) => p.f === 'comentarios.yml' && p.activo).map((p) => p.hora);
 const listaWf = workflows.filter((w) => w.programado).map((w) => `<li class="${w.activo ? '' : 'apagado'}"><span class="estado ${w.activo ? 'on' : 'off'}">${w.activo ? 'Activo' : 'Desactivado'}</span> <b>${esc(w.nombre)}</b> <span class="sub">${esc(w.f)}</span></li>`).join('');
 const generado = new Date().toLocaleString('es-HN', { timeZone: 'America/Tegucigalpa', dateStyle: 'full', timeStyle: 'short' });
 

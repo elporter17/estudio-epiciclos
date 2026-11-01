@@ -10,6 +10,7 @@ import { createCanvas } from '@napi-rs/canvas';
 import { wavBuffer } from '../bounce.mjs';
 import { MELODIAS, midiFreq } from '../../src/melodias.js';
 import { TEMAS } from './tarjetas.mjs';
+import { tituloVisual, marcaVisual } from './retos-visuales.mjs';
 
 export const W = 1080, H = 1920;
 const SR = 44100, FPS = 30;
@@ -221,6 +222,76 @@ const ESCENAS = {
     alfa(ctx, 1);
     if (!revela) reloj(ctx, W / 2, 1335 + (e.bandera ? 25 : 0), 62, e.piensa - lt, e.piensa, e.tema);
     else sello(ctx, `¡ES LA ${'ABC'[e.respuesta]}!`, VERDE, rt, 1335 + (e.bandera ? 25 : 0));
+  },
+  // Reto visual (scripts/lib/retos-visuales.mjs) sobre fondo claro, como en la imagen: cuenta atrás y la respuesta marcada
+  visual(ctx, e, lt) {
+    const revela = lt >= e.piensa, rt = lt - e.piensa, v = e.visual;
+    const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#fdfaf2'); g.addColorStop(1, '#efe8d8');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(0,0,0,0.05)'; ctx.lineWidth = 3;
+    for (let r = 80; r < 900; r += 60) { ctx.beginPath(); ctx.arc(W * 0.95, H * 0.85, r + 10 * Math.sin(lt * 2), 0, Math.PI * 2); ctx.stroke(); }
+    marcaVisual(ctx, W, 205);
+    ctx.font = font(400, 38, BLACK); ctx.fillStyle = '#777'; ctx.textAlign = 'right'; ctx.textBaseline = 'alphabetic'; ctx.fillText(`${e.idx + 1}/${e.total}`, W - 70, 205);
+    alfa(ctx, ease(lt / 0.3));
+    const fin = tituloVisual(ctx, v, { W, top: 250, emoji: EMOJI.slice(2) || 'sans-serif', maxSize: 84 });
+    const zona = { x: 70, y: fin + 30, w: W - 140, h: 1250 - fin - 30 };
+    v.cuerpo(ctx, zona, EMOJI.slice(2) || 'sans-serif');
+    if (revela) v.revelar(ctx, rt);
+    alfa(ctx, 1);
+    // El reloj se pensó para fondo oscuro: un disco oscuro debajo para que se lea sobre el claro
+    if (!revela) { ctx.fillStyle = '#26221d'; ctx.beginPath(); ctx.arc(W / 2, 1345, 84, 0, Math.PI * 2); ctx.fill(); reloj(ctx, W / 2, 1345, 66, e.piensa - lt, e.piensa, e.tema); }
+    else sello(ctx, v.corta, VERDE, rt, 1345);
+  },
+  // ¿Qué prefieres? Dos opciones enfrentadas, cuenta atrás y la pregunta de vuelta
+  prefieres(ctx, e, lt) {
+    pildora(ctx, '¿QUÉ PREFIERES?', 290, e.tema, back(lt / 0.35));
+    const fin = lt >= e.piensa;
+    [[e.a, e.icono_a, 400, '#2f6fb5'], [e.b, e.icono_b, 900, '#c2324a']].forEach(([txt, ic, y, color], i) => {
+      const s = back((lt - 0.1 - i * 0.15) / 0.4); if (s <= 0.01) return;
+      const pulso = fin ? 1 + 0.025 * Math.sin((lt - e.piensa) * 7 + i * Math.PI) : 1;
+      escala(ctx, s * pulso, W / 2, y + 200, () => {
+        caja(ctx, 70, y, W - 140, 400, 40, color, 'rgba(255,255,255,0.35)', 4);
+        emoji(ctx, ic, W / 2, y + 115, 130);
+        bloque(ctx, fit(ctx, txt, W - 220, 190, { from: 70, to: 40, peso: 700 }), W / 2, y + 190, 190);
+      });
+    });
+    const so = back((lt - 0.4) / 0.3);
+    if (so > 0.01) escala(ctx, so, W / 2, 850, () => { ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(W / 2, 850, 58, 0, Math.PI * 2); ctx.fill(); ctx.font = font(400, 56, BLACK); ctx.fillStyle = '#111'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('O', W / 2, 854); });
+    if (!fin) reloj(ctx, W / 2, 1375, 48, e.piensa - lt, e.piensa, e.tema);
+    else sello(ctx, '¿CUÁL ELEGISTE?', '#7b4bb7', lt - e.piensa, 1375);
+  },
+  // Adivina con emojis: los emojis grandes, cuenta atrás y la respuesta
+  emoji(ctx, e, lt) {
+    const revela = lt >= e.piensa, rt = lt - e.piensa;
+    pildora(ctx, e.etiqueta, 300, e.tema, back(lt / 0.35));
+    const ems = [...new Intl.Segmenter('es', { granularity: 'grapheme' }).segment(e.emojis)].map((x) => x.segment).filter((x) => x.trim());
+    const filas = ems.length > 4 ? [ems.slice(0, Math.ceil(ems.length / 2)), ems.slice(Math.ceil(ems.length / 2))] : [ems];
+    const size = Math.min(190, (W - 160) / Math.max(...filas.map((f) => f.length)) * 0.9);
+    filas.forEach((fila, r) => fila.forEach((em, i) => {
+      const s = back((lt - 0.1 - (r * 4 + i) * 0.09) / 0.35); if (s <= 0.01) return;
+      const x = W / 2 + (i - (fila.length - 1) / 2) * size * 1.08, y = 600 + (r - (filas.length - 1) / 2) * size * 1.1 + 8 * Math.sin(lt * 3 + i);
+      escala(ctx, s, x, y, () => emoji(ctx, em, x, y, size));
+    }));
+    if (!revela) reloj(ctx, W / 2, 1050, 72, e.piensa - lt, e.piensa, e.tema);
+    else {
+      const s = back(rt / 0.35);
+      escala(ctx, s, W / 2, 1060, () => {
+        caja(ctx, 70, 950, W - 140, 220, 40, VERDE, '#fff', 5);
+        bloque(ctx, fit(ctx, e.respuesta, W - 220, 170, { from: 76, to: 40, peso: 700 }), W / 2, 975, 170);
+      });
+    }
+  },
+  // Noticia: categoría, titular grande, medio y fecha
+  noticia(ctx, e, lt) {
+    pildora(ctx, e.etiqueta, 300, e.tema, back(lt / 0.35));
+    const si = back((lt - 0.1) / 0.4);
+    if (si > 0.01) escala(ctx, si, W / 2, 480, () => emoji(ctx, e.icono, W / 2, 480, 120));
+    const a = ease((lt - 0.15) / 0.35), dy = (1 - a) * 50;
+    alfa(ctx, a);
+    caja(ctx, 70, 570 + dy, W - 140, 620, 36, 'rgba(255,255,255,0.09)', 'rgba(255,255,255,0.16)', 3);
+    bloque(ctx, fit(ctx, e.titular, W - 220, 560, { from: 74, to: 40, peso: 700 }), W / 2, 600 + dy, 560);
+    ctx.font = font(600, 40); ctx.fillStyle = e.tema.acento; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(e.pie, W / 2, 1255 + dy);
+    alfa(ctx, 1);
   },
   cierre(ctx, e, lt) { ESCENAS.intro(ctx, { ...e, y0: e.y0 || 560 }, lt); }
 };

@@ -9,8 +9,9 @@ name: Nombres a TikTok
 
 on:
   schedule:
-    # Minuto 17 (GitHub retrasa más las horas en punto). En Honduras (UTC-6): 7:17 y 13:17
-    - cron: '17 13,19 * * *'
+    # Minuto 17 (GitHub retrasa más las horas en punto). En Honduras (UTC-6): 7:17. El otro lugar de los 5 borradores
+    # de TikTok es para el especial de GTA VI (gta6.yml)
+    - cron: '17 13 * * *'
   workflow_dispatch:
     inputs:
       lang:

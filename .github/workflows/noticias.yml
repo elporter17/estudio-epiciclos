@@ -1,0 +1,22 @@
+# Junta las noticias del día (scripts/noticias.mjs: videojuegos, fútbol y ciencia de RSS en español) y las deja en el
+# estado cifrado para los Reels «Noticias de hoy» de las 7:57 y las 18:57. No publica nada.
+name: Noticias del día
+
+on:
+  schedule:
+    # En Honduras (UTC-6): 6:23 y 17:23
+    - cron: '23 12,23 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  noticias:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: noticias
+      publish: none
+      aviso: false
+    secrets: inherit
