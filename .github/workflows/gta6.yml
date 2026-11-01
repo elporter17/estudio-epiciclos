@@ -5,12 +5,14 @@
 name: Especial GTA VI
 
 on:
-  schedule:
-    # En Honduras (UTC-6): 19:27 cada día (cuenta atrás)
-    - cron: '27 1 * * *'
-    # 9:27: solo el día del lanzamiento publica (el especial); los demás días termina sin hacer nada
-    - cron: '27 15 * * *'
+  # Horario: lo lanza el relojero (/api/relojero, llamado por cron-job.org cada 10 min) según scripts/lib/horario.mjs.
+  # Los «schedule» de GitHub se perdían o llegaban con horas de atraso (2026-11-01).
   workflow_dispatch:
+    inputs:
+      lanzamiento:
+        description: Corrida de la mañana del lanzamiento (solo publica el día del lanzamiento)
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -21,7 +23,7 @@ jobs:
     uses: ./.github/workflows/daily.yml
     with:
       cats: gta6
-      figura: ${{ github.event.schedule == '27 15 * * *' && 'lanzamiento' || '' }}
+      figura: ${{ inputs.lanzamiento && 'lanzamiento' || '' }}
       publish: none
       aviso: false
     secrets: inherit

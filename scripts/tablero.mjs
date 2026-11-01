@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Tablero local (solo en esta PC): qué se publica, cuánto, a qué hora y cómo le va a cada formato.
-// El horario sale de los cron de .github/workflows (siempre al día) y de qué workflows están activos en GitHub (gh).
+// El horario sale de scripts/lib/horario.mjs (el mismo que usa el relojero) y de qué workflows están activos en GitHub (gh).
 // Las cifras: el último informe de estadisticas.yml (se descarga con gh) o, si no hay, data/rendimiento.json.
 //   npm run tablero              (escribe out/tablero.html y lo abre)
 //   npm run tablero -- --sin-gh  (sin consultar GitHub)
@@ -10,9 +10,10 @@ import path from 'node:path';
 import { execFileSync, spawn } from 'node:child_process';
 import { parseCli } from './lib/cli.mjs';
 import { ROOT } from './lib/node-env.mjs';
+import { HORARIO, HASTA, ahoraHN, minutos } from './lib/horario.mjs';
 
 const o = parseCli({ 'sin-gh': { type: 'boolean', default: false }, 'no-abrir': { type: 'boolean', default: false } });
-const REPO = 'elporter17/estudio-epiciclos', DIR = path.join(ROOT, '.github', 'workflows'), UTC_HN = -6;
+const REPO = 'elporter17/estudio-epiciclos', DIR = path.join(ROOT, '.github', 'workflows');
 const gh = (args) => { if (o['sin-gh']) return null; try { return execFileSync('gh', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }); } catch { return null; } };
 
 // Qué hace cada workflow programado y adónde va (lo demás sale del archivo)
@@ -29,33 +30,19 @@ const WF = {
   'fisica.yml': { que: 'Física (pelotas y juegos)', detalle: 'Desactivado', tt: 'Borrador' }
 };
 
-const expandir = (campo, max) => campo.split(',').flatMap((p) => {
-  const [rango, paso] = p.split('/'), [a, b] = rango === '*' ? [0, max] : rango.split('-').map(Number);
-  const fin = b ?? (paso ? max : a), out = [];
-  for (let v = a; v <= fin; v += +(paso || 1)) out.push(v);
-  return out;
-});
 const estados = Object.fromEntries((gh(['workflow', 'list', '-R', REPO, '--all', '--json', 'path,state', '--jq', '.[]|"\\(.path) \\(.state)"']) || '')
   .trim().split('\n').filter(Boolean).map((l) => { const [p, s] = l.split(' '); return [path.basename(p), s]; }));
 
-const workflows = [], horario = [];
+const { fecha } = ahoraHN(), workflows = [];
 for (const f of fs.readdirSync(DIR).filter((f) => f.endsWith('.yml'))) {
-  const txt = fs.readFileSync(path.join(DIR, f), 'utf8'), meta = WF[f];
-  const nombre = (txt.match(/^name:\s*(.+)$/m) || [])[1]?.trim() || f;
-  const crons = [...txt.matchAll(/cron:\s*'([^']+)'/g)].map((m) => m[1]);
-  const activo = estados[f] ? estados[f] === 'active' : true;
-  workflows.push({ f, nombre, activo, programado: crons.length > 0, meta });
-  if (!meta || !crons.length) continue;
-  for (const c of crons) {
-    const [m, h] = c.split(/\s+/);
-    for (const hu of expandir(h, 23)) for (const mi of expandir(m, 59)) {
-      const hh = (hu + UTC_HN + 24) % 24;
-      // La corrida de la mañana de GTA VI solo publica el día del lanzamiento: no cuenta en el día normal
-      const ocasional = f === 'gta6.yml' && hu === 15;
-      horario.push({ min: hh * 60 + mi, hora: `${String(hh).padStart(2, '0')}:${String(mi).padStart(2, '0')}`, f, activo, ocasional, ...meta, ...(ocasional ? { detalle: 'Solo el 19 de noviembre: especial del lanzamiento' } : {}) });
-    }
-  }
+  const nombre = (fs.readFileSync(path.join(DIR, f), 'utf8').match(/^name:\s*(.+)$/m) || [])[1]?.trim() || f;
+  workflows.push({ f, nombre, activo: estados[f] ? estados[f] === 'active' : true, programado: HORARIO.some((x) => x.workflow === f), meta: WF[f] });
 }
+// Lo que tiene fecha (el especial de GTA VI) o ya terminó no cuenta en el día normal
+const horario = HORARIO.map((x) => ({
+  min: minutos(x.hora), hora: x.hora, f: x.workflow, activo: estados[x.workflow] ? estados[x.workflow] === 'active' : true,
+  ocasional: !!x.fecha || (HASTA[x.workflow] && fecha > HASTA[x.workflow]), ...WF[x.workflow], ...(x.fecha ? { detalle: `Solo el ${x.fecha}` } : {})
+}));
 horario.sort((a, b) => a.min - b.min);
 const activos = horario.filter((x) => x.activo && !x.ocasional);
 const cuenta = (fn) => activos.filter(fn).length;

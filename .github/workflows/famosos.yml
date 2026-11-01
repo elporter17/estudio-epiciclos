@@ -6,9 +6,8 @@
 name: Futbolistas a TikTok
 
 on:
-  schedule:
-    # Entre los nombres. En Honduras (UTC-6): 10:47
-    - cron: '47 16 * * *'
+  # Horario: lo lanza el relojero (/api/relojero, llamado por cron-job.org cada 10 min) según scripts/lib/horario.mjs.
+  # Los «schedule» de GitHub se perdían o llegaban con horas de atraso (2026-11-01).
   workflow_dispatch:
     inputs:
       lang:

@@ -5,9 +5,8 @@
 name: Curiosidades a TikTok
 
 on:
-  schedule:
-    # En Honduras (UTC-6): 12:37 y 20:37
-    - cron: '37 2,18 * * *'
+  # Horario: lo lanza el relojero (/api/relojero, llamado por cron-job.org cada 10 min) según scripts/lib/horario.mjs.
+  # Los «schedule» de GitHub se perdían o llegaban con horas de atraso (2026-11-01).
   workflow_dispatch:
 
 permissions:

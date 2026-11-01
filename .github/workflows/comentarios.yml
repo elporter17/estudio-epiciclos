@@ -5,9 +5,8 @@
 name: Respuestas a comentarios
 
 on:
-  schedule:
-    # Cada hora al minuto 47 de 7:47 a 23:47 en Honduras (UTC-6), menos a las 10:47, que es la hora de los futbolistas
-    - cron: '47 0-5,13-15,17-23 * * *'
+  # Horario: lo lanza el relojero (/api/relojero, llamado por cron-job.org cada 10 min) según scripts/lib/horario.mjs.
+  # Los «schedule» de GitHub se perdían o llegaban con horas de atraso (2026-11-01).
   workflow_dispatch:
 
 permissions:

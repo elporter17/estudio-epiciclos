@@ -3,9 +3,8 @@
 name: Noticias del día
 
 on:
-  schedule:
-    # En Honduras (UTC-6): 6:23 y 17:23
-    - cron: '23 12,23 * * *'
+  # Horario: lo lanza el relojero (/api/relojero, llamado por cron-job.org cada 10 min) según scripts/lib/horario.mjs.
+  # Los «schedule» de GitHub se perdían o llegaban con horas de atraso (2026-11-01).
   workflow_dispatch:
 
 permissions:
