@@ -304,8 +304,8 @@ async function main() {
       }
     }
     // Puntaje máximo, para contestar los comentarios con su puntaje (scripts/comentarios.mjs)
-    // Los «¿Qué prefieres?» y las noticias no tienen respuesta correcta: no se registran
-    const clave = pieza.clave || ({ quiz: { modo: 'puntaje', max: 5 }, top10: { modo: 'puntaje', max: 10 }, banderas: { modo: 'puntaje', max: 10 } })[pieza.formato];
+    // «¿Qué prefieres?» y noticias no tienen respuesta correcta: se registran como charla (se agradece cada comentario)
+    const clave = pieza.clave || ({ quiz: { modo: 'puntaje', max: 5 }, top10: { modo: 'puntaje', max: 10 }, banderas: { modo: 'puntaje', max: 10 } })[pieza.formato] || { modo: 'charla' };
     registrarRespuesta({ red: 'facebook', id: meta.facebook?.video_id, clave, titulo: pieza.titulo });
     // Instagram (cuenta vinculada a la página): el mismo video desde el almacén, como Reel y como historia
     if (o.instagram !== 'no' && meta.videoUrl && await instagramReady()) {

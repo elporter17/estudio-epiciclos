@@ -3,7 +3,7 @@
 // de Actions, no va a git).
 //   clave: { modo: 'numero', valor } · { modo: 'posicion', fila, col } · { modo: 'fraccion', k, n }
 //          { modo: 'patron', largo, pista, empieza } · { modo: 'vf', verdadero } · { modo: 'letra', letra, texto }
-//          { modo: 'puntaje', max }
+//          { modo: 'puntaje', max } · { modo: 'charla' } (sin respuesta correcta: «¿Qué prefieres?», noticias, GTA VI)
 import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT } from './node-env.mjs';
@@ -18,6 +18,17 @@ export function registrarRespuesta({ red, id, clave, titulo }) {
   const lista = [...leer(), { red, id: String(id), clave, titulo, creado: new Date().toISOString() }].filter((x) => Date.now() - Date.parse(x.creado) < 7 * 864e5);
   fs.mkdirSync(path.dirname(ARCHIVO), { recursive: true }); fs.writeFileSync(ARCHIVO, JSON.stringify(lista, null, 2) + '\n');
 }
+// Para lo publicado antes de que existiera el registro: la clave sale de la descripción (solo los formatos con puntaje;
+// los demás se contestan como charla)
+export function inferirClave(descripcion = '') {
+  const t = norm(descripcion);
+  if (t.includes('adivina las 10 banderas') || t.includes('10 cosas que no sabias')) return { modo: 'puntaje', max: 10 };
+  if (t.includes('adivina con emojis')) return { modo: 'puntaje', max: 8 };
+  if (t.includes('5 preguntas') || t.includes('5 retos visuales')) return { modo: 'puntaje', max: 5 };
+  return { modo: 'charla' };
+}
+// Un comentario normal (no vacío, sin enlaces ni menciones en masa): se le contesta con un agradecimiento
+export const comentarioNormal = (texto = '') => texto.trim().length > 0 && !/https?:\/\/|www\.|\.com\b/i.test(texto) && (texto.match(/@/g) || []).length < 3;
 export const publicacionesRecientes = (dias = 3) => leer().filter((x) => Date.now() - Date.parse(x.creado) < dias * 864e5);
 
 // 'bien' | 'mal' | { puntaje } | null (el comentario no es una respuesta: no se contesta)
@@ -46,17 +57,20 @@ export function evaluar(clave, texto) {
       return clave.texto && t.includes(norm(clave.texto)) ? 'bien' : null;
     }
     case 'puntaje': { const n = nums.find((x) => x <= clave.max); return n == null ? null : { puntaje: n }; }
+    case 'charla': return comentarioNormal(texto) ? { charla: true } : null;
     default: return null;
   }
 }
 
 const BIEN = ['¡Correcto! ✅', '¡Exacto! 👏', '¡Bien visto! 🔎 Es correcto.', '¡Eso es! 🎯', '¡Muy bien! ✅ No todos lo sacan.', '¡Respuesta correcta! 🙌'];
 const MAL = ['Mmm, no es esa 🤔 ¡Inténtalo otra vez!', 'Casi 😅 Fíjate bien y vuelve a intentarlo.', 'Todavía no 👀 ¡Tú puedes!', 'No es esa, pero vas cerca 💪 Mira otra vez.'];
+const CHARLA = ['¡Gracias por comentar! 🙌', '¡Qué buena! 🔥', '¡Gracias por jugar! 💪', '¡Así se habla! 👏', '😄 ¡Gracias por estar aquí!', '¡Gracias! Mañana hay más 🎯'];
 const cap = (s) => s[0].toUpperCase() + s.slice(1);
 
 export function mensaje(v, clave) {
   if (v === 'bien') return azar(BIEN);
   if (v === 'mal') return azar(MAL);
+  if (v.charla) return azar(CHARLA);
   if (v.bien) return `¡${cap(v.bien.toLowerCase())} cumple! ✅ ${clave.largo} letras y ${clave.empieza ? 'empieza con' : 'termina en'} ${clave.pista}.`;
   if (v.puntaje != null) {
     const r = v.puntaje / clave.max;

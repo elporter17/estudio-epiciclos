@@ -19,6 +19,7 @@ import { publishInstagramSeguro, instagramReady, musicaTendencia } from './insta
 import { publishVideo } from './publish.mjs';
 import { logUpload } from './tiktok-status.mjs';
 import { ponerFondos, guardarStock } from './lib/stock.mjs';
+import { registrarRespuesta } from './lib/respuestas.mjs';
 
 const o = parseCli({ 'dry-run': { type: 'boolean', default: false }, 'solo-lanzamiento': { type: 'boolean', default: false }, tiktok: { type: 'string', default: 'draft' }, hoy: { type: 'string' } });
 const D = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'gta6.json'), 'utf8'));
@@ -77,6 +78,7 @@ if (!o['dry-run']) {
   if (link) { meta.videoUrl = link.url; meta.videoDownload = link.downloadUrl; }
   if (facebookReady()) {
     try { meta.facebook = await publishReel({ video, description: texto }); } catch (e) { meta.facebook = { status: 'error', error: e.message }; }
+    registrarRespuesta({ red: 'facebook', id: meta.facebook?.video_id, clave: { modo: 'charla' }, titulo });
     try { meta.facebookStory = await publishStory({ video }); } catch (e) { meta.facebookStory = { status: 'error', error: e.message }; }
   }
   if (meta.videoUrl && await instagramReady()) {
@@ -84,6 +86,7 @@ if (!o['dry-run']) {
       const cancion = r.outIG ? await musicaTendencia() : null, urlIG = cancion ? (await publicarEnlace(r.outIG).catch(() => null))?.url : null;
       meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: urlIG || meta.videoUrl, caption: texto, audio: urlIG ? cancion.id : undefined });
       if (urlIG) meta.instagram.cancion = cancion.nombre;
+      registrarRespuesta({ red: 'instagram', id: meta.instagram.media_id, clave: { modo: 'charla' }, titulo });
     meta.instagramStory = await publishInstagramSeguro({ tipo: 'historia', url: meta.videoUrl });
   }
   // TikTok: borrador sin sonido (ahí se le pone una canción del momento); la descripción llega por el resumen

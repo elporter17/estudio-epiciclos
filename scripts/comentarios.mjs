@@ -10,7 +10,7 @@ import { parseCli } from './lib/cli.mjs';
 import { ROOT } from './lib/node-env.mjs';
 import { graph, facebookReady } from './facebook.mjs';
 import { instagramReady } from './instagram.mjs';
-import { publicacionesRecientes, evaluar, mensaje } from './lib/respuestas.mjs';
+import { publicacionesRecientes, evaluar, mensaje, inferirClave, comentarioNormal } from './lib/respuestas.mjs';
 
 const o = parseCli({ max: { type: 'string', default: '25' }, 'dry-run': { type: 'boolean', default: false }, diagnostico: { type: 'boolean', default: false } });
 const VISTOS = path.join(ROOT, 'data', 'comentarios-respondidos.json');
@@ -21,13 +21,14 @@ if (!facebookReady()) { console.log('Faltan FB_PAGE_ID o FB_PAGE_TOKEN'); proces
 const page = process.env.FB_PAGE_ID, ig = await instagramReady();
 const igUser = ig ? (await graph('GET', `/${ig}`, { fields: 'username' }).catch(() => ({}))).username : null;
 
+// Cada comentario de otra persona, con «respondido» si la cuenta ya le contestó (así nunca se contesta dos veces)
 async function comentarios(p) {
   if (p.red === 'facebook') {
-    const d = await graph('GET', `/${p.id}/comments`, { filter: 'toplevel', limit: 100, fields: 'id,message,from{id},created_time' });
-    return (d.data || []).filter((c) => c.from?.id !== page).map((c) => ({ id: c.id, texto: c.message || '' }));
+    const d = await graph('GET', `/${p.id}/comments`, { filter: 'toplevel', limit: 100, fields: 'id,message,from{id},created_time,comments.limit(25){from{id}}' });
+    return (d.data || []).filter((c) => c.from?.id !== page).map((c) => ({ id: c.id, texto: c.message || '', respondido: (c.comments?.data || []).some((r) => r.from?.id === page) }));
   }
-  const d = await graph('GET', `/${p.id}/comments`, { limit: 100, fields: 'id,text,username,timestamp' });
-  return (d.data || []).filter((c) => c.username !== igUser).map((c) => ({ id: c.id, texto: c.text || '' }));
+  const d = await graph('GET', `/${p.id}/comments`, { limit: 100, fields: 'id,text,username,timestamp,replies{username}' });
+  return (d.data || []).filter((c) => c.username !== igUser).map((c) => ({ id: c.id, texto: c.text || '', respondido: (c.replies?.data || []).some((r) => r.username === igUser) }));
 }
 async function contestar(p, c, msg, bien) {
   if (p.red === 'facebook') {
@@ -48,8 +49,8 @@ if (o.diagnostico) {
     if (m.comments_count) {
       try {
         for (const c of await comentarios({ red: 'instagram', id: m.id })) {
-          const v = r ? evaluar(r.clave, c.texto) : null;
-          const k = !r ? 'sin-registrar' : vistos.has(c.id) ? 'ya-visto' : !v ? 'no-es-respuesta' : v.puntaje != null ? 'puntaje' : v.bien ? 'bien' : v;
+          const v = r ? evaluar(r.clave, c.texto) || (comentarioNormal(c.texto) ? { charla: true } : null) : null;
+          const k = !r ? 'sin-registrar' : c.respondido ? 'ya-respondido' : !v ? 'ignorado' : v.charla ? 'charla' : v.puntaje != null ? 'puntaje' : v.bien ? 'bien' : v;
           cuenta[k] = (cuenta[k] || 0) + 1;
         }
       } catch (e) { cuenta.error = e.message.slice(0, 120); }
@@ -61,17 +62,29 @@ if (o.diagnostico) {
 
 let hechas = 0, revisados = 0;
 const errores = new Map();
-for (const p of publicacionesRecientes(3)) {
+// Lo registrado al publicar, más lo de Instagram de los últimos 3 días que no está registrado (publicado antes de que
+// existiera el registro): su clave se deduce de la descripción
+const publicaciones = publicacionesRecientes(3);
+if (ig) {
+  const media = await graph('GET', `/${ig}/media`, { limit: 40, fields: 'id,timestamp,comments_count,caption' }).catch(() => ({ data: [] }));
+  for (const m of media.data || []) {
+    if (!m.comments_count || Date.now() - Date.parse(m.timestamp) > 3 * 864e5 || publicaciones.some((x) => x.id === m.id)) continue;
+    publicaciones.push({ red: 'instagram', id: m.id, clave: inferirClave(m.caption), titulo: (m.caption || '').split('\n')[0].slice(0, 40) });
+  }
+}
+for (const p of publicaciones) {
   if (hechas >= +o.max) break;
   if (p.red === 'instagram' && !ig) continue;
   let lista;
   try { lista = await comentarios(p); } catch (e) { errores.set(`${p.red}: leer`, e.message); continue; }
   for (const c of lista) {
     if (hechas >= +o.max) break;
-    if (vistos.has(c.id)) continue;
+    // Ya contestado, o ignorado antes y sigue sin ser algo que se conteste (spam, vacío)
+    if (c.respondido) continue;
     revisados++;
-    const v = evaluar(p.clave, c.texto), msg = v && mensaje(v, p.clave);
-    if (!msg) { vistos.add(c.id); continue; }
+    // Si no es una respuesta al reto pero es un comentario normal, se agradece igual (más conversación)
+    const v = evaluar(p.clave, c.texto) || (comentarioNormal(c.texto) ? { charla: true } : null), msg = v && mensaje(v, p.clave);
+    if (!msg) { if (!vistos.has(c.id)) vistos.add(c.id); continue; }
     console.log(`${p.red} · ${p.titulo} → ${msg}`); // sin el texto del comentario: los registros son públicos
     if (!o['dry-run']) {
       try { await contestar(p, c, msg, v === 'bien' || !!v.bien); hechas++; await pausa(); }
