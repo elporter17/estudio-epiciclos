@@ -43,11 +43,13 @@ export async function musicaTendencia({ log = (m) => process.stderr.write(m) } =
   for (const usuario of [true, false]) {
     try {
       const d = await graph('GET', '/ig_audio', { audio_type: 'music', user_id: ig }, { usuario });
-      const lista = d.data || []; if (!lista.length) return null;
+      // La respuesta viene en «audio» y cada canción trae «audio_id»
+      const lista = (d.audio || d.data || []).map((x) => ({ ...x, id: x.audio_id || x.id })).filter((x) => x.id);
+      if (!lista.length) { if (!usuario) log('Instagram: el catálogo de música no devolvió canciones\n'); continue; }
       const usadas = (() => { try { return JSON.parse(fs.readFileSync(USADAS, 'utf8')); } catch { return []; } })();
       const a = lista.find((x) => !usadas.includes(x.id)) || lista[Math.floor(Math.random() * lista.length)];
       fs.mkdirSync(path.dirname(USADAS), { recursive: true }); fs.writeFileSync(USADAS, JSON.stringify([...usadas.filter((x) => x !== a.id), a.id].slice(-30)) + '\n');
-      const nombre = [a.title, a.artist_name || a.display_artist].filter(Boolean).join(' · ') || a.id;
+      const nombre = [a.title, a.display_artist].filter(Boolean).join(' · ') || a.id;
       log(`Instagram: música en tendencia «${nombre}»\n`);
       return { id: a.id, nombre };
     } catch (e) { if (!usuario) log(`Instagram: no se pudo buscar música (${e.message})\n`); }
