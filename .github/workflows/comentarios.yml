@@ -1,0 +1,24 @@
+# Contesta los comentarios de los retos y quiz de Facebook e Instagram (scripts/comentarios.mjs): «¡Correcto! ✅» a
+# quien acierta, un ánimo a quien falla y el puntaje en los quiz en video. Máximo 25 respuestas por corrida.
+# Reutiliza daily.yml por el estado cifrado: ahí están las respuestas correctas (data/respuestas.json) y los
+# comentarios ya vistos (data/comentarios-respondidos.json). Nunca corre a la vez que las publicaciones.
+name: Respuestas a comentarios
+
+on:
+  schedule:
+    # Cada hora al minuto 47 de 7:47 a 23:47 en Honduras (UTC-6), menos a las 10:47, que es la hora de los futbolistas
+    - cron: '47 0-5,13-15,17-23 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  comentarios:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: comentarios
+      publish: none
+      aviso: false
+    secrets: inherit

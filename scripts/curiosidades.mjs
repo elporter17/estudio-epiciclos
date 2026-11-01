@@ -17,6 +17,7 @@ import { publishPhoto, facebookReady } from './facebook.mjs';
 import { publishPhotoDraft } from './publish.mjs';
 import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
 import { crearVisual, dibujarVisual, VISUALES } from './lib/retos-visuales.mjs';
+import { registrarRespuesta } from './lib/respuestas.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades'), HIST = path.join(ROOT, 'data', 'curiosidades-historial.json');
 const SITE_MEDIA = 'https://circularte.edav-tech.com/media/'; // dominio verificado en TikTok (redirige al almacén)
@@ -47,7 +48,7 @@ function armar(x, base, formatoPedido) {
   if (x.tipo === 'reto') {
     const ok = x.opciones[x.respuesta];
     return {
-      formato: 'reto', tarjeta: { formato: 'reto', tema: x.tema, icono: x.icono, texto: x.pregunta, opciones: x.opciones },
+      formato: 'reto', clave: { modo: 'letra', letra: 'ABC'[x.respuesta], texto: ok }, tarjeta: { formato: 'reto', tema: x.tema, icono: x.icono, texto: x.pregunta, opciones: x.opciones },
       texto: `🧠 ${x.pregunta}\n\nA) ${x.opciones[0]}\nB) ${x.opciones[1]}\nC) ${x.opciones[2]}\n\n¿Cuál elegirías? Piénsalo antes de ver la solución.${OCULTAR}✅ Respuesta: ${'ABC'[x.respuesta]}) ${ok}\n${x.explicacion}${ht(['reto', 'acertijo'])}`
     };
   }
@@ -55,7 +56,7 @@ function armar(x, base, formatoPedido) {
   if (formato === 'vf') {
     const verdadero = Math.random() < 0.5, afirm = verdadero ? x.dato : x.falso;
     return {
-      formato, verdadero, tarjeta: { formato, tema: x.tema, icono: x.icono, texto: afirm },
+      formato, verdadero, clave: { modo: 'vf', verdadero }, tarjeta: { formato, tema: x.tema, icono: x.icono, texto: afirm },
       texto: `¿Verdadero o falso? 🤔\n\n«${afirm}»\n\n¿Tú qué dices? Piénsalo antes de ver la respuesta.${OCULTAR}${verdadero ? `✅ VERDADERO.\n${x.dato}` : `❌ FALSO.\n${x.explicacion}`}${ht(['verdaderoofalso'])}`
     };
   }
@@ -64,7 +65,7 @@ function armar(x, base, formatoPedido) {
     const otros = mezclar(base.filter((y) => y.tema === x.tema && y.id !== x.id && y.dato)).slice(0, 2);
     const items = mezclar([{ t: x.falso, f: true }, ...otros.map((o) => ({ t: o.dato, f: false }))]), letra = 'ABC'[items.findIndex((i) => i.f)];
     return {
-      formato, tarjeta: { formato, tema: x.tema, icono: x.icono, items: items.map((i) => i.t) },
+      formato, clave: { modo: 'letra', letra }, tarjeta: { formato, tema: x.tema, icono: x.icono, items: items.map((i) => i.t) },
       texto: `Dos son verdad y uno es FALSO. ¿Cuál es? 🧐\n\n${items.map((i, k) => `${'ABC'[k]}) ${i.t}`).join('\n')}\n\n¿Cuál crees que es el falso?${OCULTAR}❌ El falso es la ${letra}.\n${x.explicacion}${ht(['adivina'])}`
     };
   }
@@ -119,7 +120,7 @@ async function main() {
   if (!pieza && !o.id && (o.tipo === 'visual' || o.visual || (o.tipo === 'auto' && !o.formato && hist.total % 3 !== 2))) {
     const tipo = o.visual || VISUALES[(hist.visuales || []).length % VISUALES.length];
     visual = crearVisual(tipo);
-    pieza = { formato: `visual-${tipo}`, texto: visual.texto };
+    pieza = { formato: `visual-${tipo}`, texto: visual.texto, clave: visual.clave };
   }
   if (!pieza) { x = elegirCuriosidad(base, hist, { formato: o.formato, id: o.id }); pieza = armar(x, base, o.formato); }
   const nombre = noticia ? `noticia-${noticia.cat}` : visual ? `${pieza.formato}-${Date.now().toString(36)}` : `${x.id}-${pieza.formato}`;
@@ -144,10 +145,13 @@ async function main() {
       if (red === 'facebook' && facebookReady()) {
         try { meta.facebook = await publishPhoto({ url: img.url, caption: pieza.texto }); }
         catch (e) { meta.facebook = { status: 'error', error: e.message }; console.error(`Aviso: Facebook: ${e.message}`); }
+        // Respuesta correcta guardada para contestar los comentarios (scripts/comentarios.mjs)
+        registrarRespuesta({ red: 'facebook', id: meta.facebook.post_id, clave: pieza.clave, titulo: meta.title });
         // Instagram (cuenta vinculada a la página): la misma imagen en JPEG
         if (o.instagram !== 'no' && await instagramReady()) {
           const jpg = await subirImagen(archivos.instagram).catch(() => null);
           meta.instagram = jpg ? await publishInstagramSeguro({ tipo: 'imagen', url: jpg.url, caption: pieza.texto }) : { status: 'error', error: 'no se pudo subir el JPEG' };
+          registrarRespuesta({ red: 'instagram', id: meta.instagram.media_id, clave: pieza.clave, titulo: meta.title });
         }
       }
       if (red === 'tiktok') {

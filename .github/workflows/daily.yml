@@ -17,7 +17,7 @@ on:
       cats:
         description: Qué tipo de video
         type: choice
-        options: [dibujos, nombres, famosos, curiosidades-facebook, curiosidades-tiktok, curiosidades-video, fisica, juegos, pelotas, nuevos]
+        options: [dibujos, nombres, famosos, curiosidades-facebook, curiosidades-tiktok, curiosidades-video, comentarios, fisica, juegos, pelotas, nuevos]
         default: dibujos
       lang:
         description: Idioma del video y la descripción
@@ -166,6 +166,8 @@ jobs:
             curiosidades-facebook) node scripts/curiosidades.mjs --red facebook; exit 0 ;;
             curiosidades-tiktok) node scripts/curiosidades.mjs --red tiktok; exit 0 ;;
             # Reels de quiz y curiosidades (curiosidades-reels.yml); «figura» elige el formato: top10, quiz o banderas
+            # Contestar los comentarios de los retos (comentarios.yml); out/ vacío para los pasos de resumen
+            comentarios) mkdir -p out; node scripts/comentarios.mjs; exit 0 ;;
             curiosidades-video) node scripts/curiosidades-video.mjs --facebook "$FACEBOOK_INPUT" --formato "${FIGURA_INPUT:-auto}" ${HISTORIA_INPUT:+--historia}; exit 0 ;;
           esac
           # Solo consultar el estado de subidas anteriores

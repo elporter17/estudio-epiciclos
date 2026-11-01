@@ -16,6 +16,7 @@ import { renderQuiz } from './lib/quiz-video.mjs';
 import { publicarEnlace } from './lib/video-link.mjs';
 import { publishReel, publishStory, facebookReady } from './facebook.mjs';
 import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
+import { registrarRespuesta } from './lib/respuestas.mjs';
 import { MELODIA_IDS } from '../src/melodias.js';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades');
@@ -213,9 +214,13 @@ async function main() {
         catch (e) { meta.facebookStory = { status: 'error', error: e.message }; console.error(`Aviso: Facebook no publicó la historia: ${e.message}`); }
       }
     }
+    // Puntaje máximo, para contestar los comentarios con su puntaje (scripts/comentarios.mjs)
+    const clave = { modo: 'puntaje', max: pieza.formato === 'quiz' ? 5 : 10 };
+    registrarRespuesta({ red: 'facebook', id: meta.facebook?.video_id, clave, titulo: pieza.titulo });
     // Instagram (cuenta vinculada a la página): el mismo video desde el almacén, como Reel y como historia
     if (o.instagram !== 'no' && meta.videoUrl && await instagramReady()) {
       meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: meta.videoUrl, caption: pieza.texto });
+      registrarRespuesta({ red: 'instagram', id: meta.instagram.media_id, clave, titulo: pieza.titulo });
       if (o.historia && r.duration <= 60) meta.instagramStory = await publishInstagramSeguro({ tipo: 'historia', url: meta.videoUrl });
     }
     hist.ids.push(...(pieza.ids || [])); hist.retos.push(...(pieza.retos || [])); hist.banderas.push(...(pieza.banderas || []));

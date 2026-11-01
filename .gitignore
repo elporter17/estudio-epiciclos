@@ -15,3 +15,5 @@ data/curiosidades-historial.json
 data/curiosidades-video-historial.json
 # Bandeja de imágenes por agregar (npm run silueta): las limpias quedan en assets/famosos/
 siluetas/
+data/respuestas.json
+data/comentarios-respondidos.json

@@ -20,7 +20,8 @@ const sinAcentos = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toUpperCase(
 const OCULTAR = '\n\n.\n.\n.\n\n';
 const TAGS = '#retos #acertijos #retovisual #juegosmentales #agilidadmental #potterplay';
 
-// ---------- generadores: { tipo, titulo: [[texto, resaltar]], cuerpo(ctx, caja, emoji), texto } ----------
+// ---------- generadores: { tipo, clave, titulo: [[texto, resaltar]], cuerpo(ctx, caja, emoji), texto } ----------
+// clave: la respuesta correcta en una forma que scripts/lib/respuestas.mjs sabe comparar con un comentario
 function duplicado() {
   const filas = 4, cols = 5, n = filas * cols, nums = mezclar(Array.from({ length: 90 }, (_, i) => i + 10)).slice(0, n);
   let i, j;
@@ -28,7 +29,7 @@ function duplicado() {
   nums[j] = nums[i];
   const [c1, c2] = azar(PALETAS), fila = (k) => Math.floor(k / cols) + 1;
   return {
-    tipo: 'duplicado', titulo: [['¿Cuál es el número', false], ['DUPLICADO?', true]],
+    tipo: 'duplicado', clave: { modo: 'numero', valor: nums[i] }, titulo: [['¿Cuál es el número', false], ['DUPLICADO?', true]],
     cuerpo(ctx, b) {
       const gap = 18, s = Math.min((b.w - gap * (cols - 1)) / cols, (b.h - gap * (filas - 1)) / filas), x0 = b.x + (b.w - (s * cols + gap * (cols - 1))) / 2, y0 = b.y + (b.h - (s * filas + gap * (filas - 1))) / 2;
       nums.forEach((v, k) => {
@@ -48,7 +49,7 @@ function diferente() {
   const [base, raro, clase] = azar(pares), cols = 8, filas = 10, pos = entre(0, cols * filas - 1);
   const titulo = clase === 'emoji' ? [['Encuentra el', false], ['emoji diferente', true]] : clase === 'número' ? [['Encuentra el', false], [raro, true], ['escondido', false]] : [['Encuentra la', false], [raro, true], ['escondida', false]];
   return {
-    tipo: 'diferente', titulo,
+    tipo: 'diferente', clave: { modo: 'posicion', fila: Math.floor(pos / cols) + 1, col: pos % cols + 1 }, titulo,
     cuerpo(ctx, b, emoji) {
       const s = Math.min(b.w / cols, b.h / filas), x0 = b.x + (b.w - s * cols) / 2, y0 = b.y + (b.h - s * filas) / 2;
       ctx.fillStyle = '#ffffff'; ctx.beginPath(); ctx.roundRect(x0 - 16, y0 - 16, s * cols + 32, s * filas + 32, 26); ctx.fill();
@@ -66,7 +67,7 @@ function fraccion() {
   // A veces las partes pintadas no van juntas: cuesta más contarlas
   const pintadas = new Set(Math.random() < 0.5 ? Array.from({ length: k }, (_, i) => (inicio + i) % n) : mezclar(Array.from({ length: n }, (_, i) => i)).slice(0, k));
   return {
-    tipo: 'fraccion', titulo: [['¿Qué', false], ['fracción', true], ['del círculo está', false], ['pintada?', true]],
+    tipo: 'fraccion', clave: { modo: 'fraccion', k, n }, titulo: [['¿Qué', false], ['fracción', true], ['del círculo está', false], ['pintada?', true]],
     cuerpo(ctx, b) {
       const r = Math.min(b.w, b.h) / 2 * 0.92, cx = b.x + b.w / 2, cy = b.y + b.h / 2;
       for (let i = 0; i < n; i++) {
@@ -93,7 +94,7 @@ function nombre() {
   const opciones = [...grupos].filter(([, v]) => v.length >= 3);
   const [k, ejemplos] = azar(opciones), [largo, pista] = k.split('|'), L = +largo;
   return {
-    tipo: 'nombre', titulo: [['A ver quién sabe un nombre de', false], [`${L} letras`, true], [empieza ? 'que empiece con' : 'que termine en', false], [pista, true]],
+    tipo: 'nombre', clave: { modo: 'patron', largo: L, pista, empieza }, titulo: [['A ver quién sabe un nombre de', false], [`${L} letras`, true], [empieza ? 'que empiece con' : 'que termine en', false], [pista, true]],
     cuerpo(ctx, b, emoji) {
       const s = Math.min(150, (b.w - 12 * (L - 1)) / L), x0 = b.x + (b.w - (s * L + 12 * (L - 1))) / 2, y = b.y + b.h * 0.22;
       for (let i = 0; i < L; i++) {
@@ -114,7 +115,7 @@ function operacion() {
   else if (t === 2) { const a = entre(10, 20), b = entre(2, 6), c = entre(2, 6), d = entre(1, 9); expr = `${a} − ${b} × ${c} + ${d}`; res = a - b * c + d; explica = `Primero ${b} × ${c} = ${b * c}. Después, de izquierda a derecha: ${a} − ${b * c} + ${d} = ${res}.`; }
   else { const c = entre(2, 5), b = c * entre(2, 6), a = entre(2, 9), d = entre(1, 5); expr = `${a} + ${b} ÷ ${c} − ${d}`; res = a + b / c - d; explica = `Primero ${b} ÷ ${c} = ${b / c}. Después ${a} + ${b / c} − ${d} = ${res}.`; }
   return {
-    tipo: 'operacion', titulo: [['Resuelve', false], ['sin calculadora', true]],
+    tipo: 'operacion', clave: { modo: 'numero', valor: res }, titulo: [['Resuelve', false], ['sin calculadora', true]],
     cuerpo(ctx, b) {
       const linea = `${expr} = ?`; let s = 150;
       do { ctx.font = `400 ${s}px ${BLACK}`; s -= 6; } while (ctx.measureText(linea).width > b.w - 40 && s > 60);
