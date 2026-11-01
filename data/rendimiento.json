@@ -1,0 +1,117 @@
+{
+  "fuente": "Meta Business Suite → Estadísticas → Contenido (leído a mano)",
+  "periodo": "30 y 31 de octubre de 2026",
+  "generado": "2026-11-01",
+  "filas": [
+    {
+      "red": "Facebook",
+      "formato": "Banderas",
+      "publicaciones": 2,
+      "vistas_prom": 759,
+      "vistas_max": 1226,
+      "me_gusta": 5,
+      "comentarios": 0,
+      "compartidos": 0
+    },
+    {
+      "red": "Facebook",
+      "formato": "Quiz de 5 preguntas",
+      "publicaciones": 1,
+      "vistas_prom": 284,
+      "vistas_max": 284,
+      "me_gusta": 1,
+      "comentarios": 0,
+      "compartidos": 0
+    },
+    {
+      "red": "Facebook",
+      "formato": "Nombres",
+      "publicaciones": 7,
+      "vistas_prom": 141,
+      "vistas_max": 263,
+      "me_gusta": 2,
+      "comentarios": 0,
+      "compartidos": 0
+    },
+    {
+      "red": "Facebook",
+      "formato": "Top 10",
+      "publicaciones": 2,
+      "vistas_prom": 139,
+      "vistas_max": 274,
+      "me_gusta": 1,
+      "comentarios": 0,
+      "compartidos": 0
+    },
+    {
+      "red": "Facebook",
+      "formato": "Imágenes (fotos)",
+      "publicaciones": 6,
+      "vistas_prom": 14,
+      "vistas_max": 27,
+      "me_gusta": 3,
+      "comentarios": 0,
+      "compartidos": 0
+    },
+    {
+      "red": "Facebook",
+      "formato": "Futbolistas",
+      "publicaciones": 3,
+      "vistas_prom": 5,
+      "vistas_max": 7,
+      "me_gusta": 0,
+      "comentarios": 0,
+      "compartidos": 0
+    },
+    {
+      "red": "Instagram",
+      "formato": "Banderas",
+      "publicaciones": 2,
+      "vistas_prom": 1388,
+      "vistas_max": 1420,
+      "me_gusta": 86,
+      "comentarios": 5,
+      "compartidos": 5
+    },
+    {
+      "red": "Instagram",
+      "formato": "Futbolistas",
+      "publicaciones": 2,
+      "vistas_prom": 176,
+      "vistas_max": 192,
+      "me_gusta": 2,
+      "comentarios": 0,
+      "compartidos": 0
+    },
+    {
+      "red": "Instagram",
+      "formato": "Nombres",
+      "publicaciones": 4,
+      "vistas_prom": 153,
+      "vistas_max": 200,
+      "me_gusta": 5,
+      "comentarios": 0,
+      "compartidos": 1
+    },
+    {
+      "red": "Instagram",
+      "formato": "Top 10",
+      "publicaciones": 2,
+      "vistas_prom": 107,
+      "vistas_max": 124,
+      "me_gusta": 2,
+      "comentarios": 0,
+      "compartidos": 0
+    },
+    {
+      "red": "Instagram",
+      "formato": "Imágenes (fotos)",
+      "publicaciones": 4,
+      "vistas_prom": 1,
+      "vistas_max": 2,
+      "me_gusta": 0,
+      "comentarios": 0,
+      "compartidos": 0
+    }
+  ]
+}

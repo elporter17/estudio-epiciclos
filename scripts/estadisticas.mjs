@@ -7,7 +7,7 @@ import { parseCli } from './lib/cli.mjs';
 import { graph, facebookReady } from './facebook.mjs';
 import { instagramReady } from './instagram.mjs';
 
-const o = parseCli({ dias: { type: 'string', default: '7' } });
+const o = parseCli({ dias: { type: 'string', default: '7' }, json: { type: 'string' } });
 const desde = Math.floor(Date.now() / 1000) - +o.dias * 86400;
 const horaHN = (t) => new Date(new Date(t).getTime() - 6 * 3600e3).getUTCHours();
 
@@ -21,6 +21,7 @@ function formato(texto = '', tipo) {
   if (t.includes('#futbol') && tipo === 'video') return 'Video · futbolistas';
   if (tipo === 'video') return 'Video · otro';
   if (t.startsWith('📰')) return 'Imagen · noticia';
+  if (/^(👀|🔎|🟢|✍️|🧮)/u.test(texto)) return 'Imagen · reto visual';
   if (t.includes('verdadero o falso')) return 'Imagen · verdadero o falso';
   if (t.includes('uno es falso')) return 'Imagen · cuál es falso';
   if (t.startsWith('🧠')) return 'Imagen · reto';
@@ -106,3 +107,17 @@ for (const red of ['Facebook', 'Instagram']) {
   for (const f of [...r].sort((a, b) => b.vistas - a.vistas).slice(0, 10)) md.push(`| ${f.vistas} | ${f.reacciones} | ${f.comentarios} | ${f.compartidos} | ${f.formato} | ${f.fecha.slice(0, 16).replace('T', ' ')} UTC | [ver](${f.enlace}) |`);
 }
 console.log(md.join('\n'));
+
+// Para el tablero local (npm run tablero): promedio por red y formato, con los nombres cortos del tablero
+if (o.json) {
+  const corto = { 'Video · banderas': 'Banderas', 'Video · quiz 5 preguntas': 'Quiz de 5 preguntas', 'Video · top 10': 'Top 10', 'Video · nombres y parejas': 'Nombres', 'Video · futbolistas': 'Futbolistas' };
+  const g = new Map();
+  for (const f of filas) {
+    const k = `${f.red}|${corto[f.formato] || f.formato}`, a = g.get(k) || { publicaciones: 0, vistas: 0, vistas_max: 0, me_gusta: 0, comentarios: 0, compartidos: 0 };
+    a.publicaciones++; a.vistas += f.vistas; a.vistas_max = Math.max(a.vistas_max, f.vistas); a.me_gusta += f.reacciones; a.comentarios += f.comentarios; a.compartidos += f.compartidos; g.set(k, a);
+  }
+  const hoy = new Date().toISOString().slice(0, 10);
+  const salida = { fuente: 'Informe «Estadísticas de Facebook e Instagram» (Graph API)', periodo: `Últimos ${o.dias} días al ${hoy}`, generado: hoy,
+    filas: [...g].map(([k, a]) => { const [red, formato] = k.split('|'); return { red, formato, publicaciones: a.publicaciones, vistas_prom: Math.round(a.vistas / a.publicaciones), vistas_max: a.vistas_max, me_gusta: a.me_gusta, comentarios: a.comentarios, compartidos: a.compartidos }; }) };
+  (await import('node:fs')).writeFileSync(o.json, JSON.stringify(salida, null, 2) + '\n');
+}
