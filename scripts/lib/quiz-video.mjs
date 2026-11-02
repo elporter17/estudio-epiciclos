@@ -443,7 +443,7 @@ export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semill
   }
   const args = ['-hide_banner', '-loglevel', 'error', '-y',
     '-f', 'rawvideo', '-pix_fmt', 'rgba', '-s', `${W}x${H}`, '-r', String(FPS), '-i', 'pipe:0', '-i', wav, ...entradas, ...mapa,
-    '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-profile:v', 'high', '-level:v', '4.2', '-g', String(FPS * 2),
+    '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-maxrate', '5M', '-bufsize', '10M', '-profile:v', 'high', '-level:v', '4.2', '-g', String(FPS * 2),
     '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-color_range', 'tv',
     '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11', '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-ac', '2', '-t', dur.toFixed(3), '-movflags', '+faststart', out];
   const ff = spawn(ffmpegPath, args, { stdio: ['pipe', 'ignore', 'pipe'] });

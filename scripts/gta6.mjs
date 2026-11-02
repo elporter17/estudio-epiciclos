@@ -13,7 +13,7 @@ import { parseCli } from './lib/cli.mjs';
 import { setupNode, ROOT } from './lib/node-env.mjs';
 import { TEMAS } from './lib/tarjetas.mjs';
 import { renderQuiz } from './lib/quiz-video.mjs';
-import { publicarEnlace } from './lib/video-link.mjs';
+import { publicarEnlace, borrarEnlace } from './lib/video-link.mjs';
 import { publishReel, publishStory, facebookReady } from './facebook.mjs';
 import { publishInstagramSeguro, instagramReady, musicaTendencia } from './instagram.mjs';
 import { publishVideo } from './publish.mjs';
@@ -86,7 +86,7 @@ if (!o['dry-run']) {
     // Instagram: la copia con solo efectos + una canción en tendencia del catálogo autorizado de Meta
       const cancion = r.outIG ? await musicaTendencia() : null, urlIG = cancion ? (await publicarEnlace(r.outIG).catch(() => null))?.url : null;
       meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: urlIG || meta.videoUrl, caption: texto, audio: urlIG ? cancion.id : undefined });
-      if (urlIG) meta.instagram.cancion = cancion.nombre;
+      if (urlIG) { meta.instagram.cancion = cancion.nombre; await borrarEnlace(urlIG); } // Instagram ya lo copió
       registrarRespuesta({ red: 'instagram', id: meta.instagram.media_id, clave: { modo: 'charla' }, titulo });
     meta.instagramStory = await publishInstagramSeguro({ tipo: 'historia', url: meta.videoUrl });
   }

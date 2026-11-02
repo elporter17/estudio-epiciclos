@@ -1,6 +1,7 @@
 // Enlace público al MP4 de cada corrida (Vercel Blob), para bajarlo desde el teléfono sin entrar a GitHub.
 // Necesita el secreto BLOB_READ_WRITE_TOKEN (el mismo almacén que usa la web); sin él no hace nada.
-// Borra los videos de más de 7 días para no llenar el almacén.
+// Borra los videos de más de 2 días para no llenar el almacén (1 GB gratis): Facebook, Instagram y TikTok los copian
+// en minutos, así que solo hacen falta para bajarlos desde el teléfono el mismo día o el siguiente.
 import fs from 'node:fs';
 import path from 'node:path';
 import { put, list, del } from '@vercel/blob';
@@ -9,7 +10,7 @@ const PREFIX = 'circularte-videos/';
 export const blobToken = () => process.env.BLOB_READ_WRITE_TOKEN
   || Object.entries(process.env).find(([k, v]) => k.endsWith('_READ_WRITE_TOKEN') && String(v).startsWith('vercel_blob_rw_'))?.[1];
 
-export async function publicarEnlace(file, { days = 7, log = (m) => process.stderr.write(m) } = {}) {
+export async function publicarEnlace(file, { days = 2, log = (m) => process.stderr.write(m) } = {}) {
   const token = blobToken();
   if (!token) { log('Sin BLOB_READ_WRITE_TOKEN: no hay enlace directo al video\n'); return null; }
   // downloadUrl (?download=1) hace que el teléfono lo descargue en vez de solo reproducirlo
@@ -26,4 +27,10 @@ export async function publicarEnlace(file, { days = 7, log = (m) => process.stde
   } catch (e) { log(`No se pudieron borrar videos viejos: ${e.message}\n`); }
   log(`Enlace directo al video: ${url}\n`);
   return { url, downloadUrl: downloadUrl || `${url}?download=1` };
+}
+
+// Borra un video del almacén apenas deja de hacer falta (la copia de Instagram, cuando Instagram ya lo publicó)
+export async function borrarEnlace(url) {
+  const token = blobToken(); if (!token || !url) return;
+  await del(url, { token }).catch(() => {});
 }
