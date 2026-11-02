@@ -35,12 +35,13 @@ if (o['solo-lanzamiento'] && faltan !== 0) { console.log(`Faltan ${faltan} días
 // El especial sale una sola vez (en la corrida de la mañana del lanzamiento); la de la noche ya no lo repite
 if (faltan === 0 && hist.lanzamiento && !o['dry-run']) { console.log('El especial del lanzamiento ya se publicó.'); process.exit(0); }
 
-const INTRO = 2.8, DATO = 5.6, CIERRE = 3.2, son = [[0, 'whoosh'], [0.05, 'pop'], [0.23, 'pop'], [0.41, 'pop']];
+const INTRO = 2.8, DATO = 6.3, CIERRE = 3.2, son = [[0, 'whoosh'], [0.05, 'pop'], [0.23, 'pop'], [0.41, 'pop']];
 const plataformas = D.lanzamiento.plataformas.join(', ');
 let datos, escenas, texto, titulo;
 if (faltan > 0) {
-  const usados = new Set(hist.usados);
-  datos = mezclar(D.datos.filter((d) => !usados.has(d.id))).concat(mezclar(D.datos)).filter((d, i, a) => a.indexOf(d) === i).slice(0, 4);
+  // Los últimos 37 cuentan como usados: con 45 datos siempre quedan 8 sin repetir del día anterior
+  const usados = new Set(hist.usados.slice(-(D.datos.length - 8)));
+  datos = mezclar(D.datos.filter((d) => !usados.has(d.id))).concat(mezclar(D.datos)).filter((d, i, a) => a.indexOf(d) === i).slice(0, 8);
   titulo = `Faltan ${faltan} días para GTA VI`;
   escenas = [
     { tipo: 'intro', dur: INTRO, tema: 'gta', portada: true, consulta: 'miami skyline night aerial', sonidos: son, iconos: ['🌴', '🏙️', '🚗', '🌅'],

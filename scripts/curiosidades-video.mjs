@@ -134,23 +134,23 @@ function quiz(base, hist) {
     ...preguntas.map((p, i) => {
       const comun = { idx: i, total: 5 };
       if (p.tipo === 'vf') {
-        const verdadero = Math.random() < 0.5, piensa = 6;
+        const verdadero = Math.random() < 0.5, piensa = 7;
         respuestas.push(`${i + 1}. ${verdadero ? 'Verdadero' : 'Falso'}: ${p.d.dato}`);
         return { ...comun, tipo: 'vf', dur: piensa + 3.4, piensa, tema: p.d.tema, consulta: p.d.foto, icono: p.d.icono, texto: verdadero ? p.d.dato : p.d.falso, real: p.d.dato, verdadero, sonidos: cuenta(piensa, verdadero ? 'bien' : 'mal') };
       }
       if (p.tipo === 'reto') {
-        const piensa = 7;
+        const piensa = 8;
         respuestas.push(`${i + 1}. ${'ABC'[p.d.respuesta]}) ${p.d.opciones[p.d.respuesta]}. ${p.d.explicacion}`);
         return { ...comun, tipo: 'opciones', dur: piensa + 3.6, piensa, tema: 'matematicas', etiqueta: 'RETO MENTAL 🧠', texto: p.d.pregunta, opciones: p.d.opciones, respuesta: p.d.respuesta, explicacion: p.d.explicacion, sonidos: cuenta(piensa, 'bien') };
       }
-      const piensa = 5;
+      const piensa = 6;
       respuestas.push(`${i + 1}. ${'ABC'[p.d.respuesta]}) ${p.d.opciones[p.d.respuesta]}. ${p.d.explicacion}`);
       return { ...comun, tipo: 'opciones', dur: piensa + 3.2, piensa, tema: 'matematicas', etiqueta: 'CÁLCULO MENTAL ⚡', texto: p.d.texto, opciones: p.d.opciones, respuesta: p.d.respuesta, explicacion: p.d.explicacion, sonidos: cuenta(piensa, 'bien') };
     }),
     { tipo: 'cierre', dur: CIERRE, tema: 'inventos', sonidos: [[0, 'final']],
       lineas: [{ texto: '¿CUÁNTAS ACERTASTE?', size: 104, color: TEMAS.inventos.acento }, { texto: '¿Cuántas de las 5 acertaste?', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
-  const texto = `🧠 5 preguntas: ¿cuántas aciertas?\n\nVerdadero o falso, un reto y cálculo mental, con 5 segundos para pensar. ¿Cuántas de las 5 acertaste?${OCULTAR}Respuestas:\n${respuestas.join('\n')}\n\n#quiz #trivia #preguntas #curiosidades #retomental #sabiasque #reels #potterplay`;
+  const texto = `🧠 5 preguntas: ¿cuántas aciertas?\n\nVerdadero o falso, un reto y cálculo mental, con unos segundos para pensar cada una. ¿Cuántas de las 5 acertaste?${OCULTAR}Respuestas:\n${respuestas.join('\n')}\n\n#quiz #trivia #preguntas #curiosidades #retomental #sabiasque #reels #potterplay`;
   return { formato: 'quiz', titulo: '5 preguntas: ¿cuántas aciertas?', escenas, texto, ids: vf.map((d) => d.id), retos: [reto.id] };
 }
 
@@ -168,14 +168,14 @@ function banderas(hist) {
     ...paises.map((c, i) => {
       // Dos opciones falsas del mismo continente (más difícil que al azar)
       const otros = mezclar(CONTINENTES[continente(c)].split(' ').filter((x) => x !== c)).slice(0, 2);
-      const ops = mezclar([c, ...otros]), piensa = 3;
+      const ops = mezclar([c, ...otros]), piensa = 3.5;
       return { tipo: 'opciones', dur: piensa + 1.6, piensa, idx: i, total: 10, tema: 'historia', etiqueta: i < 3 ? 'FÁCIL 🟢' : i < 7 ? 'MEDIO 🟡' : 'DIFÍCIL 🔴',
         bandera: bandera(c), opciones: ops.map(nombrePais), respuesta: ops.indexOf(c), sonidos: cuenta(piensa, 'bien') };
     }),
     { tipo: 'cierre', dur: CIERRE, tema: 'historia', sonidos: [[0, 'final']],
       lineas: [{ texto: '¿CUÁNTAS ADIVINASTE?', size: 100, color: TEMAS.historia.acento }, { texto: '¿Cuántas de las 10 sacaste?', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
-  const texto = `🌎 Adivina las 10 banderas: de fácil a imposible\n\nTienes 3 segundos por bandera. ¿Cuántas sacaste de 10? La última es la más difícil.${OCULTAR}Respuestas:\n${paises.map((c, i) => `${i + 1}. ${bandera(c)} ${nombrePais(c)}`).join('\n')}\n\n#banderas #geografia #quiz #trivia #paises #curiosidades #reels #potterplay`;
+  const texto = `🌎 Adivina las 10 banderas: de fácil a imposible\n\nTienes menos de 4 segundos por bandera. ¿Cuántas sacaste de 10? La última es la más difícil.${OCULTAR}Respuestas:\n${paises.map((c, i) => `${i + 1}. ${bandera(c)} ${nombrePais(c)}`).join('\n')}\n\n#banderas #geografia #quiz #trivia #paises #curiosidades #reels #potterplay`;
   return { formato: 'banderas', titulo: 'Adivina las 10 banderas', escenas, texto, banderas: paises };
 }
 
@@ -190,7 +190,7 @@ function retosVideo() {
     { tipo: 'intro', dur: INTRO, tema: 'matematicas', portada: true, sonidos: introSonidos, iconos: ['👀', '🔎', '🧮', '✍️', '🟢'],
       lineas: [{ texto: '5 RETOS', size: 150, color: TEMAS.matematicas.acento }, { texto: 'VISUALES', size: 120 }, { texto: '¿Cuántos resuelves a tiempo?', size: 58, color: 'rgba(255,255,255,0.85)' }] },
     // Los de buscar (número repetido, letra escondida) tienen más tiempo
-    ...vs.map((v, i) => { const piensa = ['duplicado', 'diferente'].includes(v.tipo) ? 8 : 6; return { tipo: 'visual', dur: piensa + 2.6, piensa, idx: i, total: vs.length, tema: 'matematicas', visual: v, sonidos: cuenta(piensa, 'bien') }; }),
+    ...vs.map((v, i) => { const piensa = ['duplicado', 'diferente'].includes(v.tipo) ? 9 : 7; return { tipo: 'visual', dur: piensa + 2.6, piensa, idx: i, total: vs.length, tema: 'matematicas', visual: v, sonidos: cuenta(piensa, 'bien') }; }),
     cierre('matematicas', '¿CUÁNTOS RESOLVISTE?', '¿Cuántos de los 5 te salieron?')
   ];
   const texto = `👀 5 retos visuales: número repetido, letra escondida, fracción, operación y nombre. ¿Cuántos resuelves antes de que se acabe el tiempo?${OCULTAR}Respuestas:\n${vs.map((v, i) => `${i + 1}. ${v.corta.replace(/[¡!]/g, '')}`).join('\n')}\n\n${tags('retos', 'acertijos', 'retovisual', 'juegosmentales', 'agilidadmental')}`;
@@ -199,15 +199,15 @@ function retosVideo() {
 
 function prefieresVideo(hist) {
   const base = leer(path.join(ROOT, 'data', 'prefieres.json'), []), usados = new Set(hist.prefieres.slice(-120));
-  const elegidos = mezclar(base.filter((x) => !usados.has(x.id))).concat(mezclar(base)).filter((x, i, a) => a.indexOf(x) === i).slice(0, 6);
-  if (elegidos.length < 6) return null;
+  const elegidos = mezclar(base.filter((x) => !usados.has(x.id))).concat(mezclar(base)).filter((x, i, a) => a.indexOf(x) === i).slice(0, 8);
+  if (elegidos.length < 8) return null;
   const escenas = [
     { tipo: 'intro', dur: INTRO, tema: 'prefieres', portada: true, sonidos: introSonidos, iconos: elegidos.slice(0, 3).flatMap((x) => [x.icono_a, x.icono_b]).slice(0, 5),
-      lineas: [{ texto: '¿QUÉ', size: 150, color: TEMAS.prefieres.acento }, { texto: 'PREFIERES?', size: 130 }, { texto: '6 decisiones imposibles', size: 58, color: 'rgba(255,255,255,0.85)' }] },
-    ...elegidos.map((x, i) => ({ tipo: 'prefieres', dur: 6.3, piensa: 4.5, idx: i, total: 6, tema: 'prefieres', a: x.a, b: x.b, icono_a: x.icono_a, icono_b: x.icono_b, consultaA: x.foto_a, consultaB: x.foto_b, sonidos: cuenta(4.5, 'bien') })),
+      lineas: [{ texto: '¿QUÉ', size: 150, color: TEMAS.prefieres.acento }, { texto: 'PREFIERES?', size: 130 }, { texto: '8 decisiones imposibles', size: 58, color: 'rgba(255,255,255,0.85)' }] },
+    ...elegidos.map((x, i) => ({ tipo: 'prefieres', dur: 6.3, piensa: 4.5, idx: i, total: 8, tema: 'prefieres', a: x.a, b: x.b, icono_a: x.icono_a, icono_b: x.icono_b, consultaA: x.foto_a, consultaB: x.foto_b, sonidos: cuenta(4.5, 'bien') })),
     cierre('prefieres', '¿CUÁL FUE LA MÁS DIFÍCIL?', 'Seguro hubo una que te hizo dudar 🤔')
   ];
-  const texto = `🤔 ¿Qué prefieres? 6 decisiones imposibles en menos de un minuto.\n\n${elegidos.map((x, i) => `${i + 1}. ${x.icono_a} ${x.a} o ${x.icono_b} ${x.b}`).join('\n')}\n\n¿Cuál fue la más difícil para ti?\n\n${tags('queprefieres', 'dilemas', 'preguntas', 'juegos')}`;
+  const texto = `🤔 ¿Qué prefieres? 8 decisiones imposibles en menos de un minuto.\n\n${elegidos.map((x, i) => `${i + 1}. ${x.icono_a} ${x.a} o ${x.icono_b} ${x.b}`).join('\n')}\n\n¿Cuál fue la más difícil para ti?\n\n${tags('queprefieres', 'dilemas', 'preguntas', 'juegos')}`;
   return { formato: 'prefieres', titulo: '¿Qué prefieres?', escenas, texto, prefieres: elegidos.map((x) => x.id) };
 }
 
@@ -220,7 +220,7 @@ function emojisVideo(hist) {
   const escenas = [
     { tipo: 'intro', dur: INTRO, tema: 'emojis', portada: true, sonidos: introSonidos, iconos: ['🎬', '🎵', '🌎', '🦸', '💬'],
       lineas: [{ texto: 'ADIVINA', size: 130 }, { texto: 'CON EMOJIS', size: 130, color: TEMAS.emojis.acento }, { texto: 'Películas, canciones, países…', size: 56, color: 'rgba(255,255,255,0.85)' }] },
-    ...elegidos.map((x, i) => ({ tipo: 'emoji', dur: 6.2, piensa: 4, idx: i, total: 8, tema: 'emojis', etiqueta: CATEGORIA_EMOJI[x.categoria] || '🤔 ADIVINA', emojis: x.emojis, respuesta: x.respuesta, sonidos: cuenta(4, 'bien') })),
+    ...elegidos.map((x, i) => ({ tipo: 'emoji', dur: 6.6, piensa: 4, idx: i, total: 8, tema: 'emojis', etiqueta: CATEGORIA_EMOJI[x.categoria] || '🤔 ADIVINA', emojis: x.emojis, respuesta: x.respuesta, sonidos: cuenta(4, 'bien') })),
     cierre('emojis', '¿CUÁNTAS ADIVINASTE?', '¿Cuántas de las 8 sacaste?')
   ];
   const texto = `🤔 Adivina con emojis: películas, canciones, países y más. 4 segundos para cada una. ¿Cuántas sacas de 8?${OCULTAR}Respuestas:\n${elegidos.map((x, i) => `${i + 1}. ${x.emojis} → ${x.respuesta}`).join('\n')}\n\n${tags('adivina', 'emojis', 'retos', 'peliculas', 'juegos')}`;
@@ -237,14 +237,15 @@ async function noticiasVideo(hist) {
   // Una de cada categoría primero, luego las más recientes
   const elegidas = [];
   for (const cat of Object.keys(ETIQUETA_NOTICIA)) { const n = frescas.find((x) => x.cat === cat); if (n) elegidas.push(n); }
-  for (const n of frescas) if (elegidas.length < 4 && !elegidas.includes(n)) elegidas.push(n);
-  if (elegidas.length < 2) return null;
+  for (const n of frescas) if (elegidas.length < 6 && !elegidas.includes(n)) elegidas.push(n);
+  if (elegidas.length < 4) return null;
+  const durNoticia = Math.min(13, Math.max(8.5, 51.5 / elegidas.length));
   const hoy = new Date(Date.now() - 6 * 3600e3).toLocaleDateString('es-HN', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
   const corta = (f) => new Date(f).toLocaleDateString('es-HN', { day: 'numeric', month: 'short', timeZone: 'America/Tegucigalpa' });
   const escenas = [
     { tipo: 'intro', dur: INTRO, tema: 'noticias', portada: true, consulta: 'city timelapse morning', sonidos: introSonidos, iconos: ['📰', '🎮', '⚽', '🔭'],
       lineas: [{ texto: 'NOTICIAS', size: 140, color: TEMAS.noticias.acento }, { texto: 'DE HOY', size: 120 }, { texto: hoy, size: 56, color: 'rgba(255,255,255,0.85)' }] },
-    ...elegidas.map((n, i) => ({ tipo: 'noticia', dur: 8.5, idx: i, total: elegidas.length, tema: 'noticias', etiqueta: ETIQUETA_NOTICIA[n.cat] || '📰 NOTICIA', consulta: azar(FONDO_NOTICIA[n.cat] || ['newspaper printing']), icono: n.icono, titular: n.titulo, pie: `${n.medio} · ${corta(n.fecha)}`, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
+    ...elegidas.map((n, i) => ({ tipo: 'noticia', dur: durNoticia, idx: i, total: elegidas.length, tema: 'noticias', etiqueta: ETIQUETA_NOTICIA[n.cat] || '📰 NOTICIA', consulta: azar(FONDO_NOTICIA[n.cat] || ['newspaper printing']), icono: n.icono, titular: n.titulo, pie: `${n.medio} · ${corta(n.fecha)}`, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
     cierre('noticias', '¿CUÁL TE SORPRENDIÓ MÁS?', 'Las noticias del día en menos de un minuto')
   ];
   const texto = `📰 Las noticias de hoy en menos de un minuto: videojuegos, fútbol y ciencia.\n\n${elegidas.map((n, i) => `${i + 1}. ${n.titulo} (${n.medio})`).join('\n')}\n\n¿Cuál te sorprendió más?\n\n${tags('noticias', 'ultimahora', 'videojuegos', 'futbol', 'ciencia')}`;

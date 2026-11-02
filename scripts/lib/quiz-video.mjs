@@ -359,12 +359,36 @@ const SONIDOS = {
   final: (b, t) => [72, 76, 79, 84].forEach((m, i) => tono(b, t + i * 0.11, midiFreq(m), 0.9, 0.2, { caida: 0.3 }))
 };
 
+// ---------- duración ----------
+// En Facebook los Reels de 45 a 60 s tienen unas 7 veces más vistas que los de 15 a 30, así que ninguno baja de 55 s.
+// El tope es 59.5 s porque las historias de Facebook e Instagram no aceptan más de 60.
+export const DURACION_MIN = 55, DURACION_MAX = 59.5;
+const total = (escenas) => escenas.reduce((a, e) => a + e.dur, 0);
+// Si falta tiempo, se reparte entre las escenas de contenido (más tiempo para leer o ver la respuesta; la cuenta atrás
+// no cambia). Si sobra, se recorta de esas mismas sin tocar la cuenta atrás ni dejar menos de 1.4 s para la respuesta.
+export function ajustarDuracion(escenas, { min = DURACION_MIN, max = DURACION_MAX } = {}) {
+  const contenido = escenas.filter((e) => e.tipo !== 'intro' && e.tipo !== 'cierre');
+  if (!contenido.length) return escenas;
+  const antes = total(escenas);
+  if (antes < min) { const extra = (min + 0.3 - antes) / contenido.length; for (const e of contenido) e.dur += extra; }
+  else if (antes > max) {
+    const piso = (e) => (e.piensa != null ? e.piensa + 1.4 : 3.5), holgura = contenido.reduce((a, e) => a + Math.max(0, e.dur - piso(e)), 0);
+    const quitar = Math.min(antes - (max - 0.3), holgura);
+    for (const e of contenido) e.dur -= (Math.max(0, e.dur - piso(e)) / (holgura || 1)) * quitar;
+  }
+  if (total(escenas) < min) throw new Error(`El Reel dura ${total(escenas).toFixed(1)} s: el mínimo es ${min} s`);
+  return escenas;
+}
+
 // ---------- render ----------
 // escenas: [{ tipo, dur, tema: id de TEMAS, idx?, total?, sonidos?: [[t, nombre]] }]
 // estilo: pop | dembow | lofi | electro | synthwave (scripts/lib/musica.mjs). outIG: además, una copia con solo los
 // efectos (sin música), para ponerle en Instagram una canción del catálogo autorizado de Meta
 export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semilla = Date.now(), outIG, emojiFont = '', still, log = (m) => process.stderr.write(m) }) {
   EMOJI = emojiFont ? `, ${emojiFont}` : '';
+  // Nunca menos de 55 s (ni más de 59.5): ver ajustarDuracion
+  const antes = total(escenas); ajustarDuracion(escenas);
+  if (Math.abs(total(escenas) - antes) > 0.05) log(`Duración ajustada: ${antes.toFixed(1)} → ${total(escenas).toFixed(1)} s\n`);
   let t0 = 0;
   const lista = escenas.map((e) => { const r = { ...e, t0, tema: TEMAS[e.tema] || TEMAS.noticias }; t0 += e.dur; return r; });
   const dur = t0, frames = Math.ceil(dur * FPS);
