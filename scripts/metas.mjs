@@ -34,7 +34,9 @@ async function desde(ruta, params, inicio) {
   const lista = []; let after;
   for (let i = 0; i < 10; i++) {
     const d = await graph('GET', ruta, { ...params, limit: 100, ...(after ? { after } : {}) });
-    const nuevos = (d.data || []).filter((x) => Date.parse(x.created_time || x.creation_time) >= inicio.getTime());
+    // Las publicaciones traen created_time (fecha ISO); las historias, creation_time en segundos Unix
+    const cuando = (x) => { const t = x.created_time || x.creation_time; return /^\d+$/.test(String(t)) ? +t * 1000 : Date.parse(t); };
+    const nuevos = (d.data || []).filter((x) => cuando(x) >= inicio.getTime());
     lista.push(...nuevos);
     after = d.paging?.cursors?.after;
     if (!after || nuevos.length < (d.data || []).length || !(d.data || []).length) break;
