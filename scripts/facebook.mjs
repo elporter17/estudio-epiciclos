@@ -81,6 +81,15 @@ export async function publishStory({ video, log = (m) => process.stderr.write(m)
   return { video_id, post_id: d.post_id || null, status: d.success ? 'published' : 'sent', at: new Date().toISOString() };
 }
 
+// Historia de la página con una imagen vertical: la foto se sube sin publicar y se convierte en historia
+export async function publishPhotoStory({ url, log = (m) => process.stderr.write(m) }) {
+  if (!facebookReady()) throw new Error('Faltan FB_PAGE_ID o FB_PAGE_TOKEN');
+  const foto = await graph('POST', `/${process.env.FB_PAGE_ID}/photos`, { url, published: 'false' });
+  const d = await graph('POST', `/${process.env.FB_PAGE_ID}/photo_stories`, { photo_id: foto.id });
+  log(`Facebook: historia con imagen ${d.success ? 'publicada' : 'enviada'}\n`);
+  return { photo_id: foto.id, post_id: d.post_id || null, status: d.success ? 'published' : 'sent', at: new Date().toISOString() };
+}
+
 // Foto publicada en la página (curiosidades y noticias): url pública de la imagen y el texto del post
 export async function publishPhoto({ url, caption = '', log = (m) => process.stderr.write(m) }) {
   if (!facebookReady()) throw new Error('Faltan FB_PAGE_ID o FB_PAGE_TOKEN');

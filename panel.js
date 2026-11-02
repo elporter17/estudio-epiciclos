@@ -99,8 +99,14 @@ function pintar(d) {
       const ctl = el('span', { class: 'acciones' });
       let sel = null;
       if (wf === 'curiosidades-reels.yml') { sel = el('select', { 'aria-label': 'Formato del Reel' }); sel.id = 'formatoManual'; for (const f of FORMATOS) sel.append(new Option(f === 'auto' ? 'el que toca' : f, f)); ctl.append(sel); }
+      // Metas semanales: las que muestra el Panel para creadores esta semana (vacías = las que ya se pusieron)
+      let metas = null;
+      if (wf === 'metas.yml') {
+        metas = ['fotos', 'historias'].map((k) => el('input', { type: 'number', min: '0', max: '200', inputMode: 'numeric', placeholder: k, 'aria-label': `Meta de ${k} de la semana`, class: 'meta' }));
+        ctl.append(...metas);
+      }
       const b = el('button', { textContent: 'Correr' });
-      b.onclick = () => correr(wf, sel ? { formato: sel.value } : {}, b);
+      b.onclick = () => correr(wf, sel ? { formato: sel.value } : metas ? Object.fromEntries(metas.map((m, i) => [['fotos', 'historias'][i], m.value.trim()]).filter(([, v]) => /^\d{1,3}$/.test(v))) : {}, b);
       ctl.append(b); fila.append(ctl); $('manual').append(fila);
     }
   }

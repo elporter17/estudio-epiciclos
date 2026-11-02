@@ -1,0 +1,29 @@
+# Metas semanales del Panel para creadores de Facebook: cuenta las fotos e historias de la semana y publica las que
+# falten para ir al ritmo (scripts/metas.mjs). Las metas de la semana se ponen al lanzarlo desde el panel.
+name: Metas semanales de Facebook
+
+on:
+  # Horario: lo lanza el relojero (/api/relojero) según scripts/lib/horario.mjs
+  workflow_dispatch:
+    inputs:
+      fotos:
+        description: Meta de publicaciones con fotos de esta semana (vacío = la última que se puso)
+        type: string
+        default: ''
+      historias:
+        description: Meta de historias de esta semana (vacío = la última que se puso)
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  metas:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: metas
+      publish: none
+      figura: ${{ format('{0},{1}', inputs.fotos, inputs.historias) }}
+    secrets: inherit

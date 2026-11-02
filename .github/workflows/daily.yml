@@ -173,6 +173,8 @@ jobs:
             comentarios) mkdir -p out; if [ "$FIGURA_INPUT" = diagnostico ]; then node scripts/comentarios.mjs --diagnostico; else node scripts/comentarios.mjs; fi; exit 0 ;;
             # Noticias del día para los Reels (noticias.yml) y especial GTA VI (gta6.yml; «figura» = lanzamiento en la mañana)
             noticias) mkdir -p out; node scripts/noticias.mjs; exit 0 ;;
+            # Metas semanales de Facebook (metas.yml): «figura» = «fotos,historias» puestas desde el panel (vacías = las guardadas)
+            metas) mkdir -p out; IFS=, read -r mf mh <<< "$FIGURA_INPUT"; node scripts/metas.mjs ${mf:+--fotos "$mf"} ${mh:+--historias "$mh"}; exit 0 ;;
             gta6) if [ "$FIGURA_INPUT" = "lanzamiento" ]; then node scripts/gta6.mjs --solo-lanzamiento; else node scripts/gta6.mjs; fi; exit 0 ;;
             curiosidades-video) node scripts/curiosidades-video.mjs --facebook "$FACEBOOK_INPUT" --formato "${FIGURA_INPUT:-auto}" ${HISTORIA_INPUT:+--historia} --tiktok "$( [ "$PUBLISH_INPUT" = draft ] && echo draft || echo no )"; exit 0 ;;
           esac

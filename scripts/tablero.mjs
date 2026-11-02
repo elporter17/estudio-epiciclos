@@ -25,6 +25,7 @@ const WF = {
   'curiosidades-tiktok.yml': { que: 'Carrusel de 5 imágenes', detalle: 'Retos visuales o datos, día por medio', tt: 'Borrador' },
   'nombres.yml': { que: 'Nombre o pareja con círculos', detalle: 'Espejo, mandala, hilos, anillos o costura', tt: 'Borrador' },
   'famosos.yml': { que: 'Futbolista con círculos', detalle: 'Caras, celebraciones, goles y escudos', tt: 'Borrador' },
+  'metas.yml': { que: 'Metas semanales', detalle: 'Completa las fotos e historias que pide el Panel para creadores', fb: 'Fotos + historias' },
   'comentarios.yml': { que: 'Respuestas a comentarios', detalle: 'Hasta 25 por corrida, en Facebook e Instagram', fb: 'Responde', ig: 'Responde', mantenimiento: true },
   'facebook-reels.yml': { que: 'Nombres y futbolistas', detalle: 'Desactivado: casi sin vistas en Facebook', fb: 'Reel + historia', ig: 'Reel + historia', reel: true },
   'fisica.yml': { que: 'Física (pelotas y juegos)', detalle: 'Desactivado', tt: 'Borrador' }

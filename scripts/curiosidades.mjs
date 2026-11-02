@@ -3,6 +3,7 @@
 // noticias (titulares recientes de medios en español), sin IA: texto, ícono y colores por tema.
 //   node scripts/curiosidades.mjs --red facebook            (Facebook, publicada directo)
 //   node scripts/curiosidades.mjs --red tiktok              (TikTok, foto en borrador)
+//   node scripts/curiosidades.mjs --historia                (historia de Facebook con la imagen vertical; metas.mjs)
 //   node scripts/curiosidades.mjs --dry-run --formato vf    (solo la imagen y el texto, sin publicar)
 // Base: data/curiosidades/*.json. Historial (para no repetir): data/curiosidades-historial.json (estado de Actions).
 import fs from 'node:fs';
@@ -13,7 +14,7 @@ import { setupNode, ROOT } from './lib/node-env.mjs';
 import { dibujarTarjeta, TEMAS } from './lib/tarjetas.mjs';
 import { ultimaNoticia, CAT_NOMBRE } from './lib/noticias.mjs';
 import { blobToken } from './lib/video-link.mjs';
-import { publishPhoto, facebookReady } from './facebook.mjs';
+import { publishPhoto, publishPhotoStory, facebookReady } from './facebook.mjs';
 import { publishPhotoDraft } from './publish.mjs';
 import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
 import { crearVisual, dibujarVisual, VISUALES } from './lib/retos-visuales.mjs';
@@ -142,7 +143,9 @@ async function main() {
     // Un reto visual concreto: duplicado | nombre | diferente | fraccion | operacion
     visual: { type: 'string' },
     // TikTok: un carrusel de N imágenes en lugar de una sola
-    carrusel: { type: 'string' }
+    carrusel: { type: 'string' },
+    // Historia de Facebook (imagen vertical) en lugar de publicación; con --instagram si, también historia de Instagram
+    historia: { type: 'boolean', default: false }
   });
   const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
   const hist = { ids: [], temas: [], noticias: [], total: 0, ...leer(HIST, {}) };
@@ -172,7 +175,7 @@ async function main() {
   const redes = o.red === 'ambas' ? ['facebook', 'tiktok'] : [o.red];
   const archivos = {};
   for (const red of redes) {
-    const H = red === 'tiktok' ? 1920 : 1350, cv = visual ? dibujarVisual(visual, { H, emojiFont }) : dibujarTarjeta(pieza.tarjeta, { H, emojiFont });
+    const H = red === 'tiktok' || o.historia ? 1920 : 1350, cv = visual ? dibujarVisual(visual, { H, emojiFont }) : dibujarTarjeta(pieza.tarjeta, { H, emojiFont });
     // TikTok solo acepta JPG o WEBP; Facebook va en PNG
     archivos[red] = path.join(outDir, `curiosidad-${nombre}-${red}.${red === 'tiktok' ? 'jpg' : 'png'}`); fs.writeFileSync(archivos[red], red === 'tiktok' ? cv.toBuffer('image/jpeg', 92) : cv.toBuffer('image/png'));
     // Instagram solo acepta JPEG: la misma tarjeta 4:5 de Facebook
@@ -185,7 +188,14 @@ async function main() {
       const img = await subirImagen(archivos[red]).catch((e) => { console.error(`No se pudo subir la imagen: ${e.message}`); return null; });
       if (!img) { console.error('Sin almacén Blob no se puede publicar la imagen'); continue; }
       meta.imageUrl = img.url;
-      if (red === 'facebook' && facebookReady()) {
+      if (red === 'facebook' && o.historia && facebookReady()) {
+        try { meta.facebook = await publishPhotoStory({ url: img.url }); }
+        catch (e) { meta.facebook = { status: 'error', error: e.message }; console.error(`Aviso: Facebook: ${e.message}`); process.exitCode = 1; }
+        if (o.instagram !== 'no' && await instagramReady()) {
+          const jpg = await subirImagen(archivos.instagram).catch(() => null);
+          if (jpg) meta.instagram = await publishInstagramSeguro({ tipo: 'historia-imagen', url: jpg.url });
+        }
+      } else if (red === 'facebook' && facebookReady()) {
         try { meta.facebook = await publishPhoto({ url: img.url, caption: pieza.texto }); }
         catch (e) { meta.facebook = { status: 'error', error: e.message }; console.error(`Aviso: Facebook: ${e.message}`); }
         // Respuesta correcta guardada para contestar los comentarios (scripts/comentarios.mjs)
