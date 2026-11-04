@@ -264,57 +264,18 @@ jobs:
               console.log(`::notice title=Descripción para pegar en TikTok::${esc(aviso)}`);
             }' || true
 
-      # Aviso por correo: un comentario en el issue «Videos para publicar» con la descripción y el enlace. GitHub manda
-      # cada comentario por correo (y a la app) con el texto completo, cosa que no hace con el correo de la corrida.
-      - name: Aviso por correo con la descripción
-        if: always() && env.ESTADO_INPUT == '' && inputs.aviso != false
+      # Aviso SOLO de lo que necesita tu intervención (borrador de TikTok, video privado en YouTube) por Telegram o
+      # WhatsApp; sin esos secretos, por correo (comentario en el issue «Videos para publicar»). Facebook e Instagram no avisan
+      - name: Aviso de lo que hay que revisar
+        if: always() && env.ESTADO_INPUT == '' && env.PRUEBA_INPUT == ''
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: |
-          node -e '
-            const fs = require("fs"); if (!fs.existsSync("out")) process.exit(0);
-            const parts = [];
-            for (const f of fs.readdirSync("out").filter((f) => f.endsWith(".json"))) {
-              const m = JSON.parse(fs.readFileSync("out/" + f, "utf8")); if (!m.post) continue;
-              const t = (m.tiktok || []).at(-1), st = t ? t.status : "sin subir";
-              const nota = st === "LIMIT" ? "\n\n⚠️ TikTok no lo aceptó (5 borradores pendientes): bájalo y súbelo a mano." : st === "SEND_TO_USER_INBOX" ? "\n\nEnviado a la bandeja de TikTok (aviso «Tu contenido de Circularte está listo»)." : "";
-              const fbl = m.facebook ? `\n\nFacebook: ${m.facebook.status}` + (m.facebook.permalink ? ` · [${m.imageUrl ? "ver la publicación" : "ver el Reel"}](${m.facebook.permalink})` : "") + (m.facebook.error ? ` (${m.facebook.error})` : "") : "";
-              parts.push(`### 🎬 ${m.title} · ${st}\n\n\`\`\`\n${m.post.text}\n\`\`\`\n\n` + (m.videoUrl ? `[⬇️ Descargar el video](${m.videoDownload || m.videoUrl + "?download=1"}) · [▶️ Verlo](${m.videoUrl}) · ` : "") + (m.imageUrl ? `[🖼️ Ver la imagen](${m.imageUrl}) · ` : "") + `[Ver la corrida](${process.env.RUN_URL})` + nota + fbl);
-            }
-            if (parts.length) fs.writeFileSync("aviso.md", parts.join("\n\n---\n\n") + "\n");' || true
-          [ -f aviso.md ] || exit 0
-          n=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "Videos para publicar in:title" --json number --jq '.[0].number // empty')
-          if [ -z "$n" ]; then
-            n=$(gh issue create --repo "$GITHUB_REPOSITORY" --title "Videos para publicar" --body "@${{ github.repository_owner }} cada corrida deja aquí la descripción para pegar en TikTok y el enlace al video. Te llega por correo con cada comentario." | grep -o '[0-9]*$')
-          fi
-          gh issue comment "$n" --repo "$GITHUB_REPOSITORY" --body-file aviso.md || echo "No se pudo comentar en el issue"
-
-      # Aviso por WhatsApp (CallMeBot, gratis): solo si están los secretos CALLMEBOT_PHONE y CALLMEBOT_APIKEY
-      - name: Aviso por WhatsApp
-        if: always() && env.PRUEBA_INPUT == ''
-        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
           CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          JOB_STATUS: ${{ job.status }}
-        run: |
-          if [ -z "$CALLMEBOT_PHONE" ] || [ -z "$CALLMEBOT_APIKEY" ]; then echo "Sin secretos de CallMeBot: no se avisa"; exit 0; fi
-          node -e '
-            const fs = require("fs");
-            const files = fs.existsSync("out") ? fs.readdirSync("out").filter((f) => f.endsWith(".json")) : [];
-            const m = files.length ? JSON.parse(fs.readFileSync("out/" + files[0], "utf8")) : null;
-            const t = m && (m.tiktok || []).at(-1);
-            const estado = !m ? "❌ La corrida falló antes de hacer el video" : !t ? "🎬 Video generado (sin subir)"
-              : t.status === "SEND_TO_USER_INBOX" ? "✅ Borrador listo en tu bandeja de TikTok"
-              : t.status === "LIMIT" ? "⚠️ TikTok no aceptó más borradores: descárgalo del enlace" : `TikTok: ${t.status}`;
-            const msg = [`CirculArte · ${estado}`, m ? `${m.title} · ${Math.round(m.duration)} s` : `Estado: ${process.env.JOB_STATUS}`,
-              m && m.post ? `\nDescripción para pegar:\n${m.post.text}` : "",
-              m && m.youtube && m.youtube.studio ? `\nYouTube (privado, publícalo en Studio): ${m.youtube.studio}` : "", `\nRevisar: ${process.env.RUN_URL}`].join("\n");
-            fs.writeFileSync("whatsapp.txt", msg);'
-          curl -sS -G "https://api.callmebot.com/whatsapp.php" \
-            --data-urlencode "phone=$CALLMEBOT_PHONE" --data-urlencode "text@whatsapp.txt" --data-urlencode "apikey=$CALLMEBOT_APIKEY" \
-            -o /dev/null -w "CallMeBot respondió %{http_code}\n" || echo "No se pudo avisar por WhatsApp"
+        run: node scripts/aviso.mjs || echo "No se pudo avisar"
 
       - name: Cifrar estado
         if: always()
