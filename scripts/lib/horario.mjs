@@ -1,7 +1,8 @@
 // Horario de publicación, hora de Honduras (UTC-6). Es la única fuente: el relojero (/api/relojero, llamado cada
 // 10 min por cron-job.org) lanza en GitHub Actions lo que toca, el panel (/panel.html) lo muestra y el tablero local
 // lo resume. GitHub ya no programa nada por su cuenta (sus «schedule» se perdían o llegaban con horas de atraso).
-//   { hora: 'HH:MM', workflow, que, inputs?, fecha? }   fecha: solo ese día (AAAA-MM-DD)
+//   { hora: 'HH:MM', workflow, que, inputs?, fecha?, dias? }   fecha: solo ese día (AAAA-MM-DD); dias: solo esos días
+//   de la semana (0 = domingo … 6 = sábado)
 const R = 'curiosidades-reels.yml';
 export const HORARIO = [
   { hora: '06:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
@@ -18,6 +19,8 @@ export const HORARIO = [
   { hora: '12:57', workflow: R, que: 'Reel de quiz y curiosidades → también TikTok', inputs: { tiktok: 'si' } },
   { hora: '13:17', workflow: 'nombres.yml', que: 'Nombre o pareja con círculos → TikTok' },
   { hora: '13:57', workflow: R, que: 'Reel de quiz y curiosidades' },
+  // Video largo horizontal para YouTube (8 a 10 min; tarda unos 15 min en hacerse): martes, jueves y sábado
+  { hora: '14:07', workflow: 'youtube-largo.yml', que: 'Video largo de YouTube: cómo se hacen 6 cosas', dias: [2, 4, 6] },
   { hora: '15:57', workflow: R, que: 'Reel de quiz y curiosidades' },
   { hora: '16:47', workflow: 'famosos.yml', que: 'Futbolista con círculos → TikTok' },
   { hora: '17:07', workflow: 'curiosidades-facebook.yml', que: 'Imagen: reto visual o curiosidad' },
@@ -45,13 +48,13 @@ export const HASTA = { 'gta6.yml': '2026-11-19' };
 export const NOMBRES = {
   [R]: 'Reels de quiz y curiosidades', 'curiosidades-facebook.yml': 'Imágenes a Facebook e Instagram', 'curiosidades-tiktok.yml': 'Carruseles a TikTok',
   'nombres.yml': 'Nombres a TikTok', 'famosos.yml': 'Futbolistas a TikTok', 'gta6.yml': 'Especial GTA VI', 'noticias.yml': 'Noticias del día',
-  'comentarios.yml': 'Respuestas a comentarios', 'metas.yml': 'Metas semanales de Facebook', 'como-se-hace.yml': 'Cómo se hace', 'estadisticas.yml': 'Estadísticas'
+  'comentarios.yml': 'Respuestas a comentarios', 'metas.yml': 'Metas semanales de Facebook', 'como-se-hace.yml': 'Cómo se hace', 'youtube-largo.yml': 'Video largo de YouTube', 'estadisticas.yml': 'Estadísticas'
 };
 
 // Dónde sale cada cosa (fb = Facebook, ig = Instagram, tt = TikTok). Los Reels con «tiktok: si» también van a TikTok.
 const REDES_WF = {
-  [R]: ['fb', 'ig'], 'curiosidades-facebook.yml': ['fb', 'ig'], 'curiosidades-tiktok.yml': ['tt'], 'nombres.yml': ['tt'], 'famosos.yml': ['tt'],
-  'gta6.yml': ['fb', 'ig', 'tt'], 'comentarios.yml': ['fb', 'ig'], 'metas.yml': ['fb'], 'como-se-hace.yml': ['fb', 'ig'], 'noticias.yml': [], 'estadisticas.yml': []
+  [R]: ['fb', 'ig', 'yt'], 'youtube-largo.yml': ['yt'], 'curiosidades-facebook.yml': ['fb', 'ig'], 'curiosidades-tiktok.yml': ['tt'], 'nombres.yml': ['tt'], 'famosos.yml': ['tt'],
+  'gta6.yml': ['fb', 'ig', 'tt'], 'comentarios.yml': ['fb', 'ig'], 'metas.yml': ['fb'], 'como-se-hace.yml': ['fb', 'ig', 'yt'], 'noticias.yml': [], 'estadisticas.yml': []
 };
 export const redesDe = (workflow, inputs = {}) => [...(REDES_WF[workflow] || []), ...(inputs.tiktok === 'si' ? ['tt'] : [])];
 
@@ -65,4 +68,4 @@ export const minutos = (hora) => { const [h, m] = hora.split(':').map(Number); r
 // Instante UTC de una hora de Honduras en una fecha
 export const instante = (fecha, hora) => new Date(Date.parse(`${fecha}T${hora}:00Z`) - OFFSET_HN * 3600e3);
 // Lo programado para una fecha (sin lo que tiene otra fecha o ya terminó)
-export const delDia = (fecha) => HORARIO.filter((s) => (!s.fecha || s.fecha === fecha) && !(HASTA[s.workflow] && fecha > HASTA[s.workflow]));
+export const delDia = (fecha) => HORARIO.filter((s) => (!s.fecha || s.fecha === fecha) && (!s.dias || s.dias.includes(new Date(`${fecha}T12:00:00Z`).getUTCDay())) && !(HASTA[s.workflow] && fecha > HASTA[s.workflow]));

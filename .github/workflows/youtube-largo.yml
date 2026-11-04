@@ -1,0 +1,28 @@
+# Video largo horizontal para YouTube (scripts/youtube-largo.mjs, sin IA): «Cómo se hacen 6 cosas que usas todos los
+# días», de 8 a 10 min, con narrador, capítulos y miniatura. Se sube PRIVADO (se publica a mano desde YouTube Studio).
+# Lo lanza el relojero martes, jueves y sábado (scripts/lib/horario.mjs). Reutiliza daily.yml y nunca corre a la vez que los demás.
+name: Video largo de YouTube
+
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: «prueba» solo genera el video (sin subir); se descarga de los artefactos de la corrida
+        type: choice
+        options: ['publicar', 'prueba']
+        default: 'publicar'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  largo:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: youtube-largo
+      publish: none
+      facebook: 'no'
+      aviso: false
+      prueba: ${{ inputs.modo == 'prueba' }}
+    secrets: inherit

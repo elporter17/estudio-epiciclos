@@ -26,6 +26,7 @@ const WF = {
   'nombres.yml': { que: 'Nombre o pareja con círculos', detalle: 'Espejo, mandala, hilos, anillos o costura', tt: 'Borrador' },
   'famosos.yml': { que: 'Futbolista con círculos', detalle: 'Caras, celebraciones, goles y escudos', tt: 'Borrador' },
   'como-se-hace.yml': { que: 'Cómo se hace', detalle: 'La fábrica en 2D en un solo plano, con fotos reales; 60 productos, más de 1 minuto', fb: 'Reel', ig: 'Reel', reel: true },
+  'youtube-largo.yml': { que: 'Video largo de YouTube', detalle: 'Cómo se hacen 6 cosas: 8 a 10 min en horizontal, con capítulos; mar, jue y sáb', yt: 'Privado' },
   'metas.yml': { que: 'Metas semanales', detalle: 'Completa las fotos e historias que pide el Panel para creadores', fb: 'Fotos + historias' },
   'comentarios.yml': { que: 'Respuestas a comentarios', detalle: 'Hasta 25 por corrida, en Facebook e Instagram', fb: 'Responde', ig: 'Responde', mantenimiento: true },
   'facebook-reels.yml': { que: 'Nombres y futbolistas', detalle: 'Desactivado: casi sin vistas en Facebook', fb: 'Reel + historia', ig: 'Reel + historia', reel: true },

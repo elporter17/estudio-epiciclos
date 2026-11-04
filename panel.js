@@ -2,7 +2,7 @@
 const $ = (id) => document.getElementById(id);
 const FORMATOS = ['auto', 'banderas', 'retos', 'quiz', 'prefieres', 'emojis', 'top10', 'noticias'];
 const ESTADO = { hecho: 'Hecho', 'en-curso': 'En curso', pendiente: 'Pendiente', perdido: 'Perdido', proximo: 'Próximo' };
-const RED = { fb: 'Facebook', ig: 'Instagram', tt: 'TikTok' };
+const RED = { fb: 'Facebook', ig: 'Instagram', tt: 'TikTok', yt: 'YouTube' };
 let ocupado = false, ultimo = null;
 // El filtro por red y si «Ya ejecutado» está abierto se recuerdan en este navegador (si se puede)
 const guardado = (k, def) => { try { return localStorage.getItem(k) ?? def; } catch { return def; } };
@@ -56,7 +56,7 @@ function pintar(d) {
   $('fecha').textContent = `${f} · ${String(Math.floor(d.min / 60)).padStart(2, '0')}:${String(d.min % 60).padStart(2, '0')} en Honduras`;
 
   // Filtro por red, con lo hecho y lo programado de hoy en cada una
-  $('filtros').replaceChildren(...['todas', 'fb', 'ig', 'tt'].map((k) => {
+  $('filtros').replaceChildren(...['todas', 'fb', 'ig', 'tt', 'yt'].map((k) => {
     const de = d.horario.filter((s) => k === 'todas' || s.redes.includes(k)), hechas = de.filter((s) => s.estado === 'hecho' || s.estado === 'en-curso').length;
     const b = el('button', { class: `filtro ${k}`, 'aria-pressed': String(filtro === k) }, el('span', { textContent: k === 'todas' ? 'Todas' : RED[k] }), el('small', { textContent: `${hechas}/${de.length}` }));
     b.onclick = () => { filtro = k; guardar('panel-red', k); pintar(ultimo); };

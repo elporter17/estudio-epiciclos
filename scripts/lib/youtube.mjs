@@ -41,6 +41,16 @@ export async function api(ruta, { method = 'GET', query = {}, body } = {}) {
 
 export const miCanal = () => api('/channels', { query: { part: 'snippet,statistics', mine: 'true' } }).then((j) => j.items?.[0] || null);
 
+// Miniatura propia (JPG o PNG de hasta 2 MB; el canal debe estar verificado con teléfono). 50 unidades de cuota
+export async function ponerMiniatura(videoId, file) {
+  const t = await accessToken();
+  const r = await fetch(`https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=${encodeURIComponent(videoId)}&uploadType=media`, {
+    method: 'POST', headers: { authorization: `Bearer ${t}`, 'content-type': file.endsWith('.png') ? 'image/png' : 'image/jpeg' }, body: fs.readFileSync(file)
+  });
+  const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error?.message || `HTTP ${r.status}`);
+  return j;
+}
+
 // Título: máximo 100 caracteres; descripción: 5.000; etiquetas: 500 en total. Shorts: vertical y de hasta 3 min
 // (YouTube lo detecta solo; #Shorts en el título ayuda). categoryId 27 = Educación, 24 = Entretenimiento.
 export async function subirYouTube({ file, titulo, descripcion = '', etiquetas = [], privacidad = 'private', categoria = '27', publicarEn }) {

@@ -17,7 +17,7 @@ on:
       cats:
         description: Qué tipo de video
         type: choice
-        options: [dibujos, nombres, famosos, curiosidades-facebook, curiosidades-tiktok, curiosidades-video, comentarios, noticias, gta6, fisica, juegos, pelotas, nuevos]
+        options: [dibujos, nombres, famosos, curiosidades-facebook, curiosidades-tiktok, curiosidades-video, youtube-largo, comentarios, noticias, gta6, fisica, juegos, pelotas, nuevos]
         default: dibujos
       lang:
         description: Idioma del video y la descripción
@@ -93,7 +93,8 @@ permissions:
 jobs:
   daily:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # El video largo de YouTube (8 a 10 min, 1080p) tarda más en dibujarse
+    timeout-minutes: ${{ inputs.cats == 'youtube-largo' && 55 || 30 }}
     # Los dos workflows (dibujos y física) comparten el token de TikTok: nunca corren a la vez
     concurrency:
       group: daily-tiktok
@@ -145,20 +146,20 @@ jobs:
 
       # Voz del narrador de los Reels (Kokoro, local y sin API; scripts/lib/voz.mjs). El modelo (≈350 MB) va en caché
       - name: Modelo de voz (en caché)
-        if: env.CATS_INPUT == 'curiosidades-video'
+        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'youtube-largo'
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .tools/kokoro
           key: voz-kokoro-v1.0
       # Kokoro aún no tiene versión para Python 3.14 (el de ubuntu-latest): se usa 3.12
       - name: Python para la voz
-        if: env.CATS_INPUT == 'curiosidades-video'
+        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'youtube-largo'
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
       - name: Instalar la voz
         continue-on-error: true
-        if: env.CATS_INPUT == 'curiosidades-video'
+        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'youtube-largo'
         run: |
           python -m venv .tools/voz
           .tools/voz/bin/python -m pip install -q kokoro-onnx==${KOKORO_VERSION}
@@ -209,6 +210,7 @@ jobs:
             # Metas semanales de Facebook (metas.yml): «figura» = «fotos,historias» puestas desde el panel (vacías = las guardadas)
             metas) mkdir -p out; IFS=, read -r mf mh <<< "$FIGURA_INPUT"; node scripts/metas.mjs ${mf:+--fotos "$mf"} ${mh:+--historias "$mh"}; exit 0 ;;
             gta6) if [ "$FIGURA_INPUT" = "lanzamiento" ]; then node scripts/gta6.mjs --solo-lanzamiento; else node scripts/gta6.mjs; fi; exit 0 ;;
+            youtube-largo) node scripts/youtube-largo.mjs ${PRUEBA_INPUT:+--dry-run}; exit 0 ;;
             curiosidades-video) node scripts/curiosidades-video.mjs --facebook "$FACEBOOK_INPUT" --formato "${FIGURA_INPUT:-auto}" ${HISTORIA_INPUT:+--historia} ${PRUEBA_INPUT:+--dry-run} --tiktok "$( [ "$PUBLISH_INPUT" = draft ] && echo draft || echo no )"; exit 0 ;;
           esac
           # Solo consultar el estado de subidas anteriores
