@@ -10,6 +10,7 @@ export const HORARIO = [
   { hora: '08:07', workflow: 'curiosidades-facebook.yml', que: 'Imagen: reto visual o curiosidad' },
   { hora: '09:27', workflow: 'gta6.yml', que: 'Especial de lanzamiento de GTA VI', inputs: { lanzamiento: 'true' }, fecha: '2026-11-19' },
   { hora: '09:57', workflow: R, que: 'Reel de quiz y curiosidades' },
+  { hora: '10:27', workflow: 'como-se-hace.yml', que: 'Cómo se hace: la fábrica en 2D (más de 1 min)' },
   { hora: '10:47', workflow: 'famosos.yml', que: 'Futbolista con círculos → TikTok' },
   { hora: '11:57', workflow: R, que: 'Reel de quiz y curiosidades' },
   { hora: '12:07', workflow: 'curiosidades-facebook.yml', que: 'Imagen: reto visual o curiosidad' },
@@ -22,6 +23,7 @@ export const HORARIO = [
   { hora: '17:07', workflow: 'curiosidades-facebook.yml', que: 'Imagen: reto visual o curiosidad' },
   { hora: '17:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
   { hora: '17:57', workflow: R, que: 'Reel de quiz y curiosidades' },
+  { hora: '18:27', workflow: 'como-se-hace.yml', que: 'Cómo se hace: la fábrica en 2D (más de 1 min)' },
   { hora: '18:57', workflow: R, que: 'Reel: noticias de hoy', inputs: { formato: 'noticias' } },
   { hora: '19:27', workflow: 'gta6.yml', que: 'Reel GTA VI «Faltan N días» → FB, IG y TikTok' },
   { hora: '19:57', workflow: R, que: 'Reel de quiz y curiosidades' },
@@ -43,13 +45,13 @@ export const HASTA = { 'gta6.yml': '2026-11-19' };
 export const NOMBRES = {
   [R]: 'Reels de quiz y curiosidades', 'curiosidades-facebook.yml': 'Imágenes a Facebook e Instagram', 'curiosidades-tiktok.yml': 'Carruseles a TikTok',
   'nombres.yml': 'Nombres a TikTok', 'famosos.yml': 'Futbolistas a TikTok', 'gta6.yml': 'Especial GTA VI', 'noticias.yml': 'Noticias del día',
-  'comentarios.yml': 'Respuestas a comentarios', 'metas.yml': 'Metas semanales de Facebook', 'estadisticas.yml': 'Estadísticas'
+  'comentarios.yml': 'Respuestas a comentarios', 'metas.yml': 'Metas semanales de Facebook', 'como-se-hace.yml': 'Cómo se hace', 'estadisticas.yml': 'Estadísticas'
 };
 
 // Dónde sale cada cosa (fb = Facebook, ig = Instagram, tt = TikTok). Los Reels con «tiktok: si» también van a TikTok.
 const REDES_WF = {
   [R]: ['fb', 'ig'], 'curiosidades-facebook.yml': ['fb', 'ig'], 'curiosidades-tiktok.yml': ['tt'], 'nombres.yml': ['tt'], 'famosos.yml': ['tt'],
-  'gta6.yml': ['fb', 'ig', 'tt'], 'comentarios.yml': ['fb', 'ig'], 'metas.yml': ['fb'], 'noticias.yml': [], 'estadisticas.yml': []
+  'gta6.yml': ['fb', 'ig', 'tt'], 'comentarios.yml': ['fb', 'ig'], 'metas.yml': ['fb'], 'como-se-hace.yml': ['fb', 'ig'], 'noticias.yml': [], 'estadisticas.yml': []
 };
 export const redesDe = (workflow, inputs = {}) => [...(REDES_WF[workflow] || []), ...(inputs.tiktok === 'si' ? ['tt'] : [])];
 

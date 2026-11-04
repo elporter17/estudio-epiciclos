@@ -36,7 +36,8 @@ const OCULTAR = '\n\n.\n.\n.\n\n'; // lo que sigue queda debajo de «Ver más»
 // workflow en sus horarios (--formato noticias).
 // Música propia (scripts/lib/musica.mjs) según el formato; dentro de cada lista, al azar
 const ESTILO = { comosehace: ['lofi', 'electro', 'pop'], banderas: ['pop', 'dembow', 'electro'], retos: ['electro', 'synthwave'], quiz: ['pop', 'electro'], prefieres: ['lofi', 'pop'], emojis: ['dembow', 'pop'], top10: ['lofi', 'pop', 'synthwave'], noticias: ['electro', 'synthwave'] };
-const ROTACION = ['banderas', 'retos', 'quiz', 'comosehace', 'prefieres', 'emojis', 'banderas', 'top10', 'retos', 'comosehace', 'prefieres', 'quiz'];
+// «Cómo se hace» tiene su propio workflow (como-se-hace.yml, 2 al día): no entra en la rotación de los Reels
+const ROTACION = ['banderas', 'retos', 'quiz', 'prefieres', 'emojis', 'banderas', 'top10', 'retos', 'prefieres', 'quiz'];
 const TEMAS_DATOS = ['animales', 'cuerpo', 'ciencia', 'geografia', 'historia', 'comida', 'deportes', 'tecnologia', 'inventos'];
 
 // ---------- banderas ----------
@@ -254,7 +255,8 @@ async function noticiasVideo(hist) {
 }
 
 // ---------- «Cómo se hace» (2026-11-03): la fábrica en 2D animada, recorrida en un solo plano, con fotos reales ----------
-// Pasa del minuto (de 62 a 88 s): no va a las historias, que aceptan hasta 60. Datos: data/como-se-hace.json
+// Pasa del minuto (de 62 a 88 s): no va a las historias, que aceptan hasta 60. Datos: data/como-se-hace.json (60 productos)
+// Lo publica como-se-hace.yml dos veces al día; no se repite un producto hasta que salieron casi todos los demás
 function comoSeHace(hist) {
   const base = leer(path.join(ROOT, 'data', 'como-se-hace.json'), []), usados = new Set((hist.comosehace || []).slice(-Math.max(1, base.length - 5)));
   const p = azar(base.filter((x) => !usados.has(x.id))) || azar(base);

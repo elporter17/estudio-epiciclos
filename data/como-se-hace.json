@@ -1447,5 +1447,2717 @@
       "roasted peanuts",
       "peanut harvest"
     ]
+  },
+  {
+    "id": "leche",
+    "titulo": "la leche de caja",
+    "icono": "🥛",
+    "tema": "comida",
+    "fotos": [
+      "milk glass",
+      "dairy cows",
+      "milking",
+      "milk bottles"
+    ],
+    "pasos": [
+      {
+        "nombre": "ORDEÑO",
+        "maquina": "cosecha",
+        "entrada": "🐄",
+        "salida": "🥛",
+        "texto": "Las vacas se ordeñan con máquinas dos o tres veces al día."
+      },
+      {
+        "nombre": "ENFRIADO",
+        "maquina": "enfria",
+        "entrada": "🥛",
+        "salida": "🥛",
+        "texto": "La leche se enfría enseguida a unos 4 °C para que no crezcan bacterias."
+      },
+      {
+        "nombre": "TRANSPORTE",
+        "maquina": "camion",
+        "entrada": "🥛",
+        "salida": "🥛",
+        "texto": "Camiones cisterna la llevan a la planta en pocas horas."
+      },
+      {
+        "nombre": "CONTROL",
+        "maquina": "inspeccion",
+        "entrada": "🥛",
+        "salida": "🥛",
+        "texto": "Se analiza cada carga: grasa, proteína y que no tenga antibióticos."
+      },
+      {
+        "nombre": "ULTRAPASTEURIZADO",
+        "maquina": "horno",
+        "entrada": "🥛",
+        "salida": "🥛",
+        "texto": "Se calienta a unos 140 °C por pocos segundos: así dura meses sin refrigerar."
+      },
+      {
+        "nombre": "HOMOGENEIZADO",
+        "maquina": "prensa",
+        "entrada": "🥛",
+        "salida": "🥛",
+        "texto": "Se empuja a gran presión para romper la grasa y que no se separe la nata."
+      },
+      {
+        "nombre": "ENVASADO",
+        "maquina": "empaque",
+        "entrada": "🥛",
+        "salida": "📦",
+        "texto": "Se envasa en cajas de cartón con capas de plástico y aluminio, sin que entre aire."
+      }
+    ],
+    "dato": "Una vaca lechera puede dar más de 25 litros de leche al día."
+  },
+  {
+    "id": "yogur",
+    "titulo": "el yogur",
+    "icono": "🥣",
+    "tema": "comida",
+    "fotos": [
+      "yogurt",
+      "yogurt bowl",
+      "milk",
+      "yogurt cups"
+    ],
+    "pasos": [
+      {
+        "nombre": "LECHE",
+        "maquina": "cinta",
+        "entrada": "🥛",
+        "salida": "🥛",
+        "texto": "Se parte de leche fresca, a veces con un poco de leche en polvo para espesarla."
+      },
+      {
+        "nombre": "CALENTADO",
+        "maquina": "horno",
+        "entrada": "🥛",
+        "salida": "🥛",
+        "texto": "Se calienta a unos 85 °C para eliminar bacterias y preparar la proteína."
+      },
+      {
+        "nombre": "CULTIVO",
+        "maquina": "mezcla",
+        "entrada": "🥛",
+        "salida": "🥛",
+        "extra": [
+          "🥛",
+          "🧫"
+        ],
+        "texto": "Ya tibia, se le agregan bacterias buenas: los cultivos del yogur.",
+        "color": "#f5f0e6"
+      },
+      {
+        "nombre": "FERMENTADO",
+        "maquina": "fermenta",
+        "entrada": "🥛",
+        "salida": "🥣",
+        "texto": "Reposa unas horas a unos 42 °C: las bacterias la vuelven espesa y ácida."
+      },
+      {
+        "nombre": "ENFRIADO",
+        "maquina": "enfria",
+        "entrada": "🥣",
+        "salida": "🥣",
+        "texto": "Se enfría rápido para frenar la fermentación en el punto justo."
+      },
+      {
+        "nombre": "SABOR",
+        "maquina": "molde",
+        "entrada": "🥣",
+        "salida": "🥣",
+        "texto": "Se le agrega fruta o azúcar y se llenan los vasitos.",
+        "color": "#f2b8c6"
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🥣",
+        "salida": "📦",
+        "texto": "Se sellan con su tapa y se guardan en frío hasta la tienda."
+      }
+    ],
+    "dato": "Las bacterias del yogur siguen vivas en el vaso: por eso hay que mantenerlo frío."
+  },
+  {
+    "id": "mantequilla",
+    "titulo": "la mantequilla",
+    "icono": "🧈",
+    "tema": "comida",
+    "fotos": [
+      "butter",
+      "butter bread",
+      "cream",
+      "dairy farm"
+    ],
+    "pasos": [
+      {
+        "nombre": "LECHE",
+        "maquina": "cinta",
+        "entrada": "🥛",
+        "salida": "🥛",
+        "texto": "Todo empieza con leche fresca de vaca."
+      },
+      {
+        "nombre": "DESNATADO",
+        "maquina": "tostar",
+        "entrada": "🥛",
+        "salida": "🥛",
+        "texto": "Una centrífuga gira muy rápido y separa la crema, que es lo más grasoso."
+      },
+      {
+        "nombre": "PASTEURIZADO",
+        "maquina": "horno",
+        "entrada": "🥛",
+        "salida": "🥛",
+        "texto": "La crema se calienta para eliminar bacterias y luego se enfría."
+      },
+      {
+        "nombre": "BATIDO",
+        "maquina": "mezcla",
+        "entrada": "🥛",
+        "salida": "🧈",
+        "extra": [
+          "🥛",
+          "🥛"
+        ],
+        "texto": "Se bate con fuerza: la grasa se junta en granos y se separa el suero.",
+        "color": "#f7e08a"
+      },
+      {
+        "nombre": "LAVADO",
+        "maquina": "lavado",
+        "entrada": "🧈",
+        "salida": "🧈",
+        "texto": "Los granos se lavan con agua fría para quitar el suero que queda."
+      },
+      {
+        "nombre": "AMASADO",
+        "maquina": "prensa",
+        "entrada": "🧈",
+        "salida": "🧈",
+        "texto": "Se amasa hasta que queda lisa; si lleva sal, se agrega aquí."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🧈",
+        "salida": "📦",
+        "texto": "Se corta en barras y se envuelve en papel especial."
+      }
+    ],
+    "dato": "Para 1 kilo de mantequilla se necesitan unos 20 litros de leche."
+  },
+  {
+    "id": "tortillas",
+    "titulo": "las tortillas de maíz",
+    "icono": "🫓",
+    "tema": "comida",
+    "fotos": [
+      "corn tortillas",
+      "corn field",
+      "corn kernels",
+      "tacos"
+    ],
+    "pasos": [
+      {
+        "nombre": "COSECHA",
+        "maquina": "cosecha",
+        "entrada": "🌽",
+        "salida": "🌽",
+        "texto": "El maíz se cosecha seco y se desgrana."
+      },
+      {
+        "nombre": "NIXTAMAL",
+        "maquina": "fermenta",
+        "entrada": "🌽",
+        "salida": "🌽",
+        "texto": "Los granos se cocinan con agua y cal y reposan toda la noche: es la nixtamalización."
+      },
+      {
+        "nombre": "LAVADO",
+        "maquina": "lavado",
+        "entrada": "🌽",
+        "salida": "🌽",
+        "texto": "Se lavan para quitar la cal y la cascarita que se aflojó."
+      },
+      {
+        "nombre": "MOLIENDA",
+        "maquina": "molino",
+        "entrada": "🌽",
+        "salida": "🫓",
+        "texto": "Se muelen en molinos de piedra hasta volverse masa.",
+        "color": "#e8c66a"
+      },
+      {
+        "nombre": "FORMADO",
+        "maquina": "prensa",
+        "entrada": "🫓",
+        "salida": "🫓",
+        "texto": "Una máquina aplana la masa y corta los círculos."
+      },
+      {
+        "nombre": "COMAL",
+        "maquina": "horno",
+        "entrada": "🫓",
+        "salida": "🫓",
+        "texto": "Pasan por un comal caliente que las cuece por los dos lados y las infla."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🫓",
+        "salida": "📦",
+        "texto": "Se enfrían un poco, se cuentan y se empacan."
+      }
+    ],
+    "dato": "La nixtamalización la inventaron los pueblos de Mesoamérica hace miles de años."
+  },
+  {
+    "id": "espagueti",
+    "titulo": "el espagueti",
+    "icono": "🍝",
+    "tema": "comida",
+    "fotos": [
+      "spaghetti",
+      "pasta dry",
+      "wheat field",
+      "pasta factory"
+    ],
+    "pasos": [
+      {
+        "nombre": "TRIGO",
+        "maquina": "cosecha",
+        "entrada": "🌾",
+        "salida": "🌾",
+        "texto": "Se usa trigo duro, un trigo con mucha proteína."
+      },
+      {
+        "nombre": "SÉMOLA",
+        "maquina": "molino",
+        "entrada": "🌾",
+        "salida": "🟡",
+        "texto": "El trigo se muele en sémola, una harina más gruesa y amarilla.",
+        "color": "#e8c66a"
+      },
+      {
+        "nombre": "MASA",
+        "maquina": "mezcla",
+        "entrada": "🟡",
+        "salida": "🟡",
+        "extra": [
+          "🟡",
+          "💧"
+        ],
+        "texto": "La sémola se mezcla solo con agua hasta formar una masa firme.",
+        "color": "#f0d27a"
+      },
+      {
+        "nombre": "EXTRUSIÓN",
+        "maquina": "extruir",
+        "entrada": "🟡",
+        "salida": "🍝",
+        "texto": "La masa se empuja por un molde con agujeritos y salen los fideos largos.",
+        "color": "#f2d785"
+      },
+      {
+        "nombre": "CORTE",
+        "maquina": "corte",
+        "entrada": "🍝",
+        "salida": "🍝",
+        "texto": "Se cuelgan en varillas y se cortan del mismo largo."
+      },
+      {
+        "nombre": "SECADO",
+        "maquina": "secado",
+        "entrada": "🍝",
+        "salida": "🍝",
+        "texto": "Se secan despacio durante horas para que no se quiebren."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🍝",
+        "salida": "📦",
+        "texto": "Se pesan y se empacan en bolsas o cajas."
+      }
+    ],
+    "dato": "Los moldes de bronce dejan la pasta rugosa, y así la salsa se pega mejor."
+  },
+  {
+    "id": "galletas",
+    "titulo": "las galletas",
+    "icono": "🍪",
+    "tema": "comida",
+    "fotos": [
+      "cookies",
+      "baking cookies",
+      "cookie dough",
+      "biscuits"
+    ],
+    "pasos": [
+      {
+        "nombre": "MEZCLA",
+        "maquina": "mezcla",
+        "entrada": "🌾",
+        "salida": "🟤",
+        "extra": [
+          "🌾",
+          "🧈",
+          "🍬"
+        ],
+        "texto": "Harina, mantequilla, azúcar y huevo se mezclan en batidoras gigantes.",
+        "color": "#d9b27c"
+      },
+      {
+        "nombre": "LAMINADO",
+        "maquina": "prensa",
+        "entrada": "🟤",
+        "salida": "🟤",
+        "texto": "Rodillos aplanan la masa hasta dejarla del grosor exacto."
+      },
+      {
+        "nombre": "FORMAS",
+        "maquina": "corte",
+        "entrada": "🟤",
+        "salida": "🍪",
+        "texto": "Un rodillo con moldes corta las galletas y les marca el dibujo."
+      },
+      {
+        "nombre": "HORNEADO",
+        "maquina": "horno",
+        "entrada": "🍪",
+        "salida": "🍪",
+        "texto": "Viajan por un horno túnel de decenas de metros en pocos minutos."
+      },
+      {
+        "nombre": "ENFRIADO",
+        "maquina": "enfria",
+        "entrada": "🍪",
+        "salida": "🍪",
+        "texto": "Se enfrían en la cinta para quedar crujientes."
+      },
+      {
+        "nombre": "RELLENO",
+        "maquina": "molde",
+        "entrada": "🍪",
+        "salida": "🍪",
+        "texto": "Si llevan crema, una máquina la pone y tapa con otra galleta.",
+        "color": "#f5f0e6"
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🍪",
+        "salida": "📦",
+        "texto": "Se apilan, se cuentan y se empacan."
+      }
+    ],
+    "dato": "Algunas fábricas hornean miles de galletas por minuto."
+  },
+  {
+    "id": "cereal",
+    "titulo": "el cereal de hojuelas",
+    "icono": "🥣",
+    "tema": "comida",
+    "fotos": [
+      "cornflakes",
+      "cereal bowl",
+      "corn field",
+      "breakfast cereal"
+    ],
+    "pasos": [
+      {
+        "nombre": "MAÍZ",
+        "maquina": "molino",
+        "entrada": "🌽",
+        "salida": "🟡",
+        "texto": "El maíz se tritura en trozos grandes llamados sémola de maíz.",
+        "color": "#e8c66a"
+      },
+      {
+        "nombre": "COCCIÓN",
+        "maquina": "tostar",
+        "entrada": "🟡",
+        "salida": "🟡",
+        "texto": "Se cocina con azúcar, malta y sal en ollas a presión giratorias."
+      },
+      {
+        "nombre": "SECADO",
+        "maquina": "secado",
+        "entrada": "🟡",
+        "salida": "🟡",
+        "texto": "Los granos cocidos se secan un poco."
+      },
+      {
+        "nombre": "APLANADO",
+        "maquina": "prensa",
+        "entrada": "🟡",
+        "salida": "🟡",
+        "texto": "Pasan entre rodillos pesados que los aplastan en hojuelas finas."
+      },
+      {
+        "nombre": "TOSTADO",
+        "maquina": "horno",
+        "entrada": "🟡",
+        "salida": "🥣",
+        "texto": "Se tuestan en hornos calientes: se doran, se ondulan y quedan crujientes."
+      },
+      {
+        "nombre": "VITAMINAS",
+        "maquina": "lavado",
+        "entrada": "🥣",
+        "salida": "🥣",
+        "texto": "A muchos se les rocían vitaminas y minerales."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🥣",
+        "salida": "📦",
+        "texto": "Se embolsan y se meten en cajas."
+      }
+    ],
+    "dato": "Las hojuelas de maíz se inventaron en Estados Unidos a finales del siglo XIX."
+  },
+  {
+    "id": "ketchup",
+    "titulo": "el kétchup",
+    "icono": "🍅",
+    "tema": "comida",
+    "fotos": [
+      "ketchup",
+      "tomatoes",
+      "tomato harvest",
+      "french fries ketchup"
+    ],
+    "pasos": [
+      {
+        "nombre": "COSECHA",
+        "maquina": "cosecha",
+        "entrada": "🍅",
+        "salida": "🍅",
+        "texto": "Los tomates se cosechan bien maduros, muchas veces con máquinas."
+      },
+      {
+        "nombre": "LAVADO",
+        "maquina": "lavado",
+        "entrada": "🍅",
+        "salida": "🍅",
+        "texto": "Se lavan con mucha agua y se apartan los dañados."
+      },
+      {
+        "nombre": "TRITURADO",
+        "maquina": "molino",
+        "entrada": "🍅",
+        "salida": "🥫",
+        "texto": "Se trituran y se calientan; se les quitan semillas y piel.",
+        "color": "#c62828"
+      },
+      {
+        "nombre": "CONCENTRADO",
+        "maquina": "horno",
+        "entrada": "🥫",
+        "salida": "🥫",
+        "texto": "La pulpa se cocina hasta perder casi toda el agua: queda pasta de tomate."
+      },
+      {
+        "nombre": "MEZCLA",
+        "maquina": "mezcla",
+        "entrada": "🥫",
+        "salida": "🍅",
+        "extra": [
+          "🍬",
+          "🧂",
+          "🫙"
+        ],
+        "texto": "Se mezcla con vinagre, azúcar, sal y especias.",
+        "color": "#d32f2f"
+      },
+      {
+        "nombre": "LLENADO",
+        "maquina": "molde",
+        "entrada": "🍅",
+        "salida": "🧴",
+        "texto": "Todavía caliente, se llenan las botellas.",
+        "color": "#c62828"
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🧴",
+        "salida": "📦",
+        "texto": "Se tapan, se etiquetan y se empacan."
+      }
+    ],
+    "dato": "Para una botella de kétchup se usan varios tomates."
+  },
+  {
+    "id": "mermelada",
+    "titulo": "la mermelada",
+    "icono": "🍓",
+    "tema": "comida",
+    "fotos": [
+      "jam jar",
+      "strawberries",
+      "jam bread",
+      "fruit harvest"
+    ],
+    "pasos": [
+      {
+        "nombre": "FRUTA",
+        "maquina": "cosecha",
+        "entrada": "🍓",
+        "salida": "🍓",
+        "texto": "La fruta se recoge madura, en su mejor momento."
+      },
+      {
+        "nombre": "LAVADO",
+        "maquina": "lavado",
+        "entrada": "🍓",
+        "salida": "🍓",
+        "texto": "Se lava y se le quitan tallos y hojas."
+      },
+      {
+        "nombre": "TROZOS",
+        "maquina": "corte",
+        "entrada": "🍓",
+        "salida": "🍓",
+        "texto": "Se corta en trozos o se tritura según la receta."
+      },
+      {
+        "nombre": "COCCIÓN",
+        "maquina": "mezcla",
+        "entrada": "🍓",
+        "salida": "🫙",
+        "extra": [
+          "🍓",
+          "🍬",
+          "🍋"
+        ],
+        "texto": "Se cocina con azúcar y pectina, que es lo que la vuelve gelatinosa.",
+        "color": "#c2185b"
+      },
+      {
+        "nombre": "PUNTO",
+        "maquina": "inspeccion",
+        "entrada": "🫙",
+        "salida": "🫙",
+        "texto": "Se mide el azúcar para saber cuándo está en su punto."
+      },
+      {
+        "nombre": "ENVASADO",
+        "maquina": "molde",
+        "entrada": "🫙",
+        "salida": "🫙",
+        "texto": "Se envasa caliente en frascos de vidrio.",
+        "color": "#ad1457"
+      },
+      {
+        "nombre": "SELLADO",
+        "maquina": "empaque",
+        "entrada": "🫙",
+        "salida": "📦",
+        "texto": "Al enfriarse se forma vacío y la tapa queda bien cerrada."
+      }
+    ],
+    "dato": "La pectina está en la cáscara y las semillas de muchas frutas, como la manzana."
+  },
+  {
+    "id": "aceite-oliva",
+    "titulo": "el aceite de oliva",
+    "icono": "🫒",
+    "tema": "comida",
+    "fotos": [
+      "olive oil",
+      "olives",
+      "olive tree",
+      "olive harvest"
+    ],
+    "pasos": [
+      {
+        "nombre": "COSECHA",
+        "maquina": "cosecha",
+        "entrada": "🫒",
+        "salida": "🫒",
+        "texto": "Las aceitunas se recogen sacudiendo los árboles, a mano o con máquinas."
+      },
+      {
+        "nombre": "LAVADO",
+        "maquina": "lavado",
+        "entrada": "🫒",
+        "salida": "🫒",
+        "texto": "Se les quitan hojas y se lavan."
+      },
+      {
+        "nombre": "MOLIENDA",
+        "maquina": "molino",
+        "entrada": "🫒",
+        "salida": "🟢",
+        "texto": "Se muelen enteras, con hueso, hasta formar una pasta.",
+        "color": "#6b7b2a"
+      },
+      {
+        "nombre": "BATIDO",
+        "maquina": "mezcla",
+        "entrada": "🟢",
+        "salida": "🟢",
+        "texto": "La pasta se bate despacio para que las gotitas de aceite se junten.",
+        "color": "#7a8a30"
+      },
+      {
+        "nombre": "SEPARACIÓN",
+        "maquina": "tostar",
+        "entrada": "🟢",
+        "salida": "🫒",
+        "texto": "Una centrífuga separa el aceite del agua y de los restos."
+      },
+      {
+        "nombre": "REPOSO",
+        "maquina": "fermenta",
+        "entrada": "🫒",
+        "salida": "🫒",
+        "texto": "Reposa en depósitos para que se asiente."
+      },
+      {
+        "nombre": "EMBOTELLADO",
+        "maquina": "empaque",
+        "entrada": "🫒",
+        "salida": "📦",
+        "texto": "Se embotella, mejor en vidrio oscuro para protegerlo de la luz."
+      }
+    ],
+    "dato": "Hay olivos de más de 1000 años que todavía dan aceitunas."
+  },
+  {
+    "id": "sal",
+    "titulo": "la sal de mar",
+    "icono": "🧂",
+    "tema": "geografia",
+    "fotos": [
+      "sea salt",
+      "salt flats",
+      "salt pans",
+      "salt crystals"
+    ],
+    "pasos": [
+      {
+        "nombre": "AGUA DE MAR",
+        "maquina": "cinta",
+        "entrada": "🌊",
+        "salida": "🌊",
+        "texto": "El agua del mar entra a estanques poco profundos llamados salinas."
+      },
+      {
+        "nombre": "EVAPORACIÓN",
+        "maquina": "secado",
+        "entrada": "🌊",
+        "salida": "🧂",
+        "texto": "El sol y el viento evaporan el agua durante semanas."
+      },
+      {
+        "nombre": "CRISTALES",
+        "maquina": "fermenta",
+        "entrada": "🧂",
+        "salida": "🧂",
+        "texto": "Cuando el agua está muy salada, en el fondo crecen los cristales."
+      },
+      {
+        "nombre": "COSECHA",
+        "maquina": "cosecha",
+        "entrada": "🧂",
+        "salida": "🧂",
+        "texto": "La sal se raspa del fondo y se apila en montañas blancas."
+      },
+      {
+        "nombre": "LAVADO",
+        "maquina": "lavado",
+        "entrada": "🧂",
+        "salida": "🧂",
+        "texto": "Se lava con agua muy salada para quitar arena sin disolverla."
+      },
+      {
+        "nombre": "MOLIDO",
+        "maquina": "molino",
+        "entrada": "🧂",
+        "salida": "🧂",
+        "texto": "Se seca y se muele; a la de mesa se le agrega yodo.",
+        "color": "#e8e8e8"
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🧂",
+        "salida": "📦",
+        "texto": "Se empaca en bolsas y saleros."
+      }
+    ],
+    "dato": "El yodo en la sal de mesa se agrega para prevenir enfermedades de la tiroides."
+  },
+  {
+    "id": "miel",
+    "titulo": "la miel",
+    "icono": "🍯",
+    "tema": "animales",
+    "fotos": [
+      "honey",
+      "honeycomb",
+      "bees hive",
+      "beekeeper"
+    ],
+    "pasos": [
+      {
+        "nombre": "NÉCTAR",
+        "maquina": "cosecha",
+        "entrada": "🌸",
+        "salida": "🐝",
+        "texto": "Las abejas recogen el néctar de miles de flores."
+      },
+      {
+        "nombre": "PANAL",
+        "maquina": "fermenta",
+        "entrada": "🐝",
+        "salida": "🍯",
+        "texto": "En la colmena lo vuelven miel y lo guardan en celdas de cera."
+      },
+      {
+        "nombre": "COSECHA",
+        "maquina": "cinta",
+        "entrada": "🍯",
+        "salida": "🍯",
+        "texto": "El apicultor saca los marcos con humo suave para calmar a las abejas."
+      },
+      {
+        "nombre": "DESOPERCULADO",
+        "maquina": "corte",
+        "entrada": "🍯",
+        "salida": "🍯",
+        "texto": "Se corta la tapita de cera que cierra cada celda."
+      },
+      {
+        "nombre": "EXTRACCIÓN",
+        "maquina": "tostar",
+        "entrada": "🍯",
+        "salida": "🍯",
+        "texto": "Los marcos giran en una centrífuga y la miel sale disparada."
+      },
+      {
+        "nombre": "FILTRADO",
+        "maquina": "lavado",
+        "entrada": "🍯",
+        "salida": "🍯",
+        "texto": "Se cuela para quitar pedacitos de cera."
+      },
+      {
+        "nombre": "ENVASADO",
+        "maquina": "molde",
+        "entrada": "🍯",
+        "salida": "🫙",
+        "texto": "Se envasa en frascos; la miel bien guardada casi no se echa a perder.",
+        "color": "#e0a020"
+      }
+    ],
+    "dato": "Se ha encontrado miel en tumbas egipcias de miles de años, y todavía era comestible."
+  },
+  {
+    "id": "gomitas",
+    "titulo": "las gomitas",
+    "icono": "🐻",
+    "tema": "comida",
+    "fotos": [
+      "gummy bears",
+      "gummy candy",
+      "colorful candy",
+      "candy factory"
+    ],
+    "pasos": [
+      {
+        "nombre": "MEZCLA",
+        "maquina": "mezcla",
+        "entrada": "🍬",
+        "salida": "🍬",
+        "extra": [
+          "🍬",
+          "💧",
+          "🧪"
+        ],
+        "texto": "Azúcar, jarabe de glucosa, agua y gelatina se mezclan y se calientan.",
+        "color": "#f48fb1"
+      },
+      {
+        "nombre": "SABOR",
+        "maquina": "mezcla",
+        "entrada": "🍬",
+        "salida": "🍬",
+        "extra": [
+          "🍓",
+          "🍋",
+          "🍊"
+        ],
+        "texto": "Se le agregan colorantes, sabores y un poco de ácido.",
+        "color": "#ff7043"
+      },
+      {
+        "nombre": "ALMIDÓN",
+        "maquina": "prensa",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "En bandejas con almidón de maíz se marcan los huecos con la forma de los ositos."
+      },
+      {
+        "nombre": "LLENADO",
+        "maquina": "molde",
+        "entrada": "🍬",
+        "salida": "🐻",
+        "texto": "La mezcla caliente se deposita en cada hueco.",
+        "color": "#e53935"
+      },
+      {
+        "nombre": "REPOSO",
+        "maquina": "secado",
+        "entrada": "🐻",
+        "salida": "🐻",
+        "texto": "Reposan uno o dos días hasta quedar firmes."
+      },
+      {
+        "nombre": "BRILLO",
+        "maquina": "tostar",
+        "entrada": "🐻",
+        "salida": "🐻",
+        "texto": "Se sacuden del almidón y giran con un poco de cera para que no se peguen."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🐻",
+        "salida": "📦",
+        "texto": "Se mezclan los colores y se embolsan."
+      }
+    ],
+    "dato": "Los ositos de goma nacieron en Alemania en 1922."
+  },
+  {
+    "id": "malvaviscos",
+    "titulo": "los malvaviscos",
+    "icono": "🍡",
+    "tema": "comida",
+    "fotos": [
+      "marshmallows",
+      "toasted marshmallow",
+      "candy",
+      "hot chocolate marshmallows"
+    ],
+    "pasos": [
+      {
+        "nombre": "JARABE",
+        "maquina": "horno",
+        "entrada": "🍬",
+        "salida": "🍬",
+        "texto": "Azúcar, jarabe de maíz y agua se cocinan hasta formar un jarabe."
+      },
+      {
+        "nombre": "GELATINA",
+        "maquina": "mezcla",
+        "entrada": "🍬",
+        "salida": "⚪",
+        "extra": [
+          "🍬",
+          "🧪"
+        ],
+        "texto": "Se le agrega gelatina y saborizante, como vainilla.",
+        "color": "#f5f0e6"
+      },
+      {
+        "nombre": "AIRE",
+        "maquina": "mezcla",
+        "entrada": "⚪",
+        "salida": "⚪",
+        "extra": [
+          "💨"
+        ],
+        "texto": "Se bate metiéndole mucho aire: la mezcla crece y se vuelve esponjosa.",
+        "color": "#ffffff"
+      },
+      {
+        "nombre": "EXTRUSIÓN",
+        "maquina": "extruir",
+        "entrada": "⚪",
+        "salida": "⚪",
+        "texto": "Sale por boquillas como cuerdas gruesas sobre almidón de maíz.",
+        "color": "#fafafa"
+      },
+      {
+        "nombre": "CORTE",
+        "maquina": "corte",
+        "entrada": "⚪",
+        "salida": "🍡",
+        "texto": "Cuchillas cortan las cuerdas en cilindros iguales."
+      },
+      {
+        "nombre": "REPOSO",
+        "maquina": "secado",
+        "entrada": "🍡",
+        "salida": "🍡",
+        "texto": "Se cubren con almidón para que no se peguen y se dejan asentar."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🍡",
+        "salida": "📦",
+        "texto": "Se embolsan con un poco de aire para que no se aplasten."
+      }
+    ],
+    "dato": "El nombre viene de una planta, la malvavisco, cuya raíz se usaba en el dulce original."
+  },
+  {
+    "id": "refresco",
+    "titulo": "los refrescos",
+    "icono": "🥤",
+    "tema": "comida",
+    "fotos": [
+      "soda can",
+      "soft drink",
+      "bottling plant",
+      "soda bubbles"
+    ],
+    "pasos": [
+      {
+        "nombre": "AGUA",
+        "maquina": "lavado",
+        "entrada": "💧",
+        "salida": "💧",
+        "texto": "El agua se filtra y se purifica para que no cambie el sabor."
+      },
+      {
+        "nombre": "JARABE",
+        "maquina": "mezcla",
+        "entrada": "💧",
+        "salida": "🥤",
+        "extra": [
+          "🍬",
+          "🍋",
+          "💧"
+        ],
+        "texto": "Se prepara un jarabe con azúcar y el sabor secreto de cada marca.",
+        "color": "#5d2a14"
+      },
+      {
+        "nombre": "MEZCLA",
+        "maquina": "mezcla",
+        "entrada": "🥤",
+        "salida": "🥤",
+        "texto": "El jarabe se mezcla con el agua en la proporción exacta.",
+        "color": "#6d3a20"
+      },
+      {
+        "nombre": "GAS",
+        "maquina": "enfria",
+        "entrada": "🥤",
+        "salida": "🥤",
+        "texto": "Se enfría y se le inyecta gas carbónico: así salen las burbujas."
+      },
+      {
+        "nombre": "LLENADO",
+        "maquina": "cinta",
+        "entrada": "🥫",
+        "salida": "🥤",
+        "texto": "Las latas o botellas se llenan a gran velocidad, cientos por minuto."
+      },
+      {
+        "nombre": "TAPADO",
+        "maquina": "prensa",
+        "entrada": "🥤",
+        "salida": "🥤",
+        "texto": "Se tapan enseguida para que no se escape el gas."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🥤",
+        "salida": "📦",
+        "texto": "Se revisan, se agrupan en paquetes y salen al camión."
+      }
+    ],
+    "dato": "El gas se disuelve mejor en agua fría: por eso un refresco tibio tiene menos burbujas."
+  },
+  {
+    "id": "pasta-dientes",
+    "titulo": "la pasta de dientes",
+    "icono": "🪥",
+    "tema": "cuerpo",
+    "fotos": [
+      "toothpaste",
+      "toothbrush",
+      "smile teeth",
+      "toothpaste tube"
+    ],
+    "pasos": [
+      {
+        "nombre": "POLVOS",
+        "maquina": "mezcla",
+        "entrada": "⚪",
+        "salida": "⚪",
+        "extra": [
+          "⚪",
+          "💧",
+          "🧪"
+        ],
+        "texto": "Se mezclan agua, humectantes y un polvo suave que limpia los dientes.",
+        "color": "#f0f4f8"
+      },
+      {
+        "nombre": "FLÚOR",
+        "maquina": "mezcla",
+        "entrada": "⚪",
+        "salida": "⚪",
+        "extra": [
+          "🧪",
+          "🌿"
+        ],
+        "texto": "Se agrega flúor, que protege contra las caries, y sabor a menta.",
+        "color": "#e0f2f1"
+      },
+      {
+        "nombre": "BATIDO",
+        "maquina": "mezcla",
+        "entrada": "⚪",
+        "salida": "⚪",
+        "texto": "Se bate al vacío para que no queden burbujas de aire.",
+        "color": "#e8f5e9"
+      },
+      {
+        "nombre": "CONTROL",
+        "maquina": "inspeccion",
+        "entrada": "⚪",
+        "salida": "⚪",
+        "texto": "Se revisan la textura, el sabor y la cantidad de flúor."
+      },
+      {
+        "nombre": "TUBOS",
+        "maquina": "molde",
+        "entrada": "⚪",
+        "salida": "🪥",
+        "texto": "Los tubos se llenan por la parte de atrás, que está abierta.",
+        "color": "#ffffff"
+      },
+      {
+        "nombre": "SELLADO",
+        "maquina": "prensa",
+        "entrada": "🪥",
+        "salida": "🪥",
+        "texto": "Se cierra la cola del tubo con calor y presión."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🪥",
+        "salida": "📦",
+        "texto": "Cada tubo va a su caja."
+      }
+    ],
+    "dato": "Las rayas de colores se logran con varios tubitos dentro del tubo que salen juntos."
+  },
+  {
+    "id": "papel-higienico",
+    "titulo": "el papel higiénico",
+    "icono": "🧻",
+    "tema": "inventos",
+    "fotos": [
+      "toilet paper",
+      "paper rolls",
+      "paper mill",
+      "tissue paper"
+    ],
+    "pasos": [
+      {
+        "nombre": "PULPA",
+        "maquina": "fermenta",
+        "entrada": "🪵",
+        "salida": "🥣",
+        "texto": "Madera o papel reciclado se deshacen en agua hasta formar pulpa."
+      },
+      {
+        "nombre": "LIMPIEZA",
+        "maquina": "lavado",
+        "entrada": "🥣",
+        "salida": "🥛",
+        "texto": "Se limpia y se blanquea la pulpa."
+      },
+      {
+        "nombre": "HOJA",
+        "maquina": "cinta",
+        "entrada": "🥛",
+        "salida": "📄",
+        "texto": "Se rocía sobre una malla y se forma una hoja muy fina."
+      },
+      {
+        "nombre": "SECADO",
+        "maquina": "horno",
+        "entrada": "📄",
+        "salida": "📄",
+        "texto": "Un cilindro gigante y caliente la seca; una cuchilla la despega arrugadita para que quede suave."
+      },
+      {
+        "nombre": "BOBINA",
+        "maquina": "tostar",
+        "entrada": "📄",
+        "salida": "🧻",
+        "texto": "Se enrolla en bobinas enormes, del tamaño de un carro."
+      },
+      {
+        "nombre": "ROLLOS",
+        "maquina": "corte",
+        "entrada": "🧻",
+        "salida": "🧻",
+        "texto": "Se desenrolla, se perfora y se enrolla en tubos largos que luego se cortan en rollos."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🧻",
+        "salida": "📦",
+        "texto": "Los rollos se agrupan y se empacan."
+      }
+    ],
+    "dato": "La perforación del papel higiénico se patentó en Estados Unidos en 1891."
+  },
+  {
+    "id": "velas",
+    "titulo": "las velas",
+    "icono": "🕯️",
+    "tema": "historia",
+    "fotos": [
+      "candles",
+      "candle flame",
+      "wax",
+      "candle making"
+    ],
+    "pasos": [
+      {
+        "nombre": "CERA",
+        "maquina": "fundir",
+        "entrada": "⚪",
+        "salida": "⚪",
+        "texto": "La cera, de parafina, soya o abejas, se derrite."
+      },
+      {
+        "nombre": "COLOR",
+        "maquina": "mezcla",
+        "entrada": "⚪",
+        "salida": "🕯️",
+        "extra": [
+          "🎨",
+          "🌸"
+        ],
+        "texto": "Se le agrega color y, si se quiere, aroma.",
+        "color": "#f8bbd0"
+      },
+      {
+        "nombre": "PABILO",
+        "maquina": "cinta",
+        "entrada": "🧵",
+        "salida": "🧵",
+        "texto": "El pabilo de algodón se coloca centrado en cada molde."
+      },
+      {
+        "nombre": "MOLDES",
+        "maquina": "molde",
+        "entrada": "⚪",
+        "salida": "🕯️",
+        "texto": "La cera caliente se vierte en los moldes.",
+        "color": "#fce4ec"
+      },
+      {
+        "nombre": "ENFRIADO",
+        "maquina": "enfria",
+        "entrada": "🕯️",
+        "salida": "🕯️",
+        "texto": "Se enfrían despacio para que no se agrieten."
+      },
+      {
+        "nombre": "ACABADO",
+        "maquina": "corte",
+        "entrada": "🕯️",
+        "salida": "🕯️",
+        "texto": "Se desmoldan y se recorta el pabilo."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🕯️",
+        "salida": "📦",
+        "texto": "Se empacan con cuidado para que no se rayen."
+      }
+    ],
+    "dato": "Antes de la electricidad, se medía el tiempo con velas marcadas por horas."
+  },
+  {
+    "id": "globos",
+    "titulo": "los globos",
+    "icono": "🎈",
+    "tema": "inventos",
+    "fotos": [
+      "balloons",
+      "colorful balloons",
+      "latex",
+      "party balloons"
+    ],
+    "pasos": [
+      {
+        "nombre": "LÁTEX",
+        "maquina": "cosecha",
+        "entrada": "🌳",
+        "salida": "🥛",
+        "texto": "El látex es la savia del árbol del caucho, que se saca haciendo un corte en la corteza."
+      },
+      {
+        "nombre": "MEZCLA",
+        "maquina": "mezcla",
+        "entrada": "🥛",
+        "salida": "🎈",
+        "extra": [
+          "🥛",
+          "🎨"
+        ],
+        "texto": "Se mezcla con colorante y otros ingredientes.",
+        "color": "#e53935"
+      },
+      {
+        "nombre": "MOLDES",
+        "maquina": "lavado",
+        "entrada": "⚪",
+        "salida": "⚪",
+        "texto": "Moldes con forma de globo se calientan y se mojan en un líquido que ayuda a pegar el látex."
+      },
+      {
+        "nombre": "INMERSIÓN",
+        "maquina": "molde",
+        "entrada": "⚪",
+        "salida": "🎈",
+        "texto": "Los moldes se sumergen en el látex y salen cubiertos con una capa fina.",
+        "color": "#e53935"
+      },
+      {
+        "nombre": "BORDE",
+        "maquina": "tostar",
+        "entrada": "🎈",
+        "salida": "🎈",
+        "texto": "Unos cepillos enrollan el borde para formar la boquilla."
+      },
+      {
+        "nombre": "SECADO",
+        "maquina": "horno",
+        "entrada": "🎈",
+        "salida": "🎈",
+        "texto": "Pasan por un horno que seca y endurece el látex."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🎈",
+        "salida": "📦",
+        "texto": "Se desprenden del molde, se lavan y se empacan."
+      }
+    ],
+    "dato": "El primer globo de caucho lo hizo Michael Faraday en 1824 para sus experimentos."
+  },
+  {
+    "id": "balon",
+    "titulo": "los balones de fútbol",
+    "icono": "⚽",
+    "tema": "deportes",
+    "fotos": [
+      "soccer ball",
+      "football stadium",
+      "soccer ball grass",
+      "football match"
+    ],
+    "pasos": [
+      {
+        "nombre": "CAPAS",
+        "maquina": "prensa",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "Capas de tela y espuma se pegan bajo presión: así el balón rebota bien."
+      },
+      {
+        "nombre": "IMPRESIÓN",
+        "maquina": "lavado",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "Se imprimen los diseños y logos sobre la capa exterior."
+      },
+      {
+        "nombre": "PANELES",
+        "maquina": "corte",
+        "entrada": "⬜",
+        "salida": "⬛",
+        "texto": "Una prensa corta los paneles con forma de hexágono, pentágono u otras."
+      },
+      {
+        "nombre": "CÁMARA",
+        "maquina": "fundir",
+        "entrada": "🎈",
+        "salida": "🎈",
+        "texto": "La cámara de aire, de látex o caucho, se hace aparte."
+      },
+      {
+        "nombre": "UNIÓN",
+        "maquina": "cinta",
+        "entrada": "⬛",
+        "salida": "⚽",
+        "texto": "Los paneles se cosen a mano o se pegan con calor alrededor de la cámara."
+      },
+      {
+        "nombre": "PRUEBAS",
+        "maquina": "inspeccion",
+        "entrada": "⚽",
+        "salida": "⚽",
+        "texto": "Se prueba que sea redondo, que no pierda aire y que pese lo correcto."
+      },
+      {
+        "nombre": "ENVÍO",
+        "maquina": "empaque",
+        "entrada": "⚽",
+        "salida": "📦",
+        "texto": "Se desinflan un poco y se empacan."
+      }
+    ],
+    "dato": "El balón clásico de 32 paneles combina 12 pentágonos y 20 hexágonos."
+  },
+  {
+    "id": "zapatillas",
+    "titulo": "las zapatillas deportivas",
+    "icono": "👟",
+    "tema": "deportes",
+    "fotos": [
+      "sneakers",
+      "running shoes",
+      "shoe factory",
+      "sneakers white"
+    ],
+    "pasos": [
+      {
+        "nombre": "CORTE",
+        "maquina": "corte",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "Una prensa corta las piezas de tela, cuero o malla con moldes metálicos."
+      },
+      {
+        "nombre": "COSTURA",
+        "maquina": "cinta",
+        "entrada": "⬜",
+        "salida": "👟",
+        "texto": "Las piezas se cosen para formar la parte de arriba del zapato."
+      },
+      {
+        "nombre": "SUELA",
+        "maquina": "molde",
+        "entrada": "⚪",
+        "salida": "⚪",
+        "texto": "La suela de caucho y la espuma se moldean con calor.",
+        "color": "#eeeeee"
+      },
+      {
+        "nombre": "HORMA",
+        "maquina": "prensa",
+        "entrada": "👟",
+        "salida": "👟",
+        "texto": "El zapato se estira sobre una horma con forma de pie."
+      },
+      {
+        "nombre": "PEGADO",
+        "maquina": "horno",
+        "entrada": "👟",
+        "salida": "👟",
+        "texto": "Se pega la suela y pasa por calor para que el pegamento agarre."
+      },
+      {
+        "nombre": "CONTROL",
+        "maquina": "inspeccion",
+        "entrada": "👟",
+        "salida": "👟",
+        "texto": "Se revisa cada par: costuras, pegado y que los dos sean iguales."
+      },
+      {
+        "nombre": "CAJA",
+        "maquina": "empaque",
+        "entrada": "👟",
+        "salida": "📦",
+        "texto": "Se les ponen cordones y se meten en su caja."
+      }
+    ],
+    "dato": "Una zapatilla deportiva puede tener más de 30 piezas distintas."
+  },
+  {
+    "id": "camisetas",
+    "titulo": "las camisetas",
+    "icono": "👕",
+    "tema": "historia",
+    "fotos": [
+      "t-shirt",
+      "cotton field",
+      "sewing",
+      "fabric"
+    ],
+    "pasos": [
+      {
+        "nombre": "ALGODÓN",
+        "maquina": "cosecha",
+        "entrada": "☁️",
+        "salida": "☁️",
+        "texto": "El algodón se cosecha y se limpia de semillas."
+      },
+      {
+        "nombre": "HILADO",
+        "maquina": "tostar",
+        "entrada": "☁️",
+        "salida": "🧵",
+        "texto": "Las fibras se estiran y se tuercen hasta volverse hilo."
+      },
+      {
+        "nombre": "TEJIDO",
+        "maquina": "cinta",
+        "entrada": "🧵",
+        "salida": "⬜",
+        "texto": "Máquinas circulares tejen el hilo en una tela elástica en forma de tubo."
+      },
+      {
+        "nombre": "TEÑIDO",
+        "maquina": "lavado",
+        "entrada": "⬜",
+        "salida": "🟦",
+        "texto": "La tela se tiñe en grandes tinas del color deseado."
+      },
+      {
+        "nombre": "CORTE",
+        "maquina": "corte",
+        "entrada": "🟦",
+        "salida": "🟦",
+        "texto": "Se apilan capas y se cortan frente, espalda y mangas."
+      },
+      {
+        "nombre": "COSTURA",
+        "maquina": "cinta",
+        "entrada": "🟦",
+        "salida": "👕",
+        "texto": "Se cosen hombros, mangas, costados y cuello."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "👕",
+        "salida": "📦",
+        "texto": "Se revisan, se doblan y se empacan."
+      }
+    ],
+    "dato": "Para una camiseta de algodón se necesitan cientos de litros de agua."
+  },
+  {
+    "id": "latas",
+    "titulo": "las latas de aluminio",
+    "icono": "🥫",
+    "tema": "tecnologia",
+    "fotos": [
+      "aluminum cans",
+      "soda cans",
+      "recycling cans",
+      "aluminum"
+    ],
+    "pasos": [
+      {
+        "nombre": "LÁMINA",
+        "maquina": "cinta",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "Llega una bobina de aluminio delgado, mucho de él reciclado."
+      },
+      {
+        "nombre": "COPAS",
+        "maquina": "prensa",
+        "entrada": "⬜",
+        "salida": "⚪",
+        "texto": "Una prensa corta discos y los convierte en copitas bajas."
+      },
+      {
+        "nombre": "ESTIRADO",
+        "maquina": "prensa",
+        "entrada": "⚪",
+        "salida": "🥫",
+        "texto": "Cada copa se estira en un instante hasta tener el alto de la lata."
+      },
+      {
+        "nombre": "RECORTE",
+        "maquina": "corte",
+        "entrada": "🥫",
+        "salida": "🥫",
+        "texto": "Se recorta el borde de arriba para dejarlo parejo."
+      },
+      {
+        "nombre": "IMPRESIÓN",
+        "maquina": "lavado",
+        "entrada": "🥫",
+        "salida": "🥫",
+        "texto": "Se lavan, se pintan por dentro y se imprime el diseño por fuera."
+      },
+      {
+        "nombre": "CUELLO",
+        "maquina": "tostar",
+        "entrada": "🥫",
+        "salida": "🥫",
+        "texto": "Se angosta la parte de arriba para que entre la tapa."
+      },
+      {
+        "nombre": "CONTROL",
+        "maquina": "inspeccion",
+        "entrada": "🥫",
+        "salida": "📦",
+        "texto": "Se revisan con luz y cámaras y se envían a llenar."
+      }
+    ],
+    "dato": "Una lata reciclada puede volver a la tienda como lata nueva en unos 60 días."
+  },
+  {
+    "id": "aluminio-cocina",
+    "titulo": "el papel aluminio",
+    "icono": "🌯",
+    "tema": "tecnologia",
+    "fotos": [
+      "aluminum foil",
+      "foil roll",
+      "aluminium",
+      "baking foil"
+    ],
+    "pasos": [
+      {
+        "nombre": "BAUXITA",
+        "maquina": "cinta",
+        "entrada": "🪨",
+        "salida": "🪨",
+        "texto": "Todo empieza con la bauxita, una roca rojiza de la que se saca el aluminio."
+      },
+      {
+        "nombre": "ALÚMINA",
+        "maquina": "molino",
+        "entrada": "🪨",
+        "salida": "⚪",
+        "texto": "Se tritura y se trata con químicos hasta obtener un polvo blanco: la alúmina.",
+        "color": "#eeeeee"
+      },
+      {
+        "nombre": "ELECTRÓLISIS",
+        "maquina": "fundir",
+        "entrada": "⚪",
+        "salida": "⚪",
+        "texto": "Con muchísima electricidad, el polvo se vuelve aluminio líquido."
+      },
+      {
+        "nombre": "PLANCHAS",
+        "maquina": "molde",
+        "entrada": "⚪",
+        "salida": "⬜",
+        "texto": "El metal se cuela en bloques enormes.",
+        "color": "#cfd8dc"
+      },
+      {
+        "nombre": "LAMINADO",
+        "maquina": "prensa",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "Pasa una y otra vez entre rodillos hasta quedar más fino que un cabello."
+      },
+      {
+        "nombre": "DOBLE HOJA",
+        "maquina": "tostar",
+        "entrada": "⬜",
+        "salida": "🌯",
+        "texto": "Al final se laminan dos hojas juntas: por eso un lado brilla y el otro es mate."
+      },
+      {
+        "nombre": "ROLLOS",
+        "maquina": "empaque",
+        "entrada": "🌯",
+        "salida": "📦",
+        "texto": "Se corta en rollos y se mete en su caja con cuchilla."
+      }
+    ],
+    "dato": "El lado brillante y el mate del papel aluminio funcionan casi igual para cocinar."
+  },
+  {
+    "id": "carton",
+    "titulo": "las cajas de cartón",
+    "icono": "📦",
+    "tema": "inventos",
+    "fotos": [
+      "cardboard boxes",
+      "corrugated cardboard",
+      "paper recycling",
+      "warehouse boxes"
+    ],
+    "pasos": [
+      {
+        "nombre": "PAPEL",
+        "maquina": "cinta",
+        "entrada": "🧻",
+        "salida": "🧻",
+        "texto": "Llegan bobinas de papel grueso, en gran parte reciclado."
+      },
+      {
+        "nombre": "ONDULADO",
+        "maquina": "tostar",
+        "entrada": "🧻",
+        "salida": "〰️",
+        "texto": "Un papel pasa entre rodillos dentados calientes y se ondula."
+      },
+      {
+        "nombre": "PEGADO",
+        "maquina": "prensa",
+        "entrada": "〰️",
+        "salida": "⬜",
+        "texto": "La onda se pega entre dos papeles lisos con almidón: así nace el cartón corrugado."
+      },
+      {
+        "nombre": "SECADO",
+        "maquina": "horno",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "Pasa por placas calientes para que el pegamento seque."
+      },
+      {
+        "nombre": "IMPRESIÓN",
+        "maquina": "lavado",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "Se imprimen logos e instrucciones."
+      },
+      {
+        "nombre": "TROQUELADO",
+        "maquina": "corte",
+        "entrada": "⬜",
+        "salida": "📦",
+        "texto": "Se corta y se marcan los dobleces de cada caja."
+      },
+      {
+        "nombre": "PAQUETES",
+        "maquina": "empaque",
+        "entrada": "📦",
+        "salida": "📦",
+        "texto": "Las cajas se entregan planas para ocupar menos espacio."
+      }
+    ],
+    "dato": "Las ondas del cartón hacen que aguante mucho peso aunque sea ligero."
+  },
+  {
+    "id": "vasos-papel",
+    "titulo": "los vasos de papel",
+    "icono": "🥤",
+    "tema": "inventos",
+    "fotos": [
+      "paper cups",
+      "coffee cup",
+      "paper cup",
+      "takeaway coffee"
+    ],
+    "pasos": [
+      {
+        "nombre": "CARTULINA",
+        "maquina": "cinta",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "Se parte de cartulina cubierta con una capa fina de plástico que no deja pasar el líquido."
+      },
+      {
+        "nombre": "IMPRESIÓN",
+        "maquina": "lavado",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "Se imprime el diseño en hojas grandes."
+      },
+      {
+        "nombre": "TROQUELADO",
+        "maquina": "corte",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "Se cortan las paredes en forma de abanico y los fondos en círculos."
+      },
+      {
+        "nombre": "FORMADO",
+        "maquina": "prensa",
+        "entrada": "⬜",
+        "salida": "🥤",
+        "texto": "La pared se enrolla en un molde y se sella con calor."
+      },
+      {
+        "nombre": "FONDO",
+        "maquina": "horno",
+        "entrada": "🥤",
+        "salida": "🥤",
+        "texto": "Se calienta el fondo y se presiona para que quede pegado sin fugas."
+      },
+      {
+        "nombre": "BORDE",
+        "maquina": "tostar",
+        "entrada": "🥤",
+        "salida": "🥤",
+        "texto": "Se enrolla el borde de arriba para que sea cómodo al tomar."
+      },
+      {
+        "nombre": "PILAS",
+        "maquina": "empaque",
+        "entrada": "🥤",
+        "salida": "📦",
+        "texto": "Se apilan uno dentro de otro y se empacan."
+      }
+    ],
+    "dato": "Una máquina de vasos puede hacer más de 100 por minuto."
+  },
+  {
+    "id": "acero",
+    "titulo": "el acero",
+    "icono": "🏗️",
+    "tema": "tecnologia",
+    "fotos": [
+      "steel mill",
+      "molten steel",
+      "steel beams",
+      "iron ore"
+    ],
+    "pasos": [
+      {
+        "nombre": "MINERAL",
+        "maquina": "camion",
+        "entrada": "🪨",
+        "salida": "🪨",
+        "texto": "El mineral de hierro llega de las minas en trenes y barcos."
+      },
+      {
+        "nombre": "ALTO HORNO",
+        "maquina": "fundir",
+        "entrada": "🪨",
+        "salida": "🟠",
+        "texto": "Se funde con carbón en un alto horno a más de 1500 °C."
+      },
+      {
+        "nombre": "CONVERTIDOR",
+        "maquina": "fundir",
+        "entrada": "🟠",
+        "salida": "🟠",
+        "texto": "Se le sopla oxígeno para quitarle carbono: así el hierro se vuelve acero."
+      },
+      {
+        "nombre": "COLADA",
+        "maquina": "molde",
+        "entrada": "🟠",
+        "salida": "⬛",
+        "texto": "El acero líquido se cuela en moldes y sale como barras gruesas.",
+        "color": "#ff8a00"
+      },
+      {
+        "nombre": "LAMINADO",
+        "maquina": "prensa",
+        "entrada": "⬛",
+        "salida": "⬛",
+        "texto": "Todavía rojas, pasan entre rodillos que les dan forma de láminas o vigas."
+      },
+      {
+        "nombre": "ENFRIADO",
+        "maquina": "enfria",
+        "entrada": "⬛",
+        "salida": "⬛",
+        "texto": "Se enfrían con agua y aire."
+      },
+      {
+        "nombre": "ENVÍO",
+        "maquina": "camion",
+        "entrada": "⬛",
+        "salida": "🏗️",
+        "texto": "Salen a construcciones, carros y fábricas."
+      }
+    ],
+    "dato": "El acero es uno de los materiales más reciclados del mundo."
+  },
+  {
+    "id": "cemento",
+    "titulo": "el cemento",
+    "icono": "🧱",
+    "tema": "geografia",
+    "fotos": [
+      "cement",
+      "cement factory",
+      "limestone quarry",
+      "construction concrete"
+    ],
+    "pasos": [
+      {
+        "nombre": "CANTERA",
+        "maquina": "camion",
+        "entrada": "🪨",
+        "salida": "🪨",
+        "texto": "Se extraen piedra caliza y arcilla de canteras."
+      },
+      {
+        "nombre": "TRITURADO",
+        "maquina": "molino",
+        "entrada": "🪨",
+        "salida": "🟫",
+        "texto": "Las rocas se trituran y se mezclan en la proporción exacta.",
+        "color": "#9e9e9e"
+      },
+      {
+        "nombre": "HORNO",
+        "maquina": "tostar",
+        "entrada": "🟫",
+        "salida": "⚫",
+        "texto": "Pasan por un horno giratorio gigante a unos 1450 °C y salen bolitas llamadas clínker."
+      },
+      {
+        "nombre": "ENFRIADO",
+        "maquina": "enfria",
+        "entrada": "⚫",
+        "salida": "⚫",
+        "texto": "El clínker se enfría rápido con aire."
+      },
+      {
+        "nombre": "YESO",
+        "maquina": "mezcla",
+        "entrada": "⚫",
+        "salida": "⚪",
+        "extra": [
+          "⚫",
+          "⚪"
+        ],
+        "texto": "Se le agrega un poco de yeso, que controla qué tan rápido fragua.",
+        "color": "#9e9e9e"
+      },
+      {
+        "nombre": "MOLIENDA",
+        "maquina": "molino",
+        "entrada": "⚪",
+        "salida": "⚪",
+        "texto": "Se muele hasta volverse un polvo finísimo: el cemento.",
+        "color": "#bdbdbd"
+      },
+      {
+        "nombre": "SACOS",
+        "maquina": "empaque",
+        "entrada": "⚪",
+        "salida": "📦",
+        "texto": "Se empaca en sacos o se carga a granel en camiones."
+      }
+    ],
+    "dato": "Los romanos ya usaban un tipo de cemento con ceniza volcánica: el Panteón sigue en pie."
+  },
+  {
+    "id": "billetes",
+    "titulo": "los billetes",
+    "icono": "💵",
+    "tema": "historia",
+    "fotos": [
+      "banknotes",
+      "money bills",
+      "printing press",
+      "cash"
+    ],
+    "pasos": [
+      {
+        "nombre": "PAPEL",
+        "maquina": "cinta",
+        "entrada": "☁️",
+        "salida": "⬜",
+        "texto": "Muchos billetes no son de papel normal: llevan algodón o plástico, más resistentes."
+      },
+      {
+        "nombre": "MARCAS",
+        "maquina": "prensa",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "Desde la fábrica del papel ya llevan marca de agua e hilo de seguridad."
+      },
+      {
+        "nombre": "FONDO",
+        "maquina": "lavado",
+        "entrada": "⬜",
+        "salida": "💵",
+        "texto": "Se imprimen los colores de fondo en hojas grandes con muchos billetes."
+      },
+      {
+        "nombre": "RELIEVE",
+        "maquina": "prensa",
+        "entrada": "💵",
+        "salida": "💵",
+        "texto": "Una impresión especial deja la tinta en relieve: se siente al tocarla."
+      },
+      {
+        "nombre": "NÚMEROS",
+        "maquina": "cinta",
+        "entrada": "💵",
+        "salida": "💵",
+        "texto": "Se imprime un número de serie distinto en cada billete."
+      },
+      {
+        "nombre": "CONTROL",
+        "maquina": "inspeccion",
+        "entrada": "💵",
+        "salida": "💵",
+        "texto": "Máquinas revisan cada billete; los defectuosos se destruyen."
+      },
+      {
+        "nombre": "CORTE",
+        "maquina": "corte",
+        "entrada": "💵",
+        "salida": "📦",
+        "texto": "Las hojas se cortan, se cuentan y se empacan en fajos."
+      }
+    ],
+    "dato": "Algunos billetes son de polímero, un plástico que dura varias veces más."
+  },
+  {
+    "id": "espejos",
+    "titulo": "los espejos",
+    "icono": "🪞",
+    "tema": "ciencia",
+    "fotos": [
+      "mirror",
+      "glass sheet",
+      "reflection",
+      "glass factory"
+    ],
+    "pasos": [
+      {
+        "nombre": "VIDRIO",
+        "maquina": "fundir",
+        "entrada": "🏖️",
+        "salida": "🟠",
+        "texto": "Arena y otros minerales se funden en vidrio líquido."
+      },
+      {
+        "nombre": "FLOTADO",
+        "maquina": "molde",
+        "entrada": "🟠",
+        "salida": "⬜",
+        "texto": "El vidrio flota sobre estaño fundido y queda perfectamente plano.",
+        "color": "#ffb74d"
+      },
+      {
+        "nombre": "CORTE",
+        "maquina": "corte",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "La hoja se enfría y se corta al tamaño del espejo."
+      },
+      {
+        "nombre": "LAVADO",
+        "maquina": "lavado",
+        "entrada": "⬜",
+        "salida": "⬜",
+        "texto": "Se lava muy bien: cualquier polvo arruinaría el reflejo."
+      },
+      {
+        "nombre": "PLATEADO",
+        "maquina": "lavado",
+        "entrada": "⬜",
+        "salida": "🪞",
+        "texto": "Se rocía una capa finísima de plata o aluminio por detrás: eso es lo que refleja."
+      },
+      {
+        "nombre": "PROTECCIÓN",
+        "maquina": "horno",
+        "entrada": "🪞",
+        "salida": "🪞",
+        "texto": "Se cubre con pintura protectora y se seca con calor."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🪞",
+        "salida": "📦",
+        "texto": "Se pulen los bordes y se empaca con protección."
+      }
+    ],
+    "dato": "Lo que refleja en un espejo es una capa de metal más delgada que una burbuja de jabón."
+  },
+  {
+    "id": "canicas",
+    "titulo": "las canicas",
+    "icono": "🔮",
+    "tema": "inventos",
+    "fotos": [
+      "marbles",
+      "glass marbles",
+      "colorful marbles",
+      "marbles game"
+    ],
+    "pasos": [
+      {
+        "nombre": "VIDRIO",
+        "maquina": "fundir",
+        "entrada": "🏖️",
+        "salida": "🟠",
+        "texto": "Arena y vidrio reciclado se funden en un horno a más de 1000 °C."
+      },
+      {
+        "nombre": "COLOR",
+        "maquina": "mezcla",
+        "entrada": "🟠",
+        "salida": "🟠",
+        "extra": [
+          "🔴",
+          "🔵",
+          "🟢"
+        ],
+        "texto": "Se inyectan hilos de vidrio de colores dentro del chorro: así salen las espirales.",
+        "color": "#ff8a00"
+      },
+      {
+        "nombre": "CORTE",
+        "maquina": "corte",
+        "entrada": "🟠",
+        "salida": "🟠",
+        "texto": "Unas tijeras cortan el chorro en gotitas del mismo tamaño."
+      },
+      {
+        "nombre": "RODILLOS",
+        "maquina": "tostar",
+        "entrada": "🟠",
+        "salida": "🔮",
+        "texto": "Las gotas ruedan entre rodillos con surcos que giran y las vuelven esferas perfectas."
+      },
+      {
+        "nombre": "ENFRIADO",
+        "maquina": "enfria",
+        "entrada": "🔮",
+        "salida": "🔮",
+        "texto": "Se enfrían despacio para que no se rajen."
+      },
+      {
+        "nombre": "CONTROL",
+        "maquina": "inspeccion",
+        "entrada": "🔮",
+        "salida": "🔮",
+        "texto": "Se separan las que no salieron bien redondas."
+      },
+      {
+        "nombre": "BOLSAS",
+        "maquina": "empaque",
+        "entrada": "🔮",
+        "salida": "📦",
+        "texto": "Se mezclan colores y se embolsan."
+      }
+    ],
+    "dato": "Hay canicas de barro de hace miles de años: es uno de los juguetes más antiguos."
+  },
+  {
+    "id": "bloques",
+    "titulo": "los bloques de construcción",
+    "icono": "🧩",
+    "tema": "inventos",
+    "fotos": [
+      "toy bricks",
+      "building blocks",
+      "plastic toys",
+      "toy factory"
+    ],
+    "pasos": [
+      {
+        "nombre": "BOLITAS",
+        "maquina": "secado",
+        "entrada": "🔴",
+        "salida": "🔴",
+        "texto": "El plástico llega en bolitas de colores y se seca."
+      },
+      {
+        "nombre": "FUNDIDO",
+        "maquina": "fundir",
+        "entrada": "🔴",
+        "salida": "🔴",
+        "texto": "Se derrite a más de 200 °C."
+      },
+      {
+        "nombre": "INYECCIÓN",
+        "maquina": "molde",
+        "entrada": "🔴",
+        "salida": "🧱",
+        "texto": "Se inyecta a mucha presión en moldes de acero muy precisos.",
+        "color": "#e53935"
+      },
+      {
+        "nombre": "ENFRIADO",
+        "maquina": "enfria",
+        "entrada": "🧱",
+        "salida": "🧱",
+        "texto": "En segundos se enfría y el bloque sale del molde."
+      },
+      {
+        "nombre": "PRECISIÓN",
+        "maquina": "inspeccion",
+        "entrada": "🧱",
+        "salida": "🧱",
+        "texto": "Se miden: tienen que encajar justo, ni muy flojos ni muy duros."
+      },
+      {
+        "nombre": "DECORADO",
+        "maquina": "lavado",
+        "entrada": "🧱",
+        "salida": "🧩",
+        "texto": "Algunas piezas se imprimen con caras o detalles."
+      },
+      {
+        "nombre": "BOLSAS",
+        "maquina": "empaque",
+        "entrada": "🧩",
+        "salida": "📦",
+        "texto": "Máquinas pesan y cuentan las piezas de cada bolsa."
+      }
+    ],
+    "dato": "Los moldes de los bloques de juguete son tan precisos que trabajan con diferencias de milésimas de milímetro."
+  },
+  {
+    "id": "labial",
+    "titulo": "los lápices labiales",
+    "icono": "💄",
+    "tema": "cuerpo",
+    "fotos": [
+      "lipstick",
+      "makeup",
+      "cosmetics",
+      "red lipstick"
+    ],
+    "pasos": [
+      {
+        "nombre": "BASE",
+        "maquina": "fundir",
+        "entrada": "⚪",
+        "salida": "⚪",
+        "texto": "Ceras, aceites y mantecas se derriten juntos."
+      },
+      {
+        "nombre": "PIGMENTO",
+        "maquina": "molino",
+        "entrada": "🔴",
+        "salida": "🔴",
+        "texto": "Los pigmentos se muelen con aceite para que el color quede parejo.",
+        "color": "#c2185b"
+      },
+      {
+        "nombre": "MEZCLA",
+        "maquina": "mezcla",
+        "entrada": "⚪",
+        "salida": "💄",
+        "extra": [
+          "🔴",
+          "⚪",
+          "🌸"
+        ],
+        "texto": "Se mezcla la base con el color y el aroma.",
+        "color": "#d81b60"
+      },
+      {
+        "nombre": "MOLDES",
+        "maquina": "molde",
+        "entrada": "💄",
+        "salida": "💄",
+        "texto": "Se vierte caliente en moldes con forma de barra.",
+        "color": "#ad1457"
+      },
+      {
+        "nombre": "ENFRIADO",
+        "maquina": "enfria",
+        "entrada": "💄",
+        "salida": "💄",
+        "texto": "Se congela un momento para que salga fácil del molde."
+      },
+      {
+        "nombre": "BRILLO",
+        "maquina": "horno",
+        "entrada": "💄",
+        "salida": "💄",
+        "texto": "Pasa rápido por una llama suave que le da brillo."
+      },
+      {
+        "nombre": "ESTUCHE",
+        "maquina": "empaque",
+        "entrada": "💄",
+        "salida": "📦",
+        "texto": "Se coloca en su estuche y se empaca."
+      }
+    ],
+    "dato": "En la antigua Mesopotamia ya se usaban piedras molidas para pintarse los labios."
+  },
+  {
+    "id": "perfume",
+    "titulo": "los perfumes",
+    "icono": "🌸",
+    "tema": "ciencia",
+    "fotos": [
+      "perfume bottle",
+      "flowers field",
+      "lavender field",
+      "perfume"
+    ],
+    "pasos": [
+      {
+        "nombre": "FLORES",
+        "maquina": "cosecha",
+        "entrada": "🌸",
+        "salida": "🌸",
+        "texto": "Flores, cáscaras y maderas aromáticas se cosechan, a veces de madrugada para conservar el olor."
+      },
+      {
+        "nombre": "DESTILADO",
+        "maquina": "fermenta",
+        "entrada": "🌸",
+        "salida": "🧪",
+        "texto": "Con vapor se sacan sus aceites esenciales, gota a gota."
+      },
+      {
+        "nombre": "FÓRMULA",
+        "maquina": "mezcla",
+        "entrada": "🧪",
+        "salida": "🧪",
+        "extra": [
+          "🌸",
+          "🍋",
+          "🪵"
+        ],
+        "texto": "Un perfumista combina decenas de aromas como si fueran notas musicales.",
+        "color": "#f3e5f5"
+      },
+      {
+        "nombre": "ALCOHOL",
+        "maquina": "mezcla",
+        "entrada": "🧪",
+        "salida": "🌸",
+        "extra": [
+          "💧"
+        ],
+        "texto": "La mezcla se diluye en alcohol.",
+        "color": "#ede7f6"
+      },
+      {
+        "nombre": "MADURACIÓN",
+        "maquina": "enfria",
+        "entrada": "🌸",
+        "salida": "🌸",
+        "texto": "Reposa en frío varias semanas para que los aromas se integren."
+      },
+      {
+        "nombre": "FILTRADO",
+        "maquina": "lavado",
+        "entrada": "🌸",
+        "salida": "🌸",
+        "texto": "Se filtra para que quede totalmente transparente."
+      },
+      {
+        "nombre": "FRASCOS",
+        "maquina": "empaque",
+        "entrada": "🌸",
+        "salida": "📦",
+        "texto": "Se llenan los frascos, se les pone el atomizador y se empacan."
+      }
+    ],
+    "dato": "Para un litro de aceite de rosa se necesitan miles de kilos de pétalos."
+  },
+  {
+    "id": "cerillos",
+    "titulo": "los cerillos",
+    "icono": "🔥",
+    "tema": "ciencia",
+    "fotos": [
+      "matches",
+      "matchbox",
+      "match flame",
+      "wood logs"
+    ],
+    "pasos": [
+      {
+        "nombre": "MADERA",
+        "maquina": "corte",
+        "entrada": "🪵",
+        "salida": "🪵",
+        "texto": "Troncos de álamo se cortan en láminas finas como papel."
+      },
+      {
+        "nombre": "PALITOS",
+        "maquina": "corte",
+        "entrada": "🪵",
+        "salida": "➖",
+        "texto": "Las láminas se cortan en miles de palitos iguales."
+      },
+      {
+        "nombre": "BAÑO",
+        "maquina": "lavado",
+        "entrada": "➖",
+        "salida": "➖",
+        "texto": "Se bañan en una solución que evita que la madera siga ardiendo con brasa."
+      },
+      {
+        "nombre": "PARAFINA",
+        "maquina": "molde",
+        "entrada": "➖",
+        "salida": "➖",
+        "texto": "La punta se moja en parafina para que la llama prenda en la madera.",
+        "color": "#fff3e0"
+      },
+      {
+        "nombre": "CABEZA",
+        "maquina": "molde",
+        "entrada": "➖",
+        "salida": "🔥",
+        "texto": "Se sumergen en la pasta de la cabeza, que tiene clorato de potasio.",
+        "color": "#c62828"
+      },
+      {
+        "nombre": "SECADO",
+        "maquina": "secado",
+        "entrada": "🔥",
+        "salida": "🔥",
+        "texto": "Se secan colgados durante una hora."
+      },
+      {
+        "nombre": "CAJITAS",
+        "maquina": "empaque",
+        "entrada": "🔥",
+        "salida": "📦",
+        "texto": "La lija del costado de la caja lleva fósforo rojo: por eso prenden al rasparlos ahí."
+      }
+    ],
+    "dato": "Los cerillos de seguridad solo prenden contra la lija de su caja."
+  },
+  {
+    "id": "bicicletas",
+    "titulo": "las bicicletas",
+    "icono": "🚲",
+    "tema": "deportes",
+    "fotos": [
+      "bicycle",
+      "bike frame",
+      "cycling",
+      "bicycle wheel"
+    ],
+    "pasos": [
+      {
+        "nombre": "TUBOS",
+        "maquina": "corte",
+        "entrada": "➖",
+        "salida": "➖",
+        "texto": "Tubos de aluminio o acero se cortan al largo exacto."
+      },
+      {
+        "nombre": "DOBLADO",
+        "maquina": "prensa",
+        "entrada": "➖",
+        "salida": "➖",
+        "texto": "Algunos se doblan o se aplastan para darles forma."
+      },
+      {
+        "nombre": "SOLDADURA",
+        "maquina": "fundir",
+        "entrada": "➖",
+        "salida": "🔺",
+        "texto": "Se sueldan en un triángulo: el cuadro de la bicicleta."
+      },
+      {
+        "nombre": "TEMPLE",
+        "maquina": "horno",
+        "entrada": "🔺",
+        "salida": "🔺",
+        "texto": "El cuadro se calienta en un horno para hacerlo más resistente."
+      },
+      {
+        "nombre": "PINTURA",
+        "maquina": "lavado",
+        "entrada": "🔺",
+        "salida": "🔺",
+        "texto": "Se pinta con pintura en polvo que se hornea para que quede dura."
+      },
+      {
+        "nombre": "RUEDAS",
+        "maquina": "tostar",
+        "entrada": "⭕",
+        "salida": "⭕",
+        "texto": "Los radios se tensan a mano o con máquina hasta que la rueda gira derecha."
+      },
+      {
+        "nombre": "ARMADO",
+        "maquina": "cinta",
+        "entrada": "🔺",
+        "salida": "🚲",
+        "texto": "Se montan ruedas, cadena, frenos, manubrio y asiento, y se prueba."
+      }
+    ],
+    "dato": "La primera bicicleta, de 1817, no tenía pedales: se empujaba con los pies."
+  },
+  {
+    "id": "guitarras",
+    "titulo": "las guitarras",
+    "icono": "🎸",
+    "tema": "historia",
+    "fotos": [
+      "acoustic guitar",
+      "guitar wood",
+      "guitar workshop",
+      "guitar"
+    ],
+    "pasos": [
+      {
+        "nombre": "MADERA",
+        "maquina": "secado",
+        "entrada": "🪵",
+        "salida": "🪵",
+        "texto": "La madera se seca durante meses o años para que no se tuerza."
+      },
+      {
+        "nombre": "TAPA",
+        "maquina": "corte",
+        "entrada": "🪵",
+        "salida": "🟫",
+        "texto": "Se cortan la tapa, el fondo y los costados en láminas finas."
+      },
+      {
+        "nombre": "AROS",
+        "maquina": "horno",
+        "entrada": "🟫",
+        "salida": "🟫",
+        "texto": "Los costados se calientan y se doblan con la curva de la guitarra."
+      },
+      {
+        "nombre": "CAJA",
+        "maquina": "prensa",
+        "entrada": "🟫",
+        "salida": "🎸",
+        "texto": "Se pegan tapa, aros y fondo; por dentro llevan varillas que refuerzan y dan el sonido."
+      },
+      {
+        "nombre": "MÁSTIL",
+        "maquina": "corte",
+        "entrada": "🪵",
+        "salida": "🎸",
+        "texto": "El mástil se talla y se le ponen los trastes de metal."
+      },
+      {
+        "nombre": "BARNIZ",
+        "maquina": "lavado",
+        "entrada": "🎸",
+        "salida": "🎸",
+        "texto": "Se lija y se barniza en varias capas."
+      },
+      {
+        "nombre": "AFINADO",
+        "maquina": "inspeccion",
+        "entrada": "🎸",
+        "salida": "🎸",
+        "texto": "Se ponen las cuerdas, se ajusta y se prueba cómo suena."
+      }
+    ],
+    "dato": "La guitarra española moderna tomó su forma con el luthier Antonio de Torres en el siglo XIX."
+  },
+  {
+    "id": "libros",
+    "titulo": "los libros",
+    "icono": "📚",
+    "tema": "historia",
+    "fotos": [
+      "books",
+      "printing press",
+      "library books",
+      "book pages"
+    ],
+    "pasos": [
+      {
+        "nombre": "ARCHIVO",
+        "maquina": "cinta",
+        "entrada": "💻",
+        "salida": "📄",
+        "texto": "El libro ya escrito y diseñado se manda a la imprenta en un archivo."
+      },
+      {
+        "nombre": "PLANCHAS",
+        "maquina": "prensa",
+        "entrada": "📄",
+        "salida": "⬜",
+        "texto": "Se graban planchas de metal, una por cada color."
+      },
+      {
+        "nombre": "IMPRESIÓN",
+        "maquina": "tostar",
+        "entrada": "⬜",
+        "salida": "📄",
+        "texto": "Rodillos imprimen pliegos grandes con muchas páginas a la vez."
+      },
+      {
+        "nombre": "DOBLADO",
+        "maquina": "prensa",
+        "entrada": "📄",
+        "salida": "📄",
+        "texto": "Cada pliego se dobla varias veces y forma un cuadernillo."
+      },
+      {
+        "nombre": "ENCUADERNADO",
+        "maquina": "cinta",
+        "entrada": "📄",
+        "salida": "📕",
+        "texto": "Los cuadernillos se juntan y se pegan o cosen al lomo."
+      },
+      {
+        "nombre": "CORTE",
+        "maquina": "corte",
+        "entrada": "📕",
+        "salida": "📚",
+        "texto": "Una guillotina corta tres lados para que las páginas se puedan pasar."
+      },
+      {
+        "nombre": "PORTADA",
+        "maquina": "empaque",
+        "entrada": "📚",
+        "salida": "📦",
+        "texto": "Se pega la portada y se empacan en cajas."
+      }
+    ],
+    "dato": "La imprenta de tipos móviles de Gutenberg, de hacia 1450, cambió el mundo."
+  },
+  {
+    "id": "pizza",
+    "titulo": "la pizza congelada",
+    "icono": "🍕",
+    "tema": "comida",
+    "fotos": [
+      "pizza",
+      "frozen pizza",
+      "pizza dough",
+      "cheese pizza"
+    ],
+    "pasos": [
+      {
+        "nombre": "MASA",
+        "maquina": "mezcla",
+        "entrada": "🌾",
+        "salida": "🫓",
+        "extra": [
+          "🌾",
+          "💧",
+          "🧂"
+        ],
+        "texto": "Harina, agua, levadura y aceite se amasan en batidoras enormes.",
+        "color": "#e9d7b0"
+      },
+      {
+        "nombre": "BASES",
+        "maquina": "prensa",
+        "entrada": "🫓",
+        "salida": "🫓",
+        "texto": "La masa se aplana y se corta en círculos."
+      },
+      {
+        "nombre": "PREHORNEADO",
+        "maquina": "horno",
+        "entrada": "🫓",
+        "salida": "🫓",
+        "texto": "Las bases se hornean un poco para que aguanten los ingredientes."
+      },
+      {
+        "nombre": "SALSA",
+        "maquina": "molde",
+        "entrada": "🫓",
+        "salida": "🫓",
+        "texto": "Una máquina reparte la salsa de tomate en espiral.",
+        "color": "#c62828"
+      },
+      {
+        "nombre": "INGREDIENTES",
+        "maquina": "cinta",
+        "entrada": "🫓",
+        "salida": "🍕",
+        "texto": "Caen queso y toppings en cascada; lo que cae fuera se recoge y se reusa."
+      },
+      {
+        "nombre": "CONGELADO",
+        "maquina": "enfria",
+        "entrada": "🍕",
+        "salida": "🍕",
+        "texto": "Pasa por un túnel muy frío que la congela en minutos."
+      },
+      {
+        "nombre": "EMPAQUE",
+        "maquina": "empaque",
+        "entrada": "🍕",
+        "salida": "📦",
+        "texto": "Se envuelve en plástico, entra en su caja y viaja congelada."
+      }
+    ],
+    "dato": "Congelar rápido forma cristales de hielo pequeños, que dañan menos la comida."
+  },
+  {
+    "id": "pelotas-tenis",
+    "titulo": "las pelotas de tenis",
+    "icono": "🎾",
+    "tema": "deportes",
+    "fotos": [
+      "tennis balls",
+      "tennis court",
+      "tennis ball",
+      "tennis match"
+    ],
+    "pasos": [
+      {
+        "nombre": "CAUCHO",
+        "maquina": "mezcla",
+        "entrada": "⚫",
+        "salida": "⚫",
+        "extra": [
+          "🌳",
+          "⚫"
+        ],
+        "texto": "Caucho y otros ingredientes se mezclan y se cortan en trozos.",
+        "color": "#424242"
+      },
+      {
+        "nombre": "MITADES",
+        "maquina": "prensa",
+        "entrada": "⚫",
+        "salida": "⚫",
+        "texto": "Una prensa caliente moldea los trozos en medias esferas."
+      },
+      {
+        "nombre": "UNIÓN",
+        "maquina": "prensa",
+        "entrada": "⚫",
+        "salida": "⚫",
+        "texto": "Dos mitades se pegan con aire a presión dentro: eso las hace rebotar."
+      },
+      {
+        "nombre": "FIELTRO",
+        "maquina": "corte",
+        "entrada": "🟩",
+        "salida": "🟩",
+        "texto": "La tela de fieltro amarillo se corta en dos piezas con forma de hueso."
+      },
+      {
+        "nombre": "FORRADO",
+        "maquina": "cinta",
+        "entrada": "⚫",
+        "salida": "🎾",
+        "texto": "Las piezas se pegan alrededor y dejan la costura curva blanca."
+      },
+      {
+        "nombre": "VAPOR",
+        "maquina": "horno",
+        "entrada": "🎾",
+        "salida": "🎾",
+        "texto": "Pasan por vapor para que el fieltro se esponje."
+      },
+      {
+        "nombre": "LATAS",
+        "maquina": "empaque",
+        "entrada": "🎾",
+        "salida": "🥫",
+        "texto": "Se prueban y se meten en latas presurizadas para que no pierdan el rebote."
+      }
+    ],
+    "dato": "Las pelotas de tenis eran blancas: se cambiaron a amarillo en los años 70 para verlas mejor en la televisión."
   }
 ]

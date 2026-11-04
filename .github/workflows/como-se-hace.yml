@@ -1,0 +1,31 @@
+# «Cómo se hace» (scripts/curiosidades-video.mjs --formato comosehace, sin IA): la fábrica en 2D animada y recorrida en
+# un solo plano, con fotos reales de Pixabay. De 62 a 88 s, 2 al día en Facebook e Instagram (no va a las historias,
+# que aceptan hasta 60 s). 60 productos en data/como-se-hace.json: no se repite ninguno en unos 27 días.
+# Reutiliza daily.yml (estado cifrado: historial para no repetir) y nunca corre a la vez que los demás.
+name: Cómo se hace
+
+on:
+  # Horario: lo lanza el relojero (/api/relojero) según scripts/lib/horario.mjs
+  workflow_dispatch:
+    inputs:
+      tiktok:
+        description: También como borrador en TikTok (cuenta para los 5 borradores pendientes)
+        type: choice
+        options: ['no', 'si']
+        default: 'no'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  comosehace:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: curiosidades-video
+      figura: comosehace
+      publish: ${{ inputs.tiktok == 'si' && 'draft' || 'none' }}
+      facebook: si
+      historia: false
+      aviso: ${{ inputs.tiktok == 'si' }}
+    secrets: inherit

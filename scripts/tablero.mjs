@@ -18,13 +18,14 @@ const gh = (args) => { if (o['sin-gh']) return null; try { return execFileSync('
 
 // Qué hace cada workflow programado y adónde va (lo demás sale del archivo)
 const WF = {
-  'curiosidades-reels.yml': { que: 'Reel de quiz y curiosidades', detalle: 'Rota: banderas, retos de fácil a GOD, 5 preguntas, Cómo se hace (más de 1 min), ¿qué prefieres?, emojis, top 10; noticias a las 7:57 y 18:57', fb: 'Reel + historia', ig: 'Reel + historia', reel: true },
+  'curiosidades-reels.yml': { que: 'Reel de quiz y curiosidades', detalle: 'Rota: banderas, retos de fácil a GOD, 5 preguntas, ¿qué prefieres?, emojis, top 10; noticias a las 7:57 y 18:57', fb: 'Reel + historia', ig: 'Reel + historia', reel: true },
   'gta6.yml': { que: 'Especial GTA VI', detalle: 'Cuenta atrás hasta el 19 de noviembre; ese día, especial a las 9:27', fb: 'Reel + historia', ig: 'Reel + historia', tt: 'Borrador', reel: true },
   'noticias.yml': { que: 'Juntar noticias del día', detalle: 'No publica: deja los titulares para los Reels de noticias', mantenimiento: true },
   'curiosidades-facebook.yml': { que: 'Imagen', detalle: 'Reto visual (2 de cada 3), curiosidad o noticia', fb: 'Imagen', ig: 'Imagen' },
   'curiosidades-tiktok.yml': { que: 'Carrusel de 5 imágenes', detalle: 'Retos visuales o datos, día por medio', tt: 'Borrador' },
   'nombres.yml': { que: 'Nombre o pareja con círculos', detalle: 'Espejo, mandala, hilos, anillos o costura', tt: 'Borrador' },
   'famosos.yml': { que: 'Futbolista con círculos', detalle: 'Caras, celebraciones, goles y escudos', tt: 'Borrador' },
+  'como-se-hace.yml': { que: 'Cómo se hace', detalle: 'La fábrica en 2D en un solo plano, con fotos reales; 60 productos, más de 1 minuto', fb: 'Reel', ig: 'Reel', reel: true },
   'metas.yml': { que: 'Metas semanales', detalle: 'Completa las fotos e historias que pide el Panel para creadores', fb: 'Fotos + historias' },
   'comentarios.yml': { que: 'Respuestas a comentarios', detalle: 'Hasta 25 por corrida, en Facebook e Instagram', fb: 'Responde', ig: 'Responde', mantenimiento: true },
   'facebook-reels.yml': { que: 'Nombres y futbolistas', detalle: 'Desactivado: casi sin vistas en Facebook', fb: 'Reel + historia', ig: 'Reel + historia', reel: true },
