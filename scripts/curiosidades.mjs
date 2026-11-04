@@ -20,6 +20,8 @@ import { publishPhotoDraft } from './publish.mjs';
 import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
 import { crearVisual, dibujarVisual, VISUALES, NIVELES } from './lib/retos-visuales.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
+import { loadImage } from '@napi-rs/canvas';
+import { fotoStock, guardarStock } from './lib/stock.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades'), HIST = path.join(ROOT, 'data', 'curiosidades-historial.json');
 const SITE_MEDIA = 'https://circularte.edav-tech.com/media/'; // dominio verificado en TikTok (redirige al almacén)
@@ -136,6 +138,10 @@ function tipoCarrusel(o, hist) {
   return k % 6 === 5 ? 'noticias' : k % 3 === 2 ? 'datos' : 'retos';
 }
 
+// Foto real de Pixabay para una búsqueda (null si no hay clave o no encuentra)
+const fotoReal = async (q) => { const f = q ? await fotoStock(q) : null; return f ? loadImage(fs.readFileSync(f.archivo)).catch(() => null) : null; };
+const FOTO_NOTICIA = { videojuegos: 'video game controller', futbol: 'soccer stadium', ciencia: 'science laboratory' };
+
 async function carrusel(o, hist, base, emojiFont) {
   const n = Math.min(8, Math.max(3, +(o.carrusel || 5))), H = o.red === 'tiktok' ? 1920 : 1350;
   let tipo = tipoCarrusel(o, hist);
@@ -160,18 +166,23 @@ async function carrusel(o, hist, base, emojiFont) {
     const porTema = Object.entries(libres.reduce((a, x) => ((a[x.tema] = (a[x.tema] || 0) + 1), a), {})).filter(([t, c]) => c >= n && TEMA_CORTO[t] && t !== hist.temas.at(-1));
     tema = porTema.length ? azar(porTema)[0] : azar(Object.keys(TEMA_CORTO));
     const elegidos = mezclar(libres.filter((x) => x.tema === tema)).concat(mezclar(base.filter((x) => x.tema === tema && x.dato))).filter((x, i, a) => a.indexOf(x) === i).slice(0, n);
-    elegidos.forEach((x, i) => { ids.push(x.id); slides.push(dibujarTarjeta({ formato: 'sabias', tema: x.tema, icono: x.icono, texto: x.dato }, { H, emojiFont })); lineas.push(`${i + 1}. ${x.dato}`); });
-    portada = { gancho: ganchoDe('datos', k, { tema: TEMA_CORTO[tema] }), etiqueta: `${elegidos.length} DATOS · ${TEMAS[tema].nombre.toUpperCase()}`, tema, iconos: elegidos.map((x) => x.icono).slice(0, 5), sub: '¿Cuántas ya sabías?' };
+    const imgs = [];
+    for (const x of elegidos) imgs.push(await fotoReal(x.foto));
+    elegidos.forEach((x, i) => { ids.push(x.id); slides.push(dibujarTarjeta({ formato: 'sabias', tema: x.tema, icono: x.icono, texto: x.dato, imagen: imgs[i] }, { H, emojiFont })); lineas.push(`${i + 1}. ${x.dato}`); });
+    portada = { gancho: ganchoDe('datos', k, { tema: TEMA_CORTO[tema] }), etiqueta: `${elegidos.length} DATOS · ${TEMAS[tema].nombre.toUpperCase()}`, tema, iconos: elegidos.map((x) => x.icono).slice(0, 5), sub: '¿Cuántas ya sabías?', fondo: imgs.find(Boolean) };
     cierreT = { titulo: '¿Cuál te sorprendió más?', sub: `¿Cuántas de las ${elegidos.length} ya sabías?`, nota: 'Mañana hay más', tema };
   } else {
     tema = 'noticias';
     const fecha = (x) => new Date(x.fecha).toLocaleDateString('es-HN', { day: 'numeric', month: 'short', timeZone: 'America/Tegucigalpa' });
-    noticias.forEach((x, i) => { slides.push(dibujarTarjeta({ formato: 'noticia', tema: 'noticias', icono: x.icono, texto: x.titulo, pie: `Fuente: ${x.medio} · ${fecha(x)}` }, { H, emojiFont })); lineas.push(`${i + 1}. ${x.titulo} (${x.medio})\n${x.link}`); });
-    portada = { gancho: ganchoDe('noticias', k, { n: noticias.length }), etiqueta: 'NOTICIAS DE HOY', tema, iconos: noticias.map((x) => x.icono), sub: 'Videojuegos · Fútbol · Ciencia' };
+    const imgs = [];
+    for (const x of noticias) imgs.push(await fotoReal(FOTO_NOTICIA[x.cat] || 'newspaper'));
+    noticias.forEach((x, i) => { slides.push(dibujarTarjeta({ formato: 'noticia', tema: 'noticias', icono: x.icono, texto: x.titulo, pie: `Fuente: ${x.medio} · ${fecha(x)}`, imagen: imgs[i] }, { H, emojiFont })); lineas.push(`${i + 1}. ${x.titulo} (${x.medio})\n${x.link}`); });
+    portada = { gancho: ganchoDe('noticias', k, { n: noticias.length }), etiqueta: 'NOTICIAS DE HOY', tema, iconos: noticias.map((x) => x.icono), sub: 'Videojuegos · Fútbol · Ciencia', fondo: await fotoReal('city news') };
     cierreT = { titulo: '¿Cuál te sorprendió más?', sub: 'Las fuentes están en la descripción', tema };
   }
   // «de» + «el fútbol» → «del» + «fútbol» (en la portada cada parte se dibuja por separado)
   portada.gancho = portada.gancho.map(([t, r], i, a) => [a[i + 1] && /\bde$/.test(t) && /^el /.test(a[i + 1][0]) ? t.replace(/de$/, 'del') : i && /\bde$/.test(a[i - 1][0]) && /^el /.test(t) ? t.slice(3) : t, r]);
+  guardarStock();
   const todas = [dibujarPortada(portada, { H, emojiFont }), ...slides, dibujarCierre(cierreT, { H, emojiFont })];
   const outDir = path.join(ROOT, 'out'); fs.mkdirSync(outDir, { recursive: true });
   const marca = Date.now().toString(36), archivos = todas.map((cv, i) => {

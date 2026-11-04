@@ -18,7 +18,7 @@ const gh = (args) => { if (o['sin-gh']) return null; try { return execFileSync('
 
 // Qué hace cada workflow programado y adónde va (lo demás sale del archivo)
 const WF = {
-  'curiosidades-reels.yml': { que: 'Reel de quiz y curiosidades', detalle: 'Rota: banderas, retos visuales, 5 preguntas, ¿qué prefieres?, emojis, top 10; noticias a las 7:57 y 18:57', fb: 'Reel + historia', ig: 'Reel + historia', reel: true },
+  'curiosidades-reels.yml': { que: 'Reel de quiz y curiosidades', detalle: 'Rota: banderas, retos de fácil a GOD, 5 preguntas, Cómo se hace (más de 1 min), ¿qué prefieres?, emojis, top 10; noticias a las 7:57 y 18:57', fb: 'Reel + historia', ig: 'Reel + historia', reel: true },
   'gta6.yml': { que: 'Especial GTA VI', detalle: 'Cuenta atrás hasta el 19 de noviembre; ese día, especial a las 9:27', fb: 'Reel + historia', ig: 'Reel + historia', tt: 'Borrador', reel: true },
   'noticias.yml': { que: 'Juntar noticias del día', detalle: 'No publica: deja los titulares para los Reels de noticias', mantenimiento: true },
   'curiosidades-facebook.yml': { que: 'Imagen', detalle: 'Reto visual (2 de cada 3), curiosidad o noticia', fb: 'Imagen', ig: 'Imagen' },

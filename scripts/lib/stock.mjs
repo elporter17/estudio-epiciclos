@@ -72,6 +72,8 @@ export async function ponerFondos(escenas) {
       const v = memo.get(e.consulta); if (v) { e.fondo = v.archivo; n++; }
     }
     for (const k of ['A', 'B']) if (e[`consulta${k}`]) { const f = await fotoStock(e[`consulta${k}`]); if (f) { e[`foto${k}`] = f.archivo; n++; } }
+    // Varias fotos para una misma escena (la línea de «Cómo se hace»: una por máquina)
+    if (e.consultas) { e.fotos = []; for (const q of e.consultas) { const f = q ? await fotoStock(q) : null; e.fotos.push(f?.archivo || null); if (f) n++; } }
   }
   return n;
 }

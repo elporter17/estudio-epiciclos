@@ -13,7 +13,7 @@ on:
       formato:
         description: Qué video (auto = el que toca en la rotación)
         type: choice
-        options: [auto, banderas, retos, quiz, prefieres, emojis, top10, noticias]
+        options: [auto, comosehace, banderas, retos, quiz, prefieres, emojis, top10, noticias]
         default: auto
       tiktok:
         description: También como borrador en TikTok (cuenta para los 5 borradores pendientes)

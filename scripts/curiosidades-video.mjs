@@ -35,8 +35,8 @@ const OCULTAR = '\n\n.\n.\n.\n\n'; // lo que sigue queda debajo de «Ver más»
 // Las banderas, lo que más vistas tuvo (informe del 2026-11-01), salen 2 de cada 10. Las noticias las pide el
 // workflow en sus horarios (--formato noticias).
 // Música propia (scripts/lib/musica.mjs) según el formato; dentro de cada lista, al azar
-const ESTILO = { banderas: ['pop', 'dembow', 'electro'], retos: ['electro', 'synthwave'], quiz: ['pop', 'electro'], prefieres: ['lofi', 'pop'], emojis: ['dembow', 'pop'], top10: ['lofi', 'pop', 'synthwave'], noticias: ['electro', 'synthwave'] };
-const ROTACION = ['banderas', 'retos', 'quiz', 'prefieres', 'emojis', 'banderas', 'top10', 'retos', 'prefieres', 'quiz'];
+const ESTILO = { comosehace: ['lofi', 'electro', 'pop'], banderas: ['pop', 'dembow', 'electro'], retos: ['electro', 'synthwave'], quiz: ['pop', 'electro'], prefieres: ['lofi', 'pop'], emojis: ['dembow', 'pop'], top10: ['lofi', 'pop', 'synthwave'], noticias: ['electro', 'synthwave'] };
+const ROTACION = ['banderas', 'retos', 'quiz', 'comosehace', 'prefieres', 'emojis', 'banderas', 'top10', 'retos', 'comosehace', 'prefieres', 'quiz'];
 const TEMAS_DATOS = ['animales', 'cuerpo', 'ciencia', 'geografia', 'historia', 'comida', 'deportes', 'tecnologia', 'inventos'];
 
 // ---------- banderas ----------
@@ -253,6 +253,26 @@ async function noticiasVideo(hist) {
   return { formato: 'noticias', titulo: 'Noticias de hoy', escenas, texto, noticias: elegidas.map((n) => n.link) };
 }
 
+// ---------- «Cómo se hace» (2026-11-03): la fábrica en 2D animada, recorrida en un solo plano, con fotos reales ----------
+// Pasa del minuto (de 62 a 88 s): no va a las historias, que aceptan hasta 60. Datos: data/como-se-hace.json
+function comoSeHace(hist) {
+  const base = leer(path.join(ROOT, 'data', 'como-se-hace.json'), []), usados = new Set((hist.comosehace || []).slice(-Math.max(1, base.length - 5)));
+  const p = azar(base.filter((x) => !usados.has(x.id))) || azar(base);
+  if (!p) return null;
+  const n = p.pasos.length, fotos = p.fotos || [], T = TEMAS[p.tema] ? p.tema : 'inventos', hace = /^(los|las) /.test(p.titulo) ? 'hacen' : 'hace';
+  const escenas = [
+    { tipo: 'intro', dur: 3.4, tema: T, portada: true, consulta: fotos[0], sonidos: introSonidos, iconos: [...new Set(p.pasos.map((x) => x.salida))].slice(0, 5),
+      lineas: [{ texto: `CÓMO SE ${hace.toUpperCase()}`, size: 104, color: TEMAS[T].acento }, { texto: p.titulo.toUpperCase(), size: 124 }, { texto: `${n} pasos: de la fábrica a tus manos`, size: 50, color: 'rgba(255,255,255,0.85)' }] },
+    // Toda la fábrica en un solo plano: unos 7,8 s por máquina y un «whoosh» cada vez que la cámara viaja a la siguiente
+    { tipo: 'linea', dur: 7.8 * n, tema: T, etiqueta: `ASÍ SE ${hace.toUpperCase()} ${p.titulo.toUpperCase()}`, pasos: p.pasos, consultas: p.pasos.map((_, i) => fotos[(i % Math.max(1, fotos.length - 1)) + 1] || fotos[0]),
+      sonidos: [[0, 'pop'], ...p.pasos.slice(1).map((_, i) => [7.8 * (i + 1) - 0.9, 'whoosh'])] },
+    { tipo: 'proceso', dur: 6.5, tema: T, etiqueta: '¿SABÍAS QUE…?', resultado: p.icono, texto: p.dato, consultaA: fotos[0], sonidos: [[0, 'pop'], [0.2, 'bien']] },
+    cierre(T, '¿QUÉ FABRICAMOS LA PRÓXIMA?', 'Dinos qué quieres ver en «Cómo se hace»')
+  ];
+  const texto = `🏭 Así se ${hace} ${p.titulo} ${p.icono}, paso a paso: de la materia prima hasta la tienda.\n\n${p.pasos.map((x, i) => `${i + 1}. ${x.nombre[0] + x.nombre.slice(1).toLowerCase()}: ${x.texto}`).join('\n')}\n\n💡 ${p.dato}\n\n¿Qué quieres que mostremos la próxima vez?\n\n${tags('comosehace', 'asisehace', 'fabricas', 'procesos', 'curiosidades', 'aprende')}`;
+  return { formato: 'comosehace', titulo: `Cómo se ${hace} ${p.titulo}`, escenas, texto, comosehace: p.id, duracion: { min: 62, max: 88 } };
+}
+
 // ---------- principal ----------
 async function main() {
   const o = parseCli({
@@ -268,7 +288,7 @@ async function main() {
   if (ROTACION[paso % ROTACION.length] === hist.formatos.at(-1)) paso++;
   const formato = o.formato !== 'auto' ? o.formato : ROTACION[paso % ROTACION.length];
   const base = cargarDatos();
-  const hacer = { top10: () => top10(base, hist, o.tema), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
+  const hacer = { comosehace: () => comoSeHace(hist), top10: () => top10(base, hist, o.tema), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
   if (!hacer[formato]) throw new Error(`--formato debe ser ${Object.keys(hacer).join(', ')} o auto`);
   // Si un formato no tiene material (sin noticias frescas, por ejemplo), sale un quiz
   const pieza = (await hacer[formato]()) || quiz(base, hist);
@@ -287,7 +307,7 @@ async function main() {
   }
   const video = path.join(outDir, `${nombre}.mp4`);
   const estilo = azar(ESTILO[pieza.formato] || ['pop']);
-  const r = await renderQuiz({ escenas: pieza.escenas, out: video, emojiFont, estilo, semilla: hist.total * 7919 + Date.now() % 1000, outIG: video.replace(/\.mp4$/, '-ig.mp4') });
+  const r = await renderQuiz({ escenas: pieza.escenas, out: video, emojiFont, estilo, semilla: hist.total * 7919 + Date.now() % 1000, outIG: video.replace(/\.mp4$/, '-ig.mp4'), duracion: pieza.duracion });
   console.error(`Música: ${estilo}`);
   console.error(`${pieza.titulo} · ${r.duration.toFixed(1)} s · ${video}`);
   const meta = { kind: 'quiz', formato: pieza.formato, title: pieza.titulo, file: path.basename(video), duration: r.duration, post: { text: pieza.texto }, createdAt: new Date().toISOString() };
@@ -299,7 +319,7 @@ async function main() {
     if (o.facebook !== 'no' && facebookReady()) {
       try { meta.facebook = await publishReel({ video, description: pieza.texto, draft: o.facebook === 'borrador' }); }
       catch (e) { meta.facebook = { status: 'error', error: e.message }; console.error(`Aviso: Facebook no publicó el Reel: ${e.message}`); }
-      if (o.historia && o.facebook === 'si') {
+      if (o.historia && o.facebook === 'si' && r.duration <= 60) {
         if (r.duration > 60) meta.facebookStory = { status: 'omitida', error: `dura ${Math.round(r.duration)} s y las historias admiten hasta 60 s` };
         else try { meta.facebookStory = await publishStory({ video }); }
         catch (e) { meta.facebookStory = { status: 'error', error: e.message }; console.error(`Aviso: Facebook no publicó la historia: ${e.message}`); }
@@ -327,6 +347,7 @@ async function main() {
       fs.rmSync(tt.replace(/\.mp4$/, '.json'), { force: true });
     }
     hist.ids.push(...(pieza.ids || [])); hist.retos.push(...(pieza.retos || [])); hist.banderas.push(...(pieza.banderas || []));
+    if (pieza.comosehace) hist.comosehace = [...(hist.comosehace || []), pieza.comosehace].slice(-40);
     hist.prefieres.push(...(pieza.prefieres || [])); hist.emojis.push(...(pieza.emojis || [])); hist.noticias.push(...(pieza.noticias || []));
     hist.prefieres = hist.prefieres.slice(-150); hist.emojis = hist.emojis.slice(-160); hist.noticias = hist.noticias.slice(-300);
     hist.formatos.push(pieza.formato); hist.total++;

@@ -13,6 +13,7 @@ import { midiFreq } from '../../src/melodias.js';
 import { TEMAS } from './tarjetas.mjs';
 import { tituloVisual, marcaVisual, insigniaNivel } from './retos-visuales.mjs';
 import { pistaMusical } from './musica.mjs';
+import { dibujarMaquina } from './maquinas.mjs';
 
 export const W = 1080, H = 1920;
 const SR = 44100, FPS = 30;
@@ -240,6 +241,80 @@ const ESCENAS = {
     if (!revela) reloj(ctx, W / 2, 1335 + (e.bandera ? 25 : 0), 62, e.piensa - lt, e.piensa, e.tema);
     else sello(ctx, `¡ES LA ${'ABC'[e.respuesta]}!`, VERDE, rt, 1335 + (e.bandera ? 25 : 0));
   },
+  // «Cómo se hace»: la máquina del paso animada en 2D (scripts/lib/maquinas.mjs) y el texto que aparece letra a letra.
+  // Con e.resultado es el cierre: el producto terminado y un dato curioso.
+  proceso(ctx, e, lt) {
+    pildora(ctx, e.etiqueta, 290, e.tema, back(lt / 0.35));
+    const caja0 = { x: 50, y: 395, w: W - 100, h: 740 };
+    if (e.resultado) {
+      ctx.save(); ctx.beginPath(); ctx.roundRect(caja0.x, caja0.y, caja0.w, caja0.h, 40); ctx.clip();
+      const g = ctx.createRadialGradient(W / 2, caja0.y + 360, 40, W / 2, caja0.y + 360, 520); g.addColorStop(0, e.tema.acento); g.addColorStop(1, e.tema.b);
+      ctx.fillStyle = g; ctx.fillRect(caja0.x, caja0.y, caja0.w, caja0.h);
+      for (let k = 0; k < 16; k++) { const a = (k / 16) * Math.PI * 2 + lt * 0.4; ctx.strokeStyle = 'rgba(255,255,255,0.18)'; ctx.lineWidth = 16; ctx.beginPath(); ctx.moveTo(W / 2, caja0.y + 360); ctx.lineTo(W / 2 + Math.cos(a) * 700, caja0.y + 360 + Math.sin(a) * 700); ctx.stroke(); }
+      ctx.restore();
+      if (e.imgA) escala(ctx, back(lt / 0.5), W / 2, caja0.y + 360, () => { caja(ctx, W / 2 - 390, caja0.y + 70, 780, 580, 34, '#fff'); cubrir(ctx, e.imgA, W / 2 - 372, caja0.y + 88, 744, 544, 24); emoji(ctx, e.resultado, W / 2 + 330, caja0.y + 620, 150); });
+      else escala(ctx, back(lt / 0.5), W / 2, caja0.y + 360, () => emoji(ctx, e.resultado, W / 2, caja0.y + 360 + 14 * Math.sin(lt * 3), 330));
+    } else {
+      dibujarMaquina(ctx, e.maquina, caja0, lt, e, (c, em, x, y, s) => emoji(c, em, x, y, s), e.tema.acento);
+      // La foto real entra girando y queda pegada en la esquina, como en un cuaderno
+      if (e.imgA) {
+        const s = back((lt - 0.4) / 0.5); if (s > 0.01) {
+          ctx.save(); ctx.translate(caja0.x + 210, caja0.y + 170); ctx.rotate(-0.07); ctx.scale(s, s);
+          ctx.shadowColor = 'rgba(0,0,0,0.35)'; ctx.shadowBlur = 18; ctx.shadowOffsetY = 6; caja(ctx, -170, -130, 340, 280, 14, '#fff'); ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
+          cubrir(ctx, e.imgA, -156, -116, 312, 208, 8);
+          ctx.font = font(700, 26); ctx.fillStyle = '#555'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('📸 así se ve de verdad', 0, 124);
+          ctx.restore();
+        }
+      }
+    }
+    // Texto del paso: aparece de a poco, como si alguien lo contara
+    const n = Math.max(1, Math.round(e.texto.length * clamp((lt - 0.3) / 1.6)));
+    caja(ctx, 60, 1160, W - 120, 270, 34, 'rgba(255,255,255,0.95)', 'rgba(0,0,0,0.25)', 4);
+    const f = fit(ctx, e.texto, W - 200, 230, { from: 58, to: 36, peso: 700 });
+    const vis = f.lines.join('\n').slice(0, n).split('\n');
+    bloque(ctx, { ...f, lines: vis.concat(Array(f.lines.length - vis.length).fill('')) }, W / 2, 1180, 230, '#161412');
+  },
+  // «Cómo se hace» en un solo plano: las máquinas (e.pasos) están una al lado de la otra y la cámara se desliza de una a la
+  // siguiente. En cada una se queda casi todo el tiempo y al final viaja a la próxima; el texto cambia con la máquina.
+  linea(ctx, e, lt) {
+    const n = e.pasos.length, sec = e.dur / n, viaje = Math.min(1.6, sec * 0.2), i = Math.min(n - 1, Math.floor(lt / sec)), enSec = lt - i * sec;
+    const cam = (i + (i < n - 1 ? ease((enSec - (sec - viaje)) / viaje) : 0)) * (W - 100);
+    // Título fijo arriba
+    ctx.font = font(400, 46, BLACK); let fs2 = 46; while (ctx.measureText(e.etiqueta).width > W - 200 && fs2 > 30) { fs2 -= 2; ctx.font = font(400, fs2, BLACK); }
+    const tw = ctx.measureText(e.etiqueta).width + 70; caja(ctx, (W - tw) / 2, 290, tw, 82, 41, e.tema.acento);
+    ctx.fillStyle = '#111'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(e.etiqueta, W / 2, 333);
+    // La fábrica: solo se dibujan las estaciones que se ven
+    const vx = 50, vy = 395, vw = W - 100, vh = 740;
+    ctx.save(); ctx.beginPath(); ctx.roundRect(vx, vy, vw, vh, 40); ctx.clip();
+    for (let k = 0; k < n; k++) {
+      const bx = vx + k * vw - cam; if (bx > W || bx + vw < 0) continue;
+      dibujarMaquina(ctx, e.pasos[k].maquina, { x: bx, y: vy, w: vw, h: vh }, lt, e.pasos[k], (c, em, x, y, s) => emoji(c, em, x, y, s), e.tema.acento, { continuo: true });
+    }
+    ctx.restore();
+    caja(ctx, vx, vy, vw, vh, 40, null, 'rgba(0,0,0,0.25)', 6);
+    // Avance continuo (una sola barra, sin partes)
+    caja(ctx, vx + 40, vy + vh - 26, vw - 80, 10, 5, 'rgba(0,0,0,0.18)'); caja(ctx, vx + 40, vy + vh - 26, Math.max(10, (vw - 80) * clamp(lt / e.dur)), 10, 5, e.tema.acento);
+    // Foto real de lo que se está haciendo: entra y sale con cada máquina
+    const img = e.imgs?.[i], vis = clamp((enSec - 0.5) / 0.4) * clamp((sec - viaje - enSec) / 0.4);
+    if (img && vis > 0.01) {
+      ctx.save(); ctx.globalAlpha = vis * FADE; ctx.translate(vx + 205, vy + 165); ctx.rotate(-0.06); const s = 0.85 + 0.15 * vis; ctx.scale(s, s);
+      ctx.shadowColor = 'rgba(0,0,0,0.35)'; ctx.shadowBlur = 18; ctx.shadowOffsetY = 6; caja(ctx, -170, -130, 340, 280, 14, '#fff'); ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
+      cubrir(ctx, img, -156, -116, 312, 208, 8);
+      ctx.font = font(700, 26); ctx.fillStyle = '#555'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('📸 así se ve de verdad', 0, 124);
+      ctx.restore();
+    }
+    // Lo que pasa en esta máquina: nombre corto y el texto, que aparece de a poco y se va al viajar a la siguiente
+    const a = clamp(enSec / 0.35) * (i < n - 1 ? clamp((sec - enSec) / 0.45) : 1);
+    alfa(ctx, a);
+    ctx.font = font(400, 34, BLACK); const nw = ctx.measureText(e.pasos[i].nombre).width + 50;
+    caja(ctx, 80, 1160, nw, 60, 30, e.tema.acento); ctx.fillStyle = '#111'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(e.pasos[i].nombre, 80 + nw / 2, 1192);
+    caja(ctx, 60, 1232, W - 120, 210, 34, 'rgba(255,255,255,0.95)', 'rgba(0,0,0,0.25)', 4);
+    const txt = e.pasos[i].texto, f = fit(ctx, txt, W - 200, 175, { from: 54, to: 34, peso: 700 });
+    const nch = Math.max(1, Math.round(txt.length * clamp((enSec - 0.25) / 1.6)));
+    const vistas = f.lines.join('\n').slice(0, nch).split('\n');
+    bloque(ctx, { ...f, lines: vistas.concat(Array(f.lines.length - vistas.length).fill('')) }, W / 2, 1250, 175, '#161412');
+    alfa(ctx, 1);
+  },
   // Reto visual (scripts/lib/retos-visuales.mjs) sobre fondo claro, como en la imagen: cuenta atrás y la respuesta marcada
   visual(ctx, e, lt) {
     const revela = lt >= e.piensa, rt = lt - e.piensa, v = e.visual;
@@ -385,16 +460,18 @@ export function ajustarDuracion(escenas, { min = DURACION_MIN, max = DURACION_MA
 // escenas: [{ tipo, dur, tema: id de TEMAS, idx?, total?, sonidos?: [[t, nombre]] }]
 // estilo: pop | dembow | lofi | electro | synthwave (scripts/lib/musica.mjs). outIG: además, una copia con solo los
 // efectos (sin música), para ponerle en Instagram una canción del catálogo autorizado de Meta
-export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semilla = Date.now(), outIG, emojiFont = '', still, log = (m) => process.stderr.write(m) }) {
+// duracion: { min, max } si el formato tiene otro rango (por ejemplo «Cómo se hace», que pasa del minuto)
+export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semilla = Date.now(), outIG, emojiFont = '', still, duracion, log = (m) => process.stderr.write(m) }) {
   EMOJI = emojiFont ? `, ${emojiFont}` : '';
   // Nunca menos de 55 s (ni más de 59.5): ver ajustarDuracion
-  const antes = total(escenas); ajustarDuracion(escenas);
+  const antes = total(escenas); ajustarDuracion(escenas, duracion);
   if (Math.abs(total(escenas) - antes) > 0.05) log(`Duración ajustada: ${antes.toFixed(1)} → ${total(escenas).toFixed(1)} s\n`);
   let t0 = 0;
   const lista = escenas.map((e) => { const r = { ...e, t0, tema: TEMAS[e.tema] || TEMAS.noticias }; t0 += e.dur; return r; });
   const dur = t0, frames = Math.ceil(dur * FPS);
   const cv = createCanvas(W, H), ctx = cv.getContext('2d');
   for (const e of lista) for (const k of ['A', 'B']) if (e[`foto${k}`]) e[`img${k}`] = await loadImage(fs.readFileSync(e[`foto${k}`])).catch(() => null);
+  for (const e of lista) if (e.fotos) e.imgs = await Promise.all(e.fotos.map((f) => (f ? loadImage(fs.readFileSync(f)).catch(() => null) : null)));
   const conVideo = lista.filter((e) => e.fondo);
   const dibujar = (t, debajo) => {
     const e = lista.find((x) => t < x.t0 + x.dur) || lista.at(-1), lt = t - e.t0;

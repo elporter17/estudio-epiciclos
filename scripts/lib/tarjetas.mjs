@@ -60,7 +60,15 @@ export function dibujarTarjeta(t, { W = 1080, H = 1350, emojiFont = '' } = {}) {
   ctx.fillStyle = '#111'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(label, W / 2, top + 46);
   // Ícono
   let y = top + 120;
-  if (t.icono) { ctx.font = `${H > 1500 ? 210 : 170}px ${emojiFont || 'sans-serif'}`; ctx.fillText(t.icono, W / 2, y + (H > 1500 ? 110 : 90)); y += H > 1500 ? 250 : 200; }
+  if (t.imagen) {
+    // Foto real (Pixabay) recortada al centro, con el ícono como sello en la esquina
+    const ih = H > 1500 ? 620 : 420, iw = W - pad * 2;
+    ctx.save(); roundRect(ctx, pad, y, iw, ih, 30); ctx.clip();
+    const k = Math.max(iw / t.imagen.width, ih / t.imagen.height); ctx.drawImage(t.imagen, pad + (iw - t.imagen.width * k) / 2, y + (ih - t.imagen.height * k) / 2, t.imagen.width * k, t.imagen.height * k); ctx.restore();
+    ctx.strokeStyle = 'rgba(255,255,255,0.85)'; ctx.lineWidth = 6; roundRect(ctx, pad, y, iw, ih, 30); ctx.stroke();
+    if (t.icono) { ctx.fillStyle = tema.acento; ctx.beginPath(); ctx.arc(pad + iw - 60, y + ih - 60, 62, 0, Math.PI * 2); ctx.fill(); ctx.font = `76px ${emojiFont || 'sans-serif'}`; ctx.fillStyle = '#fff'; ctx.fillText(t.icono, pad + iw - 60, y + ih - 56); }
+    y += ih + 30;
+  } else if (t.icono) { ctx.font = `${H > 1500 ? 210 : 170}px ${emojiFont || 'sans-serif'}`; ctx.fillText(t.icono, W / 2, y + (H > 1500 ? 110 : 90)); y += H > 1500 ? 250 : 200; }
   const bottom = H - (H > 1500 ? 300 : 190), maxW = W - pad * 2;
   ctx.fillStyle = '#fff'; ctx.textBaseline = 'alphabetic';
 
@@ -110,10 +118,15 @@ export function dibujarTarjeta(t, { W = 1080, H = 1350, emojiFont = '' } = {}) {
 // La portada es lo único que se ve en el feed: frase corta y grande (con una parte resaltada), una fila que adelanta lo
 // que viene (niveles o íconos) y «DESLIZA» a la derecha. Lo importante va en el centro (se ve igual en la miniatura
 // cuadrada del perfil). gancho: [[texto, resaltar]]; chips: [{ texto, color }] o iconos: ['🐙', …]
-export function dibujarPortada({ gancho, sub, chips, iconos, tema: idTema = 'matematicas', etiqueta = 'CARRUSEL' }, { W = 1080, H = 1350, emojiFont = '' } = {}) {
+export function dibujarPortada({ gancho, sub, chips, iconos, fondo, tema: idTema = 'matematicas', etiqueta = 'CARRUSEL' }, { W = 1080, H = 1350, emojiFont = '' } = {}) {
   const tema = TEMAS[idTema] || TEMAS.noticias, cv = createCanvas(W, H), ctx = cv.getContext('2d'), E = emojiFont ? `, ${emojiFont}` : '';
   const g = ctx.createLinearGradient(0, 0, W * 0.4, H); g.addColorStop(0, tema.a); g.addColorStop(1, tema.b);
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  if (fondo) {
+    // Foto real de fondo, oscurecida con el color del tema para que el gancho se lea
+    const k = Math.max(W / fondo.width, H / fondo.height); ctx.drawImage(fondo, (W - fondo.width * k) / 2, (H - fondo.height * k) / 2, fondo.width * k, fondo.height * k);
+    ctx.globalAlpha = 0.72; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1;
+  }
   ctx.strokeStyle = 'rgba(255,255,255,0.07)'; ctx.lineWidth = 4;
   for (let r = 140; r < 1100; r += 80) { ctx.beginPath(); ctx.arc(W * 0.5, H * 0.5, r, 0, Math.PI * 2); ctx.stroke(); }
   const top = H > 1500 ? 300 : 80, dy = H - (H > 1500 ? 330 : 170);
