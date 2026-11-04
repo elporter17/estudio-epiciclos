@@ -14,6 +14,7 @@
     "daily": "node scripts/daily.mjs",
     "fonts": "node scripts/fonts.mjs",
     "tiktok:connect": "node scripts/tiktok-connect.mjs",
+    "youtube:connect": "node scripts/youtube-connect.mjs",
     "publish": "node scripts/publish.mjs",
     "silueta": "node scripts/silueta.mjs",
     "tablero": "node scripts/tablero.mjs"

@@ -103,6 +103,10 @@ jobs:
       TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
       TIKTOK_REDIRECT_URI: ${{ secrets.TIKTOK_REDIRECT_URI }}
       STATE_KEY: ${{ secrets.STATE_KEY }}
+      # YouTube: los Reels se suben como Shorts privados (scripts/lib/youtube.mjs; conectar: npm run youtube:connect -- --github)
+      YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+      YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+      YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
       CATS_INPUT: ${{ inputs.cats || 'dibujos' }}
       PRUEBA_INPUT: ${{ inputs.prueba == true && 'si' || '' }}
       LANG_INPUT: ${{ inputs.lang || 'es' }}
@@ -250,6 +254,7 @@ jobs:
               if (m.facebook) lines.push("", `Facebook: ${m.facebook.status}` + (m.facebook.permalink ? ` · [${m.imageUrl ? "ver la publicación" : "ver el Reel"}](${m.facebook.permalink})` : "") + (m.facebook.error ? ` · ${m.facebook.error}` : ""));
               if (m.facebookStory) lines.push("", `Historia de Facebook: ${m.facebookStory.status}` + (m.facebookStory.error ? ` · ${m.facebookStory.error}` : ""));
               for (const [k, v] of [["Instagram", m.instagram], ["Historia de Instagram", m.instagramStory]]) if (v) lines.push("", `${k}: ${v.status}` + (v.permalink ? ` · [verla](${v.permalink})` : "") + (v.error ? ` · ${v.error}` : ""));
+              if (m.youtube) lines.push("", m.youtube.studio ? `YouTube: subido como privado · [publícalo en Studio](${m.youtube.studio})` : `YouTube: ${m.youtube.error}`);
               fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.join("\n") + "\n");
               // Aviso de la corrida (se ve arriba en la página de la corrida y en la app de GitHub): descripción y enlace
               const esc = (s) => s.replace(/%/g, "%25").replace(/\r/g, "").replace(/\n/g, "%0A");
@@ -302,7 +307,8 @@ jobs:
               : t.status === "SEND_TO_USER_INBOX" ? "✅ Borrador listo en tu bandeja de TikTok"
               : t.status === "LIMIT" ? "⚠️ TikTok no aceptó más borradores: descárgalo del enlace" : `TikTok: ${t.status}`;
             const msg = [`CirculArte · ${estado}`, m ? `${m.title} · ${Math.round(m.duration)} s` : `Estado: ${process.env.JOB_STATUS}`,
-              m && m.post ? `\nDescripción para pegar:\n${m.post.text}` : "", `\nRevisar: ${process.env.RUN_URL}`].join("\n");
+              m && m.post ? `\nDescripción para pegar:\n${m.post.text}` : "",
+              m && m.youtube && m.youtube.studio ? `\nYouTube (privado, publícalo en Studio): ${m.youtube.studio}` : "", `\nRevisar: ${process.env.RUN_URL}`].join("\n");
             fs.writeFileSync("whatsapp.txt", msg);'
           curl -sS -G "https://api.callmebot.com/whatsapp.php" \
             --data-urlencode "phone=$CALLMEBOT_PHONE" --data-urlencode "text@whatsapp.txt" --data-urlencode "apikey=$CALLMEBOT_APIKEY" \

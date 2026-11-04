@@ -19,6 +19,7 @@ import { publishInstagramSeguro, instagramReady, musicaTendencia } from './insta
 import { registrarRespuesta } from './lib/respuestas.mjs';
 import { publishVideo } from './publish.mjs';
 import { logUpload } from './tiktok-status.mjs';
+import { subirYouTube, youtubeReady } from './lib/youtube.mjs';
 import { MELODIA_IDS } from '../src/melodias.js';
 import { crearVisual, VISUALES } from './lib/retos-visuales.mjs';
 import { juntarNoticias } from './noticias.mjs';
@@ -282,7 +283,7 @@ async function main() {
     formato: { type: 'string', default: 'auto' }, tema: { type: 'string' }, facebook: { type: 'string', default: 'si' },
     historia: { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' },
     // TikTok: draft = también como borrador (la copia con solo efectos: allí se le pone la canción del momento)
-    tiktok: { type: 'string', default: 'no' }, 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' }
+    tiktok: { type: 'string', default: 'no' }, youtube: { type: 'string', default: 'si' }, 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' }
   });
   const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
   const hist = { ids: [], retos: [], banderas: [], formatos: [], prefieres: [], emojis: [], noticias: [], total: 0, ...leer(HIST, {}) };
@@ -349,6 +350,13 @@ async function main() {
       logUpload({ at: new Date().toISOString(), title: pieza.titulo, publish_id: meta.tiktok[0]?.publish_id || null, status: meta.tiktok[0]?.status, run: process.env.GITHUB_RUN_ID || null });
       fs.rmSync(tt.replace(/\.mp4$/, '.json'), { force: true });
     }
+    // YouTube: el mismo video (nuestra música y el narrador) como Short PRIVADO, para publicarlo a mano desde Studio
+    if (o.youtube !== 'no' && youtubeReady() && cupoYouTube(pieza.formato)) {
+      try {
+        meta.youtube = await subirYouTube({ file: video, titulo: `${pieza.titulo} #Shorts`, descripcion: `${pieza.texto}\n\n🔔 Suscríbete a Potter Play: videos nuevos todos los días.`, etiquetas: [...new Set([...(pieza.texto.match(/#[\p{L}\d_]+/gu) || []).map((x) => x.slice(1)), 'curiosidades', 'shorts', 'potter play'])] });
+        usarCupoYouTube(pieza.formato); console.error(`YouTube: subido como privado (borrador) · ${meta.youtube.studio}`);
+      } catch (e) { meta.youtube = { status: 'error', error: e.message }; console.error(`Aviso: YouTube: ${e.message}`); }
+    }
     hist.ids.push(...(pieza.ids || [])); hist.retos.push(...(pieza.retos || [])); hist.banderas.push(...(pieza.banderas || []));
     if (pieza.comosehace) hist.comosehace = [...(hist.comosehace || []), pieza.comosehace].slice(-40);
     hist.prefieres.push(...(pieza.prefieres || [])); hist.emojis.push(...(pieza.emojis || [])); hist.noticias.push(...(pieza.noticias || []));
@@ -360,5 +368,12 @@ async function main() {
   fs.writeFileSync(sidecar, JSON.stringify(meta, null, 2) + '\n');
   console.log(JSON.stringify({ video, duration: r.duration, facebook: meta.facebook, historia: meta.facebookStory }, null, 2));
 }
+
+// Cuota de la API de YouTube: ≈ 6 subidas al día. Van los 2 «Cómo se hace» y hasta 3 Reels más (data/youtube-dia.json)
+const CUPO_YT = path.join(ROOT, 'data', 'youtube-dia.json'), LIMITE_YT = { comosehace: 2, otros: Number(process.env.YOUTUBE_REELS_DIA || 3) };
+function diaYT() { const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Tegucigalpa' }), d = leer(CUPO_YT, {}); return d.fecha === hoy ? d : { fecha: hoy, comosehace: 0, otros: 0 }; }
+const grupoYT = (f) => (f === 'comosehace' ? 'comosehace' : 'otros');
+function cupoYouTube(f) { const d = diaYT(), g = grupoYT(f); if (d[g] < LIMITE_YT[g]) return true; console.error(`YouTube: ya se subieron ${d[g]} hoy (${g}); este no`); return false; }
+function usarCupoYouTube(f) { const d = diaYT(); d[grupoYT(f)]++; fs.writeFileSync(CUPO_YT, JSON.stringify(d) + '\n'); }
 
 main().catch((e) => { console.error(`Error: ${e.message}`); process.exit(1); });
