@@ -13,6 +13,11 @@ on:
         type: choice
         options: ['no', 'si']
         default: 'no'
+      modo:
+        description: «prueba» solo genera el video (sin publicar); se descarga de los artefactos de la corrida
+        type: choice
+        options: ['publicar', 'prueba']
+        default: 'publicar'
 
 permissions:
   contents: read
@@ -27,5 +32,6 @@ jobs:
       publish: ${{ inputs.tiktok == 'si' && 'draft' || 'none' }}
       facebook: si
       historia: false
-      aviso: ${{ inputs.tiktok == 'si' }}
+      aviso: ${{ inputs.tiktok == 'si' && inputs.modo != 'prueba' }}
+      prueba: ${{ inputs.modo == 'prueba' }}
     secrets: inherit

@@ -83,6 +83,8 @@ on:
       # Comentario en el issue «Videos para publicar» (llega por correo); los Reels solo de Facebook no lo necesitan
       aviso: { type: boolean, default: true }
       reseed: { type: boolean, default: false }
+      # Solo generar el video (sin publicar ni avisar): queda para descargar en «Video del día»
+      prueba: { type: boolean, default: false }
 
 permissions:
   contents: read
@@ -102,6 +104,7 @@ jobs:
       TIKTOK_REDIRECT_URI: ${{ secrets.TIKTOK_REDIRECT_URI }}
       STATE_KEY: ${{ secrets.STATE_KEY }}
       CATS_INPUT: ${{ inputs.cats || 'dibujos' }}
+      PRUEBA_INPUT: ${{ inputs.prueba == true && 'si' || '' }}
       LANG_INPUT: ${{ inputs.lang || 'es' }}
       PUBLISH_INPUT: ${{ inputs.publish || 'draft' }}
       PRIVACY_INPUT: ${{ inputs.privacy || 'PUBLIC_TO_EVERYONE' }}
@@ -196,7 +199,7 @@ jobs:
             # Metas semanales de Facebook (metas.yml): «figura» = «fotos,historias» puestas desde el panel (vacías = las guardadas)
             metas) mkdir -p out; IFS=, read -r mf mh <<< "$FIGURA_INPUT"; node scripts/metas.mjs ${mf:+--fotos "$mf"} ${mh:+--historias "$mh"}; exit 0 ;;
             gta6) if [ "$FIGURA_INPUT" = "lanzamiento" ]; then node scripts/gta6.mjs --solo-lanzamiento; else node scripts/gta6.mjs; fi; exit 0 ;;
-            curiosidades-video) node scripts/curiosidades-video.mjs --facebook "$FACEBOOK_INPUT" --formato "${FIGURA_INPUT:-auto}" ${HISTORIA_INPUT:+--historia} --tiktok "$( [ "$PUBLISH_INPUT" = draft ] && echo draft || echo no )"; exit 0 ;;
+            curiosidades-video) node scripts/curiosidades-video.mjs --facebook "$FACEBOOK_INPUT" --formato "${FIGURA_INPUT:-auto}" ${HISTORIA_INPUT:+--historia} ${PRUEBA_INPUT:+--dry-run} --tiktok "$( [ "$PUBLISH_INPUT" = draft ] && echo draft || echo no )"; exit 0 ;;
           esac
           # Solo consultar el estado de subidas anteriores
           if [ -n "$ESTADO_INPUT" ]; then
@@ -276,7 +279,7 @@ jobs:
 
       # Aviso por WhatsApp (CallMeBot, gratis): solo si están los secretos CALLMEBOT_PHONE y CALLMEBOT_APIKEY
       - name: Aviso por WhatsApp
-        if: always()
+        if: always() && env.PRUEBA_INPUT == ''
         env:
           CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
           CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
