@@ -15,6 +15,7 @@ import { tituloVisual, marcaVisual, insigniaNivel } from './retos-visuales.mjs';
 import { pistaMusical } from './musica.mjs';
 import { dibujarMaquina, fondoFabrica } from './maquinas.mjs';
 import { cargarObjetos } from './objetos3d.mjs';
+import { narrar } from './voz.mjs';
 
 export const W = 1080, H = 1920;
 const SR = 44100, FPS = 30;
@@ -441,7 +442,7 @@ export function ajustarDuracion(escenas, { min = DURACION_MIN, max = DURACION_MA
   const antes = total(escenas);
   if (antes < min) { const extra = (min + 0.3 - antes) / contenido.length; for (const e of contenido) e.dur += extra; }
   else if (antes > max) {
-    const piso = (e) => (e.piensa != null ? e.piensa + 1.4 : 3.5), holgura = contenido.reduce((a, e) => a + Math.max(0, e.dur - piso(e)), 0);
+    const piso = (e) => Math.max(e.pisoVoz || 0, e.piensa != null ? e.piensa + 1.4 : 3.5), holgura = contenido.reduce((a, e) => a + Math.max(0, e.dur - piso(e)), 0);
     const quitar = Math.min(antes - (max - 0.3), holgura);
     for (const e of contenido) e.dur -= (Math.max(0, e.dur - piso(e)) / (holgura || 1)) * quitar;
   }
@@ -454,13 +455,21 @@ export function ajustarDuracion(escenas, { min = DURACION_MIN, max = DURACION_MA
 // estilo: pop | dembow | lofi | electro | synthwave (scripts/lib/musica.mjs). outIG: además, una copia con solo los
 // efectos (sin música), para ponerle en Instagram una canción del catálogo autorizado de Meta
 // duracion: { min, max } si el formato tiene otro rango (por ejemplo «Cómo se hace», que pasa del minuto)
-export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semilla = Date.now(), outIG, emojiFont = '', still, duracion, log = (m) => process.stderr.write(m) }) {
+// voz: e.voz en una escena es lo que dice el narrador al empezarla (en «linea», una frase por máquina). Si la frase no
+// cabe, la escena se alarga. voz: false lo apaga (por ejemplo en la vista previa de un cuadro)
+export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semilla = Date.now(), outIG, emojiFont = '', still, duracion, voz = true, log = (m) => process.stderr.write(m) }) {
   EMOJI = emojiFont ? `, ${emojiFont}` : '';
+  const narrado = voz && still == null && prepararVoz(escenas, log);
   // Nunca menos de 55 s (ni más de 59.5): ver ajustarDuracion
   const antes = total(escenas); ajustarDuracion(escenas, duracion);
   if (Math.abs(total(escenas) - antes) > 0.05) log(`Duración ajustada: ${antes.toFixed(1)} → ${total(escenas).toFixed(1)} s\n`);
   let t0 = 0;
   const lista = escenas.map((e) => { const r = { ...e, t0, tema: TEMAS[e.tema] || TEMAS.noticias }; t0 += e.dur; return r; });
+  // «linea»: un «whoosh» cada vez que la cámara viaja a la máquina siguiente (con la duración ya ajustada)
+  for (const e of lista) if (e.tipo === 'linea' && e.whoosh) {
+    const n = e.pasos.length, sec = e.dur / n, viaje = Math.min(1.6, sec * 0.2);
+    e.sonidos = [...(e.sonidos || []), ...e.pasos.slice(1).map((_, i) => [sec * (i + 1) - viaje * 0.58, 'whoosh'])];
+  }
   const dur = t0, frames = Math.ceil(dur * FPS);
   const cv = createCanvas(W, H), ctx = cv.getContext('2d');
   for (const e of lista) for (const k of ['A', 'B']) if (e[`foto${k}`]) e[`img${k}`] = await loadImage(fs.readFileSync(e[`foto${k}`])).catch(() => null);
@@ -495,11 +504,22 @@ export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semill
   const largo = Math.ceil((dur + 0.5) * SR), efectos = new Float32Array(largo), mus = new Float32Array(largo);
   for (const e of lista) for (const [t, s] of e.sonidos || []) SONIDOS[s]?.(efectos, e.t0 + t);
   pistaMusical(mus, dur, { estilo, semilla, SR });
-  const buf = efectos.map((x, i) => Math.tanh((x + 0.75 * mus[i]) * 1.2) * 0.9);
+  // Narración: cada frase en su momento; la música baja mientras habla (y vuelve a subir despacio)
+  const narra = new Float32Array(largo), baja = new Float32Array(largo);
+  if (narrado) {
+    for (const e of lista) (e._audios || []).forEach((a, i) => {
+      const ini = Math.round((e.t0 + (e.tipo === 'linea' ? i * (e.dur / e.pasos.length) + VOZ_PASO : VOZ_INI)) * SR);
+      for (let k = 0; k < a.length && ini + k < largo; k++) narra[ini + k] += a[k];
+      for (let k = Math.max(0, ini - 0.15 * SR); k < Math.min(largo, ini + a.length + 0.25 * SR); k++) baja[k] = 1;
+    });
+    let v = 0; const sube = 1 / (0.5 * SR), cae = 1 / (0.12 * SR);
+    for (let i = 0; i < largo; i++) { v += baja[i] > v ? Math.min(cae, baja[i] - v) : -Math.min(sube, v - baja[i]); baja[i] = v; }
+  }
+  const buf = efectos.map((x, i) => Math.tanh((x + 0.75 * mus[i] * (1 - 0.68 * baja[i]) + 0.95 * narra[i]) * 1.2) * 0.9);
   const wav = `${os.tmpdir()}/quiz-${process.pid}-${Date.now()}.wav`;
   fs.writeFileSync(wav, wavBuffer(buf, SR));
   const wavIG = outIG ? wav.replace(/\.wav$/, '-efectos.wav') : null;
-  if (wavIG) fs.writeFileSync(wavIG, wavBuffer(efectos.map((x) => Math.tanh(x * 1.2) * 0.9), SR));
+  if (wavIG) fs.writeFileSync(wavIG, wavBuffer(efectos.map((x, i) => Math.tanh((x + 0.95 * narra[i]) * 1.2) * 0.9), SR));
 
   // Sin video: el canvas es el cuadro entero. Con video: cada escena aporta su clip (o negro), se concatenan y el
   // canvas (con transparencia) va encima
@@ -539,5 +559,26 @@ export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semill
     }
   } finally { fs.rmSync(wav, { force: true }); if (wavIG) fs.rmSync(wavIG, { force: true }); }
   log(`  listo en ${((Date.now() - ti) / 1000).toFixed(1)} s\n`);
-  return { out, outIG: outIG && fs.existsSync(outIG) ? outIG : null, duration: +dur.toFixed(3) };
+  return { out, outIG: outIG && fs.existsSync(outIG) ? outIG : null, duration: +dur.toFixed(3), narrado: !!narrado };
+}
+
+// La frase de una escena empieza a VOZ_INI s; en «linea», VOZ_PASO s después de llegar a cada máquina, y la cámara no
+// viaja a la siguiente hasta que termina (más 1,8 s para el viaje)
+const VOZ_INI = 0.3, VOZ_PASO = 0.3;
+function prepararVoz(escenas, log) {
+  const con = escenas.filter((e) => e.voz && (Array.isArray(e.voz) ? e.voz.length : true));
+  if (!con.length) return false;
+  const textos = con.flatMap((e) => (Array.isArray(e.voz) ? e.voz : [e.voz]));
+  const ti = Date.now(), audios = narrar(textos, { SR, log });
+  if (!audios) return false;
+  let k = 0;
+  for (const e of con) {
+    const n = Array.isArray(e.voz) ? e.voz.length : 1; e._audios = audios.slice(k, k += n);
+    const largo = Math.max(...e._audios.map((a) => a.length / SR));
+    e.pisoVoz = e.tipo === 'linea' ? n * (VOZ_PASO + largo + 1.8) : VOZ_INI + largo + 0.6;
+    e.dur = Math.max(e.dur, e.pisoVoz);
+  }
+  log(`Narración: ${textos.length} frases en ${((Date.now() - ti) / 1000).toFixed(1)} s
+`);
+  return true;
 }

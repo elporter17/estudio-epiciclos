@@ -136,6 +136,26 @@ jobs:
           key: fonts-v2-noto-emoji-stix
       - run: npm run fonts
 
+      # Voz del narrador de los Reels (Kokoro, local y sin API; scripts/lib/voz.mjs). El modelo (≈350 MB) va en caché
+      - name: Modelo de voz (en caché)
+        if: env.CATS_INPUT == 'curiosidades-video'
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: .tools/kokoro
+          key: voz-kokoro-v1.0
+      - name: Instalar la voz
+        continue-on-error: true
+        if: env.CATS_INPUT == 'curiosidades-video'
+        run: |
+          python3 -m venv .tools/voz
+          .tools/voz/bin/python -m pip install -q kokoro-onnx==${KOKORO_VERSION}
+          mkdir -p .tools/kokoro
+          for f in kokoro-v1.0.onnx voices-v1.0.bin; do
+            [ -s ".tools/kokoro/$f" ] || curl -fsSL --retry 3 -o ".tools/kokoro/$f" "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/$f"
+          done
+        env:
+          KOKORO_VERSION: 0.6.1
+
       # Token de TikTok e historial de figuras, cifrados con STATE_KEY entre corridas
       - name: Recuperar estado
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0

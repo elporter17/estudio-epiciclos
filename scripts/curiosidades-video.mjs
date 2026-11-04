@@ -264,12 +264,13 @@ function comoSeHace(hist) {
   const n = p.pasos.length, fotos = p.fotos || [], T = TEMAS[p.tema] ? p.tema : 'inventos', hace = /^(los|las) /.test(p.titulo) ? 'hacen' : 'hace';
   const escenas = [
     { tipo: 'intro', dur: 3.4, tema: T, portada: true, consulta: fotos[0], sonidos: introSonidos, iconos: [...new Set(p.pasos.map((x) => x.salida))].slice(0, 5),
+      voz: `Así se ${hace} ${p.titulo}.`,
       lineas: [{ texto: `CÓMO SE ${hace.toUpperCase()}`, size: 104, color: TEMAS[T].acento }, { texto: p.titulo.toUpperCase(), size: 124 }, { texto: `${n} pasos: de la fábrica a tus manos`, size: 50, color: 'rgba(255,255,255,0.85)' }] },
     // Toda la fábrica en un solo plano: unos 7,8 s por máquina y un «whoosh» cada vez que la cámara viaja a la siguiente
     { tipo: 'linea', dur: 7.8 * n, tema: T, etiqueta: `ASÍ SE ${hace.toUpperCase()} ${p.titulo.toUpperCase()}`, pasos: p.pasos,
-      sonidos: [[0, 'pop'], ...p.pasos.slice(1).map((_, i) => [7.8 * (i + 1) - 0.9, 'whoosh'])] },
-    { tipo: 'proceso', dur: 6.5, tema: T, etiqueta: '¿SABÍAS QUE…?', resultado: p.icono, texto: p.dato, consultaA: fotos[0], sonidos: [[0, 'pop'], [0.2, 'bien']] },
-    cierre(T, '¿QUÉ FABRICAMOS LA PRÓXIMA?', 'Dinos qué quieres ver en «Cómo se hace»')
+      voz: p.pasos.map((x) => x.texto), whoosh: true, sonidos: [[0, 'pop']] },
+    { tipo: 'proceso', dur: 6.5, tema: T, etiqueta: '¿SABÍAS QUE…?', resultado: p.icono, texto: p.dato, voz: `¿Sabías que…? ${p.dato}`, consultaA: fotos[0], sonidos: [[0, 'pop'], [0.2, 'bien']] },
+    { ...cierre(T, '¿QUÉ FABRICAMOS LA PRÓXIMA?', 'Dinos qué quieres ver en «Cómo se hace»'), voz: '¿Qué fabricamos la próxima vez? Escríbelo en los comentarios.' }
   ];
   const texto = `🏭 Así se ${hace} ${p.titulo} ${p.icono}, paso a paso: de la materia prima hasta la tienda.\n\n${p.pasos.map((x, i) => `${i + 1}. ${x.nombre[0] + x.nombre.slice(1).toLowerCase()}: ${x.texto}`).join('\n')}\n\n💡 ${p.dato}\n\n¿Qué quieres que mostremos la próxima vez?\n\n${tags('comosehace', 'asisehace', 'fabricas', 'procesos', 'curiosidades', 'aprende')}`;
   return { formato: 'comosehace', titulo: `Cómo se ${hace} ${p.titulo}`, escenas, texto, comosehace: p.id, duracion: { min: 62, max: 88 } };
