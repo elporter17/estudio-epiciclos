@@ -13,7 +13,8 @@ import { midiFreq } from '../../src/melodias.js';
 import { TEMAS } from './tarjetas.mjs';
 import { tituloVisual, marcaVisual, insigniaNivel } from './retos-visuales.mjs';
 import { pistaMusical } from './musica.mjs';
-import { dibujarMaquina } from './maquinas.mjs';
+import { dibujarMaquina, fondoFabrica } from './maquinas.mjs';
+import { cargarObjetos } from './objetos3d.mjs';
 
 export const W = 1080, H = 1920;
 const SR = 44100, FPS = 30;
@@ -256,16 +257,6 @@ const ESCENAS = {
       else escala(ctx, back(lt / 0.5), W / 2, caja0.y + 360, () => emoji(ctx, e.resultado, W / 2, caja0.y + 360 + 14 * Math.sin(lt * 3), 330));
     } else {
       dibujarMaquina(ctx, e.maquina, caja0, lt, e, (c, em, x, y, s) => emoji(c, em, x, y, s), e.tema.acento);
-      // La foto real entra girando y queda pegada en la esquina, como en un cuaderno
-      if (e.imgA) {
-        const s = back((lt - 0.4) / 0.5); if (s > 0.01) {
-          ctx.save(); ctx.translate(caja0.x + 210, caja0.y + 170); ctx.rotate(-0.07); ctx.scale(s, s);
-          ctx.shadowColor = 'rgba(0,0,0,0.35)'; ctx.shadowBlur = 18; ctx.shadowOffsetY = 6; caja(ctx, -170, -130, 340, 280, 14, '#fff'); ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
-          cubrir(ctx, e.imgA, -156, -116, 312, 208, 8);
-          ctx.font = font(700, 26); ctx.fillStyle = '#555'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('📸 así se ve de verdad', 0, 124);
-          ctx.restore();
-        }
-      }
     }
     // Texto del paso: aparece de a poco, como si alguien lo contara
     const n = Math.max(1, Math.round(e.texto.length * clamp((lt - 0.3) / 1.6)));
@@ -286,23 +277,25 @@ const ESCENAS = {
     // La fábrica: solo se dibujan las estaciones que se ven
     const vx = 50, vy = 395, vw = W - 100, vh = 740;
     ctx.save(); ctx.beginPath(); ctx.roundRect(vx, vy, vw, vh, 40); ctx.clip();
+    // Acercamiento suave mientras la cámara está quieta en una máquina; vuelve a abrir al viajar
+    const z = 1 + 0.05 * ease(enSec / Math.max(0.1, sec - viaje)) * (i < n - 1 ? clamp((sec - enSec) / viaje) : 1);
+    ctx.translate(W / 2, vy + vh * 0.55); ctx.scale(z, z); ctx.translate(-W / 2, -(vy + vh * 0.55));
+    // La nave con profundidad (se mueve más lento que las máquinas) y encima las estaciones, una pegada a la otra
+    fondoFabrica(ctx, { x: vx - 60, y: vy - 40, w: vw + 120, h: vh + 80 }, cam, lt, e.tema.acento);
     for (let k = 0; k < n; k++) {
-      const bx = vx + k * vw - cam; if (bx > W || bx + vw < 0) continue;
-      dibujarMaquina(ctx, e.pasos[k].maquina, { x: bx, y: vy, w: vw, h: vh }, lt, e.pasos[k], (c, em, x, y, s) => emoji(c, em, x, y, s), e.tema.acento, { continuo: true });
+      const bx = vx + k * vw - cam; if (bx > W + 60 || bx + vw < -60) continue;
+      dibujarMaquina(ctx, e.pasos[k].maquina, { x: bx, y: vy, w: vw, h: vh }, lt, e.pasos[k], (c, em, x, y, s) => emoji(c, em, x, y, s), e.tema.acento, { continuo: true, mundo: k * vw });
+    }
+    // Columnas en primer plano, desenfocadas, que pasan más rápido (dan sensación de profundidad)
+    for (let k = 0; k <= n; k++) {
+      const x = vx + k * vw * 1.4 - cam * 1.4 - 40; if (x < -200 || x > W + 200) continue;
+      const g = ctx.createLinearGradient(x - 14, 0, x + 84, 0); g.addColorStop(0, 'rgba(31,36,41,0)'); g.addColorStop(0.15, '#2a3036'); g.addColorStop(0.45, '#55606a'); g.addColorStop(0.85, '#1f2429'); g.addColorStop(1, 'rgba(31,36,41,0)');
+      ctx.fillStyle = g; ctx.fillRect(x - 14, vy - 50, 98, vh + 100);
     }
     ctx.restore();
     caja(ctx, vx, vy, vw, vh, 40, null, 'rgba(0,0,0,0.25)', 6);
     // Avance continuo (una sola barra, sin partes)
-    caja(ctx, vx + 40, vy + vh - 26, vw - 80, 10, 5, 'rgba(0,0,0,0.18)'); caja(ctx, vx + 40, vy + vh - 26, Math.max(10, (vw - 80) * clamp(lt / e.dur)), 10, 5, e.tema.acento);
-    // Foto real de lo que se está haciendo: entra y sale con cada máquina
-    const img = e.imgs?.[i], vis = clamp((enSec - 0.5) / 0.4) * clamp((sec - viaje - enSec) / 0.4);
-    if (img && vis > 0.01) {
-      ctx.save(); ctx.globalAlpha = vis * FADE; ctx.translate(vx + 205, vy + 165); ctx.rotate(-0.06); const s = 0.85 + 0.15 * vis; ctx.scale(s, s);
-      ctx.shadowColor = 'rgba(0,0,0,0.35)'; ctx.shadowBlur = 18; ctx.shadowOffsetY = 6; caja(ctx, -170, -130, 340, 280, 14, '#fff'); ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
-      cubrir(ctx, img, -156, -116, 312, 208, 8);
-      ctx.font = font(700, 26); ctx.fillStyle = '#555'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('📸 así se ve de verdad', 0, 124);
-      ctx.restore();
-    }
+    caja(ctx, vx + 40, vy + vh - 26, vw - 80, 10, 5, 'rgba(0,0,0,0.25)'); caja(ctx, vx + 40, vy + vh - 26, Math.max(10, (vw - 80) * clamp(lt / e.dur)), 10, 5, e.tema.acento);
     // Lo que pasa en esta máquina: nombre corto y el texto, que aparece de a poco y se va al viajar a la siguiente
     const a = clamp(enSec / 0.35) * (i < n - 1 ? clamp((sec - enSec) / 0.45) : 1);
     alfa(ctx, a);
@@ -472,6 +465,9 @@ export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semill
   const cv = createCanvas(W, H), ctx = cv.getContext('2d');
   for (const e of lista) for (const k of ['A', 'B']) if (e[`foto${k}`]) e[`img${k}`] = await loadImage(fs.readFileSync(e[`foto${k}`])).catch(() => null);
   for (const e of lista) if (e.fotos) e.imgs = await Promise.all(e.fotos.map((f) => (f ? loadImage(fs.readFileSync(f)).catch(() => null) : null)));
+  // Objetos 3D de las máquinas de «Cómo se hace» (lo que entra, lo que sale y los ingredientes)
+  const glifos = lista.flatMap((e) => (e.pasos || (e.maquina ? [e] : [])).flatMap((p) => [p.entrada, p.salida, ...(p.extra || [])]));
+  if (glifos.length) await cargarObjetos([...glifos, '❄️', '✅', '🚚', '🏪', '📦']);
   const conVideo = lista.filter((e) => e.fondo);
   const dibujar = (t, debajo) => {
     const e = lista.find((x) => t < x.t0 + x.dur) || lista.at(-1), lt = t - e.t0;

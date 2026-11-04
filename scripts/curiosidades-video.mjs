@@ -266,7 +266,7 @@ function comoSeHace(hist) {
     { tipo: 'intro', dur: 3.4, tema: T, portada: true, consulta: fotos[0], sonidos: introSonidos, iconos: [...new Set(p.pasos.map((x) => x.salida))].slice(0, 5),
       lineas: [{ texto: `CÓMO SE ${hace.toUpperCase()}`, size: 104, color: TEMAS[T].acento }, { texto: p.titulo.toUpperCase(), size: 124 }, { texto: `${n} pasos: de la fábrica a tus manos`, size: 50, color: 'rgba(255,255,255,0.85)' }] },
     // Toda la fábrica en un solo plano: unos 7,8 s por máquina y un «whoosh» cada vez que la cámara viaja a la siguiente
-    { tipo: 'linea', dur: 7.8 * n, tema: T, etiqueta: `ASÍ SE ${hace.toUpperCase()} ${p.titulo.toUpperCase()}`, pasos: p.pasos, consultas: p.pasos.map((_, i) => fotos[(i % Math.max(1, fotos.length - 1)) + 1] || fotos[0]),
+    { tipo: 'linea', dur: 7.8 * n, tema: T, etiqueta: `ASÍ SE ${hace.toUpperCase()} ${p.titulo.toUpperCase()}`, pasos: p.pasos,
       sonidos: [[0, 'pop'], ...p.pasos.slice(1).map((_, i) => [7.8 * (i + 1) - 0.9, 'whoosh'])] },
     { tipo: 'proceso', dur: 6.5, tema: T, etiqueta: '¿SABÍAS QUE…?', resultado: p.icono, texto: p.dato, consultaA: fotos[0], sonidos: [[0, 'pop'], [0.2, 'bien']] },
     cierre(T, '¿QUÉ FABRICAMOS LA PRÓXIMA?', 'Dinos qué quieres ver en «Cómo se hace»')
