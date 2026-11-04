@@ -146,11 +146,17 @@ jobs:
         with:
           path: .tools/kokoro
           key: voz-kokoro-v1.0
+      # Kokoro aún no tiene versión para Python 3.14 (el de ubuntu-latest): se usa 3.12
+      - name: Python para la voz
+        if: env.CATS_INPUT == 'curiosidades-video'
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
       - name: Instalar la voz
         continue-on-error: true
         if: env.CATS_INPUT == 'curiosidades-video'
         run: |
-          python3 -m venv .tools/voz
+          python -m venv .tools/voz
           .tools/voz/bin/python -m pip install -q kokoro-onnx==${KOKORO_VERSION}
           mkdir -p .tools/kokoro
           for f in kokoro-v1.0.onnx voices-v1.0.bin; do
