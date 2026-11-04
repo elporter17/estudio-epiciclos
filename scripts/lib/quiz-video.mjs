@@ -11,7 +11,7 @@ import { createCanvas, loadImage } from '@napi-rs/canvas';
 import { wavBuffer } from '../bounce.mjs';
 import { midiFreq } from '../../src/melodias.js';
 import { TEMAS } from './tarjetas.mjs';
-import { tituloVisual, marcaVisual } from './retos-visuales.mjs';
+import { tituloVisual, marcaVisual, insigniaNivel } from './retos-visuales.mjs';
 import { pistaMusical } from './musica.mjs';
 
 export const W = 1080, H = 1920;
@@ -250,7 +250,8 @@ const ESCENAS = {
     marcaVisual(ctx, W, 205);
     ctx.font = font(400, 38, BLACK); ctx.fillStyle = '#777'; ctx.textAlign = 'right'; ctx.textBaseline = 'alphabetic'; ctx.fillText(`${e.idx + 1}/${e.total}`, W - 70, 205);
     alfa(ctx, ease(lt / 0.3));
-    const fin = tituloVisual(ctx, v, { W, top: 250, emoji: EMOJI.slice(2) || 'sans-serif', maxSize: 84 });
+    const topT = v.nivel != null ? insigniaNivel(ctx, v.nivel, W / 2, 240, { emoji: EMOJI.slice(2) || 'sans-serif', size: 36 }) + 18 : 250;
+    const fin = tituloVisual(ctx, v, { W, top: topT, emoji: EMOJI.slice(2) || 'sans-serif', maxSize: 80 });
     const zona = { x: 70, y: fin + 30, w: W - 140, h: 1250 - fin - 30 };
     v.cuerpo(ctx, zona, EMOJI.slice(2) || 'sans-serif');
     if (revela) v.revelar(ctx, rt);

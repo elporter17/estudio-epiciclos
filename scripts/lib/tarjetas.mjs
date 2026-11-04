@@ -105,3 +105,90 @@ export function dibujarTarjeta(t, { W = 1080, H = 1350, emojiFont = '' } = {}) {
   ctx.strokeStyle = tema.acento; ctx.lineWidth = 3; for (const r of [8, 15, 22]) { ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke(); }
   return cv;
 }
+
+// ---------- carruseles: portada con gancho y tarjeta final ----------
+// La portada es lo único que se ve en el feed: frase corta y grande (con una parte resaltada), una fila que adelanta lo
+// que viene (niveles o íconos) y «DESLIZA» a la derecha. Lo importante va en el centro (se ve igual en la miniatura
+// cuadrada del perfil). gancho: [[texto, resaltar]]; chips: [{ texto, color }] o iconos: ['🐙', …]
+export function dibujarPortada({ gancho, sub, chips, iconos, tema: idTema = 'matematicas', etiqueta = 'CARRUSEL' }, { W = 1080, H = 1350, emojiFont = '' } = {}) {
+  const tema = TEMAS[idTema] || TEMAS.noticias, cv = createCanvas(W, H), ctx = cv.getContext('2d'), E = emojiFont ? `, ${emojiFont}` : '';
+  const g = ctx.createLinearGradient(0, 0, W * 0.4, H); g.addColorStop(0, tema.a); g.addColorStop(1, tema.b);
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  ctx.strokeStyle = 'rgba(255,255,255,0.07)'; ctx.lineWidth = 4;
+  for (let r = 140; r < 1100; r += 80) { ctx.beginPath(); ctx.arc(W * 0.5, H * 0.5, r, 0, Math.PI * 2); ctx.stroke(); }
+  const top = H > 1500 ? 300 : 80, dy = H - (H > 1500 ? 330 : 170);
+  // Etiqueta arriba
+  ctx.font = `400 40px ${BLACK}${E}`; const lw = ctx.measureText(etiqueta).width;
+  ctx.fillStyle = 'rgba(255,255,255,0.14)'; roundRect(ctx, (W - lw - 60) / 2, top, lw + 60, 74, 37); ctx.fill();
+  ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(etiqueta, W / 2, top + 39);
+  // Gancho: el tamaño más grande con el que todo (gancho, fila y subtítulo) cabe entre la etiqueta y «DESLIZA»
+  const zona0 = top + 74 + 40, zona1 = dy - 40, extra = (chips?.length ? 64 + 50 : iconos?.length ? 120 + 50 : 0) + (sub ? 90 : 0);
+  const palabras = gancho.flatMap(([t, r]) => t.split(' ').filter(Boolean).map((w) => ({ w, r })));
+  let size = 150, lineas, lh;
+  for (; size >= 60; size -= 6) {
+    ctx.font = `400 ${size}px ${BLACK}${E}`; lineas = [[]]; let ancho = 0;
+    for (const p of palabras) { const w = ctx.measureText(p.w + ' ').width; if (ancho + w > W - 130 && lineas.at(-1).length) { lineas.push([]); ancho = 0; } lineas.at(-1).push(p); ancho += w; }
+    lh = size * 1.06;
+    if (lineas.length <= 4 && lineas.length * lh + extra <= zona1 - zona0) break;
+  }
+  let y = zona0 + (zona1 - zona0 - (lineas.length * lh + extra)) / 2;
+  ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left';
+  const esp = ctx.measureText(' ').width;
+  for (const l of lineas) {
+    const total = ctx.measureText(l.map((p) => p.w).join(' ')).width; let x = (W - total) / 2;
+    // Las palabras resaltadas seguidas van en un solo recuadro
+    for (let i = 0; i < l.length;) {
+      let j = i; while (j < l.length && l[j].r === l[i].r) j++;
+      const txt = l.slice(i, j).map((p) => p.w).join(' '), w = ctx.measureText(txt).width;
+      if (l[i].r) { ctx.fillStyle = tema.acento; roundRect(ctx, x - 12, y + lh * 0.1, w + 24, lh * 0.94, 18); ctx.fill(); ctx.fillStyle = '#111'; }
+      else ctx.fillStyle = '#fff';
+      ctx.fillText(txt, x, y + lh * 0.84); x += w + esp; i = j;
+    }
+    y += lh;
+  }
+  // Lo que viene: chips (niveles) o íconos
+  y += 50;
+  if (chips?.length) {
+    ctx.font = `400 30px ${BLACK}${E}`;
+    const ws = chips.map((c) => ctx.measureText(c.texto).width + 40), total = ws.reduce((a, b) => a + b, 0) + 14 * (chips.length - 1);
+    let x = (W - total) / 2;
+    chips.forEach((c, i) => { ctx.fillStyle = c.color; roundRect(ctx, x, y, ws[i], 64, 32); ctx.fill(); ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(c.texto, x + ws[i] / 2, y + 34); x += ws[i] + 14; });
+    y += 64;
+  } else if (iconos?.length) {
+    const paso = Math.min(150, (W - 200) / iconos.length); ctx.font = `100px ${emojiFont || 'sans-serif'}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    iconos.forEach((ic, i) => ctx.fillText(ic, W / 2 + (i - (iconos.length - 1) / 2) * paso, y + 60));
+    y += 120;
+  }
+  if (sub) { ctx.font = `600 44px ${SANS}${E}`; ctx.fillStyle = 'rgba(255,255,255,0.88)'; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic'; ctx.fillText(sub, W / 2, y + 70); }
+  // «DESLIZA ➜» abajo a la derecha (invita a pasar a la siguiente)
+  ctx.font = `400 42px ${BLACK}`; const dw = ctx.measureText('DESLIZA').width + 110;
+  ctx.fillStyle = tema.acento; roundRect(ctx, W - dw - 60, dy, dw, 84, 42); ctx.fill();
+  ctx.fillStyle = '#111'; ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillText('DESLIZA', W - dw - 30, dy + 44);
+  ctx.strokeStyle = '#111'; ctx.lineWidth = 7; ctx.lineCap = 'round'; const ax = W - 100, ay = dy + 42;
+  ctx.beginPath(); ctx.moveTo(ax - 30, ay); ctx.lineTo(ax, ay); ctx.moveTo(ax - 14, ay - 15); ctx.lineTo(ax, ay); ctx.lineTo(ax - 14, ay + 15); ctx.stroke(); ctx.lineCap = 'butt';
+  pie(ctx, tema, W, H);
+  return cv;
+}
+
+// Última del carrusel: la pregunta para comentar y dónde están las respuestas
+export function dibujarCierre({ titulo, sub, nota, tema: idTema = 'matematicas' }, { W = 1080, H = 1350, emojiFont = '' } = {}) {
+  const tema = TEMAS[idTema] || TEMAS.noticias, cv = createCanvas(W, H), ctx = cv.getContext('2d'), E = emojiFont ? `, ${emojiFont}` : '';
+  const g = ctx.createLinearGradient(0, 0, W * 0.4, H); g.addColorStop(0, tema.b); g.addColorStop(1, tema.a);
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  ctx.fillStyle = tema.acento; const f = fit(ctx, titulo, W - 160, 420, { from: 120, to: 60, weight: 400, family: BLACK, lh: 1.06, emoji: E });
+  let y = H / 2 - (f.lines.length * f.lh) / 2 - 60;
+  f.lines.forEach((l) => { ctx.fillText(l, W / 2, y + f.size * 0.9); y += f.lh; });
+  ctx.fillStyle = '#fff'; ctx.font = `600 50px ${SANS}${E}`; if (sub) ctx.fillText(sub, W / 2, y + 90);
+  if (nota) { ctx.fillStyle = 'rgba(255,255,255,0.75)'; ctx.font = `500 40px ${SANS}${E}`; ctx.fillText(nota, W / 2, y + 170); }
+  ctx.fillStyle = '#fff'; ctx.font = `400 46px ${BLACK}`; ctx.fillText('Sigue a Potter Play', W / 2, H - (H > 1500 ? 330 : 200));
+  pie(ctx, tema, W, H);
+  return cv;
+}
+
+function pie(ctx, tema, W, H) {
+  const pad = 80;
+  ctx.textAlign = 'right'; ctx.textBaseline = 'alphabetic'; ctx.font = `400 36px ${BLACK}`; ctx.fillStyle = '#fff'; ctx.fillText('Potter Play', W - pad, H - 48);
+  const bw = ctx.measureText('Potter Play').width, cx = W - pad - bw - 34, cy = H - 60;
+  ctx.strokeStyle = tema.acento; ctx.lineWidth = 3; for (const r of [8, 15, 22]) { ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke(); }
+}

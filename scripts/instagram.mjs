@@ -34,7 +34,7 @@ async function esperar(id, log) {
   throw new Error('Instagram tardó más de 5 minutos en procesar el archivo');
 }
 
-// tipo: reel | historia | imagen | historia-imagen. url: pública (el almacén Blob sirve)
+// tipo: reel | historia | imagen | historia-imagen | carrusel. url (o urls): públicas (el almacén Blob sirve)
 // Canción en tendencia del catálogo de Meta autorizado para terceros (GET /ig_audio sin búsqueda = tendencias).
 // Evita repetir las últimas 30 (data/ig-musica.json, estado de Actions). null si no hay o falla.
 const USADAS = path.join(ROOT, 'data', 'ig-musica.json');
@@ -57,11 +57,22 @@ export async function musicaTendencia({ log = (m) => process.stderr.write(m) } =
   return null;
 }
 
-// audio: id de una canción de musicaTendencia (solo Reels); si Instagram la rechaza, se publica sin ella
-export async function publishInstagram({ tipo = 'reel', url, caption = '', audio, log = (m) => process.stderr.write(m) }) {
+// audio: id de una canción de musicaTendencia (solo Reels); si Instagram la rechaza, se publica sin ella.
+// tipo carrusel: urls (2 a 10 imágenes JPEG); cada una es un contenedor «is_carousel_item» y luego van juntas
+export async function publishInstagram({ tipo = 'reel', url, urls, caption = '', audio, log = (m) => process.stderr.write(m) }) {
   const ig = await instagramReady();
   if (!ig) throw new Error('La página no tiene una cuenta de Instagram profesional vinculada o el token no tiene instagram_basic');
   const texto = caption.slice(0, 2200);
+  if (tipo === 'carrusel') {
+    const hijos = [];
+    for (const u of urls.slice(0, 10)) { const { id } = await graph('POST', `/${ig}/media`, { image_url: u, is_carousel_item: 'true' }); await esperar(id, log); hijos.push(id); }
+    const { id } = await graph('POST', `/${ig}/media`, { media_type: 'CAROUSEL', children: hijos.join(','), caption: texto });
+    await esperar(id, log);
+    const r = await graph('POST', `/${ig}/media_publish`, { creation_id: id });
+    const info = await graph('GET', `/${r.id}`, { fields: 'permalink' }).catch(() => ({}));
+    log(`Instagram: carrusel de ${hijos.length} publicado${info.permalink ? ` · ${info.permalink}` : ''}\n`);
+    return { media_id: r.id, tipo, status: 'published', permalink: info.permalink || null, at: new Date().toISOString() };
+  }
   const p = tipo === 'imagen' ? { image_url: url, caption: texto }
     : tipo === 'historia' ? { media_type: 'STORIES', video_url: url }
     : tipo === 'historia-imagen' ? { media_type: 'STORIES', image_url: url }

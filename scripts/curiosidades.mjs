@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Publicación de imágenes de curiosidades («¿Sabías que…?», «¿Verdadero o falso?», «¿Cuál es falso?», retos) y de
 // noticias (titulares recientes de medios en español), sin IA: texto, ícono y colores por tema.
-//   node scripts/curiosidades.mjs --red facebook            (Facebook, publicada directo)
+//   node scripts/curiosidades.mjs --red facebook            (carrusel en Facebook e Instagram: portada gancho + 5 + cierre)
+//   node scripts/curiosidades.mjs --red facebook --tipo retos|datos|noticias   (un carrusel de ese tipo)
 //   node scripts/curiosidades.mjs --red tiktok              (TikTok, foto en borrador)
 //   node scripts/curiosidades.mjs --historia                (historia de Facebook con la imagen vertical; metas.mjs)
 //   node scripts/curiosidades.mjs --dry-run --formato vf    (solo la imagen y el texto, sin publicar)
@@ -11,13 +12,13 @@ import path from 'node:path';
 import { put, list, del } from '@vercel/blob';
 import { parseCli } from './lib/cli.mjs';
 import { setupNode, ROOT } from './lib/node-env.mjs';
-import { dibujarTarjeta, TEMAS } from './lib/tarjetas.mjs';
+import { dibujarTarjeta, dibujarPortada, dibujarCierre, TEMAS } from './lib/tarjetas.mjs';
 import { ultimaNoticia, CAT_NOMBRE } from './lib/noticias.mjs';
 import { blobToken } from './lib/video-link.mjs';
-import { publishPhoto, publishPhotoStory, facebookReady } from './facebook.mjs';
+import { publishPhoto, publishPhotoStory, publishCarrusel, facebookReady } from './facebook.mjs';
 import { publishPhotoDraft } from './publish.mjs';
 import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
-import { crearVisual, dibujarVisual, VISUALES } from './lib/retos-visuales.mjs';
+import { crearVisual, dibujarVisual, VISUALES, NIVELES } from './lib/retos-visuales.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades'), HIST = path.join(ROOT, 'data', 'curiosidades-historial.json');
@@ -97,43 +98,123 @@ async function subirImagen(file) {
   return { url, sitio: SITE_MEDIA + pathname.replace(/^media\//, '') };
 }
 
-// Carrusel para TikTok: varias imágenes que se deslizan, en una sola publicación. Día por medio:
-// «N retos visuales» (uno de cada tipo, con las respuestas en la descripción) o «N cosas que no sabías».
+// ---------- carruseles: portada gancho + 5 (retos de fácil a GOD, datos de un tema o noticias) + cierre ----------
+// Los carruseles son lo que más se desliza (y Facebook e Instagram los vuelven a mostrar desde la segunda): la portada
+// tiene que dar una razón para deslizar, sin contar la respuesta. Ganchos que rotan, sin cifras inventadas.
+const GANCHOS = {
+  retos: [
+    [['¿Hasta qué', false], ['nivel', true], ['llegas?', false]],
+    [['El último es', false], ['nivel GOD', true]],
+    [['Casi nadie', false], ['pasa el 4', true]],
+    [['Del 1 al 5:', false], ['¿cuál te gana?', true]],
+    [['Si pasas el 3,', false], ['eres de otro nivel', true]],
+    [['El 1 es fácil.', false], ['¿Y el 5?', true]]
+  ],
+  datos: [
+    [['5 cosas de', false], ['{tema}', true], ['que nadie te contó', false]],
+    [['La número 4', false], ['parece mentira', true]],
+    [['Seguro no sabías', false], ['la última', true]],
+    [['Esto no te lo', false], ['enseñaron', true], ['en la escuela', false]],
+    [['5 datos de', false], ['{tema}', true], ['que te van a volar la cabeza', false]]
+  ],
+  noticias: [
+    [['Lo que pasó', false], ['hoy', true], ['en 1 minuto', false]],
+    [['{n} noticias', true], ['que tienes que saber hoy', false]],
+    [['Videojuegos, fútbol y ciencia:', false], ['lo de hoy', true]]
+  ]
+};
+const TEMA_CORTO = { animales: 'los animales', ciencia: 'el espacio', historia: 'la historia', deportes: 'el fútbol', inventos: 'los inventos', matematicas: 'los números', cuerpo: 'tu cuerpo', geografia: 'el mundo', comida: 'la comida', tecnologia: 'la tecnología' };
+const contraer = (t) => t.replace(/\bde el\b/g, 'del');
+const ganchoDe = (tipo, k, datos) => GANCHOS[tipo][k % GANCHOS[tipo].length].map(([t, r]) => [t.replace('{tema}', datos.tema || '').replace('{n}', datos.n || ''), r]);
+
+// Cuál toca: en Facebook, 1 de cada 6 son noticias (si hay frescas) y del resto 2 de cada 3 son retos; en TikTok, día
+// por medio retos o datos (como antes)
+function tipoCarrusel(o, hist) {
+  if (o.tipo && o.tipo !== 'auto' && GANCHOS[o.tipo]) return o.tipo;
+  const k = o.red === 'tiktok' ? hist.carruseles || 0 : hist.carruselesFb || 0;
+  if (o.red === 'tiktok') return k % 2 === 0 ? 'retos' : 'datos';
+  return k % 6 === 5 ? 'noticias' : k % 3 === 2 ? 'datos' : 'retos';
+}
+
 async function carrusel(o, hist, base, emojiFont) {
-  const n = Math.min(10, Math.max(2, +o.carrusel)), tipo = (hist.carruseles || 0) % 2 === 0 ? 'retos' : 'datos';
-  const outDir = path.join(ROOT, 'out'); fs.mkdirSync(outDir, { recursive: true });
-  const marca = Date.now().toString(36), archivos = [], lineas = [], ids = [];
-  for (let i = 0; i < n; i++) {
-    let cv;
-    if (tipo === 'retos') {
-      const v = crearVisual(VISUALES[i % VISUALES.length]);
-      cv = dibujarVisual(v, { H: 1920, emojiFont }); lineas.push(`${i + 1}. ${v.corta.replace(/[¡!]/g, '')}`);
-    } else {
-      const x = elegirCuriosidad(base, { ...hist, ids: [...hist.ids, ...ids] }, { formato: 'sabias' }); ids.push(x.id);
-      cv = dibujarTarjeta({ formato: 'sabias', tema: x.tema, icono: x.icono, texto: x.dato }, { H: 1920, emojiFont }); lineas.push(`${i + 1}. ${x.dato}`);
-    }
-    // TikTok solo acepta fotos JPG o WEBP (con PNG responde file_format_check_failed)
-    const f = path.join(outDir, `carrusel-${tipo}-${marca}-${i + 1}.jpg`); fs.writeFileSync(f, cv.toBuffer('image/jpeg', 92)); archivos.push(f);
+  const n = Math.min(8, Math.max(3, +(o.carrusel || 5))), H = o.red === 'tiktok' ? 1920 : 1350;
+  let tipo = tipoCarrusel(o, hist);
+  const k = (hist.ganchos || 0), slides = [], lineas = [], ids = [], noticias = [];
+  let tema = 'matematicas', clave = { modo: 'charla' }, portada, cierreT;
+  if (tipo === 'noticias') {
+    const cats = ['videojuegos', 'futbol', 'ciencia'], vistos = new Set(hist.noticias);
+    for (let i = 0; i < 4; i++) { const x = await ultimaNoticia({ vistos, preferir: cats[i % 3] }).catch(() => null); if (!x) break; vistos.add(x.link); noticias.push(x); }
+    if (noticias.length < 3) tipo = 'retos';
   }
-  const titulo = tipo === 'retos' ? `${n} retos visuales: ¿cuántos resuelves?` : `${n} cosas que no sabías`;
+  if (tipo === 'retos') {
+    // Un tipo de reto distinto en cada nivel, de fácil a GOD
+    const tipos = mezclar(VISUALES);
+    for (let i = 0; i < 5; i++) { const v = crearVisual(tipos[i], i); slides.push(dibujarVisual(v, { H, emojiFont })); lineas.push(`Nivel ${i + 1} (${NIVELES[i].nombre}): ${v.corta.replace(/[¡!]/g, '')}`); }
+    clave = { modo: 'puntaje', max: 5 };
+    portada = { gancho: ganchoDe('retos', k, {}), etiqueta: '5 RETOS · DE FÁCIL A GOD', tema: 'matematicas', chips: NIVELES.map((x, i) => ({ texto: i === 4 ? 'GOD' : String(i + 1), color: x.color })), sub: 'Respuestas al final de la descripción' };
+    cierreT = { titulo: '¿Hasta qué nivel llegaste?', sub: 'Del 1 (fácil) al 5 (GOD)', nota: 'Las respuestas están en la descripción', tema: 'matematicas' };
+  } else if (tipo === 'datos') {
+    // 5 datos de un mismo tema (el que más datos sin usar tenga entre unos al azar)
+    const recientes = new Set(hist.ids.slice(-Math.min(400, base.length - 20)));
+    const libres = base.filter((x) => x.dato && x.tipo !== 'reto' && !recientes.has(x.id));
+    const porTema = Object.entries(libres.reduce((a, x) => ((a[x.tema] = (a[x.tema] || 0) + 1), a), {})).filter(([t, c]) => c >= n && TEMA_CORTO[t] && t !== hist.temas.at(-1));
+    tema = porTema.length ? azar(porTema)[0] : azar(Object.keys(TEMA_CORTO));
+    const elegidos = mezclar(libres.filter((x) => x.tema === tema)).concat(mezclar(base.filter((x) => x.tema === tema && x.dato))).filter((x, i, a) => a.indexOf(x) === i).slice(0, n);
+    elegidos.forEach((x, i) => { ids.push(x.id); slides.push(dibujarTarjeta({ formato: 'sabias', tema: x.tema, icono: x.icono, texto: x.dato }, { H, emojiFont })); lineas.push(`${i + 1}. ${x.dato}`); });
+    portada = { gancho: ganchoDe('datos', k, { tema: TEMA_CORTO[tema] }), etiqueta: `${elegidos.length} DATOS · ${TEMAS[tema].nombre.toUpperCase()}`, tema, iconos: elegidos.map((x) => x.icono).slice(0, 5), sub: '¿Cuántas ya sabías?' };
+    cierreT = { titulo: '¿Cuál te sorprendió más?', sub: `¿Cuántas de las ${elegidos.length} ya sabías?`, nota: 'Mañana hay más', tema };
+  } else {
+    tema = 'noticias';
+    const fecha = (x) => new Date(x.fecha).toLocaleDateString('es-HN', { day: 'numeric', month: 'short', timeZone: 'America/Tegucigalpa' });
+    noticias.forEach((x, i) => { slides.push(dibujarTarjeta({ formato: 'noticia', tema: 'noticias', icono: x.icono, texto: x.titulo, pie: `Fuente: ${x.medio} · ${fecha(x)}` }, { H, emojiFont })); lineas.push(`${i + 1}. ${x.titulo} (${x.medio})\n${x.link}`); });
+    portada = { gancho: ganchoDe('noticias', k, { n: noticias.length }), etiqueta: 'NOTICIAS DE HOY', tema, iconos: noticias.map((x) => x.icono), sub: 'Videojuegos · Fútbol · Ciencia' };
+    cierreT = { titulo: '¿Cuál te sorprendió más?', sub: 'Las fuentes están en la descripción', tema };
+  }
+  // «de» + «el fútbol» → «del» + «fútbol» (en la portada cada parte se dibuja por separado)
+  portada.gancho = portada.gancho.map(([t, r], i, a) => [a[i + 1] && /\bde$/.test(t) && /^el /.test(a[i + 1][0]) ? t.replace(/de$/, 'del') : i && /\bde$/.test(a[i - 1][0]) && /^el /.test(t) ? t.slice(3) : t, r]);
+  const todas = [dibujarPortada(portada, { H, emojiFont }), ...slides, dibujarCierre(cierreT, { H, emojiFont })];
+  const outDir = path.join(ROOT, 'out'); fs.mkdirSync(outDir, { recursive: true });
+  const marca = Date.now().toString(36), archivos = todas.map((cv, i) => {
+    // JPEG para todos: TikTok e Instagram no aceptan PNG
+    const file = path.join(outDir, `carrusel-${tipo}-${marca}-${i + 1}.jpg`); fs.writeFileSync(file, cv.toBuffer('image/jpeg', 92)); return file;
+  });
+  const titulo = contraer(tipo === 'retos' ? '5 retos: de fácil a GOD' : tipo === 'datos' ? `${slides.length} datos de ${TEMA_CORTO[tema]}` : 'Noticias de hoy');
+  const gancho = contraer(portada.gancho.map(([t]) => t).join(' '));
   const texto = tipo === 'retos'
-    ? `👀 ${n} retos visuales: desliza y resuelve cada uno antes de ver la respuesta. ¿Cuántos sacaste?${OCULTAR}Respuestas:\n${lineas.join('\n')}\n\n#retos #acertijos #retovisual #juegosmentales #potterplay`
-    : `🤯 ${n} cosas que no sabías. Desliza 👉 ¿Cuál te sorprendió más?\n\n${lineas.join('\n')}\n\n#curiosidades #sabiasque #datoscuriosos #aprende #potterplay`;
-  console.error(`Carrusel: ${titulo}`);
+    ? `👀 ${gancho}. 5 retos visuales que suben de nivel: fácil, medio, difícil, imposible y GOD 💀. Desliza y resuelve cada uno antes de ver la respuesta.${OCULTAR}Respuestas:\n${lineas.join('\n')}\n\n#retos #acertijos #retovisual #juegosmentales #agilidadmental #potterplay`
+    : tipo === 'datos'
+      ? `🤯 ${gancho}. Desliza 👉 ¿Cuántas ya sabías?\n\n${lineas.join('\n')}\n\n#curiosidades #sabiasque #datoscuriosos #aprende ${TEMAS[tema].tags.map((t) => `#${t}`).join(' ')} #potterplay`
+      : `📰 ${gancho}. Desliza 👉\n\n${lineas.join('\n\n')}\n\n¿Cuál te sorprendió más?\n\n#noticias #ultimahora #videojuegos #futbol #ciencia #potterplay`;
+  console.error(`Carrusel (${o.red}): ${titulo} · portada «${gancho}» · ${archivos.length} imágenes`);
   const meta = { kind: 'imagen', title: titulo, id: `carrusel-${marca}`, formato: `carrusel-${tipo}`, post: { text: texto }, createdAt: new Date().toISOString() };
   if (!o['dry-run']) {
     const subidas = [];
-    for (const f of archivos) { const img = await subirImagen(f).catch((e) => { console.error(`No se pudo subir la imagen: ${e.message}`); return null; }); if (img) subidas.push(img); }
+    for (const file of archivos) { const img = await subirImagen(file).catch((e) => { console.error(`No se pudo subir la imagen: ${e.message}`); return null; }); if (img) subidas.push(img); }
     if (subidas.length >= 2) {
       meta.imageUrl = subidas[0].url;
-      try { meta.tiktok = [await publishPhotoDraft({ url: subidas.map((x) => x.sitio), title: titulo, description: texto })]; }
-      catch (e) { meta.tiktok = [{ mode: 'draft', status: /spam_risk|pending/i.test(e.message) ? 'LIMIT' : 'error', fail_reason: e.message }]; console.error(`Aviso: TikTok: ${e.message}`); }
+      if (o.red === 'tiktok') {
+        try { meta.tiktok = [await publishPhotoDraft({ url: subidas.map((x) => x.sitio), title: titulo, description: texto })]; }
+        catch (e) { meta.tiktok = [{ mode: 'draft', status: /spam_risk|pending/i.test(e.message) ? 'LIMIT' : 'error', fail_reason: e.message }]; console.error(`Aviso: TikTok: ${e.message}`); }
+      } else {
+        if (facebookReady()) {
+          try { meta.facebook = await publishCarrusel({ urls: subidas.map((x) => x.url), caption: texto }); }
+          catch (e) { meta.facebook = { status: 'error', error: e.message }; console.error(`Aviso: Facebook: ${e.message}`); process.exitCode = 1; }
+          registrarRespuesta({ red: 'facebook', id: meta.facebook?.post_id, clave, titulo });
+        }
+        if (o.instagram !== 'no' && await instagramReady()) {
+          meta.instagram = await publishInstagramSeguro({ tipo: 'carrusel', urls: subidas.map((x) => x.url), caption: texto });
+          registrarRespuesta({ red: 'instagram', id: meta.instagram.media_id, clave, titulo });
+        }
+      }
     }
-    hist.ids.push(...ids); hist.carruseles = (hist.carruseles || 0) + 1;
+    hist.ids.push(...ids); hist.noticias.push(...noticias.map((x) => x.link)); if (tipo === 'datos') hist.temas.push(tema);
+    hist.ganchos = k + 1;
+    if (o.red === 'tiktok') hist.carruseles = (hist.carruseles || 0) + 1; else hist.carruselesFb = (hist.carruselesFb || 0) + 1;
+    hist.total++; hist.ids = hist.ids.slice(-600); hist.temas = hist.temas.slice(-50); hist.noticias = hist.noticias.slice(-300);
     fs.mkdirSync(path.dirname(HIST), { recursive: true }); fs.writeFileSync(HIST, JSON.stringify(hist, null, 2) + '\n');
   }
   fs.writeFileSync(path.join(outDir, `carrusel-${marca}.json`), JSON.stringify(meta, null, 2) + '\n');
-  console.log(JSON.stringify({ imagenes: archivos, texto, tiktok: meta.tiktok }, null, 2));
+  console.log(JSON.stringify({ imagenes: archivos, texto, facebook: meta.facebook, instagram: meta.instagram, tiktok: meta.tiktok }, null, 2));
 }
 
 async function main() {
@@ -150,7 +231,8 @@ async function main() {
   const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
   const hist = { ids: [], temas: [], noticias: [], total: 0, ...leer(HIST, {}) };
   const base = cargarBase();
-  if (o.red === 'tiktok' && +o.carrusel > 1) return carrusel(o, hist, base, emojiFont);
+  const aMano = o.id || o.formato || o.visual || (o.tipo !== 'auto' && !GANCHOS[o.tipo]);
+  if ((o.red === 'tiktok' && +o.carrusel > 1) || (o.red === 'facebook' && !o.historia && !aMano)) return carrusel(o, hist, base, emojiFont);
   // Cada «noticia-cada» publicaciones va una noticia (si hay una fresca); si no, una curiosidad
   const tocaNoticia = o.tipo === 'noticia' || (o.tipo === 'auto' && (hist.total + 1) % Math.max(1, +o['noticia-cada']) === 0);
   let pieza = null, x = null, noticia = null;

@@ -169,7 +169,7 @@ function banderas(hist) {
       // Dos opciones falsas del mismo continente (más difícil que al azar)
       const otros = mezclar(CONTINENTES[continente(c)].split(' ').filter((x) => x !== c)).slice(0, 2);
       const ops = mezclar([c, ...otros]), piensa = 3.5;
-      return { tipo: 'opciones', dur: piensa + 1.6, piensa, idx: i, total: 10, tema: 'historia', etiqueta: i < 3 ? 'FÁCIL 🟢' : i < 7 ? 'MEDIO 🟡' : 'DIFÍCIL 🔴',
+      return { tipo: 'opciones', dur: piensa + 1.6, piensa, idx: i, total: 10, tema: 'historia', etiqueta: i < 3 ? 'FÁCIL 🟢' : i < 6 ? 'MEDIO 🟡' : i < 8 ? 'DIFÍCIL 🟠' : i === 8 ? 'IMPOSIBLE 🔴' : 'GOD 💀',
         bandera: bandera(c), opciones: ops.map(nombrePais), respuesta: ops.indexOf(c), sonidos: cuenta(piensa, 'bien') };
     }),
     { tipo: 'cierre', dur: CIERRE, tema: 'historia', sonidos: [[0, 'final']],
@@ -185,16 +185,17 @@ const cierre = (tema, l1, l2) => ({ tipo: 'cierre', dur: CIERRE, tema, sonidos: 
 const tags = (...t) => [...t, 'reels', 'potterplay'].map((x) => `#${x}`).join(' ');
 
 function retosVideo() {
-  const vs = mezclar(VISUALES).map(crearVisual);
+  // De fácil a GOD: un tipo distinto en cada nivel
+  const vs = mezclar(VISUALES).map((t, i) => crearVisual(t, i));
   const escenas = [
     { tipo: 'intro', dur: INTRO, tema: 'matematicas', portada: true, sonidos: introSonidos, iconos: ['👀', '🔎', '🧮', '✍️', '🟢'],
-      lineas: [{ texto: '5 RETOS', size: 150, color: TEMAS.matematicas.acento }, { texto: 'VISUALES', size: 120 }, { texto: '¿Cuántos resuelves a tiempo?', size: 58, color: 'rgba(255,255,255,0.85)' }] },
+      lineas: [{ texto: '5 RETOS', size: 150, color: TEMAS.matematicas.acento }, { texto: 'DE FÁCIL A GOD', size: 104 }, { texto: '¿Hasta qué nivel llegas?', size: 58, color: 'rgba(255,255,255,0.85)' }] },
     // Los de buscar (número repetido, letra escondida) tienen más tiempo
     ...vs.map((v, i) => { const piensa = ['duplicado', 'diferente'].includes(v.tipo) ? 9 : 7; return { tipo: 'visual', dur: piensa + 2.6, piensa, idx: i, total: vs.length, tema: 'matematicas', visual: v, sonidos: cuenta(piensa, 'bien') }; }),
-    cierre('matematicas', '¿CUÁNTOS RESOLVISTE?', '¿Cuántos de los 5 te salieron?')
+    cierre('matematicas', '¿HASTA QUÉ NIVEL LLEGASTE?', 'Del 1 (fácil) al 5 (GOD)')
   ];
-  const texto = `👀 5 retos visuales: número repetido, letra escondida, fracción, operación y nombre. ¿Cuántos resuelves antes de que se acabe el tiempo?${OCULTAR}Respuestas:\n${vs.map((v, i) => `${i + 1}. ${v.corta.replace(/[¡!]/g, '')}`).join('\n')}\n\n${tags('retos', 'acertijos', 'retovisual', 'juegosmentales', 'agilidadmental')}`;
-  return { formato: 'retos', titulo: '5 retos visuales', escenas, texto, clave: { modo: 'puntaje', max: vs.length } };
+  const texto = `👀 5 retos visuales de fácil a GOD 💀: número repetido, letra escondida, fracción, operación y nombre. ¿Hasta qué nivel llegas antes de que se acabe el tiempo?${OCULTAR}Respuestas:\n${vs.map((v, i) => `${i + 1}. ${v.corta.replace(/[¡!]/g, '')}`).join('\n')}\n\n${tags('retos', 'acertijos', 'retovisual', 'juegosmentales', 'agilidadmental')}`;
+  return { formato: 'retos', titulo: '5 retos visuales: de fácil a GOD', escenas, texto, clave: { modo: 'puntaje', max: vs.length } };
 }
 
 function prefieresVideo(hist) {

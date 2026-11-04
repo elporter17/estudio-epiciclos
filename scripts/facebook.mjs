@@ -90,6 +90,17 @@ export async function publishPhotoStory({ url, log = (m) => process.stderr.write
   return { photo_id: foto.id, post_id: d.post_id || null, status: d.success ? 'published' : 'sent', at: new Date().toISOString() };
 }
 
+// Carrusel (publicación con varias fotos): cada foto se sube sin publicar y después va todo junto en una publicación
+export async function publishCarrusel({ urls, caption = '', log = (m) => process.stderr.write(m) }) {
+  if (!facebookReady()) throw new Error('Faltan FB_PAGE_ID o FB_PAGE_TOKEN');
+  const ids = [];
+  for (const url of urls) ids.push((await graph('POST', `/${process.env.FB_PAGE_ID}/photos`, { url, published: 'false' })).id);
+  const d = await graph('POST', `/${process.env.FB_PAGE_ID}/feed`, { message: caption.slice(0, 63000), attached_media: JSON.stringify(ids.map((media_fbid) => ({ media_fbid }))) });
+  const permalink = ids[0] ? `https://www.facebook.com/photo/?fbid=${ids[0]}` : null;
+  log(`Facebook: carrusel de ${ids.length} fotos publicado${permalink ? ` · ${permalink}` : ''}\n`);
+  return { post_id: d.id, photo_ids: ids, status: 'published', permalink, at: new Date().toISOString() };
+}
+
 // Foto publicada en la página (curiosidades y noticias): url pública de la imagen y el texto del post
 export async function publishPhoto({ url, caption = '', log = (m) => process.stderr.write(m) }) {
   if (!facebookReady()) throw new Error('Faltan FB_PAGE_ID o FB_PAGE_TOKEN');

@@ -24,7 +24,7 @@ export function inferirClave(descripcion = '') {
   const t = norm(descripcion);
   if (t.includes('adivina las 10 banderas') || t.includes('10 cosas que no sabias')) return { modo: 'puntaje', max: 10 };
   if (t.includes('adivina con emojis')) return { modo: 'puntaje', max: 8 };
-  if (t.includes('5 preguntas') || t.includes('5 retos visuales')) return { modo: 'puntaje', max: 5 };
+  if (t.includes('5 preguntas') || t.includes('5 retos visuales') || t.includes('de facil a god')) return { modo: 'puntaje', max: 5 };
   return { modo: 'charla' };
 }
 // Un comentario normal (no vacío, sin enlaces ni menciones en masa): se le contesta con un agradecimiento
