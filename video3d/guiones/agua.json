@@ -1,0 +1,46 @@
+{
+  "id": "agua",
+  "titulo": "¿Cuánta agua bebes en toda tu vida?",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "tipo": "vaso",
+      "texto": "Si juntaras toda el agua que bebes en tu vida, ¿dónde cabría?",
+      "resaltar": ["toda", "vida"]
+    },
+    {
+      "tipo": "botellas",
+      "texto": "Cada día bebes unos dos litros: dos botellas como estas.",
+      "voz": "Cada día bebes unos dos litros: dos botellas como estas.",
+      "resaltar": ["dos", "litros"],
+      "contador": { "desde": 0, "hasta": 2, "unidad": "litros" }
+    },
+    {
+      "tipo": "pila",
+      "texto": "En un año son 730 litros. Casi cuatro bañeras llenas.",
+      "voz": "En un año son setecientos treinta litros. Casi cuatro bañeras llenas.",
+      "resaltar": ["730", "bañeras"],
+      "contador": { "desde": 2, "hasta": 730, "unidad": "litros" },
+      "cantidad": 365
+    },
+    {
+      "tipo": "torre",
+      "texto": "En toda tu vida son 27.375 botellas. Una sobre otra, medirían 9 kilómetros: más que el Everest.",
+      "voz": "En toda tu vida son veintisiete mil trescientas setenta y cinco botellas. Una sobre otra, medirían nueve kilómetros: más que el Everest.",
+      "resaltar": ["27.375", "9", "kilómetros", "Everest"],
+      "contador": { "desde": 0, "hasta": 9034, "unidad": "metros" }
+    },
+    {
+      "tipo": "piscina",
+      "texto": "Son unos 55.000 litros: suficiente para llenar una piscina de jardín.",
+      "voz": "Son unos cincuenta y cinco mil litros: suficiente para llenar una piscina de jardín.",
+      "resaltar": ["55.000", "piscina"],
+      "contador": { "desde": 0, "hasta": 55000, "unidad": "litros" }
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Cuánta agua tomaste hoy? Escríbelo en los comentarios.",
+      "resaltar": ["hoy", "comentarios"]
+    }
+  ]
+}

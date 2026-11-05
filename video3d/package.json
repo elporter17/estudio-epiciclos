@@ -1,0 +1,19 @@
+{
+  "name": "potter-video3d",
+  "private": true,
+  "type": "module",
+  "description": "Videos en 3D programados (Remotion + Three.js, sin IA)",
+  "scripts": {
+    "studio": "remotion studio src/index.jsx",
+    "render": "remotion render src/index.jsx"
+  },
+  "dependencies": {
+    "@react-three/fiber": "9.8.1",
+    "@remotion/cli": "4.0.536",
+    "@remotion/three": "4.0.536",
+    "react": "19.2.9",
+    "react-dom": "19.2.9",
+    "remotion": "4.0.536",
+    "three": "0.186.1"
+  }
+}

@@ -23,3 +23,8 @@ data/gta6-historial.json
 data/stock.json
 data/ig-musica.json
 .tools/
+video3d/node_modules/
+video3d/out/
+video3d/public/voz/
+video3d/public/render.json
+video3d/public/musica.wav
