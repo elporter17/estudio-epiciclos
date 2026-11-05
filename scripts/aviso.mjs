@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Aviso al final de cada corrida, SOLO cuando algo necesita tu intervención: un borrador en la bandeja de TikTok (o uno
+// Aviso al final de cada corrida, SOLO si la corrida falló (JOB_STATUS=failure) o algo necesita tu intervención: un borrador en la bandeja de TikTok (o uno
 // que TikTok no aceptó y hay que subir a mano) o un video privado en YouTube que hay que publicar en Studio. Lo que se
 // publica solo en Facebook e Instagram no avisa.
 // Canales (el primero que esté configurado; si hay varios, a todos):
@@ -29,8 +29,12 @@ for (const m of metas) {
   else if (m.youtube?.error) tareas.push(`❌ YouTube no lo subió: ${m.youtube.error}`);
   if (tareas.length) pendientes.push(`🎬 ${m.title}${m.duration ? ` · ${m.duration >= 120 ? `${(m.duration / 60).toFixed(1)} min` : `${Math.round(m.duration)} s`}` : ''}\n\n${tareas.join('\n\n')}`);
 }
-if (!pendientes.length) { console.log('Nada que necesite tu intervención: sin aviso'); process.exit(0); }
-let msg = `Potter Play · ${pendientes.length === 1 ? 'algo para revisar' : `${pendientes.length} cosas para revisar`}\n\n${pendientes.join('\n\n———\n\n')}${run ? `\n\nCorrida: ${run}` : ''}`;
+// Corrida fallida: un aviso corto con el nombre del workflow y el enlace (GitHub ya no manda correo)
+const fallo = process.env.JOB_STATUS === 'failure';
+if (!pendientes.length && !fallo) { console.log('Nada que necesite tu intervención: sin aviso'); process.exit(0); }
+const hora = new Date().toLocaleString('es-HN', { timeZone: 'America/Tegucigalpa', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+const encabezado = fallo ? `❌ Falló «${process.env.WORKFLOW_NAME || 'una corrida'}» · ${hora}` : `Potter Play · ${pendientes.length === 1 ? 'algo para revisar' : `${pendientes.length} cosas para revisar`}`;
+let msg = `${encabezado}${pendientes.length ? `\n\n${pendientes.join('\n\n———\n\n')}` : ''}${run ? `\n\n${fallo ? 'Ver qué pasó' : 'Corrida'}: ${run}` : ''}`;
 if (o.prueba) { console.log(msg); process.exit(0); }
 
 let enviado = false;

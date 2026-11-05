@@ -264,13 +264,16 @@ jobs:
               console.log(`::notice title=Descripción para pegar en TikTok::${esc(aviso)}`);
             }' || true
 
-      # Aviso SOLO de lo que necesita tu intervención (borrador de TikTok, video privado en YouTube) por Telegram o
-      # WhatsApp; sin esos secretos, por correo (comentario en el issue «Videos para publicar»). Facebook e Instagram no avisan
+      # Aviso SOLO si la corrida falló o algo necesita tu intervención (borrador de TikTok, video privado en YouTube),
+      # por Telegram o WhatsApp; sin esos secretos, por correo (comentario en el issue «Videos para publicar»).
+      # Lo que se publica solo en Facebook e Instagram no avisa
       - name: Aviso de lo que hay que revisar
         if: always() && env.ESTADO_INPUT == '' && env.PRUEBA_INPUT == ''
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          JOB_STATUS: ${{ job.status }}
+          WORKFLOW_NAME: ${{ github.workflow }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}

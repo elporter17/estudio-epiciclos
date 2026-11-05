@@ -32,6 +32,16 @@ jobs:
         env:
           DIAS: ${{ inputs.dias || '7' }}
         run: node scripts/estadisticas.mjs --dias "$DIAS" --json estadisticas.json | tee -a "$GITHUB_STEP_SUMMARY"
+      # Si falla, aviso por Telegram (GitHub ya no manda correo de las corridas)
+      - name: Aviso si falló
+        if: failure()
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          JOB_STATUS: failure
+          WORKFLOW_NAME: ${{ github.workflow }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/aviso.mjs --dir sin-videos || echo "No se pudo avisar"
       # El tablero local (npm run tablero) descarga este archivo
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
