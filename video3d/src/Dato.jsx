@@ -4,9 +4,10 @@ import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, useVideoCon
 import { useLayoutEffect } from 'react';
 import { useThree } from '@react-three/fiber';
 import { ThreeCanvas } from '@remotion/three';
-import { ESCENAS, clamp, ease } from './escenas3d.jsx';
+import { clamp, ease } from './escenas3d.jsx';
+import { ESCENAS, MODELOS_CIUDAD } from './escenas.js';
 import { useModelos, NATURALEZA, PERSONAJES } from './modelos.jsx';
-const MODELOS = [...NATURALEZA, ...PERSONAJES];
+const MODELOS = [...NATURALEZA, ...PERSONAJES, ...MODELOS_CIUDAD];
 // El lienzo de Remotion solo se dibuja al cambiar de cuadro: cuando llegan los modelos hay que redibujarlo a mano
 function Redibujar({ dep }) { const advance = useThree((s) => s.advance); useLayoutEffect(() => { advance(performance.now()); }, [dep, advance]); return null; }
 
@@ -59,20 +60,24 @@ export const Dato = ({ render }) => {
   if (!render) return null;
   const T = frame / fps, escenas = render.escenas;
   const e = escenas.find((x) => T < x.inicio + x.dur) || escenas.at(-1), t = T - e.inicio, Escena = ESCENAS[e.tipo];
-  // Fundido rápido a blanco entre escenas
-  const corte = Math.min(t, e === escenas.at(-1) ? 9 : e.dur - t), destello = 1 - clamp(corte / 0.18);
+  // Transición entre escenas: la imagen se acerca y se desenfoca como un barrido rápido de cámara (sale y entra)
+  const ultima = e === escenas.at(-1), primera = e === escenas[0];
+  const sale = ultima ? 0 : 1 - clamp((e.dur - t) / 0.28), entra = primera ? 0 : 1 - clamp(t / 0.28), k = Math.max(sale, entra);
+  const zoom = 1 + 0.12 * ease(sale) - 0.08 * ease(entra);
   return (
-    <AbsoluteFill style={{ background: 'linear-gradient(180deg, #5cc3ff 0%, #a9e1ff 45%, #e9f7ff 100%)' }}>
-      <ThreeCanvas width={width} height={height} shadows gl={{ antialias: true, alpha: true, preserveDrawingBuffer: true }} camera={{ fov: 40, position: [0, 2, 6] }}>
-        {Escena && <Escena t={t} dur={e.dur} cantidad={e.cantidad} m={m} />}
-        <Redibujar dep={m} />
-      </ThreeCanvas>
+    <AbsoluteFill style={{ background: '#a9e1ff' }}>
+      <AbsoluteFill style={{ filter: k > 0.01 ? `blur(${(k * 18).toFixed(1)}px) brightness(${(1 + 0.12 * k).toFixed(2)})` : 'none', transform: `scale(${zoom.toFixed(4)})` }}>
+        <ThreeCanvas width={width} height={height} shadows gl={{ antialias: true, preserveDrawingBuffer: true }} camera={{ fov: 40, position: [0, 2, 6] }}>
+          {Escena && <Escena t={t} dur={e.dur} cantidad={e.cantidad} m={m} />}
+          <Redibujar dep={m} />
+        </ThreeCanvas>
+      </AbsoluteFill>
       {e.contador && <Contador c={e.contador} t={t} dur={e.dur} />}
       <Subtitulos escena={e} t={t} />
-      <div style={{ position: 'absolute', bottom: 120, left: 70, fontFamily: 'Archivo Black', fontSize: 34, color: 'rgba(17,24,39,0.55)' }}>Potter Play</div>
-      <AbsoluteFill style={{ background: '#fff', opacity: 0.85 * destello }} />
+      <div style={{ position: 'absolute', bottom: 120, left: 70, fontFamily: 'Archivo Black', fontSize: 34, color: 'rgba(255,255,255,0.75)', textShadow: '0 2px 8px rgba(0,0,0,0.4)' }}>Potter Play</div>
       {escenas.map((x, i) => (<Sequence key={i} from={Math.round((x.inicio + 0.25) * fps)} durationInFrames={Math.ceil((x.voz + 0.2) * fps)}><Audio src={staticFile(x.audio)} /></Sequence>))}
-      <Audio src={staticFile('musica.wav')} volume={0.16} />
+      {(render.sfx || []).map((s, i) => (<Sequence key={`s${i}`} from={Math.max(0, Math.round(s.t * fps))} durationInFrames={Math.round(3 * fps)}><Audio src={staticFile(`sfx/${s.s}.wav`)} volume={s.v} /></Sequence>))}
+      <Audio src={staticFile('musica.wav')} volume={0.14} />
     </AbsoluteFill>
   );
 };

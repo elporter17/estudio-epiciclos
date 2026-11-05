@@ -5,42 +5,74 @@
   "escenas": [
     {
       "tipo": "vaso",
-      "texto": "Si juntaras toda el agua que bebes en tu vida, ¿dónde cabría?",
-      "resaltar": ["toda", "vida"]
+      "texto": "Si juntaras toda el agua que bebes en tu vida, ¿dónde cabría? Vamos a verlo.",
+      "resaltar": ["toda", "vida", "cabría?"]
     },
     {
       "tipo": "botellas",
       "texto": "Cada día bebes unos dos litros: dos botellas como estas.",
-      "voz": "Cada día bebes unos dos litros: dos botellas como estas.",
       "resaltar": ["dos", "litros"],
       "contador": { "desde": 0, "hasta": 2, "unidad": "litros" }
     },
     {
+      "tipo": "calendario",
+      "texto": "Y lo haces los 365 días del año, sin un solo descanso.",
+      "voz": "Y lo haces los trescientos sesenta y cinco días del año, sin un solo descanso.",
+      "resaltar": ["365", "descanso."],
+      "contador": { "desde": 1, "hasta": 365, "unidad": "días" }
+    },
+    {
       "tipo": "pila",
-      "texto": "En un año son 730 litros. Casi cuatro bañeras llenas.",
-      "voz": "En un año son setecientos treinta litros. Casi cuatro bañeras llenas.",
-      "resaltar": ["730", "bañeras"],
+      "texto": "En un año son 730 litros: una montaña de botellas.",
+      "voz": "En un año son setecientos treinta litros: una montaña de botellas.",
+      "resaltar": ["730", "montaña"],
       "contador": { "desde": 2, "hasta": 730, "unidad": "litros" },
       "cantidad": 365
+    },
+    {
+      "tipo": "foco",
+      "texto": "Eso llenaría casi cuatro bañeras hasta el borde.",
+      "resaltar": ["cuatro", "bañeras"],
+      "contador": { "desde": 0, "hasta": 4, "unidad": "bañeras" },
+      "cantidad": 4
     },
     {
       "tipo": "torre",
       "texto": "En toda tu vida son 27.375 botellas. Una sobre otra, medirían 9 kilómetros: más que el Everest.",
       "voz": "En toda tu vida son veintisiete mil trescientas setenta y cinco botellas. Una sobre otra, medirían nueve kilómetros: más que el Everest.",
-      "resaltar": ["27.375", "9", "kilómetros", "Everest"],
+      "resaltar": ["27.375", "9", "kilómetros:", "Everest."],
       "contador": { "desde": 0, "hasta": 9034, "unidad": "metros" }
     },
     {
-      "tipo": "piscina",
-      "texto": "Son unos 55.000 litros: suficiente para llenar una piscina de jardín.",
-      "voz": "Son unos cincuenta y cinco mil litros: suficiente para llenar una piscina de jardín.",
-      "resaltar": ["55.000", "piscina"],
+      "tipo": "camion",
+      "texto": "Son unos 55.000 litros: casi dos camiones cisterna llenos.",
+      "voz": "Son unos cincuenta y cinco mil litros: casi dos camiones cisterna llenos.",
+      "resaltar": ["55.000", "camiones"],
       "contador": { "desde": 0, "hasta": 55000, "unidad": "litros" }
     },
     {
+      "tipo": "piscina",
+      "texto": "O una piscina de jardín, llena hasta arriba.",
+      "resaltar": ["piscina", "jardín,"]
+    },
+    {
+      "tipo": "globo",
+      "texto": "Ahora suma a las 8.000 millones de personas del planeta.",
+      "voz": "Ahora suma a las ocho mil millones de personas del planeta.",
+      "resaltar": ["8.000", "millones", "planeta."],
+      "contador": { "desde": 0, "hasta": 8000, "unidad": "millones" }
+    },
+    {
+      "tipo": "piscinas",
+      "texto": "Cada día la humanidad bebe 16.000 millones de litros: unas 6.400 piscinas olímpicas.",
+      "voz": "Cada día la humanidad bebe dieciséis mil millones de litros: unas seis mil cuatrocientas piscinas olímpicas.",
+      "resaltar": ["16.000", "6.400", "olímpicas."],
+      "contador": { "desde": 0, "hasta": 6400, "unidad": "piscinas" }
+    },
+    {
       "tipo": "cierre",
-      "texto": "¿Cuánta agua tomaste hoy? Escríbelo en los comentarios.",
-      "resaltar": ["hoy", "comentarios"]
+      "texto": "¿Cuánta agua tomaste hoy? Escríbelo en los comentarios y síguenos para más datos.",
+      "resaltar": ["hoy?", "comentarios"]
     }
   ]
 }

@@ -4,37 +4,40 @@ import { useLayoutEffect, useMemo, useRef } from 'react';
 import { useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { Paisaje, Personaje } from './modelos.jsx';
-const PJ = (m, n) => m?.[`personajes/character-${n}`];
+import { Efectos, Cielo } from './efectos.jsx';
+export const PJ = (m, n) => m?.[`personajes/character-${n}`];
 
 export const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 export const ease = (x) => 1 - (1 - clamp(x)) ** 3;
-const easeInOut = (x) => { x = clamp(x); return x < 0.5 ? 4 * x * x * x : 1 - (-2 * x + 2) ** 3 / 2; };
+export const easeInOut = (x) => { x = clamp(x); return x < 0.5 ? 4 * x * x * x : 1 - (-2 * x + 2) ** 3 / 2; };
 // Caída con rebote (para lo que cae y aterriza)
-function rebote(x) {
+export function rebote(x) {
   x = clamp(x); const n = 7.5625, d = 2.75;
   if (x < 1 / d) return n * x * x; if (x < 2 / d) return n * (x -= 1.5 / d) * x + 0.75;
   if (x < 2.5 / d) return n * (x -= 2.25 / d) * x + 0.9375; return n * (x -= 2.625 / d) * x + 0.984375;
 }
-const lerp = (a, b, t) => a + (b - a) * t;
-const lerp3 = (a, b, t) => a.map((v, i) => lerp(v, b[i], t));
-function azar(semilla) { let s = semilla; return () => ((s = (s * 16807) % 2147483647) / 2147483647); }
+export const lerp = (a, b, t) => a + (b - a) * t;
+export const lerp3 = (a, b, t) => a.map((v, i) => lerp(v, b[i], t));
+export function azar(semilla) { let s = semilla; return () => ((s = (s * 16807) % 2147483647) / 2147483647); }
 
 // ---------- cámara ----------
 // Se aplica durante el render (no en un efecto): así el cuadro que se dibuja ya tiene la cámara en su lugar
-function Camara({ pos, mira, fov = 48 }) {
+// Además pone el posprocesado enfocado en el punto que mira (desenfoque 0 lo apaga)
+export function Camara({ pos, mira, fov = 48, desenfoque = 1, brillo }) {
   const camera = useThree((s) => s.camera), size = useThree((s) => s.size);
   camera.position.set(...pos); camera.fov = fov; camera.near = 0.1; camera.far = 2000;
   camera.aspect = size.width / size.height; camera.updateProjectionMatrix(); camera.lookAt(...mira); camera.updateMatrixWorld();
-  return null;
+  return <Efectos objetivo={mira} desenfoque={desenfoque} brillo={brillo} />;
 }
-function Luces({ sol = [6, 10, 5], intensidad = 2.2, niebla = [25, 90] }) {
+export function Luces({ sol = [6, 10, 5], intensidad = 2.2, niebla = [25, 90], colorNiebla = '#cdeeff', cielo = true }) {
   return (<>
-    <fog attach="fog" args={['#cdeeff', niebla[0], niebla[1]]} />
+    {cielo && <Cielo />}
+    <fog attach="fog" args={[colorNiebla, niebla[0], niebla[1]]} />
     <hemisphereLight args={['#ffffff', '#9fc9e8', 1.1]} />
     <directionalLight position={sol} intensity={intensidad} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-12} shadow-camera-right={12} shadow-camera-top={12} shadow-camera-bottom={-12} shadow-bias={-0.0004} />
   </>);
 }
-function Suelo({ color = '#9edb7c', radio = 80 }) {
+export function Suelo({ color = '#9edb7c', radio = 80 }) {
   return (<mesh rotation-x={-Math.PI / 2} receiveShadow><circleGeometry args={[radio, 64]} /><meshStandardMaterial color={color} roughness={0.95} /></mesh>);
 }
 
@@ -52,7 +55,7 @@ const MAT = {
   tapa: new THREE.MeshStandardMaterial({ color: '#1b5fd1', roughness: 0.4 }),
   etiqueta: new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.6, side: THREE.DoubleSide })
 };
-function Botella(props) {
+export function Botella(props) {
   return (<group {...props}>
     <mesh geometry={GEO.agua} material={MAT.agua} castShadow />
     <mesh geometry={GEO.etiqueta} material={MAT.etiqueta} />
@@ -61,7 +64,7 @@ function Botella(props) {
   </group>);
 }
 // Muchas botellas a la vez (una malla por pieza, instanciada)
-function Botellas({ matrices }) {
+export function Botellas({ matrices }) {
   const refs = [useRef(), useRef(), useRef(), useRef()];
   useLayoutEffect(() => {
     for (const r of refs) { if (!r.current) continue; matrices.forEach((m, i) => r.current.setMatrixAt(i, m)); r.current.count = matrices.length; r.current.instanceMatrix.needsUpdate = true; r.current.computeBoundingSphere(); }
@@ -74,12 +77,12 @@ function Botellas({ matrices }) {
     <instancedMesh ref={refs[3]} args={[GEO.cuerpo, MAT.cuerpo, n]} />
   </>);
 }
-const matriz = (pos, rot, s = 1) => new THREE.Matrix4().compose(new THREE.Vector3(...pos), new THREE.Quaternion().setFromEuler(new THREE.Euler(...rot)), new THREE.Vector3(s, s, s));
+export const matriz = (pos, rot, s = 1) => new THREE.Matrix4().compose(new THREE.Vector3(...pos), new THREE.Quaternion().setFromEuler(new THREE.Euler(...rot)), new THREE.Vector3(s, s, s));
 
 // ---------- vaso ----------
 const vasoPerfil = [[0.55, 0], [0.62, 1.7], [0.58, 1.7], [0.51, 0.08], [0, 0.08]];
 const GEO_VASO = new THREE.LatheGeometry([[0, 0], ...vasoPerfil].map(([x, y]) => new THREE.Vector2(x, y)), 48);
-function Vaso({ nivel = 0.8, ...props }) {
+export function Vaso({ nivel = 0.8, ...props }) {
   const h = 0.1 + 1.45 * clamp(nivel);
   return (<group {...props}>
     <mesh position={[0, 0.08 + h / 2, 0]} castShadow><cylinderGeometry args={[0.505 + 0.035 * (h / 1.62), 0.51, h, 48]} /><meshStandardMaterial color="#38a8f5" transparent opacity={0.85} roughness={0.1} /></mesh>
@@ -140,7 +143,7 @@ function EscenaPila({ t, dur, cantidad = 365, m }) {
 // 4) Una torre de botellas que sube más alto que una montaña nevada, entre nubes
 const GEO_MONTE = new THREE.ConeGeometry(42, 62, 7, 3);
 const GEO_NIEVE = new THREE.ConeGeometry(13.6, 20, 7, 1).translate(0, 21, 0);
-function Nube({ position, s = 1 }) {
+export function Nube({ position, s = 1 }) {
   return (<group position={position} scale={s}>{[[0, 0, 0, 2.2], [2.2, -0.3, 0.4, 1.6], [-2.1, -0.4, -0.2, 1.7], [0.8, 0.9, -0.3, 1.5]].map(([x, y, z, r], i) => (
     <mesh key={i} position={[x, y, z]}><icosahedronGeometry args={[r, 1]} /><meshStandardMaterial color="#ffffff" flatShading roughness={1} /></mesh>))}</group>);
 }
@@ -152,7 +155,7 @@ function EscenaTorre({ t, dur, m }) {
   return (<>
     {(() => { const sube = clamp(p / 0.7), aleja = easeInOut((p - 0.7) / 0.3), y = Math.max(4, cima - 4);
       const cerca = [8, y + 1, 20], lejos = [70, 95, 210];
-      return <Camara pos={lerp3(cerca, lejos, aleja)} mira={[0, lerp(y - 2, 90, aleja), 0]} fov={lerp(48, 55, aleja)} />; })()}
+      return <Camara pos={lerp3(cerca, lejos, aleja)} mira={[0, lerp(y - 2, 90, aleja), 0]} fov={lerp(48, 55, aleja)} desenfoque={lerp(1, 0.3, aleja)} />; })()}
     <Luces sol={[80, 200, 60]} intensidad={2} niebla={[120, 700]} />
     <mesh rotation-x={-Math.PI / 2} receiveShadow><circleGeometry args={[900, 64]} /><meshStandardMaterial color="#9edb7c" roughness={1} /></mesh>
     <group position={[-120, 75, -110]} scale={2.4}>
