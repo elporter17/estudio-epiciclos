@@ -3,6 +3,7 @@
 import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import { ThreeCanvas } from '@remotion/three';
 import { ESCENAS, clamp, ease } from './escenas3d.jsx';
+import { useModelos, NATURALEZA } from './modelos.jsx';
 
 const AMARILLO = '#ffd23c';
 const sinSignos = (w) => w.replace(/[¿?¡!.,:;«»"]/g, '').toLowerCase();
@@ -49,7 +50,7 @@ function Contador({ c, t, dur }) {
 }
 
 export const Dato = ({ render }) => {
-  const frame = useCurrentFrame(), { fps, width, height } = useVideoConfig();
+  const frame = useCurrentFrame(), { fps, width, height } = useVideoConfig(), m = useModelos(NATURALEZA);
   if (!render) return null;
   const T = frame / fps, escenas = render.escenas;
   const e = escenas.find((x) => T < x.inicio + x.dur) || escenas.at(-1), t = T - e.inicio, Escena = ESCENAS[e.tipo];
@@ -58,7 +59,7 @@ export const Dato = ({ render }) => {
   return (
     <AbsoluteFill style={{ background: 'linear-gradient(180deg, #5cc3ff 0%, #a9e1ff 45%, #e9f7ff 100%)' }}>
       <ThreeCanvas width={width} height={height} shadows gl={{ antialias: true, alpha: true, preserveDrawingBuffer: true }} camera={{ fov: 40, position: [0, 2, 6] }}>
-        {Escena && <Escena t={t} dur={e.dur} cantidad={e.cantidad} />}
+        {Escena && <Escena t={t} dur={e.dur} cantidad={e.cantidad} m={m} />}
       </ThreeCanvas>
       {e.contador && <Contador c={e.contador} t={t} dur={e.dur} />}
       <Subtitulos escena={e} t={t} />

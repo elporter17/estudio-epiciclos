@@ -3,6 +3,7 @@
 import { useLayoutEffect, useMemo, useRef } from 'react';
 import { useThree } from '@react-three/fiber';
 import * as THREE from 'three';
+import { Paisaje } from './modelos.jsx';
 
 export const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 export const ease = (x) => 1 - (1 - clamp(x)) ** 3;
@@ -87,27 +88,29 @@ function Vaso({ nivel = 0.8, ...props }) {
 
 // ---------- escenas ----------
 // 1) Un vaso que se llena con gotas que caen
-function EscenaVaso({ t, dur }) {
+function EscenaVaso({ t, dur, m }) {
   const p = t / dur, gotas = [];
   for (let k = 0; k < 7; k++) { const f = (t * 1.3 + k / 7) % 1; gotas.push(<mesh key={k} position={[Math.sin(k * 2.1) * 0.15, 3.6 - f * 2.4, Math.cos(k * 1.7) * 0.15]} scale={[0.09, 0.13, 0.09]}><sphereGeometry args={[1, 16, 12]} /><meshStandardMaterial color="#4fb6ff" transparent opacity={clamp((1 - f) * 3)} /></mesh>); }
   return (<>
     <Camara pos={lerp3([2.8, 2.4, 5.6], [1.7, 1.5, 4.2], easeInOut(p))} mira={[0, 0.75, 0]} />
     <Luces /><Suelo />
+    <Paisaje m={m} libre={2.2} lejos={16} semilla={3} />
     <Vaso nivel={ease(t / (dur * 0.85))} />
     {gotas}
   </>);
 }
 // 2) Dos botellas caen y rebotan
-function EscenaBotellas({ t, dur }) {
+function EscenaBotellas({ t, dur, m }) {
   const b = (d, x) => { const k = rebote((t - d) / 0.9); return <Botella position={[x, lerp(6, 0, k), 0]} rotation={[0, -0.4 + x * 0.3, 0]} />; };
   return (<>
     <Camara pos={lerp3([0.6, 1.5, 6.4], [0, 2, 5.2], easeInOut(t / dur))} mira={[0, 0.8, 0]} />
     <Luces /><Suelo />
+    <Paisaje m={m} libre={2.5} lejos={16} semilla={8} />
     {b(0.2, -0.65)}{b(0.55, 0.65)}
   </>);
 }
 // 3) Montaña de botellas acostadas que caen una tras otra
-function EscenaPila({ t, dur, cantidad = 365 }) {
+function EscenaPila({ t, dur, cantidad = 365, m }) {
   const lugares = useMemo(() => {
     const r = azar(11), out = [];
     for (let i = 0; i < cantidad; i++) {
@@ -125,6 +128,7 @@ function EscenaPila({ t, dur, cantidad = 365 }) {
   return (<>
     <Camara pos={lerp3([0, 4, 13], [0, 9, 19], easeInOut(t / dur))} mira={[0, 1.3, 0]} />
     <Luces /><Suelo />
+    <Paisaje m={m} libre={7} lejos={24} arboles={30} semilla={13} />
     <Botellas matrices={matrices} />
   </>);
 }
@@ -135,7 +139,7 @@ function Nube({ position, s = 1 }) {
   return (<group position={position} scale={s}>{[[0, 0, 0, 2.2], [2.2, -0.3, 0.4, 1.6], [-2.1, -0.4, -0.2, 1.7], [0.8, 0.9, -0.3, 1.5]].map(([x, y, z, r], i) => (
     <mesh key={i} position={[x, y, z]}><icosahedronGeometry args={[r, 1]} /><meshStandardMaterial color="#ffffff" flatShading roughness={1} /></mesh>))}</group>);
 }
-function EscenaTorre({ t, dur }) {
+function EscenaTorre({ t, dur, m }) {
   const N = 42, p = clamp(t / (dur * 0.8)), visibles = Math.floor(easeInOut(p) * N), matrices = [];
   const S = 2.5;
   for (let i = 0; i < visibles; i++) matrices.push(matriz([0, i * 1.6 * S, 0], [0, i * 0.7, 0], S));
@@ -151,6 +155,7 @@ function EscenaTorre({ t, dur }) {
       <mesh geometry={GEO_NIEVE}><meshStandardMaterial color="#ffffff" flatShading roughness={1} /></mesh>
     </group>
     <Nube position={[-30, 50, -10]} s={4} /><Nube position={[30, 95, -25]} s={5} /><Nube position={[-14, 135, 8]} s={3.5} /><Nube position={[40, 35, 10]} s={3} /><Nube position={[-60, 160, -60]} s={6} />
+    <Paisaje m={m} libre={9} lejos={70} arboles={40} detalles={30} escala={3.2} semilla={21} />
     <Botellas matrices={matrices} />
     {/* La botella que está cayendo arriba de la torre */}
     {visibles < N && p < 1 && <Botella position={[0, cima + 8 * (1 - ((p * N) % 1)), 0]} scale={S} />}
@@ -165,7 +170,7 @@ function cesped(w, d) {
   const g = new THREE.ShapeGeometry(sh, 48); cespedes.set(k, g); return g;
 }
 // 5) Una piscina de jardín que se llena
-function EscenaPiscina({ t, dur }) {
+function EscenaPiscina({ t, dur, m }) {
   const nivel = ease(t / (dur * 0.8)), L = 4, A = 8, P = 1.5, h = 0.02 + nivel * (P - 0.15);
   const azulejo = '#d8eef9', borde = '#f4f1ea';
   return (<>
@@ -182,16 +187,18 @@ function EscenaPiscina({ t, dur }) {
     {/* Agua que sube, con un leve oleaje en la superficie */}
     <mesh position={[0, -P + h / 2, 0]}><boxGeometry args={[L - 0.08, h, A - 0.08]} /><meshStandardMaterial color="#29a3f0" transparent opacity={0.72} roughness={0.08} /></mesh>
     <mesh position={[0, -P + h + 0.005, 0]} rotation-x={-Math.PI / 2}><planeGeometry args={[L - 0.08, A - 0.08]} /><meshStandardMaterial color="#8fd8ff" transparent opacity={0.35 + 0.1 * Math.sin(t * 3)} roughness={0.02} /></mesh>
+    <Paisaje m={m} libre={8.5} lejos={20} semilla={34} />
     {/* Escalera */}
     {[-0.3, 0.3].map((x, i) => (<mesh key={i} position={[L / 2 - 0.15, 0.2, A / 2 - 0.9 + x]} rotation-y={Math.PI / 2}><torusGeometry args={[0.35, 0.04, 8, 24, Math.PI]} /><meshStandardMaterial color="#c9d2da" metalness={0.8} roughness={0.25} /></mesh>))}
   </>);
 }
 // 6) Cierre: el vaso lleno y una botella, girando despacio
-function EscenaCierre({ t, dur }) {
+function EscenaCierre({ t, dur, m }) {
   const a = t * 0.25;
   return (<>
     <Camara pos={[Math.sin(a) * 5.4, 2.1, Math.cos(a) * 5.4]} mira={[0, 0.8, 0]} />
     <Luces /><Suelo />
+    <Paisaje m={m} libre={2.5} lejos={15} semilla={55} />
     <Vaso nivel={0.85} position={[-0.6, 0, 0]} />
     <Botella position={[0.7, 0, 0]} rotation={[0, 0.5, 0]} />
   </>);
