@@ -3,28 +3,34 @@
 import { useMemo, useState, useEffect } from 'react';
 import { staticFile, delayRender, continueRender } from 'remotion';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { clone as clonarConEsqueleto } from 'three/examples/jsm/utils/SkeletonUtils.js';
+import * as THREE from 'three';
 
 const cargador = new GLTFLoader(), cache = new Map();
 function cargar(ruta) {
-  if (!cache.has(ruta)) cache.set(ruta, new Promise((ok, mal) => cargador.load(staticFile(`modelos/${ruta}.glb`), (g) => ok(g.scene), undefined, mal)));
+  if (!cache.has(ruta)) cache.set(ruta, new Promise((ok, mal) => cargador.load(staticFile(`modelos/${ruta}.glb`), (g) => ok(g), undefined, mal)));
   return cache.get(ruta);
 }
-// Varios modelos a la vez: { nombre: escena } (null mientras cargan)
+// Varios modelos a la vez: { nombre: gltf } (null mientras cargan); gltf.scene es el modelo y gltf.animations sus animaciones
 export function useModelos(rutas) {
   const clave = rutas.join('|');
   const [listos, setListos] = useState(null);
+  // Se pide la espera al montar y se libera DESPUÉS de que React ya dibujó con los modelos (dos cuadros del navegador
+  // más tarde): si se libera al cargar, Remotion puede capturar el cuadro antes de que aparezcan
+  const [espera] = useState(() => delayRender(`modelos ${clave}`));
   useEffect(() => {
-    const h = delayRender(`modelos ${clave}`);
     Promise.all(rutas.map(cargar)).then((escenas) => {
-      escenas.forEach((s) => s.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } }));
-      setListos(Object.fromEntries(rutas.map((r, i) => [r, escenas[i]]))); continueRender(h);
-    }).catch((e) => { console.error(e); continueRender(h); });
+      escenas.forEach((g) => g.scene.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } }));
+      setListos(Object.fromEntries(rutas.map((r, i) => [r, escenas[i]])));
+    }).catch((e) => { console.error('No se pudieron cargar los modelos', e); setListos({}); });
   }, [clave]);
+  useEffect(() => { if (listos) requestAnimationFrame(() => requestAnimationFrame(() => continueRender(espera))); }, [listos, espera]);
   return listos;
 }
-// Una copia del modelo, con su posición, giro y escala
+// Una copia del modelo (acepta el gltf o su escena), con su posición, giro y escala
 export function Modelo({ escena, ...props }) {
-  const copia = useMemo(() => (escena ? escena.clone(true) : null), [escena]);
+  const base = escena?.scene || escena;
+  const copia = useMemo(() => (base ? base.clone(true) : null), [base]);
   return copia ? <primitive object={copia} {...props} /> : null;
 }
 
@@ -49,4 +55,20 @@ export function Paisaje({ m, libre = 3, lejos = 18, arboles = 26, detalles = 40,
     return out;
   }, [m, libre, lejos, arboles, detalles, escala, semilla]);
   return <>{lista.map((x) => <Modelo key={x.k} escena={m[x.n]} position={x.p} scale={x.s} rotation-y={x.ry} />)}</>;
+}
+
+// Personaje animado (Kenney Mini Characters: idle, walk, sprint, jump, sit, pick-up, emote-yes, emote-no,
+// holding-right, interact-right…). La animación se fija al tiempo t de la escena: cada cuadro sale igual siempre
+export const PERSONAJES = ['character-female-a', 'character-female-b', 'character-female-c', 'character-female-d', 'character-female-e', 'character-female-f', 'character-male-a', 'character-male-b', 'character-male-c', 'character-male-d', 'character-male-e', 'character-male-f'].map((n) => `personajes/${n}`);
+export function Personaje({ gltf, accion = 'idle', t = 0, velocidad = 1, ...props }) {
+  const inst = useMemo(() => {
+    if (!gltf) return null;
+    const obj = clonarConEsqueleto(gltf.scene), mixer = new THREE.AnimationMixer(obj);
+    obj.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.frustumCulled = false; } });
+    return { obj, mixer, clips: Object.fromEntries(gltf.animations.map((c) => [c.name, c])) };
+  }, [gltf]);
+  if (!inst) return null;
+  const clip = inst.clips[accion] || inst.clips.idle;
+  inst.mixer.stopAllAction(); const a = inst.mixer.clipAction(clip); a.reset().play(); inst.mixer.setTime(t * velocidad);
+  return <primitive object={inst.obj} {...props} />;
 }

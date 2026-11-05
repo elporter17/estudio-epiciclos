@@ -3,7 +3,8 @@
 import { useLayoutEffect, useMemo, useRef } from 'react';
 import { useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import { Paisaje } from './modelos.jsx';
+import { Paisaje, Personaje } from './modelos.jsx';
+const PJ = (m, n) => m?.[`personajes/character-${n}`];
 
 export const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 export const ease = (x) => 1 - (1 - clamp(x)) ** 3;
@@ -96,6 +97,7 @@ function EscenaVaso({ t, dur, m }) {
     <Luces /><Suelo />
     <Paisaje m={m} libre={2.2} lejos={16} semilla={3} />
     <Vaso nivel={ease(t / (dur * 0.85))} />
+    <Personaje gltf={PJ(m, 'female-a')} accion={t < dur * 0.6 ? 'idle' : 'emote-yes'} t={t} position={[-0.95, 0, -0.7]} rotation-y={0.7} scale={1.6} />
     {gotas}
   </>);
 }
@@ -107,6 +109,7 @@ function EscenaBotellas({ t, dur, m }) {
     <Luces /><Suelo />
     <Paisaje m={m} libre={2.5} lejos={16} semilla={8} />
     {b(0.2, -0.65)}{b(0.55, 0.65)}
+    <Personaje gltf={PJ(m, 'male-b')} accion={t < 1.3 ? 'idle' : 'emote-yes'} t={t} position={[0.05, 0, -1.5]} rotation-y={0} scale={1.8} />
   </>);
 }
 // 3) Montaña de botellas acostadas que caen una tras otra
@@ -130,6 +133,8 @@ function EscenaPila({ t, dur, cantidad = 365, m }) {
     <Luces /><Suelo />
     <Paisaje m={m} libre={7} lejos={24} arboles={30} semilla={13} />
     <Botellas matrices={matrices} />
+    <Personaje gltf={PJ(m, 'female-c')} accion="idle" t={t} position={[2.9, 0, 5.8]} rotation-y={-2.8} scale={2.2} />
+    <Personaje gltf={PJ(m, 'male-d')} accion="emote-no" t={t} position={[-3, 0, 5.6]} rotation-y={2.8} scale={2.2} />
   </>);
 }
 // 4) Una torre de botellas que sube más alto que una montaña nevada, entre nubes
@@ -156,6 +161,7 @@ function EscenaTorre({ t, dur, m }) {
     </group>
     <Nube position={[-30, 50, -10]} s={4} /><Nube position={[30, 95, -25]} s={5} /><Nube position={[-14, 135, 8]} s={3.5} /><Nube position={[40, 35, 10]} s={3} /><Nube position={[-60, 160, -60]} s={6} />
     <Paisaje m={m} libre={9} lejos={70} arboles={40} detalles={30} escala={3.2} semilla={21} />
+    <Personaje gltf={PJ(m, 'male-c')} accion="emote-no" t={t} position={[4, 0, 3]} rotation-y={-2.2} scale={2.6} />
     <Botellas matrices={matrices} />
     {/* La botella que está cayendo arriba de la torre */}
     {visibles < N && p < 1 && <Botella position={[0, cima + 8 * (1 - ((p * N) % 1)), 0]} scale={S} />}
@@ -188,6 +194,8 @@ function EscenaPiscina({ t, dur, m }) {
     <mesh position={[0, -P + h / 2, 0]}><boxGeometry args={[L - 0.08, h, A - 0.08]} /><meshStandardMaterial color="#29a3f0" transparent opacity={0.72} roughness={0.08} /></mesh>
     <mesh position={[0, -P + h + 0.005, 0]} rotation-x={-Math.PI / 2}><planeGeometry args={[L - 0.08, A - 0.08]} /><meshStandardMaterial color="#8fd8ff" transparent opacity={0.35 + 0.1 * Math.sin(t * 3)} roughness={0.02} /></mesh>
     <Paisaje m={m} libre={8.5} lejos={20} semilla={34} />
+    <Personaje gltf={PJ(m, 'female-d')} accion="sit" t={t} position={[-L / 2 - 0.35, 0, 1]} rotation-y={Math.PI / 2} scale={1.8} />
+    <Personaje gltf={PJ(m, 'male-e')} accion={t < dur * 0.7 ? 'idle' : 'jump'} t={t} position={[L / 2 + 0.5, 0, -2.6]} rotation-y={-Math.PI / 2} scale={1.8} />
     {/* Escalera */}
     {[-0.3, 0.3].map((x, i) => (<mesh key={i} position={[L / 2 - 0.15, 0.2, A / 2 - 0.9 + x]} rotation-y={Math.PI / 2}><torusGeometry args={[0.35, 0.04, 8, 24, Math.PI]} /><meshStandardMaterial color="#c9d2da" metalness={0.8} roughness={0.25} /></mesh>))}
   </>);
@@ -201,6 +209,8 @@ function EscenaCierre({ t, dur, m }) {
     <Paisaje m={m} libre={2.5} lejos={15} semilla={55} />
     <Vaso nivel={0.85} position={[-0.6, 0, 0]} />
     <Botella position={[0.7, 0, 0]} rotation={[0, 0.5, 0]} />
+    <Personaje gltf={PJ(m, 'female-e')} accion="emote-yes" t={t} position={[-1.15, 0, -1.3]} rotation-y={0.35} scale={1.6} />
+    <Personaje gltf={PJ(m, 'male-f')} accion="emote-yes" t={t + 0.4} position={[1.35, 0, -1.1]} rotation-y={-0.35} scale={1.6} />
   </>);
 }
 

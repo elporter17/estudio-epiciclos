@@ -1,9 +1,14 @@
 // «Dato»: video vertical de un dato curioso en 3D. Arriba, los subtítulos palabra por palabra (la palabra clave en un
 // recuadro amarillo); en medio, la escena 3D; sobre ella, el contador. Narrador por escena y música de fondo.
 import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
+import { useLayoutEffect } from 'react';
+import { useThree } from '@react-three/fiber';
 import { ThreeCanvas } from '@remotion/three';
 import { ESCENAS, clamp, ease } from './escenas3d.jsx';
-import { useModelos, NATURALEZA } from './modelos.jsx';
+import { useModelos, NATURALEZA, PERSONAJES } from './modelos.jsx';
+const MODELOS = [...NATURALEZA, ...PERSONAJES];
+// El lienzo de Remotion solo se dibuja al cambiar de cuadro: cuando llegan los modelos hay que redibujarlo a mano
+function Redibujar({ dep }) { const advance = useThree((s) => s.advance); useLayoutEffect(() => { advance(performance.now()); }, [dep, advance]); return null; }
 
 const AMARILLO = '#ffd23c';
 const sinSignos = (w) => w.replace(/[¿?¡!.,:;«»"]/g, '').toLowerCase();
@@ -43,14 +48,14 @@ function Contador({ c, t, dur }) {
   return (
     <div style={{ position: 'absolute', top: 640, width: '100%', display: 'flex', justifyContent: 'center', opacity: a, transform: `scale(${0.7 + 0.3 * a})` }}>
       <div style={{ background: 'rgba(17,24,39,0.82)', color: '#fff', borderRadius: 36, padding: '14px 42px', fontFamily: 'Archivo Black', fontSize: 96, boxShadow: '0 12px 40px rgba(0,0,0,0.3)', border: '4px solid rgba(255,255,255,0.15)' }}>
-        {formato(v)}<span style={{ fontFamily: 'Plex', fontWeight: 700, fontSize: 48, color: AMARILLO, marginLeft: 16 }}>{c.unidad}</span>
+        {formato(v)}<span style={{ fontFamily: 'Plex', fontWeight: 700, fontSize: 48, color: AMARILLO, marginLeft: 16 }}>{Math.round(v) === 1 ? c.unidad.replace(/s$/, '') : c.unidad}</span>
       </div>
     </div>
   );
 }
 
 export const Dato = ({ render }) => {
-  const frame = useCurrentFrame(), { fps, width, height } = useVideoConfig(), m = useModelos(NATURALEZA);
+  const frame = useCurrentFrame(), { fps, width, height } = useVideoConfig(), m = useModelos(MODELOS);
   if (!render) return null;
   const T = frame / fps, escenas = render.escenas;
   const e = escenas.find((x) => T < x.inicio + x.dur) || escenas.at(-1), t = T - e.inicio, Escena = ESCENAS[e.tipo];
@@ -60,6 +65,7 @@ export const Dato = ({ render }) => {
     <AbsoluteFill style={{ background: 'linear-gradient(180deg, #5cc3ff 0%, #a9e1ff 45%, #e9f7ff 100%)' }}>
       <ThreeCanvas width={width} height={height} shadows gl={{ antialias: true, alpha: true, preserveDrawingBuffer: true }} camera={{ fov: 40, position: [0, 2, 6] }}>
         {Escena && <Escena t={t} dur={e.dur} cantidad={e.cantidad} m={m} />}
+        <Redibujar dep={m} />
       </ThreeCanvas>
       {e.contador && <Contador c={e.contador} t={t} dur={e.dur} />}
       <Subtitulos escena={e} t={t} />
