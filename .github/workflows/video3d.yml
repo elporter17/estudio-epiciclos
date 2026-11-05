@@ -11,7 +11,7 @@ on:
         type: string
         default: video3d/guiones/agua.json
       calidad:
-        description: «rapida» renderiza a 720×1280 (la mitad de tiempo) y la escala a 1080×1920
+        description: «rapida» renderiza a 810×1440 (≈ 40 % menos de tiempo) y la escala a 1080×1920
         type: choice
         options: ['completa', 'rapida']
         default: 'completa'
@@ -59,7 +59,7 @@ jobs:
           CALIDAD: ${{ inputs.calidad }}
         run: |
           npx remotion browser ensure
-          ESCALA=1; [ "$CALIDAD" = rapida ] && ESCALA=0.6667
+          ESCALA=1; [ "$CALIDAD" = rapida ] && ESCALA=0.75
           inicio=$(date +%s)
           npx remotion render src/index.jsx Dato out/video.mp4 --gl=swangle --concurrency=4 --scale=$ESCALA --codec=h264 --crf=20 --log=info
           echo "Render: $(( $(date +%s) - inicio )) s" | tee -a "$GITHUB_STEP_SUMMARY"
