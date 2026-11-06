@@ -176,7 +176,7 @@ Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (�
 • Pega un enlace de una noticia para agregarla
 • «noticia: Título | resumen corto» para escribirla tú
 
-Piezas: banderas, retos, emojis, quiz, prefieres, cómo se hace, imagen, gta, nombres, futbolista, noticias en video, noticias en imagen, 3D de mediodía / de la tarde.
+Piezas: debate (video), debate en imagen, banderas, retos, emojis, quiz, prefieres, cómo se hace, imagen, gta, nombres, futbolista, noticias en video, noticias en imagen, 3D de mediodía / de la tarde.
 Horas: «14:30», «2:30 pm» o «a las 3» (de 1 a 6 se entiende de la tarde).`;
 
 // ---------- mensajes (HTML de Telegram) ----------

@@ -23,6 +23,7 @@ import { publishPhoto, publishPhotoStory, publishCarrusel, facebookReady } from 
 import { publishPhotoDraft } from './publish.mjs';
 import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
 import { crearVisual, dibujarVisual, VISUALES, NIVELES } from './lib/retos-visuales.mjs';
+import { crearDebate } from './lib/debate.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
 import { loadImage } from '@napi-rs/canvas';
 import { fotoStock, guardarStock } from './lib/stock.mjs';
@@ -259,6 +260,11 @@ async function main() {
   // Retos visuales (duplicado, nombre, letra escondida, fracción, operación): 2 de cada 3 publicaciones que no son
   // noticia, porque son el tipo de imagen que más comentarios junta. Rotan en orden.
   let visual = null;
+  // Reto de debate (scripts/lib/debate.mjs): uno solo por imagen, que es lo que más comentarios junta
+  if (!pieza && o.tipo === 'debate') {
+    visual = crearDebate(o.visual || undefined);
+    pieza = { formato: `debate-${visual.tipo}`, texto: visual.texto, clave: visual.clave };
+  }
   if (!pieza && !o.id && (o.tipo === 'visual' || o.visual || (o.tipo === 'auto' && !o.formato && hist.total % 3 !== 2))) {
     const tipo = o.visual || VISUALES[(hist.visuales || []).length % VISUALES.length];
     visual = crearVisual(tipo);
@@ -272,14 +278,14 @@ async function main() {
   const redes = o.red === 'ambas' ? ['facebook', 'tiktok'] : [o.red];
   const archivos = {};
   for (const red of redes) {
-    const H = red === 'tiktok' || o.historia ? 1920 : 1350, cv = visual ? dibujarVisual(visual, { H, emojiFont }) : dibujarTarjeta(pieza.tarjeta, { H, emojiFont });
+    const H = red === 'tiktok' || o.historia ? 1920 : 1350, cv = visual?.imagen ? visual.imagen({ W: 1080, H }) : visual ? dibujarVisual(visual, { H, emojiFont }) : dibujarTarjeta(pieza.tarjeta, { H, emojiFont });
     // TikTok solo acepta JPG o WEBP; Facebook va en PNG
     archivos[red] = path.join(outDir, `curiosidad-${nombre}-${red}.${red === 'tiktok' ? 'jpg' : 'png'}`); fs.writeFileSync(archivos[red], red === 'tiktok' ? cv.toBuffer('image/jpeg', 92) : cv.toBuffer('image/png'));
     // Instagram solo acepta JPEG: la misma tarjeta 4:5 de Facebook
     if (red === 'facebook') { archivos.instagram = path.join(outDir, `curiosidad-${nombre}-instagram.jpg`); fs.writeFileSync(archivos.instagram, cv.toBuffer('image/jpeg', 92)); }
   }
   const sidecar = path.join(outDir, `curiosidad-${nombre}.json`);
-  const meta = { kind: 'imagen', title: noticia ? noticia.titulo.slice(0, 80) : visual ? `Reto visual · ${visual.tipo}` : `${TEMAS[x.tema].nombre} · ${pieza.formato}`, id: x?.id || noticia?.link || nombre, formato: pieza.formato, post: { text: pieza.texto }, createdAt: new Date().toISOString() };
+  const meta = { kind: 'imagen', title: noticia ? noticia.titulo.slice(0, 80) : visual?.imagen ? `Debate · ${visual.tipo}` : visual ? `Reto visual · ${visual.tipo}` : `${TEMAS[x.tema].nombre} · ${pieza.formato}`, id: x?.id || noticia?.link || nombre, formato: pieza.formato, post: { text: pieza.texto }, createdAt: new Date().toISOString() };
   if (!o['dry-run']) {
     for (const red of redes) {
       const img = await subirImagen(archivos[red]).catch((e) => { console.error(`No se pudo subir la imagen: ${e.message}`); return null; });

@@ -19,7 +19,9 @@ const FONTSOURCE = [
   ['ibm-plex-mono', /-latin-400-normal\.woff2$/],
   ['pacifico', /-latin-400-normal\.woff2$/],
   ['playfair-display', /-latin-700-normal\.woff2$/],
-  ['archivo-black', /-latin-400-normal\.woff2$/]
+  ['archivo-black', /-latin-400-normal\.woff2$/],
+  // Letra a mano para los retos de debate (scripts/lib/debate.mjs)
+  ['kalam', /-latin-(400|700)-normal\.woff2$/]
 ];
 const SYSTEM_EMOJI = ['Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji'];
 

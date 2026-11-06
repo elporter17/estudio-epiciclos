@@ -4,6 +4,8 @@
 //   clave: { modo: 'numero', valor } · { modo: 'posicion', fila, col } · { modo: 'fraccion', k, n }
 //          { modo: 'patron', largo, pista, empieza } · { modo: 'vf', verdadero } · { modo: 'letra', letra, texto }
 //          { modo: 'puntaje', max } · { modo: 'charla' } (sin respuesta correcta: «¿Qué prefieres?», noticias, GTA VI)
+//          { modo: 'debate', revelar } (retos de debate, scripts/lib/debate.mjs: no se dice quién tiene razón hasta que
+//          scripts/comentarios.mjs publica «revelar» unas horas después)
 import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT } from './node-env.mjs';
@@ -72,6 +74,7 @@ export function evaluar(clave, texto) {
     }
     case 'puntaje': { const n = nums.find((x) => x <= clave.max); return n == null ? null : { puntaje: n }; }
     case 'charla': return comentarioNormal(texto) ? { charla: true } : null;
+    case 'debate': return comentarioNormal(texto) ? { debate: true } : null;
     default: return null;
   }
 }
@@ -96,6 +99,8 @@ const P = {
     noticias: ['gracias por leer', 'interesante, ¿verdad?', 'mañana traemos más'],
     generico: ['gracias por comentar', 'qué bueno verte por aquí', 'gracias por jugar', 'así se habla', 'gracias, mañana hay más', 'qué bueno que te gustó', 'gracias por pasar']
   },
+  // Retos de debate: sin decir quién tiene razón (eso sale en unas horas): que siga la discusión
+  debate: ['anotado, en unas horas digo quién acertó', 'mmm, ¿seguro? 👀', 'interesante… ¿alguien más piensa igual?', 'esa respuesta divide a todos', 'buena defensa, a ver qué dicen los demás', 'ya veremos en unas horas', 'hay quien dice otra cosa…', 'guardo tu respuesta para el final', '¿y cómo llegaste a eso?', 'tenemos debate'],
   cierre: ['', '', '', '', ' Mañana hay otro.', ' Más tarde sale otro.', ' ¿Te animas con el siguiente?', ' Gracias por jugar.'],
   emoji: ['', '', '🔥', '👏', '💪', '😄', '🙌', '🎯', '✨', '😎', '🤩', '👀', '🫡']
 };
@@ -111,6 +116,7 @@ export function mensaje(v, clave, { usadas = new Set(), usuario = null, contexto
   if (v === 'bien') nucleo = P.bien;
   else if (v === 'mal') nucleo = P.mal;
   else if (v.charla) nucleo = P.charla[formatoDe(contexto)].concat(P.charla.generico);
+  else if (v.debate) nucleo = P.debate;
   else if (v.bien) { nucleo = P.nombre; datos = { N: cap(v.bien.toLowerCase()), L: clave.largo, modo: clave.empieza ? 'empieza con' : 'termina en', pista: clave.pista }; }
   else if (v.puntaje != null) { const r = v.puntaje / clave.max; nucleo = r === 1 ? P.perfecto : r >= 0.7 ? P.alto : r >= 0.4 ? P.medio : P.bajo; datos = { n: v.puntaje, max: clave.max }; }
   else return null;

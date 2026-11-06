@@ -30,6 +30,8 @@ const PIEZAS = {
   video3d1: { workflow: 'video3d.yml', que: 'Video 3D de datos (mediodía)', inputs: { modo: 'publicar', turno: 'mediodia' } },
   video3d2: { workflow: 'video3d.yml', que: 'Video 3D de datos (tarde, la hora de más vistas)', inputs: { modo: 'publicar', turno: 'tarde' } },
   imagen: { workflow: 'curiosidades-facebook.yml', que: 'Imagen de relleno: reto visual o curiosidad' },
+  debate: { workflow: R, que: 'Reel de debate: 5 retos que dividen a internet', inputs: { formato: 'debate' } },
+  debateimg: { workflow: 'curiosidades-facebook.yml', que: 'Imagen de debate: error a propósito, «el 90 % falla» o «¿cuántos ves?»', inputs: { tipo: 'debate' } },
   noticiasimg: { workflow: 'curiosidades-facebook.yml', que: 'Noticias en imágenes: carrusel con titular y resumen', inputs: { tipo: 'noticias' } },
   gta: { workflow: 'gta6.yml', que: 'Reel GTA VI «Faltan N días»' },
   nombres: { workflow: 'nombres.yml', que: 'Nombre o pareja con círculos' },
@@ -37,9 +39,10 @@ const PIEZAS = {
 };
 // Solo de TikTok: no usan «redes»
 const SOLO_TT = new Set(['nombres', 'famosos']);
+// 2026-11-06: retos de debate (scripts/lib/debate.mjs) en lugar de «¿Qué prefieres?» (14:30) y el quiz de la noche (22:30)
 const PLAN = {
-  fb: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '14:30': 'prefieres', '15:45': 'retos', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella', '21:30': 'gta', '22:30': 'quiz' },
-  ig: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '15:45': 'retos', '18:30': 'video3d2', '20:30': 'estrella' },
+  fb: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '14:30': 'debate', '15:45': 'retos', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella', '21:30': 'gta', '22:30': 'debateimg' },
+  ig: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '15:45': 'retos', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
   tt: { '08:15': 'nombres', '10:30': 'comosehace', '12:17': 'video3d1', '15:00': 'famosos', '18:30': 'video3d2', '20:30': 'estrella' },
   yt: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '15:45': 'retos', '18:30': 'video3d2' }
 };
@@ -56,7 +59,7 @@ const RED_NOMBRE = { fb: 'FB', ig: 'IG', tt: 'TikTok', yt: 'YouTube' };
 export const redesDePieza = (pieza) => SOLO_TT.has(pieza) ? ['tt'] : (() => { const r = Object.keys(PLAN).filter((red) => Object.values(PLAN[red]).includes(pieza)); return r.length ? r : (POSIBLES[pieza] || ['fb']); })();
 // Una corrida de una pieza a una hora, para esas redes
 // Dónde puede salir cada pieza (lo que su workflow sabe publicar); los Reels, en las 4
-const POSIBLES = { imagen: ['fb', 'ig'], noticiasimg: ['fb', 'ig'], gta: ['fb', 'ig', 'tt'], nombres: ['tt'], famosos: ['tt'], largo: ['yt'] };
+const POSIBLES = { imagen: ['fb', 'ig'], noticiasimg: ['fb', 'ig'], debateimg: ['fb', 'ig'], gta: ['fb', 'ig', 'tt'], nombres: ['tt'], famosos: ['tt'], largo: ['yt'] };
 export const redesPosibles = (pieza) => POSIBLES[pieza] || ['fb', 'ig', 'tt', 'yt'];
 export function armarSlot(pieza, hora, redes = redesDePieza(pieza)) {
   const p = PIEZAS[pieza], orden = SOLO_TT.has(pieza) ? ['tt'] : ['fb', 'ig', 'tt', 'yt'].filter((r) => redes.includes(r) && redesPosibles(pieza).includes(r));
@@ -145,6 +148,8 @@ export const ALIAS = Object.entries({
   prefieres: ['que prefieres', 'prefieres'],
   emojis: ['emojis', 'emoji'],
   quiz: ['quiz', 'top 10', 'top10', 'trivia'],
+  debateimg: ['debate en imagen', 'imagen de debate', 'debate imagen', 'error a proposito', 'cuantos ves'],
+  debate: ['retos que dividen', 'reel de debate', 'debate', 'dividen'],
   noticiasimg: ['noticias en imagenes', 'noticias en imagen', 'noticias imagenes', 'noticias imagen', 'noticias en fotos', 'noticias en carrusel', 'carrusel de noticias'],
   noticias: ['noticias en video', 'noticias video', 'reel de noticias', 'noticias de hoy', 'noticiero', 'noticias'],
   video3d1: ['3d de mediodia', '3d del mediodia', 'video 3d de mediodia', '3d 1'],
@@ -155,7 +160,7 @@ export const ALIAS = Object.entries({
   famosos: ['futbolistas', 'futbolista', 'jugadores', 'jugador', 'famosos', 'futbol'],
   largo: ['video largo', 'largo de youtube']
 }).flatMap(([p, xs]) => xs.map((x) => [x, p])).sort((a, b) => b[0].length - a[0].length);
-export const NOMBRE_PIEZA = { comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Banderas/Retos', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB' };
+export const NOMBRE_PIEZA = { comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Banderas/Retos', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB' };
 export const nombreSlot = (s) => NOMBRE_PIEZA[s.pieza] || (s.workflow === 'metas.yml' ? 'Metas FB' : NOMBRES[s.workflow] || s.workflow);
 
 // Tabla para Telegram (va dentro de <pre>): hora, pieza y redes; con estado si viene de diaConEstado

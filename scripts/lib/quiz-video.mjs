@@ -12,6 +12,7 @@ import { wavBuffer } from '../bounce.mjs';
 import { midiFreq } from '../../src/melodias.js';
 import { TEMAS } from './tarjetas.mjs';
 import { tituloVisual, marcaVisual, insigniaNivel } from './retos-visuales.mjs';
+import { escritorio, gancho as ganchoDebate } from './debate.mjs';
 import { pistaMusical } from './musica.mjs';
 import { dibujarMaquina, fondoFabrica } from './maquinas.mjs';
 import { cargarObjetos } from './objetos3d.mjs';
@@ -328,6 +329,26 @@ const ESCENAS = {
     // El reloj se pensó para fondo oscuro: un disco oscuro debajo para que se lea sobre el claro
     if (!revela) { ctx.fillStyle = '#26221d'; ctx.beginPath(); ctx.arc(W / 2, 1345, 84, 0, Math.PI * 2); ctx.fill(); reloj(ctx, W / 2, 1345, 66, e.piensa - lt, e.piensa, e.tema); }
     else sello(ctx, v.corta, VERDE, rt, 1345);
+  },
+  // Reto de debate (scripts/lib/debate.mjs): el gancho arriba, la hoja o el pizarrón que se escribe a mano, la cuenta
+  // atrás y el llamado a comentar. La respuesta NO se dice: la publica el bot de comentarios unas horas después
+  debate(ctx, e, lt) {
+    const d = e.debate, escribe = e.escribe || 2.6, rt = lt - escribe;
+    escritorio(ctx, W, H); cabecera(ctx, e.tema, e.idx, e.total, lt / e.dur);
+    alfa(ctx, ease(lt / 0.25));
+    const fin = ganchoDebate(ctx, d.gancho, { W, y: 290, max: 84 });
+    d.dibujar(ctx, { x: 70, y: fin + 40, w: W - 140, h: Math.min(1020, 1450 - fin - 40) }, clamp(lt / escribe));
+    alfa(ctx, 1);
+    if (rt >= 0 && rt < e.piensa) reloj(ctx, W / 2, 1600, 70, e.piensa - rt, e.piensa, e.tema);
+    else if (rt >= e.piensa) {
+      const s = back((rt - e.piensa) / 0.35), pulso = 1 + 0.04 * Math.sin((rt - e.piensa) * 6);
+      escala(ctx, s * pulso, W / 2, 1600, () => {
+        ctx.font = font(400, 54, BLACK + EMOJI); const txt = '👇 COMENTA TU RESPUESTA', w = ctx.measureText(txt).width + 90;
+        caja(ctx, (W - w) / 2, 1545, w, 110, 55, e.tema.acento);
+        ctx.fillStyle = '#111'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(txt, W / 2, 1602);
+      });
+      alfa(ctx, clamp((rt - e.piensa - 0.3) / 0.4)); ctx.font = font(500, 38); ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.textAlign = 'center'; ctx.fillText('La respuesta, en los comentarios en unas horas', W / 2, 1700); alfa(ctx, 1);
+    }
   },
   // ¿Qué prefieres? Dos opciones enfrentadas, cuenta atrás y la pregunta de vuelta
   prefieres(ctx, e, lt) {

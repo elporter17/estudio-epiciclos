@@ -22,6 +22,7 @@ import { logUpload } from './tiktok-status.mjs';
 import { subirYouTube, youtubeReady } from './lib/youtube.mjs';
 import { MELODIA_IDS } from '../src/melodias.js';
 import { crearVisual, VISUALES } from './lib/retos-visuales.mjs';
+import { crearDebate } from './lib/debate.mjs';
 import { juntarNoticias, N_REEL } from './lib/noticias.mjs';
 import { cambiosDe, noticiasConCambios, noticiasGuardadas, guardarNoticias } from './lib/control.mjs';
 import { hoyHN } from './lib/video3d-cola.mjs';
@@ -38,7 +39,7 @@ const OCULTAR = '\n\n.\n.\n.\n\n'; // lo que sigue queda debajo de «Ver más»
 // Las banderas, lo que más vistas tuvo (informe del 2026-11-01), salen 2 de cada 10. Las noticias las pide el
 // workflow en sus horarios (--formato noticias).
 // Música propia (scripts/lib/musica.mjs) según el formato; dentro de cada lista, al azar
-const ESTILO = { comosehace: ['lofi', 'electro', 'pop'], banderas: ['pop', 'dembow', 'electro'], retos: ['electro', 'synthwave'], quiz: ['pop', 'electro'], prefieres: ['lofi', 'pop'], emojis: ['dembow', 'pop'], top10: ['lofi', 'pop', 'synthwave'], noticias: ['electro', 'synthwave'] };
+const ESTILO = { debate: ['lofi', 'pop'], comosehace: ['lofi', 'electro', 'pop'], banderas: ['pop', 'dembow', 'electro'], retos: ['electro', 'synthwave'], quiz: ['pop', 'electro'], prefieres: ['lofi', 'pop'], emojis: ['dembow', 'pop'], top10: ['lofi', 'pop', 'synthwave'], noticias: ['electro', 'synthwave'] };
 // «Cómo se hace» tiene su propio workflow (como-se-hace.yml, 2 al día): no entra en la rotación de los Reels
 const ROTACION = ['banderas', 'retos', 'quiz', 'prefieres', 'emojis', 'banderas', 'top10', 'retos', 'prefieres', 'quiz'];
 const TEMAS_DATOS = ['animales', 'cuerpo', 'ciencia', 'geografia', 'historia', 'comida', 'deportes', 'tecnologia', 'inventos'];
@@ -204,6 +205,25 @@ function retosVideo() {
   return { formato: 'retos', titulo: '5 retos visuales: de fácil a GOD', escenas, texto, clave: { modo: 'puntaje', max: vs.length } };
 }
 
+// ---------- retos de debate (2026-11-06): «5 retos que dividen a internet» ----------
+// Los tres tipos de scripts/lib/debate.mjs mezclados (error a propósito, «el 90 % falla», «¿cuántos ves?»). La
+// respuesta no sale en el video: el bot la publica en los comentarios unas horas después (clave «debate»)
+function debateVideo() {
+  const tipos = mezclar(['error', 'divide', 'cuenta', 'error', azar(['divide', 'cuenta'])]), vistos = new Set(), ds = [];
+  for (const t of tipos) { let d, k = 0; do { d = crearDebate(t); } while (vistos.has(d.pregunta) && ++k < 20); vistos.add(d.pregunta); ds.push(d); }
+  const ESCRIBE = 2.6, PIENSA = 5;
+  const sonidos = (escribe, piensa) => [[0, 'whoosh'], [0.05, 'pop'], ...Array.from({ length: piensa - 1 }, (_, k) => [escribe + piensa - (k + 1), k < 2 ? 'tock' : 'tick']), [escribe + piensa, 'pop']];
+  const escenas = [
+    { tipo: 'intro', dur: 2.6, tema: 'debate', portada: true, sonidos: introSonidos, iconos: ['🤯', '✏️', '🧮', '👀', '🔥'], voz: 'Cinco retos que dividen a internet.',
+      lineas: [{ texto: '5 RETOS', size: 150, color: TEMAS.debate.acento }, { texto: 'QUE DIVIDEN', size: 110 }, { texto: 'A INTERNET', size: 110 }, { texto: 'Comenta tus 5 respuestas', size: 56, color: 'rgba(255,255,255,0.85)' }] },
+    ...ds.map((d, i) => ({ tipo: 'debate', dur: ESCRIBE + PIENSA + 2.8, escribe: ESCRIBE, piensa: PIENSA, idx: i, total: ds.length, tema: 'debate', debate: d, voz: d.voz, sonidos: sonidos(ESCRIBE, PIENSA) })),
+    { ...cierre('debate', 'COMENTA TUS 5 RESPUESTAS', 'En unas horas te digo quién acertó'), voz: 'Deja tus cinco respuestas en los comentarios. En unas horas te digo quién acertó.' }
+  ];
+  const texto = `🤯 5 retos que dividen a internet. Comenta así: 1) … 2) … 3) … 4) … 5) …\n¿Cuál te hizo dudar más? 👇${OCULTAR}Las respuestas, en los comentarios en unas horas 👀\n\n${tags('retos', 'debate', 'acertijos', 'matematicas', 'logica')}`;
+  const revelar = `✅ Las respuestas:\n${ds.map((d, i) => `${i + 1}) ${d.correcta}. ${d.explica}`).join('\n')}\n¿Cuántas sacaste? 👀`;
+  return { formato: 'debate', titulo: '5 retos que dividen a internet', escenas, texto, clave: { modo: 'debate', revelar } };
+}
+
 function prefieresVideo(hist) {
   const base = leer(path.join(ROOT, 'data', 'prefieres.json'), []), usados = new Set(hist.prefieres.slice(-120));
   const elegidos = mezclar(base.filter((x) => !usados.has(x.id))).concat(mezclar(base)).filter((x, i, a) => a.indexOf(x) === i).slice(0, 8);
@@ -304,7 +324,7 @@ async function main() {
   const diaHN = Math.floor((Date.now() - 6 * 3600e3) / 86400e3);
   const formato = o.formato === 'estrella' ? (diaHN % 2 ? 'retos' : 'banderas') : o.formato !== 'auto' ? o.formato : ROTACION[paso % ROTACION.length];
   const base = cargarDatos();
-  const hacer = { comosehace: () => comoSeHace(hist), top10: () => top10(base, hist, o.tema), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
+  const hacer = { debate: debateVideo, comosehace: () => comoSeHace(hist), top10: () => top10(base, hist, o.tema), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
   if (!hacer[formato]) throw new Error(`--formato debe ser ${Object.keys(hacer).join(', ')} o auto`);
   // Si un formato no tiene material (sin noticias frescas, por ejemplo), sale un quiz
   const pieza = (await hacer[formato]()) || quiz(base, hist);

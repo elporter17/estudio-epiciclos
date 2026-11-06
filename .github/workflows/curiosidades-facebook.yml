@@ -14,9 +14,9 @@ on:
         type: string
         default: ''
       tipo:
-        description: Qué carrusel (auto = el que toque; noticias = noticias en imágenes con resumen; retos o datos)
+        description: Qué publicar (auto = el carrusel que toque; debate = un reto de debate en una imagen; noticias = noticias en imágenes con resumen; retos o datos)
         type: choice
-        options: [auto, noticias, retos, datos]
+        options: [auto, debate, noticias, retos, datos]
         default: auto
 
 permissions:

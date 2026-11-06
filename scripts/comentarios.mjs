@@ -116,6 +116,19 @@ if (o.diagnostico) {
   process.exit(0);
 }
 
+// Retos de debate: 6 horas después de publicar, la cuenta comenta la respuesta con su explicación (una sola vez)
+const REVELADOS = path.join(ROOT, 'data', 'debates-revelados.json');
+const revelados = new Set((() => { try { return JSON.parse(fs.readFileSync(REVELADOS, 'utf8')); } catch { return []; } })());
+if (!o.diagnostico && !o['dry-run']) {
+  for (const p of publicacionesRecientes(3)) {
+    if (p.clave?.modo !== 'debate' || !p.clave.revelar || revelados.has(`${p.red}:${p.id}`) || Date.now() - Date.parse(p.creado) < 6 * 3600e3) continue;
+    if (p.red === 'instagram' && !ig) continue;
+    try { await graph('POST', `/${p.id}/comments`, { message: p.clave.revelar }); revelados.add(`${p.red}:${p.id}`); console.log(`${p.red} · ${p.titulo} → respuesta del debate publicada`); await pausa(); }
+    catch (e) { console.log(`Aviso (${p.red}: respuesta del debate): ${e.message.slice(0, 160)}`); }
+  }
+  fs.writeFileSync(REVELADOS, JSON.stringify([...revelados].slice(-500)) + '\n');
+}
+
 let hechas = 0, revisados = 0;
 const errores = new Map();
 // Lo registrado al publicar, más lo de Instagram de los últimos 3 días que no está registrado (publicado antes de que
@@ -145,7 +158,7 @@ for (const p of publicaciones) {
     // Si no es una respuesta al reto pero es un comentario normal, se agradece igual (más conversación)
     const v = evaluar(p.clave, c.texto) || (comentarioNormal(c.texto) ? { charla: true } : null);
     // Dudas, correcciones, temas delicados…: no se contestan solos, te llegan por Telegram (una vez)
-    const motivo = v?.charla ? delicado(c.texto) : null;
+    const motivo = v?.charla ? delicado(c.texto) : v?.debate ? (delicado(c.texto) === 'insulto o grosería' ? 'insulto o grosería' : null) : null;
     if (motivo) { if (!avisados.has(c.id) && !o['dry-run']) await avisarDelicado(p, c, { motivo }); console.log(`${p.red} · ${p.titulo} → para ti (${motivo})`); continue; }
     const msg = v && mensaje(v, p.clave, { usadas, usuario: c.usuario, contexto: p.titulo });
     if (!msg) { if (!vistos.has(c.id)) vistos.add(c.id); continue; }

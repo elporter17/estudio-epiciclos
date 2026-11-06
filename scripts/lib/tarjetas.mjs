@@ -16,7 +16,9 @@ export const TEMAS = {
   gta: { nombre: 'Cuenta atrás GTA VI', a: '#8a1f6b', b: '#1a0a2e', acento: '#ff9ad5', tags: ['gta6', 'gtavi', 'videojuegos'] },
   prefieres: { nombre: '¿Qué prefieres?', a: '#3a2a6b', b: '#120c2b', acento: '#ffd166', tags: ['queprefieres', 'dilemas'] },
   emojis: { nombre: 'Adivina con emojis', a: '#0f5c6b', b: '#062a31', acento: '#ffe066', tags: ['adivina', 'emojis'] },
-  noticias: { nombre: 'Noticias', a: '#1b1b1f', b: '#0a0a0c', acento: '#ffd166', tags: ['noticias'] }
+  noticias: { nombre: 'Noticias', a: '#1b1b1f', b: '#0a0a0c', acento: '#ffd166', tags: ['noticias'] },
+  // Retos de debate (scripts/lib/debate.mjs): escritorio de madera oscura
+  debate: { nombre: 'Debate', a: '#4a3322', b: '#22160d', acento: '#ffd166', tags: ['retos', 'debate'] }
 };
 export const FORMATOS = {
   sabias: '¿SABÍAS QUE…?', vf: '¿VERDADERO O FALSO?', error: '¿CUÁL ES FALSO?', reto: 'RETO MENTAL 🧠', noticia: '📰 NOTICIA'
