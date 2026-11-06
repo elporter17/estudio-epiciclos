@@ -29,6 +29,20 @@ export function inferirClave(descripcion = '') {
 }
 // Un comentario normal (no vacío, sin enlaces ni menciones en masa): se le contesta con un agradecimiento
 export const comentarioNormal = (texto = '') => texto.trim().length > 0 && !/https?:\/\/|www\.|\.com\b/i.test(texto) && (texto.match(/@/g) || []).length < 3;
+// Un comentario que no se contesta en automático (2026-11-06: a un «¿Seguro?» le llegó un «¡gracias!»): dudas y
+// preguntas, correcciones o desacuerdos, temas delicados, comentarios largos o que mencionan a la cuenta. Llega por
+// Telegram para que lo contestes tú. Devuelve el motivo (o null si se puede contestar solo)
+export function delicado(texto = '') {
+  const t = norm(texto).trim();
+  if (!t) return null;
+  if (/\?|^(seguro|en serio|neta|de verdad|por que|porque|como|cuando|donde|cual|quien|que pasa|y si|y los|y las|y el|y la)\b/.test(t)) return 'pregunta o duda';
+  if (/\b(falso|fake|mentira|mientes|no es cierto|no es verdad|no es asi|esta mal|estan mal|error|equivocad|incorrect|no creo|no coincide|exager|invent|depende|en realidad|corrijo|correccion|deberian|deberias)\b/.test(t)) return 'corrección o desacuerdo';
+  if (/\b(africa|pobre|pobreza|hambre|muere|muert|murio|enferm|cancer|guerra|politic|gobierno|presidente|religion|dios|aborto|racis|droga|suicid|violen|abuso|robo|estafa|denuncia|reporta)/.test(t)) return 'tema delicado';
+  if (/\b(estupid|idiota|tont|basura|porquer|asco|mierda|puta|put[oa]s?|verga|pendej|culer|maric|hdp|chinga|malparid)/.test(t)) return 'insulto o grosería';
+  if (/@potter\.?play\b|potter play/.test(t)) return 'te mencionan';
+  if (t.length > 140) return 'comentario largo';
+  return null;
+}
 export const publicacionesRecientes = (dias = 3) => leer().filter((x) => Date.now() - Date.parse(x.creado) < dias * 864e5);
 
 // 'bien' | 'mal' | { puntaje } | null (el comentario no es una respuesta: no se contesta)

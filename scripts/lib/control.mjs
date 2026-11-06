@@ -115,6 +115,22 @@ export function noticiasConCambios(items, ops = []) {
   return [...propias, ...arriba, ...base.filter((n) => !arriba.includes(n))];
 }
 
+// ---------- comentarios que contestas tú ----------
+// Lo que decides en Telegram sobre un comentario delicado (responder con tu texto, «me gusta», ocultar) queda en
+// control/<id>/comentarios/<ms>.json hasta que scripts/comentarios.mjs lo publica y lo borra.
+//   { accion: 'responder' | 'like' | 'ocultar', red: 'facebook' | 'instagram', id, texto?, usuario? }
+export async function encolarComentario(a) {
+  if (!controlListo()) throw new Error('Falta el almacén o el token del bot');
+  await guardarJson(`${carpeta()}/comentarios/${String(Date.now()).padStart(15, '0')}.json`, { ...a, at: new Date().toISOString() }, { fijo: false });
+}
+export async function comentariosEnCola() {
+  if (!controlListo()) return [];
+  const { blobs } = await list({ prefix: `${carpeta()}/comentarios/`, token: blobToken() });
+  const out = await Promise.all(blobs.sort((a, b) => a.pathname.localeCompare(b.pathname)).map(async (b) => ({ ...(await fetch(b.url, { cache: 'no-store' }).then((r) => r.json()).catch(() => ({}))), url: b.url })));
+  return out.filter((x) => x.accion && x.id);
+}
+export async function quitarDeCola(url) { if (controlListo()) await del(url, { token: blobToken() }).catch(() => {}); }
+
 // ---------- Telegram ----------
 // Clave que Telegram manda en cada llamada al webhook (sale del token del bot, así no hay otra variable que guardar)
 export const secretoWebhook = () => crypto.createHash('sha256').update(`potter-webhook:${process.env.TELEGRAM_BOT_TOKEN}`).digest('hex').slice(0, 48);

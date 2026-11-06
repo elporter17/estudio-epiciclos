@@ -6,7 +6,7 @@
 // npm run telegram:webhook). Variables de Vercel: TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID.
 import { json, diaConEstado, lanzar, ACTIVO } from './_panel.js';
 import { interpretar, AYUDA, mensajePlan, mensajeNoticias, diaBonito } from '../scripts/lib/bot.mjs';
-import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasGuardadas, guardarNoticias, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId } from '../scripts/lib/control.mjs';
+import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasGuardadas, guardarNoticias, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId, encolarComentario } from '../scripts/lib/control.mjs';
 import { delDia, ahoraHN, armarSlot, redesDePieza, nombreSlot, editable, NOMBRE_PIEZA, redesDe, redesPosibles } from '../scripts/lib/horario.mjs';
 import { noticiaDeEnlace, juntarNoticias, N_REEL } from '../scripts/lib/noticias.mjs';
 
@@ -153,6 +153,14 @@ async function noticiasFrescas(minutos = 60) {
   return g.items.length >= 3 && Date.now() - g.at < minutos * 60e3 ? null : actualizarNoticias().catch(() => null);
 }
 
+// Lanza «Respuestas a comentarios» ya, salvo que haya otra corrida esperando en GitHub (lanzar otra la cancelaría): en
+// ese caso sale en su vuelta de cada hora. Devuelve si se lanzó
+async function lanzarComentarios() {
+  const { corridas } = await diaConEstado(new Date());
+  if (corridas.some((x) => ACTIVO.includes(x.estado) && x.estado !== 'in_progress')) return false;
+  await lanzar('comentarios.yml', {}); return true;
+}
+
 // Un cambio hecho: la confirmación va en su propio mensaje y debajo, en uno nuevo, el plan (o las noticias) al día
 const conConfirmacion = (vista, txt, icono = '✅') => ({ ...vista, confirmacion: `${icono} ${txt}` });
 
@@ -283,6 +291,25 @@ export default { async fetch(request) {
   if (!mio) return json({ ok: true, motivo: chat ? 'otro-chat' : 'sin-mensaje', chatIdConfigurado: !!process.env.TELEGRAM_CHAT_ID });
   let enviado = false;
   try {
+    // ---------- comentarios que contestas tú (los manda scripts/comentarios.mjs) ----------
+    const ref = (m.reply_to_message?.text || '').match(/🆔 (fb|ig) (\S+)(?: (@\S+))?/);
+    if (!cb && m.text && ref) {
+      const [, r, id, usuario] = ref, red = r === 'fb' ? 'facebook' : 'instagram';
+      // En Instagram la respuesta va al comentario principal: se menciona a quien escribió para que le llegue
+      const texto = usuario && !m.text.includes(usuario) ? `${usuario} ${m.text}` : m.text;
+      await encolarComentario({ accion: 'responder', red, id, texto, usuario: usuario || null });
+      const ya = await lanzarComentarios();
+      enviado = await telegram(`📝 Listo, publico tu respuesta en ${red === 'facebook' ? 'Facebook' : 'Instagram'}${ya ? ' en unos minutos' : ' en la próxima vuelta (máx. 1 hora)'}:\n«${esc(texto)}»\nTe aviso cuando quede.`, { chat });
+      return json({ ok: true, motivo: 'respuesta-encolada', enviado });
+    }
+    if (cb?.data?.startsWith('cm|')) {
+      const [, acc, r, id] = cb.data.split('|'), red = r === 'fb' ? 'facebook' : 'instagram';
+      await tgApi('answerCallbackQuery', { callback_query_id: cb.id, text: acc === 'i' ? 'Ignorado' : 'Listo' });
+      if (acc !== 'i') { await encolarComentario({ accion: acc === 'l' ? 'like' : 'ocultar', red, id }); await lanzarComentarios(); }
+      const estado = acc === 'i' ? '✅ Ignorado: no se contesta.' : acc === 'l' ? '👍 Le doy «me gusta» en unos minutos.' : '🙈 Lo oculto en unos minutos.';
+      enviado = await editarMensaje(chat, m.message_id, `${esc(m.text || '')}\n\n<b>${estado}</b>`);
+      return json({ ok: true, motivo: 'comentario', enviado });
+    }
     const v = cb ? (await tgApi('answerCallbackQuery', { callback_query_id: cb.id, text: 'Listo' }), await alTocar(cb.data || '')) : m.text ? await atender(m.text) : null;
     if (v?.confirmacion) {
       // El menú donde tocaste queda como la confirmación (sin botones) y el plan al día llega abajo, en un mensaje nuevo
