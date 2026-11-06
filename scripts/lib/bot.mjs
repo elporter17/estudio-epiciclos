@@ -143,7 +143,7 @@ export const AYUDA = `<b>Lo que puedo hacer</b> (escribe normal, sin comandos):
 • «agrega un quiz a las 13:00 en fb e ig»
 • «publica ya unos retos» (sale en los próximos minutos)
 • «pausa hoy» / «reanuda» · «deshaz» (anula el último cambio)
-Si dices «mañana», el cambio es para mañana.
+Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (📅 Plan de hoy → toca una publicación).
 
 📰 <b>Noticias</b>
 • «noticias»: las candidatas de hoy, numeradas

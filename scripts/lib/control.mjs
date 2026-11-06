@@ -82,16 +82,28 @@ export function noticiasConCambios(items, ops = []) {
 // Clave que Telegram manda en cada llamada al webhook (sale del token del bot, así no hay otra variable que guardar)
 export const secretoWebhook = () => crypto.createHash('sha256').update(`potter-webhook:${process.env.TELEGRAM_BOT_TOKEN}`).digest('hex').slice(0, 48);
 export const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-export async function telegram(texto, { chat = process.env.TELEGRAM_CHAT_ID, html = true } = {}) {
+export async function telegram(texto, { chat = process.env.TELEGRAM_CHAT_ID, html = true, teclado } = {}) {
   const tg = process.env.TELEGRAM_BOT_TOKEN; if (!tg || !chat) return false;
   let ok = true;
   // Telegram acepta hasta 4096 caracteres: se corta en saltos de línea, fuera de los bloques <pre>
   const partes = []; let actual = '';
   for (const bloque of texto.split(/\n\n/)) { if ((actual + '\n\n' + bloque).length > 3900 && actual) { partes.push(actual); actual = bloque; } else actual = actual ? `${actual}\n\n${bloque}` : bloque; }
   if (actual) partes.push(actual);
-  for (const p of partes) {
-    const r = await fetch(`https://api.telegram.org/bot${tg}/sendMessage`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ chat_id: chat, text: p, parse_mode: html ? 'HTML' : undefined, disable_web_page_preview: true }) }).catch(() => ({ ok: false }));
-    ok &&= r.ok;
+  for (const [i, p] of partes.entries()) {
+    // Los botones van en el último trozo
+    const r = await tgApi('sendMessage', { chat_id: chat, text: p, parse_mode: html ? 'HTML' : undefined, disable_web_page_preview: true, ...(teclado && i === partes.length - 1 ? { reply_markup: teclado } : {}) });
+    if (!r.ok) { ultimoError = r.description || 'sin respuesta'; ok = false; }
   }
   return ok;
+}
+export let ultimoError = '';
+export async function tgApi(metodo, body) {
+  const tg = process.env.TELEGRAM_BOT_TOKEN; if (!tg) return { ok: false, description: 'falta TELEGRAM_BOT_TOKEN' };
+  return fetch(`https://api.telegram.org/bot${tg}/${metodo}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }).then((r) => r.json()).catch((e) => ({ ok: false, description: e.message }));
+}
+// Cambia un mensaje que ya mandó el bot (al tocar un botón); si es igual al anterior Telegram lo rechaza, y da igual
+export async function editarMensaje(chat, id, texto, teclado) {
+  const r = await tgApi('editMessageText', { chat_id: chat, message_id: id, text: texto.slice(0, 4090), parse_mode: 'HTML', disable_web_page_preview: true, ...(teclado ? { reply_markup: teclado } : {}) });
+  if (!r.ok && !/not modified/.test(r.description || '')) ultimoError = r.description || '';
+  return r.ok || /not modified/.test(r.description || '');
 }
