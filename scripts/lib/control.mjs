@@ -30,27 +30,46 @@ export function resolver(ops) {
   const out = [];
   for (const op of ops) {
     if (op.t === 'deshacer') out.pop();
+    else if (op.t === 'borrar') { const i = out.findIndex((x) => x.id === op.id); if (i >= 0) out.splice(i, 1); }
     else if (op.t === 'reanudar-pausa') { for (let i = out.length - 1; i >= 0; i--) if (out[i].t === 'pausa') out.splice(i, 1); }
     else out.push(op);
   }
   return out;
 }
-// Lo vigente de una fecha leyendo todos sus cambios (exacto; lo usa el bot antes de escribir)
-export async function cambiosExactos(fecha) {
-  if (!controlListo()) return [];
-  const { blobs } = await list({ prefix: `${carpeta()}/ops/${fecha}/`, token: blobToken() });
-  const ops = await Promise.all(blobs.sort((a, b) => a.pathname.localeCompare(b.pathname)).map((b) => fetch(b.url, { cache: 'no-store' }).then((r) => r.json()).catch(() => null)));
-  return resolver(ops.filter(Boolean));
+// La programación fija («todos los días» o «cada viernes») se guarda igual que un día más, con la clave FIJO; sus
+// cambios llevan «id» (para borrarlos con { t: 'borrar', id }) y, si son semanales, «dias» (0 = domingo … 6 = sábado).
+export const FIJO = 'fijo';
+const hoyHN = () => new Date(Date.now() - 6 * 3600e3).toISOString().slice(0, 10);
+// Todo lo vigente, leyendo cada cambio (exacto; lo usa el bot antes de escribir): { fijos: [...], dias: { fecha: [...] } }
+export async function estadoExacto() {
+  if (!controlListo()) return { fijos: [], dias: {} };
+  const blobs = []; let cursor;
+  do { const r = await list({ prefix: `${carpeta()}/ops/`, token: blobToken(), cursor }); blobs.push(...r.blobs); cursor = r.hasMore ? r.cursor : undefined; } while (cursor);
+  const porClave = {};
+  const leidos = await Promise.all(blobs.sort((a, b) => a.pathname.localeCompare(b.pathname)).map(async (b) => [b.pathname.split('/ops/')[1].split('/')[0], await fetch(b.url, { cache: 'no-store' }).then((r) => r.json()).catch(() => null)]));
+  for (const [clave, op] of leidos) if (op) (porClave[clave] ||= []).push(op);
+  const dias = {};
+  for (const [clave, ops] of Object.entries(porClave)) if (clave !== FIJO) dias[clave] = resolver(ops);
+  return { fijos: resolver(porClave[FIJO] || []), dias };
 }
-// Lo vigente de una fecha (rápido: un solo archivo; puede tardar hasta un minuto en verse un cambio recién hecho)
-export async function cambiosDe(fecha) { return (await leerJson(`${carpeta()}/dias/${fecha}.json`))?.ops || []; }
-// Registra un cambio y deja el resumen del día al corriente; devuelve lo vigente
-export async function registrar(fecha, op) {
-  await guardarJson(`${carpeta()}/ops/${fecha}/${String(Date.now()).padStart(15, '0')}.json`, { ...op, at: new Date().toISOString() }, { fijo: false });
-  const ops = await cambiosExactos(fecha);
-  await guardarJson(`${carpeta()}/dias/${fecha}.json`, { fecha, ops });
-  return ops;
+const juntar = (e, fecha) => [...(e.fijos || []), ...(e.dias?.[fecha] || [])];
+export async function cambiosExactos(fecha) { return juntar(await estadoExacto(), fecha); }
+// Lo vigente de una fecha (rápido: un solo archivo para el relojero; un cambio recién hecho tarda hasta un minuto)
+export async function cambiosDe(fecha) {
+  const e = await leerJson(`${carpeta()}/estado.json`);
+  if (e) return juntar(e, fecha);
+  return (await leerJson(`${carpeta()}/dias/${fecha}.json`))?.ops || []; // formato de antes (hasta el primer cambio nuevo)
 }
+// Registra un cambio (de una fecha o de la programación fija) y deja el resumen al corriente; devuelve lo vigente
+export async function registrar(clave, op) {
+  await guardarJson(`${carpeta()}/ops/${clave}/${String(Date.now()).padStart(15, '0')}.json`, { ...op, at: new Date().toISOString() }, { fijo: false });
+  const e = await estadoExacto(), ayer = new Date(Date.now() - 30 * 3600e3).toISOString().slice(0, 10);
+  // En el resumen solo van la programación fija y los días de ayer en adelante
+  await guardarJson(`${carpeta()}/estado.json`, { fijos: e.fijos, dias: Object.fromEntries(Object.entries(e.dias).filter(([f]) => f >= ayer)) });
+  return clave === FIJO ? e.fijos : juntar(e, clave);
+}
+export const nuevoId = () => Date.now().toString(36).slice(-6);
+export { hoyHN as hoyControl };
 // Borra lo de hace más de 7 días (lo llama scripts/noticias.mjs una vez al día)
 export async function limpiarViejos() {
   if (!controlListo()) return;

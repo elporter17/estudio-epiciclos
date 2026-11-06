@@ -74,7 +74,9 @@ export function interpretar(textoOriginal, { slots = [] } = {}) {
   if (url) return { tipo: 'enlace', url, dia };
   const propia = String(textoOriginal).match(/^\s*noticia\s*:\s*(.+)$/is);
   if (propia) { const [titulo, ...r] = propia[1].split(/\s*\|\s*|\n+/); return { tipo: 'op', dia, op: { t: 'noticia-propia', noticia: { titulo: titulo.trim().slice(0, 150), resumen: r.join(' ').trim().slice(0, 170), link: `propia:${Date.now()}`, fecha: Date.now(), medio: 'Potter Play', cat: 'general', icono: '📰', propia: true } }, resumen: `Agregué tu noticia: «${titulo.trim()}». Va primero en el Reel.` }; }
-  const nums = /noticia/.test(t) ? [...t.replace(/\b\d{1,2}[:.]\d{2}\b/g, '').matchAll(/\b(\d{1,2})\b/g)].map((m) => +m[1]) : [];
+  // Números de noticia: «noticia 3», «noticias 2 y 5», «la 4 de noticias» (no las horas: «noticias a las 6»)
+  const grupo = t.match(/noticias?\s+(?:numero\s+|n[o°]?\.?\s*)?(\d{1,2}(?:\s*(?:,|y)\s*(?:la\s+)?\d{1,2})*)\b(?![:.]\d)/)?.[1] || t.match(/\bla (\d{1,2}(?:\s*(?:,|y)\s*(?:la\s+)?\d{1,2})*) de (?:las )?noticias/)?.[1] || '';
+  const nums = [...grupo.matchAll(/\d{1,2}/g)].map((m) => +m[0]);
   if (/noticia/.test(t) && nums.length) {
     if (/\b(quita|quitar|saca|sacar|elimina|borra|no (uses|pongas|va)|fuera|descarta|cambia)\b/.test(t)) return { tipo: 'noticias-op', dia, accion: 'fuera', nums };
     if (/\b(fija|fijar|primero|primera|usa|pon|ponla|sube|destaca|incluye|mete|agrega)\b/.test(t)) return { tipo: 'noticias-op', dia, accion: 'fija', nums };
@@ -141,7 +143,12 @@ export function interpretar(textoOriginal, { slots = [] } = {}) {
     if (!p || !PIEZAS[p]) return { tipo: 'error', msg: '¿Qué agrego? Por ejemplo: «agrega un quiz a las 13:00 en fb».' };
     if (NO_AGREGAR.has(p)) return { tipo: 'error', msg: 'Los videos 3D y el largo se preparan de madrugada: no se pueden agregar en el día.' };
     if (!hs[0]) return { tipo: 'error', msg: `¿A qué hora pongo ${NOMBRE(p)}? Por ejemplo: «agrega ${p} a las 13:00».` };
-    return { tipo: 'op', dia, op: { t: 'agregar', hora: hs[0], pieza: p, ...(rs ? { redes: rs } : {}) }, resumen: `Agregué ${NOMBRE(p)} a las ${hs[0]}${rs ? ` en ${rs.join(', ')}` : ''}.` };
+    // ¿Para siempre? «todos los días», «cada viernes», «los sábados»; «solo hoy»; si no dice, el bot pregunta
+    const SEM = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
+    const semanal = new RegExp(`\\b(cada|los|todos los) (${SEM.join('|')})`).test(t);
+    const dias = semanal ? SEM.map((d, i) => new RegExp(`\\b${d}s?\\b`).test(t) ? i : -1).filter((i) => i >= 0) : [];
+    const alcance = dias.length ? 's' : /\b(todos los dias|diario|diariamente|cada dia|siempre|de ahora en adelante|fijo)\b/.test(t) ? 't' : /\bsolo (hoy|manana|ese dia|este dia|una vez)\b/.test(t) ? 'd' : null;
+    return { tipo: 'op', dia, alcance, ...(dias.length ? { dias } : {}), op: { t: 'agregar', hora: hs[0], pieza: p, ...(rs ? { redes: rs } : {}) }, resumen: `Agregué ${NOMBRE(p)} a las ${hs[0]}${rs ? ` en ${rs.map((r) => RED_LARGO[r]).join(', ')}` : ''}.` };
   }
   if (/\b(plan|hoy|tabla|agenda|programacion|horario|que (sale|hay|se publica|toca))\b/.test(t) || dia === 'manana') return { tipo: 'plan', dia };
   return { tipo: 'error', msg: 'No te entendí 😅' , ayuda: true };
@@ -157,6 +164,7 @@ export const AYUDA = `<b>Lo que puedo hacer</b> (escribe normal, sin comandos):
 • «cambia el de las 20:30 por emojis» · «en vez de prefieres pon quiz»
 • «agrega un quiz a las 13:00 en fb e ig»
 • «quita instagram del de las 15:45» · «agrega tiktok a retos»
+• «agrega un quiz a las 13:00 todos los días» · «… cada viernes» (si no lo dices, te pregunto). 🔁 Fijos para verlos o borrarlos
 • «publica ya unos retos» (sale en los próximos minutos)
 • «pausa hoy» / «reanuda» · «deshaz» (anula el último cambio)
 Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (📅 Plan de hoy → toca una publicación).
@@ -167,14 +175,14 @@ Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (�
 • Pega un enlace de una noticia para agregarla
 • «noticia: Título | resumen corto» para escribirla tú
 
-Piezas: banderas, retos, emojis, quiz, prefieres, cómo se hace, imagen, gta, nombres, futbolista, noticias, 3D de mediodía / de la tarde.
+Piezas: banderas, retos, emojis, quiz, prefieres, cómo se hace, imagen, gta, nombres, futbolista, noticias en video, noticias en imagen, 3D de mediodía / de la tarde.
 Horas: «14:30», «2:30 pm» o «a las 3» (de 1 a 6 se entiende de la tarde).`;
 
 // ---------- mensajes (HTML de Telegram) ----------
 export const diaBonito = (fecha) => new Date(`${fecha}T12:00:00Z`).toLocaleDateString('es-HN', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
 export function mensajePlan(fecha, slots, { estado = false, ops = [], titulo } = {}) {
   const pausa = ops.some((o) => o.t === 'pausa'), cambios = slots.some((s) => s.cambio);
-  return `📅 <b>${titulo || `Plan de ${diaBonito(fecha)}`}</b>${pausa ? '\n⏸️ <b>Día en pausa</b>: no sale nada («reanuda» para volver)' : ''}\n<pre>${esc(tablaPlan(slots, { estado }) || '(nada programado)')}</pre>${cambios ? '\n* cambiado por ti' : ''}${estado ? '\n✅ salió · ⏳ en curso · ⏰ atrasado · ❌ perdido' : ''}`;
+  return `📅 <b>${titulo || `Plan de ${diaBonito(fecha)}`}</b>${pausa ? '\n⏸️ <b>Día en pausa</b>: no sale nada («reanuda» para volver)' : ''}\n<pre>${esc(tablaPlan(slots, { estado }) || '(nada programado)')}</pre>${cambios ? `\n${[slots.some((s) => s.cambio && !s.fijo) ? '* cambiado por ti' : '', slots.some((s) => s.fijo) ? '🔁 programación fija' : ''].filter(Boolean).join(' · ')}` : ''}${estado ? '\n✅ salió · ⏳ en curso · ⏰ atrasado · ❌ perdido' : ''}`;
 }
 export function mensajeNoticias(lista, { horaReel, max = 10 } = {}) {
   if (!lista.length) return '📰 Hoy no hay noticias candidatas todavía (se juntan a las 6:23).';

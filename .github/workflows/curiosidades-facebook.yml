@@ -13,6 +13,11 @@ on:
         description: Redes (fb,ig,tt,yt); vacío = lo de siempre. Lo pone el plan de cada red (scripts/lib/horario.mjs)
         type: string
         default: ''
+      tipo:
+        description: Qué carrusel (auto = el que toque; noticias = noticias en imágenes con resumen; retos o datos)
+        type: choice
+        options: [auto, noticias, retos, datos]
+        default: auto
 
 permissions:
   contents: read
@@ -25,4 +30,5 @@ jobs:
       cats: curiosidades-facebook
       publish: none
       redes: ${{ inputs.redes }}
+      figura: ${{ inputs.tipo || 'auto' }}
     secrets: inherit

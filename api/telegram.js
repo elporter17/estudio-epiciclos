@@ -6,7 +6,7 @@
 // npm run telegram:webhook). Variables de Vercel: TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID.
 import { json, diaConEstado, lanzar } from './_panel.js';
 import { interpretar, AYUDA, mensajePlan, mensajeNoticias, diaBonito } from '../scripts/lib/bot.mjs';
-import { cambiosExactos, registrar, noticiasDe, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError } from '../scripts/lib/control.mjs';
+import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId } from '../scripts/lib/control.mjs';
 import { delDia, ahoraHN, armarSlot, redesDePieza, nombreSlot, editable, NOMBRE_PIEZA, redesDe, redesPosibles } from '../scripts/lib/horario.mjs';
 import { noticiaDeEnlace, N_REEL } from '../scripts/lib/noticias.mjs';
 
@@ -17,7 +17,7 @@ const deMin = (m) => `${dd(Math.floor(m / 60))}:${dd(m % 60)}`;
 const corta = (h) => h.replace(':', ''), larga = (h) => `${h.slice(0, 2)}:${h.slice(2)}`;
 const ahoraHHMM = () => deMin(ahoraHN().min);
 // Lo que se puede poner en un hueco (los 3D y el video largo se preparan de madrugada)
-const PONIBLES = ['banderas', 'retos', 'emojis', 'quiz', 'prefieres', 'comosehace', 'imagen', 'noticias', 'gta', 'nombres', 'famosos'];
+const PONIBLES = ['banderas', 'retos', 'emojis', 'quiz', 'prefieres', 'comosehace', 'imagen', 'noticias', 'noticiasimg', 'gta', 'nombres', 'famosos'];
 const RED = { fb: 'FB', ig: 'IG', tt: 'TT', yt: 'YT' };
 
 // Teclado fijo de abajo: lo que más se usa, sin escribir
@@ -43,19 +43,40 @@ function tecladoRedes(pieza, sel, base, listo, textoListo, volver) {
 
 // ---------- vistas: { texto, teclado } ----------
 async function datosDia(fecha) {
-  const hoy = ahoraHN().fecha, ops = await cambiosExactos(fecha);
+  const hoy = ahoraHN().fecha, e = await estadoExacto(), opsDia = e.dias[fecha] || [], ops = [...e.fijos, ...opsDia];
   const slots = fecha === hoy ? (await diaConEstado(new Date(), ops)).lista : delDia(fecha, ops);
-  return { hoy, ops, slots, esHoy: fecha === hoy };
+  return { hoy, ops, opsDia, fijos: e.fijos, slots, esHoy: fecha === hoy };
+}
+const DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+const diaSemana = (fecha) => new Date(`${fecha}T12:00:00Z`).getUTCDay();
+const cortoDia = (fecha) => `${DIAS[diaSemana(fecha)].slice(0, 3)} ${+fecha.slice(8)}`;
+// Para un agregado: ¿solo ese día, todos los días o cada semana ese día?
+function vistaAlcance(fecha, pieza, hhmm, rs) {
+  const k = `a4|${fecha}|${pieza}|${hhmm}|${codR(rs)}`;
+  return {
+    texto: `➕ <b>${esc(NOMBRE_PIEZA[pieza])}</b> a las ${larga(hhmm)} en ${esc(nombresRedes(rs))}.\n¿Solo ese día o se queda en la programación?`,
+    teclado: { inline_keyboard: [fila(boton(`📅 Solo el ${cortoDia(fecha)}`, `${k}|d`)), fila(boton('🔁 Todos los días', `${k}|t`), boton(`🗓️ Cada ${DIAS[diaSemana(fecha)]}`, `${k}|s`)), fila(boton('⬅️ Volver', `a2|${fecha}|${pieza}|${codR(rs)}`))] }
+  };
+}
+// La programación fija: cada agregado de «todos los días» o «cada …» con su botón para borrarlo
+async function vistaFijos(aviso = '') {
+  const { fijos } = await estadoExacto(), lista = fijos.filter((o) => o.id);
+  const linea = (o) => `${o.dias ? `🗓️ Cada ${o.dias.map((d) => DIAS[d]).join(', ')}` : '🔁 Todos los días'} · ${o.hora} · ${NOMBRE_PIEZA[o.pieza] || o.pieza}${o.redes ? ` (${o.redes.map((r) => RED[r]).join(' ')})` : ''}`;
+  return {
+    texto: `${aviso ? `${aviso}\n\n` : ''}🔁 <b>Programación fija</b> (lo que agregaste para siempre)\n\n${lista.length ? lista.map((o) => esc(linea(o))).join('\n') : 'Todavía no hay nada: al agregar algo, elige «Todos los días» o «Cada …».'}${lista.length ? '\n\n👇 Toca ❌ para borrar uno (deja de salir desde hoy).' : ''}`,
+    teclado: { inline_keyboard: [...lista.map((o) => fila(boton(`❌ ${o.hora} ${NOMBRE_PIEZA[o.pieza] || o.pieza}${o.dias ? ` (${o.dias.map((d) => DIAS[d].slice(0, 3)).join(',')})` : ''}`, `fx|${o.id}`))), fila(boton('📅 Plan de hoy', `p|${ahoraHN().fecha}`))] }
+  };
 }
 async function vistaPlan(fecha, aviso = '') {
-  const { ops, slots, esHoy } = await datosDia(fecha);
+  const { ops, opsDia, slots, esHoy } = await datosDia(fecha);
   const pausa = ops.some((o) => o.t === 'pausa');
   // Un botón por publicación que todavía no sale
   const futuras = slots.filter((s) => editable(s) && s.workflow !== 'metas.yml' && (!esHoy || !s.estado || s.estado === 'proximo' || s.estado === 'pendiente'));
   const teclado = [
     ...enFilas(futuras.map((s) => boton(`${s.hora} ${nombreSlot(s)}`, `s|${fecha}|${corta(s.hora)}|${s.pieza || ''}`)), 2),
     fila(boton('➕ Agregar', `a|${fecha}`), boton(pausa ? '▶️ Reanudar día' : '⏸️ Pausar día', `pz|${fecha}`)),
-    fila(ops.length ? boton('↩️ Deshacer', `u|${fecha}`) : null, esHoy ? boton('📰 Noticias', 'n') : null, boton(esHoy ? '📅 Mañana' : '📅 Hoy', `p|${esHoy ? masDias(fecha, 1) : ahoraHN().fecha}`))
+    fila(opsDia.length ? boton('↩️ Deshacer', `u|${fecha}`) : null, boton('🔁 Fijos', 'fj')),
+    fila(esHoy ? boton('📰 Noticias', 'n') : null, boton(esHoy ? '📅 Mañana' : '📅 Hoy', `p|${esHoy ? masDias(fecha, 1) : ahoraHN().fecha}`))
   ].filter((f) => f.length);
   const texto = `${aviso ? `${aviso}\n\n` : ''}${mensajePlan(fecha, slots, { estado: esHoy, ops })}\n\n👇 Toca una publicación para quitarla, moverla o cambiarla.`;
   return { texto, teclado: { inline_keyboard: teclado } };
@@ -140,7 +161,17 @@ export async function alTocar(data) {
       return posibles(a[1]).length === 1 ? vistaAgregarHora(a[0], a[1], posibles(a[1])) : vistaRedesAgregar(a[0], a[1], sel);
     }
     case 'a2': return vistaAgregarHora(a[0], a[1], decR(a[2]));
-    case 'a3': { const rs = decR(a[3]); return hecho(a[0], { t: 'agregar', hora: larga(a[2]), pieza: a[1], ...(rs.length ? { redes: rs } : {}) }, `Agregué ${NOMBRE_PIEZA[a[1]]} a las ${larga(a[2])}${rs.length ? ` en ${nombresRedes(rs)}` : ''}.`); }
+    case 'a3': return vistaAlcance(a[0], a[1], a[2], decR(a[3]).length ? decR(a[3]) : redesDePieza(a[1]));
+    // a4|fecha|pieza|hhmm|redes|alcance (d = solo ese día, t = todos los días, s = cada semana ese día)
+    case 'a4': {
+      const [fecha, pieza, hhmm, r, alcance] = a, rs = decR(r), op = { t: 'agregar', hora: larga(hhmm), pieza, ...(rs.length ? { redes: rs } : {}) };
+      const donde = rs.length ? ` en ${nombresRedes(rs)}` : '';
+      if (alcance === 'd') return hecho(fecha, op, `Agregué ${NOMBRE_PIEZA[pieza]} a las ${larga(hhmm)}${donde}, solo el ${cortoDia(fecha)}.`);
+      await registrar(FIJO, { ...op, id: nuevoId(), ...(alcance === 's' ? { dias: [diaSemana(fecha)] } : {}) });
+      return vistaPlan(fecha, `✅ ${NOMBRE_PIEZA[pieza]} a las ${larga(hhmm)}${donde} queda en la programación: ${alcance === 's' ? `cada ${DIAS[diaSemana(fecha)]}` : 'todos los días'} (🔁). Se borra en «🔁 Fijos».`);
+    }
+    case 'fj': return vistaFijos();
+    case 'fx': { await registrar(FIJO, { t: 'borrar', id: a[0] }); return vistaFijos('✅ Lo quité de la programación fija.'); }
     case 'rd': return vistaRedesSlot(a[0], a[1], a[2], decR(a[3]));
     case 'rg': { const rs = decR(a[3]); return hecho(a[0], { t: 'cambiar', hora: larga(a[1]), pieza: a[2], redes: rs }, `${NOMBRE_PIEZA[a[2]] || 'La publicación'} de las ${larga(a[1])} ahora sale en ${nombresRedes(rs)}.`); }
     case 'pz': {
@@ -200,6 +231,11 @@ export async function atender(texto) {
       return vistaNoticias(`✅ Agregué «${esc(n.titulo)}» (${esc(n.medio)}). Va primero en el Reel.${n.resumen ? '' : '\nNo traía resumen: si quieres uno, mándala como «noticia: Título | resumen».'}`);
     }
     case 'op': {
+      if (r.op.t === 'agregar' && !r.alcance) return vistaAlcance(fecha, r.op.pieza, corta(r.op.hora), r.op.redes || redesDePieza(r.op.pieza));
+      if (r.op.t === 'agregar' && r.alcance !== 'd') {
+        await registrar(FIJO, { ...r.op, id: nuevoId(), ...(r.alcance === 's' ? { dias: r.dias } : {}) });
+        return vistaPlan(fecha, `✅ ${esc(NOMBRE_PIEZA[r.op.pieza])} a las ${r.op.hora} queda en la programación: ${r.alcance === 's' ? `cada ${r.dias.map((d) => DIAS[d]).join(', ')}` : 'todos los días'} (🔁).`);
+      }
       await registrar(fecha, r.op);
       if (r.op.t.startsWith('noticia')) return vistaNoticias(`✅ ${esc(r.resumen)}`);
       const pasado = r.op.t === 'mover' && fecha === hoy && r.op.a <= ahoraHHMM();

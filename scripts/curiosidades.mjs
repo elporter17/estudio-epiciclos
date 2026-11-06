@@ -211,7 +211,7 @@ async function carrusel(o, hist, base, emojiFont) {
         try { meta.tiktok = [await publishPhotoDraft({ url: subidas.map((x) => x.sitio), title: titulo, description: texto })]; }
         catch (e) { meta.tiktok = [{ mode: 'draft', status: /spam_risk|pending/i.test(e.message) ? 'LIMIT' : 'error', fail_reason: e.message }]; console.error(`Aviso: TikTok: ${e.message}`); }
       } else {
-        if (facebookReady()) {
+        if (o.facebook !== 'no' && facebookReady()) {
           try { meta.facebook = await publishCarrusel({ urls: subidas.map((x) => x.url), caption: texto }); }
           catch (e) { meta.facebook = { status: 'error', error: e.message }; console.error(`Aviso: Facebook: ${e.message}`); process.exitCode = 1; }
           registrarRespuesta({ red: 'facebook', id: meta.facebook?.post_id, clave, titulo });
@@ -235,7 +235,7 @@ async function carrusel(o, hist, base, emojiFont) {
 async function main() {
   const o = parseCli({
     red: { type: 'string', default: 'facebook' }, tipo: { type: 'string', default: 'auto' }, 'noticia-cada': { type: 'string', default: '6' },
-    formato: { type: 'string' }, id: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' },
+    formato: { type: 'string' }, id: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' }, facebook: { type: 'string', default: 'si' },
     // Un reto visual concreto: duplicado | nombre | diferente | fraccion | operacion
     visual: { type: 'string' },
     // TikTok: un carrusel de N imágenes en lugar de una sola
@@ -285,14 +285,14 @@ async function main() {
       const img = await subirImagen(archivos[red]).catch((e) => { console.error(`No se pudo subir la imagen: ${e.message}`); return null; });
       if (!img) { console.error('Sin almacén Blob no se puede publicar la imagen'); continue; }
       meta.imageUrl = img.url;
-      if (red === 'facebook' && o.historia && facebookReady()) {
+      if (red === 'facebook' && o.historia && o.facebook !== 'no' && facebookReady()) {
         try { meta.facebook = await publishPhotoStory({ url: img.url }); }
         catch (e) { meta.facebook = { status: 'error', error: e.message }; console.error(`Aviso: Facebook: ${e.message}`); process.exitCode = 1; }
         if (o.instagram !== 'no' && await instagramReady()) {
           const jpg = await subirImagen(archivos.instagram).catch(() => null);
           if (jpg) meta.instagram = await publishInstagramSeguro({ tipo: 'historia-imagen', url: jpg.url });
         }
-      } else if (red === 'facebook' && facebookReady()) {
+      } else if (red === 'facebook' && o.facebook !== 'no' && facebookReady()) {
         try { meta.facebook = await publishPhoto({ url: img.url, caption: pieza.texto }); }
         catch (e) { meta.facebook = { status: 'error', error: e.message }; console.error(`Aviso: Facebook: ${e.message}`); }
         // Respuesta correcta guardada para contestar los comentarios (scripts/comentarios.mjs)

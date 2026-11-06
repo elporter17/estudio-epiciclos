@@ -224,7 +224,7 @@ jobs:
           echo "Redes: fb=$R_FB ig=$R_IG yt=$R_YT tiktok=$R_TT"
           # Imágenes de curiosidades y noticias (curiosidades-facebook.yml y curiosidades-tiktok.yml)
           case "$CATS_INPUT" in
-            curiosidades-facebook) node scripts/curiosidades.mjs --red facebook --instagram "$R_IG"; exit 0 ;;
+            curiosidades-facebook) node scripts/curiosidades.mjs --red facebook --facebook "$R_FB" --instagram "$R_IG" --tipo "${FIGURA_INPUT:-auto}"; exit 0 ;;
             # TikTok: carrusel de 5 imágenes (retos visuales o datos, día por medio)
             curiosidades-tiktok) node scripts/curiosidades.mjs --red tiktok --carrusel 5; exit 0 ;;
             # Reels de quiz y curiosidades (curiosidades-reels.yml); «figura» elige el formato: top10, quiz o banderas
