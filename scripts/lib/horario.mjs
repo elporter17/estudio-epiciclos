@@ -54,8 +54,11 @@ const RED_NOMBRE = { fb: 'FB', ig: 'IG', tt: 'TikTok', yt: 'YouTube' };
 // Redes de siempre de una pieza: donde la pone el plan (o solo TikTok / solo Facebook)
 export const redesDePieza = (pieza) => SOLO_TT.has(pieza) ? ['tt'] : (() => { const r = Object.keys(PLAN).filter((red) => Object.values(PLAN[red]).includes(pieza)); return r.length ? r : ['fb']; })();
 // Una corrida de una pieza a una hora, para esas redes
+// Dónde puede salir cada pieza (lo que su workflow sabe publicar); los Reels, en las 4
+const POSIBLES = { imagen: ['fb', 'ig'], gta: ['fb', 'ig', 'tt'], nombres: ['tt'], famosos: ['tt'], largo: ['yt'] };
+export const redesPosibles = (pieza) => POSIBLES[pieza] || ['fb', 'ig', 'tt', 'yt'];
 export function armarSlot(pieza, hora, redes = redesDePieza(pieza)) {
-  const p = PIEZAS[pieza], orden = SOLO_TT.has(pieza) ? ['tt'] : ['fb', 'ig', 'tt', 'yt'].filter((r) => redes.includes(r));
+  const p = PIEZAS[pieza], orden = SOLO_TT.has(pieza) ? ['tt'] : ['fb', 'ig', 'tt', 'yt'].filter((r) => redes.includes(r) && redesPosibles(pieza).includes(r));
   const inputs = SOLO_TT.has(pieza) ? p.inputs : { ...(p.inputs || {}), redes: orden.join(',') };
   return { hora, pieza, workflow: p.workflow, que: `${p.que} → ${orden.map((r) => RED_NOMBRE[r]).join(', ')}`, ...(inputs ? { inputs } : {}) };
 }
@@ -139,7 +142,7 @@ export const ALIAS = Object.entries({
   prefieres: ['que prefieres', 'prefieres'],
   emojis: ['emojis', 'emoji'],
   quiz: ['quiz', 'top 10', 'top10', 'trivia'],
-  noticias: ['reel de noticias', 'noticias de hoy', 'noticiero'],
+  noticias: ['reel de noticias', 'noticias de hoy', 'noticiero', 'noticias'],
   video3d1: ['3d de mediodia', '3d del mediodia', 'video 3d de mediodia', '3d 1'],
   video3d2: ['3d de la tarde', 'video 3d de la tarde', '3d 2'],
   imagen: ['imagen', 'foto', 'curiosidad'],

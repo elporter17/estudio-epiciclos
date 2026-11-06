@@ -1,6 +1,7 @@
 // Lo que entiende el bot de Telegram (api/telegram.js), sin IA: frases normales en español con una hora y/o el nombre de
 // una pieza. Devuelve qué hacer; api/telegram.js lo aplica. Se prueba con: node scripts/bot-prueba.mjs "quita las 2:30"
-import { ALIAS, PIEZAS, editable, nombreSlot, tablaPlan } from './horario.mjs';
+import { ALIAS, PIEZAS, editable, nombreSlot, tablaPlan, redesDe, redesPosibles } from './horario.mjs';
+const RED_LARGO = { fb: 'Facebook', ig: 'Instagram', tt: 'TikTok', yt: 'YouTube' };
 import { esc } from './control.mjs';
 import { N_REEL } from './noticias.mjs';
 
@@ -98,7 +99,21 @@ export function interpretar(textoOriginal, { slots = [] } = {}) {
     const s = buscar(slots, { hora: hs[0], pieza: ps[0] });
     if (!s) return { tipo: 'error', msg: `No encontré esa publicación ${hs[0] ? `a las ${hs[0]}` : ''}. Escribe «plan» para ver las horas.` };
     if (s.estado === 'hecho' || s.estado === 'en-curso') return { tipo: 'error', msg: `${etiqueta(s)} ya ${s.estado === 'hecho' ? 'salió' : 'se está haciendo'}; no se puede quitar.` };
+    // «quita instagram del de las 15:45»: solo esas redes (si quedan otras)
+    const actuales = redesDe(s.workflow, s.inputs), quedan = rs ? actuales.filter((r) => !rs.includes(r)) : [];
+    if (rs && quedan.length && quedan.length < actuales.length) return { tipo: 'op', dia, op: { t: 'cambiar', hora: s.hora, pieza: s.pieza, redes: quedan }, resumen: `${etiqueta(s)} ya no sale en ${rs.filter((r) => actuales.includes(r)).map((r) => RED_LARGO[r]).join(', ')}; queda en ${quedan.map((r) => RED_LARGO[r]).join(', ')}.` };
     return { tipo: 'op', dia, op: { t: 'quitar', hora: s.hora, pieza: s.pieza }, resumen: `Quité ${etiqueta(s)}.` };
+  }
+  // «agrega tiktok al de las 15:45», «pon retos también en instagram»: más redes para una publicación que ya está
+  if (rs && /\b(agrega|agregar|anade|anadir|pon|ponle|poner|suma|mete|tambien)\b/.test(t) && !/\b(otro|otra|extra|nuevo|nueva)\b/.test(t)) {
+    const s = buscar(slots, { hora: hs[0], pieza: ps[0] });
+    if (s && (!hs[0] || Math.abs(aMin(s.hora) - aMin(hs[0])) <= 20) && (!ps[0] || s.pieza === ps[0] || s.pieza === 'estrella') && s.pieza && PIEZAS[s.pieza]) {
+      const actuales = redesDe(s.workflow, s.inputs), nuevas = rs.filter((r) => !actuales.includes(r) && redesPosibles(s.pieza).includes(r));
+      const imposibles = rs.filter((r) => !redesPosibles(s.pieza).includes(r));
+      if (imposibles.length && !nuevas.length) return { tipo: 'error', msg: `${nombreSlot(s)} no se puede publicar en ${imposibles.map((r) => RED_LARGO[r]).join(', ')}: solo en ${redesPosibles(s.pieza).map((r) => RED_LARGO[r]).join(', ')}.` };
+      if (!nuevas.length) return { tipo: 'error', msg: `${etiqueta(s)} ya sale en ${rs.map((r) => RED_LARGO[r]).join(', ')}.` };
+      return { tipo: 'op', dia, op: { t: 'cambiar', hora: s.hora, pieza: s.pieza, redes: [...actuales, ...nuevas] }, resumen: `${etiqueta(s)} ahora también sale en ${nuevas.map((r) => RED_LARGO[r]).join(', ')}.` };
+    }
   }
   // Mover de hora
   if (/\b(mueve|mover|muevelo|pasa|pasalo|pasar|atrasa|atrasalo|adelanta|adelantalo|reprograma|corre|correlo|cambia la hora|cambiale la hora)\b/.test(t)) {
@@ -141,6 +156,7 @@ export const AYUDA = `<b>Lo que puedo hacer</b> (escribe normal, sin comandos):
 • «mueve retos a las 5 pm» · «pasa el de las 15:45 a las 17:00»
 • «cambia el de las 20:30 por emojis» · «en vez de prefieres pon quiz»
 • «agrega un quiz a las 13:00 en fb e ig»
+• «quita instagram del de las 15:45» · «agrega tiktok a retos»
 • «publica ya unos retos» (sale en los próximos minutos)
 • «pausa hoy» / «reanuda» · «deshaz» (anula el último cambio)
 Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (📅 Plan de hoy → toca una publicación).

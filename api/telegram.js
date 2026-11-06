@@ -7,7 +7,7 @@
 import { json, diaConEstado, lanzar } from './_panel.js';
 import { interpretar, AYUDA, mensajePlan, mensajeNoticias, diaBonito } from '../scripts/lib/bot.mjs';
 import { cambiosExactos, registrar, noticiasDe, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError } from '../scripts/lib/control.mjs';
-import { delDia, ahoraHN, armarSlot, redesDePieza, nombreSlot, editable, NOMBRE_PIEZA, redesDe } from '../scripts/lib/horario.mjs';
+import { delDia, ahoraHN, armarSlot, redesDePieza, nombreSlot, editable, NOMBRE_PIEZA, redesDe, redesPosibles } from '../scripts/lib/horario.mjs';
 import { noticiaDeEnlace, N_REEL } from '../scripts/lib/noticias.mjs';
 
 const dd = (n) => String(n).padStart(2, '0');
@@ -25,6 +25,21 @@ export const MENU = { keyboard: [[{ text: '📅 Plan de hoy' }, { text: '📅 Pl
 const fila = (...b) => b.filter(Boolean);
 const boton = (text, data) => ({ text, callback_data: data.slice(0, 64) });
 const enFilas = (botones, n) => botones.reduce((acc, b, i) => (i % n ? acc[acc.length - 1].push(b) : acc.push([b]), acc), []);
+
+// ---------- redes de cada publicación ----------
+// Dónde puede salir cada pieza (lo que su workflow sabe publicar); lo demás de los Reels sale en las 4
+
+const ORDEN = ['fb', 'ig', 'tt', 'yt'], RED_LARGO = { fb: 'Facebook', ig: 'Instagram', tt: 'TikTok', yt: 'YouTube' };
+const posibles = redesPosibles;
+const codR = (rs) => ORDEN.filter((r) => rs.includes(r)).join('.') || '-';
+const decR = (s) => (s || '').split('.').filter((r) => ORDEN.includes(r));
+const nombresRedes = (rs) => rs.map((r) => RED_LARGO[r]).join(', ');
+// Interruptores ✅/▫️ por red: al tocar uno se vuelve a dibujar con esa red cambiada (`${base}|redes`); «listo» lleva
+// las elegidas (`${listo}|redes`)
+function tecladoRedes(pieza, sel, base, listo, textoListo, volver) {
+  const t = posibles(pieza).map((r) => boton(`${sel.includes(r) ? '✅' : '▫️'} ${RED_LARGO[r]}`, `${base}|${codR(sel.includes(r) ? sel.filter((x) => x !== r) : [...sel, r])}`));
+  return [...enFilas(t, 2), fila(sel.length ? boton(textoListo, `${listo}|${codR(sel)}`) : null, boton('⬅️ Volver', volver))];
+}
 
 // ---------- vistas: { texto, teclado } ----------
 async function datosDia(fecha) {
@@ -50,10 +65,25 @@ async function vistaSlot(fecha, hhmm, pieza) {
   const s = slots.find((x) => x.hora === hora && editable(x) && (!pieza || x.pieza === pieza)) || slots.find((x) => x.hora === hora && editable(x));
   if (!s) return vistaPlan(fecha, '⚠️ Esa publicación ya no está en el plan.');
   if (s.estado === 'hecho' || s.estado === 'en-curso') return vistaPlan(fecha, `⚠️ ${nombreSlot(s)} de las ${hora} ya ${s.estado === 'hecho' ? 'salió' : 'se está haciendo'}.`);
-  const k = `${fecha}|${hhmm}|${s.pieza || ''}`;
+  const k = `${fecha}|${hhmm}|${s.pieza || ''}`, rs = redesDe(s.workflow, s.inputs);
   return {
-    texto: `🎯 <b>${esc(nombreSlot(s))}</b> · ${hora} · ${redesDe(s.workflow, s.inputs).map((r) => RED[r]).join(' ')}\n${esc(diaBonito(fecha))}\n\n¿Qué hago con esta publicación?`,
-    teclado: { inline_keyboard: [fila(boton('❌ Quitar', `q|${k}`), boton('🕒 Mover', `mv|${k}`)), fila(boton('🔄 Cambiar por otra', `cb|${k}`)), fila(boton('⬅️ Volver', `p|${fecha}`))] }
+    texto: `🎯 <b>${esc(nombreSlot(s))}</b> · ${hora}\n📱 ${esc(nombresRedes(rs))}\n${esc(diaBonito(fecha))}\n\n¿Qué hago con esta publicación?`,
+    teclado: { inline_keyboard: [fila(boton('❌ Quitar', `q|${k}`), boton('🕒 Mover', `mv|${k}`)), fila(boton('🔄 Cambiar por otra', `cb|${k}`), posibles(s.pieza).length > 1 ? boton('📱 Redes', `rd|${k}|${codR(rs)}`) : null), fila(boton('⬅️ Volver', `p|${fecha}`))] }
+  };
+}
+// Quitar o poner redes a una publicación del plan
+function vistaRedesSlot(fecha, hhmm, pieza, sel) {
+  const k = `${fecha}|${hhmm}|${pieza}`;
+  return {
+    texto: `📱 <b>${esc(NOMBRE_PIEZA[pieza] || pieza)}</b> de las ${larga(hhmm)}: ¿en qué redes sale?\nToca para quitar (▫️) o poner (✅) cada una y luego «Guardar».`,
+    teclado: { inline_keyboard: tecladoRedes(pieza, sel, `rd|${k}`, `rg|${k}`, '💾 Guardar', `s|${k}`) }
+  };
+}
+// Agregar: primero las redes (empieza con las de siempre de esa pieza), luego la hora
+function vistaRedesAgregar(fecha, pieza, sel) {
+  return {
+    texto: `➕ <b>${esc(NOMBRE_PIEZA[pieza])}</b>: ¿en qué redes?\nToca para quitar (▫️) o poner (✅) cada una.`,
+    teclado: { inline_keyboard: tecladoRedes(pieza, sel, `ar|${fecha}|${pieza}`, `a2|${fecha}|${pieza}`, 'Elegir hora ➡️', `a|${fecha}`) }
   };
 }
 // Horas para mover o agregar: alrededor de la hora (mover) o huecos libres del día (agregar); nunca en el pasado
@@ -73,12 +103,11 @@ const vistaPiezas = (titulo, prefijo, volver, excluir) => ({
   texto: titulo,
   teclado: { inline_keyboard: [...enFilas(PONIBLES.filter((p) => p !== excluir).map((p) => boton(NOMBRE_PIEZA[p], `${prefijo}|${p}`)), 2), fila(boton('⬅️ Volver', volver))] }
 });
-async function vistaAgregarHora(fecha, pieza) {
-  const { slots, esHoy } = await datosDia(fecha), hs = horasPosibles(fecha, slots, { esHoy });
-  if (!hs.length) return vistaPlan(fecha, '⚠️ Ya no quedan huecos libres hoy. Escribe la hora: «agrega quiz a las 22:50».');
+async function vistaAgregarHora(fecha, pieza, rs) {
+  const { slots, esHoy } = await datosDia(fecha), hs = horasPosibles(fecha, slots, { esHoy }), r = codR(rs);
   return {
-    texto: `➕ <b>${esc(NOMBRE_PIEZA[pieza])}</b> en ${redesDePieza(pieza).map((r) => RED[r]).join(' ')}. ¿A qué hora?\nSolo muestro horas libres (a 30 min o más de otra publicación).`,
-    teclado: { inline_keyboard: [...enFilas(hs.map((h) => boton(h, `a3|${fecha}|${pieza}|${corta(h)}`)), 4), fila(boton('⬅️ Volver', `a|${fecha}`))] }
+    texto: `➕ <b>${esc(NOMBRE_PIEZA[pieza])}</b> en ${esc(nombresRedes(rs))}. ¿A qué hora?\n${hs.length ? 'Muestro las horas libres (a 30 min o más de otra publicación).' : 'Ya no quedan horas libres hoy.'}${esHoy ? ' «🚀 Ahora» lo publica en unos minutos.' : ''}\n(Otra hora: escribe «agrega ${esc(NOMBRE_PIEZA[pieza].toLowerCase())} a las 22:50».)`,
+    teclado: { inline_keyboard: [...(esHoy ? [fila(boton('🚀 Ahora', `l3|${pieza}|${r}`))] : []), ...enFilas(hs.map((h) => boton(h, `a3|${fecha}|${pieza}|${corta(h)}|${r}`)), 4), fila(boton('⬅️ Volver', `ar|${fecha}|${pieza}|${r}`))] }
   };
 }
 async function vistaNoticias(aviso = '') {
@@ -104,9 +133,16 @@ export async function alTocar(data) {
     }
     case 'cb': return vistaPiezas(`🔄 ¿Qué pongo a las ${larga(a[1])} en vez de ${esc(NOMBRE_PIEZA[a[2]] || 'eso')}?`, `c|${a[0]}|${a[1]}`, `s|${a[0]}|${a[1]}|${a[2]}`, a[2]);
     case 'c': return hecho(a[0], { t: 'cambiar', hora: larga(a[1]), pieza: a[2] }, `A las ${larga(a[1])} va ${NOMBRE_PIEZA[a[2]]}.`);
-    case 'a': return vistaPiezas('➕ ¿Qué agrego?', `a2|${a[0]}`, `p|${a[0]}`);
-    case 'a2': return vistaAgregarHora(a[0], a[1]);
-    case 'a3': return hecho(a[0], { t: 'agregar', hora: larga(a[2]), pieza: a[1] }, `Agregué ${NOMBRE_PIEZA[a[1]]} a las ${larga(a[2])}.`);
+    case 'a': return vistaPiezas('➕ ¿Qué agrego?', `ar|${a[0]}`, `p|${a[0]}`);
+    // ar|fecha|pieza[|redes]: elegir redes (sin redes: las de siempre); con una sola red posible, directo a la hora
+    case 'ar': {
+      const sel = a[2] ? decR(a[2]) : redesDePieza(a[1]).filter((r) => posibles(a[1]).includes(r));
+      return posibles(a[1]).length === 1 ? vistaAgregarHora(a[0], a[1], posibles(a[1])) : vistaRedesAgregar(a[0], a[1], sel);
+    }
+    case 'a2': return vistaAgregarHora(a[0], a[1], decR(a[2]));
+    case 'a3': { const rs = decR(a[3]); return hecho(a[0], { t: 'agregar', hora: larga(a[2]), pieza: a[1], ...(rs.length ? { redes: rs } : {}) }, `Agregué ${NOMBRE_PIEZA[a[1]]} a las ${larga(a[2])}${rs.length ? ` en ${nombresRedes(rs)}` : ''}.`); }
+    case 'rd': return vistaRedesSlot(a[0], a[1], a[2], decR(a[3]));
+    case 'rg': { const rs = decR(a[3]); return hecho(a[0], { t: 'cambiar', hora: larga(a[1]), pieza: a[2], redes: rs }, `${NOMBRE_PIEZA[a[2]] || 'La publicación'} de las ${larga(a[1])} ahora sale en ${nombresRedes(rs)}.`); }
     case 'pz': {
       const pausado = (await cambiosExactos(a[0])).some((o) => o.t === 'pausa');
       if (pausado) return hecho(a[0], { t: 'reanudar-pausa' }, 'Quité la pausa: todo vuelve a salir.');
@@ -115,13 +151,16 @@ export async function alTocar(data) {
     case 'pz2': return hecho(a[0], { t: 'pausa' }, 'Día en pausa.');
     case 'u': { await registrar(a[0], { t: 'deshacer' }); return a[1] === 'n' ? vistaNoticias('↩️ Deshice el último cambio.') : vistaPlan(a[0], '↩️ Deshice el último cambio.'); }
     case 'l': return vistaPiezas('🚀 ¿Qué publico ahora mismo? (sale en unos minutos, además de lo del plan)', 'l2', `p|${ahoraHN().fecha}`);
+    // l2|pieza[|redes]: elegir redes y confirmar
     case 'l2': {
-      const s = armarSlot(a[0], ahoraHHMM());
-      return { texto: `🚀 ¿Publico <b>${esc(NOMBRE_PIEZA[a[0]])}</b> ya en ${redesDe(s.workflow, s.inputs).map((r) => RED[r]).join(' ')}?`, teclado: { inline_keyboard: [fila(boton('Sí, publicar', `l3|${a[0]}`), boton('No', 'l'))] } };
+      const sel = a[1] ? decR(a[1]) : redesDePieza(a[0]).filter((r) => posibles(a[0]).includes(r));
+      return { texto: `🚀 <b>${esc(NOMBRE_PIEZA[a[0]])}</b> ahora mismo (además de lo del plan).\n¿En qué redes? Toca para quitar (▫️) o poner (✅).`, teclado: { inline_keyboard: tecladoRedes(a[0], sel, `l2|${a[0]}`, `l3|${a[0]}`, '🚀 Publicar ya', 'l') } };
     }
     case 'l3': {
-      const s = armarSlot(a[0], ahoraHHMM()); await lanzar(s.workflow, s.inputs || {});
-      return vistaPlan(ahoraHN().fecha, `🚀 Lancé ${NOMBRE_PIEZA[a[0]]}. Tarda unos minutos en salir.`);
+      const rs = a[1] ? decR(a[1]) : redesDePieza(a[0]);
+      if (!rs.length) return alTocar(`l2|${a[0]}`);
+      const s = armarSlot(a[0], ahoraHHMM(), rs); await lanzar(s.workflow, s.inputs || {});
+      return vistaPlan(ahoraHN().fecha, `🚀 Lancé ${NOMBRE_PIEZA[a[0]]} en ${nombresRedes(redesDe(s.workflow, s.inputs))}. Tarda unos minutos en salir.`);
     }
     case 'n': return vistaNoticias();
     case 'nx': case 'nf': {
@@ -166,7 +205,7 @@ export async function atender(texto) {
       const pasado = r.op.t === 'mover' && fecha === hoy && r.op.a <= ahoraHHMM();
       return vistaPlan(fecha, `✅ ${esc(r.resumen)}${pasado ? '\nEsa hora ya pasó: sale en los próximos 10 minutos.' : ''}`);
     }
-    case 'lanzar': return alTocar(`l2|${r.pieza}`);
+    case 'lanzar': return alTocar(`l2|${r.pieza}${r.redes ? `|${codR(r.redes)}` : ''}`);
     default: return { texto: `${esc(r.msg)}\n\nUsa los botones de abajo 👇 o escribe «ayuda».`, teclado: MENU };
   }
 }
