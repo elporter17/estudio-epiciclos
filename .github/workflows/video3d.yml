@@ -8,6 +8,15 @@ name: Video 3D
 on:
   workflow_dispatch:
     inputs:
+      redes:
+        description: Redes (fb,ig,tt,yt); vacío = lo de siempre. Lo pone el plan de cada red (scripts/lib/horario.mjs)
+        type: string
+        default: ''
+      turno:
+        description: mediodia (12:17) o tarde (18:30)
+        type: choice
+        options: ['mediodia', 'tarde']
+        default: 'mediodia'
       modo:
         description: render (madrugada) · publicar (mediodía) · prueba (solo renderizar)
         type: choice
@@ -27,4 +36,6 @@ jobs:
       facebook: si
       aviso: false
       prueba: ${{ inputs.modo == 'prueba' }}
+      figura: ${{ inputs.turno }}
+      redes: ${{ inputs.redes }}
     secrets: inherit

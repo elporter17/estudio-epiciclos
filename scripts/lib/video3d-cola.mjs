@@ -1,7 +1,8 @@
 // Cola de videos 3D: los guiones viven en video3d/guiones/cola/NNN-id.json (en orden) y el estado en
 // data/video3d-cola.json (se conserva cifrado entre corridas de GitHub, como el resto de data/):
-//   { publicados: [{ id, fecha }], listo: { id, fecha, url, download, titulo, duracion } | null }
-// Un guion con «fecha» (AAAA-MM-DD) sale ese día exacto (por ejemplo, el especial de GTA VI); los demás, en orden.
+//   { publicados: [{ id, fecha }], listos: { mediodia: {…} | null, tarde: {…} | null } }
+// Dos videos al día: «mediodia» (12:17) y «tarde» (18:30, el de más vistas). Un guion con «fecha» (AAAA-MM-DD) sale ese
+// día exacto en el turno de la tarde (por ejemplo, el especial de GTA VI); los demás, en orden.
 import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT } from './node-env.mjs';
@@ -11,15 +12,22 @@ export const ESTADO = path.join(ROOT, 'data', 'video3d-cola.json');
 export const AVISO_COLA = 5; // con tantos guiones pendientes o menos, aviso por Telegram para escribir más
 export const hoyHN = (d = new Date()) => new Date(d.getTime() - 6 * 3600e3).toISOString().slice(0, 10);
 
-export function leerEstado() { try { return { publicados: [], listo: null, ...JSON.parse(fs.readFileSync(ESTADO, 'utf8')) }; } catch { return { publicados: [], listo: null }; } }
+export const TURNOS = ['mediodia', 'tarde'];
+export function leerEstado() {
+  let e; try { e = JSON.parse(fs.readFileSync(ESTADO, 'utf8')); } catch { e = {}; }
+  const listos = { mediodia: null, tarde: null, ...(e.listos || {}) };
+  if (e.listo && !listos.mediodia) listos.mediodia = e.listo; // estado de antes de los dos turnos
+  return { publicados: e.publicados || [], listos };
+}
 export function guardarEstado(e) { fs.mkdirSync(path.dirname(ESTADO), { recursive: true }); fs.writeFileSync(ESTADO, JSON.stringify(e, null, 2) + '\n'); }
 export function guiones() {
   return fs.readdirSync(DIR_COLA).filter((f) => f.endsWith('.json')).sort().map((f) => ({ archivo: path.join(DIR_COLA, f), ...JSON.parse(fs.readFileSync(path.join(DIR_COLA, f), 'utf8')) }));
 }
-// El guion que toca publicar en «fecha»: primero el que tenga esa fecha; si no, el siguiente sin fecha que no salió
-export function elegir(fecha, estado = leerEstado()) {
-  const hechos = new Set(estado.publicados.map((p) => p.id)), todos = guiones();
-  return todos.find((g) => g.fecha === fecha && !hechos.has(g.id)) || todos.find((g) => !g.fecha && !hechos.has(g.id)) || null;
+// El guion de «fecha» y «turno»: en la tarde, primero el que tenga esa fecha; si no, el siguiente sin fecha que no salió
+// (y que no esté ya listo para el otro turno)
+export function elegir(fecha, estado = leerEstado(), turno = 'mediodia') {
+  const hechos = new Set([...estado.publicados.map((p) => p.id), ...Object.entries(estado.listos).filter(([k, v]) => k !== turno && v).map(([, v]) => v.id)]), todos = guiones();
+  return (turno === 'tarde' && todos.find((g) => g.fecha === fecha && !hechos.has(g.id))) || todos.find((g) => !g.fecha && !hechos.has(g.id)) || null;
 }
 export const pendientes = (estado = leerEstado()) => { const hechos = new Set(estado.publicados.map((p) => p.id)); return guiones().filter((g) => !g.fecha && !hechos.has(g.id)).length; };
 // Avisos extra para Telegram (los lee scripts/aviso.mjs al final de la corrida)

@@ -8,6 +8,10 @@ on:
   # Horario: lo lanza el relojero (/api/relojero) según scripts/lib/horario.mjs
   workflow_dispatch:
     inputs:
+      redes:
+        description: Redes (fb,ig,tt,yt); vacío = lo de siempre. Lo pone el plan de cada red (scripts/lib/horario.mjs)
+        type: string
+        default: ''
       tiktok:
         description: También como borrador en TikTok (cuenta para los 5 borradores pendientes)
         type: choice
@@ -29,8 +33,9 @@ jobs:
     with:
       cats: curiosidades-video
       figura: comosehace
-      publish: ${{ inputs.tiktok == 'si' && 'draft' || 'none' }}
+      publish: ${{ (inputs.tiktok == 'si' || contains(inputs.redes, 'tt')) && 'draft' || 'none' }}
       facebook: si
+      redes: ${{ inputs.redes }}
       historia: false
       aviso: ${{ inputs.tiktok == 'si' && inputs.modo != 'prueba' }}
       prueba: ${{ inputs.modo == 'prueba' }}

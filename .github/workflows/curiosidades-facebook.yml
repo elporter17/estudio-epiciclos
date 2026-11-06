@@ -8,6 +8,11 @@ on:
   # Horario: lo lanza el relojero (/api/relojero, llamado por cron-job.org cada 10 min) según scripts/lib/horario.mjs.
   # Los «schedule» de GitHub se perdían o llegaban con horas de atraso (2026-11-01).
   workflow_dispatch:
+    inputs:
+      redes:
+        description: Redes (fb,ig,tt,yt); vacío = lo de siempre. Lo pone el plan de cada red (scripts/lib/horario.mjs)
+        type: string
+        default: ''
 
 permissions:
   contents: read
@@ -19,4 +24,5 @@ jobs:
     with:
       cats: curiosidades-facebook
       publish: none
+      redes: ${{ inputs.redes }}
     secrets: inherit

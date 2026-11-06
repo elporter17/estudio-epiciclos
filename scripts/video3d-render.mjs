@@ -14,12 +14,12 @@ import { ROOT } from './lib/node-env.mjs';
 import { publicarEnlace } from './lib/video-link.mjs';
 import { leerEstado, guardarEstado, elegir, pendientes, avisoExtra, hoyHN, AVISO_COLA } from './lib/video3d-cola.mjs';
 
-const o = parseCli({ fecha: { type: 'string' }, guion: { type: 'string' }, 'dry-run': { type: 'boolean', default: false } });
-const fecha = o.fecha || hoyHN(), estado = leerEstado();
-if (!o.guion && estado.listo?.fecha === fecha) { console.log(`Ya hay un video listo para ${fecha}: ${estado.listo.titulo}`); process.exit(0); }
-const g = o.guion ? { archivo: path.resolve(o.guion), ...JSON.parse(fs.readFileSync(path.resolve(o.guion), 'utf8')) } : elegir(fecha, estado);
+const o = parseCli({ fecha: { type: 'string' }, turno: { type: 'string', default: 'mediodia' }, guion: { type: 'string' }, 'dry-run': { type: 'boolean', default: false } });
+const fecha = o.fecha || hoyHN(), estado = leerEstado(), turno = o.turno === 'tarde' ? 'tarde' : 'mediodia';
+if (!o.guion && estado.listos[turno]?.fecha === fecha) { console.log(`Ya hay un video listo para ${fecha} (${turno}): ${estado.listos[turno].titulo}`); process.exit(0); }
+const g = o.guion ? { archivo: path.resolve(o.guion), ...JSON.parse(fs.readFileSync(path.resolve(o.guion), 'utf8')) } : elegir(fecha, estado, turno);
 if (!g) { avisoExtra('📭 Videos 3D: la cola está vacía; hoy no hay video. Pídeme más guiones.'); console.log('Cola vacía'); process.exit(0); }
-console.error(`Video 3D para ${fecha}: ${g.titulo} (${path.basename(g.archivo)})`);
+console.error(`Video 3D para ${fecha} (${turno}): ${g.titulo} (${path.basename(g.archivo)})`);
 
 // npx en Windows es un .cmd y necesita el intérprete de comandos; node no (y su ruta tiene espacios)
 const correr = (cmd, args, cwd = ROOT) => { const r = spawnSync(cmd, args, { cwd, stdio: 'inherit', shell: process.platform === 'win32' && cmd === 'npx' }); if (r.status !== 0) throw new Error(`Falló: ${cmd} ${args.slice(0, 3).join(' ')}…`); };
@@ -37,8 +37,8 @@ console.error(`Listo en ${Math.round((Date.now() - ti) / 60000)} min · ${render
 if (o['dry-run']) { console.log(final); process.exit(0); }
 
 const enlace = await publicarEnlace(final, { days: 3 });
-estado.listo = { id: g.id, fecha, url: enlace.url, download: enlace.downloadUrl, titulo: g.titulo, duracion: render.duracion, archivo: path.basename(g.archivo) };
+estado.listos[turno] = { id: g.id, fecha, turno, url: enlace.url, download: enlace.downloadUrl, titulo: g.titulo, duracion: render.duracion, archivo: path.basename(g.archivo) };
 guardarEstado(estado);
-const quedan = pendientes(estado) - 1;
+const quedan = pendientes(estado) - Object.values(estado.listos).filter((x) => x && !x.fecha_fija).length;
 if (quedan <= AVISO_COLA) avisoExtra(`📚 Videos 3D: quedan ${Math.max(0, quedan)} guiones en la cola (después de «${g.titulo}»). Pídeme otra tanda para no quedarnos sin videos.`);
-console.log(JSON.stringify({ listo: estado.listo, quedan }, null, 2));
+console.log(JSON.stringify({ listo: estado.listos[turno], quedan }, null, 2));

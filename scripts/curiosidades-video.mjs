@@ -290,7 +290,9 @@ async function main() {
   // Nunca dos formatos iguales seguidos (por ejemplo, después de una prueba a mano)
   let paso = hist.total;
   if (ROTACION[paso % ROTACION.length] === hist.formatos.at(-1)) paso++;
-  const formato = o.formato !== 'auto' ? o.formato : ROTACION[paso % ROTACION.length];
+  // «estrella»: los dos formatos que más vistas tienen en Instagram (Banderas y Retos, ~1.250 de mediana), un día cada uno
+  const diaHN = Math.floor((Date.now() - 6 * 3600e3) / 86400e3);
+  const formato = o.formato === 'estrella' ? (diaHN % 2 ? 'retos' : 'banderas') : o.formato !== 'auto' ? o.formato : ROTACION[paso % ROTACION.length];
   const base = cargarDatos();
   const hacer = { comosehace: () => comoSeHace(hist), top10: () => top10(base, hist, o.tema), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
   if (!hacer[formato]) throw new Error(`--formato debe ser ${Object.keys(hacer).join(', ')} o auto`);
@@ -371,7 +373,7 @@ async function main() {
 
 // Cuota de la API de YouTube: ≈ 6 subidas al día. Van los 2 «Cómo se hace», hasta 2 Reels más, el video 3D del día y
 // (martes, jueves y sábado) el video largo (data/youtube-dia.json)
-const CUPO_YT = path.join(ROOT, 'data', 'youtube-dia.json'), LIMITE_YT = { comosehace: 2, otros: Number(process.env.YOUTUBE_REELS_DIA || 2) };
+const CUPO_YT = path.join(ROOT, 'data', 'youtube-dia.json'), LIMITE_YT = { comosehace: 1, otros: Number(process.env.YOUTUBE_REELS_DIA || 2) };
 function diaYT() { const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Tegucigalpa' }), d = leer(CUPO_YT, {}); return d.fecha === hoy ? d : { fecha: hoy, comosehace: 0, otros: 0 }; }
 const grupoYT = (f) => (f === 'comosehace' ? 'comosehace' : 'otros');
 function cupoYouTube(f) { const d = diaYT(), g = grupoYT(f); if (d[g] < LIMITE_YT[g]) return true; console.error(`YouTube: ya se subieron ${d[g]} hoy (${g}); este no`); return false; }

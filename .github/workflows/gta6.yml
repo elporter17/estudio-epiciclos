@@ -9,6 +9,10 @@ on:
   # Los «schedule» de GitHub se perdían o llegaban con horas de atraso (2026-11-01).
   workflow_dispatch:
     inputs:
+      redes:
+        description: Redes (fb,ig,tt,yt); vacío = lo de siempre. Lo pone el plan de cada red (scripts/lib/horario.mjs)
+        type: string
+        default: ''
       lanzamiento:
         description: Corrida de la mañana del lanzamiento (solo publica el día del lanzamiento)
         type: boolean
@@ -23,6 +27,7 @@ jobs:
     uses: ./.github/workflows/daily.yml
     with:
       cats: gta6
+      redes: ${{ inputs.redes }}
       figura: ${{ inputs.lanzamiento && 'lanzamiento' || '' }}
       publish: none
       # Va a TikTok: el correo trae la descripción para pegarla

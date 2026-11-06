@@ -10,10 +10,14 @@ on:
   # Los «schedule» de GitHub se perdían o llegaban con horas de atraso (2026-11-01).
   workflow_dispatch:
     inputs:
+      redes:
+        description: Redes (fb,ig,tt,yt); vacío = lo de siempre. Lo pone el plan de cada red (scripts/lib/horario.mjs)
+        type: string
+        default: ''
       formato:
         description: Qué video (auto = el que toca en la rotación)
         type: choice
-        options: [auto, banderas, retos, quiz, prefieres, emojis, top10, noticias]
+        options: [auto, estrella, banderas, retos, quiz, prefieres, emojis, top10, noticias]
         default: auto
       tiktok:
         description: También como borrador en TikTok (cuenta para los 5 borradores pendientes)
@@ -36,8 +40,9 @@ jobs:
       cats: curiosidades-video
       # El formato viaja en «figura»; los horarios de noticias lo fijan, los demás siguen la rotación
       figura: ${{ inputs.formato != 'auto' && inputs.formato || '' }}
-      publish: ${{ inputs.tiktok == 'si' && 'draft' || 'none' }}
+      publish: ${{ (inputs.tiktok == 'si' || contains(inputs.redes, 'tt')) && 'draft' || 'none' }}
       facebook: si
+      redes: ${{ inputs.redes }}
       historia: ${{ github.event_name != 'workflow_dispatch' || inputs.historia }}
       # El correo con la descripción solo hace falta cuando va a TikTok (allí se pega a mano)
       aviso: ${{ inputs.tiktok == 'si' }}

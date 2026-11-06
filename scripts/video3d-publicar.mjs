@@ -17,9 +17,9 @@ import { subirYouTube, youtubeReady } from './lib/youtube.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
 import { leerEstado, guardarEstado, avisoExtra, textoPost, hoyHN, DIR_COLA } from './lib/video3d-cola.mjs';
 
-const o = parseCli({ tiktok: { type: 'string', default: 'si' }, youtube: { type: 'string', default: 'si' } });
-const estado = leerEstado(), l = estado.listo;
-if (!l) { avisoExtra(`⚠️ Videos 3D: no hay video listo para publicar hoy (${hoyHN()}). Revisa el render de la madrugada.`); console.log('Nada listo'); process.exit(0); }
+const o = parseCli({ turno: { type: 'string', default: 'mediodia' }, tiktok: { type: 'string', default: 'si' }, youtube: { type: 'string', default: 'si' } });
+const estado = leerEstado(), turno = o.turno === 'tarde' ? 'tarde' : 'mediodia', l = estado.listos[turno];
+if (!l) { avisoExtra(`⚠️ Videos 3D: no hay video listo para el turno de ${turno === 'tarde' ? 'la tarde' : 'mediodía'} (${hoyHN()}). Revisa el render de la madrugada.`); console.log('Nada listo'); process.exit(0); }
 const g = JSON.parse(fs.readFileSync(path.join(DIR_COLA, l.archivo), 'utf8')), texto = textoPost(g);
 console.error(`Publicando: ${l.titulo}${l.fecha !== hoyHN() ? ` (renderizado para ${l.fecha})` : ''}`);
 
@@ -44,7 +44,7 @@ if (o.youtube !== 'no' && youtubeReady()) {
 fs.writeFileSync(path.join(ROOT, 'out', `video3d-${l.id}.json`), JSON.stringify(meta, null, 2) + '\n');
 // Publicado: fuera de la cola y fuera del almacén (Instagram ya lo copió)
 if (meta.facebook?.status !== 'error' || meta.instagram?.status === 'published') {
-  estado.publicados.push({ id: l.id, fecha: hoyHN() }); estado.listo = null; guardarEstado(estado);
+  estado.publicados.push({ id: l.id, fecha: hoyHN(), turno }); estado.listos[turno] = null; guardarEstado(estado);
   await borrarEnlace(l.url).catch(() => {});
 }
 console.log(JSON.stringify({ titulo: l.titulo, facebook: meta.facebook?.status, instagram: meta.instagram?.status, tiktok: meta.tiktok?.[0]?.status, youtube: meta.youtube?.estado || meta.youtube?.error }, null, 2));

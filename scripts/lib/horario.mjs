@@ -4,43 +4,64 @@
 //   { hora: 'HH:MM', workflow, que, inputs?, fecha?, dias? }   fecha: solo ese día (AAAA-MM-DD); dias: solo esos días
 //   de la semana (0 = domingo … 6 = sábado)
 const R = 'curiosidades-reels.yml';
+
+// ---------- Plan por red (2026-11-06, con las estadísticas de Meta Business Suite de los últimos 90 días) ----------
+// Instagram: Banderas y Retos rinden ~1.250 vistas de mediana (Emojis ~825); Quiz, Noticias, GTA, Datos y «Cómo se hace»
+// se quedan en ~130 → Instagram solo recibe las estrellas y lo de más esfuerzo, unas 6 al día.
+// Facebook: los Reels rinden parejo (~250) y las imágenes muy poco (~15-25) → estrellas en las mejores horas y relleno en
+// los huecos. TikTok: 5 borradores pendientes como máximo (compartido con CirculArte) → 4 al día, los mejores.
+// YouTube: ~6 subidas al día de cuota → 5 Shorts (+ el video largo martes, jueves y sábado).
+// Regla de espacio: después de una estrella (video 3D, «Cómo se hace») no sale nada en esa red durante ~2 horas.
+// Cada pieza: { hora, workflow, que, inputs, redes: { fb, ig, tt, yt } }. Si varias redes comparten pieza y hora, se
+// genera una vez y sale en todas; el resto va por su cuenta.
+const PIEZAS = {
+  noticias: { workflow: R, que: 'Reel: noticias de hoy', inputs: { formato: 'noticias' } },
+  banderas: { workflow: R, que: 'Reel estrella: banderas', inputs: { formato: 'banderas' } },
+  retos: { workflow: R, que: 'Reel estrella: retos visuales', inputs: { formato: 'retos' } },
+  estrella: { workflow: R, que: 'Reel estrella: banderas o retos (un día cada uno)', inputs: { formato: 'estrella' } },
+  prefieres: { workflow: R, que: 'Reel de relleno: ¿qué prefieres?', inputs: { formato: 'prefieres' } },
+  emojis: { workflow: R, que: 'Reel: adivina con emojis', inputs: { formato: 'emojis' } },
+  quiz: { workflow: R, que: 'Reel de relleno: quiz o top 10', inputs: { formato: 'auto' } },
+  comosehace: { workflow: 'como-se-hace.yml', que: 'Cómo se hace: la fábrica en 2D (más de 1 min)' },
+  video3d1: { workflow: 'video3d.yml', que: 'Video 3D de datos (mediodía)', inputs: { modo: 'publicar', turno: 'mediodia' } },
+  video3d2: { workflow: 'video3d.yml', que: 'Video 3D de datos (tarde, la hora de más vistas)', inputs: { modo: 'publicar', turno: 'tarde' } },
+  imagen: { workflow: 'curiosidades-facebook.yml', que: 'Imagen de relleno: reto visual o curiosidad' },
+  gta: { workflow: 'gta6.yml', que: 'Reel GTA VI «Faltan N días»' },
+  nombres: { workflow: 'nombres.yml', que: 'Nombre o pareja con círculos' }
+};
+const PLAN = {
+  fb: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '14:30': 'prefieres', '15:45': 'retos', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella', '21:30': 'gta', '22:30': 'quiz' },
+  ig: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '15:45': 'retos', '18:30': 'video3d2', '20:30': 'estrella' },
+  tt: { '12:17': 'video3d1', '15:00': 'nombres', '18:30': 'video3d2', '20:30': 'estrella' },
+  yt: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '15:45': 'retos', '18:30': 'video3d2' }
+};
+// Junta los planes: una corrida por hora y pieza, con las redes que la piden
+function juntarPlanes() {
+  const slots = new Map();
+  for (const [red, plan] of Object.entries(PLAN)) for (const [hora, pieza] of Object.entries(plan)) {
+    const k = `${hora}|${pieza}`; if (!slots.has(k)) slots.set(k, { hora, pieza, redes: [] }); slots.get(k).redes.push(red);
+  }
+  return [...slots.values()].map(({ hora, pieza, redes }) => {
+    const p = PIEZAS[pieza], orden = ['fb', 'ig', 'tt', 'yt'].filter((r) => redes.includes(r));
+    // nombres.yml es solo de TikTok y no usa «redes»
+    const inputs = pieza === 'nombres' ? p.inputs : { ...(p.inputs || {}), redes: orden.join(',') };
+    return { hora, workflow: p.workflow, que: `${p.que} → ${orden.map((r) => ({ fb: 'FB', ig: 'IG', tt: 'TikTok', yt: 'YouTube' })[r]).join(', ')}`, ...(inputs ? { inputs } : {}) };
+  });
+}
+
 export const HORARIO = [
-  // Video 3D del día (video3d.yml): se renderiza de madrugada (~40-55 min en GitHub) y se publica al mediodía
-  { hora: '01:07', workflow: 'video3d.yml', que: 'Video 3D: render de la madrugada (para hoy)', inputs: { modo: 'render' } },
-  { hora: '12:17', workflow: 'video3d.yml', que: 'Video 3D de datos → FB, IG, TikTok y YouTube', inputs: { modo: 'publicar' } },
+  // Los dos videos 3D del día se renderizan de madrugada (~40-55 min cada uno en GitHub)
+  { hora: '00:37', workflow: 'video3d.yml', que: 'Video 3D: render del de mediodía', inputs: { modo: 'render', turno: 'mediodia' } },
+  { hora: '01:47', workflow: 'video3d.yml', que: 'Video 3D: render del de la tarde', inputs: { modo: 'render', turno: 'tarde' } },
   { hora: '06:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
-  { hora: '07:17', workflow: 'nombres.yml', que: 'Nombre o pareja con círculos → TikTok' },
-  { hora: '07:57', workflow: R, que: 'Reel: noticias de hoy', inputs: { formato: 'noticias' } },
-  { hora: '08:07', workflow: 'curiosidades-facebook.yml', que: 'Imagen: reto visual o curiosidad' },
-  { hora: '09:27', workflow: 'gta6.yml', que: 'Especial de lanzamiento de GTA VI', inputs: { lanzamiento: 'true' }, fecha: '2026-11-19' },
-  { hora: '09:57', workflow: R, que: 'Reel de quiz y curiosidades' },
-  { hora: '10:27', workflow: 'como-se-hace.yml', que: 'Cómo se hace: la fábrica en 2D (más de 1 min)' },
-  { hora: '10:47', workflow: 'famosos.yml', que: 'Futbolista con círculos → TikTok' },
-  { hora: '11:57', workflow: R, que: 'Reel de quiz y curiosidades' },
-  { hora: '12:07', workflow: 'curiosidades-facebook.yml', que: 'Imagen: reto visual o curiosidad' },
-  { hora: '12:37', workflow: 'curiosidades-tiktok.yml', que: 'Carrusel de 5 imágenes → TikTok' },
-  { hora: '12:57', workflow: R, que: 'Reel de quiz y curiosidades → también TikTok', inputs: { tiktok: 'si' } },
-  { hora: '13:17', workflow: 'nombres.yml', que: 'Nombre o pareja con círculos → TikTok' },
-  { hora: '13:57', workflow: R, que: 'Reel de quiz y curiosidades' },
+  ...juntarPlanes(),
+  // Lanzamiento de GTA VI: un Reel especial a media mañana (el especial 3D sale a las 18:30)
+  { hora: '11:15', workflow: 'gta6.yml', que: 'Especial de lanzamiento de GTA VI → FB, IG, TikTok', inputs: { lanzamiento: 'true', redes: 'fb,ig,tt' }, fecha: '2026-11-19' },
   // Video largo horizontal para YouTube (8 a 10 min; tarda unos 15 min en hacerse): martes, jueves y sábado
-  { hora: '14:07', workflow: 'youtube-largo.yml', que: 'Video largo de YouTube: cómo se hacen 6 cosas', dias: [2, 4, 6] },
-  { hora: '15:57', workflow: R, que: 'Reel de quiz y curiosidades' },
-  { hora: '16:47', workflow: 'famosos.yml', que: 'Futbolista con círculos → TikTok' },
-  { hora: '17:07', workflow: 'curiosidades-facebook.yml', que: 'Imagen: reto visual o curiosidad' },
-  { hora: '17:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
-  { hora: '17:57', workflow: R, que: 'Reel de quiz y curiosidades' },
-  { hora: '18:27', workflow: 'como-se-hace.yml', que: 'Cómo se hace: la fábrica en 2D (más de 1 min)' },
-  { hora: '18:57', workflow: R, que: 'Reel: noticias de hoy', inputs: { formato: 'noticias' } },
-  { hora: '19:27', workflow: 'gta6.yml', que: 'Reel GTA VI «Faltan N días» → FB, IG y TikTok' },
-  { hora: '19:57', workflow: R, que: 'Reel de quiz y curiosidades' },
-  { hora: '20:07', workflow: 'curiosidades-facebook.yml', que: 'Imagen: reto visual o curiosidad' },
-  { hora: '20:37', workflow: 'curiosidades-tiktok.yml', que: 'Carrusel de 5 imágenes → TikTok' },
-  { hora: '20:57', workflow: R, que: 'Reel de quiz y curiosidades → también TikTok', inputs: { tiktok: 'si' } },
-  { hora: '21:57', workflow: R, que: 'Reel de quiz y curiosidades' },
-  { hora: '22:57', workflow: R, que: 'Reel de quiz y curiosidades' }
+  { hora: '14:07', workflow: 'youtube-largo.yml', que: 'Video largo de YouTube: cómo se hacen 6 cosas', dias: [2, 4, 6] }
 ];
-// Metas semanales de Facebook: tres veces al día completa las fotos e historias que falten (scripts/metas.mjs)
-for (const hora of ['11:37', '15:37', '21:37']) HORARIO.push({ hora, workflow: 'metas.yml', que: 'Metas semanales: fotos e historias que falten' });
+// Metas semanales de Facebook (fotos e historias que pide el panel): lejos de las estrellas (scripts/metas.mjs)
+for (const hora of ['07:15', '16:15', '22:45']) HORARIO.push({ hora, workflow: 'metas.yml', que: 'Metas semanales: fotos e historias que falten → FB' });
 // Respuestas a comentarios: cada hora de 7:47 a 23:47 (cuanto antes se contesta, más conversación)
 for (let h = 7; h <= 23; h++) HORARIO.push({ hora: `${String(h).padStart(2, '0')}:47`, workflow: 'comentarios.yml', que: 'Responder comentarios' });
 HORARIO.sort((a, b) => a.hora.localeCompare(b.hora));
@@ -59,7 +80,9 @@ const REDES_WF = {
   [R]: ['fb', 'ig', 'yt'], 'youtube-largo.yml': ['yt'], 'video3d.yml': ['fb', 'ig', 'tt', 'yt'], 'curiosidades-facebook.yml': ['fb', 'ig'], 'curiosidades-tiktok.yml': ['tt'], 'nombres.yml': ['tt'], 'famosos.yml': ['tt'],
   'gta6.yml': ['fb', 'ig', 'tt'], 'comentarios.yml': ['fb', 'ig'], 'metas.yml': ['fb'], 'como-se-hace.yml': ['fb', 'ig', 'yt'], 'noticias.yml': [], 'estadisticas.yml': []
 };
-export const redesDe = (workflow, inputs = {}) => [...(REDES_WF[workflow] || []), ...(inputs.tiktok === 'si' ? ['tt'] : [])];
+// Con «redes» (el plan de cada red) manda eso; si no, lo de siempre del workflow
+export const redesDe = (workflow, inputs = {}) => inputs.modo === 'render' ? [] : inputs.redes ? inputs.redes.split(',').filter(Boolean) : [...(REDES_WF[workflow] || []), ...(inputs.tiktok === 'si' ? ['tt'] : [])];
+export { PLAN };
 
 export const OFFSET_HN = -6;
 // Fecha y minuto del día en Honduras

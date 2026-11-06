@@ -1,6 +1,6 @@
 // Panel de Potter Play (panel.html). Habla solo con /api/panel.
 const $ = (id) => document.getElementById(id);
-const FORMATOS = ['auto', 'banderas', 'retos', 'quiz', 'prefieres', 'emojis', 'top10', 'noticias'];
+const FORMATOS = ['auto', 'estrella', 'banderas', 'retos', 'quiz', 'prefieres', 'emojis', 'top10', 'noticias'];
 const ESTADO = { hecho: 'Hecho', 'en-curso': 'En curso', pendiente: 'Pendiente', perdido: 'Perdido', proximo: 'Próximo' };
 const RED = { fb: 'Facebook', ig: 'Instagram', tt: 'TikTok', yt: 'YouTube' };
 let ocupado = false, ultimo = null;

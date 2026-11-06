@@ -85,6 +85,9 @@ on:
       reseed: { type: boolean, default: false }
       # Solo generar el video (sin publicar ni avisar): queda para descargar en «Video del día»
       prueba: { type: boolean, default: false }
+      # En qué redes sale (fb, ig, tt, yt separadas por coma), según el plan de cada red en scripts/lib/horario.mjs.
+      # Vacío = lo de siempre (facebook/publish deciden)
+      redes: { type: string, default: '' }
 
 permissions:
   contents: read
@@ -122,6 +125,7 @@ jobs:
       ESTADO_INPUT: ${{ inputs.estado || '' }}
       FACEBOOK_INPUT: ${{ inputs.facebook || 'si' }}
       HISTORIA_INPUT: ${{ inputs.historia && 'si' || '' }}
+      REDES_INPUT: ${{ inputs.redes || '' }}
       # Página de Facebook (opcional): Reel publicado con la misma descripción
       FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
       FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
@@ -207,9 +211,17 @@ jobs:
         # El render 3D tiene su propio límite: si se pasa, la corrida igual llega al aviso de Telegram
         timeout-minutes: ${{ env.CATS_INPUT == 'video3d-render' && 105 || 28 }}
         run: |
+          # Redes de esta corrida: con «redes» manda el plan de cada red; sin él, lo de siempre
+          en_red() { case ",$REDES_INPUT," in *",$1,"*) echo si ;; *) echo no ;; esac; }
+          if [ -n "$REDES_INPUT" ]; then
+            R_FB=$(en_red fb); R_IG=$(en_red ig); R_YT=$(en_red yt); R_TT=$( [ "$(en_red tt)" = si ] && echo draft || echo no )
+          else
+            R_FB="$FACEBOOK_INPUT"; R_IG=si; R_YT=si; R_TT=$( [ "$PUBLISH_INPUT" = draft ] && echo draft || echo no )
+          fi
+          echo "Redes: fb=$R_FB ig=$R_IG yt=$R_YT tiktok=$R_TT"
           # Imágenes de curiosidades y noticias (curiosidades-facebook.yml y curiosidades-tiktok.yml)
           case "$CATS_INPUT" in
-            curiosidades-facebook) node scripts/curiosidades.mjs --red facebook; exit 0 ;;
+            curiosidades-facebook) node scripts/curiosidades.mjs --red facebook --instagram "$R_IG"; exit 0 ;;
             # TikTok: carrusel de 5 imágenes (retos visuales o datos, día por medio)
             curiosidades-tiktok) node scripts/curiosidades.mjs --red tiktok --carrusel 5; exit 0 ;;
             # Reels de quiz y curiosidades (curiosidades-reels.yml); «figura» elige el formato: top10, quiz o banderas
@@ -219,12 +231,12 @@ jobs:
             noticias) mkdir -p out; node scripts/noticias.mjs; exit 0 ;;
             # Metas semanales de Facebook (metas.yml): «figura» = «fotos,historias» puestas desde el panel (vacías = las guardadas)
             metas) mkdir -p out; IFS=, read -r mf mh <<< "$FIGURA_INPUT"; node scripts/metas.mjs ${mf:+--fotos "$mf"} ${mh:+--historias "$mh"}; exit 0 ;;
-            gta6) if [ "$FIGURA_INPUT" = "lanzamiento" ]; then node scripts/gta6.mjs --solo-lanzamiento; else node scripts/gta6.mjs; fi; exit 0 ;;
+            gta6) GTA_TT=$( [ -n "$REDES_INPUT" ] && echo "$R_TT" || echo draft ); if [ "$FIGURA_INPUT" = "lanzamiento" ]; then node scripts/gta6.mjs --solo-lanzamiento --facebook "$R_FB" --instagram "$R_IG" --tiktok "$GTA_TT"; else node scripts/gta6.mjs --facebook "$R_FB" --instagram "$R_IG" --tiktok "$GTA_TT"; fi; exit 0 ;;
             # Videos 3D: el render de la madrugada y la publicación del mediodía (video3d.yml)
-            video3d-render) node scripts/video3d-render.mjs ${PRUEBA_INPUT:+--dry-run}; exit 0 ;;
-            video3d-publicar) node scripts/video3d-publicar.mjs --tiktok "$( [ "$PUBLISH_INPUT" = none ] && echo no || echo si )"; exit 0 ;;
+            video3d-render) node scripts/video3d-render.mjs --turno "${FIGURA_INPUT:-mediodia}" ${PRUEBA_INPUT:+--dry-run}; exit 0 ;;
+            video3d-publicar) node scripts/video3d-publicar.mjs --turno "${FIGURA_INPUT:-mediodia}" --tiktok "$( [ "$R_TT" = draft ] && echo si || echo no )" --youtube "$R_YT"; exit 0 ;;
             youtube-largo) node scripts/youtube-largo.mjs ${PRUEBA_INPUT:+--dry-run}; exit 0 ;;
-            curiosidades-video) node scripts/curiosidades-video.mjs --facebook "$FACEBOOK_INPUT" --formato "${FIGURA_INPUT:-auto}" ${HISTORIA_INPUT:+--historia} ${PRUEBA_INPUT:+--dry-run} --tiktok "$( [ "$PUBLISH_INPUT" = draft ] && echo draft || echo no )"; exit 0 ;;
+            curiosidades-video) node scripts/curiosidades-video.mjs --facebook "$R_FB" --instagram "$R_IG" --youtube "$R_YT" --formato "${FIGURA_INPUT:-auto}" ${HISTORIA_INPUT:+--historia} ${PRUEBA_INPUT:+--dry-run} --tiktok "$R_TT"; exit 0 ;;
           esac
           # Solo consultar el estado de subidas anteriores
           if [ -n "$ESTADO_INPUT" ]; then
