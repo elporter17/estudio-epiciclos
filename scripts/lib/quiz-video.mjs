@@ -378,16 +378,25 @@ const ESCENAS = {
       });
     }
   },
-  // Noticia: categoría, titular grande, medio y fecha
+  // Noticia: categoría, titular grande y, debajo, el resumen corto (entra un poco después); medio y fecha al pie
   noticia(ctx, e, lt) {
     pildora(ctx, e.etiqueta, 300, e.tema, back(lt / 0.35));
     const si = back((lt - 0.1) / 0.4);
-    if (si > 0.01) escala(ctx, si, W / 2, 480, () => emoji(ctx, e.icono, W / 2, 480, 120));
+    if (si > 0.01) escala(ctx, si, W / 2, 470, () => emoji(ctx, e.icono, W / 2, 470, 110));
     const a = ease((lt - 0.15) / 0.35), dy = (1 - a) * 50;
     alfa(ctx, a);
-    caja(ctx, 70, 570 + dy, W - 140, 620, 36, panel(e), 'rgba(255,255,255,0.16)', 3);
-    bloque(ctx, fit(ctx, e.titular, W - 220, 560, { from: 74, to: 40, peso: 700 }), W / 2, 600 + dy, 560);
-    ctx.font = font(600, 40); ctx.fillStyle = e.tema.acento; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(e.pie, W / 2, 1255 + dy);
+    caja(ctx, 60, 550 + dy, W - 120, 720, 36, panel(e), 'rgba(255,255,255,0.16)', 3);
+    if (!e.resumen) bloque(ctx, fit(ctx, e.titular, W - 200, 660, { from: 74, to: 40, peso: 700 }), W / 2, 580 + dy, 660);
+    else {
+      // El titular se lleva el espacio que necesite (hasta 360 px) y el resumen, el resto
+      const ft = fit(ctx, e.titular, W - 200, 360, { from: 66, to: 40, peso: 700 }), alto = Math.min(360, ft.lines.length * ft.lh + 10);
+      bloque(ctx, ft, W / 2, 580 + dy, alto);
+      ctx.fillStyle = e.tema.acento; ctx.fillRect(W / 2 - 60, 600 + alto + dy, 120, 5);
+      const b = ease((lt - 0.6) / 0.4); alfa(ctx, a * b);
+      bloque(ctx, fit(ctx, e.resumen, W - 200, 1240 - (630 + alto), { from: 46, to: 30, peso: 500 }), W / 2, 625 + alto + dy + (1 - b) * 20, 1240 - (630 + alto), 'rgba(255,255,255,0.92)');
+      alfa(ctx, a);
+    }
+    ctx.font = font(600, 38); ctx.fillStyle = e.tema.acento; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(e.pie, W / 2, 1320 + dy);
     alfa(ctx, 1);
   },
   cierre(ctx, e, lt) { ESCENAS.intro(ctx, { ...e, y0: e.y0 || 560 }, lt); }

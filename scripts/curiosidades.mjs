@@ -14,6 +14,10 @@ import { parseCli } from './lib/cli.mjs';
 import { setupNode, ROOT } from './lib/node-env.mjs';
 import { dibujarTarjeta, dibujarPortada, dibujarCierre, TEMAS } from './lib/tarjetas.mjs';
 import { ultimaNoticia, CAT_NOMBRE } from './lib/noticias.mjs';
+import { cambiosDe } from './lib/control.mjs';
+import { hoyHN } from './lib/video3d-cola.mjs';
+// Noticias ya publicadas + las que quitaste hoy por Telegram (scripts/lib/control.mjs)
+const vistosDe = async (hist) => new Set([...hist.noticias, ...(await cambiosDe(hoyHN()).catch(() => [])).filter((x) => x.t === 'noticia-fuera').map((x) => x.link)]);
 import { blobToken } from './lib/video-link.mjs';
 import { publishPhoto, publishPhotoStory, publishCarrusel, facebookReady } from './facebook.mjs';
 import { publishPhotoDraft } from './publish.mjs';
@@ -83,8 +87,8 @@ function armarNoticia(n) {
   const fecha = new Date(n.fecha).toLocaleDateString('es-HN', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'America/Tegucigalpa' });
   const cat = CAT_NOMBRE[n.cat];
   return {
-    formato: 'noticia', tarjeta: { formato: 'noticia', tema: 'noticias', icono: n.icono, texto: n.titulo, pie: `Fuente: ${n.medio} · ${fecha}` },
-    texto: `📰 ${cat}: ${n.titulo}\n\n¿Qué opinas?\n\nFuente: ${n.medio}\n${n.link}\n\n#noticias #${n.cat} #ultimahora #potterplay`
+    formato: 'noticia', tarjeta: { formato: 'noticia', tema: 'noticias', icono: n.icono, texto: n.titulo, resumen: n.resumen, pie: `Fuente: ${n.medio} · ${fecha}` },
+    texto: `📰 ${cat}: ${n.titulo}${n.resumen ? `\n\n${n.resumen}` : ''}\n\n¿Qué opinas?\n\nFuente: ${n.medio}\n${n.link}\n\n#noticias #${n.cat} #ultimahora #potterplay`
   };
 }
 
@@ -148,8 +152,8 @@ async function carrusel(o, hist, base, emojiFont) {
   const k = (hist.ganchos || 0), slides = [], lineas = [], ids = [], noticias = [];
   let tema = 'matematicas', clave = { modo: 'charla' }, portada, cierreT;
   if (tipo === 'noticias') {
-    const cats = ['videojuegos', 'futbol', 'ciencia'], vistos = new Set(hist.noticias);
-    for (let i = 0; i < 4; i++) { const x = await ultimaNoticia({ vistos, preferir: cats[i % 3] }).catch(() => null); if (!x) break; vistos.add(x.link); noticias.push(x); }
+    const cats = ['videojuegos', 'futbol', 'ciencia', 'tecnologia'], vistos = await vistosDe(hist);
+    for (let i = 0; i < 4; i++) { const x = await ultimaNoticia({ vistos, preferir: cats[i % cats.length] }).catch(() => null); if (!x) break; vistos.add(x.link); noticias.push(x); }
     if (noticias.length < 3) tipo = 'retos';
   }
   if (tipo === 'retos') {
@@ -176,8 +180,8 @@ async function carrusel(o, hist, base, emojiFont) {
     const fecha = (x) => new Date(x.fecha).toLocaleDateString('es-HN', { day: 'numeric', month: 'short', timeZone: 'America/Tegucigalpa' });
     const imgs = [];
     for (const x of noticias) imgs.push(await fotoReal(FOTO_NOTICIA[x.cat] || 'newspaper'));
-    noticias.forEach((x, i) => { slides.push(dibujarTarjeta({ formato: 'noticia', tema: 'noticias', icono: x.icono, texto: x.titulo, pie: `Fuente: ${x.medio} · ${fecha(x)}`, imagen: imgs[i] }, { H, emojiFont })); lineas.push(`${i + 1}. ${x.titulo} (${x.medio})\n${x.link}`); });
-    portada = { gancho: ganchoDe('noticias', k, { n: noticias.length }), etiqueta: 'NOTICIAS DE HOY', tema, iconos: noticias.map((x) => x.icono), sub: 'Videojuegos · Fútbol · Ciencia', fondo: await fotoReal('city news') };
+    noticias.forEach((x, i) => { slides.push(dibujarTarjeta({ formato: 'noticia', tema: 'noticias', icono: x.icono, texto: x.titulo, resumen: x.resumen, pie: `Fuente: ${x.medio} · ${fecha(x)}`, imagen: imgs[i] }, { H, emojiFont })); lineas.push(`${i + 1}. ${x.titulo}${x.resumen ? `\n${x.resumen}` : ''} (${x.medio})\n${x.link}`); });
+    portada = { gancho: ganchoDe('noticias', k, { n: noticias.length }), etiqueta: 'NOTICIAS DE HOY', tema, iconos: noticias.map((x) => x.icono), sub: 'Videojuegos · Fútbol · Ciencia · Tecnología', fondo: await fotoReal('city news') };
     cierreT = { titulo: '¿Cuál te sorprendió más?', sub: 'Las fuentes están en la descripción', tema };
   }
   // «de» + «el fútbol» → «del» + «fútbol» (en la portada cada parte se dibuja por separado)
@@ -248,8 +252,8 @@ async function main() {
   const tocaNoticia = o.tipo === 'noticia' || (o.tipo === 'auto' && (hist.total + 1) % Math.max(1, +o['noticia-cada']) === 0);
   let pieza = null, x = null, noticia = null;
   if (tocaNoticia && !o.id) {
-    const cats = ['videojuegos', 'futbol', 'ciencia'], preferir = cats[Math.floor(hist.total / Math.max(1, +o['noticia-cada'])) % cats.length];
-    noticia = await ultimaNoticia({ vistos: new Set(hist.noticias), preferir }).catch(() => null);
+    const cats = ['videojuegos', 'futbol', 'ciencia', 'tecnologia'], preferir = cats[Math.floor(hist.total / Math.max(1, +o['noticia-cada'])) % cats.length];
+    noticia = await ultimaNoticia({ vistos: await vistosDe(hist), preferir }).catch(() => null);
     if (noticia) pieza = armarNoticia(noticia);
   }
   // Retos visuales (duplicado, nombre, letra escondida, fracción, operación): 2 de cada 3 publicaciones que no son

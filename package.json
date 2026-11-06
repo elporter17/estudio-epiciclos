@@ -16,6 +16,7 @@
     "tiktok:connect": "node scripts/tiktok-connect.mjs",
     "youtube:connect": "node scripts/youtube-connect.mjs",
     "avisos:telegram": "node scripts/avisos-telegram.mjs",
+    "telegram:webhook": "node --env-file=.env scripts/telegram-webhook.mjs",
     "publish": "node scripts/publish.mjs",
     "silueta": "node scripts/silueta.mjs",
     "tablero": "node scripts/tablero.mjs"

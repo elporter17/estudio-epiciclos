@@ -1,0 +1,97 @@
+// Control por Telegram: los cambios que mandas al bot (api/telegram.js) para un día (quitar, mover o cambiar una
+// publicación, agregar otra, pausar el día, quitar o fijar noticias…) se guardan en el almacén Blob de Vercel.
+//   control/<id>/ops/<fecha>/<ms>.json   un archivo por cambio (no se sobrescribe nunca: siempre se lee el último)
+//   control/<id>/dias/<fecha>.json      los cambios vigentes del día, ya resueltos (lo lee el relojero cada 10 min)
+//   control/<id>/noticias/<fecha>.json  las noticias candidatas del día, numeradas (las deja scripts/noticias.mjs)
+// <id> sale del token del bot (secreto): nadie que no lo tenga puede adivinar las rutas. Lo usan Vercel (relojero, panel
+// y bot) y GitHub Actions (noticias y Reels), así que no usa el disco.
+import crypto from 'node:crypto';
+import { put, list, del } from '@vercel/blob';
+
+export const blobToken = () => process.env.BLOB_READ_WRITE_TOKEN
+  || Object.entries(process.env).find(([k, v]) => k.endsWith('_READ_WRITE_TOKEN') && String(v).startsWith('vercel_blob_rw_'))?.[1];
+export const controlListo = () => !!(blobToken() && process.env.TELEGRAM_BOT_TOKEN);
+const carpeta = () => `control/${crypto.createHash('sha256').update(`potter-control:${process.env.TELEGRAM_BOT_TOKEN}`).digest('hex').slice(0, 24)}`;
+// URL pública fija de una ruta (vercel_blob_rw_<almacén>_<secreto>)
+const urlDe = (p) => `https://${blobToken().split('_')[3].toLowerCase()}.public.blob.vercel-storage.com/${p}`;
+
+async function leerJson(p) {
+  if (!controlListo()) return null;
+  try { const r = await fetch(`${urlDe(p)}?v=${Date.now()}`, { cache: 'no-store', signal: AbortSignal.timeout(8000) }); return r.ok ? await r.json() : null; } catch { return null; }
+}
+async function guardarJson(p, data, { fijo = true } = {}) {
+  return put(p, JSON.stringify(data), { access: 'public', token: blobToken(), addRandomSuffix: !fijo, allowOverwrite: fijo, cacheControlMaxAge: 60, contentType: 'application/json' });
+}
+
+// ---------- cambios de un día ----------
+// Cada cambio: { t: 'quitar'|'mover'|'cambiar'|'agregar'|'pausa'|'reanudar'|'noticia-fuera'|'noticia-fija'|'noticia-propia'|'deshacer', … }
+// «deshacer» anula el cambio anterior que siga vigente
+export function resolver(ops) {
+  const out = [];
+  for (const op of ops) {
+    if (op.t === 'deshacer') out.pop();
+    else if (op.t === 'reanudar-pausa') { for (let i = out.length - 1; i >= 0; i--) if (out[i].t === 'pausa') out.splice(i, 1); }
+    else out.push(op);
+  }
+  return out;
+}
+// Lo vigente de una fecha leyendo todos sus cambios (exacto; lo usa el bot antes de escribir)
+export async function cambiosExactos(fecha) {
+  if (!controlListo()) return [];
+  const { blobs } = await list({ prefix: `${carpeta()}/ops/${fecha}/`, token: blobToken() });
+  const ops = await Promise.all(blobs.sort((a, b) => a.pathname.localeCompare(b.pathname)).map((b) => fetch(b.url, { cache: 'no-store' }).then((r) => r.json()).catch(() => null)));
+  return resolver(ops.filter(Boolean));
+}
+// Lo vigente de una fecha (rápido: un solo archivo; puede tardar hasta un minuto en verse un cambio recién hecho)
+export async function cambiosDe(fecha) { return (await leerJson(`${carpeta()}/dias/${fecha}.json`))?.ops || []; }
+// Registra un cambio y deja el resumen del día al corriente; devuelve lo vigente
+export async function registrar(fecha, op) {
+  await guardarJson(`${carpeta()}/ops/${fecha}/${String(Date.now()).padStart(15, '0')}.json`, { ...op, at: new Date().toISOString() }, { fijo: false });
+  const ops = await cambiosExactos(fecha);
+  await guardarJson(`${carpeta()}/dias/${fecha}.json`, { fecha, ops });
+  return ops;
+}
+// Borra lo de hace más de 7 días (lo llama scripts/noticias.mjs una vez al día)
+export async function limpiarViejos() {
+  if (!controlListo()) return;
+  const limite = new Date(Date.now() - 7 * 864e5 - 6 * 3600e3).toISOString().slice(0, 10), viejos = [];
+  let cursor;
+  do {
+    const r = await list({ prefix: `${carpeta()}/`, token: blobToken(), cursor });
+    for (const b of r.blobs) { const f = b.pathname.match(/\/(\d{4}-\d{2}-\d{2})(\/|\.json)/)?.[1]; if (f && f < limite) viejos.push(b.url); }
+    cursor = r.hasMore ? r.cursor : undefined;
+  } while (cursor);
+  if (viejos.length) await del(viejos, { token: blobToken() });
+}
+
+// ---------- noticias del día ----------
+export async function guardarNoticias(fecha, items) { if (controlListo()) await guardarJson(`${carpeta()}/noticias/${fecha}.json`, { fecha, items }); }
+export async function noticiasDe(fecha) { return (await leerJson(`${carpeta()}/noticias/${fecha}.json`))?.items || []; }
+// Las candidatas con tus cambios: primero las que agregaste, luego las fijadas y después el resto en su orden, sin las
+// que quitaste. «num» es el número con que salen en Telegram (el de la lista de la mañana)
+export function noticiasConCambios(items, ops = []) {
+  const fuera = new Set(ops.filter((o) => o.t === 'noticia-fuera').map((o) => o.link));
+  const fijas = ops.filter((o) => o.t === 'noticia-fija').map((o) => o.link);
+  const propias = ops.filter((o) => o.t === 'noticia-propia').map((o) => o.noticia).filter((n) => !fuera.has(n.link));
+  const base = items.map((n, i) => ({ ...n, num: i + 1 })).filter((n) => !fuera.has(n.link));
+  const arriba = fijas.map((l) => base.find((n) => n.link === l)).filter(Boolean);
+  return [...propias, ...arriba, ...base.filter((n) => !arriba.includes(n))];
+}
+
+// ---------- Telegram ----------
+// Clave que Telegram manda en cada llamada al webhook (sale del token del bot, así no hay otra variable que guardar)
+export const secretoWebhook = () => crypto.createHash('sha256').update(`potter-webhook:${process.env.TELEGRAM_BOT_TOKEN}`).digest('hex').slice(0, 48);
+export const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+export async function telegram(texto, { chat = process.env.TELEGRAM_CHAT_ID, html = true } = {}) {
+  const tg = process.env.TELEGRAM_BOT_TOKEN; if (!tg || !chat) return false;
+  let ok = true;
+  // Telegram acepta hasta 4096 caracteres: se corta en saltos de línea, fuera de los bloques <pre>
+  const partes = []; let actual = '';
+  for (const bloque of texto.split(/\n\n/)) { if ((actual + '\n\n' + bloque).length > 3900 && actual) { partes.push(actual); actual = bloque; } else actual = actual ? `${actual}\n\n${bloque}` : bloque; }
+  if (actual) partes.push(actual);
+  for (const p of partes) {
+    const r = await fetch(`https://api.telegram.org/bot${tg}/sendMessage`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ chat_id: chat, text: p, parse_mode: html ? 'HTML' : undefined, disable_web_page_preview: true }) }).catch(() => ({ ok: false }));
+    ok &&= r.ok;
+  }
+  return ok;
+}

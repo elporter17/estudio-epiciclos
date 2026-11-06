@@ -121,6 +121,9 @@ jobs:
       FIGURA_INPUT: ${{ inputs.figura || '' }}
       # Almacén Blob de Vercel (opcional): enlace directo al MP4 en el resumen y en el aviso de la corrida
       BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+      # Bot de Telegram: el plan y las noticias de la mañana, y los cambios que le mandas (scripts/lib/control.mjs)
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       ESTILOS_INPUT: ${{ inputs.estilos || '' }}
       ESTADO_INPUT: ${{ inputs.estado || '' }}
       FACEBOOK_INPUT: ${{ inputs.facebook || 'si' }}

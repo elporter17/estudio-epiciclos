@@ -95,6 +95,17 @@ export function dibujarTarjeta(t, { W = 1080, H = 1350, emojiFont = '' } = {}) {
       ctx.fillStyle = '#fff'; ctx.font = `600 ${Math.min(52, oh * 0.45)}px ${SANS}${E}`; ctx.textAlign = 'center';
       ctx.fillText(`${'ABC'[i]})  ${o}`, W / 2, by + oh / 2 + Math.min(52, oh * 0.45) * 0.35);
     });
+  } else if (t.resumen) {
+    // Noticia: titular arriba (hasta la mitad del espacio) y el resumen corto debajo, más pequeño
+    const total = bottom - y - 20, ft = fit(ctx, t.texto, maxW, total * 0.5, { from: 68, to: 36, weight: 700, emoji: E });
+    const altoT = ft.lines.length * ft.lh;
+    ctx.textAlign = 'center'; ctx.fillStyle = '#fff';
+    ctx.font = `700 ${ft.size}px ${SANS}${E}`;
+    ft.lines.forEach((l, k) => ctx.fillText(l, W / 2, y + ft.size * 0.85 + k * ft.lh));
+    const ly = y + altoT + 22; ctx.fillStyle = tema.acento; ctx.fillRect(W / 2 - 60, ly, 120, 5);
+    const fr = fit(ctx, t.resumen, maxW, bottom - ly - 40, { from: 44, to: 28, weight: 500, emoji: E });
+    ctx.fillStyle = 'rgba(255,255,255,0.88)';
+    fr.lines.forEach((l, k) => ctx.fillText(l, W / 2, ly + 40 + fr.size * 0.85 + k * fr.lh));
   } else {
     const f = fit(ctx, t.texto, maxW, bottom - y - 30, { from: 78, to: 38, emoji: E });
     ctx.textAlign = 'center'; const y0 = y + (bottom - y - f.lines.length * f.lh) / 2 + f.size * 0.85;

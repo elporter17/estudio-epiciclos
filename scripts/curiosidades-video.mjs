@@ -22,7 +22,9 @@ import { logUpload } from './tiktok-status.mjs';
 import { subirYouTube, youtubeReady } from './lib/youtube.mjs';
 import { MELODIA_IDS } from '../src/melodias.js';
 import { crearVisual, VISUALES } from './lib/retos-visuales.mjs';
-import { juntarNoticias } from './noticias.mjs';
+import { juntarNoticias, N_REEL } from './lib/noticias.mjs';
+import { cambiosDe, noticiasConCambios } from './lib/control.mjs';
+import { hoyHN } from './lib/video3d-cola.mjs';
 import { ponerFondos, guardarStock } from './lib/stock.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades');
@@ -230,28 +232,28 @@ function emojisVideo(hist) {
   return { formato: 'emojis', titulo: 'Adivina con emojis', escenas, texto, emojis: elegidos.map((x) => x.id), clave: { modo: 'puntaje', max: 8 } };
 }
 
-const ETIQUETA_NOTICIA = { videojuegos: '🎮 VIDEOJUEGOS', futbol: '⚽ FÚTBOL', ciencia: '🔭 CIENCIA' };
-const FONDO_NOTICIA = { videojuegos: ['video game controller', 'gamer neon room', 'arcade lights'], futbol: ['soccer stadium crowd', 'soccer ball grass', 'football fans stadium'], ciencia: ['galaxy stars space', 'science laboratory', 'earth from space'] };
+const ETIQUETA_NOTICIA = { videojuegos: '🎮 VIDEOJUEGOS', futbol: '⚽ FÚTBOL', ciencia: '🔭 CIENCIA', tecnologia: '📱 TECNOLOGÍA', general: '📰 NOTICIA' };
+const FONDO_NOTICIA = { videojuegos: ['video game controller', 'gamer neon room', 'arcade lights'], futbol: ['soccer stadium crowd', 'soccer ball grass', 'football fans stadium'], ciencia: ['galaxy stars space', 'science laboratory', 'earth from space'], tecnologia: ['smartphone technology', 'circuit board macro', 'data center lights'], general: ['newspaper printing', 'city news'] };
 async function noticiasVideo(hist) {
-  // Las del día las junta noticias.yml (scripts/noticias.mjs); si no están, se leen ahora
+  // Las del día las junta noticias.yml (scripts/noticias.mjs, ya ordenadas por importancia); si no están, se leen ahora.
+  // Encima van tus cambios por Telegram: las que quitaste no salen, las fijadas y las tuyas van primero
   let lista = leer(path.join(ROOT, 'data', 'noticias-hoy.json'), {}).items || [];
   if (lista.length < 4) lista = await juntarNoticias().catch(() => []);
-  const vistas = new Set(hist.noticias.slice(-300)), frescas = lista.filter((n) => !vistas.has(n.link));
-  // Una de cada categoría primero, luego las más recientes
-  const elegidas = [];
-  for (const cat of Object.keys(ETIQUETA_NOTICIA)) { const n = frescas.find((x) => x.cat === cat); if (n) elegidas.push(n); }
-  for (const n of frescas) if (elegidas.length < 6 && !elegidas.includes(n)) elegidas.push(n);
-  if (elegidas.length < 4) return null;
+  const ops = await cambiosDe(hoyHN()).catch(() => []);
+  const vistas = new Set(hist.noticias.slice(-300)), frescas = noticiasConCambios(lista, ops).filter((n) => n.propia || !vistas.has(n.link));
+  const elegidas = frescas.slice(0, N_REEL);
+  if (elegidas.length < 3) return null;
+  // La narración alarga cada escena lo que haga falta (titular + resumen)
   const durNoticia = Math.min(13, Math.max(8.5, 51.5 / elegidas.length));
   const hoy = new Date(Date.now() - 6 * 3600e3).toLocaleDateString('es-HN', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
   const corta = (f) => new Date(f).toLocaleDateString('es-HN', { day: 'numeric', month: 'short', timeZone: 'America/Tegucigalpa' });
   const escenas = [
-    { tipo: 'intro', dur: INTRO, tema: 'noticias', portada: true, consulta: 'city timelapse morning', sonidos: introSonidos, iconos: ['📰', '🎮', '⚽', '🔭'],
+    { tipo: 'intro', dur: INTRO, tema: 'noticias', portada: true, consulta: 'city timelapse morning', sonidos: introSonidos, iconos: ['📰', '🎮', '⚽', '🔭'], voz: 'Las noticias de hoy, en un minuto.',
       lineas: [{ texto: 'NOTICIAS', size: 140, color: TEMAS.noticias.acento }, { texto: 'DE HOY', size: 120 }, { texto: hoy, size: 56, color: 'rgba(255,255,255,0.85)' }] },
-    ...elegidas.map((n, i) => ({ tipo: 'noticia', dur: durNoticia, idx: i, total: elegidas.length, tema: 'noticias', etiqueta: ETIQUETA_NOTICIA[n.cat] || '📰 NOTICIA', consulta: azar(FONDO_NOTICIA[n.cat] || ['newspaper printing']), icono: n.icono, titular: n.titulo, pie: `${n.medio} · ${corta(n.fecha)}`, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
-    cierre('noticias', '¿CUÁL TE SORPRENDIÓ MÁS?', 'Las noticias del día en menos de un minuto')
+    ...elegidas.map((n, i) => ({ tipo: 'noticia', dur: durNoticia, idx: i, total: elegidas.length, tema: 'noticias', etiqueta: ETIQUETA_NOTICIA[n.cat] || '📰 NOTICIA', consulta: azar(FONDO_NOTICIA[n.cat] || FONDO_NOTICIA.general), icono: n.icono || '📰', titular: n.titulo, resumen: n.resumen || '', pie: n.propia ? n.medio : `${n.medio} · ${corta(n.fecha)}`, voz: [n.titulo.replace(/["“”]/g, ''), n.resumen].filter(Boolean).join('. ').replace(/\.\./g, '.'), sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
+    { ...cierre('noticias', '¿CUÁL TE SORPRENDIÓ MÁS?', 'Las noticias del día en menos de un minuto'), voz: '¿Cuál te sorprendió más? Cuéntanos en los comentarios.' }
   ];
-  const texto = `📰 Las noticias de hoy en menos de un minuto: videojuegos, fútbol y ciencia.\n\n${elegidas.map((n, i) => `${i + 1}. ${n.titulo} (${n.medio})`).join('\n')}\n\n¿Cuál te sorprendió más?\n\n${tags('noticias', 'ultimahora', 'videojuegos', 'futbol', 'ciencia')}`;
+  const texto = `📰 Las noticias de hoy en un minuto.\n\n${elegidas.map((n, i) => `${i + 1}. ${n.titulo}${n.resumen ? `\n${n.resumen}` : ''} (${n.medio})`).join('\n\n')}\n\n¿Cuál te sorprendió más?\n\n${tags('noticias', 'ultimahora', ...new Set(elegidas.map((n) => n.cat).filter((c) => c !== 'general')))}`;
   return { formato: 'noticias', titulo: 'Noticias de hoy', escenas, texto, noticias: elegidas.map((n) => n.link) };
 }
 

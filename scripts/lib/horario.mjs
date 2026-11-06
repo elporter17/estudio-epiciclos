@@ -48,11 +48,16 @@ function juntarPlanes() {
   for (const [red, plan] of Object.entries(PLAN)) for (const [hora, pieza] of Object.entries(plan)) {
     const k = `${hora}|${pieza}`; if (!slots.has(k)) slots.set(k, { hora, pieza, redes: [] }); slots.get(k).redes.push(red);
   }
-  return [...slots.values()].map(({ hora, pieza, redes }) => {
-    const p = PIEZAS[pieza], orden = ['fb', 'ig', 'tt', 'yt'].filter((r) => redes.includes(r));
-    const inputs = SOLO_TT.has(pieza) ? p.inputs :{ ...(p.inputs || {}), redes: orden.join(',') };
-    return { hora, workflow: p.workflow, que: `${p.que} → ${orden.map((r) => ({ fb: 'FB', ig: 'IG', tt: 'TikTok', yt: 'YouTube' })[r]).join(', ')}`, ...(inputs ? { inputs } : {}) };
-  });
+  return [...slots.values()].map(({ hora, pieza, redes }) => armarSlot(pieza, hora, redes));
+}
+const RED_NOMBRE = { fb: 'FB', ig: 'IG', tt: 'TikTok', yt: 'YouTube' };
+// Redes de siempre de una pieza: donde la pone el plan (o solo TikTok / solo Facebook)
+export const redesDePieza = (pieza) => SOLO_TT.has(pieza) ? ['tt'] : (() => { const r = Object.keys(PLAN).filter((red) => Object.values(PLAN[red]).includes(pieza)); return r.length ? r : ['fb']; })();
+// Una corrida de una pieza a una hora, para esas redes
+export function armarSlot(pieza, hora, redes = redesDePieza(pieza)) {
+  const p = PIEZAS[pieza], orden = SOLO_TT.has(pieza) ? ['tt'] : ['fb', 'ig', 'tt', 'yt'].filter((r) => redes.includes(r));
+  const inputs = SOLO_TT.has(pieza) ? p.inputs : { ...(p.inputs || {}), redes: orden.join(',') };
+  return { hora, pieza, workflow: p.workflow, que: `${p.que} → ${orden.map((r) => RED_NOMBRE[r]).join(', ')}`, ...(inputs ? { inputs } : {}) };
 }
 
 export const HORARIO = [
@@ -62,12 +67,12 @@ export const HORARIO = [
   { hora: '06:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
   ...juntarPlanes(),
   // Lanzamiento de GTA VI: un Reel especial a media mañana (el especial 3D sale a las 18:30)
-  { hora: '11:15', workflow: 'gta6.yml', que: 'Especial de lanzamiento de GTA VI → FB, IG, TikTok', inputs: { lanzamiento: 'true', redes: 'fb,ig,tt' }, fecha: '2026-11-19' },
+  { hora: '11:15', pieza: 'gta', workflow: 'gta6.yml', que: 'Especial de lanzamiento de GTA VI → FB, IG, TikTok', inputs: { lanzamiento: 'true', redes: 'fb,ig,tt' }, fecha: '2026-11-19' },
   // Video largo horizontal para YouTube (8 a 10 min; tarda unos 15 min en hacerse): martes, jueves y sábado
-  { hora: '14:07', workflow: 'youtube-largo.yml', que: 'Video largo de YouTube: cómo se hacen 6 cosas', dias: [2, 4, 6] }
+  { hora: '14:07', pieza: 'largo', workflow: 'youtube-largo.yml', que: 'Video largo de YouTube: cómo se hacen 6 cosas', dias: [2, 4, 6] }
 ];
 // Metas semanales de Facebook (fotos e historias que pide el panel): lejos de las estrellas (scripts/metas.mjs)
-for (const hora of ['07:15', '16:15', '22:45']) HORARIO.push({ hora, workflow: 'metas.yml', que: 'Metas semanales: fotos e historias que falten → FB' });
+for (const hora of ['07:15', '16:15', '22:45']) HORARIO.push({ hora, pieza: 'metas', workflow: 'metas.yml', que: 'Metas semanales: fotos e historias que falten → FB' });
 // Respuestas a comentarios: cada hora de 7:47 a 23:47 (cuanto antes se contesta, más conversación)
 for (let h = 7; h <= 23; h++) HORARIO.push({ hora: `${String(h).padStart(2, '0')}:47`, workflow: 'comentarios.yml', que: 'Responder comentarios' });
 HORARIO.sort((a, b) => a.hora.localeCompare(b.hora));
@@ -88,7 +93,7 @@ const REDES_WF = {
 };
 // Con «redes» (el plan de cada red) manda eso; si no, lo de siempre del workflow
 export const redesDe = (workflow, inputs = {}) => inputs.modo === 'render' ? [] : inputs.redes ? inputs.redes.split(',').filter(Boolean) : [...(REDES_WF[workflow] || []), ...(inputs.tiktok === 'si' ? ['tt'] : [])];
-export { PLAN };
+export { PLAN, PIEZAS };
 
 export const OFFSET_HN = -6;
 // Fecha y minuto del día en Honduras
@@ -99,5 +104,59 @@ export function ahoraHN(d = new Date()) {
 export const minutos = (hora) => { const [h, m] = hora.split(':').map(Number); return h * 60 + m; };
 // Instante UTC de una hora de Honduras en una fecha
 export const instante = (fecha, hora) => new Date(Date.parse(`${fecha}T${hora}:00Z`) - OFFSET_HN * 3600e3);
-// Lo programado para una fecha (sin lo que tiene otra fecha o ya terminó)
-export const delDia = (fecha) => HORARIO.filter((s) => (!s.fecha || s.fecha === fecha) && (!s.dias || s.dias.includes(new Date(`${fecha}T12:00:00Z`).getUTCDay())) && !(HASTA[s.workflow] && fecha > HASTA[s.workflow]));
+// Lo programado para una fecha (sin lo que tiene otra fecha o ya terminó), con los cambios que mandaste por Telegram
+// (scripts/lib/control.mjs: ops ya resueltas)
+export const delDia = (fecha, ops = []) => aplicarCambios(HORARIO.filter((s) => (!s.fecha || s.fecha === fecha) && (!s.dias || s.dias.includes(new Date(`${fecha}T12:00:00Z`).getUTCDay())) && !(HASTA[s.workflow] && fecha > HASTA[s.workflow])), ops);
+
+// ---------- cambios por Telegram ----------
+// Lo que no se toca con «quitar/mover»: las respuestas a comentarios (cada hora) y lo que no publica nada
+const FIJO = new Set(['comentarios.yml', 'noticias.yml', 'estadisticas.yml']);
+export const editable = (s) => !FIJO.has(s.workflow) && s.inputs?.modo !== 'render';
+// Las corridas de una hora (o de la pieza) que se pueden cambiar
+export const slotsEn = (slots, hora) => slots.filter((s) => s.hora === hora && editable(s));
+export function aplicarCambios(base, ops = []) {
+  let slots = base.map((s) => ({ ...s }));
+  for (const op of ops) {
+    if (op.t === 'quitar') slots = slots.filter((s) => !(s.hora === op.hora && editable(s) && (!op.pieza || s.pieza === op.pieza)));
+    else if (op.t === 'mover') slots = slots.map((s) => s.hora === op.hora && editable(s) && (!op.pieza || s.pieza === op.pieza) ? { ...s, hora: op.a, cambio: `movido de las ${op.hora}` } : s);
+    else if (op.t === 'cambiar') slots = slots.map((s) => {
+      if (s.hora !== op.hora || !editable(s) || !PIEZAS[op.pieza]) return s;
+      const redes = op.redes || (s.inputs?.redes ? s.inputs.redes.split(',') : redesDePieza(op.pieza));
+      return { ...armarSlot(op.pieza, s.hora, redes), cambio: `antes: ${s.pieza || s.workflow}` };
+    });
+    else if (op.t === 'agregar' && PIEZAS[op.pieza]) slots.push({ ...armarSlot(op.pieza, op.hora, op.redes || redesDePieza(op.pieza)), cambio: 'agregado' });
+    else if (op.t === 'pausa') slots = slots.filter((s) => !editable(s) || s.workflow === 'video3d.yml' && s.inputs?.modo === 'render');
+  }
+  return slots.sort((a, b) => a.hora.localeCompare(b.hora));
+}
+
+// Nombres con que puedes llamar a cada pieza por Telegram (sin tildes, en minúsculas). Los más largos primero.
+export const ALIAS = Object.entries({
+  comosehace: ['como se hace', 'como se hacen', 'comosehace', 'fabrica', 'fabricas'],
+  banderas: ['banderas', 'bandera'],
+  retos: ['retos visuales', 'retos', 'reto'],
+  estrella: ['estrella'],
+  prefieres: ['que prefieres', 'prefieres'],
+  emojis: ['emojis', 'emoji'],
+  quiz: ['quiz', 'top 10', 'top10', 'trivia'],
+  noticias: ['reel de noticias', 'noticias de hoy', 'noticiero'],
+  video3d1: ['3d de mediodia', '3d del mediodia', 'video 3d de mediodia', '3d 1'],
+  video3d2: ['3d de la tarde', 'video 3d de la tarde', '3d 2'],
+  imagen: ['imagen', 'foto', 'curiosidad'],
+  gta: ['gta 6', 'gta vi', 'gta'],
+  nombres: ['nombres', 'nombre', 'parejas', 'pareja'],
+  famosos: ['futbolistas', 'futbolista', 'jugadores', 'jugador', 'famosos', 'futbol'],
+  largo: ['video largo', 'largo de youtube']
+}).flatMap(([p, xs]) => xs.map((x) => [x, p])).sort((a, b) => b[0].length - a[0].length);
+export const NOMBRE_PIEZA = { comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Banderas/Retos', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB' };
+export const nombreSlot = (s) => NOMBRE_PIEZA[s.pieza] || (s.workflow === 'metas.yml' ? 'Metas FB' : NOMBRES[s.workflow] || s.workflow);
+
+// Tabla para Telegram (va dentro de <pre>): hora, pieza y redes; con estado si viene de diaConEstado
+const ICONO_ESTADO = { hecho: '✅', 'en-curso': '⏳', pendiente: '⏰', perdido: '❌', proximo: '·' };
+export function tablaPlan(slots, { estado = false } = {}) {
+  const filas = slots.filter((s) => editable(s) && s.workflow !== 'metas.yml').map((s) => {
+    const redes = redesDe(s.workflow, s.inputs).map((r) => RED_NOMBRE[r] === 'TikTok' ? 'TT' : RED_NOMBRE[r] === 'YouTube' ? 'YT' : RED_NOMBRE[r]).join(' ');
+    return `${estado ? `${ICONO_ESTADO[s.estado] || '·'} ` : ''}${s.hora} ${nombreSlot(s).slice(0, 16).padEnd(16)} ${redes}${s.cambio ? ' *' : ''}`;
+  });
+  return filas.join('\n');
+}
