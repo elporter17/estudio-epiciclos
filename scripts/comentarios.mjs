@@ -164,5 +164,5 @@ if (!o['dry-run']) {
   fs.writeFileSync(USADAS, JSON.stringify(recientes.slice(-400)) + '\n');
   fs.writeFileSync(AVISADOS, JSON.stringify([...avisados].slice(-3000)) + '\n');
 }
-console.log(`Comentarios nuevos revisados: ${revisados} · respuestas: ${hechas}`);
+console.log(`Comentarios nuevos revisados: ${revisados} · respuestas: ${hechas} · avisos por Telegram (para ti): ${avisosHoy}`);
 for (const [k, e] of errores) console.log(`Aviso (${k}): ${e}`);
