@@ -1,0 +1,74 @@
+{
+  "id": "monedas",
+  "titulo": "Así nació el dinero",
+  "categoria": "historia",
+  "destacar": [
+    "dinero"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Antes del dinero, la gente cambiaba cosas: una gallina por un saco de maíz.",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Las primeras monedas se hicieron en Lidia, en la actual Turquía, hace unos 2.600 años.",
+      "hitos": [
+        {
+          "anio": -600,
+          "etiqueta_anio": "600 a. C.",
+          "texto": "Primeras monedas",
+          "objeto": "moneda"
+        },
+        {
+          "anio": 1000,
+          "etiqueta_anio": "Año 1000",
+          "texto": "Billetes en China"
+        },
+        {
+          "anio": 1950,
+          "texto": "Tarjeta de crédito"
+        },
+        {
+          "anio": 2026,
+          "texto": "Pagos con el celular"
+        }
+      ]
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Eran de electro, una mezcla natural de oro y plata.",
+      "objeto": "moneda",
+      "cantidad": 150
+    },
+    {
+      "tipo": "foco",
+      "texto": "Los primeros billetes aparecieron en China hace más de mil años, porque las monedas pesaban demasiado.",
+      "objeto": "libro",
+      "cantidad": 2
+    },
+    {
+      "tipo": "pila",
+      "texto": "Hoy, la mayor parte del dinero del mundo ni siquiera existe en papel: son números en una computadora.",
+      "objeto": "moneda",
+      "cantidad": 320
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Y cada vez más gente paga solo con su tarjeta o con el celular.",
+      "objeto": "celular",
+      "lado": 20
+    },
+    {
+      "tipo": "gente",
+      "texto": "¿Tú todavía usas efectivo o ya pagas todo con el teléfono?",
+      "cantidad": 20
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ]
+}

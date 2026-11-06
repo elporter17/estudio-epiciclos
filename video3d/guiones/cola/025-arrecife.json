@@ -1,0 +1,71 @@
+{
+  "id": "arrecife",
+  "titulo": "Honduras tiene un tesoro bajo el mar",
+  "categoria": "datos",
+  "destacar": [
+    "Honduras",
+    "tesoro"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Honduras comparte uno de los arrecifes de coral más grandes del planeta.",
+      "objeto": "comida/fish"
+    },
+    {
+      "tipo": "globo",
+      "texto": "El Sistema Arrecifal Mesoamericano recorre unos 1.000 kilómetros por México, Belice, Guatemala y Honduras.",
+      "modo": "luces",
+      "contador": {
+        "desde": 0,
+        "hasta": 1000,
+        "unidad": "km"
+      }
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Es el segundo arrecife más grande del mundo, después de la Gran Barrera de Coral de Australia.",
+      "barras": [
+        {
+          "etiqueta": "Gran Barrera",
+          "valor": 2300,
+          "texto": "≈ 2.300 km"
+        },
+        {
+          "etiqueta": "Mesoamericano",
+          "valor": 1000,
+          "texto": "≈ 1.000 km",
+          "objeto": "comida/fish"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "En las Islas de la Bahía, como Roatán y Utila, se puede bucear entre corales y peces de colores.",
+      "objeto": "comida/fish",
+      "cantidad": 3
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Los arrecifes ocupan menos del uno por ciento del océano, pero albergan cerca de una cuarta parte de toda la vida marina.",
+      "objeto": "comida/fish",
+      "cantidad": 150
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y Utila es famosa porque ahí se puede ver al tiburón ballena, el pez más grande del mundo.",
+      "cantidad": 16
+    },
+    {
+      "tipo": "piscinas",
+      "texto": "Cuidarlo es tarea de todos: el calor del agua y la contaminación lo ponen en peligro.",
+      "objeto": "piscina",
+      "lado": 18
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Ya conoces Roatán o Utila? Cuéntanos y síguenos para más datos.",
+      "objeto": "comida/fish"
+    }
+  ]
+}

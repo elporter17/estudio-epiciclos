@@ -1,0 +1,72 @@
+{
+  "id": "luna",
+  "titulo": "La Luna se está alejando",
+  "categoria": "ciencia",
+  "destacar": [
+    "Luna"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La Luna se aleja de nosotros un poquito cada año.",
+      "objeto": "naturaleza/rock_largeA"
+    },
+    {
+      "tipo": "globo",
+      "texto": "Se separa de la Tierra unos 3,8 centímetros por año, más o menos lo que crecen tus uñas.",
+      "modo": "luna",
+      "contador": {
+        "desde": 0,
+        "hasta": 3.8,
+        "unidad": "cm"
+      }
+    },
+    {
+      "tipo": "globo",
+      "texto": "Está a unos 384.000 kilómetros de distancia, y entre las dos cabrían todos los planetas del sistema solar.",
+      "modo": "luna",
+      "contador": {
+        "desde": 0,
+        "hasta": 384000,
+        "unidad": "km"
+      }
+    },
+    {
+      "tipo": "calendario",
+      "texto": "Hace millones de años estaba más cerca y los días en la Tierra eran más cortos."
+    },
+    {
+      "tipo": "gente",
+      "texto": "Solo 12 personas han caminado sobre la Luna, todas entre 1969 y 1972.",
+      "cantidad": 12
+    },
+    {
+      "tipo": "linea",
+      "texto": "La última vez que alguien pisó la Luna fue en 1972, hace más de 50 años.",
+      "hitos": [
+        {
+          "anio": 1969,
+          "texto": "Primeros pasos"
+        },
+        {
+          "anio": 1972,
+          "texto": "Última visita"
+        },
+        {
+          "anio": 2026,
+          "texto": "Hoy"
+        }
+      ]
+    },
+    {
+      "tipo": "globo",
+      "texto": "Y como siempre nos muestra la misma cara, nunca vemos su lado oculto desde la Tierra.",
+      "modo": "luna"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "naturaleza/rock_largeA"
+    }
+  ]
+}

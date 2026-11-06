@@ -1,0 +1,71 @@
+{
+  "id": "huevos",
+  "titulo": "Hay más gallinas que personas",
+  "categoria": "datos",
+  "destacar": [
+    "gallinas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En la Tierra hay más gallinas que personas: muchas más.",
+      "objeto": "comida/egg"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Somos unos 8.000 millones de personas, pero hay más de 25.000 millones de gallinas.",
+      "barras": [
+        {
+          "etiqueta": "Personas",
+          "valor": 8,
+          "texto": "8.000 M"
+        },
+        {
+          "etiqueta": "Gallinas",
+          "valor": 25,
+          "texto": "25.000 M",
+          "objeto": "comida/egg"
+        }
+      ]
+    },
+    {
+      "tipo": "pila",
+      "texto": "Una gallina ponedora puede poner unos 300 huevos al año.",
+      "objeto": "comida/egg",
+      "cantidad": 300,
+      "contador": {
+        "desde": 0,
+        "hasta": 300,
+        "unidad": "huevos"
+      }
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "En total, el mundo produce más de un billón de huevos cada año.",
+      "objeto": "comida/egg",
+      "lado": 22
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Eso son miles de huevos por segundo, en todos los países del planeta.",
+      "objeto": "comida/egg",
+      "cantidad": 160
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y el color de la cáscara no cambia su sabor: depende de la raza de la gallina.",
+      "objeto": "comida/egg",
+      "cantidad": 2
+    },
+    {
+      "tipo": "gente",
+      "texto": "¿Y tú cuántos huevos comes a la semana?",
+      "cantidad": 20
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "comida/egg"
+    }
+  ]
+}

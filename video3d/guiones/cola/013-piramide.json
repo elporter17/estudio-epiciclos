@@ -1,0 +1,90 @@
+{
+  "id": "piramide",
+  "titulo": "3.800 años como la más alta",
+  "categoria": "historia",
+  "destacar": [
+    "3.800"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La Gran Pirámide de Guiza fue la construcción más alta del mundo durante unos 3.800 años.",
+      "objeto": "ladrillo"
+    },
+    {
+      "tipo": "torre",
+      "texto": "Cuando se terminó, hace unos 4.500 años, medía 146 metros de altura.",
+      "objeto": "ladrillo",
+      "cantidad": 60,
+      "referencia": "piramide",
+      "proporcion": 1.02,
+      "contador": {
+        "desde": 0,
+        "hasta": 146,
+        "unidad": "metros"
+      }
+    },
+    {
+      "tipo": "pila",
+      "texto": "Se construyó con unos 2,3 millones de bloques de piedra.",
+      "objeto": "ladrillo",
+      "cantidad": 320,
+      "contador": {
+        "desde": 0,
+        "hasta": 2300000,
+        "unidad": "bloques"
+      }
+    },
+    {
+      "tipo": "linea",
+      "texto": "Ninguna construcción la superó hasta la catedral de Lincoln, en Inglaterra, en el año 1311.",
+      "hitos": [
+        {
+          "anio": -2560,
+          "etiqueta_anio": "2560 a. C.",
+          "texto": "Gran Pirámide"
+        },
+        {
+          "anio": 1311,
+          "texto": "Catedral de Lincoln"
+        },
+        {
+          "anio": 2026,
+          "texto": "Hoy"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y no la construyeron esclavos, como se creía: la levantaron trabajadores pagados y organizados.",
+      "cantidad": 30
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es la única de las siete maravillas del mundo antiguo que todavía sigue en pie.",
+      "objeto": "naturaleza/statue_obelisk",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Hoy el edificio más alto, el Burj Khalifa, mide 828 metros: casi seis pirámides una sobre otra.",
+      "barras": [
+        {
+          "etiqueta": "Pirámide",
+          "valor": 146,
+          "texto": "146 m"
+        },
+        {
+          "etiqueta": "Burj Khalifa",
+          "valor": 828,
+          "texto": "828 m"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "ladrillo"
+    }
+  ]
+}

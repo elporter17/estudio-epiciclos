@@ -1,0 +1,63 @@
+{
+  "id": "sol",
+  "titulo": "La luz del Sol viene del pasado",
+  "categoria": "ciencia",
+  "destacar": [
+    "Sol",
+    "pasado"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La luz del Sol que ves ahora salió de él hace más de ocho minutos.",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "globo",
+      "texto": "Viaja a unos 300.000 kilómetros por segundo y aun así tarda 8 minutos y 20 segundos en llegar.",
+      "modo": "orbita"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Si el Sol se apagara de repente, no te darías cuenta hasta ocho minutos después.",
+      "objeto": "moneda",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "El Sol es tan grande que dentro de él cabrían más de un millón de Tierras.",
+      "objeto": "balon",
+      "lado": 20
+    },
+    {
+      "tipo": "globo",
+      "texto": "Mientras tanto, la Tierra viaja a su alrededor a unos 107.000 kilómetros por hora.",
+      "modo": "orbita",
+      "contador": {
+        "desde": 0,
+        "hasta": 107000,
+        "unidad": "km/h"
+      }
+    },
+    {
+      "tipo": "calle",
+      "texto": "Eso es más de mil veces más rápido que un auto en la carretera.",
+      "objeto": "autos/sedan-sports",
+      "cantidad": 8
+    },
+    {
+      "tipo": "calendario",
+      "texto": "Y le toma un año entero, 365 días, completar una vuelta.",
+      "contador": {
+        "desde": 1,
+        "hasta": 365,
+        "unidad": "días"
+      }
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ]
+}

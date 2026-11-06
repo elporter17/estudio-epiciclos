@@ -1,0 +1,74 @@
+{
+  "id": "dormir",
+  "titulo": "25 años durmiendo",
+  "categoria": "ciencia",
+  "destacar": [
+    "25",
+    "durmiendo"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Vas a pasar unos 25 años de tu vida durmiendo.",
+      "objeto": "naturaleza/bed"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Dormimos cerca de un tercio de nuestra vida, y no es tiempo perdido.",
+      "objeto": "naturaleza/bed",
+      "cantidad": 1
+    },
+    {
+      "tipo": "calendario",
+      "texto": "Si vives 75 años, unos 25 los pasarás con los ojos cerrados.",
+      "contador": {
+        "desde": 0,
+        "hasta": 25,
+        "unidad": "años"
+      }
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Mientras duermes, tu cerebro ordena lo que aprendiste durante el día.",
+      "objeto": "libro",
+      "lado": 18
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Los adultos necesitan entre siete y nueve horas, pero un koala puede dormir hasta 20 horas al día.",
+      "barras": [
+        {
+          "etiqueta": "Adulto",
+          "valor": 8,
+          "texto": "7-9 h"
+        },
+        {
+          "etiqueta": "Bebé",
+          "valor": 15,
+          "texto": "14-17 h"
+        },
+        {
+          "etiqueta": "Koala",
+          "valor": 20,
+          "texto": "20 h"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y los bebés recién nacidos pueden dormir hasta 17 horas al día.",
+      "cantidad": 16
+    },
+    {
+      "tipo": "pila",
+      "texto": "Así que la próxima vez que te digan que duermes mucho, ya sabes qué responder.",
+      "objeto": "naturaleza/bed",
+      "cantidad": 60
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Cuántas horas duermes tú? Cuéntanos en los comentarios y síguenos para más.",
+      "objeto": "naturaleza/bed"
+    }
+  ]
+}

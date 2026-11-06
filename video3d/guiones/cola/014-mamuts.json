@@ -1,0 +1,67 @@
+{
+  "id": "mamuts",
+  "titulo": "Mamuts y pirámides a la vez",
+  "categoria": "historia",
+  "destacar": [
+    "Mamuts",
+    "pirámides"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Cuando se construían las pirámides de Egipto, todavía existían mamuts.",
+      "objeto": "naturaleza/rock_largeA"
+    },
+    {
+      "tipo": "linea",
+      "texto": "La Gran Pirámide se terminó hacia el año 2560 antes de Cristo.",
+      "hitos": [
+        {
+          "anio": -2560,
+          "etiqueta_anio": "2560 a. C.",
+          "texto": "Gran Pirámide"
+        },
+        {
+          "anio": -2000,
+          "etiqueta_anio": "2000 a. C.",
+          "texto": "Últimos mamuts"
+        },
+        {
+          "anio": 2026,
+          "texto": "Hoy"
+        }
+      ]
+    },
+    {
+      "tipo": "globo",
+      "texto": "Y los últimos mamuts vivieron en la isla de Wrangel, en el Ártico, hasta hace unos 4.000 años.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Eran parientes de los elefantes y estaban cubiertos de pelo para resistir el frío.",
+      "objeto": "naturaleza/rock_largeB",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Durante la última era de hielo, millones de mamuts recorrían Europa, Asia y América del Norte.",
+      "objeto": "naturaleza/rock_largeC",
+      "lado": 16
+    },
+    {
+      "tipo": "calendario",
+      "texto": "La historia de la humanidad es mucho más corta de lo que parece."
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y cuando pensamos en el pasado, a veces mezclamos épocas que en realidad se cruzaron.",
+      "cantidad": 18
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "naturaleza/rock_largeA"
+    }
+  ]
+}

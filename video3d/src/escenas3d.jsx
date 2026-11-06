@@ -23,7 +23,7 @@ export function azar(semilla) { let s = semilla; return () => ((s = (s * 16807) 
 // ---------- cámara ----------
 // Se aplica durante el render (no en un efecto): así el cuadro que se dibuja ya tiene la cámara en su lugar
 // Además pone el posprocesado enfocado en el punto que mira (desenfoque 0 lo apaga)
-export function Camara({ pos, mira, fov = 48, desenfoque = 1, brillo }) {
+export function Camara({ pos, mira, fov = 48, desenfoque = 0.6, brillo }) {
   const camera = useThree((s) => s.camera), size = useThree((s) => s.size);
   camera.position.set(...pos); camera.fov = fov; camera.near = 0.1; camera.far = 2000;
   camera.aspect = size.width / size.height; camera.updateProjectionMatrix(); camera.lookAt(...mira); camera.updateMatrixWorld();
@@ -183,7 +183,7 @@ function EscenaPiscina({ t, dur, m }) {
   const nivel = ease(t / (dur * 0.8)), L = 4, A = 8, P = 1.5, h = 0.02 + nivel * (P - 0.15);
   const azulejo = '#d8eef9', borde = '#f4f1ea';
   return (<>
-    <Camara pos={lerp3([0.5, 11, 10], [0, 8, 8.5], easeInOut(t / dur))} mira={[0, -0.8, -0.3]} />
+    <Camara pos={lerp3([0.5, 11, 10], [0, 8, 8.5], easeInOut(t / dur))} mira={[0, -0.8, -0.3]} desenfoque={0} />
     <Luces sol={[6, 12, 4]} niebla={[30, 90]} />
     {/* Terraza alrededor (cuatro losas para dejar el hueco de la piscina) */}
     {[[0, A / 2 + 1.5, L + 6, 3], [0, -A / 2 - 1.5, L + 6, 3], [L / 2 + 1.5, 0, 3, A], [-L / 2 - 1.5, 0, 3, A]].map(([x, z, w, d], i) => (

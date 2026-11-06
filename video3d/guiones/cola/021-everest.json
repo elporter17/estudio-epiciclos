@@ -1,0 +1,71 @@
+{
+  "id": "everest",
+  "titulo": "El Everest no es el más alto",
+  "categoria": "ciencia",
+  "destacar": [
+    "Everest"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El Everest es la montaña más alta… pero no en todos los sentidos.",
+      "objeto": "naturaleza/rock_largeA"
+    },
+    {
+      "tipo": "torre",
+      "texto": "Su cima está a 8.849 metros sobre el nivel del mar: la más alta del planeta.",
+      "objeto": "ladrillo",
+      "cantidad": 50,
+      "referencia": "everest",
+      "proporcion": 1,
+      "contador": {
+        "desde": 0,
+        "hasta": 8849,
+        "unidad": "metros"
+      }
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Pero el Mauna Kea, en Hawái, mide más de 10.000 metros si lo cuentas desde su base en el fondo del mar.",
+      "barras": [
+        {
+          "etiqueta": "Everest",
+          "valor": 8849,
+          "texto": "8.849 m"
+        },
+        {
+          "etiqueta": "Mauna Kea",
+          "valor": 10200,
+          "texto": "≈ 10.200 m"
+        }
+      ]
+    },
+    {
+      "tipo": "globo",
+      "texto": "Y como la Tierra es más ancha en el ecuador, la cumbre más lejana del centro del planeta es el Chimborazo, en Ecuador.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "gente",
+      "texto": "Desde 1953 más de 6.000 personas han llegado a la cima del Everest.",
+      "cantidad": 26
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y la montaña sigue cambiando: el choque de placas que la levantó todavía no se detiene.",
+      "objeto": "naturaleza/rock_largeB",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Entre el Himalaya y el Karakórum están las 14 montañas del mundo que superan los 8.000 metros.",
+      "objeto": "naturaleza/rock_largeC",
+      "lado": 16
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "naturaleza/rock_largeA"
+    }
+  ]
+}

@@ -1,75 +1,30 @@
-# Videos de datos en 3D (video3d/, Remotion + Three.js, sin IA). Por ahora solo genera el video y lo deja en los
-# artefactos de la corrida para revisarlo; publicarlo en las redes es el paso siguiente.
-# En GitHub no hay tarjeta gráfica: Chrome dibuja el 3D con la CPU (--gl=swangle), más lento que en una PC.
+# Videos de datos en 3D (video3d/, Remotion + Three.js, sin IA), uno por día desde la cola de guiones
+# (video3d/guiones/cola). El relojero (scripts/lib/horario.mjs) lanza «render» de madrugada (~40-55 min en GitHub,
+# sin tarjeta gráfica) y «publicar» al mediodía: Reel en Facebook e Instagram, borrador en TikTok y Short privado en
+# YouTube. «prueba» solo renderiza y deja el MP4 en los artefactos de la corrida. Reutiliza daily.yml (estado cifrado,
+# voz del narrador y avisos de Telegram: fallos, cortes por tiempo, borradores y cola casi vacía).
 name: Video 3D
 
 on:
   workflow_dispatch:
     inputs:
-      guion:
-        description: Guion (video3d/guiones/*.json)
-        type: string
-        default: video3d/guiones/agua.json
-      calidad:
-        description: «rapida» renderiza a 810×1440 (≈ 40 % menos de tiempo) y la escala a 1080×1920
+      modo:
+        description: render (madrugada) · publicar (mediodía) · prueba (solo renderizar)
         type: choice
-        options: ['completa', 'rapida']
-        default: 'completa'
+        options: ['render', 'publicar', 'prueba']
+        default: 'prueba'
 
 permissions:
   contents: read
+  issues: write
 
 jobs:
-  render:
-    runs-on: ubuntu-latest
-    timeout-minutes: 120
-    steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm ci
-        working-directory: video3d
-      # Voz del narrador (Kokoro, local), igual que en daily.yml
-      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
-        with:
-          python-version: '3.12'
-      - name: Modelo de voz (en caché)
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        with:
-          path: .tools/kokoro
-          key: voz-kokoro-v1.0
-      - name: Instalar la voz
-        run: |
-          python -m venv .tools/voz
-          .tools/voz/bin/python -m pip install -q kokoro-onnx==0.6.1
-          mkdir -p .tools/kokoro
-          for f in kokoro-v1.0.onnx voices-v1.0.bin; do
-            [ -s ".tools/kokoro/$f" ] || curl -fsSL --retry 3 -o ".tools/kokoro/$f" "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/$f"
-          done
-      - name: Narración, música y efectos
-        env:
-          GUION: ${{ inputs.guion }}
-        run: node scripts/video3d-preparar.mjs --guion "$GUION"
-      - name: Render
-        working-directory: video3d
-        env:
-          CALIDAD: ${{ inputs.calidad }}
-        run: |
-          npx remotion browser ensure
-          ESCALA=1; [ "$CALIDAD" = rapida ] && ESCALA=0.75
-          inicio=$(date +%s)
-          npx remotion render src/index.jsx Dato out/video.mp4 --gl=swangle --concurrency=4 --scale=$ESCALA --codec=h264 --crf=20 --log=info
-          echo "Render: $(( $(date +%s) - inicio )) s" | tee -a "$GITHUB_STEP_SUMMARY"
-      - name: Volumen y tamaño final
-        working-directory: video3d
-        run: |
-          FF=$(node -e "console.log(require('ffmpeg-static'))" 2>/dev/null || (cd .. && node -e "console.log(require('ffmpeg-static'))"))
-          "$FF" -hide_banner -loglevel error -y -i out/video.mp4 -vf "scale=1080:1920:flags=lanczos" -c:v libx264 -crf 20 -preset medium -af "loudnorm=I=-14:TP=-1.5:LRA=11" -c:a aac -b:a 160k -ar 48000 -movflags +faststart out/video-final.mp4
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
-        with:
-          name: video3d-${{ github.run_id }}
-          path: video3d/out/video-final.mp4
-          retention-days: 7
+  video3d:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: ${{ inputs.modo == 'publicar' && 'video3d-publicar' || 'video3d-render' }}
+      publish: draft
+      facebook: si
+      aviso: false
+      prueba: ${{ inputs.modo == 'prueba' }}
+    secrets: inherit

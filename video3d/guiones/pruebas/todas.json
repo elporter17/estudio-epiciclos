@@ -1,0 +1,18 @@
+{
+  "id": "prueba", "titulo": "Prueba de todas las escenas", "categoria": "ciencia", "destacar": ["escenas"],
+  "escenas": [
+    { "tipo": "portada", "texto": "Prueba de todas las escenas.", "objeto": "comida/apple" },
+    { "tipo": "pila", "texto": "Una montaña de 300 manzanas.", "objeto": "comida/apple", "cantidad": 300, "contador": { "desde": 0, "hasta": 300, "unidad": "manzanas" } },
+    { "tipo": "lluvia", "texto": "Llueven monedas sobre el pueblo.", "objeto": "moneda", "cantidad": 160 },
+    { "tipo": "torre", "texto": "Una torre de libros más alta que la pirámide.", "objeto": "libro", "cantidad": 60, "referencia": "piramide", "proporcion": 1.1 },
+    { "tipo": "foco", "texto": "Tres corazones bajo el foco.", "objeto": "corazon", "cantidad": 3 },
+    { "tipo": "globo", "texto": "Satélites alrededor de la Tierra.", "modo": "satelites" },
+    { "tipo": "comparacion", "texto": "Comparamos tres cosas.", "barras": [ { "etiqueta": "Café", "valor": 3, "texto": "3 mil" , "objeto": "comida/cup-coffee" }, { "etiqueta": "Té", "valor": 2, "texto": "2 mil" }, { "etiqueta": "Agua", "valor": 5, "texto": "5 mil", "objeto": "botella" } ] },
+    { "tipo": "linea", "texto": "Una línea del tiempo con tres fechas.", "hitos": [ { "anio": -2560, "etiqueta_anio": "2560 a. C.", "texto": "Gran Pirámide" }, { "anio": -30, "etiqueta_anio": "30 a. C.", "texto": "Cleopatra" }, { "anio": 1969, "texto": "Llegada a la Luna" } ] },
+    { "tipo": "calle", "texto": "Pasan autos por la calle.", "objeto": "autos/taxi", "cantidad": 10 },
+    { "tipo": "gente", "texto": "Y llega mucha gente.", "cantidad": 24 },
+    { "tipo": "cuadricula", "texto": "Desde el aire, una cuadrícula.", "objeto": "naturaleza/tree_default", "lado": 18 },
+    { "tipo": "globo", "texto": "La Tierra gira alrededor del Sol.", "modo": "orbita" },
+    { "tipo": "cierre", "texto": "Síguenos para más datos.", "objeto": "comida/apple" }
+  ]
+}

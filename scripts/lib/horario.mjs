@@ -5,6 +5,9 @@
 //   de la semana (0 = domingo … 6 = sábado)
 const R = 'curiosidades-reels.yml';
 export const HORARIO = [
+  // Video 3D del día (video3d.yml): se renderiza de madrugada (~40-55 min en GitHub) y se publica al mediodía
+  { hora: '01:07', workflow: 'video3d.yml', que: 'Video 3D: render de la madrugada (para hoy)', inputs: { modo: 'render' } },
+  { hora: '12:17', workflow: 'video3d.yml', que: 'Video 3D de datos → FB, IG, TikTok y YouTube', inputs: { modo: 'publicar' } },
   { hora: '06:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
   { hora: '07:17', workflow: 'nombres.yml', que: 'Nombre o pareja con círculos → TikTok' },
   { hora: '07:57', workflow: R, que: 'Reel: noticias de hoy', inputs: { formato: 'noticias' } },
@@ -48,12 +51,12 @@ export const HASTA = { 'gta6.yml': '2026-11-19' };
 export const NOMBRES = {
   [R]: 'Reels de quiz y curiosidades', 'curiosidades-facebook.yml': 'Imágenes a Facebook e Instagram', 'curiosidades-tiktok.yml': 'Carruseles a TikTok',
   'nombres.yml': 'Nombres a TikTok', 'famosos.yml': 'Futbolistas a TikTok', 'gta6.yml': 'Especial GTA VI', 'noticias.yml': 'Noticias del día',
-  'comentarios.yml': 'Respuestas a comentarios', 'metas.yml': 'Metas semanales de Facebook', 'como-se-hace.yml': 'Cómo se hace', 'youtube-largo.yml': 'Video largo de YouTube', 'estadisticas.yml': 'Estadísticas'
+  'comentarios.yml': 'Respuestas a comentarios', 'metas.yml': 'Metas semanales de Facebook', 'como-se-hace.yml': 'Cómo se hace', 'youtube-largo.yml': 'Video largo de YouTube', 'video3d.yml': 'Video 3D de datos', 'estadisticas.yml': 'Estadísticas'
 };
 
 // Dónde sale cada cosa (fb = Facebook, ig = Instagram, tt = TikTok). Los Reels con «tiktok: si» también van a TikTok.
 const REDES_WF = {
-  [R]: ['fb', 'ig', 'yt'], 'youtube-largo.yml': ['yt'], 'curiosidades-facebook.yml': ['fb', 'ig'], 'curiosidades-tiktok.yml': ['tt'], 'nombres.yml': ['tt'], 'famosos.yml': ['tt'],
+  [R]: ['fb', 'ig', 'yt'], 'youtube-largo.yml': ['yt'], 'video3d.yml': ['fb', 'ig', 'tt', 'yt'], 'curiosidades-facebook.yml': ['fb', 'ig'], 'curiosidades-tiktok.yml': ['tt'], 'nombres.yml': ['tt'], 'famosos.yml': ['tt'],
   'gta6.yml': ['fb', 'ig', 'tt'], 'comentarios.yml': ['fb', 'ig'], 'metas.yml': ['fb'], 'como-se-hace.yml': ['fb', 'ig', 'yt'], 'noticias.yml': [], 'estadisticas.yml': []
 };
 export const redesDe = (workflow, inputs = {}) => [...(REDES_WF[workflow] || []), ...(inputs.tiktok === 'si' ? ['tt'] : [])];

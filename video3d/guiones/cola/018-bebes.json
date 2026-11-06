@@ -1,0 +1,98 @@
+{
+  "id": "bebes",
+  "titulo": "4 bebés por segundo",
+  "categoria": "datos",
+  "destacar": [
+    "4",
+    "bebés"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mientras ves esto, en el mundo nacen unos 4 bebés cada segundo.",
+      "objeto": "corazon"
+    },
+    {
+      "tipo": "gente",
+      "texto": "Eso son unos 250 nacimientos por minuto.",
+      "cantidad": 30,
+      "contador": {
+        "desde": 0,
+        "hasta": 250,
+        "unidad": "bebés"
+      }
+    },
+    {
+      "tipo": "calendario",
+      "texto": "Y más de 360.000 cada día, en todos los países del planeta.",
+      "contador": {
+        "desde": 0,
+        "hasta": 360000,
+        "unidad": "bebés"
+      }
+    },
+    {
+      "tipo": "globo",
+      "texto": "En total, somos más de 8.000 millones de personas en la Tierra.",
+      "modo": "luces",
+      "contador": {
+        "desde": 0,
+        "hasta": 8000,
+        "unidad": "millones"
+      }
+    },
+    {
+      "tipo": "linea",
+      "texto": "En 1800 éramos unos mil millones; llegar a ocho mil millones nos tomó poco más de dos siglos.",
+      "hitos": [
+        {
+          "anio": 1800,
+          "texto": "1.000 millones"
+        },
+        {
+          "anio": 1927,
+          "texto": "2.000 millones"
+        },
+        {
+          "anio": 1974,
+          "texto": "4.000 millones"
+        },
+        {
+          "anio": 2022,
+          "texto": "8.000 millones"
+        }
+      ]
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Asia es el continente con más habitantes: más de la mitad de la humanidad vive allí.",
+      "barras": [
+        {
+          "etiqueta": "Asia",
+          "valor": 59,
+          "texto": "≈ 59 %"
+        },
+        {
+          "etiqueta": "África",
+          "valor": 18,
+          "texto": "≈ 18 %"
+        },
+        {
+          "etiqueta": "América",
+          "valor": 13,
+          "texto": "≈ 13 %"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y cada uno de esos bebés llega a un mundo lleno de historias por descubrir.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "corazon"
+    }
+  ]
+}

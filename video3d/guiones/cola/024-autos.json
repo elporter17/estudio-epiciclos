@@ -1,0 +1,77 @@
+{
+  "id": "autos",
+  "titulo": "1.500 millones de autos",
+  "categoria": "datos",
+  "destacar": [
+    "1.500",
+    "autos"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En el mundo circulan unos 1.500 millones de autos.",
+      "objeto": "autos/sedan"
+    },
+    {
+      "tipo": "calle",
+      "texto": "Y cada año se fabrican y se venden unos 80 millones de autos nuevos.",
+      "objeto": "autos/sedan",
+      "cantidad": 14,
+      "contador": {
+        "desde": 0,
+        "hasta": 80,
+        "unidad": "millones"
+      }
+    },
+    {
+      "tipo": "linea",
+      "texto": "El primer automóvil con motor de gasolina lo patentó Karl Benz en 1886.",
+      "hitos": [
+        {
+          "anio": 1886,
+          "texto": "Primer automóvil"
+        },
+        {
+          "anio": 1908,
+          "texto": "Ford Modelo T"
+        },
+        {
+          "anio": 1997,
+          "texto": "Primer híbrido masivo"
+        },
+        {
+          "anio": 2026,
+          "texto": "Hoy"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y el Ford Modelo T hizo que los autos fueran para todos: se vendieron más de 15 millones.",
+      "objeto": "autos/sedan",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Si estacionaras todos los autos del mundo, ocuparían una superficie enorme.",
+      "objeto": "autos/sedan",
+      "lado": 18
+    },
+    {
+      "tipo": "calle",
+      "texto": "Un auto pasa en promedio más del 90 por ciento de su vida estacionado.",
+      "objeto": "autos/taxi",
+      "cantidad": 6
+    },
+    {
+      "tipo": "gente",
+      "texto": "¿Y tú, prefieres auto, moto o caminar?",
+      "cantidad": 20
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "autos/taxi"
+    }
+  ]
+}

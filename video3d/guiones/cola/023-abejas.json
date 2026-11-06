@@ -1,0 +1,61 @@
+{
+  "id": "abejas",
+  "titulo": "2 millones de flores por medio kilo de miel",
+  "categoria": "curiosidad",
+  "destacar": [
+    "2",
+    "millones",
+    "miel"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Para hacer medio kilo de miel, las abejas visitan unos dos millones de flores.",
+      "objeto": "comida/honey"
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Una a una, flor por flor, recogen el néctar que luego transforman en miel.",
+      "objeto": "naturaleza/flower_yellowA",
+      "lado": 24,
+      "contador": {
+        "desde": 0,
+        "hasta": 2000000,
+        "unidad": "flores"
+      }
+    },
+    {
+      "tipo": "globo",
+      "texto": "Para lograrlo, una colmena vuela en total unos 88.000 kilómetros: más de dos vueltas al mundo.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y una sola abeja obrera produce en toda su vida apenas una doceava parte de una cucharadita de miel.",
+      "objeto": "comida/honey",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Por eso cada frasco de miel es el trabajo de miles de abejas.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "pila",
+      "texto": "Además, la miel casi no se echa a perder: se ha encontrado miel comestible en tumbas egipcias.",
+      "objeto": "comida/honey",
+      "cantidad": 120
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Y gracias a la polinización de las abejas existen muchas de las frutas y verduras que comemos.",
+      "objeto": "comida/apple",
+      "cantidad": 140
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "comida/honey"
+    }
+  ]
+}

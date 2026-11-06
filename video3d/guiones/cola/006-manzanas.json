@@ -1,0 +1,59 @@
+{
+  "id": "manzanas",
+  "titulo": "7.500 tipos de manzana",
+  "categoria": "curiosidad",
+  "destacar": [
+    "7.500",
+    "manzana"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En el mundo existen más de 7.500 variedades de manzana.",
+      "objeto": "comida/apple"
+    },
+    {
+      "tipo": "calendario",
+      "texto": "Si probaras una variedad distinta cada día, tardarías más de 20 años en conocerlas todas.",
+      "contador": {
+        "desde": 1,
+        "hasta": 7500,
+        "unidad": "variedades"
+      }
+    },
+    {
+      "tipo": "pila",
+      "texto": "Y no es solo una fruta: es una de las más cultivadas del planeta.",
+      "objeto": "comida/apple",
+      "cantidad": 320
+    },
+    {
+      "tipo": "foco",
+      "texto": "Las manzanas flotan en el agua, porque casi una cuarta parte de su volumen es aire.",
+      "objeto": "comida/apple",
+      "cantidad": 1
+    },
+    {
+      "tipo": "globo",
+      "texto": "Su origen está en Asia Central, en las montañas de Kazajistán, donde todavía crecen manzanos silvestres.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "De ahí viajaron por la Ruta de la Seda hasta llegar a todo el mundo.",
+      "objeto": "naturaleza/tree_default",
+      "lado": 18
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Hoy, China es por mucho el país que más manzanas produce.",
+      "objeto": "comida/apple",
+      "cantidad": 160
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Cuál es tu manzana favorita: roja o verde? Cuéntanos y síguenos para más datos.",
+      "objeto": "comida/apple"
+    }
+  ]
+}

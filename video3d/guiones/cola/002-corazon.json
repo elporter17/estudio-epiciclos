@@ -1,0 +1,79 @@
+{
+  "id": "corazon",
+  "titulo": "Tu corazón no descansa nunca",
+  "categoria": "ciencia",
+  "destacar": [
+    "corazón"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Tu corazón late más de cien mil veces al día, y nunca se toma un descanso.",
+      "objeto": "corazon"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es un músculo del tamaño de tu puño que trabaja sin parar desde antes de que nacieras.",
+      "objeto": "corazon",
+      "cantidad": 1
+    },
+    {
+      "tipo": "calendario",
+      "texto": "En un solo año, tu corazón late unos 36 millones de veces.",
+      "contador": {
+        "desde": 0,
+        "hasta": 36,
+        "unidad": "millones"
+      }
+    },
+    {
+      "tipo": "pila",
+      "texto": "Y cada día bombea unos 7.000 litros de sangre: miles de botellas como estas.",
+      "objeto": "botella",
+      "cantidad": 300,
+      "contador": {
+        "desde": 0,
+        "hasta": 7000,
+        "unidad": "litros"
+      }
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Pero no todos los corazones van igual: el de un colibrí puede latir más de 1.000 veces por minuto.",
+      "barras": [
+        {
+          "etiqueta": "Humano",
+          "valor": 70,
+          "texto": "70"
+        },
+        {
+          "etiqueta": "Colibrí",
+          "valor": 1200,
+          "texto": "1.200"
+        },
+        {
+          "etiqueta": "Ballena",
+          "valor": 10,
+          "texto": "10"
+        }
+      ]
+    },
+    {
+      "tipo": "torre",
+      "texto": "En toda una vida, el corazón humano late unos 2.800 millones de veces.",
+      "objeto": "corazon",
+      "cantidad": 40,
+      "referencia": "edificio"
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y ahora mismo, más de 8.000 millones de corazones están latiendo a la vez en el planeta.",
+      "cantidad": 30
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "corazon"
+    }
+  ]
+}

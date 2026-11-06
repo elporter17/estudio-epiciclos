@@ -1,0 +1,79 @@
+{
+  "id": "futbol",
+  "titulo": "El primer Mundial de 48",
+  "categoria": "noticia",
+  "destacar": [
+    "48"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El Mundial de 2026 fue el primero de la historia con 48 selecciones.",
+      "objeto": "balon"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Antes jugaban 32; con 48 equipos, el torneo pasó de 64 a 104 partidos.",
+      "barras": [
+        {
+          "etiqueta": "2022",
+          "valor": 64,
+          "texto": "64",
+          "objeto": "balon"
+        },
+        {
+          "etiqueta": "2026",
+          "valor": 104,
+          "texto": "104",
+          "objeto": "balon"
+        }
+      ]
+    },
+    {
+      "tipo": "globo",
+      "texto": "Y por primera vez se jugó en tres países a la vez: México, Estados Unidos y Canadá.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "linea",
+      "texto": "El primer Mundial se jugó en Uruguay en 1930, con solo 13 selecciones.",
+      "hitos": [
+        {
+          "anio": 1930,
+          "texto": "Uruguay: 13 equipos",
+          "objeto": "balon"
+        },
+        {
+          "anio": 1998,
+          "texto": "32 equipos"
+        },
+        {
+          "anio": 2026,
+          "texto": "48 equipos"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Según la FIFA, miles de millones de personas siguen el Mundial en todo el planeta.",
+      "cantidad": 30
+    },
+    {
+      "tipo": "pila",
+      "texto": "Y el estadio Azteca se convirtió en el primero en albergar partidos de tres Mundiales.",
+      "objeto": "balon",
+      "cantidad": 260
+    },
+    {
+      "tipo": "foco",
+      "texto": "El fútbol es, sin duda, el deporte más popular del mundo.",
+      "objeto": "balon",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Qué selección crees que gana el próximo Mundial? Cuéntanos y síguenos para más.",
+      "objeto": "balon"
+    }
+  ]
+}

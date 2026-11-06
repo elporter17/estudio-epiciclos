@@ -1,0 +1,72 @@
+{
+  "id": "universidades",
+  "titulo": "Oxford es más vieja que los aztecas",
+  "categoria": "historia",
+  "destacar": [
+    "Oxford",
+    "aztecas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La Universidad de Oxford es más antigua que el Imperio azteca.",
+      "objeto": "libro"
+    },
+    {
+      "tipo": "linea",
+      "texto": "En Oxford ya se enseñaba en 1096, y la ciudad azteca de Tenochtitlan se fundó en 1325.",
+      "hitos": [
+        {
+          "anio": 859,
+          "texto": "Al Qarawiyyin"
+        },
+        {
+          "anio": 1096,
+          "texto": "Oxford"
+        },
+        {
+          "anio": 1325,
+          "texto": "Tenochtitlan"
+        },
+        {
+          "anio": 1551,
+          "texto": "Univ. en América"
+        }
+      ]
+    },
+    {
+      "tipo": "torre",
+      "texto": "Más de dos siglos de diferencia entre las dos.",
+      "objeto": "libro",
+      "cantidad": 50,
+      "referencia": "edificio"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Pero la universidad más antigua que sigue funcionando está en Marruecos: la de Al Qarawiyyin, fundada en el año 859.",
+      "objeto": "libro",
+      "cantidad": 3
+    },
+    {
+      "tipo": "globo",
+      "texto": "La fundó una mujer, Fátima al Fihri, en la ciudad de Fez.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "pila",
+      "texto": "En América continental, algunas de las primeras universidades se fundaron en 1551, en Lima y en Ciudad de México.",
+      "objeto": "libro",
+      "cantidad": 260
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y hoy millones de estudiantes siguen aprendiendo en aulas que tienen siglos de historia.",
+      "cantidad": 28
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "libro"
+    }
+  ]
+}

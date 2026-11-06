@@ -1,0 +1,61 @@
+{
+  "id": "bananas",
+  "titulo": "La banana es una baya",
+  "categoria": "curiosidad",
+  "destacar": [
+    "banana",
+    "baya"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Para la botánica, la banana es una baya… y la fresa no lo es.",
+      "objeto": "comida/banana"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Una baya es un fruto que nace de una sola flor con un solo ovario y guarda sus semillas por dentro.",
+      "objeto": "comida/banana",
+      "cantidad": 2
+    },
+    {
+      "tipo": "foco",
+      "texto": "La fresa no cumple esas reglas: sus semillas están por fuera.",
+      "objeto": "comida/strawberry",
+      "cantidad": 3
+    },
+    {
+      "tipo": "pila",
+      "texto": "Y nos encantan: cada año el mundo come más de 100.000 millones de bananas.",
+      "objeto": "comida/banana",
+      "cantidad": 300,
+      "contador": {
+        "desde": 0,
+        "hasta": 100000,
+        "unidad": "millones"
+      }
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Además, la planta de banano no es un árbol: es una hierba gigante, la más grande del mundo.",
+      "objeto": "naturaleza/tree_palmShort",
+      "lado": 18
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Casi todas las bananas que se venden son de una sola variedad, llamada Cavendish.",
+      "objeto": "comida/banana",
+      "cantidad": 150
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y Honduras ha sido durante más de un siglo uno de los grandes exportadores de banano del mundo.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "comida/banana"
+    }
+  ]
+}

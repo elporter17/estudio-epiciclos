@@ -11,6 +11,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { ROOT } from './node-env.mjs';
+import { numerosEnPalabras } from './numeros.mjs';
 
 export const VOZ_DEFECTO = 'kokoro:em_alex';
 
@@ -30,16 +31,19 @@ function python() {
   return null;
 }
 
-// Lo que la voz no debe leer tal cual: emojis, comillas angulares, palabras en MAYÚSCULAS (las deletrearía) y unidades
+// Lo que la voz no debe leer tal cual: emojis, comillas angulares, palabras en MAYÚSCULAS (las deletrearía), unidades
+// y números (se leen en palabras: «27.375» → «veintisiete mil…», ver numeros.mjs)
 export function paraLeer(t) {
-  return String(t)
+  return numerosEnPalabras(String(t)
     .replace(/\p{Extended_Pictographic}|️|‍/gu, '')
     .replace(/[«»"“”]/g, '')
+    .replace(/\bGTA VI\b/g, 'ge te a seis').replace(/\bGTA V\b/g, 'ge te a cinco').replace(/\bGTA\b/g, 'ge te a')
     .replace(/(\d)\s*°\s*C\b/g, '$1 grados').replace(/°/g, ' grados')
+    .replace(/(\d)\s*km²/g, '$1 kilómetros cuadrados').replace(/(\d)\s*km\/s\b/g, '$1 kilómetros por segundo')
     .replace(/(\d)\s*km\/h\b/g, '$1 kilómetros por hora').replace(/(\d)\s*km\b/g, '$1 kilómetros')
     .replace(/(\d)\s*kg\b/g, '$1 kilos').replace(/(\d)\s*cm\b/g, '$1 centímetros').replace(/(\d)\s*mm\b/g, '$1 milímetros')
     .replace(/(\d)\s*m\b/g, '$1 metros').replace(/(\d)\s*g\b/g, '$1 gramos').replace(/(\d)\s*%/g, '$1 por ciento')
-    .replace(/\b(\p{Lu}{2,})\b/gu, (w) => w.toLowerCase())
+    .replace(/\b(\p{Lu}{2,})\b/gu, (w) => w.toLowerCase()))
     .replace(/\s+/g, ' ').trim();
 }
 

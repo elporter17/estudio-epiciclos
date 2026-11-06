@@ -1,0 +1,64 @@
+{
+  "id": "arboles",
+  "titulo": "¿Cuántos árboles hay en la Tierra?",
+  "categoria": "ciencia",
+  "destacar": [
+    "árboles"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Cuántos árboles crees que hay en la Tierra? La respuesta es enorme.",
+      "objeto": "naturaleza/tree_oak"
+    },
+    {
+      "tipo": "globo",
+      "texto": "Según un estudio publicado en la revista Nature, en el planeta hay unos tres billones de árboles.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "gente",
+      "texto": "Eso da unos 375 árboles por cada persona que vive en la Tierra.",
+      "cantidad": 24,
+      "contador": {
+        "desde": 0,
+        "hasta": 375,
+        "unidad": "árboles"
+      }
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Pero desde el inicio de la agricultura, el mundo perdió casi la mitad de sus árboles.",
+      "objeto": "naturaleza/tree_default",
+      "lado": 20
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Y cada año se cortan unos 15.000 millones de árboles en todo el planeta.",
+      "objeto": "naturaleza/log",
+      "cantidad": 140,
+      "contador": {
+        "desde": 0,
+        "hasta": 15000,
+        "unidad": "millones"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Un solo árbol adulto puede absorber unos 22 kilos de dióxido de carbono al año.",
+      "objeto": "naturaleza/tree_oak",
+      "cantidad": 1
+    },
+    {
+      "tipo": "pila",
+      "texto": "Por eso plantar árboles es una de las formas más sencillas de cuidar el aire que respiramos.",
+      "objeto": "naturaleza/tree_pineSmallA",
+      "cantidad": 120
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Cuántos árboles has plantado tú? Cuéntanos en los comentarios y síguenos para más.",
+      "objeto": "naturaleza/tree_oak"
+    }
+  ]
+}

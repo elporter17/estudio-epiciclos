@@ -1,0 +1,73 @@
+{
+  "id": "oceanos",
+  "titulo": "El Everest cabe en el océano",
+  "categoria": "ciencia",
+  "destacar": [
+    "Everest",
+    "océano"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El Everest entero cabría en el punto más profundo del océano… y sobraría espacio.",
+      "objeto": "botella"
+    },
+    {
+      "tipo": "globo",
+      "texto": "El agua cubre cerca del 71 por ciento de la superficie de la Tierra.",
+      "modo": "luces",
+      "contador": {
+        "desde": 0,
+        "hasta": 71,
+        "unidad": "%"
+      }
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "La fosa de las Marianas llega a casi 11.000 metros de profundidad.",
+      "barras": [
+        {
+          "etiqueta": "Everest",
+          "valor": 8849,
+          "texto": "8.849 m"
+        },
+        {
+          "etiqueta": "Marianas",
+          "valor": 10935,
+          "texto": "≈ 10.900 m"
+        }
+      ]
+    },
+    {
+      "tipo": "torre",
+      "texto": "Si metieras el Everest allí, todavía quedarían unos dos kilómetros de agua sobre su cima.",
+      "objeto": "botella",
+      "cantidad": 50,
+      "referencia": "everest",
+      "proporcion": 1.24
+    },
+    {
+      "tipo": "piscinas",
+      "texto": "Los océanos guardan el 97 por ciento de toda el agua del planeta.",
+      "objeto": "piscina",
+      "lado": 22
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y conocemos mejor la superficie de la Luna que el fondo de nuestros propios océanos.",
+      "objeto": "comida/fish",
+      "cantidad": 3
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Ahí abajo viven miles de especies que todavía no tienen nombre.",
+      "objeto": "comida/fish",
+      "cantidad": 140
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "comida/fish"
+    }
+  ]
+}

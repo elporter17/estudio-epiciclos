@@ -1,0 +1,82 @@
+{
+  "id": "celulares",
+  "titulo": "Hay más celulares que personas",
+  "categoria": "noticia",
+  "destacar": [
+    "celulares"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En el mundo hay más líneas de celular que personas.",
+      "objeto": "celular"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Somos unos 8.000 millones, y hay casi 9.000 millones de líneas móviles.",
+      "barras": [
+        {
+          "etiqueta": "Personas",
+          "valor": 8,
+          "texto": "8.000 M"
+        },
+        {
+          "etiqueta": "Líneas",
+          "valor": 9,
+          "texto": "≈ 9.000 M",
+          "objeto": "celular"
+        }
+      ]
+    },
+    {
+      "tipo": "linea",
+      "texto": "El primer celular a la venta llegó en 1983: pesaba casi un kilo y costaba unos 4.000 dólares.",
+      "hitos": [
+        {
+          "anio": 1973,
+          "texto": "Primera llamada"
+        },
+        {
+          "anio": 1983,
+          "texto": "Primer celular"
+        },
+        {
+          "anio": 1992,
+          "texto": "Primer SMS"
+        },
+        {
+          "anio": 2007,
+          "texto": "Pantallas táctiles"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y su batería solo duraba unos 30 minutos de llamada.",
+      "objeto": "celular",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Hoy cualquier celular tiene más potencia que las computadoras que llevaron al ser humano a la Luna.",
+      "objeto": "celular",
+      "lado": 22
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Cada año se venden más de mil millones de teléfonos inteligentes.",
+      "objeto": "celular",
+      "cantidad": 160
+    },
+    {
+      "tipo": "gente",
+      "texto": "Así que piensa: ¿cuánto tiempo pasas mirando tu pantalla cada día?",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Cuántas horas usas el celular al día? Cuéntanos y síguenos para más datos.",
+      "objeto": "celular"
+    }
+  ]
+}

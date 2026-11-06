@@ -16,7 +16,9 @@ const o = parseCli({ guion: { type: 'string', default: 'video3d/guiones/agua.jso
 const SR = 44100, PUB = path.join(ROOT, 'video3d', 'public');
 const g = JSON.parse(fs.readFileSync(path.resolve(ROOT, o.guion), 'utf8'));
 // Lo mínimo que dura cada tipo de escena (para que la animación alcance a verse)
-const MINIMO = { vaso: 4, botellas: 3.5, calendario: 4.5, pila: 4.5, foco: 4.5, torre: 6, camion: 5, piscina: 4.5, globo: 5, piscinas: 5.5, cierre: 4.5 };
+const MINIMO = { portada: 3, vaso: 4, botellas: 3.5, calendario: 4.5, pila: 4.5, lluvia: 4.5, foco: 4.5, torre: 6, camion: 5, calle: 4.5, piscina: 4.5, globo: 5, piscinas: 5.5, cuadricula: 5, comparacion: 5, linea: 6.5, gente: 4.5, cierre: 4 };
+// La portada dice el gancho (o el título si no tiene texto)
+for (const e of g.escenas) if (e.tipo === 'portada' && !e.texto) e.texto = g.titulo;
 
 const audios = narrar(g.escenas.map((e) => e.voz || e.texto), { SR });
 if (!audios) throw new Error('No hay voz instalada (ver scripts/lib/voz.mjs)');
@@ -28,6 +30,9 @@ const escenas = g.escenas.map((e, i) => {
   const r = { ...e, audio: archivo, voz, inicio: t, dur: Math.max(MINIMO[e.tipo] || 3.5, 0.25 + voz + 0.55) };
   t += r.dur; return r;
 });
+// Ningún video baja de 56 s (regla del canal: 55 como mínimo): lo que falte se reparte entre las escenas de contenido
+const MIN_TOTAL = 56, contenido = escenas.filter((e) => e.tipo !== 'portada' && e.tipo !== 'cierre');
+if (t < MIN_TOTAL && contenido.length) { const extra = (MIN_TOTAL - t) / contenido.length; for (const e of contenido) e.dur += extra; t = 0; for (const e of escenas) { e.inicio = t; t += e.dur; } }
 // ---------- efectos de sonido (sintetizados aquí: sin archivos de terceros) ----------
 const ruido = (n, semilla = 1) => { let x = semilla; return Float32Array.from({ length: n }, () => ((x = (x * 16807) % 2147483647) / 2147483647) * 2 - 1); };
 function sintetizar(dur, fn) { const n = Math.floor(dur * SR), b = new Float32Array(n); for (let i = 0; i < n; i++) b[i] = fn(i / SR, i); return b; }
@@ -57,7 +62,14 @@ const CUANDO = {
   piscina: () => [[0.2, 'llenado', 0.6]],
   globo: () => [[0.3, 'brillo', 0.6], [2.2, 'brillo', 0.4]],
   piscinas: (d) => Array.from({ length: 10 }, (_, i) => [0.3 + i * d * 0.07, 'pop', 0.45]),
-  cierre: () => [[0.3, 'ding', 0.6]]
+  cierre: () => [[0.3, 'ding', 0.6]],
+  portada: () => [[0.05, 'brillo', 0.6]],
+  lluvia: (d) => Array.from({ length: 14 }, (_, i) => [0.5 + i * d * 0.055, 'golpe', 0.35]),
+  cuadricula: (d) => Array.from({ length: 10 }, (_, i) => [0.3 + i * d * 0.07, 'pop', 0.45]),
+  comparacion: () => [0.2, 0.6, 1.0, 1.4].map((t) => [t, 'pop', 0.5]),
+  linea: (d) => [[0.1, 'whoosh', 0.5], [d * 0.7, 'whoosh', 0.7]],
+  calle: () => [[0.1, 'motor', 0.5], [1.4, 'motor', 0.4]],
+  gente: (d) => Array.from({ length: 8 }, (_, i) => [0.2 + i * d * 0.07, 'pop', 0.35])
 };
 const sfx = [];
 for (const e of escenas) { if (e.inicio > 0) sfx.push({ t: e.inicio - 0.2, s: 'whoosh', v: 0.35 }); for (const [t, s2, v] of (CUANDO[e.tipo] || (() => []))(e.dur)) sfx.push({ t: e.inicio + t, s: s2, v }); }
@@ -65,6 +77,6 @@ for (const e of escenas) { if (e.inicio > 0) sfx.push({ t: e.inicio - 0.2, s: 'w
 const mus = new Float32Array(Math.ceil((t + 0.5) * SR));
 pistaMusical(mus, t, { estilo: g.musica || 'lofi', semilla: 7, SR });
 fs.writeFileSync(path.join(PUB, 'musica.wav'), wavBuffer(mus.map((x) => Math.tanh(x * 0.9) * 0.9), SR));
-fs.writeFileSync(path.join(PUB, 'render.json'), JSON.stringify({ id: g.id, titulo: g.titulo, duracion: t, escenas, sfx }, null, 2));
+fs.writeFileSync(path.join(PUB, 'render.json'), JSON.stringify({ id: g.id, titulo: g.titulo, categoria: g.categoria, destacar: g.destacar, duracion: t, escenas, sfx }, null, 2));
 console.log(`${g.titulo}: ${escenas.length} escenas · ${t.toFixed(1)} s`);
 for (const e of escenas) console.log(`  ${e.inicio.toFixed(1).padStart(5)} s · ${e.tipo.padEnd(8)} ${e.dur.toFixed(1)} s · voz ${e.voz.toFixed(1)} s`);

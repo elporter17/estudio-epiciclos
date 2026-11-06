@@ -1,0 +1,73 @@
+{
+  "id": "helado",
+  "titulo": "La paleta la inventó un niño",
+  "categoria": "historia",
+  "destacar": [
+    "paleta",
+    "niño"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La paleta de helado la inventó un niño de 11 años… por accidente.",
+      "objeto": "comida/popsicle"
+    },
+    {
+      "tipo": "linea",
+      "texto": "En 1905, Frank Epperson dejó un vaso con refresco y un palito afuera durante una noche fría.",
+      "hitos": [
+        {
+          "anio": 1905,
+          "texto": "El accidente",
+          "objeto": "comida/popsicle"
+        },
+        {
+          "anio": 1923,
+          "texto": "La patente"
+        },
+        {
+          "anio": 1904,
+          "texto": "Cono de helado"
+        },
+        {
+          "anio": 2026,
+          "texto": "Hoy"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "A la mañana siguiente, el refresco se había congelado con el palito adentro.",
+      "objeto": "comida/popsicle",
+      "cantidad": 1
+    },
+    {
+      "tipo": "pila",
+      "texto": "Dieciocho años después la patentó, y hoy se venden millones cada verano.",
+      "objeto": "comida/popsicle",
+      "cantidad": 260
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y el cono de helado se hizo famoso en 1904, en la Feria Mundial de San Luis.",
+      "objeto": "comida/ice-cream",
+      "cantidad": 2
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Muchos de los grandes inventos de la historia nacieron por accidente.",
+      "objeto": "comida/ice-cream-cup",
+      "cantidad": 140
+    },
+    {
+      "tipo": "gente",
+      "texto": "¿Cuál es tu sabor favorito de helado?",
+      "cantidad": 20
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "comida/popsicle"
+    }
+  ]
+}

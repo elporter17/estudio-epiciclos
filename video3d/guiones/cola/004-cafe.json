@@ -1,0 +1,75 @@
+{
+  "id": "cafe",
+  "titulo": "El mundo y su café",
+  "categoria": "datos",
+  "destacar": [
+    "café"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Cada día, el mundo se toma unos 2.250 millones de tazas de café.",
+      "objeto": "comida/cup-coffee"
+    },
+    {
+      "tipo": "globo",
+      "texto": "Es una de las bebidas más populares del planeta: se toma en casi todos los países.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "En el minuto que dura este video, se sirven más de un millón y medio de cafés.",
+      "objeto": "comida/cup-coffee",
+      "cantidad": 150,
+      "contador": {
+        "desde": 0,
+        "hasta": 1500000,
+        "unidad": "tazas"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Según la leyenda, el café se descubrió en Etiopía cuando un pastor vio a sus cabras muy activas tras comer sus frutos.",
+      "objeto": "comida/cup-coffee",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Brasil es el mayor productor del mundo, seguido por Vietnam.",
+      "barras": [
+        {
+          "etiqueta": "Brasil",
+          "valor": 3,
+          "texto": "1.º"
+        },
+        {
+          "etiqueta": "Vietnam",
+          "valor": 2,
+          "texto": "2.º"
+        },
+        {
+          "etiqueta": "Honduras",
+          "valor": 1,
+          "texto": "Top"
+        }
+      ]
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Y Honduras es el mayor productor de café de Centroamérica, con miles de fincas en sus montañas.",
+      "objeto": "naturaleza/plant_bush",
+      "lado": 20
+    },
+    {
+      "tipo": "pila",
+      "texto": "Ahora piensa en todas las tazas que tú has tomado en tu vida.",
+      "objeto": "comida/cup-coffee",
+      "cantidad": 200
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Cuántos cafés tomas al día? Escríbelo en los comentarios y síguenos para más datos.",
+      "objeto": "comida/cup-coffee"
+    }
+  ]
+}

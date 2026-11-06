@@ -1,0 +1,73 @@
+{
+  "id": "pan",
+  "titulo": "Lo mejor desde el pan rebanado",
+  "categoria": "historia",
+  "destacar": [
+    "pan",
+    "rebanado"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El pan rebanado es más reciente de lo que crees: tiene menos de cien años.",
+      "objeto": "comida/bread"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Se vendió por primera vez en 1928, en una panadería de Misuri, en Estados Unidos.",
+      "hitos": [
+        {
+          "anio": 1912,
+          "texto": "Primer prototipo"
+        },
+        {
+          "anio": 1928,
+          "texto": "Primer pan rebanado",
+          "objeto": "comida/bread"
+        },
+        {
+          "anio": 1930,
+          "texto": "Se vuelve popular"
+        },
+        {
+          "anio": 2026,
+          "texto": "Hoy"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "La máquina la inventó Otto Rohwedder después de más de diez años de trabajo.",
+      "objeto": "comida/loaf",
+      "cantidad": 1
+    },
+    {
+      "tipo": "pila",
+      "texto": "Fue tal el éxito que nació la frase: es lo mejor desde el pan rebanado.",
+      "objeto": "comida/bread",
+      "cantidad": 260
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Hoy el pan es uno de los alimentos más consumidos del planeta.",
+      "objeto": "comida/loaf-round",
+      "lado": 20
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Y el pan es antiquísimo: se han encontrado restos de pan de hace más de 14.000 años.",
+      "objeto": "comida/croissant",
+      "cantidad": 140
+    },
+    {
+      "tipo": "gente",
+      "texto": "¿Con qué te gusta más el pan: con frijoles, con queso o con mantequilla?",
+      "cantidad": 20
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "comida/bread"
+    }
+  ]
+}

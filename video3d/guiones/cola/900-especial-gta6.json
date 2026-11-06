@@ -1,0 +1,82 @@
+{
+  "id": "especial-gta6",
+  "fecha": "2026-11-19",
+  "titulo": "GTA VI ya está aquí",
+  "categoria": "especial",
+  "destacar": [
+    "GTA",
+    "VI"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Hoy llega GTA VI, uno de los videojuegos más esperados de la historia.",
+      "objeto": "autos/sedan-sports"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Pasaron más de 13 años desde GTA V, que salió en 2013.",
+      "hitos": [
+        {
+          "anio": 1997,
+          "texto": "GTA"
+        },
+        {
+          "anio": 2013,
+          "texto": "GTA V"
+        },
+        {
+          "anio": 2023,
+          "texto": "Primer tráiler"
+        },
+        {
+          "anio": 2026,
+          "texto": "GTA VI"
+        }
+      ]
+    },
+    {
+      "tipo": "pila",
+      "texto": "GTA V vendió más de 200 millones de copias: uno de los juegos más vendidos de todos los tiempos.",
+      "objeto": "moneda",
+      "cantidad": 320,
+      "contador": {
+        "desde": 0,
+        "hasta": 200,
+        "unidad": "millones"
+      }
+    },
+    {
+      "tipo": "gente",
+      "texto": "El primer tráiler de GTA VI rompió récords en YouTube: unos 90 millones de vistas en 24 horas.",
+      "cantidad": 30,
+      "contador": {
+        "desde": 0,
+        "hasta": 90,
+        "unidad": "millones"
+      }
+    },
+    {
+      "tipo": "calle",
+      "texto": "La historia vuelve a Vice City, en el estado ficticio de Leonida, inspirado en Florida.",
+      "objeto": "autos/sedan-sports",
+      "cantidad": 12
+    },
+    {
+      "tipo": "globo",
+      "texto": "Millones de jugadores en todo el mundo lo esperan desde hace años.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "calle",
+      "texto": "Y sus protagonistas son Lucía y Jason, una pareja que se mete en problemas cada vez más grandes.",
+      "objeto": "autos/police",
+      "cantidad": 8
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Ya lo vas a jugar? Cuéntanos en los comentarios y síguenos para más.",
+      "objeto": "autos/sedan-sports"
+    }
+  ]
+}

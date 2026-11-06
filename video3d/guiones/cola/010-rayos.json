@@ -1,0 +1,68 @@
+{
+  "id": "rayos",
+  "titulo": "44 rayos por segundo",
+  "categoria": "ciencia",
+  "destacar": [
+    "44",
+    "rayos"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En este preciso segundo están cayendo unos 44 rayos en la Tierra.",
+      "objeto": "naturaleza/tree_default"
+    },
+    {
+      "tipo": "globo",
+      "texto": "Según la NASA, en el planeta caen unos 1.400 millones de rayos cada año.",
+      "modo": "rayos",
+      "contador": {
+        "desde": 0,
+        "hasta": 1400,
+        "unidad": "millones"
+      }
+    },
+    {
+      "tipo": "globo",
+      "texto": "Un rayo puede calentar el aire a unos 30.000 grados: cinco veces más que la superficie del Sol.",
+      "modo": "rayos"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Para que te des una idea: la superficie del Sol está a unos 5.500 grados.",
+      "barras": [
+        {
+          "etiqueta": "Sol",
+          "valor": 5500,
+          "texto": "5.500 °"
+        },
+        {
+          "etiqueta": "Rayo",
+          "valor": 30000,
+          "texto": "30.000 °"
+        }
+      ]
+    },
+    {
+      "tipo": "globo",
+      "texto": "El lugar con más rayos del mundo está en Venezuela: el relámpago del Catatumbo, que brilla hasta 260 noches al año.",
+      "modo": "rayos"
+    },
+    {
+      "tipo": "calle",
+      "texto": "Por eso, si hay tormenta, lo más seguro es quedarse dentro de una casa o de un auto cerrado.",
+      "objeto": "autos/sedan",
+      "cantidad": 8
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y no es cierto que un rayo nunca cae dos veces en el mismo lugar: puede caer muchas veces.",
+      "cantidad": 18
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "naturaleza/tree_default"
+    }
+  ]
+}

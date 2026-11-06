@@ -1,0 +1,82 @@
+{
+  "id": "olimpicos",
+  "titulo": "El oro olímpico casi no es de oro",
+  "categoria": "curiosidad",
+  "destacar": [
+    "oro"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Las medallas de oro de los Juegos Olímpicos son casi todas de plata.",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Están hechas principalmente de plata y solo llevan un baño de al menos seis gramos de oro.",
+      "objeto": "moneda",
+      "cantidad": 3
+    },
+    {
+      "tipo": "linea",
+      "texto": "Las últimas medallas de oro macizo se entregaron en 1912, en Estocolmo.",
+      "hitos": [
+        {
+          "anio": -776,
+          "etiqueta_anio": "776 a. C.",
+          "texto": "Primeros Juegos"
+        },
+        {
+          "anio": 1896,
+          "texto": "Atenas, modernos"
+        },
+        {
+          "anio": 1912,
+          "texto": "Último oro macizo"
+        },
+        {
+          "anio": 2024,
+          "texto": "París"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Los Juegos antiguos empezaron en Olimpia, Grecia, en el año 776 antes de Cristo.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "En los primeros Juegos modernos, en 1896, participaron 14 países; hoy compiten más de 200.",
+      "barras": [
+        {
+          "etiqueta": "1896",
+          "valor": 14,
+          "texto": "14"
+        },
+        {
+          "etiqueta": "Hoy",
+          "valor": 200,
+          "texto": "+200"
+        }
+      ]
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Y en 1896 el ganador no recibía oro: le daban una medalla de plata y una rama de olivo.",
+      "objeto": "moneda",
+      "cantidad": 140
+    },
+    {
+      "tipo": "pila",
+      "texto": "Así que el oro olímpico vale más por lo que representa que por lo que pesa.",
+      "objeto": "moneda",
+      "cantidad": 260
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ]
+}

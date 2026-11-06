@@ -1,0 +1,72 @@
+{
+  "id": "pizza",
+  "titulo": "La historia de la pizza",
+  "categoria": "historia",
+  "destacar": [
+    "pizza"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La pizza que comes hoy nació en las calles de Nápoles, en Italia.",
+      "objeto": "comida/pizza"
+    },
+    {
+      "tipo": "linea",
+      "texto": "En el siglo dieciocho era comida barata para los trabajadores, y en 1830 abrió una de las primeras pizzerías del mundo.",
+      "hitos": [
+        {
+          "anio": 1700,
+          "etiqueta_anio": "Siglo XVIII",
+          "texto": "Comida de Nápoles",
+          "objeto": "comida/pizza"
+        },
+        {
+          "anio": 1830,
+          "texto": "Primeras pizzerías"
+        },
+        {
+          "anio": 1889,
+          "texto": "Pizza Margarita"
+        },
+        {
+          "anio": 1962,
+          "texto": "Pizza hawaiana"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Según la tradición, la pizza Margarita se creó en 1889 en honor a la reina Margarita de Saboya.",
+      "objeto": "comida/pizza",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Sus colores, tomate, mozzarella y albahaca, representan la bandera de Italia.",
+      "objeto": "comida/tomato",
+      "cantidad": 3
+    },
+    {
+      "tipo": "globo",
+      "texto": "Y la famosa pizza hawaiana no se inventó en Hawái: la creó en Canadá un cocinero griego en 1962.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Hoy se estima que en el mundo se venden miles de millones de pizzas cada año.",
+      "objeto": "comida/pizza",
+      "cantidad": 120
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y cada país le pone su toque: hay pizzas con piña, con camarones y hasta con plátano.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Pizza con piña: sí o no? Vota en los comentarios y síguenos para más.",
+      "objeto": "comida/pizza"
+    }
+  ]
+}

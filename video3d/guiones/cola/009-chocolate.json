@@ -1,0 +1,86 @@
+{
+  "id": "chocolate",
+  "titulo": "El chocolate fue dinero",
+  "categoria": "historia",
+  "destacar": [
+    "chocolate",
+    "dinero"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Hubo un tiempo en que el chocolate valía tanto como el dinero.",
+      "objeto": "comida/chocolate"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Los mayas y los aztecas tomaban el cacao como una bebida amarga y especiada, muy distinta del chocolate de hoy.",
+      "hitos": [
+        {
+          "anio": 600,
+          "etiqueta_anio": "Mayas",
+          "texto": "Bebida de cacao"
+        },
+        {
+          "anio": 1400,
+          "etiqueta_anio": "Aztecas",
+          "texto": "Cacao como moneda",
+          "objeto": "moneda"
+        },
+        {
+          "anio": 1847,
+          "texto": "Primera tableta"
+        },
+        {
+          "anio": 1875,
+          "texto": "Chocolate con leche"
+        }
+      ]
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Para los aztecas, los granos de cacao eran tan valiosos que se usaban para pagar.",
+      "objeto": "moneda",
+      "cantidad": 150
+    },
+    {
+      "tipo": "foco",
+      "texto": "La primera tableta de chocolate para comer se hizo en Inglaterra, en 1847.",
+      "objeto": "comida/chocolate",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y el chocolate con leche llegó en 1875, gracias a un chocolatero suizo.",
+      "objeto": "comida/chocolate-wrapper",
+      "cantidad": 2
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Hoy, Costa de Marfil produce cerca del 40 por ciento de todo el cacao del mundo.",
+      "barras": [
+        {
+          "etiqueta": "Costa de Marfil",
+          "valor": 40,
+          "texto": "≈ 40 %"
+        },
+        {
+          "etiqueta": "Resto",
+          "valor": 60,
+          "texto": "≈ 60 %"
+        }
+      ]
+    },
+    {
+      "tipo": "pila",
+      "texto": "Una bebida sagrada de América terminó convertida en el dulce favorito del planeta.",
+      "objeto": "comida/chocolate",
+      "cantidad": 250
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "comida/chocolate"
+    }
+  ]
+}

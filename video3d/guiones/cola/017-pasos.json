@@ -1,0 +1,67 @@
+{
+  "id": "pasos",
+  "titulo": "Caminarás 4 veces el mundo",
+  "categoria": "datos",
+  "destacar": [
+    "4",
+    "mundo"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En tu vida vas a caminar como si dieras tres o cuatro vueltas al mundo.",
+      "objeto": "balon"
+    },
+    {
+      "tipo": "gente",
+      "texto": "Una persona da en promedio unos 7.500 pasos al día.",
+      "cantidad": 20,
+      "contador": {
+        "desde": 0,
+        "hasta": 7500,
+        "unidad": "pasos"
+      }
+    },
+    {
+      "tipo": "calendario",
+      "texto": "En un año, eso suma más de dos millones y medio de pasos.",
+      "contador": {
+        "desde": 0,
+        "hasta": 2700000,
+        "unidad": "pasos"
+      }
+    },
+    {
+      "tipo": "calle",
+      "texto": "Y en toda una vida, más de 150.000 kilómetros recorridos a pie.",
+      "objeto": "autos/sedan",
+      "cantidad": 6,
+      "contador": {
+        "desde": 0,
+        "hasta": 150000,
+        "unidad": "km"
+      }
+    },
+    {
+      "tipo": "globo",
+      "texto": "La vuelta a la Tierra por el ecuador mide unos 40.000 kilómetros: tus pasos la rodearían casi cuatro veces.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "pila",
+      "texto": "Y para eso gastarías cientos de pares de zapatos.",
+      "objeto": "ladrillo",
+      "cantidad": 200
+    },
+    {
+      "tipo": "gente",
+      "texto": "Caminar 30 minutos al día es uno de los mejores regalos para tu salud.",
+      "cantidad": 26
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Cuántos pasos diste hoy? Escríbelo en los comentarios y síguenos para más.",
+      "objeto": "balon"
+    }
+  ]
+}

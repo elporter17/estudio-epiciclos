@@ -18,7 +18,7 @@ export function Efectos({ objetivo = [0, 1, 0], desenfoque = 1, brillo = 0.35 })
   return (
     <EffectComposer multisampling={0} enableNormalPass={false}>
       <SMAA />
-      {desenfoque > 0 && <DepthOfField target={objetivo} focalLength={0.02 * desenfoque} bokehScale={2.2 * desenfoque} />}
+      {desenfoque > 0 && <DepthOfField target={objetivo} focalLength={0.012 * desenfoque} bokehScale={1.6 * desenfoque} height={1080} />}
       <Bloom intensity={brillo} luminanceThreshold={0.82} luminanceSmoothing={0.2} mipmapBlur />
       <Vignette offset={0.32} darkness={0.42} />
     </EffectComposer>

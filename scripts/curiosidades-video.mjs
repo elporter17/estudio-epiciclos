@@ -369,8 +369,9 @@ async function main() {
   console.log(JSON.stringify({ video, duration: r.duration, facebook: meta.facebook, historia: meta.facebookStory }, null, 2));
 }
 
-// Cuota de la API de YouTube: ≈ 6 subidas al día. Van los 2 «Cómo se hace» y hasta 3 Reels más (data/youtube-dia.json)
-const CUPO_YT = path.join(ROOT, 'data', 'youtube-dia.json'), LIMITE_YT = { comosehace: 2, otros: Number(process.env.YOUTUBE_REELS_DIA || 3) };
+// Cuota de la API de YouTube: ≈ 6 subidas al día. Van los 2 «Cómo se hace», hasta 2 Reels más, el video 3D del día y
+// (martes, jueves y sábado) el video largo (data/youtube-dia.json)
+const CUPO_YT = path.join(ROOT, 'data', 'youtube-dia.json'), LIMITE_YT = { comosehace: 2, otros: Number(process.env.YOUTUBE_REELS_DIA || 2) };
 function diaYT() { const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Tegucigalpa' }), d = leer(CUPO_YT, {}); return d.fecha === hoy ? d : { fecha: hoy, comosehace: 0, otros: 0 }; }
 const grupoYT = (f) => (f === 'comosehace' ? 'comosehace' : 'otros');
 function cupoYouTube(f) { const d = diaYT(), g = grupoYT(f); if (d[g] < LIMITE_YT[g]) return true; console.error(`YouTube: ya se subieron ${d[g]} hoy (${g}); este no`); return false; }

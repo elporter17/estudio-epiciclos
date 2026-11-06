@@ -83,7 +83,7 @@ function Cisterna({ m, ...props }) {
 export function EscenaCamion({ t, dur, m }) {
   const llega = (d) => easeInOut((t - d) / 2.2), casas = useMemo(() => { const r = azar(9); return Array.from({ length: 14 }, (_, i) => ({ n: CASAS[Math.floor(r() * CASAS.length)], z: -26 + i * 4, lado: i % 2 ? 1 : -1, ry: r() })); }, []);
   return (<>
-    <Camara pos={lerp3([3.6, 6, 15], [2.6, 4.6, 12], easeInOut(t / dur))} mira={[0.4, 0.8, -4]} />
+    <Camara pos={lerp3([3.6, 6, 15], [2.6, 4.6, 12], easeInOut(t / dur))} mira={[0.4, 0.8, -4]} desenfoque={0} />
     <Luces niebla={[20, 70]} /><Suelo />
     {/* Calle: asfalto y líneas */}
     <mesh rotation-x={-Math.PI / 2} position={[0, 0.01, -5]} receiveShadow><planeGeometry args={[4.4, 70]} /><meshStandardMaterial color="#4a5260" roughness={0.9} /></mesh>
@@ -144,7 +144,7 @@ export function EscenaPiscinas({ t, dur }) {
   const orden = useMemo(() => Array.from({ length: total }, (_, i) => [(i % lado) - lado / 2 + 0.5, Math.floor(i / lado) - lado / 2 + 0.5]).sort((a, b) => Math.hypot(a[0], a[1] * 0.5) - Math.hypot(b[0], b[1] * 0.5)), [total]);
   const mat = useMemo(() => new THREE.Matrix4(), []);
   return (<>
-    <Camara pos={[alto * 0.15, alto, alto * 0.55]} mira={[0, 0, 0]} fov={50} desenfoque={0.4} />
+    <Camara pos={[alto * 0.15, alto, alto * 0.55]} mira={[0, 0, 0]} fov={50} desenfoque={0} />
     <Luces sol={[30, 80, 20]} niebla={[80, 260]} /><Suelo radio={400} />
     <instancedMesh args={[undefined, undefined, total]} count={n} ref={(im) => { if (!im) return; orden.forEach(([x, z], i) => { mat.makeTranslation(x * 3.2, 0.06, z * 1.6); im.setMatrixAt(i, mat); }); im.instanceMatrix.needsUpdate = true; }}>
       <boxGeometry args={[2.5, 0.12, 1.25]} /><meshStandardMaterial color="#2fa8f5" roughness={0.1} emissive="#0b4f86" emissiveIntensity={0.2} />

@@ -1,0 +1,77 @@
+{
+  "id": "satelites",
+  "titulo": "Más de 10.000 satélites",
+  "categoria": "noticia",
+  "destacar": [
+    "10.000"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Ahora mismo hay más de 10.000 satélites activos dando vueltas a la Tierra.",
+      "objeto": "celular"
+    },
+    {
+      "tipo": "globo",
+      "texto": "Nos dan internet, el GPS del celular, el pronóstico del tiempo y la televisión.",
+      "modo": "satelites"
+    },
+    {
+      "tipo": "linea",
+      "texto": "El primero fue el Sputnik, lanzado en 1957; hoy se lanzan miles cada año.",
+      "hitos": [
+        {
+          "anio": 1957,
+          "texto": "Sputnik"
+        },
+        {
+          "anio": 1969,
+          "texto": "Llegada a la Luna"
+        },
+        {
+          "anio": 1998,
+          "texto": "Estación Espacial"
+        },
+        {
+          "anio": 2026,
+          "texto": "+10.000 activos"
+        }
+      ]
+    },
+    {
+      "tipo": "globo",
+      "texto": "La Estación Espacial Internacional viaja a unos 28.000 kilómetros por hora.",
+      "modo": "satelites",
+      "contador": {
+        "desde": 0,
+        "hasta": 28000,
+        "unidad": "km/h"
+      }
+    },
+    {
+      "tipo": "calendario",
+      "texto": "Da unas 16 vueltas a la Tierra cada día: sus astronautas ven 16 amaneceres diarios.",
+      "contador": {
+        "desde": 0,
+        "hasta": 16,
+        "unidad": "vueltas"
+      }
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Y además hay millones de pedazos de basura espacial que también giran alrededor del planeta.",
+      "objeto": "ladrillo",
+      "cantidad": 140
+    },
+    {
+      "tipo": "gente",
+      "texto": "Algunas noches puedes ver la estación desde Honduras: parece una estrella que se mueve rápido.",
+      "cantidad": 16
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
+      "objeto": "celular"
+    }
+  ]
+}
