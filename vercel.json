@@ -1,6 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm install --omit=dev --ignore-scripts",
+  "functions": {
+    "api/telegram.js": { "maxDuration": 60 }
+  },
   "rewrites": [
     {
       "source": "/media/:path*",

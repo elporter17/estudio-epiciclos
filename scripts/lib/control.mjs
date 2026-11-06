@@ -84,8 +84,26 @@ export async function limpiarViejos() {
 }
 
 // ---------- noticias del día ----------
-export async function guardarNoticias(fecha, items) { if (controlListo()) await guardarJson(`${carpeta()}/noticias/${fecha}.json`, { fecha, items }); }
-export async function noticiasDe(fecha) { return (await leerJson(`${carpeta()}/noticias/${fecha}.json`))?.items || []; }
+// Cada vez que se juntan (6:23, el botón «Actualizar» del bot o el Reel si la lista es vieja) queda un archivo nuevo;
+// se lee siempre el último (archivos que no se sobrescriben: nunca llega una copia vieja de la caché)
+export async function guardarNoticias(fecha, items) {
+  if (!controlListo()) return;
+  const r = await guardarJson(`${carpeta()}/noticias/${fecha}/${String(Date.now()).padStart(15, '0')}.json`, { fecha, at: Date.now(), items }, { fijo: false });
+  // Las versiones anteriores del mismo día sobran
+  const { blobs } = await list({ prefix: `${carpeta()}/noticias/${fecha}`, token: blobToken() });
+  const viejos = blobs.filter((b) => b.url !== r.url).map((b) => b.url);
+  if (viejos.length) await del(viejos, { token: blobToken() }).catch(() => {});
+}
+// { at, items } de la última vez que se juntaron ese día (at = 0 si es del formato de antes)
+export async function noticiasGuardadas(fecha) {
+  if (!controlListo()) return { at: 0, items: [] };
+  const { blobs } = await list({ prefix: `${carpeta()}/noticias/${fecha}`, token: blobToken() });
+  const b = blobs.sort((x, y) => Date.parse(y.uploadedAt) - Date.parse(x.uploadedAt))[0];
+  if (!b) return { at: 0, items: [] };
+  const d = await fetch(b.url, { cache: 'no-store' }).then((r) => r.json()).catch(() => null);
+  return { at: d?.at || Date.parse(b.uploadedAt) || 0, items: d?.items || [] };
+}
+export async function noticiasDe(fecha) { return (await noticiasGuardadas(fecha)).items; }
 // Las candidatas con tus cambios: primero las que agregaste, luego las fijadas y después el resto en su orden, sin las
 // que quitaste. «num» es el número con que salen en Telegram (el de la lista de la mañana)
 export function noticiasConCambios(items, ops = []) {

@@ -6,9 +6,9 @@
 // npm run telegram:webhook). Variables de Vercel: TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID.
 import { json, diaConEstado, lanzar, ACTIVO } from './_panel.js';
 import { interpretar, AYUDA, mensajePlan, mensajeNoticias, diaBonito } from '../scripts/lib/bot.mjs';
-import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId } from '../scripts/lib/control.mjs';
+import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasGuardadas, guardarNoticias, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId } from '../scripts/lib/control.mjs';
 import { delDia, ahoraHN, armarSlot, redesDePieza, nombreSlot, editable, NOMBRE_PIEZA, redesDe, redesPosibles } from '../scripts/lib/horario.mjs';
-import { noticiaDeEnlace, N_REEL } from '../scripts/lib/noticias.mjs';
+import { noticiaDeEnlace, juntarNoticias, N_REEL } from '../scripts/lib/noticias.mjs';
 
 const dd = (n) => String(n).padStart(2, '0');
 const masDias = (fecha, n) => new Date(Date.parse(`${fecha}T12:00:00Z`) + n * 864e5).toISOString().slice(0, 10);
@@ -131,12 +131,26 @@ async function vistaAgregarHora(fecha, pieza, rs) {
     teclado: { inline_keyboard: [...(esHoy ? [fila(boton('🚀 Ahora', `l3|${pieza}|${r}`))] : []), ...enFilas(hs.map((h) => boton(h, `a3|${fecha}|${pieza}|${corta(h)}|${r}`)), 4), fila(boton('⬅️ Volver', `ar|${fecha}|${pieza}|${r}`))] }
   };
 }
-async function vistaNoticias(aviso = '') {
-  const hoy = ahoraHN().fecha, ops = await cambiosExactos(hoy), items = await noticiasDe(hoy), lista = noticiasConCambios(items, ops);
+async function vistaNoticias(aviso = '', guardadas) {
+  const hoy = ahoraHN().fecha, ops = await cambiosExactos(hoy), { at, items } = guardadas || await noticiasGuardadas(hoy), lista = noticiasConCambios(items, ops);
   const slots = delDia(hoy, ops), horaReel = slots.find((s) => s.pieza === 'noticias')?.hora;
   const teclado = lista.slice(0, 8).filter((n) => n.num).map((n, i) => fila(boton(`${i < N_REEL ? '✅' : '▫️'} ${n.num} ❌ Quitar`, `nx|${n.num}`), i < N_REEL ? null : boton(`📌 Usar la ${n.num}`, `nf|${n.num}`)));
+  teclado.push(fila(boton('🔄 Actualizar noticias', 'nr')));
   teclado.push(fila(ops.some((o) => o.t.startsWith('noticia')) ? boton('↩️ Deshacer', `u|${hoy}|n`) : null, boton('📅 Plan de hoy', `p|${hoy}`)));
-  return { texto: `${aviso ? `${aviso}\n\n` : ''}${mensajeNoticias(lista, { horaReel })}\n\n👇 ❌ quita una noticia del Reel; 📌 mete una de las de reserva. Para agregar una tuya, pega el enlace.`, teclado: { inline_keyboard: teclado } };
+  const cuando = at ? `\n🕒 Juntadas a las ${new Date(at).toLocaleTimeString('es-HN', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Tegucigalpa' })}` : '';
+  return { texto: `${aviso ? `${aviso}\n\n` : ''}${mensajeNoticias(lista, { horaReel })}${cuando}\n\n👇 ❌ quita una noticia del Reel; 📌 mete una de las de reserva; 🔄 trae las más recientes. Para agregar una tuya, pega el enlace.`, teclado: { inline_keyboard: teclado } };
+}
+// Junta las noticias ahora mismo (RSS, unos segundos) y las deja como las del día
+async function actualizarNoticias() {
+  const hoy = ahoraHN().fecha, items = await juntarNoticias();
+  if (items.length < 3) throw new Error('los medios no devolvieron noticias nuevas; prueba en unos minutos');
+  await guardarNoticias(hoy, items);
+  return { at: Date.now(), items };
+}
+// Las de hoy, actualizadas si tienen más de «minutos»
+async function noticiasFrescas(minutos = 60) {
+  const g = await noticiasGuardadas(ahoraHN().fecha);
+  return g.items.length >= 3 && Date.now() - g.at < minutos * 60e3 ? null : actualizarNoticias().catch(() => null);
 }
 
 // Un cambio hecho: la confirmación va en su propio mensaje y debajo, en uno nuevo, el plan (o las noticias) al día
@@ -194,15 +208,17 @@ export async function alTocar(data) {
       const rs = a[1] ? decR(a[1]) : redesDePieza(a[0]);
       if (!rs.length) return alTocar(`l2|${a[0]}`);
       const hoy = ahoraHN().fecha, hora = ahoraHHMM(), s = armarSlot(a[0], hora, rs), donde = nombresRedes(redesDe(s.workflow, s.inputs));
+      const frescas = a[0] === 'noticias' ? await noticiasFrescas(60) : null; // el Reel toma la lista del día: que sea de esta hora
       // GitHub guarda una sola corrida en espera: si ya hay una, lanzar otra la cancelaría. Entonces lo deja en el plan
       // y el relojero lo lanza en cuanto se libere (≤ 10 min)
       const { corridas } = await diaConEstado(new Date());
       const enCola = corridas.some((x) => ACTIVO.includes(x.estado) && x.estado !== 'in_progress');
       if (!enCola) await lanzar(s.workflow, s.inputs || {});
       await registrar(hoy, { t: 'agregar', hora, pieza: a[0], redes: rs, ya: true });
-      return conConfirmacion(await vistaPlan(hoy), `${enCola ? 'Puse' : 'Lancé'} ${NOMBRE_PIEZA[a[0]]} en ${donde}. ${enCola ? 'Hay otra corrida esperando en GitHub: sale en cuanto termine (unos minutos más).' : 'Ya se está generando: sale en unos 5 a 10 minutos.'}`, '🚀');
+      return conConfirmacion(await vistaPlan(hoy), `${enCola ? 'Puse' : 'Lancé'} ${NOMBRE_PIEZA[a[0]]} en ${donde}. ${enCola ? 'Hay otra corrida esperando en GitHub: sale en cuanto termine (unos minutos más).' : 'Ya se está generando: sale en unos 5 a 10 minutos.'}${frescas ? ' Antes actualicé las noticias.' : ''}`, '🚀');
     }
     case 'n': return vistaNoticias();
+    case 'nr': { const g = await actualizarNoticias(); return conConfirmacion(await vistaNoticias('', g), `Actualicé las noticias: ${g.items.length} recientes (las ✅ van en el Reel).`, '🔄'); }
     case 'nx': case 'nf': {
       const hoy = ahoraHN().fecha, n = (await noticiasDe(hoy))[+a[0] - 1];
       if (!n) return vistaNoticias('⚠️ Esa noticia ya no está en la lista.');
@@ -228,6 +244,7 @@ export async function atender(texto) {
     case 'ayuda': return { texto: AYUDA, teclado: MENU };
     case 'plan': return vistaPlan(fecha);
     case 'noticias': return vistaNoticias();
+    case 'noticias-actualizar': return alTocar('nr');
     case 'noticias-op': {
       const items = await noticiasDe(hoy), malas = r.nums.filter((n) => !items[n - 1]);
       if (malas.length) return vistaNoticias(`⚠️ No tengo la noticia ${malas.join(', ')}.`);

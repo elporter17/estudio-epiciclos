@@ -82,6 +82,7 @@ export function interpretar(textoOriginal, { slots = [] } = {}) {
     if (/\b(fija|fijar|primero|primera|usa|pon|ponla|sube|destaca|incluye|mete|agrega)\b/.test(t)) return { tipo: 'noticias-op', dia, accion: 'fija', nums };
     return { tipo: 'error', msg: '¿Quito o fijo esas noticias? Escribe, por ejemplo, «quita noticia 3» o «fija noticia 5».' };
   }
+  if (/\b(actualiza|actualizar|refresca|refrescar|junta|juntar|busca|buscar|trae|traer|renueva)\b.*\bnoticias\b/.test(t) || /\bnoticias (nuevas|frescas|actualizadas|recientes)\b/.test(t)) return { tipo: 'noticias-actualizar', dia };
   if (/^\/?noticias\??$/.test(t) || /\b(ver|cuales|que|lista de|muestra|manda) (son )?(las )?noticias\b/.test(t)) return { tipo: 'noticias', dia };
 
   if (/\b(deshaz|deshacer|deshace|undo|revierte|revertir|como estaba)\b/.test(t)) return { tipo: 'op', dia, op: { t: 'deshacer' }, resumen: 'Deshice el último cambio.' };
@@ -170,7 +171,7 @@ export const AYUDA = `<b>Lo que puedo hacer</b> (escribe normal, sin comandos):
 Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (📅 Plan de hoy → toca una publicación).
 
 📰 <b>Noticias</b>
-• «noticias»: las candidatas de hoy, numeradas
+• «noticias»: las candidatas de hoy, numeradas · «actualiza las noticias»: trae las más recientes
 • «quita noticia 3» · «fija noticia 5» (va primero)
 • Pega un enlace de una noticia para agregarla
 • «noticia: Título | resumen corto» para escribirla tú

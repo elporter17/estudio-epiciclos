@@ -23,7 +23,7 @@ import { subirYouTube, youtubeReady } from './lib/youtube.mjs';
 import { MELODIA_IDS } from '../src/melodias.js';
 import { crearVisual, VISUALES } from './lib/retos-visuales.mjs';
 import { juntarNoticias, N_REEL } from './lib/noticias.mjs';
-import { cambiosDe, noticiasConCambios } from './lib/control.mjs';
+import { cambiosDe, noticiasConCambios, noticiasGuardadas, guardarNoticias } from './lib/control.mjs';
 import { hoyHN } from './lib/video3d-cola.mjs';
 import { ponerFondos, guardarStock } from './lib/stock.mjs';
 
@@ -237,8 +237,14 @@ const FONDO_NOTICIA = { videojuegos: ['video game controller', 'gamer neon room'
 async function noticiasVideo(hist) {
   // Las del día las junta noticias.yml (scripts/noticias.mjs, ya ordenadas por importancia); si no están, se leen ahora.
   // Encima van tus cambios por Telegram: las que quitaste no salen, las fijadas y las tuyas van primero
-  let lista = leer(path.join(ROOT, 'data', 'noticias-hoy.json'), {}).items || [];
-  if (lista.length < 4) lista = await juntarNoticias().catch(() => []);
+  // La lista más nueva entre la del estado (6:23) y la del almacén (la que actualizas desde el bot); si tiene más de
+  // 2 horas se vuelve a juntar (y se guarda, para que el bot muestre la misma numeración)
+  const local = leer(path.join(ROOT, 'data', 'noticias-hoy.json'), {}), enBot = await noticiasGuardadas(hoyHN()).catch(() => ({ at: 0, items: [] }));
+  let { at, items: lista } = enBot.at >= (Date.parse(local.fecha) || 0) && enBot.items.length ? enBot : { at: Date.parse(local.fecha) || 0, items: local.items || [] };
+  if (lista.length < 4 || Date.now() - at > 2 * 3600e3) {
+    const nuevas = await juntarNoticias().catch(() => []);
+    if (nuevas.length >= 4) { lista = nuevas; console.error(`Noticias: actualizadas ahora (${nuevas.length})`); await guardarNoticias(hoyHN(), nuevas).catch(() => {}); }
+  } else console.error(`Noticias: las de las ${new Date(at).toLocaleTimeString('es-HN', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Tegucigalpa' })}`);
   const ops = await cambiosDe(hoyHN()).catch(() => []);
   const vistas = new Set(hist.noticias.slice(-300)), frescas = noticiasConCambios(lista, ops).filter((n) => n.propia || !vistas.has(n.link));
   const elegidas = frescas.slice(0, N_REEL);
