@@ -190,15 +190,17 @@ const tags = (...t) => [...t, 'reels', 'potterplay'].map((x) => `#${x}`).join(' 
 
 function retosVideo() {
   // De fácil a GOD: un tipo distinto en cada nivel
-  const vs = mezclar(VISUALES).map((t, i) => crearVisual(t, i));
+  // 5 de los 6 tipos, cada uno en un nivel (el primero ya cuesta; el GOD de verdad)
+  const vs = mezclar(VISUALES).slice(0, 5).map((t, i) => crearVisual(t, i));
+  const NOMBRE_TIPO = { duplicado: 'número repetido', diferente: 'letra escondida', color: 'círculo de otro tono', fraccion: 'fracción', operacion: 'operación', nombre: 'nombre' };
   const escenas = [
-    { tipo: 'intro', dur: INTRO, tema: 'matematicas', portada: true, sonidos: introSonidos, iconos: ['👀', '🔎', '🧮', '✍️', '🟢'],
-      lineas: [{ texto: '5 RETOS', size: 150, color: TEMAS.matematicas.acento }, { texto: 'DE FÁCIL A GOD', size: 104 }, { texto: '¿Hasta qué nivel llegas?', size: 58, color: 'rgba(255,255,255,0.85)' }] },
-    // Los de buscar (número repetido, letra escondida) tienen más tiempo
-    ...vs.map((v, i) => { const piensa = ['duplicado', 'diferente'].includes(v.tipo) ? 9 : 7; return { tipo: 'visual', dur: piensa + 2.6, piensa, idx: i, total: vs.length, tema: 'matematicas', visual: v, sonidos: cuenta(piensa, 'bien') }; }),
+    { tipo: 'intro', dur: INTRO, tema: 'matematicas', portada: true, sonidos: introSonidos, iconos: ['👀', '🔎', '🧮', '✍️', '🎨'],
+      lineas: [{ texto: '5 RETOS', size: 150, color: TEMAS.matematicas.acento }, { texto: 'DE FÁCIL A GOD', size: 104 }, { texto: 'El 90 % no pasa del nivel 3', size: 58, color: 'rgba(255,255,255,0.85)' }] },
+    // Los de buscar (número repetido, letra escondida, tono) tienen más tiempo
+    ...vs.map((v, i) => { const piensa = ['duplicado', 'diferente', 'color'].includes(v.tipo) ? 9 : 7; return { tipo: 'visual', dur: piensa + 2.6, piensa, idx: i, total: vs.length, tema: 'matematicas', visual: v, sonidos: cuenta(piensa, 'bien') }; }),
     cierre('matematicas', '¿HASTA QUÉ NIVEL LLEGASTE?', 'Del 1 (fácil) al 5 (GOD)')
   ];
-  const texto = `👀 5 retos visuales de fácil a GOD 💀: número repetido, letra escondida, fracción, operación y nombre. ¿Hasta qué nivel llegas antes de que se acabe el tiempo?${OCULTAR}Respuestas:\n${vs.map((v, i) => `${i + 1}. ${v.corta.replace(/[¡!]/g, '')}`).join('\n')}\n\n${tags('retos', 'acertijos', 'retovisual', 'juegosmentales', 'agilidadmental')}`;
+  const texto = `👀 5 retos visuales de fácil a GOD 💀: ${vs.map((v) => NOMBRE_TIPO[v.tipo]).join(', ').replace(/, ([^,]+)$/, ' y $1')}. ¿Hasta qué nivel llegas antes de que se acabe el tiempo?${OCULTAR}Respuestas:\n${vs.map((v, i) => `${i + 1}. ${v.corta.replace(/[¡!]/g, '')}`).join('\n')}\n\n${tags('retos', 'acertijos', 'retovisual', 'juegosmentales', 'agilidadmental')}`;
   return { formato: 'retos', titulo: '5 retos visuales: de fácil a GOD', escenas, texto, clave: { modo: 'puntaje', max: vs.length } };
 }
 
