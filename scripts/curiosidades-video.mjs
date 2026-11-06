@@ -13,9 +13,9 @@ import { parseCli } from './lib/cli.mjs';
 import { setupNode, ROOT } from './lib/node-env.mjs';
 import { TEMAS } from './lib/tarjetas.mjs';
 import { renderQuiz } from './lib/quiz-video.mjs';
-import { publicarEnlace, borrarEnlace } from './lib/video-link.mjs';
+import { publicarEnlace } from './lib/video-link.mjs';
 import { publishReel, publishStory, facebookReady } from './facebook.mjs';
-import { publishInstagramSeguro, instagramReady, musicaTendencia } from './instagram.mjs';
+import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
 import { publishVideo } from './publish.mjs';
 import { logUpload } from './tiktok-status.mjs';
@@ -337,15 +337,15 @@ async function main() {
     registrarRespuesta({ red: 'facebook', id: meta.facebook?.video_id, clave, titulo: pieza.titulo });
     // Instagram (cuenta vinculada a la página): el mismo video desde el almacén, como Reel y como historia
     if (o.instagram !== 'no' && meta.videoUrl && await instagramReady()) {
-      // Instagram: la copia con solo efectos + una canción en tendencia del catálogo autorizado de Meta
-      const cancion = r.outIG ? await musicaTendencia() : null, urlIG = cancion ? (await publicarEnlace(r.outIG).catch(() => null))?.url : null;
-      meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: urlIG || meta.videoUrl, caption: pieza.texto, audio: urlIG ? cancion.id : undefined });
-      if (urlIG) { meta.instagram.cancion = cancion.nombre; await borrarEnlace(urlIG); } // Instagram ya lo copió
+      // Instagram: el mismo video que Facebook, con nuestra música elegida para el formato (ESTILO) y bajo la voz. Las
+      // canciones en tendencia de Meta salían al azar, no combinaban y tapaban la narración (2026-11-06)
+      meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: meta.videoUrl, caption: pieza.texto });
       registrarRespuesta({ red: 'instagram', id: meta.instagram.media_id, clave, titulo: pieza.titulo });
       if (o.historia && r.duration <= 60) meta.instagramStory = await publishInstagramSeguro({ tipo: 'historia', url: meta.videoUrl });
     }
     if (o.tiktok === 'draft') {
-      const tt = r.outIG || video;
+      // Con narrador va la mezcla completa (música bajo la voz); sin narrador, la copia sin música para ponerle un sonido
+      const tt = r.narrado ? video : (r.outIG || video);
       fs.writeFileSync(tt.replace(/\.mp4$/, '.json'), JSON.stringify({ ...meta, file: path.basename(tt) }, null, 2) + '\n');
       try { meta.tiktok = [await publishVideo({ video: tt, mode: 'draft', coverMs: 0 })]; }
       catch (e) { meta.tiktok = [{ mode: 'draft', status: /spam_risk|pending/i.test(e.message) ? 'LIMIT' : 'error', fail_reason: e.message }]; console.error(`Aviso: TikTok: ${e.message}`); }

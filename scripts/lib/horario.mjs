@@ -9,7 +9,11 @@ const R = 'curiosidades-reels.yml';
 // Instagram: Banderas y Retos rinden ~1.250 vistas de mediana (Emojis ~825); Quiz, Noticias, GTA, Datos y «Cómo se hace»
 // se quedan en ~130 → Instagram solo recibe las estrellas y lo de más esfuerzo, unas 6 al día.
 // Facebook: los Reels rinden parejo (~250) y las imágenes muy poco (~15-25) → estrellas en las mejores horas y relleno en
-// los huecos. TikTok: 5 borradores pendientes como máximo (compartido con CirculArte) → 4 al día, los mejores.
+// los huecos.
+// TikTok (TikTok Studio, 88 publicaciones del 16-oct al 6-nov): todo formato saca ~500 vistas de mediana (nombres ~410,
+// futbolistas ~530, GTA ~550, retos ~500) y la hora casi no cambia nada → cuantas más piezas, más vistas en total, hasta
+// ~7 al día (el 17-oct, con 12, la mediana cayó a 183). 6 al día, con 2 h entre una y otra. El límite es de 5 borradores
+// SIN PUBLICAR por cuenta: si publicas cada borrador cuando llega el aviso de Telegram, caben las 6.
 // YouTube: ~6 subidas al día de cuota → 5 Shorts (+ el video largo martes, jueves y sábado).
 // Regla de espacio: después de una estrella (video 3D, «Cómo se hace») no sale nada en esa red durante ~2 horas.
 // Cada pieza: { hora, workflow, que, inputs, redes: { fb, ig, tt, yt } }. Si varias redes comparten pieza y hora, se
@@ -27,12 +31,15 @@ const PIEZAS = {
   video3d2: { workflow: 'video3d.yml', que: 'Video 3D de datos (tarde, la hora de más vistas)', inputs: { modo: 'publicar', turno: 'tarde' } },
   imagen: { workflow: 'curiosidades-facebook.yml', que: 'Imagen de relleno: reto visual o curiosidad' },
   gta: { workflow: 'gta6.yml', que: 'Reel GTA VI «Faltan N días»' },
-  nombres: { workflow: 'nombres.yml', que: 'Nombre o pareja con círculos' }
+  nombres: { workflow: 'nombres.yml', que: 'Nombre o pareja con círculos' },
+  famosos: { workflow: 'famosos.yml', que: 'Futbolista dibujado con círculos' }
 };
+// Solo de TikTok: no usan «redes»
+const SOLO_TT = new Set(['nombres', 'famosos']);
 const PLAN = {
   fb: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '14:30': 'prefieres', '15:45': 'retos', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella', '21:30': 'gta', '22:30': 'quiz' },
   ig: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '15:45': 'retos', '18:30': 'video3d2', '20:30': 'estrella' },
-  tt: { '12:17': 'video3d1', '15:00': 'nombres', '18:30': 'video3d2', '20:30': 'estrella' },
+  tt: { '08:15': 'nombres', '10:30': 'comosehace', '12:17': 'video3d1', '15:00': 'famosos', '18:30': 'video3d2', '20:30': 'estrella' },
   yt: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '15:45': 'retos', '18:30': 'video3d2' }
 };
 // Junta los planes: una corrida por hora y pieza, con las redes que la piden
@@ -43,8 +50,7 @@ function juntarPlanes() {
   }
   return [...slots.values()].map(({ hora, pieza, redes }) => {
     const p = PIEZAS[pieza], orden = ['fb', 'ig', 'tt', 'yt'].filter((r) => redes.includes(r));
-    // nombres.yml es solo de TikTok y no usa «redes»
-    const inputs = pieza === 'nombres' ? p.inputs : { ...(p.inputs || {}), redes: orden.join(',') };
+    const inputs = SOLO_TT.has(pieza) ? p.inputs :{ ...(p.inputs || {}), redes: orden.join(',') };
     return { hora, workflow: p.workflow, que: `${p.que} → ${orden.map((r) => ({ fb: 'FB', ig: 'IG', tt: 'TikTok', yt: 'YouTube' })[r]).join(', ')}`, ...(inputs ? { inputs } : {}) };
   });
 }

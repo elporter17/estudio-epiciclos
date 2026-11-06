@@ -510,12 +510,17 @@ export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semill
     for (const e of lista) (e._audios || []).forEach((a, i) => {
       const ini = Math.round((e.t0 + (e.tipo === 'linea' ? i * (e.dur / e.pasos.length) + VOZ_PASO : VOZ_INI)) * SR);
       for (let k = 0; k < a.length && ini + k < largo; k++) narra[ini + k] += a[k];
-      for (let k = Math.max(0, ini - 0.15 * SR); k < Math.min(largo, ini + a.length + 0.25 * SR); k++) baja[k] = 1;
+      // Se queda abajo 0,7 s después de cada frase: en las pausas cortas no vuelve a subir de golpe
+      for (let k = Math.max(0, ini - 0.2 * SR); k < Math.min(largo, ini + a.length + 0.7 * SR); k++) baja[k] = 1;
     });
-    let v = 0; const sube = 1 / (0.5 * SR), cae = 1 / (0.12 * SR);
+    let v = 0; const sube = 1 / (1.2 * SR), cae = 1 / (0.12 * SR);
     for (let i = 0; i < largo; i++) { v += baja[i] > v ? Math.min(cae, baja[i] - v) : -Math.min(sube, v - baja[i]); baja[i] = v; }
   }
-  const buf = efectos.map((x, i) => Math.tanh((x + 0.75 * mus[i] * (1 - 0.68 * baja[i]) + 0.95 * narra[i]) * 1.2) * 0.9);
+  // Con narrador, la música va a un nivel fijo (−24 dB RMS, la voz anda por −17) y baja ~9 dB más mientras habla: queda
+  // unos 16 dB por debajo de la voz, como en la radio. Antes quedaba a 6 dB y en las pausas subía por encima de la voz.
+  const rmsMus = Math.sqrt(mus.reduce((s, x) => s + x * x, 0) / mus.length) || 1;
+  const gMus = narrado ? 0.06 / rmsMus : 0.75;
+  const buf = efectos.map((x, i) => Math.tanh((x + gMus * mus[i] * (1 - 0.65 * baja[i]) + 0.95 * narra[i]) * 1.2) * 0.9);
   const wav = `${os.tmpdir()}/quiz-${process.pid}-${Date.now()}.wav`;
   fs.writeFileSync(wav, wavBuffer(buf, SR));
   const wavIG = outIG ? wav.replace(/\.wav$/, '-efectos.wav') : null;

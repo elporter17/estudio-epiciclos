@@ -189,12 +189,14 @@ export async function renderLargo({ escenas, out, estilo = 'lofi', semilla = Dat
     for (const e of lista) (e._audios || []).forEach((a, i) => {
       const ini = Math.round((e.t0 + (e.tipo === 'linea' ? i * (e.dur / e.pasos.length) + VOZ_PASO : VOZ_INI)) * SR);
       for (let k = 0; k < a.length && ini + k < largo; k++) narra[ini + k] += a[k];
-      for (let k = Math.max(0, ini - 0.15 * SR); k < Math.min(largo, ini + a.length + 0.25 * SR); k++) baja[k] = 1;
+      for (let k = Math.max(0, ini - 0.2 * SR); k < Math.min(largo, ini + a.length + 0.7 * SR); k++) baja[k] = 1;
     });
-    let v = 0; const sube = 1 / (0.5 * SR), cae = 1 / (0.12 * SR);
+    let v = 0; const sube = 1 / (1.2 * SR), cae = 1 / (0.12 * SR);
     for (let i = 0; i < largo; i++) { v += baja[i] > v ? Math.min(cae, baja[i] - v) : -Math.min(sube, v - baja[i]); baja[i] = v; }
   }
-  const buf = mus.map((x, i) => Math.tanh((0.6 * x * (1 - 0.7 * baja[i]) + 0.95 * narra[i]) * 1.2) * 0.9);
+  // Igual que en los Reels (quiz-video.mjs): música a −24 dB RMS con narrador y ~9 dB más abajo mientras habla
+  const rmsMus = Math.sqrt(mus.reduce((s, x) => s + x * x, 0) / mus.length) || 1, gMus = narrado ? 0.06 / rmsMus : 0.6;
+  const buf = mus.map((x, i) => Math.tanh((gMus * x * (1 - 0.65 * baja[i]) + 0.95 * narra[i]) * 1.2) * 0.9);
   const wav = path.join(os.tmpdir(), `largo-${process.pid}-${Date.now()}.wav`); fs.writeFileSync(wav, wavBuffer(buf, SR));
   const args = ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgba', '-s', `${W}x${H}`, '-r', String(FPS), '-i', 'pipe:0', '-i', wav,
     '-map', '0:v', '-map', '1:a', '-vf', 'scale=out_color_matrix=bt709:out_range=tv,format=yuv420p',
