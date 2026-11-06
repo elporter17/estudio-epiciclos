@@ -130,7 +130,7 @@ export function aplicarCambios(base, ops = [], fecha) {
       const redes = op.redes || (s.inputs?.redes ? s.inputs.redes.split(',') : redesDePieza(op.pieza));
       return { ...armarSlot(op.pieza, s.hora, redes), cambio: `antes: ${s.pieza || s.workflow}` };
     });
-    else if (op.t === 'agregar' && PIEZAS[op.pieza]) slots.push({ ...armarSlot(op.pieza, op.hora, op.redes || redesDePieza(op.pieza)), cambio: op.id ? 'fijo' : 'agregado', ...(op.id ? { fijo: true } : {}) });
+    else if (op.t === 'agregar' && PIEZAS[op.pieza]) slots.push({ ...armarSlot(op.pieza, op.hora, op.redes || redesDePieza(op.pieza)), cambio: op.ya ? 'publicado ya' : op.id ? 'fijo' : 'agregado', ...(op.id ? { fijo: true } : {}), ...(op.ya ? { ya: true } : {}) });
     else if (op.t === 'pausa') slots = slots.filter((s) => !editable(s) || s.workflow === 'video3d.yml' && s.inputs?.modo === 'render');
   }
   return slots.sort((a, b) => a.hora.localeCompare(b.hora));
@@ -163,7 +163,7 @@ const ICONO_ESTADO = { hecho: '✅', 'en-curso': '⏳', pendiente: '⏰', perdid
 export function tablaPlan(slots, { estado = false } = {}) {
   const filas = slots.filter((s) => editable(s) && s.workflow !== 'metas.yml').map((s) => {
     const redes = redesDe(s.workflow, s.inputs).map((r) => RED_NOMBRE[r] === 'TikTok' ? 'TT' : RED_NOMBRE[r] === 'YouTube' ? 'YT' : RED_NOMBRE[r]).join(' ');
-    return `${estado ? `${ICONO_ESTADO[s.estado] || '·'} ` : ''}${s.hora} ${nombreSlot(s).slice(0, 17).padEnd(17)} ${redes}${s.fijo ? ' 🔁' : s.cambio ? ' *' : ''}`;
+    return `${estado ? `${ICONO_ESTADO[s.estado] || '·'} ` : ''}${s.hora} ${nombreSlot(s).slice(0, 17).padEnd(17)} ${redes}${s.ya ? ' 🚀' : s.fijo ? ' 🔁' : s.cambio ? ' *' : ''}`;
   });
   return filas.join('\n');
 }

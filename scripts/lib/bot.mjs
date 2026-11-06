@@ -182,7 +182,7 @@ Horas: «14:30», «2:30 pm» o «a las 3» (de 1 a 6 se entiende de la tarde).`
 export const diaBonito = (fecha) => new Date(`${fecha}T12:00:00Z`).toLocaleDateString('es-HN', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
 export function mensajePlan(fecha, slots, { estado = false, ops = [], titulo } = {}) {
   const pausa = ops.some((o) => o.t === 'pausa'), cambios = slots.some((s) => s.cambio);
-  return `📅 <b>${titulo || `Plan de ${diaBonito(fecha)}`}</b>${pausa ? '\n⏸️ <b>Día en pausa</b>: no sale nada («reanuda» para volver)' : ''}\n<pre>${esc(tablaPlan(slots, { estado }) || '(nada programado)')}</pre>${cambios ? `\n${[slots.some((s) => s.cambio && !s.fijo) ? '* cambiado por ti' : '', slots.some((s) => s.fijo) ? '🔁 programación fija' : ''].filter(Boolean).join(' · ')}` : ''}${estado ? '\n✅ salió · ⏳ en curso · ⏰ atrasado · ❌ perdido' : ''}`;
+  return `📅 <b>${titulo || `Plan de ${diaBonito(fecha)}`}</b>${pausa ? '\n⏸️ <b>Día en pausa</b>: no sale nada («reanuda» para volver)' : ''}\n<pre>${esc(tablaPlan(slots, { estado }) || '(nada programado)')}</pre>${cambios ? `\n${[slots.some((s) => s.cambio && !s.fijo && !s.ya) ? '* cambiado por ti' : '', slots.some((s) => s.fijo) ? '🔁 programación fija' : '', slots.some((s) => s.ya) ? '🚀 publicado ya' : ''].filter(Boolean).join(' · ')}` : ''}${estado ? '\n✅ salió · ⏳ en curso · ⏰ atrasado · ❌ perdido' : ''}`;
 }
 export function mensajeNoticias(lista, { horaReel, max = 10 } = {}) {
   if (!lista.length) return '📰 Hoy no hay noticias candidatas todavía (se juntan a las 6:23).';

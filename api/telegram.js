@@ -4,7 +4,7 @@
 // (scripts/lib/control.mjs) y el relojero los aplica en su siguiente vuelta (≤ 10 min).
 // Solo hace caso a TU chat (TELEGRAM_CHAT_ID) y solo acepta llamadas de Telegram (cabecera secreta que se registra con
 // npm run telegram:webhook). Variables de Vercel: TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID.
-import { json, diaConEstado, lanzar } from './_panel.js';
+import { json, diaConEstado, lanzar, ACTIVO } from './_panel.js';
 import { interpretar, AYUDA, mensajePlan, mensajeNoticias, diaBonito } from '../scripts/lib/bot.mjs';
 import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId } from '../scripts/lib/control.mjs';
 import { delDia, ahoraHN, armarSlot, redesDePieza, nombreSlot, editable, NOMBRE_PIEZA, redesDe, redesPosibles } from '../scripts/lib/horario.mjs';
@@ -139,10 +139,13 @@ async function vistaNoticias(aviso = '') {
   return { texto: `${aviso ? `${aviso}\n\n` : ''}${mensajeNoticias(lista, { horaReel })}\n\n👇 ❌ quita una noticia del Reel; 📌 mete una de las de reserva. Para agregar una tuya, pega el enlace.`, teclado: { inline_keyboard: teclado } };
 }
 
+// Un cambio hecho: la confirmación va en su propio mensaje y debajo, en uno nuevo, el plan (o las noticias) al día
+const conConfirmacion = (vista, txt, icono = '✅') => ({ ...vista, confirmacion: `${icono} ${txt}` });
+
 // ---------- botones ----------
 export async function alTocar(data) {
   const [c, ...a] = data.split('|');
-  const hecho = async (fecha, op, txt) => { await registrar(fecha, op); return vistaPlan(fecha, `✅ ${txt}`); };
+  const hecho = async (fecha, op, txt) => { await registrar(fecha, op); return conConfirmacion(await vistaPlan(fecha), txt); };
   switch (c) {
     case 'p': return vistaPlan(a[0]);
     case 's': return vistaSlot(a[0], a[1], a[2]);
@@ -168,10 +171,10 @@ export async function alTocar(data) {
       const donde = rs.length ? ` en ${nombresRedes(rs)}` : '';
       if (alcance === 'd') return hecho(fecha, op, `Agregué ${NOMBRE_PIEZA[pieza]} a las ${larga(hhmm)}${donde}, solo el ${cortoDia(fecha)}.`);
       await registrar(FIJO, { ...op, id: nuevoId(), ...(alcance === 's' ? { dias: [diaSemana(fecha)] } : {}) });
-      return vistaPlan(fecha, `✅ ${NOMBRE_PIEZA[pieza]} a las ${larga(hhmm)}${donde} queda en la programación: ${alcance === 's' ? `cada ${DIAS[diaSemana(fecha)]}` : 'todos los días'} (🔁). Se borra en «🔁 Fijos».`);
+      return conConfirmacion(await vistaPlan(fecha), `${NOMBRE_PIEZA[pieza]} a las ${larga(hhmm)}${donde} queda en la programación: ${alcance === 's' ? `cada ${DIAS[diaSemana(fecha)]}` : 'todos los días'} (🔁). Se borra en «🔁 Fijos».`);
     }
     case 'fj': return vistaFijos();
-    case 'fx': { await registrar(FIJO, { t: 'borrar', id: a[0] }); return vistaFijos('✅ Lo quité de la programación fija.'); }
+    case 'fx': { await registrar(FIJO, { t: 'borrar', id: a[0] }); return conConfirmacion(await vistaFijos(), 'Lo quité de la programación fija: deja de salir desde hoy.'); }
     case 'rd': return vistaRedesSlot(a[0], a[1], a[2], decR(a[3]));
     case 'rg': { const rs = decR(a[3]); return hecho(a[0], { t: 'cambiar', hora: larga(a[1]), pieza: a[2], redes: rs }, `${NOMBRE_PIEZA[a[2]] || 'La publicación'} de las ${larga(a[1])} ahora sale en ${nombresRedes(rs)}.`); }
     case 'pz': {
@@ -180,7 +183,7 @@ export async function alTocar(data) {
       return { texto: `⏸️ ¿Pausar TODAS las publicaciones de ${esc(diaBonito(a[0]))}?\n(Los renders y las respuestas a comentarios siguen.)`, teclado: { inline_keyboard: [fila(boton('Sí, pausar', `pz2|${a[0]}`), boton('No', `p|${a[0]}`))] } };
     }
     case 'pz2': return hecho(a[0], { t: 'pausa' }, 'Día en pausa.');
-    case 'u': { await registrar(a[0], { t: 'deshacer' }); return a[1] === 'n' ? vistaNoticias('↩️ Deshice el último cambio.') : vistaPlan(a[0], '↩️ Deshice el último cambio.'); }
+    case 'u': { await registrar(a[0], { t: 'deshacer' }); return conConfirmacion(a[1] === 'n' ? await vistaNoticias() : await vistaPlan(a[0]), 'Deshice el último cambio.', '↩️'); }
     case 'l': return vistaPiezas('🚀 ¿Qué publico ahora mismo? (sale en unos minutos, además de lo del plan)', 'l2', `p|${ahoraHN().fecha}`);
     // l2|pieza[|redes]: elegir redes y confirmar
     case 'l2': {
@@ -190,15 +193,21 @@ export async function alTocar(data) {
     case 'l3': {
       const rs = a[1] ? decR(a[1]) : redesDePieza(a[0]);
       if (!rs.length) return alTocar(`l2|${a[0]}`);
-      const s = armarSlot(a[0], ahoraHHMM(), rs); await lanzar(s.workflow, s.inputs || {});
-      return vistaPlan(ahoraHN().fecha, `🚀 Lancé ${NOMBRE_PIEZA[a[0]]} en ${nombresRedes(redesDe(s.workflow, s.inputs))}. Tarda unos minutos en salir.`);
+      const hoy = ahoraHN().fecha, hora = ahoraHHMM(), s = armarSlot(a[0], hora, rs), donde = nombresRedes(redesDe(s.workflow, s.inputs));
+      // GitHub guarda una sola corrida en espera: si ya hay una, lanzar otra la cancelaría. Entonces lo deja en el plan
+      // y el relojero lo lanza en cuanto se libere (≤ 10 min)
+      const { corridas } = await diaConEstado(new Date());
+      const enCola = corridas.some((x) => ACTIVO.includes(x.estado) && x.estado !== 'in_progress');
+      if (!enCola) await lanzar(s.workflow, s.inputs || {});
+      await registrar(hoy, { t: 'agregar', hora, pieza: a[0], redes: rs, ya: true });
+      return conConfirmacion(await vistaPlan(hoy), `${enCola ? 'Puse' : 'Lancé'} ${NOMBRE_PIEZA[a[0]]} en ${donde}. ${enCola ? 'Hay otra corrida esperando en GitHub: sale en cuanto termine (unos minutos más).' : 'Ya se está generando: sale en unos 5 a 10 minutos.'}`, '🚀');
     }
     case 'n': return vistaNoticias();
     case 'nx': case 'nf': {
       const hoy = ahoraHN().fecha, n = (await noticiasDe(hoy))[+a[0] - 1];
       if (!n) return vistaNoticias('⚠️ Esa noticia ya no está en la lista.');
       await registrar(hoy, { t: c === 'nx' ? 'noticia-fuera' : 'noticia-fija', link: n.link });
-      return vistaNoticias(`✅ ${c === 'nx' ? 'Quité' : 'Metí en el Reel'} la noticia ${a[0]}.`);
+      return conConfirmacion(await vistaNoticias(), `${c === 'nx' ? 'Quité' : 'Metí en el Reel'} la noticia ${a[0]}.`);
     }
     default: return vistaPlan(ahoraHN().fecha);
   }
@@ -223,23 +232,23 @@ export async function atender(texto) {
       const items = await noticiasDe(hoy), malas = r.nums.filter((n) => !items[n - 1]);
       if (malas.length) return vistaNoticias(`⚠️ No tengo la noticia ${malas.join(', ')}.`);
       for (const n of r.nums) await registrar(hoy, { t: r.accion === 'fuera' ? 'noticia-fuera' : 'noticia-fija', link: items[n - 1].link });
-      return vistaNoticias(`✅ ${r.accion === 'fuera' ? 'Quité' : 'Fijé arriba'} ${r.nums.length > 1 ? 'las noticias' : 'la noticia'} ${r.nums.join(', ')}.`);
+      return conConfirmacion(await vistaNoticias(), `${r.accion === 'fuera' ? 'Quité' : 'Fijé arriba'} ${r.nums.length > 1 ? 'las noticias' : 'la noticia'} ${r.nums.join(', ')}.`);
     }
     case 'enlace': {
       const n = await noticiaDeEnlace(r.url);
       await registrar(hoy, { t: 'noticia-propia', noticia: n });
-      return vistaNoticias(`✅ Agregué «${esc(n.titulo)}» (${esc(n.medio)}). Va primero en el Reel.${n.resumen ? '' : '\nNo traía resumen: si quieres uno, mándala como «noticia: Título | resumen».'}`);
+      return conConfirmacion(await vistaNoticias(), `Agregué «${n.titulo}» (${n.medio}). Va primero en el Reel.${n.resumen ? '' : '\nNo traía resumen: si quieres uno, mándala como «noticia: Título | resumen».'}`);
     }
     case 'op': {
       if (r.op.t === 'agregar' && !r.alcance) return vistaAlcance(fecha, r.op.pieza, corta(r.op.hora), r.op.redes || redesDePieza(r.op.pieza));
       if (r.op.t === 'agregar' && r.alcance !== 'd') {
         await registrar(FIJO, { ...r.op, id: nuevoId(), ...(r.alcance === 's' ? { dias: r.dias } : {}) });
-        return vistaPlan(fecha, `✅ ${esc(NOMBRE_PIEZA[r.op.pieza])} a las ${r.op.hora} queda en la programación: ${r.alcance === 's' ? `cada ${r.dias.map((d) => DIAS[d]).join(', ')}` : 'todos los días'} (🔁).`);
+        return conConfirmacion(await vistaPlan(fecha), `${NOMBRE_PIEZA[r.op.pieza]} a las ${r.op.hora} queda en la programación: ${r.alcance === 's' ? `cada ${r.dias.map((d) => DIAS[d]).join(', ')}` : 'todos los días'} (🔁).`);
       }
       await registrar(fecha, r.op);
-      if (r.op.t.startsWith('noticia')) return vistaNoticias(`✅ ${esc(r.resumen)}`);
+      if (r.op.t.startsWith('noticia')) return conConfirmacion(await vistaNoticias(), r.resumen);
       const pasado = r.op.t === 'mover' && fecha === hoy && r.op.a <= ahoraHHMM();
-      return vistaPlan(fecha, `✅ ${esc(r.resumen)}${pasado ? '\nEsa hora ya pasó: sale en los próximos 10 minutos.' : ''}`);
+      return conConfirmacion(await vistaPlan(fecha), `${r.resumen}${pasado ? '\nEsa hora ya pasó: sale en los próximos 10 minutos.' : ''}`);
     }
     case 'lanzar': return alTocar(`l2|${r.pieza}${r.redes ? `|${codR(r.redes)}` : ''}`);
     default: return { texto: `${esc(r.msg)}\n\nUsa los botones de abajo 👇 o escribe «ayuda».`, teclado: MENU };
@@ -257,14 +266,16 @@ export default { async fetch(request) {
   if (!mio) return json({ ok: true, motivo: chat ? 'otro-chat' : 'sin-mensaje', chatIdConfigurado: !!process.env.TELEGRAM_CHAT_ID });
   let enviado = false;
   try {
-    if (cb) {
-      await tgApi('answerCallbackQuery', { callback_query_id: cb.id });
-      const v = await alTocar(cb.data || '');
-      enviado = await editarMensaje(chat, m.message_id, v.texto, v.teclado);
-      if (!enviado) enviado = await telegram(v.texto, { chat, teclado: v.teclado });
-    } else if (m.text) {
-      const v = await atender(m.text);
+    const v = cb ? (await tgApi('answerCallbackQuery', { callback_query_id: cb.id, text: 'Listo' }), await alTocar(cb.data || '')) : m.text ? await atender(m.text) : null;
+    if (v?.confirmacion) {
+      // El menú donde tocaste queda como la confirmación (sin botones) y el plan al día llega abajo, en un mensaje nuevo
+      if (cb) await editarMensaje(chat, m.message_id, esc(v.confirmacion)) || await telegram(esc(v.confirmacion), { chat });
+      else await telegram(esc(v.confirmacion), { chat });
       enviado = await telegram(v.texto, { chat, teclado: v.teclado });
+    } else if (v) {
+      // Solo navegar (abrir una publicación, elegir redes u hora): se cambia el mismo mensaje
+      enviado = cb ? await editarMensaje(chat, m.message_id, v.texto, v.teclado) : false;
+      if (!enviado) enviado = await telegram(v.texto, { chat, teclado: v.teclado });
     }
   } catch (e) { enviado = await telegram(`⚠️ No pude hacerlo: ${esc(e.message)}`, { chat, teclado: MENU }); return json({ ok: true, motivo: 'error', error: e.message, enviado }); }
   return json({ ok: true, motivo: 'atendido', enviado, error: enviado ? undefined : ultimoError });
