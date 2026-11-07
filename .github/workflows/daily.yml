@@ -234,7 +234,7 @@ jobs:
             noticias) mkdir -p out; node scripts/noticias.mjs; exit 0 ;;
             # Metas semanales de Facebook (metas.yml): «figura» = «fotos,historias» puestas desde el panel (vacías = las guardadas)
             metas) mkdir -p out; IFS=, read -r mf mh <<< "$FIGURA_INPUT"; node scripts/metas.mjs ${mf:+--fotos "$mf"} ${mh:+--historias "$mh"}; exit 0 ;;
-            gta6) GTA_TT=$( [ -n "$REDES_INPUT" ] && echo "$R_TT" || echo draft ); if [ "$FIGURA_INPUT" = "lanzamiento" ]; then node scripts/gta6.mjs --solo-lanzamiento --facebook "$R_FB" --instagram "$R_IG" --tiktok "$GTA_TT"; else node scripts/gta6.mjs --facebook "$R_FB" --instagram "$R_IG" --tiktok "$GTA_TT"; fi; exit 0 ;;
+            gta6) GTA_TT=$( [ -n "$REDES_INPUT" ] && echo "$R_TT" || echo draft ); if [ "$FIGURA_INPUT" = "lanzamiento" ]; then node scripts/gta6.mjs --solo-lanzamiento --facebook "$R_FB" --instagram "$R_IG" --tiktok "$GTA_TT" --youtube "$R_YT"; else node scripts/gta6.mjs --facebook "$R_FB" --instagram "$R_IG" --tiktok "$GTA_TT" --youtube "$R_YT"; fi; exit 0 ;;
             # Videos 3D: el render de la madrugada y la publicación del mediodía (video3d.yml)
             video3d-render) node scripts/video3d-render.mjs --turno "${FIGURA_INPUT:-mediodia}" ${PRUEBA_INPUT:+--dry-run}; exit 0 ;;
             video3d-publicar) node scripts/video3d-publicar.mjs --turno "${FIGURA_INPUT:-mediodia}" --tiktok "$( [ "$R_TT" = draft ] && echo si || echo no )" --youtube "$R_YT"; exit 0 ;;

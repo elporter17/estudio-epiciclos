@@ -10,6 +10,7 @@ import { spawnSync } from 'node:child_process';
 import ffmpegPath from 'ffmpeg-static';
 import './lib/env-file.mjs';
 import { parseCli } from './lib/cli.mjs';
+import { publicarProximos } from './lib/proximos.mjs';
 import { ROOT } from './lib/node-env.mjs';
 import { publicarEnlace } from './lib/video-link.mjs';
 import { leerEstado, guardarEstado, elegir, pendientes, avisoExtra, hoyHN, AVISO_COLA } from './lib/video3d-cola.mjs';
@@ -38,7 +39,7 @@ if (o['dry-run']) { console.log(final); process.exit(0); }
 
 const enlace = await publicarEnlace(final, { days: 3 });
 estado.listos[turno] = { id: g.id, fecha, turno, url: enlace.url, download: enlace.downloadUrl, titulo: g.titulo, duracion: render.duracion, archivo: path.basename(g.archivo) };
-guardarEstado(estado);
+guardarEstado(estado); await publicarProximos(); // el bot muestra qué 3D vienen
 const quedan = pendientes(estado) - Object.values(estado.listos).filter((x) => x && !x.fecha_fija).length;
 if (quedan <= AVISO_COLA) avisoExtra(`📚 Videos 3D: quedan ${Math.max(0, quedan)} guiones en la cola (después de «${g.titulo}»). Pídeme otra tanda para no quedarnos sin videos.`);
 console.log(JSON.stringify({ listo: estado.listos[turno], quedan }, null, 2));

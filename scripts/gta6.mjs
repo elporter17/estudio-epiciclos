@@ -18,10 +18,11 @@ import { publishReel, publishStory, facebookReady } from './facebook.mjs';
 import { publishInstagramSeguro, instagramReady } from './instagram.mjs';
 import { publishVideo } from './publish.mjs';
 import { logUpload } from './tiktok-status.mjs';
+import { subirYouTube, youtubeReady } from './lib/youtube.mjs';
 import { ponerFondos, guardarStock } from './lib/stock.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
 
-const o = parseCli({ 'dry-run': { type: 'boolean', default: false }, 'solo-lanzamiento': { type: 'boolean', default: false }, tiktok: { type: 'string', default: 'draft' }, facebook: { type: 'string', default: 'si' }, instagram: { type: 'string', default: 'si' }, hoy: { type: 'string' } });
+const o = parseCli({ 'dry-run': { type: 'boolean', default: false }, 'solo-lanzamiento': { type: 'boolean', default: false }, tiktok: { type: 'string', default: 'draft' }, facebook: { type: 'string', default: 'si' }, instagram: { type: 'string', default: 'si' }, youtube: { type: 'string', default: 'si' }, hoy: { type: 'string' } });
 const D = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'gta6.json'), 'utf8'));
 const HIST = path.join(ROOT, 'data', 'gta6-historial.json');
 const hist = (() => { try { return JSON.parse(fs.readFileSync(HIST, 'utf8')); } catch { return { usados: [] }; } })();
@@ -100,6 +101,13 @@ if (!o['dry-run']) {
       logUpload({ at: new Date().toISOString(), title: titulo, publish_id: meta.tiktok[0]?.publish_id || null, status: meta.tiktok[0]?.status, run: process.env.GITHUB_RUN_ID || null });
       fs.rmSync(mudo.replace(/\.mp4$/, '.json'), { force: true });
     }
+  }
+  // YouTube: el mismo video como Short PRIVADO (se publica a mano en Studio; el aviso llega por Telegram)
+  if (o.youtube !== 'no' && youtubeReady()) {
+    try { meta.youtube = await subirYouTube({ file: video, titulo: `${titulo} #Shorts`, descripcion: `${texto}
+
+🔔 Suscríbete a Potter Play: la cuenta atrás de GTA VI todos los días.`, etiquetas: ['gta 6', 'gta vi', 'grand theft auto', 'rockstar', 'videojuegos', 'shorts', 'potter play'] }); console.error(`YouTube: subido como privado · ${meta.youtube.studio}`); }
+    catch (e) { meta.youtube = { status: 'error', error: e.message }; console.error(`Aviso: YouTube: ${e.message}`); }
   }
   hist.usados = [...hist.usados, ...datos.map((d) => d.id)].slice(-200);
   if (faltan === 0) hist.lanzamiento = new Date().toISOString();

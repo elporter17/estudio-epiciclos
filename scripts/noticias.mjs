@@ -15,6 +15,7 @@ import { juntarNoticias } from './lib/noticias.mjs';
 import { delDia, ahoraHN } from './lib/horario.mjs';
 import { cambiosDe, guardarNoticias, noticiasConCambios, limpiarViejos, telegram, controlListo, ultimoError } from './lib/control.mjs';
 import { mensajePlan, mensajeNoticias, diaBonito } from './lib/bot.mjs';
+import { publicarProximos } from './lib/proximos.mjs';
 
 export const ARCHIVO = path.join(ROOT, 'data', 'noticias-hoy.json');
 export { juntarNoticias };
@@ -34,6 +35,7 @@ async function main() {
   fs.writeFileSync(ARCHIVO, JSON.stringify({ fecha: new Date().toISOString(), items }, null, 2) + '\n');
   if (controlListo()) {
     await guardarNoticias(fecha, items);
+    await publicarProximos(); // qué videos 3D y largo vienen (para el bot)
     await limpiarViejos().catch((e) => console.error(`No se pudo limpiar el almacén: ${e.message}`));
   } else console.error('Sin TELEGRAM_BOT_TOKEN o sin almacén: el bot no podrá cambiar las noticias de hoy');
   // Botones para cambiar sin escribir (los atiende api/telegram.js)

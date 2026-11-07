@@ -115,6 +115,10 @@ export function noticiasConCambios(items, ops = []) {
   return [...propias, ...arriba, ...base.filter((n) => !arriba.includes(n))];
 }
 
+// ---------- otros datos para el bot (qué videos vienen…) ----------
+export async function guardarControl(nombre, data) { if (controlListo()) await guardarJson(`${carpeta()}/${nombre}.json`, data); }
+export async function leerControl(nombre) { return leerJson(`${carpeta()}/${nombre}.json`); }
+
 // ---------- comentarios que contestas tú ----------
 // Lo que decides en Telegram sobre un comentario delicado (responder con tu texto, «me gusta», ocultar) queda en
 // control/<id>/comentarios/<ms>.json hasta que scripts/comentarios.mjs lo publica y lo borra.

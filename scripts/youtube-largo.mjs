@@ -9,6 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { parseCli } from './lib/cli.mjs';
+import { planearLargo, publicarProximos } from './lib/proximos.mjs';
 import { setupNode, ROOT } from './lib/node-env.mjs';
 import { renderLargo, renderMiniatura } from './lib/largo-video.mjs';
 import { subirYouTube, youtubeReady, ponerMiniatura } from './lib/youtube.mjs';
@@ -23,6 +24,8 @@ const azar = (a) => a[Math.floor(Math.random() * a.length)];
 
 const N = Math.max(3, Math.min(8, +o.productos || 6));
 let elegidos = o.ids ? o.ids.split(',').map((id) => base.find((p) => p.id === id.trim())).filter(Boolean) : [];
+// Los que ya estaban elegidos para este video (el bot los muestra de antemano: scripts/lib/proximos.mjs)
+if (!elegidos.length) elegidos = planearLargo(N);
 if (!elegidos.length) { const usados = new Set(hist.usados.slice(-Math.max(0, base.length - N))); elegidos = mezclar(base.filter((p) => !usados.has(p.id))).slice(0, N); }
 if (elegidos.length < 3) throw new Error('No hay suficientes productos');
 const n = elegidos.length, hace = (p) => (/^(los|las) /.test(p.titulo) ? 'hacen' : 'hace');
@@ -82,8 +85,10 @@ if (!o['dry-run'] && youtubeReady()) {
     try { await ponerMiniatura(meta.youtube.id, miniatura); meta.youtube.miniatura = 'ok'; }
     catch (e) { meta.youtube.miniatura = e.message; console.error(`Aviso: miniatura: ${e.message} (verifica el canal en youtube.com/verify)`); }
   } catch (e) { meta.youtube = { status: 'error', error: e.message }; console.error(`Aviso: YouTube: ${e.message}`); }
-  hist.usados = [...hist.usados, ...elegidos.map((p) => p.id)].slice(-60); hist.total++;
+  hist.usados = [...hist.usados, ...elegidos.map((p) => p.id)].slice(-60); hist.total++; hist.siguiente = null;
   fs.writeFileSync(HIST, JSON.stringify(hist, null, 2) + '\n');
+  // Y se eligen ya los del siguiente video, para que el bot los muestre
+  planearLargo(N, { nuevo: true }); await publicarProximos();
 }
 fs.writeFileSync(video.replace(/\.mp4$/, '.json'), JSON.stringify(meta, null, 2) + '\n');
 console.log(JSON.stringify({ video, miniatura, duration: r.duration, youtube: meta.youtube }, null, 2));

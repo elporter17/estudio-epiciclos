@@ -5,8 +5,8 @@
 // Solo hace caso a TU chat (TELEGRAM_CHAT_ID) y solo acepta llamadas de Telegram (cabecera secreta que se registra con
 // npm run telegram:webhook). Variables de Vercel: TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID.
 import { json, diaConEstado, lanzar, ACTIVO } from './_panel.js';
-import { interpretar, AYUDA, mensajePlan, mensajeNoticias, diaBonito } from '../scripts/lib/bot.mjs';
-import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasGuardadas, guardarNoticias, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId, encolarComentario } from '../scripts/lib/control.mjs';
+import { interpretar, AYUDA, mensajePlan, mensajeNoticias, diaBonito, alcanceDe } from '../scripts/lib/bot.mjs';
+import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasGuardadas, guardarNoticias, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId, encolarComentario, leerControl } from '../scripts/lib/control.mjs';
 import { delDia, ahoraHN, armarSlot, redesDePieza, nombreSlot, editable, NOMBRE_PIEZA, redesDe, redesPosibles } from '../scripts/lib/horario.mjs';
 import { noticiaDeEnlace, juntarNoticias, N_REEL } from '../scripts/lib/noticias.mjs';
 
@@ -21,7 +21,7 @@ const PONIBLES = ['debate', 'debateimg', 'banderas', 'retos', 'emojis', 'quiz', 
 const RED = { fb: 'FB', ig: 'IG', tt: 'TT', yt: 'YT' };
 
 // Teclado fijo de abajo: lo que más se usa, sin escribir
-export const MENU = { keyboard: [[{ text: '📅 Plan de hoy' }, { text: '📅 Plan de mañana' }], [{ text: '📰 Noticias' }, { text: '🚀 Publicar ya' }], [{ text: '❓ Ayuda' }]], resize_keyboard: true, is_persistent: true };
+export const MENU = { keyboard: [[{ text: '📅 Plan de hoy' }, { text: '📅 Plan de mañana' }], [{ text: '📰 Noticias' }, { text: '🚀 Publicar ya' }], [{ text: '🎬 Videos' }, { text: '❓ Ayuda' }]], resize_keyboard: true, is_persistent: true };
 const fila = (...b) => b.filter(Boolean);
 const boton = (text, data) => ({ text, callback_data: data.slice(0, 64) });
 const enFilas = (botones, n) => botones.reduce((acc, b, i) => (i % n ? acc[acc.length - 1].push(b) : acc.push([b]), acc), []);
@@ -58,13 +58,57 @@ function vistaAlcance(fecha, pieza, hhmm, rs) {
     teclado: { inline_keyboard: [fila(boton(`📅 Solo el ${cortoDia(fecha)}`, `${k}|d`)), fila(boton('🔁 Todos los días', `${k}|t`), boton(`🗓️ Cada ${DIAS[diaSemana(fecha)]}`, `${k}|s`)), fila(boton('⬅️ Volver', `a2|${fecha}|${pieza}|${codR(rs)}`))] }
   };
 }
-// La programación fija: cada agregado de «todos los días» o «cada …» con su botón para borrarlo
+// Para cualquier cambio (quitar, mover, cambiar, redes): ¿solo ese día o siempre? «data» es el botón sin el alcance
+function vistaAlcanceOp(fecha, data, que) {
+  return {
+    texto: `${que}\n\n¿Solo ese día o para siempre?`,
+    teclado: { inline_keyboard: [fila(boton(`📅 Solo el ${cortoDia(fecha)}`, `${data}|d`)), fila(boton('🔁 Todos los días', `${data}|t`), boton(`🗓️ Cada ${DIAS[diaSemana(fecha)]}`, `${data}|s`)), fila(boton('⬅️ Volver', `p|${fecha}`))] }
+  };
+}
+// Guarda un cambio con su alcance (d = ese día; t = todos los días; s = cada semana ese día) y arma la confirmación
+async function conAlcance(fecha, op, alcance, txt, dias) {
+  if (alcance === 't' || alcance === 's') {
+    const ds = dias || [diaSemana(fecha)];
+    await registrar(FIJO, { ...op, id: nuevoId(), ...(alcance === 's' ? { dias: ds } : {}) });
+    return conConfirmacion(await vistaPlan(fecha), `${txt} ${alcance === 's' ? `Cada ${ds.map((d) => DIAS[d]).join(', ')}` : 'Todos los días'} (🔁, se borra en «🔁 Fijos»).`);
+  }
+  await registrar(fecha, op);
+  return conConfirmacion(await vistaPlan(fecha), `${txt} Solo el ${cortoDia(fecha)}.`);
+}
+// Qué videos vienen: los 3D (listos para hoy y los siguientes de la cola) y el próximo video largo de YouTube. Lo deja
+// cada corrida de GitHub (scripts/lib/proximos.mjs)
+async function vistaVideos() {
+  const p = await leerControl('proximos'), hoy = ahoraHN().fecha;
+  const volver = { inline_keyboard: [fila(boton('📅 Plan de hoy', `p|${hoy}`))] };
+  if (!p) return { texto: '🎬 Todavía no tengo la lista de videos: se arma con el próximo render o publicación 3D (o con las noticias de las 6:23).', teclado: volver };
+  const corto = (f) => `${DIAS[diaSemana(f)].slice(0, 3)} ${+f.slice(8)}`;
+  const l = p.video3d.listos, turno = (t, h) => l[t] ? `${h} «${esc(l[t].titulo)}»${l[t].fecha !== hoy ? ` (del ${corto(l[t].fecha)})` : ''} ✅ listo` : `${h} — ya salió o se renderiza de madrugada`;
+  const texto = [
+    '🎬 <b>Videos que vienen</b>',
+    '',
+    '<b>3D de hoy</b>',
+    turno('mediodia', '12:17'), turno('tarde', '18:30'),
+    '',
+    `<b>Siguientes en la cola</b> (quedan ${p.video3d.quedan}; salen 2 al día)`,
+    ...p.video3d.siguientes.map((g, i) => `${i + 1}. ${esc(g.titulo)}`),
+    ...(p.video3d.especiales.length ? ['', '<b>Especiales con fecha</b>', ...p.video3d.especiales.map((g) => `⭐ ${esc(g.titulo)} · ${corto(g.fecha)}, 18:30`)] : []),
+    '',
+    `📺 <b>Video largo de YouTube</b>${p.largo.fecha ? ` · ${corto(p.largo.fecha)}, 14:07` : ''}`,
+    `Cómo se hacen: ${esc(p.largo.productos.join(', '))}`,
+    '',
+    `<i>Actualizado a las ${new Date(p.at).toLocaleTimeString('es-HN', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Tegucigalpa' })}</i>`
+  ].join('\n');
+  return { texto, teclado: volver };
+}
+// La programación fija: lo que agregaste o cambiaste «para siempre», con su botón para borrarlo
 async function vistaFijos(aviso = '') {
   const { fijos } = await estadoExacto(), lista = fijos.filter((o) => o.id);
-  const linea = (o) => `${o.dias ? `🗓️ Cada ${o.dias.map((d) => DIAS[d]).join(', ')}` : '🔁 Todos los días'} · ${o.hora} · ${NOMBRE_PIEZA[o.pieza] || o.pieza}${o.redes ? ` (${o.redes.map((r) => RED[r]).join(' ')})` : ''}`;
+  const accion = (o) => ({ agregar: '➕', quitar: '❌ sin', mover: '🕒', cambiar: o.redes && !o.cambio ? '📱' : '🔄' })[o.t] || '·';
+  const detalle = (o) => o.t === 'mover' ? `${NOMBRE_PIEZA[o.pieza] || o.pieza} de las ${o.hora} a las ${o.a}` : o.t === 'quitar' ? `${NOMBRE_PIEZA[o.pieza] || o.pieza} de las ${o.hora}` : `${o.hora} · ${NOMBRE_PIEZA[o.pieza] || o.pieza}${o.redes ? ` (${o.redes.map((r) => RED[r]).join(' ')})` : ''}`;
+  const linea = (o) => `${o.dias ? `🗓️ Cada ${o.dias.map((d) => DIAS[d]).join(', ')}` : '🔁 Todos los días'} · ${accion(o)} ${detalle(o)}`;
   return {
-    texto: `${aviso ? `${aviso}\n\n` : ''}🔁 <b>Programación fija</b> (lo que agregaste para siempre)\n\n${lista.length ? lista.map((o) => esc(linea(o))).join('\n') : 'Todavía no hay nada: al agregar algo, elige «Todos los días» o «Cada …».'}${lista.length ? '\n\n👇 Toca ❌ para borrar uno (deja de salir desde hoy).' : ''}`,
-    teclado: { inline_keyboard: [...lista.map((o) => fila(boton(`❌ ${o.hora} ${NOMBRE_PIEZA[o.pieza] || o.pieza}${o.dias ? ` (${o.dias.map((d) => DIAS[d].slice(0, 3)).join(',')})` : ''}`, `fx|${o.id}`))), fila(boton('📅 Plan de hoy', `p|${ahoraHN().fecha}`))] }
+    texto: `${aviso ? `${aviso}\n\n` : ''}🔁 <b>Programación fija</b> (lo que agregaste o cambiaste para siempre)\n\n${lista.length ? lista.map((o) => esc(linea(o))).join('\n') : 'Todavía no hay nada: al agregar o cambiar algo, elige «Todos los días» o «Cada …».'}${lista.length ? '\n\n👇 Toca 🗑️ para borrar uno (deja de aplicarse desde hoy).' : ''}`,
+    teclado: { inline_keyboard: [...lista.map((o) => fila(boton(`🗑️ ${accion(o)} ${o.hora} ${NOMBRE_PIEZA[o.pieza] || o.pieza}${o.dias ? ` (${o.dias.map((d) => DIAS[d].slice(0, 3)).join(',')})` : ''}`.slice(0, 60), `fx|${o.id}`))), fila(boton('📅 Plan de hoy', `p|${ahoraHN().fecha}`))] }
   };
 }
 async function vistaPlan(fecha, aviso = '') {
@@ -75,7 +119,7 @@ async function vistaPlan(fecha, aviso = '') {
   const teclado = [
     ...enFilas(futuras.map((s) => boton(`${s.hora} ${nombreSlot(s)}`, `s|${fecha}|${corta(s.hora)}|${s.pieza || ''}`)), 2),
     fila(boton('➕ Agregar', `a|${fecha}`), boton(pausa ? '▶️ Reanudar día' : '⏸️ Pausar día', `pz|${fecha}`)),
-    fila(opsDia.length ? boton('↩️ Deshacer', `u|${fecha}`) : null, boton('🔁 Fijos', 'fj')),
+    fila(opsDia.length ? boton('↩️ Deshacer', `u|${fecha}`) : null, boton('🔁 Fijos', 'fj'), boton('🎬 Videos', 'vp')),
     fila(esHoy ? boton('📰 Noticias', 'n') : null, boton(esHoy ? '📅 Mañana' : '📅 Hoy', `p|${esHoy ? masDias(fecha, 1) : ahoraHN().fecha}`))
   ].filter((f) => f.length);
   const texto = `${aviso ? `${aviso}\n\n` : ''}${mensajePlan(fecha, slots, { estado: esHoy, ops })}\n\n👇 Toca una publicación para quitarla, moverla o cambiarla.`;
@@ -171,14 +215,16 @@ export async function alTocar(data) {
   switch (c) {
     case 'p': return vistaPlan(a[0]);
     case 's': return vistaSlot(a[0], a[1], a[2]);
-    case 'q': return hecho(a[0], { t: 'quitar', hora: larga(a[1]), ...(a[2] ? { pieza: a[2] } : {}) }, `Quité ${NOMBRE_PIEZA[a[2]] || 'la publicación'} de las ${larga(a[1])}.`);
+    case 'q': return a[3] ? conAlcance(a[0], { t: 'quitar', hora: larga(a[1]), ...(a[2] ? { pieza: a[2] } : {}) }, a[3], `Quité ${NOMBRE_PIEZA[a[2]] || 'la publicación'} de las ${larga(a[1])}.`)
+      : vistaAlcanceOp(a[0], data, `❌ Quitar <b>${esc(NOMBRE_PIEZA[a[2]] || 'la publicación')}</b> de las ${larga(a[1])}.`);
     case 'mv': return vistaMover(a[0], a[1], a[2]);
     case 'm': {
-      const r = await hecho(a[0], { t: 'mover', hora: larga(a[1]), ...(a[2] ? { pieza: a[2] } : {}), a: larga(a[3]) }, `Moví ${NOMBRE_PIEZA[a[2]] || 'la publicación'} de las ${larga(a[1])} a las ${larga(a[3])}.`);
-      return r;
+      if (!a[4]) return vistaAlcanceOp(a[0], data, `🕒 Mover <b>${esc(NOMBRE_PIEZA[a[2]] || 'la publicación')}</b> de las ${larga(a[1])} a las ${larga(a[3])}.`);
+      return conAlcance(a[0], { t: 'mover', hora: larga(a[1]), ...(a[2] ? { pieza: a[2] } : {}), a: larga(a[3]) }, a[4], `Moví ${NOMBRE_PIEZA[a[2]] || 'la publicación'} de las ${larga(a[1])} a las ${larga(a[3])}.`);
     }
     case 'cb': return vistaPiezas(`🔄 ¿Qué pongo a las ${larga(a[1])} en vez de ${esc(NOMBRE_PIEZA[a[2]] || 'eso')}?`, `c|${a[0]}|${a[1]}`, `s|${a[0]}|${a[1]}|${a[2]}`, a[2]);
-    case 'c': return hecho(a[0], { t: 'cambiar', hora: larga(a[1]), pieza: a[2] }, `A las ${larga(a[1])} va ${NOMBRE_PIEZA[a[2]]}.`);
+    case 'c': return a[3] ? conAlcance(a[0], { t: 'cambiar', hora: larga(a[1]), pieza: a[2] }, a[3], `A las ${larga(a[1])} va ${NOMBRE_PIEZA[a[2]]}.`)
+      : vistaAlcanceOp(a[0], data, `🔄 A las ${larga(a[1])} poner <b>${esc(NOMBRE_PIEZA[a[2]])}</b>.`);
     case 'a': return vistaPiezas('➕ ¿Qué agrego?', `ar|${a[0]}`, `p|${a[0]}`);
     // ar|fecha|pieza[|redes]: elegir redes (sin redes: las de siempre); con una sola red posible, directo a la hora
     case 'ar': {
@@ -196,9 +242,13 @@ export async function alTocar(data) {
       return conConfirmacion(await vistaPlan(fecha), `${NOMBRE_PIEZA[pieza]} a las ${larga(hhmm)}${donde} queda en la programación: ${alcance === 's' ? `cada ${DIAS[diaSemana(fecha)]}` : 'todos los días'} (🔁). Se borra en «🔁 Fijos».`);
     }
     case 'fj': return vistaFijos();
+    case 'vp': return vistaVideos();
     case 'fx': { await registrar(FIJO, { t: 'borrar', id: a[0] }); return conConfirmacion(await vistaFijos(), 'Lo quité de la programación fija: deja de salir desde hoy.'); }
     case 'rd': return vistaRedesSlot(a[0], a[1], a[2], decR(a[3]));
-    case 'rg': { const rs = decR(a[3]); return hecho(a[0], { t: 'cambiar', hora: larga(a[1]), pieza: a[2], redes: rs }, `${NOMBRE_PIEZA[a[2]] || 'La publicación'} de las ${larga(a[1])} ahora sale en ${nombresRedes(rs)}.`); }
+    case 'rg': {
+      const rs = decR(a[3]), txt = `${NOMBRE_PIEZA[a[2]] || 'La publicación'} de las ${larga(a[1])} sale en ${nombresRedes(rs)}.`;
+      return a[4] ? conAlcance(a[0], { t: 'cambiar', hora: larga(a[1]), pieza: a[2], redes: rs }, a[4], txt) : vistaAlcanceOp(a[0], data, `📱 ${esc(txt)}`);
+    }
     case 'pz': {
       const pausado = (await cambiosExactos(a[0])).some((o) => o.t === 'pausa');
       if (pausado) return hecho(a[0], { t: 'reanudar-pausa' }, 'Quité la pausa: todo vuelve a salir.');
@@ -210,7 +260,10 @@ export async function alTocar(data) {
     // l2|pieza[|redes]: elegir redes y confirmar
     case 'l2': {
       const sel = a[1] ? decR(a[1]) : redesDePieza(a[0]).filter((r) => posibles(a[0]).includes(r));
-      return { texto: `🚀 <b>${esc(NOMBRE_PIEZA[a[0]])}</b> ahora mismo (además de lo del plan).\n¿En qué redes? Toca para quitar (▫️) o poner (✅).`, teclado: { inline_keyboard: tecladoRedes(a[0], sel, `l2|${a[0]}`, `l3|${a[0]}`, '🚀 Publicar ya', 'l') } };
+      const tec = tecladoRedes(a[0], sel, `l2|${a[0]}`, `l3|${a[0]}`, '🚀 Publicar ya', 'l');
+      // «Ya y todos los días a esta hora»: lo publica ahora y lo deja en la programación fija
+      if (sel.length) tec.splice(tec.length - 1, 0, fila(boton(`🚀 Ya y 🔁 todos los días a las ${ahoraHHMM()}`, `l3|${a[0]}|${codR(sel)}|t`)));
+      return { texto: `🚀 <b>${esc(NOMBRE_PIEZA[a[0]])}</b> ahora mismo (además de lo del plan).\n¿En qué redes? Toca para quitar (▫️) o poner (✅).`, teclado: { inline_keyboard: tec } };
     }
     case 'l3': {
       const rs = a[1] ? decR(a[1]) : redesDePieza(a[0]);
@@ -223,7 +276,9 @@ export async function alTocar(data) {
       const enCola = corridas.some((x) => ACTIVO.includes(x.estado) && x.estado !== 'in_progress');
       if (!enCola) await lanzar(s.workflow, s.inputs || {});
       await registrar(hoy, { t: 'agregar', hora, pieza: a[0], redes: rs, ya: true });
-      return conConfirmacion(await vistaPlan(hoy), `${enCola ? 'Puse' : 'Lancé'} ${NOMBRE_PIEZA[a[0]]} en ${donde}. ${enCola ? 'Hay otra corrida esperando en GitHub: sale en cuanto termine (unos minutos más).' : 'Ya se está generando: sale en unos 5 a 10 minutos.'}${frescas ? ' Antes actualicé las noticias.' : ''}`, '🚀');
+      // Para siempre a esta hora (desde mañana: hoy ya salió)
+      if (a[2] === 't') await registrar(FIJO, { t: 'agregar', hora, pieza: a[0], redes: rs, id: nuevoId(), desde: masDias(hoy, 1) });
+      return conConfirmacion(await vistaPlan(hoy), `${enCola ? 'Puse' : 'Lancé'} ${NOMBRE_PIEZA[a[0]]} en ${donde}. ${enCola ? 'Hay otra corrida esperando en GitHub: sale en cuanto termine (unos minutos más).' : 'Ya se está generando: sale en unos 5 a 10 minutos.'}${frescas ? ' Antes actualicé las noticias.' : ''}${a[2] === 't' ? ` Y desde mañana sale todos los días a las ${hora} (🔁).` : ''}`, '🚀');
     }
     case 'n': return vistaNoticias();
     case 'nr': { const g = await actualizarNoticias(); return conConfirmacion(await vistaNoticias('', g), `Actualicé las noticias: ${g.items.length} recientes (las ✅ van en el Reel).`, '🔄'); }
@@ -238,7 +293,7 @@ export async function alTocar(data) {
 }
 
 // ---------- texto escrito ----------
-const ATAJOS = { '📅 plan de hoy': 'p|hoy', '📅 plan de manana': 'p|manana', '📰 noticias': 'n', '🚀 publicar ya': 'l' };
+const ATAJOS = { '📅 plan de hoy': 'p|hoy', '📅 plan de manana': 'p|manana', '📰 noticias': 'n', '🚀 publicar ya': 'l', '🎬 videos': 'vp', 'videos': 'vp', '/videos': 'vp' };
 export async function atender(texto) {
   const hoy = ahoraHN().fecha, manana = masDias(hoy, 1);
   const atajo = ATAJOS[texto.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')];
@@ -266,6 +321,13 @@ export async function atender(texto) {
     }
     case 'op': {
       if (r.op.t === 'agregar' && !r.alcance) return vistaAlcance(fecha, r.op.pieza, corta(r.op.hora), r.op.redes || redesDePieza(r.op.pieza));
+      // Quitar, mover o cambiar: con «siempre», «todos los días», «cada viernes»… se guarda así; si no lo dice, pregunta
+      const alc = r.alcance || alcanceDe(texto).alcance;
+      if (['quitar', 'mover', 'cambiar'].includes(r.op.t)) {
+        const o = r.op, base = o.t === 'quitar' ? `q|${fecha}|${corta(o.hora)}|${o.pieza || ''}` : o.t === 'mover' ? `m|${fecha}|${corta(o.hora)}|${o.pieza || ''}|${corta(o.a)}` : o.redes ? `rg|${fecha}|${corta(o.hora)}|${o.pieza}|${codR(o.redes)}` : `c|${fecha}|${corta(o.hora)}|${o.pieza}`;
+        if (!alc) return vistaAlcanceOp(fecha, base, esc(r.resumen));
+        if (alc !== 'd') return conAlcance(fecha, o, alc, r.resumen, alcanceDe(texto).dias);
+      }
       if (r.op.t === 'agregar' && r.alcance !== 'd') {
         await registrar(FIJO, { ...r.op, id: nuevoId(), ...(r.alcance === 's' ? { dias: r.dias } : {}) });
         return conConfirmacion(await vistaPlan(fecha), `${NOMBRE_PIEZA[r.op.pieza]} a las ${r.op.hora} queda en la programación: ${r.alcance === 's' ? `cada ${r.dias.map((d) => DIAS[d]).join(', ')}` : 'todos los días'} (🔁).`);

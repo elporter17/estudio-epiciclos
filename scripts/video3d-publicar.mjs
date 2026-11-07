@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import './lib/env-file.mjs';
 import { parseCli } from './lib/cli.mjs';
+import { publicarProximos } from './lib/proximos.mjs';
 import { ROOT } from './lib/node-env.mjs';
 import { borrarEnlace } from './lib/video-link.mjs';
 import { publishReel, facebookReady } from './facebook.mjs';
@@ -44,7 +45,7 @@ if (o.youtube !== 'no' && youtubeReady()) {
 fs.writeFileSync(path.join(ROOT, 'out', `video3d-${l.id}.json`), JSON.stringify(meta, null, 2) + '\n');
 // Publicado: fuera de la cola y fuera del almacén (Instagram ya lo copió)
 if (meta.facebook?.status !== 'error' || meta.instagram?.status === 'published') {
-  estado.publicados.push({ id: l.id, fecha: hoyHN(), turno }); estado.listos[turno] = null; guardarEstado(estado);
+  estado.publicados.push({ id: l.id, fecha: hoyHN(), turno }); estado.listos[turno] = null; guardarEstado(estado); await publicarProximos();
   await borrarEnlace(l.url).catch(() => {});
 }
 console.log(JSON.stringify({ titulo: l.titulo, facebook: meta.facebook?.status, instagram: meta.instagram?.status, tiktok: meta.tiktok?.[0]?.status, youtube: meta.youtube?.estado || meta.youtube?.error }, null, 2));

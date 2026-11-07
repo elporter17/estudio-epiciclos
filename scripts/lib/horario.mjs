@@ -40,11 +40,13 @@ const PIEZAS = {
 // Solo de TikTok: no usan «redes»
 const SOLO_TT = new Set(['nombres', 'famosos']);
 // 2026-11-06: retos de debate (scripts/lib/debate.mjs) en lugar de «¿Qué prefieres?» (14:30) y el quiz de la noche (22:30)
+// 2026-11-07: noticias en FB, IG y TikTok (no YouTube); GTA VI a las 13:45 en las 4 redes. YouTube: como mucho 6
+// subidas al día por la cuota (los retos de las 15:45 ya no van a YouTube)
 const PLAN = {
-  fb: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '14:30': 'debate', '15:45': 'retos', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella', '21:30': 'gta', '22:30': 'debateimg' },
-  ig: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '15:45': 'retos', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
-  tt: { '08:15': 'nombres', '10:30': 'comosehace', '12:17': 'video3d1', '15:00': 'famosos', '18:30': 'video3d2', '20:30': 'estrella' },
-  yt: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '15:45': 'retos', '18:30': 'video3d2' }
+  fb: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '14:30': 'debate', '15:45': 'retos', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
+  ig: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:45': 'retos', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
+  tt: { '07:30': 'noticias', '08:15': 'nombres', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:00': 'famosos', '18:30': 'video3d2', '20:30': 'estrella' },
+  yt: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '18:30': 'video3d2' }
 };
 // Junta los planes: una corrida por hora y pieza, con las redes que la piden
 function juntarPlanes() {
@@ -59,7 +61,7 @@ const RED_NOMBRE = { fb: 'FB', ig: 'IG', tt: 'TikTok', yt: 'YouTube' };
 export const redesDePieza = (pieza) => SOLO_TT.has(pieza) ? ['tt'] : (() => { const r = Object.keys(PLAN).filter((red) => Object.values(PLAN[red]).includes(pieza)); return r.length ? r : (POSIBLES[pieza] || ['fb']); })();
 // Una corrida de una pieza a una hora, para esas redes
 // Dónde puede salir cada pieza (lo que su workflow sabe publicar); los Reels, en las 4
-const POSIBLES = { imagen: ['fb', 'ig'], noticiasimg: ['fb', 'ig'], debateimg: ['fb', 'ig'], gta: ['fb', 'ig', 'tt'], nombres: ['tt'], famosos: ['tt'], largo: ['yt'] };
+const POSIBLES = { imagen: ['fb', 'ig'], noticiasimg: ['fb', 'ig'], debateimg: ['fb', 'ig'], nombres: ['tt'], famosos: ['tt'], largo: ['yt'] };
 export const redesPosibles = (pieza) => POSIBLES[pieza] || ['fb', 'ig', 'tt', 'yt'];
 export function armarSlot(pieza, hora, redes = redesDePieza(pieza)) {
   const p = PIEZAS[pieza], orden = SOLO_TT.has(pieza) ? ['tt'] : ['fb', 'ig', 'tt', 'yt'].filter((r) => redes.includes(r) && redesPosibles(pieza).includes(r));
@@ -74,7 +76,7 @@ export const HORARIO = [
   { hora: '06:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
   ...juntarPlanes(),
   // Lanzamiento de GTA VI: un Reel especial a media mañana (el especial 3D sale a las 18:30)
-  { hora: '11:15', pieza: 'gta', workflow: 'gta6.yml', que: 'Especial de lanzamiento de GTA VI → FB, IG, TikTok', inputs: { lanzamiento: 'true', redes: 'fb,ig,tt' }, fecha: '2026-11-19' },
+  { hora: '11:15', pieza: 'gta', workflow: 'gta6.yml', que: 'Especial de lanzamiento de GTA VI → FB, IG, TikTok, YouTube', inputs: { lanzamiento: 'true', redes: 'fb,ig,tt,yt' }, fecha: '2026-11-19' },
   // Video largo horizontal para YouTube (8 a 10 min; tarda unos 15 min en hacerse): martes, jueves y sábado
   { hora: '14:07', pieza: 'largo', workflow: 'youtube-largo.yml', que: 'Video largo de YouTube: cómo se hacen 6 cosas', dias: [2, 4, 6] }
 ];
@@ -126,6 +128,7 @@ export function aplicarCambios(base, ops = [], fecha) {
   let slots = base.map((s) => ({ ...s }));
   for (const op of ops) {
     if (op.dias && dia != null && !op.dias.includes(dia)) continue; // programación fija de otros días de la semana
+    if (op.desde && fecha && fecha < op.desde) continue; // programación fija que empieza otro día
     if (op.t === 'quitar') slots = slots.filter((s) => !(s.hora === op.hora && editable(s) && (!op.pieza || s.pieza === op.pieza)));
     else if (op.t === 'mover') slots = slots.map((s) => s.hora === op.hora && editable(s) && (!op.pieza || s.pieza === op.pieza) ? { ...s, hora: op.a, cambio: `movido de las ${op.hora}` } : s);
     else if (op.t === 'cambiar') slots = slots.map((s) => {

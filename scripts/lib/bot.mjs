@@ -144,17 +144,22 @@ export function interpretar(textoOriginal, { slots = [] } = {}) {
     if (!p || !PIEZAS[p]) return { tipo: 'error', msg: '¿Qué agrego? Por ejemplo: «agrega un quiz a las 13:00 en fb».' };
     if (NO_AGREGAR.has(p)) return { tipo: 'error', msg: 'Los videos 3D y el largo se preparan de madrugada: no se pueden agregar en el día.' };
     if (!hs[0]) return { tipo: 'error', msg: `¿A qué hora pongo ${NOMBRE(p)}? Por ejemplo: «agrega ${p} a las 13:00».` };
-    // ¿Para siempre? «todos los días», «cada viernes», «los sábados»; «solo hoy»; si no dice, el bot pregunta
-    const SEM = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
-    const semanal = new RegExp(`\\b(cada|los|todos los) (${SEM.join('|')})`).test(t);
-    const dias = semanal ? SEM.map((d, i) => new RegExp(`\\b${d}s?\\b`).test(t) ? i : -1).filter((i) => i >= 0) : [];
-    const alcance = dias.length ? 's' : /\b(todos los dias|diario|diariamente|cada dia|siempre|de ahora en adelante|fijo)\b/.test(t) ? 't' : /\bsolo (hoy|manana|ese dia|este dia|una vez)\b/.test(t) ? 'd' : null;
+    // ¿Para siempre? (alcanceDe); si no lo dice, el bot pregunta
+    const { alcance, dias = [] } = alcanceDe(t);
     return { tipo: 'op', dia, alcance, ...(dias.length ? { dias } : {}), op: { t: 'agregar', hora: hs[0], pieza: p, ...(rs ? { redes: rs } : {}) }, resumen: `Agregué ${NOMBRE(p)} a las ${hs[0]}${rs ? ` en ${rs.map((r) => RED_LARGO[r]).join(', ')}` : ''}.` };
   }
   if (/\b(plan|hoy|tabla|agenda|programacion|horario|que (sale|hay|se publica|toca))\b/.test(t) || dia === 'manana') return { tipo: 'plan', dia };
   return { tipo: 'error', msg: 'No te entendí 😅' , ayuda: true };
 }
 const NOMBRE = (p) => nombreSlot({ pieza: p });
+// ¿Para siempre? «todos los días», «siempre», «cada viernes», «los sábados»; «solo hoy». { alcance: 't'|'s'|'d'|null, dias? }
+export function alcanceDe(texto) {
+  const t = norm(texto), SEM = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
+  const semanal = new RegExp(`\\b(cada|los|todos los) (${SEM.join('|')})`).test(t);
+  const dias = semanal ? SEM.map((d, i) => new RegExp(`\\b${d}s?\\b`).test(t) ? i : -1).filter((i) => i >= 0) : [];
+  const alcance = dias.length ? 's' : /\b(todos los dias|diario|diariamente|cada dia|siempre|de ahora en adelante|fijo|para siempre)\b/.test(t) ? 't' : /\bsolo (hoy|manana|ese dia|este dia|una vez)\b/.test(t) ? 'd' : null;
+  return { alcance, ...(dias.length ? { dias } : {}) };
+}
 
 export const AYUDA = `<b>Lo que puedo hacer</b> (escribe normal, sin comandos):
 
@@ -172,6 +177,7 @@ Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (�
 
 📰 <b>Noticias</b>
 • «noticias»: las candidatas de hoy, numeradas · «actualiza las noticias»: trae las más recientes
+• «videos»: qué videos 3D y largo vienen
 • «quita noticia 3» · «fija noticia 5» (va primero)
 • Pega un enlace de una noticia para agregarla
 • «noticia: Título | resumen corto» para escribirla tú
