@@ -24,6 +24,7 @@ import { MELODIA_IDS } from '../src/melodias.js';
 import { crearVisual, VISUALES } from './lib/retos-visuales.mjs';
 import { crearDebate } from './lib/debate.mjs';
 import { juntarNoticias, N_REEL, misma } from './lib/noticias.mjs';
+import { yaSalieronDb, marcarPublicadas } from './lib/db.mjs';
 import { cambiosDe, noticiasConCambios, noticiasGuardadas, guardarNoticias } from './lib/control.mjs';
 import { hoyHN } from './lib/video3d-cola.mjs';
 import { ponerFondos, guardarStock } from './lib/stock.mjs';
@@ -261,15 +262,16 @@ async function noticiasVideo(hist) {
   // Encima van tus cambios por Telegram: las que quitaste no salen, las fijadas y las tuyas van primero
   // La lista más nueva entre la del estado (6:23) y la del almacén (la que actualizas desde el bot); si tiene más de
   // 2 horas se vuelve a juntar (y se guarda, para que el bot muestre la misma numeración)
+  const enDb = await yaSalieronDb(10); // lo publicado o descartado en la base de noticias (Supabase)
   const local = leer(path.join(ROOT, 'data', 'noticias-hoy.json'), {}), enBot = await noticiasGuardadas(hoyHN()).catch(() => ({ at: 0, items: [] }));
   let { at, items: lista } = enBot.at >= (Date.parse(local.fecha) || 0) && enBot.items.length ? enBot : { at: Date.parse(local.fecha) || 0, items: local.items || [] };
   if (lista.length < 4 || Date.now() - at > 2 * 3600e3) {
-    const nuevas = await juntarNoticias({ yaSalieron: (hist.noticiasTitulos || []).slice(-150), vistos: new Set(hist.noticias.slice(-300)) }).catch(() => []);
+    const nuevas = await juntarNoticias({ yaSalieron: [...(hist.noticiasTitulos || []).slice(-150), ...enDb.titulos], vistos: new Set([...hist.noticias.slice(-300), ...enDb.links]) }).catch(() => []);
     if (nuevas.length >= 4) { lista = nuevas; console.error(`Noticias: actualizadas ahora (${nuevas.length})`); await guardarNoticias(hoyHN(), nuevas).catch(() => {}); }
   } else console.error(`Noticias: las de las ${new Date(at).toLocaleTimeString('es-HN', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Tegucigalpa' })}`);
   const ops = await cambiosDe(hoyHN()).catch(() => []);
   // Ni el mismo enlace ni la misma historia de otro día (por el título: otro medio puede contar lo mismo)
-  const vistas = new Set(hist.noticias.slice(-300)), titulos = (hist.noticiasTitulos || []).slice(-150);
+  const vistas = new Set([...hist.noticias.slice(-300), ...enDb.links]), titulos = [...(hist.noticiasTitulos || []).slice(-150), ...enDb.titulos];
   const frescas = noticiasConCambios(lista, ops).filter((n) => n.propia || (!vistas.has(n.link) && !titulos.some((t) => misma(t, n.titulo))));
   const elegidas = frescas.slice(0, N_REEL);
   if (elegidas.length < 3) return null;
@@ -284,7 +286,7 @@ async function noticiasVideo(hist) {
     { ...cierre('noticias', '¿CUÁL TE SORPRENDIÓ MÁS?', 'Las noticias del día en menos de un minuto'), voz: '¿Cuál te sorprendió más? Cuéntanos en los comentarios.' }
   ];
   const texto = `📰 Las noticias de hoy en un minuto.\n\n${elegidas.map((n, i) => `${i + 1}. ${n.titulo}${n.resumen ? `\n${n.resumen}` : ''} (${n.medio})`).join('\n\n')}\n\n¿Cuál te sorprendió más?\n\n${tags('noticias', 'ultimahora', ...new Set(elegidas.map((n) => n.cat).filter((c) => c !== 'general')))}`;
-  return { formato: 'noticias', titulo: 'Noticias de hoy', escenas, texto, noticias: elegidas.map((n) => n.link), noticiasTitulos: elegidas.map((n) => n.titulo) };
+  return { formato: 'noticias', titulo: 'Noticias de hoy', escenas, texto, noticias: elegidas.map((n) => n.link), noticiasTitulos: elegidas.map((n) => n.titulo), noticiasItems: elegidas };
 }
 
 // ---------- «Cómo se hace» (2026-11-03): la fábrica en 2D animada, recorrida en un solo plano, con fotos reales ----------
@@ -394,6 +396,8 @@ async function main() {
     hist.ids.push(...(pieza.ids || [])); hist.retos.push(...(pieza.retos || [])); hist.banderas.push(...(pieza.banderas || []));
     if (pieza.comosehace) hist.comosehace = [...(hist.comosehace || []), pieza.comosehace].slice(-40);
     hist.prefieres.push(...(pieza.prefieres || [])); hist.emojis.push(...(pieza.emojis || [])); hist.noticias.push(...(pieza.noticias || [])); hist.noticiasTitulos = [...(hist.noticiasTitulos || []), ...(pieza.noticiasTitulos || [])].slice(-150);
+    // En la base: salieron en un Reel, en estas redes
+    if (pieza.noticiasItems?.length) await marcarPublicadas(pieza.noticiasItems, { formato: 'reel', redes: [o.facebook !== 'no' && 'fb', o.instagram !== 'no' && 'ig', o.tiktok === 'draft' && 'tt', o.youtube !== 'no' && 'yt'].filter(Boolean) });
     hist.prefieres = hist.prefieres.slice(-150); hist.emojis = hist.emojis.slice(-160); hist.noticias = hist.noticias.slice(-300);
     hist.formatos.push(pieza.formato); hist.total++;
     hist.ids = hist.ids.slice(-500); hist.retos = hist.retos.slice(-60); hist.banderas = hist.banderas.slice(-150); hist.formatos = hist.formatos.slice(-100);

@@ -16,6 +16,7 @@ import { delDia, ahoraHN } from './lib/horario.mjs';
 import { cambiosDe, guardarNoticias, noticiasConCambios, limpiarViejos, telegram, controlListo, ultimoError } from './lib/control.mjs';
 import { mensajePlan, mensajeNoticias, diaBonito } from './lib/bot.mjs';
 import { publicarProximos } from './lib/proximos.mjs';
+import { yaSalieronDb, guardarCandidatas } from './lib/db.mjs';
 
 export const ARCHIVO = path.join(ROOT, 'data', 'noticias-hoy.json');
 export { juntarNoticias };
@@ -24,7 +25,9 @@ async function main() {
   const o = parseCli({ horas: { type: 'string', default: '36' }, 'sin-aviso': { type: 'boolean', default: false }, prueba: { type: 'boolean', default: false } });
   // Sin lo que ya salió en el Reel otros días (mismo enlace o misma historia)
   const h = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'curiosidades-video-historial.json'), 'utf8')); } catch { return {}; } })();
-  const items = await juntarNoticias({ horas: +o.horas, yaSalieron: (h.noticiasTitulos || []).slice(-150), vistos: new Set((h.noticias || []).slice(-300)) });
+  // … y sin lo que la base de noticias (Supabase) tiene como publicado o descartado
+  const enDb = await yaSalieronDb(10);
+  const items = await juntarNoticias({ horas: +o.horas, yaSalieron: [...(h.noticiasTitulos || []).slice(-150), ...enDb.titulos], vistos: new Set([...(h.noticias || []).slice(-300), ...enDb.links]) });
   const porCat = items.reduce((a, n) => ({ ...a, [n.cat]: (a[n.cat] || 0) + 1 }), {});
   console.log(`Noticias: ${items.length} ${JSON.stringify(porCat)}`);
   for (const n of items.slice(0, 8)) console.log(`· [${n.cat} ${n.puntaje}] ${n.titulo} (${n.medio})\n    ${n.resumen}`);
@@ -37,6 +40,7 @@ async function main() {
   fs.writeFileSync(ARCHIVO, JSON.stringify({ fecha: new Date().toISOString(), items }, null, 2) + '\n');
   if (controlListo()) {
     await guardarNoticias(fecha, items);
+    console.log(`Base de noticias: ${await guardarCandidatas(items) ?? 'no disponible'} candidatas guardadas`);
     await publicarProximos(); // qué videos 3D y largo vienen (para el bot)
     await limpiarViejos().catch((e) => console.error(`No se pudo limpiar el almacén: ${e.message}`));
   } else console.error('Sin TELEGRAM_BOT_TOKEN o sin almacén: el bot no podrá cambiar las noticias de hoy');

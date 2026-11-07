@@ -15,9 +15,11 @@ import { setupNode, ROOT } from './lib/node-env.mjs';
 import { dibujarTarjeta, dibujarPortada, dibujarCierre, TEMAS } from './lib/tarjetas.mjs';
 import { ultimaNoticia, CAT_NOMBRE } from './lib/noticias.mjs';
 import { cambiosDe } from './lib/control.mjs';
+import { yaSalieronDb, marcarPublicadas } from './lib/db.mjs';
 import { hoyHN } from './lib/video3d-cola.mjs';
 // Noticias ya publicadas + las que quitaste hoy por Telegram (scripts/lib/control.mjs)
-const vistosDe = async (hist) => new Set([...hist.noticias, ...(await cambiosDe(hoyHN()).catch(() => [])).filter((x) => x.t === 'noticia-fuera').map((x) => x.link)]);
+// … y lo publicado o descartado en la base de noticias (Supabase)
+const vistosDe = async (hist) => new Set([...hist.noticias, ...(await cambiosDe(hoyHN()).catch(() => [])).filter((x) => x.t === 'noticia-fuera').map((x) => x.link), ...(await yaSalieronDb(10)).links]);
 import { blobToken } from './lib/video-link.mjs';
 import { publishPhoto, publishPhotoStory, publishCarrusel, facebookReady } from './facebook.mjs';
 import { publishPhotoDraft } from './publish.mjs';
@@ -223,6 +225,7 @@ async function carrusel(o, hist, base, emojiFont) {
         }
       }
     }
+    if (noticias.length) await marcarPublicadas(noticias, { formato: 'carrusel', redes: ['fb', ...(o.instagram !== 'no' ? ['ig'] : [])] });
     hist.ids.push(...ids); hist.noticias.push(...noticias.map((x) => x.link)); if (tipo === 'datos') hist.temas.push(tema);
     hist.ganchos = k + 1;
     if (o.red === 'tiktok') hist.carruseles = (hist.carruseles || 0) + 1; else hist.carruselesFb = (hist.carruselesFb || 0) + 1;
@@ -321,7 +324,7 @@ async function main() {
     }
     // Historial: lo publicado no se repite
     if (x) { hist.ids.push(x.id); hist.temas.push(x.tema); }
-    if (noticia) hist.noticias.push(noticia.link);
+    if (noticia) { hist.noticias.push(noticia.link); await marcarPublicadas([noticia], { formato: 'imagen', redes: ['fb', ...(o.instagram !== 'no' ? ['ig'] : [])] }); }
     if (visual) hist.visuales = [...(hist.visuales || []), visual.tipo].slice(-100);
     hist.total++; hist.ids = hist.ids.slice(-600); hist.temas = hist.temas.slice(-50); hist.noticias = hist.noticias.slice(-300);
     fs.mkdirSync(path.dirname(HIST), { recursive: true }); fs.writeFileSync(HIST, JSON.stringify(hist, null, 2) + '\n');

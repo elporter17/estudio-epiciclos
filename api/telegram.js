@@ -9,6 +9,7 @@ import { interpretar, AYUDA, mensajePlan, mensajeNoticias, diaBonito, alcanceDe 
 import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasGuardadas, guardarNoticias, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId, encolarComentario, leerControl } from '../scripts/lib/control.mjs';
 import { delDia, ahoraHN, armarSlot, redesDePieza, nombreSlot, editable, NOMBRE_PIEZA, redesDe, redesPosibles } from '../scripts/lib/horario.mjs';
 import { noticiaDeEnlace, juntarNoticias, N_REEL } from '../scripts/lib/noticias.mjs';
+import { yaSalieronDb, guardarCandidatas, descartarNoticia, recientesDb } from '../scripts/lib/db.mjs';
 
 const dd = (n) => String(n).padStart(2, '0');
 const masDias = (fecha, n) => new Date(Date.parse(`${fecha}T12:00:00Z`) + n * 864e5).toISOString().slice(0, 10);
@@ -179,14 +180,27 @@ async function vistaNoticias(aviso = '', guardadas) {
   const hoy = ahoraHN().fecha, ops = await cambiosExactos(hoy), { at, items } = guardadas || await noticiasGuardadas(hoy), lista = noticiasConCambios(items, ops);
   const slots = delDia(hoy, ops), horaReel = slots.find((s) => s.pieza === 'noticias')?.hora;
   const teclado = lista.slice(0, 8).filter((n) => n.num).map((n, i) => fila(boton(`${i < N_REEL ? '✅' : '▫️'} ${n.num} ❌ Quitar`, `nx|${n.num}`), i < N_REEL ? null : boton(`📌 Usar la ${n.num}`, `nf|${n.num}`)));
-  teclado.push(fila(boton('🔄 Actualizar noticias', 'nr')));
+  teclado.push(fila(boton('🔄 Actualizar noticias', 'nr'), boton('🗂️ Ya salieron', 'ny')));
   teclado.push(fila(ops.some((o) => o.t.startsWith('noticia')) ? boton('↩️ Deshacer', `u|${hoy}|n`) : null, boton('📅 Plan de hoy', `p|${hoy}`)));
   const cuando = at ? `\n🕒 Juntadas a las ${new Date(at).toLocaleTimeString('es-HN', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Tegucigalpa' })}` : '';
   return { texto: `${aviso ? `${aviso}\n\n` : ''}${mensajeNoticias(lista, { horaReel })}${cuando}\n\n👇 ❌ quita una noticia del Reel; 📌 mete una de las de reserva; 🔄 trae las más recientes. Para agregar una tuya, pega el enlace.`, teclado: { inline_keyboard: teclado } };
 }
+// Lo que ya salió (y lo que quitaste) según la base de noticias, de lo más nuevo a lo más viejo
+async function vistaYaSalieron() {
+  const r = (await recientesDb(7)).slice(0, 20), hoy = ahoraHN().fecha;
+  const FORMATO = { reel: '🎬 Reel', imagen: '🖼️ Imagen', carrusel: '🗂️ Carrusel' };
+  const cuando = (x) => new Date(x.publicada_el || x.creada).toLocaleString('es-HN', { weekday: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'America/Tegucigalpa' });
+  const lineas = r.map((x) => x.estado === 'descartada' ? `🚫 <s>${esc(x.titulo.slice(0, 90))}</s> (la quitaste)` : `✅ <b>${esc(x.titulo.slice(0, 90))}</b>\n${cuando(x)} · ${FORMATO[x.formato] || x.formato || ''} · ${(x.redes || []).map((y) => RED[y] || y).join(' ')} · ${esc(x.medio || '')}`);
+  return {
+    texto: `🗂️ <b>Noticias que ya salieron</b> (últimos 7 días)\nNo vuelven a salir, ni la misma historia contada por otro medio.\n\n${lineas.length ? lineas.join('\n\n') : 'Todavía no hay nada guardado: se llena con el próximo Reel o imagen de noticias.'}`,
+    teclado: { inline_keyboard: [fila(boton('📰 Noticias de hoy', 'n'), boton('📅 Plan de hoy', `p|${hoy}`))] }
+  };
+}
 // Junta las noticias ahora mismo (RSS, unos segundos) y las deja como las del día
 async function actualizarNoticias() {
-  const hoy = ahoraHN().fecha, items = await juntarNoticias();
+  // Sin lo publicado o descartado en la base (Supabase)
+  const enDb = await yaSalieronDb(10), hoy = ahoraHN().fecha, items = await juntarNoticias({ yaSalieron: enDb.titulos, vistos: enDb.links });
+  await guardarCandidatas(items);
   if (items.length < 3) throw new Error('los medios no devolvieron noticias nuevas; prueba en unos minutos');
   await guardarNoticias(hoy, items);
   return { at: Date.now(), items };
@@ -281,11 +295,13 @@ export async function alTocar(data) {
       return conConfirmacion(await vistaPlan(hoy), `${enCola ? 'Puse' : 'Lancé'} ${NOMBRE_PIEZA[a[0]]} en ${donde}. ${enCola ? 'Hay otra corrida esperando en GitHub: sale en cuanto termine (unos minutos más).' : 'Ya se está generando: sale en unos 5 a 10 minutos.'}${frescas ? ' Antes actualicé las noticias.' : ''}${a[2] === 't' ? ` Y desde mañana sale todos los días a las ${hora} (🔁).` : ''}`, '🚀');
     }
     case 'n': return vistaNoticias();
+    case 'ny': return vistaYaSalieron();
     case 'nr': { const g = await actualizarNoticias(); return conConfirmacion(await vistaNoticias('', g), `Actualicé las noticias: ${g.items.length} recientes (las ✅ van en el Reel).`, '🔄'); }
     case 'nx': case 'nf': {
       const hoy = ahoraHN().fecha, n = (await noticiasDe(hoy))[+a[0] - 1];
       if (!n) return vistaNoticias('⚠️ Esa noticia ya no está en la lista.');
       await registrar(hoy, { t: c === 'nx' ? 'noticia-fuera' : 'noticia-fija', link: n.link });
+      if (c === 'nx') await descartarNoticia(n.link); // y no vuelve a salir otro día
       return conConfirmacion(await vistaNoticias(), `${c === 'nx' ? 'Quité' : 'Metí en el Reel'} la noticia ${a[0]}.`);
     }
     default: return vistaPlan(ahoraHN().fecha);
