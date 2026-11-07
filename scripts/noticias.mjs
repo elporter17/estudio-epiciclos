@@ -22,7 +22,9 @@ export { juntarNoticias };
 
 async function main() {
   const o = parseCli({ horas: { type: 'string', default: '36' }, 'sin-aviso': { type: 'boolean', default: false }, prueba: { type: 'boolean', default: false } });
-  const items = await juntarNoticias({ horas: +o.horas });
+  // Sin lo que ya salió en el Reel otros días (mismo enlace o misma historia)
+  const h = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'curiosidades-video-historial.json'), 'utf8')); } catch { return {}; } })();
+  const items = await juntarNoticias({ horas: +o.horas, yaSalieron: (h.noticiasTitulos || []).slice(-150), vistos: new Set((h.noticias || []).slice(-300)) });
   const porCat = items.reduce((a, n) => ({ ...a, [n.cat]: (a[n.cat] || 0) + 1 }), {});
   console.log(`Noticias: ${items.length} ${JSON.stringify(porCat)}`);
   for (const n of items.slice(0, 8)) console.log(`· [${n.cat} ${n.puntaje}] ${n.titulo} (${n.medio})\n    ${n.resumen}`);
