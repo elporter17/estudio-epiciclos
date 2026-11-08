@@ -42,8 +42,11 @@ const SOLO_TT = new Set(['nombres', 'famosos']);
 // 2026-11-06: retos de debate (scripts/lib/debate.mjs) en lugar de «¿Qué prefieres?» (14:30) y el quiz de la noche (22:30)
 // 2026-11-07: noticias en FB, IG y TikTok (no YouTube); GTA VI a las 13:45 en las 4 redes. YouTube: como mucho 6
 // subidas al día por la cuota (los retos de las 15:45 ya no van a YouTube)
+// 2026-11-07: Facebook solo da alcance a los primeros ~6 Reels del día (del 7.º en adelante, 0 a 15 vistas: 2 al 7 de
+// noviembre). Facebook queda en 6 Reels (más las imágenes, que no cuentan); noticias, Cómo se hace y los retos de las
+// 15:45 siguen en Instagram, TikTok y YouTube
 const PLAN = {
-  fb: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '14:30': 'debate', '15:45': 'retos', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
+  fb: { '09:00': 'banderas', '12:17': 'video3d1', '13:45': 'gta', '14:30': 'debate', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
   ig: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:45': 'retos', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
   tt: { '07:30': 'noticias', '08:15': 'nombres', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:00': 'famosos', '18:30': 'video3d2', '20:30': 'estrella' },
   yt: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '18:30': 'video3d2' }
