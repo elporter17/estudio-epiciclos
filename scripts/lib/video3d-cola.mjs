@@ -47,3 +47,20 @@ export function textoFuentes(g) {
   if (!g.fuentes?.length) return `⚠️ «${g.titulo}» no tiene fuentes cargadas en su guion (video3d/guiones/cola). Si alguien pregunta de dónde salen los datos, pídeme que las busque.`;
   return `📚 Fuentes de «${g.titulo}»:\n${g.fuentes.map((f) => `• ${f.dato}: ${f.fuente}${f.url ? `\n  ${f.url}` : ''}`).join('\n')}${g.nota ? `\n📝 ${g.nota}` : ''}`;
 }
+
+// Una respuesta sugerida para un comentario de un video 3D, con sus fuentes: la fuente cuyo dato (o la nota) más se
+// parece a lo que preguntan; si nada coincide, de dónde salen los datos en general. null si el guion no tiene fuentes
+const raices = (t) => new Set(String(t).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9ñ ]/g, ' ').split(/\s+/).filter((w) => w.length > 3).map((w) => w.slice(0, 5)));
+export function sugerirRespuesta(g, comentario, usuario = '') {
+  if (!g?.fuentes?.length) return null;
+  const c = raices(comentario), puntos = (x) => { let n = 0; for (const w of raices(x)) if (c.has(w)) n++; return n; };
+  const mejor = g.fuentes.map((f) => [puntos(`${f.dato} ${f.fuente}`), f]).sort((a, b) => b[0] - a[0])[0];
+  const corto = (f) => f.fuente.split(/[,(;]/)[0].trim();
+  const cuerpo = mejor && mejor[0] > 0
+    // Si la fuente trae «respuesta» (escrita a mano en el guion), va esa; si no, se arma con el dato y la fuente
+    ? (mejor[1].respuesta || `${mejor[1].dato.replace(/\.$/, '')}. Fuente: ${corto(mejor[1])}.`)
+    : `Los datos del video salen de ${[...new Set(g.fuentes.map(corto))].slice(0, 2).join(' y ')}.`;
+  return `${usuario ? `${usuario} ` : ''}¡Buena pregunta! ${cuerpo} 🙌`;
+}
+// El guion de un video publicado, por su id o por su título
+export const guionDe = ({ id, titulo } = {}) => guiones().find((g) => (id && g.id === id) || (titulo && g.titulo === titulo)) || null;

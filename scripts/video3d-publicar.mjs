@@ -31,8 +31,8 @@ if (!fs.existsSync(video)) { const r = await fetch(l.download || l.url); if (!r.
 const meta = { kind: 'video3d', title: l.titulo, file: path.basename(video), duration: l.duracion, videoUrl: l.url, videoDownload: l.download, post: { text: texto }, createdAt: new Date().toISOString() };
 
 if (facebookReady()) { try { meta.facebook = await publishReel({ video, description: texto }); } catch (e) { meta.facebook = { status: 'error', error: e.message }; console.error(`Aviso: Facebook: ${e.message}`); } }
-registrarRespuesta({ red: 'facebook', id: meta.facebook?.video_id, clave: { modo: 'charla' }, titulo: l.titulo });
-if (await instagramReady()) { meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: l.url, caption: texto }); registrarRespuesta({ red: 'instagram', id: meta.instagram.media_id, clave: { modo: 'charla' }, titulo: l.titulo }); }
+registrarRespuesta({ red: 'facebook', id: meta.facebook?.video_id, clave: { modo: 'charla', guion: l.id }, titulo: l.titulo });
+if (await instagramReady()) { meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: l.url, caption: texto }); registrarRespuesta({ red: 'instagram', id: meta.instagram.media_id, clave: { modo: 'charla', guion: l.id }, titulo: l.titulo }); }
 if (o.tiktok !== 'no') {
   try { meta.tiktok = [await publishVideo({ video, mode: 'draft', coverMs: 0 })]; }
   catch (e) { meta.tiktok = [{ mode: 'draft', status: /spam_risk|pending/i.test(e.message) ? 'LIMIT' : 'error', fail_reason: e.message }]; console.error(`Aviso: TikTok: ${e.message}`); }

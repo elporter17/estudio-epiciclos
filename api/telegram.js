@@ -390,6 +390,14 @@ export default { async fetch(request) {
     if (cb?.data?.startsWith('cm|')) {
       const [, acc, r, id] = cb.data.split('|'), red = r === 'fb' ? 'facebook' : 'instagram';
       await tgApi('answerCallbackQuery', { callback_query_id: cb.id, text: acc === 'i' ? 'Ignorado' : 'Listo' });
+      if (acc === 's') {
+        const texto = (m.text || '').match(/Respuesta sugerida[^\n]*\n«([\s\S]+?)»/)?.[1];
+        if (!texto) { enviado = await telegram('⚠️ No encontré la respuesta sugerida en el mensaje: respóndelo con tu texto.', { chat }); return json({ ok: true, motivo: 'sin-sugerencia', enviado }); }
+        await encolarComentario({ accion: 'responder', red, id, texto });
+        const ya = await lanzarComentarios();
+        enviado = await editarMensaje(chat, m.message_id, `${esc(m.text || '')}\n\n<b>📝 Publico la sugerida${ya ? ' en unos minutos' : ' en la próxima vuelta'}.</b>`);
+        return json({ ok: true, motivo: 'sugerida', enviado });
+      }
       if (acc !== 'i') { await encolarComentario({ accion: acc === 'l' ? 'like' : 'ocultar', red, id }); await lanzarComentarios(); }
       const estado = acc === 'i' ? '✅ Ignorado: no se contesta.' : acc === 'l' ? '👍 Le doy «me gusta» en unos minutos.' : '🙈 Lo oculto en unos minutos.';
       enviado = await editarMensaje(chat, m.message_id, `${esc(m.text || '')}\n\n<b>${estado}</b>`);

@@ -17,6 +17,7 @@ import { graph, facebookReady } from './facebook.mjs';
 import { instagramReady } from './instagram.mjs';
 import { publicacionesRecientes, evaluar, mensaje, firma, inferirClave, comentarioNormal, delicado } from './lib/respuestas.mjs';
 import { telegram, esc, comentariosEnCola, quitarDeCola } from './lib/control.mjs';
+import { sugerirRespuesta, guionDe } from './lib/video3d-cola.mjs';
 
 const o = parseCli({ max: { type: 'string', default: '25' }, 'dry-run': { type: 'boolean', default: false }, diagnostico: { type: 'boolean', default: false } });
 const VISTOS = path.join(ROOT, 'data', 'comentarios-respondidos.json');
@@ -86,8 +87,10 @@ let avisosHoy = 0; // como mucho 6 avisos por corrida (los demás, en la siguien
 async function avisarDelicado(p, c, { motivo, raiz, sigue }) {
   if (avisosHoy >= 6) return false;
   const enlace = await enlaceDe(p, raiz || c), red = p.red === 'facebook' ? 'fb' : 'ig';
-  const texto = `💬 <b>Comentario para que contestes tú</b> (${esc(motivo)})\n📍 ${NOMBRE_RED[p.red]} · ${enlace ? `<a href="${esc(enlace)}">${esc(p.titulo || 'la publicación')}</a>` : esc(p.titulo || 'una publicación')}\n${sigue ? `🧵 Sigue la conversación con ${esc(c.usuario || 'alguien')}. Antes la cuenta le dijo: «${esc((raiz.propias.at(-1) || '').slice(0, 160))}»\n` : ''}👤 ${esc(c.usuario || 'Alguien')}\n«${esc(c.texto.slice(0, 600))}»\n\n↩️ <b>Responde a este mensaje</b> con tu texto y lo publico (en unos minutos).\n🆔 ${red} ${(raiz || c).id}${red === 'ig' && c.usuario ? ` ${c.usuario}` : ''}`;
-  const teclado = { inline_keyboard: [[...(p.red === 'facebook' ? [{ text: '👍 Me gusta', callback_data: `cm|l|${red}|${c.id}` }] : []), { text: '🙈 Ocultar', callback_data: `cm|o|${red}|${c.id}` }, { text: '✅ Ignorar', callback_data: 'cm|i' }]] };
+  // En los videos 3D: una respuesta sugerida con las fuentes del guion (video3d/guiones/cola)
+  const sugerencia = sugerirRespuesta(guionDe({ id: p.clave?.guion, titulo: p.titulo }), c.texto, red === 'ig' ? c.usuario || '' : '');
+  const texto = `💬 <b>Comentario para que contestes tú</b> (${esc(motivo)})\n📍 ${NOMBRE_RED[p.red]} · ${enlace ? `<a href="${esc(enlace)}">${esc(p.titulo || 'la publicación')}</a>` : esc(p.titulo || 'una publicación')}\n${sigue ? `🧵 Sigue la conversación con ${esc(c.usuario || 'alguien')}. Antes la cuenta le dijo: «${esc((raiz.propias.at(-1) || '').slice(0, 160))}»\n` : ''}👤 ${esc(c.usuario || 'Alguien')}\n«${esc(c.texto.slice(0, 600))}»${sugerencia ? `\n\n💡 Respuesta sugerida (con las fuentes del video):\n«${esc(sugerencia)}»` : ''}\n\n↩️ <b>Responde a este mensaje</b> con tu texto y lo publico (en unos minutos)${sugerencia ? ', o toca «Usar la sugerida»' : ''}.\n🆔 ${red} ${(raiz || c).id}${red === 'ig' && c.usuario ? ` ${c.usuario}` : ''}`;
+  const teclado = { inline_keyboard: [...(sugerencia ? [[{ text: '✅ Usar la sugerida', callback_data: `cm|s|${red}|${(raiz || c).id}` }]] : []), [...(p.red === 'facebook' ? [{ text: '👍 Me gusta', callback_data: `cm|l|${red}|${c.id}` }] : []), { text: '🙈 Ocultar', callback_data: `cm|o|${red}|${c.id}` }, { text: '✅ Ignorar', callback_data: 'cm|i' }]] };
   if (await telegram(texto, { teclado })) { avisados.add(c.id); avisosHoy++; return true; }
   return false;
 }

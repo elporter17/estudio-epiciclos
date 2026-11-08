@@ -76,12 +76,14 @@
     {
       "dato": "2.250 millones de tazas al día",
       "fuente": "Cifra muy citada (Wikipedia, «Economics of coffee»); estimación sin un estudio primario claro",
-      "url": "https://en.wikipedia.org/wiki/Coffee_industry"
+      "url": "https://en.wikipedia.org/wiki/Coffee_industry",
+      "respuesta": "Es una estimación muy citada (unos 2.250 millones de tazas al día); no hay un conteo oficial exacto, pero es la cifra que más se usa."
     },
     {
       "dato": "Brasil 1.º y Vietnam 2.º productor (Colombia es 3.º)",
       "fuente": "USDA FAS, Coffee: World Markets and Trade 2025/26 (resumen de StoneX)",
-      "url": "https://www.stonex.com/en/market-intelligence/usda-sees-global-coffee-production-rising-2-5pct-year-on-year/"
+      "url": "https://www.stonex.com/en/market-intelligence/usda-sees-global-coffee-production-rising-2-5pct-year-on-year/",
+      "respuesta": "Colombia es el 3.er productor de café del mundo, después de Brasil y Vietnam (unos 13 millones de sacos al año, según el USDA). En el video destacamos a Honduras porque es el n.º 1 de Centroamérica, pero no es el 3.º del mundo."
     },
     {
       "dato": "Honduras, mayor productor de Centroamérica (≈5,5 millones de sacos en 2025/26)",
