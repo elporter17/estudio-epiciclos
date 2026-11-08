@@ -41,12 +41,14 @@ export function resumenProximos() {
   const estado = leerEstado(), todos = guiones(), hechos = new Set(estado.publicados.map((p) => p.id));
   const listos = Object.fromEntries(Object.entries(estado.listos).map(([t, l]) => [t, l ? { titulo: l.titulo, fecha: l.fecha } : null]));
   const ocupados = new Set(Object.values(estado.listos).filter(Boolean).map((l) => l.id));
-  const siguientes = todos.filter((g) => !g.fecha && !hechos.has(g.id) && !ocupados.has(g.id)).slice(0, 8).map((g) => ({ titulo: g.titulo, categoria: g.categoria }));
+  const siguientes = todos.filter((g) => !g.fecha && !hechos.has(g.id) && !ocupados.has(g.id)).slice(0, 8).map((g) => ({ titulo: g.titulo, categoria: g.categoria, fuentes: g.fuentes?.length || 0 }));
+  // Los últimos publicados con sus fuentes (para el botón 📚 Fuentes del bot)
+  const publicados = estado.publicados.slice(-10).reverse().map((p) => { const g = todos.find((x) => x.id === p.id); return g ? { titulo: g.titulo, fecha: p.fecha, turno: p.turno, fuentes: g.fuentes || [], nota: g.nota || null } : null; }).filter(Boolean);
   const especiales = todos.filter((g) => g.fecha && g.fecha >= hoyHN() && !hechos.has(g.id)).map((g) => ({ titulo: g.titulo, fecha: g.fecha }));
   const largo = planearLargo();
   return {
     at: Date.now(),
-    video3d: { listos, siguientes, especiales, quedan: todos.filter((g) => !g.fecha && !hechos.has(g.id)).length },
+    video3d: { listos, siguientes, especiales, publicados, quedan: todos.filter((g) => !g.fecha && !hechos.has(g.id)).length },
     largo: { fecha: proximoDiaLargo(), productos: largo.map((p) => p.titulo) }
   };
 }

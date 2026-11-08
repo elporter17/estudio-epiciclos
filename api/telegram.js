@@ -91,7 +91,7 @@ async function vistaVideos() {
     turno('mediodia', '12:17'), turno('tarde', '18:30'),
     '',
     `<b>Siguientes en la cola</b> (quedan ${p.video3d.quedan}; salen 2 al día)`,
-    ...p.video3d.siguientes.map((g, i) => `${i + 1}. ${esc(g.titulo)}`),
+    ...p.video3d.siguientes.map((g, i) => `${i + 1}. ${esc(g.titulo)}${g.fuentes === 0 ? ' ⚠️ sin fuentes' : ''}`),
     ...(p.video3d.especiales.length ? ['', '<b>Especiales con fecha</b>', ...p.video3d.especiales.map((g) => `⭐ ${esc(g.titulo)} · ${corto(g.fecha)}, 18:30`)] : []),
     '',
     `📺 <b>Video largo de YouTube</b>${p.largo.fecha ? ` · ${corto(p.largo.fecha)}, 14:07` : ''}`,
@@ -99,7 +99,13 @@ async function vistaVideos() {
     '',
     `<i>Actualizado a las ${new Date(p.at).toLocaleTimeString('es-HN', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Tegucigalpa' })}</i>`
   ].join('\n');
-  return { texto, teclado: volver };
+  return { texto, teclado: { inline_keyboard: [fila(boton('📚 Fuentes de los publicados', 'vf')), ...volver.inline_keyboard] } };
+}
+// Las fuentes de los últimos 3D publicados (para contestar si alguien pregunta de dónde sale un dato)
+async function vistaFuentes() {
+  const p = await leerControl('proximos'), hoy = ahoraHN().fecha, lista = p?.video3d?.publicados || [];
+  const bloque = (g) => `🎬 <b>${esc(g.titulo)}</b> · ${esc(g.fecha)}\n${g.fuentes.length ? g.fuentes.map((x) => `• ${esc(x.dato)}: ${esc(x.fuente)}${x.url ? ` · <a href="${esc(x.url)}">ver</a>` : ''}`).join('\n') : '⚠️ Sin fuentes cargadas: pídeme que las busque.'}${g.nota ? `\n📝 ${esc(g.nota)}` : ''}`;
+  return { texto: `📚 <b>Fuentes de los últimos videos 3D</b>\n\n${lista.length ? lista.map(bloque).join('\n\n') : 'Todavía no hay publicados con fuentes (se actualiza con cada video).'}`, teclado: { inline_keyboard: [fila(boton('🎬 Videos', 'vp'), boton('📅 Plan de hoy', `p|${hoy}`))] } };
 }
 // La programación fija: lo que agregaste o cambiaste «para siempre», con su botón para borrarlo
 async function vistaFijos(aviso = '') {
@@ -257,6 +263,7 @@ export async function alTocar(data) {
     }
     case 'fj': return vistaFijos();
     case 'vp': return vistaVideos();
+    case 'vf': return vistaFuentes();
     case 'fx': { await registrar(FIJO, { t: 'borrar', id: a[0] }); return conConfirmacion(await vistaFijos(), 'Lo quité de la programación fija: deja de salir desde hoy.'); }
     case 'rd': return vistaRedesSlot(a[0], a[1], a[2], decR(a[3]));
     case 'rg': {
@@ -309,7 +316,7 @@ export async function alTocar(data) {
 }
 
 // ---------- texto escrito ----------
-const ATAJOS = { '📅 plan de hoy': 'p|hoy', '📅 plan de manana': 'p|manana', '📰 noticias': 'n', '🚀 publicar ya': 'l', '🎬 videos': 'vp', 'videos': 'vp', '/videos': 'vp' };
+const ATAJOS = { '📅 plan de hoy': 'p|hoy', '📅 plan de manana': 'p|manana', '📰 noticias': 'n', '🚀 publicar ya': 'l', '🎬 videos': 'vp', 'videos': 'vp', '/videos': 'vp', 'fuentes': 'vf', '/fuentes': 'vf' };
 export async function atender(texto) {
   const hoy = ahoraHN().fecha, manana = masDias(hoy, 1);
   const atajo = ATAJOS[texto.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')];

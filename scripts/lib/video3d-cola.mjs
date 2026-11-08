@@ -40,3 +40,10 @@ export function textoPost(g) {
   const tags = [...(ETIQUETAS[g.categoria] || ['datoscuriosos']), 'aprende', 'potterplay', 'reels'].map((t) => `#${t}`).join(' ');
   return `${g.titulo} 🤯\n\n${datos.join('\n')}\n\n¿Lo sabías? Cuéntanos en los comentarios 👇\n\n${tags}`;
 }
+
+// Las fuentes de un guion («fuentes»: [{ dato, fuente, url? }], y «nota» si algo del video se puede malentender), para
+// el aviso de Telegram al publicar y para el bot (📚 Fuentes en 🎬 Videos)
+export function textoFuentes(g) {
+  if (!g.fuentes?.length) return `⚠️ «${g.titulo}» no tiene fuentes cargadas en su guion (video3d/guiones/cola). Si alguien pregunta de dónde salen los datos, pídeme que las busque.`;
+  return `📚 Fuentes de «${g.titulo}»:\n${g.fuentes.map((f) => `• ${f.dato}: ${f.fuente}${f.url ? `\n  ${f.url}` : ''}`).join('\n')}${g.nota ? `\n📝 ${g.nota}` : ''}`;
+}

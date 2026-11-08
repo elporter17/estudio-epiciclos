@@ -16,7 +16,7 @@ import { publishVideo } from './publish.mjs';
 import { logUpload } from './tiktok-status.mjs';
 import { subirYouTube, youtubeReady } from './lib/youtube.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
-import { leerEstado, guardarEstado, avisoExtra, textoPost, hoyHN, DIR_COLA } from './lib/video3d-cola.mjs';
+import { leerEstado, guardarEstado, avisoExtra, textoPost, textoFuentes, hoyHN, DIR_COLA } from './lib/video3d-cola.mjs';
 
 const o = parseCli({ turno: { type: 'string', default: 'mediodia' }, tiktok: { type: 'string', default: 'si' }, youtube: { type: 'string', default: 'si' } });
 const estado = leerEstado(), turno = o.turno === 'tarde' ? 'tarde' : 'mediodia', l = estado.listos[turno];
@@ -45,6 +45,8 @@ if (o.youtube !== 'no' && youtubeReady()) {
 fs.writeFileSync(path.join(ROOT, 'out', `video3d-${l.id}.json`), JSON.stringify(meta, null, 2) + '\n');
 // Publicado: fuera de la cola y fuera del almacén (Instagram ya lo copió)
 if (meta.facebook?.status !== 'error' || meta.instagram?.status === 'published') {
+  // Las fuentes del video llegan en el mismo aviso de Telegram (para contestar si alguien pregunta)
+  avisoExtra(textoFuentes(g));
   estado.publicados.push({ id: l.id, fecha: hoyHN(), turno }); estado.listos[turno] = null; guardarEstado(estado); await publicarProximos();
   await borrarEnlace(l.url).catch(() => {});
 }

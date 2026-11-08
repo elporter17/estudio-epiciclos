@@ -71,5 +71,27 @@
       "texto": "¿Cuántos cafés tomas al día? Escríbelo en los comentarios y síguenos para más datos.",
       "objeto": "comida/cup-coffee"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "2.250 millones de tazas al día",
+      "fuente": "Cifra muy citada (Wikipedia, «Economics of coffee»); estimación sin un estudio primario claro",
+      "url": "https://en.wikipedia.org/wiki/Coffee_industry"
+    },
+    {
+      "dato": "Brasil 1.º y Vietnam 2.º productor (Colombia es 3.º)",
+      "fuente": "USDA FAS, Coffee: World Markets and Trade 2025/26 (resumen de StoneX)",
+      "url": "https://www.stonex.com/en/market-intelligence/usda-sees-global-coffee-production-rising-2-5pct-year-on-year/"
+    },
+    {
+      "dato": "Honduras, mayor productor de Centroamérica (≈5,5 millones de sacos en 2025/26)",
+      "fuente": "USDA FAS, Honduras: Coffee Annual",
+      "url": "https://www.fas.usda.gov/data/honduras-coffee-annual-9"
+    },
+    {
+      "dato": "Leyenda de Etiopía (el pastor Kaldi y sus cabras)",
+      "fuente": "Leyenda tradicional, recogida por la National Coffee Association (EE. UU.) en su historia del café"
+    }
+  ],
+  "nota": "La gráfica de barras mostraba Brasil, Vietnam y Honduras: Honduras no es el 3.º del mundo (es Colombia); va 1.º en Centroamérica."
 }
