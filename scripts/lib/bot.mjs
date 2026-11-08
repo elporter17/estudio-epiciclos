@@ -178,6 +178,9 @@ Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (�
 📰 <b>Noticias</b>
 • «noticias»: las candidatas de hoy, numeradas · «actualiza las noticias»: trae las más recientes
 • «videos»: qué videos 3D y largo vienen
+
+💡 <b>Videos desde una idea</b>
+• «💡 Idea» o «idea: daltonismo»: armo el guion con datos de Wikipedia, lo ajustas con botones y te mando el video para aprobarlo
 • «quita noticia 3» · «fija noticia 5» (va primero)
 • Pega un enlace de una noticia para agregarla
 • «noticia: Título | resumen corto» para escribirla tú

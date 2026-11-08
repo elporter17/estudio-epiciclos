@@ -115,6 +115,24 @@ export function noticiasConCambios(items, ops = []) {
   return [...propias, ...arriba, ...base.filter((n) => !arriba.includes(n))];
 }
 
+// ---------- ideas (formato «Idea»): el borrador que armas en el bot y su video ----------
+// Cada cambio es un archivo nuevo (control/<id>/ideas/<idea>/<ms>.json) y se lee el último: tocar varios botones seguidos
+// no pisa nada (los archivos fijos tardan hasta un minuto en verse por la caché)
+export async function guardarIdea(id, data) {
+  if (!controlListo()) throw new Error('Falta el almacén o el token del bot');
+  const r = await guardarJson(`${carpeta()}/ideas/${id}/${String(Date.now()).padStart(15, '0')}.json`, { ...data, id, at: Date.now() }, { fijo: false });
+  const { blobs } = await list({ prefix: `${carpeta()}/ideas/${id}/`, token: blobToken() });
+  const viejos = blobs.filter((b) => b.url !== r.url).map((b) => b.url);
+  if (viejos.length) await del(viejos, { token: blobToken() }).catch(() => {});
+  return { ...data, id };
+}
+export async function leerIdea(id) {
+  if (!controlListo()) return null;
+  const { blobs } = await list({ prefix: `${carpeta()}/ideas/${id}/`, token: blobToken() });
+  const b = blobs.sort((x, y) => y.pathname.localeCompare(x.pathname))[0];
+  return b ? fetch(b.url, { cache: 'no-store' }).then((r) => r.json()).catch(() => null) : null;
+}
+
 // ---------- otros datos para el bot (qué videos vienen…) ----------
 export async function guardarControl(nombre, data) { if (controlListo()) await guardarJson(`${carpeta()}/${nombre}.json`, data); }
 export async function leerControl(nombre) { return leerJson(`${carpeta()}/${nombre}.json`); }

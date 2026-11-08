@@ -6,9 +6,10 @@
 // npm run telegram:webhook). Variables de Vercel: TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID.
 import { json, diaConEstado, lanzar, ACTIVO } from './_panel.js';
 import { interpretar, AYUDA, mensajePlan, mensajeNoticias, diaBonito, alcanceDe } from '../scripts/lib/bot.mjs';
-import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasGuardadas, guardarNoticias, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId, encolarComentario, leerControl } from '../scripts/lib/control.mjs';
+import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasGuardadas, guardarNoticias, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId, encolarComentario, leerControl, guardarIdea, leerIdea } from '../scripts/lib/control.mjs';
 import { delDia, ahoraHN, armarSlot, redesDePieza, nombreSlot, editable, NOMBRE_PIEZA, redesDe, redesPosibles } from '../scripts/lib/horario.mjs';
 import { noticiaDeEnlace, juntarNoticias, N_REEL } from '../scripts/lib/noticias.mjs';
+import { construir, escenaDe, NOMBRE_ESCENA } from '../scripts/lib/constructor.mjs';
 import { yaSalieronDb, guardarCandidatas, descartarNoticia, recientesDb } from '../scripts/lib/db.mjs';
 
 const dd = (n) => String(n).padStart(2, '0');
@@ -22,7 +23,7 @@ const PONIBLES = ['debate', 'debateimg', 'banderas', 'retos', 'emojis', 'quiz', 
 const RED = { fb: 'FB', ig: 'IG', tt: 'TT', yt: 'YT' };
 
 // Teclado fijo de abajo: lo que más se usa, sin escribir
-export const MENU = { keyboard: [[{ text: '📅 Plan de hoy' }, { text: '📅 Plan de mañana' }], [{ text: '📰 Noticias' }, { text: '🚀 Publicar ya' }], [{ text: '🎬 Videos' }, { text: '❓ Ayuda' }]], resize_keyboard: true, is_persistent: true };
+export const MENU = { keyboard: [[{ text: '📅 Plan de hoy' }, { text: '📅 Plan de mañana' }], [{ text: '📰 Noticias' }, { text: '🚀 Publicar ya' }], [{ text: '💡 Idea' }, { text: '🎬 Videos' }], [{ text: '❓ Ayuda' }]], resize_keyboard: true, is_persistent: true };
 const fila = (...b) => b.filter(Boolean);
 const boton = (text, data) => ({ text, callback_data: data.slice(0, 64) });
 const enFilas = (botones, n) => botones.reduce((acc, b, i) => (i % n ? acc[acc.length - 1].push(b) : acc.push([b]), acc), []);
@@ -217,6 +218,59 @@ async function noticiasFrescas(minutos = 60) {
   return g.items.length >= 3 && Date.now() - g.at < minutos * 60e3 ? null : actualizarNoticias().catch(() => null);
 }
 
+// ---------- ideas (formato «Idea»): de una idea a un video, sin IA (scripts/lib/constructor.mjs) ----------
+const PIDE_IDEA = '💡 ¿De qué quieres el video?';
+const CICLO = ['foco', 'gente', 'globo', 'linea', 'torre', 'lluvia', 'pila'];
+// Cambiar la escena de un dato: se arma de nuevo con lo que esa escena necesita
+function conEscena(o, tipo) {
+  const base = escenaDe(o.texto), anio = +(o.texto.match(/\b(1[0-9]{3}|20[0-2][0-9])\b/)?.[1] || 2000), objeto = o.objeto || base.objeto || 'libro';
+  const extra = { foco: { objeto, cantidad: 1 }, gente: { cantidad: 24 }, globo: { modo: 'luces' }, linea: { hitos: base.hitos || [{ anio, texto: o.texto.split(' ').slice(0, 4).join(' ') }] }, torre: { objeto, referencia: 'everest' }, lluvia: { objeto, cantidad: 120 }, pila: { objeto, cantidad: 150 } }[tipo] || {};
+  return { texto: o.texto, orden: o.orden, puntaje: o.puntaje, usar: o.usar, tipo, ...extra, ...(o.contador && ['globo', 'lluvia', 'foco', 'pila'].includes(tipo) ? { contador: o.contador } : {}) };
+}
+async function crearIdea(texto, articulo) {
+  const b = await construir(articulo || texto), id = Date.now().toString(36).slice(-6);
+  await guardarIdea(id, { idea: texto, tema: b.tema, url: b.url, opciones: b.opciones, otros: b.otros, estado: 'borrador' });
+  return vistaIdea(await leerIdea(id) || { ...b, id, idea: texto, estado: 'borrador' });
+}
+function vistaIdea(b) {
+  const lista = b.opciones.slice(0, 10), usados = lista.filter((o) => o.usar).length;
+  const plantilla = /dalton|color|vision|ojo|vista|ceguera/.test(`${b.idea} ${b.tema}`.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')) ? '\n🎨 Este tema suma solas la escena «Así lo ve» (daltonismo) y la prueba de puntos.' : '';
+  const texto = `💡 <b>${esc(b.tema)}</b> · <a href="${esc(b.url)}">Wikipedia</a>\nDe tu idea «${esc(b.idea)}». Van ${usados} datos (entre 3 y 6 queda bien; el video dura ~1 min).${plantilla}\n\n${lista.map((o, i) => `${o.usar ? '✅' : '▫️'} <b>${i + 1}.</b> [${NOMBRE_ESCENA[o.tipo] || o.tipo}] ${esc(o.texto)}`).join('\n\n')}\n\n👇 ✅/▫️ pone o quita un dato · 🔄 cambia su escena.`;
+  const teclado = [...lista.map((o, i) => fila(boton(`${o.usar ? '✅' : '▫️'} ${i + 1}`, `it|${b.id}|${i}`), boton(`🔄 ${i + 1}: ${NOMBRE_ESCENA[o.tipo] || o.tipo}`, `ie|${b.id}|${i}`))),
+    fila(boton('▶️ Generar video', `ig|${b.id}`)), fila(b.otros?.length ? boton(`🔎 Otro artículo: ${b.otros[0]}`.slice(0, 60), `io|${b.id}`) : null, boton('🗑️ Descartar', `ix|${b.id}`))];
+  return { texto, teclado: { inline_keyboard: teclado } };
+}
+async function alIdea(c, a) {
+  const b = await leerIdea(a[0]);
+  if (!b) return { texto: '⚠️ Ya no encuentro esa idea: manda otra con «💡 Idea».', teclado: MENU };
+  if (c === 'iv') return vistaIdea(b);
+  if (c === 'it') { b.opciones[+a[1]].usar = !b.opciones[+a[1]].usar; await guardarIdea(b.id, b); return vistaIdea(b); }
+  if (c === 'ie') { const o = b.opciones[+a[1]], sig = CICLO[(CICLO.indexOf(o.tipo) + 1) % CICLO.length]; b.opciones[+a[1]] = conEscena(o, sig); await guardarIdea(b.id, b); return vistaIdea(b); }
+  if (c === 'io') { const [otro, ...resto] = b.otros || []; if (!otro) return vistaIdea(b); const v = await crearIdea(b.idea, otro); return v; }
+  if (c === 'ix') { await guardarIdea(b.id, { ...b, estado: 'descartado' }); return { texto: `🗑️ Descarté la idea «${esc(b.idea)}».`, teclado: MENU, confirmacion: '🗑️ Idea descartada.' }; }
+  if (c === 'ig') {
+    const n = b.opciones.filter((o) => o.usar).length;
+    if (n < 2) return { ...vistaIdea(b), confirmacion: '⚠️ Elige al menos 2 datos antes de generar el video.' };
+    await guardarIdea(b.id, { ...b, estado: 'generando' });
+    await lanzar('ideas.yml', { modo: 'render', id: b.id });
+    return { texto: `🎬 Generando «${esc(b.tema)}» con ${n} datos. Va en su propia cola (no frena las publicaciones) y tarda unos 40-55 min: te mando el video por aquí para que lo apruebes.`, teclado: MENU, confirmacion: '🎬 Video en camino.' };
+  }
+  // Publicar: elegir redes y confirmar (ip → ipr|id|redes → ipx|id|redes)
+  if (c === 'ip' || c === 'ipr') {
+    if (!b.video) return { texto: '⚠️ Ese video todavía no está listo.', teclado: MENU };
+    const sel = c === 'ipr' ? decR(a[1]) : ['fb', 'ig', 'tt', 'yt'];
+    return { texto: `✅ ¿Dónde publico «${esc(b.guion?.titulo || b.tema)}»?\nOjo: en Facebook solo rinden los primeros ~6 Reels del día.`, teclado: { inline_keyboard: tecladoRedes('debate', sel, `ipr|${b.id}`, `ipx|${b.id}`, '🚀 Publicar', `iv|${b.id}`) } };
+  }
+  if (c === 'ipx') {
+    const rs = decR(a[1]); if (!rs.length) return alIdea('ip', [b.id]);
+    const { corridas } = await diaConEstado(new Date());
+    if (corridas.some((x) => ACTIVO.includes(x.estado) && x.estado !== 'in_progress')) return { texto: '⏳ Hay otra corrida esperando en GitHub; prueba de nuevo en unos minutos (si lanzo otra, la cancelaría).', teclado: { inline_keyboard: [fila(boton('🔁 Intentar de nuevo', `ipx|${b.id}|${codR(rs)}`))] } };
+    await lanzar('ideas.yml', { modo: 'publicar', id: b.id, redes: rs.join(',') });
+    return { texto: `🚀 Publicando «${esc(b.guion?.titulo || b.tema)}» en ${esc(nombresRedes(rs))}. Te aviso cuando quede (con sus fuentes).`, teclado: MENU, confirmacion: '🚀 Publicando.' };
+  }
+  return vistaIdea(b);
+}
+
 // Lanza «Respuestas a comentarios» ya, salvo que haya otra corrida esperando en GitHub (lanzar otra la cancelaría): en
 // ese caso sale en su vuelta de cada hora. Devuelve si se lanzó
 async function lanzarComentarios() {
@@ -264,6 +318,8 @@ export async function alTocar(data) {
     case 'fj': return vistaFijos();
     case 'vp': return vistaVideos();
     case 'vf': return vistaFuentes();
+    case 'i0': return { texto: `${PIDE_IDEA}\nEscribe el tema (por ejemplo: daltonismo, agujeros negros, el café, las abejas) y armo el guion con datos de Wikipedia.`, teclado: { force_reply: true, input_field_placeholder: 'Ej: daltonismo' } };
+    case 'iv': case 'it': case 'ie': case 'io': case 'ix': case 'ig': case 'ip': case 'ipr': case 'ipx': return alIdea(c, a);
     case 'fx': { await registrar(FIJO, { t: 'borrar', id: a[0] }); return conConfirmacion(await vistaFijos(), 'Lo quité de la programación fija: deja de salir desde hoy.'); }
     case 'rd': return vistaRedesSlot(a[0], a[1], a[2], decR(a[3]));
     case 'rg': {
@@ -316,7 +372,7 @@ export async function alTocar(data) {
 }
 
 // ---------- texto escrito ----------
-const ATAJOS = { '📅 plan de hoy': 'p|hoy', '📅 plan de manana': 'p|manana', '📰 noticias': 'n', '🚀 publicar ya': 'l', '🎬 videos': 'vp', 'videos': 'vp', '/videos': 'vp', 'fuentes': 'vf', '/fuentes': 'vf' };
+const ATAJOS = { '💡 idea': 'i0', 'idea': 'i0', '/idea': 'i0', '📅 plan de hoy': 'p|hoy', '📅 plan de manana': 'p|manana', '📰 noticias': 'n', '🚀 publicar ya': 'l', '🎬 videos': 'vp', 'videos': 'vp', '/videos': 'vp', 'fuentes': 'vf', '/fuentes': 'vf' };
 export async function atender(texto) {
   const hoy = ahoraHN().fecha, manana = masDias(hoy, 1);
   const atajo = ATAJOS[texto.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')];
@@ -377,6 +433,14 @@ export default { async fetch(request) {
   let enviado = false;
   try {
     // ---------- comentarios que contestas tú (los manda scripts/comentarios.mjs) ----------
+    // Una idea nueva: «idea: daltonismo» o la respuesta a «💡 ¿De qué quieres el video?»
+    const idea = !cb && m.text ? (m.text.match(/^\s*idea\s*:\s*(.+)$/is)?.[1] || ((m.reply_to_message?.text || '').startsWith(PIDE_IDEA) ? m.text : null)) : null;
+    if (idea) {
+      await telegram('🔎 Busco datos en Wikipedia y armo el guion…', { chat });
+      const v = await crearIdea(idea.trim().slice(0, 80)).catch((e) => ({ texto: `⚠️ ${esc(e.message)}. Prueba con otras palabras.`, teclado: MENU }));
+      enviado = await telegram(v.texto, { chat, teclado: v.teclado });
+      return json({ ok: true, motivo: 'idea', enviado });
+    }
     const ref = (m.reply_to_message?.text || '').match(/🆔 (fb|ig) (\S+)(?: (@\S+))?/);
     if (!cb && m.text && ref) {
       const [, r, id, usuario] = ref, red = r === 'fb' ? 'facebook' : 'instagram';

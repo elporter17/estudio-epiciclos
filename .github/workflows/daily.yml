@@ -17,7 +17,7 @@ on:
       cats:
         description: Qué tipo de video
         type: choice
-        options: [dibujos, nombres, famosos, curiosidades-facebook, curiosidades-tiktok, curiosidades-video, youtube-largo, video3d-render, video3d-publicar, comentarios, noticias, gta6, fisica, juegos, pelotas, nuevos]
+        options: [dibujos, nombres, famosos, curiosidades-facebook, curiosidades-tiktok, curiosidades-video, youtube-largo, video3d-render, video3d-publicar, idea-render, idea-publicar, comentarios, noticias, gta6, fisica, juegos, pelotas, nuevos]
         default: dibujos
       lang:
         description: Idioma del video y la descripción
@@ -97,10 +97,11 @@ jobs:
   daily:
     runs-on: ubuntu-latest
     # El video largo de YouTube (8 a 10 min, 1080p) y el video 3D (Remotion con la CPU, ~40-55 min) tardan más
-    timeout-minutes: ${{ inputs.cats == 'video3d-render' && 120 || inputs.cats == 'youtube-largo' && 55 || 30 }}
+    timeout-minutes: ${{ (inputs.cats == 'video3d-render' || inputs.cats == 'idea-render') && 120 || inputs.cats == 'youtube-largo' && 55 || 30 }}
     # Los dos workflows (dibujos y física) comparten el token de TikTok: nunca corren a la vez
     concurrency:
-      group: daily-tiktok
+      # Los videos de ideas se renderizan en su propia cola (tardan ~50 min y no deben frenar las publicaciones)
+      group: ${{ inputs.cats == 'idea-render' && 'ideas' || 'daily-tiktok' }}
       cancel-in-progress: false
     env:
       TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
@@ -153,20 +154,20 @@ jobs:
 
       # Voz del narrador de los Reels (Kokoro, local y sin API; scripts/lib/voz.mjs). El modelo (≈350 MB) va en caché
       - name: Modelo de voz (en caché)
-        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'youtube-largo' || env.CATS_INPUT == 'video3d-render'
+        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'youtube-largo' || env.CATS_INPUT == 'video3d-render' || env.CATS_INPUT == 'idea-render'
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .tools/kokoro
           key: voz-kokoro-v1.0
       # Kokoro aún no tiene versión para Python 3.14 (el de ubuntu-latest): se usa 3.12
       - name: Python para la voz
-        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'youtube-largo' || env.CATS_INPUT == 'video3d-render'
+        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'youtube-largo' || env.CATS_INPUT == 'video3d-render' || env.CATS_INPUT == 'idea-render'
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
       - name: Instalar la voz
         continue-on-error: true
-        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'youtube-largo' || env.CATS_INPUT == 'video3d-render'
+        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'youtube-largo' || env.CATS_INPUT == 'video3d-render' || env.CATS_INPUT == 'idea-render'
         run: |
           python -m venv .tools/voz
           .tools/voz/bin/python -m pip install -q kokoro-onnx==${KOKORO_VERSION}
@@ -179,7 +180,7 @@ jobs:
 
       # Videos 3D (video3d/: Remotion + Three.js): sus dependencias y el Chrome sin pantalla que dibuja los cuadros
       - name: Motor de video 3D
-        if: env.CATS_INPUT == 'video3d-render'
+        if: env.CATS_INPUT == 'video3d-render' || env.CATS_INPUT == 'idea-render'
         working-directory: video3d
         run: |
           npm ci
@@ -212,7 +213,7 @@ jobs:
 
       - name: Generar y enviar
         # El render 3D tiene su propio límite: si se pasa, la corrida igual llega al aviso de Telegram
-        timeout-minutes: ${{ env.CATS_INPUT == 'video3d-render' && 105 || 28 }}
+        timeout-minutes: ${{ (env.CATS_INPUT == 'video3d-render' || env.CATS_INPUT == 'idea-render') && 105 || 28 }}
         run: |
           # Redes de esta corrida: con «redes» manda el plan de cada red; sin él, lo de siempre
           en_red() { case ",$REDES_INPUT," in *",$1,"*) echo si ;; *) echo no ;; esac; }
@@ -236,6 +237,9 @@ jobs:
             metas) mkdir -p out; IFS=, read -r mf mh <<< "$FIGURA_INPUT"; node scripts/metas.mjs ${mf:+--fotos "$mf"} ${mh:+--historias "$mh"}; exit 0 ;;
             gta6) GTA_TT=$( [ -n "$REDES_INPUT" ] && echo "$R_TT" || echo draft ); if [ "$FIGURA_INPUT" = "lanzamiento" ]; then node scripts/gta6.mjs --solo-lanzamiento --facebook "$R_FB" --instagram "$R_IG" --tiktok "$GTA_TT" --youtube "$R_YT"; else node scripts/gta6.mjs --facebook "$R_FB" --instagram "$R_IG" --tiktok "$GTA_TT" --youtube "$R_YT"; fi; exit 0 ;;
             # Videos 3D: el render de la madrugada y la publicación del mediodía (video3d.yml)
+            # Videos desde una idea (ideas.yml): «figura» = el id de la idea
+            idea-render) node scripts/idea.mjs --render "$FIGURA_INPUT"; exit 0 ;;
+            idea-publicar) node scripts/idea.mjs --publicar "$FIGURA_INPUT" --redes "${REDES_INPUT:-fb,ig,tt,yt}"; exit 0 ;;
             video3d-render) node scripts/video3d-render.mjs --turno "${FIGURA_INPUT:-mediodia}" ${PRUEBA_INPUT:+--dry-run}; exit 0 ;;
             video3d-publicar) node scripts/video3d-publicar.mjs --turno "${FIGURA_INPUT:-mediodia}" --tiktok "$( [ "$R_TT" = draft ] && echo si || echo no )" --youtube "$R_YT"; exit 0 ;;
             youtube-largo) node scripts/youtube-largo.mjs ${PRUEBA_INPUT:+--dry-run}; exit 0 ;;
@@ -309,7 +313,8 @@ jobs:
         run: node scripts/aviso.mjs || echo "No se pudo avisar"
 
       - name: Cifrar estado
-        if: always()
+        # El render de ideas corre aparte: no guarda el estado (pisaría lo de las otras corridas)
+        if: always() && inputs.cats != 'idea-render'
         run: |
           # Solo los archivos que no están en git (ver «Descifrar estado»)
           files=$(cd data 2>/dev/null && for f in *; do [ -e "$f" ] || continue; git ls-files --error-unmatch "$f" >/dev/null 2>&1 || echo "$f"; done)
@@ -317,7 +322,7 @@ jobs:
             tar -cz -C data $files | openssl enc -aes-256-cbc -pbkdf2 -salt -pass env:STATE_KEY -out state.enc
           fi
       - name: Guardar estado
-        if: always() && hashFiles('state.enc') != ''
+        if: always() && inputs.cats != 'idea-render' && hashFiles('state.enc') != ''
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: state.enc

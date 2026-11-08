@@ -1,0 +1,35 @@
+# Videos desde una idea (formato «Idea»; scripts/idea.mjs). Lo lanza el bot de Telegram: «💡 Idea» arma el borrador,
+# «Generar video» lo renderiza aquí (~40-55 min con la CPU de GitHub) y te lo manda; «Publicar» lo sube a las redes.
+name: Videos de ideas
+
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: render (hacer el video y mandarlo por Telegram) o publicar
+        type: choice
+        options: ['render', 'publicar']
+        default: 'render'
+      id:
+        description: El id de la idea (lo pone el bot)
+        type: string
+        required: true
+      redes:
+        description: Al publicar, en qué redes (fb,ig,tt,yt)
+        type: string
+        default: 'fb,ig,tt,yt'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  idea:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: ${{ inputs.modo == 'publicar' && 'idea-publicar' || 'idea-render' }}
+      figura: ${{ inputs.id }}
+      redes: ${{ inputs.redes }}
+      publish: none
+      aviso: false
+    secrets: inherit
