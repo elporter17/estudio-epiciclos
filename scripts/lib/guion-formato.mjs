@@ -1,8 +1,7 @@
 // El formato de los guiones del formato «Idea» para que los escriba otra herramienta (ChatGPT u otra IA) y los mandes al
 // bot: textoFormato() es el texto para copiar (escenas, campos, objetos 3D y reglas) y validar() revisa lo que llega
 // (escenas que existen, campos obligatorios, objetos del catálogo, largo de los textos) y lo deja listo para el render.
-import { createRequire } from 'node:module';
-const CATALOGO = createRequire(import.meta.url)('./catalogo3d.json');
+import CATALOGO from './catalogo3d.mjs';
 
 // Objetos 3D que existen: «codigo» (hechos en código, sin carpeta) y «carpeta/nombre» (modelos de Kenney)
 export const OBJETOS = new Set([...CATALOGO.codigo, ...Object.entries(CATALOGO).filter(([k]) => k !== 'codigo').flatMap(([k, v]) => v.map((x) => `${k}/${x}`))]);
