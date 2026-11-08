@@ -60,6 +60,31 @@ async function contestar(p, c, msg, bien) {
   } else await graph('POST', `/${c.id}/replies`, { message: msg });
 }
 
+// ---------- contestar a mano un comentario desde la cuenta (comentarios.yml, campo «responder») ----------
+// «usuario|palabra|texto»: busca en las publicaciones de los últimos 3 días el comentario de ese usuario que trae esa
+// palabra y le contesta con el texto, desde la página o la cuenta de Instagram (no desde un perfil personal)
+const aMano = (process.env.FIGURA_INPUT || '').startsWith('responder|') ? process.env.FIGURA_INPUT.split('|').slice(1) : null;
+if (aMano && !o['dry-run']) {
+  const [quien, palabra, ...resto] = aMano, texto = resto.join('|').trim(), u = quien.replace(/^@/, '').toLowerCase();
+  const sin = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  let hecho = false;
+  const candidatas = [...publicacionesRecientes(3)];
+  if (ig) for (const m of (await graph('GET', `/${ig}/media`, { limit: 30, fields: 'id,timestamp' }).catch(() => ({ data: [] }))).data || []) if (!candidatas.some((x) => x.id === m.id)) candidatas.push({ red: 'instagram', id: m.id });
+  for (const p of candidatas) {
+    if (hecho || (p.red === 'instagram' && !ig)) continue;
+    const c = (await comentarios(p).catch(() => [])).find((x) => sin(x.usuario).replace(/^@/, '').startsWith(u.slice(0, 20)) && sin(x.texto).includes(sin(palabra)));
+    if (!c) continue;
+    try {
+      const msg = p.red === 'instagram' && !texto.includes(`@${u}`) ? `@${u} ${texto}` : texto;
+      await graph('POST', p.red === 'facebook' ? `/${c.id}/comments` : `/${c.id}/replies`, { message: msg });
+      vistos.add(c.id); avisados.add(c.id); hecho = true;
+      await telegram(`✅ Contesté a ${esc(c.usuario || quien)} en ${({ facebook: 'Facebook', instagram: 'Instagram' })[p.red]} desde la cuenta:\n«${esc(msg)}»`);
+      console.log(`Respuesta a mano publicada en ${p.red}`);
+    } catch (e) { console.log(`Aviso (respuesta a mano): ${e.message.slice(0, 160)}`); await telegram(`⚠️ No pude contestar a ${esc(quien)}: ${esc(e.message.slice(0, 200))}`); hecho = true; }
+  }
+  if (!hecho) { console.log('Respuesta a mano: no encontré ese comentario'); await telegram(`⚠️ No encontré un comentario de ${esc(quien)} con «${esc(palabra)}» en los últimos 3 días.`); }
+}
+
 // ---------- lo que decidiste en Telegram (responder, me gusta, ocultar) ----------
 const NOMBRE_RED = { facebook: 'Facebook', instagram: 'Instagram' };
 if (!o.diagnostico && !o['dry-run']) {

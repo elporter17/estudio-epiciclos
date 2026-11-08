@@ -13,6 +13,10 @@ on:
         description: Solo revisar (cuántos comentarios hay y por qué se responden o no), sin contestar
         type: boolean
         default: false
+      responder:
+        description: 'Contestar desde la cuenta a un comentario: usuario|palabra que trae el comentario|texto de la respuesta (busca en las publicaciones de los últimos 3 días)'
+        type: string
+        default: ''
 
 permissions:
   contents: read
@@ -23,7 +27,7 @@ jobs:
     uses: ./.github/workflows/daily.yml
     with:
       cats: comentarios
-      figura: ${{ inputs.diagnostico && 'diagnostico' || '' }}
+      figura: ${{ inputs.diagnostico && 'diagnostico' || inputs.responder && format('responder|{0}', inputs.responder) || '' }}
       publish: none
       aviso: false
     secrets: inherit
