@@ -1,0 +1,71 @@
+{
+  "id": "daltonismo",
+  "formato": "idea",
+  "titulo": "Así ve el mundo una persona daltónica",
+  "categoria": "ciencia",
+  "destacar": ["daltonismo", "daltónico", "daltónica"],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Y si no vieras los colores como los demás?",
+      "objeto": "comida/apple"
+    },
+    {
+      "tipo": "vision",
+      "texto": "Así ves tú esta mesa llena de colores… y así la ve una persona con daltonismo.",
+      "vision": { "tipo": "deutan", "desde": 0.38, "hasta": 0.58 },
+      "objetos": ["comida/apple", "comida/tomato", "comida/strawberry", "comida/orange", "comida/banana", "comida/lemon", "comida/broccoli", "comida/grapes", "comida/watermelon", "comida/cherries", "comida/carrot", "comida/eggplant"]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Le pasa a 1 de cada 12 hombres, pero solo a 1 de cada 200 mujeres.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "foco",
+      "texto": "La culpa es de un gen que va en el cromosoma X: los hombres tienen uno solo, así que no hay copia de repuesto.",
+      "objeto": "comida/strawberry",
+      "cantidad": 1
+    },
+    {
+      "tipo": "globo",
+      "texto": "En el mundo hay más de 300 millones de personas daltónicas.",
+      "modo": "luces",
+      "contador": { "desde": 0, "hasta": 300000000, "unidad": "personas" }
+    },
+    {
+      "tipo": "ishihara",
+      "texto": "Haz la prueba: ¿qué número ves en estos puntos? Si te cuesta verlo, cuéntanos.",
+      "numero": 74,
+      "revelar": 0.8
+    },
+    {
+      "tipo": "vision",
+      "modo": "semaforo",
+      "texto": "Por eso muchas personas daltónicas se guían por la posición de las luces del semáforo, no por el color.",
+      "vision": { "tipo": "protan", "desde": 0.35, "hasta": 0.55 }
+    },
+    {
+      "tipo": "linea",
+      "texto": "Se llama así por John Dalton, un químico que en 1794 describió su propio daltonismo.",
+      "hitos": [
+        { "anio": 1794, "texto": "John Dalton lo describe" },
+        { "anio": 1995, "texto": "Su ADN lo confirma" }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Qué número viste en la prueba? Escríbelo en los comentarios y síguenos para más.",
+      "objeto": "comida/apple"
+    }
+  ],
+  "fuentes": [
+    { "dato": "1 de cada 12 hombres y 1 de cada 200 mujeres (≈8 % y 0,5 %)", "fuente": "News-Medical, «Color Blindness Prevalence» (cifras de estudios muy repetidas)", "url": "https://www.news-medical.net/health/Color-Blindness-Prevalence.aspx", "respuesta": "Es de los datos más repetidos en los estudios: alrededor del 8 % de los hombres (1 de cada 12) y el 0,5 % de las mujeres (1 de cada 200) tienen algún tipo de daltonismo." },
+    { "dato": "Más de 300 millones de personas en el mundo; el rojo-verde es más del 90 % de los casos", "fuente": "Estimaciones citadas por InviOcean (varían entre 300 y 350 millones)", "url": "https://inviocean.com/learn/how-common-is-color-blindness/" },
+    { "dato": "Gen en el cromosoma X (por eso es más común en hombres)", "fuente": "Herencia ligada al cromosoma X, recogida en las mismas fuentes" },
+    { "dato": "John Dalton describió su daltonismo en 1794", "fuente": "Science History Institute: «Extraordinary Facts Relating to the Vision of Colours» (1794)", "url": "https://digital.sciencehistory.org/works/fb4949523" },
+    { "dato": "En 1995 un estudio genético de su ojo confirmó que tenía deuteranopia", "fuente": "Zientzia.eus, «El daltonismo de Dalton»", "url": "https://zientzia.eus/artikuluak/daltonen-daltonismoa/en/" },
+    { "dato": "Simulación de cómo se ven los colores", "fuente": "Matrices de Machado, Oliveira y Fernandes (2009), un modelo fisiológico de la visión de color deficiente" }
+  ],
+  "nota": "La lámina de puntos es una imitación del test de Ishihara para el video: no sirve como prueba médica."
+}

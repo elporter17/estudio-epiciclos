@@ -112,3 +112,6 @@ export const Dato = ({ render }) => {
     </AbsoluteFill>
   );
 };
+
+// Piezas que reutiliza el formato «Idea» (video3d/src/Idea.jsx); aquí no cambia nada
+export { Subtitulos, Contador, Portada, Logo, Cierre, Redibujar, BASE };
