@@ -49,7 +49,14 @@ async function mandarVideo(file, caption, teclado) {
 if (o.guion) { console.log(renderizar(JSON.parse(fs.readFileSync(path.resolve(o.guion), 'utf8')))); process.exit(0); }
 
 if (o.render) {
-  const b = await leerIdea(o.render); if (!b) throw new Error(`No encontré la idea ${o.render}`);
+  // «archivo:video3d/guiones/ideas/x.json»: un guion escrito a mano en el repo; se guarda como idea para que funcionen
+  // los botones de publicar
+  let b;
+  if (o.render.startsWith('archivo:')) {
+    const g = JSON.parse(fs.readFileSync(path.resolve(ROOT, o.render.slice(8)), 'utf8')), id = Date.now().toString(36).slice(-6);
+    b = await guardarIdea(id, { idea: g.titulo, tema: g.titulo, url: g.fuentes?.find((x) => x.url)?.url || '', guion: { ...g, id: `idea-${g.id}-${id}` }, estado: 'generando' });
+  } else b = await leerIdea(o.render);
+  if (!b) throw new Error(`No encontré la idea ${o.render}`);
   const g = b.guion || aGuion(b);
   try {
     const ti = Date.now(), video = renderizar(g), enlace = await publicarEnlace(video, { days: 7 });
