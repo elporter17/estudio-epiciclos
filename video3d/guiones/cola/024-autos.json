@@ -9,17 +9,17 @@
   "escenas": [
     {
       "tipo": "portada",
-      "texto": "En el mundo circulan unos 1.500 millones de autos.",
+      "texto": "En el mundo circulan más de 1.500 millones de autos.",
       "objeto": "autos/sedan"
     },
     {
       "tipo": "calle",
-      "texto": "Y cada año se fabrican y se venden unos 80 millones de autos nuevos.",
+      "texto": "Y cada año se fabrican y se venden casi 100 millones de autos nuevos.",
       "objeto": "autos/sedan",
       "cantidad": 14,
       "contador": {
         "desde": 0,
-        "hasta": 80,
+        "hasta": 100,
         "unidad": "millones"
       }
     },
@@ -73,5 +73,38 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "autos/taxi"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "Más de 1.500 millones de vehículos en uso en el mundo",
+      "fuente": "Estimación: Hedges & Company (≈1.640 millones) y ≈1.550 millones en 2023 atribuido a OICA; incluye camionetas, camiones y buses",
+      "url": "https://www.inkl.com/news/toyota-reveals-how-many-of-its-cars-are-on-the-road"
+    },
+    {
+      "dato": "Casi 100 millones de vehículos nuevos vendidos al año (99,8 M en 2025; 95,3 M en 2024; ≈71 M son autos de pasajeros)",
+      "fuente": "OICA, estadísticas de ventas 2025",
+      "url": "https://oica.net/wp-content/uploads/2026/04/sales-2025.pdf"
+    },
+    {
+      "dato": "Karl Benz patentó su automóvil de gasolina en 1886 (patente DRP 37435, 29 de enero)",
+      "fuente": "Mercedes-Benz, citado por New Atlas (2011)",
+      "url": "https://newatlas.com/the-birth-certificate-of-the-automobile-was-issued-125-years-ago-today/17725"
+    },
+    {
+      "dato": "Ford Modelo T (1908-1927): más de 15 millones vendidos",
+      "fuente": "Ford Motor Company, historia del Modelo T",
+      "url": "https://www.at.ford.com/us/en/home/news-media/news/2022/2/tbt--model-t-holds-sales-record-for-45-years-after-production-en.html"
+    },
+    {
+      "dato": "Toyota Prius (1997), primer híbrido fabricado en masa",
+      "fuente": "IEEE Milestone «Toyota Prius, the World’s First Mass-Produced Hybrid Vehicle, 1997»",
+      "url": "https://ethw.org/Milestones:Toyota_Prius,_the_World%27s_First_Mass-Produced_Hybrid_Vehicle,_1997"
+    },
+    {
+      "dato": "Un auto pasa estacionado más del 90 % (≈95 %) del tiempo",
+      "fuente": "Donald Shoup, The High Cost of Free Parking; RAC Foundation, Spaced Out (2012): 96 % estacionado",
+      "url": "https://www.racfoundation.org/research/mobility/spaced-out-perspectives-on-parking"
+    }
+  ],
+  "nota": "«Autos» aquí cuenta todos los vehículos de motor (también camionetas, camiones y buses): más de 1.500 millones en uso y casi 100 millones vendidos al año. Solo autos de pasajeros se vendieron unos 71 millones en 2025 (OICA)."
 }

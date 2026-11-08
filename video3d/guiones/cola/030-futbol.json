@@ -75,5 +75,40 @@
       "texto": "¿Qué selección crees que gana el próximo Mundial? Cuéntanos y síguenos para más.",
       "objeto": "balon"
     }
+  ],
+  "fuentes": [
+    {
+      "dato": "Mundial 2026: primero con 48 selecciones, en México, Canadá y Estados Unidos",
+      "fuente": "AP, vía PBS NewsHour (11 de junio de 2026)",
+      "url": "https://www.pbs.org/newshour/world/mexico-hosts-south-africa-in-opening-match-as-world-cup-begins"
+    },
+    {
+      "dato": "104 partidos en 2026 (Catar 2022: 32 selecciones y 64 partidos)",
+      "fuente": "FIFA, centro de ayuda de entradas del Mundial 2026",
+      "url": "https://gpcustomersupportfwc2026.tickets.fifa.com/hc/en-gb/articles/28783291386653-1-When-and-where-is-the-FIFA-World-Cup-2026-being-held"
+    },
+    {
+      "dato": "Uruguay 1930, primer Mundial, con 13 selecciones",
+      "fuente": "Wikipedia, «1930 FIFA World Cup»",
+      "url": "https://en.wikipedia.org/wiki/1930_FIFA_World_Cup"
+    },
+    {
+      "dato": "Francia 1998, primer Mundial con 32 selecciones",
+      "fuente": "FIFA (historia de los Mundiales)"
+    },
+    {
+      "dato": "Miles de millones siguen el Mundial: ≈5.000 millones en Catar 2022; ≈1.500 millones vieron la final",
+      "fuente": "FIFA, informe de audiencias de Catar 2022 (resumen de SportCal)",
+      "url": "https://www.sportcal.com/media/fifa-world-cup-engages-5-billion-final-reaches-1-5bn/"
+    },
+    {
+      "dato": "Estadio Azteca: primero con partidos de tres Mundiales (1970, 1986 y 2026) y tres partidos inaugurales",
+      "fuente": "beIN Sports (2 de junio de 2026)",
+      "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/estadio-azteca-will-make-history-at-the-2026-world-cup-as-the-first-stadium-to-host-three-fifa-world-cup-opening-matches-2026-06-02"
+    },
+    {
+      "dato": "El fútbol, el deporte más popular del mundo",
+      "fuente": "Afirmación muy extendida, sin una medición única"
+    }
   ]
 }

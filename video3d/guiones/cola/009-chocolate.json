@@ -82,5 +82,27 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "comida/chocolate"
     }
+  ],
+  "fuentes": [
+    {
+      "dato": "Mayas y aztecas: bebida de cacao amarga y especiada; granos de cacao como moneda",
+      "fuente": "California Academy of Sciences, California Wild (2005), «Chocolate empire»",
+      "url": "https://research.calacademy.org/calwild/2005summer/stories/chocoempire.html"
+    },
+    {
+      "dato": "Primera tableta para comer: Inglaterra, 1847",
+      "fuente": "J. S. Fry & Sons (Bristol), 1847; «primera» según la mayoría de historiadores",
+      "url": "https://en.wikipedia.org/wiki/J._S._Fry_%26_Sons"
+    },
+    {
+      "dato": "Chocolate con leche en 1875, chocolatero suizo",
+      "fuente": "Daniel Peter (Vevey), con la leche condensada de Henri Nestlé; Cailler, 150 años del chocolate con leche",
+      "url": "https://www.cailler.ch/en/150-years-milk-chocolate-exhibition-display-2"
+    },
+    {
+      "dato": "Costa de Marfil: cerca del 40 % del cacao mundial",
+      "fuente": "cálculo: ~1,85 millones de t de Costa de Marfil (previsión ICCO) ÷ 4,728 millones de t mundiales (ICCO, 2024/25) ≈ 39 %",
+      "url": "https://www.icco.org/february-2026-quarterly-bulletin-of-cocoa-statistics/"
+    }
   ]
 }

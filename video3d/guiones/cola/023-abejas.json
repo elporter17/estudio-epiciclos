@@ -57,5 +57,31 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "comida/honey"
     }
+  ],
+  "fuentes": [
+    {
+      "dato": "Unos 2 millones de flores y unas 55.000 millas (≈ 88.000 km) de vuelo por libra de miel (≈ medio kilo)",
+      "fuente": "National Honey Board, blog «Catch the Buzz on National Honey Bee Day»",
+      "url": "https://honey.com/blog/catch-the-buzz-on-national-honey-bee-day"
+    },
+    {
+      "dato": "Mismas cifras (2 millones de flores, 55.000 millas, 1/12 de cucharadita por abeja)",
+      "fuente": "University of Illinois Extension, «National Honey Bee Day» (2017)",
+      "url": "https://extension.illinois.edu/blogs/prairies-perennials/2017-08-19-national-honey-bee-day"
+    },
+    {
+      "dato": "Más de dos vueltas al mundo",
+      "fuente": "cálculo: 88.000 km ÷ 40.075 km del ecuador ≈ 2,2"
+    },
+    {
+      "dato": "La miel casi no se echa a perder; miel comestible en tumbas egipcias",
+      "fuente": "Smithsonian Magazine, «The Science Behind Honey's Eternal Shelf Life»",
+      "url": "https://www.smithsonianmag.com/science-nature/the-science-behind-honeys-eternal-shelf-life-1218690/"
+    },
+    {
+      "dato": "Cerca del 75 % de los cultivos dependen al menos en parte de los polinizadores (≈ 35 % del volumen de comida)",
+      "fuente": "FAO, citada por Our World in Data, «Pollinator dependence»",
+      "url": "https://ourworldindata.org/pollinator-dependence"
+    }
   ]
 }

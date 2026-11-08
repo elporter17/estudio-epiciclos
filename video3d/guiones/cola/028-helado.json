@@ -22,7 +22,7 @@
           "objeto": "comida/popsicle"
         },
         {
-          "anio": 1923,
+          "anio": 1924,
           "texto": "La patente"
         },
         {
@@ -43,7 +43,7 @@
     },
     {
       "tipo": "pila",
-      "texto": "Dieciocho años después la patentó, y hoy se venden millones cada verano.",
+      "texto": "Diecinueve años después la patentó, y hoy se venden millones cada verano.",
       "objeto": "comida/popsicle",
       "cantidad": 260
     },
@@ -69,5 +69,23 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "comida/popsicle"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "Frank Epperson inventó la paleta por accidente en 1905, a los 11 años",
+      "fuente": "History.com, «Frozen History: The Story of the Popsicle» (relato del propio Epperson)",
+      "url": "https://history.com/articles/frozen-history-the-story-of-the-popsicle"
+    },
+    {
+      "dato": "Patente de la paleta: US 1.505.592, concedida el 19 de agosto de 1924",
+      "fuente": "Oficina de Patentes de EE. UU. (Google Patents)",
+      "url": "https://patents.google.com/patent/US1505592A/en"
+    },
+    {
+      "dato": "El cono de helado se hizo famoso en la Feria Mundial de San Luis de 1904 (ya existía: Marchiony patentó un molde en 1903)",
+      "fuente": "Encyclopedia.com, «Ice Cream Cone»",
+      "url": "https://www.encyclopedia.com/manufacturing/news-wires-white-papers-and-books/ice-cream-cone"
+    }
+  ],
+  "nota": "El cono no se inventó en la feria de San Luis de 1904: ya existía (Italo Marchiony patentó un molde en 1903); en la feria se hizo famoso."
 }

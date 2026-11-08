@@ -60,5 +60,22 @@
       "texto": "¿Cuántos árboles has plantado tú? Cuéntanos en los comentarios y síguenos para más.",
       "objeto": "naturaleza/tree_oak"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "Unos tres billones de árboles (3,04 × 10¹²); ≈46 % perdidos desde el inicio de la agricultura; más de 15.000 millones cortados al año",
+      "fuente": "Crowther et al., Nature 525 (2015), «Mapping tree density at a global scale»",
+      "url": "https://cdanfort.w3.uvm.edu/csc-reading-group/crowther-nature-2015.pdf"
+    },
+    {
+      "dato": "Unos 375 árboles por persona",
+      "fuente": "cálculo: 3,04 billones ÷ ~8.100 millones de personas (ONU 2024); el estudio daba 422 con la población de 2015"
+    },
+    {
+      "dato": "Un árbol adulto absorbe unos 22 kg de CO2 al año",
+      "fuente": "Cifra muy citada (Agencia Europea de Medio Ambiente, Arbor Day Foundation); estimación que varía mucho por especie y tamaño",
+      "url": "https://onetreeplanted.org/blogs/stories/how-much-co2-does-tree-absorb"
+    }
+  ],
+  "nota": "Los 375 árboles por persona son un cálculo con la población actual; el estudio de Nature (2015) decía 422 porque entonces éramos unos 7.200 millones. Los 22 kg de CO2 son un promedio aproximado: según el árbol va de ~10 a más de 50 kg."
 }

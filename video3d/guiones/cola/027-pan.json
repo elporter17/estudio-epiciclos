@@ -69,5 +69,36 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "comida/bread"
     }
+  ],
+  "fuentes": [
+    {
+      "dato": "Primer pan rebanado a la venta: 7 de julio de 1928, Chillicothe Baking Company (Misuri)",
+      "fuente": "Lemelson-MIT, «Otto Rohwedder»",
+      "url": "https://lemelson.mit.edu/resources/otto-rohwedder"
+    },
+    {
+      "dato": "Otto Rohwedder trabajó en su máquina desde 1912 (un incendio destruyó su prototipo en 1917)",
+      "fuente": "Lemelson-MIT, «Otto Rohwedder»",
+      "url": "https://lemelson.mit.edu/resources/otto-rohwedder"
+    },
+    {
+      "dato": "Hacia 1930 el pan rebanado se popularizó (Wonder Bread)",
+      "fuente": "Wikipedia, «Otto Frederick Rohwedder»",
+      "url": "https://en.wikipedia.org/wiki/Otto_Frederick_Rohwedder"
+    },
+    {
+      "dato": "Origen de la frase «lo mejor desde el pan rebanado» en la publicidad de la época",
+      "fuente": "Banana IP, «Historical Patents II: Bread» (anuncio de 1928)",
+      "url": "https://bananaip.com/?p=34873"
+    },
+    {
+      "dato": "Pan más antiguo conocido: ≈14.400 años, Shubayqa 1 (Jordania)",
+      "fuente": "Arranz-Otaegui et al., PNAS (2018)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6077754"
+    },
+    {
+      "dato": "El pan, uno de los alimentos más consumidos",
+      "fuente": "Afirmación general, sin cifra en el video"
+    }
   ]
 }

@@ -24,7 +24,7 @@
     },
     {
       "tipo": "comparacion",
-      "texto": "Es el segundo arrecife más grande del mundo, después de la Gran Barrera de Coral de Australia.",
+      "texto": "Se le considera el segundo arrecife más grande del mundo, después de la Gran Barrera de Coral de Australia.",
       "barras": [
         {
           "etiqueta": "Gran Barrera",
@@ -67,5 +67,38 @@
       "texto": "¿Ya conoces Roatán o Utila? Cuéntanos y síguenos para más datos.",
       "objeto": "comida/fish"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "Sistema Arrecifal Mesoamericano: ≈1.000 km por México, Belice, Guatemala y las Islas de la Bahía de Honduras",
+      "fuente": "WWF, Mesoamerican Reef",
+      "url": "https://wwf.panda.org/knowledge_hub/where_we_work/mesoamerican_reef"
+    },
+    {
+      "dato": "Segundo arrecife de barrera más grande del mundo, después de la Gran Barrera",
+      "fuente": "Smithsonian, Healthy Reefs for Healthy People",
+      "url": "https://global.si.edu/projects/healthy-reefs-healthy-people"
+    },
+    {
+      "dato": "Gran Barrera de Coral: ≈2.300 km de largo",
+      "fuente": "GBRMPA (Autoridad del Parque Marino de la Gran Barrera), Reef Facts",
+      "url": "https://elibrary.gbrmpa.gov.au/entities/publication/a595e88a-74ef-49b5-a2b4-9b3967e0c12d"
+    },
+    {
+      "dato": "Los arrecifes cubren menos del 1 % del fondo marino y albergan ≈25 % de las especies marinas",
+      "fuente": "NOAA, Florida Keys National Marine Sanctuary",
+      "url": "https://floridakeys.noaa.gov/corals/biodiversity.html"
+    },
+    {
+      "dato": "Tiburón ballena, el pez más grande del mundo; Utila es de los mejores sitios para verlo",
+      "fuente": "AMNH (pez más grande); presencia en Utila según operadores de buceo (PADI)",
+      "url": "https://www.amnh.org/explore/news-blogs/whale-shark-largest-fish"
+    },
+    {
+      "dato": "Amenazas: calentamiento del agua (blanqueamiento de 2024) y contaminación",
+      "fuente": "WWF; Mongabay (2024), informe de Healthy Reefs",
+      "url": "https://news.mongabay.com/2024/12/after-historic-2024-coral-bleaching-hope-remains-for-mesoamerican-reef/"
+    }
+  ],
+  "nota": "«Segundo más grande» es la clasificación habitual (Smithsonian, WWF), pero depende de cómo se mida: la barrera de Nueva Caledonia (≈1.500 km) también se cita a veces como la 2.ª. El largo del Mesoamericano va de ≈1.000 a 1.126 km según la fuente."
 }

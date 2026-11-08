@@ -68,5 +68,42 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "libro"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "En Oxford ya se enseñaba en 1096 (no tiene fecha de fundación clara)",
+      "fuente": "Universidad de Oxford, «History»",
+      "url": "https://ox.ac.uk/about/the-university/history"
+    },
+    {
+      "dato": "Tenochtitlan se fundó hacia 1325; la Triple Alianza (Imperio azteca) se formó en 1428",
+      "fuente": "National Geographic, «Who were the Aztec?»",
+      "url": "https://www.nationalgeographic.com/history/history-magazine/article/who-were-the-aztec"
+    },
+    {
+      "dato": "Más de dos siglos entre las dos fechas",
+      "fuente": "cálculo: 1325 − 1096 = 229 años"
+    },
+    {
+      "dato": "Al Qarawiyyin (Fez, Marruecos), fundada en 859: la institución educativa más antigua que sigue funcionando",
+      "fuente": "Guinness World Records, «Oldest higher-learning institution»",
+      "url": "https://www.guinnessworldrecords.com/world-records/oldest-university"
+    },
+    {
+      "dato": "La fundó Fátima al Fihri",
+      "fuente": "Tradición histórica muy citada (Guinness no nombra a la fundadora); Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/University_of_al-Qarawiyyin"
+    },
+    {
+      "dato": "San Marcos (Lima), fundada por Real Cédula del 12 de mayo de 1551",
+      "fuente": "Gestión (Perú), historia de la UNMSM",
+      "url": "https://gestion.pe/peru/educacion-universidad-nacional-mayor-de-san-marcos-unmsm-celebra-474-anos-de-fundacion-su-historia-noticia/"
+    },
+    {
+      "dato": "Real Universidad de México, creada por cédula del 21 de septiembre de 1551",
+      "fuente": "UNAM Global, «471 años de la Real y Pontificia Universidad de México»",
+      "url": "https://unamglobal.unam.mx/global_revista/471-anos-de-la-real-y-pontificia-universidad-de-mexico-cuna-de-la-unam/"
+    }
+  ],
+  "nota": "1096 es la primera fecha con clases en Oxford, no su fundación formal, y 1325 es la fundación de Tenochtitlan: el Imperio azteca como tal (Triple Alianza) es de 1428, así que la portada sigue siendo cierta. Al Qarawiyyin nació como mezquita-madrasa y es universidad moderna desde 1963."
 }

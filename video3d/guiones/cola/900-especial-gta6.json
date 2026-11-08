@@ -37,12 +37,12 @@
     },
     {
       "tipo": "pila",
-      "texto": "GTA V vendió más de 200 millones de copias: uno de los juegos más vendidos de todos los tiempos.",
+      "texto": "GTA V vendió más de 230 millones de copias: uno de los juegos más vendidos de todos los tiempos.",
       "objeto": "moneda",
       "cantidad": 320,
       "contador": {
         "desde": 0,
-        "hasta": 200,
+        "hasta": 230,
         "unidad": "millones"
       }
     },
@@ -78,5 +78,33 @@
       "texto": "¿Ya lo vas a jugar? Cuéntanos en los comentarios y síguenos para más.",
       "objeto": "autos/sedan-sports"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "GTA VI sale el jueves 19 de noviembre de 2026",
+      "fuente": "Rockstar Games Newswire (anuncio del retraso, noviembre de 2025)",
+      "url": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026"
+    },
+    {
+      "dato": "GTA V salió el 17 de septiembre de 2013 (más de 13 años antes); el primer GTA es de 1997",
+      "fuente": "Anuncio de Rockstar (enero de 2013), recogido por Engadget",
+      "url": "https://www.engadget.com/2013-01-31-grand-theft-auto-5-release-date-september-17.html"
+    },
+    {
+      "dato": "GTA V: más de 230 millones de unidades vendidas",
+      "fuente": "Take-Two, resultados del 1.er trimestre fiscal 2027 (agosto de 2026), recogido por VGChartz",
+      "url": "https://www.vgchartz.com/article/468685/gta-series-sales-near-475m-rdr-series-nears-116m-gta5-tops-230m/"
+    },
+    {
+      "dato": "Primer tráiler (dic. 2023): más de 90 millones de vistas en 24 h, récord de video no musical",
+      "fuente": "YouTube Trends (93 millones); Guinness World Records (90,4 millones)",
+      "url": "https://www.guinnessworldrecords.com/world-records/407081-most-viewed-videogame-reveal-on-youtube-in-24-hours"
+    },
+    {
+      "dato": "Vice City, en el estado ficticio de Leonida (inspirado en Florida); protagonistas Lucía y Jason",
+      "fuente": "Rockstar Games, sitio oficial de Grand Theft Auto VI",
+      "url": "https://www.rockstargames.com/VI"
+    }
+  ],
+  "nota": "El guion dice «Hoy llega»: confirma la fecha con Rockstar antes de publicar, por si hay otro retraso. Los 230 millones son unidades distribuidas a tiendas y plataformas («sold-in»), según Take-Two; su informe del 9 de noviembre de 2026 podría subir la cifra."
 }

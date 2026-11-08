@@ -45,7 +45,7 @@
     },
     {
       "tipo": "globo",
-      "texto": "El lugar con más rayos del mundo está en Venezuela: el relámpago del Catatumbo, que brilla hasta 260 noches al año.",
+      "texto": "El lugar con más rayos del mundo está en Venezuela: el relámpago del Catatumbo, que brilla hasta 300 noches al año.",
       "modo": "rayos"
     },
     {
@@ -64,5 +64,43 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "naturaleza/tree_default"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "Unos 44 rayos por segundo (≈1.400 millones al año)",
+      "fuente": "NASA, climatología de rayos de los satélites OTD/LIS (cálculo: 44 × 31,5 millones de s ≈ 1.390 millones)",
+      "url": "https://svs.gsfc.nasa.gov/hyperwall/index/data/events/2012/2012-ams/lightning.txt.html"
+    },
+    {
+      "dato": "Un rayo calienta el aire a unos 50.000 °F (≈27.800 °C), unas cinco veces la superficie del Sol",
+      "fuente": "NOAA, Lightning Safety Program («Overview», copia archivada)",
+      "url": "https://webarchive.library.unt.edu/web/20130213220308/http:/www.lightningsafety.noaa.gov/overview.htm"
+    },
+    {
+      "dato": "Superficie del Sol ≈ 5.500 °C (5.772 K)",
+      "fuente": "NASA NSSDC, Sun Fact Sheet (temperatura efectiva de la fotosfera)",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    },
+    {
+      "dato": "Relámpago del Catatumbo: mayor concentración de rayos del mundo, hasta 300 noches al año",
+      "fuente": "Guinness World Records, «Highest concentration of lightning»",
+      "url": "https://www.guinnessworldrecords.com/world-records/highest-concentration-of-lightning"
+    },
+    {
+      "dato": "El lago de Maracaibo es el punto con más rayos del planeta (≈233 rayos/km² al año)",
+      "fuente": "Albrecht et al. 2016, Bulletin of the AMS, con datos del satélite LIS de la NASA",
+      "url": "https://ghrc.nsstc.nasa.gov/pub/lis/climatology/LIS/doc/Where_are_the_lightning_hotspots_on_Earth.pdf"
+    },
+    {
+      "dato": "Un auto cerrado de techo metálico protege (por la carrocería, no por las llantas)",
+      "fuente": "NWS (Servicio Meteorológico de EE. UU.), «Lightning Myths vs. Facts»",
+      "url": "https://weather.gov/fwd/ltgmythvfact"
+    },
+    {
+      "dato": "Mito: «un rayo nunca cae dos veces en el mismo lugar»",
+      "fuente": "NOAA/NWS, «Lightning Myths» (documento archivado de la oficina de Hanford)",
+      "url": "https://webarchive.library.unt.edu/web/20090508170846/http:/www.wrh.noaa.gov/hnx/LightningMyths-1.pdf"
+    }
+  ],
+  "nota": "Los «30.000 grados» están redondeados: la NOAA da 50.000 °F, que son unos 27.800 °C. Aun así, la comparación de «cinco veces» la superficie del Sol (≈5.500 °C) se mantiene."
 }

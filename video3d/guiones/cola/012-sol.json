@@ -41,13 +41,13 @@
     },
     {
       "tipo": "calle",
-      "texto": "Eso es más de mil veces más rápido que un auto en la carretera.",
+      "texto": "Eso es unas mil veces más rápido que un auto en la carretera.",
       "objeto": "autos/sedan-sports",
       "cantidad": 8
     },
     {
       "tipo": "calendario",
-      "texto": "Y le toma un año entero, 365 días, completar una vuelta.",
+      "texto": "Y le toma un año entero, unos 365 días, completar una vuelta.",
       "contador": {
         "desde": 1,
         "hasta": 365,
@@ -58,6 +58,27 @@
       "tipo": "cierre",
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "moneda"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "La luz tarda unos 8 min 20 s en llegar del Sol (≈500 s)",
+      "fuente": "cálculo: distancia media 149,6 millones de km ÷ 299.792 km/s (NASA NSSDC, Sun Fact Sheet)",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    },
+    {
+      "dato": "En el Sol cabrían unos 1,3 millones de Tierras (por volumen)",
+      "fuente": "NASA NSSDC, Sun Fact Sheet (relación de volumen Sol/Tierra: 1.304.000)",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    },
+    {
+      "dato": "La Tierra orbita al Sol a unos 107.000 km/h; una vuelta tarda ≈365,25 días",
+      "fuente": "NASA NSSDC, Earth Fact Sheet (29,78 km/s × 3.600 = 107.208 km/h; periodo sideral 365,256 días)",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    },
+    {
+      "dato": "Unas mil veces más rápido que un auto",
+      "fuente": "cálculo: 107.208 km/h ÷ 100 km/h ≈ 1.070 (a 120 km/h serían ≈ 890)"
     }
   ]
 }

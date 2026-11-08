@@ -47,7 +47,7 @@
     },
     {
       "tipo": "lluvia",
-      "texto": "Eso son miles de huevos por segundo, en todos los países del planeta.",
+      "texto": "Eso son decenas de miles de huevos por segundo, en todos los países del planeta.",
       "objeto": "comida/egg",
       "cantidad": 160
     },
@@ -67,5 +67,32 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "comida/egg"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "Unos 8.000 millones de personas",
+      "fuente": "ONU, World Population Prospects 2024 (≈8.200 millones en 2024)",
+      "url": "https://www.un.org/development/desa/pd/world-population-prospects-2024"
+    },
+    {
+      "dato": "Más de 25.000 millones de gallinas",
+      "fuente": "FAOSTAT, existencias de pollos y gallinas: ≈26.500 millones (2022), ≈27.000 millones (2023)"
+    },
+    {
+      "dato": "Una ponedora pone unos 300 huevos al año",
+      "fuente": "Georgia Farm Bureau (Agriculture in the Classroom): 300 a 325 huevos al año en razas comerciales",
+      "url": "https://www.gfb.org/content/userfiles/files/AITC/Bookmarks/AITC-egg%20Bookmark.pdf"
+    },
+    {
+      "dato": "Más de un billón de huevos al año; decenas de miles por segundo",
+      "fuente": "FAO (vía Our World in Data): ~98 millones de t en 2023 ≈ 1,6 billones de huevos; por segundo, cálculo: 1,6 billones ÷ 31,5 millones de s ≈ 50.000",
+      "url": "https://ourworldindata.org/grapher/egg-production-thousand-tonnes"
+    },
+    {
+      "dato": "El color de la cáscara depende de la raza y no cambia el sabor",
+      "fuente": "USDA (citado por Healthline)",
+      "url": "https://www.healthline.com/nutrition/white-vs-brown-eggs"
+    }
+  ],
+  "nota": "Los 25.000 millones son todas las aves de la especie (pollos de engorde, gallinas y gallos), según la FAO; gallinas ponedoras hay unas 8.000 millones, más o menos tantas como personas."
 }

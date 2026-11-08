@@ -14,7 +14,7 @@
     },
     {
       "tipo": "gente",
-      "texto": "Una persona da en promedio unos 7.500 pasos al día.",
+      "texto": "Una persona activa da unos 7.500 pasos al día.",
       "cantidad": 20,
       "contador": {
         "desde": 0,
@@ -63,5 +63,40 @@
       "texto": "¿Cuántos pasos diste hoy? Escríbelo en los comentarios y síguenos para más.",
       "objeto": "balon"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "7.500 pasos al día = persona «algo activa» (7.500-9.999)",
+      "fuente": "Tudor-Locke y Bassett, Sports Medicine 2004, «How many steps/day are enough?»",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14715035/"
+    },
+    {
+      "dato": "Promedio medido con celulares: unos 4.960 pasos al día (111 países)",
+      "fuente": "Althoff et al., Nature 2017 (Universidad de Stanford)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5774986"
+    },
+    {
+      "dato": "Más de 2,5 millones de pasos al año",
+      "fuente": "cálculo: 7.500 pasos × 365 días = 2,74 millones"
+    },
+    {
+      "dato": "Más de 150.000 km en una vida",
+      "fuente": "cálculo: 7.500 pasos × 365 × 75-80 años × 0,75 m por paso ≈ 154.000-164.000 km (la cifra popular es «110.000 millas», ≈ 177.000 km)"
+    },
+    {
+      "dato": "Ecuador de unos 40.000 km; casi cuatro vueltas",
+      "fuente": "NASA, Earth Fact Sheet (radio ecuatorial 6.378 km → 40.075 km); cálculo: 150.000 ÷ 40.075 ≈ 3,7",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    },
+    {
+      "dato": "Cientos de pares de zapatos",
+      "fuente": "cálculo: 150.000 km ÷ 480-800 km por par (regla de podólogos de 300-500 millas, AAPSM) ≈ 190-310 pares"
+    },
+    {
+      "dato": "30 minutos al día de actividad",
+      "fuente": "OMS, nota descriptiva «Actividad física»: al menos 150 minutos de actividad moderada a la semana",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity"
+    }
+  ],
+  "nota": "Las cifras de toda la vida son un cálculo con 7.500 pasos diarios (una persona activa). El promedio medido en el mundo es de unos 5.000 pasos al día: con eso saldrían unos 110.000 km, menos de tres vueltas al mundo."
 }

@@ -55,5 +55,31 @@
       "texto": "¿Cuál es tu manzana favorita: roja o verde? Cuéntanos y síguenos para más datos.",
       "objeto": "comida/apple"
     }
+  ],
+  "fuentes": [
+    {
+      "dato": "Más de 7.500 variedades de manzana",
+      "fuente": "Washington State University, Tree Fruit (también Extensión de la Univ. de Illinois); cifra muy citada",
+      "url": "https://treefruit.wsu.edu/?p=1259"
+    },
+    {
+      "dato": "Más de 20 años probando una por día",
+      "fuente": "cálculo: 7.500 ÷ 365 ≈ 20,5 años"
+    },
+    {
+      "dato": "Una de las frutas más cultivadas; China, por mucho el mayor productor (≈ la mitad)",
+      "fuente": "FAO (vía Our World in Data), producción de manzana 1961-2023",
+      "url": "https://ourworldindata.org/grapher/apple-production?tab=table"
+    },
+    {
+      "dato": "Flotan porque ~25 % de su volumen es aire",
+      "fuente": "Extensión de la Universidad de Illinois, «Apples & More» (reseñado por Common Sense Media)",
+      "url": "https://www.commonsensemedia.org/website-reviews/apples-more"
+    },
+    {
+      "dato": "Origen en Kazajistán (Malus sieversii) y difusión por la Ruta de la Seda",
+      "fuente": "UNESCO, «The Role of the Silk Roads in the Cultivation of the Modern Apple»",
+      "url": "https://fr.unesco.org/silkroad/node/11061"
+    }
   ]
 }

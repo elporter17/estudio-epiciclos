@@ -69,5 +69,42 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "comida/fish"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "El agua cubre cerca del 71 % de la superficie; los océanos tienen el 96,5 % (≈ 97 %) del agua",
+      "fuente": "USGS Water Science School, «How Much Water is There on Earth?»",
+      "url": "https://www.usgs.gov/special-topics/water-science-school/science/how-much-water-there-earth"
+    },
+    {
+      "dato": "Los océanos guardan cerca del 97 % del agua del planeta",
+      "fuente": "NOAA Ocean Service, «Where is all of the Earth's water?»",
+      "url": "https://oceanservice.noaa.gov/facts/wherewater.html"
+    },
+    {
+      "dato": "Fosa de las Marianas (abismo Challenger): unos 10.935 m",
+      "fuente": "NOAA Ocean Service, «How deep is the ocean?»",
+      "url": "https://oceanservice.noaa.gov/facts/oceandepth.html"
+    },
+    {
+      "dato": "El Everest (8.849 m) quedaría unos 2 km bajo el agua",
+      "fuente": "cálculo: 10.935 − 8.849 ≈ 2.086 m"
+    },
+    {
+      "dato": "Solo el 27,3 % del fondo marino está cartografiado con técnicas modernas (junio de 2025)",
+      "fuente": "Nippon Foundation-GEBCO Seabed 2030",
+      "url": "https://tnfsa.nippon-foundation.or.jp/news/2756701"
+    },
+    {
+      "dato": "El fondo marino está peor cartografiado que la Luna o Marte",
+      "fuente": "The Conversation, «Just how little do we know about the ocean floor?»",
+      "url": "https://theconversation.com/just-how-little-do-we-know-about-the-ocean-floor-32751"
+    },
+    {
+      "dato": "Alrededor del 91 % de las especies marinas (de unos 2,2 millones) siguen sin describir",
+      "fuente": "Mora et al., PLoS Biology 2011, «How Many Species Are There on Earth and in the Ocean?»",
+      "url": "https://www.aims.gov.au/information-centre/news-and-stories/24-august-2011-how-many-species"
+    }
+  ],
+  "nota": "Sí existe un mapa de todo el fondo marino, pero hecho desde satélites y borroso (solo se ven formas de unos 5 km o más). Con sonar moderno solo está cartografiado un 27 %, mientras que la Luna tiene mapas detallados completos."
 }

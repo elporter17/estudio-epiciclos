@@ -35,7 +35,7 @@
     },
     {
       "tipo": "comparacion",
-      "texto": "Los adultos necesitan entre siete y nueve horas, pero un koala puede dormir hasta 20 horas al día.",
+      "texto": "Los adultos necesitan entre siete y nueve horas, pero un koala puede dormir hasta 22 horas al día.",
       "barras": [
         {
           "etiqueta": "Adulto",
@@ -50,7 +50,7 @@
         {
           "etiqueta": "Koala",
           "valor": 20,
-          "texto": "20 h"
+          "texto": "18-22 h"
         }
       ]
     },
@@ -69,6 +69,27 @@
       "tipo": "cierre",
       "texto": "¿Cuántas horas duermes tú? Cuéntanos en los comentarios y síguenos para más.",
       "objeto": "naturaleza/bed"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Un tercio de la vida dormidos: unos 25 de 75 años",
+      "fuente": "cálculo: 8 h de 24 = 1/3; 75 años ÷ 3 = 25 (base: 7-9 h recomendadas)"
+    },
+    {
+      "dato": "Adultos: 7-9 horas; recién nacidos: 14-17 horas",
+      "fuente": "National Sleep Foundation, recomendaciones de 2015 (Sleep Health); la AASM pide 7 h o más para adultos",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29073412/"
+    },
+    {
+      "dato": "El cerebro consolida durante el sueño lo aprendido en el día",
+      "fuente": "Walker y Stickgold 2004, «Sleep-dependent learning and memory consolidation», Neuron",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15450165/"
+    },
+    {
+      "dato": "Un koala duerme o descansa entre 18 y 22 horas al día",
+      "fuente": "Australian Koala Foundation, citada por National Geographic en Español",
+      "url": "https://www.nationalgeographicla.com/animales/2023/03/cuantas-horas-por-dia-puede-dormir-un-koala"
     }
   ]
 }

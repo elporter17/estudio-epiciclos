@@ -13,24 +13,24 @@
     },
     {
       "tipo": "comparacion",
-      "texto": "Somos unos 8.000 millones, y hay casi 9.000 millones de líneas móviles.",
+      "texto": "Somos más de 8.000 millones, y hay más de 9.000 millones de líneas móviles.",
       "barras": [
         {
           "etiqueta": "Personas",
-          "valor": 8,
-          "texto": "8.000 M"
+          "valor": 8.2,
+          "texto": "≈ 8.200 M"
         },
         {
           "etiqueta": "Líneas",
-          "valor": 9,
-          "texto": "≈ 9.000 M",
+          "valor": 9.2,
+          "texto": "≈ 9.200 M",
           "objeto": "celular"
         }
       ]
     },
     {
       "tipo": "linea",
-      "texto": "El primer celular a la venta llegó en 1983: pesaba casi un kilo y costaba unos 4.000 dólares.",
+      "texto": "El primer celular a la venta llegó en 1983: pesaba casi 800 gramos y costaba unos 4.000 dólares.",
       "hitos": [
         {
           "anio": 1973,
@@ -46,7 +46,7 @@
         },
         {
           "anio": 2007,
-          "texto": "Pantallas táctiles"
+          "texto": "Llega el iPhone"
         }
       ]
     },
@@ -78,5 +78,58 @@
       "texto": "¿Cuántas horas usas el celular al día? Cuéntanos y síguenos para más datos.",
       "objeto": "celular"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "9.200 millones de suscripciones móviles en 2025 (112 por cada 100 habitantes)",
+      "fuente": "UIT (ITU), Facts and Figures 2025",
+      "url": "https://www.itu.int/itu-d/reports/statistics/2025/10/15/ff25-subscriptions/"
+    },
+    {
+      "dato": "Más de 8.000 millones de personas (≈ 8.200 millones en 2025)",
+      "fuente": "ONU, World Population Prospects 2024 (vía Worldometer)",
+      "url": "https://www.worldometers.info/world-population/population-by-region/"
+    },
+    {
+      "dato": "Solo el 82 % de las personas de 10 años o más tiene celular",
+      "fuente": "UIT (ITU), Facts and Figures 2025: propiedad de teléfonos móviles",
+      "url": "https://www.itu.int/itu-d/reports/statistics/2025/10/15/ff25-mobile-phone-ownership/"
+    },
+    {
+      "dato": "Motorola DynaTAC 8000X: 1983, 3.995 dólares, 1,75 libras (≈ 790 g)",
+      "fuente": "TIME, ficha del Motorola DynaTAC (1983, $3995, 1.75 lb)",
+      "url": "https://content.time.com/time/specials/packages/article/0,28804,2033483_2033504_2033435,00.html"
+    },
+    {
+      "dato": "Batería de unos 30 minutos de llamada",
+      "fuente": "NBC News, «First cell phone a true 'brick'»",
+      "url": "https://www.nbcnews.com/id/wbna7432915"
+    },
+    {
+      "dato": "Primera llamada desde un celular: 3 de abril de 1973 (Martin Cooper, Motorola)",
+      "fuente": "IEEE Spectrum, «First portable telephone call made 40 years ago today»",
+      "url": "https://spectrum.ieee.org/riskfactor/telecom/wireless/first-portable-telephone-call-made-40-years-ago-today"
+    },
+    {
+      "dato": "Primer SMS: 3 de diciembre de 1992 («Merry Christmas», red de Vodafone)",
+      "fuente": "HISTORY.com, «First SMS text message sent»",
+      "url": "https://www.history.com/this-day-in-history/december-3/first-sms-text-message-sent"
+    },
+    {
+      "dato": "iPhone presentado en enero de 2007",
+      "fuente": "Apple, comunicado «Apple Reinvents the Phone with iPhone» (9 ene. 2007)",
+      "url": "https://apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/"
+    },
+    {
+      "dato": "Un celular actual supera a la computadora del Apolo 11 (más de un millón de veces su RAM)",
+      "fuente": "Popular Science, «Could you run a moon mission from your smartphone?»",
+      "url": "https://www.popsci.com/mobile-phone-moon-power/"
+    },
+    {
+      "dato": "Más de mil millones de smartphones al año (≈ 1.260 millones enviados en 2025)",
+      "fuente": "IDC, Worldwide Quarterly Mobile Phone Tracker, enero de 2026 (vía Telecom Lead)",
+      "url": "https://telecomlead.com/smart-phone/global-smartphone-shipments-rise-in-2025-as-premium-devices-drive-growth-idc-124099"
+    }
+  ],
+  "nota": "Hay más líneas que personas, pero no todos tienen celular: mucha gente tiene dos o más líneas. Según la UIT, el 82 % de las personas de 10 años o más tiene un celular."
 }

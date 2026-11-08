@@ -73,5 +73,52 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "celular"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "Más de 10.000 satélites activos (≈ 15.950 al 26 de octubre de 2026)",
+      "fuente": "Jonathan McDowell, Jonathan's Space Pages (Harvard-Smithsonian)",
+      "url": "https://planet4589.org/space/stats/oactive.html"
+    },
+    {
+      "dato": "Sputnik 1, primer satélite artificial (4 de octubre de 1957)",
+      "fuente": "Guinness World Records, «First artificial satellite»",
+      "url": "https://www.guinnessworldrecords.com/world-records/first-artificial-satellite"
+    },
+    {
+      "dato": "Miles de satélites lanzados al año (≈ 4.500 en 2025, récord)",
+      "fuente": "KeepTrack, «How many satellites are launched per year» (conteo de Jonathan McDowell)",
+      "url": "https://keeptrack.space/live-count/how-many-satellites-are-launched-per-year"
+    },
+    {
+      "dato": "Hito: llegada a la Luna en 1969",
+      "fuente": "NASA, misión Apolo 11 (20 de julio de 1969)"
+    },
+    {
+      "dato": "Hito: primer módulo de la Estación Espacial (Zarya), noviembre de 1998",
+      "fuente": "NASA APPEL, «This Month in NASA History: the cornerstone of the ISS reached orbit»",
+      "url": "https://appel.nasa.gov/2015/11/20/this-month-in-nasa-history-the-cornerstone-of-the-iss-reached-orbit"
+    },
+    {
+      "dato": "La EEI viaja a unos 28.000 km/h y da 16 vueltas al día (16 amaneceres)",
+      "fuente": "NASA, Space Station Facts and Figures («cinco millas por segundo», 16 órbitas al día)",
+      "url": "https://www.nasa.gov/international-space-station/space-station-facts-and-figures/"
+    },
+    {
+      "dato": "En realidad son entre 15,5 y 15,9 órbitas al día",
+      "fuente": "NASA JSC, Space Station Orbit Tutorial",
+      "url": "https://eol.jsc.nasa.gov/Tools/orbitTutorial.htm"
+    },
+    {
+      "dato": "Millones de pedazos de basura espacial (más de 1,2 millones mayores de 1 cm)",
+      "fuente": "ESA, Space Environment Report 2025",
+      "url": "https://www.esa.int/Space_Safety/Space_Debris/ESA_Space_Environment_Report_2025"
+    },
+    {
+      "dato": "La estación se ve a simple vista como un punto brillante que se mueve rápido",
+      "fuente": "NASA, Spot the Station",
+      "url": "https://spotthestation.nasa.gov/"
+    }
+  ],
+  "nota": "«Más de 10.000» se queda corto: a finales de octubre de 2026 había unos 16.000 satélites activos, y unos dos tercios son de Starlink (SpaceX)."
 }

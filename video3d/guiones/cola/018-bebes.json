@@ -46,7 +46,7 @@
       "texto": "En 1800 éramos unos mil millones; llegar a ocho mil millones nos tomó poco más de dos siglos.",
       "hitos": [
         {
-          "anio": 1800,
+          "anio": 1804,
           "texto": "1.000 millones"
         },
         {
@@ -74,8 +74,8 @@
         },
         {
           "etiqueta": "África",
-          "valor": 18,
-          "texto": "≈ 18 %"
+          "valor": 19,
+          "texto": "≈ 19 %"
         },
         {
           "etiqueta": "América",
@@ -93,6 +93,28 @@
       "tipo": "cierre",
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "corazon"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Unos 132 millones de nacimientos al año: ≈ 4,2 por segundo, ≈ 250 por minuto, ≈ 363.000 al día",
+      "fuente": "ONU, World Population Prospects 2024 (vía StatisticsTimes); cálculo: 132,4 M ÷ 365 días",
+      "url": "https://statisticstimes.com/demographics/world-death-and-birth-rate.php"
+    },
+    {
+      "dato": "Más de 8.000 millones de personas (15 de noviembre de 2022)",
+      "fuente": "UNFPA / ONU, comunicado «World set to reach 8 billion people on 15 November 2022»",
+      "url": "https://www.unfpa.org/press/world-set-reach-8-billion-people-15-november-2022"
+    },
+    {
+      "dato": "1.000 millones hacia 1804; 2.000 millones en 1927; 4.000 millones en 1974",
+      "fuente": "Estimaciones de la ONU recogidas en Wikipedia, «World population milestones»",
+      "url": "https://en.wikipedia.org/wiki/World_population_milestones"
+    },
+    {
+      "dato": "Asia ≈ 59 %, África ≈ 19 %, América ≈ 13 % de la población mundial",
+      "fuente": "Worldometer con datos de la ONU (WPP 2024), población por región 2026",
+      "url": "https://www.worldometers.info/world-population/population-by-region/"
     }
   ]
 }

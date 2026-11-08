@@ -47,7 +47,7 @@
     },
     {
       "tipo": "gente",
-      "texto": "Desde 1953 más de 6.000 personas han llegado a la cima del Everest.",
+      "texto": "Desde 1953 más de 7.000 personas han llegado a la cima del Everest.",
       "cantidad": 26
     },
     {
@@ -66,6 +66,38 @@
       "tipo": "cierre",
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "naturaleza/rock_largeA"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Everest: 8.848,86 m sobre el nivel del mar (≈ 8.849 m)",
+      "fuente": "Medición conjunta de China y Nepal, anunciada el 8 de diciembre de 2020 (Al Jazeera)",
+      "url": "https://www.aljazeera.com/news/2020/12/8/mt-everest-nepal-china-announce-revised-height-at-8848-metres"
+    },
+    {
+      "dato": "Mauna Kea: más de 10.210 m desde su base; Chimborazo, la cumbre más lejana del centro de la Tierra",
+      "fuente": "NOAA Ocean Service, «What is the highest point on Earth as measured from Earth's center?»",
+      "url": "https://oceanservice.noaa.gov/facts/highestpoint.html"
+    },
+    {
+      "dato": "Mauna Kea ≈ 10.205 m desde el fondo marino",
+      "fuente": "Guinness World Records, «Tallest mountain»",
+      "url": "https://www.guinnessworldrecords.com/world-records/tallest-mountain"
+    },
+    {
+      "dato": "Más de 7.000 personas en la cima (7.269 personas distintas y 12.884 cumbres hasta diciembre de 2024)",
+      "fuente": "Himalayan Database, resumido por Alan Arnette, «Everest by the Numbers: 2025 Edition»",
+      "url": "https://www.alanarnette.com/2024/12/16/everest-by-the-numbers-2025-edition/"
+    },
+    {
+      "dato": "El Everest sigue subiendo por el choque de las placas India y Euroasiática",
+      "fuente": "National Geographic, «Why Mount Everest can grow and shrink»",
+      "url": "https://www.nationalgeographic.com/science/article/why-mount-everest-can-grow-and-shrink-plate-tectonics/"
+    },
+    {
+      "dato": "Las 14 montañas de más de 8.000 m están en el Himalaya y el Karakórum",
+      "fuente": "NASA Earth Observatory, «8,000-meter Peaks of the Himalaya and Karakoram»",
+      "url": "https://earthobservatory.nasa.gov/images/82581/8000-meter-peaks-of-the-himalaya-and-karakoram"
     }
   ]
 }

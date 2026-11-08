@@ -68,5 +68,32 @@
       "texto": "¿Pizza con piña: sí o no? Vota en los comentarios y síguenos para más.",
       "objeto": "comida/pizza"
     }
+  ],
+  "fuentes": [
+    {
+      "dato": "Comida barata de Nápoles en el siglo XVIII; una de las primeras pizzerías en 1830",
+      "fuente": "Associazione Verace Pizza Napoletana: Antica Pizzeria Port’Alba (puesto desde 1738, pizzería con mesas en 1830)",
+      "url": "https://www.pizzanapoletana.org/en/archivio_news/547-la_verace_pizza_nella_storia_re_nasone_e_lantica_pizzeria_portalba"
+    },
+    {
+      "dato": "Margarita en 1889 por la reina Margarita; colores de la bandera",
+      "fuente": "Tradición (Raffaele Esposito, 1889); los historiadores la discuten",
+      "url": "https://en.wikipedia.org/wiki/Pizza_Margherita"
+    },
+    {
+      "dato": "Hawaiana: Canadá, cocinero griego, 1962",
+      "fuente": "CBC News (2017): Sam Panopoulos, Satellite Restaurant de Chatham (Ontario)",
+      "url": "https://www.cbc.ca/1.4155044"
+    },
+    {
+      "dato": "Miles de millones de pizzas al año",
+      "fuente": "Estimación de la industria: ~3.000 millones en EE. UU. (NAPO, citado por The Week), más de 5.000 millones en el mundo",
+      "url": "https://theweek.com/articles/483784/americas-pizza-obsession-by-numbers"
+    },
+    {
+      "dato": "Pizzas con plátano",
+      "fuente": "Smithsonian Magazine: la pizza de banana y curry, popular en Suecia",
+      "url": "https://www.smithsonianmag.com/travel/bananas-and-curry-on-pizza-thats-how-the-swedish-do-it-180984961/"
+    }
   ]
 }

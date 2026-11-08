@@ -75,5 +75,48 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "corazon"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "Más de 100.000 latidos al día (≈36 millones al año)",
+      "fuente": "Cleveland Clinic, «Facts About the Heart»; el año es cálculo: 100.000 × 365",
+      "url": "https://health.clevelandclinic.org/facts-about-the-heart"
+    },
+    {
+      "dato": "Del tamaño de un puño; late desde antes de nacer",
+      "fuente": "Comparación muy citada; Cleveland Clinic: el de un adulto es como dos manos juntas, el de un niño como un puño",
+      "url": "https://health.clevelandclinic.org/facts-about-the-heart"
+    },
+    {
+      "dato": "Unos 7.000 L de sangre al día",
+      "fuente": "cálculo: ~5 L por minuto en reposo × 1.440 min (Cleveland Clinic da hasta 5,7 L/min)",
+      "url": "https://health.clevelandclinic.org/facts-about-the-heart"
+    },
+    {
+      "dato": "Humano: unos 70 latidos por minuto",
+      "fuente": "American Heart Association: 60 a 100 lpm en reposo (citado por Allina Health)",
+      "url": "https://allinahealth.org/health-conditions-and-treatments/health-library/patient-education/helping-your-heart/types-of-heart-problems/what-can-go-wrong-with-your-heart"
+    },
+    {
+      "dato": "Colibrí: más de 1.000 latidos por minuto (barra: 1.200)",
+      "fuente": "Lasiewski y Lasiewski, The Auk 84 (1967): colibrí de garganta azul, 1.200-1.260 lpm",
+      "url": "https://sora.unm.edu/sites/default/files/journals/auk/v084n01/p0034-p0048.pdf"
+    },
+    {
+      "dato": "Ballena (azul): unos 10 latidos por minuto",
+      "fuente": "Goldbogen et al., PNAS 2019: 4-8 lpm al bucear (mínimo 2) y 25-37 en la superficie",
+      "url": "https://www.eurekalert.org/pub_releases/2019-11/potn-caf112019.php"
+    },
+    {
+      "dato": "Unos 2.800 millones de latidos en una vida",
+      "fuente": "cálculo: 100.000 × 365 × 77 años; Cleveland Clinic: «más de 2.600 millones»",
+      "url": "https://health.clevelandclinic.org/facts-about-the-heart"
+    },
+    {
+      "dato": "Más de 8.000 millones de corazones",
+      "fuente": "ONU, World Population Prospects 2024 (≈8.200 millones en 2024)",
+      "url": "https://www.un.org/development/desa/pd/world-population-prospects-2024"
+    }
+  ],
+  "nota": "La barra de la ballena (10) es aproximada: la ballena azul baja a 4-8 latidos por minuto al bucear (mínimo 2) y sube a 25-37 en la superficie."
 }

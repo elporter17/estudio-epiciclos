@@ -78,5 +78,38 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "moneda"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "Medallas de oro: al menos 92,5 % de plata con un baño de al menos 6 g de oro",
+      "fuente": "Norma del COI para las medallas (resumen de APMEX)",
+      "url": "https://learn.apmex.com/answers/how-much-gold-is-in-an-olympic-gold-medal"
+    },
+    {
+      "dato": "Últimas medallas de oro macizo: Estocolmo 1912",
+      "fuente": "Guinness World Records, «Last Olympic gold medal»",
+      "url": "https://www.guinnessworldrecords.com/world-records/last-olympic-gold-medal"
+    },
+    {
+      "dato": "Juegos antiguos en Olimpia desde 776 a. C. (fecha tradicional)",
+      "fuente": "COI, olympic.org «Ancient Olympic Games» (copia de archivo, 2013)",
+      "url": "https://webarchive.library.unt.edu/web/20130128125427/http://www.olympic.org/ancient-olympic-games"
+    },
+    {
+      "dato": "Atenas 1896: 14 países",
+      "fuente": "COI, olympics.com «Athens 1896»",
+      "url": "https://olympics.com/en/olympic-games/athens-1896"
+    },
+    {
+      "dato": "Hoy más de 200: París 2024, 206 comités olímpicos nacionales más el equipo de refugiados",
+      "fuente": "COI, preguntas frecuentes de olympics.com",
+      "url": "https://olympics.com/ioc/faq/sports-programme-and-results/how-many-athletes-and-countries-take-part-in-the-olympic-games"
+    },
+    {
+      "dato": "En 1896 el ganador recibía medalla de plata y rama de olivo",
+      "fuente": "Wikipedia, «1896 Summer Olympics medal table»",
+      "url": "https://en.wikipedia.org/wiki/1896_Summer_Olympics_medal_table"
+    }
+  ],
+  "nota": "«Más de 200» cuenta comités olímpicos nacionales (206 en París 2024, más el equipo de refugiados), no países soberanos: algunos son territorios, como Puerto Rico o Hong Kong."
 }

@@ -68,5 +68,43 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "naturaleza/rock_largeA"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "La Luna se aleja unos 3,8 cm por año",
+      "fuente": "NASA JPL, «The Apollo Experiment That Keeps on Giving» (medición láser con los reflectores del Apolo)",
+      "url": "https://www.jpl.nasa.gov/news/the-apollo-experiment-that-keeps-on-giving/"
+    },
+    {
+      "dato": "Las uñas crecen unos 3,5 mm al mes (≈4 cm al año)",
+      "fuente": "Yaemsiri et al. 2010, J. Eur. Acad. Dermatol. Venereol. (cálculo: 3,47 mm × 12)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19744178/"
+    },
+    {
+      "dato": "Distancia media Tierra-Luna: 384.400 km",
+      "fuente": "NASA NSSDC, Moon Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+    },
+    {
+      "dato": "Todos los planetas caben entre la Tierra y la Luna (≈380.000 km sumando diámetros)",
+      "fuente": "Universe Today (cálculo con la distancia media); Phil Plait matiza que depende de cómo se mida",
+      "url": "https://www.universetoday.com/113566/you-could-fit-all-the-planets-between-the-earth-and-the-moon"
+    },
+    {
+      "dato": "Hace 1.400 millones de años la Luna estaba más cerca y el día duraba unas 18 horas",
+      "fuente": "Meyers y Malinverno 2018, PNAS (nota de la Universidad de Wisconsin-Madison)",
+      "url": "https://ls.wisc.edu/news/thank-the-moon-for-earths-lengthening-day"
+    },
+    {
+      "dato": "12 personas caminaron en la Luna, en 6 misiones Apolo entre 1969 y 1972 (la última, Apolo 17, en diciembre de 1972)",
+      "fuente": "NASA, programa Apolo; Britannica, «Apollo 17»",
+      "url": "https://explore.britannica.com/explore/space/apollo-17"
+    },
+    {
+      "dato": "Siempre vemos la misma cara (rotación sincrónica); el lado oculto no es oscuro",
+      "fuente": "PBS NewsHour, explicación con John Keller (NASA, Lunar Reconnaissance Orbiter)",
+      "url": "https://pbs.org/newshour/science/never-see-far-side-moon"
+    }
+  ],
+  "nota": "Los planetas solo caben entre la Tierra y la Luna a la distancia media o mayor, y muy justos (sin los anillos de Saturno); cuando la Luna está más cerca no caben. Además, en abril de 2026 la misión Artemis II llevó astronautas alrededor de la Luna, pero sin alunizar: lo de «la última vez que alguien pisó la Luna fue en 1972» sigue siendo cierto."
 }

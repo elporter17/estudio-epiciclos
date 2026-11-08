@@ -86,5 +86,33 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "ladrillo"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "Altura original ≈146 m (hoy ≈138 m); unos 2,3 millones de bloques",
+      "fuente": "Encyclopaedia Britannica, «Great Pyramid of Giza»",
+      "url": "https://britannica.com/place/Great-Pyramid-of-Giza"
+    },
+    {
+      "dato": "Terminada hacia el 2560 a. C.; la más alta hasta la catedral de Lincoln (1311), ≈3.800 años",
+      "fuente": "Wikipedia, «Great Pyramid of Giza» (cálculo: 2560 a. C. → 1311 ≈ 3.870 años)",
+      "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+    },
+    {
+      "dato": "La construyeron trabajadores pagados, no esclavos (tumbas de los obreros en Guiza)",
+      "fuente": "Zahi Hawass, Consejo Supremo de Antigüedades de Egipto (anuncio de 2010, AP/NBC News)",
+      "url": "https://www.nbcnews.com/id/wbna34794254"
+    },
+    {
+      "dato": "Única de las siete maravillas del mundo antiguo que sigue en pie",
+      "fuente": "National Geographic Education, «Seven Wonders of the Ancient World»",
+      "url": "https://education.nationalgeographic.org/resource/seven-wonders-ancient-world/"
+    },
+    {
+      "dato": "Burj Khalifa, edificio más alto del mundo: 828 m (≈5,7 pirámides)",
+      "fuente": "Guinness World Records, «Tallest building» (cálculo: 828 ÷ 146 ≈ 5,7)",
+      "url": "https://www.guinnessworldrecords.com/world-records/tallest-building"
+    }
+  ],
+  "nota": "Los 146 m son la altura original: hoy mide unos 138 m porque perdió la punta y el revestimiento. La aguja de la catedral de Lincoln, que la superó, se derrumbó en 1548 y su altura exacta se discute."
 }

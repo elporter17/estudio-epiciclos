@@ -45,7 +45,7 @@
     },
     {
       "tipo": "cuadricula",
-      "texto": "Durante la última era de hielo, millones de mamuts recorrían Europa, Asia y América del Norte.",
+      "texto": "Durante la última era de hielo, grandes manadas de mamuts recorrían Europa, Asia y América del Norte.",
       "objeto": "naturaleza/rock_largeC",
       "lado": 16
     },
@@ -63,5 +63,23 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "naturaleza/rock_largeA"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "La Gran Pirámide se terminó hacia el 2560 a. C.",
+      "fuente": "Wikipedia, «Great Pyramid of Giza» (fecha aproximada)",
+      "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+    },
+    {
+      "dato": "Los últimos mamuts vivieron en la isla de Wrangel hasta hace unos 4.000 años",
+      "fuente": "Dehasque et al. 2024, Cell (nota de prensa: aislados hace 10.000 años, vivieron allí 6.000 más)",
+      "url": "https://www.eurekalert.org/news-releases/1048810"
+    },
+    {
+      "dato": "Parientes de los elefantes, con pelaje para el frío; vivieron en Europa, Asia y Norteamérica en la última glaciación",
+      "fuente": "Wikipedia, «Woolly mammoth»",
+      "url": "https://www.wikipedia.org/wiki/Wooly_mammoth"
+    }
+  ],
+  "nota": "Los mamuts que coincidieron con las pirámides eran solo unos cientos aislados en la isla de Wrangel, en el Ártico: en el continente se habían extinguido miles de años antes, y nunca vivieron en Egipto."
 }

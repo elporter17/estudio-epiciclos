@@ -80,8 +80,8 @@
     },
     {
       "tipo": "torre",
-      "texto": "En toda tu vida son 27.375 botellas. Una sobre otra, medirían 9 kilómetros: más que el Everest.",
-      "voz": "En toda tu vida son veintisiete mil trescientas setenta y cinco botellas. Una sobre otra, medirían nueve kilómetros: más que el Everest.",
+      "texto": "En toda tu vida son 27.375 botellas de dos litros. Una sobre otra, medirían 9 kilómetros: más que el Everest.",
+      "voz": "En toda tu vida son veintisiete mil trescientas setenta y cinco botellas de dos litros. Una sobre otra, medirían nueve kilómetros: más que el Everest.",
       "resaltar": [
         "27.375",
         "9",
@@ -151,5 +151,40 @@
       "texto": "¿Cuánta agua tomaste hoy? Escríbelo en los comentarios y síguenos para más datos.",
       "objeto": "botella"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "Unos 2 litros de agua al día",
+      "fuente": "EFSA, valores de referencia de agua (2010): 2 L mujeres y 2,5 L hombres, incluida el agua de la comida",
+      "url": "https://www.efsa.europa.eu/en/press/news/nda100326"
+    },
+    {
+      "dato": "730 L al año; 27.375 botellas de 2 L en una vida",
+      "fuente": "cálculo: 2 L × 365 días; vida de 75 años (75 × 365 = 27.375 días, una botella de 2 L por día)"
+    },
+    {
+      "dato": "Casi cuatro bañeras",
+      "fuente": "cálculo: 730 L ÷ bañera llena de ~190 L (las bañeras llenas tienen de 150 a 300 L)",
+      "url": "https://ronalbathrooms.com/en_GB/magazine/bath-capacity-how-many-liters-does-each-bathtub-size-hold"
+    },
+    {
+      "dato": "Torre de 9 km, más alta que el Everest",
+      "fuente": "cálculo: 27.375 × 33 cm (botella de 2 L) ≈ 9.034 m; Everest 8.848,86 m (China y Nepal, 2020)",
+      "url": "https://kathmandupost.com/national/2020/12/08/it-s-official-mount-everest-is-8-848-86-metres-tall"
+    },
+    {
+      "dato": "Unos 55.000 L: casi dos camiones cisterna o una piscina de jardín",
+      "fuente": "cálculo: 27.375 × 2 L = 54.750 L; cisterna grande de ~30.000 L; piscina de ~8 × 4 × 1,7 m"
+    },
+    {
+      "dato": "8.000 millones de personas",
+      "fuente": "ONU, World Population Prospects 2024 (≈8.200 millones en 2024)",
+      "url": "https://www.un.org/development/desa/pd/world-population-prospects-2024"
+    },
+    {
+      "dato": "16.000 millones de litros al día ≈ 6.400 piscinas olímpicas",
+      "fuente": "cálculo: 8.000 millones × 2 L ÷ 2,5 millones de L (piscina olímpica de 50 × 25 × 2 m, profundidad mínima de World Aquatics)"
+    }
+  ],
+  "nota": "Los 2 L al día son una referencia redondeada: la EFSA da 2 a 2,5 L de agua total, que incluye la de la comida (~20 %). Las 27.375 botellas son de 2 L (una por día); como la escena de «dos botellas» sugiere botellas de 1 L, se añadió «de dos litros» en la torre."
 }

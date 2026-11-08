@@ -43,7 +43,7 @@
     },
     {
       "tipo": "lluvia",
-      "texto": "Casi todas las bananas que se venden son de una sola variedad, llamada Cavendish.",
+      "texto": "Casi todas las bananas que se exportan son de una sola variedad, llamada Cavendish.",
       "objeto": "comida/banana",
       "cantidad": 150
     },
@@ -57,5 +57,33 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "comida/banana"
     }
-  ]
+  ],
+  "fuentes": [
+    {
+      "dato": "La banana es una baya y la fresa no (fruto agregado, de una flor con varios ovarios)",
+      "fuente": "Live Science, «Why are bananas berries but strawberries aren’t?»",
+      "url": "https://livescience.com/57477-why-are-bananas-considered-berries.html"
+    },
+    {
+      "dato": "Más de 100.000 millones de bananas al año",
+      "fuente": "Cifra muy citada (PBS); estimación, probablemente baja según la producción de la FAO",
+      "url": "https://www.pbs.org/video/how-did-the-banana-become-the-worlds-most-popular-fruit-n0wvnw"
+    },
+    {
+      "dato": "El banano es una hierba gigante, la más grande del mundo",
+      "fuente": "Guinness World Records, «Largest herb» (banano gigante de montaña, Musa ingens)",
+      "url": "https://www.guinnessworldrecords.com/world-records/86951-largest-herb"
+    },
+    {
+      "dato": "Casi todas las bananas de exportación son Cavendish",
+      "fuente": "FAO, The World Banana Economy 1985-2002: casi todo el comercio internacional (≈47 % de la producción)",
+      "url": "https://www.fao.org/4/y5102e/y5102e04.htm"
+    },
+    {
+      "dato": "Honduras, gran exportador de banano por más de un siglo",
+      "fuente": "Biblioteca del Congreso de EE. UU., Country Study Honduras: 1.er productor del mundo en 1930 (un tercio del total)",
+      "url": "https://countrystudies.us/honduras/18.htm"
+    }
+  ],
+  "nota": "La Cavendish es casi toda la banana de exportación, pero solo cerca de la mitad de la producción mundial: en cada país se comen muchas otras variedades. Honduras fue el 1.º del mundo hacia 1930; hoy el mayor exportador es Ecuador."
 }

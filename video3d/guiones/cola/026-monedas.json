@@ -70,5 +70,31 @@
       "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para un dato nuevo cada día.",
       "objeto": "moneda"
     }
+  ],
+  "fuentes": [
+    {
+      "dato": "Primeras monedas en Lidia (actual Turquía), ≈650-600 a. C., de electro (aleación natural de oro y plata)",
+      "fuente": "British Museum (colección de monedas de Lidia); ficha de la LBMA",
+      "url": "https://www.lbma.org.uk/wonders-of-gold/items/lydian-electrum-coin"
+    },
+    {
+      "dato": "Primeros billetes: los jiaozi de Sichuan, dinastía Song (privados desde ≈1000; emisión estatal en 1023)",
+      "fuente": "Guinness World Records, «First paper money»",
+      "url": "https://www.guinnessworldrecords.com/world-records/first-paper-money/"
+    },
+    {
+      "dato": "La mayor parte del dinero son depósitos bancarios (≈97 % del dinero en manos del público en Reino Unido)",
+      "fuente": "Banco de Inglaterra, «Money in the modern economy: an introduction» (2014)",
+      "url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-in-the-modern-economy-an-introduction"
+    },
+    {
+      "dato": "Primera tarjeta de crédito moderna: Diners Club, 1950",
+      "fuente": "EBSCO Research Starters, «Diners Club Begins a New Industry»",
+      "url": "https://www.ebsco.com/research-starters/history/diners-club-begins-new-industry"
+    },
+    {
+      "dato": "Cada vez más gente paga con tarjeta o celular",
+      "fuente": "Banco Mundial, Global Findex (tendencia general, sin cifra en el video)"
+    }
   ]
 }
