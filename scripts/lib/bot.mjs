@@ -181,6 +181,7 @@ Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (�
 
 💡 <b>Videos desde una idea</b>
 • «💡 Idea» o «idea: daltonismo»: armo el guion con datos de Wikipedia, lo ajustas con botones y te mando el video para aprobarlo
+• «formato»: el formato para que otra IA (ChatGPT…) escriba el guion; luego me pegas el JSON o me mandas el archivo
 • «quita noticia 3» · «fija noticia 5» (va primero)
 • Pega un enlace de una noticia para agregarla
 • «noticia: Título | resumen corto» para escribirla tú

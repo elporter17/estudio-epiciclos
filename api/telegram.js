@@ -6,10 +6,11 @@
 // npm run telegram:webhook). Variables de Vercel: TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID.
 import { json, diaConEstado, lanzar, ACTIVO } from './_panel.js';
 import { interpretar, AYUDA, mensajePlan, mensajeNoticias, diaBonito, alcanceDe } from '../scripts/lib/bot.mjs';
-import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasGuardadas, guardarNoticias, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId, encolarComentario, leerControl, guardarIdea, leerIdea } from '../scripts/lib/control.mjs';
+import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasGuardadas, guardarNoticias, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId, encolarComentario, leerControl, guardarIdea, leerIdea, tgDocumento, tgLeerArchivo } from '../scripts/lib/control.mjs';
 import { delDia, ahoraHN, armarSlot, redesDePieza, nombreSlot, editable, NOMBRE_PIEZA, redesDe, redesPosibles } from '../scripts/lib/horario.mjs';
 import { noticiaDeEnlace, juntarNoticias, N_REEL } from '../scripts/lib/noticias.mjs';
 import { construir, escenaDe, NOMBRE_ESCENA } from '../scripts/lib/constructor.mjs';
+import { textoFormato, validar, ESPEC } from '../scripts/lib/guion-formato.mjs';
 import { yaSalieronDb, guardarCandidatas, descartarNoticia, recientesDb } from '../scripts/lib/db.mjs';
 
 const dd = (n) => String(n).padStart(2, '0');
@@ -240,20 +241,33 @@ function vistaIdea(b) {
     fila(boton('▶️ Generar video', `ig|${b.id}`)), fila(b.otros?.length ? boton(`🔎 Otro artículo: ${b.otros[0]}`.slice(0, 60), `io|${b.id}`) : null, boton('🗑️ Descartar', `ix|${b.id}`))];
   return { texto, teclado: { inline_keyboard: teclado } };
 }
+// Un guion que mandaste (hecho con otra IA): lo que trae y sus avisos
+function vistaGuion(b, avisos = []) {
+  const g = b.guion;
+  const texto = `📜 <b>${esc(g.titulo)}</b> · ${g.escenas.length} escenas · ${g.fuentes?.length || 0} fuentes\n\n${g.escenas.map((e, i) => `<b>${i + 1}.</b> [${esc(e.tipo)}] ${esc((e.texto || '').slice(0, 140))}`).join('\n')}${avisos.length ? `\n\n⚠️ Revisa:\n${avisos.map((x) => `• ${esc(x)}`).join('\n')}` : ''}\n\n¿Lo genero?`;
+  return { texto, teclado: { inline_keyboard: [fila(boton('▶️ Generar video', `ig|${b.id}`), boton('🗑️ Descartar', `ix|${b.id}`))] } };
+}
+// Recibe un guion (texto o archivo): lo revisa y, si está bien, lo deja como borrador
+async function recibirGuion(contenido) {
+  const r = validar(contenido);
+  if (!r.ok) return { texto: `⚠️ El guion tiene problemas:\n${r.errores.map((x) => `• ${esc(x)}`).join('\n')}${r.avisos.length ? `\n\nAdemás:\n${r.avisos.map((x) => `• ${esc(x)}`).join('\n')}` : ''}\n\nCorrígelo (o pídele a la IA que lo corrija) y mándalo otra vez.`, teclado: MENU };
+  const id = Date.now().toString(36).slice(-6), b = await guardarIdea(id, { idea: r.guion.titulo, tema: r.guion.titulo, url: r.guion.fuentes.find((x) => x.url)?.url || '', guion: r.guion, estado: 'borrador', manual: true });
+  return vistaGuion(b, r.avisos);
+}
 async function alIdea(c, a) {
   const b = await leerIdea(a[0]);
   if (!b) return { texto: '⚠️ Ya no encuentro esa idea: manda otra con «💡 Idea».', teclado: MENU };
-  if (c === 'iv') return vistaIdea(b);
+  if (c === 'iv') return b.manual ? vistaGuion(b) : vistaIdea(b);
   if (c === 'it') { b.opciones[+a[1]].usar = !b.opciones[+a[1]].usar; await guardarIdea(b.id, b); return vistaIdea(b); }
   if (c === 'ie') { const o = b.opciones[+a[1]], sig = CICLO[(CICLO.indexOf(o.tipo) + 1) % CICLO.length]; b.opciones[+a[1]] = conEscena(o, sig); await guardarIdea(b.id, b); return vistaIdea(b); }
   if (c === 'io') { const [otro, ...resto] = b.otros || []; if (!otro) return vistaIdea(b); const v = await crearIdea(b.idea, otro); return v; }
   if (c === 'ix') { await guardarIdea(b.id, { ...b, estado: 'descartado' }); return { texto: `🗑️ Descarté la idea «${esc(b.idea)}».`, teclado: MENU, confirmacion: '🗑️ Idea descartada.' }; }
   if (c === 'ig') {
-    const n = b.opciones.filter((o) => o.usar).length;
-    if (n < 2) return { ...vistaIdea(b), confirmacion: '⚠️ Elige al menos 2 datos antes de generar el video.' };
+    const n = b.manual ? b.guion.escenas.length : b.opciones.filter((o) => o.usar).length;
+    if (!b.manual && n < 2) return { ...vistaIdea(b), confirmacion: '⚠️ Elige al menos 2 datos antes de generar el video.' };
     await guardarIdea(b.id, { ...b, estado: 'generando' });
     await lanzar('ideas.yml', { modo: 'render', id: b.id });
-    return { texto: `🎬 Generando «${esc(b.tema)}» con ${n} datos. Va en su propia cola (no frena las publicaciones) y tarda unos 40-55 min: te mando el video por aquí para que lo apruebes.`, teclado: MENU, confirmacion: '🎬 Video en camino.' };
+    return { texto: `🎬 Generando «${esc(b.tema)}» con ${n} ${b.manual ? 'escenas' : 'datos'}. Va en su propia cola (no frena las publicaciones) y tarda unos 40-55 min: te mando el video por aquí para que lo apruebes.`, teclado: MENU, confirmacion: '🎬 Video en camino.' };
   }
   // Publicar: elegir redes y confirmar (ip → ipr|id|redes → ipx|id|redes)
   if (c === 'ip' || c === 'ipr') {
@@ -318,7 +332,11 @@ export async function alTocar(data) {
     case 'fj': return vistaFijos();
     case 'vp': return vistaVideos();
     case 'vf': return vistaFuentes();
-    case 'i0': return { texto: `${PIDE_IDEA}\nEscribe el tema (por ejemplo: daltonismo, agujeros negros, el café, las abejas) y armo el guion con datos de Wikipedia.`, teclado: { force_reply: true, input_field_placeholder: 'Ej: daltonismo' } };
+    case 'i0': return { texto: `${PIDE_IDEA}\nEscribe el tema (por ejemplo: daltonismo, agujeros negros, el café, las abejas) y armo el guion con datos de Wikipedia.\n\n¿Prefieres escribirlo con otra IA (ChatGPT…)? Escribe «formato»: te mando lo que necesita saber, y luego me pegas o mandas el guion que te dé.`, teclado: { force_reply: true, input_field_placeholder: 'Ej: daltonismo' } };
+    case 'if': {
+      const ok = await tgDocumento('formato-guion-potterplay.txt', textoFormato(), { caption: `📋 <b>Formato para IA</b>\n1. Pásale este archivo (o su texto) a ChatGPT u otra IA y escribe tu tema al final.\n2. Pégame aquí el JSON que te devuelva (o mándalo como archivo .json/.txt si es largo).\n3. Lo reviso y lo genero con las ${Object.keys(ESPEC).length} escenas del generador.` });
+      return { texto: ok ? '📋 Te mandé el formato. Cuando tengas el guion, pégamelo aquí.' : '⚠️ No pude mandarte el archivo del formato.', teclado: MENU };
+    }
     case 'iv': case 'it': case 'ie': case 'io': case 'ix': case 'ig': case 'ip': case 'ipr': case 'ipx': return alIdea(c, a);
     case 'fx': { await registrar(FIJO, { t: 'borrar', id: a[0] }); return conConfirmacion(await vistaFijos(), 'Lo quité de la programación fija: deja de salir desde hoy.'); }
     case 'rd': return vistaRedesSlot(a[0], a[1], a[2], decR(a[3]));
@@ -372,7 +390,7 @@ export async function alTocar(data) {
 }
 
 // ---------- texto escrito ----------
-const ATAJOS = { '💡 idea': 'i0', 'idea': 'i0', '/idea': 'i0', '📅 plan de hoy': 'p|hoy', '📅 plan de manana': 'p|manana', '📰 noticias': 'n', '🚀 publicar ya': 'l', '🎬 videos': 'vp', 'videos': 'vp', '/videos': 'vp', 'fuentes': 'vf', '/fuentes': 'vf' };
+const ATAJOS = { 'formato': 'if', '/formato': 'if', 'formato para ia': 'if', '💡 idea': 'i0', 'idea': 'i0', '/idea': 'i0', '📅 plan de hoy': 'p|hoy', '📅 plan de manana': 'p|manana', '📰 noticias': 'n', '🚀 publicar ya': 'l', '🎬 videos': 'vp', 'videos': 'vp', '/videos': 'vp', 'fuentes': 'vf', '/fuentes': 'vf' };
 export async function atender(texto) {
   const hoy = ahoraHN().fecha, manana = masDias(hoy, 1);
   const atajo = ATAJOS[texto.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')];
@@ -433,6 +451,14 @@ export default { async fetch(request) {
   let enviado = false;
   try {
     // ---------- comentarios que contestas tú (los manda scripts/comentarios.mjs) ----------
+    // Un guion hecho con otra IA: JSON pegado (con "escenas") o un archivo .json/.txt
+    const doc = !cb && m.document && /\.(json|txt)$/i.test(m.document.file_name || '') ? m.document : null;
+    if (doc || (!cb && m.text && /"escenas"\s*:/.test(m.text))) {
+      const contenido = doc ? await tgLeerArchivo(doc.file_id) : m.text;
+      const v = await recibirGuion(contenido);
+      enviado = await telegram(v.texto, { chat, teclado: v.teclado });
+      return json({ ok: true, motivo: 'guion', enviado });
+    }
     // Una idea nueva: «idea: daltonismo» o la respuesta a «💡 ¿De qué quieres el video?»
     const idea = !cb && m.text ? (m.text.match(/^\s*idea\s*:\s*(.+)$/is)?.[1] || ((m.reply_to_message?.text || '').startsWith(PIDE_IDEA) ? m.text : null)) : null;
     if (idea) {

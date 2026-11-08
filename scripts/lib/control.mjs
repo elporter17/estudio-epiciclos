@@ -176,6 +176,21 @@ export async function tgApi(metodo, body) {
   const tg = process.env.TELEGRAM_BOT_TOKEN; if (!tg) return { ok: false, description: 'falta TELEGRAM_BOT_TOKEN' };
   return fetch(`https://api.telegram.org/bot${tg}/${metodo}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }).then((r) => r.json()).catch((e) => ({ ok: false, description: e.message }));
 }
+// Manda un archivo de texto (para lo que no cabe en un mensaje, como el formato para IA)
+export async function tgDocumento(nombre, contenido, { chat = process.env.TELEGRAM_CHAT_ID, caption = '' } = {}) {
+  const tg = process.env.TELEGRAM_BOT_TOKEN; if (!tg || !chat) return false;
+  const f = new FormData(); f.set('chat_id', chat); if (caption) { f.set('caption', caption.slice(0, 1000)); f.set('parse_mode', 'HTML'); }
+  f.set('document', new Blob([contenido], { type: 'text/plain; charset=utf-8' }), nombre);
+  const r = await fetch(`https://api.telegram.org/bot${tg}/sendDocument`, { method: 'POST', body: f }).then((x) => x.json()).catch((e) => ({ ok: false, description: e.message }));
+  if (!r.ok) ultimoError = r.description || '';
+  return r.ok;
+}
+// Lo que dice un archivo que te mandaron al bot (un guion .json o .txt)
+export async function tgLeerArchivo(fileId) {
+  const tg = process.env.TELEGRAM_BOT_TOKEN, r = await tgApi('getFile', { file_id: fileId });
+  if (!r.ok) throw new Error(r.description || 'No pude abrir el archivo');
+  return (await fetch(`https://api.telegram.org/file/bot${tg}/${r.result.file_path}`)).text();
+}
 // Cambia un mensaje que ya mandó el bot (al tocar un botón); si es igual al anterior Telegram lo rechaza, y da igual
 export async function editarMensaje(chat, id, texto, teclado) {
   const r = await tgApi('editMessageText', { chat_id: chat, message_id: id, text: texto.slice(0, 4090), parse_mode: 'HTML', disable_web_page_preview: true, ...(teclado ? { reply_markup: teclado } : {}) });
