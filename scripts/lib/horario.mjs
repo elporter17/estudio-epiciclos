@@ -54,7 +54,7 @@ const PLAN = {
   fb: { '09:00': 'banderas', '12:17': 'video3d1', '13:45': 'gta', '14:30': 'debate', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
   ig: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:45': 'retos', '17:15': 'datos', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
   tt: { '07:30': 'noticias', '08:15': 'nombres', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:00': 'famosos', '17:15': 'datos', '18:30': 'video3d2', '20:30': 'estrella' },
-  yt: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '18:30': 'video3d2' }
+  yt: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '17:15': 'datos', '18:30': 'video3d2' }
 };
 // Junta los planes: una corrida por hora y pieza, con las redes que la piden
 function juntarPlanes() {
