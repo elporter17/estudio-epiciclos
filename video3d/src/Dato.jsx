@@ -58,11 +58,12 @@ function Contador({ c, t, dur }) {
 // Portada: categoría, el título enorme (se lee completo desde el primer cuadro: es la miniatura) y la marca
 function Portada({ g, t }) {
   const T = TEMAS[g.categoria] || TEMAS.datos, palabras = g.titulo.split(' '), destacar = new Set((g.destacar || []).map(sinSignos));
+  const abajo = g.estilo?.portada === 'abajo'; // estilo del video (scripts/lib/estilo3d.mjs): el título debajo del objeto
   return (<AbsoluteFill>
-    <div style={{ position: 'absolute', top: 210, width: '100%', display: 'flex', justifyContent: 'center' }}>
+    <div style={{ position: 'absolute', top: abajo ? 1150 : 210, width: '100%', display: 'flex', justifyContent: 'center' }}>
       <div style={{ background: T.acento, color: '#111', fontFamily: 'Archivo Black', fontSize: 44, padding: '10px 34px', borderRadius: 40, boxShadow: '0 8px 24px rgba(0,0,0,0.25)' }}>{T.nombre}</div>
     </div>
-    <div style={{ position: 'absolute', top: 330, left: 60, right: 60, textAlign: 'center', fontFamily: 'Archivo Black', fontSize: 104, lineHeight: 1.08, color: '#fff', WebkitTextStroke: '5px rgba(10,20,40,0.9)', paintOrder: 'stroke fill', textShadow: '0 10px 0 rgba(10,20,40,0.45), 0 0 40px rgba(10,20,40,0.4)', transform: `scale(${1 + 0.03 * Math.sin(t * 2)})` }}>
+    <div style={{ position: 'absolute', top: abajo ? 1265 : 330, left: 60, right: 60, textAlign: 'center', fontFamily: 'Archivo Black', fontSize: 104, lineHeight: 1.08, color: '#fff', WebkitTextStroke: '5px rgba(10,20,40,0.9)', paintOrder: 'stroke fill', textShadow: '0 10px 0 rgba(10,20,40,0.45), 0 0 40px rgba(10,20,40,0.4)', transform: `scale(${1 + 0.03 * Math.sin(t * 2)})` }}>
       {palabras.map((w, i) => (<span key={i} style={{ display: 'inline-block', margin: '0 14px', color: destacar.has(sinSignos(w)) || /\d/.test(w) ? AMARILLO : '#fff' }}>{w}</span>))}
     </div>
     <div style={{ position: 'absolute', bottom: 150, width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 18 }}>
@@ -91,18 +92,29 @@ export const Dato = ({ render }) => {
   if (!render) return null;
   const T = frame / fps, escenas = render.escenas;
   const e = escenas.find((x) => T < x.inicio + x.dur) || escenas.at(-1), t = T - e.inicio, Escena = ESCENAS[e.tipo];
-  // Transición entre escenas: la imagen se acerca y se desenfoca como un barrido rápido de cámara (sale y entra)
+  // Estilo del video (scripts/lib/estilo3d.mjs): color, ángulo de cada escena, transición. Sin estilo: como antes
+  const est = render.estilo || {}, idx = escenas.indexOf(e), ang = est.angulos?.[idx] || { a: 0, giro: 0 };
+  // Transición entre escenas (sale y entra): barrido (se acerca y se desenfoca), giro, deslizar o fundido a blanco
   const ultima = e === escenas.at(-1), primera = e === escenas[0];
   const sale = ultima ? 0 : 1 - clamp((e.dur - t) / 0.28), entra = primera ? 0 : 1 - clamp(t / 0.28), k = Math.max(sale, entra);
-  const zoom = 1 + 0.12 * ease(sale) - 0.08 * ease(entra);
+  const tr = est.transicion || 'barrido', zoom = 1 + 0.12 * ease(sale) - 0.08 * ease(entra);
+  const mover = tr === 'giro' ? `rotate(${((ease(sale) - ease(entra)) * 5 * (est.sentido || 1)).toFixed(2)}deg) scale(${(1 + 0.2 * k).toFixed(4)})`
+    : tr === 'deslizar' ? `translateX(${((-ease(sale) + ease(entra)) * 6 * (est.sentido || 1)).toFixed(2)}%) scale(${(1 + 0.14 * k).toFixed(4)})`
+    : tr === 'fundido' ? 'none' : `scale(${zoom.toFixed(4)})`;
+  const desenfoque = tr === 'fundido' ? 0 : tr === 'deslizar' ? 8 : 18;
+  const filtro = [k > 0.01 && desenfoque ? `blur(${(k * desenfoque).toFixed(1)}px) brightness(${(1 + 0.12 * k).toFixed(2)})` : '', est.css || ''].filter(Boolean).join(' ') || 'none';
   return (
     <AbsoluteFill style={{ background: '#a9e1ff' }}>
-      <AbsoluteFill style={{ filter: k > 0.01 ? `blur(${(k * 18).toFixed(1)}px) brightness(${(1 + 0.12 * k).toFixed(2)})` : 'none', transform: `scale(${zoom.toFixed(4)})` }}>
+      <AbsoluteFill style={{ filter: filtro, transform: mover }}>
         <ThreeCanvas width={width} height={height} shadows gl={{ antialias: true, preserveDrawingBuffer: true }} camera={{ fov: 40, position: [0, 2, 6] }}>
-          {Escena && <Escena t={t} dur={e.dur} cantidad={e.cantidad} m={m} e={e} g={render} />}
+          {/* El mundo gira un poco alrededor del objeto (igual que mover la cámara): cada escena se ve desde otro lado */}
+          <group rotation-y={ang.a + ang.giro * t}>
+            {Escena && <Escena t={t} dur={e.dur} cantidad={e.cantidad} m={m} e={e} g={render} />}
+          </group>
           <Redibujar dep={m} />
         </ThreeCanvas>
       </AbsoluteFill>
+      {tr === 'fundido' && k > 0.01 && <AbsoluteFill style={{ background: '#ffffff', opacity: +(k * 0.85).toFixed(3) }} />}
       {e.contador && <Contador c={e.contador} t={t} dur={e.dur} />}
       {e.tipo === 'portada' ? <Portada g={render} t={t} /> : e.tipo === 'cierre' && render.categoria ? <Cierre t={t} /> : <Subtitulos escena={e} t={t} />}
       {e.tipo !== 'portada' && e.tipo !== 'cierre' && <div style={{ position: 'absolute', bottom: 120, left: 70, display: 'flex', alignItems: 'center', gap: 12 }}><Logo size={54} /><span style={{ fontFamily: 'Archivo Black', fontSize: 32, color: 'rgba(255,255,255,0.85)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>Potter Play</span></div>}

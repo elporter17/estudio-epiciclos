@@ -28,6 +28,7 @@ import { yaSalieronDb, marcarPublicadas } from './lib/db.mjs';
 import { cambiosDe, noticiasConCambios, noticiasGuardadas, guardarNoticias } from './lib/control.mjs';
 import { hoyHN } from './lib/video3d-cola.mjs';
 import { ponerFondos, guardarStock } from './lib/stock.mjs';
+import { textoConTono } from './lib/tono.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades');
 const HIST = path.join(ROOT, 'data', 'curiosidades-video-historial.json'), HIST_IMG = path.join(ROOT, 'data', 'curiosidades-historial.json');
@@ -350,6 +351,8 @@ async function main() {
   const r = await renderQuiz({ escenas: pieza.escenas, out: video, emojiFont, estilo, semilla: hist.total * 7919 + Date.now() % 1000, outIG: video.replace(/\.mp4$/, '-ig.mp4'), duracion: pieza.duracion });
   console.error(`Música: ${estilo}`);
   console.error(`${pieza.titulo} · ${r.duration.toFixed(1)} s · ${video}`);
+  // Tono (scripts/lib/tono.mjs): la primera línea de la descripción, coloquial o picante; las noticias, limpias
+  if (pieza.formato !== 'noticias') pieza.texto = textoConTono(pieza.texto, `${new Date().toISOString().slice(0, 10)}|${pieza.titulo}|${pieza.formato}`);
   const meta = { kind: 'quiz', formato: pieza.formato, title: pieza.titulo, file: path.basename(video), duration: r.duration, post: { text: pieza.texto }, createdAt: new Date().toISOString() };
   const sidecar = video.replace(/\.mp4$/, '.json');
 

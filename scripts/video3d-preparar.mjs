@@ -11,6 +11,8 @@ import { ROOT } from './lib/node-env.mjs';
 import { narrar } from './lib/voz.mjs';
 import { pistaMusical } from './lib/musica.mjs';
 import { wavBuffer } from './bounce.mjs';
+import { elegirEstilo } from './lib/estilo3d.mjs';
+import { vozConTono } from './lib/tono.mjs';
 
 const o = parseCli({ guion: { type: 'string', default: 'video3d/guiones/agua.json' } });
 const SR = 44100, PUB = path.join(ROOT, 'video3d', 'public');
@@ -19,6 +21,9 @@ const g = JSON.parse(fs.readFileSync(path.resolve(ROOT, o.guion), 'utf8'));
 const MINIMO = { portada: 3, vaso: 4, botellas: 3.5, calendario: 4.5, pila: 4.5, lluvia: 4.5, foco: 4.5, torre: 6, camion: 5, calle: 4.5, piscina: 4.5, globo: 5, piscinas: 5.5, cuadricula: 5, comparacion: 5, linea: 6.5, gente: 4.5, cierre: 4, vision: 7, ishihara: 7.5 };
 // La portada dice el gancho (o el título si no tiene texto)
 for (const e of g.escenas) if (e.tipo === 'portada' && !e.texto) e.texto = g.titulo;
+// El tono del video (scripts/lib/tono.mjs): la voz del gancho empieza con «No manches.», «¿Qué mierda acabo de aprender?»…
+// En pantalla sigue el título. Las noticias van limpias
+if (g.categoria !== 'noticia') for (const e of g.escenas) if (e.tipo === 'portada') e.voz = vozConTono(e.voz || e.texto, g.id);
 
 const audios = narrar(g.escenas.map((e) => e.voz || e.texto), { SR });
 if (!audios) throw new Error('No hay voz instalada (ver scripts/lib/voz.mjs)');
@@ -77,9 +82,12 @@ const CUANDO = {
 const sfx = [];
 for (const e of escenas) { if (e.inicio > 0) sfx.push({ t: e.inicio - 0.2, s: 'whoosh', v: 0.35 }); for (const [t, s2, v] of (CUANDO[e.tipo] || (() => []))(e.dur)) sfx.push({ t: e.inicio + t, s: s2, v }); }
 
+// Estilo del video (color, cámara, transición, portada y música) sin repetir los de los últimos videos
+const estilo = elegirEstilo(g);
+console.log(`Estilo: ${estilo.filtro} · transición ${estilo.transicion} · portada ${estilo.portada} · música ${estilo.musica}`);
 const mus = new Float32Array(Math.ceil((t + 0.5) * SR));
-pistaMusical(mus, t, { estilo: g.musica || 'lofi', semilla: 7, SR });
+pistaMusical(mus, t, { estilo: estilo.musica, semilla: estilo.semillaMusica, SR });
 fs.writeFileSync(path.join(PUB, 'musica.wav'), wavBuffer(mus.map((x) => Math.tanh(x * 0.9) * 0.9), SR));
-fs.writeFileSync(path.join(PUB, 'render.json'), JSON.stringify({ id: g.id, titulo: g.titulo, categoria: g.categoria, destacar: g.destacar, duracion: t, escenas, sfx }, null, 2));
+fs.writeFileSync(path.join(PUB, 'render.json'), JSON.stringify({ id: g.id, titulo: g.titulo, categoria: g.categoria, destacar: g.destacar, duracion: t, escenas, sfx, estilo }, null, 2));
 console.log(`${g.titulo}: ${escenas.length} escenas · ${t.toFixed(1)} s`);
 for (const e of escenas) console.log(`  ${e.inicio.toFixed(1).padStart(5)} s · ${e.tipo.padEnd(8)} ${e.dur.toFixed(1)} s · voz ${e.voz.toFixed(1)} s`);
