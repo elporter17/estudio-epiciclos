@@ -21,6 +21,7 @@ import { logUpload } from './tiktok-status.mjs';
 import { subirYouTube, youtubeReady } from './lib/youtube.mjs';
 import { ponerFondos, guardarStock } from './lib/stock.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
+import { textoConTono } from './lib/tono.mjs';
 
 const o = parseCli({ 'dry-run': { type: 'boolean', default: false }, 'solo-lanzamiento': { type: 'boolean', default: false }, tiktok: { type: 'string', default: 'draft' }, facebook: { type: 'string', default: 'si' }, instagram: { type: 'string', default: 'si' }, youtube: { type: 'string', default: 'si' }, hoy: { type: 'string' } });
 const D = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'gta6.json'), 'utf8'));
@@ -65,6 +66,7 @@ if (faltan > 0) {
   texto = `🎮 ${titulo} Llegó el día: esto es lo que tienes que saber para jugar.\n\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n¿Ya lo tienes o lo vas a esperar?\n\n#gta6 #gtavi #gta #videojuegos #gaming #lanzamiento #reels #potterplay`;
 }
 
+texto = textoConTono(texto, `gta|${new Date(Date.now() - 6 * 3600e3).toISOString().slice(0, 10)}`); // tono (scripts/lib/tono.mjs)
 const fondos = await ponerFondos(escenas);
 if (fondos) console.error(`Videos reales: ${fondos}`);
 guardarStock();

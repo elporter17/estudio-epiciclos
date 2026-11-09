@@ -36,9 +36,9 @@ export function avisoExtra(texto) { fs.mkdirSync(path.join(ROOT, 'out'), { recur
 
 // Texto para las redes: el título, los datos del video en viñetas, una pregunta y hashtags según la categoría
 const ETIQUETAS = { ciencia: ['ciencia', 'datoscientificos'], historia: ['historia', 'sabiasque'], datos: ['datos', 'datoscuriosos'], curiosidad: ['curiosidades', 'sabiasque'], noticia: ['explicado', 'actualidad'], especial: ['gta6', 'videojuegos'] };
-// La primera línea lleva el tono del video (scripts/lib/tono.mjs: coloquial o picante; las noticias, limpias)
+// La primera línea lleva el tono del video (scripts/lib/tono.mjs: coloquial o picante; los «explicados», solo coloquial)
 export function textoPost(g) {
-  return g.categoria === 'noticia' ? textoPostBase(g) : textoConTono(textoPostBase(g), g.id);
+  return textoConTono(textoPostBase(g), g.id, { suave: g.categoria === 'noticia' });
 }
 function textoPostBase(g) {
   const datos = g.escenas.filter((e) => e.tipo !== 'portada' && e.tipo !== 'cierre').slice(0, 5).map((e) => `• ${e.texto}`);

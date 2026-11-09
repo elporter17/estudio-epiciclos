@@ -12,7 +12,7 @@ import { narrar } from './lib/voz.mjs';
 import { pistaMusical } from './lib/musica.mjs';
 import { wavBuffer } from './bounce.mjs';
 import { elegirEstilo } from './lib/estilo3d.mjs';
-import { vozConTono } from './lib/tono.mjs';
+import { guionConTono } from './lib/tono.mjs';
 
 const o = parseCli({ guion: { type: 'string', default: 'video3d/guiones/agua.json' } });
 const SR = 44100, PUB = path.join(ROOT, 'video3d', 'public');
@@ -21,9 +21,10 @@ const g = JSON.parse(fs.readFileSync(path.resolve(ROOT, o.guion), 'utf8'));
 const MINIMO = { portada: 3, vaso: 4, botellas: 3.5, calendario: 4.5, pila: 4.5, lluvia: 4.5, foco: 4.5, torre: 6, camion: 5, calle: 4.5, piscina: 4.5, globo: 5, piscinas: 5.5, cuadricula: 5, comparacion: 5, linea: 6.5, gente: 4.5, cierre: 4, vision: 7, ishihara: 7.5 };
 // La portada dice el gancho (o el título si no tiene texto)
 for (const e of g.escenas) if (e.tipo === 'portada' && !e.texto) e.texto = g.titulo;
-// El tono del video (scripts/lib/tono.mjs): la voz del gancho empieza con «No manches.», «¿Qué mierda acabo de aprender?»…
-// En pantalla sigue el título. Las noticias van limpias
-if (g.categoria !== 'noticia') for (const e of g.escenas) if (e.tipo === 'portada') e.voz = vozConTono(e.voz || e.texto, g.id);
+// El tono del video (scripts/lib/tono.mjs): siempre al menos una expresión jocosa. La voz del gancho empieza con
+// «No manches.» o «¿Qué mierda acabo de aprender?» (en pantalla sigue el título), una escena del medio con «Y ojo:»…
+// y el cierre con su frase. Los «explicados» (categoría noticia), solo coloquiales
+g.escenas = guionConTono(g).escenas;
 
 const audios = narrar(g.escenas.map((e) => e.voz || e.texto), { SR });
 if (!audios) throw new Error('No hay voz instalada (ver scripts/lib/voz.mjs)');

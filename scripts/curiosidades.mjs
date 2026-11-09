@@ -29,6 +29,7 @@ import { crearDebate } from './lib/debate.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
 import { loadImage } from '@napi-rs/canvas';
 import { fotoStock, guardarStock } from './lib/stock.mjs';
+import { textoConTono } from './lib/tono.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades'), HIST = path.join(ROOT, 'data', 'curiosidades-historial.json');
 const SITE_MEDIA = 'https://circularte.edav-tech.com/media/'; // dominio verificado en TikTok (redirige al almacén)
@@ -198,11 +199,13 @@ async function carrusel(o, hist, base, emojiFont) {
   });
   const titulo = contraer(tipo === 'retos' ? '5 retos: de fácil a GOD' : tipo === 'datos' ? `${slides.length} datos de ${TEMA_CORTO[tema]}` : 'Noticias de hoy');
   const gancho = contraer(portada.gancho.map(([t]) => t).join(' '));
-  const texto = tipo === 'retos'
+  let texto = tipo === 'retos'
     ? `👀 ${gancho}. 5 retos visuales que suben de nivel: fácil, medio, difícil, imposible y GOD 💀. Desliza y resuelve cada uno antes de ver la respuesta.${OCULTAR}Respuestas:\n${lineas.join('\n')}\n\n#retos #acertijos #retovisual #juegosmentales #agilidadmental #potterplay`
     : tipo === 'datos'
       ? `🤯 ${gancho}. Desliza 👉 ¿Cuántas ya sabías?\n\n${lineas.join('\n')}\n\n#curiosidades #sabiasque #datoscuriosos #aprende ${TEMAS[tema].tags.map((t) => `#${t}`).join(' ')} #potterplay`
       : `📰 ${gancho}. Desliza 👉\n\n${lineas.join('\n\n')}\n\n¿Cuál te sorprendió más?\n\n#noticias #ultimahora #videojuegos #futbol #ciencia #potterplay`;
+  // Tono (scripts/lib/tono.mjs): la primera línea, coloquial o picante; las noticias van limpias
+  if (tipo !== 'noticias') texto = textoConTono(texto, `${new Date(Date.now() - 6 * 3600e3).toISOString().slice(0, 10)}|carrusel|${tipo}|${o.red}`);
   console.error(`Carrusel (${o.red}): ${titulo} · portada «${gancho}» · ${archivos.length} imágenes`);
   const meta = { kind: 'imagen', title: titulo, id: `carrusel-${marca}`, formato: `carrusel-${tipo}`, post: { text: texto }, createdAt: new Date().toISOString() };
   if (!o['dry-run']) {
@@ -287,6 +290,7 @@ async function main() {
     // Instagram solo acepta JPEG: la misma tarjeta 4:5 de Facebook
     if (red === 'facebook') { archivos.instagram = path.join(outDir, `curiosidad-${nombre}-instagram.jpg`); fs.writeFileSync(archivos.instagram, cv.toBuffer('image/jpeg', 92)); }
   }
+  if (!noticia) pieza.texto = textoConTono(pieza.texto, `${new Date(Date.now() - 6 * 3600e3).toISOString().slice(0, 10)}|imagen|${nombre}`);
   const sidecar = path.join(outDir, `curiosidad-${nombre}.json`);
   const meta = { kind: 'imagen', title: noticia ? noticia.titulo.slice(0, 80) : visual?.imagen ? `Debate · ${visual.tipo}` : visual ? `Reto visual · ${visual.tipo}` : `${TEMAS[x.tema].nombre} · ${pieza.formato}`, id: x?.id || noticia?.link || nombre, formato: pieza.formato, post: { text: pieza.texto }, createdAt: new Date().toISOString() };
   if (!o['dry-run']) {
