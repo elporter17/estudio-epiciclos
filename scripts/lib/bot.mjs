@@ -177,13 +177,9 @@ Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (�
 
 📰 <b>Noticias</b>
 • «noticias»: las candidatas de hoy, numeradas · «actualiza las noticias»: trae las más recientes
-• «videos»: qué videos 3D y largo vienen
-
-💡 <b>Videos desde una idea</b>
-• «💡 Idea» o «idea: daltonismo»: armo el guion con datos de Wikipedia, lo ajustas con botones y te mando el video para aprobarlo
-• «formato»: el formato para que otra IA (ChatGPT…) escriba el guion; luego me pegas el JSON o me mandas el archivo
 • «quita noticia 3» · «fija noticia 5» (va primero)
 • Pega un enlace de una noticia para agregarla
+• «videos»: qué videos 3D y largo vienen
 • «noticia: Título | resumen corto» para escribirla tú
 
 Piezas: debate (video), debate en imagen, banderas, retos, emojis, quiz, prefieres, cómo se hace, imagen, gta, nombres, futbolista, noticias en video, noticias en imagen, 3D de mediodía / de la tarde.

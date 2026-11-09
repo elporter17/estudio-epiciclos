@@ -143,7 +143,12 @@ jobs:
           node-version: 22
           cache: npm
 
-      - run: npm ci
+      # npm ci con reintentos: ffmpeg-static baja su binario de GitHub y a veces da 504 (pasó el 9 nov en el render 3D)
+      - name: Dependencias
+        run: |
+          mkdir -p out
+          for i in 1 2 3; do npm ci && exit 0; echo "npm ci falló (intento $i), reintento en 30 s"; sleep 30; done
+          exit 1
 
       - name: Fuentes completas de emoji y STIX (en caché)
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
@@ -183,7 +188,7 @@ jobs:
         if: env.CATS_INPUT == 'video3d-render' || env.CATS_INPUT == 'idea-render'
         working-directory: video3d
         run: |
-          npm ci
+          for i in 1 2 3; do npm ci && break; [ $i = 3 ] && exit 1; echo "npm ci falló (intento $i), reintento en 30 s"; sleep 30; done
           npx remotion browser ensure
 
       # Token de TikTok e historial de figuras, cifrados con STATE_KEY entre corridas

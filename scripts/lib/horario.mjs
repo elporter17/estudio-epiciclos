@@ -76,6 +76,9 @@ export const HORARIO = [
   // Los dos videos 3D del día se renderizan de madrugada (~40-55 min cada uno en GitHub)
   { hora: '00:37', workflow: 'video3d.yml', que: 'Video 3D: render del de mediodía', inputs: { modo: 'render', turno: 'mediodia' } },
   { hora: '01:47', workflow: 'video3d.yml', que: 'Video 3D: render del de la tarde', inputs: { modo: 'render', turno: 'tarde' } },
+  // Respaldo: si el render falló (p. ej. npm ci con 504), se intenta otra vez; si ya hay uno listo, sale en 3-5 min
+  { hora: '03:27', workflow: 'video3d.yml', que: 'Video 3D: respaldo del render de mediodía', inputs: { modo: 'render', turno: 'mediodia' } },
+  { hora: '04:37', workflow: 'video3d.yml', que: 'Video 3D: respaldo del render de la tarde', inputs: { modo: 'render', turno: 'tarde' } },
   { hora: '06:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
   ...juntarPlanes(),
   // Lanzamiento de GTA VI: un Reel especial a media mañana (el especial 3D sale a las 18:30)
@@ -84,7 +87,7 @@ export const HORARIO = [
   { hora: '14:07', pieza: 'largo', workflow: 'youtube-largo.yml', que: 'Video largo de YouTube: cómo se hacen 6 cosas', dias: [2, 4, 6] }
 ];
 // Metas semanales de Facebook (fotos e historias que pide el panel): lejos de las estrellas (scripts/metas.mjs)
-for (const hora of ['07:15', '16:15', '22:45']) HORARIO.push({ hora, pieza: 'metas', workflow: 'metas.yml', que: 'Metas semanales: fotos e historias que falten → FB' });
+for (const hora of ['11:07']) HORARIO.push({ hora, pieza: 'metas', workflow: 'metas.yml', que: 'Metas semanales: fotos e historias que falten → FB' });
 // Respuestas a comentarios: cada hora de 7:47 a 23:47 (cuanto antes se contesta, más conversación)
 for (let h = 7; h <= 23; h++) HORARIO.push({ hora: `${String(h).padStart(2, '0')}:47`, workflow: 'comentarios.yml', que: 'Responder comentarios' });
 HORARIO.sort((a, b) => a.hora.localeCompare(b.hora));

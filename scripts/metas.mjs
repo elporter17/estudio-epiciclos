@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Metas semanales del Panel para creadores de Facebook («Crea 30 publicaciones con fotos», «Crea 44 historias»).
 // Cuenta lo que la página ya publicó esta semana (domingo a sábado, hora del Pacífico, como Meta) y, si va atrasada
-// respecto al ritmo, publica las fotos e historias que faltan, repartidas en las corridas del día (metas.yml, 3 al día).
+// respecto al ritmo, publica las fotos e historias que faltan, con una sola corrida al día (metas.yml, 11:07) y 1 foto como mucho.
 // Las metas cambian cada semana y la API no las da: se ponen en el panel («Metas semanales», campos fotos e
 // historias) y se guardan en data/metas-semana.json (estado cifrado); sin eso valen las de data/metas.json.
 //   node --env-file=.env scripts/metas.mjs [--fotos 30 --historias 44] [--dry-run]
@@ -15,9 +15,10 @@ import { graph, facebookReady } from './facebook.mjs';
 const o = parseCli({ fotos: { type: 'string' }, historias: { type: 'string' }, 'dry-run': { type: 'boolean', default: false } });
 const leer = (f, d) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return d; } };
 const BASE = path.join(ROOT, 'data', 'metas.json'), SEMANA = path.join(ROOT, 'data', 'metas-semana.json');
-// Corridas por día de metas.yml (scripts/lib/horario.mjs): lo que falta se reparte entre las que quedan
-const CORRIDAS = [11 * 60 + 37, 15 * 60 + 37, 21 * 60 + 37];
-const TOPE = { fotos: 3, historias: 4 }; // por corrida, para no publicar en ráfaga
+// Una sola corrida al día de metas.yml (11:07, scripts/lib/horario.mjs). Antes eran 3 con hasta 3 carruseles cada una
+// y en el feed se veían como publicaciones repetidas (8 nov: 16:20, 16:21 y 16:22): ahora 1 foto por día como mucho
+const CORRIDAS = [11 * 60 + 7];
+const TOPE = { fotos: 1, historias: 5 };
 
 // Inicio de la semana de Meta: el domingo a las 00:00 en Los Ángeles
 function inicioSemana(ahora = new Date()) {

@@ -24,7 +24,10 @@ const PONIBLES = ['debate', 'debateimg', 'banderas', 'retos', 'emojis', 'quiz', 
 const RED = { fb: 'FB', ig: 'IG', tt: 'TT', yt: 'YT' };
 
 // Teclado fijo de abajo: lo que más se usa, sin escribir
-export const MENU = { keyboard: [[{ text: '📅 Plan de hoy' }, { text: '📅 Plan de mañana' }], [{ text: '📰 Noticias' }, { text: '🚀 Publicar ya' }], [{ text: '💡 Idea' }, { text: '🎬 Videos' }], [{ text: '❓ Ayuda' }]], resize_keyboard: true, is_persistent: true };
+// Videos desde una idea (💡 Idea, guiones de otra IA): APAGADO el 2026-11-09 porque daba errores; las ideas nuevas se
+// piden en Claude Code. El código queda; para volver a activarlo: IDEAS = true y el botón vuelve al menú
+const IDEAS = false;
+export const MENU = { keyboard: [[{ text: '📅 Plan de hoy' }, { text: '📅 Plan de mañana' }], [{ text: '📰 Noticias' }, { text: '🚀 Publicar ya' }], [...(IDEAS ? [{ text: '💡 Idea' }] : []), { text: '🎬 Videos' }], [{ text: '❓ Ayuda' }]], resize_keyboard: true, is_persistent: true };
 const fila = (...b) => b.filter(Boolean);
 const boton = (text, data) => ({ text, callback_data: data.slice(0, 64) });
 const enFilas = (botones, n) => botones.reduce((acc, b, i) => (i % n ? acc[acc.length - 1].push(b) : acc.push([b]), acc), []);
@@ -332,8 +335,10 @@ export async function alTocar(data) {
     case 'fj': return vistaFijos();
     case 'vp': return vistaVideos();
     case 'vf': return vistaFuentes();
-    case 'i0': return { texto: `${PIDE_IDEA}\nEscribe el tema (por ejemplo: daltonismo, agujeros negros, el café, las abejas) y armo el guion con datos de Wikipedia.\n\n¿Prefieres escribirlo con otra IA (ChatGPT…)? Escribe «formato»: te mando lo que necesita saber, y luego me pegas o mandas el guion que te dé.`, teclado: { force_reply: true, input_field_placeholder: 'Ej: daltonismo' } };
+    case 'i0': if (!IDEAS) return { texto: 'Los videos desde una idea están apagados por ahora: pídeselos a Claude.', teclado: MENU };
+      return { texto: `${PIDE_IDEA}\nEscribe el tema (por ejemplo: daltonismo, agujeros negros, el café, las abejas) y armo el guion con datos de Wikipedia.\n\n¿Prefieres escribirlo con otra IA (ChatGPT…)? Escribe «formato»: te mando lo que necesita saber, y luego me pegas o mandas el guion que te dé.`, teclado: { force_reply: true, input_field_placeholder: 'Ej: daltonismo' } };
     case 'if': {
+      if (!IDEAS) return { texto: 'Los videos desde una idea están apagados por ahora: pídeselos a Claude.', teclado: MENU };
       const ok = await tgDocumento('formato-guion-potterplay.txt', textoFormato(), { caption: `📋 <b>Formato para IA</b>\n1. Pásale este archivo (o su texto) a ChatGPT u otra IA y escribe tu tema al final.\n2. Pégame aquí el JSON que te devuelva (o mándalo como archivo .json/.txt si es largo).\n3. Lo reviso y lo genero con las ${Object.keys(ESPEC).length} escenas del generador.` });
       return { texto: ok ? '📋 Te mandé el formato. Cuando tengas el guion, pégamelo aquí.' : '⚠️ No pude mandarte el archivo del formato.', teclado: MENU };
     }
@@ -390,7 +395,7 @@ export async function alTocar(data) {
 }
 
 // ---------- texto escrito ----------
-const ATAJOS = { 'formato': 'if', '/formato': 'if', 'formato para ia': 'if', '💡 idea': 'i0', 'idea': 'i0', '/idea': 'i0', '📅 plan de hoy': 'p|hoy', '📅 plan de manana': 'p|manana', '📰 noticias': 'n', '🚀 publicar ya': 'l', '🎬 videos': 'vp', 'videos': 'vp', '/videos': 'vp', 'fuentes': 'vf', '/fuentes': 'vf' };
+const ATAJOS = { ...(IDEAS ? { 'formato': 'if', '/formato': 'if', 'formato para ia': 'if', '💡 idea': 'i0', 'idea': 'i0', '/idea': 'i0' } : {}), '📅 plan de hoy': 'p|hoy', '📅 plan de manana': 'p|manana', '📰 noticias': 'n', '🚀 publicar ya': 'l', '🎬 videos': 'vp', 'videos': 'vp', '/videos': 'vp', 'fuentes': 'vf', '/fuentes': 'vf' };
 export async function atender(texto) {
   const hoy = ahoraHN().fecha, manana = masDias(hoy, 1);
   const atajo = ATAJOS[texto.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')];
@@ -453,14 +458,14 @@ export default { async fetch(request) {
     // ---------- comentarios que contestas tú (los manda scripts/comentarios.mjs) ----------
     // Un guion hecho con otra IA: JSON pegado (con "escenas") o un archivo .json/.txt
     const doc = !cb && m.document && /\.(json|txt)$/i.test(m.document.file_name || '') ? m.document : null;
-    if (doc || (!cb && m.text && /"escenas"\s*:/.test(m.text))) {
+    if (IDEAS && (doc || (!cb && m.text && /"escenas"\s*:/.test(m.text)))) {
       const contenido = doc ? await tgLeerArchivo(doc.file_id) : m.text;
       const v = await recibirGuion(contenido);
       enviado = await telegram(v.texto, { chat, teclado: v.teclado });
       return json({ ok: true, motivo: 'guion', enviado });
     }
     // Una idea nueva: «idea: daltonismo» o la respuesta a «💡 ¿De qué quieres el video?»
-    const idea = !cb && m.text ? (m.text.match(/^\s*idea\s*:\s*(.+)$/is)?.[1] || ((m.reply_to_message?.text || '').startsWith(PIDE_IDEA) ? m.text : null)) : null;
+    const idea = IDEAS && !cb && m.text ? (m.text.match(/^\s*idea\s*:\s*(.+)$/is)?.[1] || ((m.reply_to_message?.text || '').startsWith(PIDE_IDEA) ? m.text : null)) : null;
     if (idea) {
       await telegram('🔎 Busco datos en Wikipedia y armo el guion…', { chat });
       const v = await crearIdea(idea.trim().slice(0, 80)).catch((e) => ({ texto: `⚠️ ${esc(e.message)}. Prueba con otras palabras.`, teclado: MENU }));
