@@ -7,6 +7,8 @@
 // y bot) y GitHub Actions (noticias y Reels), así que no usa el disco.
 import crypto from 'node:crypto';
 import { put, list, del } from '@vercel/blob';
+import { db } from './db.mjs';
+import { enBase, aplicarFijo, filasDeHorario, planFijo, slotDeFila, cargarProgramacion } from './programacion.mjs';
 
 export const blobToken = () => process.env.BLOB_READ_WRITE_TOKEN
   || Object.entries(process.env).find(([k, v]) => k.endsWith('_READ_WRITE_TOKEN') && String(v).startsWith('vercel_blob_rw_'))?.[1];
@@ -40,8 +42,20 @@ export function resolver(ops) {
 // cambios llevan «id» (para borrarlos con { t: 'borrar', id }) y, si son semanales, «dias» (0 = domingo … 6 = sábado).
 export const FIJO = 'fijo';
 const hoyHN = () => new Date(Date.now() - 6 * 3600e3).toISOString().slice(0, 10);
+// Desde el 2026-11-09, con la programación ya en Supabase (programacion.mjs), los cambios de cada día van a la tabla
+// «cambios» y lo «fijo» cambia los renglones de «programacion» (ya no hay ops fijas). Antes de migrar, todo sigue en Blob
+const desdeBase = (rows) => {
+  const porClave = {};
+  for (const r of rows || []) if (r.clave !== FIJO) (porClave[r.clave] ||= []).push(r.op);
+  return { fijos: [], dias: Object.fromEntries(Object.entries(porClave).map(([k, ops]) => [k, resolver(ops)])) };
+};
+const haceDias = (n) => new Date(Date.now() - n * 864e5 - 6 * 3600e3).toISOString().slice(0, 10);
 // Todo lo vigente, leyendo cada cambio (exacto; lo usa el bot antes de escribir): { fijos: [...], dias: { fecha: [...] } }
 export async function estadoExacto() {
+  if (await enBase()) return desdeBase(await db('cambios-lista', { desde: haceDias(3) }));
+  return estadoBlob();
+}
+async function estadoBlob() {
   if (!controlListo()) return { fijos: [], dias: {} };
   const blobs = []; let cursor;
   do { const r = await list({ prefix: `${carpeta()}/ops/`, token: blobToken(), cursor }); blobs.push(...r.blobs); cursor = r.hasMore ? r.cursor : undefined; } while (cursor);
@@ -56,12 +70,19 @@ const juntar = (e, fecha) => [...(e.fijos || []), ...(e.dias?.[fecha] || [])];
 export async function cambiosExactos(fecha) { return juntar(await estadoExacto(), fecha); }
 // Lo vigente de una fecha (rápido: un solo archivo para el relojero; un cambio recién hecho tarda hasta un minuto)
 export async function cambiosDe(fecha) {
+  if (await enBase()) return desdeBase(await db('cambios-lista', { desde: fecha })).dias[fecha] || [];
   const e = await leerJson(`${carpeta()}/estado.json`);
   if (e) return juntar(e, fecha);
   return (await leerJson(`${carpeta()}/dias/${fecha}.json`))?.ops || []; // formato de antes (hasta el primer cambio nuevo)
 }
 // Registra un cambio (de una fecha o de la programación fija) y deja el resumen al corriente; devuelve lo vigente
 export async function registrar(clave, op) {
+  if (await enBase()) {
+    // «Para siempre»: cambia los renglones de la programación. Lo de un día: un renglón en «cambios»
+    if (clave === FIJO) { await aplicarFijo(op); return []; }
+    await db('cambios-agregar', { clave, op: { ...op, at: new Date().toISOString() } });
+    return (await estadoExacto()).dias[clave] || [];
+  }
   await guardarJson(`${carpeta()}/ops/${clave}/${String(Date.now()).padStart(15, '0')}.json`, { ...op, at: new Date().toISOString() }, { fijo: false });
   const e = await estadoExacto(), ayer = new Date(Date.now() - 30 * 3600e3).toISOString().slice(0, 10);
   // En el resumen solo van la programación fija y los días de ayer en adelante
@@ -69,6 +90,28 @@ export async function registrar(clave, op) {
   return clave === FIJO ? e.fijos : juntar(e, clave);
 }
 export const nuevoId = () => Date.now().toString(36).slice(-6);
+
+// Una sola vez (bot: «migrar programación»): llena «programacion» con HORARIO y le aplica lo fijo que estaba en Blob;
+// copia a «cambios» los cambios de hoy en adelante. Si la tabla ya tiene renglones, no hace nada
+export async function migrarProgramacion({ probar = false } = {}) {
+  const { filas } = await cargarProgramacion({ fresco: true });
+  if (filas.length) return { ya: true, filas: filas.length };
+  const e = await estadoBlob(), hoy = hoyHN();
+  // Lo fijo se aplica en memoria sobre los renglones (con ids de mentira) y se insertan ya con sus cambios
+  let mem = filasDeHorario().map((x, i) => ({ ...x, id: -(i + 1) })), sinAplicar = [];
+  for (const op of e.fijos) {
+    if (!['agregar', 'quitar', 'mover', 'cambiar'].includes(op.t)) { sinAplicar.push(op); continue; }
+    const { nuevas, cambios } = planFijo(op, mem);
+    for (const c of cambios) mem = mem.map((x) => x.id === c.id ? { ...x, ...c.cambios } : x);
+    mem.push(...nuevas.map((x, i) => ({ ...x, id: -(mem.length + i + 1) })));
+  }
+  const dias = Object.entries(e.dias).filter(([k]) => k >= hoy);
+  if (probar) return { filas: mem.length, fijos: e.fijos.length, sinAplicar, dias: dias.map(([k, ops]) => [k, ops.length]), slots: mem.filter((x) => x.activo).map(slotDeFila).filter(Boolean).length };
+  await db('prog-insertar', { filas: mem.map(({ id, ...x }) => x) });
+  for (const [k, ops] of dias) for (const op of ops) await db('cambios-agregar', { clave: k, op });
+  await cargarProgramacion({ fresco: true });
+  return { filas: mem.length, fijos: e.fijos.length, sinAplicar, dias: dias.map(([k, ops]) => [k, ops.length]) };
+}
 export { hoyHN as hoyControl };
 // Borra lo de hace más de 7 días (lo llama scripts/noticias.mjs una vez al día)
 export async function limpiarViejos() {

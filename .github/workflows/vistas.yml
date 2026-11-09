@@ -1,0 +1,19 @@
+# Vistas de lo publicado (scripts/vistas.mjs): las guarda en Supabase («envios» y «videos») para que el bot muestre
+# los videos con pocas vistas y se puedan reenviar. Una vez al día; lo lanza el relojero (scripts/lib/horario.mjs).
+name: Vistas de lo publicado
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  vistas:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: vistas
+      publish: none
+      aviso: false
+    secrets: inherit

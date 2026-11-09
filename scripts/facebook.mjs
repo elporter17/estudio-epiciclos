@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { parseCli } from './lib/cli.mjs';
+import { conGuardia } from './lib/envios.mjs';
 
 const V = process.env.FB_GRAPH_VERSION || 'v26.0';
 const GRAPH = `https://graph.facebook.com/${V}`;
@@ -53,7 +54,11 @@ async function subirVideo(edge, file, como, log) {
 }
 
 // draft: queda como borrador en Meta Business Suite en vez de publicarse
-export async function publishReel({ video, description = '', draft = false, log = (m) => process.stderr.write(m) }) {
+// Las publicaciones pasan por conGuardia (scripts/lib/envios.mjs): si esa misma ya salió en Facebook, no se repite
+export const publishReel = (o) => o.draft ? publishReelSin(o) : conGuardia({ red: 'fb', tipo: 'reel', file: o.video, texto: o.description }, () => publishReelSin(o), (r) => ({ post_id: r.video_id, url: r.permalink }), o.log);
+export const publishCarrusel = (o) => conGuardia({ red: 'fb', tipo: 'carrusel', urls: o.urls, texto: o.caption }, () => publishCarruselSin(o), (r) => ({ post_id: r.post_id, url: r.permalink }), o.log);
+export const publishPhoto = (o) => conGuardia({ red: 'fb', tipo: 'foto', url: o.url, texto: o.caption }, () => publishPhotoSin(o), (r) => ({ post_id: r.post_id || r.photo_id, url: r.permalink }), o.log);
+async function publishReelSin({ video, description = '', draft = false, log = (m) => process.stderr.write(m) }) {
   if (!facebookReady()) throw new Error('Faltan FB_PAGE_ID o FB_PAGE_TOKEN');
   const page = process.env.FB_PAGE_ID, video_id = await subirVideo('video_reels', path.resolve(video), 'Reel', log);
   await graph('POST', `/${page}/video_reels`, { upload_phase: 'finish', video_id, video_state: draft ? 'DRAFT' : 'PUBLISHED', description: description.slice(0, 2200) });
@@ -91,7 +96,7 @@ export async function publishPhotoStory({ url, log = (m) => process.stderr.write
 }
 
 // Carrusel (publicación con varias fotos): cada foto se sube sin publicar y después va todo junto en una publicación
-export async function publishCarrusel({ urls, caption = '', log = (m) => process.stderr.write(m) }) {
+async function publishCarruselSin({ urls, caption = '', log = (m) => process.stderr.write(m) }) {
   if (!facebookReady()) throw new Error('Faltan FB_PAGE_ID o FB_PAGE_TOKEN');
   const ids = [];
   for (const url of urls) ids.push((await graph('POST', `/${process.env.FB_PAGE_ID}/photos`, { url, published: 'false' })).id);
@@ -102,7 +107,7 @@ export async function publishCarrusel({ urls, caption = '', log = (m) => process
 }
 
 // Foto publicada en la página (curiosidades y noticias): url pública de la imagen y el texto del post
-export async function publishPhoto({ url, caption = '', log = (m) => process.stderr.write(m) }) {
+async function publishPhotoSin({ url, caption = '', log = (m) => process.stderr.write(m) }) {
   if (!facebookReady()) throw new Error('Faltan FB_PAGE_ID o FB_PAGE_TOKEN');
   const d = await graph('POST', `/${process.env.FB_PAGE_ID}/photos`, { url, caption: caption.slice(0, 63000), published: 'true' });
   // Enlace por el id de la foto: el de la publicación lleva el id de la página, que GitHub oculta por ser secreto

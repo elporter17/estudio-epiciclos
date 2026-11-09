@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { put, list, del } from '@vercel/blob';
+import { anotarUrl } from './envios.mjs';
 
 const PREFIX = 'circularte-videos/';
 export const blobToken = () => process.env.BLOB_READ_WRITE_TOKEN
@@ -25,6 +26,7 @@ export async function publicarEnlace(file, { days = 2, log = (m) => process.stde
     } while (cursor);
     if (viejos.length) { await del(viejos, { token }); log(`Borrados ${viejos.length} video(s) de más de ${days} días del almacén\n`); }
   } catch (e) { log(`No se pudieron borrar videos viejos: ${e.message}\n`); }
+  anotarUrl(url, file); // Instagram publica por esta URL: así sabe qué archivo es (scripts/lib/envios.mjs)
   log(`Enlace directo al video: ${url}\n`);
   return { url, downloadUrl: downloadUrl || `${url}?download=1` };
 }

@@ -4,6 +4,7 @@
 import crypto from 'node:crypto';
 import { delDia, ahoraHN, minutos, instante, NOMBRES, redesDe } from '../scripts/lib/horario.mjs';
 import { cambiosDe } from '../scripts/lib/control.mjs';
+import { cargarProgramacion } from '../scripts/lib/programacion.mjs';
 
 export const REPO = 'elporter17/estudio-epiciclos';
 export const VENTANA = 150; // minutos: lo que se atrasó más que esto ya no se lanza (sería una ráfaga de publicaciones)
@@ -39,6 +40,7 @@ export async function lanzar(workflow, inputs = {}) {
 // de su hora y hasta 5 min antes del siguiente horario del mismo workflow.
 // Con los cambios que mandaste por Telegram (scripts/lib/control.mjs); «ops» evita leerlos otra vez
 export async function diaConEstado(ahora = new Date(), ops) {
+  await cargarProgramacion(); // la base del día: la tabla «programacion» de Supabase (o HORARIO si no responde)
   const { fecha, min } = ahoraHN(ahora), slots = delDia(fecha, ops ?? await cambiosDe(fecha));
   const corridas = (await corridasDesde(instante(fecha, '00:00'))).sort((a, b) => a.creada.localeCompare(b.creada));
   const usadas = new Set();

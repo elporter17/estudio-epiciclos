@@ -11,6 +11,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { parseCli } from './lib/cli.mjs';
 import { accessToken, api, chunkPlan, uploadFile, waitForStatus } from './lib/tiktok.mjs';
+import { conGuardia } from './lib/envios.mjs';
 
 const MIME = { '.mp4': 'video/mp4', '.mov': 'video/quicktime', '.webm': 'video/webm' };
 
@@ -44,7 +45,9 @@ export async function publishPhotoDraft({ url, title = '', description = '', log
   return { mode: 'draft', publish_id: init.publish_id, status: st.status, at: new Date().toISOString() };
 }
 
-export async function publishVideo({ video, mode = 'draft', privacy = 'SELF_ONLY', title, coverMs, log = (m) => process.stderr.write(m) }) {
+// Pasa por conGuardia (scripts/lib/envios.mjs): el mismo archivo no va dos veces a TikTok (ni como borrador)
+export const publishVideo = (o) => conGuardia({ red: 'tt', tipo: o.mode || 'draft', file: o.video, texto: o.title }, () => publishVideoSin(o), (r) => ({ post_id: r.publish_id }), o.log);
+async function publishVideoSin({ video, mode = 'draft', privacy = 'SELF_ONLY', title, coverMs, log = (m) => process.stderr.write(m) }) {
   if (!['draft', 'direct'].includes(mode)) throw new Error('--mode debe ser draft o direct');
   const file = path.resolve(video);
   if (!fs.existsSync(file)) throw new Error(`No existe el video ${file}`);

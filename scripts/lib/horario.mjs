@@ -1,4 +1,6 @@
-// Horario de publicación, hora de Honduras (UTC-6). Es la única fuente: el relojero (/api/relojero, llamado cada
+// Horario de publicación, hora de Honduras (UTC-6). Desde el 2026-11-09 la fuente de la verdad es la tabla
+// «programacion» de Supabase (scripts/lib/programacion.mjs, supabase/programacion.sql): HORARIO de aquí abajo es el
+// respaldo (si Supabase no responde) y lo que llenó la tabla la primera vez. El relojero (/api/relojero, llamado cada
 // 10 min por cron-job.org) lanza en GitHub Actions lo que toca, el panel (/panel.html) lo muestra y el tablero local
 // lo resume. GitHub ya no programa nada por su cuenta (sus «schedule» se perdían o llegaban con horas de atraso).
 //   { hora: 'HH:MM', workflow, que, inputs?, fecha?, dias? }   fecha: solo ese día (AAAA-MM-DD); dias: solo esos días
@@ -35,7 +37,9 @@ const PIEZAS = {
   noticiasimg: { workflow: 'curiosidades-facebook.yml', que: 'Noticias en imágenes: carrusel con titular y resumen', inputs: { tipo: 'noticias' } },
   gta: { workflow: 'gta6.yml', que: 'Reel GTA VI «Faltan N días»' },
   nombres: { workflow: 'nombres.yml', que: 'Nombre o pareja con círculos' },
-  famosos: { workflow: 'famosos.yml', que: 'Futbolista dibujado con círculos' }
+  famosos: { workflow: 'famosos.yml', que: 'Futbolista dibujado con círculos' },
+  // Reenvío de un video ya generado (bot: «🎬 Videos» → 🔁): lleva en inputs el video, su corrida y su archivo
+  reenvio: { workflow: 'republicar.yml', que: 'Reenvío de un video ya publicado' }
 };
 // Solo de TikTok: no usan «redes»
 const SOLO_TT = new Set(['nombres', 'famosos']);
@@ -72,6 +76,20 @@ export function armarSlot(pieza, hora, redes = redesDePieza(pieza)) {
   return { hora, pieza, workflow: p.workflow, que: `${p.que} → ${orden.map((r) => RED_NOMBRE[r]).join(', ')}`, ...(inputs ? { inputs } : {}) };
 }
 
+// Lo que no es una pieza del plan de cada red (renders, juntar noticias, metas, comentarios, video largo). «conPieza»:
+// el slot lleva «pieza» (así se ve y se edita en el bot)
+export const EXTRAS = {
+  render3d1: { workflow: 'video3d.yml', que: 'Video 3D: render del de mediodía', inputs: { modo: 'render', turno: 'mediodia' } },
+  render3d2: { workflow: 'video3d.yml', que: 'Video 3D: render del de la tarde', inputs: { modo: 'render', turno: 'tarde' } },
+  juntarnoticias: { workflow: 'noticias.yml', que: 'Juntar noticias del día' },
+  comentarios: { workflow: 'comentarios.yml', que: 'Responder comentarios' },
+  metas: { workflow: 'metas.yml', que: 'Metas semanales: fotos e historias que falten → FB', conPieza: true },
+  largo: { workflow: 'youtube-largo.yml', que: 'Video largo de YouTube: cómo se hacen 6 cosas', conPieza: true },
+  vistas: { workflow: 'vistas.yml', que: 'Vistas de lo publicado → Supabase (para reenviar lo que tuvo pocas)' }
+};
+// La clave (pieza o extra) de un slot del horario
+export const claveDe = (s) => s.pieza || (s.workflow === 'video3d.yml' && s.inputs?.modo === 'render' ? (s.inputs.turno === 'tarde' ? 'render3d2' : 'render3d1') : Object.keys(EXTRAS).find((k) => EXTRAS[k].workflow === s.workflow));
+
 export const HORARIO = [
   // Los dos videos 3D del día se renderizan de madrugada (~40-55 min cada uno en GitHub)
   { hora: '00:37', workflow: 'video3d.yml', que: 'Video 3D: render del de mediodía', inputs: { modo: 'render', turno: 'mediodia' } },
@@ -80,6 +98,7 @@ export const HORARIO = [
   { hora: '03:27', workflow: 'video3d.yml', que: 'Video 3D: respaldo del render de mediodía', inputs: { modo: 'render', turno: 'mediodia' } },
   { hora: '04:37', workflow: 'video3d.yml', que: 'Video 3D: respaldo del render de la tarde', inputs: { modo: 'render', turno: 'tarde' } },
   { hora: '06:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
+  { hora: '23:25', workflow: 'vistas.yml', que: 'Vistas de lo publicado → Supabase (para reenviar lo que tuvo pocas)' },
   ...juntarPlanes(),
   // Lanzamiento de GTA VI: un Reel especial a media mañana (el especial 3D sale a las 18:30)
   { hora: '11:15', pieza: 'gta', workflow: 'gta6.yml', que: 'Especial de lanzamiento de GTA VI → FB, IG, TikTok, YouTube', inputs: { lanzamiento: 'true', redes: 'fb,ig,tt,yt' }, fecha: '2026-11-19' },
@@ -98,13 +117,13 @@ export const HASTA = { 'gta6.yml': '2026-11-19' };
 export const NOMBRES = {
   [R]: 'Reels de quiz y curiosidades', 'curiosidades-facebook.yml': 'Imágenes a Facebook e Instagram', 'curiosidades-tiktok.yml': 'Carruseles a TikTok',
   'nombres.yml': 'Nombres a TikTok', 'famosos.yml': 'Futbolistas a TikTok', 'gta6.yml': 'Especial GTA VI', 'noticias.yml': 'Noticias del día',
-  'comentarios.yml': 'Respuestas a comentarios', 'metas.yml': 'Metas semanales de Facebook', 'como-se-hace.yml': 'Cómo se hace', 'youtube-largo.yml': 'Video largo de YouTube', 'video3d.yml': 'Video 3D de datos', 'estadisticas.yml': 'Estadísticas'
+  'comentarios.yml': 'Respuestas a comentarios', 'metas.yml': 'Metas semanales de Facebook', 'como-se-hace.yml': 'Cómo se hace', 'youtube-largo.yml': 'Video largo de YouTube', 'video3d.yml': 'Video 3D de datos', 'estadisticas.yml': 'Estadísticas', 'republicar.yml': 'Reenvío de un video', 'vistas.yml': 'Vistas de lo publicado'
 };
 
 // Dónde sale cada cosa (fb = Facebook, ig = Instagram, tt = TikTok). Los Reels con «tiktok: si» también van a TikTok.
 const REDES_WF = {
   [R]: ['fb', 'ig', 'yt'], 'youtube-largo.yml': ['yt'], 'video3d.yml': ['fb', 'ig', 'tt', 'yt'], 'curiosidades-facebook.yml': ['fb', 'ig'], 'curiosidades-tiktok.yml': ['tt'], 'nombres.yml': ['tt'], 'famosos.yml': ['tt'],
-  'gta6.yml': ['fb', 'ig', 'tt'], 'comentarios.yml': ['fb', 'ig'], 'metas.yml': ['fb'], 'como-se-hace.yml': ['fb', 'ig', 'yt'], 'noticias.yml': [], 'estadisticas.yml': []
+  'gta6.yml': ['fb', 'ig', 'tt'], 'comentarios.yml': ['fb', 'ig'], 'metas.yml': ['fb'], 'como-se-hace.yml': ['fb', 'ig', 'yt'], 'noticias.yml': [], 'estadisticas.yml': [], 'vistas.yml': [], 'republicar.yml': ['fb', 'ig']
 };
 // Con «redes» (el plan de cada red) manda eso; si no, lo de siempre del workflow
 export const redesDe = (workflow, inputs = {}) => inputs.modo === 'render' ? [] : inputs.redes ? inputs.redes.split(',').filter(Boolean) : [...(REDES_WF[workflow] || []), ...(inputs.tiktok === 'si' ? ['tt'] : [])];
@@ -121,14 +140,21 @@ export const minutos = (hora) => { const [h, m] = hora.split(':').map(Number); r
 export const instante = (fecha, hora) => new Date(Date.parse(`${fecha}T${hora}:00Z`) - OFFSET_HN * 3600e3);
 // Lo programado para una fecha (sin lo que tiene otra fecha o ya terminó), con los cambios que mandaste por Telegram
 // (scripts/lib/control.mjs: ops ya resueltas)
-export const delDia = (fecha, ops = []) => aplicarCambios(HORARIO.filter((s) => (!s.fecha || s.fecha === fecha) && (!s.dias || s.dias.includes(new Date(`${fecha}T12:00:00Z`).getUTCDay())) && !(HASTA[s.workflow] && fecha > HASTA[s.workflow])), ops, fecha);
+// La base: los renglones activos de la tabla «programacion» si ya se cargaron (cargarProgramacion en
+// scripts/lib/programacion.mjs), si no HORARIO
+let BASE = HORARIO;
+export const usarBase = (slots) => { BASE = slots?.length ? slots : HORARIO; };
+export const baseActual = () => BASE;
+export const vaElDia = (s, fecha) => (!s.fecha || s.fecha === fecha) && (!s.dias?.length || s.dias.includes(new Date(`${fecha}T12:00:00Z`).getUTCDay())) && !(s.desde && fecha < s.desde) && !(s.hasta && fecha > s.hasta) && !(HASTA[s.workflow] && fecha > HASTA[s.workflow]);
+export const delDia = (fecha, ops = []) => aplicarCambios(BASE.filter((s) => vaElDia(s, fecha)), ops, fecha);
 
 // ---------- cambios por Telegram ----------
 // Lo que no se toca con «quitar/mover»: las respuestas a comentarios (cada hora) y lo que no publica nada
-const FIJO = new Set(['comentarios.yml', 'noticias.yml', 'estadisticas.yml']);
+const FIJO = new Set(['comentarios.yml', 'noticias.yml', 'estadisticas.yml', 'vistas.yml']);
 export const editable = (s) => !FIJO.has(s.workflow) && s.inputs?.modo !== 'render';
 // Las corridas de una hora (o de la pieza) que se pueden cambiar
 export const slotsEn = (slots, hora) => slots.filter((s) => s.hora === hora && editable(s));
+const conInputs = (s, inputs) => inputs ? { ...s, inputs: { ...(s.inputs || {}), ...inputs } } : s;
 export function aplicarCambios(base, ops = [], fecha) {
   const dia = fecha ? new Date(`${fecha}T12:00:00Z`).getUTCDay() : null;
   let slots = base.map((s) => ({ ...s }));
@@ -142,7 +168,7 @@ export function aplicarCambios(base, ops = [], fecha) {
       const redes = op.redes || (s.inputs?.redes ? s.inputs.redes.split(',') : redesDePieza(op.pieza));
       return { ...armarSlot(op.pieza, s.hora, redes), cambio: `antes: ${s.pieza || s.workflow}` };
     });
-    else if (op.t === 'agregar' && PIEZAS[op.pieza]) slots.push({ ...armarSlot(op.pieza, op.hora, op.redes || redesDePieza(op.pieza)), cambio: op.ya ? 'publicado ya' : op.id ? 'fijo' : 'agregado', ...(op.id ? { fijo: true } : {}), ...(op.ya ? { ya: true } : {}) });
+    else if (op.t === 'agregar' && PIEZAS[op.pieza]) slots.push({ ...conInputs(armarSlot(op.pieza, op.hora, op.redes || redesDePieza(op.pieza)), op.inputs), cambio: op.ya ? 'publicado ya' : op.id ? 'fijo' : 'agregado', ...(op.id ? { fijo: true } : {}), ...(op.ya ? { ya: true } : {}) });
     else if (op.t === 'pausa') slots = slots.filter((s) => !editable(s) || s.workflow === 'video3d.yml' && s.inputs?.modo === 'render');
   }
   return slots.sort((a, b) => a.hora.localeCompare(b.hora));
@@ -169,7 +195,7 @@ export const ALIAS = Object.entries({
   famosos: ['futbolistas', 'futbolista', 'jugadores', 'jugador', 'famosos', 'futbol'],
   largo: ['video largo', 'largo de youtube']
 }).flatMap(([p, xs]) => xs.map((x) => [x, p])).sort((a, b) => b[0].length - a[0].length);
-export const NOMBRE_PIEZA = { comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Banderas/Retos', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB' };
+export const NOMBRE_PIEZA = { comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Banderas/Retos', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB', reenvio: 'Reenvío' };
 export const nombreSlot = (s) => NOMBRE_PIEZA[s.pieza] || (s.workflow === 'metas.yml' ? 'Metas FB' : NOMBRES[s.workflow] || s.workflow);
 
 // Tabla para Telegram (va dentro de <pre>): hora, pieza y redes; con estado si viene de diaConEstado

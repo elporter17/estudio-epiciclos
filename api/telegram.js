@@ -1,17 +1,19 @@
 // POST /api/telegram: webhook del bot de Telegram (@potteplay_avisos_bot). Todo se puede hacer con BOTONES (el plan
 // del día con un botón por publicación → quitar / mover / cambiar; agregar, pausar, deshacer, publicar ya; noticias →
-// quitar / fijar) y también escribiendo normal (scripts/lib/bot.mjs). Los cambios se guardan en el almacén Blob
-// (scripts/lib/control.mjs) y el relojero los aplica en su siguiente vuelta (≤ 10 min).
+// quitar / fijar) y también escribiendo normal (scripts/lib/bot.mjs). La programación está en Supabase (tabla
+// «programacion», scripts/lib/programacion.mjs: «🗓️ Programación» la muestra y la edita) y los cambios de un día en
+// «cambios» (scripts/lib/control.mjs); el relojero los aplica en su siguiente vuelta (≤ 10 min).
 // Solo hace caso a TU chat (TELEGRAM_CHAT_ID) y solo acepta llamadas de Telegram (cabecera secreta que se registra con
 // npm run telegram:webhook). Variables de Vercel: TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID.
 import { json, diaConEstado, lanzar, ACTIVO } from './_panel.js';
 import { interpretar, AYUDA, mensajePlan, mensajeNoticias, diaBonito, alcanceDe } from '../scripts/lib/bot.mjs';
-import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasGuardadas, guardarNoticias, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId, encolarComentario, leerControl, guardarIdea, leerIdea, tgDocumento, tgLeerArchivo } from '../scripts/lib/control.mjs';
+import { cambiosExactos, estadoExacto, registrar, noticiasDe, noticiasGuardadas, guardarNoticias, noticiasConCambios, telegram, editarMensaje, tgApi, esc, secretoWebhook, ultimoError, FIJO, nuevoId, encolarComentario, leerControl, guardarIdea, leerIdea, tgDocumento, tgLeerArchivo, migrarProgramacion } from '../scripts/lib/control.mjs';
+import { cargarProgramacion, cambiarFila, editableFila, redesDeFila } from '../scripts/lib/programacion.mjs';
 import { delDia, ahoraHN, armarSlot, redesDePieza, nombreSlot, editable, NOMBRE_PIEZA, redesDe, redesPosibles } from '../scripts/lib/horario.mjs';
 import { noticiaDeEnlace, juntarNoticias, N_REEL } from '../scripts/lib/noticias.mjs';
 import { construir, escenaDe, NOMBRE_ESCENA } from '../scripts/lib/constructor.mjs';
 import { textoFormato, validar, ESPEC } from '../scripts/lib/guion-formato.mjs';
-import { yaSalieronDb, guardarCandidatas, descartarNoticia, recientesDb } from '../scripts/lib/db.mjs';
+import { yaSalieronDb, guardarCandidatas, descartarNoticia, recientesDb, db } from '../scripts/lib/db.mjs';
 
 const dd = (n) => String(n).padStart(2, '0');
 const masDias = (fecha, n) => new Date(Date.parse(`${fecha}T12:00:00Z`) + n * 864e5).toISOString().slice(0, 10);
@@ -76,7 +78,7 @@ async function conAlcance(fecha, op, alcance, txt, dias) {
   if (alcance === 't' || alcance === 's') {
     const ds = dias || [diaSemana(fecha)];
     await registrar(FIJO, { ...op, id: nuevoId(), ...(alcance === 's' ? { dias: ds } : {}) });
-    return conConfirmacion(await vistaPlan(fecha), `${txt} ${alcance === 's' ? `Cada ${ds.map((d) => DIAS[d]).join(', ')}` : 'Todos los días'} (🔁, se borra en «🔁 Fijos»).`);
+    return conConfirmacion(await vistaPlan(fecha), `${txt} ${alcance === 's' ? `Cada ${ds.map((d) => DIAS[d]).join(', ')}` : 'Todos los días'} (🔁, queda en «🗓️ Programación»).`);
   }
   await registrar(fecha, op);
   return conConfirmacion(await vistaPlan(fecha), `${txt} Solo el ${cortoDia(fecha)}.`);
@@ -85,7 +87,7 @@ async function conAlcance(fecha, op, alcance, txt, dias) {
 // cada corrida de GitHub (scripts/lib/proximos.mjs)
 async function vistaVideos() {
   const p = await leerControl('proximos'), hoy = ahoraHN().fecha;
-  const volver = { inline_keyboard: [fila(boton('📅 Plan de hoy', `p|${hoy}`))] };
+  const volver = { inline_keyboard: [fila(boton('📼 Generados', 'vl|t'), boton('📉 Pocas vistas', 'vl|b')), fila(boton('📅 Plan de hoy', `p|${hoy}`))] };
   if (!p) return { texto: '🎬 Todavía no tengo la lista de videos: se arma con el próximo render o publicación 3D (o con las noticias de las 6:23).', teclado: volver };
   const corto = (f) => `${DIAS[diaSemana(f)].slice(0, 3)} ${+f.slice(8)}`;
   const l = p.video3d.listos, turno = (t, h) => l[t] ? `${h} «${esc(l[t].titulo)}»${l[t].fecha !== hoy ? ` (del ${corto(l[t].fecha)})` : ''} ✅ listo` : `${h} — ya salió o se renderiza de madrugada`;
@@ -106,6 +108,46 @@ async function vistaVideos() {
   ].join('\n');
   return { texto, teclado: { inline_keyboard: [fila(boton('📚 Fuentes de los publicados', 'vf')), ...volver.inline_keyboard] } };
 }
+// ---------- videos generados (tabla «videos» de Supabase) y reenvíos ----------
+// Se pueden reenviar mientras exista el artefacto de su corrida (30 días). «Pocas vistas»: con 2 días o más y en el
+// 30 % de abajo de los últimos 14 días (las vistas las pone vistas.yml cada noche)
+const reenviable = (v) => v.run_id && v.archivo && Date.now() - Date.parse(v.creado) < 29 * 864e5;
+const vistasTxt = (v) => v.vistas_al ? `${v.vistas_total} 👁️ (${Object.entries(v.vistas || {}).map(([r, n]) => `${RED[r]} ${n}`).join(' · ') || '—'})` : 'sin vistas todavía';
+async function vistaGenerados(modo = 't', aviso = '') {
+  const todos = ((await db('videos-lista', { dias: 14, limite: 200 }).catch(() => null)) || []).filter(reenviable);
+  let lista = todos.slice(0, 12), titulo = '📼 <b>Videos generados</b> (últimos)';
+  if (modo === 'b') {
+    const maduros = todos.filter((v) => v.vistas_al && Date.now() - Date.parse(v.creado) >= 2 * 864e5).sort((a, b) => a.vistas_total - b.vistas_total);
+    lista = maduros.slice(0, Math.max(3, Math.ceil(maduros.length * 0.3))).slice(0, 12);
+    titulo = '📉 <b>Videos con pocas vistas</b> (2 días o más, los de abajo de las últimas 2 semanas)';
+  }
+  const dia = (v) => cortoDia(new Date(Date.parse(v.creado) - 6 * 3600e3).toISOString().slice(0, 10));
+  const texto = `${aviso ? `${aviso}\n\n` : ''}${titulo}\n\n${lista.length ? lista.map((v, i) => `<b>${i + 1}.</b> ${esc((v.titulo || 'sin título').slice(0, 70))}\n    ${dia(v)} · ${esc(v.formato || '')} · ${vistasTxt(v)}`).join('\n') : (modo === 'b' ? 'Todavía no hay videos con vistas medidas (se miden cada noche).' : 'Todavía no hay videos guardados: se guardan al publicarse.')}\n\nToca uno para reenviarlo.`;
+  return { texto, teclado: { inline_keyboard: [...enFilas(lista.map((v, i) => boton(`${i + 1}. ${(v.titulo || '').slice(0, 24)}`, `vr|${v.id}`)), 2), fila(boton(modo === 'b' ? '📼 Todos' : '📉 Pocas vistas', `vl|${modo === 'b' ? 't' : 'b'}`), boton('🎬 Videos', 'vp'))] } };
+}
+// Un video: sus vistas y a qué redes reenviarlo (vs|id|redes cambia la selección, vy|id|redes lo manda)
+async function vistaReenvio(id, sel) {
+  const v = await db('video-de', { id }).catch(() => null);
+  if (!v || !reenviable(v)) return vistaGenerados('t', '⚠️ Ese video ya no se puede reenviar (su archivo se guarda 30 días).');
+  const rs = sel || ['fb', 'ig'];
+  const t = ORDEN.map((r) => boton(`${rs.includes(r) ? '✅' : '▫️'} ${RED_LARGO[r]}`, `vs|${v.id}|${codR(rs.includes(r) ? rs.filter((x) => x !== r) : [...rs, r])}`));
+  return {
+    texto: `🔁 <b>${esc(v.titulo || 'Video')}</b>\n${esc(v.formato || '')} · del ${esc(String(v.creado).slice(0, 10))} · ${vistasTxt(v)}\n\n¿A qué redes lo reenvío? Sale en unos minutos (TikTok llega como borrador). Va una copia con otros metadatos, no el mismo archivo.`,
+    teclado: { inline_keyboard: [...enFilas(t, 2), fila(rs.length ? boton('🔁 Reenviar ahora', `vy|${v.id}|${codR(rs)}`) : null, boton('⬅️ Volver', 'vl|t'))] }
+  };
+}
+async function reenviar(id, rs) {
+  const v = await db('video-de', { id }).catch(() => null);
+  if (!v || !reenviable(v)) return vistaGenerados('t', '⚠️ Ese video ya no se puede reenviar.');
+  const hoy = ahoraHN().fecha, hora = ahoraHHMM(), inputs = { video: String(v.id), run: String(v.run_id), archivo: v.archivo };
+  const slot = { ...armarSlot('reenvio', hora, rs) }; slot.inputs = { ...slot.inputs, ...inputs };
+  // Una sola corrida en espera en GitHub: si ya hay una, queda en el plan y la lanza el relojero
+  const { corridas } = await diaConEstado(new Date());
+  const enCola = corridas.some((x) => ACTIVO.includes(x.estado) && x.estado !== 'in_progress');
+  if (!enCola) await lanzar(slot.workflow, slot.inputs);
+  await registrar(hoy, { t: 'agregar', hora, pieza: 'reenvio', redes: rs, inputs, ya: true });
+  return conConfirmacion(await vistaGenerados('t'), `${enCola ? 'Puse en cola' : 'Lancé'} el reenvío de «${v.titulo || 'el video'}» a ${nombresRedes(rs)}. ${enCola ? 'Sale cuando termine la corrida que está esperando.' : 'Sale en unos 5 a 10 minutos; te aviso aquí.'}`, '🔁');
+}
 // Las fuentes de los últimos 3D publicados (para contestar si alguien pregunta de dónde sale un dato)
 async function vistaFuentes() {
   const p = await leerControl('proximos'), hoy = ahoraHN().fecha, lista = p?.video3d?.publicados || [];
@@ -123,6 +165,28 @@ async function vistaFijos(aviso = '') {
     teclado: { inline_keyboard: [...lista.map((o) => fila(boton(`🗑️ ${accion(o)} ${o.hora} ${NOMBRE_PIEZA[o.pieza] || o.pieza}${o.dias ? ` (${o.dias.map((d) => DIAS[d].slice(0, 3)).join(',')})` : ''}`.slice(0, 60), `fx|${o.id}`))), fila(boton('📅 Plan de hoy', `p|${ahoraHN().fecha}`))] }
   };
 }
+// La programación de Supabase: un renglón por envío con sus redes. Si todavía no se migró, la lista de fijos de antes
+const SUPABASE_TABLA = 'https://supabase.com/dashboard/project/tglibbjsuskxahajtmrs/editor';
+const redesFila = (f) => f.pieza === 'metas' ? ['fb'] : posibles(f.pieza);
+const lineaFila = (f) => `${f.activo ? '' : '⏸️ '}${f.hora} ${(NOMBRE_PIEZA[f.pieza] || f.pieza).slice(0, 16)} · ${redesDeFila(f).map((r) => RED[r]).join(' ') || 'sin redes'}${f.dias?.length ? ` (${f.dias.map((d) => DIAS[d].slice(0, 3)).join(',')})` : ''}${f.fecha ? ` (solo ${f.fecha.slice(5)})` : ''}`;
+async function vistaProgramacion(aviso = '') {
+  const { filas, fuente } = await cargarProgramacion({ fresco: true });
+  if (fuente !== 'supabase') return vistaFijos(aviso);
+  const hoy = ahoraHN().fecha, lista = filas.filter((f) => editableFila(f) && (!f.fecha || f.fecha >= hoy) && (!f.hasta || f.hasta >= hoy) && (f.activo || f.nota === 'bot' || f.cambiada > new Date(Date.now() - 14 * 864e5).toISOString()));
+  return {
+    texto: `${aviso ? `${aviso}\n\n` : ''}🗓️ <b>Programación</b> (Supabase, la fuente de la verdad)\n<pre>${esc(lista.map(lineaFila).join('\n'))}</pre>\nToca uno para cambiar sus redes o pausarlo. Para la hora: «mueve el debate de las 14:30 a las 15:00 todos los días». También se edita en <a href="${SUPABASE_TABLA}">Supabase</a> → programacion. ⏸️ = pausado.`,
+    teclado: { inline_keyboard: [...enFilas(lista.map((f) => boton(`${f.activo ? '' : '⏸️ '}${f.hora} ${NOMBRE_PIEZA[f.pieza] || f.pieza}`, `pg|${f.id}`)), 3), fila(boton('📅 Plan de hoy', `p|${hoy}`))] }
+  };
+}
+async function vistaFila(id, aviso = '') {
+  const { filas } = await cargarProgramacion({ fresco: true }), f = filas.find((x) => String(x.id) === String(id));
+  if (!f) return vistaProgramacion('⚠️ Ya no encuentro ese renglón.');
+  const rs = redesFila(f);
+  return {
+    texto: `${aviso ? `${aviso}\n\n` : ''}🗓️ <b>${esc(NOMBRE_PIEZA[f.pieza] || f.pieza)}</b> a las ${f.hora}${f.dias?.length ? ` · cada ${f.dias.map((d) => DIAS[d]).join(', ')}` : ' · todos los días'}${f.fecha ? ` · solo el ${f.fecha}` : ''}${f.hasta ? ` · hasta el ${f.hasta}` : ''}\n${f.activo ? '▶️ Activo' : '⏸️ Pausado'} · redes: ${esc(nombresRedes(redesDeFila(f))) || 'ninguna'}\n\nToca una red para ponerla (✅) o quitarla (▫️). Es para siempre; lo de un solo día se cambia en el plan del día.`,
+    teclado: { inline_keyboard: [...enFilas(rs.map((r) => boton(`${f[r] ? '✅' : '▫️'} ${RED_LARGO[r]}`, `pt|${f.id}|${r}`)), 2), fila(boton(f.activo ? '⏸️ Pausar' : '▶️ Activar', `pa|${f.id}`), boton('⬅️ Programación', 'fj'))] }
+  };
+}
 async function vistaPlan(fecha, aviso = '') {
   const { ops, opsDia, slots, esHoy } = await datosDia(fecha);
   const pausa = ops.some((o) => o.t === 'pausa');
@@ -131,7 +195,7 @@ async function vistaPlan(fecha, aviso = '') {
   const teclado = [
     ...enFilas(futuras.map((s) => boton(`${s.hora} ${nombreSlot(s)}`, `s|${fecha}|${corta(s.hora)}|${s.pieza || ''}`)), 2),
     fila(boton('➕ Agregar', `a|${fecha}`), boton(pausa ? '▶️ Reanudar día' : '⏸️ Pausar día', `pz|${fecha}`)),
-    fila(opsDia.length ? boton('↩️ Deshacer', `u|${fecha}`) : null, boton('🔁 Fijos', 'fj'), boton('🎬 Videos', 'vp')),
+    fila(opsDia.length ? boton('↩️ Deshacer', `u|${fecha}`) : null, boton('🗓️ Programación', 'fj'), boton('🎬 Videos', 'vp')),
     fila(esHoy ? boton('📰 Noticias', 'n') : null, boton(esHoy ? '📅 Mañana' : '📅 Hoy', `p|${esHoy ? masDias(fecha, 1) : ahoraHN().fecha}`))
   ].filter((f) => f.length);
   const texto = `${aviso ? `${aviso}\n\n` : ''}${mensajePlan(fecha, slots, { estado: esHoy, ops })}\n\n👇 Toca una publicación para quitarla, moverla o cambiarla.`;
@@ -330,11 +394,31 @@ export async function alTocar(data) {
       const donde = rs.length ? ` en ${nombresRedes(rs)}` : '';
       if (alcance === 'd') return hecho(fecha, op, `Agregué ${NOMBRE_PIEZA[pieza]} a las ${larga(hhmm)}${donde}, solo el ${cortoDia(fecha)}.`);
       await registrar(FIJO, { ...op, id: nuevoId(), ...(alcance === 's' ? { dias: [diaSemana(fecha)] } : {}) });
-      return conConfirmacion(await vistaPlan(fecha), `${NOMBRE_PIEZA[pieza]} a las ${larga(hhmm)}${donde} queda en la programación: ${alcance === 's' ? `cada ${DIAS[diaSemana(fecha)]}` : 'todos los días'} (🔁). Se borra en «🔁 Fijos».`);
+      return conConfirmacion(await vistaPlan(fecha), `${NOMBRE_PIEZA[pieza]} a las ${larga(hhmm)}${donde} queda en la programación: ${alcance === 's' ? `cada ${DIAS[diaSemana(fecha)]}` : 'todos los días'} (🔁). Se cambia en «🗓️ Programación».`);
     }
-    case 'fj': return vistaFijos();
+    case 'fj': return vistaProgramacion();
+    case 'pg': return vistaFila(a[0]);
+    // pt|id|red: pone o quita esa red del renglón · pa|id: pausa o activa el renglón
+    case 'pt': case 'pa': {
+      const { filas } = await cargarProgramacion({ fresco: true }), x = filas.find((y) => String(y.id) === a[0]);
+      if (!x) return vistaProgramacion('⚠️ Ya no encuentro ese renglón.');
+      const cambios = c === 'pa' ? { activo: !x.activo } : { [a[1]]: !x[a[1]] };
+      await cambiarFila(x.id, cambios);
+      return vistaFila(x.id, c === 'pa' ? (x.activo ? '⏸️ Pausado: deja de salir desde hoy.' : '▶️ Activo otra vez.') : `✅ ${RED_LARGO[a[1]]}: ${x[a[1]] ? 'ya no va' : 'ahora sí va'}.`);
+    }
+    // Migrar la programación a Supabase (una sola vez): mg = ver qué se haría · mg2 = hacerlo
+    case 'mg': {
+      const r = await migrarProgramacion({ probar: true });
+      if (r.ya) return vistaProgramacion(`La programación ya está en Supabase (${r.filas} renglones).`);
+      return { texto: `🗄️ <b>Pasar la programación a Supabase</b>\n• ${r.filas} renglones (${r.slots} activos), con ${r.fijos} cambio(s) fijo(s) ya aplicados${r.sinAplicar.length ? ` · ${r.sinAplicar.length} que no se pueden pasar (${esc(r.sinAplicar.map((o) => o.t).join(', '))})` : ''}\n• Cambios de días que vienen: ${r.dias.length ? esc(r.dias.map(([k, n]) => `${k} (${n})`).join(', ')) : 'ninguno'}\n\nDesde ahí, Supabase manda: el relojero y este bot leen la tabla.`, teclado: { inline_keyboard: [fila(boton('✅ Pasar ahora', 'mg2'), boton('No', `p|${ahoraHN().fecha}`))] } };
+    }
+    case 'mg2': { const r = await migrarProgramacion(); return vistaProgramacion(r.ya ? 'Ya estaba en Supabase.' : `✅ Listo: ${r.filas} renglones en Supabase.`); }
     case 'vp': return vistaVideos();
     case 'vf': return vistaFuentes();
+    case 'vl': return vistaGenerados(a[0]);
+    case 'vr': return vistaReenvio(a[0]);
+    case 'vs': return vistaReenvio(a[0], decR(a[1]));
+    case 'vy': { const rs = decR(a[1]); return rs.length ? reenviar(a[0], rs) : vistaReenvio(a[0], []); }
     case 'i0': if (!IDEAS) return { texto: 'Los videos desde una idea están apagados por ahora: pídeselos a Claude.', teclado: MENU };
       return { texto: `${PIDE_IDEA}\nEscribe el tema (por ejemplo: daltonismo, agujeros negros, el café, las abejas) y armo el guion con datos de Wikipedia.\n\n¿Prefieres escribirlo con otra IA (ChatGPT…)? Escribe «formato»: te mando lo que necesita saber, y luego me pegas o mandas el guion que te dé.`, teclado: { force_reply: true, input_field_placeholder: 'Ej: daltonismo' } };
     case 'if': {
@@ -395,7 +479,7 @@ export async function alTocar(data) {
 }
 
 // ---------- texto escrito ----------
-const ATAJOS = { ...(IDEAS ? { 'formato': 'if', '/formato': 'if', 'formato para ia': 'if', '💡 idea': 'i0', 'idea': 'i0', '/idea': 'i0' } : {}), '📅 plan de hoy': 'p|hoy', '📅 plan de manana': 'p|manana', '📰 noticias': 'n', '🚀 publicar ya': 'l', '🎬 videos': 'vp', 'videos': 'vp', '/videos': 'vp', 'fuentes': 'vf', '/fuentes': 'vf' };
+const ATAJOS = { ...(IDEAS ? { 'formato': 'if', '/formato': 'if', 'formato para ia': 'if', '💡 idea': 'i0', 'idea': 'i0', '/idea': 'i0' } : {}), '📅 plan de hoy': 'p|hoy', '📅 plan de manana': 'p|manana', '📰 noticias': 'n', '🚀 publicar ya': 'l', '🎬 videos': 'vp', 'videos': 'vp', '/videos': 'vp', 'migrar programacion': 'mg', 'pocas vistas': 'vl|b', 'reenviar': 'vl|b', 'generados': 'vl|t', '/migrar': 'mg', 'programacion': 'fj', '/programacion': 'fj', '🗓️ programacion': 'fj', 'fuentes': 'vf', '/fuentes': 'vf' };
 export async function atender(texto) {
   const hoy = ahoraHN().fecha, manana = masDias(hoy, 1);
   const atajo = ATAJOS[texto.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')];

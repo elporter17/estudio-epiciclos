@@ -170,7 +170,7 @@ export const AYUDA = `<b>Lo que puedo hacer</b> (escribe normal, sin comandos):
 • «cambia el de las 20:30 por emojis» · «en vez de prefieres pon quiz»
 • «agrega un quiz a las 13:00 en fb e ig»
 • «quita instagram del de las 15:45» · «agrega tiktok a retos»
-• «agrega un quiz a las 13:00 todos los días» · «… cada viernes» (si no lo dices, te pregunto). 🔁 Fijos para verlos o borrarlos
+• «agrega un quiz a las 13:00 todos los días» · «… cada viernes» (si no lo dices, te pregunto). 🗓️ Programación para verla: cada envío con sus redes (✅/▫️) y pausarlo
 • «publica ya unos retos» (sale en los próximos minutos)
 • «pausa hoy» / «reanuda» · «deshaz» (anula el último cambio)
 Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (📅 Plan de hoy → toca una publicación).
@@ -180,6 +180,10 @@ Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (�
 • «quita noticia 3» · «fija noticia 5» (va primero)
 • Pega un enlace de una noticia para agregarla
 • «videos»: qué videos 3D y largo vienen
+
+🔁 <b>Reenviar</b>
+• «pocas vistas»: los videos que rindieron poco, para reenviarlos (elige redes) · «generados»: todos los recientes
+• «programacion»: la tabla de Supabase (cada envío con sus redes ✅/▫️)
 • «noticia: Título | resumen corto» para escribirla tú
 
 Piezas: debate (video), debate en imagen, banderas, retos, emojis, quiz, prefieres, cómo se hace, imagen, gta, nombres, futbolista, noticias en video, noticias en imagen, 3D de mediodía / de la tarde.

@@ -191,6 +191,14 @@ jobs:
           for i in 1 2 3; do npm ci && break; [ $i = 3 ] && exit 1; echo "npm ci falló (intento $i), reintento en 30 s"; sleep 30; done
           npx remotion browser ensure
 
+      # Reenvío (republicar.yml): el MP4 que dejó su trabajo «bajar» en esta misma corrida
+      - name: Video a reenviar
+        if: inputs.cats == 'republicar'
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: reenvio
+          path: reenvio
+
       # Token de TikTok e historial de figuras, cifrados con STATE_KEY entre corridas
       - name: Recuperar estado
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
@@ -235,6 +243,9 @@ jobs:
             curiosidades-tiktok) node scripts/curiosidades.mjs --red tiktok --carrusel 5; exit 0 ;;
             # Reels de quiz y curiosidades (curiosidades-reels.yml); «figura» elige el formato: top10, quiz o banderas
             # Contestar los comentarios de los retos (comentarios.yml); out/ vacío para los pasos de resumen
+            # Reenvío de un video ya generado (republicar.yml: el MP4 llega en reenvio/) y vistas de lo publicado (vistas.yml)
+            republicar) node scripts/republicar.mjs --video "$FIGURA_INPUT" --facebook "$R_FB" --instagram "$R_IG" --youtube "$R_YT" --tiktok "$R_TT"; exit 0 ;;
+            vistas) mkdir -p out; node scripts/vistas.mjs; exit 0 ;;
             comentarios) mkdir -p out; if [ "$FIGURA_INPUT" = diagnostico ]; then node scripts/comentarios.mjs --diagnostico; else node scripts/comentarios.mjs; fi; exit 0 ;;
             # Noticias del día para los Reels (noticias.yml) y especial GTA VI (gta6.yml; «figura» = lanzamiento en la mañana)
             noticias) mkdir -p out; node scripts/noticias.mjs; exit 0 ;;
@@ -339,5 +350,6 @@ jobs:
         with:
           name: video-${{ github.run_id }}
           path: out/
-          retention-days: 7
+          # 30 días: de aquí se bajan los videos para reenviarlos (republicar.yml). El repo es público: no cuesta
+          retention-days: 30
           if-no-files-found: ignore

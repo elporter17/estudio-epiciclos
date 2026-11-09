@@ -12,6 +12,7 @@ import { pathToFileURL } from 'node:url';
 import { ROOT } from './lib/node-env.mjs';
 import { parseCli } from './lib/cli.mjs';
 import { graph, facebookReady } from './facebook.mjs';
+import { conGuardia } from './lib/envios.mjs';
 
 let igUser;
 // Id de la cuenta de Instagram vinculada a la página (una consulta por corrida)
@@ -59,7 +60,11 @@ export async function musicaTendencia({ log = (m) => process.stderr.write(m) } =
 
 // audio: id de una canción de musicaTendencia (solo Reels); si Instagram la rechaza, se publica sin ella.
 // tipo carrusel: urls (2 a 10 imágenes JPEG); cada una es un contenedor «is_carousel_item» y luego van juntas
-export async function publishInstagram({ tipo = 'reel', url, urls, caption = '', audio, log = (m) => process.stderr.write(m) }) {
+// Lo que va al feed pasa por conGuardia (scripts/lib/envios.mjs): si ya salió en Instagram, no se repite. Las
+// historias no (duran 24 h y se repiten a propósito)
+export const publishInstagram = (o) => /^historia/.test(o.tipo || '') ? publishInstagramSin(o)
+  : conGuardia({ red: 'ig', tipo: o.tipo || 'reel', url: o.url, urls: o.urls, texto: o.caption }, () => publishInstagramSin(o), (r) => ({ post_id: r.media_id, url: r.permalink }), o.log);
+async function publishInstagramSin({ tipo = 'reel', url, urls, caption = '', audio, log = (m) => process.stderr.write(m) }) {
   const ig = await instagramReady();
   if (!ig) throw new Error('La página no tiene una cuenta de Instagram profesional vinculada o el token no tiene instagram_basic');
   const texto = caption.slice(0, 2200);

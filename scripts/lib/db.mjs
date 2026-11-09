@@ -54,8 +54,74 @@ export async function opDirecta(accion, d = {}) {
       const desde = new Date(Date.now() - (d.dias || 10) * 864e5).toISOString();
       return rest('GET', `noticias?select=link,titulo,medio,cat,estado,publicada_el,formato,redes,creada&estado=in.(publicada,descartada)&or=(publicada_el.gte.${desde},and(estado.eq.descartada,creada.gte.${desde}))&order=publicada_el.desc.nullslast&limit=300`);
     }
+    // ---------- programación (supabase/programacion.sql): la fuente de la verdad de lo que sale y cuándo ----------
+    case 'prog-lista': return rest('GET', 'programacion?select=*&order=hora.asc,id.asc');
+    case 'prog-insertar': {
+      const filas = (d.filas || []).map(filaProg);
+      return filas.length ? rest('POST', 'programacion', filas, 'return=representation') : [];
+    }
+    case 'prog-cambiar': {
+      if (!d.id) return null;
+      return rest('PATCH', `programacion?id=eq.${+d.id}`, { ...filaProg(d.cambios || {}, true), cambiada: new Date().toISOString() }, 'return=representation');
+    }
+    // ---------- cambios de un día (los del bot) ----------
+    case 'cambios-lista': return rest('GET', `cambios?select=clave,op&clave=gte.${encodeURIComponent(d.desde || '2000-01-01')}&order=id.asc&limit=5000`);
+    case 'cambios-agregar': {
+      if (!d.clave || !d.op) return null;
+      await rest('POST', 'cambios', [{ clave: String(d.clave), op: d.op }], 'return=minimal');
+      return 1;
+    }
+    // ---------- envíos (lo que salió, por red) ----------
+    // ¿Ya salió esta huella en esta red en las últimas «horas»? (sin contar los reenvíos que pediste)
+    case 'envio-buscar': {
+      if (!d.red || !d.huella) return [];
+      const desde = new Date(Date.now() - (d.horas || 72) * 3600e3).toISOString();
+      return rest('GET', `envios?select=id,red,titulo,post_id,url,creado&red=eq.${d.red}&huella=eq.${encodeURIComponent(d.huella)}&creado=gte.${desde}&limit=5`);
+    }
+    case 'envio-agregar': {
+      const e = d.envio || {};
+      if (!e.red) return null;
+      await rest('POST', 'envios', [{ red: e.red, huella: e.huella || null, tipo: e.tipo || null, titulo: e.titulo ? String(e.titulo).slice(0, 300) : null, post_id: e.post_id ? String(e.post_id) : null, url: e.url || null, workflow: e.workflow || null, run_id: e.run_id ? String(e.run_id) : null, reenvio: !!e.reenvio }], 'return=minimal');
+      return 1;
+    }
+    case 'envios-lista': {
+      const desde = new Date(Date.now() - (d.dias || 7) * 864e5).toISOString();
+      return rest('GET', `envios?select=*&creado=gte.${desde}&order=creado.desc&limit=2000`);
+    }
+    case 'envio-vistas': {
+      if (!d.id) return null;
+      await rest('PATCH', `envios?id=eq.${+d.id}`, { vistas: Math.round(+d.vistas || 0), vistas_al: new Date().toISOString() }, 'return=minimal');
+      return 1;
+    }
+    // ---------- videos generados ----------
+    case 'video-guardar': {
+      const v = d.video || {};
+      if (!v.huella) return null;
+      const r = await rest('POST', 'videos?on_conflict=huella', [{ huella: v.huella, formato: v.formato || null, titulo: v.titulo ? String(v.titulo).slice(0, 300) : null, descripcion: v.descripcion || null, run_id: v.run_id ? String(v.run_id) : null, artefacto: v.artefacto || null, archivo: v.archivo || null, meta: v.meta || null }], 'resolution=ignore-duplicates,return=representation');
+      return r?.[0] || null;
+    }
+    case 'videos-lista': {
+      const desde = new Date(Date.now() - (d.dias || 30) * 864e5).toISOString();
+      return rest('GET', `videos?select=*&creado=gte.${desde}&order=creado.desc&limit=${Math.min(+d.limite || 200, 500)}`);
+    }
+    case 'video-de': return d.id ? (await rest('GET', `videos?select=*&id=eq.${+d.id}`))?.[0] || null : null;
+    case 'video-vistas': {
+      if (!d.id) return null;
+      const vistas = d.vistas || {}, total = Object.values(vistas).reduce((a, b) => a + (+b || 0), 0);
+      await rest('PATCH', `videos?id=eq.${+d.id}`, { vistas, vistas_total: total, vistas_al: new Date().toISOString() }, 'return=minimal');
+      return 1;
+    }
     default: throw new Error(`Acción desconocida: ${accion}`);
   }
+}
+export const ACCIONES = ['candidatas', 'publicadas', 'descartar', 'recientes', 'prog-lista', 'prog-insertar', 'prog-cambiar', 'cambios-lista', 'cambios-agregar', 'envio-buscar', 'envio-agregar', 'envios-lista', 'envio-vistas', 'video-guardar', 'videos-lista', 'video-de', 'video-vistas'];
+// Un renglón de «programacion» con solo las columnas que existen (parcial = para un PATCH)
+const COLS = ['hora', 'pieza', 'fb', 'ig', 'tt', 'yt', 'dias', 'fecha', 'desde', 'hasta', 'inputs', 'activo', 'nota'];
+function filaProg(f, parcial = false) {
+  const out = {};
+  for (const k of COLS) if (k in f) out[k] = f[k] === undefined ? null : f[k];
+  if (!parcial) for (const r of ['fb', 'ig', 'tt', 'yt']) out[r] = !!out[r];
+  return out;
 }
 
 // Desde cualquier lado: directo si hay claves de Supabase; si no, por /api/datos
@@ -64,10 +130,10 @@ export async function db(accion, d = {}) {
   if (!process.env.TELEGRAM_BOT_TOKEN) return null;
   const r = await fetch(API(), { method: 'POST', signal: AbortSignal.timeout(20000), headers: { 'content-type': 'application/json', 'x-potter-datos': claveDatos() }, body: JSON.stringify({ accion, ...d }) });
   const j = await r.json().catch(() => ({}));
-  if (!r.ok || !j.ok) throw new Error(`Base de noticias: ${j.error || r.status}`);
+  if (!r.ok || !j.ok) throw new Error(`Base de datos: ${j.error || r.status}`);
   return j.resultado;
 }
-const avisar = (e) => { console.error(`Aviso: base de noticias: ${e.message}`); return null; };
+const avisar = (e) => { console.error(`Aviso: base de datos: ${e.message}`); return null; };
 export const guardarCandidatas = (items) => db('candidatas', { items }).catch(avisar);
 export const marcarPublicadas = (items, { formato, redes } = {}) => db('publicadas', { items, formato, redes }).catch(avisar);
 export const descartarNoticia = (link) => db('descartar', { link }).catch(avisar);

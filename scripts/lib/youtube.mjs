@@ -4,6 +4,7 @@
 // Mientras Google no audite el proyecto, YouTube deja privado todo lo que se sube por API.
 // Cuota: 10.000 unidades al día; cada subida cuesta 1.600 (≈ 6 al día), un comentario 50.
 import fs from 'node:fs';
+import { conGuardia } from './envios.mjs';
 
 export const SCOPES = ['https://www.googleapis.com/auth/youtube.upload', 'https://www.googleapis.com/auth/youtube.force-ssl'];
 const API = 'https://www.googleapis.com/youtube/v3';
@@ -53,7 +54,9 @@ export async function ponerMiniatura(videoId, file) {
 
 // Título: máximo 100 caracteres; descripción: 5.000; etiquetas: 500 en total. Shorts: vertical y de hasta 3 min
 // (YouTube lo detecta solo; #Shorts en el título ayuda). categoryId 27 = Educación, 24 = Entretenimiento.
-export async function subirYouTube({ file, titulo, descripcion = '', etiquetas = [], privacidad = 'private', categoria = '27', publicarEn }) {
+// Pasa por conGuardia (scripts/lib/envios.mjs): el mismo archivo no se sube dos veces a YouTube
+export const subirYouTube = (o) => conGuardia({ red: 'yt', tipo: 'short', file: o.file, texto: `${o.titulo}\n${o.descripcion || ''}` }, () => subirYouTubeSin(o), (r) => ({ post_id: r.id, url: r.url }));
+async function subirYouTubeSin({ file, titulo, descripcion = '', etiquetas = [], privacidad = 'private', categoria = '27', publicarEn }) {
   const t = await accessToken(), size = fs.statSync(file).size;
   const tags = []; let n = 0; for (const e of etiquetas) { const x = String(e).replace(/[<>#]/g, '').trim(); if (x && n + x.length + 1 <= 480) { tags.push(x); n += x.length + 1; } }
   const meta = {

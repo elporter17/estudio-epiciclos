@@ -1,0 +1,61 @@
+# Vuelve a publicar un video ya generado (tabla «videos» de Supabase; scripts/republicar.mjs), por ejemplo uno con
+# pocas vistas. Lo pide el bot («🎬 Videos» → 🔁 Reenviar) y lo lanza el relojero. «bajar» trae el MP4 del artefacto
+# de la corrida original (se guardan 30 días) y «publicar» lo sube con daily.yml (estado cifrado y tokens).
+name: Reenvío de un video
+
+on:
+  workflow_dispatch:
+    inputs:
+      video:
+        description: Id del video en la tabla «videos» de Supabase
+        type: string
+      run:
+        description: Corrida de GitHub donde se generó (su artefacto video-<corrida>)
+        type: string
+      archivo:
+        description: Ruta del MP4 dentro del artefacto
+        type: string
+      redes:
+        description: Redes (fb,ig,tt,yt)
+        type: string
+        default: 'fb,ig'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  bajar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - name: Bajar el MP4 de su corrida
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN: ${{ inputs.run }}
+          ARCHIVO: ${{ inputs.archivo }}
+        run: |
+          case "$RUN" in ''|*[!0-9]*) echo "Corrida inválida"; exit 1 ;; esac
+          case "$ARCHIVO" in ''|/*|*..*) echo "Archivo inválido"; exit 1 ;; esac
+          gh run download "$RUN" -R "$GITHUB_REPOSITORY" -n "video-$RUN" -D bajado
+          mkdir -p reenvio && cp "bajado/$ARCHIVO" reenvio/video.mp4
+          ls -la reenvio
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: reenvio
+          path: reenvio/
+          retention-days: 1
+
+  publicar:
+    needs: bajar
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: republicar
+      publish: draft
+      facebook: si
+      figura: ${{ inputs.video }}
+      redes: ${{ inputs.redes }}
+    secrets: inherit
