@@ -27,6 +27,7 @@ const PIEZAS = {
   estrella: { workflow: R, que: 'Reel estrella: banderas o retos (un día cada uno)', inputs: { formato: 'estrella' } },
   prefieres: { workflow: R, que: 'Reel de relleno: ¿qué prefieres?', inputs: { formato: 'prefieres' } },
   emojis: { workflow: R, que: 'Reel: adivina con emojis', inputs: { formato: 'emojis' } },
+  datos: { workflow: R, que: 'Reel: 5 cosas de un tema que nadie te contó (con narrador)', inputs: { formato: 'datos5' } },
   quiz: { workflow: R, que: 'Reel de relleno: quiz o top 10', inputs: { formato: 'auto' } },
   comosehace: { workflow: 'como-se-hace.yml', que: 'Cómo se hace: la fábrica en 2D (más de 1 min)' },
   video3d1: { workflow: 'video3d.yml', que: 'Video 3D de datos (mediodía)', inputs: { modo: 'publicar', turno: 'mediodia' } },
@@ -51,8 +52,8 @@ const SOLO_TT = new Set(['nombres', 'famosos']);
 // 15:45 siguen en Instagram, TikTok y YouTube
 const PLAN = {
   fb: { '09:00': 'banderas', '12:17': 'video3d1', '13:45': 'gta', '14:30': 'debate', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
-  ig: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:45': 'retos', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
-  tt: { '07:30': 'noticias', '08:15': 'nombres', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:00': 'famosos', '18:30': 'video3d2', '20:30': 'estrella' },
+  ig: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:45': 'retos', '17:15': 'datos', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
+  tt: { '07:30': 'noticias', '08:15': 'nombres', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:00': 'famosos', '17:15': 'datos', '18:30': 'video3d2', '20:30': 'estrella' },
   yt: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '18:30': 'video3d2' }
 };
 // Junta los planes: una corrida por hora y pieza, con las redes que la piden
@@ -182,6 +183,7 @@ export const ALIAS = Object.entries({
   estrella: ['estrella'],
   prefieres: ['que prefieres', 'prefieres'],
   emojis: ['emojis', 'emoji'],
+  datos: ['5 datos', 'cinco datos', 'datos en video', 'cosas que nadie te conto', '5 cosas'],
   quiz: ['quiz', 'top 10', 'top10', 'trivia'],
   debateimg: ['debate en imagen', 'imagen de debate', 'debate imagen', 'error a proposito', 'cuantos ves'],
   debate: ['retos que dividen', 'reel de debate', 'debate', 'dividen'],
@@ -195,7 +197,7 @@ export const ALIAS = Object.entries({
   famosos: ['futbolistas', 'futbolista', 'jugadores', 'jugador', 'famosos', 'futbol'],
   largo: ['video largo', 'largo de youtube']
 }).flatMap(([p, xs]) => xs.map((x) => [x, p])).sort((a, b) => b[0].length - a[0].length);
-export const NOMBRE_PIEZA = { comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Banderas/Retos', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB', reenvio: 'Reenvío' };
+export const NOMBRE_PIEZA = { comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Banderas/Retos', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB', reenvio: 'Reenvío', datos: '5 datos (video)' };
 export const nombreSlot = (s) => NOMBRE_PIEZA[s.pieza] || (s.workflow === 'metas.yml' ? 'Metas FB' : NOMBRES[s.workflow] || s.workflow);
 
 // Tabla para Telegram (va dentro de <pre>): hora, pieza y redes; con estado si viene de diaConEstado

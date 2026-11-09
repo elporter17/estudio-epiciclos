@@ -28,7 +28,7 @@ import { yaSalieronDb, marcarPublicadas } from './lib/db.mjs';
 import { cambiosDe, noticiasConCambios, noticiasGuardadas, guardarNoticias } from './lib/control.mjs';
 import { hoyHN } from './lib/video3d-cola.mjs';
 import { ponerFondos, guardarStock } from './lib/stock.mjs';
-import { textoConTono } from './lib/tono.mjs';
+import { textoConTono, vozConTono, tonoDe } from './lib/tono.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades');
 const HIST = path.join(ROOT, 'data', 'curiosidades-video-historial.json'), HIST_IMG = path.join(ROOT, 'data', 'curiosidades-historial.json');
@@ -124,6 +124,31 @@ function top10(base, hist, temaPedido) {
   const tags = ['curiosidades', 'sabiasque', 'datoscuriosos', 'aprende', ...(T ? T.tags : ['cultura']), 'reels', 'potterplay'];
   const texto = `🤯 10 cosas que no sabías hace 1 minuto${T ? ` · ${T.nombre}` : ''}\n\n¿Cuántas de las 10 ya sabías? Seguro hay una que te sorprendió.${OCULTAR}Las 10 de hoy:\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n${[...new Set(tags)].map((t) => `#${t}`).join(' ')}`;
   return { formato: 'top10', titulo: `10 cosas que no sabías${T ? ` · ${T.nombre}` : ''}`, escenas, texto, ids: datos.map((d) => d.id) };
+}
+
+// 5 cosas de un tema que nadie te contó (2026-11-09): lo mismo que el carrusel de datos de Facebook, pero en video con
+// narrador y gancho (retiene más). Facebook sigue con las imágenes; este va a Instagram, TikTok y YouTube
+const TEMA_CORTO = { animales: 'los animales', ciencia: 'el espacio', historia: 'la historia', deportes: 'el fútbol', inventos: 'los inventos', cuerpo: 'tu cuerpo', geografia: 'el mundo', comida: 'la comida', tecnologia: 'la tecnología' };
+// «de» + «el espacio» → «del espacio»
+const deTema = (t) => TEMA_CORTO[t].startsWith('el ') ? `del ${TEMA_CORTO[t].slice(3)}` : `de ${TEMA_CORTO[t]}`;
+function datos5(base, hist, temaPedido) {
+  const libres = (t) => disponibles(base, hist, (x) => x.tema === t && x.tipo !== 'reto');
+  const ultimo = hist.temas5?.at(-1);
+  const cand = Object.keys(TEMA_CORTO).map((t) => [t, libres(t).length]).filter(([t, n]) => n >= 5 && t !== ultimo).sort((a, b) => b[1] - a[1]);
+  const tema = temaPedido && TEMA_CORTO[temaPedido] ? temaPedido : cand.length ? azar(cand.slice(0, 4))[0] : azar(Object.keys(TEMA_CORTO));
+  const datos = tomar(libres(tema), 5, 120);
+  if (datos.length < 5) return null;
+  const T = TEMAS[tema] || TEMAS.ciencia, clave = `datos5|${new Date().toISOString().slice(0, 10)}|${tema}`;
+  const escenas = [
+    { tipo: 'intro', dur: INTRO + 0.6, tema, portada: true, consulta: datos[0].foto, sonidos: introSonidos, iconos: datos.map((d) => d.icono),
+      lineas: [{ texto: '5 COSAS', size: 140, color: T.acento }, { texto: deTema(tema).toUpperCase(), size: 110 }, { texto: 'QUE NADIE TE CONTÓ', size: 84 }],
+      voz: vozConTono(`Cinco cosas ${deTema(tema)} que nadie te contó.`, clave) },
+    ...datos.map((d, i) => ({ tipo: 'dato', dur: DATO, tema, idx: i, total: datos.length, n: i + 1, icono: d.icono, texto: d.dato, consulta: d.foto, sonidos: [[0, 'whoosh'], [0.05, 'pop']],
+      voz: `${i === 2 ? `${tonoDe(clave).medio} ` : ''}${d.dato}` })),
+    { ...cierre(tema, '¿CUÁNTAS YA SABÍAS?', 'Comenta del 0 al 5'), voz: tonoDe(clave).cierre }
+  ];
+  const texto = `🤯 5 cosas ${deTema(tema)} que nadie te contó. ¿Cuántas ya sabías? Comenta del 0 al 5 👇${OCULTAR}Las 5:\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n${tags('curiosidades', 'sabiasque', 'datoscuriosos', 'aprende', ...(T.tags || []))}`;
+  return { formato: 'datos5', titulo: `5 cosas ${deTema(tema)} que nadie te contó`, escenas, texto, ids: datos.map((d) => d.id), tema5: tema };
 }
 
 function quiz(base, hist) {
@@ -329,7 +354,7 @@ async function main() {
   const diaHN = Math.floor((Date.now() - 6 * 3600e3) / 86400e3);
   const formato = o.formato === 'estrella' ? (diaHN % 2 ? 'retos' : 'banderas') : o.formato !== 'auto' ? o.formato : ROTACION[paso % ROTACION.length];
   const base = cargarDatos();
-  const hacer = { debate: debateVideo, comosehace: () => comoSeHace(hist), top10: () => top10(base, hist, o.tema), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
+  const hacer = { debate: debateVideo, comosehace: () => comoSeHace(hist), top10: () => top10(base, hist, o.tema), datos5: () => datos5(base, hist, o.tema), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
   if (!hacer[formato]) throw new Error(`--formato debe ser ${Object.keys(hacer).join(', ')} o auto`);
   // Si un formato no tiene material (sin noticias frescas, por ejemplo), sale un quiz
   const pieza = (await hacer[formato]()) || quiz(base, hist);
@@ -403,6 +428,7 @@ async function main() {
     if (pieza.noticiasItems?.length) await marcarPublicadas(pieza.noticiasItems, { formato: 'reel', redes: [o.facebook !== 'no' && 'fb', o.instagram !== 'no' && 'ig', o.tiktok === 'draft' && 'tt', o.youtube !== 'no' && 'yt'].filter(Boolean) });
     hist.prefieres = hist.prefieres.slice(-150); hist.emojis = hist.emojis.slice(-160); hist.noticias = hist.noticias.slice(-300);
     hist.formatos.push(pieza.formato); hist.total++;
+    if (pieza.tema5) hist.temas5 = [...(hist.temas5 || []), pieza.tema5].slice(-10);
     hist.ids = hist.ids.slice(-500); hist.retos = hist.retos.slice(-60); hist.banderas = hist.banderas.slice(-150); hist.formatos = hist.formatos.slice(-100);
     fs.writeFileSync(HIST, JSON.stringify(hist, null, 2) + '\n');
   }
