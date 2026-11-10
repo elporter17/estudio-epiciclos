@@ -24,7 +24,9 @@ const PIEZAS = {
   noticias: { workflow: R, que: 'Reel: noticias de hoy', inputs: { formato: 'noticias' } },
   banderas: { workflow: R, que: 'Reel estrella: banderas', inputs: { formato: 'banderas' } },
   retos: { workflow: R, que: 'Reel estrella: retos visuales', inputs: { formato: 'retos' } },
-  estrella: { workflow: R, que: 'Reel estrella: banderas o retos (un día cada uno)', inputs: { formato: 'estrella' } },
+  estrella: { workflow: R, que: 'Reel estrella: retos visuales o retos de geografía (un día cada uno)', inputs: { formato: 'estrella' } },
+  // Retos de geografía difíciles (2026-11-10): mixto, siluetas, banderas gemelas o capitales trampa (rotan)
+  geo: { workflow: R, que: 'Reel: retos de geografía difíciles (siluetas, gemelas, capitales trampa…)', inputs: { formato: 'geo' } },
   prefieres: { workflow: R, que: 'Reel de relleno: ¿qué prefieres?', inputs: { formato: 'prefieres' } },
   emojis: { workflow: R, que: 'Reel: adivina con emojis', inputs: { formato: 'emojis' } },
   datos: { workflow: R, que: 'Reel: 5 cosas de un tema que nadie te contó (con narrador)', inputs: { formato: 'datos5' } },
@@ -181,6 +183,7 @@ export const ALIAS = Object.entries({
   banderas: ['banderas', 'bandera'],
   retos: ['retos visuales', 'retos', 'reto'],
   estrella: ['estrella'],
+  geo: ['retos de geografia', 'geografia', 'siluetas', 'silueta', 'banderas gemelas', 'gemelas', 'capitales', 'capitales trampa'],
   prefieres: ['que prefieres', 'prefieres'],
   emojis: ['emojis', 'emoji'],
   datos: ['5 datos', 'cinco datos', 'datos en video', 'cosas que nadie te conto', '5 cosas'],
@@ -197,7 +200,7 @@ export const ALIAS = Object.entries({
   famosos: ['futbolistas', 'futbolista', 'jugadores', 'jugador', 'famosos', 'futbol'],
   largo: ['video largo', 'largo de youtube']
 }).flatMap(([p, xs]) => xs.map((x) => [x, p])).sort((a, b) => b[0].length - a[0].length);
-export const NOMBRE_PIEZA = { comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Banderas/Retos', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB', reenvio: 'Reenvío', datos: '5 datos (video)' };
+export const NOMBRE_PIEZA = { comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Retos/Geografía', geo: 'Geografía difícil', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB', reenvio: 'Reenvío', datos: '5 datos (video)' };
 export const nombreSlot = (s) => NOMBRE_PIEZA[s.pieza] || (s.workflow === 'metas.yml' ? 'Metas FB' : NOMBRES[s.workflow] || s.workflow);
 
 // Tabla para Telegram (va dentro de <pre>): hora, pieza y redes; con estado si viene de diaConEstado

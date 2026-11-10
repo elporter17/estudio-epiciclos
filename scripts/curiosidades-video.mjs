@@ -29,6 +29,7 @@ import { cambiosDe, noticiasConCambios, noticiasGuardadas, guardarNoticias } fro
 import { hoyHN } from './lib/video3d-cola.mjs';
 import { ponerFondos, guardarStock } from './lib/stock.mjs';
 import { textoConTono, vozConTono, tonoDe } from './lib/tono.mjs';
+import * as GEO from './lib/geo-retos.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades');
 const HIST = path.join(ROOT, 'data', 'curiosidades-video-historial.json'), HIST_IMG = path.join(ROOT, 'data', 'curiosidades-historial.json');
@@ -191,24 +192,136 @@ function banderas(hist) {
   const elegir = (lista, n, ya) => mezclar(lista.filter((c) => !ya.has(c) && !recientes.has(c))).concat(mezclar(lista.filter((c) => !ya.has(c)))).filter((c, i, a) => a.indexOf(c) === i).slice(0, n);
   const ya = new Set();
   const paises = [];
-  for (const [lista, n] of [[FACILES, 3], [MEDIOS.filter((c) => TODOS.includes(c)), 4], [TODOS.filter((c) => !FACILES.includes(c) && !MEDIOS.includes(c)), 3]]) {
+  // 2026-11-10: «muy fáciles», decían en los comentarios → 2 fáciles, 3 medias, 3 difíciles y 2 GOD (de países que casi
+  // nadie conoce), menos tiempo al final y la 9 pixelada
+  for (const [lista, n] of [[FACILES, 2], [GEO.MEDIOS.filter((c) => TODOS.includes(c)), 3], [GEO.DIFICILES.filter((c) => TODOS.includes(c)), 3], [GEO.GOD.filter((c) => TODOS.includes(c)), 2]]) {
     for (const c of elegir(lista, n, ya)) { ya.add(c); paises.push(c); }
   }
   const escenas = [
     { tipo: 'intro', dur: INTRO, tema: 'historia', portada: true, sonidos: introSonidos, iconos: mezclar(FACILES).slice(0, 5).map(bandera),
-      lineas: [{ texto: 'ADIVINA', size: 120 }, { texto: 'LAS 10', size: 160, color: TEMAS.historia.acento }, { texto: 'BANDERAS', size: 120 }, { texto: 'De fácil a imposible 🔥', size: 54, color: 'rgba(255,255,255,0.8)' }] },
+      lineas: [{ texto: 'ADIVINA', size: 120 }, { texto: 'LAS 10', size: 160, color: TEMAS.historia.acento }, { texto: 'BANDERAS', size: 120 }, { texto: 'De fácil a GOD 💀', size: 54, color: 'rgba(255,255,255,0.8)' }] },
     ...paises.map((c, i) => {
       // Dos opciones falsas del mismo continente (más difícil que al azar)
       const otros = mezclar(CONTINENTES[continente(c)].split(' ').filter((x) => x !== c)).slice(0, 2);
-      const ops = mezclar([c, ...otros]), piensa = 3.5;
-      return { tipo: 'opciones', dur: piensa + 1.6, piensa, idx: i, total: 10, tema: 'historia', etiqueta: i < 3 ? 'FÁCIL 🟢' : i < 6 ? 'MEDIO 🟡' : i < 8 ? 'DIFÍCIL 🟠' : i === 8 ? 'IMPOSIBLE 🔴' : 'GOD 💀',
-        bandera: bandera(c), opciones: ops.map(nombrePais), respuesta: ops.indexOf(c), sonidos: cuenta(piensa, 'bien') };
+      const ops = mezclar([c, ...otros]), piensa = [3.5, 3.5, 3.5, 3.5, 3.5, 3, 3, 3, 3.5, 2.5][i];
+      return { tipo: 'opciones', dur: piensa + 1.6, piensa, idx: i, total: 10, tema: 'historia', etiqueta: i < 2 ? 'FÁCIL 🟢' : i < 5 ? 'MEDIO 🟡' : i < 8 ? 'DIFÍCIL 🟠' : i === 8 ? 'IMPOSIBLE 🔴 · PIXELADA' : 'GOD 💀 · 2 SEGUNDOS',
+        geo: { c, modo: i === 8 ? 'pixel' : 'bandera' }, opciones: ops.map(nombrePais), respuesta: ops.indexOf(c), sonidos: cuenta(piensa, 'bien') };
     }),
     { tipo: 'cierre', dur: CIERRE, tema: 'historia', sonidos: [[0, 'final']],
       lineas: [{ texto: '¿CUÁNTAS ADIVINASTE?', size: 100, color: TEMAS.historia.acento }, { texto: '¿Cuántas de las 10 sacaste?', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
-  const texto = `🌎 Adivina las 10 banderas: de fácil a imposible\n\nTienes menos de 4 segundos por bandera. ¿Cuántas sacaste de 10? La última es la más difícil.${OCULTAR}Respuestas:\n${paises.map((c, i) => `${i + 1}. ${bandera(c)} ${nombrePais(c)}`).join('\n')}\n\n#banderas #geografia #quiz #trivia #paises #curiosidades #reels #potterplay`;
+  const texto = `🌎 Adivina las 10 banderas: de fácil a GOD 💀\n\nMenos de 4 segundos por bandera, una pixelada y la última en 2 segundos. Si sacas 10 de 10, comenta «GOD» 👇${OCULTAR}Respuestas:\n${paises.map((c, i) => `${i + 1}. ${bandera(c)} ${nombrePais(c)}`).join('\n')}\n\n#banderas #geografia #quiz #trivia #paises #curiosidades #reels #potterplay`;
   return { formato: 'banderas', titulo: 'Adivina las 10 banderas', escenas, texto, banderas: paises };
+}
+
+// ---------- retos de geografía difíciles (2026-11-10; scripts/lib/geo-retos.mjs) ----------
+// «geo» rota entre: mixto (10 retos distintos, de fácil a GOD), siluetas, gemelas y capitales trampa
+const VARIANTES_GEO = ['mixto', 'siluetas', 'gemelas', 'mixto', 'capitales'];
+const NIVEL = (i, n) => { const k = i / (n - 1); return k < 0.2 ? 'FÁCIL 🟢' : k < 0.5 ? 'MEDIO 🟡' : k < 0.8 ? 'DIFÍCIL 🟠' : i === n - 1 ? 'GOD 💀' : 'IMPOSIBLE 🔴'; };
+const RED_GEO = (c) => continente(c) || GEO.continenteDe(c);
+// Dos países falsos del mismo continente (si se puede, que también tengan silueta)
+function otrosDe(c, { silueta = false } = {}) {
+  const cont = continente(c), base = cont ? CONTINENTES[cont].split(' ') : TODOS;
+  return mezclar(base.filter((x) => x !== c && (!silueta || GEO.tieneSilueta(x)))).slice(0, 2);
+}
+// Siluetas que se reconocen (con forma: no islitas de pocos puntos)
+const conForma = (c) => {
+  const x = GEO.siluetas()[c]; if (!x) return false;
+  const pts = x.r.reduce((a, r) => a + r.length, 0), mayor = Math.max(...x.r.map((r) => r.length));
+  // Archipiélagos de islitas sueltas (Islas Marshall, Kiribati…) no se reconocen: fuera
+  return c !== 'KI' && pts >= 22 && mayor >= pts * 0.45 && x.r.length <= 8;
+};
+const SIL_FACILES = 'IT CL BR MX US AR JP IN AU ES GB FR CA RU CN EG'.split(' ').filter(conForma);
+const SIL_MEDIOS = 'HN CU PE CO VE NO SE GR TR PH ID NZ MG PT DE UA KR VN TH ZA SA IR NG KE'.split(' ').filter(conForma);
+const SIL_DIFICILES = GEO.DIFICILES.filter(conForma), SIL_GOD = GEO.GOD.filter(conForma);
+
+function nuevoUso(hist, clave, lista, n, ya = new Set()) {
+  const recientes = new Set((hist[clave] || []).slice(-Math.max(0, lista.length - n * 2)));
+  return mezclar(lista.filter((x) => !ya.has(x) && !recientes.has(x))).concat(mezclar(lista.filter((x) => !ya.has(x)))).filter((x, i, a) => a.indexOf(x) === i).slice(0, n);
+}
+// Un reto suelto de cada tipo → { escena, respuesta (para la descripción) }
+const RETO = {
+  bandera(c, i, n, piensa = 3.5, modo = 'bandera', extra = '') {
+    const ops = mezclar([c, ...otrosDe(c)]);
+    return { escena: { tipo: 'opciones', dur: piensa + 1.6, piensa, idx: i, total: n, tema: 'geografia', etiqueta: `${NIVEL(i, n)}${extra}`, geo: { c, modo, foco: [0.2 + Math.random() * 0.6, 0.25 + Math.random() * 0.5] }, opciones: ops.map(nombrePais), respuesta: ops.indexOf(c), sonidos: cuenta(piensa, 'bien') }, respuesta: `${bandera(c)} ${nombrePais(c)}` };
+  },
+  silueta(c, i, n, piensa = 4.5) {
+    const ops = mezclar([c, ...otrosDe(c, { silueta: true })]);
+    return { escena: { tipo: 'opciones', dur: piensa + 1.8, piensa, idx: i, total: n, tema: 'geografia', etiqueta: `${NIVEL(i, n)} · SILUETA`, pregunta: '¿Qué país es?', geo: { c, modo: 'silueta' }, opciones: ops.map(nombrePais), respuesta: ops.indexOf(c), sonidos: cuenta(piensa, 'bien') }, respuesta: `Silueta: ${nombrePais(c)} ${bandera(c)}` };
+  },
+  capital([c, ok, ...trampas], i, n, piensa = 4.5) {
+    const ops = mezclar([ok, ...trampas.slice(0, 2)]);
+    return { escena: { tipo: 'opciones', dur: piensa + 2.2, piensa, idx: i, total: n, tema: 'geografia', etiqueta: `${NIVEL(i, n)} · CAPITAL`, texto: `¿Cuál es la capital de ${nombrePais(c)}? ${bandera(c)}`, opciones: ops, respuesta: ops.indexOf(ok), explicacion: `La capital de ${nombrePais(c)} es ${ok}, no ${trampas[0]}.`, sonidos: cuenta(piensa, 'bien') }, respuesta: `Capital de ${nombrePais(c)}: ${ok}` };
+  },
+  continente(c, i, n, piensa = 4) {
+    const ok = GEO.continenteDe(c), ops = mezclar([ok, ...mezclar(Object.keys(GEO.CONTINENTE_DIFICIL).filter((x) => x !== ok)).slice(0, 2)]);
+    return { escena: { tipo: 'opciones', dur: piensa + 1.8, piensa, idx: i, total: n, tema: 'geografia', etiqueta: `${NIVEL(i, n)} · CONTINENTE`, pregunta: '¿De qué continente es?', revela: `Es ${nombrePais(c)}`, geo: { c, modo: 'bandera' }, opciones: ops, respuesta: ops.indexOf(ok), sonidos: cuenta(piensa, 'bien') }, respuesta: `${bandera(c)} ${nombrePais(c)}: ${ok}` };
+  },
+  gemelas(grupo, i, n, piensa = 4.5) {
+    const items = mezclar(grupo).map((c) => ({ c, nota: nombrePais(c) })), k = Math.floor(Math.random() * items.length);
+    return { escena: { tipo: 'cuadros', dur: piensa + 2.2, piensa, idx: i, total: n, tema: 'geografia', etiqueta: `${NIVEL(i, n)} · GEMELAS`, pregunta: `¿Cuál es la bandera de ${nombrePais(items[k].c)}?`, items, respuesta: k, sonidos: cuenta(piensa, 'bien') }, respuesta: `Gemelas: ${items.map((x, j) => `${'ABCD'[j]}) ${x.nota}`).join(', ')}` };
+  },
+  real(c, falsas, i, n, piensa = 5) {
+    const NOTA = { espejo: 'ESPEJO', volteada: 'AL REVÉS', giro: 'GIRADA', colores: 'COLORES', colores2: 'COLORES' };
+    const items = mezclar([{ c, v: 'real', nota: '✅ REAL' }, ...falsas.map((v) => ({ c, v, nota: NOTA[v] }))]);
+    return { escena: { tipo: 'cuadros', dur: piensa + 2.2, piensa, idx: i, total: n, tema: 'geografia', etiqueta: `${NIVEL(i, n)} · ¿CUÁL ES LA REAL?`, pregunta: `¿Cuál es la bandera REAL de ${nombrePais(c)}?`, items, respuesta: items.findIndex((x) => x.v === 'real'), sonidos: cuenta(piensa, 'bien') }, respuesta: `La real de ${nombrePais(c)}: la ${'ABCD'[items.findIndex((x) => x.v === 'real')]}` };
+  }
+};
+function geoVideo(hist, emojiFam, pedida) {
+  const variante = VARIANTES_GEO.includes(pedida) ? pedida : VARIANTES_GEO[(hist.geoN || 0) % VARIANTES_GEO.length];
+  const ya = new Set(), retos = [], usados = { banderas: [], capitales: [], gemelas: [] };
+  const uno = (clave, lista, n = 1) => { const r = nuevoUso(hist, clave, lista, n, ya); r.forEach((x) => { ya.add(x); usados[clave === 'capitales' ? 'capitales' : 'banderas'].push(x); }); return r; };
+  const conBandera = (l) => l.filter((c) => GEO.banderaValida(c, emojiFam));
+  let titulo, lineas, texto0, n;
+  if (variante === 'siluetas') {
+    n = 10; titulo = 'Adivina el país por su silueta';
+    const lista = [...uno('banderas', SIL_FACILES, 2), ...uno('banderas', SIL_MEDIOS, 3), ...uno('banderas', SIL_DIFICILES, 3), ...uno('banderas', SIL_GOD, 2)];
+    lista.forEach((c, i) => retos.push(RETO.silueta(c, i, n, [4.5, 4.5, 4.5, 4, 4, 4, 3.5, 3.5, 3.5, 3][i])));
+    lineas = [{ texto: 'ADIVINA', size: 120 }, { texto: 'EL PAÍS', size: 150, color: TEMAS.geografia.acento }, { texto: 'POR SU SILUETA', size: 96 }];
+    texto0 = '🗺️ Adivina el país solo por su silueta: de fácil a GOD 💀. ¿Cuántas sacas de 10? Comenta tu puntaje 👇';
+  } else if (variante === 'gemelas') {
+    n = 8; titulo = 'Banderas gemelas: ¿cuál es cuál?';
+    const grupos = nuevoUso(hist, 'gemelas', GEO.GEMELAS.map((g) => g.join('-')), n).map((g) => g.split('-'));
+    usados.gemelas = grupos.map((g) => g.join('-'));
+    grupos.forEach((g, i) => retos.push(RETO.gemelas(g, i, n, i < 3 ? 4.5 : 4)));
+    lineas = [{ texto: 'BANDERAS', size: 130 }, { texto: 'GEMELAS', size: 150, color: TEMAS.geografia.acento }, { texto: '¿CUÁL ES CUÁL?', size: 96 }];
+    texto0 = '👯 Banderas gemelas: casi iguales, pero no. ¿Cuántas distingues de 8? El 90 % falla la última 👇';
+  } else if (variante === 'capitales') {
+    n = 10; titulo = 'Capitales trampa';
+    const lista = nuevoUso(hist, 'capitales', GEO.CAPITALES.map((x) => x[0]), n);
+    usados.capitales = lista;
+    lista.forEach((c, i) => retos.push(RETO.capital(GEO.CAPITALES.find((x) => x[0] === c), i, n, [4.5, 4.5, 4, 4, 4, 4, 3.5, 3.5, 3.5, 3][i])));
+    lineas = [{ texto: 'CAPITALES', size: 130, color: TEMAS.geografia.acento }, { texto: 'TRAMPA', size: 150 }, { texto: 'Casi todos dicen la ciudad famosa', size: 50, color: 'rgba(255,255,255,0.85)' }];
+    texto0 = '🏛️ Capitales trampa: la respuesta NO es la ciudad más famosa. ¿Cuántas sacas de 10? Comenta tu puntaje 👇';
+  } else {
+    n = 10; titulo = '10 retos de geografía: de fácil a GOD';
+    const realDe = mezclar(conBandera([...GEO.MEDIOS, ...FACILES])).map((c) => [c, GEO.falsas(c, emojiFam)]).find(([c, fs]) => fs && !ya.has(c));
+    const gem = nuevoUso(hist, 'gemelas', GEO.GEMELAS.map((g) => g.join('-')), 1)[0].split('-'); usados.gemelas = [gem.join('-')];
+    const cap = nuevoUso(hist, 'capitales', GEO.CAPITALES.map((x) => x[0]), 1)[0]; usados.capitales = [cap];
+    const cont = uno('banderas', conBandera(Object.values(GEO.CONTINENTE_DIFICIL).join(' ').split(' ')))[0];
+    retos.push(
+      RETO.bandera(uno('banderas', conBandera(FACILES))[0], 0, n, 3),
+      RETO.capital(GEO.CAPITALES.find((x) => x[0] === cap), 1, n, 4),
+      RETO.gemelas(gem, 2, n, 4),
+      RETO.silueta(uno('banderas', SIL_MEDIOS)[0], 3, n, 4),
+      RETO.bandera(uno('banderas', conBandera(GEO.MEDIOS))[0], 4, n, 4, 'pixel', ' · PIXELADA'),
+      realDe ? RETO.real(realDe[0], realDe[1], 5, n, 4.5) : RETO.bandera(uno('banderas', conBandera(GEO.DIFICILES))[0], 5, n, 3.5),
+      RETO.continente(cont, 6, n, 3.5),
+      RETO.bandera(uno('banderas', conBandera(GEO.DIFICILES))[0], 7, n, 4, 'zoom', ' · ZOOM'),
+      RETO.silueta(uno('banderas', SIL_DIFICILES)[0], 8, n, 3.5),
+      RETO.bandera(uno('banderas', conBandera(GEO.GOD))[0], 9, n, 2.5, 'bandera', ' · 2 SEGUNDOS')
+    );
+    lineas = [{ texto: '10 RETOS', size: 140, color: TEMAS.geografia.acento }, { texto: 'DE GEOGRAFÍA', size: 110 }, { texto: 'De fácil a GOD 💀', size: 60, color: 'rgba(255,255,255,0.85)' }];
+    texto0 = '🌎 10 retos de geografía de fácil a GOD 💀: banderas, siluetas, capitales trampa, gemelas, pixelada y una falsa. ¿Hasta qué nivel llegas? Comenta tu puntaje 👇';
+  }
+  const iconos = mezclar(conBandera(FACILES)).slice(0, 5).map(bandera);
+  const escenas = [
+    { tipo: 'intro', dur: INTRO, tema: 'geografia', portada: true, sonidos: introSonidos, iconos, lineas },
+    ...retos.map((r) => r.escena),
+    cierre('geografia', '¿CUÁNTAS SACASTE?', `Comenta tu puntaje de ${n}`)
+  ];
+  const texto = `${texto0}${OCULTAR}Respuestas:\n${retos.map((r, i) => `${i + 1}. ${r.respuesta}`).join('\n')}\n\n${tags('geografia', 'banderas', 'paises', 'quiz', 'trivia', 'retos')}`;
+  return { formato: 'geo', variante, titulo, escenas, texto, banderas: usados.banderas, geo: usados };
 }
 
 // ---------- retos visuales, ¿qué prefieres?, emojis y noticias (2026-11-01) ----------
@@ -352,9 +465,10 @@ async function main() {
   if (ROTACION[paso % ROTACION.length] === hist.formatos.at(-1)) paso++;
   // «estrella»: los dos formatos que más vistas tienen en Instagram (Banderas y Retos, ~1.250 de mediana), un día cada uno
   const diaHN = Math.floor((Date.now() - 6 * 3600e3) / 86400e3);
-  const formato = o.formato === 'estrella' ? (diaHN % 2 ? 'retos' : 'banderas') : o.formato !== 'auto' ? o.formato : ROTACION[paso % ROTACION.length];
+  // «estrella»: retos un día y los retos de geografía (geo) el otro; las banderas (ya más difíciles) quedan a las 9:00
+  const formato = o.formato === 'estrella' ? (diaHN % 2 ? 'retos' : 'geo') : o.formato !== 'auto' ? o.formato : ROTACION[paso % ROTACION.length];
   const base = cargarDatos();
-  const hacer = { debate: debateVideo, comosehace: () => comoSeHace(hist), top10: () => top10(base, hist, o.tema), datos5: () => datos5(base, hist, o.tema), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
+  const hacer = { debate: debateVideo, comosehace: () => comoSeHace(hist), top10: () => top10(base, hist, o.tema), datos5: () => datos5(base, hist, o.tema), geo: () => geoVideo(hist, emojiFont, o.tema), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
   if (!hacer[formato]) throw new Error(`--formato debe ser ${Object.keys(hacer).join(', ')} o auto`);
   // Si un formato no tiene material (sin noticias frescas, por ejemplo), sale un quiz
   const pieza = (await hacer[formato]()) || quiz(base, hist);
@@ -429,6 +543,7 @@ async function main() {
     hist.prefieres = hist.prefieres.slice(-150); hist.emojis = hist.emojis.slice(-160); hist.noticias = hist.noticias.slice(-300);
     hist.formatos.push(pieza.formato); hist.total++;
     if (pieza.tema5) hist.temas5 = [...(hist.temas5 || []), pieza.tema5].slice(-10);
+    if (pieza.geo) { hist.geoN = (hist.geoN || 0) + 1; for (const k of ['capitales', 'gemelas']) hist[k] = [...(hist[k] || []), ...pieza.geo[k]].slice(-60); }
     hist.ids = hist.ids.slice(-500); hist.retos = hist.retos.slice(-60); hist.banderas = hist.banderas.slice(-150); hist.formatos = hist.formatos.slice(-100);
     fs.writeFileSync(HIST, JSON.stringify(hist, null, 2) + '\n');
   }

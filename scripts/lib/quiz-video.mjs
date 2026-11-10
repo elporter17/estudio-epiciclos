@@ -17,6 +17,7 @@ import { pistaMusical } from './musica.mjs';
 import { dibujarMaquina, fondoFabrica } from './maquinas.mjs';
 import { cargarObjetos } from './objetos3d.mjs';
 import { narrar } from './voz.mjs';
+import { banderaCanvas, variante, dibujarSilueta } from './geo-retos.mjs';
 
 export const W = 1080, H = 1920;
 const SR = 44100, FPS = 30;
@@ -142,6 +143,42 @@ function reloj(ctx, cx, cy, r, restante, total, tema) {
   escala(ctx, pulso, cx, cy, () => { ctx.font = font(400, r * 0.95, BLACK); ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(String(n), cx, cy + 4); });
 }
 
+// ---------- geografía (scripts/lib/geo-retos.mjs) ----------
+// Una bandera (imagen ya recortada) dentro de un rectángulo, con sombra y esquinas redondeadas
+function dibujarImagen(ctx, img, cx, cy, maxW, maxH, { pixel = 0, zoom = 1, foco = [0.5, 0.5], borde = null } = {}) {
+  if (!img) return null;
+  const k = Math.min(maxW / img.width, maxH / img.height), w = img.width * k, h = img.height * k, x = cx - w / 2, y = cy - h / 2;
+  ctx.save();
+  ctx.shadowColor = 'rgba(0,0,0,0.35)'; ctx.shadowBlur = 30; ctx.shadowOffsetY = 12;
+  ctx.beginPath(); ctx.roundRect(x, y, w, h, 18); ctx.fillStyle = 'rgba(0,0,0,0.25)'; ctx.fill();
+  ctx.shadowColor = 'transparent'; ctx.clip();
+  if (pixel > 0) {
+    // Pixelada: se dibuja en pocos píxeles y se agranda sin suavizar
+    const pw = Math.max(2, Math.round(pixel)), ph = Math.max(2, Math.round(pixel * img.height / img.width));
+    const tmp = createCanvas(pw, ph); tmp.getContext('2d').drawImage(img, 0, 0, pw, ph);
+    ctx.imageSmoothingEnabled = false; ctx.drawImage(tmp, x, y, w, h); ctx.imageSmoothingEnabled = true;
+  } else if (zoom > 1.001) {
+    // Zoom a un pedacito (foco en proporciones de la bandera)
+    const sw = img.width / zoom, sh = img.height / zoom;
+    const sx = Math.max(0, Math.min(img.width - sw, foco[0] * img.width - sw / 2)), sy = Math.max(0, Math.min(img.height - sh, foco[1] * img.height - sh / 2));
+    ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
+  } else ctx.drawImage(img, x, y, w, h);
+  ctx.restore();
+  if (borde) { ctx.lineWidth = 9; ctx.strokeStyle = borde; ctx.beginPath(); ctx.roundRect(x - 6, y - 6, w + 12, h + 12, 24); ctx.stroke(); }
+  return { x, y, w, h };
+}
+function visualGeo(ctx, e, lt, revela, rt, cy) {
+  const g = e.geo, s = back((lt - 0.05) / 0.4), p = clamp(lt / e.piensa);
+  escala(ctx, s, W / 2, cy, () => {
+    if (g.modo === 'silueta') {
+      dibujarSilueta(ctx, g.c, W / 2, cy, 400, { relleno: '#ffffff', borde: e.tema.acento, ancho: 7 });
+      if (revela) dibujarImagen(ctx, e.imgGeo, W / 2 + 330, cy - 160, 210, 140);
+    } else if (g.modo === 'pixel') dibujarImagen(ctx, e.imgGeo, W / 2, cy, 780, 420, { pixel: revela ? 0 : 5 + 30 * p ** 1.8 });
+    else if (g.modo === 'zoom') dibujarImagen(ctx, e.imgGeo, W / 2, cy, 780, 420, { zoom: revela ? 1 + 3 * (1 - ease(rt / 0.5)) : 9 - 4.5 * ease(p), foco: g.foco });
+    else dibujarImagen(ctx, e.imgGeo, W / 2, cy, 780, 420);
+  });
+}
+
 // ---------- escenas ----------
 // Cada escena: { tipo, dur, tema, ...datos }. dibujar(ctx, escena, lt) con lt = segundos desde que empieza la escena
 const ESCENAS = {
@@ -218,7 +255,11 @@ const ESCENAS = {
     const a = ease(lt / 0.3);
     alfa(ctx, a);
     let yOp;
-    if (e.bandera) {
+    // La pregunta encima (al revelar puede cambiar: «Es Bután»)
+    const preg = revela && e.revela ? e.revela : e.pregunta;
+    if (preg) { ctx.font = font(700, 46); ctx.fillStyle = revela && e.revela ? VERDE : '#fff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(preg, W / 2, 405); }
+    if (e.geo) { visualGeo(ctx, e, lt, revela, rt, e.pregunta ? 665 : 620); yOp = e.pregunta ? 885 : 870; }
+    else if (e.bandera) {
       const s = back((lt - 0.05) / 0.4);
       escala(ctx, s, W / 2, 610, () => emoji(ctx, e.bandera, W / 2, 610, 300));
       yOp = 850;
@@ -241,8 +282,44 @@ const ESCENAS = {
       });
     });
     alfa(ctx, 1);
-    if (!revela) reloj(ctx, W / 2, 1335 + (e.bandera ? 25 : 0), 62, e.piensa - lt, e.piensa, e.tema);
-    else sello(ctx, `¡ES LA ${'ABC'[e.respuesta]}!`, VERDE, rt, 1335 + (e.bandera ? 25 : 0));
+    if (!revela) reloj(ctx, W / 2, 1335 + (e.bandera || e.geo ? 25 : 0), 62, e.piensa - lt, e.piensa, e.tema);
+    else sello(ctx, `¡ES LA ${'ABC'[e.respuesta]}!`, VERDE, rt, 1335 + (e.bandera || e.geo ? 25 : 0));
+  },
+  // Elegir entre banderas: gemelas («¿cuál es Rumania?») o «¿cuál es la real?» (las otras están al revés, en espejo o
+  // con los colores cambiados). e.items: [{ c, v, nota }], e.respuesta: el índice bueno
+  cuadros(ctx, e, lt) {
+    const revela = lt >= e.piensa, rt = lt - e.piensa, n = e.items.length;
+    pildora(ctx, e.etiqueta, 300, e.tema, back(lt / 0.35));
+    const a = ease(lt / 0.3);
+    alfa(ctx, a);
+    ctx.font = font(700, 50); ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    const f = fit(ctx, e.pregunta, W - 160, 120, { from: 54, to: 36, peso: 700 }); bloque(ctx, f, W / 2, 372, 120);
+    // 2: una encima de otra, grandes · 3 o 4: cuadrícula de 2 × 2
+    const celdas = n === 2 ? [[W / 2, 680], [W / 2, 1050]] : [[W / 2 - 255, 660], [W / 2 + 255, 660], [W / 2 - 255, 1030], [W / 2 + 255, 1030]].slice(0, n);
+    if (n === 3) celdas[2][0] = W / 2;
+    e.items.forEach((it, i) => {
+      const [cx, cy] = celdas[i], ok = i === e.respuesta, s0 = back((lt - 0.1 - i * 0.1) / 0.4);
+      if (s0 <= 0.01) return;
+      alfa(ctx, a * (revela && !ok ? 0.35 : 1));
+      escala(ctx, s0 * (revela && ok ? 1 + 0.06 * back(rt / 0.3) : 1), cx, cy, () => {
+        const r = dibujarImagen(ctx, it.img, cx, cy, n === 2 ? 600 : 470, n === 2 ? 290 : 300, { borde: revela && ok ? VERDE : null });
+        if (!r) return;
+        // La letra de la opción
+        ctx.fillStyle = revela && ok ? VERDE : e.tema.acento; ctx.beginPath(); ctx.arc(r.x + 8, r.y + 8, 40, 0, Math.PI * 2); ctx.fill();
+        ctx.font = font(400, 44, BLACK); ctx.fillStyle = '#111'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('ABCD'[i], r.x + 8, r.y + 11);
+        // Al revelar: qué es cada una (el país, o la trampa: espejo, al revés, colores)
+        if (revela && it.nota) {
+          alfa(ctx, a * ease(rt / 0.3) * (ok ? 1 : 0.9));
+          ctx.font = font(700, 40); const tw = ctx.measureText(it.nota).width + 40;
+          caja(ctx, cx - tw / 2, r.y + r.h + 14, tw, 60, 30, ok ? VERDE : 'rgba(0,0,0,0.55)', null);
+          ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(it.nota, cx, r.y + r.h + 45);
+        }
+      });
+    });
+    alfa(ctx, 1);
+    const yr = n === 2 ? 1345 : 1350;
+    if (!revela) reloj(ctx, W / 2, yr, 62, e.piensa - lt, e.piensa, e.tema);
+    else sello(ctx, `¡ES LA ${'ABCD'[e.respuesta]}!`, VERDE, rt, yr);
   },
   // «Cómo se hace»: la máquina del paso animada en 2D (scripts/lib/maquinas.mjs) y el texto que aparece letra a letra.
   // Con e.resultado es el cierre: el producto terminado y un dato curioso.
@@ -503,6 +580,12 @@ export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semill
   const dur = t0, frames = Math.ceil(dur * FPS);
   const cv = createCanvas(W, H), ctx = cv.getContext('2d');
   for (const e of lista) for (const k of ['A', 'B']) if (e[`foto${k}`]) e[`img${k}`] = await loadImage(fs.readFileSync(e[`foto${k}`])).catch(() => null);
+  // Banderas de los retos de geografía (el emoji dibujado aparte; en «cuadros», cada una con su variante)
+  const fam = EMOJI ? EMOJI.slice(2) : '';
+  for (const e of lista) {
+    if (e.geo) e.imgGeo = banderaCanvas(e.geo.c, fam);
+    if (e.items) for (const it of e.items) it.img = variante(banderaCanvas(it.c, fam), it.v || 'real');
+  }
   for (const e of lista) if (e.fotos) e.imgs = await Promise.all(e.fotos.map((f) => (f ? loadImage(fs.readFileSync(f)).catch(() => null) : null)));
   // Objetos 3D de las máquinas de «Cómo se hace» (lo que entra, lo que sale y los ingredientes)
   const glifos = lista.flatMap((e) => (e.pasos || (e.maquina ? [e] : [])).flatMap((p) => [p.entrada, p.salida, ...(p.extra || [])]));
