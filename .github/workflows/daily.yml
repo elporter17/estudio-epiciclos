@@ -258,7 +258,7 @@ jobs:
             idea-publicar) node scripts/idea.mjs --publicar "$FIGURA_INPUT" --redes "${REDES_INPUT:-fb,ig,tt,yt}"; exit 0 ;;
             video3d-render) node scripts/video3d-render.mjs --turno "${FIGURA_INPUT:-mediodia}" ${PRUEBA_INPUT:+--dry-run}; exit 0 ;;
             video3d-publicar) node scripts/video3d-publicar.mjs --turno "${FIGURA_INPUT:-mediodia}" --tiktok "$( [ "$R_TT" = draft ] && echo si || echo no )" --youtube "$R_YT"; exit 0 ;;
-            youtube-largo) node scripts/youtube-largo.mjs ${PRUEBA_INPUT:+--dry-run}; exit 0 ;;
+            youtube-largo) if [ "$FIGURA_INPUT" = gta ]; then node scripts/gta-largo.mjs ${PRUEBA_INPUT:+--dry-run}; else node scripts/youtube-largo.mjs ${PRUEBA_INPUT:+--dry-run}; fi; exit 0 ;;
             curiosidades-video) node scripts/curiosidades-video.mjs --facebook "$R_FB" --instagram "$R_IG" --youtube "$R_YT" --formato "${FIGURA_INPUT:-auto}" ${HISTORIA_INPUT:+--historia} ${PRUEBA_INPUT:+--dry-run} --tiktok "$R_TT"; exit 0 ;;
           esac
           # Solo consultar el estado de subidas anteriores

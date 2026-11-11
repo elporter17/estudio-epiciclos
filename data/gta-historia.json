@@ -1,0 +1,78 @@
+{
+  "nota": "Video largo «La historia de GTA, de 1997 a GTA VI» (scripts/gta-largo.mjs). Cada dato con su fuente; los de GTA VI salen de data/gta6.json.",
+  "capitulos": [
+    {
+      "anio": "1997", "titulo": "Grand Theft Auto", "icono": "🕹️",
+      "datos": [
+        { "dato": "El primer Grand Theft Auto salió en 1997 y lo creó DMA Design, un estudio de Dundee, en Escocia.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_(video_game)" },
+        { "dato": "Se jugaba visto desde arriba, en 2D, y ya tenía tres ciudades: Liberty City, San Andreas y Vice City.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_(video_game)" },
+        { "dato": "Rockstar Games nació en 1998 en Nueva York. DMA Design pasó a ser parte de Rockstar y hoy se llama Rockstar North.", "fuente": "https://en.wikipedia.org/wiki/Rockstar_North" }
+      ]
+    },
+    {
+      "anio": "1999", "titulo": "Grand Theft Auto 2", "icono": "🌃",
+      "datos": [
+        { "dato": "GTA 2 salió en 1999 y ocurre en una ciudad retro futurista sin nombre real, conocida como Anywhere City.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_2" },
+        { "dato": "Estrenó el respeto de las pandillas: si trabajabas para una, las otras empezaban a odiarte.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_2" }
+      ]
+    },
+    {
+      "anio": "2001", "titulo": "GTA III", "icono": "🏙️",
+      "datos": [
+        { "dato": "GTA III llevó la saga al 3D en 2001, en PlayStation 2, y volvió a Liberty City.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_III" },
+        { "dato": "Su protagonista, Claude, no dice una sola palabra en todo el juego.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_III" },
+        { "dato": "Fue el videojuego más vendido de 2001 en Estados Unidos.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_III" }
+      ]
+    },
+    {
+      "anio": "2002", "titulo": "Vice City", "icono": "🌴",
+      "datos": [
+        { "dato": "GTA Vice City salió en 2002 y su historia ocurre en 1986, con Tommy Vercetti como protagonista.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City" },
+        { "dato": "Vice City está inspirada en Miami: la misma ciudad a la que vuelve GTA VI.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City" },
+        { "dato": "Tommy Vercetti tiene la voz del actor Ray Liotta.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City" }
+      ]
+    },
+    {
+      "anio": "2004", "titulo": "San Andreas", "icono": "🌉",
+      "datos": [
+        { "dato": "San Andreas ocurre en 1992 y su protagonista es Carl Johnson, CJ.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas" },
+        { "dato": "Su estado tiene tres ciudades: Los Santos, San Fierro y Las Venturas, inspiradas en Los Ángeles, San Francisco y Las Vegas.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas" },
+        { "dato": "CJ podía ir al gimnasio, nadar y engordar o adelgazar según lo que hicieras.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas" },
+        { "dato": "Es el juego más vendido de toda la historia de PlayStation 2.", "fuente": "https://en.wikipedia.org/wiki/List_of_best-selling_PlayStation_2_video_games" }
+      ]
+    },
+    {
+      "anio": "2006", "titulo": "Las historias de bolsillo", "icono": "🎒",
+      "datos": [
+        { "dato": "Antes de GTA VI, la última visita a Vice City fue Vice City Stories, lanzado en 2006 para PSP.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City_Stories" }
+      ]
+    },
+    {
+      "anio": "2008", "titulo": "GTA IV", "icono": "🗽",
+      "datos": [
+        { "dato": "GTA IV salió en 2008 con Niko Bellic, un inmigrante de Europa del Este que llega a Liberty City.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV" },
+        { "dato": "Esta Liberty City está inspirada en Nueva York.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV" },
+        { "dato": "Usó la física Euphoria: los personajes reaccionan de forma realista a cada golpe y cada caída.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV" }
+      ]
+    },
+    {
+      "anio": "2013", "titulo": "GTA V", "icono": "💵",
+      "datos": [
+        { "dato": "GTA V salió el 17 de septiembre de 2013, con tres protagonistas: Michael, Franklin y Trevor.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V" },
+        { "dato": "Recaudó mil millones de dólares en apenas tres días, un récord Guinness en todo el entretenimiento.", "fuente": "https://guinnessworldrecords.com/world-records/fastest-entertainment-property-to-gross-$1-billion" },
+        { "dato": "Take-Two reporta más de 230 millones de copias distribuidas desde su estreno.", "fuente": "https://www.gamedeveloper.com/business/grand-theft-auto-v" },
+        { "dato": "GTA Online llegó el 1 de octubre de 2013 y sigue recibiendo contenido nuevo más de diez años después.", "fuente": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_Online" }
+      ]
+    },
+    {
+      "anio": "2026", "titulo": "GTA VI", "icono": "🔥",
+      "datos": [
+        { "dato": "El primer tráiler de GTA VI salió el 4 de diciembre de 2023, antes de lo planeado, porque se había filtrado.", "fuente": "https://amp.cbc.ca/lite/story/1.7049047" },
+        { "dato": "Ese tráiler logró 90,4 millones de vistas en YouTube en 24 horas y ganó un récord Guinness.", "fuente": "https://www.guinnessworldrecords.com/news" },
+        { "dato": "GTA VI tiene dos protagonistas, Jason y Lucia, y ocurre en Leonida, una versión ficticia de Florida.", "fuente": "https://www.take2games.com/ir/news/rockstar-games-announces-pre-orders-grand-theft-auto-vi" },
+        { "dato": "Se retrasó dos veces: primero de 2025 a mayo de 2026, y después al 19 de noviembre de 2026.", "fuente": "https://kotaku.com/gta-6-grand-theft-auto-vi-delayed-november-rockstar-games-2000641787" },
+        { "dato": "Sale el 19 de noviembre de 2026 en PS5 y Xbox Series X|S, más de 13 años después de GTA V.", "fuente": "https://www.rockstargames.com/VI" }
+      ]
+    }
+  ]
+}

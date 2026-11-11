@@ -11,6 +11,11 @@ on:
         type: choice
         options: ['publicar', 'prueba']
         default: 'publicar'
+      tema:
+        description: «como-se-hace» (lo de siempre) o «gta» (la historia de GTA, semana del lanzamiento)
+        type: choice
+        options: ['como-se-hace', 'gta']
+        default: 'como-se-hace'
 
 permissions:
   contents: read
@@ -25,4 +30,5 @@ jobs:
       facebook: 'no'
       aviso: false
       prueba: ${{ inputs.modo == 'prueba' }}
+      figura: ${{ inputs.tema == 'gta' && 'gta' || '' }}
     secrets: inherit

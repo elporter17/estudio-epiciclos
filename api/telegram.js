@@ -22,7 +22,7 @@ const deMin = (m) => `${dd(Math.floor(m / 60))}:${dd(m % 60)}`;
 const corta = (h) => h.replace(':', ''), larga = (h) => `${h.slice(0, 2)}:${h.slice(2)}`;
 const ahoraHHMM = () => deMin(ahoraHN().min);
 // Lo que se puede poner en un hueco (los 3D y el video largo se preparan de madrugada)
-const PONIBLES = ['debate', 'debateimg', 'banderas', 'geo', 'retos', 'datos', 'emojis', 'quiz', 'prefieres', 'comosehace', 'imagen', 'noticias', 'noticiasimg', 'gta', 'nombres', 'famosos'];
+const PONIBLES = ['debate', 'debateimg', 'banderas', 'geo', 'gtaquiz', 'retos', 'datos', 'emojis', 'quiz', 'prefieres', 'comosehace', 'imagen', 'noticias', 'noticiasimg', 'gta', 'nombres', 'famosos'];
 const RED = { fb: 'FB', ig: 'IG', tt: 'TT', yt: 'YT' };
 
 // Teclado fijo de abajo: lo que más se usa, sin escribir

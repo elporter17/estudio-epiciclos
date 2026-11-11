@@ -324,6 +324,27 @@ function geoVideo(hist, emojiFam, pedida) {
   return { formato: 'geo', variante, titulo, escenas, texto, banderas: usados.banderas, geo: usados };
 }
 
+// ---------- «¿Cuánto sabes de GTA?» (semana del lanzamiento de GTA VI, 2026-11-11) ----------
+// 8 preguntas de data/gta6.json (quiz: cada una sale de un dato con fuente), de fácil a GOD, sin repetir las últimas
+function gtaQuiz(hist) {
+  const D = leer(path.join(ROOT, 'data', 'gta6.json'), { quiz: [] }), n = 8;
+  const usadas = new Set((hist.gtaquiz || []).slice(-Math.max(0, D.quiz.length - n)));
+  const qs = mezclar(D.quiz.filter((q) => !usadas.has(q.id))).concat(mezclar(D.quiz)).filter((q, i, a) => a.indexOf(q) === i).slice(0, n);
+  const respuestas = [];
+  const escenas = [
+    { tipo: 'intro', dur: INTRO, tema: 'gta', portada: true, consulta: 'miami ocean drive neon night', sonidos: introSonidos, iconos: ['🌴', '🎮', '🚗', '🌅', '💵'],
+      lineas: [{ texto: '¿CUÁNTO SABES', size: 110 }, { texto: 'DE GTA?', size: 170, color: TEMAS.gta.acento }, { texto: '8 preguntas · de fácil a GOD 💀', size: 54, color: 'rgba(255,255,255,0.85)' }] },
+    ...qs.map((q, i) => {
+      const ops = mezclar([q.ok, ...q.malas]), piensa = i < 6 ? 4 : 3.5;
+      respuestas.push(`${i + 1}. ${q.ok}`);
+      return { tipo: 'opciones', dur: piensa + 1.9, piensa, idx: i, total: n, tema: 'gta', etiqueta: `${NIVEL(i, n)} · GTA`, texto: `${q.p} ${q.icono}`, opciones: ops, respuesta: ops.indexOf(q.ok), sonidos: cuenta(piensa, 'bien') };
+    }),
+    { ...cierre('gta', '¿CUÁNTAS SACASTE?', 'Sale el 19 de noviembre · comenta tu puntaje'), consulta: 'miami sunset palm trees' }
+  ];
+  const texto = `🎮 ¿Cuánto sabes de GTA? 8 preguntas de fácil a GOD 💀 antes del lanzamiento de GTA VI (19 de noviembre). Comenta cuántas sacaste 👇${OCULTAR}Respuestas:\n${respuestas.join('\n')}\n\n${tags('gta6', 'gtavi', 'gta', 'videojuegos', 'quiz', 'gaming')}`;
+  return { formato: 'gtaquiz', titulo: '¿Cuánto sabes de GTA?', escenas, texto, gtaquiz: qs.map((q) => q.id) };
+}
+
 // ---------- retos visuales, ¿qué prefieres?, emojis y noticias (2026-11-01) ----------
 const cierre = (tema, l1, l2) => ({ tipo: 'cierre', dur: CIERRE, tema, sonidos: [[0, 'final']],
   lineas: [{ texto: l1, size: 100, color: TEMAS[tema].acento }, { texto: l2, size: 62 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] });
@@ -468,7 +489,7 @@ async function main() {
   // «estrella»: retos un día y los retos de geografía (geo) el otro; las banderas (ya más difíciles) quedan a las 9:00
   const formato = o.formato === 'estrella' ? (diaHN % 2 ? 'retos' : 'geo') : o.formato !== 'auto' ? o.formato : ROTACION[paso % ROTACION.length];
   const base = cargarDatos();
-  const hacer = { debate: debateVideo, comosehace: () => comoSeHace(hist), top10: () => top10(base, hist, o.tema), datos5: () => datos5(base, hist, o.tema), geo: () => geoVideo(hist, emojiFont, o.tema), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
+  const hacer = { debate: debateVideo, comosehace: () => comoSeHace(hist), top10: () => top10(base, hist, o.tema), datos5: () => datos5(base, hist, o.tema), geo: () => geoVideo(hist, emojiFont, o.tema), gtaquiz: () => gtaQuiz(hist), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
   if (!hacer[formato]) throw new Error(`--formato debe ser ${Object.keys(hacer).join(', ')} o auto`);
   // Si un formato no tiene material (sin noticias frescas, por ejemplo), sale un quiz
   const pieza = (await hacer[formato]()) || quiz(base, hist);
@@ -543,6 +564,7 @@ async function main() {
     hist.prefieres = hist.prefieres.slice(-150); hist.emojis = hist.emojis.slice(-160); hist.noticias = hist.noticias.slice(-300);
     hist.formatos.push(pieza.formato); hist.total++;
     if (pieza.tema5) hist.temas5 = [...(hist.temas5 || []), pieza.tema5].slice(-10);
+    if (pieza.gtaquiz) hist.gtaquiz = [...(hist.gtaquiz || []), ...pieza.gtaquiz].slice(-40);
     if (pieza.geo) { hist.geoN = (hist.geoN || 0) + 1; for (const k of ['capitales', 'gemelas']) hist[k] = [...(hist[k] || []), ...pieza.geo[k]].slice(-60); }
     hist.ids = hist.ids.slice(-500); hist.retos = hist.retos.slice(-60); hist.banderas = hist.banderas.slice(-150); hist.formatos = hist.formatos.slice(-100);
     fs.writeFileSync(HIST, JSON.stringify(hist, null, 2) + '\n');

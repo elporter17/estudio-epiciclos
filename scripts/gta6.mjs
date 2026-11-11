@@ -22,8 +22,9 @@ import { subirYouTube, youtubeReady } from './lib/youtube.mjs';
 import { ponerFondos, guardarStock } from './lib/stock.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
 import { textoConTono } from './lib/tono.mjs';
+import { aplicarRetro, NOMBRE_RETRO } from './lib/estilo-retro.mjs';
 
-const o = parseCli({ 'dry-run': { type: 'boolean', default: false }, 'solo-lanzamiento': { type: 'boolean', default: false }, tiktok: { type: 'string', default: 'draft' }, facebook: { type: 'string', default: 'si' }, instagram: { type: 'string', default: 'si' }, youtube: { type: 'string', default: 'si' }, hoy: { type: 'string' } });
+const o = parseCli({ retro: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, 'solo-lanzamiento': { type: 'boolean', default: false }, tiktok: { type: 'string', default: 'draft' }, facebook: { type: 'string', default: 'si' }, instagram: { type: 'string', default: 'si' }, youtube: { type: 'string', default: 'si' }, hoy: { type: 'string' } });
 const D = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'gta6.json'), 'utf8'));
 const HIST = path.join(ROOT, 'data', 'gta6-historial.json');
 const hist = (() => { try { return JSON.parse(fs.readFileSync(HIST, 'utf8')); } catch { return { usados: [] }; } })();
@@ -37,6 +38,8 @@ if (o['solo-lanzamiento'] && faltan !== 0) { console.log(`Faltan ${faltan} días
 // El especial sale una sola vez (en la corrida de la mañana del lanzamiento); la de la noche ya no lo repite
 if (faltan === 0 && hist.lanzamiento && !o['dry-run']) { console.log('El especial del lanzamiento ya se publicó.'); process.exit(0); }
 
+// Semana del lanzamiento: el fondo (Miami) en 8 bits o estilo PS2, un día cada uno (scripts/lib/estilo-retro.mjs)
+const retro = NOMBRE_RETRO[o.retro] ? o.retro : faltan > 0 && faltan <= 9 ? (faltan % 2 ? 'ps2' : '8bits') : null;
 const INTRO = 2.8, DATO = 6.3, CIERRE = 3.2, son = [[0, 'whoosh'], [0.05, 'pop'], [0.23, 'pop'], [0.41, 'pop']];
 const plataformas = D.lanzamiento.plataformas.join(', ');
 let datos, escenas, texto, titulo;
@@ -47,7 +50,7 @@ if (faltan > 0) {
   titulo = `Faltan ${faltan} días para GTA VI`;
   escenas = [
     { tipo: 'intro', dur: INTRO, tema: 'gta', portada: true, consulta: 'miami skyline night aerial', sonidos: son, iconos: ['🌴', '🏙️', '🚗', '🌅'],
-      lineas: [{ texto: 'FALTAN', size: 100 }, { texto: `${faltan} ${faltan === 1 ? 'DÍA' : 'DÍAS'}`, size: 190, color: TEMAS.gta.acento }, { texto: 'PARA GTA VI', size: 110 }] },
+      lineas: [{ texto: 'FALTAN', size: 100 }, { texto: `${faltan} ${faltan === 1 ? 'DÍA' : 'DÍAS'}`, size: 190, color: TEMAS.gta.acento }, { texto: 'PARA GTA VI', size: 110 }, ...(retro ? [{ texto: `Vice City ${NOMBRE_RETRO[retro].toLowerCase().replace('en 8 bits', 'en 8 bits').replace('estilo ps2', 'estilo PS2')}`, size: 54, color: 'rgba(255,255,255,0.85)' }] : [])] },
     ...datos.map((d, i) => ({ tipo: 'dato', dur: DATO, tema: 'gta', idx: i, total: datos.length, n: i + 1, icono: d.icono, texto: d.dato, consulta: d.foto || 'miami beach palm trees', sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
     { tipo: 'cierre', dur: CIERRE, tema: 'gta', consulta: 'miami sunset palm trees', sonidos: [[0, 'final']],
       lineas: [{ texto: 'SALE EL 19 DE NOVIEMBRE', size: 96, color: TEMAS.gta.acento }, { texto: `En ${plataformas}`, size: 60 }, { texto: 'Cada día, más datos en Potter Play', size: 50, color: 'rgba(255,255,255,0.8)' }] }
@@ -69,6 +72,7 @@ if (faltan > 0) {
 texto = textoConTono(texto, `gta|${new Date(Date.now() - 6 * 3600e3).toISOString().slice(0, 10)}`); // tono (scripts/lib/tono.mjs)
 const fondos = await ponerFondos(escenas);
 if (fondos) console.error(`Videos reales: ${fondos}`);
+if (retro) console.error(`Estilo ${retro}: ${aplicarRetro(escenas, retro)} fondo(s)`);
 guardarStock();
 const fx = setupNode(), outDir = path.join(ROOT, 'out'); fs.mkdirSync(outDir, { recursive: true });
 const video = path.join(outDir, `gta6-${faltan > 0 ? `faltan-${faltan}` : 'lanzamiento'}.mp4`);

@@ -39,6 +39,8 @@ const PIEZAS = {
   debateimg: { workflow: 'curiosidades-facebook.yml', que: 'Imagen de debate: error a propósito, «el 90 % falla» o «¿cuántos ves?»', inputs: { tipo: 'debate' } },
   noticiasimg: { workflow: 'curiosidades-facebook.yml', que: 'Noticias en imágenes: carrusel con titular y resumen', inputs: { tipo: 'noticias' } },
   gta: { workflow: 'gta6.yml', que: 'Reel GTA VI «Faltan N días»' },
+  // Semana del lanzamiento de GTA VI (2026-11-11): «¿Cuánto sabes de GTA?», 8 preguntas de data/gta6.json
+  gtaquiz: { workflow: R, que: 'Reel: ¿Cuánto sabes de GTA? (quiz de 8 preguntas)', inputs: { formato: 'gtaquiz' } },
   nombres: { workflow: 'nombres.yml', que: 'Nombre o pareja con círculos' },
   famosos: { workflow: 'famosos.yml', que: 'Futbolista dibujado con círculos' },
   // Reenvío de un video ya generado (bot: «🎬 Videos» → 🔁): lleva en inputs el video, su corrida y su archivo
@@ -195,12 +197,13 @@ export const ALIAS = Object.entries({
   video3d1: ['3d de mediodia', '3d del mediodia', 'video 3d de mediodia', '3d 1'],
   video3d2: ['3d de la tarde', 'video 3d de la tarde', '3d 2'],
   imagen: ['imagen', 'foto', 'curiosidad'],
+  gtaquiz: ['quiz de gta', 'quiz gta', 'cuanto sabes de gta', 'preguntas de gta'],
   gta: ['gta 6', 'gta vi', 'gta'],
   nombres: ['nombres', 'nombre', 'parejas', 'pareja'],
   famosos: ['futbolistas', 'futbolista', 'jugadores', 'jugador', 'famosos', 'futbol'],
   largo: ['video largo', 'largo de youtube']
 }).flatMap(([p, xs]) => xs.map((x) => [x, p])).sort((a, b) => b[0].length - a[0].length);
-export const NOMBRE_PIEZA = { comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Retos/Geografía', geo: 'Geografía difícil', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB', reenvio: 'Reenvío', datos: '5 datos (video)' };
+export const NOMBRE_PIEZA = { comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Retos/Geografía', geo: 'Geografía difícil', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', gtaquiz: 'Quiz GTA', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB', reenvio: 'Reenvío', datos: '5 datos (video)' };
 export const nombreSlot = (s) => NOMBRE_PIEZA[s.pieza] || (s.workflow === 'metas.yml' ? 'Metas FB' : NOMBRES[s.workflow] || s.workflow);
 
 // Tabla para Telegram (va dentro de <pre>): hora, pieza y redes; con estado si viene de diaConEstado

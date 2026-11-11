@@ -78,16 +78,17 @@ const ESCENAS = {
   capitulo(ctx, e, lt) {
     const a = back(lt / 0.6);
     ctx.save(); ctx.translate(360, 540); ctx.scale(a, a);
-    caja(ctx, -170, -170, 340, 340, 170, e.tema.acento); ctx.font = font(400, 210, BLACK); ctx.fillStyle = '#111'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(String(e.num), 0, 12);
+    caja(ctx, -170, -170, 340, 340, 170, e.tema.acento); ctx.font = font(400, String(e.num).length > 2 ? 100 : 210, BLACK); ctx.fillStyle = '#111'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(String(e.num), 0, 12);
     ctx.restore();
     ctx.globalAlpha = ease((lt - 0.2) / 0.5);
-    pildora(ctx, `CÓMO SE ${e.hace.toUpperCase()}`, 640, 330, e.tema.acento, { size: 36 });
+    // e.etiqueta: otro rótulo (la historia de GTA: «CAPÍTULO 3 DE 9»); si no, «CÓMO SE HACE»
+    pildora(ctx, e.etiqueta || `CÓMO SE ${e.hace.toUpperCase()}`, 640, 330, e.tema.acento, { size: 36 });
     const f = fit(ctx, e.titulo.toUpperCase(), 820, 330, { from: 110, to: 60, peso: 400, fam: BLACK, lh: 1.05 });
     texto(ctx, f, 640, 430);
     ctx.globalAlpha = 1;
     icono(ctx, e.icono, 1620, 540 + Math.sin(lt * 2) * 14, 330 * back((lt - 0.3) / 0.6));
     // Progreso del video: un punto por producto
-    for (let k = 0; k < e.total; k++) { ctx.fillStyle = k < e.num ? e.tema.acento : 'rgba(255,255,255,0.25)'; ctx.beginPath(); ctx.arc(W / 2 - (e.total - 1) * 22 + k * 44, 990, k === e.num - 1 ? 12 : 8, 0, Math.PI * 2); ctx.fill(); }
+    for (let k = 0; k < e.total; k++) { const pos = e.idx ?? e.num; ctx.fillStyle = k < pos ? e.tema.acento : 'rgba(255,255,255,0.25)'; ctx.beginPath(); ctx.arc(W / 2 - (e.total - 1) * 22 + k * 44, 990, k === pos - 1 ? 12 : 8, 0, Math.PI * 2); ctx.fill(); }
   },
   // La fábrica en un solo plano (izquierda) y el paso actual (derecha)
   linea(ctx, e, lt) {
