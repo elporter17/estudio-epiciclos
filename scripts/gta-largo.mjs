@@ -12,6 +12,8 @@ import { setupNode, ROOT } from './lib/node-env.mjs';
 import { renderLargo, renderMiniatura } from './lib/largo-video.mjs';
 import { subirYouTube, youtubeReady, ponerMiniatura } from './lib/youtube.mjs';
 import { telegram } from './lib/control.mjs';
+import { fotoStock, guardarStock } from './lib/stock.mjs';
+import { hayArte, HORIZONTALES, POSTER, CREDITO_GTA } from './lib/gta-arte.mjs';
 
 const o = parseCli({ 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' } });
 const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
@@ -36,6 +38,18 @@ H.forEach((c, k) => {
 });
 escenas.push({ tipo: 'cierre', dur: 6, tema: 'gta', titulo: '¿Cuál fue tu primer GTA?', sub: 'Escríbelo en los comentarios · Suscríbete a Potter Play', capitulo: 'Cierre', voz: '¿Y tú? ¿Cuál fue tu primer GTA? Escríbelo en los comentarios, y suscríbete a Potter Play para no perderte nada del lanzamiento de GTA VI.' });
 
+// Fondos: el arte oficial de GTA VI (con crédito) en la intro, el capítulo de GTA VI y el cierre; en los juegos de antes,
+// fotos reales de la ciudad en la que se inspiran (Pixabay)
+const CIUDAD = { 1997: 'retro arcade neon', 1999: 'city night neon rain', 2001: 'new york city night street', 2002: 'miami ocean drive neon night', 2004: 'los angeles sunset palm trees', 2006: 'miami beach sunset', 2008: 'new york skyline night bridge', 2013: 'los angeles hollywood hills city', 2026: '' };
+let anio = null, k = 0;
+const arte = hayArte() ? [...HORIZONTALES, POSTER] : [];
+for (const e of escenas) {
+  if (e.tipo === 'capitulo') anio = e.num;
+  const deGta6 = e.tipo === 'gancho' || e.tipo === 'cierre' || anio === '2026';
+  if (deGta6 && arte.length) { e.imagen = arte[k++ % arte.length]; e.credito = CREDITO_GTA; }
+  else if (anio && CIUDAD[anio]) { const f = await fotoStock(CIUDAD[anio]).catch(() => null); if (f) e.imagen = f.archivo; }
+}
+guardarStock();
 const titulo = 'La historia de GTA antes de GTA VI', mini = 'DE 1997 A GTA VI';
 const outDir = path.join(ROOT, 'out'); fs.mkdirSync(outDir, { recursive: true });
 const nombre = `gta-historia-${new Date().toISOString().slice(0, 10)}`;

@@ -65,7 +65,7 @@ function bloque(ctx, f, cx, y0, h, color = '#fff') {
   ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
 }
 // Caja de texto: translúcida clara sobre los fondos de color, oscura sobre video
-const panel = (e) => e.fondo ? 'rgba(0,0,0,0.52)' : 'rgba(255,255,255,0.09)';
+const panel = (e) => e.fondo || e.imgFondo ? 'rgba(0,0,0,0.52)' : 'rgba(255,255,255,0.09)';
 // Velo sobre el video: más oscuro arriba y abajo, donde van el texto y la interfaz de Facebook
 function velo(ctx) {
   const g = ctx.createLinearGradient(0, 0, 0, H);
@@ -76,6 +76,16 @@ function velo(ctx) {
 function cubrir(ctx, img, x, y, w, h, r) {
   const k = Math.max(w / img.width, h / img.height), iw = img.width * k, ih = img.height * k;
   ctx.save(); ctx.beginPath(); ctx.roundRect(x, y, w, h, r); ctx.clip(); ctx.drawImage(img, x + (w - iw) / 2, y + (h - ih) / 2, iw, ih); ctx.restore();
+}
+// Imagen de fondo a pantalla completa con un zoom lento (arte oficial de GTA VI, por ejemplo) y su crédito
+function fondoImagen(ctx, img, lt, dur, sentido = 1) {
+  const p = clamp(lt / Math.max(1, dur)), z = 1.04 + 0.1 * p, k = Math.max(W / img.width, H / img.height) * z, iw = img.width * k, ih = img.height * k;
+  ctx.drawImage(img, (W - iw) / 2 + sentido * 30 * (p - 0.5), (H - ih) / 2, iw, ih);
+}
+function credito(ctx, texto) {
+  ctx.save(); ctx.font = font(600, 26); ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+  const w = ctx.measureText(texto).width + 28; ctx.fillStyle = 'rgba(0,0,0,0.45)'; ctx.beginPath(); ctx.roundRect(60, 1452, w, 44, 22); ctx.fill();
+  ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.fillText(texto, 74, 1475); ctx.restore();
 }
 function caja(ctx, x, y, w, h, r, fill, stroke, lw = 4) {
   ctx.beginPath(); ctx.roundRect(x, y, w, h, r);
@@ -194,7 +204,13 @@ const ESCENAS = {
       escala(ctx, s, W / 2, y + h / 2, () => bloque(ctx, f, W / 2, y, h, l.color || '#fff'));
       y += h + 26;
     });
-    if (e.iconos) {
+    // Recortes (del póster oficial, por ejemplo) que entran y flotan alrededor del título
+    if (e.imgRecortes) {
+      const POS = [[170, 1250, -8], [910, 1260, 9], [400, 1420, -4], [690, 1420, 6]];
+      e.imgRecortes.forEach((im, i) => { if (!im) return; const [x, y, giro] = POS[i % POS.length], s = e.portada && lt === 0 ? 1 : back((lt - 0.2 - i * 0.12) / 0.5); if (s <= 0.01) return;
+        const k = 300 / Math.max(im.width, im.height) * s; ctx.save(); ctx.translate(x, y + 10 * Math.sin(lt * 2 + i)); ctx.rotate(giro * Math.PI / 180); ctx.drawImage(im, -im.width * k / 2, -im.height * k / 2, im.width * k, im.height * k); ctx.restore(); });
+    }
+    if (e.iconos && !e.imgRecortes) {
       const n = e.iconos.length, paso = Math.min(170, (W - 200) / n);
       e.iconos.forEach((ic, i) => {
         const s = pop((lt - 0.5 - i * 0.08) / 0.4); if (s <= 0.01) return;
@@ -209,10 +225,10 @@ const ESCENAS = {
       ctx.font = font(400, 84, BLACK); ctx.fillStyle = '#111'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(`#${e.n}`, W / 2, 446);
     });
     const si = back((lt - 0.1) / 0.4);
-    if (si > 0.01 && !e.fondo) escala(ctx, si, W / 2, 680, () => emoji(ctx, e.icono, W / 2, 680 + 10 * Math.sin(lt * 3), 180));
+    if (si > 0.01 && !e.fondo && !e.imgFondo) escala(ctx, si, W / 2, 680, () => emoji(ctx, e.icono, W / 2, 680 + 10 * Math.sin(lt * 3), 180));
     const a = ease((lt - 0.15) / 0.35);
     alfa(ctx, a);
-    const dy = (1 - a) * 60, y0 = e.fondo ? 860 : 820;
+    const dy = (1 - a) * 60, y0 = e.fondo || e.imgFondo ? 860 : 820;
     caja(ctx, 70, y0 + dy, W - 140, 520, 36, panel(e), 'rgba(255,255,255,0.16)', 3);
     bloque(ctx, fit(ctx, e.texto, W - 220, 470, { from: 72, to: 40, peso: 700 }), W / 2, y0 + 25 + dy, 470);
     alfa(ctx, 1);
@@ -586,6 +602,11 @@ export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semill
     if (e.geo) e.imgGeo = banderaCanvas(e.geo.c, fam);
     if (e.items) for (const it of e.items) it.img = variante(banderaCanvas(it.c, fam), it.v || 'real');
   }
+  // Imagen de fondo (e.imagen) y recortes de la portada (e.recortes)
+  for (const e of lista) {
+    if (e.imagen) e.imgFondo = await loadImage(fs.readFileSync(e.imagen)).catch(() => null);
+    if (e.recortes) e.imgRecortes = await Promise.all(e.recortes.map((f) => loadImage(fs.readFileSync(f)).catch(() => null)));
+  }
   for (const e of lista) if (e.fotos) e.imgs = await Promise.all(e.fotos.map((f) => (f ? loadImage(fs.readFileSync(f)).catch(() => null) : null)));
   // Objetos 3D de las máquinas de «Cómo se hace» (lo que entra, lo que sale y los ingredientes)
   const glifos = lista.flatMap((e) => (e.pasos || (e.maquina ? [e] : [])).flatMap((p) => [p.entrada, p.salida, ...(p.extra || [])]));
@@ -594,12 +615,15 @@ export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semill
   const dibujar = (t, debajo) => {
     const e = lista.find((x) => t < x.t0 + x.dur) || lista.at(-1), lt = t - e.t0;
     // Con video, el canvas es una capa transparente (velo y texto) que ffmpeg pone encima del clip
-    if (e.fondo) { ctx.clearRect(0, 0, W, H); if (debajo) ctx.drawImage(debajo, 0, 0, W, H); velo(ctx); } else fondo(ctx, e.tema, t);
-    SOMBRA = !!e.fondo;
+    if (e.fondo) { ctx.clearRect(0, 0, W, H); if (debajo) ctx.drawImage(debajo, 0, 0, W, H); velo(ctx); }
+    else if (e.imgFondo) { fondoImagen(ctx, e.imgFondo, lt, e.dur, e.idx % 2 ? -1 : 1); velo(ctx); }
+    else fondo(ctx, e.tema, t);
+    SOMBRA = !!(e.fondo || e.imgFondo);
     if (e.idx != null) cabecera(ctx, e.tema, e.idx, e.total, lt / e.dur); else marca(ctx, e.tema, 235);
     // Salida: las escenas se desvanecen el último cuarto de segundo
     FADE = e === lista.at(-1) ? 1 : clamp((e.dur - lt) / 0.22);
     alfa(ctx, 1); ESCENAS[e.tipo](ctx, e, lt);
+    if (e.credito) { ctx.globalAlpha = FADE; credito(ctx, e.credito); }
     FADE = 1; ctx.globalAlpha = 1; SOMBRA = false;
   };
   if (still != null) {

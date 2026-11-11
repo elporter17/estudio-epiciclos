@@ -1,0 +1,145 @@
+{
+  "fuente": "https://www.rockstargames.com/VI",
+  "credito": "Imagen: Rockstar Games",
+  "nota": "Arte oficial publicado por Rockstar Games en su sitio de GTA VI (2026-11-11). Se usa con crédito, en recuadro o de fondo, para comentar noticias y datos del juego.",
+  "imagenes": [
+    {
+      "archivo": "jason-lucia-mirador.jpg",
+      "ancho": 1600,
+      "alto": 1600,
+      "forma": "cuadrada"
+    },
+    {
+      "archivo": "jason-lucia-panuelos.jpg",
+      "ancho": 1080,
+      "alto": 1600,
+      "forma": "vertical"
+    },
+    {
+      "archivo": "jason-lucia-auto.jpg",
+      "ancho": 1080,
+      "alto": 1600,
+      "forma": "vertical"
+    },
+    {
+      "archivo": "jason-lucia-muelle.jpg",
+      "ancho": 1080,
+      "alto": 1600,
+      "forma": "vertical"
+    },
+    {
+      "archivo": "jason-lucia-atardecer.jpg",
+      "ancho": 1080,
+      "alto": 1600,
+      "forma": "vertical"
+    },
+    {
+      "archivo": "hotel-neon.jpg",
+      "ancho": 1600,
+      "alto": 900,
+      "forma": "horizontal"
+    },
+    {
+      "archivo": "vice-city-noche.jpg",
+      "ancho": 901,
+      "alto": 1600,
+      "forma": "vertical"
+    },
+    {
+      "archivo": "jason-lucia-playa.jpg",
+      "ancho": 1080,
+      "alto": 1600,
+      "forma": "vertical"
+    },
+    {
+      "archivo": "jason-lucia-neon.jpg",
+      "ancho": 1080,
+      "alto": 1600,
+      "forma": "vertical"
+    },
+    {
+      "archivo": "golpe.jpg",
+      "ancho": 1080,
+      "alto": 1600,
+      "forma": "vertical"
+    },
+    {
+      "archivo": "brian-piscina.jpg",
+      "ancho": 1080,
+      "alto": 1600,
+      "forma": "vertical"
+    },
+    {
+      "archivo": "convertible.jpg",
+      "ancho": 1600,
+      "alto": 900,
+      "forma": "horizontal"
+    },
+    {
+      "archivo": "vice-city-aerea.jpg",
+      "ancho": 1600,
+      "alto": 900,
+      "forma": "horizontal"
+    },
+    {
+      "archivo": "poster.jpg",
+      "ancho": 1600,
+      "alto": 900,
+      "forma": "horizontal"
+    },
+    {
+      "archivo": "recorte-moto.png",
+      "ancho": 372,
+      "alto": 482,
+      "forma": "recorte"
+    },
+    {
+      "archivo": "recorte-helicoptero.png",
+      "ancho": 346,
+      "alto": 446,
+      "forma": "recorte"
+    },
+    {
+      "archivo": "recorte-pareja.png",
+      "ancho": 566,
+      "alto": 578,
+      "forma": "recorte"
+    },
+    {
+      "archivo": "recorte-lancha.png",
+      "ancho": 538,
+      "alto": 418,
+      "forma": "recorte"
+    },
+    {
+      "archivo": "recorte-personaje-arma.png",
+      "ancho": 372,
+      "alto": 538,
+      "forma": "recorte"
+    },
+    {
+      "archivo": "recorte-lucia.png",
+      "ancho": 346,
+      "alto": 572,
+      "forma": "recorte"
+    },
+    {
+      "archivo": "recorte-deportivo.png",
+      "ancho": 408,
+      "alto": 448,
+      "forma": "recorte"
+    },
+    {
+      "archivo": "recorte-caiman.png",
+      "ancho": 356,
+      "alto": 354,
+      "forma": "recorte"
+    },
+    {
+      "archivo": "recorte-boobie.png",
+      "ancho": 326,
+      "alto": 618,
+      "forma": "recorte"
+    }
+  ]
+}

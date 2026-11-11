@@ -30,6 +30,7 @@ import { hoyHN } from './lib/video3d-cola.mjs';
 import { ponerFondos, guardarStock } from './lib/stock.mjs';
 import { textoConTono, vozConTono, tonoDe } from './lib/tono.mjs';
 import * as GEO from './lib/geo-retos.mjs';
+import { hayArte, fondosVerticales, recortesAlAzar, CIERRE_GTA, CREDITO_GTA } from './lib/gta-arte.mjs';
 
 const DIR = path.join(ROOT, 'data', 'curiosidades');
 const HIST = path.join(ROOT, 'data', 'curiosidades-video-historial.json'), HIST_IMG = path.join(ROOT, 'data', 'curiosidades-historial.json');
@@ -341,6 +342,12 @@ function gtaQuiz(hist) {
     }),
     { ...cierre('gta', '¿CUÁNTAS SACASTE?', 'Sale el 19 de noviembre · comenta tu puntaje'), consulta: 'miami sunset palm trees' }
   ];
+  // Arte oficial de GTA VI de fondo (con crédito): la portada con recortes del póster y el póster en el cierre
+  if (hayArte()) {
+    const fa = fondosVerticales(escenas.length);
+    escenas.forEach((e, i) => { e.imagen = e.tipo === 'cierre' ? CIERRE_GTA : fa[i]; e.credito = CREDITO_GTA; delete e.consulta; });
+    escenas[0].recortes = recortesAlAzar(4);
+  }
   const texto = `🎮 ¿Cuánto sabes de GTA? 8 preguntas de fácil a GOD 💀 antes del lanzamiento de GTA VI (19 de noviembre). Comenta cuántas sacaste 👇${OCULTAR}Respuestas:\n${respuestas.join('\n')}\n\n${tags('gta6', 'gtavi', 'gta', 'videojuegos', 'quiz', 'gaming')}`;
   return { formato: 'gtaquiz', titulo: '¿Cuánto sabes de GTA?', escenas, texto, gtaquiz: qs.map((q) => q.id) };
 }

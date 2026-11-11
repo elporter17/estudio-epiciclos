@@ -23,6 +23,7 @@ import { ponerFondos, guardarStock } from './lib/stock.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
 import { textoConTono } from './lib/tono.mjs';
 import { aplicarRetro, NOMBRE_RETRO } from './lib/estilo-retro.mjs';
+import { hayArte, fondosVerticales, recortesAlAzar, CIERRE_GTA, CREDITO_GTA } from './lib/gta-arte.mjs';
 
 const o = parseCli({ retro: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, 'solo-lanzamiento': { type: 'boolean', default: false }, tiktok: { type: 'string', default: 'draft' }, facebook: { type: 'string', default: 'si' }, instagram: { type: 'string', default: 'si' }, youtube: { type: 'string', default: 'si' }, hoy: { type: 'string' } });
 const D = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'gta6.json'), 'utf8'));
@@ -38,8 +39,9 @@ if (o['solo-lanzamiento'] && faltan !== 0) { console.log(`Faltan ${faltan} días
 // El especial sale una sola vez (en la corrida de la mañana del lanzamiento); la de la noche ya no lo repite
 if (faltan === 0 && hist.lanzamiento && !o['dry-run']) { console.log('El especial del lanzamiento ya se publicó.'); process.exit(0); }
 
-// Semana del lanzamiento: el fondo (Miami) en 8 bits o estilo PS2, un día cada uno (scripts/lib/estilo-retro.mjs)
-const retro = NOMBRE_RETRO[o.retro] ? o.retro : faltan > 0 && faltan <= 9 ? (faltan % 2 ? 'ps2' : '8bits') : null;
+// Fondos: el arte oficial de GTA VI (scripts/lib/gta-arte.mjs, con crédito). El estilo retro (8 bits / PS2) solo si se pide
+// con --retro, sobre los videos de Miami cuando no hay arte
+const retro = NOMBRE_RETRO[o.retro] ? o.retro : null;
 const INTRO = 2.8, DATO = 6.3, CIERRE = 3.2, son = [[0, 'whoosh'], [0.05, 'pop'], [0.23, 'pop'], [0.41, 'pop']];
 const plataformas = D.lanzamiento.plataformas.join(', ');
 let datos, escenas, texto, titulo;
@@ -70,6 +72,11 @@ if (faltan > 0) {
 }
 
 texto = textoConTono(texto, `gta|${new Date(Date.now() - 6 * 3600e3).toISOString().slice(0, 10)}`); // tono (scripts/lib/tono.mjs)
+if (hayArte()) {
+  const fondosArte = fondosVerticales(escenas.length);
+  escenas.forEach((e, i) => { e.imagen = e.tipo === 'cierre' ? CIERRE_GTA : fondosArte[i]; e.credito = CREDITO_GTA; delete e.consulta; });
+  escenas[0].recortes = recortesAlAzar(4);
+}
 const fondos = await ponerFondos(escenas);
 if (fondos) console.error(`Videos reales: ${fondos}`);
 if (retro) console.error(`Estilo ${retro}: ${aplicarRetro(escenas, retro)} fondo(s)`);

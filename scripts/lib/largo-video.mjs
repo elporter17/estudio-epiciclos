@@ -64,6 +64,17 @@ function marca(ctx, tema) {
   ctx.font = font(400, 28, BLACK); ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillStyle = 'rgba(255,255,255,0.9)'; ctx.fillText('Potter Play', 106, 64);
 }
 
+// Foto de fondo (e.imagen: arte oficial o foto de stock) con zoom lento, oscurecida a la izquierda donde va el texto
+function fondoImagen(ctx, img, lt, dur, sentido = 1) {
+  const p = Math.min(1, lt / Math.max(1, dur)), z = 1.03 + 0.08 * p, k = Math.max(W / img.width, H / img.height) * z, iw = img.width * k, ih = img.height * k;
+  ctx.drawImage(img, (W - iw) / 2 + sentido * 40 * (p - 0.5), (H - ih) / 2, iw, ih);
+  const g = ctx.createLinearGradient(0, 0, W, 0); g.addColorStop(0, 'rgba(10,6,25,0.86)'); g.addColorStop(0.55, 'rgba(10,6,25,0.55)'); g.addColorStop(1, 'rgba(10,6,25,0.25)');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+}
+function credito(ctx, texto) {
+  ctx.save(); ctx.font = font(600, 24); ctx.textAlign = 'right'; ctx.textBaseline = 'middle'; ctx.fillStyle = 'rgba(255,255,255,0.75)'; ctx.fillText(texto, W - 40, H - 34); ctx.restore();
+}
+
 // ---------- escenas ----------
 const ESCENAS = {
   // Gancho: la promesa del video y los productos que vienen, uno tras otro
@@ -171,11 +182,15 @@ export async function renderLargo({ escenas, out, estilo = 'lofi', semilla = Dat
   let t0 = 0; const lista = escenas.map((e) => { const r = { ...e, t0, tema: TEMAS[e.tema] || TEMAS.inventos }; t0 += e.dur; return r; });
   const dur = t0, frames = Math.ceil(dur * FPS);
   await cargarObjetos([...new Set(lista.flatMap((e) => [e.icono, e.pista, ...(e.iconos || []), ...(e.pasos || []).flatMap((p) => [p.entrada, p.salida, ...(p.extra || [])])]).filter(Boolean)), '❄️', '✅', '🚚', '🏪', '📦', '🔔']);
+  // Fotos de fondo (e.imagen)
+  for (const e of lista) if (e.imagen) e.imgFondo = await loadImage(fs.readFileSync(e.imagen)).catch(() => null);
   const cv = createCanvas(W, H), ctx = cv.getContext('2d');
   const dibujar = (t) => {
     const e = lista.find((x) => t < x.t0 + x.dur) || lista.at(-1), lt = t - e.t0;
-    fondo(ctx, e.tema, t); marca(ctx, e.tema);
+    if (e.imgFondo) fondoImagen(ctx, e.imgFondo, lt, e.dur, lista.indexOf(e) % 2 ? -1 : 1); else fondo(ctx, e.tema, t);
+    marca(ctx, e.tema);
     ctx.globalAlpha = 1; ESCENAS[e.tipo](ctx, e, lt); ctx.globalAlpha = 1;
+    if (e.credito) credito(ctx, e.credito);
     // Fundido a negro corto entre escenas
     const f = Math.max(0, 1 - lt / 0.25, e === lista.at(-1) ? 0 : 1 - (e.dur - lt) / 0.25);
     if (f > 0) { ctx.fillStyle = `rgba(0,0,0,${0.85 * f})`; ctx.fillRect(0, 0, W, H); }
