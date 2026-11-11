@@ -16,7 +16,8 @@ export async function publicarEnlace(file, { days = 2, log = (m) => process.stde
   if (!token) { log('Sin BLOB_READ_WRITE_TOKEN: no hay enlace directo al video\n'); return null; }
   // downloadUrl (?download=1) hace que el teléfono lo descargue en vez de solo reproducirlo
   const { url, downloadUrl } = await put(PREFIX + path.basename(file), fs.readFileSync(file), { access: 'public', token, addRandomSuffix: true, contentType: 'video/mp4' });
-  try {
+  // Borrar los viejos pide la lista del almacén (operación avanzada del plan gratis de Vercel): 1 de cada 5 subidas
+  if (Math.random() < 0.2) try {
     const viejos = [], limite = Date.now() - days * 864e5;
     let cursor;
     do {

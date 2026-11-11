@@ -181,20 +181,28 @@ export async function guardarControl(nombre, data) { if (controlListo()) await g
 export async function leerControl(nombre) { return leerJson(`${carpeta()}/${nombre}.json`); }
 
 // ---------- comentarios que contestas tú ----------
-// Lo que decides en Telegram sobre un comentario delicado (responder con tu texto, «me gusta», ocultar) queda en
-// control/<id>/comentarios/<ms>.json hasta que scripts/comentarios.mjs lo publica y lo borra.
+// Lo que decides en Telegram sobre un comentario delicado (responder con tu texto, «me gusta», ocultar) queda en la tabla
+// «cola» de Supabase (tipo «comentario») hasta que scripts/comentarios.mjs lo publica y lo borra. Antes iba en Blob
+// (control/<id>/comentarios/): leerla cada hora gastaba ~500 operaciones avanzadas al mes del plan gratis de Vercel;
+// lo que quede ahí se revisa una vez al día.
 //   { accion: 'responder' | 'like' | 'ocultar', red: 'facebook' | 'instagram', id, texto?, usuario? }
 export async function encolarComentario(a) {
+  try { if (await db('cola-agregar', { tipo: 'comentario', datos: { ...a, at: new Date().toISOString() } })) return; } catch (e) { console.error(`Aviso: cola en Supabase: ${e.message}; va a Blob`); }
   if (!controlListo()) throw new Error('Falta el almacén o el token del bot');
   await guardarJson(`${carpeta()}/comentarios/${String(Date.now()).padStart(15, '0')}.json`, { ...a, at: new Date().toISOString() }, { fijo: false });
 }
 export async function comentariosEnCola() {
-  if (!controlListo()) return [];
+  const deBase = ((await db('cola-lista', { tipo: 'comentario' }).catch(() => null)) || []).map((r) => ({ ...r.datos, url: `db:${r.id}` }));
+  // La cola vieja de Blob: una vez al día (el «list» de Blob es una operación avanzada)
+  if (!controlListo() || new Date().getUTCHours() !== 14) return deBase.filter((x) => x.accion && x.id);
   const { blobs } = await list({ prefix: `${carpeta()}/comentarios/`, token: blobToken() });
   const out = await Promise.all(blobs.sort((a, b) => a.pathname.localeCompare(b.pathname)).map(async (b) => ({ ...(await fetch(b.url, { cache: 'no-store' }).then((r) => r.json()).catch(() => ({}))), url: b.url })));
-  return out.filter((x) => x.accion && x.id);
+  return [...deBase, ...out].filter((x) => x.accion && x.id);
 }
-export async function quitarDeCola(url) { if (controlListo()) await del(url, { token: blobToken() }).catch(() => {}); }
+export async function quitarDeCola(url) {
+  if (String(url).startsWith('db:')) { await db('cola-quitar', { id: url.slice(3) }).catch(() => {}); return; }
+  if (controlListo()) await del(url, { token: blobToken() }).catch(() => {});
+}
 
 // ---------- Telegram ----------
 // Clave que Telegram manda en cada llamada al webhook (sale del token del bot, así no hay otra variable que guardar)

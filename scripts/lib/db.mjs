@@ -111,10 +111,14 @@ export async function opDirecta(accion, d = {}) {
       await rest('PATCH', `videos?id=eq.${+d.id}`, { vistas, vistas_total: total, vistas_al: new Date().toISOString() }, 'return=minimal');
       return 1;
     }
+    // ---------- cola de trabajos (tabla «cola»): las respuestas a comentarios que decides en Telegram ----------
+    case 'cola-agregar': { if (!d.tipo || !d.datos) return null; await rest('POST', 'cola', [{ tipo: String(d.tipo), datos: d.datos }], 'return=minimal'); return 1; }
+    case 'cola-lista': return rest('GET', `cola?select=id,datos,creado&tipo=eq.${encodeURIComponent(d.tipo || '')}&order=id.asc&limit=200`);
+    case 'cola-quitar': { if (!d.id) return null; await rest('DELETE', `cola?id=eq.${+d.id}`, null, 'return=minimal'); return 1; }
     default: throw new Error(`Acción desconocida: ${accion}`);
   }
 }
-export const ACCIONES = ['candidatas', 'publicadas', 'descartar', 'recientes', 'prog-lista', 'prog-insertar', 'prog-cambiar', 'cambios-lista', 'cambios-agregar', 'envio-buscar', 'envio-agregar', 'envios-lista', 'envio-vistas', 'video-guardar', 'videos-lista', 'video-de', 'video-vistas'];
+export const ACCIONES = ['cola-agregar', 'cola-lista', 'cola-quitar', 'candidatas', 'publicadas', 'descartar', 'recientes', 'prog-lista', 'prog-insertar', 'prog-cambiar', 'cambios-lista', 'cambios-agregar', 'envio-buscar', 'envio-agregar', 'envios-lista', 'envio-vistas', 'video-guardar', 'videos-lista', 'video-de', 'video-vistas'];
 // Un renglón de «programacion» con solo las columnas que existen (parcial = para un PATCH)
 const COLS = ['hora', 'pieza', 'fb', 'ig', 'tt', 'yt', 'dias', 'fecha', 'desde', 'hasta', 'inputs', 'activo', 'nota'];
 function filaProg(f, parcial = false) {

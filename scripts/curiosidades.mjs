@@ -101,7 +101,8 @@ async function subirImagen(file) {
   const token = blobToken(); if (!token) return null;
   const contentType = /\.jpe?g$/i.test(file) ? 'image/jpeg' : 'image/png';
   const { url, pathname } = await put(`media/curiosidades/${path.basename(file)}`, fs.readFileSync(file), { access: 'public', token, addRandomSuffix: true, contentType });
-  try {
+  // La lista del almacén es una operación avanzada del plan gratis de Vercel (un carrusel sube 7 imágenes): 1 de cada 10
+  if (Math.random() < 0.1) try {
     const viejos = (await list({ prefix: 'media/curiosidades/', token })).blobs.filter((b) => Date.parse(b.uploadedAt) < Date.now() - 7 * 864e5).map((b) => b.url);
     if (viejos.length) await del(viejos, { token });
   } catch { /* la limpieza no es crítica */ }
