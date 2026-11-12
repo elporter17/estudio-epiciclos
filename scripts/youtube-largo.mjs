@@ -13,6 +13,7 @@ import { planearLargo, publicarProximos } from './lib/proximos.mjs';
 import { setupNode, ROOT } from './lib/node-env.mjs';
 import { renderLargo, renderMiniatura } from './lib/largo-video.mjs';
 import { subirYouTube, youtubeReady, ponerMiniatura } from './lib/youtube.mjs';
+import { mandarVideoATelegram } from './lib/tg-video.mjs';
 
 const o = parseCli({ 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' }, productos: { type: 'string', default: '6' }, ids: { type: 'string' } });
 const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
@@ -90,5 +91,7 @@ if (!o['dry-run'] && youtubeReady()) {
   // Y se eligen ya los del siguiente video, para que el bot los muestre
   planearLargo(N, { nuevo: true }); await publicarProximos();
 }
+const aviso = `📺 <b>${titulo}</b> · ${(r.duration / 60).toFixed(1)} min` + (meta.youtube?.studio ? `\nSubido como privado: ${meta.youtube.studio}` : o['dry-run'] ? '\n(prueba: no se subió a YouTube)' : '');
+console.error(`Telegram: ${(await mandarVideoATelegram(video, aviso, { duracion: r.duration })) ? 'enviado' : 'no se pudo enviar'}`);
 fs.writeFileSync(video.replace(/\.mp4$/, '.json'), JSON.stringify(meta, null, 2) + '\n');
 console.log(JSON.stringify({ video, miniatura, duration: r.duration, youtube: meta.youtube }, null, 2));

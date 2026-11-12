@@ -15,6 +15,7 @@ import { subirYouTube, youtubeReady, ponerMiniatura } from './lib/youtube.mjs';
 import { dibujarFondo } from './lib/fondos-garabato.mjs';
 import { dibujarEstilo, numeroEstilo } from './lib/estilos-personaje.mjs';
 import { telegram } from './lib/control.mjs';
+import { mandarVideoATelegram } from './lib/tg-video.mjs';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import ffmpegPath from 'ffmpeg-static';
@@ -94,5 +95,8 @@ if (!o['dry-run'] && youtubeReady()) {
     await telegram(`📺 <b>${G.titulo}</b> (${(r.duration / 60).toFixed(1)} min) quedó subido como <b>privado</b> en YouTube. Revísalo y publícalo desde Studio: ${meta.youtube.studio}`).catch(() => {});
   } catch (e) { meta.youtube = { status: 'error', error: e.message }; console.error(`Aviso: YouTube: ${e.message}`); }
 }
+// Siempre a tu Telegram para revisarlo (también en las pruebas)
+const aviso = `📺 <b>${G.titulo}</b> · ${(r.duration / 60).toFixed(1)} min` + (meta.youtube?.studio ? `\nSubido como privado: ${meta.youtube.studio}` : o['dry-run'] ? '\n(prueba: no se subió a YouTube)' : '');
+console.error(`Telegram: ${(await mandarVideoATelegram(video, aviso, { duracion: r.duration })) ? 'enviado' : 'no se pudo enviar'}`);
 fs.writeFileSync(video.replace(/\.mp4$/, '.json'), JSON.stringify(meta, null, 2) + '\n');
 console.log(JSON.stringify({ video, miniatura: mini, duration: r.duration, youtube: meta.youtube }, null, 2));
