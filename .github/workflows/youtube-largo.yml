@@ -12,7 +12,7 @@ on:
         options: ['publicar', 'prueba']
         default: 'publicar'
       episodio:
-        description: Con tema «ysi»: el episodio (data/ysi/<episodio>.json)
+        description: 'Con tema ysi, el episodio (data/ysi/<episodio>.json)'
         type: string
         default: mentiras
       tema:
