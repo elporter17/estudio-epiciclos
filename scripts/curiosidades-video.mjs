@@ -36,6 +36,9 @@ const DIR = path.join(ROOT, 'data', 'curiosidades');
 const HIST = path.join(ROOT, 'data', 'curiosidades-video-historial.json'), HIST_IMG = path.join(ROOT, 'data', 'curiosidades-historial.json');
 const leer = (f, d) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return d; } };
 const azar = (a) => a[Math.floor(Math.random() * a.length)];
+// Una línea que pide comentar (la gente casi no comentaba): se pone justo debajo de la primera línea de la descripción
+const CTA = { banderas: 'Comenta cuántas sacaste 👇', geo: 'Comenta cuántas sacaste 👇', quiz: 'Comenta tu puntaje 👇', gtaquiz: 'Comenta cuántas sacaste 👇', retos: 'Comenta hasta qué nivel llegaste 👇', datos5: 'Comenta cuántas ya sabías 👇', top10: 'Comenta cuántas ya sabías 👇', prefieres: 'Comenta A o B 👇', emojis: 'Comenta cuántas adivinaste 👇', debate: 'Comenta tus 5 respuestas 👇', comosehace: 'Dime qué producto quieres ver 👇' };
+const conCta = (texto, formato) => { const c = CTA[formato]; if (!c || texto.includes(c)) return texto; const i = texto.indexOf('\n'); return i < 0 ? `${texto}\n💬 ${c}` : `${texto.slice(0, i)}\n💬 ${c}${texto.slice(i)}`; };
 const mezclar = (a) => a.map((x) => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map((p) => p[1]);
 const entre = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
 const OCULTAR = '\n\n.\n.\n.\n\n'; // lo que sigue queda debajo de «Ver más»
@@ -482,7 +485,7 @@ function comoSeHace(hist) {
 async function main() {
   const o = parseCli({
     formato: { type: 'string', default: 'auto' }, tema: { type: 'string' }, facebook: { type: 'string', default: 'si' },
-    historia: { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' },
+    historia: { type: 'boolean', default: true }, instagram: { type: 'string', default: 'si' },
     // TikTok: draft = también como borrador (la copia con solo efectos: allí se le pone la canción del momento)
     tiktok: { type: 'string', default: 'no' }, youtube: { type: 'string', default: 'si' }, 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' }
   });
@@ -520,6 +523,7 @@ async function main() {
   console.error(`${pieza.titulo} · ${r.duration.toFixed(1)} s · ${video}`);
   // Tono (scripts/lib/tono.mjs): la primera línea de la descripción, coloquial o picante; las noticias, limpias
   if (pieza.formato !== 'noticias') pieza.texto = textoConTono(pieza.texto, `${new Date().toISOString().slice(0, 10)}|${pieza.titulo}|${pieza.formato}`);
+  pieza.texto = conCta(pieza.texto, pieza.formato);
   const meta = { kind: 'quiz', formato: pieza.formato, title: pieza.titulo, file: path.basename(video), duration: r.duration, post: { text: pieza.texto }, createdAt: new Date().toISOString() };
   const sidecar = video.replace(/\.mp4$/, '.json');
 

@@ -1,0 +1,756 @@
+{
+  "id": "verdad",
+  "titulo": "¿Y si todos dijeran la verdad por 24 horas?",
+  "miniatura": {
+    "texto": "24 HORAS DE VERDAD",
+    "numero": 24
+  },
+  "reparto": {
+    "dani": {
+      "nombre": "Dani",
+      "ropa": "#14b8a6",
+      "pelo": "gorra",
+      "colorPelo": "#0f766e"
+    },
+    "mama": {
+      "nombre": "Mamá",
+      "ropa": "#ec4899",
+      "pelo": "largo",
+      "colorPelo": "#3b2a20"
+    },
+    "papa": {
+      "nombre": "Papá",
+      "ropa": "#3b82f6",
+      "pelo": "corto",
+      "colorPelo": "#1f2937"
+    },
+    "sofi": {
+      "nombre": "Sofi",
+      "ropa": "#eab308",
+      "pelo": "coletas",
+      "colorPelo": "#7c2d12",
+      "tam": 0.72
+    },
+    "kevin": {
+      "nombre": "Kevin",
+      "ropa": "#ef4444",
+      "pelo": "rizado",
+      "colorPelo": "#111827"
+    },
+    "vale": {
+      "nombre": "Valeria",
+      "ropa": "#8b5cf6",
+      "pelo": "cola",
+      "colorPelo": "#451a03"
+    },
+    "profe": {
+      "nombre": "Profe",
+      "ropa": "#64748b",
+      "pelo": "calvo",
+      "lentes": true
+    },
+    "vendedor": {
+      "nombre": "Vendedor",
+      "ropa": "#f97316",
+      "pelo": "gorra",
+      "colorPelo": "#9a3412"
+    },
+    "abuela": {
+      "nombre": "Abuela",
+      "ropa": "#84cc16",
+      "pelo": "moño",
+      "colorPelo": "#9ca3af",
+      "tam": 0.88
+    },
+    "politico": {
+      "nombre": "Político",
+      "ropa": "#1e293b",
+      "pelo": "corto",
+      "colorPelo": "#111827"
+    },
+    "jefe": {
+      "nombre": "Jefe",
+      "ropa": "#475569",
+      "pelo": "calvo",
+      "lentes": true
+    },
+    "luis": {
+      "nombre": "Luis",
+      "ropa": "#0ea5e9",
+      "pelo": "corto",
+      "colorPelo": "#292524"
+    },
+    "ana": {
+      "nombre": "Ana",
+      "ropa": "#f43f5e",
+      "pelo": "moño",
+      "colorPelo": "#292524"
+    }
+  },
+  "escenas": [
+    {
+      "capitulo": "Intro",
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "sorpresa"
+        }
+      ],
+      "voz": "Imagina que mañana, por veinticuatro horas, absolutamente todo el mundo en el planeta solo puede decir la verdad. Nada de mentiras blancas, nada de «estoy bien», nada de «me encantó tu regalo». Solo la verdad. ¿Sería el mejor día de tu vida o el peor?"
+    },
+    {
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "pensando",
+          "habla": true
+        }
+      ],
+      "voz": "Yo me desperté con esa idea en la cabeza y decidí averiguarlo. Salí a recorrer mi ciudad, para ver qué pasaba en cuatro lugares: el colegio, mi casa, una oficina y las noticias. Spoiler: nada salió como yo esperaba."
+    },
+    {
+      "capitulo": "Caso 1: El colegio",
+      "fondo": "aula",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "profe",
+          "x": 0.68,
+          "cara": "pensando"
+        }
+      ],
+      "voz": "Primer caso: el colegio. Eran las siete y media y el profe de matemáticas entró al salón con una cara rara, como si hubiera ensayado un discurso toda la noche."
+    },
+    {
+      "fondo": "aula",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "profe",
+          "x": 0.68,
+          "habla": true,
+          "cara": "triste"
+        }
+      ],
+      "voz": "—Muchachos, tengo que confesarles algo —dijo—. Los exámenes de la semana pasada no los califiqué. Los puse al azar. Es que la verdad es que no tenía ganas de calificar cuarenta exámenes."
+    },
+    {
+      "fondo": "aula",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "kevin",
+          "x": 0.68,
+          "habla": true,
+          "cara": "enojado"
+        }
+      ],
+      "voz": "El salón explotó. Kevin se paró de golpe. —¡Yo saqué noventa y cinco y estudié tres días! —gritó. Y el profe, sin poder mentir, le contestó: —Eso fue pura suerte, Kevin. Al azar."
+    },
+    {
+      "fondo": "aula",
+      "personajes": [
+        {
+          "id": "vale",
+          "x": 0.3,
+          "cara": "sorpresa",
+          "habla": true
+        },
+        {
+          "id": "profe",
+          "x": 0.68,
+          "cara": "triste"
+        }
+      ],
+      "voz": "Entonces Valeria levantó la mano. —Profe, ¿y por qué da clases si no le gusta? —preguntó. Y todo el salón se quedó callado. El profe se quitó los lentes y dijo algo que nunca voy a olvidar."
+    },
+    {
+      "fondo": "aula",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "triste"
+        },
+        {
+          "id": "profe",
+          "x": 0.68,
+          "habla": true,
+          "cara": "triste"
+        }
+      ],
+      "voz": "—Me gustaba. Hace veinte años me encantaba. Pero me pagan tan poco que tengo otros dos trabajos, y llego a clase sin dormir. Perdónenme. Ustedes merecen un profe mejor, y yo merezco un descanso."
+    },
+    {
+      "fondo": "aula",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "pensando"
+        },
+        {
+          "id": "kevin",
+          "x": 0.68,
+          "cara": "triste"
+        }
+      ],
+      "voz": "Nadie dijo nada por un buen rato. Kevin se sentó despacio. Y por primera vez en todo el año, la clase de matemáticas no tuvo ni un solo celular escondido, ni un solo chiste. Solo silencio. Un silencio de esos que pesan."
+    },
+    {
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "pensando"
+        },
+        {
+          "id": "vale",
+          "x": 0.68,
+          "cara": "sorpresa",
+          "habla": true
+        }
+      ],
+      "voz": "En el recreo me encontré con Valeria, la muchacha que me gusta. Pensé: este es el momento. Si hoy nadie puede mentir, hoy es el día de preguntarle lo que siempre quise saber. Y ahí empecé a darme cuenta de que la verdad también corta en las dos direcciones."
+    },
+    {
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "sorpresa",
+          "habla": true
+        },
+        {
+          "id": "vale",
+          "x": 0.68,
+          "cara": "pensando"
+        }
+      ],
+      "voz": "—Vale, ¿yo te caigo bien? —le pregunté. Ella se mordió el labio. Quiso decir algo amable, pero hoy no se podía. —Me caes bien —dijo al fin—. Pero todavía no te veo como algo más. Todavía. Y esa palabra, «todavía», me dejó pensando todo el día."
+    },
+    {
+      "capitulo": "Caso 2: La casa",
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "pensando"
+        },
+        {
+          "id": "mama",
+          "x": 0.68,
+          "cara": "triste"
+        }
+      ],
+      "voz": "Segundo caso: mi casa. Volví a la hora del almuerzo y encontré a mi mamá sentada en la cocina, mirando la pared. Algo no estaba bien, y esta vez ella no podía decirme «todo bien»."
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "habla": true
+        },
+        {
+          "id": "mama",
+          "x": 0.68,
+          "habla": true,
+          "cara": "triste"
+        }
+      ],
+      "voz": "—Mami, ¿qué pasa? —le pregunté. Y ella, que nunca me había dicho una cosa difícil, soltó todo. —Estoy cansada, mi amor. Estoy tan cansada que a veces me escondo en el baño cinco minutos solo para respirar. Y no quiero que me ayuden porque siento que si me ayudan, soy una mala mamá."
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "triste"
+        },
+        {
+          "id": "mama",
+          "x": 0.68,
+          "cara": "triste"
+        }
+      ],
+      "voz": "Me quedé helado. Toda mi vida creí que mi mamá era invencible. Que ella ya había comido, que ella no necesitaba nada, que ella nunca se cansaba. Todo eso eran mentiras de amor. Mentiras piadosas, de esas que no queremos que se acaben, pero que a veces nos esconden a las personas."
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "papa",
+          "x": 0.3,
+          "habla": true,
+          "cara": "enojado"
+        },
+        {
+          "id": "mama",
+          "x": 0.68,
+          "cara": "sorpresa"
+        }
+      ],
+      "voz": "Entonces entró mi papá, escuchó todo, y como hoy no podía mentir, dijo lo que de verdad pensaba. —Yo pensé que estabas exagerando. Siempre lo pensé. —Mi mamá abrió los ojos como platos. Y ahí empezó la pelea más honesta de la historia de mi familia."
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "papa",
+          "x": 0.3,
+          "habla": true,
+          "cara": "enojado"
+        },
+        {
+          "id": "mama",
+          "x": 0.68,
+          "habla": true,
+          "cara": "enojado"
+        }
+      ],
+      "voz": "Se dijeron todo lo que se habían guardado por quince años. Ella, que no la ayudaban. Él, que ella nunca le pedía nada. Ella, que no debería haber tenido que pedirlo. Y yo en medio, con un plato de arroz, sin saber si salir corriendo o quedarme a escuchar."
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.2,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "mama",
+          "x": 0.5,
+          "cara": "triste"
+        },
+        {
+          "id": "papa",
+          "x": 0.8,
+          "cara": "triste"
+        }
+      ],
+      "voz": "Lo curioso es que al terminar la pelea, ninguno gritaba. Estaban sentados, sin nada que esconder. Mi papá dijo: —Mañana lavo yo los platos. Y mi mamá, entre lágrimas, se rió. —No sabés ni dónde está el jabón. Y era verdad. Pero se rieron juntos."
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "sofi",
+          "x": 0.3,
+          "habla": true,
+          "cara": "feliz"
+        },
+        {
+          "id": "abuela",
+          "x": 0.68,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "Mi hermanita Sofi entró corriendo con la boca llena. —Mami, me comí la última galleta —confesó, sin que nadie le preguntara. Y la abuela, que estaba tejiendo, soltó la carcajada. —Y yo me comí las otras tres —dijo. Una familia entera de ladrones de galletas, y por primera vez lo sabíamos."
+    },
+    {
+      "capitulo": "Caso 3: La oficina",
+      "fondo": "oficina",
+      "personajes": [
+        {
+          "id": "luis",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "jefe",
+          "x": 0.68,
+          "cara": "pensando"
+        }
+      ],
+      "voz": "Tercer caso: una oficina. Le pedí a mi tío Luis que me dejara pasar la tarde con él en su trabajo, porque mi tío trabaja en una empresa grande y siempre dice que su jefe es un monstruo. Ese día íbamos a ver si era verdad."
+    },
+    {
+      "fondo": "oficina",
+      "personajes": [
+        {
+          "id": "luis",
+          "x": 0.3,
+          "habla": true,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "jefe",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "—Luis, ¿qué te parece mi presentación de ventas? —preguntó el jefe, orgulloso. Y mi tío, que normalmente asentía con una sonrisa fingida, abrió la boca. —Es aburridísima. Tiene cuarenta diapositivas, nadie entiende los gráficos, y usted se pasa la mitad del tiempo hablando de sí mismo."
+    },
+    {
+      "fondo": "oficina",
+      "personajes": [
+        {
+          "id": "luis",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "jefe",
+          "x": 0.68,
+          "cara": "sorpresa"
+        }
+      ],
+      "voz": "El silencio fue absoluto. Mi tío se tapó la boca con las dos manos, como si pudiera meter las palabras de vuelta. Pero ya estaban dichas. El jefe lo miró fijamente, y yo pensé: ahora sí lo despiden en el acto."
+    },
+    {
+      "fondo": "oficina",
+      "personajes": [
+        {
+          "id": "luis",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "jefe",
+          "x": 0.68,
+          "habla": true,
+          "cara": "triste"
+        }
+      ],
+      "voz": "Pero el jefe, que tampoco podía mentir, respiró hondo. —Tienes razón —dijo—. Y yo te dije la semana pasada que tu propuesta era mala, y la verdad es que era brillante. La rechacé porque me dio envidia. Perdóname."
+    },
+    {
+      "fondo": "oficina",
+      "personajes": [
+        {
+          "id": "luis",
+          "x": 0.3,
+          "habla": true,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "ana",
+          "x": 0.68,
+          "cara": "feliz",
+          "habla": true
+        }
+      ],
+      "voz": "En eso entró Ana, de contabilidad, con un pastel. —Les traje pastel —anunció—. Aunque la verdad es que lo compré porque quiero que me suban el sueldo y creí que con pastel iba a funcionar. Todos se echaron a reír. Fue la primera vez que vi esa oficina reírse junta."
+    },
+    {
+      "fondo": "oficina",
+      "personajes": [
+        {
+          "id": "luis",
+          "x": 0.25,
+          "cara": "feliz"
+        },
+        {
+          "id": "ana",
+          "x": 0.5,
+          "cara": "feliz"
+        },
+        {
+          "id": "jefe",
+          "x": 0.75,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "Lo más loco fue lo que pasó después. En una sola tarde, en esa oficina se resolvieron más problemas que en todo el año. Porque cuando nadie puede esconderse, todo lo importante sale a la mesa. El jefe cambió dos reglas y mi tío logró que lo escucharan por primera vez en cinco años."
+    },
+    {
+      "fondo": "oficina",
+      "personajes": [
+        {
+          "id": "luis",
+          "x": 0.35,
+          "habla": true,
+          "cara": "pensando"
+        },
+        {
+          "id": "dani",
+          "x": 0.7,
+          "cara": "pensando"
+        }
+      ],
+      "voz": "Al salir, mi tío me dijo algo curioso. —Dani, hoy dije cosas que debí decir hace años. Y no me despidieron. ¿Sabes lo que me da miedo? Que mañana, cuando se acabe el día, vamos a volver a callarnos todo otra vez."
+    },
+    {
+      "capitulo": "Caso 4: Las noticias",
+      "fondo": "sala",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.28,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "politico",
+          "x": 0.66,
+          "tele": true,
+          "alto": 470,
+          "suelo": 860
+        }
+      ],
+      "voz": "Cuarto caso: las noticias. A las ocho de la noche toda mi familia se sentó frente a la tele, porque había discurso de un político, y esa noche, por primera vez en la historia, iba a decir la verdad."
+    },
+    {
+      "fondo": "sala",
+      "personajes": [
+        {
+          "id": "papa",
+          "x": 0.28,
+          "cara": "pensando"
+        },
+        {
+          "id": "politico",
+          "x": 0.66,
+          "tele": true,
+          "alto": 470,
+          "suelo": 860,
+          "habla": true
+        }
+      ],
+      "voz": "—Ciudadanos —empezó—, ayer prometí arreglar las calles. La verdad es que no tengo presupuesto, que ya me gasté parte en la campaña y que probablemente no voy a poder cumplir. Lo siento. Y mi papá, sentado en el sillón, soltó un «¡al fin uno que habla claro!»."
+    },
+    {
+      "fondo": "sala",
+      "personajes": [
+        {
+          "id": "mama",
+          "x": 0.28,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "politico",
+          "x": 0.66,
+          "tele": true,
+          "alto": 470,
+          "suelo": 860,
+          "habla": true,
+          "cara": "triste"
+        }
+      ],
+      "voz": "El político siguió. —Tampoco me importa tanto la gente del campo, voy a ser sincero. Nunca he ido. Mi mamá se levantó del sillón. —¡Pero qué descarado! —exclamó. Mi papá le respondió: —Pero es honesto. Y ahí se armó un debate familiar que duró hasta la medianoche."
+    },
+    {
+      "fondo": "noche",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "pensando"
+        },
+        {
+          "id": "abuela",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "Esa noche salí a caminar con mi abuela. —Abuela, ¿qué piensas de todo esto? —le pregunté. Ella se quedó pensando un rato largo. —Que la verdad es como las medicinas —dijo—. Sirve, pero hay que saber cuándo y cómo darla."
+    },
+    {
+      "fondo": "noche",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "pensando"
+        },
+        {
+          "id": "abuela",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "—Cuando eras chiquito y te dije que tu perro se fue a vivir al campo —continuó—, no mentí para engañarte. Mentí porque no tenía fuerzas de verte llorar. Y eso es lo que pasa con muchas mentiras, mi amor: son abrazos disfrazados. Y yo nunca te lo había dicho."
+    },
+    {
+      "capitulo": "Caso 5: La cita",
+      "fondo": "parque",
+      "personajes": [
+        {
+          "id": "luis",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "ana",
+          "x": 0.68,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "Quinto caso, y el más divertido: una primera cita. En el parque me encontré a mi tío Luis y a Ana, la de contabilidad, sentados en una banca. Los dos con la ropa de los domingos y los dos tan nerviosos que se les notaba a kilómetros."
+    },
+    {
+      "fondo": "parque",
+      "personajes": [
+        {
+          "id": "luis",
+          "x": 0.3,
+          "habla": true,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "ana",
+          "x": 0.68,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "—Ana, te quiero decir algo —empezó mi tío, rojo como un tomate—. Me pasé tres horas eligiendo esta camisa, y me la compré ayer. Y la verdad es que me aprieta un poco, no puedo respirar bien. Pero quería que te gustara."
+    },
+    {
+      "fondo": "parque",
+      "personajes": [
+        {
+          "id": "luis",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "ana",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "Ana se echó a reír. —Y yo me puse tacones que me están matando —confesó—. Los pies me duelen desde que salí de la casa. Y mientras estaba en la fila de la panadería pensé en cancelar la cita, porque me dio pánico."
+    },
+    {
+      "fondo": "parque",
+      "personajes": [
+        {
+          "id": "luis",
+          "x": 0.3,
+          "habla": true,
+          "cara": "feliz"
+        },
+        {
+          "id": "ana",
+          "x": 0.68,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "—¿Y por qué no la cancelaste? —preguntó mi tío. —Porque desde hace dos años me gustás —dijo ella—. Y hoy no puedo mentir. Mi tío se quedó mudo. Se le cayó el helado. Y yo, escondido detrás de un árbol, casi me caigo de la emoción."
+    },
+    {
+      "fondo": "parque",
+      "personajes": [
+        {
+          "id": "luis",
+          "x": 0.3,
+          "habla": true,
+          "cara": "feliz"
+        },
+        {
+          "id": "ana",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "—Yo también —logró decir mi tío al fin—. Desde la primera vez que me regalaste una galleta, sin que yo te la pidiera. Se quitaron los zapatos y la camisa los dos —bueno, la camisa no—, y caminaron descalzos por el pasto, riéndose como adolescentes."
+    },
+    {
+      "fondo": "parque",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "pensando"
+        },
+        {
+          "id": "luis",
+          "x": 0.7,
+          "habla": true,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "Más tarde, mi tío me dijo: —Dani, ¿sabes qué es lo más raro? Que si hoy fuera un día normal, jamás me habría atrevido a decirle nada. Yo habría seguido callado años y años. Hoy me costó cinco minutos, y no me morí. Me quedé con esa frase en la cabeza el resto de la tarde."
+    },
+    {
+      "capitulo": "Final",
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "triste"
+        }
+      ],
+      "voz": "Esa noche me acosté pensando en todo lo que había visto. En el profe que ya no podía más. En mi mamá, cansada. En mi tío y su jefe. En el político, honesto y terrible. Y me di cuenta de algo: yo también tenía cosas que decir."
+    },
+    {
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "habla": true,
+          "cara": "pensando"
+        }
+      ],
+      "voz": "A las once cincuenta y nueve de la noche, a un minuto de que acabara el día, tomé el celular y le escribí a la persona que más había estado evitando. A Kevin. Le escribí: «Perdón por no haberte preguntado más cuando algo te pasaba. Siempre me fui por lo fácil. Aquí estoy.»"
+    },
+    {
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "sorpresa"
+        }
+      ],
+      "voz": "Medianoche. El día terminó. Y de pronto, todos los que habían dicho la verdad en esas veinticuatro horas pudieron volver a mentir. Y adivina qué pasó. Mi celular sonó. Era Kevin: «No tenías que decirlo hoy. Pero me alegra que lo hayas hecho.»"
+    },
+    {
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "habla": true,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "Entonces entendí la gran lección de este día. La verdad no es perfecta. A veces duele, a veces es injusta, a veces llega en el peor momento. Pero cuando es dicha con cariño, cambia todo. Y la mentira, aunque cómoda, casi siempre nos mantiene lejos de las personas que queremos."
+    },
+    {
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "habla": true,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "Ahora te pregunto a vos: si mañana fuera el día de la verdad, ¿a quién le dirías algo que llevas años guardando? Escríbelo en los comentarios. No hace falta poner el nombre. Solo cuéntanos qué le dirías."
+    },
+    {
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "habla": true,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "Si te gustó este episodio, suscribite a Potter Play. La próxima semana: ¿y si pudieras revivir un solo día de tu vida? Nos vemos."
+    }
+  ]
+}

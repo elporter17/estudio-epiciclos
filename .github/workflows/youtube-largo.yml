@@ -11,6 +11,10 @@ on:
         type: choice
         options: ['publicar', 'prueba']
         default: 'publicar'
+      episodio:
+        description: Con tema «ysi»: el episodio (data/ysi/<episodio>.json)
+        type: string
+        default: mentiras
       tema:
         description: «como-se-hace» (lo de siempre), «gta» (la historia de GTA) o «ysi» (historia «¿Y si pudieras ver…?», data/ysi)
         type: choice
@@ -30,5 +34,5 @@ jobs:
       facebook: 'no'
       aviso: false
       prueba: ${{ inputs.modo == 'prueba' }}
-      figura: ${{ inputs.tema != 'como-se-hace' && inputs.tema || '' }}
+      figura: ${{ inputs.tema == 'ysi' && format('ysi:{0}', inputs.episodio) || inputs.tema != 'como-se-hace' && inputs.tema || '' }}
     secrets: inherit

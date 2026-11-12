@@ -17,8 +17,8 @@ const leer = (f, d) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } 
 const BASE = path.join(ROOT, 'data', 'metas.json'), SEMANA = path.join(ROOT, 'data', 'metas-semana.json');
 // Una sola corrida al día de metas.yml (11:07, scripts/lib/horario.mjs). Antes eran 3 con hasta 3 carruseles cada una
 // y en el feed se veían como publicaciones repetidas (8 nov: 16:20, 16:21 y 16:22): ahora 1 foto por día como mucho
-const CORRIDAS = [11 * 60 + 7];
-const TOPE = { fotos: 1, historias: 5 };
+const CORRIDAS = [11 * 60 + 7, 15 * 60 + 7, 21 * 60 + 7];
+const TOPE = { fotos: 1, historias: 3 };
 
 // Inicio de la semana de Meta: el domingo a las 00:00 en Los Ángeles
 function inicioSemana(ahora = new Date()) {

@@ -15,9 +15,14 @@ import { subirYouTube, youtubeReady, ponerMiniatura } from './lib/youtube.mjs';
 import { dibujarFondo } from './lib/fondos-garabato.mjs';
 import { dibujarEstilo, numeroEstilo } from './lib/estilos-personaje.mjs';
 import { telegram } from './lib/control.mjs';
+import crypto from 'node:crypto';
+import { spawnSync } from 'node:child_process';
+import ffmpegPath from 'ffmpeg-static';
+import { db } from './lib/db.mjs';
 
 const o = parseCli({ miniatura: { type: 'boolean', default: false }, episodio: { type: 'string', default: 'mentiras' }, 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' } });
 const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
+if (!/^[a-z0-9-]+$/.test(o.episodio)) throw new Error('episodio inválido');
 const G = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'ysi', `${o.episodio}.json`), 'utf8'));
 
 // Fondos dibujados a mano (scripts/lib/fondos-garabato.mjs): todo animado, sin fotos
@@ -51,6 +56,36 @@ const capitulos = r.capitulos.map((c) => `${mmss(c.t)} ${c.titulo}`).join('\n');
 const descripcion = `${G.titulo}\n\nUn día despiertas y puedes ver, encima de la cabeza de cada persona, cuántas mentiras ha dicho en su vida. Tu mamá, tu mejor amigo, la persona que te gusta… y tú.\n\nCapítulos:\n${capitulos}\n\n💬 ¿Cuántas mentiras crees que tendrías? Escríbelo en los comentarios.\n🔔 Suscríbete a Potter Play: una historia nueva de «¿Y si pudieras ver…?» cada semana.\n\nHistoria de ficción. Todo dibujado por Potter Play.\n\n#ysipudierasver #historias #animacion #potterplay`;
 const meta = { kind: 'ysi', title: G.titulo, file: path.basename(video), duration: r.duration, post: { text: descripcion }, createdAt: new Date().toISOString() };
 console.error(`${G.titulo} · ${(r.duration / 60).toFixed(1)} min\n${capitulos}`);
+
+// Partes para Reels (verticales, hasta 58 s): el inicio de cada «Caso», con el fondo borroso, «Parte N de M» y la invitación
+// a ver el final en YouTube. Se guardan en out/partes y en la tabla «videos» para publicarlas con republicar.yml en su día
+const casos = r.capitulos.map((c, i) => ({ ...c, fin: r.capitulos[i + 1]?.t ?? r.duration })).filter((c) => /^Caso/i.test(c.titulo));
+if (casos.length) {
+  const dirP = path.join(outDir, 'partes'); fs.mkdirSync(dirP, { recursive: true });
+  for (const [i, c] of casos.entries()) {
+    const n = i + 1, dur = Math.min(58, c.fin - c.t), archivoP = path.join(dirP, `${G.id}-parte${n}.mp4`), over = path.join(dirP, `${G.id}-parte${n}.png`);
+    const cv = createCanvas(1080, 1920), g = cv.getContext('2d'); g.textAlign = 'center';
+    g.font = '400 64px "Archivo Black", Impact, sans-serif'; g.lineWidth = 12; g.strokeStyle = '#111'; g.fillStyle = '#facc15';
+    g.strokeText(`PARTE ${n} DE ${casos.length}`, 540, 250); g.fillText(`PARTE ${n} DE ${casos.length}`, 540, 250);
+    g.font = '400 52px "Archivo Black", Impact, sans-serif'; g.fillStyle = '#fff'; const tit = c.titulo.replace(/^Caso d+:?s*/i, '');
+    g.strokeText(tit, 540, 330); g.fillText(tit, 540, 330);
+    g.fillStyle = 'rgba(15,15,25,0.78)'; g.beginPath(); g.roundRect(90, 1560, 900, 130, 30); g.fill(); g.fillStyle = '#fff'; g.font = '700 44px "IBM Plex Sans", sans-serif';
+    g.fillText(n < casos.length ? `Mañana, la parte ${n + 1} 👀` : 'El final, en YouTube 👇', 540, 1640);
+    fs.writeFileSync(over, cv.toBuffer('image/png'));
+    const filtro = '[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:5[bg];[b]scale=1080:-2[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2[v0];[v0][1:v]overlay=0:0[v]';
+    const ff = spawnSync(ffmpegPath, ['-hide_banner', '-loglevel', 'error', '-y', '-ss', c.t.toFixed(2), '-t', dur.toFixed(2), '-i', video, '-i', over, '-filter_complex', filtro, '-map', '[v]', '-map', '0:a', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', archivoP], { stdio: ['ignore', 'ignore', 'pipe'] });
+    if (ff.status !== 0) { console.error(`Aviso: parte ${n}: ${String(ff.stderr).slice(0, 200)}`); continue; }
+    const texto = `${G.titulo} · Parte ${n} de ${casos.length}
+💬 ¿Qué harías tú en este caso? Comenta 👇
+
+El episodio completo, en YouTube: Potter Play.
+
+#ysi #historias #animacion #potterplay #reels`;
+    const huella = crypto.createHash('sha256').update(fs.readFileSync(archivoP)).digest('hex');
+    if (process.env.GITHUB_RUN_ID) await db('video-guardar', { video: { huella, formato: 'ysi-parte', titulo: `${G.titulo} · Parte ${n} de ${casos.length}`, descripcion: texto, run_id: process.env.GITHUB_RUN_ID, artefacto: `video-${process.env.GITHUB_RUN_ID}`, archivo: `partes/${G.id}-parte${n}.mp4` } }).catch((e) => console.error(`Aviso: Supabase: ${e.message}`));
+    console.error(`Parte ${n}: ${dur.toFixed(0)} s · ${tit}`);
+  }
+}
 
 if (!o['dry-run'] && youtubeReady()) {
   try {
