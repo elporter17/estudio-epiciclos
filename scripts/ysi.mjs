@@ -16,7 +16,7 @@ import { dibujarFondo } from './lib/fondos-garabato.mjs';
 import { dibujarEstilo, numeroEstilo } from './lib/estilos-personaje.mjs';
 import { telegram } from './lib/control.mjs';
 
-const o = parseCli({ episodio: { type: 'string', default: 'mentiras' }, 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' } });
+const o = parseCli({ miniatura: { type: 'boolean', default: false }, episodio: { type: 'string', default: 'mentiras' }, 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' } });
 const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
 const G = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'ysi', `${o.episodio}.json`), 'utf8'));
 
@@ -33,8 +33,8 @@ async function miniatura(out) {
   // El patio dibujado a mano, escalado a 1280×720
   g.save(); g.scale(W / 1920, H / 1080); dibujarFondo(g, 'patio', 1920, 1080, 0, 9); g.restore();
   const lado = g.createLinearGradient(0, 0, W, 0); lado.addColorStop(0, 'rgba(10,10,20,0.75)'); lado.addColorStop(0.55, 'rgba(10,10,20,0.15)'); lado.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = lado; g.fillRect(0, 0, W, H);
-  const c = dibujarEstilo(g, 'garabato', { ...G.reparto.kevin, sobreFoto: true }, 960, 700, 560, { expresion: 'feliz', semilla: 20 });
-  numeroEstilo(g, 'garabato', (m.numero || 9416).toLocaleString('es-HN').replace(/,/g, '.'), 960, c.cabeza - 40, 92, true);
+  const c = dibujarEstilo(g, 'garabato', { ...G.reparto.kevin, sobreFoto: true }, 960, 700, 440, { expresion: 'feliz', semilla: 20 });
+  numeroEstilo(g, 'garabato', (m.numero || 9416).toLocaleString('es-HN').replace(/,/g, '.'), 960, Math.max(80, c.cabeza - 30), 84, true);
   g.font = '400 92px "Archivo Black", Impact, sans-serif'; g.textAlign = 'left'; g.textBaseline = 'top';
   const palabras = (m.texto || '¿Y SI PUDIERAS VER?').split(' '), lineas = []; let l = '';
   for (const w of palabras) { const p = l ? `${l} ${w}` : w; if (g.measureText(p).width > 620) { lineas.push(l); l = w; } else l = p; } lineas.push(l);
@@ -43,6 +43,7 @@ async function miniatura(out) {
 }
 
 const video = path.join(outDir, `${nombre}.mp4`), mini = path.join(outDir, `${nombre}-miniatura.jpg`);
+if (o.miniatura) { await miniatura(mini); console.log(mini); process.exit(0); }
 const r = await renderLargo({ escenas, out: video, emojiFont, estilo: 'lofi', semilla: 4208 });
 await miniatura(mini);
 const mmss = (t) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
