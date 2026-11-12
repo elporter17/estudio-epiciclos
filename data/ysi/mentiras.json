@@ -1,0 +1,896 @@
+{
+  "id": "mentiras",
+  "titulo": "¿Y si pudieras ver cuántas mentiras ha dicho cada persona?",
+  "miniatura": {
+    "texto": "¿CUÁNTAS MENTIRAS?",
+    "numero": 9416
+  },
+  "fondos": {
+    "cuarto": "cozy bedroom morning sunlight",
+    "cocina": "home kitchen morning",
+    "calle": "latin american street market",
+    "bus": "bus interior passengers",
+    "aula": "school classroom desks",
+    "patio": "school courtyard students",
+    "sala": "living room television night",
+    "noche": "city street night lights",
+    "taller": "motorcycle repair workshop",
+    "bano": "bathroom mirror sink"
+  },
+  "reparto": {
+    "dani": {
+      "nombre": "Dani",
+      "ropa": "#14b8a6",
+      "pelo": "gorra",
+      "colorPelo": "#0f766e"
+    },
+    "mama": {
+      "nombre": "Mamá",
+      "ropa": "#ec4899",
+      "pelo": "largo",
+      "colorPelo": "#3b2a20"
+    },
+    "papa": {
+      "nombre": "Papá",
+      "ropa": "#3b82f6",
+      "pelo": "corto",
+      "colorPelo": "#1f2937"
+    },
+    "sofi": {
+      "nombre": "Sofi",
+      "ropa": "#eab308",
+      "pelo": "coletas",
+      "colorPelo": "#7c2d12",
+      "tam": 0.72
+    },
+    "kevin": {
+      "nombre": "Kevin",
+      "ropa": "#ef4444",
+      "pelo": "rizado",
+      "colorPelo": "#111827"
+    },
+    "vale": {
+      "nombre": "Valeria",
+      "ropa": "#8b5cf6",
+      "pelo": "cola",
+      "colorPelo": "#451a03"
+    },
+    "profe": {
+      "nombre": "Profe",
+      "ropa": "#64748b",
+      "pelo": "calvo",
+      "lentes": true
+    },
+    "vendedor": {
+      "nombre": "Vendedor",
+      "ropa": "#f97316",
+      "pelo": "gorra",
+      "colorPelo": "#9a3412"
+    },
+    "abuela": {
+      "nombre": "Abuela",
+      "ropa": "#84cc16",
+      "pelo": "moño",
+      "colorPelo": "#9ca3af",
+      "tam": 0.88
+    },
+    "politico": {
+      "nombre": "Político",
+      "ropa": "#1e293b",
+      "pelo": "corto",
+      "colorPelo": "#111827"
+    },
+    "jefe": {
+      "nombre": "Jefe del taller",
+      "ropa": "#78716c",
+      "pelo": "calvo"
+    }
+  },
+  "escenas": [
+    {
+      "capitulo": "El primer número",
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "sueño"
+        }
+      ],
+      "voz": "Imagina despertar un día y ver, flotando encima de la cabeza de cada persona, un número. No es su edad ni su peso. Es la cantidad exacta de mentiras que ha dicho en toda su vida."
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "sorpresa",
+          "x": 0.3
+        },
+        {
+          "id": "mama",
+          "x": 0.68,
+          "num": {
+            "valor": 2847,
+            "aparece": true
+          }
+        }
+      ],
+      "voz": "A mí me pasó un lunes. Bajé a la cocina medio dormido, y ahí estaba mi mamá con su café. Encima de su cabeza, un número rojo: dos mil ochocientos cuarenta y siete."
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3
+        },
+        {
+          "id": "mama",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz",
+          "num": {
+            "de": 2847,
+            "valor": 2848,
+            "en": 0.45
+          }
+        }
+      ],
+      "voz": "—Buenos días, mi amor. Dormí perfecto —me dijo. Y el número subió: dos mil ochocientos cuarenta y ocho. Mi mamá tenía ojeras de tres días. No había dormido nada."
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "pensando"
+        },
+        {
+          "id": "papa",
+          "x": 0.68,
+          "num": {
+            "valor": 1932,
+            "aparece": true
+          }
+        }
+      ],
+      "voz": "Mi papá entró con el celular en la mano. Mil novecientos treinta y dos. Menos que mi mamá. Pensé que era el más honesto de la casa… hasta que sonó el teléfono."
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "feliz"
+        },
+        {
+          "id": "papa",
+          "x": 0.68,
+          "habla": true,
+          "num": {
+            "de": 1932,
+            "valor": 1933,
+            "en": 0.4
+          }
+        }
+      ],
+      "voz": "—Sí, jefe, ya voy en camino —dijo, todavía en pijama. Mil novecientos treinta y tres. Tuve que taparme la boca para no reírme."
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "sofi",
+          "x": 0.68,
+          "num": {
+            "valor": 58,
+            "aparece": true
+          }
+        }
+      ],
+      "voz": "Entonces bajó mi hermanita Sofi. Ocho años. Encima de su cabeza: cincuenta y ocho. ¿Cincuenta y ocho mentiras a los ocho años? Eso es más de siete por año."
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "mama",
+          "x": 0.3
+        },
+        {
+          "id": "sofi",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz",
+          "num": {
+            "de": 58,
+            "valor": 59,
+            "en": 0.5
+          }
+        }
+      ],
+      "voz": "—Mami, yo no me comí la última galleta —dijo, con la boca llena de migas. Cincuenta y nueve. Por lo menos algunas cosas tenían sentido."
+    },
+    {
+      "fondo": "bano",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "pensando"
+        }
+      ],
+      "voz": "Me lavé la cara con agua fría. Me froté los ojos. Y los números seguían ahí. No era un sueño. De alguna forma, podía ver las mentiras de todo el mundo."
+    },
+    {
+      "capitulo": "La calle",
+      "fondo": "calle",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "vendedor",
+          "x": 0.68,
+          "num": {
+            "valor": 41230,
+            "aparece": true
+          }
+        }
+      ],
+      "voz": "En la calle fue peor. Todo el mundo tenía un número. El señor que vende aguacates en la esquina: cuarenta y un mil doscientos treinta."
+    },
+    {
+      "fondo": "calle",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "feliz"
+        },
+        {
+          "id": "vendedor",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz",
+          "num": {
+            "de": 41230,
+            "valor": 41231,
+            "en": 0.5
+          }
+        }
+      ],
+      "voz": "—¡Aguacates maduritos, para hoy mismo! —gritaba, mientras metía unos bien duros en la bolsa de una señora. Cuarenta y un mil doscientos treinta y uno."
+    },
+    {
+      "fondo": "bus",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3
+        },
+        {
+          "id": "abuela",
+          "x": 0.68,
+          "cara": "feliz",
+          "num": {
+            "valor": 312,
+            "aparece": true
+          }
+        }
+      ],
+      "voz": "En el bus me senté junto a una abuelita que tejía una bufanda. Trescientos doce. En toda su vida. Me dieron ganas de abrazarla."
+    },
+    {
+      "fondo": "bus",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "feliz"
+        },
+        {
+          "id": "abuela",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz",
+          "num": {
+            "valor": 312
+          }
+        }
+      ],
+      "voz": "—Qué muchacho tan guapo —me dijo. Y el número no se movió. Por primera vez en toda la mañana, sentí que alguien me decía la verdad."
+    },
+    {
+      "capitulo": "El colegio",
+      "fondo": "aula",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "pensando"
+        },
+        {
+          "id": "profe",
+          "x": 0.68,
+          "num": {
+            "valor": 15702,
+            "aparece": true
+          }
+        }
+      ],
+      "voz": "Llegué al colegio. El profe de matemáticas tenía quince mil setecientos dos. Y justo ese día teníamos examen."
+    },
+    {
+      "fondo": "aula",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "profe",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz",
+          "num": {
+            "de": 15702,
+            "valor": 15703,
+            "en": 0.4
+          }
+        }
+      ],
+      "voz": "—Tranquilos, muchachos, el examen va a estar facilito —dijo. Quince mil setecientos tres. Media clase se puso pálida. Yo ya sabía lo que venía."
+    },
+    {
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "kevin",
+          "x": 0.68,
+          "cara": "feliz",
+          "num": {
+            "valor": 9416,
+            "aparece": true
+          }
+        }
+      ],
+      "voz": "Y entonces lo vi. Kevin, mi mejor amigo desde primer grado. El que siempre me hace reír. Encima de su cabeza: nueve mil cuatrocientos dieciséis."
+    },
+    {
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "triste"
+        },
+        {
+          "id": "kevin",
+          "x": 0.68,
+          "cara": "feliz",
+          "num": {
+            "valor": 9416
+          }
+        }
+      ],
+      "voz": "Casi diez mil mentiras. Más que mi mamá, mi papá y mi hermana juntos. Sentí algo raro en el estómago. ¿Cuántas de esas me las había dicho a mí?"
+    },
+    {
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "pensando"
+        },
+        {
+          "id": "kevin",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz",
+          "num": {
+            "de": 9416,
+            "valor": 9417,
+            "en": 0.55
+          }
+        }
+      ],
+      "voz": "—¿Qué onda, Dani? Todo bien en la casa, todo tranquilo —me dijo, con su sonrisa de siempre. Nueve mil cuatrocientos diecisiete."
+    },
+    {
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "vale",
+          "x": 0.68,
+          "num": {
+            "valor": 7,
+            "aparece": true
+          }
+        }
+      ],
+      "voz": "En el recreo pasó Valeria. La muchacha que me gusta desde hace un año. Me dio miedo mirar su número… pero miré. Siete. Solo siete mentiras en toda su vida."
+    },
+    {
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "feliz"
+        },
+        {
+          "id": "vale",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz",
+          "num": {
+            "valor": 7
+          }
+        }
+      ],
+      "voz": "—Oye, vi tu dibujo en el mural. Está bien bonito —me dijo. Y el siete no se movió. Era verdad. Creo que sonreí como un tonto el resto del día."
+    },
+    {
+      "capitulo": "Las noticias",
+      "fondo": "sala",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.28,
+          "cara": "sorpresa"
+        },
+        {
+          "id": "politico",
+          "x": 0.66,
+          "tele": true,
+          "alto": 470,
+          "suelo": 860,
+          "num": {
+            "valor": 3418000,
+            "aparece": true,
+            "size": 50
+          }
+        }
+      ],
+      "voz": "Esa noche salió un político en las noticias. Me tuve que acercar a la tele para contar los números: tres millones cuatrocientos dieciocho mil."
+    },
+    {
+      "fondo": "sala",
+      "personajes": [
+        {
+          "id": "papa",
+          "x": 0.28,
+          "habla": true,
+          "num": {
+            "de": 1933,
+            "valor": 1934,
+            "en": 0.78
+          }
+        },
+        {
+          "id": "politico",
+          "x": 0.66,
+          "tele": true,
+          "alto": 470,
+          "suelo": 860,
+          "habla": true,
+          "num": {
+            "de": 3418000,
+            "valor": 3418001,
+            "en": 0.35,
+            "size": 50
+          }
+        }
+      ],
+      "voz": "—Les prometo que este año sí arreglamos las calles —dijo. Tres millones cuatrocientos dieciocho mil uno. Y mi papá, desde el sillón: —Este sí es honesto. Mil novecientos treinta y cuatro."
+    },
+    {
+      "capitulo": "El secreto de Kevin",
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "pensando"
+        }
+      ],
+      "voz": "Pero yo no podía dejar de pensar en Kevin. Casi diez mil mentiras. ¿Por qué alguien mentiría tanto? Al día siguiente decidí preguntarle."
+    },
+    {
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "habla": true
+        },
+        {
+          "id": "kevin",
+          "x": 0.68,
+          "cara": "sorpresa",
+          "num": {
+            "de": 9417,
+            "valor": 9418,
+            "en": 0.85
+          }
+        }
+      ],
+      "voz": "—Kevin, ¿por qué mentís tanto? —le solté, sin pensarlo. Se quedó quieto. —¿De qué hablás? Yo no miento —dijo. Nueve mil cuatrocientos dieciocho."
+    },
+    {
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "habla": true,
+          "cara": "triste"
+        },
+        {
+          "id": "kevin",
+          "x": 0.68,
+          "cara": "enojado",
+          "num": {
+            "valor": 9418
+          }
+        }
+      ],
+      "voz": "—Sé que algo te pasa. Vos no estás bien —le dije. Kevin se puso rojo, agarró su mochila y se fue sin decir nada. Nunca lo había visto así."
+    },
+    {
+      "fondo": "noche",
+      "personajes": [
+        {
+          "id": "kevin",
+          "x": 0.66,
+          "num": {
+            "valor": 9418
+          }
+        },
+        {
+          "id": "dani",
+          "x": 0.25,
+          "alto": 470,
+          "cara": "pensando"
+        }
+      ],
+      "voz": "Esa tarde lo seguí. Ya sé, no estuvo bien. Caminó once cuadras, pasó de largo su casa… y entró a un taller de motos, todavía con el uniforme del colegio."
+    },
+    {
+      "fondo": "taller",
+      "personajes": [
+        {
+          "id": "kevin",
+          "x": 0.35,
+          "cara": "triste",
+          "num": {
+            "valor": 9418
+          }
+        },
+        {
+          "id": "jefe",
+          "x": 0.72,
+          "habla": true,
+          "cara": "enojado"
+        }
+      ],
+      "voz": "Lo vi por la ventana. Kevin, lleno de grasa, cargando llantas, barriendo. Un señor le gritaba que se apurara. Eran las siete de la noche."
+    },
+    {
+      "fondo": "taller",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "triste"
+        },
+        {
+          "id": "kevin",
+          "x": 0.68,
+          "cara": "sorpresa",
+          "num": {
+            "valor": 9418
+          }
+        }
+      ],
+      "voz": "Cuando me vio, se quedó helado. Pensé que me iba a gritar. Pero se sentó en una llanta y, por primera vez en años, me habló sin sonreír."
+    },
+    {
+      "fondo": "taller",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "triste"
+        },
+        {
+          "id": "kevin",
+          "x": 0.68,
+          "habla": true,
+          "cara": "triste",
+          "num": {
+            "valor": 9418
+          }
+        }
+      ],
+      "voz": "—Mi papá se fue hace un año. Mi mamá limpia casas y no alcanza. Yo trabajo aquí en las noches. No quería que nadie supiera. Ni vos. Y el número no se movió."
+    },
+    {
+      "fondo": "taller",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "triste"
+        }
+      ],
+      "voz": "Y entonces entendí sus números. Cada vez que me dijo «todo bien en la casa». Cada vez que no fue a mis fiestas «porque estaba enfermo». Cada «ya comí, gracias»."
+    },
+    {
+      "fondo": "noche",
+      "personajes": [
+        {
+          "id": "kevin",
+          "cara": "triste",
+          "num": {
+            "valor": 9418
+          }
+        }
+      ],
+      "voz": "Kevin no mentía para engañarme. Mentía para que nadie le tuviera lástima. Para que su mamá no se preocupara. Para seguir siendo el que hace reír a todos."
+    },
+    {
+      "capitulo": "Mi número",
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "triste"
+        },
+        {
+          "id": "mama",
+          "x": 0.68,
+          "num": {
+            "valor": 2848
+          }
+        }
+      ],
+      "voz": "Esa noche volví a la casa y miré a mi mamá de otra forma. Dos mil ochocientas cuarenta y ocho mentiras. ¿Cuántas eran «ya comí, coman ustedes»?"
+    },
+    {
+      "fondo": "cocina",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "habla": true
+        },
+        {
+          "id": "mama",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz",
+          "num": {
+            "de": 2848,
+            "valor": 2849,
+            "en": 0.55
+          }
+        }
+      ],
+      "voz": "—¿Estás cansada, mami? —le pregunté. —No, mi amor, para nada —dijo, con los ojos cerrándose solos. Dos mil ochocientos cuarenta y nueve. Me abrazó y se fue a dormir."
+    },
+    {
+      "fondo": "bano",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "pensando"
+        }
+      ],
+      "voz": "Antes de acostarme, me vi en el espejo del baño. Y por primera vez se me ocurrió mirar mi propio número. Me daba miedo."
+    },
+    {
+      "fondo": "bano",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "sorpresa",
+          "num": {
+            "valor": 4208,
+            "aparece": true
+          }
+        }
+      ],
+      "voz": "Cuatro mil doscientos ocho. Yo, que me sentía tan honesto. Yo, que me estaba riendo de todo el mundo. Cuatro mil doscientas ocho mentiras."
+    },
+    {
+      "fondo": "bano",
+      "personajes": [
+        {
+          "id": "dani",
+          "habla": true,
+          "cara": "enojado",
+          "num": {
+            "de": 4208,
+            "valor": 4209,
+            "en": 0.45
+          }
+        }
+      ],
+      "voz": "—Bueno… a mí no me importa —le dije a mi reflejo. Cuatro mil doscientos nueve. Ni siquiera a mí mismo me podía mentir."
+    },
+    {
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "pensando",
+          "num": {
+            "valor": 4209
+          }
+        }
+      ],
+      "voz": "Ahí entendí algo. El número dice cuántas veces mentiste. Pero no dice por qué. Y el porqué lo cambia todo."
+    },
+    {
+      "capitulo": "La verdad",
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "habla": true,
+          "cara": "feliz",
+          "num": {
+            "valor": 4209
+          }
+        },
+        {
+          "id": "kevin",
+          "x": 0.68,
+          "cara": "sorpresa",
+          "num": {
+            "valor": 9418
+          }
+        }
+      ],
+      "voz": "Al día siguiente busqué a Kevin. No le dije nada de los números. Solo le dije que mi papá necesitaba ayuda los sábados en el negocio, y que pagaba bien."
+    },
+    {
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "feliz",
+          "num": {
+            "valor": 4209
+          }
+        },
+        {
+          "id": "kevin",
+          "x": 0.68,
+          "cara": "feliz",
+          "num": {
+            "valor": 9418
+          }
+        }
+      ],
+      "voz": "Y era verdad: esa mañana hablé con mi papá. Mi número no se movió. Kevin me miró un rato largo… y me dio un abrazo de esos que casi duelen."
+    },
+    {
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "habla": true,
+          "cara": "sorpresa",
+          "num": {
+            "valor": 4209
+          }
+        },
+        {
+          "id": "vale",
+          "x": 0.68,
+          "num": {
+            "valor": 7
+          }
+        }
+      ],
+      "voz": "En el recreo me armé de valor y busqué a Valeria. Las manos me sudaban. —Vale, me gustás desde hace un año —le dije. Sin mentiras."
+    },
+    {
+      "fondo": "patio",
+      "personajes": [
+        {
+          "id": "dani",
+          "x": 0.3,
+          "cara": "feliz",
+          "num": {
+            "valor": 4209
+          }
+        },
+        {
+          "id": "vale",
+          "x": 0.68,
+          "habla": true,
+          "cara": "feliz",
+          "num": {
+            "valor": 7
+          }
+        }
+      ],
+      "voz": "Se quedó callada. Se puso roja. Y me dijo: —Yo también. Miré su número. Siete. No se movió ni un poquito."
+    },
+    {
+      "capitulo": "Final",
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "feliz"
+        }
+      ],
+      "voz": "A la mañana siguiente me desperté y los números habían desaparecido. Así como llegaron, se fueron. Y la verdad… no los extrañé."
+    },
+    {
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "cara": "feliz"
+        }
+      ],
+      "voz": "Porque aprendí que todos mentimos. Mi mamá, mi papá, mi mejor amigo, yo. Lo que importa no es el número. Es lo que hay detrás de cada mentira."
+    },
+    {
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "habla": true,
+          "cara": "feliz",
+          "num": {
+            "valor": 0,
+            "texto": "¿?",
+            "rojo": false,
+            "aparece": true
+          }
+        }
+      ],
+      "voz": "Y ahora te pregunto a vos: si pudieras ver tu número, ¿cuántas mentiras crees que tendrías? Escríbelo en los comentarios. Yo ya confesé el mío."
+    },
+    {
+      "fondo": "cuarto",
+      "personajes": [
+        {
+          "id": "dani",
+          "habla": true,
+          "cara": "feliz"
+        }
+      ],
+      "voz": "Si te gustó esta historia, suscribite a Potter Play. La próxima: ¿y si pudieras ver quién te va a traicionar?"
+    }
+  ]
+}

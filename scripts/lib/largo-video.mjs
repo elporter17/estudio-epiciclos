@@ -15,6 +15,8 @@ import { dibujarMaquina, fondoFabrica } from './maquinas.mjs';
 import { cargarObjetos, objeto3d } from './objetos3d.mjs';
 import { narrar } from './voz.mjs';
 import { ROOT } from './node-env.mjs';
+import { dibujarEstilo, numeroEstilo } from './estilos-personaje.mjs';
+import { dibujarFondo } from './fondos-garabato.mjs';
 
 export const W = 1920, H = 1080;
 const SR = 44100, FPS = 30;
@@ -58,10 +60,10 @@ function fondo(ctx, tema, t) {
   ctx.lineWidth = 3;
   for (let k = 0, r = 90; r < 1500; r += 80, k++) { ctx.strokeStyle = `rgba(255,255,255,${0.03 + 0.025 * Math.sin(t * 2 - k * 0.6) ** 2})`; ctx.beginPath(); ctx.arc(W * 0.95, H * 0.08, r, 0, Math.PI * 2); ctx.stroke(); }
 }
-function marca(ctx, tema) {
-  ctx.strokeStyle = tema.acento; ctx.lineWidth = 3;
+function marca(ctx, tema, tinta) {
+  ctx.strokeStyle = tinta || tema.acento; ctx.lineWidth = 3;
   for (const r of [6, 11, 16]) { ctx.beginPath(); ctx.arc(80, 62, r, 0, Math.PI * 2); ctx.stroke(); }
-  ctx.font = font(400, 28, BLACK); ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillStyle = 'rgba(255,255,255,0.9)'; ctx.fillText('Potter Play', 106, 64);
+  ctx.font = font(400, 28, BLACK); ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillStyle = tinta || 'rgba(255,255,255,0.9)'; ctx.fillText('Potter Play', 106, 64);
 }
 
 // Foto de fondo (e.imagen: arte oficial o foto de stock) con zoom lento, oscurecida a la izquierda donde va el texto
@@ -71,12 +73,48 @@ function fondoImagen(ctx, img, lt, dur, sentido = 1) {
   const g = ctx.createLinearGradient(0, 0, W, 0); g.addColorStop(0, 'rgba(10,6,25,0.86)'); g.addColorStop(0.55, 'rgba(10,6,25,0.55)'); g.addColorStop(1, 'rgba(10,6,25,0.25)');
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
 }
+// La foto de las historias: entera, con zoom lento y un velo blanco suave (los dibujos de lapicero se leen encima)
+function fondoFoto(ctx, img, lt, dur, sentido = 1) {
+  const p = Math.min(1, lt / Math.max(1, dur)), z = 1.02 + 0.05 * p, k = Math.max(W / img.width, H / img.height) * z, iw = img.width * k, ih = img.height * k;
+  ctx.drawImage(img, (W - iw) / 2 + sentido * 30 * (p - 0.5), (H - ih) / 2, iw, ih);
+  ctx.fillStyle = 'rgba(255,255,250,0.16)'; ctx.fillRect(0, 0, W, H);
+}
 function credito(ctx, texto) {
   ctx.save(); ctx.font = font(600, 24); ctx.textAlign = 'right'; ctx.textBaseline = 'middle'; ctx.fillStyle = 'rgba(255,255,255,0.75)'; ctx.fillText(texto, W - 40, H - 34); ctx.restore();
 }
 
 // ---------- escenas ----------
+// Historias «¿Y si pudieras ver…?» (scripts/ysi.mjs): personajes de garabato (scripts/lib/estilos-personaje.mjs) sobre una
+// foto real, con su número encima (sube con un golpe cuando la persona miente) y el subtítulo de lo que se narra
+const fmtNum = (n) => Math.round(n).toLocaleString('es-HN').replace(/,/g, '.');
+function subtitulo(ctx, texto, p) {
+  const palabras = texto.split(/\s+/), grupos = [];
+  for (let i = 0; i < palabras.length; i += 9) grupos.push(palabras.slice(i, i + 9).join(' '));
+  const g = grupos[Math.min(grupos.length - 1, Math.floor(p * grupos.length))];
+  ctx.font = font(700, 44); ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  const w = Math.min(1760, ctx.measureText(g).width + 60);
+  ctx.fillStyle = 'rgba(15,15,25,0.72)'; ctx.beginPath(); ctx.roundRect(W / 2 - w / 2, 958, w, 78, 20); ctx.fill();
+  ctx.fillStyle = '#ffffff'; ctx.fillText(g, W / 2, 998);
+}
 const ESCENAS = {
+  historia(ctx, e, lt) {
+    const voz = Math.max(1, e.dur - VOZ_INI - 0.7), p = Math.max(0, Math.min(1, (lt - VOZ_INI) / voz));
+    const n = e.personajes?.length || 0;
+    (e.personajes || []).forEach((q, i) => {
+      const x = (q.x ?? (n === 1 ? 0.5 : 0.28 + (0.44 * i) / Math.max(1, n - 1))) * W, alto = q.alto || 560;
+      const entra = Math.min(1, lt / 0.35), salto = (1 - entra) * 50;
+      const c = dibujarEstilo(ctx, 'garabato', { ...e.reparto[q.id], sobreFoto: true, tele: q.tele }, x, (q.suelo || 930) + salto, alto, { t: e.t0 + lt, habla: !!q.habla && p < 0.95, expresion: q.cara || 'neutro', semilla: 7 + i * 13 });
+      if (q.num) {
+        const en = q.num.en ?? 0.6, cambia = q.num.de != null && q.num.de !== q.num.valor, k = cambia ? Math.min(1, Math.max(0, (p - en) / 0.05)) : 1;
+        const v = cambia ? q.num.de + (q.num.valor - q.num.de) * k : q.num.valor, golpe = cambia && p >= en && p < en + 0.1 ? 1 + 0.4 * (1 - (p - en) / 0.1) : 1;
+        const aparece = q.num.aparece ? back(lt / 0.6) : 1;
+        ctx.save(); ctx.translate(x, c.cabeza - 30); ctx.scale(golpe * aparece, golpe * aparece);
+        numeroEstilo(ctx, 'garabato', q.num.texto ?? `${q.num.prefijo || ''}${fmtNum(v)}`, 0, 0, q.num.size || 58, q.num.rojo ?? v > 100);
+        ctx.restore();
+      }
+    });
+    if (e.voz && e.subtitulos !== false) subtitulo(ctx, e.voz, p);
+  },
   // Gancho: la promesa del video y los productos que vienen, uno tras otro
   gancho(ctx, e, lt) {
     const f = fit(ctx, e.titulo, 1500, 300, { from: 96, to: 56, peso: 400, fam: BLACK, lh: 1.1 });
@@ -187,8 +225,11 @@ export async function renderLargo({ escenas, out, estilo = 'lofi', semilla = Dat
   const cv = createCanvas(W, H), ctx = cv.getContext('2d');
   const dibujar = (t) => {
     const e = lista.find((x) => t < x.t0 + x.dur) || lista.at(-1), lt = t - e.t0;
-    if (e.imgFondo) fondoImagen(ctx, e.imgFondo, lt, e.dur, lista.indexOf(e) % 2 ? -1 : 1); else fondo(ctx, e.tema, t);
-    marca(ctx, e.tema);
+    if (e.tipo === 'historia' && e.lugar) dibujarFondo(ctx, e.lugar, W, H, t, 3 + lista.indexOf(e));
+    else if (e.imgFondo && e.tipo === 'historia') fondoFoto(ctx, e.imgFondo, lt, e.dur, lista.indexOf(e) % 2 ? -1 : 1);
+    else if (e.imgFondo) fondoImagen(ctx, e.imgFondo, lt, e.dur, lista.indexOf(e) % 2 ? -1 : 1); else fondo(ctx, e.tema, t);
+    // En las historias de cuaderno, el logo en tinta azul (en las escenas de noche, blanco)
+    marca(ctx, e.tema, e.tipo === 'historia' && e.lugar && !['sala', 'noche'].includes(e.lugar) ? '#1d4ed8' : null);
     ctx.globalAlpha = 1; ESCENAS[e.tipo](ctx, e, lt); ctx.globalAlpha = 1;
     if (e.credito) credito(ctx, e.credito);
     // Fundido a negro corto entre escenas
