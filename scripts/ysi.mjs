@@ -70,9 +70,9 @@ if (casos.length) {
     g.font = '400 52px "Archivo Black", Impact, sans-serif'; g.fillStyle = '#fff'; const tit = c.titulo.replace(/^Caso d+:?s*/i, '');
     g.strokeText(tit, 540, 330); g.fillText(tit, 540, 330);
     g.fillStyle = 'rgba(15,15,25,0.78)'; g.beginPath(); g.roundRect(90, 1560, 900, 130, 30); g.fill(); g.fillStyle = '#fff'; g.font = '700 44px "IBM Plex Sans", sans-serif';
-    g.fillText(n < casos.length ? `Mañana, la parte ${n + 1} 👀` : 'El final, en YouTube 👇', 540, 1640);
+    g.fillText(n < casos.length ? `Mañana, la parte ${n + 1}  >>` : 'El final completo, en YouTube', 540, 1640);
     fs.writeFileSync(over, cv.toBuffer('image/png'));
-    const filtro = '[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:5[bg];[b]scale=1080:-2[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2[v0];[v0][1:v]overlay=0:0[v]';
+    const filtro = '[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:5[bg];[b]scale=1400:-2,crop=1080:ih:(iw-1080)/2:0[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2[v0];[v0][1:v]overlay=0:0[v]';
     const ff = spawnSync(ffmpegPath, ['-hide_banner', '-loglevel', 'error', '-y', '-ss', c.t.toFixed(2), '-t', dur.toFixed(2), '-i', video, '-i', over, '-filter_complex', filtro, '-map', '[v]', '-map', '0:a', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', archivoP], { stdio: ['ignore', 'ignore', 'pipe'] });
     if (ff.status !== 0) { console.error(`Aviso: parte ${n}: ${String(ff.stderr).slice(0, 200)}`); continue; }
     const texto = `${G.titulo} · Parte ${n} de ${casos.length}

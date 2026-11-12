@@ -111,7 +111,7 @@ export const HORARIO = [
   { hora: '14:07', pieza: 'largo', workflow: 'youtube-largo.yml', que: 'Video largo de YouTube: cómo se hacen 6 cosas', dias: [2, 4, 6] }
 ];
 // Metas semanales de Facebook (fotos e historias que pide el panel): lejos de las estrellas (scripts/metas.mjs)
-for (const hora of ['11:07']) HORARIO.push({ hora, pieza: 'metas', workflow: 'metas.yml', que: 'Metas semanales: fotos e historias que falten → FB' });
+for (const hora of ['11:07', '15:07', '21:07']) HORARIO.push({ hora, pieza: 'metas', workflow: 'metas.yml', que: 'Metas semanales: fotos e historias que falten → FB' });
 // Respuestas a comentarios: cada hora de 7:47 a 23:47 (cuanto antes se contesta, más conversación)
 for (let h = 7; h <= 23; h++) HORARIO.push({ hora: `${String(h).padStart(2, '0')}:47`, workflow: 'comentarios.yml', que: 'Responder comentarios' });
 HORARIO.sort((a, b) => a.hora.localeCompare(b.hora));
