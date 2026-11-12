@@ -7,6 +7,33 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import ffmpegPath from 'ffmpeg-static';
 
+// La descripción para pegar, en un mensaje propio y dentro de un bloque <pre>: al tocarlo, Telegram copia todo el texto de
+// una vez (los botones «copiar» de los bots solo aceptan 256 caracteres y las descripciones son más largas)
+export async function mandarDescripcion(texto, titulo = '') {
+  const tg = process.env.TELEGRAM_BOT_TOKEN, chat = process.env.TELEGRAM_CHAT_ID;
+  if (!tg || !chat) return false;
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const j = await fetch(`https://api.telegram.org/bot${tg}/sendMessage`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: chat, parse_mode: 'HTML', text: `📋 <b>Descripción${titulo ? ` · ${esc(titulo)}` : ''}</b> (toca el recuadro para copiarla)\n\n<pre>${esc(texto).slice(0, 3800)}</pre>` })
+  }).then((x) => x.json()).catch((e) => ({ ok: false, description: e.message }));
+  if (!j.ok) console.error(`Aviso: Telegram no recibió la descripción: ${j.description}`);
+  return !!j.ok;
+}
+
+// Manda un carrusel (hasta 10 fotos) como álbum de Telegram, para guardarlas y subirlas a mano
+export async function mandarFotosATelegram(archivos, caption = '') {
+  const tg = process.env.TELEGRAM_BOT_TOKEN, chat = process.env.TELEGRAM_CHAT_ID;
+  const lista = archivos.filter((a) => fs.existsSync(a)).slice(0, 10);
+  if (!tg || !chat || lista.length < 2) return false;
+  const f = new FormData(); f.set('chat_id', chat);
+  f.set('media', JSON.stringify(lista.map((a, i) => ({ type: 'photo', media: `attach://f${i}`, ...(i === 0 && caption ? { caption: caption.slice(0, 1000) } : {}) }))));
+  lista.forEach((a, i) => f.set(`f${i}`, new Blob([fs.readFileSync(a)], { type: 'image/jpeg' }), path.basename(a)));
+  const j = await fetch(`https://api.telegram.org/bot${tg}/sendMediaGroup`, { method: 'POST', body: f }).then((x) => x.json()).catch((e) => ({ ok: false, description: e.message }));
+  if (!j.ok) console.error(`Aviso: Telegram no recibió las fotos: ${j.description}`);
+  return !!j.ok;
+}
+
 const LIMITE = 48 * 1024 * 1024;
 export async function mandarVideoATelegram(archivo, caption = '', { duracion } = {}) {
   const tg = process.env.TELEGRAM_BOT_TOKEN, chat = process.env.TELEGRAM_CHAT_ID;

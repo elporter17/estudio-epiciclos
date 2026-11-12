@@ -26,7 +26,8 @@ import { crearVisual, VISUALES } from './lib/retos-visuales.mjs';
 import { crearDebate } from './lib/debate.mjs';
 import { juntarNoticias, N_REEL, misma } from './lib/noticias.mjs';
 import { yaSalieronDb, marcarPublicadas } from './lib/db.mjs';
-import { cambiosDe, noticiasConCambios, noticiasGuardadas, guardarNoticias } from './lib/control.mjs';
+import { cambiosDe, noticiasConCambios, noticiasGuardadas, guardarNoticias, telegram } from './lib/control.mjs';
+import { mandarVideoATelegram, mandarDescripcion } from './lib/tg-video.mjs';
 import { hoyHN } from './lib/video3d-cola.mjs';
 import { ponerFondos, guardarStock } from './lib/stock.mjs';
 import { textoConTono, vozConTono, tonoDe } from './lib/tono.mjs';
@@ -488,7 +489,7 @@ async function main() {
     formato: { type: 'string', default: 'auto' }, tema: { type: 'string' }, facebook: { type: 'string', default: 'si' },
     historia: { type: 'boolean', default: true }, instagram: { type: 'string', default: 'si' },
     // TikTok: draft = también como borrador (la copia con solo efectos: allí se le pone la canción del momento)
-    tiktok: { type: 'string', default: 'no' }, youtube: { type: 'string', default: 'si' }, 'dry-run': { type: 'boolean', default: false }, still: { type: 'string' }
+    tiktok: { type: 'string', default: 'no' }, youtube: { type: 'string', default: 'si' }, 'dry-run': { type: 'boolean', default: false }, perfil: { type: 'boolean', default: false }, still: { type: 'string' }
   });
   const fx = setupNode(), emojiFont = fx.emoji ? `"${fx.emoji}"` : '';
   const hist = { ids: [], retos: [], banderas: [], formatos: [], prefieres: [], emojis: [], noticias: [], total: 0, ...leer(HIST, {}) };
@@ -528,7 +529,8 @@ async function main() {
   const meta = { kind: 'quiz', formato: pieza.formato, title: pieza.titulo, file: path.basename(video), duration: r.duration, post: { text: pieza.texto }, createdAt: new Date().toISOString() };
   const sidecar = video.replace(/\.mp4$/, '.json');
 
-  if (!o['dry-run']) {
+  if (o.perfil) await mandarAlPerfil({ video, pieza, duracion: r.duration });
+  if (!o['dry-run'] && !o.perfil) {
     const link = await publicarEnlace(video).catch((e) => { console.error(`No se pudo subir el video al almacén: ${e.message}`); return null; });
     if (link) { meta.videoUrl = link.url; meta.videoDownload = link.downloadUrl; }
     if (o.facebook !== 'no' && facebookReady()) {
@@ -592,5 +594,14 @@ function diaYT() { const hoy = new Date().toLocaleDateString('en-CA', { timeZone
 const grupoYT = (f) => (f === 'comosehace' ? 'comosehace' : 'otros');
 function cupoYouTube(f) { const d = diaYT(), g = grupoYT(f); if (d[g] < LIMITE_YT[g]) return true; console.error(`YouTube: ya se subieron ${d[g]} hoy (${g}); este no`); return false; }
 function usarCupoYouTube(f) { const d = diaYT(); d[grupoYT(f)]++; fs.writeFileSync(CUPO_YT, JSON.stringify(d) + '\n'); }
+
+// Modo perfil personal (--perfil, con MARCA=EA): nada se publica en redes ni toca el historial; el video y la descripción
+// listos para pegar llegan a Telegram y se publican a mano en el perfil de Facebook
+async function mandarAlPerfil({ video, pieza, duracion }) {
+  const texto = pieza.texto.replace(/#potterplay/gi, '').replace(/Potter ?Play/gi, MARCA).replace(/[ \t]+\n/g, '\n').trim();
+  await mandarDescripcion(texto, pieza.titulo);
+  const ok = await mandarVideoATelegram(video, `📲 Para tu perfil · ${pieza.titulo} · ${Math.round(duracion)} s\nLa descripción está en el mensaje de arriba.`, { duracion });
+  console.error(`Perfil: ${ok ? 'enviado a Telegram' : 'no se pudo enviar el video'}`);
+}
 
 main().catch((e) => { console.error(`Error: ${e.message}`); process.exit(1); });

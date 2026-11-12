@@ -1,0 +1,112 @@
+# Contenido para el perfil personal de Facebook (marca «EA», sin «Potter Play»). Facebook no deja publicar en perfiles por
+# API, así que este flujo NO publica: genera el video o las fotos con la firma EA y los manda a tu Telegram junto con la
+# descripción lista para pegar; los subes tú a mano. No toca el historial ni las colas de Potter Play (concurrency propia).
+#   Tres entregas al día (hora de Honduras): 10:00 video · 15:00 fotos informativas · 19:00 video. Sin retos ni debates.
+name: Contenido para mi perfil (EA)
+
+on:
+  schedule:
+    - cron: '0 16 * * *'
+    - cron: '0 21 * * *'
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+    inputs:
+      tipo:
+        description: Qué generar
+        type: choice
+        options: [auto, video, fotos]
+        default: auto
+      formato:
+        description: Formato (video) o tipo (fotos); vacío = el que toca
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: perfil
+  cancel-in-progress: false
+
+jobs:
+  perfil:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      MARCA: EA
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+      TIPO_INPUT: ${{ inputs.tipo || 'auto' }}
+      FORMATO_INPUT: ${{ inputs.formato || '' }}
+      CRON: ${{ github.event.schedule }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Dependencias
+        run: |
+          mkdir -p out
+          for i in 1 2 3; do npm ci && exit 0; echo "npm ci falló (intento $i), reintento en 30 s"; sleep 30; done
+          exit 1
+
+      - name: Fuentes completas de emoji y STIX (en caché)
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: assets/fonts
+          key: fonts-v2-noto-emoji-stix
+      - run: npm run fonts
+
+      - name: Modelo de voz (en caché)
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: .tools/kokoro
+          key: voz-kokoro-v1.0
+      - name: Python para la voz
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Instalar la voz
+        continue-on-error: true
+        env:
+          KOKORO_VERSION: 0.6.1
+        run: |
+          python -m venv .tools/voz
+          .tools/voz/bin/python -m pip install -q kokoro-onnx==${KOKORO_VERSION}
+          mkdir -p .tools/kokoro
+          for f in kokoro-v1.0.onnx voices-v1.0.bin; do
+            [ -s ".tools/kokoro/$f" ] || curl -fsSL --retry 3 -o ".tools/kokoro/$f" "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/$f"
+          done
+
+      - name: Generar y mandar a Telegram
+        run: |
+          TIPO="$TIPO_INPUT"
+          if [ "$TIPO" = auto ]; then
+            case "$CRON" in
+              '0 21 * * *') TIPO=fotos ;;
+              '') TIPO=video ;;
+              *) TIPO=video ;;
+            esac
+          fi
+          # Formatos que sí funcionan para el perfil (sin retos ni debates), uno distinto en cada corrida
+          VIDEOS=(datos5 top10 noticias comosehace prefieres quiz)
+          FOTOS=(datos noticias)
+          N=$(( ${GITHUB_RUN_NUMBER} + $(date +%j) ))
+          if [ "$TIPO" = fotos ]; then
+            F="${FORMATO_INPUT:-${FOTOS[$(( N % ${#FOTOS[@]} ))]}}"
+            echo "Fotos: $F"
+            node scripts/curiosidades.mjs --red facebook --tipo "$F" --perfil --instagram no --facebook no
+          else
+            F="${FORMATO_INPUT:-${VIDEOS[$(( N % ${#VIDEOS[@]} ))]}}"
+            echo "Video: $F"
+            node scripts/curiosidades-video.mjs --formato "$F" --perfil --facebook no --instagram no --youtube no --tiktok no
+          fi
+
+      - name: Aviso si falló
+        if: failure()
+        run: |
+          curl -s "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" --data-urlencode "text=❌ Falló «Contenido para mi perfil (EA)». Revisa: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" > /dev/null

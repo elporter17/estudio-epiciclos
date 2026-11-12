@@ -14,7 +14,9 @@ import { parseCli } from './lib/cli.mjs';
 import { setupNode, ROOT } from './lib/node-env.mjs';
 import { dibujarTarjeta, dibujarPortada, dibujarCierre, TEMAS } from './lib/tarjetas.mjs';
 import { ultimaNoticia, CAT_NOMBRE } from './lib/noticias.mjs';
-import { cambiosDe } from './lib/control.mjs';
+import { cambiosDe, telegram } from './lib/control.mjs';
+import { mandarFotosATelegram, mandarDescripcion } from './lib/tg-video.mjs';
+import { MARCA } from './lib/marca.mjs';
 import { yaSalieronDb, marcarPublicadas } from './lib/db.mjs';
 import { hoyHN } from './lib/video3d-cola.mjs';
 // Noticias ya publicadas + las que quitaste hoy por Telegram (scripts/lib/control.mjs)
@@ -209,7 +211,14 @@ async function carrusel(o, hist, base, emojiFont) {
   if (tipo !== 'noticias') texto = textoConTono(texto, `${new Date(Date.now() - 6 * 3600e3).toISOString().slice(0, 10)}|carrusel|${tipo}|${o.red}`);
   console.error(`Carrusel (${o.red}): ${titulo} · portada «${gancho}» · ${archivos.length} imágenes`);
   const meta = { kind: 'imagen', title: titulo, id: `carrusel-${marca}`, formato: `carrusel-${tipo}`, post: { text: texto }, createdAt: new Date().toISOString() };
-  if (!o['dry-run']) {
+  // Perfil personal (--perfil, con MARCA=EA): no se publica nada ni se toca el historial; las fotos y la descripción
+  // llegan a Telegram para subirlas a mano al perfil
+  if (o.perfil) {
+    await mandarDescripcion(texto.replace(/#potterplay/gi, '').replace(/Potter ?Play/gi, MARCA).replace(/[ \t]+\n/g, '\n').trim(), titulo);
+    const ok = await mandarFotosATelegram(archivos, `📲 Para tu perfil · ${titulo} · ${archivos.length} fotos\nLa descripción está en el mensaje de arriba.`);
+    console.error(`Perfil: ${ok ? 'enviado a Telegram' : 'no se pudo enviar'}`);
+  }
+  if (!o['dry-run'] && !o.perfil) {
     const subidas = [];
     for (const file of archivos) { const img = await subirImagen(file).catch((e) => { console.error(`No se pudo subir la imagen: ${e.message}`); return null; }); if (img) subidas.push(img); }
     if (subidas.length >= 2) {
@@ -243,7 +252,7 @@ async function carrusel(o, hist, base, emojiFont) {
 async function main() {
   const o = parseCli({
     red: { type: 'string', default: 'facebook' }, tipo: { type: 'string', default: 'auto' }, 'noticia-cada': { type: 'string', default: '6' },
-    formato: { type: 'string' }, id: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' }, facebook: { type: 'string', default: 'si' },
+    formato: { type: 'string' }, id: { type: 'string' }, 'dry-run': { type: 'boolean', default: false }, perfil: { type: 'boolean', default: false }, instagram: { type: 'string', default: 'si' }, facebook: { type: 'string', default: 'si' },
     // Un reto visual concreto: duplicado | nombre | diferente | fraccion | operacion
     visual: { type: 'string' },
     // TikTok: un carrusel de N imágenes en lugar de una sola
