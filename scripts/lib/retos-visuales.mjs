@@ -7,6 +7,7 @@
 //   fraccion   ¿Qué fracción del círculo está pintada?
 //   nombre     Un nombre de N letras que termine (o empiece) en …
 //   operacion  Una operación con trampa de orden (6 + 6 × 0 + 6)
+import { MARCA } from './marca.mjs';
 import { createCanvas } from '@napi-rs/canvas';
 import { BIBLIOTECA } from './catalog.mjs';
 
@@ -293,7 +294,7 @@ export function tituloVisual(ctx, v, { W = 1080, top = 70, emoji = 'sans-serif',
   return top + size * lineas.length * 1.08;
 }
 export function marcaVisual(ctx, W, by) {
-  ctx.font = `400 34px ${BLACK}`; const bw = ctx.measureText('Potter Play').width, bx = (W - bw) / 2 + 22;
+  ctx.font = `400 34px ${BLACK}`; const bw = ctx.measureText(MARCA).width, bx = (W - bw) / 2 + 22;
   ctx.strokeStyle = ROJO; ctx.lineWidth = 3; for (const r of [7, 13, 19]) { ctx.beginPath(); ctx.arc(bx - 34, by - 12, r, 0, Math.PI * 2); ctx.stroke(); }
-  ctx.fillStyle = TINTA; ctx.textAlign = 'left'; ctx.fillText('Potter Play', bx, by);
+  ctx.fillStyle = TINTA; ctx.textAlign = 'left'; ctx.fillText(MARCA, bx, by);
 }

@@ -5,6 +5,7 @@
 // Después del lanzamiento no hace nada. Historial: data/gta6-historial.json (estado de Actions).
 //   node scripts/gta6.mjs --dry-run            (solo el video, en out/)
 //   node scripts/gta6.mjs --solo-lanzamiento   (corrida de la mañana: solo publica el día del lanzamiento)
+import { MARCA } from './lib/marca.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -55,7 +56,7 @@ if (faltan > 0) {
       lineas: [{ texto: 'FALTAN', size: 100 }, { texto: `${faltan} ${faltan === 1 ? 'DÍA' : 'DÍAS'}`, size: 190, color: TEMAS.gta.acento }, { texto: 'PARA GTA VI', size: 110 }, ...(retro ? [{ texto: `Vice City ${NOMBRE_RETRO[retro].toLowerCase().replace('en 8 bits', 'en 8 bits').replace('estilo ps2', 'estilo PS2')}`, size: 54, color: 'rgba(255,255,255,0.85)' }] : [])] },
     ...datos.map((d, i) => ({ tipo: 'dato', dur: DATO, tema: 'gta', idx: i, total: datos.length, n: i + 1, icono: d.icono, texto: d.dato, consulta: d.foto || 'miami beach palm trees', sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
     { tipo: 'cierre', dur: CIERRE, tema: 'gta', consulta: 'miami sunset palm trees', sonidos: [[0, 'final']],
-      lineas: [{ texto: 'SALE EL 19 DE NOVIEMBRE', size: 96, color: TEMAS.gta.acento }, { texto: `En ${plataformas}`, size: 60 }, { texto: 'Cada día, más datos en Potter Play', size: 50, color: 'rgba(255,255,255,0.8)' }] }
+      lineas: [{ texto: 'SALE EL 19 DE NOVIEMBRE', size: 96, color: TEMAS.gta.acento }, { texto: `En ${plataformas}`, size: 60 }, { texto: `Cada día, más datos en ${MARCA}`, size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
   texto = `🌴 ${titulo}. Mientras llega el 19 de noviembre, ${datos.length} datos que quizá no sabías:\n\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n¿Cuál te sorprendió más?\n\n#gta6 #gtavi #gta #videojuegos #gaming #rockstar #reels #potterplay`;
 } else {
@@ -66,7 +67,7 @@ if (faltan > 0) {
       lineas: [{ texto: '¡HOY SALE', size: 130 }, { texto: 'GTA VI!', size: 200, color: TEMAS.gta.acento }, { texto: 'Lo que tienes que saber', size: 60, color: 'rgba(255,255,255,0.85)' }] },
     ...datos.map((d, i) => ({ tipo: 'dato', dur: DATO, tema: 'gta', idx: i, total: datos.length, n: i + 1, icono: d.icono, texto: d.dato, consulta: d.foto || 'miami beach palm trees', sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
     { tipo: 'cierre', dur: CIERRE, tema: 'gta', consulta: 'miami night highway lights', sonidos: [[0, 'final']],
-      lineas: [{ texto: '¿YA LO TIENES?', size: 120, color: TEMAS.gta.acento }, { texto: `Disponible en ${plataformas}`, size: 60 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
+      lineas: [{ texto: '¿YA LO TIENES?', size: 120, color: TEMAS.gta.acento }, { texto: `Disponible en ${plataformas}`, size: 60 }, { texto: `Sigue a ${MARCA} para más`, size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
   texto = `🎮 ${titulo} Llegó el día: esto es lo que tienes que saber para jugar.\n\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n¿Ya lo tienes o lo vas a esperar?\n\n#gta6 #gtavi #gta #videojuegos #gaming #lanzamiento #reels #potterplay`;
 }

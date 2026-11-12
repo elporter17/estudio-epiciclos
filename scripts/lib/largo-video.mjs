@@ -2,6 +2,7 @@
 // Reutiliza las máquinas de «Cómo se hace» (maquinas.mjs) en una pantalla ancha: la fábrica a la izquierda y el panel con
 // el paso a la derecha. Retención (consejos de YouTube): gancho en los primeros segundos, una intriga entre productos
 // (≈ cada 90 s), capítulos con su tiempo y narrador (voz local, voz.mjs). Lo usa scripts/youtube-largo.mjs.
+import { MARCA } from './marca.mjs';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -63,7 +64,7 @@ function fondo(ctx, tema, t) {
 function marca(ctx, tema, tinta) {
   ctx.strokeStyle = tinta || tema.acento; ctx.lineWidth = 3;
   for (const r of [6, 11, 16]) { ctx.beginPath(); ctx.arc(80, 62, r, 0, Math.PI * 2); ctx.stroke(); }
-  ctx.font = font(400, 28, BLACK); ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillStyle = tinta || 'rgba(255,255,255,0.9)'; ctx.fillText('Potter Play', 106, 64);
+  ctx.font = font(400, 28, BLACK); ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillStyle = tinta || 'rgba(255,255,255,0.9)'; ctx.fillText(MARCA, 106, 64);
 }
 
 // Foto de fondo (e.imagen: arte oficial o foto de stock) con zoom lento, oscurecida a la izquierda donde va el texto

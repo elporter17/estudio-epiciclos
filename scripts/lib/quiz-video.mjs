@@ -2,6 +2,7 @@
 // dibujadas con canvas, con sonidos y una melodía de dominio público sintetizados aquí, y codificadas con ffmpeg.
 // Lo usa scripts/curiosidades-video.mjs. Formato Reels: 1080×1920; lo importante queda entre y = 170 y 1430, fuera
 // de la zona que tapan la descripción y los botones de Facebook.
+import { MARCA } from './marca.mjs';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -132,7 +133,7 @@ function cabecera(ctx, tema, idx, total, avance) {
 function marca(ctx, tema, y) {
   ctx.strokeStyle = tema.acento; ctx.lineWidth = 3;
   for (const r of [7, 13, 19]) { ctx.beginPath(); ctx.arc(92, y + 5, r, 0, Math.PI * 2); ctx.stroke(); }
-  ctx.font = font(400, 34, BLACK); ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillStyle = 'rgba(255,255,255,0.92)'; ctx.fillText('Potter Play', 124, y + 6);
+  ctx.font = font(400, 34, BLACK); ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillStyle = 'rgba(255,255,255,0.92)'; ctx.fillText(MARCA, 124, y + 6);
 }
 // Etiqueta tipo píldora (formato de la pregunta)
 function pildora(ctx, texto, y, tema, s = 1) {

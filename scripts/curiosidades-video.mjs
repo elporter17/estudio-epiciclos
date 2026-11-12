@@ -7,6 +7,7 @@
 //   node scripts/curiosidades-video.mjs --dry-run --formato top10 --still 5   (un cuadro en PNG)
 //   node scripts/curiosidades-video.mjs --facebook si --historia        (elige el formato que toca y publica)
 // Datos: data/curiosidades/*.json. Historial (no repetir): data/curiosidades-video-historial.json (estado de Actions).
+import { MARCA } from './lib/marca.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parseCli } from './lib/cli.mjs';
@@ -124,7 +125,7 @@ function top10(base, hist, temaPedido) {
       lineas: [{ texto: '10 COSAS', size: 150, color: (T || TEMAS.ciencia).acento }, { texto: 'QUE NO SABÍAS', size: 96 }, { texto: 'HACE 1 MINUTO', size: 96 }, ...(T ? [{ texto: T.nombre.toUpperCase(), size: 50, color: 'rgba(255,255,255,0.8)' }] : [])] },
     ...datos.map((d, i) => ({ tipo: 'dato', dur: DATO, tema: d.tema, idx: i, total: 10, n: i + 1, icono: d.icono, texto: d.dato, consulta: d.foto, sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
     { tipo: 'cierre', dur: CIERRE, tema: temaFondo, consulta: datos.at(-1)?.foto, sonidos: [[0, 'final']],
-      lineas: [{ texto: '¿CUÁNTAS SABÍAS?', size: 110, color: (T || TEMAS.ciencia).acento }, { texto: '¿Cuántas de las 10 ya sabías?', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
+      lineas: [{ texto: '¿CUÁNTAS SABÍAS?', size: 110, color: (T || TEMAS.ciencia).acento }, { texto: '¿Cuántas de las 10 ya sabías?', size: 64 }, { texto: `Sigue a ${MARCA} para más`, size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
   const tags = ['curiosidades', 'sabiasque', 'datoscuriosos', 'aprende', ...(T ? T.tags : ['cultura']), 'reels', 'potterplay'];
   const texto = `🤯 10 cosas que no sabías hace 1 minuto${T ? ` · ${T.nombre}` : ''}\n\n¿Cuántas de las 10 ya sabías? Seguro hay una que te sorprendió.${OCULTAR}Las 10 de hoy:\n${datos.map((d, i) => `${i + 1}. ${d.dato}`).join('\n')}\n\n${[...new Set(tags)].map((t) => `#${t}`).join(' ')}`;
@@ -185,7 +186,7 @@ function quiz(base, hist) {
       return { ...comun, tipo: 'opciones', dur: piensa + 3.2, piensa, tema: 'matematicas', etiqueta: 'CÁLCULO MENTAL ⚡', texto: p.d.texto, opciones: p.d.opciones, respuesta: p.d.respuesta, explicacion: p.d.explicacion, sonidos: cuenta(piensa, 'bien') };
     }),
     { tipo: 'cierre', dur: CIERRE, tema: 'inventos', sonidos: [[0, 'final']],
-      lineas: [{ texto: '¿CUÁNTAS ACERTASTE?', size: 104, color: TEMAS.inventos.acento }, { texto: '¿Cuántas de las 5 acertaste?', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
+      lineas: [{ texto: '¿CUÁNTAS ACERTASTE?', size: 104, color: TEMAS.inventos.acento }, { texto: '¿Cuántas de las 5 acertaste?', size: 64 }, { texto: `Sigue a ${MARCA} para más`, size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
   const texto = `🧠 5 preguntas: ¿cuántas aciertas?\n\nVerdadero o falso, un reto y cálculo mental, con unos segundos para pensar cada una. ¿Cuántas de las 5 acertaste?${OCULTAR}Respuestas:\n${respuestas.join('\n')}\n\n#quiz #trivia #preguntas #curiosidades #retomental #sabiasque #reels #potterplay`;
   return { formato: 'quiz', titulo: '5 preguntas: ¿cuántas aciertas?', escenas, texto, ids: vf.map((d) => d.id), retos: [reto.id] };
@@ -212,7 +213,7 @@ function banderas(hist) {
         geo: { c, modo: i === 8 ? 'pixel' : 'bandera' }, opciones: ops.map(nombrePais), respuesta: ops.indexOf(c), sonidos: cuenta(piensa, 'bien') };
     }),
     { tipo: 'cierre', dur: CIERRE, tema: 'historia', sonidos: [[0, 'final']],
-      lineas: [{ texto: '¿CUÁNTAS ADIVINASTE?', size: 100, color: TEMAS.historia.acento }, { texto: '¿Cuántas de las 10 sacaste?', size: 64 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] }
+      lineas: [{ texto: '¿CUÁNTAS ADIVINASTE?', size: 100, color: TEMAS.historia.acento }, { texto: '¿Cuántas de las 10 sacaste?', size: 64 }, { texto: `Sigue a ${MARCA} para más`, size: 50, color: 'rgba(255,255,255,0.8)' }] }
   ];
   const texto = `🌎 Adivina las 10 banderas: de fácil a GOD 💀\n\nMenos de 4 segundos por bandera, una pixelada y la última en 2 segundos. Si sacas 10 de 10, comenta «GOD» 👇${OCULTAR}Respuestas:\n${paises.map((c, i) => `${i + 1}. ${bandera(c)} ${nombrePais(c)}`).join('\n')}\n\n#banderas #geografia #quiz #trivia #paises #curiosidades #reels #potterplay`;
   return { formato: 'banderas', titulo: 'Adivina las 10 banderas', escenas, texto, banderas: paises };
@@ -357,7 +358,7 @@ function gtaQuiz(hist) {
 
 // ---------- retos visuales, ¿qué prefieres?, emojis y noticias (2026-11-01) ----------
 const cierre = (tema, l1, l2) => ({ tipo: 'cierre', dur: CIERRE, tema, sonidos: [[0, 'final']],
-  lineas: [{ texto: l1, size: 100, color: TEMAS[tema].acento }, { texto: l2, size: 62 }, { texto: 'Sigue a Potter Play para más', size: 50, color: 'rgba(255,255,255,0.8)' }] });
+  lineas: [{ texto: l1, size: 100, color: TEMAS[tema].acento }, { texto: l2, size: 62 }, { texto: `Sigue a ${MARCA} para más`, size: 50, color: 'rgba(255,255,255,0.8)' }] });
 const tags = (...t) => [...t, 'reels', 'potterplay'].map((x) => `#${x}`).join(' ');
 
 function retosVideo() {

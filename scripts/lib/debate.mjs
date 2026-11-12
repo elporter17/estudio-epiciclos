@@ -7,6 +7,7 @@
 // La respuesta NO se da en la publicación: scripts/comentarios.mjs la publica como comentario unas horas después
 // (clave { modo: 'debate', revelar }), y mientras tanto contesta sin decir quién tiene razón.
 // Solo matemáticas, lógica y datos curiosos sin riesgo: nunca salud, noticias ni nada que confunda si se lee suelto.
+import { MARCA } from './marca.mjs';
 import { createCanvas } from '@napi-rs/canvas';
 
 export const TIPOS_DEBATE = ['error', 'divide', 'cuenta'];
@@ -304,6 +305,6 @@ export function dibujarDebate(d, { W = 1080, H = 1350 } = {}) {
   d.dibujar(ctx, b, 1);
   ctx.font = `400 46px ${BLACK}`; ctx.fillStyle = AMARILLO; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
   ctx.fillText('COMENTA TU RESPUESTA', W / 2, H - pie + 92);
-  ctx.font = `500 30px ${SANS}`; ctx.fillStyle = 'rgba(255,255,255,0.75)'; ctx.fillText('Potter Play · la respuesta, en unas horas en los comentarios', W / 2, H - pie + 140);
+  ctx.font = `500 30px ${SANS}`; ctx.fillStyle = 'rgba(255,255,255,0.75)'; ctx.fillText(MARCA + ' · la respuesta, en unas horas en los comentarios', W / 2, H - pie + 140);
   return cv;
 }

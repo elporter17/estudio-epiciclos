@@ -1,5 +1,6 @@
 // Tarjetas de curiosidades y noticias (sin IA): texto grande, un ícono (emoji de Noto Color Emoji), colores por tema,
 // círculos de fondo como sello de la marca y «Potter Play» abajo. Las usan scripts/curiosidades.mjs y noticias.
+import { MARCA } from './marca.mjs';
 import { createCanvas } from '@napi-rs/canvas';
 
 export const TEMAS = {
@@ -121,8 +122,8 @@ export function dibujarTarjeta(t, { W = 1080, H = 1350, emojiFont = '' } = {}) {
   // Pie: tema a la izquierda, marca a la derecha con su sello de círculos
   ctx.font = `500 30px ${SANS}`; ctx.fillStyle = 'rgba(255,255,255,0.7)'; ctx.textAlign = 'left';
   ctx.fillText(tema.nombre, pad, H - 50);
-  ctx.textAlign = 'right'; ctx.font = `400 36px ${BLACK}`; ctx.fillStyle = '#fff'; ctx.fillText('Potter Play', W - pad, H - 48);
-  const bw = ctx.measureText('Potter Play').width, cx = W - pad - bw - 34, cy = H - 60;
+  ctx.textAlign = 'right'; ctx.font = `400 36px ${BLACK}`; ctx.fillStyle = '#fff'; ctx.fillText(MARCA, W - pad, H - 48);
+  const bw = ctx.measureText(MARCA).width, cx = W - pad - bw - 34, cy = H - 60;
   ctx.strokeStyle = tema.acento; ctx.lineWidth = 3; for (const r of [8, 15, 22]) { ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke(); }
   return cv;
 }
@@ -207,14 +208,14 @@ export function dibujarCierre({ titulo, sub, nota, tema: idTema = 'matematicas' 
   f.lines.forEach((l) => { ctx.fillText(l, W / 2, y + f.size * 0.9); y += f.lh; });
   ctx.fillStyle = '#fff'; ctx.font = `600 50px ${SANS}${E}`; if (sub) ctx.fillText(sub, W / 2, y + 90);
   if (nota) { ctx.fillStyle = 'rgba(255,255,255,0.75)'; ctx.font = `500 40px ${SANS}${E}`; ctx.fillText(nota, W / 2, y + 170); }
-  ctx.fillStyle = '#fff'; ctx.font = `400 46px ${BLACK}`; ctx.fillText('Sigue a Potter Play', W / 2, H - (H > 1500 ? 330 : 200));
+  ctx.fillStyle = '#fff'; ctx.font = `400 46px ${BLACK}`; ctx.fillText(`Sigue a ${MARCA}`, W / 2, H - (H > 1500 ? 330 : 200));
   pie(ctx, tema, W, H);
   return cv;
 }
 
 function pie(ctx, tema, W, H) {
   const pad = 80;
-  ctx.textAlign = 'right'; ctx.textBaseline = 'alphabetic'; ctx.font = `400 36px ${BLACK}`; ctx.fillStyle = '#fff'; ctx.fillText('Potter Play', W - pad, H - 48);
-  const bw = ctx.measureText('Potter Play').width, cx = W - pad - bw - 34, cy = H - 60;
+  ctx.textAlign = 'right'; ctx.textBaseline = 'alphabetic'; ctx.font = `400 36px ${BLACK}`; ctx.fillStyle = '#fff'; ctx.fillText(MARCA, W - pad, H - 48);
+  const bw = ctx.measureText(MARCA).width, cx = W - pad - bw - 34, cy = H - 60;
   ctx.strokeStyle = tema.acento; ctx.lineWidth = 3; for (const r of [8, 15, 22]) { ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke(); }
 }
