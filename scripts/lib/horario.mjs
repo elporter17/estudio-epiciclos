@@ -34,7 +34,7 @@ const PIEZAS = {
   comosehace: { workflow: 'como-se-hace.yml', que: 'Cómo se hace: la fábrica en 2D (más de 1 min)' },
   video3d1: { workflow: 'video3d.yml', que: 'Video 3D de datos (mediodía)', inputs: { modo: 'publicar', turno: 'mediodia' } },
   video3d2: { workflow: 'video3d.yml', que: 'Video 3D de datos (tarde, la hora de más vistas)', inputs: { modo: 'publicar', turno: 'tarde' } },
-  imagen: { workflow: 'curiosidades-facebook.yml', que: 'Imagen de relleno: reto visual o curiosidad' },
+  imagen: { workflow: 'curiosidades-facebook.yml', que: 'Imagen informativa: 5 datos de un tema (sin retos)', inputs: { tipo: 'datos' } },
   debate: { workflow: R, que: 'Reel de debate: 5 retos que dividen a internet', inputs: { formato: 'debate' } },
   debateimg: { workflow: 'curiosidades-facebook.yml', que: 'Imagen de debate: error a propósito, «el 90 % falla» o «¿cuántos ves?»', inputs: { tipo: 'debate' } },
   noticiasimg: { workflow: 'curiosidades-facebook.yml', que: 'Noticias en imágenes: carrusel con titular y resumen', inputs: { tipo: 'noticias' } },
@@ -55,8 +55,8 @@ const SOLO_TT = new Set(['nombres', 'famosos']);
 // noviembre). Facebook queda en 6 Reels (más las imágenes, que no cuentan); noticias, Cómo se hace y los retos de las
 // 15:45 siguen en Instagram, TikTok y YouTube
 const PLAN = {
-  fb: { '09:00': 'banderas', '12:17': 'video3d1', '13:45': 'gta', '14:30': 'debate', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
-  ig: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:45': 'retos', '17:15': 'datos', '18:30': 'video3d2', '20:30': 'estrella', '22:30': 'debateimg' },
+  fb: { '09:00': 'banderas', '12:17': 'video3d1', '13:45': 'gta', '14:30': 'debate', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella' },
+  ig: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:45': 'retos', '17:15': 'datos', '18:30': 'video3d2', '20:30': 'estrella' },
   tt: { '07:30': 'noticias', '08:15': 'nombres', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:00': 'famosos', '17:15': 'datos', '18:30': 'video3d2', '20:30': 'estrella' },
   yt: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '17:15': 'datos', '18:30': 'video3d2' }
 };

@@ -146,7 +146,8 @@ function tipoCarrusel(o, hist) {
   if (o.tipo && o.tipo !== 'auto' && GANCHOS[o.tipo]) return o.tipo;
   const k = o.red === 'tiktok' ? hist.carruseles || 0 : hist.carruselesFb || 0;
   if (o.red === 'tiktok') return k % 2 === 0 ? 'retos' : 'datos';
-  return k % 6 === 5 ? 'noticias' : k % 3 === 2 ? 'datos' : 'retos';
+  // 2026-11-14: las imágenes de retos no sacaron vistas ni en FB ni en IG; ahora solo fotos informativas (datos y noticias)
+  return k % 4 === 3 ? 'noticias' : 'datos';
 }
 
 // Foto real de Pixabay para una búsqueda (null si no hay clave o no encuentra)
