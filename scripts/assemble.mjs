@@ -89,10 +89,10 @@ function splitPhrase(p) {
 }
 
 // Bloques con tiempo: visibles desde su primera palabra hasta el siguiente bloque (o poco después de la línea)
-export function buildCaptions(timeline) {
+export function buildCaptions(timeline, { standalone = false } = {}) {
   const out = [];
   timeline.lines.forEach((line, li) => {
-    if (line.beat === 'cierre') return; // el cierre lo dice la tarjeta final
+    if (!standalone && line.beat === 'cierre') return; // el cierre lo dice la tarjeta final
     const next = timeline.lines[li + 1];
     const chunks = chunkWords(line.words);
     chunks.forEach((ws, ci) => {
@@ -228,10 +228,12 @@ export async function prepare(series, n) {
 
   const cv = createCanvas(W, H), ctx = cv.getContext('2d');
   ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
-  const captions = buildCaptions(timeline);
+  // series.standalone: video suelto (sin «PARTE N» ni tarjeta «PARTE N+1 EN MI PERFIL»); el cierre se subtitula
+  const standalone = !!series.standalone;
+  const captions = buildCaptions(timeline, { standalone });
   const windows = sceneWindows(timeline);
   const motions = Object.fromEntries(ep.scenes.map((s) => [s.id, s.motion]));
-  const closing = timeline.lines.find((l) => l.beat === 'cierre');
+  const closing = standalone ? null : timeline.lines.find((l) => l.beat === 'cierre');
   const lang = series.language;
 
   // Layouts fijos (se calculan una vez) y revisión de la zona segura
@@ -297,11 +299,13 @@ export async function prepare(series, n) {
     }
 
     // PARTE N
-    ctx.fillStyle = P.bg;
-    ctx.beginPath(); ctx.roundRect(part.x0, part.y0, part.w, part.h, part.h / 2); ctx.fill();
-    ctx.font = font(800, P.size); ctx.fillStyle = '#FFFFFF'; ctx.textBaseline = 'middle'; ctx.textAlign = 'center';
-    ctx.fillText(part.text, CX, part.y0 + part.h / 2 + 2);
-    ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    if (!standalone) {
+      ctx.fillStyle = P.bg;
+      ctx.beginPath(); ctx.roundRect(part.x0, part.y0, part.w, part.h, part.h / 2); ctx.fill();
+      ctx.font = font(800, P.size); ctx.fillStyle = '#FFFFFF'; ctx.textBaseline = 'middle'; ctx.textAlign = 'center';
+      ctx.fillText(part.text, CX, part.y0 + part.h / 2 + 2);
+      ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    }
 
     // gancho de los primeros 3 s
     if (t < Hk.until + Hk.fade) {

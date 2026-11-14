@@ -1,0 +1,56 @@
+{
+  "amigo": {
+    "file": "amigo.jpg",
+    "usage": {
+      "input_tokens": 195,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 195
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 539
+    },
+    "cost": 0.011295,
+    "at": "2026-11-14T16:53:43.169Z"
+  },
+  "chepe": {
+    "file": "chepe.jpg",
+    "usage": {
+      "input_tokens": 203,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 203
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 547
+    },
+    "cost": 0.011335,
+    "at": "2026-11-14T16:53:43.531Z"
+  },
+  "papi": {
+    "file": "papi.jpg",
+    "usage": {
+      "input_tokens": 256,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 256
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 600
+    },
+    "cost": 0.0116,
+    "at": "2026-11-14T16:53:44.705Z"
+  }
+}

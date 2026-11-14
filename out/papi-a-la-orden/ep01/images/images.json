@@ -1,0 +1,310 @@
+{
+  "s2": {
+    "file": "s2.jpg",
+    "refs": [
+      "chepe"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1813,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 305
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2157
+    },
+    "cost": 0.023909,
+    "prompt": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.\nReference images: image 1 is Chepe. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nChepe (28 years old): Young Honduran man in his late 20s: very large round head, short black curly hair, medium-brown skin, big expressive dark eyes, small body. Wears a wrinkled green pajama t-shirt (no print) and gray sweatpants.\nShot: medium.\nScene: Chepe in pajamas stands on his tiny balcony at sunrise, jaw dropped, looking down at a perfectly smooth, spotless, completely empty boulevard with no potholes, no cars, glowing in golden light and palm trees along the sidewalks.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-11-14T16:54:08.747Z"
+  },
+  "s3": {
+    "file": "s3.jpg",
+    "refs": [
+      "papi"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1866,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 358
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2210
+    },
+    "cost": 0.024174,
+    "prompt": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.\nReference images: image 1 is Papi. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nPapi (60 years old): Caricature of a lean older man in his 60s: very large head on a thin body, tall bald forehead with a ring of short gray hair at the sides, thick gray mustache, long expressive nose, droopy kind eyes. Wears a light-blue button-up shirt with the sleeves rolled up, blue jeans and heavy black lace-up work boots (Timberland style, rounded toe, thick sole). Often carries a small Honduran flag (blue-white-blue stripes with five small blue stars) or a smartphone.\nShot: wide.\nScene: Papi jogging joyfully along a turquoise tropical beach under coconut palms, a smartphone in one hand, one fist raised, wide happy open-mouthed shout, sand kicking up behind his heavy black work boots. Joyful energy.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-11-14T16:54:10.445Z"
+  },
+  "s1": {
+    "file": "s1.jpg",
+    "refs": [
+      "papi"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1863,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 355
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2207
+    },
+    "cost": 0.024159,
+    "prompt": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.\nReference images: image 1 is Papi. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nPapi (60 years old): Caricature of a lean older man in his 60s: very large head on a thin body, tall bald forehead with a ring of short gray hair at the sides, thick gray mustache, long expressive nose, droopy kind eyes. Wears a light-blue button-up shirt with the sleeves rolled up, blue jeans and heavy black lace-up work boots (Timberland style, rounded toe, thick sole). Often carries a small Honduran flag (blue-white-blue stripes with five small blue stars) or a smartphone.\nShot: close-up.\nScene: Extreme close-up of Papi's huge caricature face, eyebrows raised very high in comic surprise, mouth slightly open, eyes wide, golden sunburst rays behind him. His face fills the upper two thirds.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-11-14T16:54:11.819Z"
+  },
+  "s4": {
+    "file": "s4.jpg",
+    "refs": [],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 202,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 202
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 546
+    },
+    "cost": 0.01133,
+    "prompt": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.\nNo people in frame unless described.\nShot: wide.\nScene: Futuristic Tegucigalpa skyline at golden hour: gleaming glass skyscrapers rising from green hills where small houses used to cling, one super-tall tower with a Honduran flag on top, flying cars gliding between the buildings. No readable text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-11-14T16:54:20.553Z"
+  },
+  "s5": {
+    "file": "s5.jpg",
+    "refs": [
+      "chepe"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1834,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 326
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2178
+    },
+    "cost": 0.024014,
+    "prompt": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.\nReference images: image 1 is Chepe. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nChepe (28 years old): Young Honduran man in his late 20s: very large round head, short black curly hair, medium-brown skin, big expressive dark eyes, small body. Wears a wrinkled green pajama t-shirt (no print) and gray sweatpants.\nShot: medium.\nScene: A modern elevated train glides above a clean San Pedro Sula street; below, a cheerful minibus 'rapidito' politely stops to let a smiling grandmother cross the street; Chepe in pajamas waves; in the background a cartoon fried chicken character with big eyes stands calmly on the sidewalk, not looking lost. No readable text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-11-14T16:54:22.632Z"
+  },
+  "s6": {
+    "file": "s6.jpg",
+    "refs": [],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 206,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 206
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 550
+    },
+    "cost": 0.01135,
+    "prompt": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.\nNo people in frame unless described.\nShot: wide.\nScene: La Ceiba beach as a glamorous tropical Miami: turquoise sea, a carnival parade with colorful dancers and floats, and in the foreground a giant baleada (Honduran folded tortilla) wearing a small golden crown on a beach towel. Festive and bright. No readable text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-11-14T16:54:23.136Z"
+  },
+  "s7": {
+    "file": "s7.jpg",
+    "refs": [
+      "chepe"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1827,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 319
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2171
+    },
+    "cost": 0.023979,
+    "prompt": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.\nReference images: image 1 is Chepe. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nChepe (28 years old): Young Honduran man in his late 20s: very large round head, short black curly hair, medium-brown skin, big expressive dark eyes, small body. Wears a wrinkled green pajama t-shirt (no print) and gray sweatpants.\nShot: medium.\nScene: Chepe holds a giant electricity bill that is almost as big as he is, eyes huge with joy; behind him a glowing lamp is on and a living-room TV shows a football match with a cheering crowd. Warm cozy light. The bill shows only a big plain number one, no other text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-11-14T16:54:32.457Z"
+  },
+  "s8": {
+    "file": "s8.jpg",
+    "refs": [
+      "chepe"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1830,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 322
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2174
+    },
+    "cost": 0.023994,
+    "prompt": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.\nReference images: image 1 is Chepe. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nChepe (28 years old): Young Honduran man in his late 20s: very large round head, short black curly hair, medium-brown skin, big expressive dark eyes, small body. Wears a wrinkled green pajama t-shirt (no print) and gray sweatpants.\nShot: wide.\nScene: Split scene in one frame: on the left a bright modern hospital pharmacy with shelves completely full of medicine boxes and a smiling nurse; on the right a school with a solid roof and tiny cartoon kids in graduation caps speaking happily with speech bubbles of different flags (no readable text). Chepe watches proudly from the center.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-11-14T16:54:34.570Z"
+  },
+  "s9": {
+    "file": "s9.jpg",
+    "refs": [
+      "papi"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1874,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 366
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2218
+    },
+    "cost": 0.024214,
+    "prompt": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.\nReference images: image 1 is Papi. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nPapi (60 years old): Caricature of a lean older man in his 60s: very large head on a thin body, tall bald forehead with a ring of short gray hair at the sides, thick gray mustache, long expressive nose, droopy kind eyes. Wears a light-blue button-up shirt with the sleeves rolled up, blue jeans and heavy black lace-up work boots (Timberland style, rounded toe, thick sole). Often carries a small Honduran flag (blue-white-blue stripes with five small blue stars) or a smartphone.\nShot: wide.\nScene: Heroic low-angle shot of Papi on a hilltop holding a large Honduran flag (blue-white-blue stripes with five small blue stars) that waves in the wind, fireworks and sparkles behind him in a sunset sky, mouth open in a triumphant shout.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-11-14T16:54:35.720Z"
+  },
+  "s10": {
+    "file": "s10.jpg",
+    "refs": [
+      "papi"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1848,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 340
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2192
+    },
+    "cost": 0.024084,
+    "prompt": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.\nReference images: image 1 is Papi. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nPapi (60 years old): Caricature of a lean older man in his 60s: very large head on a thin body, tall bald forehead with a ring of short gray hair at the sides, thick gray mustache, long expressive nose, droopy kind eyes. Wears a light-blue button-up shirt with the sleeves rolled up, blue jeans and heavy black lace-up work boots (Timberland style, rounded toe, thick sole). Often carries a small Honduran flag (blue-white-blue stripes with five small blue stars) or a smartphone.\nShot: close-up.\nScene: Close-up of Papi shrugging his shoulders with palms up and a small proud smile, eyebrows raised, soft golden light behind him.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-11-14T16:54:44.826Z"
+  },
+  "s11": {
+    "file": "s11.jpg",
+    "refs": [
+      "chepe"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1826,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 318
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2170
+    },
+    "cost": 0.023974,
+    "prompt": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.\nReference images: image 1 is Chepe. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nChepe (28 years old): Young Honduran man in his late 20s: very large round head, short black curly hair, medium-brown skin, big expressive dark eyes, small body. Wears a wrinkled green pajama t-shirt (no print) and gray sweatpants.\nShot: medium.\nScene: Dark messy bedroom at night: Chepe sits up in bed in his pajamas, hair messy, a phone alarm glowing on the nightstand, a power outage making the room dark; through the window a large pothole is visible in the street in front of his house under a dim streetlight.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-11-14T16:54:46.058Z"
+  },
+  "s12": {
+    "file": "s12.jpg",
+    "refs": [
+      "amigo"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1804,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 296
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2148
+    },
+    "cost": 0.023864,
+    "prompt": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.\nReference images: image 1 is Don Chelito. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nDon Chelito (45 years old): Stocky man in his mid 40s: very large head, red baseball cap, thick black mustache, smug half-closed eyes, arms crossed over a plain royal-blue polo shirt. Small body, big belly.\nShot: medium.\nScene: Don Chelito stands with arms crossed, red cap, smug closed-eye smile and nose in the air, in front of a dusty street with one pothole behind him; comic contrast of his confidence with the bad street.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-11-14T16:54:48.467Z"
+  }
+}

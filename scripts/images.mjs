@@ -24,10 +24,10 @@ export const characterBlock = (series, ids) => series.characters.filter((c) => i
 export function scenePrompt(series, scene, { refs = [] } = {}) {
   const who = characterBlock(series, scene.characters);
   const refNote = refs.length ? `Reference images: ${refs.map((r, i) => `image ${i + 1} is ${r.name}`).join('; ')}. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\n` : '';
-  return `${FRAMING}\nVisual style: ${series.visual_style}\n${refNote}${who ? `Characters in frame (keep their appearance exactly):\n${who}\n` : 'No people in frame unless described.\n'}Shot: ${scene.shot}.\nScene: ${scene.image_prompt}\n${NO_TEXT}`;
+  return `${series.framing || FRAMING}\nVisual style: ${series.visual_style}\n${refNote}${who ? `Characters in frame (keep their appearance exactly):\n${who}\n` : 'No people in frame unless described.\n'}Shot: ${scene.shot}.\nScene: ${scene.image_prompt}\n${NO_TEXT}`;
 }
 
-const portraitPrompt = (series, c) => `Character reference portrait for a live-action drama series. Waist-up, facing the camera, neutral expression, plain mid-gray studio background, soft even light, sharp focus on the face.\nVisual style: ${series.visual_style}\n${c.name} (${c.age} years old): ${c.visual}\n${NO_TEXT}`;
+const portraitPrompt = (series, c) => `${series.portrait_framing || 'Character reference portrait for a live-action drama series. Waist-up, facing the camera, neutral expression, plain mid-gray studio background, soft even light, sharp focus on the face.'}\nVisual style: ${series.visual_style}\n${c.name} (${c.age} years old): ${c.visual}\n${NO_TEXT}`;
 
 // Guarda la imagen y su costo real según el uso de tokens que devuelve la API
 async function saveImage(res, file) {
