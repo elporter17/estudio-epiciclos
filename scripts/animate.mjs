@@ -103,7 +103,8 @@ async function cargar(dir) {
 // Dónde está la boca de cada personaje (fracción del ancho y del alto de su imagen)
 const BOCA = {
   papi_fist: [0.51, 0.228], papi_run: [0.5, 0.272], papi_flag: [0.47, 0.357], papi_shrug: [0.52, 0.226],
-  chepe_shock: [0.46, 0.349], chepe_cheer: [0.51, 0.297], chepe_proud: [0.485, 0.292], chepe_bed: [0.487, 0.405], amigo_arms: [0.49, 0.268]
+  chepe_shock: [0.46, 0.349], chepe_cheer: [0.51, 0.297], chepe_proud: [0.485, 0.292], chepe_bed: [0.487, 0.405], amigo_arms: [0.49, 0.268],
+  presidente_mazo: [0.48, 0.228], presidente_senala: [0.455, 0.25], presidente_celebra: [0.5, 0.228]
 };
 
 /* ---------- el guion animado ---------- */
@@ -145,7 +146,7 @@ function objeto(c, id, x, y, h, { rot = 0, flip = false, alpha = 1 } = {}) {
   const img = c.A[id]; if (!img) return;
   const w = (img.width / img.height) * h; c.ctx.save(); c.ctx.globalAlpha = alpha; c.ctx.translate(x, y); c.ctx.rotate(rot * Math.PI / 180); c.ctx.scale(flip ? -1 : 1, 1); c.ctx.drawImage(img, -w / 2, -h / 2, w, h); c.ctx.restore();
 }
-const ESCENAS = {
+const ESCENAS_PAPI = {
   s1: {
     cam: [[0, 2.3, 0.5, 0.5], [1.6, 1.0, 0.5, 0.5], [3.3, 2.0, 0.5, 0.42], [4.6, 1.15, 0.5, 0.52]],
     mundo(c) { c.ctx.fillStyle = '#F5B800'; c.ctx.fillRect(0, 0, W, H); rayos(c.ctx, W / 2, H * 0.42, c.ts, '#FFD23F', '#F5A300'); sprite(c, 'papi_fist', { x: 0.5, foot: 0.97, h: 1500, enter: 'pop', bob: 6 }); chispas(c.ctx, c.ts, { seed: 3, n: 12 }); }
@@ -241,6 +242,116 @@ const ESCENAS = {
   }
 };
 
+/* ---------- guion animado de «congreso-al-servicio» ---------- */
+function reloj(ctx, x, y, r, ts, t0) {
+  const a = ts - t0; if (a < 0) return; const k = outBack(a / 0.4);
+  ctx.save(); ctx.translate(x, y); ctx.scale(k, k); ctx.rotate(Math.sin(ts * 14) * 0.03 * (a < 1.5 ? 1 : 0));
+  ctx.fillStyle = '#FFFFFF'; ctx.strokeStyle = '#1f2937'; ctx.lineWidth = 14; ctx.beginPath(); ctx.arc(0, 0, r, 0, PI2); ctx.fill(); ctx.stroke();
+  for (let i = 0; i < 12; i++) { const an = (i / 12) * PI2; ctx.lineWidth = i % 3 ? 5 : 9; ctx.beginPath(); ctx.moveTo(Math.sin(an) * r * 0.82, -Math.cos(an) * r * 0.82); ctx.lineTo(Math.sin(an) * r * 0.93, -Math.cos(an) * r * 0.93); ctx.stroke(); }
+  const man = (ang, len, w) => { ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(Math.sin(ang) * r * len, -Math.cos(ang) * r * len); ctx.stroke(); };
+  man((8 / 12) * PI2, 0.5, 13); man(0, 0.75, 9);
+  ctx.fillStyle = '#1f2937'; ctx.beginPath(); ctx.arc(0, 0, 11, 0, PI2); ctx.fill(); ctx.restore();
+}
+function pantalla(c, x, y, w, h, t0) {
+  const { ctx, ts } = c, a = ts - t0; if (a < 0) return; const k = outBack(a / 0.45);
+  ctx.save(); ctx.translate(x, y); ctx.scale(k, k);
+  ctx.fillStyle = '#0B1F4D'; ctx.fillRect(-w / 2, -h / 2, w, h); ctx.strokeStyle = '#E5E7EB'; ctx.lineWidth = 12; ctx.strokeRect(-w / 2, -h / 2, w, h);
+  for (let i = 0; i < 5; i++) {
+    const ry = -h / 2 + 50 + i * (h - 80) / 5; ctx.fillStyle = '#93C5FD'; ctx.fillRect(-w / 2 + 28, ry, w * 0.5 - (i % 3) * 30, 18); ctx.fillStyle = '#FDE68A'; ctx.fillRect(w * 0.1, ry, w * 0.28, 18);
+    const ap = ts - t0 - 1.2 - i * 1.1; if (ap > 0) { const kk = outBack(ap / 0.25); ctx.save(); ctx.translate(w * 0.36, ry + 8); ctx.rotate(-0.15); ctx.scale(kk, kk); ctx.strokeStyle = '#22C55E'; ctx.lineWidth = 7; ctx.strokeRect(-70, -22, 140, 44); ctx.fillStyle = '#22C55E'; ctx.font = '900 30px Montserrat'; ctx.textAlign = 'center'; ctx.fillText('APROBADO', 0, 11); ctx.restore(); }
+  }
+  ctx.restore();
+}
+const ESCENAS_CONGRESO = {
+  s1: {
+    cam: [[0, 1.0, 0.5, 0.5], [2.4, 1.4, 0.5, 0.38], [4.8, 1.15, 0.5, 0.5]],
+    mundo(c) {
+      const { ctx, ts } = c; fondo(c, 'bg_congreso_noche', { deriva: 0.08 });
+      const d = 0.6 * (1 - clamp((ts - 2.0) / 2.2)); ctx.fillStyle = `rgba(0,0,25,${d})`; ctx.fillRect(0, 0, W, H);
+      const g = clamp((ts - 2.0) / 2.2); if (g > 0) { const gr = ctx.createRadialGradient(W / 2, H * 0.42, 20, W / 2, H * 0.42, 150 + 800 * g); gr.addColorStop(0, `rgba(255,225,120,${0.55 * g})`); gr.addColorStop(1, 'rgba(255,225,120,0)'); ctx.fillStyle = gr; ctx.fillRect(0, 0, W, H); }
+      sprite(c, 'chepe_shock', { x: 0.22, foot: 0.99, h: 800, enter: 'rise', t0: 0.3 });
+    },
+    hud(c) { sello(c.ctx, '¡SE PRENDIÓ LA LUZ!', W / 2, H * 0.3, c.ts, 4.0, '#F59E0B', 70, -4); chispas(c.ctx, c.ts - 4.0, { seed: 4, n: 10, y0: 0.2, y1: 0.45 }); }
+  },
+  s2: {
+    cam: [[0, 1.0, 0.5, 0.5], [2.3, 1.5, 0.3, 0.55], [4.4, 1.5, 0.75, 0.35], [7.0, 1.0, 0.5, 0.5]],
+    mundo(c) {
+      const t = c.ts; fondo(c, 'bg_balcon'); sprite(c, 'chepe_shock', { x: 0.3, foot: 0.97, h: 1250, enter: 'rise', t0: 0.15 });
+      for (let i = 0; i < 2; i++) { const a = (t - 1.2 - i * 2.4) / 3.4; if (a > 0 && a < 1) objeto(c, 'diputados', lerp(-300, W + 300, a), H * 0.64 + Math.sin(t * 14) * 8, 430, {}); }
+      reloj(c.ctx, W * 0.74, H * 0.3, 150, t, 0.5);
+    },
+    hud(c) { sello(c.ctx, '¡A LAS 8!', W * 0.5, H * 0.43, c.ts, 5.6, '#22C55E', 100); chispas(c.ctx, c.ts - 5.6, { seed: 8, n: 8, y0: 0.25, y1: 0.5 }); }
+  },
+  s3: {
+    cam: [[0, 1.0, 0.5, 0.5], [4.5, 1.7, 0.5, 0.52], [4.9, 1.15, 0.5, 0.52]],
+    mundo(c) { const { ctx } = c; ctx.fillStyle = '#F5B800'; ctx.fillRect(0, 0, W, H); rayos(ctx, W / 2, H * 0.42, c.ts, '#FFD23F', '#F5A300'); sprite(c, 'presidente_mazo', { x: 0.5, foot: 0.99, h: 1280, enter: 'pop', t0: 0.2, bob: 6, hablante: 'presidente' }); chispas(ctx, c.ts, { seed: 3, n: 12 }); },
+    hud(c) { texto(c.ctx, '¡SESIÓN ABIERTA', W / 2, H * 0.075, c.ts, 4.7, { size: 96, rot: -4 }); texto(c.ctx, 'Y A LA HORAAA,', W / 2, H * 0.145, c.ts, 5.2, { size: 92, rot: 3, color: '#FF4D6D' }); texto(c.ctx, 'MAJE!', W / 2, H * 0.225, c.ts, 5.7, { size: 120, rot: -3 }); if (c.ts > 4.7) chispas(c.ctx, c.ts, { seed: 2, n: 16, y0: 0.15, y1: 0.55 }); },
+    sacudida(ts) { return ts > 4.7 && ts < 7.6 ? 14 : 0; }
+  },
+  s4: {
+    cam: [[0, 1.0, 0.5, 0.5], [3.0, 1.35, 0.5, 0.4], [6.5, 1.0, 0.5, 0.5], [8.6, 1.5, 0.5, 0.4]],
+    mundo(c) { fondo(c, 'bg_clinica', { deriva: 0.1 }); sprite(c, 'diputada_bata', { x: 0.5, foot: 0.99, h: 1350, enter: 'pop', t0: 0.3, bob: 5 }); },
+    hud(c) { sello(c.ctx, 'DICE: 2 PLAZAS', W / 2, H * 0.24, c.ts, 4.2, '#EA580C', 70, -3); sello(c.ctx, '1 SOLA CHAMBA', W / 2, H * 0.34, c.ts, 8.8, '#22C55E', 84, 3); chispas(c.ctx, c.ts - 8.8, { seed: 5, n: 10, y0: 0.25, y1: 0.45 }); }
+  },
+  s5: {
+    cam: [[0, 1.0, 0.5, 0.5], [2.6, 1.5, 0.7, 0.62], [6.0, 1.0, 0.5, 0.5], [8.0, 1.4, 0.3, 0.55]],
+    mundo(c) {
+      const t = c.ts; fondo(c, 'bg_hospital', { deriva: 0.08 });
+      sprite(c, 'abuelita', { x: (a) => 0.15 + clamp((a - 1.0) / 6) * 0.45, foot: 0.82, h: 560, t0: 0.8, enter: 'pop', bobV: 9, bob: 7 });
+      sprite(c, 'chepe_cheer', { x: 0.74, foot: 0.99, h: 1100, enter: 'pop', t0: 0.3, salto: t > 5 ? 8 : 0, hablante: 'narrador' });
+    },
+    hud(c) { sello(c.ctx, 'MEDICINAS', W * 0.35, H * 0.26, c.ts, 1.6, '#22C55E', 80); sello(c.ctx, 'SIN FALTANTES', W * 0.6, H * 0.35, c.ts, 4.4, '#2563EB', 70, 4); if (c.ts > 7.2) confeti(c.ctx, c.ts - 7.2, 50, 5); }
+  },
+  s6: {
+    cam: [[0, 1.0, 0.35, 0.55], [3.0, 1.3, 0.65, 0.58], [5.5, 1.05, 0.5, 0.5]],
+    mundo(c) { fondo(c, 'bg_hospital', { dx: -260, base: 1.3 }); sprite(c, 'chepe_proud', { x: 0.28, foot: 0.99, h: 1050, enter: 'left', hablante: 'narrador' }); sprite(c, 'graduados', { x: 0.76, foot: 0.9, h: 700, t0: 2.2, enter: 'drop', salto: 6, bob: 4 }); },
+    hud(c) { sello(c.ctx, 'MAESTROS PAGADOS', W * 0.5, H * 0.24, c.ts, 0.9, '#22C55E', 62); sello(c.ctx, 'TECHOS', W * 0.72, H * 0.31, c.ts, 3.0, '#22C55E', 70, 5); sello(c.ctx, 'INGLÉS', W * 0.5, H * 0.38, c.ts, 5.2, '#2563EB', 70, -3); }
+  },
+  s7: {
+    cam: [[0, 1.0, 0.4, 0.5], [3.0, 1.3, 0.7, 0.5], [6.0, 1.5, 0.72, 0.5], [8.2, 1.0, 0.5, 0.5]],
+    mundo(c) {
+      const { ts } = c; fondo(c, 'bg_pleno', { deriva: 0.08 }); sprite(c, 'presidente_senala', { x: 0.28, foot: 0.99, h: 1200, enter: 'pop', t0: 0.3, bob: 5 });
+      const a = ts - 2.0; if (a > 0) { const k = outBack(a / 0.4); objeto(c, 'sobre', W * 0.74, H * 0.5, 520 * k, { rot: -4 }); }
+      const b = clamp((ts - 4.6) / 1.2); if (ts > 4.6) objeto(c, 'tijeras', lerp(W * 1.0, W * 0.74, ease(b)), lerp(H * 0.3, H * 0.47, ease(b)), 380, { rot: ts > 5.8 ? Math.sin(ts * 22) * 14 : -20 });
+    },
+    hud(c) { sello(c.ctx, 'FALTAS = SIN PAGO', W / 2, H * 0.27, c.ts, 6.0, '#DC2626', 66, -3); texto(c.ctx, '¡NI UN LEMPIRA!', W / 2, H * 0.34, c.ts, 8.2, { size: 100, rot: 3, color: '#FFFFFF' }); },
+    sacudida(ts) { return ts > 6.0 && ts < 6.5 ? 10 : 0; }
+  },
+  s8: {
+    cam: [[0, 1.0, 0.35, 0.55], [3.5, 1.3, 0.62, 0.4], [7.0, 1.1, 0.5, 0.5], [9.0, 1.5, 0.7, 0.28]],
+    mundo(c) { fondo(c, 'bg_pleno', { dx: 120, deriva: 0.06 }); sprite(c, 'chepe_proud', { x: 0.22, foot: 0.99, h: 1000, enter: 'left', hablante: 'narrador' }); pantalla(c, W * 0.64, H * 0.36, 560, 400, 0.6);
+      const a = c.ts - 8.2; if (a > 0) { const k = outBack(a / 0.5); c.ctx.save(); c.ctx.translate(W * 0.84, H * 0.15); c.ctx.scale(k, k); c.ctx.fillStyle = '#FDE047'; c.ctx.beginPath(); c.ctx.arc(0, 0, 70, 0, PI2); c.ctx.fill(); c.ctx.strokeStyle = '#F59E0B'; c.ctx.lineWidth = 10; for (let i = 0; i < 12; i++) { const an = (i / 12) * PI2 + c.ts; c.ctx.beginPath(); c.ctx.moveTo(Math.cos(an) * 90, Math.sin(an) * 90); c.ctx.lineTo(Math.cos(an) * 125, Math.sin(an) * 125); c.ctx.stroke(); } c.ctx.restore(); } },
+    hud(c) { sello(c.ctx, 'TODO A LA VISTA', W / 2, H * 0.27, c.ts, 5.8, '#2563EB', 66, -3); sello(c.ctx, 'VOTAN DE DÍA', W / 2, H * 0.36, c.ts, 8.6, '#F59E0B', 70, 3); }
+  },
+  s9: {
+    cam: [[0, 1.0, 0.5, 0.55], [3.0, 1.4, 0.4, 0.5], [6.0, 1.0, 0.5, 0.5]],
+    mundo(c) { fondo(c, 'bg_barrio', { deriva: 0.1 }); sprite(c, 'diputada_nota', { x: 0.4, foot: 0.99, h: 1300, enter: 'left', t0: 0.2, tilt: 1.2, bob: 7 }); if (c.ts > 6.3) confeti(c.ctx, c.ts - 6.3, 50, 7); },
+    hud(c) { sello(c.ctx, 'ESCUCHAN AL BARRIO', W / 2, H * 0.24, c.ts, 1.2, '#2563EB', 62, -3); sello(c.ctx, '+ UNA BALEADA', W / 2, H * 0.33, c.ts, 4.4, '#F59E0B', 76, 4); }
+  },
+  s10: {
+    cam: [[0, 1.5, 0.5, 0.45], [2.0, 1.0, 0.5, 0.5], [8.5, 1.7, 0.5, 0.52], [8.9, 1.15, 0.5, 0.52]],
+    mundo(c) { const { ctx, ts } = c; ctx.fillStyle = '#F5B800'; ctx.fillRect(0, 0, W, H); rayos(ctx, W / 2, H * 0.45, ts * 1.2, '#FFD23F', '#F59E0B'); sprite(c, 'presidente_celebra', { x: 0.5, foot: 0.99, h: 1280, enter: 'pop', t0: 0.2, bob: 6, hablante: 'presidente' }); if (ts > 1) confeti(ctx, ts - 1, 80, 3); },
+    hud(c) { if (c.ts < 8.5) sello(c.ctx, 'EL PISTO LLEGA COMPLETO', W / 2, H * 0.3, c.ts, 2.6, '#22C55E', 64, -3); texto(c.ctx, '¡SESIÓN ABIERTA', W / 2, H * 0.075, c.ts, 8.7, { size: 96, rot: -4 }); texto(c.ctx, 'Y A LA HORAAA,', W / 2, H * 0.145, c.ts, 9.2, { size: 92, rot: 3, color: '#FF4D6D' }); texto(c.ctx, 'MAJE!', W / 2, H * 0.225, c.ts, 9.7, { size: 120, rot: -3 }); },
+    sacudida(ts) { return ts > 8.7 && ts < 11.5 ? 12 : 0; }
+  },
+  s11: {
+    cam: [[0, 1.0, 0.5, 0.55], [3.2, 1.7, 0.74, 0.28], [5.8, 1.0, 0.5, 0.55], [7.4, 1.5, 0.5, 0.62]],
+    mundo(c) {
+      const t = c.ts; fondo(c, 'bg_noche'); sprite(c, 'chepe_bed', { x: 0.5, foot: 1.03, h: 1000, enter: 'rise', t0: 0.5, hablante: 'narrador', bob: 5 });
+      if (t < 4) for (let i = 0; i < 3; i++) { const k = ((t * 1.6 + i / 3) % 1); c.ctx.strokeStyle = `rgba(255,70,70,${1 - k})`; c.ctx.lineWidth = 8; c.ctx.beginPath(); c.ctx.arc(W * 0.3, H * 0.6, 40 + k * 190, 0, PI2); c.ctx.stroke(); }
+      if (t > 6.2) { const f = t < 7.0 ? (Math.floor(t * 12) % 2 ? 0.15 : 0.45) : 0.4; c.ctx.fillStyle = `rgba(0,0,10,${f})`; c.ctx.fillRect(0, 0, W, H); }
+    },
+    hud(c) { if (c.ts > 6.3) texto(c.ctx, '¡APAGÓN!', W / 2, H * 0.3, c.ts, 6.3, { size: 150, rot: -4, color: '#FFFFFF' }); },
+    sacudida(ts) { return ts < 3.6 ? 5 : 0; }
+  },
+  s12: {
+    cam: [[0, 1.0, 0.5, 0.5], [3.0, 1.35, 0.5, 0.55], [5.4, 1.1, 0.5, 0.5]],
+    mundo(c) { fondo(c, 'bg_hoyo'); sprite(c, 'amigo_arms', { x: 0.5, foot: 0.96, h: 1250, enter: 'pop', bob: 5, tilt: -1.2 }); },
+    hud(c) { texto(c.ctx, 'COMPÁRTELO', W / 2, H * 0.22, c.ts, 3.4, { size: 140, rot: -3, color: '#FFE14D' }); }
+  }
+};
+let ESCENAS = ESCENAS_PAPI;
+
 /* ---------- audio: volumen de la voz por cuadro (mueve la boca) ---------- */
 function envolvente(wav) {
   const r = spawnSync(ffmpegPath, ['-hide_banner', '-loglevel', 'error', '-i', wav, '-ac', '1', '-ar', '8000', '-f', 'f32le', '-'], { maxBuffer: 256 * 1024 * 1024 });
@@ -255,7 +366,7 @@ async function preparar(series, n) {
   const ep = episode(series, n), timeline = readJson(timelineFile(series.slug, n));
   if (!timeline) throw new Error('Falta la voz: ejecuta «npm run voice -- --ep 1».');
   const A = await cargar(path.join(OUT_DIR, series.slug, 'anim'));
-  const ceiba = path.join(imageDir(series.slug, n), 's6.jpg'); if (fs.existsSync(ceiba)) A.ceiba = await loadImage(fs.readFileSync(ceiba));
+  const ceiba = path.join(imageDir(series.slug, n), 's6.jpg'); if (series.slug === 'papi-a-la-orden' && fs.existsSync(ceiba)) A.ceiba = await loadImage(fs.readFileSync(ceiba));
   const env = envolvente(path.join(path.dirname(timelineFile(series.slug, n)), timeline.audio));
   const lineas = timeline.lines, voz = (t, spk) => (lineas.some((l) => l.speaker === spk && t >= l.start - 0.03 && t <= l.end + 0.08) ? env[Math.min(env.length - 1, Math.floor(t * FPS))] || 0 : 0);
   const sc = timeline.scenes.map((s, i, a) => ({ ...s, ini: i === 0 ? 0 : s.start, fin: a[i + 1] ? a[i + 1].start : timeline.duration }));
@@ -297,7 +408,9 @@ async function preparar(series, n) {
 
 async function main() {
   const o = parseCli({ series: { type: 'string' }, ep: { type: 'string', default: '1' }, still: { type: 'string' }, crf: { type: 'string', default: '20' } });
-  const series = loadSeries(o.series), n = +o.ep, R = await preparar(series, n);
+  const series = loadSeries(o.series), n = +o.ep;
+  if (series.slug === 'congreso-al-servicio') ESCENAS = ESCENAS_CONGRESO;
+  const R = await preparar(series, n);
   if (R.violations.length) log(`AVISO: subtítulos fuera de la zona segura: ${R.violations.join(' | ')}\n`);
   const out = path.join(OUT_DIR, series.slug, `${series.slug}-animado.mp4`);
   if (o.still != null) { for (const s of o.still.split(',')) { const png = out.replace(/\.mp4$/, `-${s}s.png`); fs.writeFileSync(png, R.render(+s).toBuffer('image/png')); log(`PNG: ${png}\n`); } return; }

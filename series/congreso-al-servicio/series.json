@@ -291,5 +291,40 @@
   ],
   "framing": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).",
   "portrait_framing": "Character reference sheet in hand-drawn editorial caricature style. Full-body, standing, facing the camera, neutral relaxed expression, plain light-gray background, even light, all clothing and shoes clearly visible.",
-  "standalone": true
+  "standalone": true,
+  "anim": {
+    "sprites": {
+      "presidente_mazo": [
+        "presidente",
+        "Standing with one arm raised high holding the wooden gavel overhead, other hand on hip, big proud closed-mouth smile."
+      ],
+      "presidente_senala": [
+        "presidente",
+        "Standing and pointing one index finger forward firmly with a serious determined closed-mouth look, the gavel under the other arm."
+      ],
+      "presidente_celebra": [
+        "presidente",
+        "Both arms raised in victory, the gavel in one hand, very happy closed-mouth smile."
+      ],
+      "diputada_bata": [
+        "diputada",
+        "Standing relaxed, hands clasped in front, calm closed-mouth smile, looking at the viewer."
+      ],
+      "diputada_nota": [
+        "diputada",
+        "Holding a small notebook in one hand and writing with a pen in the other, friendly closed-mouth smile, looking at the viewer."
+      ]
+    },
+    "props": {
+      "sobre": "A paycheck envelope with a stack of banknotes peeking out, front view. ",
+      "tijeras": "A pair of giant open scissors, red handles, front view, tilted. ",
+      "diputados": "Three cartoon deputies in dark suits and ties running side by side holding coffee cups, side view, full body. "
+    },
+    "bgs": {
+      "bg_congreso_noche": "A grand neoclassical legislative building with tall columns and a dome at night, all windows dark, deep blue sky with stars, wide stone steps in the foreground.",
+      "bg_pleno": "Interior of a legislative chamber in daylight: semicircular rows of empty wooden seats, a central podium with a gavel, tall windows with bright light, a blue-white-blue flag.",
+      "bg_clinica": "A bright clean clinic consultation room: an exam bed, a medicine cabinet full of boxes, a desk with a lamp, a window with palm trees outside.",
+      "bg_barrio": "A colorful Honduran neighborhood corner store with a pastel facade, a hand-painted sign with no readable text, a plastic chair and a dirt street, warm afternoon sun."
+    }
+  }
 }

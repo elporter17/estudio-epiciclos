@@ -1,0 +1,1423 @@
+{
+  "series": "congreso-al-servicio",
+  "episode": 1,
+  "duration": 114,
+  "audio": "episode.wav",
+  "voiceModel": "gpt-4o-mini-tts",
+  "scenes": [
+    {
+      "id": "s1",
+      "beat": "gancho",
+      "start": 0.08,
+      "end": 6.38
+    },
+    {
+      "id": "s2",
+      "beat": "reloj",
+      "start": 6.8,
+      "end": 15.9
+    },
+    {
+      "id": "s3",
+      "beat": "grito",
+      "start": 16.32,
+      "end": 24.08
+    },
+    {
+      "id": "s4",
+      "beat": "salud",
+      "start": 24.5,
+      "end": 35.99
+    },
+    {
+      "id": "s5",
+      "beat": "medicinas",
+      "start": 36.41,
+      "end": 46.21
+    },
+    {
+      "id": "s6",
+      "beat": "escuelas",
+      "start": 46.63,
+      "end": 53.33
+    },
+    {
+      "id": "s7",
+      "beat": "asistencia",
+      "start": 53.75,
+      "end": 63.35
+    },
+    {
+      "id": "s8",
+      "beat": "transparencia",
+      "start": 63.77,
+      "end": 75.58
+    },
+    {
+      "id": "s9",
+      "beat": "barrio",
+      "start": 76,
+      "end": 84.82
+    },
+    {
+      "id": "s10",
+      "beat": "celebracion",
+      "start": 85.24,
+      "end": 97.06
+    },
+    {
+      "id": "s11",
+      "beat": "despertar",
+      "start": 97.48,
+      "end": 105.96
+    },
+    {
+      "id": "s12",
+      "beat": "remate",
+      "start": 106.38,
+      "end": 112.4
+    }
+  ],
+  "lines": [
+    {
+      "scene": "s1",
+      "beat": "gancho",
+      "speaker": "narrador",
+      "text": "¿Y si el Congreso Nacional, por fin, trabajara de verdad para el pueblo, maje?",
+      "start": 0.08,
+      "end": 6.38,
+      "words": [
+        {
+          "w": "¿Y",
+          "start": 0.08,
+          "end": 0.32
+        },
+        {
+          "w": "si",
+          "start": 0.32,
+          "end": 0.5
+        },
+        {
+          "w": "el",
+          "start": 0.5,
+          "end": 0.72
+        },
+        {
+          "w": "Congreso",
+          "start": 0.72,
+          "end": 1.22
+        },
+        {
+          "w": "Nacional,",
+          "start": 1.22,
+          "end": 1.94
+        },
+        {
+          "w": "por",
+          "start": 2.56,
+          "end": 2.6
+        },
+        {
+          "w": "fin,",
+          "start": 2.6,
+          "end": 2.86
+        },
+        {
+          "w": "trabajara",
+          "start": 3.68,
+          "end": 3.88
+        },
+        {
+          "w": "de",
+          "start": 3.88,
+          "end": 4.14
+        },
+        {
+          "w": "verdad",
+          "start": 4.14,
+          "end": 4.5
+        },
+        {
+          "w": "para",
+          "start": 4.5,
+          "end": 4.78
+        },
+        {
+          "w": "el",
+          "start": 4.78,
+          "end": 5.54
+        },
+        {
+          "w": "pueblo,",
+          "start": 5.54,
+          "end": 5.76
+        },
+        {
+          "w": "maje?",
+          "start": 6.18,
+          "end": 6.26
+        }
+      ]
+    },
+    {
+      "scene": "s2",
+      "beat": "reloj",
+      "speaker": "narrador",
+      "text": "Despiertas un martes y los diputados ya están en sus curules. Llegaron a las ocho. ¡A las ocho, cabrón!",
+      "start": 6.8,
+      "end": 15.9,
+      "words": [
+        {
+          "w": "Despiertas",
+          "start": 7.48,
+          "end": 8.04
+        },
+        {
+          "w": "un",
+          "start": 8.04,
+          "end": 8.4
+        },
+        {
+          "w": "martes",
+          "start": 8.4,
+          "end": 8.94
+        },
+        {
+          "w": "y",
+          "start": 8.94,
+          "end": 9.62
+        },
+        {
+          "w": "los",
+          "start": 9.62,
+          "end": 9.84
+        },
+        {
+          "w": "diputados",
+          "start": 9.84,
+          "end": 10.5
+        },
+        {
+          "w": "ya",
+          "start": 10.5,
+          "end": 10.88
+        },
+        {
+          "w": "están",
+          "start": 10.88,
+          "end": 11.18
+        },
+        {
+          "w": "en",
+          "start": 11.18,
+          "end": 11.32
+        },
+        {
+          "w": "sus",
+          "start": 11.32,
+          "end": 11.58
+        },
+        {
+          "w": "curules.",
+          "start": 11.58,
+          "end": 12
+        },
+        {
+          "w": "Llegaron",
+          "start": 13.14,
+          "end": 13.34
+        },
+        {
+          "w": "a",
+          "start": 13.34,
+          "end": 13.44
+        },
+        {
+          "w": "las",
+          "start": 13.44,
+          "end": 13.58
+        },
+        {
+          "w": "ocho.",
+          "start": 13.58,
+          "end": 14.38
+        },
+        {
+          "w": "¡A",
+          "start": 14.58,
+          "end": 14.74
+        },
+        {
+          "w": "las",
+          "start": 14.74,
+          "end": 14.82
+        },
+        {
+          "w": "ocho,",
+          "start": 14.82,
+          "end": 15.28
+        },
+        {
+          "w": "cabrón!",
+          "start": 15.54,
+          "end": 15.82
+        }
+      ]
+    },
+    {
+      "scene": "s3",
+      "beat": "grito",
+      "speaker": "narrador",
+      "text": "Y el presidente del Congreso golpea el mazo y grita:",
+      "start": 16.32,
+      "end": 20.64,
+      "words": [
+        {
+          "w": "Y",
+          "start": 16.32,
+          "end": 16.48
+        },
+        {
+          "w": "el",
+          "start": 16.48,
+          "end": 16.66
+        },
+        {
+          "w": "presidente",
+          "start": 16.66,
+          "end": 17.26
+        },
+        {
+          "w": "del",
+          "start": 17.26,
+          "end": 17.54
+        },
+        {
+          "w": "Congreso",
+          "start": 17.54,
+          "end": 18.1
+        },
+        {
+          "w": "golpea",
+          "start": 18.1,
+          "end": 19.16
+        },
+        {
+          "w": "el",
+          "start": 19.16,
+          "end": 19.34
+        },
+        {
+          "w": "mazo",
+          "start": 19.34,
+          "end": 19.7
+        },
+        {
+          "w": "y",
+          "start": 19.7,
+          "end": 20.32
+        },
+        {
+          "w": "grita:",
+          "start": 20.32,
+          "end": 20.54
+        }
+      ]
+    },
+    {
+      "scene": "s3",
+      "beat": "grito",
+      "speaker": "presidente",
+      "text": "¡Sesión abierta y a la horaaa, maje!",
+      "start": 20.86,
+      "end": 24.08,
+      "words": [
+        {
+          "w": "¡Sesión",
+          "start": 20.86,
+          "end": 21.72
+        },
+        {
+          "w": "abierta",
+          "start": 21.72,
+          "end": 22.46
+        },
+        {
+          "w": "y",
+          "start": 22.46,
+          "end": 22.78
+        },
+        {
+          "w": "a",
+          "start": 22.78,
+          "end": 22.92
+        },
+        {
+          "w": "la",
+          "start": 22.92,
+          "end": 23.06
+        },
+        {
+          "w": "horaaa,",
+          "start": 23.06,
+          "end": 23.28
+        },
+        {
+          "w": "maje!",
+          "start": 23.84,
+          "end": 23.96
+        }
+      ]
+    },
+    {
+      "scene": "s4",
+      "beat": "salud",
+      "speaker": "narrador",
+      "text": "La doctora Jovana Bermuda, que en la vida real dice que necesita dos plazas por falta de especialistas, aquí tiene una sola chamba… y la hace.",
+      "start": 24.5,
+      "end": 35.99,
+      "words": [
+        {
+          "w": "La",
+          "start": 24.5,
+          "end": 24.78
+        },
+        {
+          "w": "doctora",
+          "start": 24.78,
+          "end": 25.56
+        },
+        {
+          "w": "Jovana",
+          "start": 25.56,
+          "end": 25.84
+        },
+        {
+          "w": "Bermuda,",
+          "start": 25.84,
+          "end": 26.42
+        },
+        {
+          "w": "que",
+          "start": 27.16,
+          "end": 27.28
+        },
+        {
+          "w": "en",
+          "start": 27.28,
+          "end": 27.34
+        },
+        {
+          "w": "la",
+          "start": 27.34,
+          "end": 27.74
+        },
+        {
+          "w": "vida",
+          "start": 27.74,
+          "end": 27.74
+        },
+        {
+          "w": "real",
+          "start": 27.74,
+          "end": 28.18
+        },
+        {
+          "w": "dice",
+          "start": 28.18,
+          "end": 28.54
+        },
+        {
+          "w": "que",
+          "start": 28.54,
+          "end": 28.84
+        },
+        {
+          "w": "necesita",
+          "start": 28.84,
+          "end": 29.24
+        },
+        {
+          "w": "dos",
+          "start": 29.24,
+          "end": 29.68
+        },
+        {
+          "w": "plazas",
+          "start": 29.68,
+          "end": 30.24
+        },
+        {
+          "w": "por",
+          "start": 30.24,
+          "end": 30.72
+        },
+        {
+          "w": "falta",
+          "start": 30.72,
+          "end": 31.02
+        },
+        {
+          "w": "de",
+          "start": 31.02,
+          "end": 31.38
+        },
+        {
+          "w": "especialistas,",
+          "start": 31.38,
+          "end": 32.02
+        },
+        {
+          "w": "aquí",
+          "start": 32.96,
+          "end": 33.16
+        },
+        {
+          "w": "tiene",
+          "start": 33.16,
+          "end": 33.46
+        },
+        {
+          "w": "una",
+          "start": 33.46,
+          "end": 33.8
+        },
+        {
+          "w": "sola",
+          "start": 33.8,
+          "end": 34.16
+        },
+        {
+          "w": "chamba…",
+          "start": 34.16,
+          "end": 34.5
+        },
+        {
+          "w": "y",
+          "start": 34.5,
+          "end": 35.32
+        },
+        {
+          "w": "la",
+          "start": 35.32,
+          "end": 35.82
+        },
+        {
+          "w": "hace.",
+          "start": 35.82,
+          "end": 35.86
+        }
+      ]
+    },
+    {
+      "scene": "s5",
+      "beat": "medicinas",
+      "speaker": "narrador",
+      "text": "Aprueban la ley de medicinas y los hospitales amanecen llenos de pastillas. Hasta para el dolor de cabeza del catracho.",
+      "start": 36.41,
+      "end": 46.21,
+      "words": [
+        {
+          "w": "Aprueban",
+          "start": 36.41,
+          "end": 37.35
+        },
+        {
+          "w": "la",
+          "start": 37.35,
+          "end": 37.67
+        },
+        {
+          "w": "ley",
+          "start": 37.67,
+          "end": 38.01
+        },
+        {
+          "w": "de",
+          "start": 38.01,
+          "end": 38.17
+        },
+        {
+          "w": "medicinas",
+          "start": 38.17,
+          "end": 38.95
+        },
+        {
+          "w": "y",
+          "start": 38.95,
+          "end": 39.51
+        },
+        {
+          "w": "los",
+          "start": 39.51,
+          "end": 39.69
+        },
+        {
+          "w": "hospitales",
+          "start": 39.69,
+          "end": 40.53
+        },
+        {
+          "w": "amanecen",
+          "start": 40.53,
+          "end": 41.19
+        },
+        {
+          "w": "llenos",
+          "start": 41.19,
+          "end": 41.79
+        },
+        {
+          "w": "de",
+          "start": 41.79,
+          "end": 41.97
+        },
+        {
+          "w": "pastillas.",
+          "start": 41.97,
+          "end": 43.23
+        },
+        {
+          "w": "Hasta",
+          "start": 43.81,
+          "end": 43.81
+        },
+        {
+          "w": "para",
+          "start": 43.81,
+          "end": 44.07
+        },
+        {
+          "w": "el",
+          "start": 44.07,
+          "end": 44.29
+        },
+        {
+          "w": "dolor",
+          "start": 44.29,
+          "end": 44.59
+        },
+        {
+          "w": "de",
+          "start": 44.59,
+          "end": 44.81
+        },
+        {
+          "w": "cabeza",
+          "start": 44.81,
+          "end": 45.25
+        },
+        {
+          "w": "del",
+          "start": 45.25,
+          "end": 45.51
+        },
+        {
+          "w": "catracho.",
+          "start": 45.51,
+          "end": 46.11
+        }
+      ]
+    },
+    {
+      "scene": "s6",
+      "beat": "escuelas",
+      "speaker": "narrador",
+      "text": "Los maestros cobran puntual, las escuelas tienen techo y los cipotes salen hablando inglés.",
+      "start": 46.63,
+      "end": 53.33,
+      "words": [
+        {
+          "w": "Los",
+          "start": 46.63,
+          "end": 46.95
+        },
+        {
+          "w": "maestros",
+          "start": 46.95,
+          "end": 47.57
+        },
+        {
+          "w": "cobran",
+          "start": 47.57,
+          "end": 48.01
+        },
+        {
+          "w": "puntual,",
+          "start": 48.01,
+          "end": 48.59
+        },
+        {
+          "w": "las",
+          "start": 49.05,
+          "end": 49.27
+        },
+        {
+          "w": "escuelas",
+          "start": 49.27,
+          "end": 49.81
+        },
+        {
+          "w": "tienen",
+          "start": 49.81,
+          "end": 50.15
+        },
+        {
+          "w": "techo",
+          "start": 50.15,
+          "end": 50.61
+        },
+        {
+          "w": "y",
+          "start": 50.61,
+          "end": 51.23
+        },
+        {
+          "w": "los",
+          "start": 51.23,
+          "end": 51.43
+        },
+        {
+          "w": "cipotes",
+          "start": 51.43,
+          "end": 51.91
+        },
+        {
+          "w": "salen",
+          "start": 51.91,
+          "end": 52.37
+        },
+        {
+          "w": "hablando",
+          "start": 52.37,
+          "end": 52.69
+        },
+        {
+          "w": "inglés.",
+          "start": 52.69,
+          "end": 53.17
+        }
+      ]
+    },
+    {
+      "scene": "s7",
+      "beat": "asistencia",
+      "speaker": "narrador",
+      "text": "Y Jonas Zambruna cumple lo que anunció: al diputado que falta o llega tarde, no se le paga ese día. Ni un lempira, mi amigo.",
+      "start": 53.75,
+      "end": 63.35,
+      "words": [
+        {
+          "w": "Y",
+          "start": 53.75,
+          "end": 53.907
+        },
+        {
+          "w": "Jonas",
+          "start": 53.907,
+          "end": 54.379
+        },
+        {
+          "w": "Zambruna",
+          "start": 54.379,
+          "end": 55.087
+        },
+        {
+          "w": "cumple",
+          "start": 55.087,
+          "end": 55.638
+        },
+        {
+          "w": "lo",
+          "start": 55.638,
+          "end": 55.874
+        },
+        {
+          "w": "que",
+          "start": 55.874,
+          "end": 56.189
+        },
+        {
+          "w": "anunció:",
+          "start": 56.189,
+          "end": 56.818
+        },
+        {
+          "w": "al",
+          "start": 56.818,
+          "end": 57.054
+        },
+        {
+          "w": "diputado",
+          "start": 57.054,
+          "end": 57.762
+        },
+        {
+          "w": "que",
+          "start": 57.762,
+          "end": 58.077
+        },
+        {
+          "w": "falta",
+          "start": 58.077,
+          "end": 58.549
+        },
+        {
+          "w": "o",
+          "start": 58.549,
+          "end": 58.706
+        },
+        {
+          "w": "llega",
+          "start": 58.706,
+          "end": 59.178
+        },
+        {
+          "w": "tarde,",
+          "start": 59.178,
+          "end": 59.65
+        },
+        {
+          "w": "no",
+          "start": 59.65,
+          "end": 59.886
+        },
+        {
+          "w": "se",
+          "start": 59.886,
+          "end": 60.122
+        },
+        {
+          "w": "le",
+          "start": 60.122,
+          "end": 60.358
+        },
+        {
+          "w": "paga",
+          "start": 60.358,
+          "end": 60.751
+        },
+        {
+          "w": "ese",
+          "start": 60.751,
+          "end": 61.066
+        },
+        {
+          "w": "día.",
+          "start": 61.066,
+          "end": 61.381
+        },
+        {
+          "w": "Ni",
+          "start": 61.381,
+          "end": 61.617
+        },
+        {
+          "w": "un",
+          "start": 61.617,
+          "end": 61.853
+        },
+        {
+          "w": "lempira,",
+          "start": 61.853,
+          "end": 62.482
+        },
+        {
+          "w": "mi",
+          "start": 62.482,
+          "end": 62.718
+        },
+        {
+          "w": "amigo.",
+          "start": 62.718,
+          "end": 63.19
+        }
+      ]
+    },
+    {
+      "scene": "s8",
+      "beat": "transparencia",
+      "speaker": "narrador",
+      "text": "Cada lempira del presupuesto sale en pantalla: en qué se gastó y quién lo firmó. Y las leyes se votan de día, no a las tres de la mañana.",
+      "start": 63.77,
+      "end": 75.58,
+      "words": [
+        {
+          "w": "Cada",
+          "start": 63.77,
+          "end": 64.27
+        },
+        {
+          "w": "lempira",
+          "start": 64.27,
+          "end": 65.05
+        },
+        {
+          "w": "del",
+          "start": 65.05,
+          "end": 65.39
+        },
+        {
+          "w": "presupuesto",
+          "start": 65.39,
+          "end": 66.17
+        },
+        {
+          "w": "sale",
+          "start": 66.17,
+          "end": 66.87
+        },
+        {
+          "w": "en",
+          "start": 66.87,
+          "end": 67.35
+        },
+        {
+          "w": "pantalla:",
+          "start": 67.35,
+          "end": 67.65
+        },
+        {
+          "w": "en",
+          "start": 68.37,
+          "end": 68.59
+        },
+        {
+          "w": "qué",
+          "start": 68.59,
+          "end": 68.75
+        },
+        {
+          "w": "se",
+          "start": 68.75,
+          "end": 69.27
+        },
+        {
+          "w": "gastó",
+          "start": 69.27,
+          "end": 69.69
+        },
+        {
+          "w": "y",
+          "start": 69.69,
+          "end": 69.99
+        },
+        {
+          "w": "quién",
+          "start": 69.99,
+          "end": 70.21
+        },
+        {
+          "w": "lo",
+          "start": 70.21,
+          "end": 70.59
+        },
+        {
+          "w": "firmó.",
+          "start": 70.59,
+          "end": 70.91
+        },
+        {
+          "w": "Y",
+          "start": 71.57,
+          "end": 71.69
+        },
+        {
+          "w": "las",
+          "start": 71.69,
+          "end": 71.99
+        },
+        {
+          "w": "leyes",
+          "start": 71.99,
+          "end": 72.29
+        },
+        {
+          "w": "se",
+          "start": 72.29,
+          "end": 72.69
+        },
+        {
+          "w": "votan",
+          "start": 72.69,
+          "end": 72.89
+        },
+        {
+          "w": "de",
+          "start": 72.89,
+          "end": 73.29
+        },
+        {
+          "w": "día,",
+          "start": 73.29,
+          "end": 73.37
+        },
+        {
+          "w": "no",
+          "start": 74.13,
+          "end": 74.23
+        },
+        {
+          "w": "a",
+          "start": 74.23,
+          "end": 74.41
+        },
+        {
+          "w": "las",
+          "start": 74.41,
+          "end": 74.61
+        },
+        {
+          "w": "tres",
+          "start": 74.61,
+          "end": 74.81
+        },
+        {
+          "w": "de",
+          "start": 74.81,
+          "end": 74.99
+        },
+        {
+          "w": "la",
+          "start": 74.99,
+          "end": 75.23
+        },
+        {
+          "w": "mañana.",
+          "start": 75.23,
+          "end": 75.43
+        }
+      ]
+    },
+    {
+      "scene": "s9",
+      "beat": "barrio",
+      "speaker": "narrador",
+      "text": "Los diputados bajan al barrio a escuchar. Se comen una baleada, anotan todo y regresan con la libreta llena.",
+      "start": 76,
+      "end": 84.82,
+      "words": [
+        {
+          "w": "Los",
+          "start": 76,
+          "end": 76.38
+        },
+        {
+          "w": "diputados",
+          "start": 76.38,
+          "end": 77.18
+        },
+        {
+          "w": "bajan",
+          "start": 77.18,
+          "end": 77.7
+        },
+        {
+          "w": "al",
+          "start": 77.7,
+          "end": 77.96
+        },
+        {
+          "w": "barrio",
+          "start": 77.96,
+          "end": 78.34
+        },
+        {
+          "w": "a",
+          "start": 78.34,
+          "end": 78.8
+        },
+        {
+          "w": "escuchar.",
+          "start": 78.8,
+          "end": 79.52
+        },
+        {
+          "w": "Se",
+          "start": 79.86,
+          "end": 80.16
+        },
+        {
+          "w": "comen",
+          "start": 80.16,
+          "end": 80.24
+        },
+        {
+          "w": "una",
+          "start": 80.24,
+          "end": 80.52
+        },
+        {
+          "w": "baleada,",
+          "start": 80.52,
+          "end": 80.98
+        },
+        {
+          "w": "anotan",
+          "start": 81.8,
+          "end": 81.98
+        },
+        {
+          "w": "todo",
+          "start": 81.98,
+          "end": 82.36
+        },
+        {
+          "w": "y",
+          "start": 82.36,
+          "end": 83
+        },
+        {
+          "w": "regresan",
+          "start": 83,
+          "end": 83.56
+        },
+        {
+          "w": "con",
+          "start": 83.56,
+          "end": 83.78
+        },
+        {
+          "w": "la",
+          "start": 83.78,
+          "end": 84.06
+        },
+        {
+          "w": "libreta",
+          "start": 84.06,
+          "end": 84.44
+        },
+        {
+          "w": "llena.",
+          "start": 84.44,
+          "end": 84.68
+        }
+      ]
+    },
+    {
+      "scene": "s10",
+      "beat": "celebracion",
+      "speaker": "narrador",
+      "text": "Y el pisto del pueblo llega completo al pueblo. Y el presidente del Congreso grita otra vez:",
+      "start": 85.24,
+      "end": 93.63,
+      "words": [
+        {
+          "w": "Y",
+          "start": 85.24,
+          "end": 85.64
+        },
+        {
+          "w": "el",
+          "start": 85.64,
+          "end": 86.32
+        },
+        {
+          "w": "pisto",
+          "start": 86.32,
+          "end": 86.8
+        },
+        {
+          "w": "del",
+          "start": 86.8,
+          "end": 87.06
+        },
+        {
+          "w": "pueblo",
+          "start": 87.06,
+          "end": 87.44
+        },
+        {
+          "w": "llega",
+          "start": 87.44,
+          "end": 88.3
+        },
+        {
+          "w": "completo",
+          "start": 88.3,
+          "end": 88.94
+        },
+        {
+          "w": "al",
+          "start": 88.94,
+          "end": 89.18
+        },
+        {
+          "w": "pueblo.",
+          "start": 89.18,
+          "end": 89.5
+        },
+        {
+          "w": "Y",
+          "start": 90.34,
+          "end": 90.44
+        },
+        {
+          "w": "el",
+          "start": 90.44,
+          "end": 90.6
+        },
+        {
+          "w": "presidente",
+          "start": 90.6,
+          "end": 91.16
+        },
+        {
+          "w": "del",
+          "start": 91.16,
+          "end": 92.28
+        },
+        {
+          "w": "Congreso",
+          "start": 92.28,
+          "end": 92.28
+        },
+        {
+          "w": "grita",
+          "start": 92.28,
+          "end": 92.82
+        },
+        {
+          "w": "otra",
+          "start": 92.82,
+          "end": 93.26
+        },
+        {
+          "w": "vez:",
+          "start": 93.26,
+          "end": 93.5
+        }
+      ]
+    },
+    {
+      "scene": "s10",
+      "beat": "celebracion",
+      "speaker": "presidente",
+      "text": "¡Sesión abierta y a la horaaa, maje!",
+      "start": 93.85,
+      "end": 97.06,
+      "words": [
+        {
+          "w": "¡Sesión",
+          "start": 93.85,
+          "end": 94.53
+        },
+        {
+          "w": "abierta",
+          "start": 94.53,
+          "end": 95.19
+        },
+        {
+          "w": "y",
+          "start": 95.19,
+          "end": 95.57
+        },
+        {
+          "w": "a",
+          "start": 95.57,
+          "end": 95.69
+        },
+        {
+          "w": "la",
+          "start": 95.69,
+          "end": 95.83
+        },
+        {
+          "w": "horaaa,",
+          "start": 95.83,
+          "end": 96.13
+        },
+        {
+          "w": "maje!",
+          "start": 96.13,
+          "end": 96.89
+        }
+      ]
+    },
+    {
+      "scene": "s11",
+      "beat": "despertar",
+      "speaker": "narrador",
+      "text": "Y suena la alarma. Era un sueño, catracho. Siguen las sillas vacías… y se fue la luz.",
+      "start": 97.48,
+      "end": 105.96,
+      "words": [
+        {
+          "w": "Y",
+          "start": 97.48,
+          "end": 97.84
+        },
+        {
+          "w": "suena",
+          "start": 97.84,
+          "end": 98.16
+        },
+        {
+          "w": "la",
+          "start": 98.16,
+          "end": 98.54
+        },
+        {
+          "w": "alarma.",
+          "start": 98.54,
+          "end": 98.92
+        },
+        {
+          "w": "Era",
+          "start": 100,
+          "end": 100.1
+        },
+        {
+          "w": "un",
+          "start": 100.1,
+          "end": 100.48
+        },
+        {
+          "w": "sueño,",
+          "start": 100.48,
+          "end": 100.78
+        },
+        {
+          "w": "catracho.",
+          "start": 101,
+          "end": 101.46
+        },
+        {
+          "w": "Siguen",
+          "start": 102.66,
+          "end": 102.76
+        },
+        {
+          "w": "las",
+          "start": 102.76,
+          "end": 103.4
+        },
+        {
+          "w": "sillas",
+          "start": 103.4,
+          "end": 103.4
+        },
+        {
+          "w": "vacías…",
+          "start": 103.4,
+          "end": 104.04
+        },
+        {
+          "w": "y",
+          "start": 104.68,
+          "end": 104.92
+        },
+        {
+          "w": "se",
+          "start": 104.92,
+          "end": 105.16
+        },
+        {
+          "w": "fue",
+          "start": 105.16,
+          "end": 105.28
+        },
+        {
+          "w": "la",
+          "start": 105.28,
+          "end": 105.78
+        },
+        {
+          "w": "luz.",
+          "start": 105.78,
+          "end": 105.8
+        }
+      ]
+    },
+    {
+      "scene": "s12",
+      "beat": "remate",
+      "speaker": "narrador",
+      "text": "Mándaselo al cerote de tu amigo cachureco que piensa que el Congreso ya hace su chamba.",
+      "start": 106.38,
+      "end": 112.4,
+      "words": [
+        {
+          "w": "Mándaselo",
+          "start": 106.38,
+          "end": 107.2
+        },
+        {
+          "w": "al",
+          "start": 107.2,
+          "end": 107.48
+        },
+        {
+          "w": "cerote",
+          "start": 107.48,
+          "end": 107.92
+        },
+        {
+          "w": "de",
+          "start": 107.92,
+          "end": 108.08
+        },
+        {
+          "w": "tu",
+          "start": 108.08,
+          "end": 108.26
+        },
+        {
+          "w": "amigo",
+          "start": 108.26,
+          "end": 108.5
+        },
+        {
+          "w": "cachureco",
+          "start": 108.5,
+          "end": 109.22
+        },
+        {
+          "w": "que",
+          "start": 109.22,
+          "end": 109.62
+        },
+        {
+          "w": "piensa",
+          "start": 109.62,
+          "end": 110.02
+        },
+        {
+          "w": "que",
+          "start": 110.02,
+          "end": 110.2
+        },
+        {
+          "w": "el",
+          "start": 110.2,
+          "end": 110.34
+        },
+        {
+          "w": "Congreso",
+          "start": 110.34,
+          "end": 110.88
+        },
+        {
+          "w": "ya",
+          "start": 110.88,
+          "end": 111.46
+        },
+        {
+          "w": "hace",
+          "start": 111.46,
+          "end": 111.72
+        },
+        {
+          "w": "su",
+          "start": 111.72,
+          "end": 111.94
+        },
+        {
+          "w": "chamba.",
+          "start": 111.94,
+          "end": 112.3
+        }
+      ]
+    }
+  ]
+}

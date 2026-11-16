@@ -52,12 +52,14 @@ async function main() {
   const style = `Visual style: ${series.visual_style}`;
   const jobs = [];
   const add = (id, sub, fn) => { const file = path.join(dir, sub, `${id}.png`); if ((!only || only.has(id)) && (o.force || !fs.existsSync(file))) jobs.push({ id, file, fn }); };
-  for (const [id, [cid, pose]] of Object.entries(SPRITES)) add(id, 'sprites', async () => {
+  // series.anim = { sprites, props, bgs } (series.json) reemplaza las listas de Papi
+  const SP = series.anim?.sprites || SPRITES, PR = series.anim?.props || PROPS, BG_ = series.anim?.bgs || BGS;
+  for (const [id, [cid, pose]] of Object.entries(SP)) add(id, 'sprites', async () => {
     const ref = await toFile(fs.readFileSync(path.join(charDir(series.slug), `${cid}.jpg`)), `${cid}.jpg`, { type: 'image/jpeg' });
     return openai.images.edit({ model: MODELS.image, image: [ref], prompt: `${style}\n${SPRITE}\nPose: ${pose}`, size: '1024x1536', quality: 'medium', background: 'transparent', output_format: 'png' });
   });
-  for (const [id, text] of Object.entries(PROPS)) add(id, 'props', () => openai.images.generate({ model: MODELS.image, prompt: `${style}\n${text}${PROP}`, size: '1024x1024', quality: 'medium', background: 'transparent', output_format: 'png' }));
-  for (const [id, text] of Object.entries(BGS)) add(id, 'bg', () => openai.images.generate({ model: MODELS.image, prompt: `${style}\n${text} ${BG}`, size: '1088x1920', quality: 'medium', output_format: 'png' }));
+  for (const [id, text] of Object.entries(PR)) add(id, 'props', () => openai.images.generate({ model: MODELS.image, prompt: `${style}\n${text}${PROP}`, size: '1024x1024', quality: 'medium', background: 'transparent', output_format: 'png' }));
+  for (const [id, text] of Object.entries(BG_)) add(id, 'bg', () => openai.images.generate({ model: MODELS.image, prompt: `${style}\n${text} ${BG}`, size: '1088x1920', quality: 'medium', output_format: 'png' }));
   let total = 0;
   await pool(jobs, 4, async (j) => {
     for (let k = 0; k < 2; k++) {
