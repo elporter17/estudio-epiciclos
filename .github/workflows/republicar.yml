@@ -38,10 +38,20 @@ jobs:
           RUN: ${{ inputs.run }}
           ARCHIVO: ${{ inputs.archivo }}
         run: |
-          case "$RUN" in ''|*[!0-9]*) echo "Corrida inválida"; exit 1 ;; esac
           case "$ARCHIVO" in ''|/*|*..*) echo "Archivo inválido"; exit 1 ;; esac
-          gh run download "$RUN" -R "$GITHUB_REPOSITORY" -n "video-$RUN" -D bajado
-          mkdir -p reenvio && cp "bajado/$ARCHIVO" reenvio/video.mp4
+          mkdir -p reenvio
+          case "$ARCHIVO" in
+            # Videos hechos a mano (no salieron de una corrida): están en el release «videos-manuales» del repositorio
+            release:*)
+              NOMBRE="${ARCHIVO#release:}"
+              case "$NOMBRE" in ''|*[!A-Za-z0-9._-]*) echo "Nombre de release inválido"; exit 1 ;; esac
+              gh release download videos-manuales -R "$GITHUB_REPOSITORY" -p "$NOMBRE" -D bajado
+              cp "bajado/$NOMBRE" reenvio/video.mp4 ;;
+            *)
+              case "$RUN" in ''|*[!0-9]*) echo "Corrida inválida"; exit 1 ;; esac
+              gh run download "$RUN" -R "$GITHUB_REPOSITORY" -n "video-$RUN" -D bajado
+              cp "bajado/$ARCHIVO" reenvio/video.mp4 ;;
+          esac
           ls -la reenvio
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
