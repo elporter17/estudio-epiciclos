@@ -85,7 +85,7 @@ for (const e of escenas) { if (e.inicio > 0) sfx.push({ t: e.inicio - 0.2, s: 'w
 
 // Estilo del video (color, cámara, transición, portada y música) sin repetir los de los últimos videos
 const estilo = elegirEstilo(g);
-console.log(`Estilo: ${estilo.filtro} · transición ${estilo.transicion} · portada ${estilo.portada} · música ${estilo.musica}`);
+console.log(`Estilo: ambiente ${estilo.ambiente} · ${estilo.filtro} · transición ${estilo.transicion} · portada ${estilo.portada} · música ${estilo.musica}`);
 const mus = new Float32Array(Math.ceil((t + 0.5) * SR));
 pistaMusical(mus, t, { estilo: estilo.musica, semilla: estilo.semillaMusica, SR });
 fs.writeFileSync(path.join(PUB, 'musica.wav'), wavBuffer(mus.map((x) => Math.tanh(x * 0.9) * 0.9), SR));

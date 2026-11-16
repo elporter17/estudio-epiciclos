@@ -1,11 +1,14 @@
 // Escenas 3D hechas con código (sin modelos descargados ni IA): botellas por torneado (LatheGeometry), vaso, montaña
 // low-poly, nubes y piscina. Todo depende solo del tiempo `t` de la escena, así cada cuadro se puede dibujar suelto.
-import { useLayoutEffect, useMemo, useRef } from 'react';
+import { useContext, useLayoutEffect, useMemo, useRef } from 'react';
+import { AmbienteCtx } from './ambientes.js';
 import { useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { Paisaje, Personaje } from './modelos.jsx';
 import { Efectos, Cielo } from './efectos.jsx';
-export const PJ = (m, n) => m?.[`personajes/character-${n}`];
+// Reparto del video: cada personaje del código («female-c») lo hace otro distinto en cada video (Dato.jsx llena REPARTO)
+export const REPARTO = { mapa: {} };
+export const PJ = (m, n) => m?.[`personajes/character-${REPARTO.mapa[n] || n}`];
 
 export const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 export const ease = (x) => 1 - (1 - clamp(x)) ** 3;
@@ -29,16 +32,19 @@ export function Camara({ pos, mira, fov = 48, desenfoque = 0.6, brillo }) {
   camera.aspect = size.width / size.height; camera.updateProjectionMatrix(); camera.lookAt(...mira); camera.updateMatrixWorld();
   return <Efectos objetivo={mira} desenfoque={desenfoque} brillo={brillo} />;
 }
-export function Luces({ sol = [6, 10, 5], intensidad = 2.2, niebla = [25, 90], colorNiebla = '#cdeeff', cielo = true }) {
+// Los colores, la luz y el suelo salen del ambiente del video (ambientes.js) cuando la escena no pide otros
+export function Luces({ sol, intensidad, niebla = [25, 90], colorNiebla, cielo = true }) {
+  const A = useContext(AmbienteCtx);
   return (<>
     {cielo && <Cielo />}
-    <fog attach="fog" args={[colorNiebla, niebla[0], niebla[1]]} />
-    <hemisphereLight args={['#ffffff', '#9fc9e8', 1.1]} />
-    <directionalLight position={sol} intensity={intensidad} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-12} shadow-camera-right={12} shadow-camera-top={12} shadow-camera-bottom={-12} shadow-bias={-0.0004} />
+    <fog attach="fog" args={[colorNiebla || A.niebla, niebla[0], niebla[1]]} />
+    <hemisphereLight args={A.hemi} />
+    <directionalLight position={sol || A.sol} color={A.solColor} intensity={intensidad ?? A.intensidad} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-12} shadow-camera-right={12} shadow-camera-top={12} shadow-camera-bottom={-12} shadow-bias={-0.0004} />
   </>);
 }
-export function Suelo({ color = '#9edb7c', radio = 80 }) {
-  return (<mesh rotation-x={-Math.PI / 2} receiveShadow><circleGeometry args={[radio, 64]} /><meshStandardMaterial color={color} roughness={0.95} /></mesh>);
+export function Suelo({ color, radio = 80 }) {
+  const A = useContext(AmbienteCtx);
+  return (<mesh rotation-x={-Math.PI / 2} receiveShadow><circleGeometry args={[radio, 64]} /><meshStandardMaterial color={color || A.suelo} roughness={0.95} /></mesh>);
 }
 
 // ---------- botella (geometría por torneado) ----------

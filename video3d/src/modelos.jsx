@@ -1,6 +1,7 @@
 // Modelos 3D gratuitos (Kenney, CC0: public/modelos/*/LICENSE-*.txt) en formato GLB. Se cargan una vez por pestaña
 // del render; Remotion espera (delayRender) a que estén listos antes de dibujar el cuadro.
-import { useMemo, useState, useEffect } from 'react';
+import { useContext, useMemo, useState, useEffect } from 'react';
+import { AmbienteCtx, TODO_AMBIENTE } from './ambientes.js';
 import { staticFile, delayRender, continueRender } from 'remotion';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { clone as clonarConEsqueleto } from 'three/examples/jsm/utils/SkeletonUtils.js';
@@ -37,23 +38,24 @@ export function Modelo({ escena, ...props }) {
 function azar(semilla) { let s = semilla; return () => ((s = (s * 16807) % 2147483647) / 2147483647); }
 const ARBOLES = ['naturaleza/tree_default', 'naturaleza/tree_oak', 'naturaleza/tree_detailed', 'naturaleza/tree_pineRoundA', 'naturaleza/tree_pineTallA', 'naturaleza/tree_fat', 'naturaleza/tree_cone'];
 const PEQUENOS = ['naturaleza/flower_redA', 'naturaleza/flower_yellowA', 'naturaleza/flower_purpleA', 'naturaleza/grass_large', 'naturaleza/plant_bush', 'naturaleza/rock_smallA', 'naturaleza/mushroom_red', 'naturaleza/plant_bushSmall'];
-export const NATURALEZA = [...ARBOLES, ...PEQUENOS, 'naturaleza/fence_simple', 'naturaleza/rock_largeA', 'naturaleza/stump_round', 'naturaleza/log'];
+export const NATURALEZA = [...new Set([...ARBOLES, ...PEQUENOS, 'naturaleza/fence_simple', 'naturaleza/rock_largeA', 'naturaleza/stump_round', 'naturaleza/log', ...TODO_AMBIENTE])];
 
 // Paisaje alrededor de la acción: árboles en un anillo lejano y flores, pasto y piedras más cerca (sin tapar el centro)
 export function Paisaje({ m, libre = 3, lejos = 18, arboles = 26, detalles = 40, escala = 1, semilla = 5 }) {
+  const A = useContext(AmbienteCtx), ARB = A.arboles, PEQ = A.pequenos;
   const lista = useMemo(() => {
     if (!m) return [];
     const r = azar(semilla), out = [];
     for (let i = 0; i < arboles; i++) {
       const a = (i / arboles) * Math.PI * 2 + r() * 0.3, d = lejos * (0.75 + r() * 0.6);
-      out.push({ k: `a${i}`, n: ARBOLES[Math.floor(r() * ARBOLES.length)], p: [Math.cos(a) * d, 0, Math.sin(a) * d], s: (2.2 + r() * 1.6) * escala, ry: r() * 6.3 });
+      out.push({ k: `a${i}`, n: ARB[Math.floor(r() * ARB.length)], p: [Math.cos(a) * d, 0, Math.sin(a) * d], s: (2.2 + r() * 1.6) * escala, ry: r() * 6.3 });
     }
     for (let i = 0; i < detalles; i++) {
       const a = r() * Math.PI * 2, d = libre + r() * (lejos * 0.7 - libre);
-      out.push({ k: `d${i}`, n: PEQUENOS[Math.floor(r() * PEQUENOS.length)], p: [Math.cos(a) * d, 0, Math.sin(a) * d], s: (1.4 + r() * 1.2) * escala, ry: r() * 6.3 });
+      out.push({ k: `d${i}`, n: PEQ[Math.floor(r() * PEQ.length)], p: [Math.cos(a) * d, 0, Math.sin(a) * d], s: (1.4 + r() * 1.2) * escala, ry: r() * 6.3 });
     }
     return out;
-  }, [m, libre, lejos, arboles, detalles, escala, semilla]);
+  }, [m, libre, lejos, arboles, detalles, escala, semilla, ARB, PEQ]);
   return <>{lista.map((x) => <Modelo key={x.k} escena={m[x.n]} position={x.p} scale={x.s} rotation-y={x.ry} />)}</>;
 }
 

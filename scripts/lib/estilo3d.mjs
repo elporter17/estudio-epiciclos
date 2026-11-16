@@ -16,6 +16,9 @@ export const FILTROS = {
 };
 export const TRANSICIONES = ['barrido', 'giro', 'deslizar', 'fundido'];
 const PORTADAS = ['arriba', 'abajo'];
+// Ambientes (video3d/src/ambientes.js): cielo, suelo, luz y árboles; y los 12 personajes, que cambian de papel en cada video
+const AMBIENTES = ['pradera', 'desierto', 'nevado', 'playa', 'otono', 'atardecer', 'noche', 'bosque'];
+const PERSONAJES = ['female-a', 'female-b', 'female-c', 'female-d', 'female-e', 'female-f', 'male-a', 'male-b', 'male-c', 'male-d', 'male-e', 'male-f'];
 const MUSICAS = ['lofi', 'pop', 'electro'];
 // Escenas con carteles de texto: giran menos para que se lean
 const CON_TEXTO = new Set(['comparacion', 'linea', 'cuadricula', 'piscinas', 'calendario']);
@@ -36,6 +39,11 @@ export function elegirEstilo(g, { guardar = true } = {}) {
     e = { filtro: elige(Object.keys(FILTROS)), sentido: r() < 0.5 ? -1 : 1, transicion: elige(TRANSICIONES), portada: elige(PORTADAS) };
     if (!recientes.has(clave(e)) && !usadosF.includes(e.filtro) && !usadasT.includes(e.transicion)) break;
   }
+  // Ambiente distinto de los últimos 4 videos y un reparto nuevo (nadie hace el mismo papel que en el código)
+  const ambientesUsados = new Set((hist.ultimos || []).slice(-4).map((x) => x.ambiente));
+  e.ambiente = elige(AMBIENTES.filter((a) => !ambientesUsados.has(a)));
+  let baraja; do { baraja = [...PERSONAJES]; for (let i = baraja.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [baraja[i], baraja[j]] = [baraja[j], baraja[i]]; } } while (baraja.filter((p, i) => p === PERSONAJES[i]).length > 1);
+  e.reparto = Object.fromEntries(PERSONAJES.map((p, i) => [p, baraja[i]]));
   e.musica = g.musica || elige(MUSICAS.filter((m) => m !== hist.ultimos?.at(-1)?.musica));
   e.semillaMusica = hash(g.id) % 9973;
   // Ángulo de cada escena (radianes alrededor del objeto) y cuánto gira mientras dura
@@ -50,7 +58,7 @@ export function elegirEstilo(g, { guardar = true } = {}) {
   if (guardar) {
     try {
       fs.mkdirSync(path.dirname(ARCHIVO), { recursive: true });
-      fs.writeFileSync(ARCHIVO, JSON.stringify({ ultimos: [...(hist.ultimos || []), { id: g.id, clave: clave(e), filtro: e.filtro, transicion: e.transicion, musica: e.musica, at: new Date().toISOString() }].slice(-20) }, null, 2) + '\n');
+      fs.writeFileSync(ARCHIVO, JSON.stringify({ ultimos: [...(hist.ultimos || []), { id: g.id, clave: clave(e), filtro: e.filtro, transicion: e.transicion, ambiente: e.ambiente, musica: e.musica, at: new Date().toISOString() }].slice(-20) }, null, 2) + '\n');
     } catch {}
   }
   return { ...e, css: FILTROS[e.filtro] };

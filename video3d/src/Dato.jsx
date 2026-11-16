@@ -4,7 +4,8 @@ import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, useVideoCon
 import { useLayoutEffect, useMemo } from 'react';
 import { useThree } from '@react-three/fiber';
 import { ThreeCanvas } from '@remotion/three';
-import { clamp, ease } from './escenas3d.jsx';
+import { clamp, ease, REPARTO } from './escenas3d.jsx';
+import { AMBIENTES, AmbienteCtx } from './ambientes.js';
 import { ESCENAS, MODELOS_CIUDAD, TEMAS, modelosDelGuion } from './escenas.js';
 import { useModelos, NATURALEZA, PERSONAJES } from './modelos.jsx';
 const BASE = [...NATURALEZA, ...PERSONAJES, ...MODELOS_CIUDAD];
@@ -93,7 +94,9 @@ export const Dato = ({ render }) => {
   const T = frame / fps, escenas = render.escenas;
   const e = escenas.find((x) => T < x.inicio + x.dur) || escenas.at(-1), t = T - e.inicio, Escena = ESCENAS[e.tipo];
   // Estilo del video (scripts/lib/estilo3d.mjs): color, ángulo de cada escena, transición. Sin estilo: como antes
-  const est = render.estilo || {}, idx = escenas.indexOf(e), ang = est.angulos?.[idx] || { a: 0, giro: 0 };
+  const est = render.estilo || {}, ambiente = AMBIENTES[est.ambiente] || AMBIENTES.pradera;
+  REPARTO.mapa = est.reparto || {}; // otro personaje en cada papel
+  const idx = escenas.indexOf(e), ang = est.angulos?.[idx] || { a: 0, giro: 0 };
   // Transición entre escenas (sale y entra): barrido (se acerca y se desenfoca), giro, deslizar o fundido a blanco
   const ultima = e === escenas.at(-1), primera = e === escenas[0];
   const sale = ultima ? 0 : 1 - clamp((e.dur - t) / 0.28), entra = primera ? 0 : 1 - clamp(t / 0.28), k = Math.max(sale, entra);
@@ -108,9 +111,11 @@ export const Dato = ({ render }) => {
       <AbsoluteFill style={{ filter: filtro, transform: mover }}>
         <ThreeCanvas width={width} height={height} shadows gl={{ antialias: true, preserveDrawingBuffer: true }} camera={{ fov: 40, position: [0, 2, 6] }}>
           {/* El mundo gira un poco alrededor del objeto (igual que mover la cámara): cada escena se ve desde otro lado */}
-          <group rotation-y={ang.a + ang.giro * t}>
-            {Escena && <Escena t={t} dur={e.dur} cantidad={e.cantidad} m={m} e={e} g={render} />}
-          </group>
+          <AmbienteCtx.Provider value={ambiente}>
+            <group rotation-y={ang.a + ang.giro * t}>
+              {Escena && <Escena t={t} dur={e.dur} cantidad={e.cantidad} m={m} e={e} g={render} />}
+            </group>
+          </AmbienteCtx.Provider>
           <Redibujar dep={m} />
         </ThreeCanvas>
       </AbsoluteFill>
