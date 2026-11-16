@@ -104,6 +104,7 @@ async function cargar(dir) {
 const BOCA = {
   papi_fist: [0.51, 0.228], papi_run: [0.5, 0.272], papi_flag: [0.47, 0.357], papi_shrug: [0.52, 0.226],
   chepe_shock: [0.46, 0.349], chepe_cheer: [0.51, 0.297], chepe_proud: [0.485, 0.292], chepe_bed: [0.487, 0.405], amigo_arms: [0.49, 0.268],
+  chepe_presenta: [0.5, 0.375], curul_nervioso: [0.5, 0.25], curul_encoge: [0.5, 0.25],
   presidente_mazo: [0.48, 0.228], presidente_senala: [0.455, 0.25], presidente_celebra: [0.5, 0.228]
 };
 
@@ -352,6 +353,80 @@ const ESCENAS_CONGRESO = {
 };
 let ESCENAS = ESCENAS_PAPI;
 
+/* ---------- guion animado de «tal-cual-pasa» (noticiero parodia) ---------- */
+function logoTCP(ctx, x, y, s, ts, t0 = 0) {
+  const a = ts - t0; if (a < 0) return; const k = outBack(a / 0.4);
+  ctx.save(); ctx.translate(x, y); ctx.scale(k * s, k * s);
+  ['T', 'C', 'P'].forEach((l, i) => {
+    const bx = (i - 1) * 150 - 65, g = ctx.createLinearGradient(0, -65, 0, 65); g.addColorStop(0, '#5B3FD6'); g.addColorStop(1, '#2B1A8C');
+    ctx.fillStyle = g; ctx.strokeStyle = '#FFFFFF'; ctx.lineWidth = 6; ctx.beginPath(); ctx.roundRect(bx, -65, 130, 130, 24); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = '#FFE14D'; ctx.font = '900 104px Montserrat'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(l, bx + 65, 6);
+  });
+  ctx.restore();
+}
+function barra(ctx, s, ts, t0 = 0.4) {
+  const a = ts - t0; if (a < 0) return; const k = clamp(a / 0.4);
+  ctx.save(); ctx.translate(-(1 - ease(k)) * W, 0); ctx.fillStyle = '#C81E3C'; ctx.fillRect(0, H * 0.115, W * 0.62, 70);
+  ctx.fillStyle = '#FFFFFF'; ctx.font = '900 40px Montserrat'; ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillText(s, 34, H * 0.115 + 36); ctx.restore();
+}
+const ESCENAS_TCP = {
+  s1: {
+    cam: [[0, 1.0, 0.5, 0.5], [3.0, 1.3, 0.5, 0.45], [6.0, 1.0, 0.5, 0.5]],
+    mundo(c) { fondo(c, 'bg_estudio', { deriva: 0.06 }); sprite(c, 'chepe_presenta', { x: 0.5, foot: 1.0, h: 1250, enter: 'rise', t0: 0.2, hablante: 'narrador', bob: 4 }); },
+    hud(c) { logoTCP(c.ctx, W / 2, H * 0.22, c.ts < 5.5 ? 1.4 : 0.8, c.ts, 3.2); barra(c.ctx, 'EN VIVO · LA NUEVA LEY PENAL', c.ts, 3.4); chispas(c.ctx, c.ts - 0.4, { seed: 11, n: 10, y0: 0.1, y1: 0.35 }); }
+  },
+  s2: {
+    cam: [[0, 1.0, 0.5, 0.5], [3.2, 1.3, 0.3, 0.55], [5.4, 1.6, 0.74, 0.5], [8.2, 1.2, 0.5, 0.5]],
+    mundo(c) { fondo(c, 'bg_estudio'); sprite(c, 'chepe_presenta', { x: 0.26, foot: 1.0, h: 1000, hablante: 'narrador', bob: 4 }); sprite(c, 'curul_nervioso', { x: 0.76, foot: 0.97, h: 1150, enter: 'right', t0: 0.3, hablante: 'don_curul', bob: 4 }); },
+    hud(c) { logoTCP(c.ctx, W * 0.82, H * 0.07, 0.5, c.ts); sello(c.ctx, '118 VOTOS', W * 0.5, H * 0.2, c.ts, 2.0, '#2563EB', 70, -3); sello(c.ctx, '2 DEBATES SALTADOS', W * 0.5, H * 0.29, c.ts, 3.6, '#EA580C', 62, 3); sello(c.ctx, 'NI ELLOS SE LA CREEN', W * 0.5, H * 0.38, c.ts, 8.6, '#DC2626', 66, -4); }
+  },
+  s3: {
+    cam: [[0, 1.0, 0.5, 0.5], [2.6, 1.35, 0.5, 0.65], [5.0, 1.5, 0.74, 0.5], [8.0, 1.1, 0.5, 0.5]],
+    mundo(c) {
+      const { ts } = c; fondo(c, 'bg_estudio'); sprite(c, 'chepe_presenta', { x: 0.26, foot: 1.0, h: 1000, hablante: 'narrador', bob: 4 });
+      sprite(c, ts < 5.0 ? 'curul_nervioso' : 'curul_encoge', { x: 0.76, foot: 0.97, h: 1150, hablante: 'don_curul', bob: 4 });
+      const a = ts - 0.9; if (a > 0) { const k = outBack(a / 0.45); objeto(c, 'billetes', W * 0.5, H * 0.66, 560 * k, {}); }
+    },
+    hud(c) { logoTCP(c.ctx, W * 0.82, H * 0.07, 0.5, c.ts); sello(c.ctx, 'L140 MIL AL MES', W * 0.5, H * 0.24, c.ts, 2.2, '#16A34A', 74, -3); sello(c.ctx, 'SEGÚN EL HERALDO', W * 0.5, H * 0.32, c.ts, 3.6, '#2563EB', 54, 3); sello(c.ctx, '¿POR SENTARSE?', W * 0.5, H * 0.4, c.ts, 7.6, '#EA580C', 70, -3); }
+  },
+  s4: {
+    cam: [[0, 1.0, 0.5, 0.55], [3.0, 1.4, 0.5, 0.6], [6.0, 1.1, 0.5, 0.55]],
+    mundo(c) { const { ts } = c; fondo(c, 'bg_estudio'); sprite(c, 'chepe_presenta', { x: 0.2, foot: 1.0, h: 800, hablante: 'narrador', bob: 4 }); const a = ts - 0.6; if (a > 0) { const k = outBack(a / 0.5); objeto(c, 'escoltas', W * 0.62, H * 0.66, 1000 * k, {}); } },
+    hud(c) { logoTCP(c.ctx, W * 0.82, H * 0.07, 0.5, c.ts); sello(c.ctx, 'AUSTERIDAD', W * 0.5, H * 0.22, c.ts, 1.0, '#16A34A', 76, -3); sello(c.ctx, '¿MÁS GUARDIAS QUE BEZOS?', W * 0.5, H * 0.31, c.ts, 6.0, '#DC2626', 54, 3); },
+    sacudida(ts) { return ts > 6.0 && ts < 6.5 ? 8 : 0; }
+  },
+  s5: {
+    cam: [[0, 1.0, 0.5, 0.5], [3.0, 1.4, 0.55, 0.55], [5.4, 1.05, 0.5, 0.5]],
+    mundo(c) { const { ts } = c; fondo(c, 'bg_estudio'); sprite(c, 'chepe_presenta', { x: 0.2, foot: 1.0, h: 800, hablante: 'narrador', bob: 4 });
+      const a = ts - 0.8; if (a > 0) { const k = outBack(a / 0.45); objeto(c, 'arbol', W * 0.45, H * 0.62, 640 * k, {}); }
+      const b = ts - 3.0; if (b > 0) { const k = outBack(b / 0.4); objeto(c, 'esposas', W * 0.75, H * 0.62 + Math.sin(ts * 5) * 10, 420 * k, { rot: Math.sin(ts * 4) * 8 }); } },
+    hud(c) { logoTCP(c.ctx, W * 0.82, H * 0.07, 0.5, c.ts); sello(c.ctx, '2 AÑOS 3 MESES', W * 0.5, H * 0.24, c.ts, 3.6, '#DC2626', 76, -3); sello(c.ctx, 'POR SERRUCHAR UN ÁRBOL', W * 0.5, H * 0.33, c.ts, 5.0, '#EA580C', 56, 3); }
+  },
+  s6: {
+    cam: [[0, 1.0, 0.5, 0.5], [3.4, 1.3, 0.5, 0.5], [8.0, 1.2, 0.5, 0.45], [10.6, 1.4, 0.5, 0.5], [12.8, 1.2, 0.5, 0.55], [15.0, 1.5, 0.5, 0.5], [16.6, 1.0, 0.5, 0.5]],
+    mundo(c) { const { ts } = c; fondo(c, 'bg_estudio'); sprite(c, 'chepe_presenta', { x: 0.5, foot: 1.0, h: 1100, hablante: 'narrador', bob: 4 });
+      if (ts > 12.8) { const k = outBack((ts - 12.8) / 0.4); objeto(c, 'arbol', W * 0.2, H * 0.6, 420 * k, {}); objeto(c, 'esposas', W * 0.8, H * 0.6, 300 * k, { rot: Math.sin(ts * 4) * 6 }); } },
+    hud(c) { logoTCP(c.ctx, W * 0.82, H * 0.07, 0.5, c.ts); sello(c.ctx, '45 AÑOS EN EE. UU.', W * 0.5, H * 0.2, c.ts, 3.6, '#DC2626', 66, -3); sello(c.ctx, 'INDULTADO', W * 0.5, H * 0.28, c.ts, 8.3, '#16A34A', 80, 3); sello(c.ctx, 'CASO CERRADO', W * 0.5, H * 0.36, c.ts, 10.8, '#2563EB', 76, -3); sello(c.ctx, 'LEÑADOR = CÁRCEL', W * 0.5, H * 0.44, c.ts > 12.5 ? c.ts : 0, 13.0, '#DC2626', 66, 3); if (c.ts > 15) sello(c.ctx, 'EXPRESIDENTE = SOBRESEIMIENTO', W * 0.5, H * 0.52, c.ts, 15.0, '#16A34A', 50, -3); },
+    sacudida(ts) { return ts > 16.6 ? 10 : 0; }
+  },
+  s7: {
+    cam: [[0, 1.0, 0.5, 0.5], [2.6, 1.3, 0.3, 0.55]],
+    mundo(c) { const { ts } = c; fondo(c, 'bg_estudio'); sprite(c, 'chepe_presenta', { x: 0.26, foot: 1.0, h: 1000, hablante: 'narrador', bob: 4 }); sprite(c, 'curul_corre', { x: (a) => 0.76 + clamp(a / 3) * 0.55, foot: 0.97, h: 1050, hablante: 'don_curul', salto: 9, tilt: 5, bob: 2 }); },
+    hud(c) { logoTCP(c.ctx, W * 0.82, H * 0.07, 0.5, c.ts); sello(c.ctx, 'CORTE A COMERCIALES', W * 0.5, H * 0.26, c.ts, 3.0, '#DC2626', 62, -3); }
+  },
+  s8: {
+    cam: [[0, 1.0, 0.5, 0.5], [4.7, 1.7, 0.5, 0.52], [5.1, 1.15, 0.5, 0.52]],
+    mundo(c) { const { ctx } = c; ctx.fillStyle = '#F5B800'; ctx.fillRect(0, 0, W, H); rayos(ctx, W / 2, H * 0.42, c.ts, '#FFD23F', '#F5A300'); sprite(c, 'presidente_mazo', { x: 0.5, foot: 0.99, h: 1280, enter: 'pop', t0: 0.2, bob: 6, hablante: 'presidente' }); chispas(ctx, c.ts, { seed: 3, n: 12 }); },
+    hud(c) { texto(c.ctx, '¡SESIÓN ABIERTA', W / 2, H * 0.075, c.ts, 4.9, { size: 96, rot: -4 }); texto(c.ctx, 'Y A LA HORAAA,', W / 2, H * 0.145, c.ts, 5.4, { size: 92, rot: 3, color: '#FF4D6D' }); texto(c.ctx, 'MAJE!', W / 2, H * 0.225, c.ts, 5.9, { size: 120, rot: -3 }); },
+    sacudida(ts) { return ts > 4.9 && ts < 8.0 ? 14 : 0; }
+  },
+  s9: {
+    cam: [[0, 1.0, 0.5, 0.5], [3.4, 1.3, 0.5, 0.45], [5.8, 1.1, 0.5, 0.5]],
+    mundo(c) { fondo(c, 'bg_estudio'); sprite(c, 'chepe_presenta', { x: 0.5, foot: 1.0, h: 1250, hablante: 'narrador', bob: 4 }); },
+    hud(c) { logoTCP(c.ctx, W / 2, H * 0.2, 1.3, c.ts, 0.2); texto(c.ctx, 'COMPÁRTELO', W / 2, H * 0.32, c.ts, 4.2, { size: 140, rot: -3, color: '#FFE14D' }); chispas(c.ctx, c.ts - 0.4, { seed: 5, n: 12, y0: 0.1, y1: 0.4 }); }
+  }
+};
+
 /* ---------- audio: volumen de la voz por cuadro (mueve la boca) ---------- */
 function envolvente(wav) {
   const r = spawnSync(ffmpegPath, ['-hide_banner', '-loglevel', 'error', '-i', wav, '-ac', '1', '-ar', '8000', '-f', 'f32le', '-'], { maxBuffer: 256 * 1024 * 1024 });
@@ -410,6 +485,7 @@ async function main() {
   const o = parseCli({ series: { type: 'string' }, ep: { type: 'string', default: '1' }, still: { type: 'string' }, crf: { type: 'string', default: '20' } });
   const series = loadSeries(o.series), n = +o.ep;
   if (series.slug === 'congreso-al-servicio') ESCENAS = ESCENAS_CONGRESO;
+  if (series.slug === 'tal-cual-pasa') ESCENAS = ESCENAS_TCP;
   const R = await preparar(series, n);
   if (R.violations.length) log(`AVISO: subtítulos fuera de la zona segura: ${R.violations.join(' | ')}\n`);
   const out = path.join(OUT_DIR, series.slug, `${series.slug}-animado.mp4`);

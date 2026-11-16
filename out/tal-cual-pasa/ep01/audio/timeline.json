@@ -1,0 +1,990 @@
+{
+  "series": "tal-cual-pasa",
+  "episode": 1,
+  "duration": 88.57,
+  "audio": "episode.wav",
+  "voiceModel": "gpt-4o-mini-tts",
+  "scenes": [
+    {
+      "id": "s1",
+      "beat": "apertura",
+      "start": 0.08,
+      "end": 8.77
+    },
+    {
+      "id": "s2",
+      "beat": "ley",
+      "start": 9.19,
+      "end": 20.25
+    },
+    {
+      "id": "s3",
+      "beat": "salario",
+      "start": 20.67,
+      "end": 30.95
+    },
+    {
+      "id": "s4",
+      "beat": "austeridad",
+      "start": 31.37,
+      "end": 40.06
+    },
+    {
+      "id": "s5",
+      "beat": "lena",
+      "start": 40.48,
+      "end": 47.24
+    },
+    {
+      "id": "s6",
+      "beat": "indulto",
+      "start": 47.66,
+      "end": 65.35
+    },
+    {
+      "id": "s7",
+      "beat": "huida",
+      "start": 65.77,
+      "end": 71.23
+    },
+    {
+      "id": "s8",
+      "beat": "cameo",
+      "start": 71.65,
+      "end": 80.28
+    },
+    {
+      "id": "s9",
+      "beat": "cierre",
+      "start": 80.98,
+      "end": 86.97
+    }
+  ],
+  "lines": [
+    {
+      "scene": "s1",
+      "beat": "apertura",
+      "speaker": "narrador",
+      "text": "Buenas noches, catrachos. Esto es Tal Cual Pasa. Hoy, la nueva ley penal, con Don Curul.",
+      "start": 0.08,
+      "end": 8.77,
+      "words": [
+        {
+          "w": "Buenas",
+          "start": 0.08,
+          "end": 0.72
+        },
+        {
+          "w": "noches,",
+          "start": 0.72,
+          "end": 1.32
+        },
+        {
+          "w": "catrachos.",
+          "start": 2,
+          "end": 2.3
+        },
+        {
+          "w": "Esto",
+          "start": 3.18,
+          "end": 3.3
+        },
+        {
+          "w": "es",
+          "start": 3.3,
+          "end": 3.9
+        },
+        {
+          "w": "Tal",
+          "start": 3.9,
+          "end": 4.28
+        },
+        {
+          "w": "Cual",
+          "start": 4.28,
+          "end": 4.6
+        },
+        {
+          "w": "Pasa.",
+          "start": 4.6,
+          "end": 5.16
+        },
+        {
+          "w": "Hoy,",
+          "start": 5.84,
+          "end": 5.86
+        },
+        {
+          "w": "la",
+          "start": 6.22,
+          "end": 6.36
+        },
+        {
+          "w": "nueva",
+          "start": 6.36,
+          "end": 6.76
+        },
+        {
+          "w": "ley",
+          "start": 6.76,
+          "end": 7
+        },
+        {
+          "w": "penal,",
+          "start": 7,
+          "end": 7.4
+        },
+        {
+          "w": "con",
+          "start": 7.4,
+          "end": 8
+        },
+        {
+          "w": "Don",
+          "start": 8,
+          "end": 8.32
+        },
+        {
+          "w": "Curul.",
+          "start": 8.32,
+          "end": 8.62
+        }
+      ]
+    },
+    {
+      "scene": "s2",
+      "beat": "ley",
+      "speaker": "narrador",
+      "text": "Ley penal aprobada con dispensa de dos debates. ¿Usted se la cree?",
+      "start": 9.19,
+      "end": 14.57,
+      "words": [
+        {
+          "w": "Ley",
+          "start": 9.19,
+          "end": 9.63
+        },
+        {
+          "w": "penal",
+          "start": 9.63,
+          "end": 10.17
+        },
+        {
+          "w": "aprobada",
+          "start": 10.17,
+          "end": 10.89
+        },
+        {
+          "w": "con",
+          "start": 10.89,
+          "end": 11.31
+        },
+        {
+          "w": "dispensa",
+          "start": 11.31,
+          "end": 11.93
+        },
+        {
+          "w": "de",
+          "start": 11.93,
+          "end": 12.15
+        },
+        {
+          "w": "dos",
+          "start": 12.15,
+          "end": 12.41
+        },
+        {
+          "w": "debates.",
+          "start": 12.41,
+          "end": 12.89
+        },
+        {
+          "w": "¿Usted",
+          "start": 13.59,
+          "end": 13.93
+        },
+        {
+          "w": "se",
+          "start": 13.93,
+          "end": 14.07
+        },
+        {
+          "w": "la",
+          "start": 14.07,
+          "end": 14.29
+        },
+        {
+          "w": "cree?",
+          "start": 14.29,
+          "end": 14.43
+        }
+      ]
+    },
+    {
+      "scene": "s2",
+      "beat": "ley",
+      "speaker": "don_curul",
+      "text": "Eh… la votamos, pues.",
+      "start": 14.79,
+      "end": 16.84,
+      "words": [
+        {
+          "w": "Eh…",
+          "start": 14.79,
+          "end": 15.23
+        },
+        {
+          "w": "la",
+          "start": 15.23,
+          "end": 15.97
+        },
+        {
+          "w": "votamos,",
+          "start": 15.97,
+          "end": 16.43
+        },
+        {
+          "w": "pues.",
+          "start": 16.43,
+          "end": 16.69
+        }
+      ]
+    },
+    {
+      "scene": "s2",
+      "beat": "ley",
+      "speaker": "narrador",
+      "text": "Ni ustedes se la creen, maje.",
+      "start": 17.06,
+      "end": 20.25,
+      "words": [
+        {
+          "w": "Ni",
+          "start": 17.06,
+          "end": 17.66
+        },
+        {
+          "w": "ustedes",
+          "start": 17.66,
+          "end": 18.22
+        },
+        {
+          "w": "se",
+          "start": 18.22,
+          "end": 18.5
+        },
+        {
+          "w": "la",
+          "start": 18.5,
+          "end": 18.74
+        },
+        {
+          "w": "creen,",
+          "start": 18.74,
+          "end": 19.12
+        },
+        {
+          "w": "maje.",
+          "start": 19.96,
+          "end": 20.12
+        }
+      ]
+    },
+    {
+      "scene": "s3",
+      "beat": "salario",
+      "speaker": "narrador",
+      "text": "Ciento cuarenta mil entre sueldo y viáticos, según El Heraldo. ¿Qué hace?",
+      "start": 20.67,
+      "end": 25.61,
+      "words": [
+        {
+          "w": "Ciento",
+          "start": 20.67,
+          "end": 21.152
+        },
+        {
+          "w": "cuarenta",
+          "start": 21.152,
+          "end": 21.772
+        },
+        {
+          "w": "mil",
+          "start": 21.772,
+          "end": 22.047
+        },
+        {
+          "w": "entre",
+          "start": 22.047,
+          "end": 22.46
+        },
+        {
+          "w": "sueldo",
+          "start": 22.46,
+          "end": 22.942
+        },
+        {
+          "w": "y",
+          "start": 22.942,
+          "end": 23.08
+        },
+        {
+          "w": "viáticos,",
+          "start": 23.08,
+          "end": 23.7
+        },
+        {
+          "w": "según",
+          "start": 23.7,
+          "end": 24.113
+        },
+        {
+          "w": "El",
+          "start": 24.113,
+          "end": 24.319
+        },
+        {
+          "w": "Heraldo.",
+          "start": 24.319,
+          "end": 24.87
+        },
+        {
+          "w": "¿Qué",
+          "start": 24.87,
+          "end": 25.146
+        },
+        {
+          "w": "hace?",
+          "start": 25.146,
+          "end": 25.49
+        }
+      ]
+    },
+    {
+      "scene": "s3",
+      "beat": "salario",
+      "speaker": "don_curul",
+      "text": "Me siento.",
+      "start": 25.83,
+      "end": 26.88,
+      "words": [
+        {
+          "w": "Me",
+          "start": 25.83,
+          "end": 26.25
+        },
+        {
+          "w": "siento.",
+          "start": 26.25,
+          "end": 26.85
+        }
+      ]
+    },
+    {
+      "scene": "s3",
+      "beat": "salario",
+      "speaker": "narrador",
+      "text": "¿Y por sentarse cobra? Hijuepuchica.",
+      "start": 27.1,
+      "end": 30.95,
+      "words": [
+        {
+          "w": "¿Y",
+          "start": 27.1,
+          "end": 27.316
+        },
+        {
+          "w": "por",
+          "start": 27.316,
+          "end": 27.749
+        },
+        {
+          "w": "sentarse",
+          "start": 27.749,
+          "end": 28.724
+        },
+        {
+          "w": "cobra?",
+          "start": 28.724,
+          "end": 29.373
+        },
+        {
+          "w": "Hijuepuchica.",
+          "start": 29.373,
+          "end": 30.78
+        }
+      ]
+    },
+    {
+      "scene": "s4",
+      "beat": "austeridad",
+      "speaker": "narrador",
+      "text": "Prometieron austeridad: sin escoltas ni sirenas. Y los veo con más guardias que Jeff Bezos, cerote.",
+      "start": 31.37,
+      "end": 40.06,
+      "words": [
+        {
+          "w": "Prometieron",
+          "start": 31.37,
+          "end": 32.15
+        },
+        {
+          "w": "austeridad:",
+          "start": 32.15,
+          "end": 33.17
+        },
+        {
+          "w": "sin",
+          "start": 34.07,
+          "end": 34.17
+        },
+        {
+          "w": "escoltas",
+          "start": 34.17,
+          "end": 34.93
+        },
+        {
+          "w": "ni",
+          "start": 34.93,
+          "end": 35.33
+        },
+        {
+          "w": "sirenas.",
+          "start": 35.33,
+          "end": 36.09
+        },
+        {
+          "w": "Y",
+          "start": 36.55,
+          "end": 36.67
+        },
+        {
+          "w": "los",
+          "start": 36.67,
+          "end": 36.93
+        },
+        {
+          "w": "veo",
+          "start": 36.93,
+          "end": 37.07
+        },
+        {
+          "w": "con",
+          "start": 37.07,
+          "end": 37.37
+        },
+        {
+          "w": "más",
+          "start": 37.37,
+          "end": 37.73
+        },
+        {
+          "w": "guardias",
+          "start": 37.73,
+          "end": 38.13
+        },
+        {
+          "w": "que",
+          "start": 38.13,
+          "end": 38.37
+        },
+        {
+          "w": "Jeff",
+          "start": 38.37,
+          "end": 38.69
+        },
+        {
+          "w": "Bezos,",
+          "start": 38.69,
+          "end": 39.07
+        },
+        {
+          "w": "cerote.",
+          "start": 39.69,
+          "end": 39.95
+        }
+      ]
+    },
+    {
+      "scene": "s5",
+      "beat": "lena",
+      "speaker": "narrador",
+      "text": "A dos hombres les dieron dos años y tres meses por serruchar un árbol.",
+      "start": 40.48,
+      "end": 47.24,
+      "words": [
+        {
+          "w": "A",
+          "start": 40.48,
+          "end": 40.9
+        },
+        {
+          "w": "dos",
+          "start": 40.9,
+          "end": 41.42
+        },
+        {
+          "w": "hombres",
+          "start": 41.42,
+          "end": 41.94
+        },
+        {
+          "w": "les",
+          "start": 41.94,
+          "end": 42.62
+        },
+        {
+          "w": "dieron",
+          "start": 42.62,
+          "end": 42.92
+        },
+        {
+          "w": "dos",
+          "start": 42.92,
+          "end": 43.32
+        },
+        {
+          "w": "años",
+          "start": 43.32,
+          "end": 43.82
+        },
+        {
+          "w": "y",
+          "start": 43.82,
+          "end": 44.5
+        },
+        {
+          "w": "tres",
+          "start": 44.5,
+          "end": 44.82
+        },
+        {
+          "w": "meses",
+          "start": 44.82,
+          "end": 45.26
+        },
+        {
+          "w": "por",
+          "start": 45.26,
+          "end": 45.98
+        },
+        {
+          "w": "serruchar",
+          "start": 45.98,
+          "end": 46.54
+        },
+        {
+          "w": "un",
+          "start": 46.54,
+          "end": 46.86
+        },
+        {
+          "w": "árbol.",
+          "start": 46.86,
+          "end": 47.12
+        }
+      ]
+    },
+    {
+      "scene": "s6",
+      "beat": "indulto",
+      "speaker": "narrador",
+      "text": "Y Juan Orlandazo Fernández, condenado a cuarenta y cinco años en Estados Unidos: indultado allá, y aquí le cierran el caso. Al leñador, cárcel; a él, sobreseimiento. A la gran puta.",
+      "start": 47.66,
+      "end": 65.35,
+      "words": [
+        {
+          "w": "Y",
+          "start": 47.66,
+          "end": 47.863
+        },
+        {
+          "w": "Juan",
+          "start": 47.863,
+          "end": 48.371
+        },
+        {
+          "w": "Orlandazo",
+          "start": 48.371,
+          "end": 49.386
+        },
+        {
+          "w": "Fernández,",
+          "start": 49.386,
+          "end": 50.401
+        },
+        {
+          "w": "condenado",
+          "start": 50.401,
+          "end": 51.416
+        },
+        {
+          "w": "a",
+          "start": 51.416,
+          "end": 51.619
+        },
+        {
+          "w": "cuarenta",
+          "start": 51.619,
+          "end": 52.532
+        },
+        {
+          "w": "y",
+          "start": 52.532,
+          "end": 52.735
+        },
+        {
+          "w": "cinco",
+          "start": 52.735,
+          "end": 53.344
+        },
+        {
+          "w": "años",
+          "start": 53.344,
+          "end": 53.852
+        },
+        {
+          "w": "en",
+          "start": 53.852,
+          "end": 54.156
+        },
+        {
+          "w": "Estados",
+          "start": 54.156,
+          "end": 54.968
+        },
+        {
+          "w": "Unidos:",
+          "start": 54.968,
+          "end": 55.679
+        },
+        {
+          "w": "indultado",
+          "start": 55.679,
+          "end": 56.694
+        },
+        {
+          "w": "allá,",
+          "start": 56.694,
+          "end": 57.201
+        },
+        {
+          "w": "y",
+          "start": 57.201,
+          "end": 57.404
+        },
+        {
+          "w": "aquí",
+          "start": 57.404,
+          "end": 57.912
+        },
+        {
+          "w": "le",
+          "start": 57.912,
+          "end": 58.216
+        },
+        {
+          "w": "cierran",
+          "start": 58.216,
+          "end": 59.028
+        },
+        {
+          "w": "el",
+          "start": 59.028,
+          "end": 59.333
+        },
+        {
+          "w": "caso.",
+          "start": 59.333,
+          "end": 59.84
+        },
+        {
+          "w": "Al",
+          "start": 59.84,
+          "end": 60.145
+        },
+        {
+          "w": "leñador,",
+          "start": 60.145,
+          "end": 60.957
+        },
+        {
+          "w": "cárcel;",
+          "start": 60.957,
+          "end": 61.667
+        },
+        {
+          "w": "a",
+          "start": 61.667,
+          "end": 61.87
+        },
+        {
+          "w": "él,",
+          "start": 61.87,
+          "end": 62.175
+        },
+        {
+          "w": "sobreseimiento.",
+          "start": 62.175,
+          "end": 63.697
+        },
+        {
+          "w": "A",
+          "start": 63.697,
+          "end": 63.9
+        },
+        {
+          "w": "la",
+          "start": 63.9,
+          "end": 64.205
+        },
+        {
+          "w": "gran",
+          "start": 64.205,
+          "end": 64.712
+        },
+        {
+          "w": "puta.",
+          "start": 64.712,
+          "end": 65.22
+        }
+      ]
+    },
+    {
+      "scene": "s7",
+      "beat": "huida",
+      "speaker": "don_curul",
+      "text": "Mejor hablamos de… otra cosa.",
+      "start": 65.77,
+      "end": 68.31,
+      "words": [
+        {
+          "w": "Mejor",
+          "start": 65.77,
+          "end": 66.33
+        },
+        {
+          "w": "hablamos",
+          "start": 66.33,
+          "end": 67.11
+        },
+        {
+          "w": "de…",
+          "start": 67.11,
+          "end": 67.33
+        },
+        {
+          "w": "otra",
+          "start": 67.33,
+          "end": 67.93
+        },
+        {
+          "w": "cosa.",
+          "start": 67.93,
+          "end": 68.17
+        }
+      ]
+    },
+    {
+      "scene": "s7",
+      "beat": "huida",
+      "speaker": "narrador",
+      "text": "Corte a comerciales, baboso.",
+      "start": 68.53,
+      "end": 71.23,
+      "words": [
+        {
+          "w": "Corte",
+          "start": 68.53,
+          "end": 69.03
+        },
+        {
+          "w": "a",
+          "start": 69.03,
+          "end": 69.33
+        },
+        {
+          "w": "comerciales,",
+          "start": 69.33,
+          "end": 70.23
+        },
+        {
+          "w": "baboso.",
+          "start": 70.61,
+          "end": 71.07
+        }
+      ]
+    },
+    {
+      "scene": "s8",
+      "beat": "cameo",
+      "speaker": "narrador",
+      "text": "Y el presidente del Congreso interrumpe, mazo en mano:",
+      "start": 71.65,
+      "end": 76.26,
+      "words": [
+        {
+          "w": "Y",
+          "start": 71.65,
+          "end": 71.83
+        },
+        {
+          "w": "el",
+          "start": 71.83,
+          "end": 72.03
+        },
+        {
+          "w": "presidente",
+          "start": 72.03,
+          "end": 72.85
+        },
+        {
+          "w": "del",
+          "start": 72.85,
+          "end": 73.03
+        },
+        {
+          "w": "Congreso",
+          "start": 73.03,
+          "end": 73.59
+        },
+        {
+          "w": "interrumpe,",
+          "start": 73.59,
+          "end": 74.79
+        },
+        {
+          "w": "mazo",
+          "start": 75.45,
+          "end": 75.55
+        },
+        {
+          "w": "en",
+          "start": 75.55,
+          "end": 76.09
+        },
+        {
+          "w": "mano:",
+          "start": 76.09,
+          "end": 76.15
+        }
+      ]
+    },
+    {
+      "scene": "s8",
+      "beat": "cameo",
+      "speaker": "presidente",
+      "text": "¡Sesión abierta y a la horaaa, maje!",
+      "start": 76.48,
+      "end": 80.28,
+      "words": [
+        {
+          "w": "¡Sesión",
+          "start": 76.48,
+          "end": 77.24
+        },
+        {
+          "w": "abierta",
+          "start": 77.24,
+          "end": 78.2
+        },
+        {
+          "w": "y",
+          "start": 78.2,
+          "end": 78.66
+        },
+        {
+          "w": "a",
+          "start": 78.66,
+          "end": 78.98
+        },
+        {
+          "w": "la",
+          "start": 78.98,
+          "end": 79
+        },
+        {
+          "w": "horaaa,",
+          "start": 79,
+          "end": 79.32
+        },
+        {
+          "w": "maje!",
+          "start": 79.98,
+          "end": 80.18
+        }
+      ]
+    },
+    {
+      "scene": "s9",
+      "beat": "cierre",
+      "speaker": "narrador",
+      "text": "Esto fue Tal Cual Pasa. Mándaselo al cerote de tu amigo cachureco.",
+      "start": 80.98,
+      "end": 86.97,
+      "words": [
+        {
+          "w": "Esto",
+          "start": 80.98,
+          "end": 81.52
+        },
+        {
+          "w": "fue",
+          "start": 81.52,
+          "end": 81.94
+        },
+        {
+          "w": "Tal",
+          "start": 81.94,
+          "end": 82.66
+        },
+        {
+          "w": "Cual",
+          "start": 82.66,
+          "end": 82.98
+        },
+        {
+          "w": "Pasa.",
+          "start": 82.98,
+          "end": 83.32
+        },
+        {
+          "w": "Mándaselo",
+          "start": 84.36,
+          "end": 84.76
+        },
+        {
+          "w": "al",
+          "start": 84.76,
+          "end": 85.1
+        },
+        {
+          "w": "cerote",
+          "start": 85.1,
+          "end": 85.5
+        },
+        {
+          "w": "de",
+          "start": 85.5,
+          "end": 85.72
+        },
+        {
+          "w": "tu",
+          "start": 85.72,
+          "end": 85.96
+        },
+        {
+          "w": "amigo",
+          "start": 85.96,
+          "end": 86.24
+        },
+        {
+          "w": "cachureco.",
+          "start": 86.24,
+          "end": 86.88
+        }
+      ]
+    }
+  ]
+}

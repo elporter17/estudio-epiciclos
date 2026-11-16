@@ -1,0 +1,290 @@
+{
+  "title": "Tal Cual Pasa: entrevista a Don Curul",
+  "slug": "tal-cual-pasa",
+  "logline": "Un noticiero parodia entrevista a un diputado inventado sobre la nueva ley penal, el sueldo y la justicia selectiva.",
+  "premise": "Sátira en formato de entrevista de noticiero. Don Curul es un personaje inventado. Los datos son públicos y verificados (ley penal con dispensa de dos debates; salario y viáticos estimados por El Heraldo; anuncios de austeridad; condena de dos años y tres meses por aserrar un árbol; indulto y sobreseimiento de un expresidente). Sin acusaciones de delitos.",
+  "setting": "Honduras imaginaria del futuro: Tegucigalpa, San Pedro Sula y La Ceiba convertidas en ciudades de cristal.",
+  "tone": "Comedia absurda, rápida, con groserías hondureñas y remate final.",
+  "visual_style": "Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.",
+  "narrator": {
+    "character_id": "chepe",
+    "voice": "ash",
+    "voice_instructions": "Hombre joven hondureño, ritmo MUY rápido y chismoso, tono burlón y sarcástico, como contando un chisme a un amigo. Hace una pausa corta antes de cada remate y dice las groserías con naturalidad. Español de Honduras, nada de acento neutro."
+  },
+  "characters": [
+    {
+      "id": "chepe",
+      "name": "Chepe",
+      "role": "Presentador del noticiero «Tal Cual Pasa»",
+      "age": 28,
+      "visual": "Young Honduran man in his late 20s: very large round head, short black curly hair, medium-brown skin, big expressive dark eyes, small body. Wears a navy suit jacket over a white shirt with a crooked red tie, like a nervous TV news anchor.",
+      "personality": "Cansado de los baches y los apagones, sueña en grande.",
+      "voice": "ash",
+      "voice_instructions": "Hombre joven hondureño, muy rápido y burlón."
+    },
+    {
+      "id": "don_curul",
+      "name": "Don Curul",
+      "role": "Diputado inventado (personaje genérico, no es nadie real) al que entrevistan",
+      "age": 55,
+      "visual": "Caricature of a heavy-set Honduran man in his mid 50s: very large round head on a wide body, thinning combed-over gray hair, round wire glasses, double chin, sweaty forehead, nervous half-smile. Wears a rumpled gray suit, a blue tie and a small Honduran flag lapel pin.",
+      "personality": "Evasivo y nervioso; contesta lo mínimo y quiere irse.",
+      "voice": "echo",
+      "voice_instructions": "Hombre hondureño de unos 55 años, nervioso y evasivo, voz algo aguda, balbucea y duda antes de contestar."
+    },
+    {
+      "id": "presidente",
+      "name": "Jonas Zambruna",
+      "role": "Presidente del Congreso caricaturizado (nombre de parodia); grita la frase de la suerte",
+      "age": 45,
+      "visual": "Caricature of a Honduran man in his 40s: very large head on a lean body, short dark hair swept back with a small cowlick, light-brown skin, a wide beaming toothy smile, friendly brown eyes, a slightly square jaw. Wears a light-blue open-collar dress shirt with the sleeves rolled up and a small Honduran flag lapel pin, holding a wooden gavel in one hand.",
+      "personality": "Campechano y enérgico; siempre grita su frase cuando algo funciona.",
+      "voice": "onyx",
+      "voice_instructions": "Hombre hondureño de unos 45 años, voz fuerte y alegre; grita la frase con muchísima energía, alargando las vocales: «¡Sesión abierta y a la horaaa, maje!»."
+    }
+  ],
+  "outline": [
+    "Un solo episodio: sueño de un país perfecto, remate con el hoyo y el apagón, y la invitación a compartirlo."
+  ],
+  "genre": "comedia",
+  "language": "es",
+  "episodes": [
+    {
+      "number": 1,
+      "title": "La entrevista a Don Curul",
+      "hook_text": "TAL CUAL PASA: la entrevista que el Congreso no quiere",
+      "post_description": "TAL CUAL PASA 🇭🇳🎙️ Entrevistamos a Don Curul sobre la nueva ley penal, los L140 mil, la «austeridad» y por qué al leñador lo encierran. Mándaselo al cerote de tu amigo que cree que todo está bien. 👇 Comenta qué pregunta le harías tú.",
+      "hashtags": [
+        "Honduras",
+        "Catracho",
+        "TalCualPasa",
+        "Humor",
+        "Satira"
+      ],
+      "scenes": [
+        {
+          "id": "s1",
+          "beat": "apertura",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "TV news studio, Chepe as anchor behind a desk with a crooked tie.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Buenas noches, catrachos. Esto es Tal Cual Pasa. Hoy, la nueva ley penal, con Don Curul.",
+              "delivery": "MUY rápido, sin pausas largas, burlón, presentador de noticias"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "beat": "ley",
+          "characters": [
+            "chepe",
+            "don_curul"
+          ],
+          "shot": "medium",
+          "motion": "pan_right",
+          "image_prompt": "Chepe interviewing a sweating deputy.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Ley penal aprobada con dispensa de dos debates. ¿Usted se la cree?",
+              "delivery": "MUY rápido, sin pausas largas, burlón, presentador de noticias"
+            },
+            {
+              "speaker": "don_curul",
+              "text": "Eh… la votamos, pues.",
+              "delivery": "nervioso, balbuceando"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Ni ustedes se la creen, maje.",
+              "delivery": "MUY rápido, sin pausas largas, burlón, presentador de noticias"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "beat": "salario",
+          "characters": [
+            "chepe",
+            "don_curul"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Money stack on the desk.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Ciento cuarenta mil entre sueldo y viáticos, según El Heraldo. ¿Qué hace?",
+              "delivery": "MUY rápido, sin pausas largas, burlón, presentador de noticias"
+            },
+            {
+              "speaker": "don_curul",
+              "text": "Me siento.",
+              "delivery": "nervioso, bajito"
+            },
+            {
+              "speaker": "narrador",
+              "text": "¿Y por sentarse cobra? Hijuepuchica.",
+              "delivery": "MUY rápido, sin pausas largas, burlón, presentador de noticias"
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "beat": "austeridad",
+          "characters": [
+            "don_curul"
+          ],
+          "shot": "wide",
+          "motion": "pan_left",
+          "image_prompt": "Bodyguards crowding the deputy.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Prometieron austeridad: sin escoltas ni sirenas. Y los veo con más guardias que Jeff Bezos, cerote.",
+              "delivery": "MUY rápido, sin pausas largas, burlón, presentador de noticias"
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "beat": "lena",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "A cut tree and handcuffs.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "A dos hombres les dieron dos años y tres meses por serruchar un árbol.",
+              "delivery": "MUY rápido, sin pausas largas, burlón, presentador de noticias"
+            }
+          ]
+        },
+        {
+          "id": "s6",
+          "beat": "indulto",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Stamps 45 years, pardoned, case closed.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Y Juan Orlandazo Fernández, condenado a cuarenta y cinco años en Estados Unidos: indultado allá, y aquí le cierran el caso. Al leñador, cárcel; a él, sobreseimiento. A la gran puta.",
+              "delivery": "MUY rápido, sin pausas largas, burlón, presentador de noticias"
+            }
+          ]
+        },
+        {
+          "id": "s7",
+          "beat": "huida",
+          "characters": [
+            "chepe",
+            "don_curul"
+          ],
+          "shot": "medium",
+          "motion": "pan_left",
+          "image_prompt": "The deputy runs away.",
+          "lines": [
+            {
+              "speaker": "don_curul",
+              "text": "Mejor hablamos de… otra cosa.",
+              "delivery": "nervioso, huyendo"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Corte a comerciales, baboso.",
+              "delivery": "MUY rápido, sin pausas largas, burlón, presentador de noticias"
+            }
+          ]
+        },
+        {
+          "id": "s8",
+          "beat": "cameo",
+          "characters": [
+            "presidente"
+          ],
+          "shot": "close",
+          "motion": "push_in",
+          "image_prompt": "The Congress president with a gavel.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Y el presidente del Congreso interrumpe, mazo en mano:",
+              "delivery": "MUY rápido, sin pausas largas, burlón, presentador de noticias"
+            },
+            {
+              "speaker": "presidente",
+              "text": "¡Sesión abierta y a la horaaa, maje!",
+              "delivery": "gritando muy fuerte, alargando las vocales finales"
+            }
+          ]
+        },
+        {
+          "id": "s9",
+          "beat": "cierre",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Anchor closing the show.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Esto fue Tal Cual Pasa. Mándaselo al cerote de tu amigo cachureco.",
+              "delivery": "MUY rápido, sin pausas largas, burlón, presentador de noticias"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "framing": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).",
+  "portrait_framing": "Character reference sheet in hand-drawn editorial caricature style. Full-body, standing, facing the camera, neutral relaxed expression, plain light-gray background, even light, all clothing and shoes clearly visible.",
+  "standalone": true,
+  "anim": {
+    "sprites": {
+      "chepe_presenta": [
+        "chepe",
+        "Seated behind a wooden TV news desk holding papers, only the upper body and desk visible, crooked tie, serious anchor face, mouth closed."
+      ],
+      "chepe_enojado": [
+        "chepe",
+        "Seated behind a news desk, leaning forward pointing an accusing finger, eyebrows raised, mouth closed."
+      ],
+      "curul_nervioso": [
+        "don_curul",
+        "Standing stiffly with hands clasped, sweat drops on the forehead, nervous closed-mouth smile."
+      ],
+      "curul_encoge": [
+        "don_curul",
+        "Shrugging with both palms up, eyes looking aside, closed-mouth awkward smile."
+      ],
+      "curul_corre": [
+        "don_curul",
+        "Running away mid-stride carrying a briefcase, looking back over the shoulder in panic, mouth closed."
+      ]
+    },
+    "props": {
+      "escoltas": "Six cartoon bodyguards in black suits and sunglasses with earpieces, standing in a tight circle, front view, full body. ",
+      "billetes": "A huge pile of Honduran banknotes and coins, front view. ",
+      "arbol": "A freshly sawn tree trunk with a saw stuck in it and wood chips, side view. ",
+      "esposas": "A pair of metal handcuffs, front view. "
+    },
+    "bgs": {
+      "bg_estudio": "A TV news studio set: a blue wall with glowing light panels and a city skyline backdrop, an empty wooden anchor desk in the foreground, a microphone on it, no people, no text, no letters."
+    }
+  }
+}
