@@ -1,0 +1,295 @@
+{
+  "title": "¿Y si el Congreso Nacional trabajara de verdad para el pueblo?",
+  "slug": "congreso-al-servicio",
+  "logline": "Un hondureño sueña con un Congreso que llega a la hora, trabaja de verdad y cuida el pisto del pueblo, hasta que suena la alarma.",
+  "premise": "Sátira en forma de sueño con caricaturas de parodia (nombres cambiados) de dos figuras públicas. Solo hechos públicos: la diputada dice que conserva dos plazas por falta de especialistas; el presidente del Congreso anunció descuentos a diputados que falten. Sin acusaciones de delitos.",
+  "setting": "Honduras imaginaria del futuro: Tegucigalpa, San Pedro Sula y La Ceiba convertidas en ciudades de cristal.",
+  "tone": "Comedia absurda, rápida, con groserías hondureñas y remate final.",
+  "visual_style": "Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.",
+  "narrator": {
+    "character_id": "chepe",
+    "voice": "ash",
+    "voice_instructions": "Hombre joven hondureño, ritmo MUY rápido y chismoso, tono burlón y sarcástico, como contando un chisme a un amigo. Hace una pausa corta antes de cada remate y dice las groserías con naturalidad. Español de Honduras, nada de acento neutro."
+  },
+  "characters": [
+    {
+      "id": "chepe",
+      "name": "Chepe",
+      "role": "El soñador, protagonista y narrador",
+      "age": 28,
+      "visual": "Young Honduran man in his late 20s: very large round head, short black curly hair, medium-brown skin, big expressive dark eyes, small body. Wears a wrinkled green pajama t-shirt (no print) and gray sweatpants.",
+      "personality": "Cansado de los baches y los apagones, sueña en grande.",
+      "voice": "ash",
+      "voice_instructions": "Hombre joven hondureño, muy rápido y burlón."
+    },
+    {
+      "id": "amigo",
+      "name": "Don Chelito",
+      "role": "El amigo que piensa que Honduras está bien",
+      "age": 45,
+      "visual": "Stocky man in his mid 40s: very large head, red baseball cap, thick black mustache, smug half-closed eyes, arms crossed over a plain royal-blue polo shirt. Small body, big belly.",
+      "personality": "Cree que todo está bien y no acepta críticas.",
+      "voice": "onyx",
+      "voice_instructions": "Hombre hondureño, tono presumido."
+    },
+    {
+      "id": "diputada",
+      "name": "Doctora Jovana Bermuda",
+      "role": "Diputada caricaturizada (nombre de parodia); en el sueño atiende en un solo lugar",
+      "age": 50,
+      "visual": "Caricature of a Honduran woman in her 50s: very large head on a small body, dark brown skin, straight black shoulder-length hair with side-swept bangs, warm closed-mouth smile, a single strand of white pearls around the neck, small pearl earrings. Wears a pale-yellow blouse with a rounded neckline and a white doctor's coat over it, a stethoscope around the neck, and a small Honduran flag pin.",
+      "personality": "Amable y orgullosa; en el sueño tiene una sola chamba y la hace.",
+      "voice": "coral",
+      "voice_instructions": "Mujer hondureña de unos 50 años, voz cálida y segura."
+    },
+    {
+      "id": "presidente",
+      "name": "Jonas Zambruna",
+      "role": "Presidente del Congreso caricaturizado (nombre de parodia); grita la frase de la suerte",
+      "age": 45,
+      "visual": "Caricature of a Honduran man in his 40s: very large head on a lean body, short dark hair swept back with a small cowlick, light-brown skin, a wide beaming toothy smile, friendly brown eyes, a slightly square jaw. Wears a light-blue open-collar dress shirt with the sleeves rolled up and a small Honduran flag lapel pin, holding a wooden gavel in one hand.",
+      "personality": "Campechano y enérgico; siempre grita su frase cuando algo funciona.",
+      "voice": "onyx",
+      "voice_instructions": "Hombre hondureño de unos 45 años, voz fuerte y alegre; grita la frase con muchísima energía, alargando las vocales: «¡Sesión abierta y a la horaaa, maje!»."
+    }
+  ],
+  "outline": [
+    "Un solo episodio: sueño de un país perfecto, remate con el hoyo y el apagón, y la invitación a compartirlo."
+  ],
+  "genre": "comedia",
+  "language": "es",
+  "episodes": [
+    {
+      "number": 1,
+      "title": "Sesión abierta y a la hora",
+      "hook_text": "¿Y si el Congreso trabajara de verdad para el pueblo?",
+      "post_description": "¿Y si el Congreso Nacional, por fin, trabajara de verdad para el pueblo? 🇭🇳🔥 Sesión a la hora, una sola chamba y el pisto llegando completo. Mándaselo al cerote de tu amigo que piensa que todo está bien. 👇 Comenta qué ley aprobarías tú primero.",
+      "hashtags": [
+        "Honduras",
+        "Catracho",
+        "CongresoNacional",
+        "Humor",
+        "Satira"
+      ],
+      "scenes": [
+        {
+          "id": "s1",
+          "beat": "gancho",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "wide",
+          "motion": "push_in",
+          "image_prompt": "The Honduran National Congress building at night with every window dark, then a single window lighting up, tiny sleepy Chepe in green pajamas looking up at it.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "¿Y si el Congreso Nacional, por fin, trabajara de verdad para el pueblo, maje?",
+              "delivery": "rápido, burlón"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "beat": "reloj",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "pan_right",
+          "image_prompt": "Chepe in pajamas on a balcony at sunrise, a big wall clock reading 8:00 beside him, a street below where deputies in suits run toward the Congress holding coffee cups.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Despiertas un martes y los diputados ya están en sus curules. Llegaron a las ocho. ¡A las ocho, cabrón!",
+              "delivery": "rápido, burlón"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "beat": "grito",
+          "characters": [
+            "presidente"
+          ],
+          "shot": "close",
+          "motion": "push_in",
+          "image_prompt": "Jonas Zambruna caricature banging a wooden gavel on a podium, mouth wide open shouting, golden light rays behind him, the chamber full of attentive deputies.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Y el presidente del Congreso golpea el mazo y grita:",
+              "delivery": "rápido, burlón"
+            },
+            {
+              "speaker": "presidente",
+              "text": "¡Sesión abierta y a la horaaa, maje!",
+              "delivery": "gritando muy fuerte, alargando las vocales finales"
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "beat": "salud",
+          "characters": [
+            "diputada"
+          ],
+          "shot": "medium",
+          "motion": "pan_left",
+          "image_prompt": "Doctora Jovana Bermuda caricature in a white coat attending a smiling patient in a bright hospital, a single name tag reading ONE JOB, shelves full of medicine boxes behind her.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "La doctora Jovana Bermuda, que en la vida real dice que necesita dos plazas por falta de especialistas, aquí tiene una sola chamba… y la hace.",
+              "delivery": "rápido, burlón"
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "beat": "medicinas",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "wide",
+          "motion": "pan_right",
+          "image_prompt": "A pharmacy shelf overflowing with medicine boxes and a happy grandmother in a purple blouse holding a full bag, Chepe cheering beside her.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Aprueban la ley de medicinas y los hospitales amanecen llenos de pastillas. Hasta para el dolor de cabeza del catracho.",
+              "delivery": "rápido, burlón"
+            }
+          ]
+        },
+        {
+          "id": "s6",
+          "beat": "escuelas",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "wide",
+          "motion": "push_in",
+          "image_prompt": "A school with a solid red roof and a green yard, kids in graduation caps with diplomas, a teacher receiving a paycheck envelope with a smile.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Los maestros cobran puntual, las escuelas tienen techo y los cipotes salen hablando inglés.",
+              "delivery": "rápido, burlón"
+            }
+          ]
+        },
+        {
+          "id": "s7",
+          "beat": "asistencia",
+          "characters": [
+            "presidente"
+          ],
+          "shot": "medium",
+          "motion": "pan_left",
+          "image_prompt": "Jonas Zambruna caricature pointing at a giant attendance board where one empty chair has a salary envelope being cut in half by giant scissors, deputies in suits looking nervous.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Y Jonas Zambruna cumple lo que anunció: al diputado que falta o llega tarde, no se le paga ese día. Ni un lempira, mi amigo.",
+              "delivery": "rápido, burlón"
+            }
+          ]
+        },
+        {
+          "id": "s8",
+          "beat": "transparencia",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "A huge screen in the chamber listing budget lines with APPROVED stamps and receipts, citizens in the gallery clapping, a lamp lit in broad daylight.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Cada lempira del presupuesto sale en pantalla: en qué se gastó y quién lo firmó. Y las leyes se votan de día, no a las tres de la mañana.",
+              "delivery": "rápido, burlón"
+            }
+          ]
+        },
+        {
+          "id": "s9",
+          "beat": "barrio",
+          "characters": [
+            "diputada"
+          ],
+          "shot": "wide",
+          "motion": "pan_right",
+          "image_prompt": "Doctora Jovana Bermuda caricature in a neighborhood corner store with neighbors, taking notes in a notebook, a bag of baleadas on the counter.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Los diputados bajan al barrio a escuchar. Se comen una baleada, anotan todo y regresan con la libreta llena.",
+              "delivery": "rápido, burlón"
+            }
+          ]
+        },
+        {
+          "id": "s10",
+          "beat": "celebracion",
+          "characters": [
+            "presidente"
+          ],
+          "shot": "close",
+          "motion": "push_in",
+          "image_prompt": "Jonas Zambruna caricature raising the gavel high with confetti, a glowing Honduran flag behind him, the whole chamber cheering.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Y el pisto del pueblo llega completo al pueblo. Y el presidente del Congreso grita otra vez:",
+              "delivery": "rápido, burlón"
+            },
+            {
+              "speaker": "presidente",
+              "text": "¡Sesión abierta y a la horaaa, maje!",
+              "delivery": "gritando muy fuerte, alargando las vocales finales"
+            }
+          ]
+        },
+        {
+          "id": "s11",
+          "beat": "despertar",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "pan_left",
+          "image_prompt": "Chepe waking up in a dark bedroom at night, the phone alarm glowing, a pothole outside the window and the lights going out.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Y suena la alarma. Era un sueño, catracho. Siguen las sillas vacías… y se fue la luz.",
+              "delivery": "rápido, burlón"
+            }
+          ]
+        },
+        {
+          "id": "s12",
+          "beat": "remate",
+          "characters": [
+            "amigo"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Don Chelito with arms crossed and nose in the air with a smug smile, a SHARE stamp, a blue-white-blue flag behind him.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Mándaselo al cerote de tu amigo cachureco que piensa que el Congreso ya hace su chamba.",
+              "delivery": "rápido, burlón"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "framing": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).",
+  "portrait_framing": "Character reference sheet in hand-drawn editorial caricature style. Full-body, standing, facing the camera, neutral relaxed expression, plain light-gray background, even light, all clothing and shoes clearly visible.",
+  "standalone": true
+}
