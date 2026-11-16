@@ -20,19 +20,19 @@
   "diputada": {
     "file": "diputada.jpg",
     "usage": {
-      "input_tokens": 244,
+      "input_tokens": 266,
       "input_tokens_details": {
         "image_tokens": 0,
-        "text_tokens": 244
+        "text_tokens": 266
       },
       "output_tokens": 344,
       "output_tokens_details": {
         "image_tokens": 344,
         "text_tokens": 0
       },
-      "total_tokens": 588
+      "total_tokens": 610
     },
-    "cost": 0.01154,
-    "at": "2026-11-16T20:41:43.800Z"
+    "cost": 0.01165,
+    "at": "2026-11-16T20:44:08.097Z"
   }
 }

@@ -1,0 +1,80 @@
+{
+  "file": "la-boda-del-platano-parte-2-v2.mp4",
+  "series": "la-boda-del-platano",
+  "seriesTitle": "La boda del Plátano",
+  "episode": 2,
+  "title": "El plátanito",
+  "lang": "es",
+  "format": "veo",
+  "duration": 58.559999999999995,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "clips": [
+    {
+      "id": "c01",
+      "start": 0,
+      "dur": 10.01
+    },
+    {
+      "id": "c02",
+      "start": 10.01,
+      "dur": 10.03
+    },
+    {
+      "id": "c03",
+      "start": 20.04,
+      "dur": 10.01
+    },
+    {
+      "id": "c04",
+      "start": 30.049999999999997,
+      "dur": 10.01
+    },
+    {
+      "id": "c05",
+      "start": 40.059999999999995,
+      "dur": 8
+    },
+    {
+      "id": "c06",
+      "start": 48.059999999999995,
+      "dur": 8
+    }
+  ],
+  "ai_generated": true,
+  "hook_text": "Te lo dije: ese plátano estaba demasiado maduro.",
+  "safe_zone": {
+    "x0": 64.8,
+    "x1": 907.1999999999999,
+    "y0": 288,
+    "y1": 1497.6000000000001
+  },
+  "violations": [],
+  "post": {
+    "text": "La boda del Plátano 🍓🍌 Parte 2: «El plátanito»\nFicción · hecho con IA\n\n#minidrama #frutas #telenovela #drama #comedia #novela",
+    "description": "La boda del Plátano 🍓🍌 Parte 2: «El plátanito»",
+    "hashtags": [
+      "minidrama",
+      "frutas",
+      "telenovela",
+      "drama",
+      "comedia",
+      "novela"
+    ],
+    "source": "Veo (Gemini) + ChatGPT Images"
+  },
+  "createdAt": "2026-10-21T04:15:13.359Z",
+  "tiktok": [
+    {
+      "file": "la-boda-del-platano-parte-2-v2.mp4",
+      "mode": "draft",
+      "publish_id": "v_inbox_file~v2.7698986805907818516",
+      "status": "SEND_TO_USER_INBOX",
+      "fail_reason": null,
+      "privacy": null,
+      "is_aigc": false,
+      "at": "2026-10-21T05:23:49.454Z"
+    }
+  ]
+}
