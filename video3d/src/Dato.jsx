@@ -75,6 +75,14 @@ function Portada({ g, t }) {
 function Logo({ size }) {
   return <div style={{ width: size, height: size, borderRadius: '50%', backgroundImage: `url(${staticFile('marca/logo.jpg')})`, backgroundSize: `${size * 1.92}px`, backgroundPosition: `${-size * 0.46}px ${-size * 0.31}px`, boxShadow: '0 6px 20px rgba(0,0,0,0.4)', border: '4px solid #fff' }} />;
 }
+// Botón «SÍGUENOS» que aparece en la escena donde la voz pide seguir (e.pedir): pulsa y se va antes de que acabe la escena
+function Seguir({ t, dur }) {
+  const a = ease((t - Math.max(0.6, dur - 3.4)) / 0.35) * (1 - ease((t - (dur - 0.5)) / 0.4)); if (a <= 0.01) return null;
+  const pulso = 1 + 0.05 * Math.sin(t * 9);
+  return (<div style={{ position: 'absolute', bottom: 250, width: '100%', display: 'flex', justifyContent: 'center', opacity: a, transform: `translateY(${(1 - a) * 30}px) scale(${(0.9 + 0.1 * a) * pulso})` }}>
+    <div style={{ background: '#ff2d55', color: '#fff', fontFamily: 'Archivo Black', fontSize: 54, padding: '16px 40px', whiteSpace: 'nowrap', borderRadius: 60, boxShadow: '0 10px 30px rgba(0,0,0,0.35)', border: '5px solid #fff' }}>SÍGUENOS · MAÑANA OTRO</div>
+  </div>);
+}
 // Cierre: el logo grande, «Síguenos» y la promesa del canal
 function Cierre({ t }) {
   const a = ease(t / 0.5);
@@ -122,6 +130,7 @@ export const Dato = ({ render }) => {
       {tr === 'fundido' && k > 0.01 && <AbsoluteFill style={{ background: '#ffffff', opacity: +(k * 0.85).toFixed(3) }} />}
       {e.contador && <Contador c={e.contador} t={t} dur={e.dur} />}
       {e.tipo === 'portada' ? <Portada g={render} t={t} /> : e.tipo === 'cierre' && render.categoria ? <Cierre t={t} /> : <Subtitulos escena={e} t={t} />}
+      {e.pedir && <Seguir t={t} dur={e.dur} />}
       {e.tipo !== 'portada' && e.tipo !== 'cierre' && <div style={{ position: 'absolute', bottom: 120, left: 70, display: 'flex', alignItems: 'center', gap: 12 }}><Logo size={54} /><span style={{ fontFamily: 'Archivo Black', fontSize: 32, color: 'rgba(255,255,255,0.85)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>Potter Play</span></div>}
       {escenas.map((x, i) => (<Sequence key={i} from={Math.round((x.inicio + 0.25) * fps)} durationInFrames={Math.ceil((x.voz + 0.2) * fps)}><Audio src={staticFile(x.audio)} /></Sequence>))}
       {(render.sfx || []).map((s, i) => (<Sequence key={`s${i}`} from={Math.max(0, Math.round(s.t * fps))} durationInFrames={Math.round(3 * fps)}><Audio src={staticFile(`sfx/${s.s}.wav`)} volume={s.v} /></Sequence>))}

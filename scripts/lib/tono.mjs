@@ -29,13 +29,20 @@ const MEDIO = [
 const MEDIO_PICANTE = ['Y lo más cabrón:', 'Y aquí viene lo heavy:', 'Y para colmo, carajo:', 'Ahora, lo que me voló la cabeza:'];
 // El cierre (en pantalla va «¡SÍGUENOS!»): siempre pide comentar y seguir
 const CIERRES = [
-  'Si ya lo sabías, eres un crack. Si no, ahora ya. Cuéntame en los comentarios y síguenos para otro dato mañana.',
-  '¿Lo sabías o te agarró en curva? Comenta y síguenos, que mañana viene otro.',
-  'Mándaselo al que siempre dice que sabe de todo. Y síguenos para más.',
-  'Dime en los comentarios si esto te voló la cabeza. Mañana hay más, síguenos.',
-  'Ahora ya puedes presumir en el grupo de la familia. Síguenos para el dato de mañana.',
-  'Comenta «ya lo sabía» si eres de los pocos. Y síguenos, que esto no para.',
-  '¿Cuál fue el dato más loco? Comenta y síguenos para un dato nuevo cada día.'
+  'Mañana te cuento otro que casi nadie sabe. Síguenos para no perdértelo y comenta si ya lo sabías.',
+  '¿Lo sabías o te agarró en curva? Comenta, y síguenos: mañana viene uno todavía más loco.',
+  'Mándaselo al que dice que sabe de todo. Y síguenos: mañana hay otro para ganarle.',
+  'Dime si esto te voló la cabeza. Mañana, otro dato; síguenos para no perderlo.',
+  'Ya puedes presumir en el grupo de la familia. Síguenos: mañana hay otro dato nuevo.',
+  'Comenta «ya lo sabía» si eres de los pocos. Síguenos, que mañana viene el siguiente.',
+  '¿Cuál fue el más loco de hoy? Comenta, y síguenos para el de mañana.'
+];
+// A media escena del final de la segunda mitad: la petición va con un motivo concreto (pedir sin motivo no convence)
+const PEDIDOS = [
+  'Y si te está gustando, síguenos: mañana viene otro dato.',
+  'Si vas aprendiendo, síguenos, que mañana hay otro.',
+  'Síguenos para no perderte el de mañana, que está mejor.',
+  'Si te sirve, síguenos: cada día sale un dato nuevo.'
 ];
 const CIERRES_PICANTE = [
   'Si ya lo sabías, qué crack. Si no, no pasa nada, carajo: ahora ya. Comenta y síguenos.',
@@ -79,6 +86,11 @@ export function guionConTono(g) {
     // Siglas o nombres propios conocidos se quedan con su mayúscula
     e.texto = `${t.medio} ${/^[A-ZÁÉÍÓÚ]{2}|^\d|^(Honduras|Brasil|México|Italia|China|Estados|Europa|África|América|Asia|La Luna|El Sol|Tierra)/.test(base) ? base : sin}`;
     if (e.voz) e.voz = `${t.medio} ${e.voz}`;
+  }
+  // Petición de seguir a mitad del video (voz + subtítulo + botón en pantalla), después de dar valor y lejos del gancho y del cierre
+  if (contenido.length >= 4) {
+    const [e] = contenido[Math.min(contenido.length - 1, Math.floor(contenido.length * 0.7))], p = de(PEDIDOS, hash(g.id) >>> 4);
+    e.pedir = true; e.texto = `${e.texto} ${p}`; if (e.voz) e.voz = `${e.voz} ${p}`; else e.voz = e.texto;
   }
   for (const e of escenas) if (e.tipo === 'cierre') { e.voz = t.cierre; if (!e.texto) e.texto = t.cierre; }
   return { ...g, escenas };
