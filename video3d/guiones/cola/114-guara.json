@@ -1,0 +1,66 @@
+{
+  "id": "guara",
+  "temporada": 2,
+  "episodio": 14,
+  "titulo": "La guara roja de Honduras",
+  "categoria": "honduras",
+  "destacar": [
+    "guara",
+    "Honduras"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La guara roja es el ave nacional de Honduras, y puede vivir hasta 50 años.",
+      "objeto": "naturaleza/flower_redC"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es un tipo de guacamaya con plumas rojas, amarillas y azules.",
+      "objeto": "naturaleza/flower_redC",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Los grandes grupos vuelan juntos y se reconocen por su voz.",
+      "objeto": "naturaleza/flower_redC",
+      "lado": 18
+    },
+    {
+      "tipo": "gente",
+      "texto": "En Copán se protegen y se reintroducen guaras, y tienen un lugar especial en la cultura maya.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "En cautiverio pueden vivir 40 o 50 años, casi una vida entera.",
+      "objeto": "naturaleza/flower_redC",
+      "cantidad": 100,
+      "contador": {
+        "desde": 0,
+        "hasta": 50,
+        "unidad": "años"
+      }
+    },
+    {
+      "tipo": "globo",
+      "texto": "Por eso cuidar sus bosques es cuidar un símbolo hondureño.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/flower_redC"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "La guara roja (Ara macao) es el ave nacional de Honduras",
+      "fuente": "Instituto de Conservación Forestal (ICF), Honduras"
+    },
+    {
+      "dato": "Vive 40-50 años",
+      "fuente": "Zoológico de San Diego, «Scarlet Macaw»"
+    }
+  ]
+}

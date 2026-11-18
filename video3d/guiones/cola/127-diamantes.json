@@ -1,0 +1,72 @@
+{
+  "id": "diamantes",
+  "temporada": 2,
+  "episodio": 27,
+  "titulo": "Los diamantes no vienen del carbón",
+  "categoria": "mito",
+  "destacar": [
+    "diamantes",
+    "carbón"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: los diamantes se hacen del carbón. Casi todos son mucho más antiguos que el carbón.",
+      "objeto": "naturaleza/rock_tallA"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "El carbón tiene unos 300 millones de años; los diamantes, entre 1.000 y 3.500 millones.",
+      "barras": [
+        {
+          "etiqueta": "Carbón",
+          "valor": 300,
+          "texto": "≈ 300 M años",
+          "objeto": "naturaleza/rock_tallA"
+        },
+        {
+          "etiqueta": "Diamantes",
+          "valor": 1000,
+          "texto": "1.000 a 3.500 M"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "El carbón se formó con plantas enterradas, cerca de la superficie.",
+      "objeto": "naturaleza/tree_oak",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Los diamantes se forman a unos 150 kilómetros bajo tierra, con un calor y una presión enormes.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Los trae a la superficie un tipo de erupción volcánica muy rápida, que forma tubos llamados kimberlitas.",
+      "objeto": "naturaleza/rock_tallA",
+      "cantidad": 80
+    },
+    {
+      "tipo": "globo",
+      "texto": "Y los primeros diamantes se formaron mucho antes de que existieran las plantas terrestres.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/rock_tallA"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Los diamantes naturales tienen entre 1.000 y 3.500 millones de años; se forman a unos 150-200 km de profundidad",
+      "fuente": "Instituto Gemológico de América (GIA), «How Diamonds Form»"
+    },
+    {
+      "dato": "El carbón se formó hace unos 300 millones de años, a partir de plantas",
+      "fuente": "Servicio Geológico de EE. UU. (USGS)"
+    }
+  ]
+}

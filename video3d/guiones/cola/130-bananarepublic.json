@@ -1,0 +1,75 @@
+{
+  "id": "bananarepublic",
+  "temporada": 2,
+  "episodio": 30,
+  "titulo": "La «república bananera»",
+  "categoria": "honduras",
+  "destacar": [
+    "Honduras",
+    "república",
+    "bananera"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La expresión «república bananera» nació hablando de Honduras. La inventó un escritor estadounidense.",
+      "objeto": "comida/banana"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Una frase que dio la vuelta al mundo.",
+      "hitos": [
+        {
+          "anio": 1896,
+          "texto": "O. Henry llega a Honduras",
+          "objeto": "comida/banana"
+        },
+        {
+          "anio": 1904,
+          "texto": "Publica «Cabbages and Kings»"
+        },
+        {
+          "anio": 1950,
+          "texto": "Honduras, gran exportador de banano"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "El escritor O. Henry usó «banana republic» en un libro de 1904, inspirado en su estadía en Honduras.",
+      "objeto": "comida/banana",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Lo usó para burlarse de países dominados por las compañías fruteras.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Honduras fue durante décadas uno de los mayores exportadores de banano del mundo.",
+      "objeto": "comida/banana",
+      "cantidad": 140
+    },
+    {
+      "tipo": "globo",
+      "texto": "Hoy la frase se usa en todo el mundo, casi siempre con un tono de crítica.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/banana"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "O. Henry acuñó «banana republic» en «Cabbages and Kings» (1904), tras vivir en Honduras (1896)",
+      "fuente": "Enciclopedia Británica, «Banana republic» y Biblioteca del Congreso de EE. UU."
+    },
+    {
+      "dato": "Honduras, gran exportador de banano en el siglo XX",
+      "fuente": "Enciclopedia Británica, «Honduras: Economy»"
+    }
+  ]
+}

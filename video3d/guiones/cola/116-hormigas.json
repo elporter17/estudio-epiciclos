@@ -1,0 +1,72 @@
+{
+  "id": "hormigas",
+  "temporada": 2,
+  "episodio": 16,
+  "titulo": "Hay 20 mil billones de hormigas",
+  "categoria": "curiosidad",
+  "destacar": [
+    "hormigas",
+    "mil",
+    "billones"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En la Tierra hay unos veinte mil billones de hormigas.",
+      "objeto": "comida/cookie"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Son 20.000.000.000.000.000: unos 2,5 millones de hormigas por cada persona.",
+      "objeto": "comida/cookie",
+      "cantidad": 160,
+      "contador": {
+        "desde": 0,
+        "hasta": 2500000,
+        "unidad": "por persona"
+      }
+    },
+    {
+      "tipo": "gente",
+      "texto": "Entre todas pesan más que todas las aves silvestres y los mamíferos silvestres juntos.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y hay más de 15.000 especies de hormigas en el mundo.",
+      "objeto": "comida/cookie",
+      "cantidad": 3
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Viven en todos los continentes menos en la Antártida.",
+      "objeto": "comida/cookie",
+      "lado": 16
+    },
+    {
+      "tipo": "globo",
+      "texto": "Una colonia puede tener desde unas decenas hasta millones de hormigas, y cada una tiene su trabajo.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/cookie"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Unos 20 cuatrillones (2×10^16) de hormigas",
+      "fuente": "Schultheiss et al. (2022), PNAS"
+    },
+    {
+      "dato": "Su biomasa supera la de las aves y los mamíferos silvestres juntos",
+      "fuente": "Schultheiss et al. (2022), PNAS; Bar-On et al. (2018), PNAS"
+    },
+    {
+      "dato": "Más de 15.000 especies descritas",
+      "fuente": "AntWeb / Museo Americano de Historia Natural"
+    }
+  ],
+  "nota": "Cifra estimada: el estudio da un rango, y 20 mil billones es el valor central."
+}

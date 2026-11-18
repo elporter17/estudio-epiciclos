@@ -1,0 +1,84 @@
+{
+  "id": "colon",
+  "temporada": 2,
+  "episodio": 19,
+  "titulo": "Colón y la Tierra redonda",
+  "categoria": "mito",
+  "destacar": [
+    "Colón",
+    "redonda"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: Colón demostró que la Tierra era redonda. Eso ya se sabía hacía casi dos mil años.",
+      "objeto": "libro"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Los griegos ya lo habían calculado mucho antes de 1492.",
+      "hitos": [
+        {
+          "anio": -350,
+          "texto": "Aristóteles da pruebas",
+          "etiqueta_anio": "350 a. C.",
+          "objeto": "libro"
+        },
+        {
+          "anio": -240,
+          "texto": "Eratóstenes mide la Tierra",
+          "etiqueta_anio": "240 a. C."
+        },
+        {
+          "anio": 1492,
+          "texto": "Colón sale al mar"
+        },
+        {
+          "anio": 1522,
+          "texto": "Elcano da la vuelta al mundo"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Eratóstenes calculó el tamaño de la Tierra midiendo sombras, con muy poco error.",
+      "objeto": "libro",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Los marinos y sabios de la época de Colón también sabían que la Tierra era redonda.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "globo",
+      "texto": "La discusión era otra: qué tan grande era, y si se podía llegar a Asia por el oeste.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Colón subestimó la distancia, y por suerte se encontró con un continente en el camino.",
+      "objeto": "libro",
+      "cantidad": 70
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "libro"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Aristóteles argumentó la esfericidad de la Tierra (siglo IV a. C.)",
+      "fuente": "Enciclopedia Británica, «Aristotle»"
+    },
+    {
+      "dato": "Eratóstenes midió la circunferencia terrestre hacia el 240 a. C.",
+      "fuente": "Enciclopedia Británica, «Eratosthenes»"
+    },
+    {
+      "dato": "Elcano completó la primera vuelta al mundo en 1522",
+      "fuente": "Enciclopedia Británica"
+    }
+  ]
+}

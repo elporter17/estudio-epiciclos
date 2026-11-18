@@ -35,7 +35,7 @@ export const pendientes = (estado = leerEstado()) => { const hechos = new Set(es
 export function avisoExtra(texto) { fs.mkdirSync(path.join(ROOT, 'out'), { recursive: true }); fs.appendFileSync(path.join(ROOT, 'out', 'aviso-extra.txt'), texto.trim() + '\n'); }
 
 // Texto para las redes: el título, los datos del video en viñetas, una pregunta y hashtags según la categoría
-const ETIQUETAS = { ciencia: ['ciencia', 'datoscientificos'], historia: ['historia', 'sabiasque'], datos: ['datos', 'datoscuriosos'], curiosidad: ['curiosidades', 'sabiasque'], noticia: ['explicado', 'actualidad'], especial: ['gta6', 'videojuegos'] };
+const ETIQUETAS = { ciencia: ['ciencia', 'datoscientificos'], historia: ['historia', 'sabiasque'], datos: ['datos', 'datoscuriosos'], curiosidad: ['curiosidades', 'sabiasque'], noticia: ['explicado', 'actualidad'], especial: ['gta6', 'videojuegos'], mito: ['mito', 'verdadomito', 'sabiasque'], honduras: ['honduras', 'orgullohondureno', 'catracho'] };
 // La primera línea lleva el tono del video (scripts/lib/tono.mjs: coloquial o picante; los «explicados», solo coloquial)
 export function textoPost(g) {
   return textoConTono(textoPostBase(g), g.id, { suave: g.categoria === 'noticia' });

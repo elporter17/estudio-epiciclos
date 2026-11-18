@@ -89,6 +89,6 @@ console.log(`Estilo: ambiente ${estilo.ambiente} · ${estilo.filtro} · transici
 const mus = new Float32Array(Math.ceil((t + 0.5) * SR));
 pistaMusical(mus, t, { estilo: estilo.musica, semilla: estilo.semillaMusica, SR });
 fs.writeFileSync(path.join(PUB, 'musica.wav'), wavBuffer(mus.map((x) => Math.tanh(x * 0.9) * 0.9), SR));
-fs.writeFileSync(path.join(PUB, 'render.json'), JSON.stringify({ id: g.id, titulo: g.titulo, categoria: g.categoria, destacar: g.destacar, duracion: t, escenas, sfx, estilo }, null, 2));
+fs.writeFileSync(path.join(PUB, 'render.json'), JSON.stringify({ id: g.id, titulo: g.titulo, categoria: g.categoria, temporada: g.temporada, episodio: g.episodio, destacar: g.destacar, duracion: t, escenas, sfx, estilo }, null, 2));
 console.log(`${g.titulo}: ${escenas.length} escenas · ${t.toFixed(1)} s`);
 for (const e of escenas) console.log(`  ${e.inicio.toFixed(1).padStart(5)} s · ${e.tipo.padEnd(8)} ${e.dur.toFixed(1)} s · voz ${e.voz.toFixed(1)} s`);

@@ -1,0 +1,81 @@
+{
+  "id": "cerebro",
+  "temporada": 2,
+  "episodio": 5,
+  "titulo": "No usas solo el 10 % del cerebro",
+  "categoria": "mito",
+  "destacar": [
+    "10",
+    "cerebro"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: usamos solo el diez por ciento del cerebro. Falso: lo usas casi todo, incluso dormido.",
+      "objeto": "libro"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Tu cerebro tiene unos 86.000 millones de neuronas, y casi todas se usan.",
+      "objeto": "moneda",
+      "cantidad": 150,
+      "contador": {
+        "desde": 0,
+        "hasta": 86000,
+        "unidad": "millones"
+      }
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Pesa apenas el 2 % del cuerpo, pero gasta cerca del 20 % de tu energía.",
+      "barras": [
+        {
+          "etiqueta": "Peso del cuerpo",
+          "valor": 2,
+          "texto": "2 %"
+        },
+        {
+          "etiqueta": "Energía que gasta",
+          "valor": 20,
+          "texto": "≈ 20 %",
+          "objeto": "moneda"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Si el 90 % no sirviera, un golpe en cualquier zona no tendría consecuencias. Y sí las tiene.",
+      "objeto": "libro",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Los escáneres muestran actividad en todo el cerebro durante el día, y también mientras duermes.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "globo",
+      "texto": "El mito se repite desde hace más de un siglo, pero no tiene base científica.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "libro"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Unos 86.000 millones de neuronas",
+      "fuente": "Azevedo et al. (2009), Journal of Comparative Neurology"
+    },
+    {
+      "dato": "El cerebro usa cerca del 20 % de la energía del cuerpo",
+      "fuente": "Raichle y Gusnard (2002), PNAS"
+    },
+    {
+      "dato": "El mito del 10 %",
+      "fuente": "Scientific American, «Do People Use Only 10 Percent of Their Brains?»"
+    }
+  ]
+}

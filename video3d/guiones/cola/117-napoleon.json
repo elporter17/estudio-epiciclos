@@ -1,0 +1,76 @@
+{
+  "id": "napoleon",
+  "temporada": 2,
+  "episodio": 17,
+  "titulo": "Napoleón no era tan bajito",
+  "categoria": "mito",
+  "destacar": [
+    "Napoleón",
+    "bajito"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: Napoleón era muy bajito. En realidad medía unos 1,69 metros, y era normal para su época.",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "El francés promedio de su época medía unos 1,65 metros, así que Napoleón era un poquito más alto.",
+      "barras": [
+        {
+          "etiqueta": "Napoleón",
+          "valor": 169,
+          "texto": "≈ 1,69 m",
+          "objeto": "moneda"
+        },
+        {
+          "etiqueta": "Hombre francés de su época",
+          "valor": 165,
+          "texto": "≈ 1,65 m"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Su autopsia dice 5 pies 2 pulgadas… pero en medidas francesas, que eran más largas.",
+      "objeto": "moneda",
+      "cantidad": 2
+    },
+    {
+      "tipo": "gente",
+      "texto": "Sus soldados lo llamaban «el pequeño cabo», un apodo cariñoso, no una burla.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "globo",
+      "texto": "Y los dibujos británicos de la época lo exageraban, para burlarse de él.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Así nació la imagen del Napoleón enano que aún repetimos.",
+      "objeto": "moneda",
+      "cantidad": 70
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Napoleón medía unos 1,69 m (5 pies 2 pulgadas francesas)",
+      "fuente": "Enciclopedia Británica y Fondation Napoléon"
+    },
+    {
+      "dato": "Estatura media francesa de la época: unos 1,65 m",
+      "fuente": "Enciclopedia Británica"
+    },
+    {
+      "dato": "Apodo «le petit caporal»",
+      "fuente": "Fondation Napoléon"
+    }
+  ]
+}

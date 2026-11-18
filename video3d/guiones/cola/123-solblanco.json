@@ -1,0 +1,72 @@
+{
+  "id": "solblanco",
+  "temporada": 2,
+  "episodio": 23,
+  "titulo": "El Sol no es amarillo",
+  "categoria": "mito",
+  "destacar": [
+    "Sol",
+    "amarillo"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: el Sol es amarillo. Visto desde el espacio, es blanco.",
+      "objeto": "comida/lemon"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El Sol emite luz de todos los colores a la vez, y todos juntos forman luz blanca.",
+      "objeto": "comida/lemon",
+      "cantidad": 1
+    },
+    {
+      "tipo": "globo",
+      "texto": "Lo vemos amarillo porque la atmósfera de la Tierra dispersa el azul y deja pasar el resto.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "gente",
+      "texto": "Por eso en el atardecer se ve rojizo: la luz atraviesa más aire.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Y está caliente: su superficie ronda los 5.500 grados.",
+      "barras": [
+        {
+          "etiqueta": "Superficie del Sol",
+          "valor": 5500,
+          "texto": "≈ 5.500 °C",
+          "objeto": "comida/lemon"
+        },
+        {
+          "etiqueta": "Un horno de pizza",
+          "valor": 450,
+          "texto": "≈ 450 °C"
+        }
+      ]
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Los astronautas lo ven blanco, sin amarillo, desde la órbita.",
+      "objeto": "comida/lemon",
+      "cantidad": 90
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/lemon"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El Sol es blanco visto desde el espacio; la atmósfera lo hace parecer amarillo",
+      "fuente": "NASA, «Why is the Sun Yellow? (It isn’t)» y Universidad de Cornell, Curiosidades de astronomía"
+    },
+    {
+      "dato": "Temperatura de la superficie solar: unos 5.500 °C",
+      "fuente": "NASA, «Sun Fact Sheet»"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "lengua",
+  "temporada": 2,
+  "episodio": 29,
+  "titulo": "El mapa de sabores es falso",
+  "categoria": "mito",
+  "destacar": [
+    "lengua",
+    "sabores"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: cada parte de la lengua detecta un sabor distinto. No, todas detectan todos.",
+      "objeto": "comida/lollypop"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El «mapa de la lengua» nació de un estudio alemán de 1901, mal interpretado.",
+      "objeto": "comida/lollypop",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hoy se sabe que todas las zonas de la lengua detectan dulce, salado, ácido, amargo y umami.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Tienes miles de papilas gustativas, y cada una puede sentir los cinco sabores.",
+      "objeto": "comida/lollypop",
+      "cantidad": 100
+    },
+    {
+      "tipo": "globo",
+      "texto": "El quinto sabor, el umami, lo describió en 1908 el científico japonés Kikunae Ikeda.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Y la mayor parte de lo que llamamos «sabor» viene del olfato, no de la lengua.",
+      "objeto": "comida/lemon",
+      "lado": 14
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/lollypop"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El mapa de la lengua viene de una mala lectura del estudio de Hänig (1901)",
+      "fuente": "Smithsonian Magazine, «The Tongue Map: Tasteless Myth Debunked»"
+    },
+    {
+      "dato": "Todas las zonas detectan todos los sabores básicos",
+      "fuente": "Instituto Nacional de Sordera y otros Trastornos de la Comunicación (NIDCD, EE. UU.)"
+    },
+    {
+      "dato": "Umami descrito por Kikunae Ikeda en 1908",
+      "fuente": "Enciclopedia Británica, «Umami»"
+    }
+  ]
+}

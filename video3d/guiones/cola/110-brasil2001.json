@@ -1,0 +1,89 @@
+{
+  "id": "brasil2001",
+  "temporada": 2,
+  "episodio": 10,
+  "titulo": "Honduras le ganó a Brasil",
+  "categoria": "honduras",
+  "destacar": [
+    "Honduras",
+    "Brasil"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En 2001, Honduras le ganó 2 a 0 a Brasil en la Copa América. Sí, en serio.",
+      "objeto": "balon"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "En los cuartos de final, Honduras 2, Brasil 0.",
+      "barras": [
+        {
+          "etiqueta": "Honduras",
+          "valor": 2,
+          "texto": "2",
+          "objeto": "balon"
+        },
+        {
+          "etiqueta": "Brasil",
+          "valor": 0.05,
+          "texto": "0"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Honduras era invitada a esa Copa América, en Colombia, y llegó hasta las semifinales.",
+      "cantidad": 28
+    },
+    {
+      "tipo": "linea",
+      "texto": "Honduras tiene tres Mundiales y una Copa América que sorprendió.",
+      "hitos": [
+        {
+          "anio": 1982,
+          "texto": "Mundial de España",
+          "objeto": "balon"
+        },
+        {
+          "anio": 2001,
+          "texto": "Le gana a Brasil"
+        },
+        {
+          "anio": 2010,
+          "texto": "Mundial de Sudáfrica"
+        },
+        {
+          "anio": 2014,
+          "texto": "Mundial de Brasil"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "En la semifinal cayó ante Colombia, que terminó ganando el torneo.",
+      "objeto": "balon",
+      "cantidad": 1
+    },
+    {
+      "tipo": "globo",
+      "texto": "Una de las mayores sorpresas de la historia de la Copa América.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "balon"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Honduras 2-0 Brasil, cuartos de final de la Copa América 2001",
+      "fuente": "CONMEBOL y FIFA (historial de la Copa América 2001)"
+    },
+    {
+      "dato": "Honduras en los Mundiales de 1982, 2010 y 2014",
+      "fuente": "FIFA, historial de participación de Honduras"
+    }
+  ]
+}

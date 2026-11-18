@@ -1,0 +1,71 @@
+{
+  "id": "pulpo",
+  "temporada": 2,
+  "episodio": 4,
+  "titulo": "El pulpo tiene tres corazones",
+  "categoria": "curiosidad",
+  "destacar": [
+    "pulpo",
+    "tres",
+    "corazones"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El pulpo tiene tres corazones, sangre azul y brazos que casi piensan por su cuenta.",
+      "objeto": "corazon"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Dos corazones mandan la sangre a las branquias y el tercero la reparte por el cuerpo.",
+      "objeto": "corazon",
+      "cantidad": 3
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Su sangre es azul porque usa cobre, no hierro, para llevar el oxígeno.",
+      "objeto": "comida/mussel",
+      "cantidad": 130
+    },
+    {
+      "tipo": "gente",
+      "texto": "Tiene unos 500 millones de neuronas, y casi dos tercios están en los brazos.",
+      "cantidad": 22,
+      "contador": {
+        "desde": 0,
+        "hasta": 500,
+        "unidad": "millones"
+      }
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Por eso cada brazo puede probar y decidir con cierta autonomía.",
+      "objeto": "corazon",
+      "lado": 14
+    },
+    {
+      "tipo": "globo",
+      "texto": "Y viven en todos los océanos del planeta.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "corazon"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Tres corazones: dos branquiales y uno sistémico",
+      "fuente": "Smithsonian Ocean / Acuario de la Bahía de Monterrey"
+    },
+    {
+      "dato": "Sangre azul por la hemocianina (cobre)",
+      "fuente": "Smithsonian Ocean"
+    },
+    {
+      "dato": "Unos 500 millones de neuronas, dos tercios en los brazos",
+      "fuente": "Hochner (2012), «An embodied view of octopus neurobiology», Current Biology"
+    }
+  ]
+}

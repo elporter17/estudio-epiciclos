@@ -1,0 +1,61 @@
+{
+  "id": "toros",
+  "temporada": 2,
+  "episodio": 3,
+  "titulo": "El toro no ve el rojo",
+  "categoria": "mito",
+  "destacar": [
+    "toros",
+    "rojo"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: al toro lo enfurece el color rojo. Pero para ellos, el rojo ni se distingue.",
+      "objeto": "naturaleza/flower_redA"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Los toros no distinguen bien el rojo del verde: tienen una visión de dos colores.",
+      "objeto": "naturaleza/flower_redA",
+      "cantidad": 2
+    },
+    {
+      "tipo": "gente",
+      "texto": "Lo que los provoca es el movimiento del capote, no su color.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "En una prueba del programa MythBusters, los toros embistieron banderas rojas, azules y blancas por igual.",
+      "objeto": "naturaleza/flower_redA",
+      "lado": 18
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Si el capote está quieto, el toro casi ni se interesa.",
+      "objeto": "naturaleza/flower_redA",
+      "cantidad": 110
+    },
+    {
+      "tipo": "globo",
+      "texto": "Y el rojo del capote es tradición de la corrida, no una necesidad del toro.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/flower_redA"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El ganado bovino tiene visión de color dicromática (no distingue bien el rojo)",
+      "fuente": "Estudios de visión de color en ganado bovino (visión dicromática)"
+    },
+    {
+      "dato": "Embisten banderas de cualquier color si se mueven",
+      "fuente": "MythBusters (Discovery Channel), episodio sobre el toro y el color rojo"
+    }
+  ]
+}

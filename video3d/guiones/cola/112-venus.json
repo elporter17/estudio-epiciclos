@@ -1,0 +1,78 @@
+{
+  "id": "venus",
+  "temporada": 2,
+  "episodio": 12,
+  "titulo": "En Venus, un día dura más",
+  "categoria": "curiosidad",
+  "destacar": [
+    "Venus",
+    "día",
+    "año"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En Venus un día dura más que un año. Sí, en serio.",
+      "objeto": "comida/orange"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Venus gira tan despacio que su día dura 243 días terrestres, y su año, solo 225.",
+      "barras": [
+        {
+          "etiqueta": "Un día en Venus",
+          "valor": 243,
+          "texto": "243 días",
+          "objeto": "comida/orange"
+        },
+        {
+          "etiqueta": "Un año en Venus",
+          "valor": 225,
+          "texto": "225 días"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Además gira al revés: allá el Sol sale por el oeste.",
+      "objeto": "comida/orange",
+      "cantidad": 1
+    },
+    {
+      "tipo": "globo",
+      "texto": "Es el planeta más caliente del sistema solar: unos 465 grados, más que cualquier horno.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Su atmósfera de dióxido de carbono atrapa el calor como una olla tapada.",
+      "objeto": "comida/orange",
+      "cantidad": 100
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y la presión en su superficie equivale a estar casi un kilómetro bajo el mar.",
+      "cantidad": 18
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/orange"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Día en Venus: unos 243 días terrestres; año: unos 225",
+      "fuente": "NASA, «Venus Facts»",
+      "url": "https://science.nasa.gov/venus/venus-facts/"
+    },
+    {
+      "dato": "Rotación retrógrada",
+      "fuente": "NASA, «Venus Facts»"
+    },
+    {
+      "dato": "Temperatura de unos 465 °C y 90 veces la presión de la Tierra",
+      "fuente": "NASA, «Venus Facts»"
+    }
+  ]
+}

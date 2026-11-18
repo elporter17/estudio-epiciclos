@@ -1,0 +1,68 @@
+{
+  "id": "segundos",
+  "temporada": 2,
+  "episodio": 8,
+  "titulo": "Un millón de segundos",
+  "categoria": "curiosidad",
+  "destacar": [
+    "millón",
+    "segundos"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Un millón de segundos son once días. Mil millones de segundos, ¡treinta y dos años!",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "calendario",
+      "texto": "Un millón de segundos son unos 11 días y medio.",
+      "contador": {
+        "desde": 0,
+        "hasta": 11,
+        "unidad": "días"
+      }
+    },
+    {
+      "tipo": "pila",
+      "texto": "Si ganaras un dólar por segundo, tendrías un millón en menos de dos semanas.",
+      "objeto": "moneda",
+      "cantidad": 260,
+      "contador": {
+        "desde": 0,
+        "hasta": 1000000,
+        "unidad": "dólares"
+      }
+    },
+    {
+      "tipo": "calendario",
+      "texto": "Mil millones de segundos son casi 32 años: más que lo que llevas viviendo, tal vez.",
+      "contador": {
+        "desde": 0,
+        "hasta": 32,
+        "unidad": "años"
+      }
+    },
+    {
+      "tipo": "gente",
+      "texto": "Pero para llegar a mil millones tendrías que esperar casi 32 años sin parar, sin dormir y sin comer.",
+      "cantidad": 26
+    },
+    {
+      "tipo": "globo",
+      "texto": "Por eso los números enormes nos engañan: no los sentimos, solo los leemos.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "1.000.000 de segundos ≈ 11,6 días; 1.000.000.000 de segundos ≈ 31,7 años",
+      "fuente": "Cálculo directo: 1.000.000 ÷ 86.400 y 1.000.000.000 ÷ 31.557.600"
+    }
+  ]
+}

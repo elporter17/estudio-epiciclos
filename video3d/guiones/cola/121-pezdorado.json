@@ -1,0 +1,65 @@
+{
+  "id": "pezdorado",
+  "temporada": 2,
+  "episodio": 21,
+  "titulo": "El pez dorado sí recuerda",
+  "categoria": "mito",
+  "destacar": [
+    "pez",
+    "dorado",
+    "memoria"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: el pez dorado olvida todo en tres segundos. Falso: recuerda por meses.",
+      "objeto": "comida/fish"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Un pez dorado puede aprender a reconocer a quien lo alimenta.",
+      "objeto": "comida/fish",
+      "cantidad": 1
+    },
+    {
+      "tipo": "calendario",
+      "texto": "Se han hecho pruebas donde recuerdan rutinas y horarios por meses.",
+      "contador": {
+        "desde": 0,
+        "hasta": 3,
+        "unidad": "meses"
+      }
+    },
+    {
+      "tipo": "gente",
+      "texto": "Pueden aprender a empujar una palanca para recibir comida, a una hora fija del día.",
+      "cantidad": 18
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Y en buenas condiciones pueden vivir más de diez años.",
+      "objeto": "comida/fish",
+      "cantidad": 100
+    },
+    {
+      "tipo": "globo",
+      "texto": "El récord Guinness es de 43 años, el de un pez dorado llamado Tish, en Inglaterra.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/fish"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Entrenamiento con palanca y horario (memoria de meses)",
+      "fuente": "Universidad de Plymouth (Reino Unido), estudio de 2003"
+    },
+    {
+      "dato": "Pez dorado más longevo: 43 años (Tish)",
+      "fuente": "Guinness World Records, «Oldest goldfish ever»"
+    }
+  ]
+}

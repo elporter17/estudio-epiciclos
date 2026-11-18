@@ -1,0 +1,72 @@
+{
+  "id": "avestruz",
+  "temporada": 2,
+  "episodio": 13,
+  "titulo": "El avestruz y la arena",
+  "categoria": "mito",
+  "destacar": [
+    "avestruz",
+    "cabeza"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: el avestruz esconde la cabeza bajo la tierra cuando tiene miedo. Nunca lo hace.",
+      "objeto": "comida/egg"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Lo que hace es agacharse junto al suelo, y de lejos parece que la mete en la arena.",
+      "objeto": "comida/egg",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "También cava huecos en la tierra para poner sus huevos, y con la cabeza los voltea.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Y pone el huevo más grande de todas las aves: como 24 huevos de gallina.",
+      "barras": [
+        {
+          "etiqueta": "Huevo de gallina",
+          "valor": 1,
+          "texto": "1"
+        },
+        {
+          "etiqueta": "Huevo de avestruz",
+          "valor": 24,
+          "texto": "≈ 24",
+          "objeto": "comida/egg"
+        }
+      ]
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Cuando de verdad hay peligro, corre: puede llegar a 70 kilómetros por hora.",
+      "objeto": "comida/egg",
+      "cantidad": 90
+    },
+    {
+      "tipo": "globo",
+      "texto": "Es la mayor ave del mundo y no puede volar.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/egg"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "No entierra la cabeza; pone la cabeza al ras del suelo y voltea sus huevos",
+      "fuente": "Zoológico de San Diego, «Ostrich»"
+    },
+    {
+      "dato": "Corre hasta unos 70 km/h; huevo de unos 1,4 kg",
+      "fuente": "Zoológico de San Diego y Enciclopedia Británica"
+    }
+  ]
+}

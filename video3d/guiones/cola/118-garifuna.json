@@ -1,0 +1,75 @@
+{
+  "id": "garifuna",
+  "temporada": 2,
+  "episodio": 18,
+  "titulo": "Garífunas: llegaron en 1797",
+  "categoria": "honduras",
+  "destacar": [
+    "garífunas",
+    "1797"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En 1797, los garífunas llegaron a Roatán, en Honduras. Hoy su cultura es patrimonio de la humanidad.",
+      "objeto": "comida/bread"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Su historia llega hasta hoy.",
+      "hitos": [
+        {
+          "anio": 1797,
+          "texto": "Llegan a Roatán",
+          "objeto": "comida/bread"
+        },
+        {
+          "anio": 2001,
+          "texto": "La UNESCO proclama su cultura"
+        },
+        {
+          "anio": 2008,
+          "texto": "Patrimonio Inmaterial"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Su música, su danza y su idioma se reconocieron como Patrimonio Inmaterial de la Humanidad.",
+      "objeto": "comida/bread",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Sus raíces son africanas, arahuacas y caribes, y hoy viven en Honduras, Belice, Guatemala y Nicaragua.",
+      "cantidad": 28
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "El casabe y el hudutu, con pescado y plátano, son parte de su comida más conocida.",
+      "objeto": "comida/bread",
+      "cantidad": 90
+    },
+    {
+      "tipo": "globo",
+      "texto": "Los garífunas son uno de los orgullos culturales de Honduras.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/bread"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Llegada a Roatán en 1797 tras su deportación de San Vicente",
+      "fuente": "UNESCO, «Language, dance and music of the Garifuna»"
+    },
+    {
+      "dato": "Proclamada en 2001 e inscrita en 2008 como Patrimonio Cultural Inmaterial",
+      "fuente": "UNESCO",
+      "url": "https://ich.unesco.org/en/RL/language-dance-and-music-of-the-garifuna-00001"
+    }
+  ]
+}

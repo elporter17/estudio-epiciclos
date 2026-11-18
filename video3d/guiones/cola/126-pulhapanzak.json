@@ -1,0 +1,58 @@
+{
+  "id": "pulhapanzak",
+  "temporada": 2,
+  "episodio": 26,
+  "titulo": "Pulhapanzak: 43 metros",
+  "categoria": "honduras",
+  "destacar": [
+    "Pulhapanzak",
+    "43"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En Honduras hay una catarata de 43 metros: Pulhapanzak.",
+      "objeto": "naturaleza/cliff_waterfall_rock"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Tiene unos 43 metros de altura, más que un edificio de 12 pisos.",
+      "objeto": "naturaleza/cliff_waterfall_rock",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cae del río Amapa y está cerca del Lago de Yojoa.",
+      "cantidad": 18
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Dicen que su nombre viene del náhuatl y significa «agua que cae con fuerza».",
+      "objeto": "naturaleza/cliff_waterfall_rock",
+      "cantidad": 90
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Se puede caminar por un sendero que pasa por detrás de la cascada.",
+      "objeto": "naturaleza/tree_palm",
+      "lado": 16
+    },
+    {
+      "tipo": "globo",
+      "texto": "Está en San Buenaventura, Cortés, y es uno de los destinos naturales más visitados del país.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/cliff_waterfall_rock"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Catarata de unos 43 m de altura, en el río Amapa (cerca de Yojoa)",
+      "fuente": "Instituto Hondureño de Turismo (IHT)"
+    }
+  ],
+  "nota": "La altura y el significado del nombre salen de guías turísticas; puede variar un poco según la fuente."
+}

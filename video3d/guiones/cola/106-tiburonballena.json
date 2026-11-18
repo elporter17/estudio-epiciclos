@@ -1,0 +1,81 @@
+{
+  "id": "tiburonballena",
+  "temporada": 2,
+  "episodio": 6,
+  "titulo": "El pez más grande, en Honduras",
+  "categoria": "honduras",
+  "destacar": [
+    "pez",
+    "Honduras"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El pez más grande del mundo, el tiburón ballena, se deja ver en las aguas de Utila, en Honduras.",
+      "objeto": "comida/fish"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El tiburón ballena puede medir unos 12 metros: más largo que un autobús.",
+      "objeto": "comida/fish",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Un autobús urbano mide unos 12 metros. Un tiburón ballena adulto llega a lo mismo.",
+      "barras": [
+        {
+          "etiqueta": "Tiburón ballena",
+          "valor": 12,
+          "texto": "≈ 12 m",
+          "objeto": "comida/fish"
+        },
+        {
+          "etiqueta": "Autobús",
+          "valor": 12,
+          "texto": "≈ 12 m",
+          "objeto": "autos/van"
+        }
+      ]
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Y no come personas: se alimenta filtrando plancton y peces diminutos.",
+      "objeto": "comida/fish",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cada uno tiene un patrón de manchas distinto, como una huella digital.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "globo",
+      "texto": "Utila, en las Islas de la Bahía, es famosa entre buzos por poder verlos con cierta frecuencia.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/fish"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El tiburón ballena es el pez más grande, de unos 12 m",
+      "fuente": "WWF y Acuario de Georgia"
+    },
+    {
+      "dato": "Se alimenta por filtración de plancton",
+      "fuente": "NOAA Fisheries, «Whale Shark»"
+    },
+    {
+      "dato": "Patrón de manchas único en cada individuo",
+      "fuente": "Wildbook for Whale Sharks / Ecocean"
+    },
+    {
+      "dato": "Avistamientos frecuentes en Utila (Islas de la Bahía)",
+      "fuente": "Whale Shark and Oceanic Research Center, Utila (WSORC)"
+    }
+  ]
+}

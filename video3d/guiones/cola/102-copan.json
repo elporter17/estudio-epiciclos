@@ -1,0 +1,81 @@
+{
+  "id": "copan",
+  "temporada": 2,
+  "episodio": 2,
+  "titulo": "La escalera de 2.200 glifos",
+  "categoria": "honduras",
+  "destacar": [
+    "Copán",
+    "2.200"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En Honduras está la escritura maya más larga que se conoce: la Escalera de los Jeroglíficos de Copán.",
+      "objeto": "naturaleza/statue_obelisk"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Copán fue una gran ciudad maya durante siglos y hoy es Patrimonio de la Humanidad.",
+      "hitos": [
+        {
+          "anio": 426,
+          "texto": "Se funda la dinastía",
+          "etiqueta_anio": "Año 426",
+          "objeto": "naturaleza/statue_obelisk"
+        },
+        {
+          "anio": 755,
+          "texto": "Escalera de los Jeroglíficos",
+          "etiqueta_anio": "Hacia 755"
+        },
+        {
+          "anio": 1980,
+          "texto": "Patrimonio de la UNESCO"
+        }
+      ]
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "La escalera tiene 63 gradas y unos 2.200 glifos tallados, una historia entera escrita en piedra.",
+      "objeto": "ladrillo",
+      "lado": 20
+    },
+    {
+      "tipo": "foco",
+      "texto": "Cada glifo es un bloque tallado con nombres, fechas y hazañas de los reyes de Copán.",
+      "objeto": "naturaleza/statue_obelisk",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hoy, miles de visitantes de todo el mundo viajan a Honduras solo para verla.",
+      "cantidad": 26
+    },
+    {
+      "tipo": "globo",
+      "texto": "Y todo está en Copán Ruinas, en el occidente de Honduras, cerca de la frontera con Guatemala.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/statue_obelisk"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Copán, Patrimonio Mundial desde 1980",
+      "fuente": "UNESCO, «Maya Site of Copan»",
+      "url": "https://whc.unesco.org/en/list/129"
+    },
+    {
+      "dato": "Escalera de los Jeroglíficos: unos 2.200 glifos, la inscripción maya más larga conocida",
+      "fuente": "UNESCO, «Maya Site of Copan» e Instituto Hondureño de Antropología e Historia"
+    },
+    {
+      "dato": "Dinastía fundada en el año 426",
+      "fuente": "Instituto Hondureño de Antropología e Historia (según las inscripciones del sitio)"
+    }
+  ]
+}

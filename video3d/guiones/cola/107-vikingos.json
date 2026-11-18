@@ -1,0 +1,79 @@
+{
+  "id": "vikingos",
+  "temporada": 2,
+  "episodio": 7,
+  "titulo": "Vikingos sin cuernos",
+  "categoria": "mito",
+  "destacar": [
+    "vikingos",
+    "cuernos"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: los vikingos llevaban cascos con cuernos. No hay pruebas de que los usaran.",
+      "objeto": "naturaleza/canoe"
+    },
+    {
+      "tipo": "linea",
+      "texto": "La imagen se hizo famosa mucho después de la era vikinga.",
+      "hitos": [
+        {
+          "anio": 800,
+          "texto": "Era vikinga",
+          "etiqueta_anio": "Siglos IX-XI",
+          "objeto": "naturaleza/canoe"
+        },
+        {
+          "anio": 1876,
+          "texto": "Vestuario de ópera con cuernos"
+        },
+        {
+          "anio": 2000,
+          "texto": "Hoy, en pelis y caricaturas"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "El único casco vikingo casi completo que se ha encontrado, el de Gjermundbu, en Noruega, no tiene cuernos.",
+      "objeto": "naturaleza/canoe",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Los cuernos aparecieron en 1876 en el vestuario de una ópera de Richard Wagner, en Alemania.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "En una batalla, los cuernos habrían sido un estorbo: un enemigo los podía agarrar.",
+      "objeto": "naturaleza/canoe",
+      "cantidad": 90
+    },
+    {
+      "tipo": "globo",
+      "texto": "Y así se quedó la imagen en el imaginario popular.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/canoe"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "No hay evidencia arqueológica de cascos con cuernos",
+      "fuente": "Museo Nacional de Dinamarca y Museo Británico"
+    },
+    {
+      "dato": "Casco de Gjermundbu (Noruega), el más completo, sin cuernos",
+      "fuente": "Museo de Historia Cultural, Universidad de Oslo"
+    },
+    {
+      "dato": "Los cuernos se popularizaron con el vestuario de «El anillo del nibelungo» (1876)",
+      "fuente": "Enciclopedia Británica y museos escandinavos"
+    }
+  ]
+}

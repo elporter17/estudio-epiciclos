@@ -1,0 +1,83 @@
+{
+  "id": "rayos2",
+  "temporada": 2,
+  "episodio": 9,
+  "titulo": "El rayo sí cae dos veces",
+  "categoria": "mito",
+  "destacar": [
+    "rayo",
+    "dos",
+    "veces"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: un rayo nunca cae dos veces en el mismo sitio. Hay un edificio que recibe más de veinte al año.",
+      "objeto": "naturaleza/statue_obelisk"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El Empire State, en Nueva York, recibe en promedio unos 20 a 25 rayos al año.",
+      "objeto": "naturaleza/statue_obelisk",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Un guardabosques de EE. UU., Roy Sullivan, fue alcanzado por siete rayos y sobrevivió a todos.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "linea",
+      "texto": "Sus siete rayos, entre 1942 y 1977, le dieron récord Guinness.",
+      "hitos": [
+        {
+          "anio": 1942,
+          "texto": "Primer rayo",
+          "objeto": "naturaleza/statue_obelisk"
+        },
+        {
+          "anio": 1970,
+          "texto": "Tercer rayo"
+        },
+        {
+          "anio": 1976,
+          "texto": "Sexto rayo"
+        },
+        {
+          "anio": 1977,
+          "texto": "Séptimo rayo"
+        }
+      ]
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Los rayos buscan lo más alto y lo que mejor conduce: por eso se repiten en los mismos sitios.",
+      "objeto": "naturaleza/tree_pineTallA",
+      "cantidad": 90
+    },
+    {
+      "tipo": "globo",
+      "texto": "Un rayo calienta el aire cerca de cinco veces más que la superficie del Sol.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/statue_obelisk"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El Empire State recibe unos 20-25 rayos al año",
+      "fuente": "Servicio Meteorológico Nacional de EE. UU. (NOAA)"
+    },
+    {
+      "dato": "Roy Sullivan, alcanzado por siete rayos (1942-1977)",
+      "fuente": "Guinness World Records, «Most lightning strike survivals»"
+    },
+    {
+      "dato": "El aire de un rayo llega a unos 30.000 K, cinco veces la superficie del Sol",
+      "fuente": "NOAA / Servicio Meteorológico Nacional (EE. UU.)"
+    }
+  ]
+}

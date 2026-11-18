@@ -1,0 +1,62 @@
+{
+  "id": "rioplatano",
+  "temporada": 2,
+  "episodio": 22,
+  "titulo": "Río Plátano, la selva de Honduras",
+  "categoria": "honduras",
+  "destacar": [
+    "Río",
+    "Plátano"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En Honduras hay una selva tropical protegida por la UNESCO: la Reserva del Río Plátano.",
+      "objeto": "naturaleza/tree_palmTall"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es una de las mayores zonas de selva tropical húmeda que quedan en Centroamérica.",
+      "objeto": "naturaleza/tree_palmTall",
+      "cantidad": 3
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Cubre más de 5.000 kilómetros cuadrados, una selva que sigue casi intacta.",
+      "objeto": "naturaleza/tree_palmTall",
+      "lado": 20
+    },
+    {
+      "tipo": "gente",
+      "texto": "Allí viven pueblos indígenas misquitos, pech y tawahka, junto a jaguares, tapires y monos.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Es Patrimonio Mundial de la UNESCO y Reserva de la Biosfera.",
+      "objeto": "naturaleza/tree_palmTall",
+      "cantidad": 110
+    },
+    {
+      "tipo": "globo",
+      "texto": "Está en la Mosquitia hondureña, en el oriente del país.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/tree_palmTall"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Reserva del Río Plátano, Patrimonio Mundial de la UNESCO",
+      "fuente": "UNESCO, «Río Plátano Biosphere Reserve»",
+      "url": "https://whc.unesco.org/en/list/196"
+    },
+    {
+      "dato": "Más de 5.000 km² de superficie",
+      "fuente": "UNESCO y Instituto de Conservación Forestal (ICF), Honduras"
+    }
+  ]
+}

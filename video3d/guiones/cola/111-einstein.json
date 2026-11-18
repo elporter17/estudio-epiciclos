@@ -1,0 +1,83 @@
+{
+  "id": "einstein",
+  "temporada": 2,
+  "episodio": 11,
+  "titulo": "Einstein no reprobó matemáticas",
+  "categoria": "mito",
+  "destacar": [
+    "Einstein",
+    "matemáticas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: Einstein reprobó matemáticas. Falso: a los 15 años ya dominaba el cálculo.",
+      "objeto": "libro"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Él mismo lo desmintió: dijo que nunca reprobó matemáticas.",
+      "objeto": "libro",
+      "cantidad": 2
+    },
+    {
+      "tipo": "linea",
+      "texto": "Su vida, en cuatro paradas.",
+      "hitos": [
+        {
+          "anio": 1879,
+          "texto": "Nace en Ulm",
+          "objeto": "libro"
+        },
+        {
+          "anio": 1895,
+          "texto": "Suspende el examen de ingreso en letras"
+        },
+        {
+          "anio": 1905,
+          "texto": "Su año milagroso"
+        },
+        {
+          "anio": 1921,
+          "texto": "Premio Nobel"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Lo que falló a los 16 años fue el examen de ingreso a una universidad suiza, en áreas como francés y letras, no en matemáticas.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "globo",
+      "texto": "En matemáticas y física, en cambio, sacó notas excelentes.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "En 1905 publicó cuatro artículos que cambiaron la física para siempre.",
+      "objeto": "libro",
+      "cantidad": 70
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "libro"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Einstein desmintió haber reprobado matemáticas",
+      "fuente": "Archivos Einstein, Universidad Hebrea de Jerusalén / Princeton"
+    },
+    {
+      "dato": "Examen de ingreso al Politécnico de Zúrich (1895), con excelentes notas en matemáticas y física",
+      "fuente": "The Einstein Papers Project, Caltech"
+    },
+    {
+      "dato": "Premio Nobel de Física 1921",
+      "fuente": "NobelPrize.org",
+      "url": "https://www.nobelprize.org/prizes/physics/1921/summary/"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "camello",
+  "temporada": 2,
+  "episodio": 25,
+  "titulo": "La joroba del camello",
+  "categoria": "mito",
+  "destacar": [
+    "camello",
+    "joroba"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: los camellos guardan agua en la joroba. Lo que guardan ahí es grasa.",
+      "objeto": "naturaleza/cactus_tall"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Una joroba llena puede guardar hasta unos 36 kilos de grasa.",
+      "objeto": "naturaleza/cactus_tall",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Esa grasa es una reserva de energía: cuando no hay comida, el camello la va gastando.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Para aguantar sin agua, sus glóbulos rojos son ovalados y soportan mucha deshidratación.",
+      "objeto": "naturaleza/cactus_tall",
+      "cantidad": 90
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Y cuando por fin encuentran agua, pueden beber decenas de litros de una vez.",
+      "objeto": "naturaleza/cactus_tall",
+      "lado": 14
+    },
+    {
+      "tipo": "globo",
+      "texto": "Un camello puede perder una cuarta parte de su peso en agua y seguir caminando.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/cactus_tall"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "La joroba guarda grasa, hasta unos 36 kg",
+      "fuente": "Enciclopedia Británica, «Camel» y Zoológico de San Diego"
+    },
+    {
+      "dato": "Pueden perder hasta un 25 % de su peso en agua; glóbulos rojos ovalados",
+      "fuente": "Enciclopedia Británica, «Camel»"
+    }
+  ],
+  "nota": "La cifra de 36 kilos es la que más se repite en las fuentes; varía según el animal."
+}

@@ -1,0 +1,66 @@
+{
+  "id": "nube",
+  "temporada": 2,
+  "episodio": 24,
+  "titulo": "Una nube pesa 100 elefantes",
+  "categoria": "curiosidad",
+  "destacar": [
+    "nube",
+    "elefantes"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Una nube blanca y esponjosa puede pesar lo mismo que cien elefantes.",
+      "objeto": "botella"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Una nube cúmulo típica pesa unas 500 toneladas.",
+      "objeto": "botella",
+      "cantidad": 1
+    },
+    {
+      "tipo": "pila",
+      "texto": "Son unas 500.000 kilos de agua flotando sobre tu cabeza.",
+      "objeto": "botella",
+      "cantidad": 220,
+      "contador": {
+        "desde": 0,
+        "hasta": 500,
+        "unidad": "toneladas"
+      }
+    },
+    {
+      "tipo": "gente",
+      "texto": "Un elefante africano pesa unas cinco toneladas, así que son como cien elefantes en el aire.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "globo",
+      "texto": "No se cae porque el agua está en gotitas diminutas, sostenidas por el aire que sube.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Cuando las gotas se juntan y pesan demasiado, caen como lluvia.",
+      "objeto": "naturaleza/rock_smallA",
+      "cantidad": 100
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "botella"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Una nube cúmulo de tamaño típico pesa unas 500 toneladas (1,1 millones de libras)",
+      "fuente": "Peggy LeMone, científica del NCAR, citada por el Servicio Geológico de EE. UU. (USGS)"
+    },
+    {
+      "dato": "Un elefante africano pesa unas 5 toneladas",
+      "fuente": "WWF y Zoológico de San Diego"
+    }
+  ]
+}

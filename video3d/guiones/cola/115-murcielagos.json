@@ -1,0 +1,66 @@
+{
+  "id": "murcielagos",
+  "temporada": 2,
+  "episodio": 15,
+  "titulo": "Los murciélagos no son ciegos",
+  "categoria": "mito",
+  "destacar": [
+    "murciélagos",
+    "ciegos"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: los murciélagos son ciegos. Falso: todos pueden ver.",
+      "objeto": "naturaleza/cliff_cave_rock"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Todas las especies tienen ojos que funcionan, y algunas ven muy bien con poca luz.",
+      "objeto": "naturaleza/cliff_cave_rock",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Existen más de 1.400 especies: casi uno de cada cinco mamíferos del planeta es un murciélago.",
+      "cantidad": 24,
+      "contador": {
+        "desde": 0,
+        "hasta": 1400,
+        "unidad": "especies"
+      }
+    },
+    {
+      "tipo": "globo",
+      "texto": "Muchas, además de ver, usan el eco: emiten sonidos y escuchan cómo rebotan para cazar de noche.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Los murciélagos que comen insectos se comen toneladas de plagas cada noche.",
+      "objeto": "naturaleza/cliff_cave_rock",
+      "cantidad": 80
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Y otros polinizan flores y dispersan semillas: sin ellos habría menos bosque.",
+      "objeto": "naturaleza/tree_palm",
+      "lado": 16
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/cliff_cave_rock"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Más de 1.400 especies (aprox. el 20 % de los mamíferos)",
+      "fuente": "Bat Conservation International"
+    },
+    {
+      "dato": "Todos los murciélagos ven; algunos usan ecolocalización",
+      "fuente": "Bat Conservation International, «Bats are not blind»"
+    }
+  ]
+}

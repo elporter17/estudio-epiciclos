@@ -63,6 +63,7 @@ function Portada({ g, t }) {
   return (<AbsoluteFill>
     <div style={{ position: 'absolute', top: abajo ? 1150 : 210, width: '100%', display: 'flex', justifyContent: 'center' }}>
       <div style={{ background: T.acento, color: '#111', fontFamily: 'Archivo Black', fontSize: 44, padding: '10px 34px', borderRadius: 40, boxShadow: '0 8px 24px rgba(0,0,0,0.25)' }}>{T.nombre}</div>
+      {g.temporada && <div style={{ position: 'absolute', top: -70, left: 70, background: '#111', color: '#ffd23c', fontFamily: 'Archivo Black', fontSize: 34, padding: '6px 24px', borderRadius: 30, border: '4px solid #ffd23c', transform: 'rotate(-4deg)' }}>TEMPORADA {g.temporada}{g.episodio ? ` · EP ${g.episodio}` : ''}</div>}
     </div>
     <div style={{ position: 'absolute', top: abajo ? 1265 : 330, left: 60, right: 60, textAlign: 'center', fontFamily: 'Archivo Black', fontSize: 104, lineHeight: 1.08, color: '#fff', WebkitTextStroke: '5px rgba(10,20,40,0.9)', paintOrder: 'stroke fill', textShadow: '0 10px 0 rgba(10,20,40,0.45), 0 0 40px rgba(10,20,40,0.4)', transform: `scale(${1 + 0.03 * Math.sin(t * 2)})` }}>
       {palabras.map((w, i) => (<span key={i} style={{ display: 'inline-block', margin: '0 14px', color: destacar.has(sinSignos(w)) || /\d/.test(w) ? AMARILLO : '#fff' }}>{w}</span>))}

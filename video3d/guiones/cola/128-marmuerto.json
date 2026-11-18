@@ -1,0 +1,77 @@
+{
+  "id": "marmuerto",
+  "temporada": 2,
+  "episodio": 28,
+  "titulo": "En el Mar Muerto no te hundes",
+  "categoria": "curiosidad",
+  "destacar": [
+    "Mar",
+    "Muerto"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En el Mar Muerto flotas sin hacer nada, y está a 430 metros bajo el nivel del mar.",
+      "objeto": "comida/shaker-salt"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es el punto más bajo de la superficie terrestre, a unos 430 metros bajo el nivel del mar.",
+      "objeto": "comida/shaker-salt",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Tiene casi diez veces más sal que el océano.",
+      "barras": [
+        {
+          "etiqueta": "Océano",
+          "valor": 3.5,
+          "texto": "3,5 %"
+        },
+        {
+          "etiqueta": "Mar Muerto",
+          "valor": 34,
+          "texto": "≈ 34 %",
+          "objeto": "comida/shaker-salt"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Por esa sal el agua es tan densa que cualquiera flota, incluso sin saber nadar.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Pero se está encogiendo: baja cerca de un metro cada año.",
+      "objeto": "comida/shaker-salt",
+      "cantidad": 100
+    },
+    {
+      "tipo": "globo",
+      "texto": "Está entre Israel, Jordania y Cisjordania, y casi ningún pez puede vivir allí.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/shaker-salt"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Punto más bajo de la superficie terrestre, unos 430 m bajo el nivel del mar",
+      "fuente": "Enciclopedia Británica, «Dead Sea»"
+    },
+    {
+      "dato": "Salinidad cercana al 34 %, frente a 3,5 % del océano",
+      "fuente": "Enciclopedia Británica, «Dead Sea»"
+    },
+    {
+      "dato": "El nivel baja alrededor de 1 m al año",
+      "fuente": "Servicio Geológico de Israel y reportes de la ONU"
+    }
+  ],
+  "nota": "La cifra exacta de descenso del nivel varía por año; 1 metro es un promedio reciente."
+}

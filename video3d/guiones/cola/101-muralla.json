@@ -1,0 +1,70 @@
+{
+  "id": "muralla",
+  "temporada": 2,
+  "episodio": 1,
+  "titulo": "La Muralla no se ve del espacio",
+  "categoria": "mito",
+  "destacar": [
+    "Muralla",
+    "espacio"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: la Gran Muralla china se ve desde el espacio. La verdad es que a simple vista, no.",
+      "objeto": "ladrillo"
+    },
+    {
+      "tipo": "pila",
+      "texto": "La muralla mide más de 21.000 kilómetros, según la medición oficial china de 2012.",
+      "objeto": "ladrillo",
+      "cantidad": 260,
+      "contador": {
+        "desde": 0,
+        "hasta": 21196,
+        "unidad": "kilómetros"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Pero es angosta: en casi todo su recorrido tiene apenas unos metros de ancho.",
+      "objeto": "ladrillo",
+      "cantidad": 2
+    },
+    {
+      "tipo": "gente",
+      "texto": "En 2003, Yang Liwei, el primer astronauta chino, dijo que no pudo verla desde su nave.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Además, se hizo con ladrillo, piedra y tierra, y es del mismo color que el paisaje.",
+      "objeto": "ladrillo",
+      "cantidad": 150
+    },
+    {
+      "tipo": "globo",
+      "texto": "Lo que sí se ve de noche desde el espacio son las ciudades iluminadas.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "ladrillo"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Más de 21.000 km de muralla (21.196 km)",
+      "fuente": "Administración Estatal de Patrimonio Cultural de China (2012), reportado por la BBC"
+    },
+    {
+      "dato": "No se ve a simple vista desde la órbita baja",
+      "fuente": "NASA, «Great Wall of China» y «Great Wall: Not Visible from Space»"
+    },
+    {
+      "dato": "Yang Liwei, 2003, dijo que no la vio",
+      "fuente": "Entrevistas a Yang Liwei tras la misión Shenzhou 5 (2003), reportadas por prensa internacional"
+    }
+  ]
+}

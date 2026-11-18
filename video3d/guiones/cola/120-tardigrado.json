@@ -1,0 +1,72 @@
+{
+  "id": "tardigrado",
+  "temporada": 2,
+  "episodio": 20,
+  "titulo": "El animal que vive en el espacio",
+  "categoria": "curiosidad",
+  "destacar": [
+    "tardígrado",
+    "espacio"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Este animal de medio milímetro sobrevivió desnudo en el espacio.",
+      "objeto": "comida/mussel"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El tardígrado, o «oso de agua», mide menos de un milímetro y vive en el musgo.",
+      "objeto": "comida/mussel",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "En 2007, la Agencia Espacial Europea los llevó al espacio, y algunos sobrevivieron al vacío y a la radiación.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Resisten desde casi el cero absoluto hasta unos 150 grados.",
+      "barras": [
+        {
+          "etiqueta": "Frío extremo",
+          "valor": 1,
+          "texto": "−272 °C",
+          "objeto": "comida/mussel"
+        },
+        {
+          "etiqueta": "Calor extremo",
+          "valor": 150,
+          "texto": "+150 °C"
+        }
+      ]
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Cuando se seca, se encoge y entra en un letargo que puede durar años.",
+      "objeto": "comida/mussel",
+      "cantidad": 90
+    },
+    {
+      "tipo": "globo",
+      "texto": "Existen en casi todo el planeta, de las montañas al fondo del mar.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/mussel"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Sobrevivieron al vacío y la radiación en el experimento FOTON-M3 (2007)",
+      "fuente": "Jönsson et al. (2008), Current Biology; Agencia Espacial Europea (ESA)"
+    },
+    {
+      "dato": "Resisten temperaturas de hasta unos 150 °C y cerca del cero absoluto",
+      "fuente": "Enciclopedia Británica, «Tardigrade»"
+    }
+  ]
+}
