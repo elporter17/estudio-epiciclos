@@ -24,4 +24,4 @@ La lista completa (id, título, fechas, privacidad, vistas, me gusta y comentari
 - Retención: las vistas se actualizan una vez al día y los registros se conservan mientras el canal esté activo; el usuario puede revocar el acceso en https://myaccount.google.com/permissions y los tokens se eliminan.
 
 ## 4. Visibilidad de los videos subidos con videos.insert
-Ver la respuesta del correo: se describe tal como aparece en los datos (columna «privacidad» y fechas del archivo CSV).
+Todos los videos subidos con videos.insert por este cliente quedan en estado privado. Para publicarlos hay que abrir YouTube Studio, revisar y aprobar cada video y cambiar manualmente su visibilidad a Público. Ninguno de los 56 videos de la muestra se hizo público de forma automática. La columna «privacidad» del CSV muestra su estado actual (todos públicos porque se publicaron a mano).

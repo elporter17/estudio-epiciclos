@@ -20,7 +20,7 @@ We do not use the YouTube Analytics or Reporting APIs, and we do not retrieve co
 
 **2. Content visibility after videos.insert**
 
-[CONFIRMAR ANTES DE ENVIAR — ver nota] Yes. Every videos.insert request from our client sends status.privacyStatus = "private" (we use it as a draft workflow). Of the 56 videos uploaded by the client between 2026-11-09 and 2026-11-18, 30 were not public until we published them manually in YouTube Studio, several hours after upload. The remaining 26 appear as public within about a minute of upload. We are requesting the compliance audit and quota review so that this behavior is clearly allowed for our verified use case. Please tell us if you need screenshots of YouTube Studio showing the private state or the OAuth consent flow (we already have them prepared from our earlier submission).
+Yes, we are experiencing this. Every video uploaded through videos.insert by our client stays Private after the upload. To publish it, we have to open YouTube Studio, review and approve each video, and manually change its visibility to Public. All 56 videos uploaded between 2026-11-09 and 2026-11-18 followed this flow, and none became public automatically.
 
 If this is not the correct or preferred API contact email, or you would like us to cc other contacts, please let us know.
 
@@ -30,4 +30,4 @@ Potter Play
 
 ---
 
-**Nota para ti (no va en el correo):** la frase del punto 2 necesita tu confirmación. Los datos dicen que 30 videos se hicieron públicos horas después de subirlos (manual) y 26 salieron públicos a los pocos segundos, aunque el código pide «private». Antes de enviar, confirma si tú publicas a mano o si algo cambió desde el 13 de noviembre.
+**ENVIADO el 2026-11-18** desde el Gmail de Erick, como respuesta al segundo aviso, con los adjuntos informe-muestra-api.md y muestra-datos-api.csv. El punto 2 refleja lo que confirmó Erick: todos los videos subidos por API quedan privados y los publica a mano desde Studio.
