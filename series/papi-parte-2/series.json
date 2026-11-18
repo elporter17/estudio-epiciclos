@@ -1,0 +1,362 @@
+{
+  "title": "¿Y si Papi hiciera su puta chamba? Parte 2",
+  "slug": "papi-parte-2",
+  "logline": "Segunda parte del sueño del país donde todo funciona, con lo que los seguidores pidieron en los comentarios.",
+  "premise": "Sátira en forma de sueño, parte 2: responde comentarios reales del video de la parte 1 (calles de San Marcos de Colón, casa de dos pisos, la H ganando). Humor sobre servicios públicos y justicia, sin acusaciones contra nadie.",
+  "setting": "Honduras imaginaria del futuro: Tegucigalpa, San Pedro Sula y La Ceiba convertidas en ciudades de cristal.",
+  "tone": "Comedia absurda, rápida, con groserías hondureñas y remate final.",
+  "visual_style": "Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.",
+  "narrator": {
+    "character_id": "chepe",
+    "voice": "ash",
+    "voice_instructions": "Hombre joven hondureño, ritmo MUY rápido y chismoso, tono burlón y sarcástico, como contando un chisme a un amigo. Hace una pausa corta antes de cada remate y dice las groserías con naturalidad. Español de Honduras, nada de acento neutro."
+  },
+  "characters": [
+    {
+      "id": "papi",
+      "name": "Papi",
+      "role": "Caricatura del presidente, personaje del sueño",
+      "age": 60,
+      "visual": "Caricature of a lean older man in his 60s: very large head on a thin body, tall bald forehead with a ring of short gray hair at the sides, thick gray mustache, long expressive nose, droopy kind eyes. Wears a light-blue button-up shirt with the sleeves rolled up, blue jeans and heavy black lace-up work boots (Timberland style, rounded toe, thick sole). Often carries a small Honduran flag (blue-white-blue stripes with five small blue stars) or a smartphone.",
+      "personality": "Campechano, siempre grita con alegría su frase de la suerte.",
+      "voice": "onyx",
+      "voice_instructions": "Hombre mayor hondureño, voz ronca y alegre; grita la frase con muchísima energía, alargando las vocales finales: «¡La rachaaa está activaaa!»."
+    },
+    {
+      "id": "chepe",
+      "name": "Chepe",
+      "role": "El soñador, protagonista y narrador",
+      "age": 28,
+      "visual": "Young Honduran man in his late 20s: very large round head, short black curly hair, medium-brown skin, big expressive dark eyes, small body. Wears a wrinkled green pajama t-shirt (no print) and gray sweatpants.",
+      "personality": "Cansado de los baches y los apagones, sueña en grande.",
+      "voice": "ash",
+      "voice_instructions": "Hombre joven hondureño, muy rápido y burlón."
+    },
+    {
+      "id": "albanil",
+      "name": "Albañil",
+      "role": "Albañil que grita desde un techo",
+      "age": 40,
+      "visual": "Caricature of a heavy-set Honduran bricklayer in his 40s: very large head on a stocky body, yellow hard hat, thick black mustache, wide grin, dusty orange safety vest over a gray t-shirt, work boots.",
+      "personality": "Personaje de reparto con una sola línea.",
+      "voice": "echo",
+      "voice_instructions": "Hombre hondureño, voz fuerte y ronca, grita desde lejos con alegría."
+    },
+    {
+      "id": "banquero",
+      "name": "Banquero",
+      "role": "Banquero que regala casas",
+      "age": 40,
+      "visual": "Caricature of a slim Honduran banker in his 40s: very large head on a thin body, slicked-back black hair, round glasses, dark suit with a gold tie, plastic polite smile.",
+      "personality": "Personaje de reparto con una sola línea.",
+      "voice": "sage",
+      "voice_instructions": "Hombre hondureño formal y servicial, con voz de ventanilla de banco, muy amable."
+    },
+    {
+      "id": "conductor",
+      "name": "Conductor",
+      "role": "Conductor de la gasolinera",
+      "age": 40,
+      "visual": "Caricature of a young Honduran man in his 20s: very large head on a lanky body, backwards cap, sunglasses on his forehead, a blue football jersey, cargo shorts and sandals, huge grin.",
+      "personality": "Personaje de reparto con una sola línea.",
+      "voice": "verse",
+      "voice_instructions": "Hombre hondureño joven, eufórico, habla rápido y se ríe."
+    },
+    {
+      "id": "cajera",
+      "name": "Cajera",
+      "role": "Cajera del supermercado",
+      "age": 40,
+      "visual": "Caricature of a friendly Honduran woman in her 40s: very large head on a small body, black hair in a ponytail, warm smile, a red supermarket vest over a white blouse.",
+      "personality": "Personaje de reparto con una sola línea.",
+      "voice": "shimmer",
+      "voice_instructions": "Mujer hondureña cariñosa, voz dulce y rápida, de cajera simpática."
+    },
+    {
+      "id": "guardia",
+      "name": "Guardia",
+      "role": "Guardia del tribunal",
+      "age": 40,
+      "visual": "Caricature of a tall Honduran security guard in his 40s: very large head on a lanky body, navy uniform with cap, thick mustache, stern worried face.",
+      "personality": "Personaje de reparto con una sola línea.",
+      "voice": "fable",
+      "voice_instructions": "Hombre hondureño serio y preocupado, voz grave, lo dice con ironía."
+    }
+  ],
+  "outline": [
+    "Un solo episodio: sueño de un país perfecto, remate con el hoyo y el apagón, y la invitación a compartirlo."
+  ],
+  "genre": "comedia",
+  "language": "es",
+  "episodes": [
+    {
+      "number": 1,
+      "title": "Parte 2: ustedes pidieron más",
+      "hook_text": "SI PAPI HICIERA SU PUTA CHAMBA: PARTE 2",
+      "post_description": "¿Y si Papi hiciera su puta chamba… PARTE 2? 🇭🇳🔥 Con lo que ustedes pidieron en los comentarios: San Marcos de Colón, casas de dos pisos y la H ganando. Mándaselo al cerote de tu amigo que cree que todo está bien. 👇 Comenta: ¿qué otra cosa pasaría en esta Honduras?",
+      "hashtags": [
+        "Honduras",
+        "Catracho",
+        "LaRachaEstaActivada",
+        "Humor",
+        "Satira"
+      ],
+      "scenes": [
+        {
+          "id": "s1",
+          "beat": "gancho",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Scene s1",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Parte dos, maje. Papi hizo su puta chamba, y ustedes pidieron más.",
+              "delivery": "MUY rápido, chismoso, burlón"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "beat": "calles",
+          "characters": [
+            "chepe",
+            "albanil"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Scene s2",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Preguntaron por San Marcos de Colón. ¡Pavimentaron todo, hasta los techos!",
+              "delivery": "MUY rápido, chismoso, burlón"
+            },
+            {
+              "speaker": "albanil",
+              "text": "¡Jefe, ya no hay ni dónde sembrar un palo de mango!",
+              "delivery": "gritando desde lejos"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "beat": "casas",
+          "characters": [
+            "chepe",
+            "banquero"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Scene s3",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "¿Casa de dos pisos? El banco te regala dos.",
+              "delivery": "MUY rápido, chismoso, burlón"
+            },
+            {
+              "speaker": "banquero",
+              "text": "¿Trajo la identidad? ¡No importa, llévese dos casas!",
+              "delivery": "amable, ventanilla"
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "beat": "gasolina",
+          "characters": [
+            "chepe",
+            "conductor"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Scene s4",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "La gasolina es gratis y te pagan quinientos pesos por llenar el tanque. ¡Y todos andan en Prado!",
+              "delivery": "MUY rápido, chismoso, burlón"
+            },
+            {
+              "speaker": "conductor",
+              "text": "¡Ya llené hasta la podadora de mi suegra!",
+              "delivery": "eufórico"
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "beat": "seleccion",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Scene s5",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "La H le gana hasta a Brasil, maje.",
+              "delivery": "MUY rápido, chismoso, burlón"
+            }
+          ]
+        },
+        {
+          "id": "s6",
+          "beat": "comida",
+          "characters": [
+            "chepe",
+            "cajera"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Scene s6",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "La comida está tan barata que esperamos tener hambre, no la quincena.",
+              "delivery": "MUY rápido, chismoso, burlón"
+            },
+            {
+              "speaker": "cajera",
+              "text": "¡Tenga su vuelto, doña, y llévese otro pollo!",
+              "delivery": "dulce y rápida"
+            }
+          ]
+        },
+        {
+          "id": "s7",
+          "beat": "justicia",
+          "characters": [
+            "chepe",
+            "guardia"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Scene s7",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Al delincuente de verdad lo dejan preso, y por recoger leña ya no te llevan al mamo.",
+              "delivery": "MUY rápido, chismoso, burlón"
+            },
+            {
+              "speaker": "guardia",
+              "text": "¡Si la ley aplica parejo, cerotes, aquí falta espacio!",
+              "delivery": "irónico, preocupado"
+            }
+          ]
+        },
+        {
+          "id": "s8",
+          "beat": "potencia",
+          "characters": [
+            "papi",
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Scene s8",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Honduras es potencia mundial, y los gringos cruzan la frontera a trabajar aquí.",
+              "delivery": "MUY rápido, chismoso, burlón"
+            },
+            {
+              "speaker": "papi",
+              "text": "¡La rachaaa está activaaa!",
+              "delivery": "gritando muy fuerte, alargando las vocales finales"
+            }
+          ]
+        },
+        {
+          "id": "s9",
+          "beat": "despertar",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Scene s9",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "¡A la gran puta, qué bonito sueño, maje!",
+              "delivery": "despertando sobresaltado, a gritos"
+            }
+          ]
+        },
+        {
+          "id": "s10",
+          "beat": "remate",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "push_in",
+          "image_prompt": "Scene s10",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Si Papi hiciera su puta chamba… parte dos. Mándaselo al cerote de tu amigo cachureco.",
+              "delivery": "MUY rápido, chismoso, burlón"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "framing": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).",
+  "portrait_framing": "Character reference sheet in hand-drawn editorial caricature style. Full-body, standing, facing the camera, neutral relaxed expression, plain light-gray background, even light, all clothing and shoes clearly visible.",
+  "standalone": true,
+  "anim": {
+    "sprites": {
+      "albanil_grita": [
+        "albanil",
+        "Standing on one leg leaning forward, one arm waving high over his head, the other hand cupped at the mouth to shout, mouth closed."
+      ],
+      "banquero_llaves": [
+        "banquero",
+        "Holding out a big ring of house keys toward the viewer with a friendly closed-mouth smile."
+      ],
+      "conductor_feliz": [
+        "conductor",
+        "Holding a gasoline pump nozzle in one hand and a thick wad of banknotes in the other, delighted closed-mouth grin."
+      ],
+      "cajera_vuelto": [
+        "cajera",
+        "Holding out a thick bundle of banknotes in one hand and a roasted chicken in the other, friendly closed-mouth smile."
+      ],
+      "guardia_cruzado": [
+        "guardia",
+        "Standing with arms crossed, stern worried face looking sideways, mouth closed."
+      ],
+      "chepe_hamaca": [
+        "chepe",
+        "Lying in a hammock holding a paper electricity bill in one hand, startled wide eyes, mouth closed; only the upper body and hammock visible."
+      ]
+    },
+    "props": {
+      "prado": "A shiny white Toyota Land Cruiser Prado style SUV, side view, no text on it. ",
+      "maquina": "A yellow road-paving machine with a steaming black asphalt roller, side view. ",
+      "carretas": "Three supermarket shopping carts overflowing with raw meat, eggs, cheese and chickens, front view. ",
+      "trofeo": "A golden trophy cup next to a soccer ball, front view. ",
+      "mansion": "A luxurious two-story modern mansion with a giant red gift bow on it, front view. "
+    },
+    "bgs": {
+      "bg_barrio": "A neighborhood where absolutely everything is covered in fresh black asphalt: the street, the sidewalks, the yards and even the roofs of the small houses, with a few steaming road machines far away, bright sun.",
+      "bg_banco": "A luxurious modern bank interior with marble floor, a long counter with glass, golden lights and potted plants, no people, no text.",
+      "bg_gasolinera": "A busy gas station with many white SUVs at the pumps, bright sun, palm trees, no people, no text, no letters.",
+      "bg_estadio": "A packed soccer stadium at night, floodlights, green field with a blue and white confetti storm, no text, no people close up.",
+      "bg_super": "A luxurious supermarket aisle with abundant fresh meat, eggs, cheese and fruit on shelves, bright and clean, no people, no text.",
+      "bg_tribunal": "A grand courthouse interior with tall columns, a judge bench and a large scale of justice on the wall, no people, no text.",
+      "bg_espacio": "The planet Earth seen from space with the Central American isthmus glowing gold and blue, stars, a giant glowing banner with no readable text.",
+      "bg_hamaca": "A small porch at dawn with a woven hammock, a palm tree, a wooden railing and a clay floor, warm light, no people."
+    }
+  }
+}

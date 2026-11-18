@@ -1,0 +1,1086 @@
+{
+  "series": "papi-parte-2",
+  "episode": 1,
+  "duration": 88.59,
+  "audio": "episode.wav",
+  "voiceModel": "gpt-4o-mini-tts",
+  "scenes": [
+    {
+      "id": "s1",
+      "beat": "gancho",
+      "start": 0.08,
+      "end": 6.65
+    },
+    {
+      "id": "s2",
+      "beat": "calles",
+      "start": 7.07,
+      "end": 16.04
+    },
+    {
+      "id": "s3",
+      "beat": "casas",
+      "start": 16.46,
+      "end": 25.37
+    },
+    {
+      "id": "s4",
+      "beat": "gasolina",
+      "start": 25.79,
+      "end": 37.43
+    },
+    {
+      "id": "s5",
+      "beat": "seleccion",
+      "start": 37.85,
+      "end": 42.42
+    },
+    {
+      "id": "s6",
+      "beat": "comida",
+      "start": 42.84,
+      "end": 51.67
+    },
+    {
+      "id": "s7",
+      "beat": "justicia",
+      "start": 52.09,
+      "end": 63.87
+    },
+    {
+      "id": "s8",
+      "beat": "potencia",
+      "start": 64.29,
+      "end": 73.03
+    },
+    {
+      "id": "s9",
+      "beat": "despertar",
+      "start": 73.45,
+      "end": 78.94
+    },
+    {
+      "id": "s10",
+      "beat": "remate",
+      "start": 79.36,
+      "end": 86.99
+    }
+  ],
+  "lines": [
+    {
+      "scene": "s1",
+      "beat": "gancho",
+      "speaker": "narrador",
+      "text": "Parte dos, maje. Papi hizo su puta chamba, y ustedes pidieron más.",
+      "start": 0.08,
+      "end": 6.65,
+      "words": [
+        {
+          "w": "Parte",
+          "start": 0.08,
+          "end": 0.44
+        },
+        {
+          "w": "dos,",
+          "start": 0.44,
+          "end": 1.2
+        },
+        {
+          "w": "maje.",
+          "start": 1.54,
+          "end": 1.66
+        },
+        {
+          "w": "Papi",
+          "start": 2.76,
+          "end": 2.88
+        },
+        {
+          "w": "hizo",
+          "start": 2.88,
+          "end": 3.26
+        },
+        {
+          "w": "su",
+          "start": 3.26,
+          "end": 3.62
+        },
+        {
+          "w": "puta",
+          "start": 3.62,
+          "end": 3.98
+        },
+        {
+          "w": "chamba,",
+          "start": 3.98,
+          "end": 4.36
+        },
+        {
+          "w": "y",
+          "start": 4.36,
+          "end": 5.16
+        },
+        {
+          "w": "ustedes",
+          "start": 5.16,
+          "end": 5.62
+        },
+        {
+          "w": "pidieron",
+          "start": 5.62,
+          "end": 6.18
+        },
+        {
+          "w": "más.",
+          "start": 6.18,
+          "end": 6.54
+        }
+      ]
+    },
+    {
+      "scene": "s2",
+      "beat": "calles",
+      "speaker": "narrador",
+      "text": "Preguntaron por San Marcos de Colón. ¡Pavimentaron todo, hasta los techos!",
+      "start": 7.07,
+      "end": 13.07,
+      "words": [
+        {
+          "w": "Preguntaron",
+          "start": 7.07,
+          "end": 7.87
+        },
+        {
+          "w": "por",
+          "start": 7.87,
+          "end": 8.19
+        },
+        {
+          "w": "San",
+          "start": 8.19,
+          "end": 8.51
+        },
+        {
+          "w": "Marcos",
+          "start": 8.51,
+          "end": 8.79
+        },
+        {
+          "w": "de",
+          "start": 8.79,
+          "end": 9.07
+        },
+        {
+          "w": "Colón.",
+          "start": 9.07,
+          "end": 9.29
+        },
+        {
+          "w": "¡Pavimentaron",
+          "start": 10.27,
+          "end": 10.95
+        },
+        {
+          "w": "todo,",
+          "start": 10.95,
+          "end": 11.47
+        },
+        {
+          "w": "hasta",
+          "start": 11.87,
+          "end": 12.19
+        },
+        {
+          "w": "los",
+          "start": 12.19,
+          "end": 12.55
+        },
+        {
+          "w": "techos!",
+          "start": 12.55,
+          "end": 12.91
+        }
+      ]
+    },
+    {
+      "scene": "s2",
+      "beat": "calles",
+      "speaker": "albanil",
+      "text": "¡Jefe, ya no hay ni dónde sembrar un palo de mango!",
+      "start": 13.29,
+      "end": 16.04,
+      "words": [
+        {
+          "w": "¡Jefe,",
+          "start": 13.29,
+          "end": 13.71
+        },
+        {
+          "w": "ya",
+          "start": 13.77,
+          "end": 13.93
+        },
+        {
+          "w": "no",
+          "start": 13.93,
+          "end": 14.07
+        },
+        {
+          "w": "hay",
+          "start": 14.07,
+          "end": 14.19
+        },
+        {
+          "w": "ni",
+          "start": 14.19,
+          "end": 14.39
+        },
+        {
+          "w": "dónde",
+          "start": 14.39,
+          "end": 14.63
+        },
+        {
+          "w": "sembrar",
+          "start": 14.63,
+          "end": 15.05
+        },
+        {
+          "w": "un",
+          "start": 15.05,
+          "end": 15.29
+        },
+        {
+          "w": "palo",
+          "start": 15.29,
+          "end": 15.51
+        },
+        {
+          "w": "de",
+          "start": 15.51,
+          "end": 15.69
+        },
+        {
+          "w": "mango!",
+          "start": 15.69,
+          "end": 15.89
+        }
+      ]
+    },
+    {
+      "scene": "s3",
+      "beat": "casas",
+      "speaker": "narrador",
+      "text": "¿Casa de dos pisos? El banco te regala dos.",
+      "start": 16.46,
+      "end": 20.06,
+      "words": [
+        {
+          "w": "¿Casa",
+          "start": 16.46,
+          "end": 16.887
+        },
+        {
+          "w": "de",
+          "start": 16.887,
+          "end": 17.143
+        },
+        {
+          "w": "dos",
+          "start": 17.143,
+          "end": 17.484
+        },
+        {
+          "w": "pisos?",
+          "start": 17.484,
+          "end": 17.997
+        },
+        {
+          "w": "El",
+          "start": 17.997,
+          "end": 18.253
+        },
+        {
+          "w": "banco",
+          "start": 18.253,
+          "end": 18.765
+        },
+        {
+          "w": "te",
+          "start": 18.765,
+          "end": 19.021
+        },
+        {
+          "w": "regala",
+          "start": 19.021,
+          "end": 19.619
+        },
+        {
+          "w": "dos.",
+          "start": 19.619,
+          "end": 19.96
+        }
+      ]
+    },
+    {
+      "scene": "s3",
+      "beat": "casas",
+      "speaker": "banquero",
+      "text": "¿Trajo la identidad? ¡No importa, llévese dos casas!",
+      "start": 20.28,
+      "end": 25.37,
+      "words": [
+        {
+          "w": "¿Trajo",
+          "start": 20.28,
+          "end": 20.72
+        },
+        {
+          "w": "la",
+          "start": 20.72,
+          "end": 21
+        },
+        {
+          "w": "identidad?",
+          "start": 21,
+          "end": 21.5
+        },
+        {
+          "w": "¡No",
+          "start": 22.16,
+          "end": 22.6
+        },
+        {
+          "w": "importa,",
+          "start": 22.6,
+          "end": 23.12
+        },
+        {
+          "w": "llévese",
+          "start": 23.9,
+          "end": 24.38
+        },
+        {
+          "w": "dos",
+          "start": 24.38,
+          "end": 24.78
+        },
+        {
+          "w": "casas!",
+          "start": 24.78,
+          "end": 25.24
+        }
+      ]
+    },
+    {
+      "scene": "s4",
+      "beat": "gasolina",
+      "speaker": "narrador",
+      "text": "La gasolina es gratis y te pagan quinientos pesos por llenar el tanque. ¡Y todos andan en Prado!",
+      "start": 25.79,
+      "end": 33.93,
+      "words": [
+        {
+          "w": "La",
+          "start": 25.79,
+          "end": 26.09
+        },
+        {
+          "w": "gasolina",
+          "start": 26.09,
+          "end": 26.67
+        },
+        {
+          "w": "es",
+          "start": 26.67,
+          "end": 27.35
+        },
+        {
+          "w": "gratis",
+          "start": 27.35,
+          "end": 27.95
+        },
+        {
+          "w": "y",
+          "start": 27.95,
+          "end": 28.57
+        },
+        {
+          "w": "te",
+          "start": 28.57,
+          "end": 28.81
+        },
+        {
+          "w": "pagan",
+          "start": 28.81,
+          "end": 29.03
+        },
+        {
+          "w": "quinientos",
+          "start": 29.03,
+          "end": 29.75
+        },
+        {
+          "w": "pesos",
+          "start": 29.75,
+          "end": 30.23
+        },
+        {
+          "w": "por",
+          "start": 30.23,
+          "end": 30.75
+        },
+        {
+          "w": "llenar",
+          "start": 30.75,
+          "end": 31.07
+        },
+        {
+          "w": "el",
+          "start": 31.07,
+          "end": 31.29
+        },
+        {
+          "w": "tanque.",
+          "start": 31.29,
+          "end": 31.77
+        },
+        {
+          "w": "¡Y",
+          "start": 31.77,
+          "end": 32.45
+        },
+        {
+          "w": "todos",
+          "start": 32.45,
+          "end": 32.89
+        },
+        {
+          "w": "andan",
+          "start": 32.89,
+          "end": 33.35
+        },
+        {
+          "w": "en",
+          "start": 33.35,
+          "end": 33.77
+        },
+        {
+          "w": "Prado!",
+          "start": 33.77,
+          "end": 33.79
+        }
+      ]
+    },
+    {
+      "scene": "s4",
+      "beat": "gasolina",
+      "speaker": "conductor",
+      "text": "¡Ya llené hasta la podadora de mi suegra!",
+      "start": 34.15,
+      "end": 37.43,
+      "words": [
+        {
+          "w": "¡Ya",
+          "start": 34.15,
+          "end": 34.75
+        },
+        {
+          "w": "llené",
+          "start": 34.75,
+          "end": 35.37
+        },
+        {
+          "w": "hasta",
+          "start": 35.37,
+          "end": 35.81
+        },
+        {
+          "w": "la",
+          "start": 35.81,
+          "end": 36.11
+        },
+        {
+          "w": "podadora",
+          "start": 36.11,
+          "end": 36.59
+        },
+        {
+          "w": "de",
+          "start": 36.59,
+          "end": 36.83
+        },
+        {
+          "w": "mi",
+          "start": 36.83,
+          "end": 37.03
+        },
+        {
+          "w": "suegra!",
+          "start": 37.03,
+          "end": 37.35
+        }
+      ]
+    },
+    {
+      "scene": "s5",
+      "beat": "seleccion",
+      "speaker": "narrador",
+      "text": "La H le gana hasta a Brasil, maje.",
+      "start": 37.85,
+      "end": 42.42,
+      "words": [
+        {
+          "w": "La",
+          "start": 37.85,
+          "end": 38.254
+        },
+        {
+          "w": "H",
+          "start": 38.254,
+          "end": 38.523
+        },
+        {
+          "w": "le",
+          "start": 38.523,
+          "end": 38.926
+        },
+        {
+          "w": "gana",
+          "start": 38.926,
+          "end": 39.599
+        },
+        {
+          "w": "hasta",
+          "start": 39.599,
+          "end": 40.406
+        },
+        {
+          "w": "a",
+          "start": 40.406,
+          "end": 40.675
+        },
+        {
+          "w": "Brasil,",
+          "start": 40.675,
+          "end": 41.617
+        },
+        {
+          "w": "maje.",
+          "start": 41.617,
+          "end": 42.29
+        }
+      ]
+    },
+    {
+      "scene": "s6",
+      "beat": "comida",
+      "speaker": "narrador",
+      "text": "La comida está tan barata que esperamos tener hambre, no la quincena.",
+      "start": 42.84,
+      "end": 48.14,
+      "words": [
+        {
+          "w": "La",
+          "start": 42.84,
+          "end": 43.1
+        },
+        {
+          "w": "comida",
+          "start": 43.1,
+          "end": 43.48
+        },
+        {
+          "w": "está",
+          "start": 43.48,
+          "end": 43.86
+        },
+        {
+          "w": "tan",
+          "start": 43.86,
+          "end": 44.4
+        },
+        {
+          "w": "barata",
+          "start": 44.4,
+          "end": 44.86
+        },
+        {
+          "w": "que",
+          "start": 44.86,
+          "end": 45.44
+        },
+        {
+          "w": "esperamos",
+          "start": 45.44,
+          "end": 46
+        },
+        {
+          "w": "tener",
+          "start": 46,
+          "end": 46.3
+        },
+        {
+          "w": "hambre,",
+          "start": 46.3,
+          "end": 46.62
+        },
+        {
+          "w": "no",
+          "start": 47.32,
+          "end": 47.4
+        },
+        {
+          "w": "la",
+          "start": 47.4,
+          "end": 47.62
+        },
+        {
+          "w": "quincena.",
+          "start": 47.62,
+          "end": 48.06
+        }
+      ]
+    },
+    {
+      "scene": "s6",
+      "beat": "comida",
+      "speaker": "cajera",
+      "text": "¡Tenga su vuelto, doña, y llévese otro pollo!",
+      "start": 48.36,
+      "end": 51.67,
+      "words": [
+        {
+          "w": "¡Tenga",
+          "start": 48.36,
+          "end": 48.817
+        },
+        {
+          "w": "su",
+          "start": 48.817,
+          "end": 49.046
+        },
+        {
+          "w": "vuelto,",
+          "start": 49.046,
+          "end": 49.579
+        },
+        {
+          "w": "doña,",
+          "start": 49.579,
+          "end": 49.96
+        },
+        {
+          "w": "y",
+          "start": 49.96,
+          "end": 50.112
+        },
+        {
+          "w": "llévese",
+          "start": 50.112,
+          "end": 50.722
+        },
+        {
+          "w": "otro",
+          "start": 50.722,
+          "end": 51.103
+        },
+        {
+          "w": "pollo!",
+          "start": 51.103,
+          "end": 51.56
+        }
+      ]
+    },
+    {
+      "scene": "s7",
+      "beat": "justicia",
+      "speaker": "narrador",
+      "text": "Al delincuente de verdad lo dejan preso, y por recoger leña ya no te llevan al mamo.",
+      "start": 52.09,
+      "end": 59.36,
+      "words": [
+        {
+          "w": "Al",
+          "start": 52.09,
+          "end": 52.57
+        },
+        {
+          "w": "delincuente",
+          "start": 52.57,
+          "end": 53.41
+        },
+        {
+          "w": "de",
+          "start": 53.41,
+          "end": 53.71
+        },
+        {
+          "w": "verdad",
+          "start": 53.71,
+          "end": 54.11
+        },
+        {
+          "w": "lo",
+          "start": 54.11,
+          "end": 54.77
+        },
+        {
+          "w": "dejan",
+          "start": 54.77,
+          "end": 55.13
+        },
+        {
+          "w": "preso,",
+          "start": 55.13,
+          "end": 56.05
+        },
+        {
+          "w": "y",
+          "start": 56.27,
+          "end": 56.39
+        },
+        {
+          "w": "por",
+          "start": 56.39,
+          "end": 56.59
+        },
+        {
+          "w": "recoger",
+          "start": 56.59,
+          "end": 57.07
+        },
+        {
+          "w": "leña",
+          "start": 57.07,
+          "end": 57.57
+        },
+        {
+          "w": "ya",
+          "start": 57.57,
+          "end": 58.23
+        },
+        {
+          "w": "no",
+          "start": 58.23,
+          "end": 58.39
+        },
+        {
+          "w": "te",
+          "start": 58.39,
+          "end": 58.61
+        },
+        {
+          "w": "llevan",
+          "start": 58.61,
+          "end": 58.85
+        },
+        {
+          "w": "al",
+          "start": 58.85,
+          "end": 59.07
+        },
+        {
+          "w": "mamo.",
+          "start": 59.07,
+          "end": 59.27
+        }
+      ]
+    },
+    {
+      "scene": "s7",
+      "beat": "justicia",
+      "speaker": "guardia",
+      "text": "¡Si la ley aplica parejo, cerotes, aquí falta espacio!",
+      "start": 59.58,
+      "end": 63.87,
+      "words": [
+        {
+          "w": "¡Si",
+          "start": 59.58,
+          "end": 59.86
+        },
+        {
+          "w": "la",
+          "start": 59.86,
+          "end": 60.08
+        },
+        {
+          "w": "ley",
+          "start": 60.08,
+          "end": 60.38
+        },
+        {
+          "w": "aplica",
+          "start": 60.38,
+          "end": 61
+        },
+        {
+          "w": "parejo,",
+          "start": 61,
+          "end": 61.6
+        },
+        {
+          "w": "cerotes,",
+          "start": 61.6,
+          "end": 62.1
+        },
+        {
+          "w": "aquí",
+          "start": 62.68,
+          "end": 62.9
+        },
+        {
+          "w": "falta",
+          "start": 62.9,
+          "end": 63.22
+        },
+        {
+          "w": "espacio!",
+          "start": 63.22,
+          "end": 63.7
+        }
+      ]
+    },
+    {
+      "scene": "s8",
+      "beat": "potencia",
+      "speaker": "narrador",
+      "text": "Honduras es potencia mundial, y los gringos cruzan la frontera a trabajar aquí.",
+      "start": 64.29,
+      "end": 70.25,
+      "words": [
+        {
+          "w": "Honduras",
+          "start": 64.29,
+          "end": 64.89
+        },
+        {
+          "w": "es",
+          "start": 64.89,
+          "end": 65.37
+        },
+        {
+          "w": "potencia",
+          "start": 65.37,
+          "end": 66.01
+        },
+        {
+          "w": "mundial,",
+          "start": 66.01,
+          "end": 66.59
+        },
+        {
+          "w": "y",
+          "start": 66.59,
+          "end": 67.29
+        },
+        {
+          "w": "los",
+          "start": 67.29,
+          "end": 67.53
+        },
+        {
+          "w": "gringos",
+          "start": 67.53,
+          "end": 67.97
+        },
+        {
+          "w": "cruzan",
+          "start": 67.97,
+          "end": 68.41
+        },
+        {
+          "w": "la",
+          "start": 68.41,
+          "end": 68.85
+        },
+        {
+          "w": "frontera",
+          "start": 68.85,
+          "end": 69.07
+        },
+        {
+          "w": "a",
+          "start": 69.07,
+          "end": 69.49
+        },
+        {
+          "w": "trabajar",
+          "start": 69.49,
+          "end": 69.79
+        },
+        {
+          "w": "aquí.",
+          "start": 69.79,
+          "end": 70.15
+        }
+      ]
+    },
+    {
+      "scene": "s8",
+      "beat": "potencia",
+      "speaker": "papi",
+      "text": "¡La rachaaa está activaaa!",
+      "start": 70.47,
+      "end": 73.03,
+      "words": [
+        {
+          "w": "¡La",
+          "start": 70.47,
+          "end": 70.79
+        },
+        {
+          "w": "rachaaa",
+          "start": 70.79,
+          "end": 71.27
+        },
+        {
+          "w": "está",
+          "start": 71.27,
+          "end": 72.05
+        },
+        {
+          "w": "activaaa!",
+          "start": 72.05,
+          "end": 72.89
+        }
+      ]
+    },
+    {
+      "scene": "s9",
+      "beat": "despertar",
+      "speaker": "narrador",
+      "text": "¡A la gran puta, qué bonito sueño, maje!",
+      "start": 73.45,
+      "end": 78.94,
+      "words": [
+        {
+          "w": "¡A",
+          "start": 73.45,
+          "end": 73.75
+        },
+        {
+          "w": "la",
+          "start": 73.75,
+          "end": 73.99
+        },
+        {
+          "w": "gran",
+          "start": 73.99,
+          "end": 74.49
+        },
+        {
+          "w": "puta,",
+          "start": 74.49,
+          "end": 75.13
+        },
+        {
+          "w": "qué",
+          "start": 75.81,
+          "end": 76.17
+        },
+        {
+          "w": "bonito",
+          "start": 76.17,
+          "end": 76.69
+        },
+        {
+          "w": "sueño,",
+          "start": 76.69,
+          "end": 77.55
+        },
+        {
+          "w": "maje!",
+          "start": 78.29,
+          "end": 78.77
+        }
+      ]
+    },
+    {
+      "scene": "s10",
+      "beat": "remate",
+      "speaker": "narrador",
+      "text": "Si Papi hiciera su puta chamba… parte dos. Mándaselo al cerote de tu amigo cachureco.",
+      "start": 79.36,
+      "end": 86.99,
+      "words": [
+        {
+          "w": "Si",
+          "start": 79.36,
+          "end": 79.8
+        },
+        {
+          "w": "Papi",
+          "start": 79.8,
+          "end": 80.24
+        },
+        {
+          "w": "hiciera",
+          "start": 80.24,
+          "end": 80.78
+        },
+        {
+          "w": "su",
+          "start": 80.78,
+          "end": 81.16
+        },
+        {
+          "w": "puta",
+          "start": 81.16,
+          "end": 81.6
+        },
+        {
+          "w": "chamba…",
+          "start": 81.6,
+          "end": 82.08
+        },
+        {
+          "w": "parte",
+          "start": 82.8,
+          "end": 82.84
+        },
+        {
+          "w": "dos.",
+          "start": 82.84,
+          "end": 83.5
+        },
+        {
+          "w": "Mándaselo",
+          "start": 84.4,
+          "end": 84.76
+        },
+        {
+          "w": "al",
+          "start": 84.76,
+          "end": 85.04
+        },
+        {
+          "w": "cerote",
+          "start": 85.04,
+          "end": 85.46
+        },
+        {
+          "w": "de",
+          "start": 85.46,
+          "end": 85.68
+        },
+        {
+          "w": "tu",
+          "start": 85.68,
+          "end": 85.86
+        },
+        {
+          "w": "amigo",
+          "start": 85.86,
+          "end": 86.18
+        },
+        {
+          "w": "cachureco.",
+          "start": 86.18,
+          "end": 86.9
+        }
+      ]
+    }
+  ]
+}
