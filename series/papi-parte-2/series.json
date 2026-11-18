@@ -92,8 +92,8 @@
     {
       "number": 1,
       "title": "Parte 2: ustedes pidieron más",
-      "hook_text": "SI PAPI HICIERA SU PUTA CHAMBA: PARTE 2",
-      "post_description": "¿Y si Papi hiciera su puta chamba… PARTE 2? 🇭🇳🔥 Con lo que ustedes pidieron en los comentarios: San Marcos de Colón, casas de dos pisos y la H ganando. Mándaselo al cerote de tu amigo que cree que todo está bien. 👇 Comenta: ¿qué otra cosa pasaría en esta Honduras?",
+      "hook_text": "SI PAPI HICIERA SU PUTA CHAMBA",
+      "post_description": "¿Y si Papi hiciera su puta chamba? PARTE 2 🇭🇳🔥 Despiertas y ves Honduras pavimentada hasta los techos, gasolina gratis, comida barata y dos casas gratis. Mándaselo al cerote de tu amigo que cree que todo está bien. 👇 Comenta: ¿qué otra cosa pasaría en esta Honduras?",
       "hashtags": [
         "Honduras",
         "Catracho",
@@ -114,7 +114,7 @@
           "lines": [
             {
               "speaker": "narrador",
-              "text": "Parte dos, maje. Papi hizo su puta chamba, y ustedes pidieron más.",
+              "text": "¿Y si Papi, por fin, hiciera su puta chamba? Parte dos, maje.",
               "delivery": "MUY rápido, chismoso, burlón"
             }
           ]
@@ -132,13 +132,8 @@
           "lines": [
             {
               "speaker": "narrador",
-              "text": "Preguntaron por San Marcos de Colón. ¡Pavimentaron todo, hasta los techos!",
+              "text": "Despiertas y ves que pavimentaron toda Honduras, hasta los techos, maje.",
               "delivery": "MUY rápido, chismoso, burlón"
-            },
-            {
-              "speaker": "albanil",
-              "text": "¡Jefe, ya no hay ni dónde sembrar un palo de mango!",
-              "delivery": "gritando desde lejos"
             }
           ]
         },
@@ -155,13 +150,8 @@
           "lines": [
             {
               "speaker": "narrador",
-              "text": "¿Casa de dos pisos? El banco te regala dos.",
+              "text": "Llegas a la gasolinera y es gratis, y te regalan quinientos pesos por llenar el tanque.",
               "delivery": "MUY rápido, chismoso, burlón"
-            },
-            {
-              "speaker": "banquero",
-              "text": "¿Trajo la identidad? ¡No importa, llévese dos casas!",
-              "delivery": "amable, ventanilla"
             }
           ]
         },
@@ -178,13 +168,8 @@
           "lines": [
             {
               "speaker": "narrador",
-              "text": "La gasolina es gratis y te pagan quinientos pesos por llenar el tanque. ¡Y todos andan en Prado!",
+              "text": "Vas al súper y la comida está tan barata que ya no esperas la quincena: esperas tener hambre.",
               "delivery": "MUY rápido, chismoso, burlón"
-            },
-            {
-              "speaker": "conductor",
-              "text": "¡Ya llené hasta la podadora de mi suegra!",
-              "delivery": "eufórico"
             }
           ]
         },
@@ -200,7 +185,7 @@
           "lines": [
             {
               "speaker": "narrador",
-              "text": "La H le gana hasta a Brasil, maje.",
+              "text": "Entras al banco sin identidad y el banquero te regala dos casas. ¡Dos, maje!",
               "delivery": "MUY rápido, chismoso, burlón"
             }
           ]
@@ -218,13 +203,8 @@
           "lines": [
             {
               "speaker": "narrador",
-              "text": "La comida está tan barata que esperamos tener hambre, no la quincena.",
+              "text": "Y todo mundo anda en Prado nueva, hasta el que vende elotes.",
               "delivery": "MUY rápido, chismoso, burlón"
-            },
-            {
-              "speaker": "cajera",
-              "text": "¡Tenga su vuelto, doña, y llévese otro pollo!",
-              "delivery": "dulce y rápida"
             }
           ]
         },
@@ -241,13 +221,8 @@
           "lines": [
             {
               "speaker": "narrador",
-              "text": "Al delincuente de verdad lo dejan preso, y por recoger leña ya no te llevan al mamo.",
+              "text": "Aprobaron una ley penal tan buena que ni los diputados se la creen. Al ladrón de verdad lo dejan preso, y por leña ya no te llevan al mamo, cerotes.",
               "delivery": "MUY rápido, chismoso, burlón"
-            },
-            {
-              "speaker": "guardia",
-              "text": "¡Si la ley aplica parejo, cerotes, aquí falta espacio!",
-              "delivery": "irónico, preocupado"
             }
           ]
         },
@@ -264,7 +239,7 @@
           "lines": [
             {
               "speaker": "narrador",
-              "text": "Honduras es potencia mundial, y los gringos cruzan la frontera a trabajar aquí.",
+              "text": "Honduras es potencia mundial y los gringos cruzan la frontera a trabajar aquí. Y Papi grita:",
               "delivery": "MUY rápido, chismoso, burlón"
             },
             {
@@ -286,8 +261,8 @@
           "lines": [
             {
               "speaker": "narrador",
-              "text": "¡A la gran puta, qué bonito sueño, maje!",
-              "delivery": "despertando sobresaltado, a gritos"
+              "text": "Y suena la alarma. Era un sueño, catracho. Tienes el recibo de luz en la mano… y se fue la luz.",
+              "delivery": "MUY rápido, chismoso, burlón"
             }
           ]
         },
@@ -303,12 +278,13 @@
           "lines": [
             {
               "speaker": "narrador",
-              "text": "Si Papi hiciera su puta chamba… parte dos. Mándaselo al cerote de tu amigo cachureco.",
+              "text": "Mándaselo al cerote de tu amigo cachureco. ¿Qué otra cosa pasaría en esta Honduras?",
               "delivery": "MUY rápido, chismoso, burlón"
             }
           ]
         }
-      ]
+      ],
+      "subtitle": "PARTE 2"
     }
   ],
   "framing": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).",
