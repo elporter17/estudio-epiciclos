@@ -446,59 +446,64 @@ function comentario(ctx, texto, ts, t0, t1) {
 }
 const ESCENAS_P2 = {
   s1: {
-    cam: [[0, 2.0, 0.5, 0.45], [1.6, 1.0, 0.5, 0.5], [3.4, 1.7, 0.5, 0.42], [5.0, 1.15, 0.5, 0.5]],
+    cam: [[0, 2.0, 0.5, 0.45], [1.6, 1.0, 0.5, 0.5], [3.4, 1.7, 0.5, 0.42], [5.2, 1.15, 0.5, 0.5]],
     mundo(c) { const { ctx } = c; ctx.fillStyle = '#F5B800'; ctx.fillRect(0, 0, W, H); rayos(ctx, W / 2, H * 0.42, c.ts, '#FFD23F', '#F5A300'); sprite(c, 'papi_fist', { x: 0.5, foot: 0.97, h: 1500, enter: 'pop', bob: 6 }); chispas(ctx, c.ts, { seed: 3, n: 12 }); },
-    hud(c) { texto(c.ctx, 'PARTE 2', W / 2, H * 0.2, c.ts, 3.2, { size: 190, rot: -4, color: '#FFFFFF' }); }
+    hud(c) { texto(c.ctx, 'PARTE 2', W / 2, H * 0.34, c.ts, 0.5, { size: 150, rot: -4, color: '#FFFFFF' }); }
   },
   s2: {
-    cam: [[0, 1.0, 0.5, 0.5], [3.2, 1.3, 0.3, 0.6], [6.0, 1.5, 0.78, 0.55], [8.4, 1.0, 0.5, 0.5]],
-    mundo(c) { const { ts } = c; fondo(c, 'bg_barrio', { deriva: 0.1 }); objeto(c, 'maquina', lerp(-300, W + 300, clamp((ts - 0.5) / 6)), H * 0.7 + Math.sin(ts * 12) * 4, 620, {}); sprite(c, 'albanil_grita', { x: 0.76, foot: 0.97, h: 1000, enter: 'pop', t0: 5.6, hablante: 'albanil', bob: 6 }); },
-    hud(c) { comentario(c.ctx, '¿Será que en el siguiente video te las repara?', c.ts, 0.3, 4.6); sello(c.ctx, 'ASFALTO HASTA EN LOS TECHOS', W / 2, H * 0.4, c.ts, 5.0, '#16A34A', 54, -3); }
+    cam: [[0, 1.0, 0.5, 0.5], [2.6, 1.3, 0.3, 0.6], [4.4, 1.4, 0.78, 0.55], [6.0, 1.0, 0.5, 0.5]],
+    mundo(c) { const { ts } = c; fondo(c, 'bg_barrio', { deriva: 0.1 }); objeto(c, 'maquina', lerp(-300, W + 300, clamp((ts - 0.4) / 5)), H * 0.7 + Math.sin(ts * 12) * 4, 620, {}); sprite(c, 'albanil_grita', { x: 0.78, foot: 0.97, h: 900, enter: 'pop', t0: 3.2, bob: 6 }); },
+    hud(c) { sello(c.ctx, 'ASFALTO HASTA EN LOS TECHOS', W / 2, H * 0.3, c.ts, 3.4, '#16A34A', 54, -3); }
   },
   s3: {
-    cam: [[0, 1.0, 0.5, 0.5], [3.4, 1.35, 0.7, 0.55], [6.5, 1.0, 0.5, 0.5]],
-    mundo(c) { const { ts } = c; fondo(c, 'bg_banco'); const a = ts - 1.2; if (a > 0) objeto(c, 'mansion', W * 0.28, H * 0.52, 620 * outBack(a / 0.45), {}); sprite(c, 'banquero_llaves', { x: 0.72, foot: 0.98, h: 1300, enter: 'pop', t0: 3.4, hablante: 'banquero', bob: 5 }); },
-    hud(c) { comentario(c.ctx, 'Y que venga a mi casa y me diga voy a hacer tu casa de 2 pisos', c.ts, 0.2, 3.6); sello(c.ctx, '2 CASAS GRATIS', W / 2, H * 0.4, c.ts, 6.6, '#16A34A', 78, 3); chispas(c.ctx, c.ts - 6.6, { seed: 4, n: 10, y0: 0.2, y1: 0.5 }); }
+    cam: [[0, 1.0, 0.5, 0.5], [2.4, 1.3, 0.4, 0.6], [4.4, 1.15, 0.5, 0.6]],
+    mundo(c) { const { ts } = c; fondo(c, 'bg_gasolinera', { deriva: 0.08 }); sprite(c, 'conductor_feliz', { x: 0.72, foot: 0.97, h: 950, enter: 'pop', t0: 1.8, bob: 5 }); },
+    hud(c) { sello(c.ctx, 'GASOLINA GRATIS', W / 2, H * 0.22, c.ts, 0.8, '#16A34A', 76, -3); sello(c.ctx, '+ 500 PESOS', W / 2, H * 0.3, c.ts, 3.2, '#2563EB', 76, 3); }
   },
   s4: {
-    cam: [[0, 1.0, 0.5, 0.5], [3.0, 1.3, 0.35, 0.6], [6.0, 1.15, 0.5, 0.65], [8.2, 1.6, 0.74, 0.55], [11.0, 1.0, 0.5, 0.5]],
-    mundo(c) { const { ts } = c; fondo(c, 'bg_gasolinera', { deriva: 0.08 });
-      if (ts > 5) for (let i = 0; i < 3; i++) { const x = ((ts - 5) * 260 + i * 520) % (W + 900) - 450; objeto(c, 'prado', x, H * (0.78 + 0.02 * i), 620, {}); }
-      sprite(c, 'conductor_feliz', { x: 0.74, foot: 0.97, h: 950, enter: 'pop', t0: 8.0, hablante: 'conductor', bob: 5 }); },
-    hud(c) { sello(c.ctx, 'GASOLINA GRATIS', W / 2, H * 0.22, c.ts, 1.0, '#16A34A', 76, -3); sello(c.ctx, '+ 500 PESOS', W / 2, H * 0.3, c.ts, 3.8, '#2563EB', 76, 3); sello(c.ctx, '¡TODOS EN PRADO!', W / 2, H * 0.38, c.ts, 6.8, '#EA580C', 70, -3); }
+    cam: [[0, 1.0, 0.5, 0.5], [2.6, 1.3, 0.4, 0.62], [5.0, 1.4, 0.72, 0.55], [6.8, 1.0, 0.5, 0.5]],
+    mundo(c) { const { ts } = c; fondo(c, 'bg_super', { deriva: 0.08 }); objeto(c, 'carretas', lerp(-500, W * 0.32, ease((ts - 0.4) / 1.2)), H * 0.62, 700, {}); sprite(c, 'cajera_vuelto', { x: 0.74, foot: 0.98, h: 1250, enter: 'pop', t0: 3.0, bob: 5 }); if (ts > 5.0) sprite(c, 'pollo', { x: 0.3, foot: 0.9, h: 600, t0: 5.0, enter: 'pop', salto: 7, bob: 3 }); },
+    hud(c) { sello(c.ctx, 'COMIDA BARATA', W / 2, H * 0.22, c.ts, 1.0, '#16A34A', 78, -3); sello(c.ctx, 'VUELTO + POLLO', W / 2, H * 0.31, c.ts, 5.2, '#2563EB', 72, 3); }
   },
   s5: {
-    cam: [[0, 1.0, 0.5, 0.55], [2.4, 1.4, 0.5, 0.6]],
-    mundo(c) { const { ts, ctx } = c; fondo(c, 'bg_estadio', { deriva: 0.08 }); const a = ts - 1.0; if (a > 0) objeto(c, 'trofeo', W * 0.5, H * 0.55 + Math.sin(ts * 3) * 12, 700 * outBack(a / 0.45), {}); if (ts > 2.0) confeti(ctx, ts - 2.0, 70, 8); },
-    hud(c) { comentario(c.ctx, 'Y que hasta la H empiece a jugar mejor, maje', c.ts, 0.1, 2.4); sello(c.ctx, 'H 3 - 0 BRASIL', W / 2, H * 0.3, c.ts, 2.5, '#2563EB', 82, -3); }
+    cam: [[0, 1.0, 0.5, 0.5], [3.0, 1.35, 0.7, 0.55], [6.0, 1.0, 0.5, 0.5]],
+    mundo(c) { const { ts } = c; fondo(c, 'bg_banco'); const a = ts - 0.8; if (a > 0) objeto(c, 'mansion', W * 0.28, H * 0.52, 620 * outBack(a / 0.45), {}); sprite(c, 'banquero_llaves', { x: 0.72, foot: 0.98, h: 1300, enter: 'pop', t0: 2.4, bob: 5 }); },
+    hud(c) { sello(c.ctx, '2 CASAS GRATIS', W / 2, H * 0.4, c.ts, 4.8, '#16A34A', 78, 3); chispas(c.ctx, c.ts - 4.8, { seed: 4, n: 10, y0: 0.2, y1: 0.5 }); }
   },
   s6: {
-    cam: [[0, 1.0, 0.5, 0.5], [2.6, 1.3, 0.4, 0.62], [5.4, 1.5, 0.74, 0.55], [8.0, 1.0, 0.5, 0.5]],
-    mundo(c) { const { ts } = c; fondo(c, 'bg_super', { deriva: 0.08 }); objeto(c, 'carretas', lerp(-500, W * 0.32, ease((ts - 0.5) / 1.2)), H * 0.62, 700, {}); sprite(c, 'cajera_vuelto', { x: 0.74, foot: 0.98, h: 1250, enter: 'pop', t0: 5.3, hablante: 'cajera', bob: 5 }); if (ts > 6.6) sprite(c, 'pollo', { x: 0.3, foot: 0.9, h: 600, t0: 6.6, enter: 'pop', salto: 7, bob: 3 }); },
-    hud(c) { sello(c.ctx, 'COMIDA BARATA', W / 2, H * 0.22, c.ts, 1.8, '#16A34A', 78, -3); sello(c.ctx, 'VUELTO + POLLO', W / 2, H * 0.31, c.ts, 6.4, '#2563EB', 72, 3); }
+    cam: [[0, 1.0, 0.5, 0.55], [2.4, 1.3, 0.5, 0.65], [4.2, 1.1, 0.5, 0.6]],
+    mundo(c) { const { ts } = c; fondo(c, 'bg_ciudad', { deriva: 0.1 }); for (let i = 0; i < 3; i++) { const x = ((ts * 300 + i * 520) % (W + 900)) - 450; objeto(c, 'prado', x, H * (0.74 + 0.04 * i), 640 + 60 * i, {}); } },
+    hud(c) { sello(c.ctx, '¡TODOS EN PRADO!', W / 2, H * 0.24, c.ts, 0.8, '#EA580C', 74, -3); }
   },
   s7: {
-    cam: [[0, 1.0, 0.5, 0.5], [3.0, 1.25, 0.5, 0.6], [7.3, 1.5, 0.5, 0.5], [10.4, 1.1, 0.5, 0.5]],
-    mundo(c) { fondo(c, 'bg_tribunal', { deriva: 0.08 }); sprite(c, 'guardia_cruzado', { x: 0.5, foot: 0.99, h: 1350, enter: 'pop', t0: 7.2, hablante: 'guardia', bob: 5 }); },
-    hud(c) { sello(c.ctx, 'DELINCUENTE = PRESO', W / 2, H * 0.22, c.ts, 1.8, '#16A34A', 62, -3); sello(c.ctx, 'LEÑA = LIBRE', W / 2, H * 0.31, c.ts, 4.4, '#2563EB', 72, 3); sello(c.ctx, 'LEY PAREJA', W / 2, H * 0.4, c.ts, 9.2, '#DC2626', 76, -3); }
+    cam: [[0, 1.0, 0.5, 0.5], [3.4, 1.25, 0.5, 0.6], [7.0, 1.4, 0.5, 0.5], [9.4, 1.1, 0.5, 0.5]],
+    mundo(c) { fondo(c, 'bg_tribunal', { deriva: 0.08 }); sprite(c, 'guardia_cruzado', { x: 0.5, foot: 0.99, h: 1350, enter: 'pop', t0: 6.2, bob: 5 }); },
+    hud(c) { sello(c.ctx, 'LEY QUE NI ELLOS SE CREEN', W / 2, H * 0.2, c.ts, 2.0, '#EA580C', 50, -3); sello(c.ctx, 'DELINCUENTE = PRESO', W / 2, H * 0.28, c.ts, 5.4, '#16A34A', 62, 3); sello(c.ctx, 'LEÑA = LIBRE', W / 2, H * 0.36, c.ts, 8.0, '#2563EB', 72, -3); }
   },
   s8: {
-    cam: [[0, 1.0, 0.5, 0.5], [3.0, 1.3, 0.5, 0.3], [6.0, 1.15, 0.5, 0.55]],
-    mundo(c) { const { ctx, ts } = c; fondo(c, 'bg_espacio', { deriva: 0.1 }); const a = ts - 0.5; if (a > 0) { ctx.save(); ctx.translate(W / 2, H * 0.155); ctx.rotate(-0.04); ctx.scale(outBack(a / 0.5), outBack(a / 0.5)); ctx.fillStyle = '#7C2D12'; ctx.font = '900 56px Montserrat'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('POTENCIA MUNDIAL', 0, 0); ctx.restore(); }
-      sprite(c, 'papi_flag', { x: 0.5, foot: 1.0, h: 1300, enter: 'rise', t0: 5.8, sway: 2.2, hablante: 'papi' }); },
-    hud(c) { texto(c.ctx, 'LA RACHAAA', W / 2, H * 0.33, c.ts, 6.2, { size: 112, rot: -5 }); texto(c.ctx, 'ESTÁ ACTIVAAA', W / 2, H * 0.4, c.ts, 6.6, { size: 112, rot: 3, color: '#FF4D6D' }); if (c.ts > 6.2) chispas(c.ctx, c.ts, { seed: 2, n: 16, y0: 0.15, y1: 0.55 }); },
-    sacudida(ts) { return ts > 6.2 && ts < 8.6 ? 12 : 0; }
+    cam: [[0, 1.0, 0.5, 0.55], [2.4, 1.35, 0.5, 0.6]],
+    mundo(c) { const { ts, ctx } = c; fondo(c, 'bg_estadio', { deriva: 0.08 }); const a = ts - 1.0; if (a > 0) objeto(c, 'trofeo', W * 0.68, H * 0.58 + Math.sin(ts * 3) * 12, 640 * outBack(a / 0.45), {}); sprite(c, 'papi_fist', { x: 0.28, foot: 0.99, h: 1200, enter: 'pop', t0: 2.2, salto: 6, bob: 4 }); if (ts > 1.6) confeti(ctx, ts - 1.6, 80, 8); },
+    hud(c) { sello(c.ctx, 'HONDURAS CAMPEÓN', W / 2, H * 0.26, c.ts, 1.8, '#2563EB', 78, -3); sello(c.ctx, 'DEL MUNDO', W / 2, H * 0.34, c.ts, 3.4, '#F59E0B', 84, 3); }
   },
   s9: {
-    cam: [[0, 1.0, 0.5, 0.55], [2.0, 1.6, 0.5, 0.6], [4.4, 1.1, 0.5, 0.55]],
-    mundo(c) { const { ts } = c; fondo(c, 'bg_hamaca'); sprite(c, 'chepe_hamaca', { x: 0.5, foot: 0.98, h: 1150, enter: 'rise', t0: 0.1, bob: 3, tilt: ts > 1.0 ? Math.sin(ts * 18) * 3 : 0 }); },
-    hud(c) { texto(c.ctx, '¡SOLO UN SUEÑO!', W / 2, H * 0.24, c.ts, 2.4, { size: 100, rot: -3, color: '#FFFFFF' }); },
-    sacudida(ts) { return ts < 1.2 ? 14 : 0; }
+    cam: [[0, 1.0, 0.5, 0.5], [3.0, 1.3, 0.5, 0.3], [7.8, 1.1, 0.5, 0.5], [8.4, 1.15, 0.5, 0.55]],
+    mundo(c) { const { ctx, ts } = c; fondo(c, 'bg_espacio', { deriva: 0.1 }); const a = ts - 0.5; if (a > 0) { ctx.save(); ctx.translate(W / 2, H * 0.155); ctx.rotate(-0.04); ctx.scale(outBack(a / 0.5), outBack(a / 0.5)); ctx.fillStyle = '#7C2D12'; ctx.font = '900 56px Montserrat'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('POTENCIA MUNDIAL', 0, 0); ctx.restore(); }
+      sprite(c, 'papi_flag', { x: 0.5, foot: 1.0, h: 1300, enter: 'rise', t0: 7.9, sway: 2.2, hablante: 'papi' }); },
+    hud(c) { sello(c.ctx, 'GRINGOS TRABAJANDO AQUÍ', W / 2, H * 0.45, c.ts, 4.2, '#16A34A', 54, -3); texto(c.ctx, 'LA RACHAAA', W / 2, H * 0.33, c.ts, 8.2, { size: 112, rot: -5 }); texto(c.ctx, 'ESTÁ ACTIVAAA', W / 2, H * 0.4, c.ts, 8.6, { size: 112, rot: 3, color: '#FF4D6D' }); if (c.ts > 8.2) chispas(c.ctx, c.ts, { seed: 2, n: 16, y0: 0.15, y1: 0.55 }); },
+    sacudida(ts) { return ts > 8.2 && ts < 10.4 ? 12 : 0; }
   },
   s10: {
-    cam: [[0, 1.0, 0.5, 0.5], [3.0, 1.2, 0.5, 0.5], [6.0, 1.0, 0.5, 0.5]],
+    cam: [[0, 1.0, 0.5, 0.55], [2.0, 1.6, 0.5, 0.6], [5.2, 1.1, 0.5, 0.55]],
+    mundo(c) { const { ctx, ts } = c; fondo(c, 'bg_hamaca'); sprite(c, 'chepe_hamaca', { x: 0.5, foot: 0.98, h: 1150, enter: 'rise', t0: 0.1, bob: 3, tilt: ts > 1.0 && ts < 4 ? Math.sin(ts * 18) * 3 : 0 });
+      if (ts < 3.6) for (let i = 0; i < 3; i++) { const k = ((ts * 1.6 + i / 3) % 1); ctx.strokeStyle = `rgba(255,70,70,${1 - k})`; ctx.lineWidth = 8; ctx.beginPath(); ctx.arc(W * 0.25, H * 0.35, 40 + k * 190, 0, PI2); ctx.stroke(); }
+      if (ts > 5.8) { const f = ts < 6.6 ? (Math.floor(ts * 12) % 2 ? 0.15 : 0.45) : 0.45; ctx.fillStyle = `rgba(0,0,10,${f})`; ctx.fillRect(0, 0, W, H); } },
+    hud(c) { texto(c.ctx, '¡SOLO UN SUEÑO!', W / 2, H * 0.24, c.ts, 2.4, { size: 100, rot: -3, color: '#FFFFFF' }); if (c.ts > 6.0) texto(c.ctx, '¡APAGÓN!', W / 2, H * 0.34, c.ts, 6.0, { size: 140, rot: -4, color: '#FFFFFF' }); },
+    sacudida(ts) { return ts < 1.2 ? 14 : 0; }
+  },
+  s11: {
+    cam: [[0, 1.0, 0.5, 0.5], [3.0, 1.2, 0.5, 0.5], [5.8, 1.0, 0.5, 0.5]],
     mundo(c) { fondo(c, 'bg_ciudad', { deriva: 0.1 }); sprite(c, 'chepe_proud', { x: 0.5, foot: 0.99, h: 1100, enter: 'pop', t0: 0.2, hablante: 'narrador', bob: 5 }); },
-    hud(c) { texto(c.ctx, 'COMPÁRTELO', W / 2, H * 0.2, c.ts, 3.2, { size: 118, rot: -3, color: '#FFE14D' }); texto(c.ctx, '¿QUÉ OTRA COSA PASARÍA', W / 2, H * 0.29, c.ts, 5.0, { size: 70, rot: 2, color: '#FFFFFF' }); texto(c.ctx, 'EN ESTA HONDURAS?', W / 2, H * 0.34, c.ts, 5.4, { size: 70, rot: -2, color: '#FFFFFF' }); }
+    hud(c) { texto(c.ctx, 'COMPÁRTELO', W / 2, H * 0.2, c.ts, 3.2, { size: 118, rot: -3, color: '#FFE14D' }); texto(c.ctx, '¿QUÉ OTRA COSA PASARÍA?', W / 2, H * 0.29, c.ts, 4.8, { size: 66, rot: 2, color: '#FFFFFF' }); }
   }
 };
 
