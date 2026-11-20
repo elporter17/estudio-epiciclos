@@ -56,7 +56,7 @@ export async function ponerMiniatura(videoId, file) {
 // (YouTube lo detecta solo; #Shorts en el título ayuda). categoryId 27 = Educación, 24 = Entretenimiento.
 // Pasa por conGuardia (scripts/lib/envios.mjs): el mismo archivo no se sube dos veces a YouTube
 export const subirYouTube = (o) => conGuardia({ red: 'yt', tipo: 'short', file: o.file, texto: `${o.titulo}\n${o.descripcion || ''}` }, () => subirYouTubeSin(o), (r) => ({ post_id: r.id, url: r.url }));
-async function subirYouTubeSin({ file, titulo, descripcion = '', etiquetas = [], privacidad = 'private', categoria = '27', publicarEn }) {
+async function subirYouTubeSin({ file, titulo, descripcion = '', etiquetas = [], privacidad = process.env.YOUTUBE_PRIVACIDAD || 'public', categoria = '27', publicarEn }) {
   const t = await accessToken(), size = fs.statSync(file).size;
   const tags = []; let n = 0; for (const e of etiquetas) { const x = String(e).replace(/[<>#]/g, '').trim(); if (x && n + x.length + 1 <= 480) { tags.push(x); n += x.length + 1; } }
   const meta = {
@@ -72,6 +72,7 @@ async function subirYouTubeSin({ file, titulo, descripcion = '', etiquetas = [],
   for (let intento = 1; ; intento++) {
     const r = await fetch(destino, { method: 'PUT', headers: { authorization: `Bearer ${t}`, 'content-type': 'video/mp4', 'content-length': String(size) }, body: fs.readFileSync(file) });
     const j = await r.json().catch(() => ({}));
+    if (r.ok && j.status?.privacyStatus && j.status.privacyStatus !== (publicarEn ? 'private' : privacidad)) console.error(`⚠️ YouTube dejó el video ${j.id} en «${j.status.privacyStatus}» aunque se pidió «${privacidad}» (proyecto de API sin verificar: hay que pasarlo a público en Studio)`);
     if (r.ok) return { id: j.id, url: `https://youtu.be/${j.id}`, studio: `https://studio.youtube.com/video/${j.id}/edit`, estado: j.status?.privacyStatus, subida: j.status?.uploadStatus };
     if (intento >= 3 || r.status < 500) throw new Error(`YouTube falló al subir: ${j.error?.message || r.status}`);
     await new Promise((ok) => setTimeout(ok, 3000 * intento));
