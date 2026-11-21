@@ -13,9 +13,9 @@ on:
         type: string
         default: ''
       turno:
-        description: mediodia (12:17) o tarde (18:30)
+        description: mediodia (12:17), noche (15:30) o tarde (18:30)
         type: choice
-        options: ['mediodia', 'tarde']
+        options: ['mediodia', 'tarde', 'noche']
         default: 'mediodia'
       modo:
         description: render (madrugada) · publicar (mediodía) · prueba (solo renderizar)

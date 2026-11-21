@@ -10,13 +10,13 @@ import { textoConTono } from './tono.mjs';
 
 export const DIR_COLA = path.join(ROOT, 'video3d', 'guiones', 'cola');
 export const ESTADO = path.join(ROOT, 'data', 'video3d-cola.json');
-export const AVISO_COLA = 5; // con tantos guiones pendientes o menos, aviso por Telegram para escribir más
+export const AVISO_COLA = 6; // con tantos guiones pendientes o menos, aviso por Telegram para escribir más
 export const hoyHN = (d = new Date()) => new Date(d.getTime() - 6 * 3600e3).toISOString().slice(0, 10);
 
-export const TURNOS = ['mediodia', 'tarde'];
+export const TURNOS = ['mediodia', 'tarde', 'noche']; // 3 al día desde 2026-11-21: mediodía (12:17), noche = las 15:30 y tarde (18:30)
 export function leerEstado() {
   let e; try { e = JSON.parse(fs.readFileSync(ESTADO, 'utf8')); } catch { e = {}; }
-  const listos = { mediodia: null, tarde: null, ...(e.listos || {}) };
+  const listos = { mediodia: null, tarde: null, noche: null, ...(e.listos || {}) };
   if (e.listo && !listos.mediodia) listos.mediodia = e.listo; // estado de antes de los dos turnos
   return { publicados: e.publicados || [], listos };
 }

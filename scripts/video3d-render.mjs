@@ -13,10 +13,10 @@ import { parseCli } from './lib/cli.mjs';
 import { publicarProximos } from './lib/proximos.mjs';
 import { ROOT } from './lib/node-env.mjs';
 import { publicarEnlace } from './lib/video-link.mjs';
-import { leerEstado, guardarEstado, elegir, pendientes, avisoExtra, hoyHN, AVISO_COLA } from './lib/video3d-cola.mjs';
+import { leerEstado, guardarEstado, elegir, pendientes, avisoExtra, hoyHN, AVISO_COLA, TURNOS } from './lib/video3d-cola.mjs';
 
 const o = parseCli({ fecha: { type: 'string' }, turno: { type: 'string', default: 'mediodia' }, guion: { type: 'string' }, 'dry-run': { type: 'boolean', default: false } });
-const fecha = o.fecha || hoyHN(), estado = leerEstado(), turno = o.turno === 'tarde' ? 'tarde' : 'mediodia';
+const fecha = o.fecha || hoyHN(), estado = leerEstado(), turno = TURNOS.includes(o.turno) ? o.turno : 'mediodia';
 if (!o.guion && estado.listos[turno]?.fecha === fecha) { console.log(`Ya hay un video listo para ${fecha} (${turno}): ${estado.listos[turno].titulo}`); process.exit(0); }
 const g = o.guion ? { archivo: path.resolve(o.guion), ...JSON.parse(fs.readFileSync(path.resolve(o.guion), 'utf8')) } : elegir(fecha, estado, turno);
 if (!g) { avisoExtra('📭 Videos 3D: la cola está vacía; hoy no hay video. Pídeme más guiones.'); console.log('Cola vacía'); process.exit(0); }

@@ -16,11 +16,11 @@ import { publishVideo } from './publish.mjs';
 import { logUpload } from './tiktok-status.mjs';
 import { subirYouTube, youtubeReady } from './lib/youtube.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
-import { leerEstado, guardarEstado, avisoExtra, textoPost, textoFuentes, hoyHN, DIR_COLA } from './lib/video3d-cola.mjs';
+import { leerEstado, guardarEstado, avisoExtra, textoPost, textoFuentes, hoyHN, DIR_COLA, TURNOS } from './lib/video3d-cola.mjs';
 
 const o = parseCli({ turno: { type: 'string', default: 'mediodia' }, tiktok: { type: 'string', default: 'si' }, youtube: { type: 'string', default: 'si' }, facebook: { type: 'string', default: 'si' }, instagram: { type: 'string', default: 'si' } });
-const estado = leerEstado(), turno = o.turno === 'tarde' ? 'tarde' : 'mediodia', l = estado.listos[turno];
-if (!l) { avisoExtra(`⚠️ Videos 3D: no hay video listo para el turno de ${turno === 'tarde' ? 'la tarde' : 'mediodía'} (${hoyHN()}). Revisa el render de la madrugada.`); console.log('Nada listo'); process.exit(0); }
+const estado = leerEstado(), turno = TURNOS.includes(o.turno) ? o.turno : 'mediodia', l = estado.listos[turno];
+if (!l) { avisoExtra(`⚠️ Videos 3D: no hay video listo para el turno de ${turno === 'tarde' ? 'la tarde' : turno === 'noche' ? 'las 15:30' : 'mediodía'} (${hoyHN()}). Revisa el render de la madrugada.`); console.log('Nada listo'); process.exit(0); }
 const g = JSON.parse(fs.readFileSync(path.join(DIR_COLA, l.archivo), 'utf8')), texto = textoPost(g);
 console.error(`Publicando: ${l.titulo}${l.fecha !== hoyHN() ? ` (renderizado para ${l.fecha})` : ''}`);
 
