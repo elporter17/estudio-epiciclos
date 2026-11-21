@@ -19,9 +19,9 @@ export const FUENTES = [
   { cat: 'tecnologia', medio: 'Hipertextual', url: 'https://hipertextual.com/feed' },
   { cat: 'tecnologia', medio: 'Infobae', url: 'https://www.infobae.com/arc/outboundfeeds/rss/category/tecno/' }
 ];
-export const ICONO = { videojuegos: '🎮', futbol: '⚽', ciencia: '🔭', tecnologia: '📱', general: '📰' };
-export const CAT_NOMBRE = { videojuegos: 'Videojuegos', futbol: 'Fútbol', ciencia: 'Ciencia', tecnologia: 'Tecnología', general: 'Noticias' };
-export const CATS = ['videojuegos', 'futbol', 'ciencia', 'tecnologia'];
+export const ICONO = { videojuegos: '🎮', futbol: '⚽', ciencia: '🔭', tecnologia: '📱', general: '📰', honduras: '📍' };
+export const CAT_NOMBRE = { videojuegos: 'Videojuegos', futbol: 'Fútbol', ciencia: 'Ciencia', tecnologia: 'Tecnología', general: 'Noticias', honduras: 'Honduras' };
+export const CATS = ['videojuegos', 'futbol', 'ciencia', 'tecnologia', 'honduras'];
 export const N_REEL = 5; // noticias en el Reel «Noticias de hoy»
 
 const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', hellip: '…', laquo: '«', raquo: '»', ldquo: '“', rdquo: '”', lsquo: '‘', rsquo: '’', ndash: '–', mdash: '—', iexcl: '¡', iquest: '¿' };
@@ -92,6 +92,10 @@ export const TENDENCIAS = [
   { cat: 'ciencia', url: GN('headlines/section/topic/SCIENCE?') },
   { cat: 'general', url: GN('headlines/section/topic/ENTERTAINMENT?') },
   { cat: 'videojuegos', url: GN('search?q=videojuegos+OR+Nintendo+OR+PlayStation+OR+Xbox+when:1d&') },
+  // Honduras (2026-11-21, prueba de Facebook local): deportes, cultura y turismo; lo sensible (política, crímenes) ya lo filtra SENSIBLE
+  { cat: 'honduras', url: GN('search?q=Honduras+Olimpia+OR+Motagua+OR+Selecci%C3%B3n+OR+Bicolor+when:2d&') },
+  { cat: 'honduras', url: GN('search?q=Honduras+turismo+OR+cultura+OR+m%C3%BAsica+OR+gastronom%C3%ADa+OR+viral+when:3d&') },
+  { cat: 'honduras', url: GN('search?q=catracho+OR+hondure%C3%B1o+OR+hondure%C3%B1a+when:2d&') },
   { cat: 'videojuegos', url: GN('search?q=%22League+of+Legends%22+OR+%22Worlds+2026%22+OR+%22LoL+Worlds%22+OR+Faker+when:2d&') }
 ];
 const TRENDS = ['HN', 'MX', 'US'].map((g) => `https://trends.google.com/trending/rss?geo=${g}`);

@@ -18,7 +18,7 @@ import { subirYouTube, youtubeReady } from './lib/youtube.mjs';
 import { registrarRespuesta } from './lib/respuestas.mjs';
 import { leerEstado, guardarEstado, avisoExtra, textoPost, textoFuentes, hoyHN, DIR_COLA } from './lib/video3d-cola.mjs';
 
-const o = parseCli({ turno: { type: 'string', default: 'mediodia' }, tiktok: { type: 'string', default: 'si' }, youtube: { type: 'string', default: 'si' } });
+const o = parseCli({ turno: { type: 'string', default: 'mediodia' }, tiktok: { type: 'string', default: 'si' }, youtube: { type: 'string', default: 'si' }, facebook: { type: 'string', default: 'si' }, instagram: { type: 'string', default: 'si' } });
 const estado = leerEstado(), turno = o.turno === 'tarde' ? 'tarde' : 'mediodia', l = estado.listos[turno];
 if (!l) { avisoExtra(`⚠️ Videos 3D: no hay video listo para el turno de ${turno === 'tarde' ? 'la tarde' : 'mediodía'} (${hoyHN()}). Revisa el render de la madrugada.`); console.log('Nada listo'); process.exit(0); }
 const g = JSON.parse(fs.readFileSync(path.join(DIR_COLA, l.archivo), 'utf8')), texto = textoPost(g);
@@ -30,9 +30,9 @@ const video = path.join(ROOT, 'out', `video3d-${l.id}.mp4`);
 if (!fs.existsSync(video)) { const r = await fetch(l.download || l.url); if (!r.ok) throw new Error(`No se pudo bajar el video (${r.status})`); fs.writeFileSync(video, Buffer.from(await r.arrayBuffer())); }
 const meta = { kind: 'video3d', title: l.titulo, file: path.basename(video), duration: l.duracion, videoUrl: l.url, videoDownload: l.download, post: { text: texto }, createdAt: new Date().toISOString() };
 
-if (facebookReady()) { try { meta.facebook = await publishReel({ video, description: texto }); } catch (e) { meta.facebook = { status: 'error', error: e.message }; console.error(`Aviso: Facebook: ${e.message}`); } }
+if (o.facebook !== 'no' && facebookReady()) { try { meta.facebook = await publishReel({ video, description: texto }); } catch (e) { meta.facebook = { status: 'error', error: e.message }; console.error(`Aviso: Facebook: ${e.message}`); } }
 registrarRespuesta({ red: 'facebook', id: meta.facebook?.video_id, clave: { modo: 'charla', guion: l.id }, titulo: l.titulo });
-if (await instagramReady()) { meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: l.url, caption: texto }); registrarRespuesta({ red: 'instagram', id: meta.instagram.media_id, clave: { modo: 'charla', guion: l.id }, titulo: l.titulo }); }
+if (o.instagram !== 'no' && await instagramReady()) { meta.instagram = await publishInstagramSeguro({ tipo: 'reel', url: l.url, caption: texto }); registrarRespuesta({ red: 'instagram', id: meta.instagram.media_id, clave: { modo: 'charla', guion: l.id }, titulo: l.titulo }); }
 if (o.tiktok !== 'no') {
   try { meta.tiktok = [await publishVideo({ video, mode: 'draft', coverMs: 0 })]; }
   catch (e) { meta.tiktok = [{ mode: 'draft', status: /spam_risk|pending/i.test(e.message) ? 'LIMIT' : 'error', fail_reason: e.message }]; console.error(`Aviso: TikTok: ${e.message}`); }
@@ -44,7 +44,7 @@ if (o.youtube !== 'no' && youtubeReady()) {
 }
 fs.writeFileSync(path.join(ROOT, 'out', `video3d-${l.id}.json`), JSON.stringify(meta, null, 2) + '\n');
 // Publicado: fuera de la cola y fuera del almacén (Instagram ya lo copió)
-if (meta.facebook?.status !== 'error' || meta.instagram?.status === 'published') {
+if ((meta.facebook && meta.facebook.status !== 'error') || meta.instagram?.status === 'published' || (!meta.facebook && !meta.instagram && (meta.tiktok?.[0]?.status !== 'error' || meta.youtube?.id))) {
   // Las fuentes del video llegan en el mismo aviso de Telegram (para contestar si alguien pregunta)
   avisoExtra(textoFuentes(g));
   estado.publicados.push({ id: l.id, fecha: hoyHN(), turno }); estado.listos[turno] = null; guardarEstado(estado); await publicarProximos();

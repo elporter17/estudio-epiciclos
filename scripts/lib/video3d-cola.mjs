@@ -28,7 +28,11 @@ export function guiones() {
 // (y que no esté ya listo para el otro turno)
 export function elegir(fecha, estado = leerEstado(), turno = 'mediodia') {
   const hechos = new Set([...estado.publicados.map((p) => p.id), ...Object.entries(estado.listos).filter(([k, v]) => k !== turno && v).map(([, v]) => v.id)]), todos = guiones();
-  return (turno === 'tarde' && todos.find((g) => g.fecha === fecha && !hechos.has(g.id))) || todos.find((g) => !g.fecha && !hechos.has(g.id)) || null;
+  const libres = todos.filter((g) => !g.fecha && !hechos.has(g.id));
+  // Prueba de Honduras (2026-11-21): la tarde (Facebook y TikTok) toma primero los de categoría «honduras»; el mediodía (IG y YouTube) los salta
+  // mientras haya otros, así se comparan sin mezclarlos
+  const pref = turno === 'tarde' ? libres.find((g) => g.categoria === 'honduras') : libres.find((g) => g.categoria !== 'honduras');
+  return (turno === 'tarde' && todos.find((g) => g.fecha === fecha && !hechos.has(g.id))) || pref || libres[0] || null;
 }
 export const pendientes = (estado = leerEstado()) => { const hechos = new Set(estado.publicados.map((p) => p.id)); return guiones().filter((g) => !g.fecha && !hechos.has(g.id)).length; };
 // Avisos extra para Telegram (los lee scripts/aviso.mjs al final de la corrida)

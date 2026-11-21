@@ -16,6 +16,7 @@ import { delDia, ahoraHN } from './lib/horario.mjs';
 import { cambiosDe, guardarNoticias, noticiasConCambios, limpiarViejos, telegram, controlListo, ultimoError } from './lib/control.mjs';
 import { mensajePlan, mensajeNoticias, diaBonito } from './lib/bot.mjs';
 import { publicarProximos } from './lib/proximos.mjs';
+import { radar, mensajeRadar } from './lib/radar.mjs';
 import { yaSalieronDb, guardarCandidatas } from './lib/db.mjs';
 
 export const ARCHIVO = path.join(ROOT, 'data', 'noticias-hoy.json');
@@ -34,10 +35,13 @@ async function main() {
 
   const { fecha } = ahoraHN(), ops = await cambiosDe(fecha), slots = delDia(fecha, ops);
   const msg = `☀️ <b>Buenos días</b> · ${diaBonito(fecha)}\n\n${mensajePlan(fecha, slots, { ops, titulo: 'Lo que sale hoy' })}\n\n${mensajeNoticias(noticiasConCambios(items, ops), { horaReel: slots.find((s) => s.pieza === 'noticias')?.hora, max: 8 })}\n\n✍️ ¿Cambio algo? Toca los botones de abajo o escríbeme normal («quita 14:30», «mueve retos a las 5 pm»…).`;
-  if (o.prueba) { console.log(`\n${msg.replace(/<[^>]+>/g, '')}`); return; }
+  // Radar de tendencias de Honduras (Google Trends, Google News y YouTube; sin navegador): se guarda y se manda aparte
+  const rd = await radar().catch((e) => { console.error(`Radar: ${e.message}`); return null; });
+  if (o.prueba) { console.log(`\n${msg.replace(/<[^>]+>/g, '')}`); if (rd) console.log(`\n${mensajeRadar(rd).replace(/<[^>]+>/g, '')}`); return; }
 
   fs.mkdirSync(path.dirname(ARCHIVO), { recursive: true });
   fs.writeFileSync(ARCHIVO, JSON.stringify({ fecha: new Date().toISOString(), items }, null, 2) + '\n');
+  if (rd) fs.writeFileSync(path.join(ROOT, 'data', 'radar-hoy.json'), JSON.stringify(rd, null, 2) + '\n');
   if (controlListo()) {
     await guardarNoticias(fecha, items);
     console.log(`Base de noticias: ${await guardarCandidatas(items) ?? 'no disponible'} candidatas guardadas`);
@@ -47,6 +51,7 @@ async function main() {
   // Botones para cambiar sin escribir (los atiende api/telegram.js)
   const teclado = { inline_keyboard: [[{ text: '✏️ Cambiar el plan', callback_data: `p|${fecha}` }, { text: '📰 Quitar o fijar noticias', callback_data: 'n' }]] };
   if (!o['sin-aviso']) console.log(`Telegram (plan y noticias): ${await telegram(msg, { teclado }) ? 'enviado' : `no se pudo enviar (${ultimoError})`}`);
+  if (rd && !o['sin-aviso']) console.log(`Telegram (radar): ${await telegram(mensajeRadar(rd)) ? 'enviado' : `no se pudo enviar (${ultimoError})`}`);
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {

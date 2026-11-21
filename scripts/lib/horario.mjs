@@ -22,6 +22,7 @@ const R = 'curiosidades-reels.yml';
 // genera una vez y sale en todas; el resto va por su cuenta.
 const PIEZAS = {
   noticias: { workflow: R, que: 'Reel: noticias de hoy', inputs: { formato: 'noticias' } },
+  noticiashn: { workflow: R, que: 'Reel: noticias de Honduras (prueba local de Facebook)', inputs: { formato: 'noticiashn' } },
   banderas: { workflow: R, que: 'Reel estrella: banderas', inputs: { formato: 'banderas' } },
   retos: { workflow: R, que: 'Reel estrella: retos visuales', inputs: { formato: 'retos' } },
   estrella: { workflow: R, que: 'Reel estrella: retos visuales o retos de geografía (un día cada uno)', inputs: { formato: 'estrella' } },
@@ -54,11 +55,22 @@ const SOLO_TT = new Set(['nombres', 'famosos']);
 // 2026-11-07: Facebook solo da alcance a los primeros ~6 Reels del día (del 7.º en adelante, 0 a 15 vistas: 2 al 7 de
 // noviembre). Facebook queda en 6 Reels (más las imágenes, que no cuentan); noticias, Cómo se hace y los retos de las
 // 15:45 siguen en Instagram, TikTok y YouTube
+// 2026-11-21: un enfoque por red, a horas distintas (antes 8 de 13 horarios eran el mismo video en varias redes a la vez).
+// Datos de los últimos 28-30 días (YouTube Studio, Instagram, Facebook, TikTok Studio y la base de videos):
+//  · Instagram: 98,6 % de las vistas son Reels; quizzes (banderas, retos, ¿qué prefieres?) y 3D rinden ~1.300-1.600; las
+//    fotos, 4-10 → solo Reels de quiz y 3D, sin fotos, noticias ni «Cómo se hace».
+//  · Facebook: un Reel de retos llegó a 20.865 vistas y el resto ronda 100-270; prueba de contenido de Honduras (noticias
+//    de Honduras y los 3D de Honduras en el turno de la tarde), retos y debate. Sin imágenes ni metas de fotos (apagadas).
+//    Máximo 6 Reels al día (del 7.º en adelante casi no hay alcance).
+//  · TikTok: lo mejor fue la sátira de Honduras (minidramas, a mano) y noticias; el resto ~370-560 → 6 al día, variados.
+//  · YouTube: el 99,6 % de las vistas son Shorts; los largos casi no suman → solo Shorts (3D y quizzes), 4 al día, sin largo.
+// Los dos 3D del día ya no salen en las 4 redes: el de mediodía (12:17) va a IG y YouTube, el de la tarde (18:30) a
+// Facebook y TikTok, y son videos distintos.
 const PLAN = {
-  fb: { '09:00': 'banderas', '12:17': 'video3d1', '13:45': 'gta', '14:30': 'debate', '16:45': 'imagen', '18:30': 'video3d2', '20:30': 'estrella' },
-  ig: { '07:30': 'noticias', '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:45': 'retos', '17:15': 'datos', '18:30': 'video3d2', '20:30': 'estrella' },
-  tt: { '07:30': 'noticias', '08:15': 'nombres', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '15:00': 'famosos', '17:15': 'datos', '18:30': 'video3d2', '20:30': 'estrella' },
-  yt: { '09:00': 'banderas', '10:30': 'comosehace', '12:17': 'video3d1', '13:45': 'gta', '17:15': 'datos', '18:30': 'video3d2' }
+  fb: { '07:45': 'noticiashn', '10:15': 'retos', '13:30': 'debate', '16:30': 'prefieres', '18:30': 'video3d2', '21:00': 'geo' },
+  ig: { '08:30': 'banderas', '12:17': 'video3d1', '15:00': 'retos', '17:30': 'prefieres', '19:45': 'emojis', '21:15': 'debate' },
+  tt: { '07:30': 'noticias', '10:00': 'banderas', '13:00': 'debate', '15:30': 'emojis', '18:30': 'video3d2', '21:30': 'estrella' },
+  yt: { '10:45': 'banderas', '12:17': 'video3d1', '16:45': 'retos', '20:00': 'estrella' }
 };
 // Junta los planes: una corrida por hora y pieza, con las redes que la piden
 function juntarPlanes() {
@@ -104,14 +116,9 @@ export const HORARIO = [
   { hora: '04:37', workflow: 'video3d.yml', que: 'Video 3D: respaldo del render de la tarde', inputs: { modo: 'render', turno: 'tarde' } },
   { hora: '06:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
   { hora: '23:25', workflow: 'vistas.yml', que: 'Vistas de lo publicado → Supabase (para reenviar lo que tuvo pocas)' },
-  ...juntarPlanes(),
-  // Lanzamiento de GTA VI: un Reel especial a media mañana (el especial 3D sale a las 18:30)
-  { hora: '11:15', pieza: 'gta', workflow: 'gta6.yml', que: 'Especial de lanzamiento de GTA VI → FB, IG, TikTok, YouTube', inputs: { lanzamiento: 'true', redes: 'fb,ig,tt,yt' }, fecha: '2026-11-19' },
-  // Video largo horizontal para YouTube (8 a 10 min; tarda unos 15 min en hacerse): martes, jueves y sábado
-  { hora: '14:07', pieza: 'largo', workflow: 'youtube-largo.yml', que: 'Video largo de YouTube: cómo se hacen 6 cosas', dias: [2, 4, 6] }
+  ...juntarPlanes()
 ];
-// Metas semanales de Facebook (fotos e historias que pide el panel): lejos de las estrellas (scripts/metas.mjs)
-for (const hora of ['11:07', '15:07', '21:07']) HORARIO.push({ hora, pieza: 'metas', workflow: 'metas.yml', que: 'Metas semanales: fotos e historias que falten → FB' });
+// Metas semanales de Facebook (fotos): apagadas el 2026-11-21 (las fotos sacaban 15-25 vistas); la pieza 'metas' sigue definida por si se quieren reactivar
 // Respuestas a comentarios: cada hora de 7:47 a 23:47 (cuanto antes se contesta, más conversación)
 for (let h = 7; h <= 23; h++) HORARIO.push({ hora: `${String(h).padStart(2, '0')}:47`, workflow: 'comentarios.yml', que: 'Responder comentarios' });
 HORARIO.sort((a, b) => a.hora.localeCompare(b.hora));
@@ -193,6 +200,7 @@ export const ALIAS = Object.entries({
   debateimg: ['debate en imagen', 'imagen de debate', 'debate imagen', 'error a proposito', 'cuantos ves'],
   debate: ['retos que dividen', 'reel de debate', 'debate', 'dividen'],
   noticiasimg: ['noticias en imagenes', 'noticias en imagen', 'noticias imagenes', 'noticias imagen', 'noticias en fotos', 'noticias en carrusel', 'carrusel de noticias'],
+  noticiashn: ['noticias de honduras', 'noticias honduras', 'noticias hn', 'honduras'],
   noticias: ['noticias en video', 'noticias video', 'reel de noticias', 'noticias de hoy', 'noticiero', 'noticias'],
   video3d1: ['3d de mediodia', '3d del mediodia', 'video 3d de mediodia', '3d 1'],
   video3d2: ['3d de la tarde', 'video 3d de la tarde', '3d 2'],
@@ -203,7 +211,7 @@ export const ALIAS = Object.entries({
   famosos: ['futbolistas', 'futbolista', 'jugadores', 'jugador', 'famosos', 'futbol'],
   largo: ['video largo', 'largo de youtube']
 }).flatMap(([p, xs]) => xs.map((x) => [x, p])).sort((a, b) => b[0].length - a[0].length);
-export const NOMBRE_PIEZA = { comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Retos/Geografía', geo: 'Geografía difícil', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', gtaquiz: 'Quiz GTA', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB', reenvio: 'Reenvío', datos: '5 datos (video)' };
+export const NOMBRE_PIEZA = { noticiashn: 'Noticias Honduras', comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Retos/Geografía', geo: 'Geografía difícil', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', gtaquiz: 'Quiz GTA', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB', reenvio: 'Reenvío', datos: '5 datos (video)' };
 export const nombreSlot = (s) => NOMBRE_PIEZA[s.pieza] || (s.workflow === 'metas.yml' ? 'Metas FB' : NOMBRES[s.workflow] || s.workflow);
 
 // Tabla para Telegram (va dentro de <pre>): hora, pieza y redes; con estado si viene de diaConEstado

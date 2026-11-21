@@ -427,9 +427,9 @@ function emojisVideo(hist) {
   return { formato: 'emojis', titulo: 'Adivina con emojis', escenas, texto, emojis: elegidos.map((x) => x.id), clave: { modo: 'puntaje', max: 8 } };
 }
 
-const ETIQUETA_NOTICIA = { videojuegos: '🎮 VIDEOJUEGOS', futbol: '⚽ FÚTBOL', ciencia: '🔭 CIENCIA', tecnologia: '📱 TECNOLOGÍA', general: '📰 NOTICIA' };
-const FONDO_NOTICIA = { videojuegos: ['video game controller', 'gamer neon room', 'arcade lights'], futbol: ['soccer stadium crowd', 'soccer ball grass', 'football fans stadium'], ciencia: ['galaxy stars space', 'science laboratory', 'earth from space'], tecnologia: ['smartphone technology', 'circuit board macro', 'data center lights'], general: ['newspaper printing', 'city news'] };
-async function noticiasVideo(hist) {
+const ETIQUETA_NOTICIA = { videojuegos: '🎮 VIDEOJUEGOS', futbol: '⚽ FÚTBOL', ciencia: '🔭 CIENCIA', tecnologia: '📱 TECNOLOGÍA', general: '📰 NOTICIA', honduras: '📍 HONDURAS' };
+const FONDO_NOTICIA = { videojuegos: ['video game controller', 'gamer neon room', 'arcade lights'], futbol: ['soccer stadium crowd', 'soccer ball grass', 'football fans stadium'], ciencia: ['galaxy stars space', 'science laboratory', 'earth from space'], tecnologia: ['smartphone technology', 'circuit board macro', 'data center lights'], general: ['newspaper printing', 'city news'], honduras: ['tropical city latin america', 'palm trees beach', 'latin american street'] };
+async function noticiasVideo(hist, enfoque = '') {
   // Las del día las junta noticias.yml (scripts/noticias.mjs, ya ordenadas por importancia); si no están, se leen ahora.
   // Encima van tus cambios por Telegram: las que quitaste no salen, las fijadas y las tuyas van primero
   // La lista más nueva entre la del estado (6:23) y la del almacén (la que actualizas desde el bot); si tiene más de
@@ -445,7 +445,9 @@ async function noticiasVideo(hist) {
   // Ni el mismo enlace ni la misma historia de otro día (por el título: otro medio puede contar lo mismo)
   const vistas = new Set([...hist.noticias.slice(-300), ...enDb.links]), titulos = [...(hist.noticiasTitulos || []).slice(-150), ...enDb.titulos];
   const frescas = noticiasConCambios(lista, ops).filter((n) => n.propia || (!vistas.has(n.link) && !titulos.some((t) => misma(t, n.titulo))));
-  const elegidas = frescas.slice(0, N_REEL);
+  // enfoque «honduras» (prueba de Facebook local): las de Honduras primero, el resto completa hasta 5
+  const ordenadas = enfoque === 'honduras' ? [...frescas.filter((n) => n.cat === 'honduras'), ...frescas.filter((n) => n.cat !== 'honduras')] : frescas;
+  const elegidas = ordenadas.slice(0, N_REEL);
   if (elegidas.length < 3) return null;
   // La narración alarga cada escena lo que haga falta (titular + resumen)
   const durNoticia = Math.min(13, Math.max(8.5, 51.5 / elegidas.length));
@@ -453,12 +455,12 @@ async function noticiasVideo(hist) {
   const corta = (f) => new Date(f).toLocaleDateString('es-HN', { day: 'numeric', month: 'short', timeZone: 'America/Tegucigalpa' });
   const escenas = [
     { tipo: 'intro', dur: INTRO, tema: 'noticias', portada: true, consulta: 'city timelapse morning', sonidos: introSonidos, iconos: ['📰', '🎮', '⚽', '🔭'], voz: 'Las noticias de hoy, en un minuto.',
-      lineas: [{ texto: 'NOTICIAS', size: 140, color: TEMAS.noticias.acento }, { texto: 'DE HOY', size: 120 }, { texto: hoy, size: 56, color: 'rgba(255,255,255,0.85)' }] },
+      lineas: [{ texto: 'NOTICIAS', size: 140, color: TEMAS.noticias.acento }, { texto: enfoque === 'honduras' ? 'DE HONDURAS' : 'DE HOY', size: enfoque === 'honduras' ? 96 : 120 }, { texto: hoy, size: 56, color: 'rgba(255,255,255,0.85)' }] },
     ...elegidas.map((n, i) => ({ tipo: 'noticia', dur: durNoticia, idx: i, total: elegidas.length, tema: 'noticias', etiqueta: ETIQUETA_NOTICIA[n.cat] || '📰 NOTICIA', consulta: azar(FONDO_NOTICIA[n.cat] || FONDO_NOTICIA.general), icono: n.icono || '📰', titular: n.titulo, resumen: n.resumen || '', pie: n.propia ? n.medio : `${n.medio} · ${corta(n.fecha)}`, voz: [n.titulo.replace(/["“”]/g, ''), n.resumen].filter(Boolean).join('. ').replace(/\.\./g, '.'), sonidos: [[0, 'whoosh'], [0.05, 'pop']] })),
     { ...cierre('noticias', '¿CUÁL TE SORPRENDIÓ MÁS?', 'Las noticias del día en menos de un minuto'), voz: '¿Cuál te sorprendió más? Cuéntanos en los comentarios.' }
   ];
-  const texto = `📰 Las noticias de hoy en un minuto.\n\n${elegidas.map((n, i) => `${i + 1}. ${n.titulo}${n.resumen ? `\n${n.resumen}` : ''} (${n.medio})`).join('\n\n')}\n\n¿Cuál te sorprendió más?\n\n${tags('noticias', 'ultimahora', ...new Set(elegidas.map((n) => n.cat).filter((c) => c !== 'general')))}`;
-  return { formato: 'noticias', titulo: 'Noticias de hoy', escenas, texto, noticias: elegidas.map((n) => n.link), noticiasTitulos: elegidas.map((n) => n.titulo), noticiasItems: elegidas };
+  const texto = `📰 Las noticias de hoy en un minuto.\n\n${elegidas.map((n, i) => `${i + 1}. ${n.titulo}${n.resumen ? `\n${n.resumen}` : ''} (${n.medio})`).join('\n\n')}\n\n¿Cuál te sorprendió más?\n\n${tags('noticias', 'ultimahora', ...(enfoque === 'honduras' ? ['honduras', 'catracho'] : []), ...new Set(elegidas.map((n) => n.cat).filter((c) => c !== 'general')))}`;
+  return { formato: 'noticias', titulo: enfoque === 'honduras' ? 'Noticias de Honduras' : 'Noticias de hoy', escenas, texto, noticias: elegidas.map((n) => n.link), noticiasTitulos: elegidas.map((n) => n.titulo), noticiasItems: elegidas };
 }
 
 // ---------- «Cómo se hace» (2026-11-03): la fábrica en 2D animada, recorrida en un solo plano, con fotos reales ----------
@@ -501,7 +503,7 @@ async function main() {
   // «estrella»: retos un día y los retos de geografía (geo) el otro; las banderas (ya más difíciles) quedan a las 9:00
   const formato = o.formato === 'estrella' ? (diaHN % 2 ? 'retos' : 'geo') : o.formato !== 'auto' ? o.formato : ROTACION[paso % ROTACION.length];
   const base = cargarDatos();
-  const hacer = { debate: debateVideo, comosehace: () => comoSeHace(hist), top10: () => top10(base, hist, o.tema), datos5: () => datos5(base, hist, o.tema), geo: () => geoVideo(hist, emojiFont, o.tema), gtaquiz: () => gtaQuiz(hist), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist) };
+  const hacer = { debate: debateVideo, comosehace: () => comoSeHace(hist), top10: () => top10(base, hist, o.tema), datos5: () => datos5(base, hist, o.tema), geo: () => geoVideo(hist, emojiFont, o.tema), gtaquiz: () => gtaQuiz(hist), quiz: () => quiz(base, hist), banderas: () => banderas(hist), retos: retosVideo, prefieres: () => prefieresVideo(hist), emojis: () => emojisVideo(hist), noticias: () => noticiasVideo(hist), noticiashn: () => noticiasVideo(hist, 'honduras') };
   if (!hacer[formato]) throw new Error(`--formato debe ser ${Object.keys(hacer).join(', ')} o auto`);
   // Si un formato no tiene material (sin noticias frescas, por ejemplo), sale un quiz
   const pieza = (await hacer[formato]()) || quiz(base, hist);
