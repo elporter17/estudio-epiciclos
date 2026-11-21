@@ -14,6 +14,7 @@ import { parseCli } from './lib/cli.mjs';
 import { log } from './lib/env.mjs';
 import { loadSeries, episode, timelineFile, imageDir, readJson, OUT_DIR } from './lib/series.mjs';
 import { W, H, FPS, SAFE, LOOK, CX, setupFonts, layoutWords, boxOf, drawRows, ease, buildCaptions } from './assemble.mjs';
+import { aplicarPOV } from './lib/pov.mjs';
 
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const lerp = (a, b, k) => a + (b - a) * k;
@@ -507,6 +508,68 @@ const ESCENAS_P2 = {
   }
 };
 
+
+/* ---------- escenas declarativas: series.anim.escenas (sin código por serie) ----------
+ * Cada escena es un objeto JSON con el id de la escena del guion como llave:
+ *   fondo: 'bg_x' (o color: '#hex'), deriva, dx  ·  cam: 'cortes' | 'acerca' | 'quieta' | [[seg, zoom, fx, fy], …], foco (0-1)
+ *   personajes: [{ id, x, foot, h, enter: pop|left|right|rise|drop, t0, hablante, flip, bob, salto, tilt, sway }]
+ *   objetos: [{ id, x, y, h, t0, pop, flota, rot, flip, de: [x, y], a: [x, y], dur }]   (x, y en fracciones de la pantalla)
+ *   hud: [{ tipo: 'sello'|'texto'|'comentario'|'etiqueta', texto, x, y, t0, t1, color, size, rot }]
+ *   pov: [{ tipo: 'deutan'|'protan'|'tritan'|'verde-azul'|'grises'|'miopia'|'tunel', t0, t1, etiqueta }]   (cómo lo ve…)
+ *   efectos: [{ tipo: 'confeti'|'chispas'|'rayos', t0 }]  ·  sacudida: [t0, t1, fuerza]
+ * Detalle y ejemplos en historias/README.md. */
+function etiqueta(ctx, texto, ts, t0, t1, color = '#111827', fondoC = '#FFFFFF') {
+  if (ts < t0 || (t1 != null && ts > t1 + 0.3)) return;
+  const k = t1 != null && ts > t1 ? 1 - ease((ts - t1) / 0.3) : outBack((ts - t0) / 0.35);
+  ctx.save(); ctx.translate(W / 2, SAFE.y0 + 150); ctx.scale(Math.max(0.01, k), Math.max(0.01, k));
+  ctx.font = '900 54px Montserrat'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  const w = ctx.measureText(texto).width + 90;
+  ctx.fillStyle = fondoC; ctx.strokeStyle = color; ctx.lineWidth = 7; ctx.beginPath(); ctx.roundRect(-w / 2, -48, w, 96, 48); ctx.fill(); ctx.stroke();
+  ctx.fillStyle = color; ctx.fillText(texto, 0, 3); ctx.restore();
+}
+const CAMS = {
+  quieta: () => [[0, 1.0, 0.5, 0.5]],
+  acerca: () => [[0, 1.0, 0.5, 0.5]],
+  cortes: (dur, fx = 0.5) => { const kf = [[0, 1.0, 0.5, 0.5]]; for (let t = 2.2, i = 0; t < dur - 1.2; t += 2.4, i++) kf.push([t, i % 2 ? 1.0 : 1.32, i % 2 ? 0.5 : fx, 0.5]); return kf; }
+};
+function desdeSpec(sp) {
+  const nombreCam = typeof sp.cam === 'string' || !sp.cam ? (sp.cam || 'cortes') : null;
+  const cam = nombreCam ? (dur) => (CAMS[nombreCam] || CAMS.cortes)(dur, sp.foco ?? 0.5) : sp.cam;
+  return {
+    cam, lento: sp.lento ?? (nombreCam === 'acerca' ? 1.25 : 0), pov: sp.pov,
+    sacudida: sp.sacudida ? (ts) => (ts >= sp.sacudida[0] && ts <= sp.sacudida[1] ? sp.sacudida[2] ?? 12 : 0) : undefined,
+    mundo(c) {
+      const { ctx, ts } = c;
+      if (sp.fondo) fondo(c, sp.fondo, { deriva: sp.deriva ?? 0.08, base: sp.base ?? 1.12, dx: (sp.dx || 0) * ts });
+      else { ctx.fillStyle = sp.color || '#1f2937'; ctx.fillRect(0, 0, W, H); if (sp.rayos) rayos(ctx, W / 2, H * 0.42, ts, sp.rayos[0], sp.rayos[1]); }
+      for (const o of sp.objetos || []) {
+        const a = ts - (o.t0 || 0); if (a < 0) continue;
+        let x = o.x ?? 0.5, y = o.y ?? 0.5;
+        if (o.de && o.a) { const k = ease(clamp(a / (o.dur || 1.2))); x = lerp(o.de[0], o.a[0], k); y = lerp(o.de[1], o.a[1], k); }
+        const e = o.pop ? Math.max(0.02, outBack(a / 0.45)) : 1;
+        objeto(c, o.id, x * W, y * H + (o.flota ? Math.sin(ts * 3) * 12 : 0), (o.h || 600) * e, { rot: o.rot || 0, flip: o.flip, alpha: o.alpha ?? 1 });
+      }
+      for (const p of sp.personajes || []) sprite(c, p.id, { x: p.x ?? 0.5, foot: p.foot ?? 0.97, h: p.h ?? 1100, enter: p.enter ?? 'pop', t0: p.t0 ?? 0.2, hablante: p.hablante, flip: p.flip, bob: p.bob, salto: p.salto, tilt: p.tilt, sway: p.sway, escala: p.escala });
+      for (const e of sp.efectos || []) {
+        const a = ts - (e.t0 || 0); if (a < 0) continue;
+        if (e.tipo === 'confeti') confeti(ctx, a, e.n || 80, e.seed || 8);
+        else if (e.tipo === 'chispas') chispas(ctx, a, { seed: e.seed || 3, n: e.n || 12, y0: e.y0 ?? 0.1, y1: e.y1 ?? 0.5 });
+        else if (e.tipo === 'rayos') rayos(ctx, W / 2, H * 0.42, a, e.a || '#FFD23F', e.b || '#F5A300');
+      }
+    },
+    hud(c) {
+      const { ctx, ts } = c;
+      for (const h of sp.hud || []) {
+        const x = (h.x ?? 0.5) * W, y = (h.y ?? 0.3) * H, t0 = h.t0 ?? 0.5;
+        if (h.tipo === 'sello') sello(ctx, h.texto, x, y, ts, t0, h.color || '#22C55E', h.size || 78, h.rot ?? -4);
+        else if (h.tipo === 'texto') texto(ctx, h.texto, x, y, ts, t0, { size: h.size || 110, color: h.color || '#FFE14D', rot: h.rot ?? -4, dur: h.dur ?? 99 });
+        else if (h.tipo === 'comentario') comentario(ctx, h.texto, ts, t0, h.t1 ?? t0 + 3);
+        else if (h.tipo === 'etiqueta') etiqueta(ctx, h.texto, ts, t0, h.t1, h.color, h.fondo);
+      }
+    }
+  };
+}
+
 /* ---------- audio: volumen de la voz por cuadro (mueve la boca) ---------- */
 function envolvente(wav) {
   const r = spawnSync(ffmpegPath, ['-hide_banner', '-loglevel', 'error', '-i', wav, '-ac', '1', '-ar', '8000', '-f', 'f32le', '-'], { maxBuffer: 256 * 1024 * 1024 });
@@ -530,7 +593,8 @@ async function preparar(series, n) {
   const captions = buildCaptions(timeline, { standalone: true });
   const Hk = LOOK.hook, hookL = layoutWords(ctx, ep.hook_text.trim().split(/\s+/).map((w) => ({ text: w.toLocaleUpperCase('es') })), { size: Hk.size, min: Hk.min, stroke: Hk.stroke, maxLines: Hk.maxLines, lineGap: 1.1 });
   const hookY = SAFE.y0 + 12 + 30 + Hk.gapTop + hookL.asc + Hk.stroke / 2;
-  const S = LOOK.sub; const violations = [];
+  const S = { ...LOOK.sub, ...(series.anim?.subs || {}) }; const violations = [];
+  Object.assign(BOCA, series.anim?.boca || {});
   for (const c of captions) {
     c.L = layoutWords(ctx, c.words, { size: S.size, min: S.min, stroke: S.stroke, lineGap: S.lineGap });
     c.baseY = S.y - ((c.L.rows.length - 1) * c.L.lineH) / 2 + (c.L.asc - c.L.desc) / 2;
@@ -541,16 +605,23 @@ async function preparar(series, n) {
     ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
     const i = Math.max(0, sc.findLastIndex((s) => t >= s.ini)), s = sc[i], E = ESCENAS[s.id], ts = t - s.ini;
     if (E) {
-      const kf = E.cam; let a = kf[0], prev = kf[0];
+      const durE = s.fin - s.ini, kf = typeof E.cam === 'function' ? E.cam(durE) : E.cam; let a = kf[0], prev = kf[0];
       for (const k of kf) if (ts >= k[0]) { prev = a; a = k; }
       const kk = a === prev ? 1 : ease((ts - a[0]) / 0.24);
       let z = lerp(prev[1], a[1], kk), fx = lerp(prev[2], a[2], kk), fy = lerp(prev[3], a[3], kk);
       z *= 1 + 0.1 * (1 - ease(ts / 0.3)); // cada corte «cae» un poco encima
+      if (E.lento) z *= lerp(1, E.lento, clamp(ts / Math.max(1, durE)));
       fx = clamp(fx, 0.5 / z, 1 - 0.5 / z); fy = clamp(fy, 0.5 / z, 1 - 0.5 / z);
       const sh = E.sacudida ? E.sacudida(ts) : 0, ox = sh ? Math.sin(ts * 60) * sh : 0, oy = sh ? Math.cos(ts * 53) * sh : 0;
       const c = { ctx, ts, dur: s.fin - s.ini, A, voz: (spk) => voz(t, spk) };
       ctx.save(); ctx.translate(W / 2 + ox, H / 2 + oy); ctx.scale(z, z); ctx.translate(-fx * W, -fy * H); E.mundo(c); ctx.restore();
       if (E.hud) { ctx.save(); ctx.translate(ox * 0.6, oy * 0.6); E.hud(c); ctx.restore(); }
+      // «Cómo lo ve…»: filtro de visión con fundido de 0,35 s (y una etiqueta mientras dura), después del dibujo y antes de los subtítulos
+      for (const p of E.pov || []) {
+        const t0 = p.t0 ?? 0, t1 = p.t1, k = ease(clamp((ts - t0) / 0.35)) * (t1 != null ? 1 - ease(clamp((ts - t1) / 0.35)) : 1);
+        if (k > 0.004) aplicarPOV(ctx, W, H, p.tipo, k);
+        if (p.etiqueta) etiqueta(ctx, p.etiqueta, ts, t0, t1, '#FFFFFF', '#BE185D');
+      }
       if (ts < 0.14) { ctx.fillStyle = `rgba(255,255,255,${0.55 * (1 - ts / 0.14)})`; ctx.fillRect(0, 0, W, H); }
     }
     if (t < Hk.until + Hk.fade) { const al = t < Hk.until ? 1 : 1 - (t - Hk.until) / Hk.fade; drawRows(ctx, hookL, hookY, { stroke: Hk.stroke, color: '#FFFFFF', alpha: al, scale: 0.94 + 0.06 * ease(t / 0.18) }); }
@@ -567,6 +638,7 @@ async function main() {
   if (series.slug === 'congreso-al-servicio') ESCENAS = ESCENAS_CONGRESO;
   if (series.slug === 'tal-cual-pasa') ESCENAS = ESCENAS_TCP;
   if (series.slug === 'papi-parte-2') ESCENAS = ESCENAS_P2;
+  if (series.anim?.escenas) ESCENAS = Object.fromEntries(Object.entries(series.anim.escenas).map(([id, sp]) => [id, desdeSpec(sp)]));
   const R = await preparar(series, n);
   if (R.violations.length) log(`AVISO: subtítulos fuera de la zona segura: ${R.violations.join(' | ')}\n`);
   const out = path.join(OUT_DIR, series.slug, `${series.slug}-animado.mp4`);

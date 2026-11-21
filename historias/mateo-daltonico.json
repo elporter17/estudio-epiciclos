@@ -1,0 +1,95 @@
+{
+  "slug": "mateo-daltonico",
+  "titulo": "Mateo y el equipo rojo contra el verde",
+  "estilo": "cartoon3d",
+  "gancho": "ROJO CONTRA VERDE: MATEO NO LOS DISTINGUÍA",
+  "descripcion": "Mateo no distinguía a su equipo del rival… ¿sabes por qué? 👀 El daltonismo afecta a 1 de cada 12 hombres. Cuéntanos si conoces a alguien daltónico 👇",
+  "hashtags": ["daltonismo", "curiosidades", "ciencia", "aprende", "historia"],
+  "sinopsis": "Un niño que no distingue la camiseta de su equipo de la del rival descubre que es daltónico.",
+  "tono": "Cálido, cercano y educativo; sin dramatizar ni burlarse de nadie.",
+  "narrador": {
+    "voz": "coral",
+    "instrucciones": "Narradora cálida y cercana, ritmo ágil, español claro y neutro; baja un poco el tono y hace una pausa corta antes del dato importante."
+  },
+  "personajes": [
+    { "id": "mateo", "nombre": "Mateo", "rol": "Niño de 10 años que ama el fútbol", "edad": 10, "voz": "ash",
+      "visual": "A 10-year-old Latin American boy: oversized round head, short messy black hair, warm brown skin, big friendly dark eyes, small body. Wears a red soccer jersey with the number 7, white shorts, white socks and black cleats." },
+    { "id": "entrenador", "nombre": "Entrenador Ramos", "rol": "Entrenador del equipo", "edad": 45, "voz": "onyx",
+      "visual": "A cheerful middle-aged Latin American soccer coach: oversized round head, short gray-black hair, thick black mustache, warm brown skin, navy tracksuit with a silver whistle around his neck." },
+    { "id": "doctora", "nombre": "Doctora Elena", "rol": "Doctora de los ojos", "edad": 35, "voz": "nova",
+      "visual": "A kind young Latin American eye doctor: oversized round head, dark hair in a neat bun, round glasses, white lab coat over a teal blouse, a small penlight in the breast pocket." },
+    { "id": "papa", "nombre": "Papá de Mateo", "rol": "Papá", "edad": 38, "voz": "echo",
+      "visual": "A tall slim Latin American father in his late 30s: oversized round head, short black hair, light stubble, warm brown skin, a blue polo shirt and jeans." }
+  ],
+  "poses": {
+    "mateo_balon": ["mateo", "Standing proudly with a soccer ball under one arm, big happy smile."],
+    "mateo_triste": ["mateo", "Standing with head down and shoulders slumped, sad face, arms hanging."],
+    "mateo_curioso": ["mateo", "Leaning forward looking closely at something with a puzzled face, one hand on his chin."],
+    "mateo_feliz": ["mateo", "Jumping with both arms raised, a huge happy smile."],
+    "entrenador_senala": ["entrenador", "Pointing forward with one arm and holding his whistle in the other hand, kind concerned face."],
+    "doctora_prueba": ["doctora", "Holding up a blank round card in both hands, friendly smile."],
+    "papa_saluda": ["papa", "Standing with a warm smile, one hand raised in a friendly wave."]
+  },
+  "props": {
+    "equipo_rojo": "A group of four cartoon kids in red soccer jerseys running together, full body, smiling. ",
+    "equipo_verde": "A group of four cartoon kids in green soccer jerseys running together, full body, determined faces. ",
+    "equipo_azul": "A group of four cartoon kids in blue soccer jerseys running together, full body, smiling. ",
+    "equipo_amarillo": "A group of four cartoon kids in yellow soccer jerseys running together, full body, determined faces. ",
+    "prueba_puntos": "A large round color-vision test card made of many small dots in orange, green and red tones, flat front view, no numbers or letters. "
+  },
+  "fondos": {
+    "bg_cancha": "A bright green soccer field seen from the sideline, white lines, goals in the distance, blue sky with a few clouds, rounded cartoon trees behind.",
+    "bg_clinica": "A friendly pediatric eye clinic: a light room with a medical chair, a small desk and pastel walls, abstract shapes on the wall instead of letters.",
+    "bg_casa": "A cozy living room at sunset: a sofa, a bookshelf and a window with warm orange light."
+  },
+  "escenas": [
+    { "id": "s1", "beat": "gancho", "texto": "Mateo amaba el fútbol, pero tenía un problema: nunca sabía a quién pasarle el balón.",
+      "fondo": "bg_cancha", "cam": "cortes",
+      "personajes": [{ "pose": "mateo_balon", "x": 0.5, "h": 1250, "hablante": "narrador" }] },
+    { "id": "s2", "texto": "En su equipo todos llevaban camiseta roja, y los rivales, verde. Para Mateo, las dos se veían casi igual.",
+      "fondo": "bg_cancha", "cam": "quieta",
+      "objetos": [
+        { "id": "equipo_rojo", "de": [-0.3, 0.6], "a": [0.28, 0.62], "dur": 1.4, "h": 640 },
+        { "id": "equipo_verde", "de": [1.3, 0.6], "a": [0.72, 0.62], "dur": 1.4, "h": 640 }
+      ],
+      "personajes": [{ "pose": "mateo_curioso", "x": 0.5, "h": 1000, "t0": 0.6 }],
+      "pov": [{ "tipo": "deutan", "t0": 4.2, "etiqueta": "ASÍ LOS VE MATEO" }] },
+    { "id": "s3", "texto": "Se pasó el partido regalando balones al otro equipo, y sus amigos se reían. Mateo quería desaparecer.",
+      "fondo": "bg_cancha", "cam": "acerca", "dx": -14,
+      "personajes": [{ "pose": "mateo_triste", "x": 0.5, "h": 1250 }] },
+    { "id": "s4", "texto": "Esa tarde, el entrenador lo llevó con una doctora de los ojos.",
+      "fondo": "bg_clinica", "cam": "cortes", "foco": 0.3,
+      "personajes": [{ "pose": "entrenador_senala", "x": 0.27, "h": 1150, "enter": "left" }, { "pose": "mateo_curioso", "x": 0.74, "h": 950, "t0": 0.6, "enter": "right" }] },
+    { "id": "s5", "texto": "La doctora le mostró un círculo de puntos de colores y le preguntó qué número veía. Mateo no veía ninguno.",
+      "fondo": "bg_clinica", "cam": "cortes", "foco": 0.7,
+      "personajes": [{ "pose": "doctora_prueba", "x": 0.3, "h": 1150 }],
+      "objetos": [{ "id": "prueba_puntos", "x": 0.72, "y": 0.4, "h": 620, "t0": 1.4, "pop": true, "flota": true }] },
+    { "id": "s6", "texto": "Tenía daltonismo. No ve menos: ve algunos colores de otra manera, sobre todo el rojo y el verde.",
+      "fondo": "bg_clinica", "cam": "acerca",
+      "personajes": [{ "pose": "mateo_curioso", "x": 0.5, "h": 1150 }],
+      "hud": [{ "tipo": "sello", "texto": "DALTONISMO", "x": 0.5, "y": 0.24, "t0": 0.4, "color": "#BE185D", "size": 100 }] },
+    { "id": "s7", "texto": "Es más común de lo que crees: le pasa a uno de cada doce hombres, y a una de cada doscientas mujeres.",
+      "fondo": "bg_casa", "cam": "quieta",
+      "personajes": [{ "pose": "mateo_curioso", "x": 0.5, "h": 1000, "enter": "rise" }],
+      "hud": [
+        { "tipo": "sello", "texto": "1 DE CADA 12 HOMBRES", "x": 0.5, "y": 0.2, "t0": 2.2, "color": "#2563EB", "size": 66 },
+        { "tipo": "sello", "texto": "1 DE CADA 200 MUJERES", "x": 0.5, "y": 0.29, "t0": 4.6, "color": "#BE185D", "size": 62, "rot": 3 }
+      ] },
+    { "id": "s8", "texto": "Su papá le contó que a él le pasaba igual: es hereditario, y viaja en el cromosoma equis.",
+      "fondo": "bg_casa", "cam": "cortes", "foco": 0.3,
+      "personajes": [{ "pose": "papa_saluda", "x": 0.28, "h": 1200, "enter": "left" }, { "pose": "mateo_curioso", "x": 0.74, "h": 950, "t0": 0.5 }],
+      "hud": [{ "tipo": "texto", "texto": "CROMOSOMA X", "x": 0.5, "y": 0.2, "t0": 3.6, "color": "#FFE14D", "size": 110 }] },
+    { "id": "s9", "texto": "Entonces cambiaron los colores del equipo: azul contra amarillo. Y Mateo volvió a pasar el balón sin dudar.",
+      "fondo": "bg_cancha", "cam": "acerca",
+      "objetos": [
+        { "id": "equipo_azul", "de": [-0.3, 0.6], "a": [0.26, 0.62], "dur": 1.4, "h": 640 },
+        { "id": "equipo_amarillo", "de": [1.3, 0.6], "a": [0.74, 0.62], "dur": 1.4, "h": 640 }
+      ],
+      "personajes": [{ "pose": "mateo_feliz", "x": 0.5, "h": 1050, "t0": 2.4, "salto": 6 }],
+      "efectos": [{ "tipo": "confeti", "t0": 3.0 }] },
+    { "id": "s10", "beat": "cierre", "texto": "¿Conocías el daltonismo? Cuéntanos en los comentarios y comparte este video con alguien que quiera saber cómo se ve el mundo así.",
+      "fondo": "bg_casa", "cam": "quieta",
+      "personajes": [{ "pose": "mateo_feliz", "x": 0.5, "h": 1150, "salto": 5 }],
+      "hud": [{ "tipo": "texto", "texto": "COMPÁRTELO", "x": 0.5, "y": 0.22, "t0": 3.4, "color": "#FFE14D", "size": 120 }] }
+  ]
+}

@@ -50,6 +50,12 @@ Clips de video con diálogo hechos a mano en el navegador, sin API: **ChatGPT** 
 - Gemini permite 2 o 3 videos a la vez en pestañas distintas (la preparación con JavaScript sí funciona: Herramientas → Crear vídeo → Vertical); a veces responde «demasiadas solicitudes» y se arregla con «Rehacer».
 - Veo a veces mete palabras de relleno. `veo-assemble` alinea las palabras del guion con lo que oye Whisper y deja fuera el relleno; los subtítulos van por línea de diálogo.
 
+## Historias 2D (generador, rama `feat/historias-2d`)
+Formato de historias narradas con personajes animados, fondos que cambian, subtítulos palabra por palabra y filtro de «cómo lo ve…» (daltonismo, miopía, túnel). Se escribe **un JSON** en `historias/<slug>.json` y `node scripts/historia.mjs historias/<slug>.json` lo valida, estima duración y costo y lo compila a `series/<slug>/series.json`. Guía completa en [historias/README.md](historias/README.md).
+- `--prueba`: vista previa **gratis** (figuras de relleno y voz en silencio, PNG de los segundos que pidas con `--cuadros`). `--hacer`: genera retratos, recursos, voz y video (**gasta API**: muestra el costo y confirma antes).
+- Motor: `scripts/animate.mjs` lee `series.anim.escenas` (escenas declarativas, sin código por serie); el filtro está en `scripts/lib/pov.mjs`; los estilos visuales en `scripts/lib/estilos.mjs`.
+- Piloto: `historias/mateo-daltonico.json` («Mateo y el equipo rojo contra el verde», ≈ 89 s, costo estimado ≈ $0,70). Aún sin generar: falta el OK del usuario para gastar.
+
 ## Pendiente o ideas
 - La parte 5 cierra con «Parte 6 en mi perfil», que todavía no existe: hay que escribir una temporada 2 o cambiar la línea final.
 - No hay música (la carpeta `assets/music/` está vacía). Hay que poner pistas con licencia.

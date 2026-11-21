@@ -16,7 +16,8 @@
     "review": "node scripts/review.mjs",
     "tiktok:connect": "node scripts/tiktok-connect.mjs",
     "publish": "node scripts/publish.mjs",
-    "all": "node scripts/all.mjs"
+    "all": "node scripts/all.mjs",
+    "historia": "node scripts/historia.mjs"
   },
   "dependencies": {
     "@fontsource/montserrat": "^5.3.0",
