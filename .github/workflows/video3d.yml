@@ -13,12 +13,12 @@ on:
         type: string
         default: ''
       turno:
-        description: 3D: mediodia (12:17), noche (15:30) o tarde (18:30) · 2D: dos1 (10:20), dos3 (18:00) o dos2 (21:10)
+        description: Turnos 3D son mediodia (12:17), noche (15:30) y tarde (18:30); turnos 2D son dos1 (10:20), dos3 (18:00) y dos2 (21:10)
         type: choice
         options: ['mediodia', 'tarde', 'noche', 'dos1', 'dos2', 'dos3']
         default: 'mediodia'
       guion:
-        description: Solo en modo prueba: ruta de un guion concreto (por ejemplo video3d/guiones/cola/601-2d-oro-cubo.json); vacío = el que toque en la cola
+        description: Solo en modo prueba, la ruta de un guion concreto (por ejemplo video3d/guiones/cola/601-2d-oro-cubo.json); vacío = el que toque en la cola
         type: string
         default: ''
       modo:
