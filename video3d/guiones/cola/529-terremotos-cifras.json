@@ -1,0 +1,67 @@
+{
+  "id": "terremotos-cifras",
+  "temporada": 3,
+  "episodio": 29,
+  "titulo": "Medio millón de terremotos",
+  "categoria": "ciencia",
+  "destacar": [
+    "terremotos",
+    "millón"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Cada año hay unos 500.000 terremotos detectables.",
+      "objeto": "ladrillo"
+    },
+    {
+      "tipo": "pila",
+      "texto": "Se calcula que son unos 500.000 los que registran los instrumentos.",
+      "objeto": "ladrillo",
+      "cantidad": 240,
+      "contador": {
+        "desde": 0,
+        "hasta": 500000,
+        "unidad": "terremotos al año"
+      }
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Pero solo una parte se siente, y muy pocos hacen daño.",
+      "barras": [
+        {
+          "etiqueta": "Se detectan",
+          "valor": 500,
+          "texto": "≈ 500.000",
+          "objeto": "ladrillo"
+        },
+        {
+          "etiqueta": "Se sienten",
+          "valor": 100,
+          "texto": "≈ 100.000"
+        },
+        {
+          "etiqueta": "Causan daños",
+          "valor": 0.1,
+          "texto": "≈ 100"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Honduras, Guatemala y El Salvador están en una zona sísmica activa, por eso conviene conocer el plan de emergencia de tu familia.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "ladrillo"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "≈ 500.000 terremotos detectables al año, ≈ 100.000 se sienten y ≈ 100 causan daños",
+      "fuente": "USGS, «How many earthquakes occur each year?»"
+    }
+  ]
+}

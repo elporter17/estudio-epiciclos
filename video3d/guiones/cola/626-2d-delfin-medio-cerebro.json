@@ -1,0 +1,51 @@
+{
+  "id": "d2b-delfin-medio-cerebro",
+  "motor": "2d",
+  "episodio": 56,
+  "titulo": "El delfín duerme a medias",
+  "categoria": "curiosidad",
+  "destacar": [
+    "delfín",
+    "cerebro"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Los delfines duermen con la mitad del cerebro despierta.",
+      "objeto": "🐬"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Necesitan subir a respirar, así que no pueden desconectarse del todo.",
+      "objeto": "🌊",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Cada mitad del cerebro duerme por turnos, y el ojo del lado dormido se mantiene cerrado.",
+      "objeto": "👁️",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Así vigilan a los depredadores, nadan despacio y siguen respirando.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y los recién nacidos y sus mamás casi no duermen durante las primeras semanas.",
+      "objeto": "🍼",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Los delfines tienen sueño unihemisférico: duermen con una mitad del cerebro a la vez",
+      "fuente": "Lyamin et al. (2005), Neuroscience & Biobehavioral Reviews; Smithsonian"
+    }
+  ]
+}

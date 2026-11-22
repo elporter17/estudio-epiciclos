@@ -1,0 +1,62 @@
+{
+  "id": "d2b-trueno-segundos",
+  "motor": "2d",
+  "episodio": 50,
+  "titulo": "Cuenta los segundos del trueno",
+  "categoria": "ciencia",
+  "destacar": [
+    "trueno",
+    "segundos"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Puedes calcular a qué distancia cayó un rayo contando los segundos.",
+      "objeto": "⛈️"
+    },
+    {
+      "tipo": "foco",
+      "texto": "La luz llega casi al instante, pero el sonido tarda: viaja a unos 343 metros por segundo.",
+      "objeto": "⚡",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Cada tres segundos entre el rayo y el trueno son aproximadamente un kilómetro.",
+      "barras": [
+        {
+          "etiqueta": "3 segundos",
+          "valor": 1,
+          "texto": "≈ 1 km",
+          "objeto": "⛈️"
+        },
+        {
+          "etiqueta": "9 segundos",
+          "valor": 3,
+          "texto": "≈ 3 km"
+        },
+        {
+          "etiqueta": "15 segundos",
+          "valor": 5,
+          "texto": "≈ 5 km"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Si el trueno llega en menos de 30 segundos, la tormenta está cerca y conviene buscar refugio.",
+      "objeto": "🏠",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El sonido avanza ≈ 343 m/s: ≈ 3 s por km entre el relámpago y el trueno; regla de los 30 segundos",
+      "fuente": "Servicio Meteorológico Nacional de EE. UU. (NOAA), «Lightning safety»"
+    }
+  ]
+}

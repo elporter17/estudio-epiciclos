@@ -1,0 +1,46 @@
+{
+  "id": "chicle-siete",
+  "temporada": 3,
+  "episodio": 22,
+  "titulo": "El chicle no dura siete años",
+  "categoria": "mito",
+  "destacar": [
+    "chicle",
+    "siete"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: si te tragas un chicle, tarda siete años en digerirse.",
+      "objeto": "comida/candy-bar"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El chicle no se digiere del todo, pero tampoco se queda: avanza por el intestino como otros restos.",
+      "objeto": "comida/candy-bar",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Normalmente sale en pocos días.",
+      "objeto": "comida/candy-bar",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Lo que sí conviene es no tragarlo a propósito, sobre todo en niños pequeños.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/candy-bar"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El chicle tragado pasa por el aparato digestivo y se elimina en días; casos de obstrucción son raros",
+      "fuente": "Academia Estadounidense de Pediatría y Mayo Clinic"
+    }
+  ]
+}

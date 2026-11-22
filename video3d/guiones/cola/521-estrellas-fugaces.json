@@ -1,0 +1,46 @@
+{
+  "id": "estrellas-fugaces",
+  "temporada": 3,
+  "episodio": 21,
+  "titulo": "Estrellas fugaces, ¿estrellas?",
+  "categoria": "mito",
+  "destacar": [
+    "estrellas",
+    "fugaces"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: las estrellas fugaces son estrellas que caen.",
+      "objeto": "naturaleza/rock_smallA"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Son meteoroides, pedacitos de roca o hielo, muchos del tamaño de un grano de arena.",
+      "objeto": "naturaleza/rock_smallA",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Brillan al entrar a la atmósfera a decenas de kilómetros por segundo y se calientan hasta brillar.",
+      "objeto": "naturaleza/campfire_logs",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "En agosto es la temporada de las Perseidas, cuando se pueden ver decenas por hora.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/rock_smallA"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Los meteoros son meteoroides que se queman en la atmósfera, a ≈ 70-100 km de altura",
+      "fuente": "NASA, «Meteors and Meteorites»"
+    }
+  ]
+}

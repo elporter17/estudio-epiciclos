@@ -1,0 +1,46 @@
+{
+  "id": "vidrio-fluye",
+  "temporada": 3,
+  "episodio": 16,
+  "titulo": "El vidrio no fluye",
+  "categoria": "mito",
+  "destacar": [
+    "vidrio",
+    "fluye"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: los vitrales antiguos son más gruesos abajo porque el vidrio fluye.",
+      "objeto": "comida/glass"
+    },
+    {
+      "tipo": "foco",
+      "texto": "En realidad, el vidrio de esa época se hacía girando un disco, y quedaba desigual desde el principio.",
+      "objeto": "comida/glass",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Los vidrieros lo colocaban con la parte más gruesa hacia abajo, porque era más estable.",
+      "objeto": "comida/glass",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y los cálculos dicen que el vidrio tardaría muchísimo más que la edad del universo en deformarse.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/glass"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El vidrio de ventanas medievales (corona) era desigual de origen; no fluye de forma perceptible a temperatura ambiente",
+      "fuente": "Zanotto (1998), American Journal of Physics"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "d2b-tenochtitlan-lago",
+  "motor": "2d",
+  "episodio": 33,
+  "titulo": "La ciudad sobre un lago",
+  "categoria": "historia",
+  "destacar": [
+    "Tenochtitlan",
+    "lago"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Tenochtitlan, la capital azteca, estaba construida sobre un lago.",
+      "objeto": "🏛️"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Los mexicas la fundaron en una isla del lago de Texcoco, y llegó a ser enorme.",
+      "hitos": [
+        {
+          "anio": 1325,
+          "texto": "Se funda Tenochtitlan",
+          "objeto": "🏛️"
+        },
+        {
+          "anio": 1519,
+          "texto": "Llegan los españoles"
+        },
+        {
+          "anio": 1521,
+          "texto": "Cae la ciudad"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Se llegaba por calzadas y había canales, como una ciudad con calles de agua.",
+      "objeto": "🛶",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Cultivaban en chinampas: islas artificiales de cañas, barro y tierra donde crecían maíz y flores.",
+      "objeto": "🌽",
+      "lado": 10
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cuando llegaron los españoles, era una de las ciudades más grandes del mundo, con unos 200.000 habitantes.",
+      "cantidad": 28
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Fundada en 1325 en una isla del lago de Texcoco; ≈ 200.000 habitantes hacia 1519; cae en 1521",
+      "fuente": "Instituto Nacional de Antropología e Historia (México) y Encyclopaedia Britannica, «Tenochtitlán»"
+    }
+  ],
+  "nota": "La población de Tenochtitlan es una estimación; las cifras van de 140.000 a 300.000."
+}

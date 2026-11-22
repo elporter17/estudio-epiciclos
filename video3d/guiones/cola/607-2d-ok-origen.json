@@ -1,0 +1,60 @@
+{
+  "id": "d2b-ok-origen",
+  "motor": "2d",
+  "episodio": 37,
+  "titulo": "De dónde viene «OK»",
+  "categoria": "historia",
+  "destacar": [
+    "OK",
+    "Boston"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La palabra «OK» empezó como una broma en un periódico de Boston.",
+      "objeto": "👌"
+    },
+    {
+      "tipo": "foco",
+      "texto": "En 1839, un periódico de Boston la usó como abreviatura graciosa de «oll korrect», una forma mal escrita de «all correct».",
+      "objeto": "📰",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "Esa moda de abreviar con faltas de ortografía duró poco, pero «OK» sobrevivió.",
+      "hitos": [
+        {
+          "anio": 1839,
+          "texto": "Aparece «OK» en Boston",
+          "objeto": "📰"
+        },
+        {
+          "anio": 1840,
+          "texto": "La campaña de Van Buren la populariza"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Un candidato a presidente, de apodo «Old Kinderhook», la usó como lema, y se volvió famosa.",
+      "objeto": "🗳️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hoy se entiende en casi todos los idiomas del mundo.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "«OK» aparece en el Boston Morning Post (1839) como abreviatura de «oll korrect»; se populariza en 1840",
+      "fuente": "Read, A. W. (1963), American Speech; Merriam-Webster, «The history of OK»"
+    }
+  ]
+}

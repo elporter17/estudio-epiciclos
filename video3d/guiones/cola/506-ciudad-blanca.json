@@ -1,0 +1,66 @@
+{
+  "id": "ciudad-blanca",
+  "temporada": 3,
+  "episodio": 6,
+  "titulo": "La Ciudad Blanca de la Mosquitia",
+  "categoria": "honduras",
+  "destacar": [
+    "Ciudad",
+    "Blanca"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Una leyenda hondureña dice que hay una ciudad perdida en la selva.",
+      "objeto": "naturaleza/statue_column"
+    },
+    {
+      "tipo": "linea",
+      "texto": "La llamaban Ciudad Blanca, o Ciudad del Dios Mono.",
+      "hitos": [
+        {
+          "anio": 1940,
+          "texto": "Un explorador dice que la encontró",
+          "objeto": "naturaleza/statue_column"
+        },
+        {
+          "anio": 2012,
+          "texto": "Un láser revela ruinas bajo la selva"
+        },
+        {
+          "anio": 2015,
+          "texto": "Una expedición lo confirma"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "El LiDAR mide el terreno con láser desde un avión y «ve» el suelo entre los árboles.",
+      "objeto": "naturaleza/tree_palmTall",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Así aparecieron plazas, montículos y estructuras de una cultura antigua en La Mosquitia.",
+      "objeto": "naturaleza/rock_largeA",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "La zona es muy difícil de recorrer: casi no hay caminos y gran parte es selva protegida.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/statue_column"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Estudio LiDAR de 2012 y expedición de 2015 en La Mosquitia",
+      "fuente": "National Geographic (2015), «Lost City Found in the Honduran Rain Forest»; Preston, D. (2017), «The Lost City of the Monkey God»"
+    }
+  ],
+  "nota": "Los arqueólogos hablan de varias ciudades antiguas; «Ciudad Blanca» es el nombre de la leyenda."
+}

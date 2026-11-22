@@ -1,0 +1,63 @@
+{
+  "id": "d2b-auroras-origen",
+  "motor": "2d",
+  "episodio": 49,
+  "titulo": "Cómo nace una aurora",
+  "categoria": "ciencia",
+  "destacar": [
+    "aurora",
+    "viento"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Las auroras nacen cuando partículas del Sol chocan con el aire.",
+      "objeto": "🌌"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El Sol lanza sin parar un viento de partículas cargadas que viaja hasta la Tierra.",
+      "objeto": "☀️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "El campo magnético las guía hacia los polos, donde chocan con los gases a unos 100 kilómetros de altura.",
+      "objeto": "🧲",
+      "cantidad": 90
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "El color depende del gas: el oxígeno da verde y rojo, y el nitrógeno, azul y violeta.",
+      "barras": [
+        {
+          "etiqueta": "Oxígeno",
+          "valor": 5,
+          "texto": "verde y rojo",
+          "objeto": "🟢"
+        },
+        {
+          "etiqueta": "Nitrógeno",
+          "valor": 3,
+          "texto": "azul y violeta",
+          "objeto": "🟣"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "También hay auroras en Júpiter y Saturno.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Las auroras surgen por la colisión de partículas del viento solar con la atmósfera, a ≈ 100 km de altura",
+      "fuente": "NASA, «What causes the northern lights?»; NOAA SWPC"
+    }
+  ]
+}

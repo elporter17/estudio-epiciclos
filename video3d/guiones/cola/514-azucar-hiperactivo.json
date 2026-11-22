@@ -1,0 +1,51 @@
+{
+  "id": "azucar-hiperactivo",
+  "temporada": 3,
+  "episodio": 14,
+  "titulo": "El azúcar no da hiperactividad",
+  "categoria": "mito",
+  "destacar": [
+    "azúcar",
+    "niños"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: el azúcar vuelve hiperactivos a los niños.",
+      "objeto": "comida/candy-bar"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Un análisis de 23 estudios, publicado en 1995, no encontró ese efecto.",
+      "objeto": "comida/candy-bar",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "En otro experimento, los padres a los que dijeron que su hijo había tomado azúcar lo vieron más inquieto… aunque no la había tomado.",
+      "objeto": "comida/cookie",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Las fiestas, los amigos y la emoción pueden explicar mucho de esa energía.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/candy-bar"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Metaanálisis de 23 estudios: el azúcar no afecta la conducta ni la cognición de los niños",
+      "fuente": "Wolraich, Wilson y White (1995), JAMA"
+    },
+    {
+      "dato": "Expectativa de los padres y percepción de hiperactividad",
+      "fuente": "Hoover y Milich (1994), Journal of Abnormal Child Psychology"
+    }
+  ],
+  "nota": "Esto no significa que el azúcar sea saludable en exceso."
+}

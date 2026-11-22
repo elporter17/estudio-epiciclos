@@ -1,0 +1,56 @@
+{
+  "id": "galaxias-cantidad",
+  "temporada": 3,
+  "episodio": 25,
+  "titulo": "Cientos de miles de millones",
+  "categoria": "ciencia",
+  "destacar": [
+    "galaxias",
+    "estrellas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En el universo que podemos ver hay cientos de miles de millones de galaxias.",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "globo",
+      "texto": "Se calcula que son entre 200.000 millones y más de un billón, según el estudio.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "pila",
+      "texto": "Y solo la Vía Láctea tiene entre 100.000 y 400.000 millones de estrellas.",
+      "objeto": "moneda",
+      "cantidad": 260,
+      "contador": {
+        "desde": 0,
+        "hasta": 400,
+        "unidad": "mil millones de estrellas"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Más estrellas que granos de arena en todas las playas, según un cálculo muy repetido.",
+      "objeto": "moneda",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Entre 100 y 400 mil millones de estrellas en la Vía Láctea",
+      "fuente": "NASA, «Milky Way»"
+    },
+    {
+      "dato": "Estimaciones del número de galaxias del universo observable",
+      "fuente": "Conselice et al. (2016), The Astrophysical Journal; NASA"
+    }
+  ],
+  "nota": "Las cifras de galaxias cambian con cada telescopio; son estimaciones."
+}

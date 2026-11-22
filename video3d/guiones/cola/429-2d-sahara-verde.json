@@ -44,10 +44,10 @@
       "cantidad": 1
     },
     {
-      "tipo": "foco",
+      "tipo": "lluvia",
       "texto": "Cambió por pequeños movimientos de la inclinación de la Tierra, que alteraron las lluvias.",
       "objeto": "🌍",
-      "cantidad": 1
+      "cantidad": 90
     },
     {
       "tipo": "cierre",

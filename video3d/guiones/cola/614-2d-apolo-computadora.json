@@ -1,0 +1,63 @@
+{
+  "id": "d2b-apolo-computadora",
+  "motor": "2d",
+  "episodio": 44,
+  "titulo": "La computadora de la Luna",
+  "categoria": "ciencia",
+  "destacar": [
+    "Apolo",
+    "computadora"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La computadora que llevó a la Luna tenía menos memoria que una foto de tu celular.",
+      "objeto": "🌙"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Se llamaba Apollo Guidance Computer y guiaba la nave del Apolo 11, en 1969.",
+      "objeto": "🌙",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Tenía unos 4 kilobytes de memoria de trabajo y unos 72 de almacenamiento fijo.",
+      "barras": [
+        {
+          "etiqueta": "Computadora del Apolo",
+          "valor": 4,
+          "texto": "≈ 4 KB",
+          "objeto": "🌙"
+        },
+        {
+          "etiqueta": "Foto de celular",
+          "valor": 4000,
+          "texto": "≈ 4.000 KB",
+          "objeto": "📷"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Los astronautas la manejaban con un teclado de números muy sencillo.",
+      "objeto": "🔢",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Con tan poco, hizo falta muchísimo ingenio y mucho trabajo de equipo.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "AGC: ≈ 2.048 palabras de memoria borrable y ≈ 36.864 de memoria fija",
+      "fuente": "NASA y MIT Instrumentation Laboratory, «Apollo Guidance Computer»"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "d2b-camaron-corazon",
+  "motor": "2d",
+  "episodio": 54,
+  "titulo": "El corazón del camarón",
+  "categoria": "curiosidad",
+  "destacar": [
+    "camarón",
+    "corazón"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El corazón del camarón está en la cabeza.",
+      "objeto": "🦐"
+    },
+    {
+      "tipo": "foco",
+      "texto": "En realidad está en la parte delantera del cuerpo, justo detrás de la cabeza, que se llama cefalotórax.",
+      "objeto": "🫀",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Su sangre no es roja: es azulada y se llama hemolinfa.",
+      "objeto": "🩵",
+      "cantidad": 90
+    },
+    {
+      "tipo": "foco",
+      "texto": "Eso sí, no tiene tantas venas como nosotros: la sangre baña los órganos directamente.",
+      "objeto": "🫧",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cuando comas camarones, ya sabes dónde está su corazón.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El corazón del camarón se ubica en el cefalotórax y su hemolinfa es azulada",
+      "fuente": "Encyclopaedia Britannica, «Shrimp» y Museo Americano de Historia Natural"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "d2b-perro-olfato",
+  "motor": "2d",
+  "episodio": 60,
+  "titulo": "El olfato del perro es gigante",
+  "categoria": "ciencia",
+  "destacar": [
+    "perro",
+    "olfato"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El olfato de un perro es miles de veces mejor que el nuestro.",
+      "objeto": "🐕"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Un perro tiene unos 300 millones de receptores del olfato; una persona, unos 6 millones.",
+      "barras": [
+        {
+          "etiqueta": "Perro",
+          "valor": 300,
+          "texto": "≈ 300 M",
+          "objeto": "🐕"
+        },
+        {
+          "etiqueta": "Persona",
+          "valor": 6,
+          "texto": "≈ 6 M",
+          "objeto": "🧍"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Una parte de su cerebro dedicada a oler es, proporcionalmente, unas 40 veces mayor que la nuestra.",
+      "objeto": "🧠",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Por eso detectan enfermedades, buscan personas perdidas y encuentran objetos escondidos.",
+      "objeto": "🔍",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cada vez que olfatea en un paseo, tu perro lee un periódico de olores.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "≈ 300 millones de receptores olfativos en el perro frente a ≈ 6 millones en las personas",
+      "fuente": "Horowitz (2016), «Being a Dog»; Universidad de Auburn y Scientific American"
+    }
+  ],
+  "nota": "La ventaja exacta depende de la raza y del olor."
+}

@@ -1,0 +1,53 @@
+{
+  "id": "comayagua-reloj",
+  "temporada": 3,
+  "episodio": 4,
+  "titulo": "El reloj más viejo de América",
+  "categoria": "honduras",
+  "destacar": [
+    "reloj",
+    "Comayagua"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En Honduras hay uno de los relojes más antiguos de América que todavía funciona.",
+      "objeto": "ciudad/building-type-c"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Está en la torre de la catedral de Comayagua, una ciudad colonial del centro del país.",
+      "objeto": "ciudad/building-type-c",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Se cree que lo hicieron en España hace muchos siglos y que llegó a Honduras en la época colonial.",
+      "objeto": "naturaleza/statue_column",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Comayagua fue la capital de Honduras hasta 1880.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "foco",
+      "texto": "Hoy sus campanadas siguen marcando las horas para quienes pasean por el centro histórico.",
+      "objeto": "ciudad/building-type-h",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "ciudad/building-type-c"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Reloj de la catedral de Comayagua, considerado el más antiguo en funcionamiento del continente",
+      "fuente": "Instituto Hondureño de Antropología e Historia y Instituto Hondureño de Turismo"
+    }
+  ],
+  "nota": "Su origen exacto y su fecha se discuten; la fuente es la tradición y las guías oficiales."
+}

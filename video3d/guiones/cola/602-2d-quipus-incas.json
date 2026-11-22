@@ -1,0 +1,73 @@
+{
+  "id": "d2b-quipus-incas",
+  "motor": "2d",
+  "episodio": 32,
+  "titulo": "Los incas contaban con nudos",
+  "categoria": "historia",
+  "destacar": [
+    "incas",
+    "quipus"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Los incas llevaban sus cuentas con cuerdas y nudos.",
+      "objeto": "🧶"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Se llaman quipus: cuerdas de colores con nudos, cuya posición y tipo guardaban números.",
+      "objeto": "🧶",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "El imperio no tenía escritura como la nuestra, ni usaba la rueda para transportar cargas.",
+      "objeto": "🛞",
+      "cantidad": 90
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Aun así construyó una red de caminos de más de 30.000 kilómetros.",
+      "barras": [
+        {
+          "etiqueta": "Caminos incas",
+          "valor": 30,
+          "texto": "≈ 30.000 km",
+          "objeto": "🛣️"
+        },
+        {
+          "etiqueta": "Autopista Panamericana",
+          "valor": 30,
+          "texto": "≈ 30.000 km"
+        },
+        {
+          "etiqueta": "Vuelta a la Tierra",
+          "valor": 40,
+          "texto": "40.075 km",
+          "objeto": "🌍"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Los mensajeros corrían por esos caminos, relevándose, para llevar noticias muy rápido.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Los quipus registraban números con nudos; el imperio no usaba rueda para transporte",
+      "fuente": "Museo Larco y Encyclopaedia Britannica, «Quipu»"
+    },
+    {
+      "dato": "Qhapaq Ñan: más de 30.000 km de caminos",
+      "fuente": "UNESCO, «Qhapaq Ñan, Andean Road System»"
+    }
+  ],
+  "nota": "Todavía no se ha descifrado por completo qué más podían guardar los quipus."
+}

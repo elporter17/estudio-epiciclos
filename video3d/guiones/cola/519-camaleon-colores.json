@@ -1,0 +1,52 @@
+{
+  "id": "camaleon-colores",
+  "temporada": 3,
+  "episodio": 19,
+  "titulo": "El camaleón y sus colores",
+  "categoria": "mito",
+  "destacar": [
+    "camaleón",
+    "colores"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: los camaleones cambian de color para camuflarse.",
+      "objeto": "naturaleza/tree_default"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Cambian sobre todo para comunicarse con otros camaleones: el miedo, el enojo o el cortejo.",
+      "objeto": "naturaleza/tree_default",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "También cambian para regular su temperatura: más oscuros absorben más calor.",
+      "objeto": "naturaleza/campfire_logs",
+      "cantidad": 90
+    },
+    {
+      "tipo": "foco",
+      "texto": "El truco está en su piel: unos cristales diminutos que cambian de espacio y reflejan otros colores.",
+      "objeto": "naturaleza/rock_smallA",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Su color de reposo, verde o marrón, ya los esconde bastante bien.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/tree_default"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El cambio de color sirve para comunicación y termorregulación; se produce con nanocristales de guanina",
+      "fuente": "Teyssier et al. (2015), Nature Communications"
+    }
+  ]
+}

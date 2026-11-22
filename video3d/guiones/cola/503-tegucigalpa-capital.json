@@ -1,0 +1,66 @@
+{
+  "id": "tegucigalpa-capital",
+  "temporada": 3,
+  "episodio": 3,
+  "titulo": "Tegucigalpa, capital desde 1880",
+  "categoria": "honduras",
+  "destacar": [
+    "Tegucigalpa",
+    "1880"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Tegucigalpa no siempre fue la capital de Honduras.",
+      "objeto": "ciudad/building-type-a"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Su historia empieza en una mina de plata.",
+      "hitos": [
+        {
+          "anio": 1578,
+          "texto": "Se funda el real de minas",
+          "objeto": "ciudad/building-type-a"
+        },
+        {
+          "anio": 1880,
+          "texto": "Pasa a ser la capital"
+        },
+        {
+          "anio": 1937,
+          "texto": "Se une con Comayagüela"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Antes de 1880, la capital era Comayagua.",
+      "objeto": "ciudad/building-type-c",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Según una explicación, su nombre viene del náhuatl y significa «cerro de plata».",
+      "objeto": "naturaleza/rock_largeA",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hoy el Distrito Central, con Comayagüela, es la ciudad más poblada del país junto con San Pedro Sula.",
+      "cantidad": 28
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "ciudad/building-type-a"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Fundada en 1578 como real de minas; capital desde 1880; unida a Comayagüela como Distrito Central en 1937",
+      "fuente": "Alcaldía Municipal del Distrito Central y Encyclopaedia Britannica, «Tegucigalpa»"
+    }
+  ],
+  "nota": "El origen del nombre «Tegucigalpa» tiene varias explicaciones."
+}

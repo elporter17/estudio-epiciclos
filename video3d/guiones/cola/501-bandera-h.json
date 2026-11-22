@@ -1,0 +1,66 @@
+{
+  "id": "bandera-h",
+  "temporada": 3,
+  "episodio": 1,
+  "titulo": "La bandera y sus cinco estrellas",
+  "categoria": "honduras",
+  "destacar": [
+    "bandera",
+    "estrellas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La bandera de Honduras tiene cinco estrellas por una razón.",
+      "objeto": "naturaleza/sign"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Representan a los cinco países de la antigua Federación Centroamericana: Guatemala, El Salvador, Honduras, Nicaragua y Costa Rica.",
+      "objeto": "naturaleza/sign",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "Sus franjas azules y blancas vienen de esa unión.",
+      "hitos": [
+        {
+          "anio": 1823,
+          "texto": "Nacen las Provincias Unidas de Centroamérica",
+          "objeto": "naturaleza/sign"
+        },
+        {
+          "anio": 1866,
+          "texto": "Honduras adopta su bandera"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Según la tradición, el azul recuerda a los dos océanos y al cielo, y el blanco, a la paz.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "foco",
+      "texto": "Honduras es de los pocos países con costa en el mar Caribe y en el océano Pacífico.",
+      "objeto": "naturaleza/tree_palm",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/sign"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Las cinco estrellas simbolizan a los países de la Federación Centroamericana; la bandera actual se adoptó en 1866",
+      "fuente": "Encyclopaedia Britannica, «Flag of Honduras»"
+    },
+    {
+      "dato": "Significado tradicional de los colores",
+      "fuente": "Secretaría de Cultura, Artes y Deportes de Honduras"
+    }
+  ],
+  "nota": "El significado de los colores es tradicional y varía un poco según la fuente."
+}

@@ -46,10 +46,10 @@
       "cantidad": 1
     },
     {
-      "tipo": "foco",
+      "tipo": "lluvia",
       "texto": "Y el logo mezcla las dos runas de sus iniciales, H y B.",
       "objeto": "ᚼ",
-      "cantidad": 1
+      "cantidad": 90
     },
     {
       "tipo": "cierre",

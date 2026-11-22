@@ -1,0 +1,46 @@
+{
+  "id": "afeitar-grueso",
+  "temporada": 3,
+  "episodio": 15,
+  "titulo": "Afeitarse no engrosa el vello",
+  "categoria": "mito",
+  "destacar": [
+    "afeitar",
+    "vello"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: si te afeitas, el vello vuelve más grueso y más oscuro.",
+      "objeto": "naturaleza/grass_large"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Al afeitar, la punta del vello queda cortada en seco, sin la punta fina, y se siente más áspera.",
+      "objeto": "naturaleza/grass_large",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Pero la raíz, que es lo que decide el grosor, no cambia.",
+      "objeto": "naturaleza/tree_default",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Varios estudios midieron el vello antes y después de afeitar y no encontraron diferencias.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/grass_large"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Afeitar no cambia el grosor, el color ni la velocidad de crecimiento del vello",
+      "fuente": "Lynfield y MacWilliams (1970), Journal of Investigative Dermatology; Mayo Clinic"
+    }
+  ]
+}

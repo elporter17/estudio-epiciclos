@@ -1,0 +1,70 @@
+{
+  "id": "d2b-papas-andes",
+  "motor": "2d",
+  "episodio": 46,
+  "titulo": "La papa nació en los Andes",
+  "categoria": "historia",
+  "destacar": [
+    "papa",
+    "Andes"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La papa nació en los Andes, y allí hay más de 4.000 variedades.",
+      "objeto": "🥔"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Se domesticó hace unos 8.000 años cerca del lago Titicaca, entre Perú y Bolivia.",
+      "objeto": "🥔",
+      "cantidad": 1
+    },
+    {
+      "tipo": "pila",
+      "texto": "Solo en los Andes se conservan más de 4.000 variedades nativas, de todos los colores.",
+      "objeto": "🥔",
+      "cantidad": 180,
+      "contador": {
+        "desde": 0,
+        "hasta": 4000,
+        "unidad": "variedades"
+      }
+    },
+    {
+      "tipo": "linea",
+      "texto": "Llegó a Europa en el siglo XVI, y cambió la alimentación del mundo.",
+      "hitos": [
+        {
+          "anio": -6000,
+          "texto": "Se domestica en los Andes",
+          "etiqueta_anio": "Hace 8.000 años",
+          "objeto": "🥔"
+        },
+        {
+          "anio": 1570,
+          "texto": "Llega a España"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hoy es el tercer alimento más consumido del planeta, después del arroz y el trigo.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Domesticada hace ≈ 8.000 años en los Andes; > 4.000 variedades nativas",
+      "fuente": "Centro Internacional de la Papa (CIP)"
+    },
+    {
+      "dato": "Tercer cultivo alimenticio más importante del mundo",
+      "fuente": "FAO, «International Year of the Potato 2008»"
+    }
+  ]
+}

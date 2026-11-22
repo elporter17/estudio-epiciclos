@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { DIR_COLA } from './video3d-cola.mjs';
+import { variarEscenas } from './variar-escenas.mjs';
 
 const P = (texto, objeto) => ({ tipo: 'portada', texto, objeto });
 const C = (texto, objeto) => ({ tipo: 'cierre', texto: texto || '¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.', objeto });
@@ -63,7 +64,7 @@ const EP = [
     C()], [
     { dato: 'Año de ≈ 165 años terrestres; vientos de ≈ 2.100 km/h', fuente: 'NASA, «Neptune Facts»', url: 'https://science.nasa.gov/neptune/neptune-facts/' },
     { dato: 'Descubierto en 1846 por cálculos de Le Verrier y Adams; Voyager 2 pasó en 1989', fuente: 'NASA, «Neptune»' }]],
-  ['jupiter-mancha', 'ciencia', 'La mancha más grande que la Tierra', ['mancha', 'Júpiter'], [
+  ['jupiter-mancha', 'ciencia', 'La mancha más grande de todas', ['mancha', 'Júpiter'], [
     P('En Júpiter hay una tormenta más grande que la Tierra.', '🪐'),
     CO('La Gran Mancha Roja mide unos 16.000 kilómetros de ancho: cabe la Tierra entera.', [B('Gran Mancha Roja', 16, '≈ 16.000 km', '🌀'), B('La Tierra', 12.7, '12.742 km', '🌍')]),
     F('Es una tormenta que se observa desde hace más de 150 años.', '🌀'),
@@ -82,7 +83,7 @@ const EP = [
     C()], [
     { dato: 'Densidad media de Saturno ≈ 0,69 g/cm³ (menor que la del agua)', fuente: 'NASA, «Saturn Fact Sheet»' },
     { dato: 'Anillos: > 280.000 km de ancho y tan finos como ≈ 10 m en algunas zonas', fuente: 'NASA/JPL, «Saturn’s Rings»' }]],
-  ['estrella-neutrones', 'ciencia', 'Una estrella del tamaño de ciudad', ['neutrones', 'ciudad'], [
+  ['estrella-neutrones', 'ciencia', 'Una estrella como una ciudad', ['neutrones', 'ciudad'], [
     P('Una estrella de neutrones mide como una ciudad, pero pesa más que el Sol.', '⭐'),
     F('Mide unos 20 kilómetros de ancho, y tiene más masa que el Sol.', '🏙️'),
     PI('Un cubito de su materia pesaría unos mil millones de toneladas.', '🧊', 130, { desde: 0, hasta: 1, unidad: 'mil millones de toneladas' }),
@@ -102,7 +103,7 @@ const EP = [
     { dato: '≈ 30 billones de células humanas; 84 % glóbulos rojos', fuente: 'Sender, Fuchs y Milo (2016), PLoS Biology; Sender y Milo (2021), Nature Medicine' },
     { dato: 'Se renuevan ≈ 330 mil millones al día; bacterias ≈ igual que células humanas', fuente: 'Sender y Milo (2021), Nature Medicine' }],
     'Son estimaciones para un adulto promedio: cada persona es distinta.'],
-  ['adn-dos-metros', 'ciencia', 'El ADN de una célula mide 2 metros', ['ADN', 'metros'], [
+  ['adn-dos-metros', 'ciencia', 'El ADN de una célula: 2 metros', ['ADN', 'metros'], [
     P('Si estiraras el ADN de una sola célula, mediría casi dos metros.', '🧬'),
     F('Cabe dentro del núcleo, que es miles de veces más pequeño, porque está enrollado muy apretado.', '🧵'),
     LL('Tiene unos 3.200 millones de «letras» químicas.', '🔤', 120, { desde: 0, hasta: 3200, unidad: 'millones de letras' }),
@@ -129,7 +130,7 @@ const EP = [
     { dato: 'Primer mensaje ARPANET: 29 de octubre de 1969, UCLA → SRI; falló tras «LO»', fuente: 'UCLA Samueli, «The first message sent over the ARPANET»' },
     { dato: 'Correo (1971), TCP/IP (1983), web pública (1991)', fuente: 'Encyclopaedia Britannica, «Internet»' },
     { dato: '≈ 68 % de la población mundial usa internet (2024)', fuente: 'ITU, «Facts and Figures 2024»' }]],
-  ['codigo-qr', 'datos', 'El código QR nació en una fábrica', ['QR', 'fábrica'], [
+  ['codigo-qr', 'datos', 'El código QR nació en fábrica', ['QR', 'fábrica'], [
     P('El código QR se inventó para seguir piezas de autos en una fábrica.', '📱'),
     F('Lo creó Denso Wave, una empresa japonesa, en 1994.', '🏭'),
     CU('Parece un cuadro de puntos, pero cada punto es un dato que el celular lee.', '⬛', 12),
@@ -307,7 +308,7 @@ const EP = [
 let n = 0;
 for (const [id, categoria, titulo, destacar, escenas, fuentes, nota] of EP) {
   n++;
-  const g = { id: `d2-${id}`, motor: '2d', episodio: n, titulo, categoria, destacar, escenas, fuentes, ...(nota ? { nota } : {}) };
+  const g = { id: `d2-${id}`, motor: '2d', episodio: n, titulo, categoria, destacar, escenas: variarEscenas(escenas), fuentes, ...(nota ? { nota } : {}) };
   fs.writeFileSync(path.join(DIR_COLA, `4${String(n).padStart(2, '0')}-2d-${id}.json`), JSON.stringify(g, null, 2) + '\n');
 }
 console.log(`${n} guiones 2D escritos en ${DIR_COLA}`);

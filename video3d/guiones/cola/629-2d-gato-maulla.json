@@ -1,0 +1,52 @@
+{
+  "id": "d2b-gato-maulla",
+  "motor": "2d",
+  "episodio": 59,
+  "titulo": "Los gatos maúllan para ti",
+  "categoria": "curiosidad",
+  "destacar": [
+    "gatos",
+    "maullar"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Los gatos adultos maúllan casi solo para hablar con las personas.",
+      "objeto": "🐱"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Entre ellos usan el olfato, el lenguaje corporal, los bufidos y el ronroneo.",
+      "objeto": "😺",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Los gatitos maúllan para llamar a su mamá, pero de grandes mantienen el maullido solo con nosotros.",
+      "objeto": "🍼",
+      "cantidad": 90
+    },
+    {
+      "tipo": "foco",
+      "texto": "Cada gato aprende qué maullido le funciona con su persona.",
+      "objeto": "🥫",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Es una especie de dialecto entre tú y tu gato.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Los gatos adultos maúllan principalmente a las personas",
+      "fuente": "Nicastro (2004), Journal of the Acoustical Society of America; Bradshaw (2013), «Cat Sense»"
+    }
+  ],
+  "nota": "Hay excepciones: algunos gatos sí se maúllan entre sí."
+}

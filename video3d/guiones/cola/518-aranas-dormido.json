@@ -1,0 +1,47 @@
+{
+  "id": "aranas-dormido",
+  "temporada": 3,
+  "episodio": 18,
+  "titulo": "Ocho arañas al año: falso",
+  "categoria": "mito",
+  "destacar": [
+    "arañas",
+    "dormido"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: cada año te tragas ocho arañas mientras duermes.",
+      "objeto": "naturaleza/plant_bush"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Las arañas detectan las vibraciones y el calor de una persona dormida, y se alejan.",
+      "objeto": "naturaleza/plant_bush",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Tu respiración y tus ronquidos son como una alarma que las espanta.",
+      "objeto": "naturaleza/rock_smallA",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "No hay ningún estudio que muestre que alguien se trague arañas dormido de forma habitual.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/plant_bush"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "No hay evidencia de que las personas se traguen arañas al dormir de forma habitual",
+      "fuente": "Burke Museum of Natural History (Universidad de Washington); Snopes"
+    }
+  ],
+  "nota": "Es una afirmación difícil de probar con un estudio, pero no hay casos documentados."
+}

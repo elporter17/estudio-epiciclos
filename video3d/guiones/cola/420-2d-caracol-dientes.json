@@ -32,10 +32,10 @@
       "cantidad": 1
     },
     {
-      "tipo": "foco",
+      "tipo": "lluvia",
       "texto": "La usa como una lima para raspar hojas y otros alimentos.",
       "objeto": "🥬",
-      "cantidad": 1
+      "cantidad": 90
     },
     {
       "tipo": "calendario",

@@ -1,0 +1,70 @@
+{
+  "id": "d2b-oro-cubo",
+  "motor": "2d",
+  "episodio": 31,
+  "titulo": "Todo el oro cabe en un cubo",
+  "categoria": "datos",
+  "destacar": [
+    "oro",
+    "cubo"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Todo el oro que se ha extraído en la historia cabría en un cubo de unos 22 metros.",
+      "objeto": "🪙"
+    },
+    {
+      "tipo": "torre",
+      "texto": "Se calcula que se han sacado unas 216.000 toneladas de oro desde siempre.",
+      "objeto": "🪙",
+      "cantidad": 40
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Si fuera un cubo, mediría lo que un edificio de siete pisos por lado.",
+      "barras": [
+        {
+          "etiqueta": "Cubo de oro",
+          "valor": 22,
+          "texto": "≈ 22 m",
+          "objeto": "🪙"
+        },
+        {
+          "etiqueta": "Edificio de 7 pisos",
+          "valor": 21,
+          "texto": "≈ 21 m",
+          "objeto": "🏢"
+        },
+        {
+          "etiqueta": "Persona",
+          "valor": 1.7,
+          "texto": "1,7 m",
+          "objeto": "🧍"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Casi la mitad está en joyas y la otra parte, en barras guardadas por bancos centrales y por inversionistas.",
+      "objeto": "💍",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cada año se extraen unas 3.000 toneladas más.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "≈ 216.000 toneladas de oro extraídas hasta 2023 (un cubo de ≈ 22 m de lado)",
+      "fuente": "World Gold Council, «How much gold has been mined?»"
+    }
+  ],
+  "nota": "La cifra se actualiza cada año; el tamaño del cubo es una aproximación."
+}

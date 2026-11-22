@@ -1,0 +1,51 @@
+{
+  "id": "d2b-agua-hielo-expande",
+  "motor": "2d",
+  "episodio": 51,
+  "titulo": "El hielo flota por una rareza",
+  "categoria": "ciencia",
+  "destacar": [
+    "hielo",
+    "flota"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El agua es de las pocas sustancias que se expande al congelarse.",
+      "objeto": "🧊"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Al congelarse, el agua ocupa cerca de un 9 % más de espacio.",
+      "objeto": "🧊",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Por eso el hielo es menos denso que el agua líquida y flota.",
+      "objeto": "🌊",
+      "lado": 10
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Si el hielo se hundiera, lagos y mares se congelarían de abajo hacia arriba, y la vida sería muy distinta.",
+      "objeto": "❄️",
+      "cantidad": 110
+    },
+    {
+      "tipo": "gente",
+      "texto": "Es también la razón por la que una botella llena se rompe en el congelador.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El agua se expande ≈ 9 % al congelarse; el hielo flota",
+      "fuente": "USGS Water Science School, «Water density» y Encyclopaedia Britannica"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "d2b-elefante-gestacion",
+  "motor": "2d",
+  "episodio": 57,
+  "titulo": "El elefante tarda 22 meses",
+  "categoria": "curiosidad",
+  "destacar": [
+    "elefante",
+    "meses"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La mamá elefante tarda 22 meses en tener a su cría.",
+      "objeto": "🐘"
+    },
+    {
+      "tipo": "calendario",
+      "texto": "Es el embarazo más largo de todos los mamíferos terrestres.",
+      "contador": {
+        "desde": 0,
+        "hasta": 22,
+        "unidad": "meses"
+      }
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Y el elefantito nace pesando unos 100 kilos.",
+      "barras": [
+        {
+          "etiqueta": "Elefantito",
+          "valor": 100,
+          "texto": "≈ 100 kg",
+          "objeto": "🐘"
+        },
+        {
+          "etiqueta": "Bebé humano",
+          "valor": 3.4,
+          "texto": "≈ 3,4 kg",
+          "objeto": "👶"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Se pone de pie a los pocos minutos y camina con la manada al poco tiempo.",
+      "objeto": "🦶",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Toda la manada, sobre todo las tías, ayuda a cuidarlo.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Gestación de ≈ 22 meses; cría de ≈ 90-110 kg",
+      "fuente": "WWF y San Diego Zoo, «Elephant»"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "sangre-azul",
+  "temporada": 3,
+  "episodio": 17,
+  "titulo": "La sangre nunca es azul",
+  "categoria": "mito",
+  "destacar": [
+    "sangre",
+    "azul"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: la sangre sin oxígeno es azul y se pone roja al tocar el aire.",
+      "objeto": "corazon"
+    },
+    {
+      "tipo": "foco",
+      "texto": "La sangre siempre es roja: más brillante con oxígeno y rojo oscuro sin él.",
+      "objeto": "corazon",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Las venas se ven azules por cómo la piel absorbe y refleja la luz, no por el color de la sangre.",
+      "objeto": "comida/grapes",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cuando te sacan sangre, sale roja oscura, nunca azul.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "corazon"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "La sangre desoxigenada es rojo oscuro; el tono azul de las venas es un efecto óptico",
+      "fuente": "Kienle et al. (1996), Applied Optics; Cleveland Clinic"
+    }
+  ]
+}

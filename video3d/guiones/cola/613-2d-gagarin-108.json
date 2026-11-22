@@ -1,0 +1,56 @@
+{
+  "id": "d2b-gagarin-108",
+  "motor": "2d",
+  "episodio": 43,
+  "titulo": "Gagarin dio la vuelta en 108",
+  "categoria": "historia",
+  "destacar": [
+    "Gagarin",
+    "108"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Yuri Gagarin dio una vuelta a la Tierra en solo 108 minutos.",
+      "objeto": "🚀"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Fue el 12 de abril de 1961: el primer ser humano en viajar al espacio.",
+      "objeto": "🚀",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Su vuelo completo duró 108 minutos y dio una sola vuelta a la Tierra.",
+      "objeto": "⏱️",
+      "cantidad": 100,
+      "contador": {
+        "desde": 0,
+        "hasta": 108,
+        "unidad": "minutos"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Dicen que, al verla desde arriba, dijo que la Tierra era azul.",
+      "objeto": "🌍",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Ocho años después, el Apolo 11 llevó personas a la Luna.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Vostok 1: 12 de abril de 1961, 108 minutos, una órbita",
+      "fuente": "NASA History, «Yuri Gagarin»; Agencia Espacial Europea (ESA)"
+    }
+  ]
+}

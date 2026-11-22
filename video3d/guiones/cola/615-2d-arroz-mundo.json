@@ -1,0 +1,63 @@
+{
+  "id": "d2b-arroz-mundo",
+  "motor": "2d",
+  "episodio": 45,
+  "titulo": "El arroz alimenta a la mitad",
+  "categoria": "datos",
+  "destacar": [
+    "arroz",
+    "mitad"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El arroz es el alimento básico de más de la mitad del mundo.",
+      "objeto": "🍚"
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Se cultiva en todos los continentes menos la Antártida, y hay más de 40.000 variedades.",
+      "objeto": "🌾",
+      "lado": 12
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Asia produce más del 90 % del arroz del mundo.",
+      "barras": [
+        {
+          "etiqueta": "Asia",
+          "valor": 90,
+          "texto": "≈ 90 %",
+          "objeto": "🌏"
+        },
+        {
+          "etiqueta": "Resto del mundo",
+          "valor": 10,
+          "texto": "≈ 10 %",
+          "objeto": "🌍"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Los campos inundados, llamados arrozales, cambian el paisaje donde se cultiva.",
+      "objeto": "🌾",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "En Honduras, el arroz con frijoles acompaña casi cualquier comida.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El arroz es alimento básico de más de la mitad de la población mundial; Asia produce ≈ 90 %",
+      "fuente": "FAO, «Rice market monitor»; Instituto Internacional de Investigación del Arroz (IRRI)"
+    }
+  ]
+}

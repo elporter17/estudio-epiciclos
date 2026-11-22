@@ -1,0 +1,62 @@
+{
+  "id": "nombre-honduras",
+  "temporada": 3,
+  "episodio": 10,
+  "titulo": "De dónde viene «Honduras»",
+  "categoria": "honduras",
+  "destacar": [
+    "Honduras",
+    "nombre"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Por qué el país se llama Honduras? Hay una leyenda famosa.",
+      "objeto": "naturaleza/canoe"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Cuenta la tradición que todo empezó en 1502.",
+      "hitos": [
+        {
+          "anio": 1502,
+          "texto": "Colón llega a la costa de Honduras",
+          "objeto": "naturaleza/canoe"
+        },
+        {
+          "anio": 1821,
+          "texto": "Independencia de España"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Según se cuenta, Colón dijo: «Gracias a Dios que hemos salido de esas honduras».",
+      "objeto": "naturaleza/canoe",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "«Honduras» significaba «profundidades»: las aguas hondas de la costa, no el país entero.",
+      "objeto": "comida/fish",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "De esa misma travesía viene el nombre del Cabo Gracias a Dios, en la frontera con Nicaragua.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/canoe"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Colón llegó a la costa de Honduras en 1502; el Cabo Gracias a Dios lleva ese nombre",
+      "fuente": "Encyclopaedia Britannica, «Honduras: History»"
+    }
+  ],
+  "nota": "La frase atribuida a Colón es tradición y no está documentada."
+}

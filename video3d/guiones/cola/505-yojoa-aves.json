@@ -1,0 +1,52 @@
+{
+  "id": "yojoa-aves",
+  "temporada": 3,
+  "episodio": 5,
+  "titulo": "El lago de las 400 aves",
+  "categoria": "honduras",
+  "destacar": [
+    "lago",
+    "aves"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Alrededor del lago de Yojoa viven más de 400 especies de aves.",
+      "objeto": "naturaleza/tree_palm"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es el lago natural más grande de Honduras, entre Cortés, Comayagua y Santa Bárbara.",
+      "objeto": "naturaleza/canoe",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Su zona tiene bosques, ríos y montañas, y por eso atrae a tantas especies.",
+      "objeto": "naturaleza/tree_default",
+      "lado": 16
+    },
+    {
+      "tipo": "foco",
+      "texto": "Por eso es un destino conocido entre las personas que observan aves.",
+      "objeto": "naturaleza/tree_palm",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y muy cerca está la catarata de Pulhapanzak, otro lugar para visitar el mismo día.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/tree_palm"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Lago de Yojoa: el mayor lago natural de Honduras; más de 400 especies de aves en su zona",
+      "fuente": "Instituto Hondureño de Turismo; Audubon / eBird (Lago de Yojoa)"
+    }
+  ]
+}

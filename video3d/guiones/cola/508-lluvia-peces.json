@@ -1,0 +1,53 @@
+{
+  "id": "lluvia-peces",
+  "temporada": 3,
+  "episodio": 8,
+  "titulo": "La lluvia de peces de Yoro",
+  "categoria": "honduras",
+  "destacar": [
+    "lluvia",
+    "peces"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En Yoro, según cuenta la tradición, a veces llueven peces.",
+      "objeto": "comida/fish"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Cada año, después de una tormenta fuerte, aparecen cientos de pececitos vivos en el suelo.",
+      "objeto": "comida/fish",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "La gente dice que pasa desde hace más de un siglo, y hay un festival que lo celebra.",
+      "objeto": "comida/fish",
+      "cantidad": 120
+    },
+    {
+      "tipo": "foco",
+      "texto": "Algunos científicos creen que es una manga de agua que levanta peces; otros, que salen de aguas subterráneas con las crecidas.",
+      "objeto": "naturaleza/cliff_waterfall_rock",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Nadie ha demostrado qué ocurre exactamente, y eso lo hace todavía más famoso.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/fish"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Fenómeno anual de «lluvia de peces» en Yoro y festival local",
+      "fuente": "Instituto Hondureño de Turismo; reportes de National Geographic y la BBC"
+    }
+  ],
+  "nota": "La causa no está confirmada; hay varias hipótesis."
+}

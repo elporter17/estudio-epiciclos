@@ -1,0 +1,65 @@
+{
+  "id": "d2b-maiz-teosinte",
+  "motor": "2d",
+  "episodio": 47,
+  "titulo": "El maíz nació en México",
+  "categoria": "historia",
+  "destacar": [
+    "maíz",
+    "México"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El maíz nació hace unos 9.000 años de una hierba silvestre de México.",
+      "objeto": "🌽"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Esa hierba se llama teosinte, y sus granos eran pocos y muy duros.",
+      "objeto": "🌾",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "Los pueblos de Mesoamérica lo fueron mejorando generación tras generación.",
+      "hitos": [
+        {
+          "anio": -7000,
+          "texto": "Se domestica en México",
+          "etiqueta_anio": "Hace 9.000 años",
+          "objeto": "🌽"
+        },
+        {
+          "anio": 1500,
+          "texto": "Llega a Europa"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Hoy es uno de los tres cereales más cultivados del mundo, junto al trigo y el arroz.",
+      "objeto": "🌽",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "En Honduras, las tortillas, los tamales y las baleadas lo tienen de base… o de acompañante.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Maíz domesticado a partir del teosinte en el sur de México hace ≈ 9.000 años",
+      "fuente": "Matsuoka et al. (2002), PNAS"
+    },
+    {
+      "dato": "Maíz, trigo y arroz: los tres cereales de mayor producción",
+      "fuente": "FAO, FAOSTAT"
+    }
+  ]
+}

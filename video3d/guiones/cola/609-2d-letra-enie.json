@@ -1,0 +1,51 @@
+{
+  "id": "d2b-letra-enie",
+  "motor": "2d",
+  "episodio": 39,
+  "titulo": "La ñ nació de una abreviatura",
+  "categoria": "historia",
+  "destacar": [
+    "ñ",
+    "abreviatura"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La letra ñ nació como una abreviatura de los copistas medievales.",
+      "objeto": "🔤"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Los copistas escribían la doble «nn» con una «n» y una rayita encima, para ahorrar tinta y pergamino.",
+      "objeto": "✍️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Esa rayita se volvió la tilde que hoy ponemos sobre la n.",
+      "objeto": "〰️",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Con el tiempo, la «ñ» se convirtió en una letra con su propio sonido.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es tan importante para el español que se convirtió en un símbolo de la lengua.",
+      "objeto": "🇪🇸",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "La ñ proviene de la abreviatura medieval de «nn» con una tilde",
+      "fuente": "Real Academia Española, «Ñ»"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "iss-orbitas",
+  "temporada": 3,
+  "episodio": 23,
+  "titulo": "La Estación da 16 vueltas al día",
+  "categoria": "ciencia",
+  "destacar": [
+    "Estación",
+    "16"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La Estación Espacial da dieciséis vueltas a la Tierra cada día.",
+      "objeto": "ladrillo"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Viaja a unos 28.000 kilómetros por hora.",
+      "objeto": "ladrillo",
+      "cantidad": 100,
+      "contador": {
+        "desde": 0,
+        "hasta": 28000,
+        "unidad": "km/h"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Da una vuelta completa en unos 90 minutos, a unos 400 kilómetros de altura.",
+      "objeto": "ladrillo",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Por eso las personas a bordo ven unos 16 amaneceres y 16 atardeceres cada día.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y no se cae: está en caída libre constante, y la Tierra se curva debajo.",
+      "objeto": "balon",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "ladrillo"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "ISS: ≈ 28.000 km/h, una órbita cada ≈ 90 minutos, ≈ 400 km de altura",
+      "fuente": "NASA, «International Space Station Facts and Figures»"
+    }
+  ]
+}

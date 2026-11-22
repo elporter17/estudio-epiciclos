@@ -1,0 +1,46 @@
+{
+  "id": "agua-coriolis",
+  "temporada": 3,
+  "episodio": 20,
+  "titulo": "El agua y el hemisferio sur",
+  "categoria": "mito",
+  "destacar": [
+    "agua",
+    "hemisferio"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: en el hemisferio sur el agua del lavabo gira al revés.",
+      "objeto": "botella"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El efecto de la rotación de la Tierra, llamado Coriolis, es demasiado débil en algo tan pequeño como un lavabo.",
+      "objeto": "botella",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Lo que decide hacia dónde gira el agua es la forma del recipiente y cómo se movía antes de abrir el desagüe.",
+      "objeto": "comida/bowl",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "El efecto sí importa en cosas enormes: los huracanes giran en un sentido en el norte y en otro en el sur.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "botella"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El efecto Coriolis es despreciable en un lavabo; sí gobierna el giro de los huracanes",
+      "fuente": "NASA y Shapiro (1962), Nature"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "baleada",
+  "temporada": 3,
+  "episodio": 9,
+  "titulo": "La baleada, orgullo de la costa",
+  "categoria": "honduras",
+  "destacar": [
+    "baleada",
+    "costa"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La baleada es la comida más famosa de la costa hondureña.",
+      "objeto": "comida/taco"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es una tortilla de harina doblada, con frijoles refritos, queso y crema.",
+      "objeto": "comida/taco",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "A la «sencilla» se le puede agregar huevo, aguacate, carne o pollo, y pasa a ser «especial».",
+      "objeto": "comida/taco",
+      "lado": 8
+    },
+    {
+      "tipo": "foco",
+      "texto": "Nació en la costa norte, y hoy se vende en todo el país y entre la gente hondureña que vive fuera.",
+      "objeto": "comida/taco",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Es barata, rápida y sabrosa: por eso se come a cualquier hora del día.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/taco"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Descripción de la baleada y su origen en la costa norte",
+      "fuente": "Instituto Hondureño de Turismo y Secretaría de Cultura, Artes y Deportes"
+    }
+  ],
+  "nota": "Qué ciudad la inventó primero se discute."
+}

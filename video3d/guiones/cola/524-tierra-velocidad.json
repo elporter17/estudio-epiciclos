@@ -1,0 +1,66 @@
+{
+  "id": "tierra-velocidad",
+  "temporada": 3,
+  "episodio": 24,
+  "titulo": "Vas a 107.000 km/h sin notarlo",
+  "categoria": "ciencia",
+  "destacar": [
+    "107.000",
+    "Tierra"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Ahora mismo viajas a 107.000 kilómetros por hora y no lo sientes.",
+      "objeto": "balon"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "La Tierra gira sobre sí misma, da vueltas al Sol y viaja con todo el sistema solar por la galaxia.",
+      "barras": [
+        {
+          "etiqueta": "Giro de la Tierra",
+          "valor": 1.67,
+          "texto": "1.670 km/h",
+          "objeto": "balon"
+        },
+        {
+          "etiqueta": "Vuelta al Sol",
+          "valor": 107,
+          "texto": "107.000 km/h"
+        },
+        {
+          "etiqueta": "Por la galaxia",
+          "valor": 790,
+          "texto": "≈ 790.000 km/h"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "No lo notamos porque la velocidad es casi constante, y todo se mueve con nosotros.",
+      "objeto": "balon",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Solo sentimos los cambios de velocidad: las frenadas, los baches y las curvas.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "balon"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Velocidad orbital de la Tierra ≈ 29,8 km/s ≈ 107.000 km/h; giro en el ecuador ≈ 1.670 km/h",
+      "fuente": "NASA, «Earth Fact Sheet»"
+    },
+    {
+      "dato": "El Sol se mueve en la galaxia a ≈ 220 km/s",
+      "fuente": "NASA y Reid et al. (2014), Astrophysical Journal"
+    }
+  ]
+}

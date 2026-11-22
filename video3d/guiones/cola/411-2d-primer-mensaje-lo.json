@@ -21,10 +21,10 @@
       "cantidad": 1
     },
     {
-      "tipo": "foco",
+      "tipo": "lluvia",
       "texto": "Pero el sistema falló después de la segunda letra, y solo llegó «LO».",
       "objeto": "💥",
-      "cantidad": 1
+      "cantidad": 90
     },
     {
       "tipo": "linea",

@@ -1,0 +1,65 @@
+{
+  "id": "d2b-ada-lovelace",
+  "motor": "2d",
+  "episodio": 40,
+  "titulo": "Ada y el primer programa",
+  "categoria": "historia",
+  "destacar": [
+    "Ada",
+    "programa"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El primer programa de computadora lo escribió una mujer en 1843.",
+      "objeto": "👩‍💻"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Ada Lovelace imaginó que una máquina podía hacer mucho más que calcular.",
+      "hitos": [
+        {
+          "anio": 1815,
+          "texto": "Nace Ada Lovelace",
+          "objeto": "👩‍💻"
+        },
+        {
+          "anio": 1843,
+          "texto": "Publica su algoritmo"
+        },
+        {
+          "anio": 1852,
+          "texto": "Muere a los 36 años"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Escribió un algoritmo para la máquina analítica, un diseño de computadora que nunca llegó a construirse.",
+      "objeto": "⚙️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "También pensó que algún día las máquinas podrían componer música.",
+      "objeto": "🎵",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hoy se le considera la primera programadora de la historia.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Notas de Ada Lovelace (1843) con un algoritmo para la máquina analítica de Charles Babbage",
+      "fuente": "Science Museum (Londres) y Encyclopaedia Britannica, «Ada Lovelace»"
+    }
+  ],
+  "nota": "Que sea «el primer programa» es una interpretación que algunos historiadores discuten."
+}

@@ -1,6 +1,6 @@
 # Videos programados (desde el 2026-11-22)
 
-60 guiones, 6 al día: tres 3D (12:17 Instagram, 15:30 TikTok, 18:30 Facebook) y tres 2D sin IA (10:20 Facebook, 18:00 TikTok, 21:10 Instagram). YouTube publica los tres 3D y los 2D de Facebook e Instagram. Los 3D de Honduras van primero a Facebook. La voz dice cada línea tal cual; el tono lo agrega el sistema al renderizar.
+120 guiones, 6 al día: tres 3D (12:17 Instagram, 15:30 TikTok, 18:30 Facebook) y tres 2D sin IA (10:20 Facebook, 18:00 TikTok, 21:10 Instagram). YouTube publica los tres 3D y los 2D de Facebook e Instagram. Los 3D de Honduras van primero a Facebook. La voz dice cada línea tal cual; el tono lo agrega el sistema al renderizar.
 
 | # | Fecha | Hora | Redes | Guion |
 |---|---|---|---|---|
@@ -15,17 +15,17 @@
 | 9 | 2026-11-23 | 15:30 | TikTok + YouTube | No usas solo el 10 % del cerebro (mito) |
 | 10 | 2026-11-23 | 18:00 | TikTok | Saturno flotaría en el agua (ciencia, 2D) |
 | 11 | 2026-11-23 | 18:30 | Facebook + YouTube | El pez más grande, en Honduras (honduras) |
-| 12 | 2026-11-23 | 21:10 | Instagram + YouTube | La mancha más grande que la Tierra (ciencia, 2D) |
-| 13 | 2026-11-24 | 10:20 | Facebook + YouTube | Una estrella del tamaño de ciudad (ciencia, 2D) |
+| 12 | 2026-11-23 | 21:10 | Instagram + YouTube | La mancha más grande de todas (ciencia, 2D) |
+| 13 | 2026-11-24 | 10:20 | Facebook + YouTube | Una estrella como una ciudad (ciencia, 2D) |
 | 14 | 2026-11-24 | 12:17 | Instagram + YouTube | Vikingos sin cuernos (mito) |
 | 15 | 2026-11-24 | 15:30 | TikTok + YouTube | Un millón de segundos (curiosidad) |
-| 16 | 2026-11-24 | 18:00 | TikTok | El ADN de una célula mide 2 metros (ciencia, 2D) |
+| 16 | 2026-11-24 | 18:00 | TikTok | El ADN de una célula: 2 metros (ciencia, 2D) |
 | 17 | 2026-11-24 | 18:30 | Facebook + YouTube | Honduras le ganó a Brasil (honduras) |
 | 18 | 2026-11-24 | 21:10 | Instagram + YouTube | Tu cuerpo tiene 30 billones (ciencia, 2D) |
 | 19 | 2026-11-25 | 10:20 | Facebook + YouTube | Cleopatra y el iPhone (historia, 2D) |
 | 20 | 2026-11-25 | 12:17 | Instagram + YouTube | El rayo sí cae dos veces (mito) |
 | 21 | 2026-11-25 | 15:30 | TikTok + YouTube | Einstein no reprobó matemáticas (mito) |
-| 22 | 2026-11-25 | 18:00 | TikTok | El código QR nació en una fábrica (datos, 2D) |
+| 22 | 2026-11-25 | 18:00 | TikTok | El código QR nació en fábrica (datos, 2D) |
 | 23 | 2026-11-25 | 18:30 | Facebook + YouTube | La guara roja de Honduras (honduras) |
 | 24 | 2026-11-25 | 21:10 | Instagram + YouTube | El primer mensaje fue «LO» (historia, 2D) |
 | 25 | 2026-11-26 | 10:20 | Facebook + YouTube | Bluetooth se llama como un rey (historia, 2D) |
@@ -54,16 +54,76 @@
 | 48 | 2026-11-29 | 21:10 | Instagram + YouTube | El cacahuate no es una nuez (curiosidad, 2D) |
 | 49 | 2026-11-30 | 10:20 | Facebook + YouTube | Las zanahorias eran moradas (historia, 2D) |
 | 50 | 2026-11-30 | 12:17 | Instagram + YouTube | El Sol no es amarillo (mito) |
-| 51 | 2026-11-30 | 15:30 | TikTok + YouTube | La joroba del camello (mito) |
+| 51 | 2026-11-30 | 15:30 | TikTok + YouTube | Una nube pesa 100 elefantes (curiosidad) |
 | 52 | 2026-11-30 | 18:00 | TikTok | El país con más husos horarios (datos, 2D) |
-| 53 | 2026-11-30 | 18:30 | Facebook + YouTube | Una nube pesa 100 elefantes (curiosidad) |
+| 53 | 2026-11-30 | 18:30 | Facebook + YouTube | La bandera y sus cinco estrellas (honduras) |
 | 54 | 2026-11-30 | 21:10 | Instagram + YouTube | Las aves no sienten el picante (ciencia, 2D) |
 | 55 | 2026-12-01 | 10:20 | Facebook + YouTube | El país más pequeño del mundo (datos, 2D) |
-| 56 | 2026-12-01 | 12:17 | Instagram + YouTube | Los diamantes no vienen del carbón (mito) |
-| 57 | 2026-12-01 | 15:30 | TikTok + YouTube | El mapa de sabores es falso (mito) |
+| 56 | 2026-12-01 | 12:17 | Instagram + YouTube | La joroba del camello (mito) |
+| 57 | 2026-12-01 | 15:30 | TikTok + YouTube | Los diamantes no vienen del carbón (mito) |
 | 58 | 2026-12-01 | 18:00 | TikTok | El 70 % del agua dulce es hielo (ciencia, 2D) |
-| 59 | 2026-12-01 | 18:30 | Facebook + YouTube | En el Mar Muerto no te hundes (curiosidad) |
+| 59 | 2026-12-01 | 18:30 | Facebook + YouTube | Lempira, el nombre de tu dinero (honduras) |
 | 60 | 2026-12-01 | 21:10 | Instagram + YouTube | El Sahara fue verde (historia, 2D) |
+| 61 | 2026-12-02 | 10:20 | Facebook + YouTube | Todo el oro cabe en un cubo (datos, 2D) |
+| 62 | 2026-12-02 | 12:17 | Instagram + YouTube | En el Mar Muerto no te hundes (curiosidad) |
+| 63 | 2026-12-02 | 15:30 | TikTok + YouTube | El mapa de sabores es falso (mito) |
+| 64 | 2026-12-02 | 18:00 | TikTok | La ciudad sobre un lago (historia, 2D) |
+| 65 | 2026-12-02 | 18:30 | Facebook + YouTube | Tegucigalpa, capital desde 1880 (honduras) |
+| 66 | 2026-12-02 | 21:10 | Instagram + YouTube | Los incas contaban con nudos (historia, 2D) |
+| 67 | 2026-12-03 | 10:20 | Facebook + YouTube | La primera computadora pesaba 27 (historia, 2D) |
+| 68 | 2026-12-03 | 12:17 | Instagram + YouTube | No pierdes el 40 % por la cabeza (mito) |
+| 69 | 2026-12-03 | 15:30 | TikTok + YouTube | Las uñas no crecen tras morir (mito) |
+| 70 | 2026-12-03 | 18:00 | TikTok | El GPS usa la relatividad (ciencia, 2D) |
+| 71 | 2026-12-03 | 18:30 | Facebook + YouTube | El reloj más viejo de América (honduras) |
+| 72 | 2026-12-03 | 21:10 | Instagram + YouTube | Un disco duro de una tonelada (historia, 2D) |
+| 73 | 2026-12-04 | 10:20 | Facebook + YouTube | De dónde viene «OK» (historia, 2D) |
+| 74 | 2026-12-04 | 12:17 | Instagram + YouTube | Los ocho vasos de agua (mito) |
+| 75 | 2026-12-04 | 15:30 | TikTok + YouTube | El azúcar no da hiperactividad (mito) |
+| 76 | 2026-12-04 | 18:00 | TikTok | La ñ nació de una abreviatura (historia, 2D) |
+| 77 | 2026-12-04 | 18:30 | Facebook + YouTube | El lago de las 400 aves (honduras) |
+| 78 | 2026-12-04 | 21:10 | Instagram + YouTube | El español en el mundo (datos, 2D) |
+| 79 | 2026-12-05 | 10:20 | Facebook + YouTube | Ada y el primer programa (historia, 2D) |
+| 80 | 2026-12-05 | 12:17 | Instagram + YouTube | Afeitarse no engrosa el vello (mito) |
+| 81 | 2026-12-05 | 15:30 | TikTok + YouTube | El vidrio no fluye (mito) |
+| 82 | 2026-12-05 | 18:00 | TikTok | El primer vuelo duró 12 segundos (historia, 2D) |
+| 83 | 2026-12-05 | 18:30 | Facebook + YouTube | La Ciudad Blanca de la Mosquitia (honduras) |
+| 84 | 2026-12-05 | 21:10 | Instagram + YouTube | Dos Nobel en dos ciencias (historia, 2D) |
+| 85 | 2026-12-06 | 10:20 | Facebook + YouTube | Gagarin dio la vuelta en 108 (historia, 2D) |
+| 86 | 2026-12-06 | 12:17 | Instagram + YouTube | La sangre nunca es azul (mito) |
+| 87 | 2026-12-06 | 15:30 | TikTok + YouTube | Ocho arañas al año: falso (mito) |
+| 88 | 2026-12-06 | 18:00 | TikTok | El arroz alimenta a la mitad (datos, 2D) |
+| 89 | 2026-12-06 | 18:30 | Facebook + YouTube | El primer parque nacional (honduras) |
+| 90 | 2026-12-06 | 21:10 | Instagram + YouTube | La computadora de la Luna (ciencia, 2D) |
+| 91 | 2026-12-07 | 10:20 | Facebook + YouTube | La papa nació en los Andes (historia, 2D) |
+| 92 | 2026-12-07 | 12:17 | Instagram + YouTube | El camaleón y sus colores (mito) |
+| 93 | 2026-12-07 | 15:30 | TikTok + YouTube | El agua y el hemisferio sur (mito) |
+| 94 | 2026-12-07 | 18:00 | TikTok | El Sol es 400 veces más grande (ciencia, 2D) |
+| 95 | 2026-12-07 | 18:30 | Facebook + YouTube | La lluvia de peces de Yoro (honduras) |
+| 96 | 2026-12-07 | 21:10 | Instagram + YouTube | El maíz nació en México (historia, 2D) |
+| 97 | 2026-12-08 | 10:20 | Facebook + YouTube | Cómo nace una aurora (ciencia, 2D) |
+| 98 | 2026-12-08 | 12:17 | Instagram + YouTube | Estrellas fugaces, ¿estrellas? (mito) |
+| 99 | 2026-12-08 | 15:30 | TikTok + YouTube | El chicle no dura siete años (mito) |
+| 100 | 2026-12-08 | 18:00 | TikTok | El hielo flota por una rareza (ciencia, 2D) |
+| 101 | 2026-12-08 | 18:30 | Facebook + YouTube | La baleada, orgullo de la costa (honduras) |
+| 102 | 2026-12-08 | 21:10 | Instagram + YouTube | Cuenta los segundos del trueno (ciencia, 2D) |
+| 103 | 2026-12-09 | 10:20 | Facebook + YouTube | En el espacio no se oye nada (ciencia, 2D) |
+| 104 | 2026-12-09 | 12:17 | Instagram + YouTube | La Estación da 16 vueltas al día (ciencia) |
+| 105 | 2026-12-09 | 15:30 | TikTok + YouTube | Vas a 107.000 km/h sin notarlo (ciencia) |
+| 106 | 2026-12-09 | 18:00 | TikTok | El corazón del camarón (curiosidad, 2D) |
+| 107 | 2026-12-09 | 18:30 | Facebook + YouTube | De dónde viene «Honduras» (honduras) |
+| 108 | 2026-12-09 | 21:10 | Instagram + YouTube | Mariposas con sabor en las patas (curiosidad, 2D) |
+| 109 | 2026-12-10 | 10:20 | Facebook + YouTube | Estrella de mar sin cerebro (curiosidad, 2D) |
+| 110 | 2026-12-10 | 12:17 | Instagram + YouTube | Cientos de miles de millones (ciencia) |
+| 111 | 2026-12-10 | 15:30 | TikTok + YouTube | Plutón no ha dado una vuelta (ciencia) |
+| 112 | 2026-12-10 | 18:00 | TikTok | El elefante tarda 22 meses (curiosidad, 2D) |
+| 113 | 2026-12-10 | 18:30 | Facebook + YouTube | Atardeceres azules en Marte (ciencia) |
+| 114 | 2026-12-10 | 21:10 | Instagram + YouTube | El delfín duerme a medias (curiosidad, 2D) |
+| 115 | 2026-12-11 | 10:20 | Facebook + YouTube | El ornitorrinco pone huevos (curiosidad, 2D) |
+| 116 | 2026-12-11 | 12:17 | Instagram + YouTube | Los continentes crecen como uñas (ciencia) |
+| 117 | 2026-12-11 | 15:30 | TikTok + YouTube | Rusia es más grande que Plutón (ciencia) |
+| 118 | 2026-12-11 | 18:00 | TikTok | El olfato del perro es gigante (ciencia, 2D) |
+| 119 | 2026-12-11 | 18:30 | Facebook + YouTube | Medio millón de terremotos (ciencia) |
+| 120 | 2026-12-11 | 21:10 | Instagram + YouTube | Los gatos maúllan para ti (curiosidad, 2D) |
 
 ## 1. El corazón de la ballena azul
 *2026-11-22 · 10:20 · Facebook + YouTube · categoría: ciencia · episodio 1*
@@ -236,7 +296,7 @@
 - Patrón de manchas único en cada individuo — Wildbook for Whale Sharks / Ecocean
 - Avistamientos frecuentes en Utila (Islas de la Bahía) — Whale Shark and Oceanic Research Center, Utila (WSORC)
 
-## 12. La mancha más grande que la Tierra
+## 12. La mancha más grande de todas
 *2026-11-23 · 21:10 · Instagram + YouTube · categoría: ciencia · episodio 5*
 
 - **portada:** En Júpiter hay una tormenta más grande que la Tierra.
@@ -252,7 +312,7 @@
 
 > Nota: La mancha se está encogiendo: su tamaño exacto depende del año de la medición.
 
-## 13. Una estrella del tamaño de ciudad
+## 13. Una estrella como una ciudad
 *2026-11-24 · 10:20 · Facebook + YouTube · categoría: ciencia · episodio 7*
 
 - **portada:** Una estrella de neutrones mide como una ciudad, pero pesa más que el Sol.
@@ -298,7 +358,7 @@
 **Fuentes:**
 - 1.000.000 de segundos ≈ 11,6 días; 1.000.000.000 de segundos ≈ 31,7 años — Cálculo directo: 1.000.000 ÷ 86.400 y 1.000.000.000 ÷ 31.557.600
 
-## 16. El ADN de una célula mide 2 metros
+## 16. El ADN de una célula: 2 metros
 *2026-11-24 · 18:00 · TikTok · categoría: ciencia · episodio 9*
 
 - **portada:** Si estiraras el ADN de una sola célula, mediría casi dos metros.
@@ -389,7 +449,7 @@
 - Examen de ingreso al Politécnico de Zúrich (1895), con excelentes notas en matemáticas y física — The Einstein Papers Project, Caltech
 - Premio Nobel de Física 1921 — NobelPrize.org (https://www.nobelprize.org/prizes/physics/1921/summary/)
 
-## 22. El código QR nació en una fábrica
+## 22. El código QR nació en fábrica
 *2026-11-25 · 18:00 · TikTok · categoría: datos · episodio 12*
 
 - **portada:** El código QR se inventó para seguir piezas de autos en una fábrica.
@@ -423,7 +483,7 @@
 
 - **portada:** El primer mensaje enviado por Internet fue «LO».
 - **foco:** En 1969, desde una universidad de California, querían escribir «LOGIN».
-- **foco:** Pero el sistema falló después de la segunda letra, y solo llegó «LO».
+- **lluvia:** Pero el sistema falló después de la segunda letra, y solo llegó «LO».
 - **linea:** Desde entonces, internet creció por etapas.
 - **globo:** Hoy casi siete de cada diez personas del mundo usan internet.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
@@ -440,7 +500,7 @@
 - **foco:** Harald «Diente Azul» fue un rey de Dinamarca que unió a varias tribus hace más de mil años.
 - **linea:** Su nombre llegó a la tecnología mil años después.
 - **foco:** La idea era unir dispositivos de distintas marcas, como él unió pueblos.
-- **foco:** Y el logo mezcla las dos runas de sus iniciales, H y B.
+- **lluvia:** Y el logo mezcla las dos runas de sus iniciales, H y B.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
 
 **Fuentes:**
@@ -577,7 +637,7 @@
 - **portada:** La jirafa tiene los mismos huesos del cuello que tú: siete.
 - **comparacion:** Casi todos los mamíferos tienen siete vértebras en el cuello, desde un ratón hasta una jirafa.
 - **foco:** Lo que cambia es el tamaño: cada hueso de una jirafa puede medir unos 25 centímetros.
-- **foco:** Su corazón pesa unos 11 kilos para subir la sangre hasta la cabeza.
+- **lluvia:** Su corazón pesa unos 11 kilos para subir la sangre hasta la cabeza.
 - **foco:** Y su lengua mide hasta unos 45 centímetros, es oscura y agarra las hojas.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
 
@@ -700,7 +760,7 @@
 - **portada:** Un caracol de jardín puede tener miles de dientes.
 - **pila:** Se calcula que tiene hasta unos 14.000 dientes diminutos.
 - **foco:** No están en la boca como los nuestros, sino en una lengua rasposa llamada rádula.
-- **foco:** La usa como una lima para raspar hojas y otros alimentos.
+- **lluvia:** La usa como una lima para raspar hojas y otros alimentos.
 - **calendario:** Y cuando hace mucho calor o se seca todo, algunos caracoles duermen por meses, y hasta años.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
 
@@ -787,7 +847,7 @@
 
 - **portada:** El cacahuate no es una nuez: es una legumbre.
 - **foco:** Es pariente de los frijoles y las lentejas, no de las almendras ni las nueces.
-- **foco:** Además, crece bajo la tierra: la flor se dobla y entierra su fruto.
+- **cuadricula:** Además, crece bajo la tierra: la flor se dobla y entierra su fruto.
 - **lluvia:** Cada planta produce decenas de vainas, y cada vaina trae dos o tres semillas.
 - **gente:** Es una de las alergias alimentarias más comunes, así que siempre hay que leer las etiquetas.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
@@ -827,22 +887,20 @@
 - El Sol es blanco visto desde el espacio; la atmósfera lo hace parecer amarillo — NASA, «Why is the Sun Yellow? (It isn’t)» y Universidad de Cornell, Curiosidades de astronomía
 - Temperatura de la superficie solar: unos 5.500 °C — NASA, «Sun Fact Sheet»
 
-## 51. La joroba del camello
-*2026-11-30 · 15:30 · TikTok + YouTube · categoría: mito · episodio 25*
+## 51. Una nube pesa 100 elefantes
+*2026-11-30 · 15:30 · TikTok + YouTube · categoría: curiosidad · episodio 24*
 
-- **portada:** Mito: los camellos guardan agua en la joroba. Lo que guardan ahí es grasa.
-- **foco:** Una joroba llena puede guardar hasta unos 36 kilos de grasa.
-- **gente:** Esa grasa es una reserva de energía: cuando no hay comida, el camello la va gastando.
-- **lluvia:** Para aguantar sin agua, sus glóbulos rojos son ovalados y soportan mucha deshidratación.
-- **cuadricula:** Y cuando por fin encuentran agua, pueden beber decenas de litros de una vez.
-- **globo:** Un camello puede perder una cuarta parte de su peso en agua y seguir caminando.
+- **portada:** Una nube blanca y esponjosa puede pesar lo mismo que cien elefantes.
+- **foco:** Una nube cúmulo típica pesa unas 500 toneladas.
+- **pila:** Son unas 500.000 kilos de agua flotando sobre tu cabeza.
+- **gente:** Un elefante africano pesa unas cinco toneladas, así que son como cien elefantes en el aire.
+- **globo:** No se cae porque el agua está en gotitas diminutas, sostenidas por el aire que sube.
+- **lluvia:** Cuando las gotas se juntan y pesan demasiado, caen como lluvia.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
 
 **Fuentes:**
-- La joroba guarda grasa, hasta unos 36 kg — Enciclopedia Británica, «Camel» y Zoológico de San Diego
-- Pueden perder hasta un 25 % de su peso en agua; glóbulos rojos ovalados — Enciclopedia Británica, «Camel»
-
-> Nota: La cifra de 36 kilos es la que más se repite en las fuentes; varía según el animal.
+- Una nube cúmulo de tamaño típico pesa unas 500 toneladas (1,1 millones de libras) — Peggy LeMone, científica del NCAR, citada por el Servicio Geológico de EE. UU. (USGS)
+- Un elefante africano pesa unas 5 toneladas — WWF y Zoológico de San Diego
 
 ## 52. El país con más husos horarios
 *2026-11-30 · 18:00 · TikTok · categoría: datos · episodio 27*
@@ -859,27 +917,28 @@
 
 > Nota: El número cambia según se cuenten los territorios de ultramar y la Antártida.
 
-## 53. Una nube pesa 100 elefantes
-*2026-11-30 · 18:30 · Facebook + YouTube · categoría: curiosidad · episodio 24*
+## 53. La bandera y sus cinco estrellas
+*2026-11-30 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 1*
 
-- **portada:** Una nube blanca y esponjosa puede pesar lo mismo que cien elefantes.
-- **foco:** Una nube cúmulo típica pesa unas 500 toneladas.
-- **pila:** Son unas 500.000 kilos de agua flotando sobre tu cabeza.
-- **gente:** Un elefante africano pesa unas cinco toneladas, así que son como cien elefantes en el aire.
-- **globo:** No se cae porque el agua está en gotitas diminutas, sostenidas por el aire que sube.
-- **lluvia:** Cuando las gotas se juntan y pesan demasiado, caen como lluvia.
+- **portada:** La bandera de Honduras tiene cinco estrellas por una razón.
+- **foco:** Representan a los cinco países de la antigua Federación Centroamericana: Guatemala, El Salvador, Honduras, Nicaragua y Costa Rica.
+- **linea:** Sus franjas azules y blancas vienen de esa unión.
+- **gente:** Según la tradición, el azul recuerda a los dos océanos y al cielo, y el blanco, a la paz.
+- **foco:** Honduras es de los pocos países con costa en el mar Caribe y en el océano Pacífico.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
 
 **Fuentes:**
-- Una nube cúmulo de tamaño típico pesa unas 500 toneladas (1,1 millones de libras) — Peggy LeMone, científica del NCAR, citada por el Servicio Geológico de EE. UU. (USGS)
-- Un elefante africano pesa unas 5 toneladas — WWF y Zoológico de San Diego
+- Las cinco estrellas simbolizan a los países de la Federación Centroamericana; la bandera actual se adoptó en 1866 — Encyclopaedia Britannica, «Flag of Honduras»
+- Significado tradicional de los colores — Secretaría de Cultura, Artes y Deportes de Honduras
+
+> Nota: El significado de los colores es tradicional y varía un poco según la fuente.
 
 ## 54. Las aves no sienten el picante
 *2026-11-30 · 21:10 · Instagram + YouTube · categoría: ciencia · episodio 26*
 
 - **portada:** Las aves comen chile sin sentir que pica.
 - **foco:** Lo que nos arde, la capsaicina, es una defensa de la planta contra los mamíferos.
-- **foco:** Las aves no la sienten, y así llevan las semillas lejos sin dañarlas.
+- **lluvia:** Las aves no la sienten, y así llevan las semillas lejos sin dañarlas.
 - **comparacion:** El picante se mide en unidades Scoville: de un jalapeño al chile más picante del mundo.
 - **foco:** Lo que sientes no es un sabor: es una señal de dolor que le manda tu boca al cerebro.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
@@ -901,8 +960,25 @@
 - Superficie ≈ 0,44 km²; menos de 1.000 habitantes — CIA World Factbook, «Holy See (Vatican City)»
 - Central Park: ≈ 3,41 km² (843 acres) — Central Park Conservancy
 
-## 56. Los diamantes no vienen del carbón
-*2026-12-01 · 12:17 · Instagram + YouTube · categoría: mito · episodio 27*
+## 56. La joroba del camello
+*2026-12-01 · 12:17 · Instagram + YouTube · categoría: mito · episodio 25*
+
+- **portada:** Mito: los camellos guardan agua en la joroba. Lo que guardan ahí es grasa.
+- **foco:** Una joroba llena puede guardar hasta unos 36 kilos de grasa.
+- **gente:** Esa grasa es una reserva de energía: cuando no hay comida, el camello la va gastando.
+- **lluvia:** Para aguantar sin agua, sus glóbulos rojos son ovalados y soportan mucha deshidratación.
+- **cuadricula:** Y cuando por fin encuentran agua, pueden beber decenas de litros de una vez.
+- **globo:** Un camello puede perder una cuarta parte de su peso en agua y seguir caminando.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- La joroba guarda grasa, hasta unos 36 kg — Enciclopedia Británica, «Camel» y Zoológico de San Diego
+- Pueden perder hasta un 25 % de su peso en agua; glóbulos rojos ovalados — Enciclopedia Británica, «Camel»
+
+> Nota: La cifra de 36 kilos es la que más se repite en las fuentes; varía según el animal.
+
+## 57. Los diamantes no vienen del carbón
+*2026-12-01 · 15:30 · TikTok + YouTube · categoría: mito · episodio 27*
 
 - **portada:** Mito: los diamantes se hacen del carbón. Casi todos son mucho más antiguos que el carbón.
 - **comparacion:** El carbón tiene unos 300 millones de años; los diamantes, entre 1.000 y 3.500 millones.
@@ -916,22 +992,6 @@
 - Los diamantes naturales tienen entre 1.000 y 3.500 millones de años; se forman a unos 150-200 km de profundidad — Instituto Gemológico de América (GIA), «How Diamonds Form»
 - El carbón se formó hace unos 300 millones de años, a partir de plantas — Servicio Geológico de EE. UU. (USGS)
 
-## 57. El mapa de sabores es falso
-*2026-12-01 · 15:30 · TikTok + YouTube · categoría: mito · episodio 29*
-
-- **portada:** Mito: cada parte de la lengua detecta un sabor distinto. No, todas detectan todos.
-- **foco:** El «mapa de la lengua» nació de un estudio alemán de 1901, mal interpretado.
-- **gente:** Hoy se sabe que todas las zonas de la lengua detectan dulce, salado, ácido, amargo y umami.
-- **lluvia:** Tienes miles de papilas gustativas, y cada una puede sentir los cinco sabores.
-- **globo:** El quinto sabor, el umami, lo describió en 1908 el científico japonés Kikunae Ikeda.
-- **cuadricula:** Y la mayor parte de lo que llamamos «sabor» viene del olfato, no de la lengua.
-- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
-
-**Fuentes:**
-- El mapa de la lengua viene de una mala lectura del estudio de Hänig (1901) — Smithsonian Magazine, «The Tongue Map: Tasteless Myth Debunked»
-- Todas las zonas detectan todos los sabores básicos — Instituto Nacional de Sordera y otros Trastornos de la Comunicación (NIDCD, EE. UU.)
-- Umami descrito por Kikunae Ikeda en 1908 — Enciclopedia Británica, «Umami»
-
 ## 58. El 70 % del agua dulce es hielo
 *2026-12-01 · 18:00 · TikTok · categoría: ciencia · episodio 30*
 
@@ -939,7 +999,7 @@
 - **globo:** La mayor parte está en la Antártida, el continente más frío, más seco y más ventoso.
 - **comparacion:** Del agua dulce del mundo, la mayoría es hielo y apenas una pequeña parte está en ríos y lagos.
 - **foco:** El hielo de la Antártida llega a medir casi cinco kilómetros de grosor.
-- **foco:** Si se derritiera todo, el nivel del mar subiría decenas de metros.
+- **lluvia:** Si se derritiera todo, el nivel del mar subiría decenas de metros.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
 
 **Fuentes:**
@@ -948,8 +1008,53 @@
 
 > Nota: Los porcentajes cambian un poco entre estudios; lo importante es el orden de magnitud.
 
-## 59. En el Mar Muerto no te hundes
-*2026-12-01 · 18:30 · Facebook + YouTube · categoría: curiosidad · episodio 28*
+## 59. Lempira, el nombre de tu dinero
+*2026-12-01 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 2*
+
+- **portada:** El dinero de Honduras lleva el nombre de un guerrero.
+- **foco:** Lempira fue un líder lenca que organizó la resistencia contra los españoles en la década de 1530.
+- **lluvia:** Según la tradición, su nombre significa «señor de la sierra».
+- **gente:** Hoy su nombre está en la moneda del país, en un departamento y en incontables calles y escuelas.
+- **pila:** Y cada vez que pagas, lo recuerdas.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Lempira, líder lenca de la resistencia contra la conquista española (década de 1530) — Encyclopaedia Britannica, «Lempira»
+- La moneda nacional se llama lempira — Banco Central de Honduras
+
+> Nota: El significado del nombre «Lempira» se transmite por tradición y se discute.
+
+## 60. El Sahara fue verde
+*2026-12-01 · 21:10 · Instagram + YouTube · categoría: historia · episodio 29*
+
+- **portada:** Hace unos 6.000 años el Sahara era verde.
+- **linea:** Durante miles de años el norte de África tuvo lagos, ríos y animales de sabana.
+- **foco:** Hay pinturas en las rocas del Sahara con jirafas, hipopótamos y gente nadando.
+- **lluvia:** Cambió por pequeños movimientos de la inclinación de la Tierra, que alteraron las lluvias.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El «Sahara verde» o Periodo Húmedo Africano, hace ≈ 14.500-5.000 años — NASA Earth Observatory, «The Green Sahara»; deMenocal et al. (2000), Quaternary Science Reviews
+
+> Nota: Las fechas del cambio varían por región.
+
+## 61. Todo el oro cabe en un cubo
+*2026-12-02 · 10:20 · Facebook + YouTube · categoría: datos · episodio 31*
+
+- **portada:** Todo el oro que se ha extraído en la historia cabría en un cubo de unos 22 metros.
+- **torre:** Se calcula que se han sacado unas 216.000 toneladas de oro desde siempre.
+- **comparacion:** Si fuera un cubo, mediría lo que un edificio de siete pisos por lado.
+- **foco:** Casi la mitad está en joyas y la otra parte, en barras guardadas por bancos centrales y por inversionistas.
+- **gente:** Cada año se extraen unas 3.000 toneladas más.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- ≈ 216.000 toneladas de oro extraídas hasta 2023 (un cubo de ≈ 22 m de lado) — World Gold Council, «How much gold has been mined?»
+
+> Nota: La cifra se actualiza cada año; el tamaño del cubo es una aproximación.
+
+## 62. En el Mar Muerto no te hundes
+*2026-12-02 · 12:17 · Instagram + YouTube · categoría: curiosidad · episodio 28*
 
 - **portada:** En el Mar Muerto flotas sin hacer nada, y está a 430 metros bajo el nivel del mar.
 - **foco:** Es el punto más bajo de la superficie terrestre, a unos 430 metros bajo el nivel del mar.
@@ -966,16 +1071,786 @@
 
 > Nota: La cifra exacta de descenso del nivel varía por año; 1 metro es un promedio reciente.
 
-## 60. El Sahara fue verde
-*2026-12-01 · 21:10 · Instagram + YouTube · categoría: historia · episodio 29*
+## 63. El mapa de sabores es falso
+*2026-12-02 · 15:30 · TikTok + YouTube · categoría: mito · episodio 29*
 
-- **portada:** Hace unos 6.000 años el Sahara era verde.
-- **linea:** Durante miles de años el norte de África tuvo lagos, ríos y animales de sabana.
-- **foco:** Hay pinturas en las rocas del Sahara con jirafas, hipopótamos y gente nadando.
-- **foco:** Cambió por pequeños movimientos de la inclinación de la Tierra, que alteraron las lluvias.
+- **portada:** Mito: cada parte de la lengua detecta un sabor distinto. No, todas detectan todos.
+- **foco:** El «mapa de la lengua» nació de un estudio alemán de 1901, mal interpretado.
+- **gente:** Hoy se sabe que todas las zonas de la lengua detectan dulce, salado, ácido, amargo y umami.
+- **lluvia:** Tienes miles de papilas gustativas, y cada una puede sentir los cinco sabores.
+- **globo:** El quinto sabor, el umami, lo describió en 1908 el científico japonés Kikunae Ikeda.
+- **cuadricula:** Y la mayor parte de lo que llamamos «sabor» viene del olfato, no de la lengua.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
 
 **Fuentes:**
-- El «Sahara verde» o Periodo Húmedo Africano, hace ≈ 14.500-5.000 años — NASA Earth Observatory, «The Green Sahara»; deMenocal et al. (2000), Quaternary Science Reviews
+- El mapa de la lengua viene de una mala lectura del estudio de Hänig (1901) — Smithsonian Magazine, «The Tongue Map: Tasteless Myth Debunked»
+- Todas las zonas detectan todos los sabores básicos — Instituto Nacional de Sordera y otros Trastornos de la Comunicación (NIDCD, EE. UU.)
+- Umami descrito por Kikunae Ikeda en 1908 — Enciclopedia Británica, «Umami»
 
-> Nota: Las fechas del cambio varían por región.
+## 64. La ciudad sobre un lago
+*2026-12-02 · 18:00 · TikTok · categoría: historia · episodio 33*
+
+- **portada:** Tenochtitlan, la capital azteca, estaba construida sobre un lago.
+- **linea:** Los mexicas la fundaron en una isla del lago de Texcoco, y llegó a ser enorme.
+- **foco:** Se llegaba por calzadas y había canales, como una ciudad con calles de agua.
+- **cuadricula:** Cultivaban en chinampas: islas artificiales de cañas, barro y tierra donde crecían maíz y flores.
+- **gente:** Cuando llegaron los españoles, era una de las ciudades más grandes del mundo, con unos 200.000 habitantes.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Fundada en 1325 en una isla del lago de Texcoco; ≈ 200.000 habitantes hacia 1519; cae en 1521 — Instituto Nacional de Antropología e Historia (México) y Encyclopaedia Britannica, «Tenochtitlán»
+
+> Nota: La población de Tenochtitlan es una estimación; las cifras van de 140.000 a 300.000.
+
+## 65. Tegucigalpa, capital desde 1880
+*2026-12-02 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 3*
+
+- **portada:** Tegucigalpa no siempre fue la capital de Honduras.
+- **linea:** Su historia empieza en una mina de plata.
+- **foco:** Antes de 1880, la capital era Comayagua.
+- **lluvia:** Según una explicación, su nombre viene del náhuatl y significa «cerro de plata».
+- **gente:** Hoy el Distrito Central, con Comayagüela, es la ciudad más poblada del país junto con San Pedro Sula.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Fundada en 1578 como real de minas; capital desde 1880; unida a Comayagüela como Distrito Central en 1937 — Alcaldía Municipal del Distrito Central y Encyclopaedia Britannica, «Tegucigalpa»
+
+> Nota: El origen del nombre «Tegucigalpa» tiene varias explicaciones.
+
+## 66. Los incas contaban con nudos
+*2026-12-02 · 21:10 · Instagram + YouTube · categoría: historia · episodio 32*
+
+- **portada:** Los incas llevaban sus cuentas con cuerdas y nudos.
+- **foco:** Se llaman quipus: cuerdas de colores con nudos, cuya posición y tipo guardaban números.
+- **lluvia:** El imperio no tenía escritura como la nuestra, ni usaba la rueda para transportar cargas.
+- **comparacion:** Aun así construyó una red de caminos de más de 30.000 kilómetros.
+- **gente:** Los mensajeros corrían por esos caminos, relevándose, para llevar noticias muy rápido.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Los quipus registraban números con nudos; el imperio no usaba rueda para transporte — Museo Larco y Encyclopaedia Britannica, «Quipu»
+- Qhapaq Ñan: más de 30.000 km de caminos — UNESCO, «Qhapaq Ñan, Andean Road System»
+
+> Nota: Todavía no se ha descifrado por completo qué más podían guardar los quipus.
+
+## 67. La primera computadora pesaba 27
+*2026-12-03 · 10:20 · Facebook + YouTube · categoría: historia · episodio 34*
+
+- **portada:** La primera computadora electrónica pesaba 27 toneladas.
+- **foco:** Se llamaba ENIAC, se terminó en 1945 en Estados Unidos y ocupaba una sala entera.
+- **pila:** Tenía casi 17.500 tubos de vacío, que se calentaban y a veces se fundían.
+- **comparacion:** Hoy, un celular es millones de veces más potente y cabe en un bolsillo.
+- **gente:** Hacía unas 5.000 sumas por segundo; un celular actual hace miles de millones.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- ENIAC (1945): ≈ 27 toneladas, 17.468 tubos de vacío, ≈ 5.000 sumas por segundo — Smithsonian Institution y Universidad de Pensilvania, «ENIAC»
+
+## 68. No pierdes el 40 % por la cabeza
+*2026-12-03 · 12:17 · Instagram + YouTube · categoría: mito · episodio 11*
+
+- **portada:** Mito: pierdes la mayor parte del calor del cuerpo por la cabeza.
+- **foco:** La cifra del 40 % sale de una prueba antigua del ejército de EE. UU.: todos llevaban abrigo, menos la cabeza.
+- **comparacion:** La cabeza es cerca del 10 % de la superficie del cuerpo, y pierde un calor parecido a eso.
+- **gente:** Se pierde calor por cualquier parte que esté descubierta.
+- **foco:** Eso sí: taparte la cabeza ayuda, como taparte cualquier otra parte.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El mito del 40-45 % viene de un experimento de las Fuerzas Armadas de EE. UU. (1950) donde solo la cabeza estaba descubierta — Vreeman y Carroll (2008), British Medical Journal
+- La cabeza pierde ≈ 7-10 % del calor — Pretorius et al. (2006), Journal of Applied Physiology
+
+## 69. Las uñas no crecen tras morir
+*2026-12-03 · 15:30 · TikTok + YouTube · categoría: mito · episodio 12*
+
+- **portada:** Mito: después de morir, las uñas y el pelo siguen creciendo.
+- **foco:** Para crecer, las células necesitan oxígeno y glucosa, y después de morir ya no las reciben.
+- **lluvia:** Lo que pasa es que la piel se deshidrata y se encoge, y deja ver más de la uña y del pelo.
+- **gente:** Por eso parece que crecieron, pero en realidad solo quedaron más a la vista.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Las uñas y el pelo no crecen después de la muerte; la piel se retrae — Vreeman y Carroll (2007), British Medical Journal, «Medical myths»
+
+## 70. El GPS usa la relatividad
+*2026-12-03 · 18:00 · TikTok · categoría: ciencia · episodio 36*
+
+- **portada:** Tu GPS necesita la teoría de la relatividad de Einstein para funcionar.
+- **foco:** Los satélites llevan relojes atómicos, y el tiempo corre un poco distinto allá arriba que en la Tierra.
+- **comparacion:** Por su velocidad atrasan un poco y por la menor gravedad adelantan más: el resultado final es una diferencia diaria.
+- **lluvia:** Sin corregirla, el GPS fallaría unos 10 kilómetros cada día.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Diferencia neta ≈ +38 microsegundos por día en los relojes de los satélites GPS; sin corrección el error crecería ≈ 10 km al día — Ashby (2003), Living Reviews in Relativity; GPS.gov
+
+## 71. El reloj más viejo de América
+*2026-12-03 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 4*
+
+- **portada:** En Honduras hay uno de los relojes más antiguos de América que todavía funciona.
+- **foco:** Está en la torre de la catedral de Comayagua, una ciudad colonial del centro del país.
+- **lluvia:** Se cree que lo hicieron en España hace muchos siglos y que llegó a Honduras en la época colonial.
+- **gente:** Comayagua fue la capital de Honduras hasta 1880.
+- **foco:** Hoy sus campanadas siguen marcando las horas para quienes pasean por el centro histórico.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Reloj de la catedral de Comayagua, considerado el más antiguo en funcionamiento del continente — Instituto Hondureño de Antropología e Historia y Instituto Hondureño de Turismo
+
+> Nota: Su origen exacto y su fecha se discuten; la fuente es la tradición y las guías oficiales.
+
+## 72. Un disco duro de una tonelada
+*2026-12-03 · 21:10 · Instagram + YouTube · categoría: historia · episodio 35*
+
+- **portada:** El primer disco duro pesaba más de una tonelada y guardaba 5 megas.
+- **foco:** IBM lo presentó en 1956, y se parecía a un refrigerador de gran tamaño.
+- **comparacion:** Guardaba unos 5 millones de caracteres, menos que una sola foto de celular.
+- **foco:** Las empresas no lo vendían: lo alquilaban por unos 3.200 dólares al mes.
+- **gente:** Hoy un disco de bolsillo guarda millones de veces más.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- IBM 305 RAMAC (1956): 50 discos de 24 pulgadas, ≈ 5 MB, alquiler de ≈ 3.200 USD/mes — IBM Archives, «IBM 350 disk storage unit»
+
+## 73. De dónde viene «OK»
+*2026-12-04 · 10:20 · Facebook + YouTube · categoría: historia · episodio 37*
+
+- **portada:** La palabra «OK» empezó como una broma en un periódico de Boston.
+- **foco:** En 1839, un periódico de Boston la usó como abreviatura graciosa de «oll korrect», una forma mal escrita de «all correct».
+- **linea:** Esa moda de abreviar con faltas de ortografía duró poco, pero «OK» sobrevivió.
+- **foco:** Un candidato a presidente, de apodo «Old Kinderhook», la usó como lema, y se volvió famosa.
+- **gente:** Hoy se entiende en casi todos los idiomas del mundo.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- «OK» aparece en el Boston Morning Post (1839) como abreviatura de «oll korrect»; se populariza en 1840 — Read, A. W. (1963), American Speech; Merriam-Webster, «The history of OK»
+
+## 74. Los ocho vasos de agua
+*2026-12-04 · 12:17 · Instagram + YouTube · categoría: mito · episodio 13*
+
+- **portada:** Mito: todos necesitamos tomar ocho vasos de agua al día.
+- **foco:** Esa regla no tiene una base científica clara: la necesidad de agua cambia con el calor, el ejercicio y el cuerpo.
+- **comparacion:** Las recomendaciones de agua total, contando la de los alimentos, son estas.
+- **foco:** Cerca del 20 % del agua que tomamos viene de la comida: frutas, verduras y sopas.
+- **gente:** Una buena señal es la sed, y que la orina salga clara o amarillo pálido.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Ingesta adecuada de agua total: ≈ 3,7 L (hombres) y 2,7 L (mujeres), incluida la de los alimentos — National Academies (2004), «Dietary Reference Intakes for Water»
+- No hay evidencia sólida de la regla de 8 vasos — Valtin (2002), American Journal of Physiology
+
+> Nota: Las necesidades individuales varían; ante dudas, consulta a un profesional de salud.
+
+## 75. El azúcar no da hiperactividad
+*2026-12-04 · 15:30 · TikTok + YouTube · categoría: mito · episodio 14*
+
+- **portada:** Mito: el azúcar vuelve hiperactivos a los niños.
+- **foco:** Un análisis de 23 estudios, publicado en 1995, no encontró ese efecto.
+- **lluvia:** En otro experimento, los padres a los que dijeron que su hijo había tomado azúcar lo vieron más inquieto… aunque no la había tomado.
+- **gente:** Las fiestas, los amigos y la emoción pueden explicar mucho de esa energía.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Metaanálisis de 23 estudios: el azúcar no afecta la conducta ni la cognición de los niños — Wolraich, Wilson y White (1995), JAMA
+- Expectativa de los padres y percepción de hiperactividad — Hoover y Milich (1994), Journal of Abnormal Child Psychology
+
+> Nota: Esto no significa que el azúcar sea saludable en exceso.
+
+## 76. La ñ nació de una abreviatura
+*2026-12-04 · 18:00 · TikTok · categoría: historia · episodio 39*
+
+- **portada:** La letra ñ nació como una abreviatura de los copistas medievales.
+- **foco:** Los copistas escribían la doble «nn» con una «n» y una rayita encima, para ahorrar tinta y pergamino.
+- **lluvia:** Esa rayita se volvió la tilde que hoy ponemos sobre la n.
+- **gente:** Con el tiempo, la «ñ» se convirtió en una letra con su propio sonido.
+- **foco:** Es tan importante para el español que se convirtió en un símbolo de la lengua.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- La ñ proviene de la abreviatura medieval de «nn» con una tilde — Real Academia Española, «Ñ»
+
+## 77. El lago de las 400 aves
+*2026-12-04 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 5*
+
+- **portada:** Alrededor del lago de Yojoa viven más de 400 especies de aves.
+- **foco:** Es el lago natural más grande de Honduras, entre Cortés, Comayagua y Santa Bárbara.
+- **cuadricula:** Su zona tiene bosques, ríos y montañas, y por eso atrae a tantas especies.
+- **foco:** Por eso es un destino conocido entre las personas que observan aves.
+- **gente:** Y muy cerca está la catarata de Pulhapanzak, otro lugar para visitar el mismo día.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Lago de Yojoa: el mayor lago natural de Honduras; más de 400 especies de aves en su zona — Instituto Hondureño de Turismo; Audubon / eBird (Lago de Yojoa)
+
+## 78. El español en el mundo
+*2026-12-04 · 21:10 · Instagram + YouTube · categoría: datos · episodio 38*
+
+- **portada:** El español es la segunda lengua con más hablantes nativos del mundo.
+- **globo:** Lo hablan casi 500 millones de personas como lengua materna, en más de veinte países.
+- **comparacion:** Solo el chino mandarín tiene más hablantes nativos.
+- **foco:** Con quienes lo hablan como segunda lengua, pasa de 600 millones de personas.
+- **gente:** Y en Estados Unidos hay más hispanohablantes que en España.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- ≈ 500 millones de hablantes nativos y > 600 millones en total — Instituto Cervantes, «El español: una lengua viva» (2023)
+- Chino mandarín ≈ 940 M y español ≈ 485 M de hablantes nativos — Ethnologue (2024)
+
+> Nota: Las cifras de Ethnologue y del Instituto Cervantes difieren un poco.
+
+## 79. Ada y el primer programa
+*2026-12-05 · 10:20 · Facebook + YouTube · categoría: historia · episodio 40*
+
+- **portada:** El primer programa de computadora lo escribió una mujer en 1843.
+- **linea:** Ada Lovelace imaginó que una máquina podía hacer mucho más que calcular.
+- **foco:** Escribió un algoritmo para la máquina analítica, un diseño de computadora que nunca llegó a construirse.
+- **lluvia:** También pensó que algún día las máquinas podrían componer música.
+- **gente:** Hoy se le considera la primera programadora de la historia.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Notas de Ada Lovelace (1843) con un algoritmo para la máquina analítica de Charles Babbage — Science Museum (Londres) y Encyclopaedia Britannica, «Ada Lovelace»
+
+> Nota: Que sea «el primer programa» es una interpretación que algunos historiadores discuten.
+
+## 80. Afeitarse no engrosa el vello
+*2026-12-05 · 12:17 · Instagram + YouTube · categoría: mito · episodio 15*
+
+- **portada:** Mito: si te afeitas, el vello vuelve más grueso y más oscuro.
+- **foco:** Al afeitar, la punta del vello queda cortada en seco, sin la punta fina, y se siente más áspera.
+- **lluvia:** Pero la raíz, que es lo que decide el grosor, no cambia.
+- **gente:** Varios estudios midieron el vello antes y después de afeitar y no encontraron diferencias.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Afeitar no cambia el grosor, el color ni la velocidad de crecimiento del vello — Lynfield y MacWilliams (1970), Journal of Investigative Dermatology; Mayo Clinic
+
+## 81. El vidrio no fluye
+*2026-12-05 · 15:30 · TikTok + YouTube · categoría: mito · episodio 16*
+
+- **portada:** Mito: los vitrales antiguos son más gruesos abajo porque el vidrio fluye.
+- **foco:** En realidad, el vidrio de esa época se hacía girando un disco, y quedaba desigual desde el principio.
+- **lluvia:** Los vidrieros lo colocaban con la parte más gruesa hacia abajo, porque era más estable.
+- **gente:** Y los cálculos dicen que el vidrio tardaría muchísimo más que la edad del universo en deformarse.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El vidrio de ventanas medievales (corona) era desigual de origen; no fluye de forma perceptible a temperatura ambiente — Zanotto (1998), American Journal of Physics
+
+## 82. El primer vuelo duró 12 segundos
+*2026-12-05 · 18:00 · TikTok · categoría: historia · episodio 42*
+
+- **portada:** El primer vuelo con motor de la historia duró apenas 12 segundos.
+- **foco:** Fue el 17 de diciembre de 1903 en Kitty Hawk, Carolina del Norte, con los hermanos Wright.
+- **comparacion:** Voló unos 37 metros: menos que el largo de un avión grande.
+- **foco:** Ese mismo día hicieron cuatro vuelos, y el más largo duró 59 segundos.
+- **gente:** Menos de 70 años después, personas caminaban sobre la Luna.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Primer vuelo: 17 de diciembre de 1903, 12 segundos y ≈ 37 m; el cuarto, 59 s y ≈ 260 m — Smithsonian National Air and Space Museum; Biblioteca del Congreso de EE. UU.
+
+## 83. La Ciudad Blanca de la Mosquitia
+*2026-12-05 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 6*
+
+- **portada:** Una leyenda hondureña dice que hay una ciudad perdida en la selva.
+- **linea:** La llamaban Ciudad Blanca, o Ciudad del Dios Mono.
+- **foco:** El LiDAR mide el terreno con láser desde un avión y «ve» el suelo entre los árboles.
+- **lluvia:** Así aparecieron plazas, montículos y estructuras de una cultura antigua en La Mosquitia.
+- **gente:** La zona es muy difícil de recorrer: casi no hay caminos y gran parte es selva protegida.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Estudio LiDAR de 2012 y expedición de 2015 en La Mosquitia — National Geographic (2015), «Lost City Found in the Honduran Rain Forest»; Preston, D. (2017), «The Lost City of the Monkey God»
+
+> Nota: Los arqueólogos hablan de varias ciudades antiguas; «Ciudad Blanca» es el nombre de la leyenda.
+
+## 84. Dos Nobel en dos ciencias
+*2026-12-05 · 21:10 · Instagram + YouTube · categoría: historia · episodio 41*
+
+- **portada:** Marie Curie ganó dos premios Nobel en dos ciencias distintas.
+- **linea:** Fue la primera mujer en ganar un Nobel, y la única en ganarlo en dos ciencias.
+- **foco:** Descubrió dos elementos, el polonio y el radio, y estudió la radiactividad.
+- **gente:** Durante la Primera Guerra Mundial, organizó unidades móviles de rayos X para ayudar a los heridos.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Nobel de Física 1903 (compartido) y Nobel de Química 1911 — NobelPrize.org, «Marie Curie – Facts» (https://www.nobelprize.org/prizes/physics/1903/marie-curie/facts/)
+
+## 85. Gagarin dio la vuelta en 108
+*2026-12-06 · 10:20 · Facebook + YouTube · categoría: historia · episodio 43*
+
+- **portada:** Yuri Gagarin dio una vuelta a la Tierra en solo 108 minutos.
+- **foco:** Fue el 12 de abril de 1961: el primer ser humano en viajar al espacio.
+- **lluvia:** Su vuelo completo duró 108 minutos y dio una sola vuelta a la Tierra.
+- **foco:** Dicen que, al verla desde arriba, dijo que la Tierra era azul.
+- **gente:** Ocho años después, el Apolo 11 llevó personas a la Luna.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Vostok 1: 12 de abril de 1961, 108 minutos, una órbita — NASA History, «Yuri Gagarin»; Agencia Espacial Europea (ESA)
+
+## 86. La sangre nunca es azul
+*2026-12-06 · 12:17 · Instagram + YouTube · categoría: mito · episodio 17*
+
+- **portada:** Mito: la sangre sin oxígeno es azul y se pone roja al tocar el aire.
+- **foco:** La sangre siempre es roja: más brillante con oxígeno y rojo oscuro sin él.
+- **lluvia:** Las venas se ven azules por cómo la piel absorbe y refleja la luz, no por el color de la sangre.
+- **gente:** Cuando te sacan sangre, sale roja oscura, nunca azul.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- La sangre desoxigenada es rojo oscuro; el tono azul de las venas es un efecto óptico — Kienle et al. (1996), Applied Optics; Cleveland Clinic
+
+## 87. Ocho arañas al año: falso
+*2026-12-06 · 15:30 · TikTok + YouTube · categoría: mito · episodio 18*
+
+- **portada:** Mito: cada año te tragas ocho arañas mientras duermes.
+- **foco:** Las arañas detectan las vibraciones y el calor de una persona dormida, y se alejan.
+- **lluvia:** Tu respiración y tus ronquidos son como una alarma que las espanta.
+- **gente:** No hay ningún estudio que muestre que alguien se trague arañas dormido de forma habitual.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- No hay evidencia de que las personas se traguen arañas al dormir de forma habitual — Burke Museum of Natural History (Universidad de Washington); Snopes
+
+> Nota: Es una afirmación difícil de probar con un estudio, pero no hay casos documentados.
+
+## 88. El arroz alimenta a la mitad
+*2026-12-06 · 18:00 · TikTok · categoría: datos · episodio 45*
+
+- **portada:** El arroz es el alimento básico de más de la mitad del mundo.
+- **cuadricula:** Se cultiva en todos los continentes menos la Antártida, y hay más de 40.000 variedades.
+- **comparacion:** Asia produce más del 90 % del arroz del mundo.
+- **foco:** Los campos inundados, llamados arrozales, cambian el paisaje donde se cultiva.
+- **gente:** En Honduras, el arroz con frijoles acompaña casi cualquier comida.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El arroz es alimento básico de más de la mitad de la población mundial; Asia produce ≈ 90 % — FAO, «Rice market monitor»; Instituto Internacional de Investigación del Arroz (IRRI)
+
+## 89. El primer parque nacional
+*2026-12-06 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 7*
+
+- **portada:** Cerca de Tegucigalpa hay un bosque de nubes protegido desde 1980.
+- **foco:** El Parque Nacional La Tigra fue el primer parque nacional que declaró Honduras.
+- **cuadricula:** Es un bosque nublado: las nubes bajas dejan gotas de agua en las hojas todo el año.
+- **foco:** Esa agua alimenta quebradas que abastecen en parte a la capital.
+- **gente:** Y hay senderos para recorrerlo en una excursión de un día desde la ciudad.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Parque Nacional La Tigra: declarado en 1980, el primero del país; bosque nublado — Instituto de Conservación Forestal (ICF), Honduras
+- Sus quebradas abastecen en parte a Tegucigalpa — Fundación Amitigra
+
+## 90. La computadora de la Luna
+*2026-12-06 · 21:10 · Instagram + YouTube · categoría: ciencia · episodio 44*
+
+- **portada:** La computadora que llevó a la Luna tenía menos memoria que una foto de tu celular.
+- **foco:** Se llamaba Apollo Guidance Computer y guiaba la nave del Apolo 11, en 1969.
+- **comparacion:** Tenía unos 4 kilobytes de memoria de trabajo y unos 72 de almacenamiento fijo.
+- **foco:** Los astronautas la manejaban con un teclado de números muy sencillo.
+- **gente:** Con tan poco, hizo falta muchísimo ingenio y mucho trabajo de equipo.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- AGC: ≈ 2.048 palabras de memoria borrable y ≈ 36.864 de memoria fija — NASA y MIT Instrumentation Laboratory, «Apollo Guidance Computer»
+
+## 91. La papa nació en los Andes
+*2026-12-07 · 10:20 · Facebook + YouTube · categoría: historia · episodio 46*
+
+- **portada:** La papa nació en los Andes, y allí hay más de 4.000 variedades.
+- **foco:** Se domesticó hace unos 8.000 años cerca del lago Titicaca, entre Perú y Bolivia.
+- **pila:** Solo en los Andes se conservan más de 4.000 variedades nativas, de todos los colores.
+- **linea:** Llegó a Europa en el siglo XVI, y cambió la alimentación del mundo.
+- **gente:** Hoy es el tercer alimento más consumido del planeta, después del arroz y el trigo.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Domesticada hace ≈ 8.000 años en los Andes; > 4.000 variedades nativas — Centro Internacional de la Papa (CIP)
+- Tercer cultivo alimenticio más importante del mundo — FAO, «International Year of the Potato 2008»
+
+## 92. El camaleón y sus colores
+*2026-12-07 · 12:17 · Instagram + YouTube · categoría: mito · episodio 19*
+
+- **portada:** Mito: los camaleones cambian de color para camuflarse.
+- **foco:** Cambian sobre todo para comunicarse con otros camaleones: el miedo, el enojo o el cortejo.
+- **lluvia:** También cambian para regular su temperatura: más oscuros absorben más calor.
+- **foco:** El truco está en su piel: unos cristales diminutos que cambian de espacio y reflejan otros colores.
+- **gente:** Su color de reposo, verde o marrón, ya los esconde bastante bien.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El cambio de color sirve para comunicación y termorregulación; se produce con nanocristales de guanina — Teyssier et al. (2015), Nature Communications
+
+## 93. El agua y el hemisferio sur
+*2026-12-07 · 15:30 · TikTok + YouTube · categoría: mito · episodio 20*
+
+- **portada:** Mito: en el hemisferio sur el agua del lavabo gira al revés.
+- **foco:** El efecto de la rotación de la Tierra, llamado Coriolis, es demasiado débil en algo tan pequeño como un lavabo.
+- **lluvia:** Lo que decide hacia dónde gira el agua es la forma del recipiente y cómo se movía antes de abrir el desagüe.
+- **gente:** El efecto sí importa en cosas enormes: los huracanes giran en un sentido en el norte y en otro en el sur.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El efecto Coriolis es despreciable en un lavabo; sí gobierna el giro de los huracanes — NASA y Shapiro (1962), Nature
+
+## 94. El Sol es 400 veces más grande
+*2026-12-07 · 18:00 · TikTok · categoría: ciencia · episodio 48*
+
+- **portada:** Por una coincidencia, la Luna tapa justo al Sol en los eclipses.
+- **foco:** El Sol es unas 400 veces más ancho que la Luna.
+- **lluvia:** Pero también está unas 400 veces más lejos, así que en el cielo se ven casi del mismo tamaño.
+- **comparacion:** Esa proporción hace posible los eclipses totales.
+- **gente:** La Luna se aleja de la Tierra unos 3,8 centímetros cada año, y dentro de millones de años ya no podrá tapar el Sol por completo.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Sol ≈ 400 veces más ancho y ≈ 400 veces más lejos que la Luna; la Luna se aleja ≈ 3,8 cm al año — NASA, «Eclipses» y «Moon Facts»
+
+## 95. La lluvia de peces de Yoro
+*2026-12-07 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 8*
+
+- **portada:** En Yoro, según cuenta la tradición, a veces llueven peces.
+- **foco:** Cada año, después de una tormenta fuerte, aparecen cientos de pececitos vivos en el suelo.
+- **lluvia:** La gente dice que pasa desde hace más de un siglo, y hay un festival que lo celebra.
+- **foco:** Algunos científicos creen que es una manga de agua que levanta peces; otros, que salen de aguas subterráneas con las crecidas.
+- **gente:** Nadie ha demostrado qué ocurre exactamente, y eso lo hace todavía más famoso.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Fenómeno anual de «lluvia de peces» en Yoro y festival local — Instituto Hondureño de Turismo; reportes de National Geographic y la BBC
+
+> Nota: La causa no está confirmada; hay varias hipótesis.
+
+## 96. El maíz nació en México
+*2026-12-07 · 21:10 · Instagram + YouTube · categoría: historia · episodio 47*
+
+- **portada:** El maíz nació hace unos 9.000 años de una hierba silvestre de México.
+- **foco:** Esa hierba se llama teosinte, y sus granos eran pocos y muy duros.
+- **linea:** Los pueblos de Mesoamérica lo fueron mejorando generación tras generación.
+- **foco:** Hoy es uno de los tres cereales más cultivados del mundo, junto al trigo y el arroz.
+- **gente:** En Honduras, las tortillas, los tamales y las baleadas lo tienen de base… o de acompañante.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Maíz domesticado a partir del teosinte en el sur de México hace ≈ 9.000 años — Matsuoka et al. (2002), PNAS
+- Maíz, trigo y arroz: los tres cereales de mayor producción — FAO, FAOSTAT
+
+## 97. Cómo nace una aurora
+*2026-12-08 · 10:20 · Facebook + YouTube · categoría: ciencia · episodio 49*
+
+- **portada:** Las auroras nacen cuando partículas del Sol chocan con el aire.
+- **foco:** El Sol lanza sin parar un viento de partículas cargadas que viaja hasta la Tierra.
+- **lluvia:** El campo magnético las guía hacia los polos, donde chocan con los gases a unos 100 kilómetros de altura.
+- **comparacion:** El color depende del gas: el oxígeno da verde y rojo, y el nitrógeno, azul y violeta.
+- **gente:** También hay auroras en Júpiter y Saturno.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Las auroras surgen por la colisión de partículas del viento solar con la atmósfera, a ≈ 100 km de altura — NASA, «What causes the northern lights?»; NOAA SWPC
+
+## 98. Estrellas fugaces, ¿estrellas?
+*2026-12-08 · 12:17 · Instagram + YouTube · categoría: mito · episodio 21*
+
+- **portada:** Mito: las estrellas fugaces son estrellas que caen.
+- **foco:** Son meteoroides, pedacitos de roca o hielo, muchos del tamaño de un grano de arena.
+- **lluvia:** Brillan al entrar a la atmósfera a decenas de kilómetros por segundo y se calientan hasta brillar.
+- **gente:** En agosto es la temporada de las Perseidas, cuando se pueden ver decenas por hora.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Los meteoros son meteoroides que se queman en la atmósfera, a ≈ 70-100 km de altura — NASA, «Meteors and Meteorites»
+
+## 99. El chicle no dura siete años
+*2026-12-08 · 15:30 · TikTok + YouTube · categoría: mito · episodio 22*
+
+- **portada:** Mito: si te tragas un chicle, tarda siete años en digerirse.
+- **foco:** El chicle no se digiere del todo, pero tampoco se queda: avanza por el intestino como otros restos.
+- **lluvia:** Normalmente sale en pocos días.
+- **gente:** Lo que sí conviene es no tragarlo a propósito, sobre todo en niños pequeños.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El chicle tragado pasa por el aparato digestivo y se elimina en días; casos de obstrucción son raros — Academia Estadounidense de Pediatría y Mayo Clinic
+
+## 100. El hielo flota por una rareza
+*2026-12-08 · 18:00 · TikTok · categoría: ciencia · episodio 51*
+
+- **portada:** El agua es de las pocas sustancias que se expande al congelarse.
+- **foco:** Al congelarse, el agua ocupa cerca de un 9 % más de espacio.
+- **cuadricula:** Por eso el hielo es menos denso que el agua líquida y flota.
+- **lluvia:** Si el hielo se hundiera, lagos y mares se congelarían de abajo hacia arriba, y la vida sería muy distinta.
+- **gente:** Es también la razón por la que una botella llena se rompe en el congelador.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El agua se expande ≈ 9 % al congelarse; el hielo flota — USGS Water Science School, «Water density» y Encyclopaedia Britannica
+
+## 101. La baleada, orgullo de la costa
+*2026-12-08 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 9*
+
+- **portada:** La baleada es la comida más famosa de la costa hondureña.
+- **foco:** Es una tortilla de harina doblada, con frijoles refritos, queso y crema.
+- **cuadricula:** A la «sencilla» se le puede agregar huevo, aguacate, carne o pollo, y pasa a ser «especial».
+- **foco:** Nació en la costa norte, y hoy se vende en todo el país y entre la gente hondureña que vive fuera.
+- **gente:** Es barata, rápida y sabrosa: por eso se come a cualquier hora del día.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Descripción de la baleada y su origen en la costa norte — Instituto Hondureño de Turismo y Secretaría de Cultura, Artes y Deportes
+
+> Nota: Qué ciudad la inventó primero se discute.
+
+## 102. Cuenta los segundos del trueno
+*2026-12-08 · 21:10 · Instagram + YouTube · categoría: ciencia · episodio 50*
+
+- **portada:** Puedes calcular a qué distancia cayó un rayo contando los segundos.
+- **foco:** La luz llega casi al instante, pero el sonido tarda: viaja a unos 343 metros por segundo.
+- **comparacion:** Cada tres segundos entre el rayo y el trueno son aproximadamente un kilómetro.
+- **foco:** Si el trueno llega en menos de 30 segundos, la tormenta está cerca y conviene buscar refugio.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El sonido avanza ≈ 343 m/s: ≈ 3 s por km entre el relámpago y el trueno; regla de los 30 segundos — Servicio Meteorológico Nacional de EE. UU. (NOAA), «Lightning safety»
+
+## 103. En el espacio no se oye nada
+*2026-12-09 · 10:20 · Facebook + YouTube · categoría: ciencia · episodio 52*
+
+- **portada:** En el espacio no se oye nada, porque el sonido necesita aire.
+- **foco:** El sonido viaja por vibraciones de un medio, como el aire o el agua.
+- **lluvia:** En el vacío del espacio casi no hay materia que vibre, así que el sonido no se propaga.
+- **gente:** Los astronautas hablan por radio, que usa ondas que sí viajan por el vacío.
+- **foco:** Las explosiones espaciales de las películas son un efecto: en realidad serían silenciosas.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El sonido no se propaga en el vacío; las ondas de radio sí — NASA, «Is there sound in space?»
+
+## 104. La Estación da 16 vueltas al día
+*2026-12-09 · 12:17 · Instagram + YouTube · categoría: ciencia · episodio 23*
+
+- **portada:** La Estación Espacial da dieciséis vueltas a la Tierra cada día.
+- **lluvia:** Viaja a unos 28.000 kilómetros por hora.
+- **foco:** Da una vuelta completa en unos 90 minutos, a unos 400 kilómetros de altura.
+- **gente:** Por eso las personas a bordo ven unos 16 amaneceres y 16 atardeceres cada día.
+- **foco:** Y no se cae: está en caída libre constante, y la Tierra se curva debajo.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- ISS: ≈ 28.000 km/h, una órbita cada ≈ 90 minutos, ≈ 400 km de altura — NASA, «International Space Station Facts and Figures»
+
+## 105. Vas a 107.000 km/h sin notarlo
+*2026-12-09 · 15:30 · TikTok + YouTube · categoría: ciencia · episodio 24*
+
+- **portada:** Ahora mismo viajas a 107.000 kilómetros por hora y no lo sientes.
+- **comparacion:** La Tierra gira sobre sí misma, da vueltas al Sol y viaja con todo el sistema solar por la galaxia.
+- **foco:** No lo notamos porque la velocidad es casi constante, y todo se mueve con nosotros.
+- **gente:** Solo sentimos los cambios de velocidad: las frenadas, los baches y las curvas.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Velocidad orbital de la Tierra ≈ 29,8 km/s ≈ 107.000 km/h; giro en el ecuador ≈ 1.670 km/h — NASA, «Earth Fact Sheet»
+- El Sol se mueve en la galaxia a ≈ 220 km/s — NASA y Reid et al. (2014), Astrophysical Journal
+
+## 106. El corazón del camarón
+*2026-12-09 · 18:00 · TikTok · categoría: curiosidad · episodio 54*
+
+- **portada:** El corazón del camarón está en la cabeza.
+- **foco:** En realidad está en la parte delantera del cuerpo, justo detrás de la cabeza, que se llama cefalotórax.
+- **lluvia:** Su sangre no es roja: es azulada y se llama hemolinfa.
+- **foco:** Eso sí, no tiene tantas venas como nosotros: la sangre baña los órganos directamente.
+- **gente:** Cuando comas camarones, ya sabes dónde está su corazón.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El corazón del camarón se ubica en el cefalotórax y su hemolinfa es azulada — Encyclopaedia Britannica, «Shrimp» y Museo Americano de Historia Natural
+
+## 107. De dónde viene «Honduras»
+*2026-12-09 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 10*
+
+- **portada:** ¿Por qué el país se llama Honduras? Hay una leyenda famosa.
+- **linea:** Cuenta la tradición que todo empezó en 1502.
+- **foco:** Según se cuenta, Colón dijo: «Gracias a Dios que hemos salido de esas honduras».
+- **lluvia:** «Honduras» significaba «profundidades»: las aguas hondas de la costa, no el país entero.
+- **gente:** De esa misma travesía viene el nombre del Cabo Gracias a Dios, en la frontera con Nicaragua.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Colón llegó a la costa de Honduras en 1502; el Cabo Gracias a Dios lleva ese nombre — Encyclopaedia Britannica, «Honduras: History»
+
+> Nota: La frase atribuida a Colón es tradición y no está documentada.
+
+## 108. Mariposas con sabor en las patas
+*2026-12-09 · 21:10 · Instagram + YouTube · categoría: curiosidad · episodio 53*
+
+- **portada:** Las mariposas saborean con las patas.
+- **foco:** Tienen receptores del gusto en los pies, y así saben si una hoja sirve para poner sus huevos.
+- **lluvia:** Cuando aterrizan sobre una flor, ya están «probando» el néctar.
+- **foco:** Beben con una trompa larga, enrollada como un resorte, llamada probóscide.
+- **gente:** Y pueden detectar olores a muchos metros con sus antenas.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Las mariposas tienen receptores de gusto en los tarsos (patas) — Smithsonian Institution y Encyclopaedia Britannica, «Lepidoptera»
+
+## 109. Estrella de mar sin cerebro
+*2026-12-10 · 10:20 · Facebook + YouTube · categoría: curiosidad · episodio 55*
+
+- **portada:** La estrella de mar no tiene cerebro ni sangre.
+- **foco:** Tiene un sistema nervioso repartido por todo el cuerpo, sin un cerebro central.
+- **lluvia:** En lugar de sangre, bombea agua de mar por unos canales para moverse y respirar.
+- **foco:** Si pierde un brazo, puede regenerarlo, y algunas especies hasta regeneran el cuerpo entero.
+- **gente:** Hay unas 2.000 especies de estrellas de mar en el mundo.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Las estrellas de mar no tienen cerebro ni sangre; usan un sistema vascular acuífero y pueden regenerar brazos — Smithsonian National Museum of Natural History, «Sea stars»
+
+## 110. Cientos de miles de millones
+*2026-12-10 · 12:17 · Instagram + YouTube · categoría: ciencia · episodio 25*
+
+- **portada:** En el universo que podemos ver hay cientos de miles de millones de galaxias.
+- **globo:** Se calcula que son entre 200.000 millones y más de un billón, según el estudio.
+- **pila:** Y solo la Vía Láctea tiene entre 100.000 y 400.000 millones de estrellas.
+- **foco:** Más estrellas que granos de arena en todas las playas, según un cálculo muy repetido.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Entre 100 y 400 mil millones de estrellas en la Vía Láctea — NASA, «Milky Way»
+- Estimaciones del número de galaxias del universo observable — Conselice et al. (2016), The Astrophysical Journal; NASA
+
+> Nota: Las cifras de galaxias cambian con cada telescopio; son estimaciones.
+
+## 111. Plutón no ha dado una vuelta
+*2026-12-10 · 15:30 · TikTok + YouTube · categoría: ciencia · episodio 27*
+
+- **portada:** Desde que se descubrió Plutón, no ha completado ni una vuelta al Sol.
+- **linea:** Plutón tarda 248 años en dar una vuelta alrededor del Sol.
+- **foco:** Cada estación en Plutón dura unas seis décadas terrestres.
+- **gente:** Lo vimos de cerca por primera vez en 2015, y descubrimos montañas de hielo y un corazón gigante.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Descubierto en 1930 por Clyde Tombaugh; periodo orbital ≈ 248 años; planeta enano desde 2006; sobrevuelo de New Horizons en 2015 — NASA, «Pluto Facts»
+
+## 112. El elefante tarda 22 meses
+*2026-12-10 · 18:00 · TikTok · categoría: curiosidad · episodio 57*
+
+- **portada:** La mamá elefante tarda 22 meses en tener a su cría.
+- **calendario:** Es el embarazo más largo de todos los mamíferos terrestres.
+- **comparacion:** Y el elefantito nace pesando unos 100 kilos.
+- **foco:** Se pone de pie a los pocos minutos y camina con la manada al poco tiempo.
+- **gente:** Toda la manada, sobre todo las tías, ayuda a cuidarlo.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Gestación de ≈ 22 meses; cría de ≈ 90-110 kg — WWF y San Diego Zoo, «Elephant»
+
+## 113. Atardeceres azules en Marte
+*2026-12-10 · 18:30 · Facebook + YouTube · categoría: ciencia · episodio 26*
+
+- **portada:** En Marte, los atardeceres son azules.
+- **foco:** Lo vio por primera vez la sonda Curiosity en 2015, cuando fotografió el Sol poniéndose.
+- **lluvia:** El polvo fino del cielo marciano deja pasar la luz azul mejor cerca del Sol, al revés que en la Tierra.
+- **comparacion:** Un día en Marte dura casi lo mismo que uno en la Tierra.
+- **gente:** Y la gravedad allá es solo el 38 % de la nuestra: saltarías más del doble de alto.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Atardeceres azules fotografiados por Curiosity (2015) — NASA/JPL, «Curiosity Mars Rover: A Martian sunset»
+- Día marciano (sol) ≈ 24 h 40 min; gravedad ≈ 38 % de la terrestre — NASA, «Mars Fact Sheet»
+
+## 114. El delfín duerme a medias
+*2026-12-10 · 21:10 · Instagram + YouTube · categoría: curiosidad · episodio 56*
+
+- **portada:** Los delfines duermen con la mitad del cerebro despierta.
+- **foco:** Necesitan subir a respirar, así que no pueden desconectarse del todo.
+- **lluvia:** Cada mitad del cerebro duerme por turnos, y el ojo del lado dormido se mantiene cerrado.
+- **gente:** Así vigilan a los depredadores, nadan despacio y siguen respirando.
+- **foco:** Y los recién nacidos y sus mamás casi no duermen durante las primeras semanas.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Los delfines tienen sueño unihemisférico: duermen con una mitad del cerebro a la vez — Lyamin et al. (2005), Neuroscience & Biobehavioral Reviews; Smithsonian
+
+## 115. El ornitorrinco pone huevos
+*2026-12-11 · 10:20 · Facebook + YouTube · categoría: curiosidad · episodio 58*
+
+- **portada:** El ornitorrinco es un mamífero que pone huevos.
+- **foco:** Es uno de los pocos mamíferos que lo hacen, junto con los equidnas.
+- **lluvia:** Los machos tienen un espolón en las patas traseras que suelta veneno.
+- **foco:** Y su pico detecta los campos eléctricos que producen sus presas bajo el agua.
+- **gente:** Vive solo en Australia, y los científicos que lo vieron por primera vez pensaron que era un engaño.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Monotrema que pone huevos; machos con espolón venenoso; pico electrorreceptor — Australian Museum, «Platypus» y Smithsonian
+
+## 116. Los continentes crecen como uñas
+*2026-12-11 · 12:17 · Instagram + YouTube · categoría: ciencia · episodio 28*
+
+- **portada:** Los continentes se mueven más o menos a la velocidad a la que crecen tus uñas.
+- **comparacion:** Las placas se desplazan entre 2 y 10 centímetros al año.
+- **foco:** Es lento, pero en millones de años mueve continentes enteros.
+- **gente:** Hace 200 millones de años, casi todos los continentes estaban juntos.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Las placas tectónicas se mueven ≈ 2-10 cm al año — USGS, «Plate tectonics»
+- Las uñas de las manos crecen ≈ 3,5 mm al mes — Yaemsiri et al. (2010), Journal of the American Academy of Dermatology
+
+## 117. Rusia es más grande que Plutón
+*2026-12-11 · 15:30 · TikTok + YouTube · categoría: ciencia · episodio 30*
+
+- **portada:** Rusia tiene más superficie que Plutón.
+- **comparacion:** Rusia mide unos 17,1 millones de kilómetros cuadrados; Plutón, unos 16,7.
+- **foco:** Plutón es un mundo pequeño: menos de la mitad de ancho que la Tierra.
+- **gente:** Y Honduras cabría más de 150 veces dentro de Rusia.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Superficie de Rusia ≈ 17,1 M km²; de Honduras ≈ 112.492 km² — CIA World Factbook
+- Superficie de Plutón ≈ 16,65 M km² — NASA, «Pluto Fact Sheet»
+
+## 118. El olfato del perro es gigante
+*2026-12-11 · 18:00 · TikTok · categoría: ciencia · episodio 60*
+
+- **portada:** El olfato de un perro es miles de veces mejor que el nuestro.
+- **comparacion:** Un perro tiene unos 300 millones de receptores del olfato; una persona, unos 6 millones.
+- **foco:** Una parte de su cerebro dedicada a oler es, proporcionalmente, unas 40 veces mayor que la nuestra.
+- **lluvia:** Por eso detectan enfermedades, buscan personas perdidas y encuentran objetos escondidos.
+- **gente:** Cada vez que olfatea en un paseo, tu perro lee un periódico de olores.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- ≈ 300 millones de receptores olfativos en el perro frente a ≈ 6 millones en las personas — Horowitz (2016), «Being a Dog»; Universidad de Auburn y Scientific American
+
+> Nota: La ventaja exacta depende de la raza y del olor.
+
+## 119. Medio millón de terremotos
+*2026-12-11 · 18:30 · Facebook + YouTube · categoría: ciencia · episodio 29*
+
+- **portada:** Cada año hay unos 500.000 terremotos detectables.
+- **pila:** Se calcula que son unos 500.000 los que registran los instrumentos.
+- **comparacion:** Pero solo una parte se siente, y muy pocos hacen daño.
+- **gente:** Honduras, Guatemala y El Salvador están en una zona sísmica activa, por eso conviene conocer el plan de emergencia de tu familia.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- ≈ 500.000 terremotos detectables al año, ≈ 100.000 se sienten y ≈ 100 causan daños — USGS, «How many earthquakes occur each year?»
+
+## 120. Los gatos maúllan para ti
+*2026-12-11 · 21:10 · Instagram + YouTube · categoría: curiosidad · episodio 59*
+
+- **portada:** Los gatos adultos maúllan casi solo para hablar con las personas.
+- **foco:** Entre ellos usan el olfato, el lenguaje corporal, los bufidos y el ronroneo.
+- **lluvia:** Los gatitos maúllan para llamar a su mamá, pero de grandes mantienen el maullido solo con nosotros.
+- **foco:** Cada gato aprende qué maullido le funciona con su persona.
+- **gente:** Es una especie de dialecto entre tú y tu gato.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Los gatos adultos maúllan principalmente a las personas — Nicastro (2004), Journal of the Acoustical Society of America; Bradshaw (2013), «Cat Sense»
+
+> Nota: Hay excepciones: algunos gatos sí se maúllan entre sí.

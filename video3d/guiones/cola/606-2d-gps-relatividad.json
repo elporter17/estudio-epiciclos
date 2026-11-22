@@ -1,0 +1,69 @@
+{
+  "id": "d2b-gps-relatividad",
+  "motor": "2d",
+  "episodio": 36,
+  "titulo": "El GPS usa la relatividad",
+  "categoria": "ciencia",
+  "destacar": [
+    "GPS",
+    "relatividad"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Tu GPS necesita la teoría de la relatividad de Einstein para funcionar.",
+      "objeto": "🛰️"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Los satélites llevan relojes atómicos, y el tiempo corre un poco distinto allá arriba que en la Tierra.",
+      "objeto": "🛰️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Por su velocidad atrasan un poco y por la menor gravedad adelantan más: el resultado final es una diferencia diaria.",
+      "barras": [
+        {
+          "etiqueta": "Por la velocidad",
+          "valor": 7,
+          "texto": "−7 µs/día",
+          "objeto": "🚀"
+        },
+        {
+          "etiqueta": "Por la gravedad",
+          "valor": 45,
+          "texto": "+45 µs/día",
+          "objeto": "🌍"
+        },
+        {
+          "etiqueta": "Diferencia neta",
+          "valor": 38,
+          "texto": "+38 µs/día",
+          "objeto": "⏱️"
+        }
+      ]
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Sin corregirla, el GPS fallaría unos 10 kilómetros cada día.",
+      "objeto": "📍",
+      "cantidad": 100,
+      "contador": {
+        "desde": 0,
+        "hasta": 10,
+        "unidad": "km de error por día"
+      }
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Diferencia neta ≈ +38 microsegundos por día en los relojes de los satélites GPS; sin corrección el error crecería ≈ 10 km al día",
+      "fuente": "Ashby (2003), Living Reviews in Relativity; GPS.gov"
+    }
+  ]
+}

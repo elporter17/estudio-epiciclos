@@ -1,0 +1,51 @@
+{
+  "id": "d2b-sonido-espacio",
+  "motor": "2d",
+  "episodio": 52,
+  "titulo": "En el espacio no se oye nada",
+  "categoria": "ciencia",
+  "destacar": [
+    "sonido",
+    "espacio"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En el espacio no se oye nada, porque el sonido necesita aire.",
+      "objeto": "🔇"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El sonido viaja por vibraciones de un medio, como el aire o el agua.",
+      "objeto": "🔊",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "En el vacío del espacio casi no hay materia que vibre, así que el sonido no se propaga.",
+      "objeto": "🌌",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Los astronautas hablan por radio, que usa ondas que sí viajan por el vacío.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "foco",
+      "texto": "Las explosiones espaciales de las películas son un efecto: en realidad serían silenciosas.",
+      "objeto": "🎬",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El sonido no se propaga en el vacío; las ondas de radio sí",
+      "fuente": "NASA, «Is there sound in space?»"
+    }
+  ]
+}

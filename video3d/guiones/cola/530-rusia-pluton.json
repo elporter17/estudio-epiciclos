@@ -1,0 +1,66 @@
+{
+  "id": "rusia-pluton",
+  "temporada": 3,
+  "episodio": 30,
+  "titulo": "Rusia es más grande que Plutón",
+  "categoria": "ciencia",
+  "destacar": [
+    "Rusia",
+    "Plutón"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Rusia tiene más superficie que Plutón.",
+      "objeto": "balon"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Rusia mide unos 17,1 millones de kilómetros cuadrados; Plutón, unos 16,7.",
+      "barras": [
+        {
+          "etiqueta": "Rusia",
+          "valor": 17.1,
+          "texto": "17,1 M km²",
+          "objeto": "balon"
+        },
+        {
+          "etiqueta": "Plutón",
+          "valor": 16.7,
+          "texto": "16,7 M km²"
+        },
+        {
+          "etiqueta": "Honduras",
+          "valor": 0.11,
+          "texto": "0,11 M km²"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Plutón es un mundo pequeño: menos de la mitad de ancho que la Tierra.",
+      "objeto": "moneda",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y Honduras cabría más de 150 veces dentro de Rusia.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "balon"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Superficie de Rusia ≈ 17,1 M km²; de Honduras ≈ 112.492 km²",
+      "fuente": "CIA World Factbook"
+    },
+    {
+      "dato": "Superficie de Plutón ≈ 16,65 M km²",
+      "fuente": "NASA, «Pluto Fact Sheet»"
+    }
+  ]
+}

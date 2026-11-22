@@ -1,0 +1,55 @@
+{
+  "id": "d2b-marie-curie",
+  "motor": "2d",
+  "episodio": 41,
+  "titulo": "Dos Nobel en dos ciencias",
+  "categoria": "historia",
+  "destacar": [
+    "Curie",
+    "Nobel"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Marie Curie ganó dos premios Nobel en dos ciencias distintas.",
+      "objeto": "🔬"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Fue la primera mujer en ganar un Nobel, y la única en ganarlo en dos ciencias.",
+      "hitos": [
+        {
+          "anio": 1903,
+          "texto": "Nobel de Física",
+          "objeto": "🔬"
+        },
+        {
+          "anio": 1911,
+          "texto": "Nobel de Química"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Descubrió dos elementos, el polonio y el radio, y estudió la radiactividad.",
+      "objeto": "☢️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Durante la Primera Guerra Mundial, organizó unidades móviles de rayos X para ayudar a los heridos.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Nobel de Física 1903 (compartido) y Nobel de Química 1911",
+      "fuente": "NobelPrize.org, «Marie Curie – Facts»",
+      "url": "https://www.nobelprize.org/prizes/physics/1903/marie-curie/facts/"
+    }
+  ]
+}

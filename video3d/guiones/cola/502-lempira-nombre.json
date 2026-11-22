@@ -1,0 +1,57 @@
+{
+  "id": "lempira-nombre",
+  "temporada": 3,
+  "episodio": 2,
+  "titulo": "Lempira, el nombre de tu dinero",
+  "categoria": "honduras",
+  "destacar": [
+    "Lempira",
+    "dinero"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El dinero de Honduras lleva el nombre de un guerrero.",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Lempira fue un líder lenca que organizó la resistencia contra los españoles en la década de 1530.",
+      "objeto": "moneda",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Según la tradición, su nombre significa «señor de la sierra».",
+      "objeto": "naturaleza/tree_pineTallA",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hoy su nombre está en la moneda del país, en un departamento y en incontables calles y escuelas.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "pila",
+      "texto": "Y cada vez que pagas, lo recuerdas.",
+      "objeto": "moneda",
+      "cantidad": 180
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Lempira, líder lenca de la resistencia contra la conquista española (década de 1530)",
+      "fuente": "Encyclopaedia Britannica, «Lempira»"
+    },
+    {
+      "dato": "La moneda nacional se llama lempira",
+      "fuente": "Banco Central de Honduras"
+    }
+  ],
+  "nota": "El significado del nombre «Lempira» se transmite por tradición y se discute."
+}

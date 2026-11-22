@@ -1,0 +1,67 @@
+{
+  "id": "placas-unas",
+  "temporada": 3,
+  "episodio": 28,
+  "titulo": "Los continentes crecen como uñas",
+  "categoria": "ciencia",
+  "destacar": [
+    "continentes",
+    "uñas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Los continentes se mueven más o menos a la velocidad a la que crecen tus uñas.",
+      "objeto": "naturaleza/rock_largeB"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Las placas se desplazan entre 2 y 10 centímetros al año.",
+      "barras": [
+        {
+          "etiqueta": "Tus uñas",
+          "valor": 4,
+          "texto": "≈ 4 cm/año",
+          "objeto": "libro"
+        },
+        {
+          "etiqueta": "Placa del Pacífico",
+          "valor": 7,
+          "texto": "≈ 7 cm/año",
+          "objeto": "naturaleza/rock_largeB"
+        },
+        {
+          "etiqueta": "Atlántico (se abre)",
+          "valor": 2.5,
+          "texto": "≈ 2,5 cm/año"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es lento, pero en millones de años mueve continentes enteros.",
+      "objeto": "naturaleza/rock_largeB",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hace 200 millones de años, casi todos los continentes estaban juntos.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/rock_largeB"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Las placas tectónicas se mueven ≈ 2-10 cm al año",
+      "fuente": "USGS, «Plate tectonics»"
+    },
+    {
+      "dato": "Las uñas de las manos crecen ≈ 3,5 mm al mes",
+      "fuente": "Yaemsiri et al. (2010), Journal of the American Academy of Dermatology"
+    }
+  ]
+}

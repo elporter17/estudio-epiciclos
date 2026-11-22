@@ -1,0 +1,68 @@
+{
+  "id": "ocho-vasos",
+  "temporada": 3,
+  "episodio": 13,
+  "titulo": "Los ocho vasos de agua",
+  "categoria": "mito",
+  "destacar": [
+    "ocho",
+    "vasos"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: todos necesitamos tomar ocho vasos de agua al día.",
+      "objeto": "botella"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Esa regla no tiene una base científica clara: la necesidad de agua cambia con el calor, el ejercicio y el cuerpo.",
+      "objeto": "botella",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Las recomendaciones de agua total, contando la de los alimentos, son estas.",
+      "barras": [
+        {
+          "etiqueta": "Hombres",
+          "valor": 3.7,
+          "texto": "≈ 3,7 L",
+          "objeto": "botella"
+        },
+        {
+          "etiqueta": "Mujeres",
+          "valor": 2.7,
+          "texto": "≈ 2,7 L"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Cerca del 20 % del agua que tomamos viene de la comida: frutas, verduras y sopas.",
+      "objeto": "comida/apple",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Una buena señal es la sed, y que la orina salga clara o amarillo pálido.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "botella"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Ingesta adecuada de agua total: ≈ 3,7 L (hombres) y 2,7 L (mujeres), incluida la de los alimentos",
+      "fuente": "National Academies (2004), «Dietary Reference Intakes for Water»"
+    },
+    {
+      "dato": "No hay evidencia sólida de la regla de 8 vasos",
+      "fuente": "Valtin (2002), American Journal of Physiology"
+    }
+  ],
+  "nota": "Las necesidades individuales varían; ante dudas, consulta a un profesional de salud."
+}

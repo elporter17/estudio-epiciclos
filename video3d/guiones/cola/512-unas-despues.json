@@ -1,0 +1,46 @@
+{
+  "id": "unas-despues",
+  "temporada": 3,
+  "episodio": 12,
+  "titulo": "Las uñas no crecen tras morir",
+  "categoria": "mito",
+  "destacar": [
+    "uñas",
+    "pelo"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: después de morir, las uñas y el pelo siguen creciendo.",
+      "objeto": "libro"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Para crecer, las células necesitan oxígeno y glucosa, y después de morir ya no las reciben.",
+      "objeto": "libro",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Lo que pasa es que la piel se deshidrata y se encoge, y deja ver más de la uña y del pelo.",
+      "objeto": "naturaleza/grass_large",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Por eso parece que crecieron, pero en realidad solo quedaron más a la vista.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "libro"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Las uñas y el pelo no crecen después de la muerte; la piel se retrae",
+      "fuente": "Vreeman y Carroll (2007), British Medical Journal, «Medical myths»"
+    }
+  ]
+}

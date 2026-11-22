@@ -1,0 +1,73 @@
+{
+  "id": "d2b-espanol-hablantes",
+  "motor": "2d",
+  "episodio": 38,
+  "titulo": "El español en el mundo",
+  "categoria": "datos",
+  "destacar": [
+    "español",
+    "hablantes"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El español es la segunda lengua con más hablantes nativos del mundo.",
+      "objeto": "🗣️"
+    },
+    {
+      "tipo": "globo",
+      "texto": "Lo hablan casi 500 millones de personas como lengua materna, en más de veinte países.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Solo el chino mandarín tiene más hablantes nativos.",
+      "barras": [
+        {
+          "etiqueta": "Chino mandarín",
+          "valor": 940,
+          "texto": "≈ 940 M",
+          "objeto": "🇨🇳"
+        },
+        {
+          "etiqueta": "Español",
+          "valor": 500,
+          "texto": "≈ 500 M",
+          "objeto": "🇪🇸"
+        },
+        {
+          "etiqueta": "Inglés",
+          "valor": 380,
+          "texto": "≈ 380 M",
+          "objeto": "🇬🇧"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Con quienes lo hablan como segunda lengua, pasa de 600 millones de personas.",
+      "objeto": "🌎",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y en Estados Unidos hay más hispanohablantes que en España.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "≈ 500 millones de hablantes nativos y > 600 millones en total",
+      "fuente": "Instituto Cervantes, «El español: una lengua viva» (2023)"
+    },
+    {
+      "dato": "Chino mandarín ≈ 940 M y español ≈ 485 M de hablantes nativos",
+      "fuente": "Ethnologue (2024)"
+    }
+  ],
+  "nota": "Las cifras de Ethnologue y del Instituto Cervantes difieren un poco."
+}

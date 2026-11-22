@@ -50,10 +50,10 @@
       "cantidad": 1
     },
     {
-      "tipo": "foco",
+      "tipo": "lluvia",
       "texto": "Si se derritiera todo, el nivel del mar subiría decenas de metros.",
       "objeto": "🌊",
-      "cantidad": 1
+      "cantidad": 90
     },
     {
       "tipo": "cierre",

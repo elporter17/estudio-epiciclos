@@ -1,0 +1,63 @@
+{
+  "id": "pluton-ano",
+  "temporada": 3,
+  "episodio": 27,
+  "titulo": "Plutón no ha dado una vuelta",
+  "categoria": "ciencia",
+  "destacar": [
+    "Plutón",
+    "248"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Desde que se descubrió Plutón, no ha completado ni una vuelta al Sol.",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Plutón tarda 248 años en dar una vuelta alrededor del Sol.",
+      "hitos": [
+        {
+          "anio": 1930,
+          "texto": "Se descubre Plutón",
+          "objeto": "moneda"
+        },
+        {
+          "anio": 2006,
+          "texto": "Pasa a ser planeta enano"
+        },
+        {
+          "anio": 2015,
+          "texto": "La sonda New Horizons lo visita"
+        },
+        {
+          "anio": 2178,
+          "texto": "Completará su primera vuelta"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Cada estación en Plutón dura unas seis décadas terrestres.",
+      "objeto": "moneda",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Lo vimos de cerca por primera vez en 2015, y descubrimos montañas de hielo y un corazón gigante.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Descubierto en 1930 por Clyde Tombaugh; periodo orbital ≈ 248 años; planeta enano desde 2006; sobrevuelo de New Horizons en 2015",
+      "fuente": "NASA, «Pluto Facts»"
+    }
+  ]
+}

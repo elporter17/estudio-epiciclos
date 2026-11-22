@@ -1,0 +1,68 @@
+{
+  "id": "marte-azul",
+  "temporada": 3,
+  "episodio": 26,
+  "titulo": "Atardeceres azules en Marte",
+  "categoria": "ciencia",
+  "destacar": [
+    "Marte",
+    "azules"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En Marte, los atardeceres son azules.",
+      "objeto": "comida/orange"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Lo vio por primera vez la sonda Curiosity en 2015, cuando fotografió el Sol poniéndose.",
+      "objeto": "comida/orange",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "El polvo fino del cielo marciano deja pasar la luz azul mejor cerca del Sol, al revés que en la Tierra.",
+      "objeto": "naturaleza/rock_largeA",
+      "cantidad": 90
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Un día en Marte dura casi lo mismo que uno en la Tierra.",
+      "barras": [
+        {
+          "etiqueta": "Día en la Tierra",
+          "valor": 24,
+          "texto": "24 h",
+          "objeto": "balon"
+        },
+        {
+          "etiqueta": "Día en Marte",
+          "valor": 24.66,
+          "texto": "24 h 40 min",
+          "objeto": "comida/orange"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y la gravedad allá es solo el 38 % de la nuestra: saltarías más del doble de alto.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/orange"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Atardeceres azules fotografiados por Curiosity (2015)",
+      "fuente": "NASA/JPL, «Curiosity Mars Rover: A Martian sunset»"
+    },
+    {
+      "dato": "Día marciano (sol) ≈ 24 h 40 min; gravedad ≈ 38 % de la terrestre",
+      "fuente": "NASA, «Mars Fact Sheet»"
+    }
+  ]
+}

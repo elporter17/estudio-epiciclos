@@ -1,0 +1,68 @@
+{
+  "id": "d2b-eniac-27-toneladas",
+  "motor": "2d",
+  "episodio": 34,
+  "titulo": "La primera computadora pesaba 27",
+  "categoria": "historia",
+  "destacar": [
+    "computadora",
+    "27"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La primera computadora electrónica pesaba 27 toneladas.",
+      "objeto": "💾"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Se llamaba ENIAC, se terminó en 1945 en Estados Unidos y ocupaba una sala entera.",
+      "objeto": "🏢",
+      "cantidad": 1
+    },
+    {
+      "tipo": "pila",
+      "texto": "Tenía casi 17.500 tubos de vacío, que se calentaban y a veces se fundían.",
+      "objeto": "💡",
+      "cantidad": 150,
+      "contador": {
+        "desde": 0,
+        "hasta": 17468,
+        "unidad": "tubos"
+      }
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Hoy, un celular es millones de veces más potente y cabe en un bolsillo.",
+      "barras": [
+        {
+          "etiqueta": "ENIAC",
+          "valor": 27,
+          "texto": "27 toneladas",
+          "objeto": "⚖️"
+        },
+        {
+          "etiqueta": "Celular",
+          "valor": 0.0002,
+          "texto": "≈ 200 gramos",
+          "objeto": "📱"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hacía unas 5.000 sumas por segundo; un celular actual hace miles de millones.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "ENIAC (1945): ≈ 27 toneladas, 17.468 tubos de vacío, ≈ 5.000 sumas por segundo",
+      "fuente": "Smithsonian Institution y Universidad de Pensilvania, «ENIAC»"
+    }
+  ]
+}

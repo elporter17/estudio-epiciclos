@@ -1,0 +1,51 @@
+{
+  "id": "d2b-estrella-mar-cerebro",
+  "motor": "2d",
+  "episodio": 55,
+  "titulo": "Estrella de mar sin cerebro",
+  "categoria": "curiosidad",
+  "destacar": [
+    "estrella",
+    "cerebro"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La estrella de mar no tiene cerebro ni sangre.",
+      "objeto": "⭐"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Tiene un sistema nervioso repartido por todo el cuerpo, sin un cerebro central.",
+      "objeto": "⭐",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "En lugar de sangre, bombea agua de mar por unos canales para moverse y respirar.",
+      "objeto": "🌊",
+      "cantidad": 90
+    },
+    {
+      "tipo": "foco",
+      "texto": "Si pierde un brazo, puede regenerarlo, y algunas especies hasta regeneran el cuerpo entero.",
+      "objeto": "🦾",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hay unas 2.000 especies de estrellas de mar en el mundo.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Las estrellas de mar no tienen cerebro ni sangre; usan un sistema vascular acuífero y pueden regenerar brazos",
+      "fuente": "Smithsonian National Museum of Natural History, «Sea stars»"
+    }
+  ]
+}

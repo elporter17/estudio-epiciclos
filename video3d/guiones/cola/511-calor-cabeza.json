@@ -1,0 +1,67 @@
+{
+  "id": "calor-cabeza",
+  "temporada": 3,
+  "episodio": 11,
+  "titulo": "No pierdes el 40 % por la cabeza",
+  "categoria": "mito",
+  "destacar": [
+    "cabeza",
+    "calor"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: pierdes la mayor parte del calor del cuerpo por la cabeza.",
+      "objeto": "naturaleza/campfire_logs"
+    },
+    {
+      "tipo": "foco",
+      "texto": "La cifra del 40 % sale de una prueba antigua del ejército de EE. UU.: todos llevaban abrigo, menos la cabeza.",
+      "objeto": "naturaleza/campfire_logs",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "La cabeza es cerca del 10 % de la superficie del cuerpo, y pierde un calor parecido a eso.",
+      "barras": [
+        {
+          "etiqueta": "Superficie de la cabeza",
+          "valor": 10,
+          "texto": "≈ 10 %",
+          "objeto": "naturaleza/campfire_logs"
+        },
+        {
+          "etiqueta": "Calor que pierde",
+          "valor": 10,
+          "texto": "7 a 10 %"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Se pierde calor por cualquier parte que esté descubierta.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "foco",
+      "texto": "Eso sí: taparte la cabeza ayuda, como taparte cualquier otra parte.",
+      "objeto": "naturaleza/plant_bush",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/campfire_logs"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El mito del 40-45 % viene de un experimento de las Fuerzas Armadas de EE. UU. (1950) donde solo la cabeza estaba descubierta",
+      "fuente": "Vreeman y Carroll (2008), British Medical Journal"
+    },
+    {
+      "dato": "La cabeza pierde ≈ 7-10 % del calor",
+      "fuente": "Pretorius et al. (2006), Journal of Applied Physiology"
+    }
+  ]
+}

@@ -21,10 +21,10 @@
       "cantidad": 1
     },
     {
-      "tipo": "foco",
+      "tipo": "cuadricula",
       "texto": "Además, crece bajo la tierra: la flor se dobla y entierra su fruto.",
       "objeto": "🌱",
-      "cantidad": 1
+      "lado": 10
     },
     {
       "tipo": "lluvia",

@@ -1,0 +1,51 @@
+{
+  "id": "d2b-mariposa-patas",
+  "motor": "2d",
+  "episodio": 53,
+  "titulo": "Mariposas con sabor en las patas",
+  "categoria": "curiosidad",
+  "destacar": [
+    "mariposa",
+    "patas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Las mariposas saborean con las patas.",
+      "objeto": "🦋"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Tienen receptores del gusto en los pies, y así saben si una hoja sirve para poner sus huevos.",
+      "objeto": "🍃",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Cuando aterrizan sobre una flor, ya están «probando» el néctar.",
+      "objeto": "🌸",
+      "cantidad": 90
+    },
+    {
+      "tipo": "foco",
+      "texto": "Beben con una trompa larga, enrollada como un resorte, llamada probóscide.",
+      "objeto": "🌀",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y pueden detectar olores a muchos metros con sus antenas.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Las mariposas tienen receptores de gusto en los tarsos (patas)",
+      "fuente": "Smithsonian Institution y Encyclopaedia Britannica, «Lepidoptera»"
+    }
+  ]
+}

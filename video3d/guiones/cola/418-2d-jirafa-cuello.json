@@ -45,10 +45,10 @@
       "cantidad": 1
     },
     {
-      "tipo": "foco",
+      "tipo": "lluvia",
       "texto": "Su corazón pesa unos 11 kilos para subir la sangre hasta la cabeza.",
       "objeto": "🫀",
-      "cantidad": 1
+      "cantidad": 90
     },
     {
       "tipo": "foco",

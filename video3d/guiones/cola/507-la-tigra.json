@@ -1,0 +1,56 @@
+{
+  "id": "la-tigra",
+  "temporada": 3,
+  "episodio": 7,
+  "titulo": "El primer parque nacional",
+  "categoria": "honduras",
+  "destacar": [
+    "parque",
+    "La Tigra"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Cerca de Tegucigalpa hay un bosque de nubes protegido desde 1980.",
+      "objeto": "naturaleza/tree_pineTallA"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El Parque Nacional La Tigra fue el primer parque nacional que declaró Honduras.",
+      "objeto": "naturaleza/tree_pineTallA",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Es un bosque nublado: las nubes bajas dejan gotas de agua en las hojas todo el año.",
+      "objeto": "naturaleza/tree_pineTallA",
+      "lado": 16
+    },
+    {
+      "tipo": "foco",
+      "texto": "Esa agua alimenta quebradas que abastecen en parte a la capital.",
+      "objeto": "botella",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y hay senderos para recorrerlo en una excursión de un día desde la ciudad.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/tree_pineTallA"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Parque Nacional La Tigra: declarado en 1980, el primero del país; bosque nublado",
+      "fuente": "Instituto de Conservación Forestal (ICF), Honduras"
+    },
+    {
+      "dato": "Sus quebradas abastecen en parte a Tegucigalpa",
+      "fuente": "Fundación Amitigra"
+    }
+  ]
+}
