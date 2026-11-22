@@ -65,12 +65,22 @@ Cada red publica un video 3D y uno 2D al día; el resto son quizzes y noticias q
 | lun 7/12 | La papa nació en los Andes | El camaleón y sus colores | El agua y el hemisferio sur | El Sol es 400 veces más grande | La lluvia de peces de Yoro 🇭🇳 | El maíz nació en México |
 | mar 8/12 | Cómo nace una aurora | Estrellas fugaces, ¿estrellas? | El chicle no dura siete años | El hielo flota por una rareza | La baleada, orgullo de la costa 🇭🇳 | Cuenta los segundos del trueno |
 | mié 9/12 | En el espacio no se oye nada | La Estación da 16 vueltas al día | Vas a 107.000 km/h sin notarlo | El corazón del camarón | De dónde viene «Honduras» 🇭🇳 | Mariposas con sabor en las patas |
-| jue 10/12 | Estrella de mar sin cerebro | Cientos de miles de millones | Plutón no ha dado una vuelta | El elefante tarda 22 meses | Atardeceres azules en Marte | El delfín duerme a medias |
-| vie 11/12 | El ornitorrinco pone huevos | Los continentes crecen como uñas | Rusia es más grande que Plutón | El olfato del perro es gigante | Medio millón de terremotos | Los gatos maúllan para ti |
+| jue 10/12 | Estrella de mar sin cerebro | Cientos de miles de millones | Atardeceres azules en Marte | El elefante tarda 22 meses | El himno nacional de Honduras 🇭🇳 | El delfín duerme a medias |
+| vie 11/12 | El ornitorrinco pone huevos | Plutón no ha dado una vuelta | Los continentes crecen como uñas | El olfato del perro es gigante | Roatán, refugio de piratas 🇭🇳 | Los gatos maúllan para ti |
+| sáb 12/12 | Un reloj que casi no se atrasa | Medio millón de terremotos | Rusia es más grande que Plutón | El papel nació en China | El punto más alto de Honduras 🇭🇳 | Los mayas y el cero |
+| dom 13/12 | La imprenta y 180 Biblias | La Luna no tiene lado oscuro | Las fases no son sombra | La primera radiografía | El golfo de tres países 🇭🇳 | La penicilina y un descuido |
+| lun 14/12 | El primero en ver bacterias | Crujir los dedos no da artritis | Esperar dos horas para nadar | El arcoíris y sus siete colores | Los nueve pueblos de Honduras 🇭🇳 | La primera llamada de teléfono |
+| mar 15/12 | Por qué el cielo es azul | Leer con poca luz no daña | Los perros sí ven colores | La enfermedad que se erradicó | Café Marcala, el primero 🇭🇳 | El aluminio valió más que el oro |
+| mié 16/12 | El cuervo que hace herramientas | En la Estación sí hay gravedad | El cerebro no siente dolor | El búho gira el cuello 270° | El manatí de Cuero y Salado 🇭🇳 | La vista del águila |
+| jue 17/12 | Solo las mosquitas pican | Cien palabras para la nieve | El perezoso no duerme tanto | Ciempiés: nunca 100 patas | Honduras en el Mundial de 1982 🇭🇳 | El salto de la pulga |
+| vie 18/12 | La tortuga regresa a su playa | Elefantes y ratones | El café no frena el crecimiento | Islandia no tiene mosquitos | Las alfombras de Comayagua 🇭🇳 | El mono más ruidoso de América |
+| sáb 19/12 | El lago más profundo del mundo | Un avión tardaría 19 años | Un año galáctico dura 230 M | El desierto sin lluvia | El carnaval de La Ceiba 🇭🇳 | Australia más ancha que la Luna |
+| dom 20/12 | Venecia, una ciudad de islas | La Torre Eiffel crece en verano | El polvo que abona el Amazonas | El punto más lejos de la tierra | El Canal que sube barcos | Groenlandia no es tan grande |
+| lun 21/12 | Tus pulmones tienen 480 millones | El tren bala más puntual | Los días se alargan | Lo más duro de tu cuerpo | El Pacífico y toda la tierra | El hueso más pequeño del cuerpo |
 
 ## Resumen
 
-- **60 videos 3D** y **60 videos 2D** programados: 20 días con 6 videos al día, del dom 22/11 al vie 11/12.
-- Se acaban el **vie 11/12**. El bot avisa cuando quedan 6 guiones de un tipo (hacia el mié 9/12), así que las próximas tandas conviene tenerlas listas antes del dom 6/12.
-- Por tipo de guion 3D: Temporada 2 (mitos, Honduras y escala), Temporada 3 (mitos, Honduras y escala). 2D: dos tandas de 30 (ciencia, historia, animales, tecnología, comida y geografía).
+- **90 videos 3D** y **90 videos 2D** programados: 30 días con 6 videos al día, del dom 22/11 al lun 21/12.
+- Se acaban el **lun 21/12**. El bot avisa cuando quedan 6 guiones de un tipo (hacia el sáb 19/12), así que las próximas tandas conviene tenerlas listas antes del mié 16/12.
+- 3D: temporadas 2, 3 y 4 (mitos, Honduras y escala). 2D: tres tandas de 30 (ciencia, historia, inventos, animales, cuerpo humano, comida y geografía).
 - Los 3D de Honduras 🇭🇳 salen a las 18:30 en Facebook (prueba de contenido local) y se compararán con el resto.

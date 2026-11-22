@@ -1,0 +1,64 @@
+{
+  "id": "d2c-pulga-salto",
+  "motor": "2d",
+  "episodio": 77,
+  "titulo": "El salto de la pulga",
+  "categoria": "ciencia",
+  "destacar": [
+    "pulga",
+    "salto"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Una pulga puede saltar más de cien veces su tamaño.",
+      "objeto": "🪳"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Mide un par de milímetros, y puede saltar a más de 15 centímetros de altura.",
+      "objeto": "📏",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Lo logra con una proteína elástica, la resilina, que funciona como un resorte y suelta la energía de golpe.",
+      "objeto": "🧬",
+      "cantidad": 90
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Si una persona saltara igual, llegaría a la altura de un edificio de 60 pisos.",
+      "barras": [
+        {
+          "etiqueta": "Pulga",
+          "valor": 100,
+          "texto": "≈ 100 veces su tamaño",
+          "objeto": "🪳"
+        },
+        {
+          "etiqueta": "Persona",
+          "valor": 1,
+          "texto": "≈ 1 vez",
+          "objeto": "🧍"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Por eso es tan difícil atrapar a una.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Las pulgas saltan ≈ 100 veces su longitud con ayuda de resilina",
+      "fuente": "Sutton y Burrows (2011), Journal of Experimental Biology"
+    }
+  ],
+  "nota": "La proporción exacta depende de la especie."
+}

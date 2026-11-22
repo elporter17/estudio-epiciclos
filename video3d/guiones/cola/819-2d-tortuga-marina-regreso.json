@@ -1,0 +1,56 @@
+{
+  "id": "d2c-tortuga-marina-regreso",
+  "motor": "2d",
+  "episodio": 79,
+  "titulo": "La tortuga regresa a su playa",
+  "categoria": "ciencia",
+  "destacar": [
+    "tortuga",
+    "playa"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Las tortugas marinas regresan a poner huevos a la playa donde nacieron.",
+      "objeto": "🐢"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Después de nacer, la tortuga recorre miles de kilómetros por el océano.",
+      "objeto": "🌊",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Cuando es adulta, vuelve a la misma zona, y hasta décadas después.",
+      "objeto": "📍",
+      "cantidad": 90
+    },
+    {
+      "tipo": "foco",
+      "texto": "Se orientan con el campo magnético de la Tierra y con el olor del agua.",
+      "objeto": "🧲",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Solo una de cada mil tortugas llega a adulta, por eso cuidar sus nidos es tan importante.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Las tortugas marinas regresan a su playa natal; usan el campo magnético para navegar",
+      "fuente": "Lohmann et al. (2008), Journal of Experimental Biology; NOAA Fisheries"
+    },
+    {
+      "dato": "≈ 1 de cada 1.000 tortugas llega a adulta (estimación)",
+      "fuente": "NOAA Fisheries"
+    }
+  ],
+  "nota": "La proporción de supervivencia es una estimación que cambia entre especies."
+}

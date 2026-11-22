@@ -1,0 +1,46 @@
+{
+  "id": "nadar-tras-comer",
+  "temporada": 4,
+  "episodio": 14,
+  "titulo": "Esperar dos horas para nadar",
+  "categoria": "mito",
+  "destacar": [
+    "nadar",
+    "comer"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: si nadas justo después de comer, te da un corte de digestión.",
+      "objeto": "comida/sandwich"
+    },
+    {
+      "tipo": "foco",
+      "texto": "No hay evidencia de que comer y nadar provoque ahogamientos por la digestión.",
+      "objeto": "comida/sandwich",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Lo que sí puede pasar es un malestar o un calambre leve si comes mucho y haces un esfuerzo fuerte.",
+      "objeto": "comida/sandwich",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Los riesgos más serios en el agua son el alcohol, el cansancio y nadar sin vigilancia.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/sandwich"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "No hay evidencia de que nadar tras comer cause calambres peligrosos",
+      "fuente": "Cruz Roja Estadounidense y Mayo Clinic"
+    }
+  ]
+}

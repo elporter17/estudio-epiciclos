@@ -1,0 +1,51 @@
+{
+  "id": "d2c-alveolos-pulmones",
+  "motor": "2d",
+  "episodio": 88,
+  "titulo": "Tus pulmones tienen 480 millones",
+  "categoria": "ciencia",
+  "destacar": [
+    "pulmones",
+    "alvéolos"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Tus pulmones tienen cerca de 480 millones de bolsitas de aire.",
+      "objeto": "🫁"
+    },
+    {
+      "tipo": "pila",
+      "texto": "Se llaman alvéolos, y es donde el oxígeno pasa a tu sangre.",
+      "objeto": "🫧",
+      "cantidad": 140,
+      "contador": {
+        "desde": 0,
+        "hasta": 480,
+        "unidad": "millones"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Si los estiraras, tendrían una superficie de unos 70 metros cuadrados, más que un departamento pequeño.",
+      "objeto": "📐",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Respiras unas 20.000 veces al día, sin pensar en ello.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "≈ 480 millones de alvéolos y ≈ 70 m² de superficie",
+      "fuente": "Ochs et al. (2004), The Anatomical Record; American Lung Association"
+    }
+  ],
+  "nota": "El número de alvéolos varía entre personas."
+}

@@ -1,0 +1,46 @@
+{
+  "id": "perezoso-sueno",
+  "temporada": 4,
+  "episodio": 20,
+  "titulo": "El perezoso no duerme tanto",
+  "categoria": "mito",
+  "destacar": [
+    "perezoso",
+    "sueño"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: los perezosos duermen 20 horas al día.",
+      "objeto": "naturaleza/bed"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Eso se midió en perezosos en cautiverio, donde se mueven poco.",
+      "objeto": "naturaleza/bed",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "En la selva, los perezosos duermen cerca de 9 o 10 horas.",
+      "objeto": "naturaleza/bed",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Son lentos porque comen hojas, que dan poca energía, y no porque duerman todo el día.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/bed"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Perezosos silvestres: ≈ 9,6 h de sueño al día frente a ≈ 16 h en cautiverio",
+      "fuente": "Rattenborg et al. (2008), Biology Letters"
+    }
+  ]
+}

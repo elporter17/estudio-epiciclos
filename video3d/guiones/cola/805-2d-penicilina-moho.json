@@ -1,0 +1,65 @@
+{
+  "id": "d2c-penicilina-moho",
+  "motor": "2d",
+  "episodio": 65,
+  "titulo": "La penicilina y un descuido",
+  "categoria": "historia",
+  "destacar": [
+    "penicilina",
+    "moho"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La penicilina se descubrió por un descuido en un laboratorio.",
+      "objeto": "🧫"
+    },
+    {
+      "tipo": "foco",
+      "texto": "En 1928, Alexander Fleming volvió de vacaciones y vio que un moho había matado las bacterias de uno de sus cultivos.",
+      "objeto": "🧫",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Ese moho producía una sustancia que mata bacterias: la penicilina.",
+      "objeto": "🍄",
+      "cantidad": 90
+    },
+    {
+      "tipo": "linea",
+      "texto": "Pasaron más de diez años antes de convertirla en medicina.",
+      "hitos": [
+        {
+          "anio": 1928,
+          "texto": "Fleming descubre la penicilina",
+          "objeto": "🧫"
+        },
+        {
+          "anio": 1941,
+          "texto": "Primer paciente tratado con penicilina"
+        },
+        {
+          "anio": 1945,
+          "texto": "Nobel de Medicina"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Salvó millones de vidas, sobre todo después de la Segunda Guerra Mundial.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Fleming descubrió la penicilina en 1928; Florey y Chain la desarrollaron; Nobel de Medicina 1945",
+      "fuente": "NobelPrize.org, «The Nobel Prize in Physiology or Medicine 1945»",
+      "url": "https://www.nobelprize.org/prizes/medicine/1945/summary/"
+    }
+  ]
+}

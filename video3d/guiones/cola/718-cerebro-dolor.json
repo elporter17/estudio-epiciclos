@@ -1,0 +1,46 @@
+{
+  "id": "cerebro-dolor",
+  "temporada": 4,
+  "episodio": 18,
+  "titulo": "El cerebro no siente dolor",
+  "categoria": "mito",
+  "destacar": [
+    "cerebro",
+    "dolor"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: el cerebro siente dolor cuando te duele la cabeza.",
+      "objeto": "libro"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El tejido del cerebro no tiene receptores de dolor, y por eso no siente nada si lo tocan.",
+      "objeto": "libro",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "El dolor de cabeza viene de los vasos sanguíneos, los músculos y las membranas que lo rodean.",
+      "objeto": "libro",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Por eso se puede operar el cerebro con el paciente despierto, y sin que le duela.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "libro"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El tejido cerebral no tiene nociceptores; el dolor de cabeza se origina en estructuras vecinas",
+      "fuente": "American Migraine Foundation y Mayo Clinic"
+    }
+  ]
+}

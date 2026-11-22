@@ -1,0 +1,63 @@
+{
+  "id": "d2c-punto-nemo",
+  "motor": "2d",
+  "episodio": 87,
+  "titulo": "El punto más lejos de la tierra",
+  "categoria": "datos",
+  "destacar": [
+    "Nemo",
+    "océano"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El lugar más lejos de cualquier tierra firme se llama Punto Nemo.",
+      "objeto": "🌊"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Está en el Pacífico Sur, y la tierra más cercana queda a unos 2.700 kilómetros.",
+      "objeto": "📍",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Cuando la Estación Espacial pasa por encima, los astronautas están más cerca que cualquier persona en tierra.",
+      "barras": [
+        {
+          "etiqueta": "Tierra más cercana",
+          "valor": 2700,
+          "texto": "≈ 2.700 km",
+          "objeto": "🏝️"
+        },
+        {
+          "etiqueta": "Estación Espacial",
+          "valor": 400,
+          "texto": "≈ 400 km",
+          "objeto": "🛰️"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Allí van a parar los restos de satélites y naves que ya no se usan.",
+      "objeto": "🗑️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Se le puso el nombre del capitán Nemo, de las novelas de Julio Verne.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Punto Nemo: ≈ 2.688 km de la tierra más cercana; cementerio de naves espaciales",
+      "fuente": "NOAA y Agencia Espacial Europea (ESA), «Point Nemo»"
+    }
+  ]
+}

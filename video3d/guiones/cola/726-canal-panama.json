@@ -1,0 +1,61 @@
+{
+  "id": "canal-panama",
+  "temporada": 4,
+  "episodio": 26,
+  "titulo": "El Canal que sube barcos",
+  "categoria": "ciencia",
+  "destacar": [
+    "Canal",
+    "Panamá"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En el Canal de Panamá, los barcos suben una montaña de agua.",
+      "objeto": "naturaleza/canoe"
+    },
+    {
+      "tipo": "linea",
+      "texto": "El canal une el Atlántico y el Pacífico desde hace más de cien años.",
+      "hitos": [
+        {
+          "anio": 1914,
+          "texto": "Se inaugura el Canal de Panamá",
+          "objeto": "naturaleza/canoe"
+        },
+        {
+          "anio": 2016,
+          "texto": "Abre la ampliación"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Cada barco sube unos 26 metros por esclusas hasta el lago Gatún, y luego baja del otro lado.",
+      "objeto": "naturaleza/canoe",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Mide unos 80 kilómetros y cruzarlo toma entre 8 y 10 horas.",
+      "objeto": "naturaleza/canoe",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cada año cruzan por allí miles de barcos de todo el mundo.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/canoe"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Canal inaugurado en 1914; los barcos suben ≈ 26 m hasta el lago Gatún; ≈ 80 km",
+      "fuente": "Autoridad del Canal de Panamá (ACP)"
+    }
+  ]
+}

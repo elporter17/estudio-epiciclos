@@ -1,0 +1,63 @@
+{
+  "id": "cerro-las-minas",
+  "temporada": 4,
+  "episodio": 3,
+  "titulo": "El punto más alto de Honduras",
+  "categoria": "honduras",
+  "destacar": [
+    "Cerro",
+    "Minas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El punto más alto de Honduras es el Cerro Las Minas.",
+      "objeto": "naturaleza/rock_tallA"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Mide unos 2.870 metros sobre el nivel del mar y está en el departamento de Lempira, en el parque nacional Celaque.",
+      "objeto": "naturaleza/rock_tallA",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Es mucho más bajo que el Everest, pero alto para Centroamérica.",
+      "barras": [
+        {
+          "etiqueta": "Cerro Las Minas",
+          "valor": 2.87,
+          "texto": "≈ 2.870 m",
+          "objeto": "naturaleza/rock_tallA"
+        },
+        {
+          "etiqueta": "Monte Everest",
+          "valor": 8.85,
+          "texto": "8.849 m"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "El bosque nublado de Celaque guarda quebradas que dan agua a muchas comunidades.",
+      "objeto": "naturaleza/tree_pineTallA",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Es un destino para quienes disfrutan de las caminatas largas.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/rock_tallA"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Cerro Las Minas: ≈ 2.870 m, el punto más alto de Honduras (parque nacional Celaque)",
+      "fuente": "Instituto de Conservación Forestal (ICF), Honduras; Encyclopaedia Britannica, «Honduras»"
+    }
+  ]
+}

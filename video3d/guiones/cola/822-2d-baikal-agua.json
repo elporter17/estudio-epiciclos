@@ -1,0 +1,63 @@
+{
+  "id": "d2c-baikal-agua",
+  "motor": "2d",
+  "episodio": 82,
+  "titulo": "El lago más profundo del mundo",
+  "categoria": "datos",
+  "destacar": [
+    "Baikal",
+    "lago"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El lago Baikal guarda el 20 % del agua dulce líquida del mundo.",
+      "objeto": "🏞️"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Está en Siberia y es el lago más profundo de la Tierra: unos 1.640 metros.",
+      "objeto": "🌊",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Tiene más agua que todos los Grandes Lagos de Norteamérica juntos.",
+      "barras": [
+        {
+          "etiqueta": "Baikal",
+          "valor": 23600,
+          "texto": "≈ 23.600 km³",
+          "objeto": "🏞️"
+        },
+        {
+          "etiqueta": "Grandes Lagos",
+          "valor": 22700,
+          "texto": "≈ 22.700 km³"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es también uno de los más antiguos: se calcula que tiene unos 25 millones de años.",
+      "objeto": "⏳",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Su agua es tan transparente que, en invierno, se puede ver el fondo a través del hielo.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Baikal: ≈ 1.642 m de profundidad, ≈ 20 % del agua dulce líquida superficial, ≈ 25 millones de años",
+      "fuente": "UNESCO, «Lake Baikal»",
+      "url": "https://whc.unesco.org/en/list/754"
+    }
+  ]
+}

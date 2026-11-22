@@ -1,0 +1,46 @@
+{
+  "id": "lado-oscuro-luna",
+  "temporada": 4,
+  "episodio": 11,
+  "titulo": "La Luna no tiene lado oscuro",
+  "categoria": "mito",
+  "destacar": [
+    "Luna",
+    "lado"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: la Luna tiene un lado oscuro que nunca recibe luz.",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Siempre vemos la misma cara de la Luna, porque tarda lo mismo en girar sobre sí misma que en dar una vuelta a la Tierra.",
+      "objeto": "moneda",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Pero la otra cara sí recibe luz del Sol: se llama lado lejano, no lado oscuro.",
+      "objeto": "moneda",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Durante la luna nueva, el lado que no vemos está completamente iluminado.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "La Luna tiene rotación sincrónica; su cara oculta recibe luz solar",
+      "fuente": "NASA, «Moon Facts» y «Far Side of the Moon»"
+    }
+  ]
+}

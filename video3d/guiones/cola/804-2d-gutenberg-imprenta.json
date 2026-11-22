@@ -1,0 +1,66 @@
+{
+  "id": "d2c-gutenberg-imprenta",
+  "motor": "2d",
+  "episodio": 64,
+  "titulo": "La imprenta y 180 Biblias",
+  "categoria": "historia",
+  "destacar": [
+    "imprenta",
+    "Gutenberg"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Gutenberg imprimió la primera Biblia con tipos móviles hacia 1455.",
+      "objeto": "📖"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Su idea fue usar letras de metal que se podían reordenar y reutilizar.",
+      "objeto": "🔠",
+      "cantidad": 1
+    },
+    {
+      "tipo": "pila",
+      "texto": "Se cree que imprimió unas 180 copias de su Biblia, y hoy sobreviven menos de cincuenta.",
+      "objeto": "📖",
+      "cantidad": 120,
+      "contador": {
+        "desde": 0,
+        "hasta": 180,
+        "unidad": "copias"
+      }
+    },
+    {
+      "tipo": "linea",
+      "texto": "En pocas décadas, la imprenta se extendió por toda Europa.",
+      "hitos": [
+        {
+          "anio": 1455,
+          "texto": "Biblia de Gutenberg",
+          "objeto": "📖"
+        },
+        {
+          "anio": 1500,
+          "texto": "Más de 1.000 imprentas en Europa"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Los libros se volvieron mucho más baratos, y las ideas viajaron más rápido.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "La Biblia de Gutenberg (≈ 1455): ≈ 180 copias, ≈ 49 sobreviven",
+      "fuente": "Biblioteca Británica y Biblioteca del Congreso de EE. UU., «Gutenberg Bible»"
+    }
+  ],
+  "nota": "El número exacto de copias es una estimación."
+}

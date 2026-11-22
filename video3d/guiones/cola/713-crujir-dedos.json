@@ -1,0 +1,47 @@
+{
+  "id": "crujir-dedos",
+  "temporada": 4,
+  "episodio": 13,
+  "titulo": "Crujir los dedos no da artritis",
+  "categoria": "mito",
+  "destacar": [
+    "dedos",
+    "artritis"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: crujirte los dedos te da artritis.",
+      "objeto": "ladrillo"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El sonido viene de burbujas de gas en el líquido de la articulación, no de que se desgaste el hueso.",
+      "objeto": "ladrillo",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Un médico se crujió los nudillos de una sola mano por más de 60 años y no desarrolló artritis, ni en esa mano ni en la otra.",
+      "objeto": "ladrillo",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Varios estudios no encontraron relación entre el hábito y la artritis.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "ladrillo"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Experimento de Donald Unger durante más de 60 años; estudios sin relación con artritis",
+      "fuente": "Unger (1998), Arthritis & Rheumatism; Deweber et al. (2011), Journal of the American Board of Family Medicine"
+    }
+  ],
+  "nota": "Si crujir te duele o se hincha la articulación, conviene consultar a un médico."
+}

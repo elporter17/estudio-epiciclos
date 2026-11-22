@@ -1,0 +1,46 @@
+{
+  "id": "leer-poca-luz",
+  "temporada": 4,
+  "episodio": 15,
+  "titulo": "Leer con poca luz no daña",
+  "categoria": "mito",
+  "destacar": [
+    "leer",
+    "luz"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: leer con poca luz daña los ojos para siempre.",
+      "objeto": "libro"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Cansa la vista y puede dar dolor de cabeza, pero no causa un daño permanente.",
+      "objeto": "libro",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Con poca luz, parpadeamos menos y forzamos los músculos del ojo, y por eso se cansan.",
+      "objeto": "libro",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Una buena luz ayuda a leer más cómodo, aunque no cambia la salud de tus ojos a largo plazo.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "libro"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Leer con poca luz no causa daño permanente a los ojos; produce fatiga visual",
+      "fuente": "American Academy of Ophthalmology"
+    }
+  ]
+}

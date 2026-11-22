@@ -1,0 +1,63 @@
+{
+  "id": "d2c-mercator-groenlandia",
+  "motor": "2d",
+  "episodio": 86,
+  "titulo": "Groenlandia no es tan grande",
+  "categoria": "datos",
+  "destacar": [
+    "Groenlandia",
+    "mapa"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En muchos mapas, Groenlandia parece tan grande como África. Pero es 14 veces más pequeña.",
+      "objeto": "🗺️"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "África tiene unos 30 millones de kilómetros cuadrados; Groenlandia, unos 2.",
+      "barras": [
+        {
+          "etiqueta": "África",
+          "valor": 30.4,
+          "texto": "≈ 30,4 M km²",
+          "objeto": "🌍"
+        },
+        {
+          "etiqueta": "Groenlandia",
+          "valor": 2.2,
+          "texto": "≈ 2,2 M km²",
+          "objeto": "🧊"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "El mapa más usado, llamado Mercator, estira las zonas cercanas a los polos.",
+      "objeto": "🗺️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Se hizo en 1569 para ayudar a los marinos a navegar con rumbo recto, no para comparar tamaños.",
+      "objeto": "⛵",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hoy hay mapas que respetan mejor las áreas, y otros que muestran el mundo con su verdadera proporción.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "África ≈ 30,4 M km²; Groenlandia ≈ 2,17 M km²; proyección de Mercator, 1569",
+      "fuente": "Encyclopaedia Britannica, «Mercator projection»; CIA World Factbook"
+    }
+  ]
+}

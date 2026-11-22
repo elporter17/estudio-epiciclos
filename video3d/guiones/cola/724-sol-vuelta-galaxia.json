@@ -1,0 +1,63 @@
+{
+  "id": "sol-vuelta-galaxia",
+  "temporada": 4,
+  "episodio": 24,
+  "titulo": "Un año galáctico dura 230 M",
+  "categoria": "ciencia",
+  "destacar": [
+    "galaxia",
+    "millones"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El Sol tarda unos 230 millones de años en dar una vuelta a la galaxia.",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Viaja a más de 700.000 kilómetros por hora alrededor del centro de la Vía Láctea.",
+      "objeto": "moneda",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "La última vez que estuvo en este punto de la galaxia, había dinosaurios.",
+      "hitos": [
+        {
+          "anio": -230,
+          "texto": "Aparecen los primeros dinosaurios",
+          "etiqueta_anio": "Hace 230 M",
+          "objeto": "moneda"
+        },
+        {
+          "anio": -66,
+          "texto": "Se extinguen los dinosaurios",
+          "etiqueta_anio": "Hace 66 M"
+        },
+        {
+          "anio": 2026,
+          "texto": "Hoy",
+          "etiqueta_anio": "Hoy"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Desde que nació, el Sol ha dado unas 20 vueltas a la galaxia.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El Sol da una vuelta a la Vía Láctea en ≈ 225-250 millones de años",
+      "fuente": "NASA, «Milky Way Galaxy»; Reid et al. (2014), The Astrophysical Journal"
+    }
+  ],
+  "nota": "El valor exacto varía según el estudio."
+}

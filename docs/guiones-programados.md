@@ -1,6 +1,6 @@
 # Videos programados (desde el 2026-11-22)
 
-120 guiones, 6 al día: tres 3D (12:17 Instagram, 15:30 TikTok, 18:30 Facebook) y tres 2D sin IA (10:20 Facebook, 18:00 TikTok, 21:10 Instagram). YouTube publica los tres 3D y los 2D de Facebook e Instagram. Los 3D de Honduras van primero a Facebook. La voz dice cada línea tal cual; el tono lo agrega el sistema al renderizar.
+180 guiones, 6 al día: tres 3D (12:17 Instagram, 15:30 TikTok, 18:30 Facebook) y tres 2D sin IA (10:20 Facebook, 18:00 TikTok, 21:10 Instagram). YouTube publica los tres 3D y los 2D de Facebook e Instagram. Los 3D de Honduras van primero a Facebook. La voz dice cada línea tal cual; el tono lo agrega el sistema al renderizar.
 
 | # | Fecha | Hora | Redes | Guion |
 |---|---|---|---|---|
@@ -114,16 +114,76 @@
 | 108 | 2026-12-09 | 21:10 | Instagram + YouTube | Mariposas con sabor en las patas (curiosidad, 2D) |
 | 109 | 2026-12-10 | 10:20 | Facebook + YouTube | Estrella de mar sin cerebro (curiosidad, 2D) |
 | 110 | 2026-12-10 | 12:17 | Instagram + YouTube | Cientos de miles de millones (ciencia) |
-| 111 | 2026-12-10 | 15:30 | TikTok + YouTube | Plutón no ha dado una vuelta (ciencia) |
+| 111 | 2026-12-10 | 15:30 | TikTok + YouTube | Atardeceres azules en Marte (ciencia) |
 | 112 | 2026-12-10 | 18:00 | TikTok | El elefante tarda 22 meses (curiosidad, 2D) |
-| 113 | 2026-12-10 | 18:30 | Facebook + YouTube | Atardeceres azules en Marte (ciencia) |
+| 113 | 2026-12-10 | 18:30 | Facebook + YouTube | El himno nacional de Honduras (honduras) |
 | 114 | 2026-12-10 | 21:10 | Instagram + YouTube | El delfín duerme a medias (curiosidad, 2D) |
 | 115 | 2026-12-11 | 10:20 | Facebook + YouTube | El ornitorrinco pone huevos (curiosidad, 2D) |
-| 116 | 2026-12-11 | 12:17 | Instagram + YouTube | Los continentes crecen como uñas (ciencia) |
-| 117 | 2026-12-11 | 15:30 | TikTok + YouTube | Rusia es más grande que Plutón (ciencia) |
+| 116 | 2026-12-11 | 12:17 | Instagram + YouTube | Plutón no ha dado una vuelta (ciencia) |
+| 117 | 2026-12-11 | 15:30 | TikTok + YouTube | Los continentes crecen como uñas (ciencia) |
 | 118 | 2026-12-11 | 18:00 | TikTok | El olfato del perro es gigante (ciencia, 2D) |
-| 119 | 2026-12-11 | 18:30 | Facebook + YouTube | Medio millón de terremotos (ciencia) |
+| 119 | 2026-12-11 | 18:30 | Facebook + YouTube | Roatán, refugio de piratas (honduras) |
 | 120 | 2026-12-11 | 21:10 | Instagram + YouTube | Los gatos maúllan para ti (curiosidad, 2D) |
+| 121 | 2026-12-12 | 10:20 | Facebook + YouTube | Un reloj que casi no se atrasa (ciencia, 2D) |
+| 122 | 2026-12-12 | 12:17 | Instagram + YouTube | Medio millón de terremotos (ciencia) |
+| 123 | 2026-12-12 | 15:30 | TikTok + YouTube | Rusia es más grande que Plutón (ciencia) |
+| 124 | 2026-12-12 | 18:00 | TikTok | El papel nació en China (historia, 2D) |
+| 125 | 2026-12-12 | 18:30 | Facebook + YouTube | El punto más alto de Honduras (honduras) |
+| 126 | 2026-12-12 | 21:10 | Instagram + YouTube | Los mayas y el cero (historia, 2D) |
+| 127 | 2026-12-13 | 10:20 | Facebook + YouTube | La imprenta y 180 Biblias (historia, 2D) |
+| 128 | 2026-12-13 | 12:17 | Instagram + YouTube | La Luna no tiene lado oscuro (mito) |
+| 129 | 2026-12-13 | 15:30 | TikTok + YouTube | Las fases no son sombra (mito) |
+| 130 | 2026-12-13 | 18:00 | TikTok | La primera radiografía (historia, 2D) |
+| 131 | 2026-12-13 | 18:30 | Facebook + YouTube | El golfo de tres países (honduras) |
+| 132 | 2026-12-13 | 21:10 | Instagram + YouTube | La penicilina y un descuido (historia, 2D) |
+| 133 | 2026-12-14 | 10:20 | Facebook + YouTube | El primero en ver bacterias (historia, 2D) |
+| 134 | 2026-12-14 | 12:17 | Instagram + YouTube | Crujir los dedos no da artritis (mito) |
+| 135 | 2026-12-14 | 15:30 | TikTok + YouTube | Esperar dos horas para nadar (mito) |
+| 136 | 2026-12-14 | 18:00 | TikTok | El arcoíris y sus siete colores (ciencia, 2D) |
+| 137 | 2026-12-14 | 18:30 | Facebook + YouTube | Los nueve pueblos de Honduras (honduras) |
+| 138 | 2026-12-14 | 21:10 | Instagram + YouTube | La primera llamada de teléfono (historia, 2D) |
+| 139 | 2026-12-15 | 10:20 | Facebook + YouTube | Por qué el cielo es azul (ciencia, 2D) |
+| 140 | 2026-12-15 | 12:17 | Instagram + YouTube | Leer con poca luz no daña (mito) |
+| 141 | 2026-12-15 | 15:30 | TikTok + YouTube | Los perros sí ven colores (mito) |
+| 142 | 2026-12-15 | 18:00 | TikTok | La enfermedad que se erradicó (historia, 2D) |
+| 143 | 2026-12-15 | 18:30 | Facebook + YouTube | Café Marcala, el primero (honduras) |
+| 144 | 2026-12-15 | 21:10 | Instagram + YouTube | El aluminio valió más que el oro (historia, 2D) |
+| 145 | 2026-12-16 | 10:20 | Facebook + YouTube | El cuervo que hace herramientas (ciencia, 2D) |
+| 146 | 2026-12-16 | 12:17 | Instagram + YouTube | En la Estación sí hay gravedad (mito) |
+| 147 | 2026-12-16 | 15:30 | TikTok + YouTube | El cerebro no siente dolor (mito) |
+| 148 | 2026-12-16 | 18:00 | TikTok | El búho gira el cuello 270° (ciencia, 2D) |
+| 149 | 2026-12-16 | 18:30 | Facebook + YouTube | El manatí de Cuero y Salado (honduras) |
+| 150 | 2026-12-16 | 21:10 | Instagram + YouTube | La vista del águila (ciencia, 2D) |
+| 151 | 2026-12-17 | 10:20 | Facebook + YouTube | Solo las mosquitas pican (ciencia, 2D) |
+| 152 | 2026-12-17 | 12:17 | Instagram + YouTube | Cien palabras para la nieve (mito) |
+| 153 | 2026-12-17 | 15:30 | TikTok + YouTube | El perezoso no duerme tanto (mito) |
+| 154 | 2026-12-17 | 18:00 | TikTok | Ciempiés: nunca 100 patas (curiosidad, 2D) |
+| 155 | 2026-12-17 | 18:30 | Facebook + YouTube | Honduras en el Mundial de 1982 (honduras) |
+| 156 | 2026-12-17 | 21:10 | Instagram + YouTube | El salto de la pulga (ciencia, 2D) |
+| 157 | 2026-12-18 | 10:20 | Facebook + YouTube | La tortuga regresa a su playa (ciencia, 2D) |
+| 158 | 2026-12-18 | 12:17 | Instagram + YouTube | Elefantes y ratones (mito) |
+| 159 | 2026-12-18 | 15:30 | TikTok + YouTube | El café no frena el crecimiento (mito) |
+| 160 | 2026-12-18 | 18:00 | TikTok | Islandia no tiene mosquitos (curiosidad, 2D) |
+| 161 | 2026-12-18 | 18:30 | Facebook + YouTube | Las alfombras de Comayagua (honduras) |
+| 162 | 2026-12-18 | 21:10 | Instagram + YouTube | El mono más ruidoso de América (ciencia, 2D) |
+| 163 | 2026-12-19 | 10:20 | Facebook + YouTube | El lago más profundo del mundo (datos, 2D) |
+| 164 | 2026-12-19 | 12:17 | Instagram + YouTube | Un avión tardaría 19 años (ciencia) |
+| 165 | 2026-12-19 | 15:30 | TikTok + YouTube | Un año galáctico dura 230 M (ciencia) |
+| 166 | 2026-12-19 | 18:00 | TikTok | El desierto sin lluvia (datos, 2D) |
+| 167 | 2026-12-19 | 18:30 | Facebook + YouTube | El carnaval de La Ceiba (honduras) |
+| 168 | 2026-12-19 | 21:10 | Instagram + YouTube | Australia más ancha que la Luna (datos, 2D) |
+| 169 | 2026-12-20 | 10:20 | Facebook + YouTube | Venecia, una ciudad de islas (datos, 2D) |
+| 170 | 2026-12-20 | 12:17 | Instagram + YouTube | La Torre Eiffel crece en verano (ciencia) |
+| 171 | 2026-12-20 | 15:30 | TikTok + YouTube | El polvo que abona el Amazonas (ciencia) |
+| 172 | 2026-12-20 | 18:00 | TikTok | El punto más lejos de la tierra (datos, 2D) |
+| 173 | 2026-12-20 | 18:30 | Facebook + YouTube | El Canal que sube barcos (ciencia) |
+| 174 | 2026-12-20 | 21:10 | Instagram + YouTube | Groenlandia no es tan grande (datos, 2D) |
+| 175 | 2026-12-21 | 10:20 | Facebook + YouTube | Tus pulmones tienen 480 millones (ciencia, 2D) |
+| 176 | 2026-12-21 | 12:17 | Instagram + YouTube | El tren bala más puntual (ciencia) |
+| 177 | 2026-12-21 | 15:30 | TikTok + YouTube | Los días se alargan (ciencia) |
+| 178 | 2026-12-21 | 18:00 | TikTok | Lo más duro de tu cuerpo (ciencia, 2D) |
+| 179 | 2026-12-21 | 18:30 | Facebook + YouTube | El Pacífico y toda la tierra (ciencia) |
+| 180 | 2026-12-21 | 21:10 | Instagram + YouTube | El hueso más pequeño del cuerpo (ciencia, 2D) |
 
 ## 1. El corazón de la ballena azul
 *2026-11-22 · 10:20 · Facebook + YouTube · categoría: ciencia · episodio 1*
@@ -1722,17 +1782,19 @@
 
 > Nota: Las cifras de galaxias cambian con cada telescopio; son estimaciones.
 
-## 111. Plutón no ha dado una vuelta
-*2026-12-10 · 15:30 · TikTok + YouTube · categoría: ciencia · episodio 27*
+## 111. Atardeceres azules en Marte
+*2026-12-10 · 15:30 · TikTok + YouTube · categoría: ciencia · episodio 26*
 
-- **portada:** Desde que se descubrió Plutón, no ha completado ni una vuelta al Sol.
-- **linea:** Plutón tarda 248 años en dar una vuelta alrededor del Sol.
-- **foco:** Cada estación en Plutón dura unas seis décadas terrestres.
-- **gente:** Lo vimos de cerca por primera vez en 2015, y descubrimos montañas de hielo y un corazón gigante.
+- **portada:** En Marte, los atardeceres son azules.
+- **foco:** Lo vio por primera vez la sonda Curiosity en 2015, cuando fotografió el Sol poniéndose.
+- **lluvia:** El polvo fino del cielo marciano deja pasar la luz azul mejor cerca del Sol, al revés que en la Tierra.
+- **comparacion:** Un día en Marte dura casi lo mismo que uno en la Tierra.
+- **gente:** Y la gravedad allá es solo el 38 % de la nuestra: saltarías más del doble de alto.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
 
 **Fuentes:**
-- Descubierto en 1930 por Clyde Tombaugh; periodo orbital ≈ 248 años; planeta enano desde 2006; sobrevuelo de New Horizons en 2015 — NASA, «Pluto Facts»
+- Atardeceres azules fotografiados por Curiosity (2015) — NASA/JPL, «Curiosity Mars Rover: A Martian sunset»
+- Día marciano (sol) ≈ 24 h 40 min; gravedad ≈ 38 % de la terrestre — NASA, «Mars Fact Sheet»
 
 ## 112. El elefante tarda 22 meses
 *2026-12-10 · 18:00 · TikTok · categoría: curiosidad · episodio 57*
@@ -1747,19 +1809,20 @@
 **Fuentes:**
 - Gestación de ≈ 22 meses; cría de ≈ 90-110 kg — WWF y San Diego Zoo, «Elephant»
 
-## 113. Atardeceres azules en Marte
-*2026-12-10 · 18:30 · Facebook + YouTube · categoría: ciencia · episodio 26*
+## 113. El himno nacional de Honduras
+*2026-12-10 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 1*
 
-- **portada:** En Marte, los atardeceres son azules.
-- **foco:** Lo vio por primera vez la sonda Curiosity en 2015, cuando fotografió el Sol poniéndose.
-- **lluvia:** El polvo fino del cielo marciano deja pasar la luz azul mejor cerca del Sol, al revés que en la Tierra.
-- **comparacion:** Un día en Marte dura casi lo mismo que uno en la Tierra.
-- **gente:** Y la gravedad allá es solo el 38 % de la nuestra: saltarías más del doble de alto.
+- **portada:** El himno nacional de Honduras tiene una historia de más de cien años.
+- **foco:** La letra es de Augusto Constancio Coello y la música, del compositor alemán Carlos Hartling.
+- **linea:** Se hizo oficial a principios del siglo XX.
+- **foco:** El himno tiene siete estrofas, pero en los actos oficiales casi siempre se canta el coro y una o dos estrofas.
+- **gente:** Cada año, millones de estudiantes lo cantan en los actos cívicos de septiembre.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
 
 **Fuentes:**
-- Atardeceres azules fotografiados por Curiosity (2015) — NASA/JPL, «Curiosity Mars Rover: A Martian sunset»
-- Día marciano (sol) ≈ 24 h 40 min; gravedad ≈ 38 % de la terrestre — NASA, «Mars Fact Sheet»
+- Letra de Augusto C. Coello, música de Carlos Hartling; declarado himno nacional en 1915 — Secretaría de Cultura, Artes y Deportes de Honduras
+
+> Nota: El número de estrofas que se cantan varía según el acto.
 
 ## 114. El delfín duerme a medias
 *2026-12-10 · 21:10 · Instagram + YouTube · categoría: curiosidad · episodio 56*
@@ -1787,8 +1850,20 @@
 **Fuentes:**
 - Monotrema que pone huevos; machos con espolón venenoso; pico electrorreceptor — Australian Museum, «Platypus» y Smithsonian
 
-## 116. Los continentes crecen como uñas
-*2026-12-11 · 12:17 · Instagram + YouTube · categoría: ciencia · episodio 28*
+## 116. Plutón no ha dado una vuelta
+*2026-12-11 · 12:17 · Instagram + YouTube · categoría: ciencia · episodio 27*
+
+- **portada:** Desde que se descubrió Plutón, no ha completado ni una vuelta al Sol.
+- **linea:** Plutón tarda 248 años en dar una vuelta alrededor del Sol.
+- **foco:** Cada estación en Plutón dura unas seis décadas terrestres.
+- **gente:** Lo vimos de cerca por primera vez en 2015, y descubrimos montañas de hielo y un corazón gigante.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Descubierto en 1930 por Clyde Tombaugh; periodo orbital ≈ 248 años; planeta enano desde 2006; sobrevuelo de New Horizons en 2015 — NASA, «Pluto Facts»
+
+## 117. Los continentes crecen como uñas
+*2026-12-11 · 15:30 · TikTok + YouTube · categoría: ciencia · episodio 28*
 
 - **portada:** Los continentes se mueven más o menos a la velocidad a la que crecen tus uñas.
 - **comparacion:** Las placas se desplazan entre 2 y 10 centímetros al año.
@@ -1799,19 +1874,6 @@
 **Fuentes:**
 - Las placas tectónicas se mueven ≈ 2-10 cm al año — USGS, «Plate tectonics»
 - Las uñas de las manos crecen ≈ 3,5 mm al mes — Yaemsiri et al. (2010), Journal of the American Academy of Dermatology
-
-## 117. Rusia es más grande que Plutón
-*2026-12-11 · 15:30 · TikTok + YouTube · categoría: ciencia · episodio 30*
-
-- **portada:** Rusia tiene más superficie que Plutón.
-- **comparacion:** Rusia mide unos 17,1 millones de kilómetros cuadrados; Plutón, unos 16,7.
-- **foco:** Plutón es un mundo pequeño: menos de la mitad de ancho que la Tierra.
-- **gente:** Y Honduras cabría más de 150 veces dentro de Rusia.
-- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
-
-**Fuentes:**
-- Superficie de Rusia ≈ 17,1 M km²; de Honduras ≈ 112.492 km² — CIA World Factbook
-- Superficie de Plutón ≈ 16,65 M km² — NASA, «Pluto Fact Sheet»
 
 ## 118. El olfato del perro es gigante
 *2026-12-11 · 18:00 · TikTok · categoría: ciencia · episodio 60*
@@ -1828,17 +1890,20 @@
 
 > Nota: La ventaja exacta depende de la raza y del olor.
 
-## 119. Medio millón de terremotos
-*2026-12-11 · 18:30 · Facebook + YouTube · categoría: ciencia · episodio 29*
+## 119. Roatán, refugio de piratas
+*2026-12-11 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 2*
 
-- **portada:** Cada año hay unos 500.000 terremotos detectables.
-- **pila:** Se calcula que son unos 500.000 los que registran los instrumentos.
-- **comparacion:** Pero solo una parte se siente, y muy pocos hacen daño.
-- **gente:** Honduras, Guatemala y El Salvador están en una zona sísmica activa, por eso conviene conocer el plan de emergencia de tu familia.
+- **portada:** Las islas de Honduras fueron un escondite de piratas.
+- **foco:** Roatán y las otras Islas de la Bahía, en el Caribe, tenían puertos naturales donde los barcos podían esconderse.
+- **lluvia:** Piratas como Henry Morgan las usaron como base en el siglo XVII para atacar a los barcos españoles.
+- **cuadricula:** Hoy esas aguas son famosas por sus arrecifes de coral y por el buceo.
+- **gente:** Roatán recibe cada año miles de turistas, entre ellos visitantes de los cruceros.
 - **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
 
 **Fuentes:**
-- ≈ 500.000 terremotos detectables al año, ≈ 100.000 se sienten y ≈ 100 causan daños — USGS, «How many earthquakes occur each year?»
+- Las Islas de la Bahía fueron refugio y base de piratas y corsarios en los siglos XVII y XVIII — Encyclopaedia Britannica, «Bay Islands»
+
+> Nota: Qué pirata usó qué isla, y cuándo, varía según las fuentes.
 
 ## 120. Los gatos maúllan para ti
 *2026-12-11 · 21:10 · Instagram + YouTube · categoría: curiosidad · episodio 59*
@@ -1854,3 +1919,802 @@
 - Los gatos adultos maúllan principalmente a las personas — Nicastro (2004), Journal of the Acoustical Society of America; Bradshaw (2013), «Cat Sense»
 
 > Nota: Hay excepciones: algunos gatos sí se maúllan entre sí.
+
+## 121. Un reloj que casi no se atrasa
+*2026-12-12 · 10:20 · Facebook + YouTube · categoría: ciencia · episodio 61*
+
+- **portada:** Los mejores relojes atómicos casi no se atrasan en cientos de millones de años.
+- **foco:** Un reloj atómico mide el tiempo con las vibraciones de los átomos, que son siempre iguales.
+- **comparacion:** El reloj atómico del NIST, en Estados Unidos, se atrasaría solo un segundo cada 300 millones de años.
+- **foco:** Desde 1967, el segundo se define con los átomos de cesio y no con el giro de la Tierra.
+- **gente:** Gracias a ellos funcionan el GPS, los bancos y la hora de tu celular.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- NIST-F2: se atrasaría 1 s en ≈ 300 millones de años; el segundo se define desde 1967 con el cesio-133 — NIST, «NIST-F2 Cesium Fountain Atomic Clock»; BIPM
+
+> Nota: Los relojes ópticos más nuevos son todavía más precisos.
+
+## 122. Medio millón de terremotos
+*2026-12-12 · 12:17 · Instagram + YouTube · categoría: ciencia · episodio 29*
+
+- **portada:** Cada año hay unos 500.000 terremotos detectables.
+- **pila:** Se calcula que son unos 500.000 los que registran los instrumentos.
+- **comparacion:** Pero solo una parte se siente, y muy pocos hacen daño.
+- **gente:** Honduras, Guatemala y El Salvador están en una zona sísmica activa, por eso conviene conocer el plan de emergencia de tu familia.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- ≈ 500.000 terremotos detectables al año, ≈ 100.000 se sienten y ≈ 100 causan daños — USGS, «How many earthquakes occur each year?»
+
+## 123. Rusia es más grande que Plutón
+*2026-12-12 · 15:30 · TikTok + YouTube · categoría: ciencia · episodio 30*
+
+- **portada:** Rusia tiene más superficie que Plutón.
+- **comparacion:** Rusia mide unos 17,1 millones de kilómetros cuadrados; Plutón, unos 16,7.
+- **foco:** Plutón es un mundo pequeño: menos de la mitad de ancho que la Tierra.
+- **gente:** Y Honduras cabría más de 150 veces dentro de Rusia.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Superficie de Rusia ≈ 17,1 M km²; de Honduras ≈ 112.492 km² — CIA World Factbook
+- Superficie de Plutón ≈ 16,65 M km² — NASA, «Pluto Fact Sheet»
+
+## 124. El papel nació en China
+*2026-12-12 · 18:00 · TikTok · categoría: historia · episodio 63*
+
+- **portada:** El papel se inventó en China, según la tradición, en el año 105.
+- **foco:** Un funcionario de la corte, Cai Lun, presentó un papel hecho con corteza, trapos y redes de pescar.
+- **linea:** Antes se escribía en seda, bambú, piedra y pergamino, que eran pesados o muy caros.
+- **foco:** Con el tiempo, el papel hizo posible la imprenta y la difusión de los libros.
+- **gente:** Hoy se producen más de 400 millones de toneladas de papel y cartón al año.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Cai Lun presentó el papel al emperador en el año 105; llegó a Europa ≈ siglo XII — Encyclopaedia Britannica, «Paper»; Biblioteca Británica
+- Producción mundial de papel y cartón ≈ 400 millones de toneladas al año — FAO, FAOSTAT (productos forestales)
+
+> Nota: Hay hallazgos de papel más antiguos que Cai Lun, así que su fecha es la tradicional.
+
+## 125. El punto más alto de Honduras
+*2026-12-12 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 3*
+
+- **portada:** El punto más alto de Honduras es el Cerro Las Minas.
+- **foco:** Mide unos 2.870 metros sobre el nivel del mar y está en el departamento de Lempira, en el parque nacional Celaque.
+- **comparacion:** Es mucho más bajo que el Everest, pero alto para Centroamérica.
+- **foco:** El bosque nublado de Celaque guarda quebradas que dan agua a muchas comunidades.
+- **gente:** Es un destino para quienes disfrutan de las caminatas largas.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Cerro Las Minas: ≈ 2.870 m, el punto más alto de Honduras (parque nacional Celaque) — Instituto de Conservación Forestal (ICF), Honduras; Encyclopaedia Britannica, «Honduras»
+
+## 126. Los mayas y el cero
+*2026-12-12 · 21:10 · Instagram + YouTube · categoría: historia · episodio 62*
+
+- **portada:** Los mayas usaban el cero hace más de mil quinientos años.
+- **foco:** Inventaron un símbolo, parecido a una concha, para marcar el lugar vacío en sus números.
+- **lluvia:** Contaban en base 20 y combinaban puntos y rayas: un punto valía uno y una raya, cinco.
+- **linea:** El cero apareció en varios lugares del mundo por separado.
+- **gente:** Con ese sistema registraban fechas que alcanzaban millones de años.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Los mayas usaban un signo para el cero en su sistema vigesimal, en inscripciones de hace más de 1.500 años — Smithsonian National Museum of the American Indian y Encyclopaedia Britannica, «Maya numerals»
+
+> Nota: La fecha de la primera aparición del cero maya se discute.
+
+## 127. La imprenta y 180 Biblias
+*2026-12-13 · 10:20 · Facebook + YouTube · categoría: historia · episodio 64*
+
+- **portada:** Gutenberg imprimió la primera Biblia con tipos móviles hacia 1455.
+- **foco:** Su idea fue usar letras de metal que se podían reordenar y reutilizar.
+- **pila:** Se cree que imprimió unas 180 copias de su Biblia, y hoy sobreviven menos de cincuenta.
+- **linea:** En pocas décadas, la imprenta se extendió por toda Europa.
+- **gente:** Los libros se volvieron mucho más baratos, y las ideas viajaron más rápido.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- La Biblia de Gutenberg (≈ 1455): ≈ 180 copias, ≈ 49 sobreviven — Biblioteca Británica y Biblioteca del Congreso de EE. UU., «Gutenberg Bible»
+
+> Nota: El número exacto de copias es una estimación.
+
+## 128. La Luna no tiene lado oscuro
+*2026-12-13 · 12:17 · Instagram + YouTube · categoría: mito · episodio 11*
+
+- **portada:** Mito: la Luna tiene un lado oscuro que nunca recibe luz.
+- **foco:** Siempre vemos la misma cara de la Luna, porque tarda lo mismo en girar sobre sí misma que en dar una vuelta a la Tierra.
+- **lluvia:** Pero la otra cara sí recibe luz del Sol: se llama lado lejano, no lado oscuro.
+- **gente:** Durante la luna nueva, el lado que no vemos está completamente iluminado.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- La Luna tiene rotación sincrónica; su cara oculta recibe luz solar — NASA, «Moon Facts» y «Far Side of the Moon»
+
+## 129. Las fases no son sombra
+*2026-12-13 · 15:30 · TikTok + YouTube · categoría: mito · episodio 12*
+
+- **portada:** Mito: las fases de la Luna son la sombra de la Tierra.
+- **foco:** Esa sombra solo aparece en los eclipses de Luna, que son raros.
+- **lluvia:** Las fases dependen de cuánta parte de la cara iluminada de la Luna vemos desde la Tierra, mientras da la vuelta.
+- **gente:** Por eso la Luna completa sus fases en unos 29 días y medio.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Las fases se deben a la posición relativa Sol-Tierra-Luna; ciclo de ≈ 29,5 días — NASA, «Moon Phases»
+
+## 130. La primera radiografía
+*2026-12-13 · 18:00 · TikTok · categoría: historia · episodio 66*
+
+- **portada:** La primera radiografía fue de la mano de la esposa de su inventor.
+- **foco:** Wilhelm Röntgen descubrió los rayos X en noviembre de 1895, mientras investigaba otra cosa.
+- **lluvia:** Pocas semanas después, tomó la imagen de la mano de su esposa, donde se veían los huesos y su anillo.
+- **linea:** El descubrimiento se difundió por el mundo en meses.
+- **gente:** Hoy se usan para ver huesos, dientes y también el interior de las maletas.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Descubrimiento de los rayos X (1895); primer Nobel de Física (1901) para Röntgen — NobelPrize.org, «Wilhelm Conrad Röntgen – Facts» (https://www.nobelprize.org/prizes/physics/1901/rontgen/facts/)
+
+## 131. El golfo de tres países
+*2026-12-13 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 4*
+
+- **portada:** Honduras tiene una costa en el Pacífico, y la comparte con dos países.
+- **foco:** El golfo de Fonseca lo comparten Honduras, El Salvador y Nicaragua.
+- **comparacion:** Honduras tiene mucha más costa en el Caribe que en el Pacífico.
+- **foco:** Allí está Amapala, un puerto en la isla del Tigre, un antiguo volcán dentro del golfo.
+- **gente:** Esa pequeña costa es la salida de Honduras al océano Pacífico.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El golfo de Fonseca lo comparten Honduras, El Salvador y Nicaragua; Amapala está en la isla del Tigre — Encyclopaedia Britannica, «Gulf of Fonseca»
+- Costas de Honduras: ≈ 670 km en el Caribe y ≈ 150 km en el Pacífico — CIA World Factbook, «Honduras»
+
+> Nota: Las longitudes de costa cambian según cómo se mida.
+
+## 132. La penicilina y un descuido
+*2026-12-13 · 21:10 · Instagram + YouTube · categoría: historia · episodio 65*
+
+- **portada:** La penicilina se descubrió por un descuido en un laboratorio.
+- **foco:** En 1928, Alexander Fleming volvió de vacaciones y vio que un moho había matado las bacterias de uno de sus cultivos.
+- **lluvia:** Ese moho producía una sustancia que mata bacterias: la penicilina.
+- **linea:** Pasaron más de diez años antes de convertirla en medicina.
+- **gente:** Salvó millones de vidas, sobre todo después de la Segunda Guerra Mundial.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Fleming descubrió la penicilina en 1928; Florey y Chain la desarrollaron; Nobel de Medicina 1945 — NobelPrize.org, «The Nobel Prize in Physiology or Medicine 1945» (https://www.nobelprize.org/prizes/medicine/1945/summary/)
+
+## 133. El primero en ver bacterias
+*2026-12-14 · 10:20 · Facebook + YouTube · categoría: historia · episodio 67*
+
+- **portada:** Un comerciante de telas fue la primera persona en ver bacterias.
+- **foco:** Antonie van Leeuwenhoek, en Holanda, pulía lentes pequeñísimas para ver mejor la tela.
+- **lluvia:** Sus lentes ampliaban hasta unas 270 veces, mucho más que los microscopios de la época.
+- **linea:** Con ellas descubrió un mundo que nadie había visto.
+- **gente:** Los llamó «animalículos», y hoy sabemos que son microbios.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Leeuwenhoek observó microorganismos con lentes de hasta ≈ 270 aumentos (1670-1680) — Museo Boerhaave y Encyclopaedia Britannica, «Antonie van Leeuwenhoek»
+
+## 134. Crujir los dedos no da artritis
+*2026-12-14 · 12:17 · Instagram + YouTube · categoría: mito · episodio 13*
+
+- **portada:** Mito: crujirte los dedos te da artritis.
+- **foco:** El sonido viene de burbujas de gas en el líquido de la articulación, no de que se desgaste el hueso.
+- **lluvia:** Un médico se crujió los nudillos de una sola mano por más de 60 años y no desarrolló artritis, ni en esa mano ni en la otra.
+- **gente:** Varios estudios no encontraron relación entre el hábito y la artritis.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Experimento de Donald Unger durante más de 60 años; estudios sin relación con artritis — Unger (1998), Arthritis & Rheumatism; Deweber et al. (2011), Journal of the American Board of Family Medicine
+
+> Nota: Si crujir te duele o se hincha la articulación, conviene consultar a un médico.
+
+## 135. Esperar dos horas para nadar
+*2026-12-14 · 15:30 · TikTok + YouTube · categoría: mito · episodio 14*
+
+- **portada:** Mito: si nadas justo después de comer, te da un corte de digestión.
+- **foco:** No hay evidencia de que comer y nadar provoque ahogamientos por la digestión.
+- **lluvia:** Lo que sí puede pasar es un malestar o un calambre leve si comes mucho y haces un esfuerzo fuerte.
+- **gente:** Los riesgos más serios en el agua son el alcohol, el cansancio y nadar sin vigilancia.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- No hay evidencia de que nadar tras comer cause calambres peligrosos — Cruz Roja Estadounidense y Mayo Clinic
+
+## 136. El arcoíris y sus siete colores
+*2026-12-14 · 18:00 · TikTok · categoría: ciencia · episodio 69*
+
+- **portada:** El arcoíris no tiene siete colores: tiene infinitos.
+- **foco:** La luz blanca se separa en una banda continua, donde cada color se mezcla con el siguiente.
+- **lluvia:** El número siete lo escogió Isaac Newton, quizá porque eran siete las notas musicales.
+- **linea:** Antes de él, se hablaba de menos colores.
+- **gente:** Cuántos colores ves en un arcoíris depende también de tu idioma y de tu cultura.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El espectro es continuo; Newton propuso siete colores en su «Opticks» (1704) — Royal Society y Encyclopaedia Britannica, «Rainbow»
+
+## 137. Los nueve pueblos de Honduras
+*2026-12-14 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 5*
+
+- **portada:** Honduras reconoce nueve pueblos indígenas y afrohondureños.
+- **foco:** Son los lenca, miskito, tolupán, pech, tawahka, maya chortí, garífuna, nahua y los negros de habla inglesa de las Islas de la Bahía.
+- **gente:** Cada pueblo tiene su lengua, su música, su comida y su forma de ver el mundo.
+- **foco:** Los maya chortí viven en el occidente, cerca de Copán, y los miskito, en La Mosquitia.
+- **lluvia:** Muchas de esas lenguas están en peligro, y varias comunidades trabajan para conservarlas.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Honduras reconoce nueve pueblos indígenas y afrohondureños — Secretaría de Desarrollo e Inclusión Social y Secretaría de Cultura de Honduras
+
+## 138. La primera llamada de teléfono
+*2026-12-14 · 21:10 · Instagram + YouTube · categoría: historia · episodio 68*
+
+- **portada:** La primera llamada de teléfono fue una petición de ayuda.
+- **foco:** Fue el 10 de marzo de 1876, y la hizo Alexander Graham Bell a su ayudante.
+- **lluvia:** Según su cuaderno, le dijo: «Señor Watson, venga aquí, quiero verlo».
+- **linea:** Bell había patentado el teléfono solo unas semanas antes.
+- **gente:** Hoy hay más celulares que personas en el planeta.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Primera llamada: 10 de marzo de 1876; patente de Bell: 7 de marzo de 1876 — Biblioteca del Congreso de EE. UU., «Alexander Graham Bell Family Papers»
+
+## 139. Por qué el cielo es azul
+*2026-12-15 · 10:20 · Facebook + YouTube · categoría: ciencia · episodio 70*
+
+- **portada:** El cielo es azul porque el aire dispersa más la luz azul.
+- **foco:** La luz del Sol parece blanca, pero lleva todos los colores mezclados.
+- **lluvia:** Al chocar con las moléculas del aire, la luz azul se dispersa mucho más que la roja, y llega a tus ojos desde todas partes.
+- **foco:** Por eso los atardeceres son rojizos: la luz atraviesa más aire y el azul se dispersa por el camino.
+- **gente:** En la Luna, sin aire, el cielo se ve negro aun de día.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Dispersión de Rayleigh: la luz azul se dispersa mucho más que la roja en la atmósfera — NASA, «Why is the sky blue?»
+
+## 140. Leer con poca luz no daña
+*2026-12-15 · 12:17 · Instagram + YouTube · categoría: mito · episodio 15*
+
+- **portada:** Mito: leer con poca luz daña los ojos para siempre.
+- **foco:** Cansa la vista y puede dar dolor de cabeza, pero no causa un daño permanente.
+- **lluvia:** Con poca luz, parpadeamos menos y forzamos los músculos del ojo, y por eso se cansan.
+- **gente:** Una buena luz ayuda a leer más cómodo, aunque no cambia la salud de tus ojos a largo plazo.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Leer con poca luz no causa daño permanente a los ojos; produce fatiga visual — American Academy of Ophthalmology
+
+## 141. Los perros sí ven colores
+*2026-12-15 · 15:30 · TikTok + YouTube · categoría: mito · episodio 16*
+
+- **portada:** Mito: los perros ven todo en blanco y negro.
+- **foco:** Ven menos colores que nosotros: distinguen sobre todo azules y amarillos.
+- **lluvia:** El rojo y el verde se ven para ellos como tonos de gris o de amarillo apagado.
+- **gente:** Por eso una pelota roja sobre el pasto verde puede ser difícil de ver para un perro.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Los perros tienen visión dicromática (azul y amarillo) — Neitz, Geist y Jacobs (1989), Visual Neuroscience; American Kennel Club
+
+## 142. La enfermedad que se erradicó
+*2026-12-15 · 18:00 · TikTok · categoría: historia · episodio 72*
+
+- **portada:** La viruela es la única enfermedad humana que se ha logrado erradicar.
+- **linea:** Todo empezó con una observación y una vacuna.
+- **foco:** En 1980, la Organización Mundial de la Salud declaró que la viruela había desaparecido del mundo.
+- **gente:** Antes mataba a millones de personas cada año.
+- **foco:** Hoy ya no hay casos, y solo se conservan muestras del virus en dos laboratorios.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Viruela erradicada: declaración de la OMS el 8 de mayo de 1980 — Organización Mundial de la Salud (OMS), «Smallpox»
+- Edward Jenner probó la primera vacuna en 1796 — Encyclopaedia Britannica, «Edward Jenner»
+
+## 143. Café Marcala, el primero
+*2026-12-15 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 6*
+
+- **portada:** El café de Marcala fue el primero de Centroamérica con denominación de origen.
+- **linea:** Marcala es un municipio de La Paz, en las montañas del occidente de Honduras.
+- **foco:** Una denominación de origen certifica que un producto viene de una zona específica y cumple ciertas reglas de calidad.
+- **cuadricula:** Allí se cultiva a gran altura, y sus cafés se conocen por ser dulces y de buen cuerpo.
+- **gente:** Honduras es el mayor productor de café de Centroamérica.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Café Marcala: primera denominación de origen para el café en Honduras y en Centroamérica (2005) — Instituto Hondureño del Café (IHCAFE) y Secretaría de Agricultura
+- Honduras: mayor productor de café de Centroamérica — Organización Internacional del Café (ICO)
+
+> Nota: La posición como mayor productor puede cambiar de un año a otro.
+
+## 144. El aluminio valió más que el oro
+*2026-12-15 · 21:10 · Instagram + YouTube · categoría: historia · episodio 71*
+
+- **portada:** Hubo un tiempo en que el aluminio valía más que el oro.
+- **foco:** Aunque hay mucho aluminio en la Tierra, estaba pegado a otros materiales, y separarlo era carísimo.
+- **linea:** En 1884 se coronó el Monumento a Washington con una pieza de aluminio, como un lujo.
+- **foco:** Hoy se hacen latas, aviones y bicicletas con él, y es uno de los metales más reciclados.
+- **gente:** Reciclar aluminio gasta alrededor de un 5 % de la energía de producirlo desde cero.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- En 1884 se colocó una punta de aluminio de ≈ 2,8 kg en el Monumento a Washington; en 1886 se inventó el proceso Hall-Héroult — Servicio de Parques Nacionales de EE. UU. y Encyclopaedia Britannica, «Aluminum»
+- Reciclar aluminio ahorra ≈ 95 % de la energía — The Aluminum Association
+
+## 145. El cuervo que hace herramientas
+*2026-12-16 · 10:20 · Facebook + YouTube · categoría: ciencia · episodio 73*
+
+- **portada:** Algunos cuervos fabrican herramientas.
+- **foco:** Los cuervos de Nueva Caledonia doblan ramas y alambres para hacer ganchos y sacar insectos de los troncos.
+- **lluvia:** Una cuerva llamada Betty, en un experimento en 2002, dobló un alambre recto para formar un gancho y alcanzar comida.
+- **gente:** Los cuervos reconocen caras, resuelven rompecabezas y recuerdan a quien los trató mal.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Cuervos de Nueva Caledonia fabrican herramientas; experimento con «Betty» (2002) — Weir, Chappell y Kacelnik (2002), Science, «Shaping of hooks in New Caledonian crows»
+
+## 146. En la Estación sí hay gravedad
+*2026-12-16 · 12:17 · Instagram + YouTube · categoría: mito · episodio 17*
+
+- **portada:** Mito: los astronautas flotan porque no hay gravedad.
+- **foco:** A la altura de la Estación Espacial, la gravedad todavía es cerca del 90 % de la que sentimos en el suelo.
+- **lluvia:** Flotan porque están en caída libre: la Estación cae sin parar alrededor de la Tierra, y ellos con ella.
+- **gente:** Se llama microgravedad: es como un ascensor que cae, pero nunca llega al suelo.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- A ≈ 400 km de altura la gravedad es ≈ 90 % de la de la superficie; la sensación de ingravidez es caída libre — NASA, «What is microgravity?»
+
+## 147. El cerebro no siente dolor
+*2026-12-16 · 15:30 · TikTok + YouTube · categoría: mito · episodio 18*
+
+- **portada:** Mito: el cerebro siente dolor cuando te duele la cabeza.
+- **foco:** El tejido del cerebro no tiene receptores de dolor, y por eso no siente nada si lo tocan.
+- **lluvia:** El dolor de cabeza viene de los vasos sanguíneos, los músculos y las membranas que lo rodean.
+- **gente:** Por eso se puede operar el cerebro con el paciente despierto, y sin que le duela.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El tejido cerebral no tiene nociceptores; el dolor de cabeza se origina en estructuras vecinas — American Migraine Foundation y Mayo Clinic
+
+## 148. El búho gira el cuello 270°
+*2026-12-16 · 18:00 · TikTok · categoría: ciencia · episodio 75*
+
+- **portada:** El búho puede girar la cabeza hasta unos 270 grados.
+- **foco:** No puede mover los ojos, que están fijos en su cabeza, así que gira todo el cuello.
+- **comparacion:** Tiene 14 huesos en el cuello, el doble que una persona.
+- **foco:** Además tiene vasos sanguíneos especiales que evitan que se corte el flujo de sangre al cerebro.
+- **gente:** Así vigila en todas direcciones sin mover el cuerpo y sin hacer ruido.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Los búhos giran el cuello ≈ 270°; tienen 14 vértebras cervicales y adaptaciones vasculares — Krings et al. (2017), Science; Smithsonian
+
+## 149. El manatí de Cuero y Salado
+*2026-12-16 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 7*
+
+- **portada:** En Honduras viven manatíes, los «vacas marinas» del Caribe.
+- **foco:** Uno de los lugares donde se pueden ver es el refugio Cuero y Salado, cerca de La Ceiba.
+- **lluvia:** Un manatí adulto puede medir unos tres metros y pesar cerca de 500 kilos, y se alimenta de plantas acuáticas.
+- **gente:** Están en peligro, y la principal amenaza son los choques con lanchas y la pérdida de su hábitat.
+- **cuadricula:** Los recorridos en bote por los canales del refugio permiten ver monos, aves y, con suerte, un manatí.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Refugio de Vida Silvestre Cuero y Salado, hábitat del manatí antillano — Instituto de Conservación Forestal (ICF) y Fundación Cuero y Salado (FUCSA)
+- El manatí antillano: ≈ 3 m y ≈ 500 kg; está en peligro — NOAA Fisheries y UICN
+
+## 150. La vista del águila
+*2026-12-16 · 21:10 · Instagram + YouTube · categoría: ciencia · episodio 74*
+
+- **portada:** Un águila puede ver un conejo desde más de tres kilómetros.
+- **foco:** Su vista es varias veces más aguda que la nuestra: ve detalles pequeños desde mucho más lejos.
+- **comparacion:** Ven mejor porque sus ojos son grandes y tienen muchas más células sensibles a la luz.
+- **foco:** Cada ojo es casi tan grande como el de una persona, aunque la cabeza es mucho más pequeña.
+- **gente:** Cazan con la vista: ven la presa a gran distancia, y bajan en picada.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- La agudeza visual de algunas águilas es hasta ≈ 4 veces la humana — Reymond (1985), Vision Research; Audubon Society
+
+> Nota: La ventaja depende de la especie y de cómo se mida.
+
+## 151. Solo las mosquitas pican
+*2026-12-17 · 10:20 · Facebook + YouTube · categoría: ciencia · episodio 76*
+
+- **portada:** Solo las hembras de los mosquitos pican.
+- **foco:** Necesitan las proteínas de la sangre para producir sus huevos.
+- **cuadricula:** Los machos y las hembras, el resto del tiempo, se alimentan del néctar de las flores.
+- **lluvia:** Cada hembra puede poner cientos de huevos en un pequeño charco de agua.
+- **gente:** Eliminar el agua estancada de macetas y llantas es la forma más sencilla de reducir los mosquitos.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Solo las hembras se alimentan de sangre, para el desarrollo de los huevos — Organización Mundial de la Salud (OMS) y Centros para el Control de Enfermedades (CDC), «Mosquito life cycle»
+
+## 152. Cien palabras para la nieve
+*2026-12-17 · 12:17 · Instagram + YouTube · categoría: mito · episodio 19*
+
+- **portada:** Mito: los inuit tienen cien palabras para decir nieve.
+- **foco:** Las lenguas inuit arman palabras largas pegando partes, así que cuentan las palabras de otra forma.
+- **lluvia:** Tienen varios términos para nieve, y también el español, el inglés y otras lenguas: «nevada», «ventisca», «aguanieve».
+- **gente:** La cifra de cien se fue inflando con el tiempo, sin base en un estudio.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El mito de las «cien palabras» para nieve no tiene respaldo lingüístico — Pullum (1991), «The Great Eskimo Vocabulary Hoax»; Martin (1986), American Anthropologist
+
+> Nota: El debate lingüístico sigue: depende de qué se considere una «palabra».
+
+## 153. El perezoso no duerme tanto
+*2026-12-17 · 15:30 · TikTok + YouTube · categoría: mito · episodio 20*
+
+- **portada:** Mito: los perezosos duermen 20 horas al día.
+- **foco:** Eso se midió en perezosos en cautiverio, donde se mueven poco.
+- **lluvia:** En la selva, los perezosos duermen cerca de 9 o 10 horas.
+- **gente:** Son lentos porque comen hojas, que dan poca energía, y no porque duerman todo el día.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Perezosos silvestres: ≈ 9,6 h de sueño al día frente a ≈ 16 h en cautiverio — Rattenborg et al. (2008), Biology Letters
+
+## 154. Ciempiés: nunca 100 patas
+*2026-12-17 · 18:00 · TikTok · categoría: curiosidad · episodio 78*
+
+- **portada:** Ningún ciempiés tiene exactamente cien patas.
+- **foco:** Los ciempiés tienen un número impar de pares de patas, así que el total nunca es 100.
+- **lluvia:** Hay especies con menos de treinta patas y otras con más de trescientas.
+- **foco:** Los milpiés, que se parecen, tienen dos pares de patas por segmento y caminan más despacio.
+- **gente:** El nombre es un poco exagerado, pero algunos tienen muchas más de cien.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Los ciempiés (quilópodos) siempre tienen un número impar de pares de patas (de 15 a 191) — Museo de Historia Natural de Londres y Arkive
+
+## 155. Honduras en el Mundial de 1982
+*2026-12-17 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 8*
+
+- **portada:** Honduras jugó su primer Mundial en 1982 y empató con la anfitriona.
+- **linea:** Fue la primera vez que la selección llegó a una Copa del Mundo.
+- **foco:** En su debut empató 1 a 1 con España, que jugaba en casa.
+- **lluvia:** Honduras logró otros dos empates en esa fase, y volvió a un Mundial recién en 2010.
+- **gente:** Aquella selección es recordada con cariño por los aficionados hondureños.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Mundial de 1982: Honduras empató 1-1 con España; participó también en 2010 y 2014 — FIFA, historial de participación de Honduras
+
+> Nota: Conviene revisar los resultados completos en la web de la FIFA.
+
+## 156. El salto de la pulga
+*2026-12-17 · 21:10 · Instagram + YouTube · categoría: ciencia · episodio 77*
+
+- **portada:** Una pulga puede saltar más de cien veces su tamaño.
+- **foco:** Mide un par de milímetros, y puede saltar a más de 15 centímetros de altura.
+- **lluvia:** Lo logra con una proteína elástica, la resilina, que funciona como un resorte y suelta la energía de golpe.
+- **comparacion:** Si una persona saltara igual, llegaría a la altura de un edificio de 60 pisos.
+- **gente:** Por eso es tan difícil atrapar a una.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Las pulgas saltan ≈ 100 veces su longitud con ayuda de resilina — Sutton y Burrows (2011), Journal of Experimental Biology
+
+> Nota: La proporción exacta depende de la especie.
+
+## 157. La tortuga regresa a su playa
+*2026-12-18 · 10:20 · Facebook + YouTube · categoría: ciencia · episodio 79*
+
+- **portada:** Las tortugas marinas regresan a poner huevos a la playa donde nacieron.
+- **foco:** Después de nacer, la tortuga recorre miles de kilómetros por el océano.
+- **lluvia:** Cuando es adulta, vuelve a la misma zona, y hasta décadas después.
+- **foco:** Se orientan con el campo magnético de la Tierra y con el olor del agua.
+- **gente:** Solo una de cada mil tortugas llega a adulta, por eso cuidar sus nidos es tan importante.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Las tortugas marinas regresan a su playa natal; usan el campo magnético para navegar — Lohmann et al. (2008), Journal of Experimental Biology; NOAA Fisheries
+- ≈ 1 de cada 1.000 tortugas llega a adulta (estimación) — NOAA Fisheries
+
+> Nota: La proporción de supervivencia es una estimación que cambia entre especies.
+
+## 158. Elefantes y ratones
+*2026-12-18 · 12:17 · Instagram + YouTube · categoría: mito · episodio 21*
+
+- **portada:** Mito: los elefantes se asustan con los ratones.
+- **foco:** No hay ninguna prueba de que lo hagan: es un cuento popular que se repite desde hace siglos.
+- **lluvia:** Cuando un experimento puso ratones en el camino de los elefantes, ellos casi no reaccionaron.
+- **gente:** Lo que sí les molesta son animales más grandes que pueden amenazar a las crías, y las abejas.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- No hay evidencia de que los elefantes teman a los ratones; sí reaccionan a las abejas — King, Douglas-Hamilton y Vollrath (2007), Current Biology; Smithsonian National Zoo
+
+## 159. El café no frena el crecimiento
+*2026-12-18 · 15:30 · TikTok + YouTube · categoría: mito · episodio 22*
+
+- **portada:** Mito: tomar café de niño te hace crecer menos.
+- **foco:** No hay estudios que muestren que el café reduzca la estatura final.
+- **lluvia:** Lo que sí puede hacer en niños y adolescentes es quitarles el sueño y ponerlos nerviosos.
+- **gente:** Por eso se recomienda que no tomen mucha cafeína, aunque no afecte los huesos.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- No hay evidencia de que el café afecte la estatura; sí puede alterar el sueño — Academia Estadounidense de Pediatría y Mayo Clinic
+
+## 160. Islandia no tiene mosquitos
+*2026-12-18 · 18:00 · TikTok · categoría: curiosidad · episodio 81*
+
+- **portada:** Islandia es uno de los pocos lugares del mundo sin mosquitos.
+- **foco:** Allí no viven mosquitos de forma estable, aunque sí hay moscas y otros insectos.
+- **lluvia:** Una posible razón es el clima: los cambios bruscos entre helada y deshielo les cuesta mucho.
+- **gente:** La Antártida tampoco los tiene, y casi todo el resto del planeta sí.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Islandia no tiene mosquitos residentes — Instituto Islandés de Historia Natural y Encyclopaedia Britannica, «Iceland»
+
+> Nota: Se han encontrado mosquitos aislados que llegaron por barcos o aviones.
+
+## 161. Las alfombras de Comayagua
+*2026-12-18 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 9*
+
+- **portada:** Cada Semana Santa, las calles de Comayagua se llenan de alfombras de aserrín.
+- **foco:** Se hacen con aserrín teñido, flores y semillas, y forman dibujos de colores sobre el pavimento.
+- **lluvia:** La procesión del Viernes Santo pasa por encima de ellas, y en unas horas desaparecen.
+- **gente:** Cientos de familias y jóvenes trabajan durante la noche para terminarlas a tiempo.
+- **foco:** Es una de las tradiciones religiosas más conocidas de Honduras.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Alfombras de aserrín de la Semana Santa en Comayagua — Instituto Hondureño de Turismo (IHT) y alcaldía de Comayagua
+
+## 162. El mono más ruidoso de América
+*2026-12-18 · 21:10 · Instagram + YouTube · categoría: ciencia · episodio 80*
+
+- **portada:** El mono aullador se oye a varios kilómetros.
+- **foco:** Su grito se escucha en la selva a unos cinco kilómetros de distancia.
+- **lluvia:** Tiene un hueso en la garganta, el hioides, grande y hueco, que amplifica el sonido.
+- **foco:** Vive en los bosques de Honduras, y grita al amanecer y antes de la lluvia.
+- **gente:** Con esos gritos, cada grupo avisa a los vecinos que ese territorio ya está ocupado.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El aullido del mono aullador se oye a ≈ 5 km; hioides agrandado — Smithsonian National Zoo, «Howler monkey»; Encyclopaedia Britannica
+- El mono aullador de manto (Alouatta palliata) habita en Honduras — Instituto de Conservación Forestal (ICF), Honduras
+
+## 163. El lago más profundo del mundo
+*2026-12-19 · 10:20 · Facebook + YouTube · categoría: datos · episodio 82*
+
+- **portada:** El lago Baikal guarda el 20 % del agua dulce líquida del mundo.
+- **foco:** Está en Siberia y es el lago más profundo de la Tierra: unos 1.640 metros.
+- **comparacion:** Tiene más agua que todos los Grandes Lagos de Norteamérica juntos.
+- **foco:** Es también uno de los más antiguos: se calcula que tiene unos 25 millones de años.
+- **gente:** Su agua es tan transparente que, en invierno, se puede ver el fondo a través del hielo.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Baikal: ≈ 1.642 m de profundidad, ≈ 20 % del agua dulce líquida superficial, ≈ 25 millones de años — UNESCO, «Lake Baikal» (https://whc.unesco.org/en/list/754)
+
+## 164. Un avión tardaría 19 años
+*2026-12-19 · 12:17 · Instagram + YouTube · categoría: ciencia · episodio 23*
+
+- **portada:** Si un avión volara hasta el Sol, tardaría unos 19 años.
+- **comparacion:** El Sol está a unos 150 millones de kilómetros de la Tierra.
+- **lluvia:** A 900 kilómetros por hora, el viaje duraría casi 19 años seguidos, sin parar.
+- **gente:** La luz, en cambio, llega en poco más de 8 minutos.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Distancia media Tierra-Sol ≈ 149,6 millones de km; a 900 km/h son ≈ 19 años — NASA, «Sun Fact Sheet»; cálculo directo
+
+## 165. Un año galáctico dura 230 M
+*2026-12-19 · 15:30 · TikTok + YouTube · categoría: ciencia · episodio 24*
+
+- **portada:** El Sol tarda unos 230 millones de años en dar una vuelta a la galaxia.
+- **foco:** Viaja a más de 700.000 kilómetros por hora alrededor del centro de la Vía Láctea.
+- **linea:** La última vez que estuvo en este punto de la galaxia, había dinosaurios.
+- **gente:** Desde que nació, el Sol ha dado unas 20 vueltas a la galaxia.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El Sol da una vuelta a la Vía Láctea en ≈ 225-250 millones de años — NASA, «Milky Way Galaxy»; Reid et al. (2014), The Astrophysical Journal
+
+> Nota: El valor exacto varía según el estudio.
+
+## 166. El desierto sin lluvia
+*2026-12-19 · 18:00 · TikTok · categoría: datos · episodio 84*
+
+- **portada:** El desierto de Atacama es uno de los lugares más secos del mundo.
+- **foco:** En algunas zonas puede pasar años sin una sola gota de lluvia.
+- **comparacion:** En el pueblo de Arica llueven apenas 0,5 milímetros al año.
+- **foco:** Es tan árido que los científicos lo usan para probar equipos de la NASA para Marte.
+- **gente:** Y como casi no hay nubes, tiene uno de los cielos más claros para ver estrellas.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Arica promedia ≈ 0,5 mm de lluvia al año; Atacama es el desierto no polar más seco — Servicio Meteorológico de Chile y NASA (Atacama como análogo de Marte)
+- San Pedro Sula: ≈ 1.400 mm de lluvia al año — Servicio Meteorológico Nacional de Honduras (promedio histórico)
+
+> Nota: La cifra de San Pedro Sula es un promedio aproximado.
+
+## 167. El carnaval de La Ceiba
+*2026-12-19 · 18:30 · Facebook + YouTube · categoría: honduras · episodio 10*
+
+- **portada:** El carnaval de La Ceiba es la fiesta más grande de la costa hondureña.
+- **foco:** Se celebra cada mayo, en honor a San Isidro Labrador, patrono de la ciudad.
+- **gente:** El gran desfile reúne comparsas, carrozas y bailarines en la avenida San Isidro.
+- **foco:** Atrae a miles de visitantes de Honduras y de otros países.
+- **lluvia:** Y la ciudad es la puerta de entrada a Pico Bonito, las playas y las Islas de la Bahía.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Feria y Gran Carnaval de La Ceiba en mayo, en honor a San Isidro Labrador — Instituto Hondureño de Turismo y municipalidad de La Ceiba
+
+## 168. Australia más ancha que la Luna
+*2026-12-19 · 21:10 · Instagram + YouTube · categoría: datos · episodio 83*
+
+- **portada:** Australia es más ancha que la Luna.
+- **comparacion:** De este a oeste, Australia mide unos 4.000 kilómetros; la Luna, unos 3.474 de diámetro.
+- **foco:** Es un continente casi tan grande como Estados Unidos sin Alaska.
+- **gente:** Aun así, vive allí una población parecida a la de Honduras y Guatemala juntas.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Ancho de Australia ≈ 4.000 km; diámetro de la Luna ≈ 3.474 km — Geoscience Australia y NASA, «Moon Fact Sheet»
+
+> Nota: La comparación de población es aproximada; conviene revisarla antes de usarla.
+
+## 169. Venecia, una ciudad de islas
+*2026-12-20 · 10:20 · Facebook + YouTube · categoría: datos · episodio 85*
+
+- **portada:** Venecia está construida sobre más de cien islas.
+- **cuadricula:** Son unas 118 islitas unidas por unos 400 puentes y separadas por canales.
+- **foco:** La ciudad se levantó sobre troncos clavados en el fondo de una laguna.
+- **gente:** Cada año, la crecida del agua, llamada «acqua alta», inunda sus calles.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Venecia: ≈ 118 islas y ≈ 400 puentes — UNESCO, «Venice and its Lagoon» (https://whc.unesco.org/en/list/394)
+
+## 170. La Torre Eiffel crece en verano
+*2026-12-20 · 12:17 · Instagram + YouTube · categoría: ciencia · episodio 25*
+
+- **portada:** La Torre Eiffel crece unos 15 centímetros en verano.
+- **foco:** Es de hierro, y el hierro se dilata con el calor: en un día muy caliente, la torre se alarga.
+- **lluvia:** En invierno vuelve a encogerse, y el sol también la inclina unos centímetros hacia el lado opuesto.
+- **comparacion:** Mide unos 330 metros de alto, casi como un edificio de 80 pisos.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- La torre puede crecer hasta ≈ 15 cm por la dilatación térmica; mide ≈ 330 m — Sociedad de Explotación de la Torre Eiffel (SETE)
+
+## 171. El polvo que abona el Amazonas
+*2026-12-20 · 15:30 · TikTok + YouTube · categoría: ciencia · episodio 27*
+
+- **portada:** El polvo del Sahara viaja por el aire hasta el Amazonas.
+- **lluvia:** Cada año, unos 180 millones de toneladas de polvo salen del Sahara sobre el Atlántico.
+- **foco:** Unos 28 millones de toneladas caen sobre el Amazonas, y llevan fósforo, un nutriente que la selva necesita.
+- **gente:** El polvo viene de un lago seco, la depresión de Bodélé, y cruza el océano en una semana.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- ≈ 182 Mt de polvo salen del Sahara y ≈ 27,7 Mt caen en el Amazonas; fertilizan con fósforo — NASA, estudio CALIPSO (Yu et al., 2015), Geophysical Research Letters
+
+## 172. El punto más lejos de la tierra
+*2026-12-20 · 18:00 · TikTok · categoría: datos · episodio 87*
+
+- **portada:** El lugar más lejos de cualquier tierra firme se llama Punto Nemo.
+- **foco:** Está en el Pacífico Sur, y la tierra más cercana queda a unos 2.700 kilómetros.
+- **comparacion:** Cuando la Estación Espacial pasa por encima, los astronautas están más cerca que cualquier persona en tierra.
+- **foco:** Allí van a parar los restos de satélites y naves que ya no se usan.
+- **gente:** Se le puso el nombre del capitán Nemo, de las novelas de Julio Verne.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Punto Nemo: ≈ 2.688 km de la tierra más cercana; cementerio de naves espaciales — NOAA y Agencia Espacial Europea (ESA), «Point Nemo»
+
+## 173. El Canal que sube barcos
+*2026-12-20 · 18:30 · Facebook + YouTube · categoría: ciencia · episodio 26*
+
+- **portada:** En el Canal de Panamá, los barcos suben una montaña de agua.
+- **linea:** El canal une el Atlántico y el Pacífico desde hace más de cien años.
+- **foco:** Cada barco sube unos 26 metros por esclusas hasta el lago Gatún, y luego baja del otro lado.
+- **lluvia:** Mide unos 80 kilómetros y cruzarlo toma entre 8 y 10 horas.
+- **gente:** Cada año cruzan por allí miles de barcos de todo el mundo.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Canal inaugurado en 1914; los barcos suben ≈ 26 m hasta el lago Gatún; ≈ 80 km — Autoridad del Canal de Panamá (ACP)
+
+## 174. Groenlandia no es tan grande
+*2026-12-20 · 21:10 · Instagram + YouTube · categoría: datos · episodio 86*
+
+- **portada:** En muchos mapas, Groenlandia parece tan grande como África. Pero es 14 veces más pequeña.
+- **comparacion:** África tiene unos 30 millones de kilómetros cuadrados; Groenlandia, unos 2.
+- **foco:** El mapa más usado, llamado Mercator, estira las zonas cercanas a los polos.
+- **lluvia:** Se hizo en 1569 para ayudar a los marinos a navegar con rumbo recto, no para comparar tamaños.
+- **gente:** Hoy hay mapas que respetan mejor las áreas, y otros que muestran el mundo con su verdadera proporción.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- África ≈ 30,4 M km²; Groenlandia ≈ 2,17 M km²; proyección de Mercator, 1569 — Encyclopaedia Britannica, «Mercator projection»; CIA World Factbook
+
+## 175. Tus pulmones tienen 480 millones
+*2026-12-21 · 10:20 · Facebook + YouTube · categoría: ciencia · episodio 88*
+
+- **portada:** Tus pulmones tienen cerca de 480 millones de bolsitas de aire.
+- **pila:** Se llaman alvéolos, y es donde el oxígeno pasa a tu sangre.
+- **foco:** Si los estiraras, tendrían una superficie de unos 70 metros cuadrados, más que un departamento pequeño.
+- **gente:** Respiras unas 20.000 veces al día, sin pensar en ello.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- ≈ 480 millones de alvéolos y ≈ 70 m² de superficie — Ochs et al. (2004), The Anatomical Record; American Lung Association
+
+> Nota: El número de alvéolos varía entre personas.
+
+## 176. El tren bala más puntual
+*2026-12-21 · 12:17 · Instagram + YouTube · categoría: ciencia · episodio 28*
+
+- **portada:** El tren bala japonés se atrasa, en promedio, menos de un minuto.
+- **linea:** El Shinkansen empezó a funcionar en 1964, justo antes de los Juegos Olímpicos de Tokio.
+- **foco:** Hoy algunos trenes superan los 300 kilómetros por hora.
+- **gente:** Sale cada pocos minutos y casi siempre llega a su hora exacta.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Shinkansen desde 1964; retraso medio < 1 minuto en la línea Tokaido; velocidad > 300 km/h — JR Central, «Shinkansen» y Encyclopaedia Britannica
+
+## 177. Los días se alargan
+*2026-12-21 · 15:30 · TikTok + YouTube · categoría: ciencia · episodio 30*
+
+- **portada:** Los días se alargan un poquito cada siglo.
+- **foco:** La Luna frena la rotación de la Tierra con las mareas, y cada siglo el día dura unos 2 milisegundos más.
+- **linea:** Hace mucho, los días eran más cortos.
+- **gente:** Pero es tan lento que ni siquiera lo notamos en toda una vida.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El día se alarga ≈ 1,7-2 ms por siglo por la fricción de las mareas — NASA y Observatorio Real de Bélgica; Stephenson, Morrison y Hohenkerk (2016)
+- Hace ≈ 400 M de años el día duraba ≈ 22 h (corales fósiles) — Wells (1963), Nature
+
+## 178. Lo más duro de tu cuerpo
+*2026-12-21 · 18:00 · TikTok · categoría: ciencia · episodio 90*
+
+- **portada:** La parte más dura de tu cuerpo es el esmalte de tus dientes.
+- **foco:** Es casi todo mineral, un 96 %, y es más duro que los huesos.
+- **lluvia:** Pero no se repara solo: si se desgasta o se pica, el cuerpo no fabrica esmalte nuevo.
+- **foco:** Por eso cuidarlo con cepillado, flúor y menos azúcar es tan importante.
+- **gente:** El esmalte protege la parte blanda de adentro, donde están los nervios.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El esmalte dental es la sustancia más dura del cuerpo humano, ≈ 96 % mineral — American Dental Association y Encyclopaedia Britannica, «Tooth enamel»
+
+## 179. El Pacífico y toda la tierra
+*2026-12-21 · 18:30 · Facebook + YouTube · categoría: ciencia · episodio 29*
+
+- **portada:** El océano Pacífico es más grande que toda la tierra firme.
+- **comparacion:** Cubre unos 165 millones de kilómetros cuadrados; todos los continentes juntos, unos 149.
+- **foco:** Es tan grande que ocupa casi un tercio de la superficie de la Tierra.
+- **gente:** Y tiene el punto más profundo del planeta: la fosa de las Marianas.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- Pacífico ≈ 165 M km²; superficie terrestre ≈ 149 M km² — NOAA, «How big is the Pacific Ocean?»
+
+## 180. El hueso más pequeño del cuerpo
+*2026-12-21 · 21:10 · Instagram + YouTube · categoría: ciencia · episodio 89*
+
+- **portada:** El hueso más pequeño del cuerpo está dentro de tu oído.
+- **foco:** Se llama estribo, mide unos tres milímetros, y pesa cerca de dos o tres miligramos.
+- **lluvia:** Junto con el martillo y el yunque, pasa las vibraciones del sonido al oído interno.
+- **comparacion:** El hueso más largo, el fémur, mide unos 45 centímetros: casi 150 veces más.
+- **gente:** Tienes tres huesecillos en cada oído, y están completamente formados desde antes de nacer.
+- **cierre:** ¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.
+
+**Fuentes:**
+- El estribo mide ≈ 3 mm y pesa ≈ 2-4 mg; es el hueso más pequeño del cuerpo humano — Encyclopaedia Britannica, «Stapes» y Cleveland Clinic

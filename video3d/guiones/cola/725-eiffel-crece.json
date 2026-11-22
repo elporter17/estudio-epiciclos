@@ -1,0 +1,58 @@
+{
+  "id": "eiffel-crece",
+  "temporada": 4,
+  "episodio": 25,
+  "titulo": "La Torre Eiffel crece en verano",
+  "categoria": "ciencia",
+  "destacar": [
+    "Eiffel",
+    "verano"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La Torre Eiffel crece unos 15 centímetros en verano.",
+      "objeto": "ciudad/building-type-m"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es de hierro, y el hierro se dilata con el calor: en un día muy caliente, la torre se alarga.",
+      "objeto": "ciudad/building-type-m",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "En invierno vuelve a encogerse, y el sol también la inclina unos centímetros hacia el lado opuesto.",
+      "objeto": "ciudad/building-type-m",
+      "cantidad": 90
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Mide unos 330 metros de alto, casi como un edificio de 80 pisos.",
+      "barras": [
+        {
+          "etiqueta": "Torre Eiffel",
+          "valor": 330,
+          "texto": "≈ 330 m",
+          "objeto": "ciudad/building-type-m"
+        },
+        {
+          "etiqueta": "Edificio de 10 pisos",
+          "valor": 35,
+          "texto": "≈ 35 m"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "ciudad/building-type-m"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "La torre puede crecer hasta ≈ 15 cm por la dilatación térmica; mide ≈ 330 m",
+      "fuente": "Sociedad de Explotación de la Torre Eiffel (SETE)"
+    }
+  ]
+}

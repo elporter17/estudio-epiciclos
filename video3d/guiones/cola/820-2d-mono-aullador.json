@@ -1,0 +1,55 @@
+{
+  "id": "d2c-mono-aullador",
+  "motor": "2d",
+  "episodio": 80,
+  "titulo": "El mono más ruidoso de América",
+  "categoria": "ciencia",
+  "destacar": [
+    "mono",
+    "aullador"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El mono aullador se oye a varios kilómetros.",
+      "objeto": "🐒"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Su grito se escucha en la selva a unos cinco kilómetros de distancia.",
+      "objeto": "🔊",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Tiene un hueso en la garganta, el hioides, grande y hueco, que amplifica el sonido.",
+      "objeto": "🦴",
+      "cantidad": 90
+    },
+    {
+      "tipo": "foco",
+      "texto": "Vive en los bosques de Honduras, y grita al amanecer y antes de la lluvia.",
+      "objeto": "🌳",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Con esos gritos, cada grupo avisa a los vecinos que ese territorio ya está ocupado.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El aullido del mono aullador se oye a ≈ 5 km; hioides agrandado",
+      "fuente": "Smithsonian National Zoo, «Howler monkey»; Encyclopaedia Britannica"
+    },
+    {
+      "dato": "El mono aullador de manto (Alouatta palliata) habita en Honduras",
+      "fuente": "Instituto de Conservación Forestal (ICF), Honduras"
+    }
+  ]
+}

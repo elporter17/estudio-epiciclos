@@ -1,0 +1,56 @@
+{
+  "id": "manati-cuero-salado",
+  "temporada": 4,
+  "episodio": 7,
+  "titulo": "El manatí de Cuero y Salado",
+  "categoria": "honduras",
+  "destacar": [
+    "manatí",
+    "Cuero"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En Honduras viven manatíes, los «vacas marinas» del Caribe.",
+      "objeto": "comida/fish"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Uno de los lugares donde se pueden ver es el refugio Cuero y Salado, cerca de La Ceiba.",
+      "objeto": "comida/fish",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Un manatí adulto puede medir unos tres metros y pesar cerca de 500 kilos, y se alimenta de plantas acuáticas.",
+      "objeto": "comida/fish",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Están en peligro, y la principal amenaza son los choques con lanchas y la pérdida de su hábitat.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Los recorridos en bote por los canales del refugio permiten ver monos, aves y, con suerte, un manatí.",
+      "objeto": "naturaleza/tree_palm",
+      "lado": 14
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/fish"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Refugio de Vida Silvestre Cuero y Salado, hábitat del manatí antillano",
+      "fuente": "Instituto de Conservación Forestal (ICF) y Fundación Cuero y Salado (FUCSA)"
+    },
+    {
+      "dato": "El manatí antillano: ≈ 3 m y ≈ 500 kg; está en peligro",
+      "fuente": "NOAA Fisheries y UICN"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "inuit-nieve",
+  "temporada": 4,
+  "episodio": 19,
+  "titulo": "Cien palabras para la nieve",
+  "categoria": "mito",
+  "destacar": [
+    "palabras",
+    "nieve"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: los inuit tienen cien palabras para decir nieve.",
+      "objeto": "naturaleza/tree_pineTallA"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Las lenguas inuit arman palabras largas pegando partes, así que cuentan las palabras de otra forma.",
+      "objeto": "naturaleza/tree_pineTallA",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Tienen varios términos para nieve, y también el español, el inglés y otras lenguas: «nevada», «ventisca», «aguanieve».",
+      "objeto": "naturaleza/tree_pineTallA",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "La cifra de cien se fue inflando con el tiempo, sin base en un estudio.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/tree_pineTallA"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El mito de las «cien palabras» para nieve no tiene respaldo lingüístico",
+      "fuente": "Pullum (1991), «The Great Eskimo Vocabulary Hoax»; Martin (1986), American Anthropologist"
+    }
+  ],
+  "nota": "El debate lingüístico sigue: depende de qué se considere una «palabra»."
+}

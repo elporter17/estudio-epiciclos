@@ -1,0 +1,46 @@
+{
+  "id": "perros-blanco-negro",
+  "temporada": 4,
+  "episodio": 16,
+  "titulo": "Los perros sí ven colores",
+  "categoria": "mito",
+  "destacar": [
+    "perros",
+    "colores"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: los perros ven todo en blanco y negro.",
+      "objeto": "comida/hot-dog"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Ven menos colores que nosotros: distinguen sobre todo azules y amarillos.",
+      "objeto": "comida/hot-dog",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "El rojo y el verde se ven para ellos como tonos de gris o de amarillo apagado.",
+      "objeto": "comida/hot-dog",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Por eso una pelota roja sobre el pasto verde puede ser difícil de ver para un perro.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/hot-dog"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Los perros tienen visión dicromática (azul y amarillo)",
+      "fuente": "Neitz, Geist y Jacobs (1989), Visual Neuroscience; American Kennel Club"
+    }
+  ]
+}

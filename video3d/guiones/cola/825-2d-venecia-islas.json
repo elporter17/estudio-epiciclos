@@ -1,0 +1,46 @@
+{
+  "id": "d2c-venecia-islas",
+  "motor": "2d",
+  "episodio": 85,
+  "titulo": "Venecia, una ciudad de islas",
+  "categoria": "datos",
+  "destacar": [
+    "Venecia",
+    "islas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Venecia está construida sobre más de cien islas.",
+      "objeto": "🛶"
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Son unas 118 islitas unidas por unos 400 puentes y separadas por canales.",
+      "objeto": "🌉",
+      "lado": 10
+    },
+    {
+      "tipo": "foco",
+      "texto": "La ciudad se levantó sobre troncos clavados en el fondo de una laguna.",
+      "objeto": "🪵",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cada año, la crecida del agua, llamada «acqua alta», inunda sus calles.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Venecia: ≈ 118 islas y ≈ 400 puentes",
+      "fuente": "UNESCO, «Venice and its Lagoon»",
+      "url": "https://whc.unesco.org/en/list/394"
+    }
+  ]
+}

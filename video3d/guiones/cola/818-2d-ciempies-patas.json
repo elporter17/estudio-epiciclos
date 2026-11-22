@@ -1,0 +1,51 @@
+{
+  "id": "d2c-ciempies-patas",
+  "motor": "2d",
+  "episodio": 78,
+  "titulo": "Ciempiés: nunca 100 patas",
+  "categoria": "curiosidad",
+  "destacar": [
+    "ciempiés",
+    "patas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Ningún ciempiés tiene exactamente cien patas.",
+      "objeto": "🐛"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Los ciempiés tienen un número impar de pares de patas, así que el total nunca es 100.",
+      "objeto": "🦶",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Hay especies con menos de treinta patas y otras con más de trescientas.",
+      "objeto": "🔢",
+      "cantidad": 90
+    },
+    {
+      "tipo": "foco",
+      "texto": "Los milpiés, que se parecen, tienen dos pares de patas por segmento y caminan más despacio.",
+      "objeto": "🐌",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "El nombre es un poco exagerado, pero algunos tienen muchas más de cien.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Los ciempiés (quilópodos) siempre tienen un número impar de pares de patas (de 15 a 191)",
+      "fuente": "Museo de Historia Natural de Londres y Arkive"
+    }
+  ]
+}

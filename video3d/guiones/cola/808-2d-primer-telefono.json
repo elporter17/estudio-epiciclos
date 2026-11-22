@@ -1,0 +1,64 @@
+{
+  "id": "d2c-primer-telefono",
+  "motor": "2d",
+  "episodio": 68,
+  "titulo": "La primera llamada de teléfono",
+  "categoria": "historia",
+  "destacar": [
+    "teléfono",
+    "Bell"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La primera llamada de teléfono fue una petición de ayuda.",
+      "objeto": "☎️"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Fue el 10 de marzo de 1876, y la hizo Alexander Graham Bell a su ayudante.",
+      "objeto": "☎️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Según su cuaderno, le dijo: «Señor Watson, venga aquí, quiero verlo».",
+      "objeto": "🗣️",
+      "cantidad": 90
+    },
+    {
+      "tipo": "linea",
+      "texto": "Bell había patentado el teléfono solo unas semanas antes.",
+      "hitos": [
+        {
+          "anio": 1876,
+          "texto": "Bell patenta el teléfono",
+          "objeto": "☎️"
+        },
+        {
+          "anio": 1877,
+          "texto": "Nace la compañía Bell"
+        },
+        {
+          "anio": 1927,
+          "texto": "Primera llamada transatlántica"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hoy hay más celulares que personas en el planeta.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Primera llamada: 10 de marzo de 1876; patente de Bell: 7 de marzo de 1876",
+      "fuente": "Biblioteca del Congreso de EE. UU., «Alexander Graham Bell Family Papers»"
+    }
+  ]
+}

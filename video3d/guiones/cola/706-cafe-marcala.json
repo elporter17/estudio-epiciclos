@@ -1,0 +1,62 @@
+{
+  "id": "cafe-marcala",
+  "temporada": 4,
+  "episodio": 6,
+  "titulo": "Café Marcala, el primero",
+  "categoria": "honduras",
+  "destacar": [
+    "café",
+    "Marcala"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El café de Marcala fue el primero de Centroamérica con denominación de origen.",
+      "objeto": "comida/cup-coffee"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Marcala es un municipio de La Paz, en las montañas del occidente de Honduras.",
+      "hitos": [
+        {
+          "anio": 2005,
+          "texto": "Café Marcala recibe la denominación de origen",
+          "objeto": "comida/cup-coffee"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Una denominación de origen certifica que un producto viene de una zona específica y cumple ciertas reglas de calidad.",
+      "objeto": "comida/cup-coffee",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Allí se cultiva a gran altura, y sus cafés se conocen por ser dulces y de buen cuerpo.",
+      "objeto": "naturaleza/plant_bush",
+      "lado": 16
+    },
+    {
+      "tipo": "gente",
+      "texto": "Honduras es el mayor productor de café de Centroamérica.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/cup-coffee"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Café Marcala: primera denominación de origen para el café en Honduras y en Centroamérica (2005)",
+      "fuente": "Instituto Hondureño del Café (IHCAFE) y Secretaría de Agricultura"
+    },
+    {
+      "dato": "Honduras: mayor productor de café de Centroamérica",
+      "fuente": "Organización Internacional del Café (ICO)"
+    }
+  ],
+  "nota": "La posición como mayor productor puede cambiar de un año a otro."
+}

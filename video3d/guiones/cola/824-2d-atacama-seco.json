@@ -1,0 +1,68 @@
+{
+  "id": "d2c-atacama-seco",
+  "motor": "2d",
+  "episodio": 84,
+  "titulo": "El desierto sin lluvia",
+  "categoria": "datos",
+  "destacar": [
+    "Atacama",
+    "lluvia"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El desierto de Atacama es uno de los lugares más secos del mundo.",
+      "objeto": "🏜️"
+    },
+    {
+      "tipo": "foco",
+      "texto": "En algunas zonas puede pasar años sin una sola gota de lluvia.",
+      "objeto": "☀️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "En el pueblo de Arica llueven apenas 0,5 milímetros al año.",
+      "barras": [
+        {
+          "etiqueta": "Arica (Atacama)",
+          "valor": 0.5,
+          "texto": "≈ 0,5 mm/año",
+          "objeto": "🏜️"
+        },
+        {
+          "etiqueta": "San Pedro Sula",
+          "valor": 1400,
+          "texto": "≈ 1.400 mm/año",
+          "objeto": "🌧️"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es tan árido que los científicos lo usan para probar equipos de la NASA para Marte.",
+      "objeto": "🚀",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y como casi no hay nubes, tiene uno de los cielos más claros para ver estrellas.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Arica promedia ≈ 0,5 mm de lluvia al año; Atacama es el desierto no polar más seco",
+      "fuente": "Servicio Meteorológico de Chile y NASA (Atacama como análogo de Marte)"
+    },
+    {
+      "dato": "San Pedro Sula: ≈ 1.400 mm de lluvia al año",
+      "fuente": "Servicio Meteorológico Nacional de Honduras (promedio histórico)"
+    }
+  ],
+  "nota": "La cifra de San Pedro Sula es un promedio aproximado."
+}

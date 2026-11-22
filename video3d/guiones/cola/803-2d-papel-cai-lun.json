@@ -1,0 +1,69 @@
+{
+  "id": "d2c-papel-cai-lun",
+  "motor": "2d",
+  "episodio": 63,
+  "titulo": "El papel nació en China",
+  "categoria": "historia",
+  "destacar": [
+    "papel",
+    "China"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El papel se inventó en China, según la tradición, en el año 105.",
+      "objeto": "📜"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Un funcionario de la corte, Cai Lun, presentó un papel hecho con corteza, trapos y redes de pescar.",
+      "objeto": "🎣",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "Antes se escribía en seda, bambú, piedra y pergamino, que eran pesados o muy caros.",
+      "hitos": [
+        {
+          "anio": 105,
+          "texto": "Cai Lun presenta el papel",
+          "objeto": "📜"
+        },
+        {
+          "anio": 751,
+          "texto": "El papel llega al mundo árabe"
+        },
+        {
+          "anio": 1150,
+          "texto": "Llega a Europa"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Con el tiempo, el papel hizo posible la imprenta y la difusión de los libros.",
+      "objeto": "📚",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hoy se producen más de 400 millones de toneladas de papel y cartón al año.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Cai Lun presentó el papel al emperador en el año 105; llegó a Europa ≈ siglo XII",
+      "fuente": "Encyclopaedia Britannica, «Paper»; Biblioteca Británica"
+    },
+    {
+      "dato": "Producción mundial de papel y cartón ≈ 400 millones de toneladas al año",
+      "fuente": "FAO, FAOSTAT (productos forestales)"
+    }
+  ],
+  "nota": "Hay hallazgos de papel más antiguos que Cai Lun, así que su fecha es la tradicional."
+}

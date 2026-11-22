@@ -1,0 +1,62 @@
+{
+  "id": "avion-al-sol",
+  "temporada": 4,
+  "episodio": 23,
+  "titulo": "Un avión tardaría 19 años",
+  "categoria": "ciencia",
+  "destacar": [
+    "avión",
+    "19"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Si un avión volara hasta el Sol, tardaría unos 19 años.",
+      "objeto": "autos/suv"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "El Sol está a unos 150 millones de kilómetros de la Tierra.",
+      "barras": [
+        {
+          "etiqueta": "Tierra al Sol",
+          "valor": 150,
+          "texto": "≈ 150 M km",
+          "objeto": "moneda"
+        },
+        {
+          "etiqueta": "Tierra a la Luna",
+          "valor": 0.384,
+          "texto": "384.000 km"
+        }
+      ]
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "A 900 kilómetros por hora, el viaje duraría casi 19 años seguidos, sin parar.",
+      "objeto": "autos/suv",
+      "cantidad": 90,
+      "contador": {
+        "desde": 0,
+        "hasta": 19,
+        "unidad": "años"
+      }
+    },
+    {
+      "tipo": "gente",
+      "texto": "La luz, en cambio, llega en poco más de 8 minutos.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Distancia media Tierra-Sol ≈ 149,6 millones de km; a 900 km/h son ≈ 19 años",
+      "fuente": "NASA, «Sun Fact Sheet»; cálculo directo"
+    }
+  ]
+}

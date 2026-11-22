@@ -1,0 +1,56 @@
+{
+  "id": "d2c-mosquito-hembras",
+  "motor": "2d",
+  "episodio": 76,
+  "titulo": "Solo las mosquitas pican",
+  "categoria": "ciencia",
+  "destacar": [
+    "mosquitos",
+    "pican"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Solo las hembras de los mosquitos pican.",
+      "objeto": "🦟"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Necesitan las proteínas de la sangre para producir sus huevos.",
+      "objeto": "🩸",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Los machos y las hembras, el resto del tiempo, se alimentan del néctar de las flores.",
+      "objeto": "🌸",
+      "lado": 10
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Cada hembra puede poner cientos de huevos en un pequeño charco de agua.",
+      "objeto": "🥚",
+      "cantidad": 100,
+      "contador": {
+        "desde": 0,
+        "hasta": 300,
+        "unidad": "huevos"
+      }
+    },
+    {
+      "tipo": "gente",
+      "texto": "Eliminar el agua estancada de macetas y llantas es la forma más sencilla de reducir los mosquitos.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Solo las hembras se alimentan de sangre, para el desarrollo de los huevos",
+      "fuente": "Organización Mundial de la Salud (OMS) y Centros para el Control de Enfermedades (CDC), «Mosquito life cycle»"
+    }
+  ]
+}

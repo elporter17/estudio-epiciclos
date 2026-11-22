@@ -1,0 +1,46 @@
+{
+  "id": "fases-sombra",
+  "temporada": 4,
+  "episodio": 12,
+  "titulo": "Las fases no son sombra",
+  "categoria": "mito",
+  "destacar": [
+    "fases",
+    "Luna"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: las fases de la Luna son la sombra de la Tierra.",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Esa sombra solo aparece en los eclipses de Luna, que son raros.",
+      "objeto": "moneda",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Las fases dependen de cuánta parte de la cara iluminada de la Luna vemos desde la Tierra, mientras da la vuelta.",
+      "objeto": "moneda",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Por eso la Luna completa sus fases en unos 29 días y medio.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Las fases se deben a la posición relativa Sol-Tierra-Luna; ciclo de ≈ 29,5 días",
+      "fuente": "NASA, «Moon Phases»"
+    }
+  ]
+}

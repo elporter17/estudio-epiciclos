@@ -1,0 +1,63 @@
+{
+  "id": "d2c-estribo-hueso",
+  "motor": "2d",
+  "episodio": 89,
+  "titulo": "El hueso más pequeño del cuerpo",
+  "categoria": "ciencia",
+  "destacar": [
+    "estribo",
+    "hueso"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El hueso más pequeño del cuerpo está dentro de tu oído.",
+      "objeto": "👂"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Se llama estribo, mide unos tres milímetros, y pesa cerca de dos o tres miligramos.",
+      "objeto": "🦴",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Junto con el martillo y el yunque, pasa las vibraciones del sonido al oído interno.",
+      "objeto": "🔔",
+      "cantidad": 90
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "El hueso más largo, el fémur, mide unos 45 centímetros: casi 150 veces más.",
+      "barras": [
+        {
+          "etiqueta": "Fémur",
+          "valor": 450,
+          "texto": "≈ 450 mm",
+          "objeto": "🦴"
+        },
+        {
+          "etiqueta": "Estribo",
+          "valor": 3,
+          "texto": "≈ 3 mm",
+          "objeto": "👂"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Tienes tres huesecillos en cada oído, y están completamente formados desde antes de nacer.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El estribo mide ≈ 3 mm y pesa ≈ 2-4 mg; es el hueso más pequeño del cuerpo humano",
+      "fuente": "Encyclopaedia Britannica, «Stapes» y Cleveland Clinic"
+    }
+  ]
+}

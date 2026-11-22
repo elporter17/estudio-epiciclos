@@ -1,0 +1,64 @@
+{
+  "id": "d2c-aguila-vista",
+  "motor": "2d",
+  "episodio": 74,
+  "titulo": "La vista del águila",
+  "categoria": "ciencia",
+  "destacar": [
+    "águila",
+    "vista"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Un águila puede ver un conejo desde más de tres kilómetros.",
+      "objeto": "🦅"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Su vista es varias veces más aguda que la nuestra: ve detalles pequeños desde mucho más lejos.",
+      "objeto": "🔍",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Ven mejor porque sus ojos son grandes y tienen muchas más células sensibles a la luz.",
+      "barras": [
+        {
+          "etiqueta": "Águila",
+          "valor": 4,
+          "texto": "hasta 4 veces",
+          "objeto": "🦅"
+        },
+        {
+          "etiqueta": "Persona",
+          "valor": 1,
+          "texto": "1 vez",
+          "objeto": "🧍"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Cada ojo es casi tan grande como el de una persona, aunque la cabeza es mucho más pequeña.",
+      "objeto": "👁️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cazan con la vista: ven la presa a gran distancia, y bajan en picada.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "La agudeza visual de algunas águilas es hasta ≈ 4 veces la humana",
+      "fuente": "Reymond (1985), Vision Research; Audubon Society"
+    }
+  ],
+  "nota": "La ventaja depende de la especie y de cómo se mida."
+}

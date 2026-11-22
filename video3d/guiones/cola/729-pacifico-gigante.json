@@ -1,0 +1,58 @@
+{
+  "id": "pacifico-gigante",
+  "temporada": 4,
+  "episodio": 29,
+  "titulo": "El Pacífico y toda la tierra",
+  "categoria": "ciencia",
+  "destacar": [
+    "Pacífico",
+    "tierra"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El océano Pacífico es más grande que toda la tierra firme.",
+      "objeto": "botella"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Cubre unos 165 millones de kilómetros cuadrados; todos los continentes juntos, unos 149.",
+      "barras": [
+        {
+          "etiqueta": "Océano Pacífico",
+          "valor": 165,
+          "texto": "≈ 165 M km²",
+          "objeto": "botella"
+        },
+        {
+          "etiqueta": "Todos los continentes",
+          "valor": 149,
+          "texto": "≈ 149 M km²",
+          "objeto": "naturaleza/tree_default"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es tan grande que ocupa casi un tercio de la superficie de la Tierra.",
+      "objeto": "botella",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y tiene el punto más profundo del planeta: la fosa de las Marianas.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "botella"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Pacífico ≈ 165 M km²; superficie terrestre ≈ 149 M km²",
+      "fuente": "NOAA, «How big is the Pacific Ocean?»"
+    }
+  ]
+}

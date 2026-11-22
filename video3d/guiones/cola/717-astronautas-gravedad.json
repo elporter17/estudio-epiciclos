@@ -1,0 +1,46 @@
+{
+  "id": "astronautas-gravedad",
+  "temporada": 4,
+  "episodio": 17,
+  "titulo": "En la Estación sí hay gravedad",
+  "categoria": "mito",
+  "destacar": [
+    "gravedad",
+    "astronautas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: los astronautas flotan porque no hay gravedad.",
+      "objeto": "balon"
+    },
+    {
+      "tipo": "foco",
+      "texto": "A la altura de la Estación Espacial, la gravedad todavía es cerca del 90 % de la que sentimos en el suelo.",
+      "objeto": "balon",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Flotan porque están en caída libre: la Estación cae sin parar alrededor de la Tierra, y ellos con ella.",
+      "objeto": "balon",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Se llama microgravedad: es como un ascensor que cae, pero nunca llega al suelo.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "balon"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "A ≈ 400 km de altura la gravedad es ≈ 90 % de la de la superficie; la sensación de ingravidez es caída libre",
+      "fuente": "NASA, «What is microgravity?»"
+    }
+  ]
+}

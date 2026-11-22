@@ -1,0 +1,65 @@
+{
+  "id": "d2c-rayos-x-curie",
+  "motor": "2d",
+  "episodio": 66,
+  "titulo": "La primera radiografía",
+  "categoria": "historia",
+  "destacar": [
+    "radiografía",
+    "Röntgen"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La primera radiografía fue de la mano de la esposa de su inventor.",
+      "objeto": "🩻"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Wilhelm Röntgen descubrió los rayos X en noviembre de 1895, mientras investigaba otra cosa.",
+      "objeto": "🔬",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Pocas semanas después, tomó la imagen de la mano de su esposa, donde se veían los huesos y su anillo.",
+      "objeto": "💍",
+      "cantidad": 90
+    },
+    {
+      "tipo": "linea",
+      "texto": "El descubrimiento se difundió por el mundo en meses.",
+      "hitos": [
+        {
+          "anio": 1895,
+          "texto": "Röntgen descubre los rayos X",
+          "objeto": "🩻"
+        },
+        {
+          "anio": 1896,
+          "texto": "Se usan para ver fracturas"
+        },
+        {
+          "anio": 1901,
+          "texto": "Primer Nobel de Física"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Hoy se usan para ver huesos, dientes y también el interior de las maletas.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Descubrimiento de los rayos X (1895); primer Nobel de Física (1901) para Röntgen",
+      "fuente": "NobelPrize.org, «Wilhelm Conrad Röntgen – Facts»",
+      "url": "https://www.nobelprize.org/prizes/physics/1901/rontgen/facts/"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "elefante-raton",
+  "temporada": 4,
+  "episodio": 21,
+  "titulo": "Elefantes y ratones",
+  "categoria": "mito",
+  "destacar": [
+    "elefantes",
+    "ratones"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: los elefantes se asustan con los ratones.",
+      "objeto": "comida/cheese"
+    },
+    {
+      "tipo": "foco",
+      "texto": "No hay ninguna prueba de que lo hagan: es un cuento popular que se repite desde hace siglos.",
+      "objeto": "comida/cheese",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Cuando un experimento puso ratones en el camino de los elefantes, ellos casi no reaccionaron.",
+      "objeto": "comida/cheese",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Lo que sí les molesta son animales más grandes que pueden amenazar a las crías, y las abejas.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/cheese"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "No hay evidencia de que los elefantes teman a los ratones; sí reaccionan a las abejas",
+      "fuente": "King, Douglas-Hamilton y Vollrath (2007), Current Biology; Smithsonian National Zoo"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "roatan-piratas",
+  "temporada": 4,
+  "episodio": 2,
+  "titulo": "Roatán, refugio de piratas",
+  "categoria": "honduras",
+  "destacar": [
+    "Roatán",
+    "piratas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Las islas de Honduras fueron un escondite de piratas.",
+      "objeto": "naturaleza/canoe"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Roatán y las otras Islas de la Bahía, en el Caribe, tenían puertos naturales donde los barcos podían esconderse.",
+      "objeto": "naturaleza/canoe",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Piratas como Henry Morgan las usaron como base en el siglo XVII para atacar a los barcos españoles.",
+      "objeto": "naturaleza/tree_palm",
+      "cantidad": 90
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Hoy esas aguas son famosas por sus arrecifes de coral y por el buceo.",
+      "objeto": "naturaleza/tree_palm",
+      "lado": 14
+    },
+    {
+      "tipo": "gente",
+      "texto": "Roatán recibe cada año miles de turistas, entre ellos visitantes de los cruceros.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/canoe"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Las Islas de la Bahía fueron refugio y base de piratas y corsarios en los siglos XVII y XVIII",
+      "fuente": "Encyclopaedia Britannica, «Bay Islands»"
+    }
+  ],
+  "nota": "Qué pirata usó qué isla, y cuándo, varía según las fuentes."
+}

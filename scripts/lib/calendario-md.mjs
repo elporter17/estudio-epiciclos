@@ -37,7 +37,7 @@ const n3 = dias.flatMap((d) => Object.entries(d.fila)).filter(([t]) => !/^dos/.t
 const fin = dias.at(-1).fecha, aviso = dias[Math.max(0, dias.length - 3)].fecha;
 out.push('## Resumen\n', `- **${n3} videos 3D** y **${n2} videos 2D** programados: ${dias.length} días con 6 videos al día, del ${bonito(inicio)} al ${bonito(fin)}.`,
   `- Se acaban el **${bonito(fin)}**. El bot avisa cuando quedan 6 guiones de un tipo (hacia el ${bonito(aviso)}), así que las próximas tandas conviene tenerlas listas antes del ${bonito(dias[Math.max(0, dias.length - 6)].fecha)}.`,
-  `- Por tipo de guion 3D: Temporada 2 (mitos, Honduras y escala), Temporada 3 (mitos, Honduras y escala). 2D: dos tandas de 30 (ciencia, historia, animales, tecnología, comida y geografía).`,
+  `- 3D: temporadas 2, 3 y 4 (mitos, Honduras y escala). 2D: tres tandas de 30 (ciencia, historia, inventos, animales, cuerpo humano, comida y geografía).`,
   '- Los 3D de Honduras 🇭🇳 salen a las 18:30 en Facebook (prueba de contenido local) y se compararán con el resto.');
 fs.writeFileSync(path.join(ROOT, 'docs', 'calendario.md'), out.join('\n') + '\n');
 console.log(`${dias.length} días, ${n3} 3D + ${n2} 2D → docs/calendario.md`);

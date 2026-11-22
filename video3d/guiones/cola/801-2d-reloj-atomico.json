@@ -1,0 +1,64 @@
+{
+  "id": "d2c-reloj-atomico",
+  "motor": "2d",
+  "episodio": 61,
+  "titulo": "Un reloj que casi no se atrasa",
+  "categoria": "ciencia",
+  "destacar": [
+    "reloj",
+    "atómico"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Los mejores relojes atómicos casi no se atrasan en cientos de millones de años.",
+      "objeto": "⏱️"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Un reloj atómico mide el tiempo con las vibraciones de los átomos, que son siempre iguales.",
+      "objeto": "⚛️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "El reloj atómico del NIST, en Estados Unidos, se atrasaría solo un segundo cada 300 millones de años.",
+      "barras": [
+        {
+          "etiqueta": "Reloj atómico NIST-F2",
+          "valor": 300,
+          "texto": "1 s en 300 M años",
+          "objeto": "⏱️"
+        },
+        {
+          "etiqueta": "Reloj de cuarzo",
+          "valor": 0.00003,
+          "texto": "1 s en 30.000 años",
+          "objeto": "⌚"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Desde 1967, el segundo se define con los átomos de cesio y no con el giro de la Tierra.",
+      "objeto": "🌍",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Gracias a ellos funcionan el GPS, los bancos y la hora de tu celular.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "NIST-F2: se atrasaría 1 s en ≈ 300 millones de años; el segundo se define desde 1967 con el cesio-133",
+      "fuente": "NIST, «NIST-F2 Cesium Fountain Atomic Clock»; BIPM"
+    }
+  ],
+  "nota": "Los relojes ópticos más nuevos son todavía más precisos."
+}

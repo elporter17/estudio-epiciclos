@@ -1,0 +1,63 @@
+{
+  "id": "d2c-buho-cuello",
+  "motor": "2d",
+  "episodio": 75,
+  "titulo": "El búho gira el cuello 270°",
+  "categoria": "ciencia",
+  "destacar": [
+    "búho",
+    "cuello"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El búho puede girar la cabeza hasta unos 270 grados.",
+      "objeto": "🦉"
+    },
+    {
+      "tipo": "foco",
+      "texto": "No puede mover los ojos, que están fijos en su cabeza, así que gira todo el cuello.",
+      "objeto": "👁️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Tiene 14 huesos en el cuello, el doble que una persona.",
+      "barras": [
+        {
+          "etiqueta": "Búho",
+          "valor": 14,
+          "texto": "14 vértebras",
+          "objeto": "🦉"
+        },
+        {
+          "etiqueta": "Persona",
+          "valor": 7,
+          "texto": "7 vértebras",
+          "objeto": "🧍"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Además tiene vasos sanguíneos especiales que evitan que se corte el flujo de sangre al cerebro.",
+      "objeto": "🩸",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Así vigila en todas direcciones sin mover el cuerpo y sin hacer ruido.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Los búhos giran el cuello ≈ 270°; tienen 14 vértebras cervicales y adaptaciones vasculares",
+      "fuente": "Krings et al. (2017), Science; Smithsonian"
+    }
+  ]
+}

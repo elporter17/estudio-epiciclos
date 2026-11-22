@@ -1,0 +1,58 @@
+{
+  "id": "himno-nacional",
+  "temporada": 4,
+  "episodio": 1,
+  "titulo": "El himno nacional de Honduras",
+  "categoria": "honduras",
+  "destacar": [
+    "himno",
+    "Honduras"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El himno nacional de Honduras tiene una historia de más de cien años.",
+      "objeto": "libro"
+    },
+    {
+      "tipo": "foco",
+      "texto": "La letra es de Augusto Constancio Coello y la música, del compositor alemán Carlos Hartling.",
+      "objeto": "libro",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "Se hizo oficial a principios del siglo XX.",
+      "hitos": [
+        {
+          "anio": 1915,
+          "texto": "El Congreso lo declara himno nacional",
+          "objeto": "libro"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "El himno tiene siete estrofas, pero en los actos oficiales casi siempre se canta el coro y una o dos estrofas.",
+      "objeto": "libro",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cada año, millones de estudiantes lo cantan en los actos cívicos de septiembre.",
+      "cantidad": 28
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "libro"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Letra de Augusto C. Coello, música de Carlos Hartling; declarado himno nacional en 1915",
+      "fuente": "Secretaría de Cultura, Artes y Deportes de Honduras"
+    }
+  ],
+  "nota": "El número de estrofas que se cantan varía según el acto."
+}

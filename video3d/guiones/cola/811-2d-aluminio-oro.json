@@ -1,0 +1,64 @@
+{
+  "id": "d2c-aluminio-oro",
+  "motor": "2d",
+  "episodio": 71,
+  "titulo": "El aluminio valió más que el oro",
+  "categoria": "historia",
+  "destacar": [
+    "aluminio",
+    "oro"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Hubo un tiempo en que el aluminio valía más que el oro.",
+      "objeto": "🥄"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Aunque hay mucho aluminio en la Tierra, estaba pegado a otros materiales, y separarlo era carísimo.",
+      "objeto": "🪨",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "En 1884 se coronó el Monumento a Washington con una pieza de aluminio, como un lujo.",
+      "hitos": [
+        {
+          "anio": 1884,
+          "texto": "Aluminio en el Monumento a Washington",
+          "objeto": "🥄"
+        },
+        {
+          "anio": 1886,
+          "texto": "Un método barato lo abarata"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Hoy se hacen latas, aviones y bicicletas con él, y es uno de los metales más reciclados.",
+      "objeto": "🥫",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Reciclar aluminio gasta alrededor de un 5 % de la energía de producirlo desde cero.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "En 1884 se colocó una punta de aluminio de ≈ 2,8 kg en el Monumento a Washington; en 1886 se inventó el proceso Hall-Héroult",
+      "fuente": "Servicio de Parques Nacionales de EE. UU. y Encyclopaedia Britannica, «Aluminum»"
+    },
+    {
+      "dato": "Reciclar aluminio ahorra ≈ 95 % de la energía",
+      "fuente": "The Aluminum Association"
+    }
+  ]
+}

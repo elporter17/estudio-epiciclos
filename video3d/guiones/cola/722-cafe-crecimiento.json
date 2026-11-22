@@ -1,0 +1,46 @@
+{
+  "id": "cafe-crecimiento",
+  "temporada": 4,
+  "episodio": 22,
+  "titulo": "El café no frena el crecimiento",
+  "categoria": "mito",
+  "destacar": [
+    "café",
+    "crecimiento"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mito: tomar café de niño te hace crecer menos.",
+      "objeto": "comida/cup-coffee"
+    },
+    {
+      "tipo": "foco",
+      "texto": "No hay estudios que muestren que el café reduzca la estatura final.",
+      "objeto": "comida/cup-coffee",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Lo que sí puede hacer en niños y adolescentes es quitarles el sueño y ponerlos nerviosos.",
+      "objeto": "comida/cup-coffee",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Por eso se recomienda que no tomen mucha cafeína, aunque no afecte los huesos.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "comida/cup-coffee"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "No hay evidencia de que el café afecte la estatura; sí puede alterar el sueño",
+      "fuente": "Academia Estadounidense de Pediatría y Mayo Clinic"
+    }
+  ]
+}

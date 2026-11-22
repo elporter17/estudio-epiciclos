@@ -1,0 +1,60 @@
+{
+  "id": "d2c-arcoiris-siete",
+  "motor": "2d",
+  "episodio": 69,
+  "titulo": "El arcoíris y sus siete colores",
+  "categoria": "ciencia",
+  "destacar": [
+    "arcoíris",
+    "siete"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El arcoíris no tiene siete colores: tiene infinitos.",
+      "objeto": "🌈"
+    },
+    {
+      "tipo": "foco",
+      "texto": "La luz blanca se separa en una banda continua, donde cada color se mezcla con el siguiente.",
+      "objeto": "🌈",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "El número siete lo escogió Isaac Newton, quizá porque eran siete las notas musicales.",
+      "objeto": "🎵",
+      "cantidad": 90
+    },
+    {
+      "tipo": "linea",
+      "texto": "Antes de él, se hablaba de menos colores.",
+      "hitos": [
+        {
+          "anio": 1666,
+          "texto": "Newton separa la luz con un prisma",
+          "objeto": "🌈"
+        },
+        {
+          "anio": 1704,
+          "texto": "Publica su «Óptica» con siete colores"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cuántos colores ves en un arcoíris depende también de tu idioma y de tu cultura.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El espectro es continuo; Newton propuso siete colores en su «Opticks» (1704)",
+      "fuente": "Royal Society y Encyclopaedia Britannica, «Rainbow»"
+    }
+  ]
+}

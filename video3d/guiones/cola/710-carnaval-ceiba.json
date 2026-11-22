@@ -1,0 +1,52 @@
+{
+  "id": "carnaval-ceiba",
+  "temporada": 4,
+  "episodio": 10,
+  "titulo": "El carnaval de La Ceiba",
+  "categoria": "honduras",
+  "destacar": [
+    "carnaval",
+    "Ceiba"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El carnaval de La Ceiba es la fiesta más grande de la costa hondureña.",
+      "objeto": "naturaleza/tree_palm"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Se celebra cada mayo, en honor a San Isidro Labrador, patrono de la ciudad.",
+      "objeto": "naturaleza/tree_palm",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "El gran desfile reúne comparsas, carrozas y bailarines en la avenida San Isidro.",
+      "cantidad": 28
+    },
+    {
+      "tipo": "foco",
+      "texto": "Atrae a miles de visitantes de Honduras y de otros países.",
+      "objeto": "naturaleza/tree_palm",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Y la ciudad es la puerta de entrada a Pico Bonito, las playas y las Islas de la Bahía.",
+      "objeto": "naturaleza/tree_default",
+      "cantidad": 90
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/tree_palm"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Feria y Gran Carnaval de La Ceiba en mayo, en honor a San Isidro Labrador",
+      "fuente": "Instituto Hondureño de Turismo y municipalidad de La Ceiba"
+    }
+  ]
+}

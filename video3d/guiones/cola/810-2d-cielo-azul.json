@@ -1,0 +1,51 @@
+{
+  "id": "d2c-cielo-azul",
+  "motor": "2d",
+  "episodio": 70,
+  "titulo": "Por qué el cielo es azul",
+  "categoria": "ciencia",
+  "destacar": [
+    "cielo",
+    "azul"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El cielo es azul porque el aire dispersa más la luz azul.",
+      "objeto": "🌤️"
+    },
+    {
+      "tipo": "foco",
+      "texto": "La luz del Sol parece blanca, pero lleva todos los colores mezclados.",
+      "objeto": "☀️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Al chocar con las moléculas del aire, la luz azul se dispersa mucho más que la roja, y llega a tus ojos desde todas partes.",
+      "objeto": "🔵",
+      "cantidad": 90
+    },
+    {
+      "tipo": "foco",
+      "texto": "Por eso los atardeceres son rojizos: la luz atraviesa más aire y el azul se dispersa por el camino.",
+      "objeto": "🌅",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "En la Luna, sin aire, el cielo se ve negro aun de día.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Dispersión de Rayleigh: la luz azul se dispersa mucho más que la roja en la atmósfera",
+      "fuente": "NASA, «Why is the sky blue?»"
+    }
+  ]
+}

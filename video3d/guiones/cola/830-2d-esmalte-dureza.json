@@ -1,0 +1,51 @@
+{
+  "id": "d2c-esmalte-dureza",
+  "motor": "2d",
+  "episodio": 90,
+  "titulo": "Lo más duro de tu cuerpo",
+  "categoria": "ciencia",
+  "destacar": [
+    "esmalte",
+    "dientes"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La parte más dura de tu cuerpo es el esmalte de tus dientes.",
+      "objeto": "🦷"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es casi todo mineral, un 96 %, y es más duro que los huesos.",
+      "objeto": "🪨",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Pero no se repara solo: si se desgasta o se pica, el cuerpo no fabrica esmalte nuevo.",
+      "objeto": "🚫",
+      "cantidad": 90
+    },
+    {
+      "tipo": "foco",
+      "texto": "Por eso cuidarlo con cepillado, flúor y menos azúcar es tan importante.",
+      "objeto": "🪥",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "El esmalte protege la parte blanda de adentro, donde están los nervios.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El esmalte dental es la sustancia más dura del cuerpo humano, ≈ 96 % mineral",
+      "fuente": "American Dental Association y Encyclopaedia Britannica, «Tooth enamel»"
+    }
+  ]
+}

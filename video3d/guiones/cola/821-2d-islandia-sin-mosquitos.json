@@ -1,0 +1,46 @@
+{
+  "id": "d2c-islandia-sin-mosquitos",
+  "motor": "2d",
+  "episodio": 81,
+  "titulo": "Islandia no tiene mosquitos",
+  "categoria": "curiosidad",
+  "destacar": [
+    "Islandia",
+    "mosquitos"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Islandia es uno de los pocos lugares del mundo sin mosquitos.",
+      "objeto": "🇮🇸"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Allí no viven mosquitos de forma estable, aunque sí hay moscas y otros insectos.",
+      "objeto": "🦟",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Una posible razón es el clima: los cambios bruscos entre helada y deshielo les cuesta mucho.",
+      "objeto": "🥶",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "La Antártida tampoco los tiene, y casi todo el resto del planeta sí.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Islandia no tiene mosquitos residentes",
+      "fuente": "Instituto Islandés de Historia Natural y Encyclopaedia Britannica, «Iceland»"
+    }
+  ],
+  "nota": "Se han encontrado mosquitos aislados que llegaron por barcos o aviones."
+}

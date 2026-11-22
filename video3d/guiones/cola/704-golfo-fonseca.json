@@ -1,0 +1,69 @@
+{
+  "id": "golfo-fonseca",
+  "temporada": 4,
+  "episodio": 4,
+  "titulo": "El golfo de tres países",
+  "categoria": "honduras",
+  "destacar": [
+    "golfo",
+    "Fonseca"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Honduras tiene una costa en el Pacífico, y la comparte con dos países.",
+      "objeto": "naturaleza/canoe"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El golfo de Fonseca lo comparten Honduras, El Salvador y Nicaragua.",
+      "objeto": "naturaleza/canoe",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Honduras tiene mucha más costa en el Caribe que en el Pacífico.",
+      "barras": [
+        {
+          "etiqueta": "Costa del Caribe",
+          "valor": 670,
+          "texto": "≈ 670 km",
+          "objeto": "naturaleza/tree_palm"
+        },
+        {
+          "etiqueta": "Costa del Pacífico",
+          "valor": 150,
+          "texto": "≈ 150 km",
+          "objeto": "naturaleza/canoe"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Allí está Amapala, un puerto en la isla del Tigre, un antiguo volcán dentro del golfo.",
+      "objeto": "naturaleza/rock_largeA",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Esa pequeña costa es la salida de Honduras al océano Pacífico.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/canoe"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El golfo de Fonseca lo comparten Honduras, El Salvador y Nicaragua; Amapala está en la isla del Tigre",
+      "fuente": "Encyclopaedia Britannica, «Gulf of Fonseca»"
+    },
+    {
+      "dato": "Costas de Honduras: ≈ 670 km en el Caribe y ≈ 150 km en el Pacífico",
+      "fuente": "CIA World Factbook, «Honduras»"
+    }
+  ],
+  "nota": "Las longitudes de costa cambian según cómo se mida."
+}

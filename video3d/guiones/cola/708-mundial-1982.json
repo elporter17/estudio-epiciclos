@@ -1,0 +1,66 @@
+{
+  "id": "mundial-1982",
+  "temporada": 4,
+  "episodio": 8,
+  "titulo": "Honduras en el Mundial de 1982",
+  "categoria": "honduras",
+  "destacar": [
+    "Honduras",
+    "1982"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Honduras jugó su primer Mundial en 1982 y empató con la anfitriona.",
+      "objeto": "balon"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Fue la primera vez que la selección llegó a una Copa del Mundo.",
+      "hitos": [
+        {
+          "anio": 1982,
+          "texto": "Mundial de España",
+          "objeto": "balon"
+        },
+        {
+          "anio": 2010,
+          "texto": "Mundial de Sudáfrica"
+        },
+        {
+          "anio": 2014,
+          "texto": "Mundial de Brasil"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "En su debut empató 1 a 1 con España, que jugaba en casa.",
+      "objeto": "balon",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Honduras logró otros dos empates en esa fase, y volvió a un Mundial recién en 2010.",
+      "objeto": "balon",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Aquella selección es recordada con cariño por los aficionados hondureños.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "balon"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Mundial de 1982: Honduras empató 1-1 con España; participó también en 2010 y 2014",
+      "fuente": "FIFA, historial de participación de Honduras"
+    }
+  ],
+  "nota": "Conviene revisar los resultados completos en la web de la FIFA."
+}

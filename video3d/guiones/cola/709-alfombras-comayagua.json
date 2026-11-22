@@ -1,0 +1,52 @@
+{
+  "id": "alfombras-comayagua",
+  "temporada": 4,
+  "episodio": 9,
+  "titulo": "Las alfombras de Comayagua",
+  "categoria": "honduras",
+  "destacar": [
+    "alfombras",
+    "Comayagua"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Cada Semana Santa, las calles de Comayagua se llenan de alfombras de aserrín.",
+      "objeto": "naturaleza/flower_redA"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Se hacen con aserrín teñido, flores y semillas, y forman dibujos de colores sobre el pavimento.",
+      "objeto": "naturaleza/flower_redA",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "La procesión del Viernes Santo pasa por encima de ellas, y en unas horas desaparecen.",
+      "objeto": "naturaleza/flower_redA",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cientos de familias y jóvenes trabajan durante la noche para terminarlas a tiempo.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es una de las tradiciones religiosas más conocidas de Honduras.",
+      "objeto": "naturaleza/flower_yellowA",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/flower_redA"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Alfombras de aserrín de la Semana Santa en Comayagua",
+      "fuente": "Instituto Hondureño de Turismo (IHT) y alcaldía de Comayagua"
+    }
+  ]
+}

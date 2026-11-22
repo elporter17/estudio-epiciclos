@@ -1,0 +1,51 @@
+{
+  "id": "polvo-sahara-amazonas",
+  "temporada": 4,
+  "episodio": 27,
+  "titulo": "El polvo que abona el Amazonas",
+  "categoria": "ciencia",
+  "destacar": [
+    "polvo",
+    "Sahara"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El polvo del Sahara viaja por el aire hasta el Amazonas.",
+      "objeto": "naturaleza/rock_smallA"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Cada año, unos 180 millones de toneladas de polvo salen del Sahara sobre el Atlántico.",
+      "objeto": "naturaleza/rock_smallA",
+      "cantidad": 130,
+      "contador": {
+        "desde": 0,
+        "hasta": 180,
+        "unidad": "millones de toneladas"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Unos 28 millones de toneladas caen sobre el Amazonas, y llevan fósforo, un nutriente que la selva necesita.",
+      "objeto": "naturaleza/tree_default",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "El polvo viene de un lago seco, la depresión de Bodélé, y cruza el océano en una semana.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "naturaleza/rock_smallA"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "≈ 182 Mt de polvo salen del Sahara y ≈ 27,7 Mt caen en el Amazonas; fertilizan con fósforo",
+      "fuente": "NASA, estudio CALIPSO (Yu et al., 2015), Geophysical Research Letters"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "d2c-viruela-erradicada",
+  "motor": "2d",
+  "episodio": 72,
+  "titulo": "La enfermedad que se erradicó",
+  "categoria": "historia",
+  "destacar": [
+    "viruela",
+    "vacuna"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La viruela es la única enfermedad humana que se ha logrado erradicar.",
+      "objeto": "💉"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Todo empezó con una observación y una vacuna.",
+      "hitos": [
+        {
+          "anio": 1796,
+          "texto": "Jenner prueba la primera vacuna",
+          "objeto": "💉"
+        },
+        {
+          "anio": 1967,
+          "texto": "La OMS lanza una campaña mundial"
+        },
+        {
+          "anio": 1980,
+          "texto": "Se declara erradicada"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "En 1980, la Organización Mundial de la Salud declaró que la viruela había desaparecido del mundo.",
+      "objeto": "🌍",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Antes mataba a millones de personas cada año.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "foco",
+      "texto": "Hoy ya no hay casos, y solo se conservan muestras del virus en dos laboratorios.",
+      "objeto": "🧪",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Viruela erradicada: declaración de la OMS el 8 de mayo de 1980",
+      "fuente": "Organización Mundial de la Salud (OMS), «Smallpox»"
+    },
+    {
+      "dato": "Edward Jenner probó la primera vacuna en 1796",
+      "fuente": "Encyclopaedia Britannica, «Edward Jenner»"
+    }
+  ]
+}

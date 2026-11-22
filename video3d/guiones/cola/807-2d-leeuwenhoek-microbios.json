@@ -1,0 +1,64 @@
+{
+  "id": "d2c-leeuwenhoek-microbios",
+  "motor": "2d",
+  "episodio": 67,
+  "titulo": "El primero en ver bacterias",
+  "categoria": "historia",
+  "destacar": [
+    "Leeuwenhoek",
+    "bacterias"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Un comerciante de telas fue la primera persona en ver bacterias.",
+      "objeto": "🔬"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Antonie van Leeuwenhoek, en Holanda, pulía lentes pequeñísimas para ver mejor la tela.",
+      "objeto": "🧵",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Sus lentes ampliaban hasta unas 270 veces, mucho más que los microscopios de la época.",
+      "objeto": "🔍",
+      "cantidad": 90
+    },
+    {
+      "tipo": "linea",
+      "texto": "Con ellas descubrió un mundo que nadie había visto.",
+      "hitos": [
+        {
+          "anio": 1674,
+          "texto": "Describe organismos diminutos en agua de lago",
+          "objeto": "🔬"
+        },
+        {
+          "anio": 1676,
+          "texto": "Observa bacterias"
+        },
+        {
+          "anio": 1683,
+          "texto": "Dibuja las bacterias de la boca"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Los llamó «animalículos», y hoy sabemos que son microbios.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Leeuwenhoek observó microorganismos con lentes de hasta ≈ 270 aumentos (1670-1680)",
+      "fuente": "Museo Boerhaave y Encyclopaedia Britannica, «Antonie van Leeuwenhoek»"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "d2c-cero-maya",
+  "motor": "2d",
+  "episodio": 62,
+  "titulo": "Los mayas y el cero",
+  "categoria": "historia",
+  "destacar": [
+    "mayas",
+    "cero"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Los mayas usaban el cero hace más de mil quinientos años.",
+      "objeto": "0️⃣"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Inventaron un símbolo, parecido a una concha, para marcar el lugar vacío en sus números.",
+      "objeto": "🐚",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Contaban en base 20 y combinaban puntos y rayas: un punto valía uno y una raya, cinco.",
+      "objeto": "🔢",
+      "cantidad": 90
+    },
+    {
+      "tipo": "linea",
+      "texto": "El cero apareció en varios lugares del mundo por separado.",
+      "hitos": [
+        {
+          "anio": -300,
+          "texto": "Babilonia usa un signo de lugar vacío",
+          "etiqueta_anio": "≈ siglo IV a. C.",
+          "objeto": "0️⃣"
+        },
+        {
+          "anio": 350,
+          "texto": "Los mayas usan un cero en su calendario",
+          "etiqueta_anio": "≈ siglo IV d. C."
+        },
+        {
+          "anio": 628,
+          "texto": "India lo trata como un número",
+          "etiqueta_anio": "628 d. C."
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Con ese sistema registraban fechas que alcanzaban millones de años.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Los mayas usaban un signo para el cero en su sistema vigesimal, en inscripciones de hace más de 1.500 años",
+      "fuente": "Smithsonian National Museum of the American Indian y Encyclopaedia Britannica, «Maya numerals»"
+    }
+  ],
+  "nota": "La fecha de la primera aparición del cero maya se discute."
+}

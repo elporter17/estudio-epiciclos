@@ -1,0 +1,61 @@
+{
+  "id": "dias-se-alargan",
+  "temporada": 4,
+  "episodio": 30,
+  "titulo": "Los días se alargan",
+  "categoria": "ciencia",
+  "destacar": [
+    "días",
+    "alargan"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Los días se alargan un poquito cada siglo.",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "foco",
+      "texto": "La Luna frena la rotación de la Tierra con las mareas, y cada siglo el día dura unos 2 milisegundos más.",
+      "objeto": "moneda",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "Hace mucho, los días eran más cortos.",
+      "hitos": [
+        {
+          "anio": -400,
+          "texto": "Hace 400 millones de años, el día duraba ≈ 22 horas",
+          "etiqueta_anio": "Hace 400 M",
+          "objeto": "moneda"
+        },
+        {
+          "anio": 2026,
+          "texto": "Hoy, 24 horas",
+          "etiqueta_anio": "Hoy"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Pero es tan lento que ni siquiera lo notamos en toda una vida.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El día se alarga ≈ 1,7-2 ms por siglo por la fricción de las mareas",
+      "fuente": "NASA y Observatorio Real de Bélgica; Stephenson, Morrison y Hohenkerk (2016)"
+    },
+    {
+      "dato": "Hace ≈ 400 M de años el día duraba ≈ 22 h (corales fósiles)",
+      "fuente": "Wells (1963), Nature"
+    }
+  ]
+}

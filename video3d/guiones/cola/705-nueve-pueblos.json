@@ -1,0 +1,52 @@
+{
+  "id": "nueve-pueblos",
+  "temporada": 4,
+  "episodio": 5,
+  "titulo": "Los nueve pueblos de Honduras",
+  "categoria": "honduras",
+  "destacar": [
+    "pueblos",
+    "Honduras"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Honduras reconoce nueve pueblos indígenas y afrohondureños.",
+      "objeto": "moneda"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Son los lenca, miskito, tolupán, pech, tawahka, maya chortí, garífuna, nahua y los negros de habla inglesa de las Islas de la Bahía.",
+      "objeto": "moneda",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Cada pueblo tiene su lengua, su música, su comida y su forma de ver el mundo.",
+      "cantidad": 26
+    },
+    {
+      "tipo": "foco",
+      "texto": "Los maya chortí viven en el occidente, cerca de Copán, y los miskito, en La Mosquitia.",
+      "objeto": "naturaleza/tree_palm",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Muchas de esas lenguas están en peligro, y varias comunidades trabajan para conservarlas.",
+      "objeto": "libro",
+      "cantidad": 90
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "moneda"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Honduras reconoce nueve pueblos indígenas y afrohondureños",
+      "fuente": "Secretaría de Desarrollo e Inclusión Social y Secretaría de Cultura de Honduras"
+    }
+  ]
+}

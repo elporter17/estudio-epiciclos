@@ -1,0 +1,51 @@
+{
+  "id": "shinkansen-puntual",
+  "temporada": 4,
+  "episodio": 28,
+  "titulo": "El tren bala más puntual",
+  "categoria": "ciencia",
+  "destacar": [
+    "tren",
+    "puntual"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El tren bala japonés se atrasa, en promedio, menos de un minuto.",
+      "objeto": "autos/race-future"
+    },
+    {
+      "tipo": "linea",
+      "texto": "El Shinkansen empezó a funcionar en 1964, justo antes de los Juegos Olímpicos de Tokio.",
+      "hitos": [
+        {
+          "anio": 1964,
+          "texto": "Primer Shinkansen",
+          "objeto": "autos/race-future"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Hoy algunos trenes superan los 300 kilómetros por hora.",
+      "objeto": "autos/race-future",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Sale cada pocos minutos y casi siempre llega a su hora exacta.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.",
+      "objeto": "autos/race-future"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Shinkansen desde 1964; retraso medio < 1 minuto en la línea Tokaido; velocidad > 300 km/h",
+      "fuente": "JR Central, «Shinkansen» y Encyclopaedia Britannica"
+    }
+  ]
+}

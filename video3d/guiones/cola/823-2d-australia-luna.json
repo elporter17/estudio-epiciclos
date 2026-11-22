@@ -1,0 +1,58 @@
+{
+  "id": "d2c-australia-luna",
+  "motor": "2d",
+  "episodio": 83,
+  "titulo": "Australia más ancha que la Luna",
+  "categoria": "datos",
+  "destacar": [
+    "Australia",
+    "Luna"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Australia es más ancha que la Luna.",
+      "objeto": "🇦🇺"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "De este a oeste, Australia mide unos 4.000 kilómetros; la Luna, unos 3.474 de diámetro.",
+      "barras": [
+        {
+          "etiqueta": "Australia",
+          "valor": 4000,
+          "texto": "≈ 4.000 km",
+          "objeto": "🇦🇺"
+        },
+        {
+          "etiqueta": "La Luna",
+          "valor": 3474,
+          "texto": "3.474 km",
+          "objeto": "🌙"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es un continente casi tan grande como Estados Unidos sin Alaska.",
+      "objeto": "🌏",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Aun así, vive allí una población parecida a la de Honduras y Guatemala juntas.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Ancho de Australia ≈ 4.000 km; diámetro de la Luna ≈ 3.474 km",
+      "fuente": "Geoscience Australia y NASA, «Moon Fact Sheet»"
+    }
+  ],
+  "nota": "La comparación de población es aproximada; conviene revisarla antes de usarla."
+}

@@ -1,0 +1,45 @@
+{
+  "id": "d2c-cuervo-herramientas",
+  "motor": "2d",
+  "episodio": 73,
+  "titulo": "El cuervo que hace herramientas",
+  "categoria": "ciencia",
+  "destacar": [
+    "cuervo",
+    "herramientas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Algunos cuervos fabrican herramientas.",
+      "objeto": "🐦‍⬛"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Los cuervos de Nueva Caledonia doblan ramas y alambres para hacer ganchos y sacar insectos de los troncos.",
+      "objeto": "🪝",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Una cuerva llamada Betty, en un experimento en 2002, dobló un alambre recto para formar un gancho y alcanzar comida.",
+      "objeto": "🧪",
+      "cantidad": 90
+    },
+    {
+      "tipo": "gente",
+      "texto": "Los cuervos reconocen caras, resuelven rompecabezas y recuerdan a quien los trató mal.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Cuervos de Nueva Caledonia fabrican herramientas; experimento con «Betty» (2002)",
+      "fuente": "Weir, Chappell y Kacelnik (2002), Science, «Shaping of hooks in New Caledonian crows»"
+    }
+  ]
+}
