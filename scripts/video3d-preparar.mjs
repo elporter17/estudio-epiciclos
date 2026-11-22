@@ -13,6 +13,7 @@ import { pistaMusical } from './lib/musica.mjs';
 import { wavBuffer } from './bounce.mjs';
 import { elegirEstilo } from './lib/estilo3d.mjs';
 import { guionConTono } from './lib/tono.mjs';
+import { GANCHOS } from './lib/ganchos.mjs';
 
 const o = parseCli({ guion: { type: 'string', default: 'video3d/guiones/agua.json' } });
 const SR = 44100, PUB = path.join(ROOT, 'video3d', 'public');
@@ -21,6 +22,14 @@ const g = JSON.parse(fs.readFileSync(path.resolve(ROOT, o.guion), 'utf8'));
 const MINIMO = { portada: 3, vaso: 4, botellas: 3.5, calendario: 4.5, pila: 4.5, lluvia: 4.5, foco: 4.5, torre: 6, camion: 5, calle: 4.5, piscina: 4.5, globo: 5, piscinas: 5.5, cuadricula: 5, comparacion: 5, linea: 6.5, gente: 4.5, cierre: 3, vision: 7, ishihara: 7.5, historia: 4.5 };
 // La portada dice el gancho (o el título si no tiene texto)
 for (const e of g.escenas) if (e.tipo === 'portada' && !e.texto) e.texto = g.titulo;
+// Gancho (scripts/lib/ganchos.mjs): lo primero que se oye, un adelanto del dato más sorprendente sin revelar la respuesta. El dato que
+// antes se decía en la portada pasa a su lugar, en una escena justo después (que no repite el tipo de la siguiente)
+const gancho = g.gancho || GANCHOS[g.id], iPortada = g.escenas.findIndex((e) => e.tipo === 'portada');
+if (gancho && iPortada >= 0 && g.escenas[iPortada].texto && g.escenas[iPortada].texto !== gancho && g.escenas[iPortada].texto !== g.titulo) {
+  const p = g.escenas[iPortada], dato = p.texto, sig = g.escenas[iPortada + 1];
+  p.texto = gancho;
+  g.escenas.splice(iPortada + 1, 0, sig?.tipo === 'foco' ? { tipo: 'lluvia', texto: dato, objeto: p.objeto, cantidad: 80 } : { tipo: 'foco', texto: dato, objeto: p.objeto, cantidad: 1 });
+}
 // El tono del video (scripts/lib/tono.mjs): siempre al menos una expresión jocosa. La voz del gancho empieza con
 // «No manches.» o «¿Qué mierda acabo de aprender?» (en pantalla sigue el título), una escena del medio con «Y ojo:»…
 // y el cierre con su frase. Los «explicados» (categoría noticia), solo coloquiales
@@ -33,11 +42,13 @@ let t = 0;
 const escenas = g.escenas.map((e, i) => {
   const voz = audios[i].length / SR, archivo = `voz/${String(i).padStart(2, '0')}.wav`;
   fs.writeFileSync(path.join(PUB, archivo), wavBuffer(audios[i], SR));
-  const r = { ...e, audio: archivo, voz, inicio: t, dur: Math.max(MINIMO[e.tipo] || 3.5, 0.25 + voz + 0.55) };
+  const r = { ...e, audio: archivo, voz, inicio: t, dur: Math.max(MINIMO[e.tipo] || 3.5, 0.25 + voz + 0.4) };
   t += r.dur; return r;
 });
-// Ningún video baja de 56 s (regla del canal: 55 como mínimo): lo que falte se reparte entre las escenas de contenido
-const MIN_TOTAL = 56, contenido = escenas.filter((e) => e.tipo !== 'portada' && e.tipo !== 'cierre');
+// Un video no baja de MIN_TOTAL segundos; lo que falte se reparte entre las escenas de contenido. Antes eran 56 s (regla «55 como mínimo»)
+// y, como la voz dura ~35 s, hasta 20 s eran aire muerto (2026-11-22). Ahora 42 s: el gancho y el dato movido a su escena llenan con
+// contenido y el sobrante es poco. Para volver a 56 s: VIDEO_MIN_TOTAL=56
+const MIN_TOTAL = +(process.env.VIDEO_MIN_TOTAL || 42), contenido = escenas.filter((e) => e.tipo !== 'portada' && e.tipo !== 'cierre');
 if (t < MIN_TOTAL && contenido.length) { const extra = (MIN_TOTAL - t) / contenido.length; for (const e of contenido) e.dur += extra; t = 0; for (const e of escenas) { e.inicio = t; t += e.dur; } }
 // ---------- efectos de sonido (sintetizados aquí: sin archivos de terceros) ----------
 const ruido = (n, semilla = 1) => { let x = semilla; return Float32Array.from({ length: n }, () => ((x = (x * 16807) % 2147483647) / 2147483647) * 2 - 1); };
