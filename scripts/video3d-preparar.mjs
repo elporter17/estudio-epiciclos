@@ -14,6 +14,7 @@ import { wavBuffer } from './bounce.mjs';
 import { elegirEstilo } from './lib/estilo3d.mjs';
 import { guionConTono } from './lib/tono.mjs';
 import { GANCHOS } from './lib/ganchos.mjs';
+import { PICARDIA } from './lib/picardia.mjs';
 
 const o = parseCli({ guion: { type: 'string', default: 'video3d/guiones/agua.json' } });
 const SR = 44100, PUB = path.join(ROOT, 'video3d', 'public');
@@ -34,6 +35,10 @@ if (gancho && iPortada >= 0 && g.escenas[iPortada].texto && g.escenas[iPortada].
 // «No manches.» o «¿Qué mierda acabo de aprender?» (en pantalla sigue el título), una escena del medio con «Y ojo:»…
 // y el cierre con su frase. Los «explicados» (categoría noticia), solo coloquiales
 g.escenas = guionConTono(g).escenas;
+// Picardía (scripts/lib/picardia.mjs): una frase de doble sentido ligero al final de la tercera escena de contenido desde el final
+// (así no choca con la petición de seguir). Se apaga con VIDEO_PICARDIA=0
+const picardia = process.env.VIDEO_PICARDIA === '0' ? null : (g.picardia ?? PICARDIA[g.id]), contenidoP = g.escenas.filter((e) => e.tipo !== 'portada' && e.tipo !== 'cierre' && e.texto);
+if (picardia && contenidoP.length >= 4) { const e = contenidoP[contenidoP.length - 3]; e.texto = `${e.texto} ${picardia}`; if (e.voz) e.voz = `${e.voz} ${picardia}`; }
 
 const audios = narrar(g.escenas.map((e) => e.voz || e.texto), { SR });
 if (!audios) throw new Error('No hay voz instalada (ver scripts/lib/voz.mjs)');

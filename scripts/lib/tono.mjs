@@ -2,7 +2,7 @@
 // recibe un nivel (siempre el mismo para la misma clave, así el render y la publicación coinciden):
 //   1 coloquial (2 de cada 3)  ·  2 picante (1 de cada 3: una grosería suave en el gancho)
 // En los 3D: la voz del gancho (portada), una frase a media escena y el cierre. En los demás formatos: la primera
-// línea de la descripción. Reglas: nada sexual («prostis» y parecidas no), nada contra grupos de personas, nunca en
+// línea de la descripción. Reglas: nada sexual explícito («prostis» y parecidas no; desde 2026-11-22 sí hay doble sentido ligero, ver scripts/lib/picardia.mjs), nada contra grupos de personas, nunca en
 // el título del video ni en el de YouTube. Los 3D «explicados» (categoría noticia) van solo coloquiales y el Reel de
 // noticias reales va limpio (puede hablar de muertes o tragedias). En YouTube, decir groserías en los primeros 7 s
 // puede limitar los anuncios (solo importa si el canal tiene monetización).
