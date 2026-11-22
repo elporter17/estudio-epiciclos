@@ -13,10 +13,11 @@ export const ESTADO = path.join(ROOT, 'data', 'video3d-cola.json');
 export const AVISO_COLA = 6; // con tantos guiones pendientes o menos, aviso por Telegram para escribir más
 export const hoyHN = (d = new Date()) => new Date(d.getTime() - 6 * 3600e3).toISOString().slice(0, 10);
 
-export const TURNOS = ['mediodia', 'tarde', 'noche']; // 3 al día desde 2026-11-21: mediodía (12:17), noche = las 15:30 y tarde (18:30)
+// 6 videos al día desde 2026-11-21: tres 3D (mediodía 12:17, noche 15:30 y tarde 18:30) y tres 2D sin IA (dos1 10:20, dos3 18:00 y dos2 21:10)
+export const TURNOS = ['mediodia', 'tarde', 'noche', 'dos1', 'dos2', 'dos3'];
 export function leerEstado() {
   let e; try { e = JSON.parse(fs.readFileSync(ESTADO, 'utf8')); } catch { e = {}; }
-  const listos = { mediodia: null, tarde: null, noche: null, ...(e.listos || {}) };
+  const listos = { mediodia: null, tarde: null, noche: null, dos1: null, dos2: null, dos3: null, ...(e.listos || {}) };
   if (e.listo && !listos.mediodia) listos.mediodia = e.listo; // estado de antes de los dos turnos
   return { publicados: e.publicados || [], listos };
 }
@@ -31,12 +32,13 @@ export function elegir(fecha, estado = leerEstado(), turno = 'mediodia') {
   const libres = todos.filter((g) => !g.fecha && !hechos.has(g.id)), l2d = libres.filter((g) => g.motor === '2d'), l3d = libres.filter((g) => g.motor !== '2d');
   // Prueba de Honduras (2026-11-21): la tarde (Facebook y TikTok) toma primero los de categoría «honduras»; el mediodía (IG y YouTube) los salta
   // mientras haya otros, así se comparan sin mezclarlos
-  // Motor 2D (2026-11-21, sin IA): el turno «noche» saca un video 2D al día (y los 3D, solo si ya no quedan 2D); los otros dos turnos, 3D
-  const pref = turno === 'noche' ? (l2d[0] || l3d.find((g) => g.categoria !== 'honduras')) : turno === 'tarde' ? l3d.find((g) => g.categoria === 'honduras') : l3d.find((g) => g.categoria !== 'honduras');
+  // Los turnos «dos…» son del motor 2D (sin IA); mediodía, noche y tarde, del 3D (la tarde, con los de Honduras primero). Si de un tipo
+  // ya no quedan, sale del otro para que ninguna red se quede sin video
+  const pref = turno.startsWith('dos') ? l2d[0] : turno === 'tarde' ? l3d.find((g) => g.categoria === 'honduras') : l3d.find((g) => g.categoria !== 'honduras');
   // Un guion con «fecha» sale ese día exacto en su «turno» (por defecto la tarde); los demás, en orden
-  return todos.find((g) => g.fecha === fecha && (g.turno || 'tarde') === turno && !hechos.has(g.id)) || pref || l3d[0] || l2d[0] || null;
+  return todos.find((g) => g.fecha === fecha && (g.turno || 'tarde') === turno && !hechos.has(g.id)) || pref || (turno.startsWith('dos') ? l3d[0] : l3d[0] || l2d[0]) || l2d[0] || null;
 }
-export const pendientes = (estado = leerEstado()) => { const hechos = new Set(estado.publicados.map((p) => p.id)); return guiones().filter((g) => !g.fecha && !hechos.has(g.id)).length; };
+export const pendientes = (estado = leerEstado(), motor) => { const hechos = new Set(estado.publicados.map((p) => p.id)); return guiones().filter((g) => motor === undefined || (g.motor === '2d') === (motor === '2d')).filter((g) => !g.fecha && !hechos.has(g.id)).length; };
 // Avisos extra para Telegram (los lee scripts/aviso.mjs al final de la corrida)
 export function avisoExtra(texto) { fs.mkdirSync(path.join(ROOT, 'out'), { recursive: true }); fs.appendFileSync(path.join(ROOT, 'out', 'aviso-extra.txt'), texto.trim() + '\n'); }
 

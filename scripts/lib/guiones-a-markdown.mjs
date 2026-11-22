@@ -7,8 +7,8 @@ import { ROOT } from './node-env.mjs';
 import { guiones, elegir } from './video3d-cola.mjs';
 
 const inicio = process.argv[2] || '2026-11-22';
-const REDES = { mediodia: 'Instagram + YouTube', noche: 'TikTok + YouTube', tarde: 'Facebook + YouTube' };
-const HORA = { mediodia: '12:17', noche: '15:30', tarde: '18:30' };
+const REDES = { mediodia: 'Instagram + YouTube', noche: 'TikTok + YouTube', tarde: 'Facebook + YouTube', dos1: 'Facebook + YouTube', dos3: 'TikTok', dos2: 'Instagram + YouTube' };
+const HORA = { dos1: '10:20', mediodia: '12:17', noche: '15:30', dos3: '18:00', tarde: '18:30', dos2: '21:10' };
 const estado = { publicados: [], listos: { mediodia: null, tarde: null, noche: null } };
 const hechosS1 = new Set(guiones().filter((g) => !g.temporada && g.motor !== '2d').map((g) => g.id)); // la temporada 1 ya salió completa
 estado.publicados = [...hechosS1].map((id) => ({ id }));
@@ -16,7 +16,7 @@ const orden = [];
 for (let d = 0; d < 40; d++) {
   const fecha = new Date(Date.parse(`${inicio}T12:00:00Z`) + d * 86400e3).toISOString().slice(0, 10);
   let alguno = false;
-  for (const turno of ['mediodia', 'tarde', 'noche']) {
+  for (const turno of ['mediodia', 'tarde', 'noche', 'dos1', 'dos2', 'dos3']) {
     const g = elegir(fecha, estado, turno); if (!g) continue;
     estado.publicados.push({ id: g.id }); alguno = true;
     orden.push({ fecha, turno, g });
@@ -24,9 +24,9 @@ for (let d = 0; d < 40; d++) {
   if (!alguno) break;
 }
 const por = { mediodia: 0, tarde: 1, noche: 2 };
-orden.sort((a, b) => a.fecha.localeCompare(b.fecha) || ['mediodia', 'noche', 'tarde'].indexOf(a.turno) - ['mediodia', 'noche', 'tarde'].indexOf(b.turno));
+orden.sort((a, b) => a.fecha.localeCompare(b.fecha) || HORA[a.turno].localeCompare(HORA[b.turno]));
 const out = [`# Videos programados (desde el ${inicio})\n`,
-  `${orden.length} guiones, 3 al día. 12:17 y 18:30: videos 3D (Instagram y Facebook, más YouTube); 15:30: video 2D sin IA (TikTok y YouTube). Los de Honduras 3D van primero a Facebook. La voz dice cada línea tal cual; el tono (muletillas del principio, a mitad y el cierre) lo agrega el sistema al renderizar.\n`,
+  `${orden.length} guiones, 6 al día: tres 3D (12:17 Instagram, 15:30 TikTok, 18:30 Facebook) y tres 2D sin IA (10:20 Facebook, 18:00 TikTok, 21:10 Instagram). YouTube publica los tres 3D y los 2D de Facebook e Instagram. Los 3D de Honduras van primero a Facebook. La voz dice cada línea tal cual; el tono lo agrega el sistema al renderizar.\n`,
   '| # | Fecha | Hora | Redes | Guion |', '|---|---|---|---|---|',
   ...orden.map((o, i) => `| ${i + 1} | ${o.fecha} | ${HORA[o.turno]} | ${REDES[o.turno]} | ${o.g.titulo} (${o.g.categoria}${o.g.motor === '2d' ? ', 2D' : ''}) |`), ''];
 orden.forEach((o, i) => {

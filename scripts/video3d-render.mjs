@@ -40,8 +40,8 @@ console.error(`Listo en ${Math.round((Date.now() - ti) / 60000)} min · ${render
 if (o['dry-run']) { console.log(final); process.exit(0); }
 
 const enlace = await publicarEnlace(final, { days: 3 });
-estado.listos[turno] = { id: g.id, fecha, turno, url: enlace.url, download: enlace.downloadUrl, titulo: g.titulo, duracion: render.duracion, archivo: path.basename(g.archivo) };
+estado.listos[turno] = { id: g.id, motor: g.motor || '3d', fecha, turno, url: enlace.url, download: enlace.downloadUrl, titulo: g.titulo, duracion: render.duracion, archivo: path.basename(g.archivo) };
 guardarEstado(estado); await publicarProximos(); // el bot muestra qué 3D vienen
-const quedan = pendientes(estado) - Object.values(estado.listos).filter((x) => x && !x.fecha_fija).length;
-if (quedan <= AVISO_COLA) avisoExtra(`📚 Videos 3D: quedan ${Math.max(0, quedan)} guiones en la cola (después de «${g.titulo}»). Pídeme otra tanda para no quedarnos sin videos.`);
+const quedan = pendientes(estado, g.motor) - Object.values(estado.listos).filter((x) => x && !x.fecha_fija && (x.motor === '2d') === (g.motor === '2d')).length;
+if (quedan <= AVISO_COLA) avisoExtra(`📚 Videos ${g.motor === '2d' ? '2D' : '3D'}: quedan ${Math.max(0, quedan)} guiones en la cola (después de «${g.titulo}»). Pídeme otra tanda para no quedarnos sin videos.`);
 console.log(JSON.stringify({ listo: estado.listos[turno], quedan }, null, 2));

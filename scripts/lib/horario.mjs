@@ -34,7 +34,11 @@ const PIEZAS = {
   quiz: { workflow: R, que: 'Reel de relleno: quiz o top 10', inputs: { formato: 'auto' } },
   comosehace: { workflow: 'como-se-hace.yml', que: 'Cómo se hace: la fábrica en 2D (más de 1 min)' },
   video3d1: { workflow: 'video3d.yml', que: 'Video 3D de datos (mediodía)', inputs: { modo: 'publicar', turno: 'mediodia' } },
-  video3d3: { workflow: 'video3d.yml', que: 'Video de datos 2D, sin IA (15:30)', inputs: { modo: 'publicar', turno: 'noche' } },
+  video3d3: { workflow: 'video3d.yml', que: 'Video 3D de datos (15:30)', inputs: { modo: 'publicar', turno: 'noche' } },
+  // Motor 2D (scripts/render2d.mjs, sin IA): mismo flujo que el 3D, con su propio turno
+  video2d1: { workflow: 'video3d.yml', que: 'Video de datos 2D, sin IA (mañana)', inputs: { modo: 'publicar', turno: 'dos1' } },
+  video2d2: { workflow: 'video3d.yml', que: 'Video de datos 2D, sin IA (noche)', inputs: { modo: 'publicar', turno: 'dos2' } },
+  video2d3: { workflow: 'video3d.yml', que: 'Video de datos 2D, sin IA (18:00)', inputs: { modo: 'publicar', turno: 'dos3' } },
   video3d2: { workflow: 'video3d.yml', que: 'Video 3D de datos (tarde, la hora de más vistas)', inputs: { modo: 'publicar', turno: 'tarde' } },
   imagen: { workflow: 'curiosidades-facebook.yml', que: 'Imagen informativa: 5 datos de un tema (sin retos)', inputs: { tipo: 'datos' } },
   debate: { workflow: R, que: 'Reel de debate: 5 retos que dividen a internet', inputs: { formato: 'debate' } },
@@ -65,13 +69,14 @@ const SOLO_TT = new Set(['nombres', 'famosos']);
 //    Máximo 6 Reels al día (del 7.º en adelante casi no hay alcance).
 //  · TikTok: lo mejor fue la sátira de Honduras (minidramas, a mano) y noticias; el resto ~370-560 → 6 al día, variados.
 //  · YouTube: el 99,6 % de las vistas son Shorts; los largos casi no suman → solo Shorts (3D y quizzes), 4 al día, sin largo.
-// 3 videos 3D al día (desde 2026-11-21), todos distintos: YouTube publica los 3 (12:17, 15:30 y 18:30) y cada una de las
-// otras redes uno solo: 12:17 → Instagram, 15:30 → TikTok, 18:30 → Facebook (con los de Honduras primero).
+// 6 videos de datos al día (desde 2026-11-21), todos distintos: tres 3D (12:17 → Instagram, 15:30 → TikTok, 18:30 → Facebook, este con
+// los de Honduras primero) y tres 2D sin IA (10:20 → Facebook, 18:00 → TikTok, 21:10 → Instagram). Así cada red saca uno 3D y uno 2D al
+// día. YouTube publica los tres 3D y dos 2D (los de Facebook e Instagram): 5 subidas, unas 8.000 unidades de las 10.000 de cuota.
 const PLAN = {
-  fb: { '07:45': 'noticiashn', '10:15': 'retos', '13:30': 'debate', '16:30': 'prefieres', '18:30': 'video3d2', '21:00': 'geo' },
-  ig: { '08:30': 'banderas', '12:17': 'video3d1', '15:00': 'retos', '17:30': 'prefieres', '19:45': 'emojis', '21:15': 'debate' },
-  tt: { '07:30': 'noticias', '10:00': 'banderas', '13:00': 'debate', '15:30': 'video3d3', '18:00': 'emojis', '21:30': 'estrella' },
-  yt: { '10:45': 'banderas', '12:17': 'video3d1', '15:30': 'video3d3', '18:30': 'video3d2', '20:30': 'retos' }
+  fb: { '07:45': 'noticiashn', '10:20': 'video2d1', '12:45': 'retos', '15:30': 'debate', '18:30': 'video3d2', '21:00': 'geo' },
+  ig: { '08:30': 'banderas', '12:17': 'video3d1', '15:00': 'retos', '17:30': 'prefieres', '19:45': 'emojis', '21:10': 'video2d2' },
+  tt: { '07:30': 'noticias', '10:00': 'banderas', '13:00': 'debate', '15:30': 'video3d3', '18:00': 'video2d3', '21:30': 'estrella' },
+  yt: { '10:20': 'video2d1', '12:17': 'video3d1', '15:30': 'video3d3', '18:30': 'video3d2', '21:10': 'video2d2' }
 };
 // Junta los planes: una corrida por hora y pieza, con las redes que la piden
 function juntarPlanes() {
@@ -99,6 +104,9 @@ export function armarSlot(pieza, hora, redes = redesDePieza(pieza)) {
 export const EXTRAS = {
   render3d1: { workflow: 'video3d.yml', que: 'Video 3D: render del de mediodía', inputs: { modo: 'render', turno: 'mediodia' } },
   render3d3: { workflow: 'video3d.yml', que: 'Video 3D: render del de las 15:30', inputs: { modo: 'render', turno: 'noche' } },
+  render2d1: { workflow: 'video3d.yml', que: 'Video 2D: render del de la mañana', inputs: { modo: 'render', turno: 'dos1' } },
+  render2d2: { workflow: 'video3d.yml', que: 'Video 2D: render del de la noche', inputs: { modo: 'render', turno: 'dos2' } },
+  render2d3: { workflow: 'video3d.yml', que: 'Video 2D: render del de las 18:00', inputs: { modo: 'render', turno: 'dos3' } },
   render3d2: { workflow: 'video3d.yml', que: 'Video 3D: render del de la tarde', inputs: { modo: 'render', turno: 'tarde' } },
   juntarnoticias: { workflow: 'noticias.yml', que: 'Juntar noticias del día' },
   comentarios: { workflow: 'comentarios.yml', que: 'Responder comentarios' },
@@ -107,7 +115,7 @@ export const EXTRAS = {
   vistas: { workflow: 'vistas.yml', que: 'Vistas de lo publicado → Supabase (para reenviar lo que tuvo pocas)' }
 };
 // La clave (pieza o extra) de un slot del horario
-export const claveDe = (s) => s.pieza || (s.workflow === 'video3d.yml' && s.inputs?.modo === 'render' ? (s.inputs.turno === 'tarde' ? 'render3d2' : s.inputs.turno === 'noche' ? 'render3d3' : 'render3d1') : Object.keys(EXTRAS).find((k) => EXTRAS[k].workflow === s.workflow));
+export const claveDe = (s) => s.pieza || (s.workflow === 'video3d.yml' && s.inputs?.modo === 'render' ? ({ tarde: 'render3d2', noche: 'render3d3', dos1: 'render2d1', dos2: 'render2d2', dos3: 'render2d3' }[s.inputs.turno] || 'render3d1') : Object.keys(EXTRAS).find((k) => EXTRAS[k].workflow === s.workflow));
 
 export const HORARIO = [
   // Los dos videos 3D del día se renderizan de madrugada (~40-55 min cada uno en GitHub)
@@ -115,9 +123,17 @@ export const HORARIO = [
   { hora: '01:47', workflow: 'video3d.yml', que: 'Video 3D: render del de la tarde', inputs: { modo: 'render', turno: 'tarde' } },
   // Respaldo: si el render falló (p. ej. npm ci con 504), se intenta otra vez; si ya hay uno listo, sale en 3-5 min
   { hora: '02:57', workflow: 'video3d.yml', que: 'Video 3D: render del de las 15:30', inputs: { modo: 'render', turno: 'noche' } },
-  { hora: '04:10', workflow: 'video3d.yml', que: 'Video 3D: respaldo del render de mediodía', inputs: { modo: 'render', turno: 'mediodia' } },
-  { hora: '05:10', workflow: 'video3d.yml', que: 'Video 3D: respaldo del render de la tarde', inputs: { modo: 'render', turno: 'tarde' } },
-  { hora: '05:50', workflow: 'video3d.yml', que: 'Video 3D: respaldo del render de las 15:30', inputs: { modo: 'render', turno: 'noche' } },
+  // Los 2D se renderizan en 3-5 min cada uno, después de los 3D (GitHub solo deja una corrida esperando por grupo: 12 min entre una y otra)
+  { hora: '04:00', workflow: 'video3d.yml', que: 'Video 2D: render del de la mañana', inputs: { modo: 'render', turno: 'dos1' } },
+  { hora: '04:12', workflow: 'video3d.yml', que: 'Video 2D: render del de la noche', inputs: { modo: 'render', turno: 'dos2' } },
+  { hora: '04:24', workflow: 'video3d.yml', que: 'Video 2D: render del de las 18:00', inputs: { modo: 'render', turno: 'dos3' } },
+  // Respaldos (si ya hay video listo, salen en 3-5 min sin hacer nada)
+  { hora: '05:00', workflow: 'video3d.yml', que: 'Video 3D: respaldo del render de mediodía', inputs: { modo: 'render', turno: 'mediodia' } },
+  { hora: '05:12', workflow: 'video3d.yml', que: 'Video 3D: respaldo del render de la tarde', inputs: { modo: 'render', turno: 'tarde' } },
+  { hora: '05:24', workflow: 'video3d.yml', que: 'Video 3D: respaldo del render de las 15:30', inputs: { modo: 'render', turno: 'noche' } },
+  { hora: '05:36', workflow: 'video3d.yml', que: 'Video 2D: respaldo del render de la mañana', inputs: { modo: 'render', turno: 'dos1' } },
+  { hora: '05:48', workflow: 'video3d.yml', que: 'Video 2D: respaldo del render de la noche', inputs: { modo: 'render', turno: 'dos2' } },
+  { hora: '06:00', workflow: 'video3d.yml', que: 'Video 2D: respaldo del render de las 18:00', inputs: { modo: 'render', turno: 'dos3' } },
   { hora: '06:23', workflow: 'noticias.yml', que: 'Juntar noticias del día' },
   { hora: '23:25', workflow: 'vistas.yml', que: 'Vistas de lo publicado → Supabase (para reenviar lo que tuvo pocas)' },
   ...juntarPlanes()
@@ -208,6 +224,9 @@ export const ALIAS = Object.entries({
   noticias: ['noticias en video', 'noticias video', 'reel de noticias', 'noticias de hoy', 'noticiero', 'noticias'],
   video3d1: ['3d de mediodia', '3d del mediodia', 'video 3d de mediodia', '3d 1'],
   video3d2: ['3d de la tarde', 'video 3d de la tarde', '3d 2'],
+  video2d1: ['2d de la manana', '2d de la mañana', '2d 1'],
+  video2d2: ['2d de la noche', '2d 2'],
+  video2d3: ['2d de las 6', '2d 3'],
   imagen: ['imagen', 'foto', 'curiosidad'],
   gtaquiz: ['quiz de gta', 'quiz gta', 'cuanto sabes de gta', 'preguntas de gta'],
   gta: ['gta 6', 'gta vi', 'gta'],
