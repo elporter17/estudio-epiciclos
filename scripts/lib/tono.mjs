@@ -76,10 +76,10 @@ export function textoConTono(texto, clave, op) {
 }
 // Un guion 3D completo con su tono: gancho, una muletilla en una escena del medio (voz y subtítulo) y el cierre
 export function guionConTono(g) {
-  const op = { suave: g.categoria === 'noticia' }, t = tonoDe(g.id, op), escenas = g.escenas.map((e) => ({ ...e }));
+  const op = { suave: g.categoria === 'noticia' || g.categoria === 'minihistoria' }, t = tonoDe(g.id, op), escenas = g.escenas.map((e) => ({ ...e }));
   for (const e of escenas) if (e.tipo === 'portada') e.voz = vozConTono(e.voz || e.texto, g.id, op);
   const contenido = escenas.map((e, i) => [e, i]).filter(([e]) => e.tipo !== 'portada' && e.tipo !== 'cierre' && e.texto);
-  if (contenido.length >= 2) {
+  if (contenido.length >= 2 && g.categoria !== 'minihistoria') { // en una historia la muletilla a media escena corta el relato
     const [e] = contenido[Math.min(contenido.length - 1, Math.floor(contenido.length / 2))];
     // Sin el conector del principio («Y …», «Además, …»): la muletilla ya hace de puente
     const base = e.texto.replace(/^(Y además,|Además,|Pero|Y|E)\s+/, ''), sin = base.charAt(0).toLowerCase() + base.slice(1);

@@ -1,0 +1,62 @@
+{
+  "id": "d2-cleopatra-iphone",
+  "motor": "2d",
+  "episodio": 10,
+  "titulo": "Cleopatra y el iPhone",
+  "categoria": "historia",
+  "destacar": [
+    "Cleopatra",
+    "iPhone"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Cleopatra vivió más cerca del iPhone que de la construcción de la Gran Pirámide.",
+      "objeto": "👑"
+    },
+    {
+      "tipo": "linea",
+      "texto": "La Gran Pirámide ya tenía unos 2.500 años cuando nació Cleopatra.",
+      "hitos": [
+        {
+          "anio": -2560,
+          "texto": "Gran Pirámide de Guiza",
+          "etiqueta_anio": "≈ 2560 a. C.",
+          "objeto": "🔺"
+        },
+        {
+          "anio": -30,
+          "texto": "Muere Cleopatra",
+          "etiqueta_anio": "30 a. C."
+        },
+        {
+          "anio": 2007,
+          "texto": "Primer iPhone",
+          "etiqueta_anio": "2007"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Entre la muerte de Cleopatra y el primer iPhone pasaron unos 2.000 años.",
+      "objeto": "📱",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "La historia es más larga de lo que parece: los egipcios de su época ya miraban las pirámides como ruinas.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Gran Pirámide ≈ 2560 a. C.; Cleopatra VII murió en el 30 a. C.; primer iPhone en 2007",
+      "fuente": "Encyclopaedia Britannica, «Cleopatra» y «Pyramids of Giza»; Apple (2007)"
+    }
+  ],
+  "nota": "La fecha de construcción de la pirámide es aproximada (±100 años)."
+}

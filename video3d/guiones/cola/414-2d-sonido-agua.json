@@ -1,0 +1,65 @@
+{
+  "id": "d2-sonido-agua",
+  "motor": "2d",
+  "episodio": 14,
+  "titulo": "El sonido corre más en el agua",
+  "categoria": "ciencia",
+  "destacar": [
+    "sonido",
+    "agua"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El sonido viaja más de cuatro veces más rápido bajo el agua.",
+      "objeto": "🔊"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "En el aire va a unos 343 metros por segundo; en el agua, a unos 1.480.",
+      "barras": [
+        {
+          "etiqueta": "Aire",
+          "valor": 343,
+          "texto": "343 m/s",
+          "objeto": "💨"
+        },
+        {
+          "etiqueta": "Agua",
+          "valor": 1480,
+          "texto": "1.480 m/s",
+          "objeto": "🌊"
+        },
+        {
+          "etiqueta": "Acero",
+          "valor": 5960,
+          "texto": "≈ 5.960 m/s",
+          "objeto": "🔩"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Por eso bajo el agua cuesta saber de dónde viene un sonido: llega casi al mismo tiempo a los dos oídos.",
+      "objeto": "🤿",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Las ballenas aprovechan que el sonido llega muy lejos en el mar para llamarse entre ellas.",
+      "objeto": "🐋",
+      "cantidad": 80
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Sonido ≈ 343 m/s en el aire (20 °C), ≈ 1.480 m/s en el agua y ≈ 5.960 m/s en el acero",
+      "fuente": "Encyclopaedia Britannica, «Speed of sound» y Discovery of Sound in the Sea (DOSITS)"
+    }
+  ],
+  "nota": "La velocidad depende de la temperatura y la salinidad."
+}

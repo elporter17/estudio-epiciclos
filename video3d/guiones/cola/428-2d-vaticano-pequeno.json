@@ -1,0 +1,67 @@
+{
+  "id": "d2-vaticano-pequeno",
+  "motor": "2d",
+  "episodio": 28,
+  "titulo": "El país más pequeño del mundo",
+  "categoria": "datos",
+  "destacar": [
+    "Vaticano",
+    "país"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El Vaticano es el país más pequeño del mundo.",
+      "objeto": "🇻🇦"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Mide unos 0,44 kilómetros cuadrados: cabe varias veces en Central Park.",
+      "barras": [
+        {
+          "etiqueta": "Vaticano",
+          "valor": 0.44,
+          "texto": "0,44 km²",
+          "objeto": "🇻🇦"
+        },
+        {
+          "etiqueta": "Mónaco",
+          "valor": 2,
+          "texto": "2,02 km²",
+          "objeto": "🇲🇨"
+        },
+        {
+          "etiqueta": "Central Park",
+          "valor": 3.4,
+          "texto": "3,4 km²",
+          "objeto": "🌳"
+        }
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Tiene menos de mil habitantes.",
+      "cantidad": 14
+    },
+    {
+      "tipo": "foco",
+      "texto": "Aun así tiene su propia estación de tren, su emisora de radio y su oficina de correos.",
+      "objeto": "🚂",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Superficie ≈ 0,44 km²; menos de 1.000 habitantes",
+      "fuente": "CIA World Factbook, «Holy See (Vatican City)»"
+    },
+    {
+      "dato": "Central Park: ≈ 3,41 km² (843 acres)",
+      "fuente": "Central Park Conservancy"
+    }
+  ]
+}

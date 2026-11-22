@@ -18,7 +18,7 @@ const o = parseCli({ guion: { type: 'string', default: 'video3d/guiones/agua.jso
 const SR = 44100, PUB = path.join(ROOT, 'video3d', 'public');
 const g = JSON.parse(fs.readFileSync(path.resolve(ROOT, o.guion), 'utf8'));
 // Lo mínimo que dura cada tipo de escena (para que la animación alcance a verse)
-const MINIMO = { portada: 3, vaso: 4, botellas: 3.5, calendario: 4.5, pila: 4.5, lluvia: 4.5, foco: 4.5, torre: 6, camion: 5, calle: 4.5, piscina: 4.5, globo: 5, piscinas: 5.5, cuadricula: 5, comparacion: 5, linea: 6.5, gente: 4.5, cierre: 3, vision: 7, ishihara: 7.5 };
+const MINIMO = { portada: 3, vaso: 4, botellas: 3.5, calendario: 4.5, pila: 4.5, lluvia: 4.5, foco: 4.5, torre: 6, camion: 5, calle: 4.5, piscina: 4.5, globo: 5, piscinas: 5.5, cuadricula: 5, comparacion: 5, linea: 6.5, gente: 4.5, cierre: 3, vision: 7, ishihara: 7.5, historia: 4.5 };
 // La portada dice el gancho (o el título si no tiene texto)
 for (const e of g.escenas) if (e.tipo === 'portada' && !e.texto) e.texto = g.titulo;
 // El tono del video (scripts/lib/tono.mjs): siempre al menos una expresión jocosa. La voz del gancho empieza con
@@ -61,6 +61,7 @@ const CUANDO = {
   // Formato «Idea»: el cambio de visión suena con un barrido; la lámina, con un tic al aparecer y un brillo al revelar
   vision: (d) => [[0.3, 'pop', 0.4], [d * 0.36, 'whoosh', 0.7], [d * 0.4, 'brillo', 0.5]],
   ishihara: (d) => [[0.2, 'foco', 0.6], [d * 0.78, 'ding', 0.7]],
+  historia: (d) => [[0.3, 'pop', 0.4]],
   vaso: (d) => [[0.2, 'llenado', 0.5], ...[0.3, 0.7, 1.1, 1.5, 1.9].map((t) => [t, 'gota', 0.4])],
   botellas: () => [[0.5, 'golpe', 0.8], [0.85, 'golpe', 0.8]],
   calendario: (d) => Array.from({ length: 14 }, (_, i) => [d * 0.85 * Math.sqrt(i / 14), 'tic', 0.5]),

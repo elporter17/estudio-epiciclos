@@ -1,0 +1,66 @@
+{
+  "id": "d2-estrella-neutrones",
+  "motor": "2d",
+  "episodio": 7,
+  "titulo": "Una estrella del tamaño de ciudad",
+  "categoria": "ciencia",
+  "destacar": [
+    "neutrones",
+    "ciudad"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Una estrella de neutrones mide como una ciudad, pero pesa más que el Sol.",
+      "objeto": "⭐"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Mide unos 20 kilómetros de ancho, y tiene más masa que el Sol.",
+      "objeto": "🏙️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "pila",
+      "texto": "Un cubito de su materia pesaría unos mil millones de toneladas.",
+      "objeto": "🧊",
+      "cantidad": 130,
+      "contador": {
+        "desde": 0,
+        "hasta": 1,
+        "unidad": "mil millones de toneladas"
+      }
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Algunas giran hasta 716 veces por segundo.",
+      "objeto": "🌀",
+      "cantidad": 110,
+      "contador": {
+        "desde": 0,
+        "hasta": 716,
+        "unidad": "vueltas por segundo"
+      }
+    },
+    {
+      "tipo": "gente",
+      "texto": "Nacen cuando una estrella enorme explota y su centro se aplasta sobre sí mismo.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Ancho ≈ 20 km y más masa que el Sol; un cubito de azúcar pesaría ≈ mil millones de toneladas",
+      "fuente": "NASA Goddard, «Neutron stars»"
+    },
+    {
+      "dato": "Pulsar que gira ≈ 716 veces por segundo",
+      "fuente": "Hessels et al. (2006), Science"
+    }
+  ],
+  "nota": "La masa de un «cubito» depende de la densidad que se tome: es un orden de magnitud."
+}

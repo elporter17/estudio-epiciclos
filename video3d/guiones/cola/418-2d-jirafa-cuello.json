@@ -1,0 +1,75 @@
+{
+  "id": "d2-jirafa-cuello",
+  "motor": "2d",
+  "episodio": 18,
+  "titulo": "La jirafa y sus siete huesos",
+  "categoria": "curiosidad",
+  "destacar": [
+    "jirafa",
+    "siete"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "La jirafa tiene los mismos huesos del cuello que tú: siete.",
+      "objeto": "🦒"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Casi todos los mamíferos tienen siete vértebras en el cuello, desde un ratón hasta una jirafa.",
+      "barras": [
+        {
+          "etiqueta": "Persona",
+          "valor": 7,
+          "texto": "7",
+          "objeto": "🧍"
+        },
+        {
+          "etiqueta": "Jirafa",
+          "valor": 7,
+          "texto": "7",
+          "objeto": "🦒"
+        },
+        {
+          "etiqueta": "Ratón",
+          "valor": 7,
+          "texto": "7",
+          "objeto": "🐭"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Lo que cambia es el tamaño: cada hueso de una jirafa puede medir unos 25 centímetros.",
+      "objeto": "📏",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Su corazón pesa unos 11 kilos para subir la sangre hasta la cabeza.",
+      "objeto": "🫀",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y su lengua mide hasta unos 45 centímetros, es oscura y agarra las hojas.",
+      "objeto": "👅",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Siete vértebras cervicales, como casi todos los mamíferos",
+      "fuente": "Smithsonian National Zoo, «Giraffe»"
+    },
+    {
+      "dato": "Corazón de ≈ 11 kg; lengua de hasta ≈ 45-50 cm",
+      "fuente": "San Diego Zoo, «Giraffe»"
+    }
+  ],
+  "nota": "Los perezosos y los manatíes son excepciones, con menos o más de siete."
+}

@@ -1,0 +1,74 @@
+{
+  "id": "d2-neptuno-ano",
+  "motor": "2d",
+  "episodio": 4,
+  "titulo": "Un año en Neptuno dura 165",
+  "categoria": "ciencia",
+  "destacar": [
+    "Neptuno",
+    "165"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Un año en Neptuno dura 165 años de los nuestros.",
+      "objeto": "🪐"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Neptuno se descubrió con matemáticas antes de verlo, y recién en 2011 completó su primera vuelta al Sol desde entonces.",
+      "hitos": [
+        {
+          "anio": 1846,
+          "texto": "Se descubre Neptuno",
+          "objeto": "🪐"
+        },
+        {
+          "anio": 1989,
+          "texto": "Pasa la sonda Voyager 2"
+        },
+        {
+          "anio": 2011,
+          "texto": "Primera vuelta completa"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Tarda unos 165 años terrestres en dar una vuelta alrededor del Sol.",
+      "objeto": "☀️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Allí soplan los vientos más rápidos del sistema solar: más de 2.000 kilómetros por hora.",
+      "objeto": "🌬️",
+      "cantidad": 100,
+      "contador": {
+        "desde": 0,
+        "hasta": 2100,
+        "unidad": "km/h"
+      }
+    },
+    {
+      "tipo": "gente",
+      "texto": "Es tan lejano que desde allí el Sol se vería como una estrella muy brillante.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Año de ≈ 165 años terrestres; vientos de ≈ 2.100 km/h",
+      "fuente": "NASA, «Neptune Facts»",
+      "url": "https://science.nasa.gov/neptune/neptune-facts/"
+    },
+    {
+      "dato": "Descubierto en 1846 por cálculos de Le Verrier y Adams; Voyager 2 pasó en 1989",
+      "fuente": "NASA, «Neptune»"
+    }
+  ]
+}

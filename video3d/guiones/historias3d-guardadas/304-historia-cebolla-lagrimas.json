@@ -1,0 +1,197 @@
+{
+  "id": "cebolla-lagrimas",
+  "formato": "idea",
+  "ambiente": "pradera",
+  "fecha": "2026-12-03",
+  "turno": "noche",
+  "titulo": "Por qué lloras con la cebolla",
+  "categoria": "minihistoria",
+  "destacar": [
+    "cebolla",
+    "lágrimas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Por qué lloras cuando cortas una cebolla?",
+      "objeto": "comida/onion"
+    },
+    {
+      "tipo": "historia",
+      "texto": "Cortar una cebolla parece fácil, pero casi siempre termina con lágrimas.",
+      "lugar": "cocina",
+      "personajes": [
+        {
+          "modelo": "female-e",
+          "x": 0,
+          "z": -2.4,
+          "accion": "interact-right"
+        }
+      ],
+      "props": [
+        {
+          "objeto": "comida/onion",
+          "x": -0.5,
+          "y": 1.06,
+          "z": -1.6,
+          "escala": 0.6
+        }
+      ],
+      "camara": "frente",
+      "foco": [
+        0,
+        1.2,
+        -1.6
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Al cortarla, se rompen sus células y se mezclan sustancias que estaban separadas.",
+      "lugar": "cocina",
+      "personajes": [
+        {
+          "modelo": "female-e",
+          "x": 0,
+          "z": -2.4,
+          "accion": "interact-right"
+        }
+      ],
+      "props": [
+        {
+          "objeto": "comida/onion-half",
+          "x": -0.5,
+          "y": 1.06,
+          "z": -1.6,
+          "escala": 0.6
+        },
+        {
+          "objeto": "comida/onion-half",
+          "x": 0.3,
+          "y": 1.06,
+          "z": -1.6,
+          "escala": 0.6,
+          "giro": 3
+        }
+      ],
+      "camara": "cerca",
+      "foco": [
+        0,
+        1.2,
+        -1.6
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Eso produce un gas que sube hasta tus ojos, y tu cuerpo responde con lágrimas para protegerlos.",
+      "lugar": "cocina",
+      "personajes": [
+        {
+          "modelo": "female-e",
+          "x": 0,
+          "z": -2.4,
+          "accion": "emote-no"
+        }
+      ],
+      "props": [
+        {
+          "objeto": "comida/onion-half",
+          "x": -0.5,
+          "y": 1.06,
+          "z": -1.6,
+          "escala": 0.6
+        }
+      ],
+      "camara": "cerca",
+      "foco": [
+        0,
+        1.5,
+        -2
+      ],
+      "vision": {
+        "tipo": "miopia",
+        "desde": 0.5,
+        "hasta": 0.7
+      }
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 2002, un equipo japonés descubrió la enzima que fabrica ese gas.",
+      "lugar": "cocina",
+      "personajes": [
+        {
+          "modelo": "female-e",
+          "x": 0,
+          "z": -2.4,
+          "accion": "emote-yes"
+        }
+      ],
+      "props": [
+        {
+          "objeto": "comida/onion",
+          "x": -0.5,
+          "y": 1.06,
+          "z": -1.6,
+          "escala": 0.6,
+          "gira": 1
+        }
+      ],
+      "camara": "orbita",
+      "foco": [
+        0,
+        1.2,
+        -1.6
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Un truco que puede ayudar: enfriar la cebolla antes de cortarla y usar un cuchillo bien afilado.",
+      "lugar": "cocina",
+      "personajes": [
+        {
+          "modelo": "female-e",
+          "x": 0,
+          "z": -2.4,
+          "accion": "interact-right"
+        }
+      ],
+      "props": [
+        {
+          "objeto": "comida/onion",
+          "x": -0.5,
+          "y": 1.06,
+          "z": -1.6,
+          "escala": 0.6
+        },
+        {
+          "objeto": "comida/cooking-knife-chopping",
+          "x": 0.5,
+          "y": 1.06,
+          "z": -1.6,
+          "escala": 0.8
+        }
+      ],
+      "camara": "frente",
+      "foco": [
+        0,
+        1.2,
+        -1.6
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Cuál es tu truco para no llorar con la cebolla? Cuéntanos en los comentarios.",
+      "objeto": "comida/onion"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Una enzima («lachrymatory-factor synthase») fabrica el gas que irrita los ojos al cortar cebolla",
+      "fuente": "Imai et al. (2002), Nature, «An onion enzyme that makes the eyes water»"
+    },
+    {
+      "dato": "Enfriar la cebolla y usar un cuchillo afilado reducen el gas (consejo habitual)",
+      "fuente": "Scientific American, «Why do onions make you cry?»"
+    }
+  ],
+  "nota": "Los trucos para llorar menos son consejos comunes; no hay una solución garantizada."
+}

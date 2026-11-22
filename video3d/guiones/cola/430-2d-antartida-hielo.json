@@ -1,0 +1,74 @@
+{
+  "id": "d2-antartida-hielo",
+  "motor": "2d",
+  "episodio": 30,
+  "titulo": "El 70 % del agua dulce es hielo",
+  "categoria": "ciencia",
+  "destacar": [
+    "hielo",
+    "agua"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Casi el 70 % del agua dulce del planeta está congelada.",
+      "objeto": "🧊"
+    },
+    {
+      "tipo": "globo",
+      "texto": "La mayor parte está en la Antártida, el continente más frío, más seco y más ventoso.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Del agua dulce del mundo, la mayoría es hielo y apenas una pequeña parte está en ríos y lagos.",
+      "barras": [
+        {
+          "etiqueta": "Congelada",
+          "valor": 69,
+          "texto": "≈ 69 %",
+          "objeto": "🧊"
+        },
+        {
+          "etiqueta": "Subterránea",
+          "valor": 30,
+          "texto": "≈ 30 %",
+          "objeto": "💧"
+        },
+        {
+          "etiqueta": "Ríos y lagos",
+          "valor": 1,
+          "texto": "≈ 1 %",
+          "objeto": "🏞️"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "El hielo de la Antártida llega a medir casi cinco kilómetros de grosor.",
+      "objeto": "🏔️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Si se derritiera todo, el nivel del mar subiría decenas de metros.",
+      "objeto": "🌊",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "≈ 69 % del agua dulce está en glaciares y casquetes de hielo",
+      "fuente": "USGS Water Science School, «Where is Earth’s water?»"
+    },
+    {
+      "dato": "Hielo antártico de hasta ≈ 4.800 m; subida del nivel del mar de decenas de metros",
+      "fuente": "NASA, «Antarctic ice sheet»"
+    }
+  ],
+  "nota": "Los porcentajes cambian un poco entre estudios; lo importante es el orden de magnitud."
+}

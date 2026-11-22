@@ -1,0 +1,61 @@
+{
+  "id": "d2-codigo-qr",
+  "motor": "2d",
+  "episodio": 12,
+  "titulo": "El código QR nació en una fábrica",
+  "categoria": "datos",
+  "destacar": [
+    "QR",
+    "fábrica"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El código QR se inventó para seguir piezas de autos en una fábrica.",
+      "objeto": "📱"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Lo creó Denso Wave, una empresa japonesa, en 1994.",
+      "objeto": "🏭",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Parece un cuadro de puntos, pero cada punto es un dato que el celular lee.",
+      "objeto": "⬛",
+      "lado": 12
+    },
+    {
+      "tipo": "pila",
+      "texto": "Puede guardar hasta unos 7.000 dígitos.",
+      "objeto": "🔢",
+      "cantidad": 110,
+      "contador": {
+        "desde": 0,
+        "hasta": 7000,
+        "unidad": "dígitos"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y todavía se lee aunque esté roto o manchado hasta en un 30 %.",
+      "objeto": "🩹",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Inventado en 1994 por Denso Wave (Masahiro Hara) para rastrear piezas",
+      "fuente": "Denso Wave, «History of QR Code»"
+    },
+    {
+      "dato": "Hasta 7.089 dígitos; corrección de errores de hasta ≈ 30 %",
+      "fuente": "ISO/IEC 18004 y Denso Wave"
+    }
+  ]
+}

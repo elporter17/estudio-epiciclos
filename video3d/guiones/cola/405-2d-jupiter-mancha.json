@@ -1,0 +1,74 @@
+{
+  "id": "d2-jupiter-mancha",
+  "motor": "2d",
+  "episodio": 5,
+  "titulo": "La mancha más grande que la Tierra",
+  "categoria": "ciencia",
+  "destacar": [
+    "mancha",
+    "Júpiter"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "En Júpiter hay una tormenta más grande que la Tierra.",
+      "objeto": "🪐"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "La Gran Mancha Roja mide unos 16.000 kilómetros de ancho: cabe la Tierra entera.",
+      "barras": [
+        {
+          "etiqueta": "Gran Mancha Roja",
+          "valor": 16,
+          "texto": "≈ 16.000 km",
+          "objeto": "🌀"
+        },
+        {
+          "etiqueta": "La Tierra",
+          "valor": 12.7,
+          "texto": "12.742 km",
+          "objeto": "🌍"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es una tormenta que se observa desde hace más de 150 años.",
+      "objeto": "🌀",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Sus vientos superan los 400 kilómetros por hora.",
+      "objeto": "🌪️",
+      "cantidad": 100,
+      "contador": {
+        "desde": 0,
+        "hasta": 430,
+        "unidad": "km/h"
+      }
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Y el planeta entero es tan grande que cabrían más de mil Tierras dentro.",
+      "objeto": "🌍",
+      "lado": 10
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Gran Mancha Roja de ≈ 16.000 km (2017); vientos de hasta ≈ 430 km/h",
+      "fuente": "NASA, misión Juno y «Jupiter Facts»"
+    },
+    {
+      "dato": "Volumen de Júpiter ≈ 1.300 veces el de la Tierra",
+      "fuente": "NASA, «Jupiter Fact Sheet»"
+    }
+  ],
+  "nota": "La mancha se está encogiendo: su tamaño exacto depende del año de la medición."
+}

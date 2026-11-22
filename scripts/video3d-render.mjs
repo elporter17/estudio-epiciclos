@@ -30,7 +30,9 @@ const crudo = path.join(ROOT, 'video3d', 'out', `${g.id}-crudo.mp4`), final = pa
 fs.mkdirSync(path.dirname(crudo), { recursive: true }); fs.mkdirSync(path.dirname(final), { recursive: true });
 // En GitHub no hay tarjeta gráfica: «swangle» dibuja con la CPU; en una PC con GPU, VIDEO3D_GL=angle es mucho más rápido
 const gl = process.env.VIDEO3D_GL || (process.env.GITHUB_ACTIONS ? 'swangle' : 'angle');
-correr('npx', ['remotion', 'render', 'src/index.jsx', 'Dato', crudo, `--gl=${gl}`, `--concurrency=${process.env.VIDEO3D_HILOS || 4}`, '--codec=h264', '--crf=20', '--log=error'], path.join(ROOT, 'video3d'));
+// Guion con «motor»: «2d»: se dibuja con canvas (scripts/render2d.mjs, sin IA, ~30 s); si no, con Remotion (3D)
+if (g.motor === '2d') correr(process.execPath, [path.join(ROOT, 'scripts', 'render2d.mjs'), '--salida', crudo]);
+else correr('npx', ['remotion', 'render', 'src/index.jsx', g.formato === 'idea' ? 'Idea' : 'Dato', crudo, `--gl=${gl}`, `--concurrency=${process.env.VIDEO3D_HILOS || 4}`, '--codec=h264', '--crf=20', '--log=error'], path.join(ROOT, 'video3d'));
 const r = spawnSync(ffmpegPath, ['-hide_banner', '-loglevel', 'error', '-y', '-i', crudo, '-c:v', 'copy', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-movflags', '+faststart', final]);
 if (r.status !== 0) throw new Error(`ffmpeg: ${String(r.stderr).slice(-300)}`);
 const render = JSON.parse(fs.readFileSync(path.join(ROOT, 'video3d', 'public', 'render.json'), 'utf8'));

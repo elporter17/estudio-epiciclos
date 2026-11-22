@@ -1,0 +1,229 @@
+{
+  "id": "ana-miopia",
+  "formato": "idea",
+  "ambiente": "pradera",
+  "fecha": "2026-11-27",
+  "turno": "noche",
+  "titulo": "Ana y la pizarra borrosa",
+  "categoria": "minihistoria",
+  "destacar": [
+    "Ana",
+    "miopía"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Ana no veía la pizarra y creía que a todos les pasaba igual.",
+      "objeto": "libro"
+    },
+    {
+      "tipo": "historia",
+      "texto": "Ana se sentaba al fondo del salón y copiaba lo que podía de la pizarra, aunque casi nunca entendía lo que decía.",
+      "lugar": "aula",
+      "personajes": [
+        {
+          "modelo": "female-d",
+          "x": 1.4,
+          "z": 1.2,
+          "escala": 1.4
+        },
+        {
+          "modelo": "male-c",
+          "x": -1.8,
+          "z": -0.4,
+          "accion": "interact-right"
+        }
+      ],
+      "pizarra": "LA LUNA",
+      "camara": "frente"
+    },
+    {
+      "tipo": "historia",
+      "texto": "Para ella las letras se veían borrosas, como si estuvieran bajo el agua. Pensaba que todos veían así.",
+      "lugar": "aula",
+      "personajes": [
+        {
+          "modelo": "female-d",
+          "x": 1.4,
+          "z": 1.2,
+          "escala": 1.4
+        },
+        {
+          "modelo": "male-c",
+          "x": -1.8,
+          "z": -0.4
+        }
+      ],
+      "pizarra": "LA LUNA",
+      "camara": "cerca",
+      "foco": [
+        0,
+        1.6,
+        -1
+      ],
+      "vision": {
+        "tipo": "miopia",
+        "desde": 0.3,
+        "hasta": 0.5
+      }
+    },
+    {
+      "tipo": "historia",
+      "texto": "Hasta que su maestro notó que entrecerraba los ojos, y habló con su mamá.",
+      "lugar": "aula",
+      "personajes": [
+        {
+          "modelo": "female-d",
+          "x": 1.4,
+          "z": 1.2,
+          "escala": 1.4,
+          "accion": "emote-no"
+        },
+        {
+          "modelo": "male-c",
+          "x": -0.4,
+          "z": 0.2,
+          "accion": "walk",
+          "camina": {
+            "a": [
+              0.6,
+              1.2
+            ],
+            "t0": 0.4,
+            "t1": 2.2
+          }
+        }
+      ],
+      "pizarra": "LA LUNA",
+      "camara": "frente"
+    },
+    {
+      "tipo": "historia",
+      "texto": "En el consultorio, el optometrista le puso unas lentes de prueba y le preguntó: ¿ahora qué ves?",
+      "lugar": "consultorio",
+      "personajes": [
+        {
+          "modelo": "male-a",
+          "x": -1.5,
+          "z": 0,
+          "accion": "interact-right"
+        },
+        {
+          "modelo": "female-d",
+          "x": 1.3,
+          "z": 0.4,
+          "escala": 1.4
+        }
+      ],
+      "props": [
+        {
+          "objeto": "personajes/aid-glasses",
+          "x": 0,
+          "y": 1.6,
+          "z": 1.6,
+          "escala": 3,
+          "flota": true,
+          "gira": 0.6,
+          "t0": 1.2
+        }
+      ],
+      "camara": "cerca",
+      "foco": [
+        0,
+        1.2,
+        0.4
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Con los lentes, la pizarra apareció nítida. Ana sonrió: tenía miopía, y tenía solución.",
+      "lugar": "aula",
+      "personajes": [
+        {
+          "modelo": "female-d",
+          "x": 0.8,
+          "z": 1.4,
+          "escala": 1.4,
+          "accion": [
+            [
+              0,
+              "idle"
+            ],
+            [
+              1.8,
+              "jump"
+            ]
+          ]
+        },
+        {
+          "modelo": "male-c",
+          "x": -1.8,
+          "z": -0.4,
+          "accion": "emote-yes"
+        }
+      ],
+      "pizarra": "LA LUNA",
+      "camara": "frente"
+    },
+    {
+      "tipo": "globo",
+      "texto": "Se calcula que para el año 2050 la mitad de las personas del mundo tendrá miopía.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "historia",
+      "texto": "Y los estudios sugieren que jugar al aire libre ayuda a que los niños desarrollen menos miopía.",
+      "lugar": "parque",
+      "personajes": [
+        {
+          "modelo": "female-d",
+          "x": -1,
+          "z": 1,
+          "escala": 1.4,
+          "accion": "sprint",
+          "camina": {
+            "a": [
+              2.4,
+              0.4
+            ],
+            "t0": 0.2,
+            "t1": 3.6
+          }
+        },
+        {
+          "modelo": "male-e",
+          "x": 2.2,
+          "z": -0.4,
+          "escala": 1.4,
+          "accion": "jump"
+        }
+      ],
+      "camara": "orbita",
+      "foco": [
+        0,
+        1,
+        0.4
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Si ves borroso de lejos, pide un examen de la vista: es rápido y no duele. Cuéntanos en los comentarios si usas lentes.",
+      "objeto": "personajes/aid-glasses"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Para 2050 se proyecta que cerca de la mitad de la población mundial tendrá miopía (≈ 49,8 %)",
+      "fuente": "Holden et al. (2016), Ophthalmology, «Global prevalence of myopia and high myopia and temporal trends from 2000 through 2050»"
+    },
+    {
+      "dato": "El tiempo al aire libre se asocia con menos miopía en niños",
+      "fuente": "Xiong et al. (2017), Acta Ophthalmologica (metaanálisis)"
+    },
+    {
+      "dato": "La miopía se corrige con lentes (anteojos o de contacto)",
+      "fuente": "American Academy of Ophthalmology, «What is myopia?»"
+    }
+  ],
+  "nota": "Los estudios muestran asociación, no una garantía individual; ante molestias en la vista, consultar con un profesional."
+}

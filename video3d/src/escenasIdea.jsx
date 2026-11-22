@@ -12,7 +12,7 @@ import { Paisaje } from './modelos.jsx';
 
 // ---------- vision: mesa de frutas (o semáforo) que la cámara rodea despacio ----------
 export const FRUTAS = ['comida/apple', 'comida/tomato', 'comida/strawberry', 'comida/orange', 'comida/banana', 'comida/lemon', 'comida/broccoli', 'comida/grapes', 'comida/watermelon', 'comida/cherries', 'comida/carrot', 'comida/eggplant'];
-function Semaforo({ t, position, scale = 1 }) {
+export function Semaforo({ t, position, scale = 1 }) {
   // Rojo, amarillo y verde se encienden por turnos (cada 1,4 s)
   const turno = Math.floor(t / 1.4) % 3, luces = [['#ff2d2d', 0], ['#ffd400', 1], ['#22e05b', 2]];
   return (<group position={position} scale={scale}>

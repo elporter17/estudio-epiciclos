@@ -1,0 +1,78 @@
+{
+  "id": "d2-tiburones-arboles",
+  "motor": "2d",
+  "episodio": 2,
+  "titulo": "Los tiburones son más viejos",
+  "categoria": "historia",
+  "destacar": [
+    "tiburones",
+    "árboles"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Los tiburones existían antes que los árboles.",
+      "objeto": "🦈"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Los primeros tiburones nadaban hace unos 450 millones de años, mucho antes que los primeros bosques.",
+      "hitos": [
+        {
+          "anio": -450,
+          "texto": "Primeros tiburones",
+          "etiqueta_anio": "Hace 450 M",
+          "objeto": "🦈"
+        },
+        {
+          "anio": -385,
+          "texto": "Primeros árboles",
+          "etiqueta_anio": "Hace 385 M"
+        },
+        {
+          "anio": -230,
+          "texto": "Primeros dinosaurios",
+          "etiqueta_anio": "Hace 230 M"
+        },
+        {
+          "anio": -66,
+          "texto": "Se extinguen los dinosaurios",
+          "etiqueta_anio": "Hace 66 M"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Han sobrevivido a varias extinciones masivas, incluida la de los dinosaurios.",
+      "objeto": "🦖",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Hoy hay más de 500 especies de tiburones, desde unos de 20 centímetros hasta el tiburón ballena.",
+      "objeto": "🦈",
+      "lado": 7
+    },
+    {
+      "tipo": "pila",
+      "texto": "Y casi ninguna ataca a las personas: cada año hay menos de diez muertes por mordidas en todo el mundo.",
+      "objeto": "🏊",
+      "cantidad": 90
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Escamas de tiburón de hace ≈ 450 M de años; primeros árboles hace ≈ 385 M",
+      "fuente": "Smithsonian Ocean, «Sharks»; Stein et al. (2007), Nature (Gilboa)"
+    },
+    {
+      "dato": "Menos de 10 muertes al año por mordidas",
+      "fuente": "International Shark Attack File, Museo de Historia Natural de Florida"
+    }
+  ],
+  "nota": "Las fechas de los fósiles más antiguos se revisan con cada hallazgo; son aproximadas."
+}

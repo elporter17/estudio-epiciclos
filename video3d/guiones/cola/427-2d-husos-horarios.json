@@ -1,0 +1,68 @@
+{
+  "id": "d2-husos-horarios",
+  "motor": "2d",
+  "episodio": 27,
+  "titulo": "El país con más husos horarios",
+  "categoria": "datos",
+  "destacar": [
+    "husos",
+    "horarios"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El país con más husos horarios no es Rusia.",
+      "objeto": "🕐"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Francia tiene 12 por sus territorios en todo el mundo; Rusia, 11; y Estados Unidos, 11.",
+      "barras": [
+        {
+          "etiqueta": "Francia",
+          "valor": 12,
+          "texto": "12",
+          "objeto": "🇫🇷"
+        },
+        {
+          "etiqueta": "Rusia",
+          "valor": 11,
+          "texto": "11",
+          "objeto": "🇷🇺"
+        },
+        {
+          "etiqueta": "EE. UU.",
+          "valor": 11,
+          "texto": "11",
+          "objeto": "🇺🇸"
+        }
+      ]
+    },
+    {
+      "tipo": "globo",
+      "texto": "Un huso horario es una franja de la Tierra donde se usa la misma hora oficial.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "foco",
+      "texto": "En cambio China, tan grande como Estados Unidos, usa una sola hora para todo el país.",
+      "objeto": "🇨🇳",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Francia: 12 husos con sus territorios de ultramar (13 con la Antártida); Rusia: 11; EE. UU.: 11",
+      "fuente": "Encyclopaedia Britannica, «Time zone»; Time and Date"
+    },
+    {
+      "dato": "China usa una sola hora oficial (UTC+8)",
+      "fuente": "Encyclopaedia Britannica"
+    }
+  ],
+  "nota": "El número cambia según se cuenten los territorios de ultramar y la Antártida."
+}

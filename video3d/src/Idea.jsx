@@ -9,17 +9,19 @@ import { ThreeCanvas } from '@remotion/three';
 import { clamp, ease, lerp } from './escenas3d.jsx';
 import { ESCENAS, modelosDelGuion } from './escenas.js';
 import { ESCENAS_IDEA, FRUTAS } from './escenasIdea.jsx';
+import { ESCENAS_HISTORIA } from './escenasHistoria.jsx';
 import { useModelos } from './modelos.jsx';
 import { Subtitulos, Contador, Portada, Logo, Cierre, Redibujar, BASE } from './Dato.jsx';
 
-const TODAS = { ...ESCENAS, ...ESCENAS_IDEA };
+const TODAS = { ...ESCENAS, ...ESCENAS_IDEA, ...ESCENAS_HISTORIA };
 // Simulación de daltonismo (Machado, Oliveira y Fernandes, 2009; severidad completa), en filas RGB
 const VISION = {
   protan: [0.152286, 1.052583, -0.204868, 0.114503, 0.786281, 0.099216, -0.003882, -0.048116, 1.051998],
   deutan: [0.367322, 0.860646, -0.227968, 0.280085, 0.672501, 0.047413, -0.01182, 0.04294, 0.968881],
-  tritan: [1.255528, -0.076749, -0.178779, -0.078411, 0.930809, 0.147602, 0.004733, 0.691367, 0.3039]
+  tritan: [1.255528, -0.076749, -0.178779, -0.078411, 0.930809, 0.147602, 0.004733, 0.691367, 0.3039],
+  grises: [0.299, 0.587, 0.114, 0.299, 0.587, 0.114, 0.299, 0.587, 0.114] // acromatopsia (sin color)
 };
-export const NOMBRE_VISION = { protan: 'protanopia', deutan: 'deuteranopia', tritan: 'tritanopia' };
+export const NOMBRE_VISION = { protan: 'protanopia', deutan: 'deuteranopia', tritan: 'tritanopia', grises: 'acromatopsia', miopia: 'miopía' };
 const ID = [1, 0, 0, 0, 1, 0, 0, 0, 1];
 const valores = (tipo, p) => { const v = ID.map((x, i) => lerp(x, VISION[tipo][i], p)); return `${v[0]} ${v[1]} ${v[2]} 0 0 ${v[3]} ${v[4]} ${v[5]} 0 0 ${v[6]} ${v[7]} ${v[8]} 0 0 0 0 0 1 0`; };
 
@@ -40,11 +42,11 @@ export const Idea = ({ render }) => {
   const sale = ultima ? 0 : 1 - clamp((e.dur - t) / 0.28), entra = primera ? 0 : 1 - clamp(t / 0.28), k = Math.max(sale, entra);
   const zoom = 1 + 0.12 * ease(sale) - 0.08 * ease(entra);
   // Cuánto del filtro de visión va (0 = colores normales, 1 = como lo ve alguien con ese daltonismo)
-  const v = e.vision && VISION[e.vision.tipo] ? e.vision : null, pv = v ? clamp((t / e.dur - (v.desde ?? 0.35)) / Math.max(0.01, (v.hasta ?? 0.55) - (v.desde ?? 0.35))) : 0;
-  const filtros = [k > 0.01 ? `blur(${(k * 18).toFixed(1)}px) brightness(${(1 + 0.12 * k).toFixed(2)})` : '', pv > 0 ? 'url(#vision)' : ''].filter(Boolean).join(' ') || 'none';
+  const v = e.vision && (VISION[e.vision.tipo] || e.vision.tipo === 'miopia') ? e.vision : null, pv = v ? clamp((t / e.dur - (v.desde ?? 0.35)) / Math.max(0.01, (v.hasta ?? 0.55) - (v.desde ?? 0.35))) : 0;
+  const filtros = [k > 0.01 ? `blur(${(k * 18).toFixed(1)}px) brightness(${(1 + 0.12 * k).toFixed(2)})` : '', pv > 0 && v && VISION[v.tipo] ? 'url(#vision)' : '', pv > 0 && v?.tipo === 'miopia' ? `blur(${(pv * 11).toFixed(1)}px)` : ''].filter(Boolean).join(' ') || 'none';
   return (
     <AbsoluteFill style={{ background: '#a9e1ff' }}>
-      <svg width="0" height="0" style={{ position: 'absolute' }}><filter id="vision" colorInterpolationFilters="linearRGB"><feColorMatrix type="matrix" values={v ? valores(v.tipo, pv) : valores('deutan', 0)} /></filter></svg>
+      <svg width="0" height="0" style={{ position: 'absolute' }}><filter id="vision" colorInterpolationFilters="linearRGB"><feColorMatrix type="matrix" values={v && VISION[v.tipo] ? valores(v.tipo, pv) : valores('deutan', 0)} /></filter></svg>
       <AbsoluteFill style={{ filter: filtros, transform: `scale(${zoom.toFixed(4)})` }}>
         <ThreeCanvas width={width} height={height} shadows gl={{ antialias: true, preserveDrawingBuffer: true }} camera={{ fov: 40, position: [0, 2, 6] }}>
           {Escena && <Escena t={t} dur={e.dur} cantidad={e.cantidad} m={m} e={e} g={render} />}

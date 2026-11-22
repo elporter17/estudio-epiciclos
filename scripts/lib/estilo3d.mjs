@@ -41,7 +41,7 @@ export function elegirEstilo(g, { guardar = true } = {}) {
   }
   // Ambiente distinto de los últimos 4 videos y un reparto nuevo (nadie hace el mismo papel que en el código)
   const ambientesUsados = new Set((hist.ultimos || []).slice(-4).map((x) => x.ambiente));
-  e.ambiente = elige(AMBIENTES.filter((a) => !ambientesUsados.has(a)));
+  e.ambiente = g.ambiente || elige(AMBIENTES.filter((a) => !ambientesUsados.has(a))); // un guion puede fijar su ambiente (las historias: pradera)
   let baraja; do { baraja = [...PERSONAJES]; for (let i = baraja.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [baraja[i], baraja[j]] = [baraja[j], baraja[i]]; } } while (baraja.filter((p, i) => p === PERSONAJES[i]).length > 1);
   e.reparto = Object.fromEntries(PERSONAJES.map((p, i) => [p, baraja[i]]));
   e.musica = g.musica || elige(MUSICAS.filter((m) => m !== hist.ultimos?.at(-1)?.musica));

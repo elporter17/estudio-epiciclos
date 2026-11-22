@@ -1,0 +1,271 @@
+{
+  "id": "mateo-daltonico",
+  "formato": "idea",
+  "ambiente": "pradera",
+  "fecha": "2026-11-24",
+  "turno": "noche",
+  "titulo": "Rojo contra verde: Mateo",
+  "categoria": "minihistoria",
+  "destacar": [
+    "Mateo",
+    "daltonismo"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Mateo no distinguía a su equipo del rival. ¿Sabes por qué?",
+      "objeto": "balon"
+    },
+    {
+      "tipo": "historia",
+      "texto": "Mateo amaba el fútbol, pero tenía un problema: nunca sabía a quién pasarle el balón.",
+      "lugar": "cancha",
+      "personajes": [
+        {
+          "modelo": "male-a",
+          "x": 0,
+          "z": 1.4,
+          "escala": 1.4,
+          "accion": "holding-right"
+        }
+      ],
+      "props": [
+        {
+          "objeto": "balon",
+          "x": 0.9,
+          "z": 1.8,
+          "escala": 0.5
+        }
+      ],
+      "camara": "cerca",
+      "foco": [
+        0,
+        1,
+        1.4
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "En su equipo todos llevaban rojo, y los rivales, verde. Para Mateo, los dos colores se veían casi igual.",
+      "lugar": "cancha",
+      "personajes": [
+        {
+          "modelo": "male-a",
+          "x": 0,
+          "z": 2.2,
+          "escala": 1.4,
+          "marca": "#dc2626",
+          "accion": "emote-no"
+        },
+        {
+          "modelo": "male-b",
+          "x": -2.4,
+          "z": 0,
+          "marca": "#dc2626"
+        },
+        {
+          "modelo": "male-c",
+          "x": -1.2,
+          "z": -1,
+          "marca": "#dc2626"
+        },
+        {
+          "modelo": "female-a",
+          "x": 2.4,
+          "z": 0,
+          "marca": "#16a34a"
+        },
+        {
+          "modelo": "female-b",
+          "x": 1.2,
+          "z": -1,
+          "marca": "#16a34a"
+        }
+      ],
+      "camara": "alta",
+      "foco": [
+        0,
+        0.6,
+        0.6
+      ],
+      "vision": {
+        "tipo": "deutan",
+        "desde": 0.55,
+        "hasta": 0.72
+      }
+    },
+    {
+      "tipo": "historia",
+      "texto": "Se pasó el partido regalando balones al otro equipo, y sus amigos se reían. Mateo quería desaparecer.",
+      "lugar": "cancha",
+      "personajes": [
+        {
+          "modelo": "male-a",
+          "x": 0,
+          "z": 1.4,
+          "escala": 1.5,
+          "accion": "emote-no"
+        },
+        {
+          "modelo": "female-a",
+          "x": -2.2,
+          "z": 0.2,
+          "marca": "#16a34a"
+        },
+        {
+          "modelo": "male-b",
+          "x": 2.2,
+          "z": 0.2,
+          "marca": "#dc2626"
+        }
+      ],
+      "camara": "cerca",
+      "foco": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Esa tarde, lo llevaron con una doctora de los ojos.",
+      "lugar": "consultorio",
+      "personajes": [
+        {
+          "modelo": "female-c",
+          "x": -1.5,
+          "z": 0,
+          "accion": "interact-right"
+        },
+        {
+          "modelo": "male-a",
+          "x": 1.3,
+          "z": 0.4,
+          "escala": 1.4
+        }
+      ],
+      "camara": "frente"
+    },
+    {
+      "tipo": "ishihara",
+      "texto": "Ella le mostró un círculo de puntos de colores y le preguntó qué número veía. Mateo no veía ninguno.",
+      "numero": 74,
+      "revelar": 0.8
+    },
+    {
+      "tipo": "historia",
+      "texto": "Tenía daltonismo. No ve menos: ve algunos colores de otra manera, sobre todo el rojo y el verde.",
+      "lugar": "consultorio",
+      "personajes": [
+        {
+          "modelo": "female-c",
+          "x": -1.5,
+          "z": 0,
+          "accion": "emote-yes"
+        },
+        {
+          "modelo": "male-a",
+          "x": 1.3,
+          "z": 0.4,
+          "escala": 1.4
+        }
+      ],
+      "camara": "cerca",
+      "foco": [
+        0,
+        1.1,
+        0.2
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Le pasa a uno de cada doce hombres, y a una de cada doscientas mujeres.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "historia",
+      "texto": "Su papá le contó que a él le pasaba igual: es hereditario y viaja en el cromosoma equis.",
+      "lugar": "interior",
+      "personajes": [
+        {
+          "modelo": "male-d",
+          "x": -1.4,
+          "z": 0.4,
+          "accion": "emote-yes"
+        },
+        {
+          "modelo": "male-a",
+          "x": 1.2,
+          "z": 0.8,
+          "escala": 1.4
+        }
+      ],
+      "camara": "frente"
+    },
+    {
+      "tipo": "historia",
+      "texto": "Cambiaron los colores del equipo: azul contra amarillo. Y Mateo volvió a pasar el balón sin dudar.",
+      "lugar": "cancha",
+      "personajes": [
+        {
+          "modelo": "male-a",
+          "x": 0,
+          "z": 1.6,
+          "escala": 1.4,
+          "marca": "#2563eb",
+          "accion": [
+            [
+              0,
+              "idle"
+            ],
+            [
+              2.6,
+              "jump"
+            ]
+          ]
+        },
+        {
+          "modelo": "male-b",
+          "x": -2.4,
+          "z": 0,
+          "marca": "#2563eb"
+        },
+        {
+          "modelo": "female-a",
+          "x": 2.4,
+          "z": 0,
+          "marca": "#facc15"
+        },
+        {
+          "modelo": "female-b",
+          "x": 1.2,
+          "z": -1,
+          "marca": "#facc15"
+        }
+      ],
+      "camara": "orbita",
+      "foco": [
+        0,
+        1,
+        0.6
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Conocías el daltonismo? Cuéntanos en los comentarios y compártelo con alguien que quiera saber cómo se ve el mundo así.",
+      "objeto": "balon"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Daltonismo: afecta a 1 de cada 12 hombres y a 1 de cada 200 mujeres",
+      "fuente": "National Eye Institute (EE. UU.), «Color blindness»",
+      "url": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness"
+    },
+    {
+      "dato": "Es hereditario y los genes están en el cromosoma X",
+      "fuente": "MedlinePlus (NIH), «Color vision deficiency»"
+    }
+  ],
+  "nota": "Los colores de la escena de los equipos se simulan con el modelo de Machado et al. (2009), una aproximación: cada persona ve distinto."
+}

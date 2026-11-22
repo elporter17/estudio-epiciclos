@@ -1,0 +1,68 @@
+{
+  "id": "d2-guepardo-velocidad",
+  "motor": "2d",
+  "episodio": 16,
+  "titulo": "El guepardo, el más veloz",
+  "categoria": "ciencia",
+  "destacar": [
+    "guepardo",
+    "veloz"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El guepardo pasa de cero a cien kilómetros por hora en unos tres segundos.",
+      "objeto": "🐆"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Es el animal terrestre más veloz: gana hasta a la persona más rápida.",
+      "barras": [
+        {
+          "etiqueta": "Guepardo",
+          "valor": 100,
+          "texto": "≈ 100 km/h",
+          "objeto": "🐆"
+        },
+        {
+          "etiqueta": "Usain Bolt",
+          "valor": 44.7,
+          "texto": "44,7 km/h",
+          "objeto": "🏃"
+        },
+        {
+          "etiqueta": "Persona trotando",
+          "valor": 12,
+          "texto": "≈ 12 km/h",
+          "objeto": "🚶"
+        }
+      ]
+    },
+    {
+      "tipo": "calle",
+      "texto": "Pero solo mantiene esa carrera unos cientos de metros, y después tiene que descansar.",
+      "objeto": "🐆",
+      "cantidad": 6
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y aunque es un felino grande, no ruge: ronronea.",
+      "objeto": "😺",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Aceleración 0-100 km/h en ≈ 3 s; velocidad máxima registrada ≈ 93-100 km/h",
+      "fuente": "Wilson et al. (2013), Nature; San Diego Zoo"
+    },
+    {
+      "dato": "Usain Bolt: 44,72 km/h (2009)",
+      "fuente": "World Athletics"
+    }
+  ]
+}

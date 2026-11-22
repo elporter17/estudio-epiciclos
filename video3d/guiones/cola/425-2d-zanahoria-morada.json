@@ -1,0 +1,68 @@
+{
+  "id": "d2-zanahoria-morada",
+  "motor": "2d",
+  "episodio": 25,
+  "titulo": "Las zanahorias eran moradas",
+  "categoria": "historia",
+  "destacar": [
+    "zanahorias",
+    "moradas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Las primeras zanahorias que se cultivaron no eran naranjas.",
+      "objeto": "🥕"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Se domesticaron hace más de mil años en Asia Central, y eran moradas y amarillas.",
+      "objeto": "🟣",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "Las naranjas se volvieron comunes mucho después.",
+      "hitos": [
+        {
+          "anio": 900,
+          "texto": "Zanahorias moradas y amarillas",
+          "etiqueta_anio": "≈ siglo X",
+          "objeto": "🥕"
+        },
+        {
+          "anio": 1600,
+          "texto": "Aparecen las naranjas",
+          "etiqueta_anio": "≈ siglo XVI-XVII"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "El color morado viene de unos pigmentos, las antocianinas, que también tienen los arándanos.",
+      "objeto": "🫐",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Hoy se venden zanahorias moradas, blancas, rojas y amarillas en muchos mercados.",
+      "objeto": "🥕",
+      "cantidad": 90
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Zanahorias domesticadas en Asia Central (≈ siglo X), moradas y amarillas",
+      "fuente": "Banga (1957); Iorizzo et al. (2016), BMC Genomics"
+    },
+    {
+      "dato": "El color morado viene de antocianinas",
+      "fuente": "Encyclopaedia Britannica, «Carrot»"
+    }
+  ],
+  "nota": "La fecha de las primeras naranjas es aproximada y se discute."
+}

@@ -95,7 +95,7 @@ async function vistaVideos() {
     '🎬 <b>Videos que vienen</b>',
     '',
     '<b>3D de hoy</b>',
-    turno('mediodia', '12:17'), turno('noche', '15:30'), turno('tarde', '18:30'),
+    turno('mediodia', '12:17'), turno('noche', '15:30 (2D)'), turno('tarde', '18:30'),
     '',
     `<b>Siguientes en la cola</b> (quedan ${p.video3d.quedan}; salen 3 al día)`,
     ...p.video3d.siguientes.map((g, i) => `${i + 1}. ${esc(g.titulo)}${g.fuentes === 0 ? ' ⚠️ sin fuentes' : ''}`),

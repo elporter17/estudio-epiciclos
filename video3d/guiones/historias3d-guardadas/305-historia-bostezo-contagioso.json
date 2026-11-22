@@ -1,0 +1,196 @@
+{
+  "id": "bostezo-contagioso",
+  "formato": "idea",
+  "ambiente": "pradera",
+  "fecha": "2026-12-06",
+  "turno": "noche",
+  "titulo": "El bostezo que se contagia",
+  "categoria": "minihistoria",
+  "destacar": [
+    "bostezo",
+    "contagia"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Por qué bostezas cuando ves bostezar a otro?",
+      "objeto": "comida/cup-coffee"
+    },
+    {
+      "tipo": "historia",
+      "texto": "En una sala, una persona bosteza… y de pronto otra, y otra más.",
+      "lugar": "interior",
+      "personajes": [
+        {
+          "modelo": "male-a",
+          "x": -2.4,
+          "z": 0,
+          "accion": [
+            [
+              0,
+              "idle"
+            ],
+            [
+              1,
+              "emote-yes"
+            ]
+          ]
+        },
+        {
+          "modelo": "female-b",
+          "x": -0.8,
+          "z": 0.4,
+          "accion": [
+            [
+              0,
+              "idle"
+            ],
+            [
+              2,
+              "emote-yes"
+            ]
+          ]
+        },
+        {
+          "modelo": "male-d",
+          "x": 0.8,
+          "z": 0,
+          "accion": [
+            [
+              0,
+              "idle"
+            ],
+            [
+              3,
+              "emote-yes"
+            ]
+          ]
+        },
+        {
+          "modelo": "female-f",
+          "x": 2.4,
+          "z": 0.4,
+          "accion": [
+            [
+              0,
+              "idle"
+            ],
+            [
+              4,
+              "emote-yes"
+            ]
+          ]
+        }
+      ],
+      "camara": "frente"
+    },
+    {
+      "tipo": "historia",
+      "texto": "Se llama bostezo contagioso, y no solo pasa viéndolo: a veces basta con leer sobre él. ¿Ya sientes ganas?",
+      "lugar": "interior",
+      "personajes": [
+        {
+          "modelo": "female-c",
+          "x": 0,
+          "z": 0.6,
+          "escala": 1.9,
+          "accion": [
+            [
+              0,
+              "idle"
+            ],
+            [
+              2.6,
+              "emote-yes"
+            ]
+          ]
+        }
+      ],
+      "camara": "cerca",
+      "foco": [
+        0,
+        1.5,
+        0.6
+      ]
+    },
+    {
+      "tipo": "gente",
+      "texto": "Los estudios dicen que cerca de la mitad de las personas lo contagia.",
+      "cantidad": 24
+    },
+    {
+      "tipo": "historia",
+      "texto": "Hasta los perros se contagian: en un estudio de 2008, la mayoría bostezó al ver bostezar a una persona.",
+      "lugar": "parque",
+      "personajes": [
+        {
+          "modelo": "male-e",
+          "x": -1,
+          "z": 1,
+          "accion": [
+            [
+              0,
+              "idle"
+            ],
+            [
+              1.5,
+              "emote-yes"
+            ]
+          ]
+        },
+        {
+          "modelo": "female-a",
+          "x": 1.2,
+          "z": 0.4,
+          "accion": "idle"
+        }
+      ],
+      "camara": "orbita",
+      "foco": [
+        0,
+        1,
+        0.6
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Nadie sabe con certeza por qué pasa. Una idea es que tiene que ver con la empatía; otra, con enfriar el cerebro.",
+      "lugar": "interior",
+      "personajes": [
+        {
+          "modelo": "female-c",
+          "x": -1.2,
+          "z": 0.6,
+          "accion": "idle"
+        },
+        {
+          "modelo": "male-b",
+          "x": 1.2,
+          "z": 0.6,
+          "accion": "emote-no"
+        }
+      ],
+      "camara": "frente"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Ya bostezaste? Cuéntanos en los comentarios y compártelo con alguien que tenga sueño.",
+      "objeto": "comida/cup-coffee"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Bostezo contagioso: también se dispara al leer o pensar en bostezar",
+      "fuente": "Provine (1986), Ethology, «Yawning as a stereotyped action pattern and releasing stimulus»"
+    },
+    {
+      "dato": "Perros que bostezan al ver bostezar a una persona (21 de 29)",
+      "fuente": "Joly-Mascheroni, Senju y Shepherd (2008), Biology Letters"
+    },
+    {
+      "dato": "Hipótesis: empatía y enfriamiento del cerebro; no hay consenso",
+      "fuente": "Gallup y Gallup (2007), Evolutionary Psychology"
+    }
+  ],
+  "nota": "La proporción de personas que se contagian varía según el estudio (entre ~40 % y ~60 %)."
+}

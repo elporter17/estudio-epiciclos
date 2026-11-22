@@ -15,6 +15,7 @@ export const TEMAS = {
   noticia: { cielo: ['#b91c1c', '#f87171', '#fee2e2'], acento: '#f87171', nombre: 'EXPLICADO' },
   especial: { cielo: ['#9d174d', '#f472b6', '#fce7f3'], acento: '#f472b6', nombre: 'ESPECIAL' },
   // Temporada 2: mitos desmentidos y orgullo hondureño
+  minihistoria: { cielo: ['#be185d', '#f472b6', '#fce7f3'], acento: '#f9a8d4', nombre: 'MINI HISTORIA' },
   mito: { cielo: ['#c2410c', '#fb923c', '#ffedd5'], acento: '#fdba74', nombre: '¿MITO O VERDAD?' },
   honduras: { cielo: ['#1d4ed8', '#60a5fa', '#eff6ff'], acento: '#93c5fd', nombre: 'ORGULLO HONDUREÑO' }
 };

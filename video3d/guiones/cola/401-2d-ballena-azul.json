@@ -1,0 +1,85 @@
+{
+  "id": "d2-ballena-azul",
+  "motor": "2d",
+  "episodio": 1,
+  "titulo": "El corazón de la ballena azul",
+  "categoria": "ciencia",
+  "destacar": [
+    "ballena",
+    "corazón"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El corazón de la ballena azul es del tamaño de un auto pequeño.",
+      "objeto": "🐋"
+    },
+    {
+      "tipo": "foco",
+      "texto": "La ballena azul es el animal más grande que ha existido: llega a medir unos 30 metros.",
+      "objeto": "🐋",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Es más larga que dos autobuses juntos y mide casi veinte veces lo que una persona.",
+      "barras": [
+        {
+          "etiqueta": "Ballena azul",
+          "valor": 30,
+          "texto": "30 m",
+          "objeto": "🐋"
+        },
+        {
+          "etiqueta": "Autobús",
+          "valor": 12,
+          "texto": "12 m",
+          "objeto": "🚌"
+        },
+        {
+          "etiqueta": "Persona",
+          "valor": 1.7,
+          "texto": "1,7 m",
+          "objeto": "🧍"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Su corazón pesa cerca de 180 kilos: como dos o tres adultos juntos.",
+      "objeto": "🫀",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Late muy despacio: cuando bucea puede bajar a unos dos latidos por minuto.",
+      "objeto": "❤️",
+      "cantidad": 90
+    },
+    {
+      "tipo": "pila",
+      "texto": "Y un ballenato toma unos doscientos litros de leche al día.",
+      "objeto": "🥛",
+      "cantidad": 110,
+      "contador": {
+        "desde": 0,
+        "hasta": 200,
+        "unidad": "litros"
+      }
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Hasta ≈ 30 m de largo y unas 150 toneladas",
+      "fuente": "NOAA Fisheries, «Blue whale»"
+    },
+    {
+      "dato": "Corazón de ≈ 180 kg y hasta 2 latidos por minuto al bucear",
+      "fuente": "Goldbogen et al. (2019), PNAS; Royal Ontario Museum (2014)"
+    }
+  ]
+}

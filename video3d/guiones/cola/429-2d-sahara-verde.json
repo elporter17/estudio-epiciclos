@@ -1,0 +1,64 @@
+{
+  "id": "d2-sahara-verde",
+  "motor": "2d",
+  "episodio": 29,
+  "titulo": "El Sahara fue verde",
+  "categoria": "historia",
+  "destacar": [
+    "Sahara",
+    "verde"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Hace unos 6.000 años el Sahara era verde.",
+      "objeto": "🏜️"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Durante miles de años el norte de África tuvo lagos, ríos y animales de sabana.",
+      "hitos": [
+        {
+          "anio": -12000,
+          "texto": "Sahara húmedo",
+          "etiqueta_anio": "Hace 12.000 años",
+          "objeto": "🌿"
+        },
+        {
+          "anio": -5000,
+          "texto": "Empieza a secarse",
+          "etiqueta_anio": "Hace 5.000 años"
+        },
+        {
+          "anio": -3000,
+          "texto": "Desierto",
+          "etiqueta_anio": "Hace 3.000 años",
+          "objeto": "🏜️"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Hay pinturas en las rocas del Sahara con jirafas, hipopótamos y gente nadando.",
+      "objeto": "🦒",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Cambió por pequeños movimientos de la inclinación de la Tierra, que alteraron las lluvias.",
+      "objeto": "🌍",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El «Sahara verde» o Periodo Húmedo Africano, hace ≈ 14.500-5.000 años",
+      "fuente": "NASA Earth Observatory, «The Green Sahara»; deMenocal et al. (2000), Quaternary Science Reviews"
+    }
+  ],
+  "nota": "Las fechas del cambio varían por región."
+}

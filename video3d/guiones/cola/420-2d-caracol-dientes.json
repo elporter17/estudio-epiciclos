@@ -1,0 +1,65 @@
+{
+  "id": "d2-caracol-dientes",
+  "motor": "2d",
+  "episodio": 20,
+  "titulo": "Un caracol con 14.000 dientes",
+  "categoria": "curiosidad",
+  "destacar": [
+    "caracol",
+    "dientes"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Un caracol de jardín puede tener miles de dientes.",
+      "objeto": "🐌"
+    },
+    {
+      "tipo": "pila",
+      "texto": "Se calcula que tiene hasta unos 14.000 dientes diminutos.",
+      "objeto": "🦷",
+      "cantidad": 140,
+      "contador": {
+        "desde": 0,
+        "hasta": 14000,
+        "unidad": "dientes"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "No están en la boca como los nuestros, sino en una lengua rasposa llamada rádula.",
+      "objeto": "👅",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "La usa como una lima para raspar hojas y otros alimentos.",
+      "objeto": "🥬",
+      "cantidad": 1
+    },
+    {
+      "tipo": "calendario",
+      "texto": "Y cuando hace mucho calor o se seca todo, algunos caracoles duermen por meses, y hasta años.",
+      "contador": {
+        "desde": 0,
+        "hasta": 3,
+        "unidad": "años"
+      }
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "La rádula de algunos caracoles tiene miles de dientes (hasta ≈ 14.000)",
+      "fuente": "Encyclopaedia Britannica, «Radula»; Smithsonian"
+    },
+    {
+      "dato": "Estivación o hibernación prolongada, en casos de hasta ≈ 3 años",
+      "fuente": "Natural History Museum (Londres)"
+    }
+  ],
+  "nota": "El número de dientes varía según la especie y el estudio."
+}

@@ -1,0 +1,76 @@
+{
+  "id": "d2-primer-mensaje-lo",
+  "motor": "2d",
+  "episodio": 11,
+  "titulo": "El primer mensaje fue «LO»",
+  "categoria": "historia",
+  "destacar": [
+    "mensaje",
+    "LO"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El primer mensaje enviado por Internet fue «LO».",
+      "objeto": "💻"
+    },
+    {
+      "tipo": "foco",
+      "texto": "En 1969, desde una universidad de California, querían escribir «LOGIN».",
+      "objeto": "⌨️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Pero el sistema falló después de la segunda letra, y solo llegó «LO».",
+      "objeto": "💥",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "Desde entonces, internet creció por etapas.",
+      "hitos": [
+        {
+          "anio": 1969,
+          "texto": "Primer mensaje: «LO»",
+          "objeto": "💻"
+        },
+        {
+          "anio": 1971,
+          "texto": "Primer correo electrónico"
+        },
+        {
+          "anio": 1983,
+          "texto": "Nace el internet moderno"
+        },
+        {
+          "anio": 1991,
+          "texto": "La web se abre al público"
+        }
+      ]
+    },
+    {
+      "tipo": "globo",
+      "texto": "Hoy casi siete de cada diez personas del mundo usan internet.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Primer mensaje ARPANET: 29 de octubre de 1969, UCLA → SRI; falló tras «LO»",
+      "fuente": "UCLA Samueli, «The first message sent over the ARPANET»"
+    },
+    {
+      "dato": "Correo (1971), TCP/IP (1983), web pública (1991)",
+      "fuente": "Encyclopaedia Britannica, «Internet»"
+    },
+    {
+      "dato": "≈ 68 % de la población mundial usa internet (2024)",
+      "fuente": "ITU, «Facts and Figures 2024»"
+    }
+  ]
+}

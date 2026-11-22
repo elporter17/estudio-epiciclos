@@ -1,0 +1,55 @@
+{
+  "id": "d2-cacahuate-legumbre",
+  "motor": "2d",
+  "episodio": 23,
+  "titulo": "El cacahuate no es una nuez",
+  "categoria": "curiosidad",
+  "destacar": [
+    "cacahuate",
+    "legumbre"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El cacahuate no es una nuez: es una legumbre.",
+      "objeto": "🥜"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es pariente de los frijoles y las lentejas, no de las almendras ni las nueces.",
+      "objeto": "🫘",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Además, crece bajo la tierra: la flor se dobla y entierra su fruto.",
+      "objeto": "🌱",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Cada planta produce decenas de vainas, y cada vaina trae dos o tres semillas.",
+      "objeto": "🥜",
+      "cantidad": 110
+    },
+    {
+      "tipo": "gente",
+      "texto": "Es una de las alergias alimentarias más comunes, así que siempre hay que leer las etiquetas.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "El cacahuate (Arachis hypogaea) es una leguminosa; sus frutos maduran bajo tierra",
+      "fuente": "Encyclopaedia Britannica, «Peanut»"
+    },
+    {
+      "dato": "Alergia al cacahuate: una de las más comunes",
+      "fuente": "Food Allergy Research & Education (FARE)"
+    }
+  ]
+}

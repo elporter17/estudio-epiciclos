@@ -1,0 +1,55 @@
+{
+  "id": "d2-pinguino-rodillas",
+  "motor": "2d",
+  "episodio": 22,
+  "titulo": "Los pingüinos sí tienen rodillas",
+  "categoria": "curiosidad",
+  "destacar": [
+    "pingüinos",
+    "rodillas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Los pingüinos tienen rodillas, pero las llevan escondidas.",
+      "objeto": "🐧"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Sus piernas son largas, pero quedan dentro del cuerpo, cubiertas por plumas.",
+      "objeto": "🦵",
+      "cantidad": 1
+    },
+    {
+      "tipo": "pila",
+      "texto": "Por eso caminan balanceándose y, para abrigarse, se amontonan por miles.",
+      "objeto": "🐧",
+      "cantidad": 90
+    },
+    {
+      "tipo": "foco",
+      "texto": "El pingüino emperador puede bucear a más de 500 metros de profundidad.",
+      "objeto": "🌊",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y puede aguantar la respiración por más de veinte minutos.",
+      "cantidad": 18
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Rodillas y fémur dentro del cuerpo",
+      "fuente": "Smithsonian National Zoo, «Penguins»"
+    },
+    {
+      "dato": "Emperador: hasta ≈ 564 m de profundidad y > 20 minutos de inmersión",
+      "fuente": "Wienecke et al. (2007); Ponganis (2015)"
+    }
+  ]
+}

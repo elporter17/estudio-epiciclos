@@ -1,0 +1,74 @@
+{
+  "id": "d2-chile-picante",
+  "motor": "2d",
+  "episodio": 26,
+  "titulo": "Las aves no sienten el picante",
+  "categoria": "ciencia",
+  "destacar": [
+    "picante",
+    "aves"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Las aves comen chile sin sentir que pica.",
+      "objeto": "🌶️"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Lo que nos arde, la capsaicina, es una defensa de la planta contra los mamíferos.",
+      "objeto": "🔥",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Las aves no la sienten, y así llevan las semillas lejos sin dañarlas.",
+      "objeto": "🐦",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "El picante se mide en unidades Scoville: de un jalapeño al chile más picante del mundo.",
+      "barras": [
+        {
+          "etiqueta": "Jalapeño",
+          "valor": 8,
+          "texto": "hasta 8.000",
+          "objeto": "🫑"
+        },
+        {
+          "etiqueta": "Habanero",
+          "valor": 350,
+          "texto": "≈ 350.000",
+          "objeto": "🌶️"
+        },
+        {
+          "etiqueta": "Pepper X",
+          "valor": 2693,
+          "texto": "2,69 millones",
+          "objeto": "🔥"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Lo que sientes no es un sabor: es una señal de dolor que le manda tu boca al cerebro.",
+      "objeto": "🧠",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Las aves son insensibles a la capsaicina y dispersan las semillas",
+      "fuente": "Tewksbury y Nabhan (2001), Nature"
+    },
+    {
+      "dato": "Pepper X: 2.693.000 unidades Scoville (récord 2023)",
+      "fuente": "Guinness World Records, «Hottest chili pepper»"
+    }
+  ]
+}

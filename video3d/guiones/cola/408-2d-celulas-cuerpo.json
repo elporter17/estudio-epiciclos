@@ -1,0 +1,73 @@
+{
+  "id": "d2-celulas-cuerpo",
+  "motor": "2d",
+  "episodio": 8,
+  "titulo": "Tu cuerpo tiene 30 billones",
+  "categoria": "ciencia",
+  "destacar": [
+    "células",
+    "30"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Tu cuerpo tiene unos 30 billones de células.",
+      "objeto": "🧬"
+    },
+    {
+      "tipo": "gente",
+      "texto": "Son casi cuatro mil veces las personas que viven en el planeta.",
+      "cantidad": 30
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Y 84 de cada 100 son glóbulos rojos.",
+      "barras": [
+        {
+          "etiqueta": "Glóbulos rojos",
+          "valor": 84,
+          "texto": "84 %",
+          "objeto": "🩸"
+        },
+        {
+          "etiqueta": "Todas las demás",
+          "valor": 16,
+          "texto": "16 %",
+          "objeto": "🧫"
+        }
+      ]
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Cada día se renuevan unos 330 mil millones de células.",
+      "objeto": "🔄",
+      "cantidad": 110,
+      "contador": {
+        "desde": 0,
+        "hasta": 330,
+        "unidad": "mil millones"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y hay más o menos tantas bacterias en tu cuerpo como células propias.",
+      "objeto": "🦠",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "≈ 30 billones de células humanas; 84 % glóbulos rojos",
+      "fuente": "Sender, Fuchs y Milo (2016), PLoS Biology; Sender y Milo (2021), Nature Medicine"
+    },
+    {
+      "dato": "Se renuevan ≈ 330 mil millones al día; bacterias ≈ igual que células humanas",
+      "fuente": "Sender y Milo (2021), Nature Medicine"
+    }
+  ],
+  "nota": "Son estimaciones para un adulto promedio: cada persona es distinta."
+}

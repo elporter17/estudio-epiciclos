@@ -1,0 +1,83 @@
+{
+  "id": "d2-saturno-flota",
+  "motor": "2d",
+  "episodio": 6,
+  "titulo": "Saturno flotaría en el agua",
+  "categoria": "ciencia",
+  "destacar": [
+    "Saturno",
+    "flotaría"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Saturno flotaría en el agua si hubiera una piscina lo bastante grande.",
+      "objeto": "🪐"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Su densidad es menor que la del agua, y la Tierra es el planeta más denso.",
+      "barras": [
+        {
+          "etiqueta": "Saturno",
+          "valor": 0.69,
+          "texto": "0,69 g/cm³",
+          "objeto": "🪐"
+        },
+        {
+          "etiqueta": "Agua",
+          "valor": 1,
+          "texto": "1 g/cm³",
+          "objeto": "💧"
+        },
+        {
+          "etiqueta": "Tierra",
+          "valor": 5.5,
+          "texto": "5,5 g/cm³",
+          "objeto": "🌍"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es un gigante de gas: casi todo hidrógeno y helio, los dos elementos más livianos.",
+      "objeto": "🎈",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "Sus anillos se vieron por primera vez con telescopio hace más de 400 años.",
+      "hitos": [
+        {
+          "anio": 1610,
+          "texto": "Galileo ve «orejas»",
+          "objeto": "🔭"
+        },
+        {
+          "anio": 1655,
+          "texto": "Huygens ve un anillo"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Los anillos miden más de 280.000 kilómetros de ancho, pero en algunos tramos tienen apenas unos diez metros de grosor.",
+      "objeto": "💍",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Densidad media de Saturno ≈ 0,69 g/cm³ (menor que la del agua)",
+      "fuente": "NASA, «Saturn Fact Sheet»"
+    },
+    {
+      "dato": "Anillos: > 280.000 km de ancho y tan finos como ≈ 10 m en algunas zonas",
+      "fuente": "NASA/JPL, «Saturn’s Rings»"
+    }
+  ]
+}

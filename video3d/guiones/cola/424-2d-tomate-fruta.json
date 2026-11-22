@@ -1,0 +1,60 @@
+{
+  "id": "d2-tomate-fruta",
+  "motor": "2d",
+  "episodio": 24,
+  "titulo": "El tomate que fue a juicio",
+  "categoria": "historia",
+  "destacar": [
+    "tomate",
+    "juicio"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El tomate es una fruta, pero una corte dijo que es verdura.",
+      "objeto": "🍅"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Para la botánica es una fruta, porque nace de la flor y guarda semillas.",
+      "objeto": "🌼",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "Pero en 1893 la Corte Suprema de Estados Unidos decidió otra cosa, por una cuestión de impuestos.",
+      "hitos": [
+        {
+          "anio": 1887,
+          "texto": "Se cobran aranceles a las verduras",
+          "objeto": "🍅"
+        },
+        {
+          "anio": 1893,
+          "texto": "La Corte decide: es verdura"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "El argumento fue que se come en la cena, con el plato principal, y no de postre.",
+      "objeto": "🍽️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Las dos cosas son ciertas: botánicamente es fruta, y en la cocina se usa como verdura.",
+      "cantidad": 22
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Nix contra Hedden (1893): la Corte Suprema de EE. UU. lo clasificó como verdura para efectos de aranceles",
+      "fuente": "Corte Suprema de EE. UU., Nix v. Hedden, 149 U.S. 304 (1893)"
+    }
+  ]
+}

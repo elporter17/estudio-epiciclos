@@ -1,0 +1,74 @@
+{
+  "id": "d2-colibri-alas",
+  "motor": "2d",
+  "episodio": 15,
+  "titulo": "El colibrí y sus alas",
+  "categoria": "ciencia",
+  "destacar": [
+    "colibrí",
+    "alas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El colibrí bate las alas hasta 80 veces por segundo.",
+      "objeto": "🐦"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Según la especie, aletea entre 50 y 80 veces cada segundo.",
+      "objeto": "🪽",
+      "cantidad": 120,
+      "contador": {
+        "desde": 0,
+        "hasta": 80,
+        "unidad": "aleteos por segundo"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es la única ave que puede volar hacia atrás y quedarse quieta en el aire.",
+      "objeto": "🌸",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "El más pequeño pesa menos que una moneda.",
+      "barras": [
+        {
+          "etiqueta": "Colibrí abeja",
+          "valor": 2,
+          "texto": "≈ 2 g",
+          "objeto": "🐦"
+        },
+        {
+          "etiqueta": "Moneda",
+          "valor": 7,
+          "texto": "≈ 7 g",
+          "objeto": "🪙"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Come muchas veces al día: su cuerpo gasta energía muy rápido.",
+      "objeto": "🍯",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Aletea entre ≈ 50 y 80 veces por segundo y puede volar hacia atrás",
+      "fuente": "Smithsonian National Zoo, «Hummingbirds»"
+    },
+    {
+      "dato": "El colibrí abeja pesa ≈ 2 g",
+      "fuente": "Audubon Society y Encyclopaedia Britannica"
+    }
+  ],
+  "nota": "Muchas aves pueden cernirse un momento; el colibrí es el único que lo mantiene de forma sostenida."
+}

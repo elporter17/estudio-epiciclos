@@ -1,0 +1,182 @@
+{
+  "id": "primer-semaforo",
+  "formato": "idea",
+  "ambiente": "pradera",
+  "fecha": "2026-11-30",
+  "turno": "noche",
+  "titulo": "El semáforo que explotó",
+  "categoria": "minihistoria",
+  "destacar": [
+    "semáforo",
+    "1868"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El primer semáforo del mundo explotó. Esta es su historia.",
+      "objeto": "autos/taxi"
+    },
+    {
+      "tipo": "historia",
+      "texto": "En 1868, Londres tenía un problema: carruajes y peatones se cruzaban sin ningún orden frente al Parlamento.",
+      "lugar": "calle",
+      "personajes": [
+        {
+          "modelo": "male-b",
+          "x": -2,
+          "z": 0,
+          "accion": "walk",
+          "camina": {
+            "a": [
+              2,
+              0
+            ],
+            "t0": 0.2,
+            "t1": 3
+          }
+        },
+        {
+          "modelo": "female-e",
+          "x": 2,
+          "z": 0.6,
+          "accion": "walk",
+          "camina": {
+            "a": [
+              -2,
+              0.6
+            ],
+            "t0": 0.2,
+            "t1": 3
+          }
+        }
+      ],
+      "camara": "frente",
+      "foco": [
+        0,
+        1.2,
+        0
+      ]
+    },
+    {
+      "tipo": "linea",
+      "texto": "Lo diseñó un ingeniero de ferrocarriles: brazos mecánicos de día y lámparas de gas rojas y verdes de noche.",
+      "hitos": [
+        {
+          "anio": 1868,
+          "texto": "Primer semáforo, en Londres"
+        },
+        {
+          "anio": 1914,
+          "texto": "Primero eléctrico, en Cleveland"
+        },
+        {
+          "anio": 1920,
+          "texto": "Tres luces, en Detroit"
+        }
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Pero una fuga de gas lo hizo explotar en 1869 y hirió al policía que lo manejaba.",
+      "lugar": "calle",
+      "personajes": [
+        {
+          "modelo": "male-b",
+          "x": -1.4,
+          "z": 0.4,
+          "accion": "emote-no"
+        },
+        {
+          "modelo": "female-e",
+          "x": 1.4,
+          "z": 0.4,
+          "accion": "emote-no"
+        }
+      ],
+      "camara": "cerca",
+      "foco": [
+        0,
+        1.3,
+        0
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "Casi medio siglo después, en 1914, Cleveland instaló el primer semáforo eléctrico.",
+      "lugar": "calle",
+      "personajes": [
+        {
+          "modelo": "female-e",
+          "x": -2,
+          "z": 0.6,
+          "accion": "walk",
+          "camina": {
+            "a": [
+              2,
+              0.6
+            ],
+            "t0": 0.3,
+            "t1": 3
+          }
+        },
+        {
+          "modelo": "male-d",
+          "x": 1.6,
+          "z": -0.2,
+          "accion": "idle"
+        }
+      ],
+      "camara": "orbita",
+      "foco": [
+        0,
+        1.2,
+        0
+      ]
+    },
+    {
+      "tipo": "historia",
+      "texto": "El rojo significa alto porque los ferrocarriles ya usaban ese color para el peligro. Y siempre va arriba, para que quien no distingue bien el rojo del verde se guíe por la posición.",
+      "lugar": "calle",
+      "personajes": [
+        {
+          "modelo": "male-d",
+          "x": -1.6,
+          "z": 1,
+          "escala": 1.5
+        }
+      ],
+      "camara": "cerca",
+      "foco": [
+        3.2,
+        1.9,
+        -0.9
+      ],
+      "fov": 36,
+      "vision": {
+        "tipo": "deutan",
+        "desde": 0.55,
+        "hasta": 0.7
+      }
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Te habías fijado que el rojo siempre va arriba? Cuéntanos en los comentarios y compártelo.",
+      "objeto": "autos/taxi"
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Primer semáforo, Londres, 1868 (ingeniero ferroviario John Peake Knight); explotó en 1869",
+      "fuente": "Enciclopedia Británica, «Traffic light»"
+    },
+    {
+      "dato": "Primer semáforo eléctrico: Cleveland (Ohio), 1914",
+      "fuente": "Enciclopedia Británica y Biblioteca del Congreso de EE. UU."
+    },
+    {
+      "dato": "Semáforo de tres colores en Detroit, 1920",
+      "fuente": "History.com, «The history of the traffic light»"
+    }
+  ],
+  "nota": "La fecha del semáforo de tres colores (Detroit, 1920) es la que más cambia entre fuentes."
+}

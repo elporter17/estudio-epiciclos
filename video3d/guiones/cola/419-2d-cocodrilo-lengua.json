@@ -1,0 +1,73 @@
+{
+  "id": "d2-cocodrilo-lengua",
+  "motor": "2d",
+  "episodio": 19,
+  "titulo": "El cocodrilo no saca la lengua",
+  "categoria": "ciencia",
+  "destacar": [
+    "cocodrilo",
+    "mordida"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Los cocodrilos no pueden sacar la lengua.",
+      "objeto": "🐊"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Una membrana la mantiene pegada al paladar, así que no se mueve como la nuestra.",
+      "objeto": "👅",
+      "cantidad": 1
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Pero su mordida es la más fuerte que se ha medido en un animal vivo.",
+      "barras": [
+        {
+          "etiqueta": "Cocodrilo marino",
+          "valor": 16.4,
+          "texto": "≈ 16.400 N",
+          "objeto": "🐊"
+        },
+        {
+          "etiqueta": "León",
+          "valor": 4.2,
+          "texto": "≈ 4.200 N",
+          "objeto": "🦁"
+        },
+        {
+          "etiqueta": "Persona",
+          "valor": 0.9,
+          "texto": "≈ 900 N",
+          "objeto": "🧍"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Pueden pasar meses sin comer, porque guardan energía en la cola.",
+      "objeto": "🕰️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Y su linaje es muy antiguo: sus parientes ya vivían junto a los dinosaurios.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Mordida de ≈ 16.400 newtons en el cocodrilo marino; ≈ 900 N en humanos",
+      "fuente": "Erickson et al. (2012), PLoS ONE"
+    },
+    {
+      "dato": "La lengua está unida al paladar por una membrana",
+      "fuente": "San Diego Zoo, «Crocodile»"
+    }
+  ]
+}

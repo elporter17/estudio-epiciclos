@@ -34,7 +34,7 @@ const PIEZAS = {
   quiz: { workflow: R, que: 'Reel de relleno: quiz o top 10', inputs: { formato: 'auto' } },
   comosehace: { workflow: 'como-se-hace.yml', que: 'Cómo se hace: la fábrica en 2D (más de 1 min)' },
   video3d1: { workflow: 'video3d.yml', que: 'Video 3D de datos (mediodía)', inputs: { modo: 'publicar', turno: 'mediodia' } },
-  video3d3: { workflow: 'video3d.yml', que: 'Video 3D de datos (15:30)', inputs: { modo: 'publicar', turno: 'noche' } },
+  video3d3: { workflow: 'video3d.yml', que: 'Video de datos 2D, sin IA (15:30)', inputs: { modo: 'publicar', turno: 'noche' } },
   video3d2: { workflow: 'video3d.yml', que: 'Video 3D de datos (tarde, la hora de más vistas)', inputs: { modo: 'publicar', turno: 'tarde' } },
   imagen: { workflow: 'curiosidades-facebook.yml', que: 'Imagen informativa: 5 datos de un tema (sin retos)', inputs: { tipo: 'datos' } },
   debate: { workflow: R, que: 'Reel de debate: 5 retos que dividen a internet', inputs: { formato: 'debate' } },

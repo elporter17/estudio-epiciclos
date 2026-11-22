@@ -14,6 +14,6 @@ export { MODELOS_CIUDAD, TEMAS };
 // Los modelos de Kenney que pide un guion (objetos de las escenas, barras y carteles)
 export function modelosDelGuion(render) {
   const s = new Set();
-  for (const e of render?.escenas || []) for (const o of [e.objeto, ...(e.barras || []).map((b) => b.objeto), ...(e.hitos || []).map((h) => h.objeto)]) if (typeof o === 'string' && o.includes('/')) s.add(o);
+  for (const e of render?.escenas || []) for (const o of [e.objeto, ...(e.barras || []).map((b) => b.objeto), ...(e.hitos || []).map((h) => h.objeto), ...(e.props || []).map((x) => x.objeto), ...(e.personajes || []).map((x) => x.modelo && `personajes/character-${x.modelo}`), ...(e.lugar === 'calle' ? ['ciudad/building-type-a', 'ciudad/building-type-c', 'ciudad/building-type-h', 'ciudad/building-type-e', 'ciudad/building-type-m', 'ciudad/building-type-b'] : [])]) if (typeof o === 'string' && o.includes('/')) s.add(o);
   return [...s];
 }

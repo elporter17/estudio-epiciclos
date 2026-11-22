@@ -1,0 +1,58 @@
+{
+  "id": "d2-koala-huellas",
+  "motor": "2d",
+  "episodio": 17,
+  "titulo": "El koala y sus huellas",
+  "categoria": "curiosidad",
+  "destacar": [
+    "koala",
+    "huellas"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Los koalas tienen huellas dactilares casi iguales a las humanas.",
+      "objeto": "🐨"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Tanto, que bajo el microscopio es difícil distinguirlas de las de una persona.",
+      "objeto": "🔍",
+      "cantidad": 1
+    },
+    {
+      "tipo": "calendario",
+      "texto": "Duerme unas 20 horas al día, porque comer hojas de eucalipto da muy poca energía.",
+      "contador": {
+        "desde": 0,
+        "hasta": 20,
+        "unidad": "horas"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Esas hojas son tóxicas para la mayoría de los animales, y el koala las digiere con ayuda de microbios.",
+      "objeto": "🌿",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Un bebé de koala nace del tamaño de una gominola y vive meses en la bolsa de su mamá.",
+      "cantidad": 18
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Huellas dactilares casi indistinguibles de las humanas",
+      "fuente": "Henneberg et al. (1997), Nature; Australian Koala Foundation"
+    },
+    {
+      "dato": "Duerme ≈ 18-22 horas al día",
+      "fuente": "Australian Koala Foundation y San Diego Zoo"
+    }
+  ]
+}

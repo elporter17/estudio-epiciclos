@@ -1,0 +1,77 @@
+{
+  "id": "d2-amazonas-agua",
+  "motor": "2d",
+  "episodio": 3,
+  "titulo": "El río que aporta el 20 %",
+  "categoria": "datos",
+  "destacar": [
+    "Amazonas",
+    "20"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "El Amazonas lleva más agua que cualquier otro río del planeta.",
+      "objeto": "🌊"
+    },
+    {
+      "tipo": "globo",
+      "texto": "Aporta cerca del 20 % de toda el agua dulce que los ríos llevan al mar.",
+      "modo": "luces"
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Descarga unos 209.000 metros cúbicos de agua por segundo.",
+      "objeto": "💧",
+      "cantidad": 140,
+      "contador": {
+        "desde": 0,
+        "hasta": 209000,
+        "unidad": "m³ por segundo"
+      }
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Su caudal supera al de los siguientes siete ríos juntos.",
+      "barras": [
+        {
+          "etiqueta": "Amazonas",
+          "valor": 209,
+          "texto": "209.000",
+          "objeto": "🌊"
+        },
+        {
+          "etiqueta": "Congo",
+          "valor": 41,
+          "texto": "41.000"
+        },
+        {
+          "etiqueta": "Misisipi",
+          "valor": 17,
+          "texto": "16.800"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "En época de lluvias puede medir hasta 40 kilómetros de orilla a orilla.",
+      "objeto": "🛶",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Descarga ≈ 209.000 m³/s, ≈ 20 % del agua dulce que llega al océano",
+      "fuente": "NASA Earth Observatory y USGS"
+    },
+    {
+      "dato": "Caudal mayor que el de los siguientes ríos juntos",
+      "fuente": "Encyclopaedia Britannica, «Amazon River»"
+    }
+  ],
+  "nota": "Las cifras de caudal cambian por temporada y por el método de medición."
+}

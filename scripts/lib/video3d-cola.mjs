@@ -28,21 +28,23 @@ export function guiones() {
 // (y que no esté ya listo para el otro turno)
 export function elegir(fecha, estado = leerEstado(), turno = 'mediodia') {
   const hechos = new Set([...estado.publicados.map((p) => p.id), ...Object.entries(estado.listos).filter(([k, v]) => k !== turno && v).map(([, v]) => v.id)]), todos = guiones();
-  const libres = todos.filter((g) => !g.fecha && !hechos.has(g.id));
+  const libres = todos.filter((g) => !g.fecha && !hechos.has(g.id)), l2d = libres.filter((g) => g.motor === '2d'), l3d = libres.filter((g) => g.motor !== '2d');
   // Prueba de Honduras (2026-11-21): la tarde (Facebook y TikTok) toma primero los de categoría «honduras»; el mediodía (IG y YouTube) los salta
   // mientras haya otros, así se comparan sin mezclarlos
-  const pref = turno === 'tarde' ? libres.find((g) => g.categoria === 'honduras') : libres.find((g) => g.categoria !== 'honduras');
-  return (turno === 'tarde' && todos.find((g) => g.fecha === fecha && !hechos.has(g.id))) || pref || libres[0] || null;
+  // Motor 2D (2026-11-21, sin IA): el turno «noche» saca un video 2D al día (y los 3D, solo si ya no quedan 2D); los otros dos turnos, 3D
+  const pref = turno === 'noche' ? (l2d[0] || l3d.find((g) => g.categoria !== 'honduras')) : turno === 'tarde' ? l3d.find((g) => g.categoria === 'honduras') : l3d.find((g) => g.categoria !== 'honduras');
+  // Un guion con «fecha» sale ese día exacto en su «turno» (por defecto la tarde); los demás, en orden
+  return todos.find((g) => g.fecha === fecha && (g.turno || 'tarde') === turno && !hechos.has(g.id)) || pref || l3d[0] || l2d[0] || null;
 }
 export const pendientes = (estado = leerEstado()) => { const hechos = new Set(estado.publicados.map((p) => p.id)); return guiones().filter((g) => !g.fecha && !hechos.has(g.id)).length; };
 // Avisos extra para Telegram (los lee scripts/aviso.mjs al final de la corrida)
 export function avisoExtra(texto) { fs.mkdirSync(path.join(ROOT, 'out'), { recursive: true }); fs.appendFileSync(path.join(ROOT, 'out', 'aviso-extra.txt'), texto.trim() + '\n'); }
 
 // Texto para las redes: el título, los datos del video en viñetas, una pregunta y hashtags según la categoría
-const ETIQUETAS = { ciencia: ['ciencia', 'datoscientificos'], historia: ['historia', 'sabiasque'], datos: ['datos', 'datoscuriosos'], curiosidad: ['curiosidades', 'sabiasque'], noticia: ['explicado', 'actualidad'], especial: ['gta6', 'videojuegos'], mito: ['mito', 'verdadomito', 'sabiasque'], honduras: ['honduras', 'orgullohondureno', 'catracho'] };
+const ETIQUETAS = { ciencia: ['ciencia', 'datoscientificos'], historia: ['historia', 'sabiasque'], datos: ['datos', 'datoscuriosos'], curiosidad: ['curiosidades', 'sabiasque'], noticia: ['explicado', 'actualidad'], especial: ['gta6', 'videojuegos'], mito: ['mito', 'verdadomito', 'sabiasque'], honduras: ['honduras', 'orgullohondureno', 'catracho'], minihistoria: ['historia', 'minihistoria', 'sabiasque'] };
 // La primera línea lleva el tono del video (scripts/lib/tono.mjs: coloquial o picante; los «explicados», solo coloquial)
 export function textoPost(g) {
-  return textoConTono(textoPostBase(g), g.id, { suave: g.categoria === 'noticia' });
+  return textoConTono(textoPostBase(g), g.id, { suave: g.categoria === 'noticia' || g.categoria === 'minihistoria' });
 }
 function textoPostBase(g) {
   const datos = g.escenas.filter((e) => e.tipo !== 'portada' && e.tipo !== 'cierre').slice(0, 5).map((e) => `• ${e.texto}`);

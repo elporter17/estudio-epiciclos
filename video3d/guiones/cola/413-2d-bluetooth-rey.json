@@ -1,0 +1,70 @@
+{
+  "id": "d2-bluetooth-rey",
+  "motor": "2d",
+  "episodio": 13,
+  "titulo": "Bluetooth se llama como un rey",
+  "categoria": "historia",
+  "destacar": [
+    "Bluetooth",
+    "rey"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Bluetooth se llama así por un rey vikingo.",
+      "objeto": "🦷"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Harald «Diente Azul» fue un rey de Dinamarca que unió a varias tribus hace más de mil años.",
+      "objeto": "👑",
+      "cantidad": 1
+    },
+    {
+      "tipo": "linea",
+      "texto": "Su nombre llegó a la tecnología mil años después.",
+      "hitos": [
+        {
+          "anio": 958,
+          "texto": "Reina Harald (≈ 958)",
+          "objeto": "👑"
+        },
+        {
+          "anio": 1997,
+          "texto": "Proponen el nombre"
+        },
+        {
+          "anio": 1998,
+          "texto": "Nace el grupo Bluetooth SIG"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "La idea era unir dispositivos de distintas marcas, como él unió pueblos.",
+      "objeto": "🔗",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y el logo mezcla las dos runas de sus iniciales, H y B.",
+      "objeto": "ᚼ",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Harald I «Bluetooth» Gormsson, rey de Dinamarca (c. 958-986)",
+      "fuente": "Encyclopaedia Britannica, «Harald I Bluetooth»"
+    },
+    {
+      "dato": "Nombre propuesto en 1997 por Jim Kardach; logo con las runas ᚼ y ᛒ",
+      "fuente": "Bluetooth SIG, «Our history»"
+    }
+  ],
+  "nota": "Por qué lo llamaban «Diente Azul» no está claro; se cree que tenía un diente oscuro."
+}

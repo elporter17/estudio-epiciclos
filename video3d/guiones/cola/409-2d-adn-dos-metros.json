@@ -1,0 +1,60 @@
+{
+  "id": "d2-adn-dos-metros",
+  "motor": "2d",
+  "episodio": 9,
+  "titulo": "El ADN de una célula mide 2 metros",
+  "categoria": "ciencia",
+  "destacar": [
+    "ADN",
+    "metros"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Si estiraras el ADN de una sola célula, mediría casi dos metros.",
+      "objeto": "🧬"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Cabe dentro del núcleo, que es miles de veces más pequeño, porque está enrollado muy apretado.",
+      "objeto": "🧵",
+      "cantidad": 1
+    },
+    {
+      "tipo": "lluvia",
+      "texto": "Tiene unos 3.200 millones de «letras» químicas.",
+      "objeto": "🔤",
+      "cantidad": 120,
+      "contador": {
+        "desde": 0,
+        "hasta": 3200,
+        "unidad": "millones de letras"
+      }
+    },
+    {
+      "tipo": "gente",
+      "texto": "Entre dos personas cualesquiera, el 99,9 % del ADN es igual.",
+      "cantidad": 30
+    },
+    {
+      "tipo": "foco",
+      "texto": "Con el chimpancé compartimos cerca del 98,8 %.",
+      "objeto": "🐒",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "ADN humano de ≈ 2 m por célula y ≈ 3.200 millones de pares de bases",
+      "fuente": "National Human Genome Research Institute (NIH)"
+    },
+    {
+      "dato": "99,9 % igual entre personas; ≈ 98,8 % con el chimpancé",
+      "fuente": "NHGRI; Chimpanzee Sequencing and Analysis Consortium (2005), Nature"
+    }
+  ]
+}

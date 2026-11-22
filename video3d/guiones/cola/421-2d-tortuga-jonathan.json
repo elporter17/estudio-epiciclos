@@ -1,0 +1,70 @@
+{
+  "id": "d2-tortuga-jonathan",
+  "motor": "2d",
+  "episodio": 21,
+  "titulo": "Jonathan, la tortuga de 190 años",
+  "categoria": "historia",
+  "destacar": [
+    "Jonathan",
+    "tortuga"
+  ],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Jonathan, una tortuga gigante, tiene casi 200 años.",
+      "objeto": "🐢"
+    },
+    {
+      "tipo": "linea",
+      "texto": "Nació hacia 1832 y llegó a la isla de Santa Elena en 1882.",
+      "hitos": [
+        {
+          "anio": 1832,
+          "texto": "Nace Jonathan",
+          "etiqueta_anio": "≈ 1832",
+          "objeto": "🐢"
+        },
+        {
+          "anio": 1882,
+          "texto": "Llega a Santa Elena"
+        },
+        {
+          "anio": 2022,
+          "texto": "Cumple 190 años"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es el animal terrestre más viejo que se conoce.",
+      "objeto": "🏝️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "gente",
+      "texto": "Ha vivido más que cualquier persona y ha visto pasar más de seis reyes y reinas del Reino Unido.",
+      "cantidad": 20
+    },
+    {
+      "tipo": "foco",
+      "texto": "Sigue comiendo hierba y zanahorias, aunque ya no ve y ha perdido el olfato.",
+      "objeto": "🥕",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Jonathan, tortuga gigante de las Seychelles, nacida hacia 1832",
+      "fuente": "Guinness World Records, «Oldest chelonian»"
+    },
+    {
+      "dato": "Vive en Santa Elena desde 1882",
+      "fuente": "Gobierno de Santa Elena"
+    }
+  ],
+  "nota": "La fecha de nacimiento es una estimación."
+}
