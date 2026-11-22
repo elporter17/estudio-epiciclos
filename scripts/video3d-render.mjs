@@ -13,6 +13,7 @@ import { parseCli } from './lib/cli.mjs';
 import { publicarProximos } from './lib/proximos.mjs';
 import { ROOT } from './lib/node-env.mjs';
 import { publicarEnlace } from './lib/video-link.mjs';
+import { mandarVideoATelegram } from './lib/tg-video.mjs';
 import { leerEstado, guardarEstado, elegir, pendientes, avisoExtra, hoyHN, AVISO_COLA, TURNOS } from './lib/video3d-cola.mjs';
 
 const o = parseCli({ fecha: { type: 'string' }, turno: { type: 'string', default: 'mediodia' }, guion: { type: 'string' }, 'dry-run': { type: 'boolean', default: false } });
@@ -37,7 +38,14 @@ const r = spawnSync(ffmpegPath, ['-hide_banner', '-loglevel', 'error', '-y', '-i
 if (r.status !== 0) throw new Error(`ffmpeg: ${String(r.stderr).slice(-300)}`);
 const render = JSON.parse(fs.readFileSync(path.join(ROOT, 'video3d', 'public', 'render.json'), 'utf8'));
 console.error(`Listo en ${Math.round((Date.now() - ti) / 60000)} min · ${render.duracion.toFixed(1)} s · ${final}`);
-if (o['dry-run']) { console.log(final); process.exit(0); }
+// En una prueba (--dry-run) dentro de GitHub, el video te llega por Telegram para revisarlo; no se publica ni se sube a ningún lado
+if (o['dry-run']) {
+  if (process.env.GITHUB_ACTIONS) {
+    const ok = await mandarVideoATelegram(final, `🧪 Prueba ${g.motor === '2d' ? '2D (sin IA)' : '3D'} · ${g.titulo}\n${render.duracion.toFixed(0)} s · renderizado en GitHub en ${Math.round((Date.now() - ti) / 60000)} min · no se publicó`, { duracion: render.duracion });
+    console.error(`Telegram: ${ok ? 'video enviado' : 'no se pudo enviar'}`);
+  }
+  console.log(final); process.exit(0);
+}
 
 const enlace = await publicarEnlace(final, { days: 3 });
 estado.listos[turno] = { id: g.id, motor: g.motor || '3d', fecha, turno, url: enlace.url, download: enlace.downloadUrl, titulo: g.titulo, duracion: render.duracion, archivo: path.basename(g.archivo) };

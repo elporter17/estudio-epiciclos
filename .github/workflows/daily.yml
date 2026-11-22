@@ -76,6 +76,8 @@ on:
       privacy: { type: string, default: PUBLIC_TO_EVERYONE }
       sonido: { type: string, default: sin }
       figura: { type: string, default: '' }
+      # Guion concreto para las pruebas del render de video3d.yml (ruta dentro del repo)
+      guion: { type: string, default: '' }
       estilos: { type: string, default: '' }
       estado: { type: string, default: '' }
       facebook: { type: string, default: si }
@@ -120,6 +122,7 @@ jobs:
       # Las corridas programadas no tienen inputs: salen sin sonido
       SOUND_INPUT: ${{ inputs.sonido || 'sin' }}
       FIGURA_INPUT: ${{ inputs.figura || '' }}
+      GUION_INPUT: ${{ inputs.guion || '' }}
       # Almacén Blob de Vercel (opcional): enlace directo al MP4 en el resumen y en el aviso de la corrida
       BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
       # Bot de Telegram: el plan y las noticias de la mañana, y los cambios que le mandas (scripts/lib/control.mjs)
@@ -256,7 +259,7 @@ jobs:
             # Videos desde una idea (ideas.yml): «figura» = el id de la idea
             idea-render) node scripts/idea.mjs --render "$FIGURA_INPUT"; exit 0 ;;
             idea-publicar) node scripts/idea.mjs --publicar "$FIGURA_INPUT" --redes "${REDES_INPUT:-fb,ig,tt,yt}"; exit 0 ;;
-            video3d-render) node scripts/video3d-render.mjs --turno "${FIGURA_INPUT:-mediodia}" ${PRUEBA_INPUT:+--dry-run}; exit 0 ;;
+            video3d-render) node scripts/video3d-render.mjs --turno "${FIGURA_INPUT:-mediodia}" ${GUION_INPUT:+--guion "$GUION_INPUT"} ${PRUEBA_INPUT:+--dry-run}; exit 0 ;;
             video3d-publicar) node scripts/video3d-publicar.mjs --turno "${FIGURA_INPUT:-mediodia}" --tiktok "$( [ "$R_TT" = draft ] && echo si || echo no )" --youtube "$R_YT" --facebook "$R_FB" --instagram "$R_IG"; exit 0 ;;
             youtube-largo)
               # «ysi» o «ysi:<episodio>»: historias «¿Y si pudieras ver…?» (data/ysi); «gta»: historia de GTA; si no, Cómo se hace

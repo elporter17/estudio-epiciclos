@@ -17,6 +17,10 @@ on:
         type: choice
         options: ['mediodia', 'tarde', 'noche', 'dos1', 'dos2', 'dos3']
         default: 'mediodia'
+      guion:
+        description: Solo en modo prueba: ruta de un guion concreto (por ejemplo video3d/guiones/cola/601-2d-oro-cubo.json); vacío = el que toque en la cola
+        type: string
+        default: ''
       modo:
         description: render (madrugada) · publicar (mediodía) · prueba (solo renderizar)
         type: choice
@@ -37,5 +41,6 @@ jobs:
       aviso: false
       prueba: ${{ inputs.modo == 'prueba' }}
       figura: ${{ inputs.turno }}
+      guion: ${{ inputs.guion }}
       redes: ${{ inputs.redes }}
     secrets: inherit
