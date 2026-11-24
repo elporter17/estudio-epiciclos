@@ -1,0 +1,26 @@
+{
+  "id": "d2d-gatos-actitud",
+  "motor": "2d",
+  "episodio": 91,
+  "fecha": "2026-11-24",
+  "turno": "dos3",
+  "titulo": "La actitud de los gatos",
+  "categoria": "curiosidad",
+  "etiquetas": ["gatos", "michi", "mascotas", "sabiasque"],
+  "destacar": ["gatos", "nombre"],
+  "gancho": "Tu gato no te obedece, y tiene una razón muy antigua.",
+  "picardia": "Se hacen de rogar... y a algunos nos encanta.",
+  "escenas": [
+    { "tipo": "portada", "texto": "Los gatos se acercaron solos a los humanos.", "objeto": "🐈" },
+    { "tipo": "foco", "texto": "Hace miles de años llegaron a los primeros pueblos agrícolas, atraídos por los ratones que se comían el grano guardado.", "objeto": "🐀", "cantidad": 1 },
+    { "tipo": "foco", "texto": "Nadie los obligó: las personas los dejaron quedarse porque cuidaban las cosechas.", "objeto": "🌾", "cantidad": 1 },
+    { "tipo": "foco", "texto": "Y hoy reconocen su nombre: un estudio de 2019 en Japón lo comprobó. Que vengan cuando los llamas es otra historia.", "objeto": "😼", "cantidad": 1 },
+    { "tipo": "foco", "texto": "Por eso no te obedecen: ellos se quedaron contigo porque quisieron.", "objeto": "🐱", "cantidad": 1 },
+    { "tipo": "cierre", "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día." }
+  ],
+  "fuentes": [
+    { "dato": "Los gatos se acercaron a los pueblos agrícolas del Cercano Oriente atraídos por los roedores del grano almacenado", "fuente": "Ottoni et al. (2017), Nature Ecology & Evolution, «The palaeogenetics of cat dispersal in the ancient world»" },
+    { "dato": "Los gatos distinguen su nombre de otras palabras, aunque no siempre respondan", "fuente": "Saito, Shinozuka, Ito y Hasegawa (2019), Scientific Reports, «Domestic cats discriminate their names from other words»" }
+  ],
+  "nota": "Las fechas de la domesticación varían entre estudios (de unos 10.000 años a bastante menos), por eso el video dice «hace miles de años»."
+}

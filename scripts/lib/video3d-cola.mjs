@@ -50,7 +50,7 @@ export function textoPost(g) {
 }
 function textoPostBase(g) {
   const datos = g.escenas.filter((e) => e.tipo !== 'portada' && e.tipo !== 'cierre').slice(0, 5).map((e) => `• ${e.texto}`);
-  const tags = [...(ETIQUETAS[g.categoria] || ['datoscuriosos']), 'aprende', 'potterplay', 'reels'].map((t) => `#${t}`).join(' ');
+  const tags = [...(g.etiquetas || ETIQUETAS[g.categoria] || ['datoscuriosos']), 'aprende', 'potterplay', 'reels'].map((t) => `#${t}`).join(' ');
   return `${g.titulo} 🤯\n\n${datos.join('\n')}\n\n¿Lo sabías? Cuéntanos en los comentarios 👇\n\n${tags}`;
 }
 

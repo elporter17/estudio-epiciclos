@@ -1,0 +1,27 @@
+{
+  "id": "gatos-michis",
+  "temporada": 4,
+  "episodio": 91,
+  "fecha": "2026-11-24",
+  "turno": "noche",
+  "titulo": "¿Por qué le decimos michi?",
+  "categoria": "curiosidad",
+  "etiquetas": ["gatos", "michi", "mascotas", "sabiasque"],
+  "destacar": ["michi", "gato"],
+  "gancho": "¿Por qué le decimos «michi» a los gatos? La respuesta es un sonido.",
+  "picardia": "Acarícialo bien y ronronea... como a ti te gusta.",
+  "escenas": [
+    { "tipo": "portada", "texto": "«Michi» viene del sonido con que llamamos a los gatos.", "objeto": "comida/fish" },
+    { "tipo": "foco", "texto": "«Micho» y «michi» parecen venir de un «miz, miz», el sonido con que se llama a un gato.", "objeto": "comida/fish", "cantidad": 1 },
+    { "tipo": "gente", "texto": "Y no hay una explicación definitiva: cada país tiene su forma de llamarlos.", "cantidad": 20 },
+    { "tipo": "lluvia", "texto": "Los queremos tanto porque tienen cara redonda, ojos grandes y nariz pequeña, justo lo que el cerebro asocia con las crías.", "objeto": "corazon", "cantidad": 80 },
+    { "tipo": "foco", "texto": "Y si te miran y cierran los ojos despacio, es una señal amistosa: los gatos se acercan más a quien les parpadea lento.", "objeto": "naturaleza/bed", "cantidad": 1 },
+    { "tipo": "cierre", "texto": "¿Lo sabías? Cuéntanos en los comentarios y síguenos para uno nuevo cada día.", "objeto": "corazon" }
+  ],
+  "fuentes": [
+    { "dato": "«Micho» y «michi» como voz para llamar al gato (miz, miz); no hay un origen definitivo documentado", "fuente": "Billiken, «¿Por qué se le dice michi a los gatos?», y entradas de la RAE sobre voces onomatopéyicas del maullido" },
+    { "dato": "Cara redonda, ojos grandes y nariz pequeña activan el instinto de cuidar (esquema infantil)", "fuente": "Konrad Lorenz, «Kindchenschema», 1943" },
+    { "dato": "Los gatos se acercan más a quien les hace un parpadeo lento", "fuente": "Humphrey, Proops, Forman, Spooner y McComb (2020), Scientific Reports 10:16503" }
+  ],
+  "nota": "El origen de «michi» es una explicación probable, no definitiva. El esquema infantil es una explicación general de por qué nos atraen las caras tiernas, no un estudio solo de gatos."
+}
