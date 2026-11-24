@@ -15,7 +15,7 @@ import { juntarNoticias } from './lib/noticias.mjs';
 import { delDia, ahoraHN } from './lib/horario.mjs';
 import { cambiosDe, guardarNoticias, noticiasConCambios, limpiarViejos, telegram, controlListo, ultimoError } from './lib/control.mjs';
 import { mensajePlan, mensajeNoticias, diaBonito } from './lib/bot.mjs';
-import { publicarProximos } from './lib/proximos.mjs';
+import { publicarProximos, videosDeHoy } from './lib/proximos.mjs';
 import { radar, mensajeRadar } from './lib/radar.mjs';
 import { yaSalieronDb, guardarCandidatas } from './lib/db.mjs';
 
@@ -34,7 +34,9 @@ async function main() {
   for (const n of items.slice(0, 8)) console.log(`· [${n.cat} ${n.puntaje}] ${n.titulo} (${n.medio})\n    ${n.resumen}`);
 
   const { fecha } = ahoraHN(), ops = await cambiosDe(fecha), slots = delDia(fecha, ops);
-  const msg = `☀️ <b>Buenos días</b> · ${diaBonito(fecha)}\n\n${mensajePlan(fecha, slots, { ops, titulo: 'Lo que sale hoy' })}\n\n${mensajeNoticias(noticiasConCambios(items, ops), { horaReel: slots.find((s) => s.pieza === 'noticias')?.hora, max: 8 })}\n\n✍️ ¿Cambio algo? Toca los botones de abajo o escríbeme normal («quita 14:30», «mueve retos a las 5 pm»…).`;
+  const msg = `☀️ <b>Buenos días</b> · ${diaBonito(fecha)}\n\n${mensajePlan(fecha, slots, { ops, titulo: 'Lo que sale hoy' })}
+
+${videosDeHoy(slots, fecha)}\n\n${mensajeNoticias(noticiasConCambios(items, ops), { horaReel: slots.find((s) => s.pieza === 'noticias')?.hora, max: 8 })}\n\n✍️ ¿Cambio algo? Toca los botones de abajo o escríbeme normal («quita 14:30», «mueve retos a las 5 pm»…).`;
   // Radar de tendencias de Honduras (Google Trends, Google News y YouTube; sin navegador): se guarda y se manda aparte
   const rd = await radar().catch((e) => { console.error(`Radar: ${e.message}`); return null; });
   if (o.prueba) { console.log(`\n${msg.replace(/<[^>]+>/g, '')}`); if (rd) console.log(`\n${mensajeRadar(rd).replace(/<[^>]+>/g, '')}`); return; }

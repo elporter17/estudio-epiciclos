@@ -41,18 +41,36 @@ export function resumenProximos() {
   const estado = leerEstado(), todos = guiones(), hechos = new Set(estado.publicados.map((p) => p.id));
   const listos = Object.fromEntries(Object.entries(estado.listos).map(([t, l]) => [t, l ? { titulo: l.titulo, fecha: l.fecha } : null]));
   const ocupados = new Set(Object.values(estado.listos).filter(Boolean).map((l) => l.id));
-  const siguientes = todos.filter((g) => !g.fecha && !hechos.has(g.id) && !ocupados.has(g.id)).slice(0, 8).map((g) => ({ titulo: g.titulo, categoria: g.categoria, fuentes: g.fuentes?.length || 0 }));
+  const libres = todos.filter((g) => !g.fecha && !hechos.has(g.id) && !ocupados.has(g.id)), v = (g) => ({ titulo: g.titulo, categoria: g.categoria, fuentes: g.fuentes?.length || 0 });
+  const siguientes3d = libres.filter((g) => g.motor !== '2d').slice(0, 4).map(v), siguientes2d = libres.filter((g) => g.motor === '2d').slice(0, 4).map(v), siguientes = [...siguientes3d, ...siguientes2d];
   // Los últimos publicados con sus fuentes (para el botón 📚 Fuentes del bot)
   const publicados = estado.publicados.slice(-10).reverse().map((p) => { const g = todos.find((x) => x.id === p.id); return g ? { titulo: g.titulo, fecha: p.fecha, turno: p.turno, fuentes: g.fuentes || [], nota: g.nota || null } : null; }).filter(Boolean);
-  const especiales = todos.filter((g) => g.fecha && g.fecha >= hoyHN() && !hechos.has(g.id)).map((g) => ({ titulo: g.titulo, fecha: g.fecha }));
+  const especiales = todos.filter((g) => g.fecha && g.fecha >= hoyHN() && !hechos.has(g.id)).map((g) => ({ titulo: g.titulo, fecha: g.fecha, turno: g.turno || 'tarde', motor: g.motor === '2d' ? '2d' : '3d' }));
   const largo = planearLargo();
   return {
     at: Date.now(),
-    video3d: { listos, siguientes, especiales, publicados, quedan: todos.filter((g) => !g.fecha && !hechos.has(g.id)).length },
+    video3d: { listos, siguientes, siguientes3d, siguientes2d, especiales, publicados, quedan: todos.filter((g) => !g.fecha && !hechos.has(g.id)).length, quedan3d: todos.filter((g) => !g.fecha && !hechos.has(g.id) && g.motor !== '2d').length, quedan2d: todos.filter((g) => !g.fecha && !hechos.has(g.id) && g.motor === '2d').length },
     largo: { fecha: proximoDiaLargo(), productos: largo.map((p) => p.titulo) }
   };
 }
 export async function publicarProximos() {
   try { const r = resumenProximos(); await guardarControl('proximos', r); return r; }
   catch (e) { console.error(`No se pudo publicar qué videos vienen: ${e.message}`); return null; }
+}
+
+// Los videos de datos de hoy con su título, para el «Buenos días» del bot: tipo (3D o 2D), hora y redes de cada uno. Los que ya
+// están renderizados salen con su título; un guion con fecha de hoy y turno (un especial) sale marcado con ⭐ aunque no se haya renderizado
+const TURNO_DE = { video3d1: 'mediodia', video3d2: 'tarde', video3d3: 'noche', video2d1: 'dos1', video2d2: 'dos2', video2d3: 'dos3' };
+const RED_CORTO = { fb: 'FB', ig: 'IG', tt: 'TT', yt: 'YT' };
+const html = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+export function videosDeHoy(slots, fecha) {
+  const estado = leerEstado(), todos = guiones(), usados = new Set();
+  const filas = slots.filter((s) => TURNO_DE[s.pieza]).sort((a, b) => a.hora.localeCompare(b.hora)).map((s) => {
+    const turno = TURNO_DE[s.pieza], tipo = s.pieza.startsWith('video2d') ? '2D' : '3D', redes = (s.inputs?.redes || '').split(',').filter(Boolean).map((r) => RED_CORTO[r]).join(' ');
+    const especial = s.fecha === fecha ? todos.find((g) => g.fecha === fecha && (g.turno || 'tarde') === turno && !usados.has(g.id)) : null;
+    if (especial) { usados.add(especial.id); return `${s.hora} ${tipo} ⭐ «${html(especial.titulo)}» → ${redes}`; }
+    const l = estado.listos[turno];
+    return `${s.hora} ${tipo} ${l ? `«${html(l.titulo)}»` : '(todavía sin video listo)'} → ${redes}`;
+  });
+  return filas.length ? ['🎬 <b>Los videos de hoy</b>', ...filas].join('\n') : '';
 }

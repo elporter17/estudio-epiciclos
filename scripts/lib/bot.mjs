@@ -62,7 +62,7 @@ export function buscar(slots, { hora, pieza }) {
   return null;
 }
 
-const NO_AGREGAR = new Set(['video3d1', 'video3d2', 'largo']);
+const NO_AGREGAR = new Set(['video3d1', 'video3d2', 'video3d3', 'video2d1', 'video2d2', 'video2d3', 'largo']);
 // texto → { tipo: 'ayuda' | 'plan' | 'noticias' | 'op' | 'lanzar' | 'enlace' | 'error', … }
 export function interpretar(textoOriginal, { slots = [] } = {}) {
   const t = norm(textoOriginal);
@@ -179,14 +179,14 @@ Si dices «mañana», el cambio es para mañana. Lo más fácil: los botones (�
 • «noticias»: las candidatas de hoy, numeradas · «actualiza las noticias»: trae las más recientes
 • «quita noticia 3» · «fija noticia 5» (va primero)
 • Pega un enlace de una noticia para agregarla
-• «videos»: qué videos 3D y largo vienen
+• «videos»: qué videos 3D, 2D y largo vienen
 
 🔁 <b>Reenviar</b>
 • «pocas vistas»: los videos que rindieron poco, para reenviarlos (elige redes) · «generados»: todos los recientes
 • «programacion»: la tabla de Supabase (cada envío con sus redes ✅/▫️)
 • «noticia: Título | resumen corto» para escribirla tú
 
-Piezas: debate (video), debate en imagen, banderas, retos, emojis, quiz, prefieres, cómo se hace, imagen, gta, nombres, futbolista, noticias en video, noticias en imagen, 3D de mediodía / de la tarde.
+Piezas: debate (video), debate en imagen, banderas, retos, emojis, quiz, prefieres, cómo se hace, imagen, gta, nombres, futbolista, noticias en video, noticias en imagen, 3D (mediodía, 15:30, tarde) y 2D (mañana, 18:00, noche).
 Horas: «14:30», «2:30 pm» o «a las 3» (de 1 a 6 se entiende de la tarde).`;
 
 // ---------- mensajes (HTML de Telegram) ----------

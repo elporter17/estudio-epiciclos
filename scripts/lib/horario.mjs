@@ -224,6 +224,7 @@ export const ALIAS = Object.entries({
   noticias: ['noticias en video', 'noticias video', 'reel de noticias', 'noticias de hoy', 'noticiero', 'noticias'],
   video3d1: ['3d de mediodia', '3d del mediodia', 'video 3d de mediodia', '3d 1'],
   video3d2: ['3d de la tarde', 'video 3d de la tarde', '3d 2'],
+  video3d3: ['3d de las 3', '3d de las 15:30', '3d de las 3 y media', '3d 3'],
   video2d1: ['2d de la manana', '2d de la mañana', '2d 1'],
   video2d2: ['2d de la noche', '2d 2'],
   video2d3: ['2d de las 6', '2d 3'],
@@ -234,7 +235,7 @@ export const ALIAS = Object.entries({
   famosos: ['futbolistas', 'futbolista', 'jugadores', 'jugador', 'famosos', 'futbol'],
   largo: ['video largo', 'largo de youtube']
 }).flatMap(([p, xs]) => xs.map((x) => [x, p])).sort((a, b) => b[0].length - a[0].length);
-export const NOMBRE_PIEZA = { noticiashn: 'Noticias Honduras', comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Retos/Geografía', geo: 'Geografía difícil', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', imagen: 'Imagen', gta: 'GTA VI', gtaquiz: 'Quiz GTA', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB', reenvio: 'Reenvío', datos: '5 datos (video)' };
+export const NOMBRE_PIEZA = { noticiashn: 'Noticias Honduras', comosehace: 'Cómo se hace', banderas: 'Banderas', retos: 'Retos', estrella: 'Retos/Geografía', geo: 'Geografía difícil', prefieres: '¿Qué prefieres?', emojis: 'Emojis', quiz: 'Quiz', noticias: 'Noticias (video)', noticiasimg: 'Noticias (imagen)', debate: 'Debate (video)', debateimg: 'Debate (imagen)', video3d1: '3D mediodía', video3d2: '3D tarde', video3d3: '3D 15:30', video2d1: '2D mañana', video2d2: '2D noche', video2d3: '2D 18:00', imagen: 'Imagen', gta: 'GTA VI', gtaquiz: 'Quiz GTA', nombres: 'Nombres', famosos: 'Futbolista', largo: 'Video largo YT', metas: 'Metas FB', reenvio: 'Reenvío', datos: '5 datos (video)' };
 export const nombreSlot = (s) => NOMBRE_PIEZA[s.pieza] || (s.workflow === 'metas.yml' ? 'Metas FB' : NOMBRES[s.workflow] || s.workflow);
 
 // Tabla para Telegram (va dentro de <pre>): hora, pieza y redes; con estado si viene de diaConEstado
