@@ -36,7 +36,7 @@ export function elegir(fecha, estado = leerEstado(), turno = 'mediodia') {
   // ya no quedan, sale del otro para que ninguna red se quede sin video
   const pref = turno.startsWith('dos') ? l2d[0] : turno === 'tarde' ? l3d.find((g) => g.categoria === 'honduras') : l3d.find((g) => g.categoria !== 'honduras');
   // Un guion con «fecha» sale ese día exacto en su «turno» (por defecto la tarde); los demás, en orden
-  return todos.find((g) => g.fecha === fecha && (g.turno || 'tarde') === turno && !hechos.has(g.id)) || pref || (turno.startsWith('dos') ? l3d[0] : l3d[0] || l2d[0]) || l2d[0] || null;
+  return todos.find((g) => g.fecha === fecha && !g.manual && (g.turno || 'tarde') === turno && !hechos.has(g.id)) || pref || (turno.startsWith('dos') ? l3d[0] : l3d[0] || l2d[0]) || l2d[0] || null;
 }
 export const pendientes = (estado = leerEstado(), motor) => { const hechos = new Set(estado.publicados.map((p) => p.id)); return guiones().filter((g) => motor === undefined || (g.motor === '2d') === (motor === '2d')).filter((g) => !g.fecha && !hechos.has(g.id)).length; };
 // Avisos extra para Telegram (los lee scripts/aviso.mjs al final de la corrida)
