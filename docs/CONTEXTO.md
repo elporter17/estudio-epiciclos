@@ -83,8 +83,8 @@ Lo pidió el usuario después de ver el primer borrador:
 
 ## 5. Para retomar en otra PC
 ```bash
-git clone https://github.com/elporter17/estudio-epiciclos.git
-cd estudio-epiciclos
+git clone https://github.com/elporter17/potter-play.git
+cd potter-play
 npm install
 npm run fonts
 ```

@@ -4,8 +4,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const envFile = path.join(ROOT, '.env');
-if (fs.existsSync(envFile) && typeof process.loadEnvFile === 'function') process.loadEnvFile(envFile);
+// Un solo .env para todo el proyecto: el de la raíz del repo (si hay uno propio en minidramas/, manda ese)
+export const ENV_FILE = [path.join(ROOT, '.env'), path.join(ROOT, '..', '.env')].find((f) => fs.existsSync(f));
+if (ENV_FILE && typeof process.loadEnvFile === 'function') process.loadEnvFile(ENV_FILE);
 
 export const openaiKey = () => process.env.OPENAI_API_KEY || process.env.OPEN_AI;
 

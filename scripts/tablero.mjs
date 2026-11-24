@@ -13,7 +13,7 @@ import { ROOT } from './lib/node-env.mjs';
 import { HORARIO, HASTA, ahoraHN, minutos } from './lib/horario.mjs';
 
 const o = parseCli({ 'sin-gh': { type: 'boolean', default: false }, 'no-abrir': { type: 'boolean', default: false } });
-const REPO = 'elporter17/estudio-epiciclos', DIR = path.join(ROOT, '.github', 'workflows');
+const REPO = 'elporter17/potter-play', DIR = path.join(ROOT, '.github', 'workflows');
 const gh = (args) => { if (o['sin-gh']) return null; try { return execFileSync('gh', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }); } catch { return null; } };
 
 // Qué hace cada workflow programado y adónde va (lo demás sale del archivo)

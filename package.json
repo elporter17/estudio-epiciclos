@@ -1,8 +1,8 @@
 {
-  "name": "circularte",
+  "name": "potter-play",
   "version": "1.0.0",
   "private": true,
-  "description": "CirculArte: dibujos con series de Fourier. Web estática + render y publicación de videos en Node.",
+  "description": "Potter Play: videos 3D y 2D sin IA, series con voz IA y publicación automática en TikTok, Instagram, Facebook y YouTube.",
   "type": "module",
   "engines": {
     "node": ">=20"
@@ -19,10 +19,22 @@
     "telegram:webhook": "node --env-file=.env scripts/telegram-webhook.mjs",
     "publish": "node scripts/publish.mjs",
     "silueta": "node scripts/silueta.mjs",
-    "tablero": "node scripts/tablero.mjs"
+    "tablero": "node scripts/tablero.mjs",
+    "md:script": "node minidramas/scripts/script.mjs",
+    "md:estimate": "node minidramas/scripts/estimate.mjs",
+    "md:voice": "node minidramas/scripts/voice.mjs",
+    "md:images": "node minidramas/scripts/images.mjs",
+    "md:assemble": "node minidramas/scripts/assemble.mjs",
+    "md:review": "node minidramas/scripts/review.mjs",
+    "md:tiktok-connect": "node minidramas/scripts/tiktok-connect.mjs",
+    "md:publish": "node minidramas/scripts/publish.mjs",
+    "md:all": "node minidramas/scripts/all.mjs",
+    "md:historia": "node minidramas/scripts/historia.mjs"
   },
   "dependencies": {
-    "@vercel/blob": "^2.8.2"
+    "@vercel/blob": "^2.8.2",
+    "@fontsource/montserrat": "^5.3.0",
+    "openai": "^7.39.0"
   },
   "devDependencies": {
     "@fontsource/archivo-black": "^5.3.0",

@@ -20,7 +20,7 @@ if ($only) { $names = $names | Where-Object { $only -contains $_ } }
 $missing = $names | Where-Object { -not $vars[$_] }
 if ($missing) { throw "Sin valor en .env: $($missing -join ', ')" }
 
-Write-Host "Abre https://github.com/elporter17/estudio-epiciclos/settings/secrets/actions/new`n"
+Write-Host "Abre https://github.com/elporter17/potter-play/settings/secrets/actions/new`n"
 foreach ($n in $names) {
   Set-Clipboard -Value $vars[$n]
   Write-Host "`n[$n] ya esta en el portapapeles."

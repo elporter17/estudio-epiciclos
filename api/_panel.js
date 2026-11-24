@@ -6,7 +6,7 @@ import { delDia, ahoraHN, minutos, instante, NOMBRES, redesDe } from '../scripts
 import { cambiosDe } from '../scripts/lib/control.mjs';
 import { cargarProgramacion } from '../scripts/lib/programacion.mjs';
 
-export const REPO = 'elporter17/estudio-epiciclos';
+export const REPO = 'elporter17/potter-play';
 export const VENTANA = 150; // minutos: lo que se atrasó más que esto ya no se lanza (sería una ráfaga de publicaciones)
 export const json = (data, status = 200, headers = {}) => new Response(JSON.stringify(data), { status, headers: { 'content-type': 'application/json; charset=utf-8', ...headers } });
 

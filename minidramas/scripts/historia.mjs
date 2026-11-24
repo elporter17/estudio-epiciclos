@@ -13,7 +13,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { parseCli } from './lib/cli.mjs';
-import { ROOT, log } from './lib/env.mjs';
+import { ROOT, ENV_FILE, log } from './lib/env.mjs';
 import { saveSeries, seriesFile, wordsOf } from './lib/series.mjs';
 import { ESTILOS } from './lib/estilos.mjs';
 import { TIPOS_POV } from './lib/pov.mjs';
@@ -87,7 +87,7 @@ export function compilar(h) {
 
 function paso(cmd, args) {
   log(`\n▶ node ${cmd} ${args.join(' ')}\n`);
-  const r = spawnSync(process.execPath, ['--env-file=.env', path.join('scripts', cmd), ...args], { cwd: ROOT, stdio: 'inherit' });
+  const r = spawnSync(process.execPath, [`--env-file=${ENV_FILE}`, path.join('scripts', cmd), ...args], { cwd: ROOT, stdio: 'inherit' });
   if (r.status !== 0) throw new Error(`${cmd} falló (${r.status})`);
 }
 

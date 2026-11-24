@@ -7,7 +7,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import ffmpegPath from 'ffmpeg-static';
 import { createCanvas } from '@napi-rs/canvas';
-import { ROOT } from './env.mjs';
+import { ROOT, ENV_FILE } from './env.mjs';
 import { saveSeries, writeJson, OUT_DIR, wordsOf } from './series.mjs';
 import { setupFonts } from '../assemble.mjs';
 
@@ -59,6 +59,6 @@ export function vistaPrevia(serie, { stills = [] } = {}) {
   spawnSync(ffmpegPath, ['-y', '-loglevel', 'error', '-f', 'lavfi', '-i', 'anullsrc=r=24000:cl=mono', '-t', String(dur), '-c:a', 'pcm_s16le', path.join(audio, 'episode.wav')]);
   writeJson(path.join(audio, 'timeline.json'), { series: slug, episode: 1, duration: dur, audio: 'episode.wav', voiceModel: 'prueba', scenes, lines });
   const hits = stills.length ? stills : scenes.map((s) => +(s.start + Math.min(5, (s.end - s.start) * 0.8)).toFixed(1));
-  const r = spawnSync(process.execPath, ['--env-file=.env', path.join('scripts', 'animate.mjs'), '--series', slug, '--ep', '1', '--still', hits.join(',')], { cwd: ROOT, stdio: 'inherit' });
+  const r = spawnSync(process.execPath, [`--env-file=${ENV_FILE}`, path.join('scripts', 'animate.mjs'), '--series', slug, '--ep', '1', '--still', hits.join(',')], { cwd: ROOT, stdio: 'inherit' });
   return { slug, dur, hits, ok: r.status === 0, dir };
 }
