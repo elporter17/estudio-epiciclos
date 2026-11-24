@@ -18,11 +18,16 @@ const run = process.env.RUN_URL || '';
 const leer = (f) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return null; } };
 const metas = fs.existsSync(o.dir) ? fs.readdirSync(o.dir).filter((f) => f.endsWith('.json')).map((f) => leer(path.join(o.dir, f))).filter((m) => m && (m.post || m.youtube)) : [];
 
+// Con Telegram, la descripción de cada borrador de TikTok va aparte (bloque para copiar con un toque): la API de TikTok no deja
+// poner título ni descripción en un borrador. Sin Telegram, va dentro del aviso
+const conTelegram = !!(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID);
+const borradores = [];
 // Qué necesita intervención en cada pieza
 const pendientes = [];
 for (const m of metas) {
   const t = (m.tiktok || []).at(-1), tareas = [];
-  if (t?.status === 'SEND_TO_USER_INBOX') tareas.push(`📱 TikTok: borrador en tu bandeja («Tu contenido de Circularte está listo»). Pega esta descripción:\n${m.post?.text || ''}`);
+  if (t?.status === 'SEND_TO_USER_INBOX' && conTelegram) { tareas.push('📱 TikTok: borrador en tu bandeja («Tu contenido de Circularte está listo»). La descripción va en el mensaje siguiente.'); borradores.push({ titulo: m.title, texto: m.post?.text || '', revelar: m.revelar || '' }); }
+  else if (t?.status === 'SEND_TO_USER_INBOX') tareas.push(`📱 TikTok: borrador en tu bandeja («Tu contenido de Circularte está listo»). Pega esta descripción:\n${m.post?.text || ''}${m.revelar ? `\n\nRespuestas (cuando pasen unas horas, en un comentario):\n${m.revelar}` : ''}`);
   else if (t?.status === 'LIMIT') tareas.push(`⚠️ TikTok no aceptó más borradores (5 pendientes). Bájalo y súbelo a mano:\n${m.videoDownload || m.videoUrl || run}\n\nDescripción:\n${m.post?.text || ''}`);
   else if (t && t.status !== 'PUBLISH_COMPLETE' && /error/i.test(t.status || '')) tareas.push(`❌ TikTok falló: ${t.fail_reason || t.status}`);
   if (m.youtube?.studio) tareas.push(`▶️ YouTube: subido como PRIVADO. Publícalo (audiencia + «Público»):\n${m.youtube.studio}`);
@@ -37,7 +42,18 @@ if (!pendientes.length && !fallo && !cortada && !extra) { console.log('Nada que 
 const hora = new Date().toLocaleString('es-HN', { timeZone: 'America/Tegucigalpa', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
 const encabezado = fallo ? `❌ Falló «${process.env.WORKFLOW_NAME || 'una corrida'}» · ${hora}` : cortada ? `⏱️ No terminó «${process.env.WORKFLOW_NAME || 'una corrida'}» (cancelada o se pasó del tiempo) · ${hora}` : `Potter Play · ${pendientes.length === 1 ? 'algo para revisar' : pendientes.length ? `${pendientes.length} cosas para revisar` : 'aviso'}`;
 let msg = `${encabezado}${extra ? `\n\n${extra}` : ''}${pendientes.length ? `\n\n${pendientes.join('\n\n———\n\n')}` : ''}${run ? `\n\n${fallo || cortada ? 'Ver qué pasó' : 'Corrida'}: ${run}` : ''}`;
-if (o.prueba) { console.log(msg); process.exit(0); }
+const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+// Un mensaje por borrador: título, la descripción para pegar y, si el video no dice sus respuestas, las respuestas para comentarlas después
+const mensajesBorrador = (b) => {
+  const rec = (t, n) => (t.length > n ? `${t.slice(0, n)}…` : t);
+  const [visible, ...resto] = b.texto.split(/\n\n\.\n\.\n\.\n\n/), ocultoEnTexto = resto.join('\n\n').trim();
+  let m1 = `📱 <b>TikTok · ${esc(b.titulo)}</b>\nToca la descripción para copiarla y pégala en el borrador (activa «Contenido generado por IA»):\n\n<pre>${esc(rec(b.texto, 3000))}</pre>`;
+  if (ocultoEnTexto) m1 += `\n\n👆 Lo que está debajo de los puntos queda oculto tras «más» (por ejemplo, las respuestas).`;
+  const out = [m1];
+  if (b.revelar) out.push(`✅ <b>Respuestas de «${esc(b.titulo)}»</b>\nEn Facebook e Instagram las pone el bot en los comentarios a las 6 horas; en TikTok pégalas tú como comentario cuando quieras:\n\n<pre>${esc(rec(b.revelar, 3000))}</pre>`);
+  return out;
+};
+if (o.prueba) { console.log(msg); for (const b of borradores) console.log(`\n--- borrador TikTok ---\n${mensajesBorrador(b).join('\n---\n')}`); process.exit(0); }
 
 let enviado = false;
 const { TELEGRAM_BOT_TOKEN: tg, TELEGRAM_CHAT_ID: chat, CALLMEBOT_PHONE: tel, CALLMEBOT_APIKEY: key } = process.env;
@@ -47,6 +63,10 @@ if (tg && chat) {
     const r = await fetch(`https://api.telegram.org/bot${tg}/sendMessage`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ chat_id: chat, text: msg.slice(i, i + 4000), disable_web_page_preview: true }) }).catch((e) => ({ ok: false, statusText: e.message }));
     console.log(`Telegram: ${r.ok ? 'enviado' : `falló (${r.status || ''} ${r.statusText || ''})`}`); enviado ||= r.ok;
   }
+}
+if (tg && chat) for (const b of borradores) for (const texto of mensajesBorrador(b)) {
+  const r = await fetch(`https://api.telegram.org/bot${tg}/sendMessage`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ chat_id: chat, text: texto, parse_mode: 'HTML', disable_web_page_preview: true }) }).catch((e) => ({ ok: false, statusText: e.message }));
+  console.log(`Telegram (descripción de TikTok): ${r.ok ? 'enviado' : `falló (${r.status || ''} ${r.statusText || ''})`}`);
 }
 if (tel && key) {
   const r = await fetch(`https://api.callmebot.com/whatsapp.php?${new URLSearchParams({ phone: tel, text: msg.slice(0, 3500), apikey: key })}`).catch((e) => ({ ok: false, statusText: e.message }));

@@ -528,7 +528,7 @@ async function main() {
   // Tono (scripts/lib/tono.mjs): la primera línea de la descripción, coloquial o picante; las noticias, limpias
   if (pieza.formato !== 'noticias') pieza.texto = textoConTono(pieza.texto, `${new Date().toISOString().slice(0, 10)}|${pieza.titulo}|${pieza.formato}`);
   pieza.texto = conCta(pieza.texto, pieza.formato);
-  const meta = { kind: 'quiz', formato: pieza.formato, title: pieza.titulo, file: path.basename(video), duration: r.duration, post: { text: pieza.texto }, createdAt: new Date().toISOString() };
+  const meta = { kind: 'quiz', formato: pieza.formato, title: pieza.titulo, file: path.basename(video), duration: r.duration, post: { text: pieza.texto }, ...(pieza.clave?.revelar ? { revelar: pieza.clave.revelar } : {}), createdAt: new Date().toISOString() };
   const sidecar = video.replace(/\.mp4$/, '.json');
 
   if (o.perfil) await mandarAlPerfil({ video, pieza, duracion: r.duration });
