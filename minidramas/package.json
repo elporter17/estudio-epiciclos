@@ -1,0 +1,28 @@
+{
+  "name": "minidramas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Fábrica de minidramas verticales para TikTok: guion, voz, imágenes y montaje con IA, y subida como borrador.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "script": "node scripts/script.mjs",
+    "estimate": "node scripts/estimate.mjs",
+    "voice": "node scripts/voice.mjs",
+    "images": "node scripts/images.mjs",
+    "assemble": "node scripts/assemble.mjs",
+    "review": "node scripts/review.mjs",
+    "tiktok:connect": "node scripts/tiktok-connect.mjs",
+    "publish": "node scripts/publish.mjs",
+    "all": "node scripts/all.mjs",
+    "historia": "node scripts/historia.mjs"
+  },
+  "dependencies": {
+    "@fontsource/montserrat": "^5.3.0",
+    "@napi-rs/canvas": "^1.0.11",
+    "ffmpeg-static": "^5.3.0",
+    "openai": "^7.39.0"
+  }
+}

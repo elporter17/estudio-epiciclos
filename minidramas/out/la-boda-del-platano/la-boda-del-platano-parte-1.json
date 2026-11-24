@@ -1,0 +1,80 @@
+{
+  "file": "la-boda-del-platano-parte-1.mp4",
+  "series": "la-boda-del-platano",
+  "seriesTitle": "La boda del Plátano",
+  "episode": 1,
+  "title": "¡Yo me opongo!",
+  "lang": "es",
+  "format": "veo",
+  "duration": 58.54,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "clips": [
+    {
+      "id": "c01",
+      "start": 0,
+      "dur": 10.01
+    },
+    {
+      "id": "c02",
+      "start": 10.01,
+      "dur": 10.01
+    },
+    {
+      "id": "c03",
+      "start": 20.02,
+      "dur": 10.01
+    },
+    {
+      "id": "c04",
+      "start": 30.03,
+      "dur": 10.01
+    },
+    {
+      "id": "c05",
+      "start": 40.04,
+      "dur": 8
+    },
+    {
+      "id": "c06",
+      "start": 48.04,
+      "dur": 8
+    }
+  ],
+  "ai_generated": true,
+  "hook_text": "¡Ese plátano es MÍO!",
+  "safe_zone": {
+    "x0": 64.8,
+    "x1": 907.1999999999999,
+    "y0": 288,
+    "y1": 1497.6000000000001
+  },
+  "violations": [],
+  "post": {
+    "text": "La boda del Plátano 🍓🍌 Parte 1: «¡Yo me opongo!»\nEn plena boda, la madrina se opone: el novio es suyo. Y eso es solo el principio.\nFicción · hecho con IA\n\n#minidrama #frutas #telenovela #drama #comedia #novela",
+    "description": "La boda del Plátano 🍓🍌 Parte 1: «¡Yo me opongo!»\nEn plena boda, la madrina se opone: el novio es suyo. Y eso es solo el principio.",
+    "hashtags": [
+      "minidrama",
+      "frutas",
+      "telenovela",
+      "drama",
+      "comedia",
+      "novela"
+    ],
+    "source": "Veo (Gemini) + ChatGPT Images"
+  },
+  "createdAt": "2026-10-20T23:40:44.553Z",
+  "tiktok": [
+    {
+      "file": "la-boda-del-platano-parte-1.mp4",
+      "mode": "draft",
+      "publish_id": "v_inbox_file~v2.7698898607679965204",
+      "status": "SEND_TO_USER_INBOX",
+      "fail_reason": null,
+      "privacy": null,
+      "is_aigc": false,
+      "at": "2026-10-20T23:41:55.903Z"
+    }
+  ]
+}

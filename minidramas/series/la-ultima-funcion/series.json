@@ -1,0 +1,1197 @@
+{
+  "title": "La última función",
+  "slug": "la-ultima-funcion",
+  "logline": "Cuando mi prometido me pidió renovar el contrato de nuestro cine, descubrí que en realidad estaba ayudándolo a quitármelo.",
+  "premise": "Alma sostiene un pequeño cine de barrio que heredó de su madre y planea casarse con Simón, el hombre que la ayudó a reabrirlo. Una noche descubre mensajes que lo vinculan con Inés, su mejor amiga, y con un trámite que ella firmó sin leer completo. Mientras intenta impedir que el cine cambie de manos, debe averiguar si Inés es cómplice de Simón o también cayó en su mentira. Salvar el lugar exigirá que Alma deje de confiar en promesas y escuche a quienes todavía están dispuestos a decirle la verdad.",
+  "setting": "Ciudad latinoamericana ficticia de Puerto Lucero, época actual. Un cine de barrio con butacas gastadas, una cabina de proyección y calles que brillan después de la lluvia.",
+  "tone": "Romance íntimo, sospecha creciente y traición emocional, con giros claros y un cierre esperanzador.",
+  "visual_style": "Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.",
+  "narrator": {
+    "character_id": "alma",
+    "voice": "coral",
+    "voice_instructions": "Mujer adulta, español latinoamericano neutro; voz cercana y cálida, como si confiara un secreto a la cámara. Contiene el dolor al principio y gana firmeza en cada parte."
+  },
+  "characters": [
+    {
+      "id": "alma",
+      "name": "Alma Ríos",
+      "role": "Protagonista, narradora y encargada del cine",
+      "age": 31,
+      "visual": "Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.",
+      "personality": "Leal, observadora y acostumbrada a sostenerlo todo sola. Su secreto es que teme perder el cine porque cree que, sin él, perdería también el último vínculo con su madre.",
+      "voice": "coral",
+      "voice_instructions": "Español latinoamericano neutro; habla con calma y precisión, pero deja escapar silencios cuando una verdad le duele."
+    },
+    {
+      "id": "simon",
+      "name": "Simón Varela",
+      "role": "Prometido de Alma",
+      "age": 35,
+      "visual": "Angular face, light olive skin, close-cropped dark hair with a distinct silver streak above the right temple. Tall, lean build. Always wears a charcoal jacket over a pale blue shirt and a narrow black wristwatch. His carefully controlled smile rarely reaches his eyes.",
+      "personality": "Encantador y resolutivo en público, evasivo cuando le piden explicaciones. Oculta que intentó quedarse con el contrato del cine para resolver sus deudas.",
+      "voice": "onyx",
+      "voice_instructions": "Español latinoamericano neutro; voz grave y persuasiva, frases breves que se vuelven secas cuando pierde el control."
+    },
+    {
+      "id": "ines",
+      "name": "Inés Duarte",
+      "role": "Mejor amiga de Alma y colaboradora del cine",
+      "age": 32,
+      "visual": "Heart-shaped face, warm tan skin, hazel eyes, straight copper-brown hair cut into a blunt chin-length bob. Medium build. Always wears an olive-green utility shirt, dark jeans, and a yellow thread bracelet. A small crescent-shaped birthmark beside her mouth remains visible in every scene.",
+      "personality": "Ingeniosa, afectuosa y propensa a justificar sus errores. Ayudó a Simón a preparar el trámite a cambio de dinero, antes de comprender cuánto le ocultaba él.",
+      "voice": "shimmer",
+      "voice_instructions": "Español latinoamericano neutro; voz ágil y luminosa que se entrecorta cuando intenta confesar algo."
+    },
+    {
+      "id": "elena",
+      "name": "Elena Salcedo",
+      "role": "Coordinadora del centro vecinal que administra el local del cine",
+      "age": 46,
+      "visual": "Broad face, deep brown skin, short salt-and-pepper hair brushed close to the head. Sturdy build and upright posture. Always wears a sand-colored linen blazer, a dark green scarf, and rectangular amber glasses. She carries a worn blue document folder tucked firmly under one arm.",
+      "personality": "Metódica, justa y poco impresionable ante las excusas. Sospechó que el cambio de titular no reflejaba la voluntad de Alma, pero esperaba que ella lo confirmara.",
+      "voice": "sage",
+      "voice_instructions": "Español latinoamericano neutro; tono sereno, bajo y directo, con pausas que dan peso a cada advertencia."
+    }
+  ],
+  "outline": [
+    {
+      "number": 1,
+      "title": "Firma aquí",
+      "summary": "Simón me lleva flores y me pide que firme lo que llama una renovación urgente del cine. Esa noche veo en su teléfono un mensaje de Inés: «Alma no debe enterarse antes del viernes». Los sigo hasta la cabina de proyección y los encuentro abrazados junto a una carpeta con mi nombre.",
+      "twist": "En la portada de la carpeta leo «Cambio de titular», no «Renovación».",
+      "cliffhanger": "¿Qué acabo de firmar para los dos?"
+    },
+    {
+      "number": 2,
+      "title": "La amiga que miente",
+      "summary": "Le pregunto a Inés por la carpeta. Dice que Simón planeaba sorprenderme con mejoras para el cine, pero Elena me explica que el formulario solicita poner el contrato a nombre de él. Al revisar los mensajes que Inés dejó abiertos, encuentro un comprobante de dinero que ella le envió.",
+      "twist": "Inés pagó parte de los costos del trámite que juró desconocer.",
+      "cliffhanger": "Si era mi amiga, ¿por qué ayudó a Simón a sacarme del cine?"
+    },
+    {
+      "number": 3,
+      "title": "Nos vamos juntos",
+      "summary": "Inés admite que Simón le prometió devolverle el dinero cuando obtuviera el contrato; ella necesitaba pagar una deuda y quiso creer que yo estaba de acuerdo. Entonces escucho una nota de voz que él le mandó: «Cuando Alma firme, nos vamos juntos». Inés asegura que nunca planeó irse con él.",
+      "twist": "La frase que parecía confirmar una aventura también revela que Simón le prometía a Inés una nueva vida mientras se comprometía conmigo.",
+      "cliffhanger": "¿Le creo a Inés ahora que Simón también la engañó?"
+    },
+    {
+      "number": 4,
+      "title": "La última copia",
+      "summary": "Decido escuchar a Inés, pero no perdonarla todavía. Me ayuda a encontrar en la cabina una copia completa del formulario: mi firma autoriza a presentar la solicitud, pero el centro vecinal aún no ha aprobado el cambio. Elena confirma que puedo presentarme a la reunión de la mañana para dejar clara mi decisión.",
+      "twist": "Entre los papeles encuentro una carta de Simón dirigida a Inés: le había prometido marcharse con ella usando el dinero que esperaba obtener después de quedarse con el cine.",
+      "cliffhanger": "Cuando Simón entre a esa reunión, ¿tendré el valor de enfrentar a los dos?"
+    },
+    {
+      "number": 5,
+      "title": "Se encienden las luces",
+      "summary": "Me presento ante Elena con la copia, rechazo el cambio de titular y cuento cómo Simón consiguió mi firma. La solicitud no prospera. Rompo nuestro compromiso; Inés reconoce delante de mí lo que hizo y le digo que recuperar mi confianza tomará tiempo. Esa noche vuelvo a abrir el cine para la primera función que elijo sin Simón.",
+      "twist": "Al encender el proyector encuentro un sobre antiguo escondido en la cabina: alguien había intentado cambiar el contrato años antes de que Simón llegara a mi vida.",
+      "cliffhanger": "¿Por qué mi madre guardó esa advertencia sin decirme nada?"
+    }
+  ],
+  "genre": "amor y traición",
+  "language": "es",
+  "model": "gpt-6-sol",
+  "createdAt": "2026-10-19T23:14:13.602Z",
+  "episodes": [
+    {
+      "number": 1,
+      "title": "Firma aquí",
+      "hook_text": "¿Qué firmé por confiar en él?",
+      "post_description": "Simón llegó con flores y una carpeta. Esa noche entendí que debía haber leído antes de firmar.",
+      "hashtags": [
+        "LaUltimaFuncion",
+        "Minidrama",
+        "CineDeBarrio",
+        "DramaVertical"
+      ],
+      "scenes": [
+        {
+          "id": "s1",
+          "beat": "gancho",
+          "image_prompt": "Vertical 9:16 close-up inside a small neighborhood cinema in fictional Puerto Lucero. Alma holds a closed folder near her face and stares ahead, unsettled. Her face and the folder occupy the upper half; the lower third is empty for subtitles. Moody projector light, no legible text.",
+          "characters": [
+            "alma"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "El día que firmé, mi prometido ya sabía que me estaba mintiendo.",
+              "delivery": "íntima, contenida"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Yo todavía creía en nosotros y en el cine que mi madre me dejó.",
+              "delivery": "con nostalgia"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 medium shot of a worn neighborhood cinema lobby after rain. Alma stands behind the counter as Simón approaches with flowers and a closed folder. Both faces and the objects are in the upper half; the lower third stays clear for subtitles. Warm lobby lights, wet street glow through the door, no legible text.",
+          "characters": [
+            "alma",
+            "simon"
+          ],
+          "shot": "medium",
+          "motion": "pan_right",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "En Puerto Lucero, el cine olía a palomitas frías y lluvia. Faltaban minutos para abrir.",
+              "delivery": "cercana"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Simón llegó con flores y una carpeta, sonriendo como si las dos cosas fueran regalos.",
+              "delivery": "con una leve duda"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 medium shot at the cinema counter. Simón indicates a signature line on a document while Alma signs, distracted by patrons waiting near the entrance. Frame faces, hands, and paper in the upper half; leave the lower third empty for subtitles. The document is angled away and completely unreadable. Warm practical lighting.",
+          "characters": [
+            "alma",
+            "simon"
+          ],
+          "shot": "medium",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "simon",
+              "text": "Es la renovación urgente del contrato. Firma aquí y yo me encargo del resto.",
+              "delivery": "tranquilizador, apresurado"
+            },
+            {
+              "speaker": "narrador",
+              "text": "No leí todas las hojas. Había una fila en la puerta y confiaba en el hombre con quien iba a casarme.",
+              "delivery": "con arrepentimiento contenido"
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 close-up of Alma behind the cinema counter, startled by a phone vibrating beside her. She turns it slightly; its screen is seen only from the side, defocused, with no readable text. Alma's face and the phone remain in the upper half; lower third empty for subtitles. Dim projection light.",
+          "characters": [
+            "alma"
+          ],
+          "shot": "close-up",
+          "motion": "pan_left",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Más tarde, su teléfono vibró sobre el mostrador. Lo giré para avisarle y apareció un mensaje de Inés.",
+              "delivery": "alerta creciente"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Mi mejor amiga escribía: «Alma no debe enterarse antes del viernes». Sentí que el proyector dejaba de sonar.",
+              "delivery": "en voz baja, herida"
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 wide shot of the cinema lobby and corridor. Simón pockets his phone and walks away; Inés follows without meeting Alma's eyes. Alma watches from the counter. Keep all faces in the upper half and the lower third uncluttered for subtitles. Fading warm light, no legible signs.",
+          "characters": [
+            "alma",
+            "simon",
+            "ines"
+          ],
+          "shot": "wide",
+          "motion": "pan_right",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Simón recogió el teléfono sin mirarme. Dijo que iba por unas llaves; Inés salió detrás, evitando mis ojos.",
+              "delivery": "sospechando"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Esperé unos segundos. Luego los seguí por el pasillo que llevaba a la cabina de proyección.",
+              "delivery": "decidida, en susurro"
+            }
+          ]
+        },
+        {
+          "id": "s6",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 view through the partly open projection booth door. In the upper half, Alma watches from the doorway as Simón and Inés embrace beside a folder lying open on a raised work surface. Their expressions are tense, not joyful. Keep the lower third dark and empty for subtitles. Projector beam, no legible writing.",
+          "characters": [
+            "alma",
+            "simon",
+            "ines"
+          ],
+          "shot": "medium",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Desde la puerta entreabierta vi a Simón abrazar a Inés. No se apartaron enseguida; sobre la mesa había una carpeta con mi nombre.",
+              "delivery": "dolida, casi sin aire"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Pensé que el engaño empezaba con ese abrazo. Entonces reconocí mi firma entre las páginas.",
+              "delivery": "con súbita alarma"
+            }
+          ]
+        },
+        {
+          "id": "s7",
+          "beat": "giro",
+          "image_prompt": "Vertical 9:16 close-up in the projection booth. Alma lifts the folder toward the projector beam, her expression changing from heartbreak to shock. The cover faces only Alma and is fully out of focus to the viewer; no legible text. Her face and folder are in the upper half, lower third empty for subtitles.",
+          "characters": [
+            "alma"
+          ],
+          "shot": "close-up",
+          "motion": "pan_up",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "La abrí: decía «Cambio de titular». No era una renovación; Simón había usado mi confianza para pedir el cine a su nombre.",
+              "delivery": "primero incrédula, luego firme"
+            }
+          ]
+        },
+        {
+          "id": "s8",
+          "beat": "cliffhanger",
+          "image_prompt": "Vertical 9:16 medium shot inside the cramped projection booth. Inés looks up at Alma while Simón takes one cautious step toward her. Alma holds the folder between them. All faces and the folder fill the upper half; leave the lower third empty for subtitles. Stark projector beam, suspended tension, no legible text.",
+          "characters": [
+            "alma",
+            "simon",
+            "ines"
+          ],
+          "shot": "medium",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Inés levantó la vista. Simón dio un paso hacia mí y entendí que ninguno esperaba verme allí.",
+              "delivery": "tensa"
+            },
+            {
+              "speaker": "narrador",
+              "text": "¿Qué acabo de firmar para los dos?",
+              "delivery": "directa, sin esperar respuesta"
+            }
+          ]
+        },
+        {
+          "id": "s9",
+          "beat": "cierre",
+          "image_prompt": "Vertical 9:16 close-up holding on Alma's tense face in the projection booth as Simón remains blurred in the background. A projector beam crosses the upper half; the lower third is dark and clear for subtitles. No legible text, unresolved stillness.",
+          "characters": [
+            "alma",
+            "simon"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Parte 2 en mi perfil.",
+              "delivery": "Pausa breve antes; tono de promesa, más bajo, con intriga."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "La amiga que miente",
+      "hook_text": "¿Por qué Inés escondía esa carpeta?",
+      "post_description": "Inés tenía una explicación para la carpeta. Yo necesitaba escuchar a alguien más.",
+      "hashtags": [
+        "Minidrama",
+        "CineDeBarrio",
+        "Traicion",
+        "PuertoLucero"
+      ],
+      "scenes": [
+        {
+          "id": "s1",
+          "beat": "gancho",
+          "image_prompt": "Vertical 9:16 inside a neighborhood cinema projection booth. Alma holds a folder while Inés steps away from Simón; all three faces show shock. Tight framing, projector light across their faces in the upper half, no important details in the lower third, no legible text.",
+          "characters": [
+            "alma",
+            "ines",
+            "simon"
+          ],
+          "shot": "medium",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Mi mejor amiga sabía que querían quitarme el cine.",
+              "delivery": "conteniendo la rabia"
+            },
+            {
+              "speaker": "narrador",
+              "text": "La encontré abrazada a Simón, junto a la carpeta que yo había firmado.",
+              "delivery": "dolida"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 in the projection booth. Alma questions Inés, who glances at Simón before answering. Simón holds a folder behind his back. Faces in the upper half, tense projector light, no important details in the lower third, no legible text.",
+          "characters": [
+            "alma",
+            "ines",
+            "simon"
+          ],
+          "shot": "medium",
+          "motion": "pan_right",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Le pregunté por qué decía cambio de titular. Inés miró primero a Simón.",
+              "delivery": "desconfiada"
+            },
+            {
+              "speaker": "ines",
+              "text": "Era una sorpresa. Íbamos a renovar las butacas y el sonido.",
+              "delivery": "apresurada"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Simón asintió, pero escondió la carpeta detrás de su espalda.",
+              "delivery": "seca"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 on the narrow stairs outside the projection booth. Alma descends gripping the folder while Simón calls after her from the doorway. Their faces remain in the upper half, dim cinema lighting, no important details in the lower third, no legible text.",
+          "characters": [
+            "alma",
+            "simon"
+          ],
+          "shot": "medium",
+          "motion": "pan_down",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Se la quité y salí de la cabina antes de escucharlos inventar otra explicación.",
+              "delivery": "decidida"
+            },
+            {
+              "speaker": "simon",
+              "text": "Alma, hablamos en casa. Esto no es lo que parece.",
+              "delivery": "evasivo"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Al día siguiente busqué a Elena, del centro vecinal que administraba el local.",
+              "delivery": "resuelta"
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 in a modest neighborhood center office. Alma and Elena face each other across a desk with papers turned away from the camera. Elena studies the document while Alma watches her expression. Faces in the upper half, pale morning light, no important details in the lower third, no legible text.",
+          "characters": [
+            "alma",
+            "elena"
+          ],
+          "shot": "medium",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Extendí mi copia sobre su escritorio; todavía tenía la mancha de café de nuestra taquilla.",
+              "delivery": "nerviosa"
+            },
+            {
+              "speaker": "elena",
+              "text": "Esto solicita poner el contrato a nombre de Simón. No son mejoras.",
+              "delivery": "precisa"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Me faltó el aire. Inés había llamado sorpresa a mi salida del cine.",
+              "delivery": "herida"
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 at the cinema ticket counter. Alma leans toward a shared tablet with its screen seen only from the side and out of focus. Her face fills the upper half; soft lobby lights and worn seats behind her. No important details in the lower third, no legible text.",
+          "characters": [
+            "alma"
+          ],
+          "shot": "close-up",
+          "motion": "pan_left",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Volví a la taquilla. Inés había dejado abierta su sesión de mensajes en la tableta compartida.",
+              "delivery": "cautelosa"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Busqué la conversación con Simón; junto a la fecha del trámite había un comprobante de transferencia.",
+              "delivery": "cada vez más inquieta"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Al principio creí que él le pagaba por ayudarlo. Amplié la imagen.",
+              "delivery": "en voz baja"
+            }
+          ]
+        },
+        {
+          "id": "s6",
+          "beat": "giro",
+          "image_prompt": "Vertical 9:16 close-up of Alma at the ticket counter, staring at the shared tablet in disbelief. The screen is angled away and blurred; the discovery registers only on her face in the upper half. Cool light, no important details in the lower third, no legible text.",
+          "characters": [
+            "alma"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "El dinero había salido de la cuenta de Inés hacia la de Simón.",
+              "delivery": "incrédula"
+            },
+            {
+              "speaker": "narrador",
+              "text": "También figuraba el pago de una parte de los costos del trámite.",
+              "delivery": "conteniendo el dolor"
+            },
+            {
+              "speaker": "narrador",
+              "text": "No solo sabía del cambio: había puesto dinero para hacerlo posible.",
+              "delivery": "firme"
+            }
+          ]
+        },
+        {
+          "id": "s7",
+          "beat": "cliffhanger",
+          "image_prompt": "Vertical 9:16 at the cinema ticket counter. Alma turns the blurred tablet toward Inés, who has stopped behind her; Inés's smile fades. Both faces in the upper half, tense stillness under dim lobby lights, no important details in the lower third, no legible text.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "medium",
+          "motion": "pan_right",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Inés apareció detrás de mí. Le mostré la tableta y vi cómo se le borraba la sonrisa.",
+              "delivery": "dolida"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Si era mi amiga, ¿por qué ayudó a Simón a sacarme del cine?",
+              "delivery": "en suspenso"
+            }
+          ]
+        },
+        {
+          "id": "s8",
+          "beat": "cierre",
+          "image_prompt": "Vertical 9:16 close-up of Alma waiting for an answer, with Inés frozen out of focus behind her. Their faces occupy the upper half; the dark cinema lobby holds the tension. No important details in the lower third, no legible text.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_out",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Parte 3 en mi perfil.",
+              "delivery": "Pausa breve antes; tono de promesa, más bajo, con intriga."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Nos vamos juntos",
+      "hook_text": "¿Por qué pagó mi mejor amiga?",
+      "post_description": "Inés dice que Simón también le mintió. Tengo su transferencia frente a mí y necesito algo más que su palabra.",
+      "hashtags": [
+        "Minidrama",
+        "LaUltimaFuncion",
+        "CineDeBarrio",
+        "Secretos"
+      ],
+      "scenes": [
+        {
+          "id": "s1",
+          "beat": "gancho",
+          "image_prompt": "Vertical 9:16 frame inside a neighborhood cinema ticket booth. Alma stares at a tablet seen from the side, its screen blurred; Inés stands frozen behind her. Their faces fill the upper half, with tense dim lighting and nothing important in the lower third. No legible text.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "medium",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Mi mejor amiga pagó para quitarme el cine.",
+              "delivery": "Dolor contenido, inmediata."
+            },
+            {
+              "speaker": "narrador",
+              "text": "Tenía su transferencia abierta en la tableta; Inés se quedó inmóvil detrás de mí.",
+              "delivery": "Baja, incrédula."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 frame at the cinema ticket counter. Alma confronts Inés, who avoids her eyes and grips the counter. Frame both faces in the upper half under cold fluorescent light; keep the lower third empty. No legible text.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "medium",
+          "motion": "pan_right",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Le pregunté cuánto le había dado a Simón. Miró la pantalla, no mis ojos.",
+              "delivery": "Firme, sin alzar la voz."
+            },
+            {
+              "speaker": "ines",
+              "text": "Todo lo que había ahorrado para saldar una deuda.",
+              "delivery": "Avergonzada."
+            },
+            {
+              "speaker": "narrador",
+              "text": "Sus dedos temblaban sobre el borde de la taquilla.",
+              "delivery": "Observadora."
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 close view of Inés speaking to Alma between worn cinema seats. Inés looks ashamed; Alma listens without softening. Faces occupy the upper half, projector light cuts through the background, lower third uncluttered. No legible text.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_out",
+          "lines": [
+            {
+              "speaker": "ines",
+              "text": "Me prometió devolverlo cuando el contrato quedara a su nombre.",
+              "delivery": "Apresurada, sincera."
+            },
+            {
+              "speaker": "narrador",
+              "text": "Quiso hacerme creer que yo había aceptado perder el cine.",
+              "delivery": "Con incredulidad creciente."
+            },
+            {
+              "speaker": "ines",
+              "text": "Dijo que tú querías dejar de cargar con este lugar.",
+              "delivery": "Casi en un susurro."
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 frame in the worn auditorium. Alma looks across the empty seats, then turns toward Inés as she takes a phone from her pocket. Faces stay in the upper half; soft projector glow, clear lower third. The phone screen is angled away and blurred, with no legible text.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "wide",
+          "motion": "pan_left",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Pensé en las noches que había dormido entre esas butacas para mantenerlo abierto.",
+              "delivery": "Herida, íntima."
+            },
+            {
+              "speaker": "narrador",
+              "text": "Le pedí una prueba, no otra disculpa.",
+              "delivery": "Decidida."
+            },
+            {
+              "speaker": "narrador",
+              "text": "Inés sacó su teléfono. Había guardado una nota de voz.",
+              "delivery": "Expectante."
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 frame beside the cinema projector. Inés holds her phone sideways between herself and Alma; its screen is out of focus. Alma reacts to a recorded voice as projector light flickers across both faces in the upper half. Keep the lower third clear; no legible text.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "close-up",
+          "motion": "pan_up",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Le dio reproducir; reconocí la voz de Simón bajo el zumbido del proyector.",
+              "delivery": "Tensa."
+            },
+            {
+              "speaker": "simon",
+              "text": "Cuando Alma firme, nos vamos juntos.",
+              "delivery": "Nota de voz; seguro de sí."
+            },
+            {
+              "speaker": "narrador",
+              "text": "Por un momento, aquel abrazo en la cabina pareció tener otra explicación.",
+              "delivery": "Conteniendo el golpe."
+            }
+          ]
+        },
+        {
+          "id": "s6",
+          "beat": "giro",
+          "image_prompt": "Vertical 9:16 frame in the projection booth. Inés faces Alma with an earnest, distressed expression while Alma studies her. The phone rests turned away and blurred; stark projector light outlines their faces in the upper half, with the lower third empty. No legible text.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "medium",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "ines",
+              "text": "Nunca acepté irme con él. Me ofreció empezar de cero lejos de aquí.",
+              "delivery": "Firme, dolida."
+            },
+            {
+              "speaker": "narrador",
+              "text": "La nota no probaba una aventura: Simón le prometía a Inés otra vida mientras planeaba casarse conmigo.",
+              "delivery": "Comprensión amarga."
+            },
+            {
+              "speaker": "narrador",
+              "text": "¿Cuántas versiones de nuestro futuro había vendido?",
+              "delivery": "Apenas audible."
+            }
+          ]
+        },
+        {
+          "id": "s7",
+          "beat": "cliffhanger",
+          "image_prompt": "Vertical 9:16 tight frame at the projection booth doorway. Inés takes one cautious step toward Alma, who hesitates without reaching back. Their faces hold the upper half against a dark auditorium; a narrow strip of projector light heightens the tension. Lower third empty, no legible text.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "close-up",
+          "motion": "pan_down",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Quise creerle, pero aún veía su pago en el trámite y recordaba su silencio cuando le pregunté.",
+              "delivery": "Vacila, luego se endurece."
+            },
+            {
+              "speaker": "narrador",
+              "text": "Si Simón también la engañó, ¿cómo sé que Inés no vuelve a mentirme?",
+              "delivery": "Suspendida en la duda."
+            }
+          ]
+        },
+        {
+          "id": "s8",
+          "beat": "cierre",
+          "image_prompt": "Vertical 9:16 still, tense view of Alma and Inés on opposite sides of the half-open projection booth door. Neither moves closer; their faces remain in the upper half, lit by the projector beam. Keep the lower third free of important details. No legible text.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "medium",
+          "motion": "zoom_out",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Parte 4 en mi perfil.",
+              "delivery": "Pausa breve antes; tono de promesa, más bajo, con intriga."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "La última copia",
+      "hook_text": "¿Mi firma le entregó el cine?",
+      "post_description": "Alma encuentra la copia que Simón le ocultó. Ahora sabe que todavía puede decidir, pero no qué hará Inés.",
+      "hashtags": [
+        "LaUltimaFuncion",
+        "Minidrama",
+        "CineDeBarrio",
+        "Parte4"
+      ],
+      "scenes": [
+        {
+          "id": "s1",
+          "beat": "gancho",
+          "image_prompt": "Vertical 9:16 close-up inside an empty neighborhood cinema at dawn. Alma faces Inés across the ticket counter, wary but determined; Inés holds a phone angled away from the camera, its screen blurred. Rainy window light, faces in the upper half, lower third clear for subtitles, no legible text.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Firmé para mi prometido sin saber si ya había perdido el cine.",
+              "delivery": "íntima, con angustia contenida"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Decidí escuchar a Inés, aunque aún no podía perdonarla.",
+              "delivery": "firme"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 medium shot in the cinema's narrow stairwell. Alma and Inés hurry toward the projection booth while rain streaks a high window. Their tense faces occupy the upper half; the lower third is clear for subtitles. No legible text.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "medium",
+          "motion": "pan_up",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Le exigí ver el formulario entero, no solo las páginas que Simón me mostró.",
+              "delivery": "decidida"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Inés recordó una copia escondida en la cabina de proyección.",
+              "delivery": "rápida"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Subimos mientras la lluvia golpeaba las ventanas del cine vacío.",
+              "delivery": "en suspenso"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 medium shot in a dusty projection booth. Alma opens a folder beside old film canisters and faded tickets; Inés watches her read. The papers are turned away with no legible text. Projector light catches their faces in the upper half; lower third clear for subtitles.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "medium",
+          "motion": "pan_right",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Entre latas de película y boletos viejos, encontramos la carpeta con mi firma.",
+              "delivery": "atenta"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Leí cada hoja; Simón me había pedido autorización para presentar la solicitud.",
+              "delivery": "con creciente alivio"
+            },
+            {
+              "speaker": "narrador",
+              "text": "El centro vecinal todavía no había aprobado el cambio de titular.",
+              "delivery": "firme"
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 close-up of Alma in the projection booth, holding a phone to her ear while gripping the edge of a table. Early daylight cuts across her face in the upper half; the phone screen is hidden and the lower third is clear for subtitles. No legible text.",
+          "characters": [
+            "alma"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Llamé a Elena y le pregunté si aún podía impedirlo.",
+              "delivery": "urgente"
+            },
+            {
+              "speaker": "elena",
+              "text": "Ven a la reunión de mañana. Ahí puedes dejar clara tu decisión.",
+              "delivery": "serena, por teléfono"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Me aferré al borde de la mesa: por primera vez tenía una salida real.",
+              "delivery": "aliviada, sin perder la cautela"
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 medium shot in the projection booth. Inés offers to stand beside Alma; Alma keeps a guarded distance while putting the folder away. An envelope slips from it near their hands, with no legible writing. Faces in the upper half, lower third clear for subtitles, pale morning light.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "medium",
+          "motion": "pan_down",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Inés ofreció acompañarme. Le dije que necesitaba testigos, no promesas.",
+              "delivery": "dolida, firme"
+            },
+            {
+              "speaker": "ines",
+              "text": "Diré lo que hice. No te pediré que me perdones.",
+              "delivery": "sincera"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Al guardar la copia, cayó un sobre dirigido a Inés.",
+              "delivery": "sorprendida"
+            }
+          ]
+        },
+        {
+          "id": "s6",
+          "beat": "giro",
+          "image_prompt": "Vertical 9:16 close-up in the projection booth. Alma reads an unfolded letter held high between her and Inés; both faces are visible above it, stunned. The letter faces away from the camera, with no legible text. Cold dawn light, lower third clear for subtitles.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_out",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Dentro había una carta de Simón: le prometía marcharse con ella cuando obtuviera el cine.",
+              "delivery": "herida"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Pensaba conseguir dinero con el local. Esa era la vida nueva que le había ofrecido.",
+              "delivery": "con amarga claridad"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Inés leyó conmigo sin defenderlo, pero tampoco se disculpó otra vez.",
+              "delivery": "contenida"
+            }
+          ]
+        },
+        {
+          "id": "s7",
+          "beat": "cliffhanger",
+          "image_prompt": "Vertical 9:16 wide shot in a modest neighborhood meeting room the next morning. Elena stands at the head of a table; Alma holds a closed folder, Simón has just entered, and Inés pauses behind him. Their faces and charged glances fill the upper half; papers show no legible text, lower third clear for subtitles.",
+          "characters": [
+            "alma",
+            "simon",
+            "ines",
+            "elena"
+          ],
+          "shot": "wide",
+          "motion": "pan_left",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "A la mañana siguiente, Simón entró a la reunión. Inés llegó detrás de él.",
+              "delivery": "tensa"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Los dos me miraron cuando Elena pidió que hablara primero.",
+              "delivery": "conteniendo el aliento"
+            },
+            {
+              "speaker": "narrador",
+              "text": "¿Tendré el valor de enfrentarlos a los dos?",
+              "delivery": "en suspenso"
+            }
+          ]
+        },
+        {
+          "id": "s8",
+          "beat": "cierre",
+          "image_prompt": "Vertical 9:16 close-up held on Alma at the meeting table, looking toward Simón and Inés outside the frame. Her hand rests on the closed folder near the upper center; no legible text. Her face occupies the upper half, the lower third stays clear for subtitles, tense morning light.",
+          "characters": [
+            "alma"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Parte 5 en mi perfil.",
+              "delivery": "Pausa breve antes; tono de promesa, más bajo, con intriga."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Se encienden las luces",
+      "hook_text": "¿Quién se quedará con el cine?",
+      "post_description": "Alma llega a la reunión con una decisión tomada. Pero salvar el cine no será lo último que descubra.",
+      "hashtags": [
+        "Minidrama",
+        "CineDeBarrio",
+        "Traicion",
+        "Secretos"
+      ],
+      "scenes": [
+        {
+          "id": "s1",
+          "beat": "gancho",
+          "image_prompt": "Vertical 9:16 frame inside a neighborhood community meeting room. Alma faces Simón across a table; Inés and Elena watch in tense silence. Faces in the upper half, soft morning light, no important details in the lower third, no legible text.",
+          "characters": [
+            "alma",
+            "simon",
+            "ines",
+            "elena"
+          ],
+          "shot": "medium",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Mi prometido quiso quitarme el cine frente a todos.",
+              "delivery": "Firme, inmediata"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Elena me dio la palabra. Simón sonrió: creía que mi firma me callaría.",
+              "delivery": "Dolor contenido"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 frame. Alma places a document on the meeting table while Elena leans toward it and Simón watches. Keep their faces in the upper half; the document is angled away with no legible text. Cool morning light, lower third visually clear.",
+          "characters": [
+            "alma",
+            "elena",
+            "simon"
+          ],
+          "shot": "medium",
+          "motion": "pan_right",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Mostré la copia: la cláusula autorizaba solicitar el cambio, no decidir por mí.",
+              "delivery": "Precisa"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Rechacé el cambio de titular: Simón me dijo que era una renovación.",
+              "delivery": "Sin titubear"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 frame. Simón turns toward Alma as Inés places a small payment receipt beside the document. Alma holds Inés's gaze. Tight composition with faces in the upper half, receipt out of focus and unreadable, lower third clear.",
+          "characters": [
+            "simon",
+            "ines",
+            "alma"
+          ],
+          "shot": "medium",
+          "motion": "pan_left",
+          "lines": [
+            {
+              "speaker": "simon",
+              "text": "Estás confundida. Tú firmaste.",
+              "delivery": "Defensivo"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Inés puso su comprobante junto al mío: pagó el trámite porque creyó a Simón.",
+              "delivery": "Serena, herida"
+            },
+            {
+              "speaker": "ines",
+              "text": "Te ayudé a ocultarlo. No tengo excusa.",
+              "delivery": "Avergonzada"
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 frame. Elena reviews a blurred document, then looks directly at Alma while Simón averts his eyes. Faces in the upper half, daylight through a rain-streaked window, no legible text, lower third uncluttered.",
+          "characters": [
+            "elena",
+            "alma",
+            "simon"
+          ],
+          "shot": "medium",
+          "motion": "zoom_out",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Elena revisó las fechas; Simón evitó mirarme. Nada estaba aprobado: aún podía impedirlo.",
+              "delivery": "Esperanza cautelosa"
+            },
+            {
+              "speaker": "elena",
+              "text": "Consta tu rechazo. Esta solicitud no prospera.",
+              "delivery": "Clara y formal"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Oí la calle y pude respirar.",
+              "delivery": "Aliviada"
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 frame in the community center hallway. Simón stands a step behind Alma; she removes her engagement ring without looking back. Frame their faces and hands in the upper half, pale corridor light, lower third empty, no text.",
+          "characters": [
+            "alma",
+            "simon"
+          ],
+          "shot": "medium",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "En el pasillo, Simón prometió arreglarlo, como al reabrir el cine.",
+              "delivery": "Triste, decidida"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Me quité el anillo: cancelé la boda. No firmaría otra promesa suya.",
+              "delivery": "Firme"
+            }
+          ]
+        },
+        {
+          "id": "s6",
+          "beat": "desarrollo",
+          "image_prompt": "Vertical 9:16 frame outside the neighborhood cinema at dusk after rain. Inés offers Alma the projection booth keys; Alma accepts them without embracing her. Their faces occupy the upper half, reflected streetlights, no legible signage, lower third clear.",
+          "characters": [
+            "alma",
+            "ines"
+          ],
+          "shot": "medium",
+          "motion": "pan_up",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Inés esperaba con las llaves de la cabina. Admitió que perder mi confianza no era un malentendido.",
+              "delivery": "Reflexiva"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Quizá hablaríamos algún día sin mentiras. Esa noche necesitaba abrir las puertas.",
+              "delivery": "Cálida, con distancia"
+            }
+          ]
+        },
+        {
+          "id": "s7",
+          "beat": "giro",
+          "image_prompt": "Vertical 9:16 frame in the cinema projection booth at night. The projector glows behind Alma as she discovers an aged envelope beneath an old film canister. Her surprised face and the objects fill the upper half; all writing is turned away or blurred, lower third clear.",
+          "characters": [
+            "alma"
+          ],
+          "shot": "medium",
+          "motion": "pan_down",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Encendí el proyector para mi primera función sin Simón. Bajo una lata vieja hallé un sobre con la letra de mi madre.",
+              "delivery": "Esperanzada, luego inquieta"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Dentro, una copia amarillenta: alguien pidió cambiar la titularidad del cine años antes de Simón.",
+              "delivery": "En voz baja"
+            }
+          ]
+        },
+        {
+          "id": "s8",
+          "beat": "cliffhanger",
+          "image_prompt": "Vertical 9:16 close-up of Alma in the projection booth, frozen as she reads an old paper held near her face. Projector light cuts across her expression; the paper faces away from camera and contains no legible text. Face in the upper half, lower third clear.",
+          "characters": [
+            "alma"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_in",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Mi madre había subrayado la fecha y escrito: «Si regresan por el cine, no firmes».",
+              "delivery": "Casi un susurro"
+            },
+            {
+              "speaker": "narrador",
+              "text": "¿Quiénes habían intentado arrebatárselo antes de Simón?",
+              "delivery": "Sobrecogida"
+            }
+          ]
+        },
+        {
+          "id": "s9",
+          "beat": "cierre",
+          "image_prompt": "Vertical 9:16 lingering close-up of Alma staring at the old paper just outside the frame. The projector beam flickers behind her, leaving her face half in shadow. Face in the upper half, no legible text, lower third empty.",
+          "characters": [
+            "alma"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_out",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Parte 6 en mi perfil.",
+              "delivery": "Pausa breve antes; tono de promesa, más bajo, con intriga."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

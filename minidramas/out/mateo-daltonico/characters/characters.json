@@ -1,0 +1,74 @@
+{
+  "mateo": {
+    "file": "mateo.jpg",
+    "usage": {
+      "input_tokens": 200,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 200
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 544
+    },
+    "cost": 0.01132,
+    "at": "2026-11-21T23:16:01.000Z"
+  },
+  "doctora": {
+    "file": "doctora.jpg",
+    "usage": {
+      "input_tokens": 189,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 189
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 533
+    },
+    "cost": 0.011265,
+    "at": "2026-11-21T23:16:02.766Z"
+  },
+  "entrenador": {
+    "file": "entrenador.jpg",
+    "usage": {
+      "input_tokens": 188,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 188
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 532
+    },
+    "cost": 0.01126,
+    "at": "2026-11-21T23:16:03.540Z"
+  },
+  "papa": {
+    "file": "papa.jpg",
+    "usage": {
+      "input_tokens": 186,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 186
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 530
+    },
+    "cost": 0.01125,
+    "at": "2026-11-21T23:16:10.746Z"
+  }
+}

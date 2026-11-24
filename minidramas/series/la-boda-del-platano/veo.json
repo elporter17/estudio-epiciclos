@@ -1,0 +1,127 @@
+{
+  "title": "La boda del Plátano",
+  "slug": "la-boda-del-platano",
+  "format": "veo",
+  "lang": "es",
+  "logline": "En plena boda, la madrina se opone: el novio es suyo. Y eso es solo el principio.",
+  "premise": "Fresa está a punto de casarse con Plátano cuando Piña, su madrina, interrumpe la boda. Lo que parece un simple engaño esconde un plan: Plátano quiere la huerta que Fresa heredó de su abuela. Fresa, Piña y su mejor amigo Limón se alían para darle la vuelta a la boda.",
+  "style": "Vertical 9:16, Pixar-style 3D animation, glossy and colorful, soft warm kitchen lighting, Latin American telenovela drama with a comedic tone. All characters are anthropomorphic fruits with expressive faces, tiny arms and legs. Characters speak Latin American Spanish with clear lip-sync. No subtitles, no on-screen text, no logos.",
+  "clip_seconds": 10,
+  "characters": [
+    {
+      "id": "fresa",
+      "name": "Fresa",
+      "role": "La novia y protagonista",
+      "visual": "FRESA: a cute anthropomorphic strawberry woman, glossy red skin with tiny yellow seeds, a small green leafy cap, big green expressive eyes with long eyelashes, thin green stem-like arms and legs. Wears a white lace bridal veil with a crown of small white flowers in wedding scenes.",
+      "voice": "young adult woman, sweet but brave, dramatic telenovela delivery"
+    },
+    {
+      "id": "platano",
+      "name": "Plátano",
+      "role": "El novio infiel",
+      "visual": "PLÁTANO: a tall anthropomorphic banana man, bright yellow peel with a few brown freckles, big round brown eyes, thin dark eyebrows, a black bow tie, thin yellow arms with yellow cartoon gloves, always slightly sweating.",
+      "voice": "adult man, smooth talker, gets squeaky when nervous"
+    },
+    {
+      "id": "pina",
+      "name": "Piña",
+      "role": "La madrina que se opone",
+      "visual": "PIÑA: an anthropomorphic pineapple woman, golden textured skin, a tall spiky green leaf crown like a hairdo, big dark oval sunglasses, red lips, a hot pink wrap dress with small yellow dots, thin yellow arms and legs, pink high heels.",
+      "voice": "adult woman, loud, confident diva"
+    },
+    {
+      "id": "coco",
+      "name": "Padre Coco",
+      "role": "El cura",
+      "visual": "PADRE COCO: a round hairy brown coconut man, small round wire glasses, bushy gray eyebrows, a black priest cassock with a white collar, holding a small black book with a gold cross, tiny brown arms.",
+      "voice": "older man, calm, slow and solemn"
+    },
+    {
+      "id": "limon",
+      "name": "Limón",
+      "role": "El mejor amigo de Fresa",
+      "visual": "LIMÓN: a small anthropomorphic lemon man, bright yellow bumpy skin, a tiny green leaf on top, thick black rectangular glasses, a green cardigan, tiny arms and legs, sarcastic half-smile.",
+      "voice": "young adult man, sarcastic and loyal"
+    },
+    {
+      "id": "uva",
+      "name": "Uva",
+      "role": "La otra amante (aparece en la parte 4)",
+      "visual": "UVA: an anthropomorphic purple grape woman made of a small cluster of shiny grapes, a curly vine like a ponytail, long eyelashes, purple lipstick, a gold necklace, tiny arms and legs.",
+      "voice": "adult woman, sly and whispery"
+    }
+  ],
+  "settings": {
+    "boda": "A wedding on a sunny kitchen counter: the altar is a decorated fruit bowl with white flowers, small apple and grape guests sit on rows of matchboxes, a wooden kitchen door in the background.",
+    "nevera": "Inside an open refrigerator at night, cold blue light, shelves with milk cartons and yogurt cups.",
+    "mercado": "A colorful Latin American market stall full of fruit crates, string lights, busy background.",
+    "cocina_noche": "The same kitchen counter at night, dim moonlight through the window, a phone glowing on the counter."
+  },
+  "episodes": [
+    {
+      "number": 1,
+      "title": "¡Yo me opongo!",
+      "hook": "¡Ese plátano es MÍO!",
+      "clips": [
+        { "id": "c01", "setting": "boda", "cast": ["fresa", "platano", "coco", "pina"], "action": "Padre Coco reads from his book at the altar while Fresa and Plátano hold hands. Suddenly the kitchen door bursts open and Piña storms in pointing at Plátano. All guests gasp.", "dialogue": [{ "who": "coco", "line": "Si alguien se opone a esta boda, que hable ahora..." }, { "who": "pina", "line": "¡Yo me opongo! ¡Ese plátano es MÍO!" }], "camera": "Slow push-in on the altar, then fast whip pan to the door.", "sound": "Dramatic telenovela music sting, guests gasping." },
+        { "id": "c02", "setting": "boda", "cast": ["fresa"], "action": "Close-up of Fresa under her veil, her eyes fill with tears and a single drop of red juice rolls down her cheek. She slowly turns to look at Plátano.", "dialogue": [{ "who": "fresa", "line": "¿Piña? ¿Mi madrina? ¿Desde cuándo, Plátano?" }], "camera": "Slow dolly-in to an extreme close-up of her eyes.", "sound": "Soft sad violin, a heartbeat." },
+        { "id": "c03", "setting": "boda", "cast": ["platano", "fresa"], "action": "Plátano sweats a lot, loosens his bow tie and laughs nervously with his hands up, trying to calm Fresa.", "dialogue": [{ "who": "platano", "line": "Mi amor, te juro que solo fue... una ensalada de frutas." }], "camera": "Medium shot, slight handheld shake.", "sound": "Comedic record scratch, guests murmuring." },
+        { "id": "c04", "setting": "boda", "cast": ["pina", "fresa"], "action": "Piña walks down the aisle between the apple and grape guests, takes off her sunglasses slowly and looks at Fresa with a smirk.", "dialogue": [{ "who": "pina", "line": "Seis meses, Fresita. Seis meses escondidos detrás del frutero." }], "camera": "Low-angle tracking shot following Piña down the aisle.", "sound": "Sassy slow-motion beat, guests whispering." },
+        { "id": "c05", "setting": "boda", "cast": ["coco", "fresa", "platano"], "action": "Padre Coco closes his book and looks over his glasses at Fresa. Fresa stares at the ring on her tiny hand, trembling. Plátano kneels and begs.", "dialogue": [{ "who": "coco", "line": "Hija mía... ¿todavía quieres casarte?" }, { "who": "platano", "line": "¡Fresita, por favor, di que sí!" }], "camera": "Over-the-shoulder shot from Padre Coco, then cut to Fresa's face.", "sound": "Tense silence, a clock ticking." },
+        { "id": "c06", "setting": "boda", "cast": ["pina", "fresa"], "action": "Piña pulls an ultrasound picture out of her purse showing a tiny baby banana and holds it up high. Fresa's eyes go wide in total shock and her veil falls off.", "dialogue": [{ "who": "pina", "line": "Y no vengo sola, Fresa." }, { "who": "fresa", "line": "¿¡QUÉ!?" }], "camera": "Crash zoom on the ultrasound, then crash zoom on Fresa's face, freeze.", "sound": "Huge dramatic telenovela sting, thunder." }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "El plátanito",
+      "hook": "Te lo dije: ese plátano estaba demasiado maduro.",
+      "clips": [
+        { "id": "c01", "setting": "nevera", "cast": ["fresa", "limon"], "action": "Fresa, still in her veil, sits crying inside the refrigerator between yogurt cups. Limón opens the fridge door and hands her a tissue.", "dialogue": [{ "who": "limon", "line": "Te lo dije, Fresa. Ese plátano estaba demasiado maduro." }], "camera": "Wide shot from outside the fridge as the door opens, light spilling in.", "sound": "Fridge hum, soft sad piano." },
+        { "id": "c02", "setting": "nevera", "cast": ["fresa", "limon"], "action": "Fresa blows her nose loudly into the tissue and looks at Limón with puffy eyes.", "dialogue": [{ "who": "fresa", "line": "Un bebé, Limón. Un plátanito. ¿Cómo no me di cuenta?" }], "camera": "Close two-shot, gentle push-in.", "sound": "Comedic nose blow, sad piano continues." },
+        { "id": "c03", "setting": "nevera", "cast": ["limon", "fresa"], "action": "Limón pushes his glasses up and holds up the ultrasound picture that Piña dropped, examining it with a magnifying glass.", "dialogue": [{ "who": "limon", "line": "Piña dejó esto tirado en la boda. Algo aquí no me cuadra." }], "camera": "Insert close-up of the magnifying glass over the ultrasound.", "sound": "Detective mystery music, a soft whoosh." },
+        { "id": "c04", "setting": "nevera", "cast": ["fresa", "limon"], "action": "Fresa wipes her tears, stands up on the fridge shelf and takes off her veil with determination.", "dialogue": [{ "who": "fresa", "line": "Se acabó llorar entre yogures. Quiero la verdad." }], "camera": "Low angle hero shot of Fresa, cold light behind her.", "sound": "Music swells, empowering drum hit." },
+        { "id": "c05", "setting": "nevera", "cast": ["limon"], "action": "Limón zooms in with the magnifying glass and freezes, his mouth drops open.", "dialogue": [{ "who": "limon", "line": "Fresa... esta ecografía tiene fecha de hace dos años." }], "camera": "Extreme close-up of Limón's eye through the magnifying glass.", "sound": "Suspense sting." },
+        { "id": "c06", "setting": "nevera", "cast": ["fresa", "limon"], "action": "Fresa grabs the ultrasound and reads it, then looks straight at the camera with fury.", "dialogue": [{ "who": "fresa", "line": "Entonces ese plátanito... no existe." }, { "who": "limon", "line": "O no es de Piña." }], "camera": "Snap zoom to Fresa's face, then to Limón.", "sound": "Thunder, dramatic telenovela sting." }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "La verdad de la Piña",
+      "hook": "Tú me robaste el novio... y yo te voy a salvar la vida.",
+      "clips": [
+        { "id": "c01", "setting": "mercado", "cast": ["fresa", "pina"], "action": "Fresa marches through the market and slams the ultrasound picture on Piña's fruit crate. Piña lowers her sunglasses.", "dialogue": [{ "who": "fresa", "line": "¡Esta ecografía es de hace dos años, mentirosa!" }], "camera": "Tracking shot behind Fresa, then a hard stop on Piña.", "sound": "Market noise stops abruptly, dramatic sting." },
+        { "id": "c02", "setting": "mercado", "cast": ["pina", "fresa"], "action": "Piña sighs, takes off her sunglasses and her eyes are sad and tired. She sits down on a crate.", "dialogue": [{ "who": "pina", "line": "Ya lo sé, Fresita. Me la dio él. Me usó a mí también." }], "camera": "Slow push-in on Piña's face.", "sound": "Soft emotional guitar." },
+        { "id": "c03", "setting": "mercado", "cast": ["fresa", "pina"], "action": "Fresa crosses her tiny arms, suspicious, leaning toward Piña.", "dialogue": [{ "who": "fresa", "line": "¿Y por qué arruinaste mi boda, entonces?" }], "camera": "Two-shot, slight low angle on Fresa.", "sound": "Tense strings." },
+        { "id": "c04", "setting": "mercado", "cast": ["pina", "fresa"], "action": "Piña pulls a folded contract out of her purse and hands it to Fresa. Fresa unfolds it and starts reading.", "dialogue": [{ "who": "pina", "line": "Porque escuché a Plátano. No busca tu amor, Fresa." }], "camera": "Close-up of the paper being unfolded.", "sound": "Paper rustle, suspense pulse." },
+        { "id": "c05", "setting": "mercado", "cast": ["fresa"], "action": "Fresa reads the paper and her hands start trembling, her green eyes go wide.", "dialogue": [{ "who": "fresa", "line": "¿La huerta de mi abuela? ¿Me iba a hacer firmar esto en la boda?" }], "camera": "Over-the-shoulder on the paper, then rack focus to Fresa's face.", "sound": "Heartbeat, low drone." },
+        { "id": "c06", "setting": "mercado", "cast": ["pina", "fresa"], "action": "Piña puts her sunglasses back on, stands up and offers her tiny hand to Fresa for a handshake.", "dialogue": [{ "who": "pina", "line": "Tú me odias y yo a ti. Pero a él lo odiamos más. ¿Trato?" }], "camera": "Slow orbit around the two of them, ending on the hands about to shake.", "sound": "Epic telenovela music sting." }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "La otra",
+      "hook": "Perdóname, mi amor... ¿nos casamos otra vez?",
+      "clips": [
+        { "id": "c01", "setting": "cocina_noche", "cast": ["fresa", "platano"], "action": "Plátano opens the kitchen door and finds Fresa waiting on the counter with candles. She smiles sweetly, a little too sweetly.", "dialogue": [{ "who": "fresa", "line": "Te perdono, mi amor. ¿Nos casamos otra vez?" }], "camera": "Slow push-in on Fresa's fake smile.", "sound": "Romantic music with a slightly creepy undertone." },
+        { "id": "c02", "setting": "cocina_noche", "cast": ["platano", "fresa"], "action": "Plátano jumps with joy, hugs Fresa from the side and secretly winks at the camera.", "dialogue": [{ "who": "platano", "line": "¡Sí! Mañana mismo, mi Fresita. Y firmamos todo de una vez." }], "camera": "Medium shot, quick zoom on his wink.", "sound": "Comedic sting on the wink." },
+        { "id": "c03", "setting": "cocina_noche", "cast": ["limon", "pina"], "action": "Hidden behind the sugar jar, Limón and Piña spy on them with tiny binoculars.", "dialogue": [{ "who": "limon", "line": "Cayó redondito." }, { "who": "pina", "line": "Como buen plátano: resbaloso pero tonto." }], "camera": "Peek shot from behind the sugar jar.", "sound": "Spy music, whispers." },
+        { "id": "c04", "setting": "cocina_noche", "cast": ["platano"], "action": "Later that night, Plátano sneaks to the corner of the counter, picks up the glowing phone and whispers into it with a smirk.", "dialogue": [{ "who": "platano", "line": "Mañana firmo y la huerta es mía. Y luego nos vamos tú y yo..." }], "camera": "Slow creeping dolly toward Plátano from behind.", "sound": "Sinister low strings." },
+        { "id": "c05", "setting": "cocina_noche", "cast": ["uva"], "action": "Split-screen style: on the other side of the call, Uva lies on a silk pillow in a fruit bowl, twirling her vine ponytail.", "dialogue": [{ "who": "uva", "line": "No me falles, Platanito. Tu Uvita te espera." }], "camera": "Close-up of Uva with purple moody lighting.", "sound": "Seductive saxophone." },
+        { "id": "c06", "setting": "cocina_noche", "cast": ["fresa", "limon", "pina"], "action": "Fresa, Limón and Piña have heard everything from the dark. Fresa steps into the moonlight, furious and determined.", "dialogue": [{ "who": "pina", "line": "¿UVA? ¿También hay una uva?" }, { "who": "fresa", "line": "Mañana... va a ser la boda del año." }], "camera": "Crash zoom on Fresa's eyes in the moonlight.", "sound": "Thunder, dramatic telenovela sting." }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "La segunda boda",
+      "hook": "Yo me opongo... a mi propia boda.",
+      "clips": [
+        { "id": "c01", "setting": "boda", "cast": ["coco", "fresa", "platano"], "action": "The same wedding altar again. Padre Coco sighs and reads from his book. Plátano grins with a pen and a contract ready on the altar.", "dialogue": [{ "who": "coco", "line": "Otra vez... Si alguien se opone a esta boda, que hable ahora." }], "camera": "Slow push-in on the altar, same as the first wedding.", "sound": "Wedding organ, guests whispering." },
+        { "id": "c02", "setting": "boda", "cast": ["fresa", "platano"], "action": "Fresa lifts her veil herself, looks at Plátano and raises her tiny hand.", "dialogue": [{ "who": "fresa", "line": "Yo me opongo... a mi propia boda." }], "camera": "Close-up of Fresa, then quick cut to Plátano's shocked face.", "sound": "Organ stops with a wrong note, guests gasp." },
+        { "id": "c03", "setting": "boda", "cast": ["pina", "limon", "uva"], "action": "The kitchen door bursts open: Piña and Limón walk in, dragging a surprised Uva between them.", "dialogue": [{ "who": "pina", "line": "¡Y traje a una invitada especial!" }, { "who": "uva", "line": "¿Platanito? ¿Te ibas a casar?" }], "camera": "Whip pan to the door, slow-motion entrance.", "sound": "Epic entrance music." },
+        { "id": "c04", "setting": "boda", "cast": ["fresa", "platano"], "action": "Fresa takes the contract from the altar and tears it in half in front of Plátano. Paper pieces fly in slow motion.", "dialogue": [{ "who": "fresa", "line": "La huerta de mi abuela no se vende. Y yo tampoco." }], "camera": "Low angle on Fresa tearing the paper, slow motion.", "sound": "Paper tear, music swells." },
+        { "id": "c05", "setting": "boda", "cast": ["platano"], "action": "Plátano tries to run away down the aisle, steps on a banana peel and slips comically, sliding across the counter into the fruit bowl. Guests laugh.", "dialogue": [{ "who": "platano", "line": "¡Nooo, mi cáscara!" }], "camera": "Wide tracking shot of the slip, ends on a comedic freeze.", "sound": "Cartoon slip sound, guests laughing." },
+        { "id": "c06", "setting": "boda", "cast": ["fresa", "pina", "limon"], "action": "Fresa, Piña and Limón stand together at the altar, smiling. Fresa throws her bouquet toward the camera.", "dialogue": [{ "who": "fresa", "line": "Aquí la que manda en la huerta... soy yo." }, { "who": "pina", "line": "¡Y la madrina también!" }], "camera": "Slow dolly-out, bouquet flies at the lens.", "sound": "Happy telenovela finale music, applause." }
+      ]
+    }
+  ]
+}

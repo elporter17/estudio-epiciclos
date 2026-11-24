@@ -1,0 +1,286 @@
+{
+  "title": "¿Y si Papi a la orden hiciera bien su trabajo?",
+  "slug": "papi-a-la-orden",
+  "logline": "Un hondureño sueña con un país donde todo funciona, hasta que suena la alarma y hay un hoyo frente a su casa.",
+  "premise": "Sátira en forma de sueño: si el presidente hiciera bien su trabajo, Honduras sería como Dubái. Humor sobre servicios públicos (baches, luz, hospitales), no acusaciones contra nadie.",
+  "setting": "Honduras imaginaria del futuro: Tegucigalpa, San Pedro Sula y La Ceiba convertidas en ciudades de cristal.",
+  "tone": "Comedia absurda, rápida, con groserías hondureñas y remate final.",
+  "visual_style": "Hand-drawn editorial newspaper caricature illustration: confident black ink outlines with slight line-weight variation, flat digital coloring with soft cel shading, hugely exaggerated heads like a Latin American political cartoonist, bright tropical colors, subtle paper grain. Clearly a drawing, never 3D, never photorealistic.",
+  "narrator": {
+    "character_id": "chepe",
+    "voice": "ash",
+    "voice_instructions": "Hombre joven hondureño, ritmo MUY rápido y chismoso, tono burlón y sarcástico, como contando un chisme a un amigo. Hace una pausa corta antes de cada remate y dice las groserías con naturalidad. Español de Honduras, nada de acento neutro."
+  },
+  "characters": [
+    {
+      "id": "papi",
+      "name": "Papi",
+      "role": "Caricatura del presidente, personaje del sueño",
+      "age": 60,
+      "visual": "Caricature of a lean older man in his 60s: very large head on a thin body, tall bald forehead with a ring of short gray hair at the sides, thick gray mustache, long expressive nose, droopy kind eyes. Wears a light-blue button-up shirt with the sleeves rolled up, blue jeans and heavy black lace-up work boots (Timberland style, rounded toe, thick sole). Often carries a small Honduran flag (blue-white-blue stripes with five small blue stars) or a smartphone.",
+      "personality": "Campechano, siempre grita con alegría su frase de la suerte.",
+      "voice": "onyx",
+      "voice_instructions": "Hombre mayor hondureño, voz ronca y alegre; grita la frase con muchísima energía, alargando las vocales finales: «¡La rachaaa está activaaa!»."
+    },
+    {
+      "id": "chepe",
+      "name": "Chepe",
+      "role": "El soñador, protagonista y narrador",
+      "age": 28,
+      "visual": "Young Honduran man in his late 20s: very large round head, short black curly hair, medium-brown skin, big expressive dark eyes, small body. Wears a wrinkled green pajama t-shirt (no print) and gray sweatpants.",
+      "personality": "Cansado de los baches y los apagones, sueña en grande.",
+      "voice": "ash",
+      "voice_instructions": "Hombre joven hondureño, muy rápido y burlón."
+    },
+    {
+      "id": "amigo",
+      "name": "Don Chelito",
+      "role": "El amigo que piensa que Honduras está bien",
+      "age": 45,
+      "visual": "Stocky man in his mid 40s: very large head, red baseball cap, thick black mustache, smug half-closed eyes, arms crossed over a plain royal-blue polo shirt. Small body, big belly.",
+      "personality": "Cree que todo está bien y no acepta críticas.",
+      "voice": "onyx",
+      "voice_instructions": "Hombre hondureño, tono presumido."
+    }
+  ],
+  "outline": [
+    "Un solo episodio: sueño de un país perfecto, remate con el hoyo y el apagón, y la invitación a compartirlo."
+  ],
+  "genre": "comedia",
+  "language": "es",
+  "episodes": [
+    {
+      "number": 1,
+      "title": "La racha está activada",
+      "hook_text": "¿Y si Papi a la orden hiciera bien su chamba?",
+      "post_description": "¿Y si Papi a la orden, por fin, hiciera bien su puta chamba? 🇭🇳🔥 Tegucigalpa, San Pedro Sula y La Ceiba como Dubái. Mándaselo al cerote de tu amigo que piensa que Honduras está bien. 👇 Comenta qué arreglarías tú primero.",
+      "hashtags": [
+        "Honduras",
+        "Catracho",
+        "LaRachaEstaActivada",
+        "Humor",
+        "Satira"
+      ],
+      "scenes": [
+        {
+          "id": "s1",
+          "beat": "gancho",
+          "characters": [
+            "papi"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_in",
+          "image_prompt": "Extreme close-up of Papi's huge caricature face, eyebrows raised very high in comic surprise, mouth slightly open, eyes wide, golden sunburst rays behind him. His face fills the upper two thirds.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "¿Y si Papi a la orden, por fin, hiciera bien su puta chamba?",
+              "delivery": "gancho, directo y provocador"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "beat": "sueño",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "pan_right",
+          "image_prompt": "Chepe in pajamas stands on his tiny balcony at sunrise, jaw dropped, looking down at a perfectly smooth, spotless, completely empty boulevard with no potholes, no cars, glowing in golden light and palm trees along the sidewalks.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Despiertas un lunes, maje, y el bulevar está vacío. Ni un bache de mierda. Ni uno.",
+              "delivery": "asombrado, con el remate en 'ni uno'"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "beat": "racha",
+          "characters": [
+            "papi"
+          ],
+          "shot": "wide",
+          "motion": "pan_left",
+          "image_prompt": "Papi jogging joyfully along a turquoise tropical beach under coconut palms, a smartphone in one hand, one fist raised, wide happy open-mouthed shout, sand kicking up behind his heavy black work boots. Joyful energy.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Sales y ves a Papi corriendo por la playa, celular en mano, gritando:",
+              "delivery": "rápido, emocionado"
+            },
+            {
+              "speaker": "papi",
+              "text": "¡La rachaaa está activaaa!",
+              "delivery": "gritando muy fuerte, alargando las vocales finales"
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "beat": "tegucigalpa",
+          "characters": [],
+          "shot": "wide",
+          "motion": "pan_up",
+          "image_prompt": "Futuristic Tegucigalpa skyline at golden hour: gleaming glass skyscrapers rising from green hills where small houses used to cling, one super-tall tower with a Honduran flag on top, flying cars gliding between the buildings. No readable text.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Tegucigalpa ya no tiene casas colgadas del cerro: tiene rascacielos de cristal y autos voladores. La Torre Catracha le pasa la mano al Burj Khalifa.",
+              "delivery": "épico y exagerado"
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "beat": "sanpedro",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "pan_right",
+          "image_prompt": "A modern elevated train glides above a clean San Pedro Sula street; below, a cheerful minibus 'rapidito' politely stops to let a smiling grandmother cross the street; Chepe in pajamas waves; in the background a cartoon fried chicken character with big eyes stands calmly on the sidewalk, not looking lost. No readable text.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "San Pedro Sula tiene tren elevado, los rapiditos son educados y ya no hay choques, cabrón.",
+              "delivery": "rápido, burlón"
+            },
+            {
+              "speaker": "narrador",
+              "text": "Y el pollo ya no anda diciendo: ¡dónde estooooy!",
+              "delivery": "imitando una voz de pollo perdido, alargando la 'o'"
+            }
+          ]
+        },
+        {
+          "id": "s6",
+          "beat": "laceiba",
+          "characters": [],
+          "shot": "wide",
+          "motion": "zoom_in",
+          "image_prompt": "La Ceiba beach as a glamorous tropical Miami: turquoise sea, a carnival parade with colorful dancers and floats, and in the foreground a giant baleada (Honduran folded tortilla) wearing a small golden crown on a beach towel. Festive and bright. No readable text.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "La Ceiba es Miami, pero con baleadas, y el Carnaval dura todo el año.",
+              "delivery": "festivo"
+            }
+          ]
+        },
+        {
+          "id": "s7",
+          "beat": "luz",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "zoom_in",
+          "image_prompt": "Chepe holds a giant electricity bill that is almost as big as he is, eyes huge with joy; behind him a glowing lamp is on and a living-room TV shows a football match with a cheering crowd. Warm cozy light. The bill shows only a big plain number one, no other text.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Te llega el recibo de la luz y es de un lempira. Y no hay apagón. Ni cuando juega la H.",
+              "delivery": "incrédulo, con el remate en 'la H'"
+            }
+          ]
+        },
+        {
+          "id": "s8",
+          "beat": "hospitales",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "wide",
+          "motion": "pan_left",
+          "image_prompt": "Split scene in one frame: on the left a bright modern hospital pharmacy with shelves completely full of medicine boxes and a smiling nurse; on the right a school with a solid roof and tiny cartoon kids in graduation caps speaking happily with speech bubbles of different flags (no readable text). Chepe watches proudly from the center.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Los hospitales tienen medicinas, las escuelas tienen techo, y los cipotes salen del cole hablando tres idiomas.",
+              "delivery": "orgulloso"
+            }
+          ]
+        },
+        {
+          "id": "s9",
+          "beat": "racha2",
+          "characters": [
+            "papi"
+          ],
+          "shot": "wide",
+          "motion": "zoom_in",
+          "image_prompt": "Heroic low-angle shot of Papi on a hilltop holding a large Honduran flag (blue-white-blue stripes with five small blue stars) that waves in the wind, fireworks and sparkles behind him in a sunset sky, mouth open in a triumphant shout.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Y Papi, en medio de todo, levanta la bandera y grita otra vez:",
+              "delivery": "épico"
+            },
+            {
+              "speaker": "papi",
+              "text": "¡La rachaaa está activaaa!",
+              "delivery": "gritando muy fuerte, alargando las vocales finales"
+            }
+          ]
+        },
+        {
+          "id": "s10",
+          "beat": "remate",
+          "characters": [
+            "papi"
+          ],
+          "shot": "close-up",
+          "motion": "zoom_in",
+          "image_prompt": "Close-up of Papi shrugging his shoulders with palms up and a small proud smile, eyebrows raised, soft golden light behind him.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Todo, solo porque alguien hizo lo mínimo: su puta chamba.",
+              "delivery": "seco, con el remate marcado"
+            }
+          ]
+        },
+        {
+          "id": "s11",
+          "beat": "despertar",
+          "characters": [
+            "chepe"
+          ],
+          "shot": "medium",
+          "motion": "pan_right",
+          "image_prompt": "Dark messy bedroom at night: Chepe sits up in bed in his pajamas, hair messy, a phone alarm glowing on the nightstand, a power outage making the room dark; through the window a large pothole is visible in the street in front of his house under a dim streetlight.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Y suena la alarma. Hay un hoyo frente a tu casa… y se fue la luz. Era un sueño, catracho, a la gran puta.",
+              "delivery": "desinflado, resignado"
+            }
+          ]
+        },
+        {
+          "id": "s12",
+          "beat": "cierre",
+          "characters": [
+            "amigo"
+          ],
+          "shot": "medium",
+          "motion": "zoom_in",
+          "image_prompt": "Don Chelito stands with arms crossed, red cap, smug closed-eye smile and nose in the air, in front of a dusty street with one pothole behind him; comic contrast of his confidence with the bad street.",
+          "lines": [
+            {
+              "speaker": "narrador",
+              "text": "Mándaselo al cerote de tu amigo cachureco que piensa que Honduras está bien.",
+              "delivery": "cómplice, con sonrisa"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "framing": "Vertical 9:16 hand-drawn editorial caricature illustration. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).",
+  "portrait_framing": "Character reference sheet in hand-drawn editorial caricature style. Full-body, standing, facing the camera, neutral relaxed expression, plain light-gray background, even light, all clothing and shoes clearly visible.",
+  "standalone": true
+}

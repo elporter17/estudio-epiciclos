@@ -1,0 +1,21 @@
+node_modules/
+.env
+.env.*
+!.env.example
+work/
+assets/music/*
+!assets/music/.gitkeep
+*.mp3
+# Lo generado que se rehace gratis en local (assemble / review / voice con caché) no se sube
+*.mp4
+out/**/*.png
+out/**/review/
+out/**/episode.wav
+data/tiktok-token.json
+data/tiktok-pending.json
+data/tiktok-log.json
+.claude/
+# Formato Veo: los clips y la hoja de personajes cuestan cupo de Gemini o puntos de Flow, se suben
+!out/*/ep*/clips/c*.mp4
+!out/*/characters/sheet.png
+out/**/descartados-flow/

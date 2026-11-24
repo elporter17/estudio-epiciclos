@@ -1,0 +1,58 @@
+{
+  "text": "Seis meses, Fresita. Seis meses escondidos detrás del frutero.",
+  "words": [
+    {
+      "word": "Seis",
+      "start": 2.700000047683716,
+      "end": 3.4600000381469727
+    },
+    {
+      "word": "meses",
+      "start": 3.4600000381469727,
+      "end": 3.819999933242798
+    },
+    {
+      "word": "Fresita",
+      "start": 3.940000057220459,
+      "end": 4.480000019073486
+    },
+    {
+      "word": "Seis",
+      "start": 5.599999904632568,
+      "end": 5.880000114440918
+    },
+    {
+      "word": "meses",
+      "start": 5.880000114440918,
+      "end": 6.139999866485596
+    },
+    {
+      "word": "escondidos",
+      "start": 6.139999866485596,
+      "end": 6.980000019073486
+    },
+    {
+      "word": "detrás",
+      "start": 6.980000019073486,
+      "end": 7.380000114440918
+    },
+    {
+      "word": "del",
+      "start": 7.380000114440918,
+      "end": 7.619999885559082
+    },
+    {
+      "word": "frutero",
+      "start": 7.619999885559082,
+      "end": 8.0600004196167
+    }
+  ],
+  "segments": [
+    {
+      "start": 2.700000047683716,
+      "end": 8.0600004196167,
+      "text": " Seis meses, Fresita. Seis meses escondidos detrás del frutero.",
+      "no_speech_prob": 0.2382536381483078
+    }
+  ]
+}

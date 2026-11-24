@@ -1,0 +1,92 @@
+{
+  "albanil": {
+    "file": "albanil.jpg",
+    "usage": {
+      "input_tokens": 202,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 202
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 546
+    },
+    "cost": 0.01133,
+    "at": "2026-11-18T03:49:42.213Z"
+  },
+  "banquero": {
+    "file": "banquero.jpg",
+    "usage": {
+      "input_tokens": 193,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 193
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 537
+    },
+    "cost": 0.011285,
+    "at": "2026-11-18T03:49:42.802Z"
+  },
+  "conductor": {
+    "file": "conductor.jpg",
+    "usage": {
+      "input_tokens": 194,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 194
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 538
+    },
+    "cost": 0.01129,
+    "at": "2026-11-18T03:49:43.138Z"
+  },
+  "cajera": {
+    "file": "cajera.jpg",
+    "usage": {
+      "input_tokens": 192,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 192
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 536
+    },
+    "cost": 0.01128,
+    "at": "2026-11-18T03:49:53.685Z"
+  },
+  "guardia": {
+    "file": "guardia.jpg",
+    "usage": {
+      "input_tokens": 187,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 187
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 531
+    },
+    "cost": 0.011255,
+    "at": "2026-11-18T03:49:54.376Z"
+  }
+}

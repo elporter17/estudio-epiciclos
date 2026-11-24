@@ -1,0 +1,43 @@
+{
+  "text": "¿Piña? ¿Mi madrina? ¿Desde cuándo, Plátano?",
+  "words": [
+    {
+      "word": "¿Piña",
+      "start": 0,
+      "end": 1.7599999904632568
+    },
+    {
+      "word": "¿Mi",
+      "start": 2.299999952316284,
+      "end": 2.4600000381469727
+    },
+    {
+      "word": "madrina",
+      "start": 2.4600000381469727,
+      "end": 2.9200000762939453
+    },
+    {
+      "word": "¿Desde",
+      "start": 3.5399999618530273,
+      "end": 3.8399999141693115
+    },
+    {
+      "word": "cuándo",
+      "start": 3.8399999141693115,
+      "end": 4.340000152587891
+    },
+    {
+      "word": "Plátano",
+      "start": 4.340000152587891,
+      "end": 4.78000020980835
+    }
+  ],
+  "segments": [
+    {
+      "start": 0,
+      "end": 4.78000020980835,
+      "text": " ¿Piña? ¿Mi madrina? ¿Desde cuándo, Plátano?",
+      "no_speech_prob": 0.013836543075740337
+    }
+  ]
+}

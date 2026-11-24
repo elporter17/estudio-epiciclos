@@ -1,0 +1,114 @@
+{
+  "text": "¿Entonces ese platanito, con tanta piel, de qué toque torrate me defiendo, no existe? O no es de Piña.",
+  "words": [
+    {
+      "word": "¿Entonces",
+      "start": 0,
+      "end": 0.699999988079071
+    },
+    {
+      "word": "ese",
+      "start": 0.699999988079071,
+      "end": 0.9800000190734863
+    },
+    {
+      "word": "platanito",
+      "start": 0.9800000190734863,
+      "end": 1.559999942779541
+    },
+    {
+      "word": "con",
+      "start": 1.6399999856948853,
+      "end": 1.8200000524520874
+    },
+    {
+      "word": "tanta",
+      "start": 1.8200000524520874,
+      "end": 2.140000104904175
+    },
+    {
+      "word": "piel",
+      "start": 2.140000104904175,
+      "end": 2.240000009536743
+    },
+    {
+      "word": "de",
+      "start": 2.3399999141693115,
+      "end": 2.4000000953674316
+    },
+    {
+      "word": "qué",
+      "start": 2.4000000953674316,
+      "end": 2.5199999809265137
+    },
+    {
+      "word": "toque",
+      "start": 2.5199999809265137,
+      "end": 2.7200000286102295
+    },
+    {
+      "word": "torrate",
+      "start": 2.7200000286102295,
+      "end": 3
+    },
+    {
+      "word": "me",
+      "start": 3,
+      "end": 3.200000047683716
+    },
+    {
+      "word": "defiendo",
+      "start": 3.200000047683716,
+      "end": 3.5399999618530273
+    },
+    {
+      "word": "no",
+      "start": 3.819999933242798,
+      "end": 4.059999942779541
+    },
+    {
+      "word": "existe",
+      "start": 4.059999942779541,
+      "end": 4.480000019073486
+    },
+    {
+      "word": "O",
+      "start": 5.579999923706055,
+      "end": 5.980000019073486
+    },
+    {
+      "word": "no",
+      "start": 5.980000019073486,
+      "end": 6.300000190734863
+    },
+    {
+      "word": "es",
+      "start": 6.300000190734863,
+      "end": 6.420000076293945
+    },
+    {
+      "word": "de",
+      "start": 6.420000076293945,
+      "end": 6.860000133514404
+    },
+    {
+      "word": "Piña",
+      "start": 6.860000133514404,
+      "end": 7.039999961853027
+    }
+  ],
+  "segments": [
+    {
+      "start": 0,
+      "end": 4.480000019073486,
+      "text": " ¿Entonces ese platanito, con tanta piel, de qué toque torrate me defiendo, no existe?",
+      "no_speech_prob": 0.3880529999732971
+    },
+    {
+      "start": 5.579999923706055,
+      "end": 7.039999961853027,
+      "text": " O no es de Piña.",
+      "no_speech_prob": 0.3880529999732971
+    }
+  ]
+}

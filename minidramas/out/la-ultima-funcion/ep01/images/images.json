@@ -1,0 +1,239 @@
+{
+  "s1": {
+    "file": "s1.jpg",
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nShot: close-up.\nScene: Vertical 9:16 close-up inside a small neighborhood cinema in fictional Puerto Lucero. Alma holds a closed folder near her face and stares ahead, unsettled. Her face and the folder occupy the upper half; the lower third is empty for subtitles. Moody projector light, no legible text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "refs": [
+      "alma"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1843,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 335
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2187
+    },
+    "cost": 0.024059,
+    "at": "2026-10-19T23:19:02.927Z"
+  },
+  "s2": {
+    "file": "s2.jpg",
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Simón Varela. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nSimón Varela (35 years old): Angular face, light olive skin, close-cropped dark hair with a distinct silver streak above the right temple. Tall, lean build. Always wears a charcoal jacket over a pale blue shirt and a narrow black wristwatch. His carefully controlled smile rarely reaches his eyes.\nShot: medium.\nScene: Vertical 9:16 medium shot of a worn neighborhood cinema lobby after rain. Alma stands behind the counter as Simón approaches with flowers and a closed folder. Both faces and the objects are in the upper half; the lower third stays clear for subtitles. Warm lobby lights, wet street glow through the door, no legible text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "refs": [
+      "alma",
+      "simon"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 3437,
+      "input_tokens_details": {
+        "image_tokens": 3016,
+        "text_tokens": 421
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 3781
+    },
+    "cost": 0.036553,
+    "at": "2026-10-19T23:19:04.449Z"
+  },
+  "s3": {
+    "file": "s3.jpg",
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Simón Varela. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nSimón Varela (35 years old): Angular face, light olive skin, close-cropped dark hair with a distinct silver streak above the right temple. Tall, lean build. Always wears a charcoal jacket over a pale blue shirt and a narrow black wristwatch. His carefully controlled smile rarely reaches his eyes.\nShot: medium.\nScene: Vertical 9:16 medium shot at the cinema counter. Simón indicates a signature line on a document while Alma signs, distracted by patrons waiting near the entrance. Frame faces, hands, and paper in the upper half; leave the lower third empty for subtitles. The document is angled away and completely unreadable. Warm practical lighting.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "refs": [
+      "alma",
+      "simon"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 3437,
+      "input_tokens_details": {
+        "image_tokens": 3016,
+        "text_tokens": 421
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 3781
+    },
+    "cost": 0.036553,
+    "at": "2026-10-19T23:19:05.840Z"
+  },
+  "s4": {
+    "file": "s4.jpg",
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nShot: close-up.\nScene: Vertical 9:16 close-up of Alma behind the cinema counter, startled by a phone vibrating beside her. She turns it slightly; its screen is seen only from the side, defocused, with no readable text. Alma's face and the phone remain in the upper half; lower third empty for subtitles. Dim projection light.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "refs": [
+      "alma"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1848,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 340
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2192
+    },
+    "cost": 0.024084,
+    "at": "2026-10-19T23:19:15.533Z"
+  },
+  "s5": {
+    "file": "s5.jpg",
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Simón Varela; image 3 is Inés Duarte. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nSimón Varela (35 years old): Angular face, light olive skin, close-cropped dark hair with a distinct silver streak above the right temple. Tall, lean build. Always wears a charcoal jacket over a pale blue shirt and a narrow black wristwatch. His carefully controlled smile rarely reaches his eyes.\nInés Duarte (32 years old): Heart-shaped face, warm tan skin, hazel eyes, straight copper-brown hair cut into a blunt chin-length bob. Medium build. Always wears an olive-green utility shirt, dark jeans, and a yellow thread bracelet. A small crescent-shaped birthmark beside her mouth remains visible in every scene.\nShot: wide.\nScene: Vertical 9:16 wide shot of the cinema lobby and corridor. Simón pockets his phone and walks away; Inés follows without meeting Alma's eyes. Alma watches from the counter. Keep all faces in the upper half and the lower third uncluttered for subtitles. Fading warm light, no legible signs.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "refs": [
+      "alma",
+      "simon",
+      "ines"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 5030,
+      "input_tokens_details": {
+        "image_tokens": 4524,
+        "text_tokens": 506
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 5374
+    },
+    "cost": 0.049042,
+    "at": "2026-10-19T23:19:18.751Z"
+  },
+  "s7": {
+    "file": "s7.jpg",
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nShot: close-up.\nScene: Vertical 9:16 close-up in the projection booth. Alma lifts the folder toward the projector beam, her expression changing from heartbreak to shock. The cover faces only Alma and is fully out of focus to the viewer; no legible text. Her face and folder are in the upper half, lower third empty for subtitles.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "refs": [
+      "alma"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 1847,
+      "input_tokens_details": {
+        "image_tokens": 1508,
+        "text_tokens": 339
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 2191
+    },
+    "cost": 0.024079,
+    "at": "2026-10-19T23:19:26.354Z"
+  },
+  "s9": {
+    "file": "s9.jpg",
+    "refs": [
+      "alma",
+      "simon"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 3424,
+      "input_tokens_details": {
+        "image_tokens": 3016,
+        "text_tokens": 408
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 3768
+    },
+    "cost": 0.036488,
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Simón Varela. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nSimón Varela (35 years old): Angular face, light olive skin, close-cropped dark hair with a distinct silver streak above the right temple. Tall, lean build. Always wears a charcoal jacket over a pale blue shirt and a narrow black wristwatch. His carefully controlled smile rarely reaches his eyes.\nShot: close-up.\nScene: Vertical 9:16 close-up holding on Alma's tense face in the projection booth as Simón remains blurred in the background. A projector beam crosses the upper half; the lower third is dark and clear for subtitles. No legible text, unresolved stillness.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-10-19T23:20:28.552Z"
+  },
+  "s6": {
+    "file": "s6.jpg",
+    "refs": [
+      "alma",
+      "simon",
+      "ines"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 5034,
+      "input_tokens_details": {
+        "image_tokens": 4524,
+        "text_tokens": 510
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 5378
+    },
+    "cost": 0.049062,
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Simón Varela; image 3 is Inés Duarte. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nSimón Varela (35 years old): Angular face, light olive skin, close-cropped dark hair with a distinct silver streak above the right temple. Tall, lean build. Always wears a charcoal jacket over a pale blue shirt and a narrow black wristwatch. His carefully controlled smile rarely reaches his eyes.\nInés Duarte (32 years old): Heart-shaped face, warm tan skin, hazel eyes, straight copper-brown hair cut into a blunt chin-length bob. Medium build. Always wears an olive-green utility shirt, dark jeans, and a yellow thread bracelet. A small crescent-shaped birthmark beside her mouth remains visible in every scene.\nShot: medium.\nScene: Vertical 9:16 view through the partly open projection booth door. In the upper half, Alma watches from the doorway as Simón and Inés embrace beside a folder lying open on a raised work surface. Their expressions are tense, not joyful. Keep the lower third dark and empty for subtitles. Projector beam, no legible writing.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-10-19T23:20:30.141Z"
+  },
+  "s8": {
+    "file": "s8.jpg",
+    "refs": [
+      "alma",
+      "simon",
+      "ines"
+    ],
+    "model": "gpt-image-2.5-flare",
+    "size": "1088x1920",
+    "quality": "medium",
+    "usage": {
+      "input_tokens": 5031,
+      "input_tokens_details": {
+        "image_tokens": 4524,
+        "text_tokens": 507
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 5375
+    },
+    "cost": 0.049047,
+    "prompt": "Vertical 9:16 cinematic still from a live-action drama series. Faces and key action in the upper two thirds; the lower third is calm background (subtitles go there).\nVisual style: Realistic cinematic photography for vertical frames, intimate close-ups and slow-motion-friendly compositions. Warm amber projector light contrasts with cool blue rainy streets; muted burgundy, cream, and charcoal palette. 50mm lens, shallow depth of field, subtle film grain, contemporary Latin American urban setting, natural textures, no visible brands or readable signage.\nReference images: image 1 is Alma Ríos; image 2 is Simón Varela; image 3 is Inés Duarte. Keep each person's face, hair, skin tone, build and outfit exactly as in their reference; ignore the reference background and pose.\nCharacters in frame (keep their appearance exactly):\nAlma Ríos (31 years old): Oval face, medium-brown skin, dark brown eyes, shoulder-length black curls pinned back on one side. Slim build. Always wears a faded burgundy cardigan over a cream blouse and dark trousers. A tiny silver star earring in her left ear makes her recognizable in close-ups.\nSimón Varela (35 years old): Angular face, light olive skin, close-cropped dark hair with a distinct silver streak above the right temple. Tall, lean build. Always wears a charcoal jacket over a pale blue shirt and a narrow black wristwatch. His carefully controlled smile rarely reaches his eyes.\nInés Duarte (32 years old): Heart-shaped face, warm tan skin, hazel eyes, straight copper-brown hair cut into a blunt chin-length bob. Medium build. Always wears an olive-green utility shirt, dark jeans, and a yellow thread bracelet. A small crescent-shaped birthmark beside her mouth remains visible in every scene.\nShot: medium.\nScene: Vertical 9:16 medium shot inside the cramped projection booth. Inés looks up at Alma while Simón takes one cautious step toward her. Alma holds the folder between them. All faces and the folder fill the upper half; leave the lower third empty for subtitles. Stark projector beam, suspended tension, no legible text.\nNo text, no letters, no captions, no subtitles, no logos, no watermarks; any phone or computer screen is seen at an angle or blurred.",
+    "attempt": 1,
+    "at": "2026-10-19T23:20:30.993Z"
+  }
+}

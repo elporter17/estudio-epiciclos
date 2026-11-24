@@ -1,0 +1,1032 @@
+{
+  "series": "papi-parte-2",
+  "episode": 1,
+  "duration": 82.94,
+  "audio": "episode.wav",
+  "voiceModel": "gpt-4o-mini-tts",
+  "scenes": [
+    {
+      "id": "s1",
+      "beat": "gancho",
+      "start": 0.08,
+      "end": 7.07
+    },
+    {
+      "id": "s2",
+      "beat": "calles",
+      "start": 7.49,
+      "end": 14
+    },
+    {
+      "id": "s3",
+      "beat": "gasolina",
+      "start": 14.42,
+      "end": 19.98
+    },
+    {
+      "id": "s4",
+      "beat": "comida",
+      "start": 20.4,
+      "end": 27.86
+    },
+    {
+      "id": "s5",
+      "beat": "casas",
+      "start": 28.28,
+      "end": 35.24
+    },
+    {
+      "id": "s6",
+      "beat": "prado",
+      "start": 35.66,
+      "end": 40.3
+    },
+    {
+      "id": "s7",
+      "beat": "justicia",
+      "start": 40.72,
+      "end": 51.02
+    },
+    {
+      "id": "s8",
+      "beat": "mundial",
+      "start": 51.44,
+      "end": 56.64
+    },
+    {
+      "id": "s9",
+      "beat": "potencia",
+      "start": 57.06,
+      "end": 67.19
+    },
+    {
+      "id": "s10",
+      "beat": "despertar",
+      "start": 67.61,
+      "end": 75.33
+    },
+    {
+      "id": "s11",
+      "beat": "remate",
+      "start": 75.75,
+      "end": 81.34
+    }
+  ],
+  "lines": [
+    {
+      "scene": "s1",
+      "beat": "gancho",
+      "speaker": "narrador",
+      "text": "¿Y si Papi, por fin, hiciera su puta chamba? Parte dos, maje.",
+      "start": 0.08,
+      "end": 7.07,
+      "words": [
+        {
+          "w": "¿Y",
+          "start": 0.08,
+          "end": 0.46
+        },
+        {
+          "w": "si",
+          "start": 1.14,
+          "end": 1.38
+        },
+        {
+          "w": "Papi,",
+          "start": 1.38,
+          "end": 1.82
+        },
+        {
+          "w": "por",
+          "start": 2.08,
+          "end": 2.4
+        },
+        {
+          "w": "fin,",
+          "start": 2.4,
+          "end": 2.66
+        },
+        {
+          "w": "hiciera",
+          "start": 3.34,
+          "end": 3.6
+        },
+        {
+          "w": "su",
+          "start": 3.6,
+          "end": 4
+        },
+        {
+          "w": "puta",
+          "start": 4,
+          "end": 4.36
+        },
+        {
+          "w": "chamba?",
+          "start": 4.36,
+          "end": 5.28
+        },
+        {
+          "w": "Parte",
+          "start": 5.86,
+          "end": 5.86
+        },
+        {
+          "w": "dos,",
+          "start": 5.86,
+          "end": 6.32
+        },
+        {
+          "w": "maje.",
+          "start": 6.66,
+          "end": 6.96
+        }
+      ]
+    },
+    {
+      "scene": "s2",
+      "beat": "calles",
+      "speaker": "narrador",
+      "text": "Despiertas y ves que pavimentaron toda Honduras, hasta los techos, maje.",
+      "start": 7.49,
+      "end": 14,
+      "words": [
+        {
+          "w": "Despiertas",
+          "start": 7.49,
+          "end": 8.57
+        },
+        {
+          "w": "y",
+          "start": 8.57,
+          "end": 9.03
+        },
+        {
+          "w": "ves",
+          "start": 9.03,
+          "end": 9.23
+        },
+        {
+          "w": "que",
+          "start": 9.23,
+          "end": 9.51
+        },
+        {
+          "w": "pavimentaron",
+          "start": 9.51,
+          "end": 10.25
+        },
+        {
+          "w": "toda",
+          "start": 10.25,
+          "end": 10.85
+        },
+        {
+          "w": "Honduras,",
+          "start": 10.85,
+          "end": 11.39
+        },
+        {
+          "w": "hasta",
+          "start": 12.11,
+          "end": 12.27
+        },
+        {
+          "w": "los",
+          "start": 12.27,
+          "end": 12.65
+        },
+        {
+          "w": "techos,",
+          "start": 12.65,
+          "end": 13.35
+        },
+        {
+          "w": "maje.",
+          "start": 13.35,
+          "end": 13.91
+        }
+      ]
+    },
+    {
+      "scene": "s3",
+      "beat": "gasolina",
+      "speaker": "narrador",
+      "text": "La gasolina es gratis, y te regalan quinientos pesos por llenar el tanque.",
+      "start": 14.42,
+      "end": 19.98,
+      "words": [
+        {
+          "w": "La",
+          "start": 14.42,
+          "end": 14.68
+        },
+        {
+          "w": "gasolina",
+          "start": 14.68,
+          "end": 15.26
+        },
+        {
+          "w": "es",
+          "start": 15.26,
+          "end": 15.66
+        },
+        {
+          "w": "gratis,",
+          "start": 15.66,
+          "end": 16.42
+        },
+        {
+          "w": "y",
+          "start": 16.42,
+          "end": 16.86
+        },
+        {
+          "w": "te",
+          "start": 16.86,
+          "end": 17.08
+        },
+        {
+          "w": "regalan",
+          "start": 17.08,
+          "end": 17.46
+        },
+        {
+          "w": "quinientos",
+          "start": 17.46,
+          "end": 18.1
+        },
+        {
+          "w": "pesos",
+          "start": 18.1,
+          "end": 18.56
+        },
+        {
+          "w": "por",
+          "start": 18.56,
+          "end": 19.1
+        },
+        {
+          "w": "llenar",
+          "start": 19.1,
+          "end": 19.42
+        },
+        {
+          "w": "el",
+          "start": 19.42,
+          "end": 19.58
+        },
+        {
+          "w": "tanque.",
+          "start": 19.58,
+          "end": 19.88
+        }
+      ]
+    },
+    {
+      "scene": "s4",
+      "beat": "comida",
+      "speaker": "narrador",
+      "text": "Vas al súper y la comida está tan barata que esperas tener hambre, no la quincena.",
+      "start": 20.4,
+      "end": 27.86,
+      "words": [
+        {
+          "w": "Vas",
+          "start": 20.4,
+          "end": 20.9
+        },
+        {
+          "w": "al",
+          "start": 20.9,
+          "end": 21.32
+        },
+        {
+          "w": "súper",
+          "start": 21.32,
+          "end": 21.72
+        },
+        {
+          "w": "y",
+          "start": 21.72,
+          "end": 22.44
+        },
+        {
+          "w": "la",
+          "start": 22.44,
+          "end": 22.82
+        },
+        {
+          "w": "comida",
+          "start": 22.82,
+          "end": 23
+        },
+        {
+          "w": "está",
+          "start": 23,
+          "end": 23.36
+        },
+        {
+          "w": "tan",
+          "start": 23.36,
+          "end": 23.9
+        },
+        {
+          "w": "barata",
+          "start": 23.9,
+          "end": 24.28
+        },
+        {
+          "w": "que",
+          "start": 24.28,
+          "end": 25.12
+        },
+        {
+          "w": "esperas",
+          "start": 25.12,
+          "end": 25.54
+        },
+        {
+          "w": "tener",
+          "start": 25.54,
+          "end": 25.86
+        },
+        {
+          "w": "hambre,",
+          "start": 25.86,
+          "end": 26.18
+        },
+        {
+          "w": "no",
+          "start": 27,
+          "end": 27.06
+        },
+        {
+          "w": "la",
+          "start": 27.06,
+          "end": 27.3
+        },
+        {
+          "w": "quincena.",
+          "start": 27.3,
+          "end": 27.76
+        }
+      ]
+    },
+    {
+      "scene": "s5",
+      "beat": "casas",
+      "speaker": "narrador",
+      "text": "Entras al banco sin identidad y el banquero te regala dos casas. ¡Dos, maje!",
+      "start": 28.28,
+      "end": 35.24,
+      "words": [
+        {
+          "w": "Entras",
+          "start": 28.28,
+          "end": 28.84
+        },
+        {
+          "w": "al",
+          "start": 28.84,
+          "end": 29.12
+        },
+        {
+          "w": "banco",
+          "start": 29.12,
+          "end": 29.5
+        },
+        {
+          "w": "sin",
+          "start": 29.5,
+          "end": 29.84
+        },
+        {
+          "w": "identidad",
+          "start": 29.84,
+          "end": 30.42
+        },
+        {
+          "w": "y",
+          "start": 30.42,
+          "end": 31.06
+        },
+        {
+          "w": "el",
+          "start": 31.06,
+          "end": 31.24
+        },
+        {
+          "w": "banquero",
+          "start": 31.24,
+          "end": 31.66
+        },
+        {
+          "w": "te",
+          "start": 31.66,
+          "end": 32.06
+        },
+        {
+          "w": "regala",
+          "start": 32.06,
+          "end": 32.28
+        },
+        {
+          "w": "dos",
+          "start": 32.28,
+          "end": 32.96
+        },
+        {
+          "w": "casas.",
+          "start": 32.96,
+          "end": 33.9
+        },
+        {
+          "w": "¡Dos,",
+          "start": 34.2,
+          "end": 34.52
+        },
+        {
+          "w": "maje!",
+          "start": 35.06,
+          "end": 35.14
+        }
+      ]
+    },
+    {
+      "scene": "s6",
+      "beat": "prado",
+      "speaker": "narrador",
+      "text": "Y todo mundo anda en Prado nueva, hasta el que vende elotes.",
+      "start": 35.66,
+      "end": 40.3,
+      "words": [
+        {
+          "w": "Y",
+          "start": 35.66,
+          "end": 35.96
+        },
+        {
+          "w": "todo",
+          "start": 35.96,
+          "end": 36.32
+        },
+        {
+          "w": "mundo",
+          "start": 36.32,
+          "end": 36.82
+        },
+        {
+          "w": "anda",
+          "start": 36.82,
+          "end": 37.24
+        },
+        {
+          "w": "en",
+          "start": 37.24,
+          "end": 37.48
+        },
+        {
+          "w": "Prado",
+          "start": 37.48,
+          "end": 37.78
+        },
+        {
+          "w": "nueva,",
+          "start": 37.78,
+          "end": 38.16
+        },
+        {
+          "w": "hasta",
+          "start": 38.72,
+          "end": 38.92
+        },
+        {
+          "w": "el",
+          "start": 38.92,
+          "end": 39.12
+        },
+        {
+          "w": "que",
+          "start": 39.12,
+          "end": 39.52
+        },
+        {
+          "w": "vende",
+          "start": 39.52,
+          "end": 39.6
+        },
+        {
+          "w": "elotes.",
+          "start": 39.6,
+          "end": 40.12
+        }
+      ]
+    },
+    {
+      "scene": "s7",
+      "beat": "justicia",
+      "speaker": "narrador",
+      "text": "Aprobaron una ley penal que ni los diputados se la creen. Al ladrón lo dejan preso, y por leña ya no te llevan al mamo, cerotes.",
+      "start": 40.72,
+      "end": 51.02,
+      "words": [
+        {
+          "w": "Aprobaron",
+          "start": 40.72,
+          "end": 41.62
+        },
+        {
+          "w": "una",
+          "start": 41.62,
+          "end": 41.84
+        },
+        {
+          "w": "ley",
+          "start": 41.84,
+          "end": 42.1
+        },
+        {
+          "w": "penal",
+          "start": 42.1,
+          "end": 42.54
+        },
+        {
+          "w": "que",
+          "start": 42.54,
+          "end": 42.84
+        },
+        {
+          "w": "ni",
+          "start": 42.84,
+          "end": 43
+        },
+        {
+          "w": "los",
+          "start": 43,
+          "end": 43.26
+        },
+        {
+          "w": "diputados",
+          "start": 43.26,
+          "end": 43.94
+        },
+        {
+          "w": "se",
+          "start": 43.94,
+          "end": 44.18
+        },
+        {
+          "w": "la",
+          "start": 44.18,
+          "end": 44.46
+        },
+        {
+          "w": "creen.",
+          "start": 44.46,
+          "end": 44.74
+        },
+        {
+          "w": "Al",
+          "start": 45.64,
+          "end": 45.66
+        },
+        {
+          "w": "ladrón",
+          "start": 45.66,
+          "end": 46.12
+        },
+        {
+          "w": "lo",
+          "start": 46.12,
+          "end": 46.34
+        },
+        {
+          "w": "dejan",
+          "start": 46.34,
+          "end": 46.68
+        },
+        {
+          "w": "preso,",
+          "start": 46.68,
+          "end": 47.34
+        },
+        {
+          "w": "y",
+          "start": 47.72,
+          "end": 47.88
+        },
+        {
+          "w": "por",
+          "start": 47.88,
+          "end": 48.08
+        },
+        {
+          "w": "leña",
+          "start": 48.08,
+          "end": 48.44
+        },
+        {
+          "w": "ya",
+          "start": 48.44,
+          "end": 48.82
+        },
+        {
+          "w": "no",
+          "start": 48.82,
+          "end": 48.94
+        },
+        {
+          "w": "te",
+          "start": 48.94,
+          "end": 49.14
+        },
+        {
+          "w": "llevan",
+          "start": 49.14,
+          "end": 49.42
+        },
+        {
+          "w": "al",
+          "start": 49.42,
+          "end": 49.66
+        },
+        {
+          "w": "mamo,",
+          "start": 49.66,
+          "end": 49.94
+        },
+        {
+          "w": "cerotes.",
+          "start": 50.52,
+          "end": 50.76
+        }
+      ]
+    },
+    {
+      "scene": "s8",
+      "beat": "mundial",
+      "speaker": "narrador",
+      "text": "Y Honduras gana el Mundial, maje, y Papi levanta la copa.",
+      "start": 51.44,
+      "end": 56.64,
+      "words": [
+        {
+          "w": "Y",
+          "start": 51.44,
+          "end": 51.72
+        },
+        {
+          "w": "Honduras",
+          "start": 51.72,
+          "end": 52.46
+        },
+        {
+          "w": "gana",
+          "start": 52.46,
+          "end": 52.96
+        },
+        {
+          "w": "el",
+          "start": 52.96,
+          "end": 53.36
+        },
+        {
+          "w": "Mundial,",
+          "start": 53.36,
+          "end": 53.78
+        },
+        {
+          "w": "maje,",
+          "start": 53.78,
+          "end": 54.44
+        },
+        {
+          "w": "y",
+          "start": 54.8,
+          "end": 54.86
+        },
+        {
+          "w": "Papi",
+          "start": 54.86,
+          "end": 55.42
+        },
+        {
+          "w": "levanta",
+          "start": 55.42,
+          "end": 56.04
+        },
+        {
+          "w": "la",
+          "start": 56.04,
+          "end": 56.44
+        },
+        {
+          "w": "copa.",
+          "start": 56.44,
+          "end": 56.62
+        }
+      ]
+    },
+    {
+      "scene": "s9",
+      "beat": "potencia",
+      "speaker": "narrador",
+      "text": "Honduras es potencia mundial y los gringos cruzan la frontera a trabajar aquí. Y Papi grita:",
+      "start": 57.06,
+      "end": 65.06,
+      "words": [
+        {
+          "w": "Honduras",
+          "start": 57.06,
+          "end": 57.72
+        },
+        {
+          "w": "es",
+          "start": 57.72,
+          "end": 58.4
+        },
+        {
+          "w": "potencia",
+          "start": 58.4,
+          "end": 59.02
+        },
+        {
+          "w": "mundial",
+          "start": 59.02,
+          "end": 59.6
+        },
+        {
+          "w": "y",
+          "start": 60.2,
+          "end": 60.24
+        },
+        {
+          "w": "los",
+          "start": 60.24,
+          "end": 60.48
+        },
+        {
+          "w": "gringos",
+          "start": 60.48,
+          "end": 60.88
+        },
+        {
+          "w": "cruzan",
+          "start": 60.88,
+          "end": 61.26
+        },
+        {
+          "w": "la",
+          "start": 61.26,
+          "end": 61.94
+        },
+        {
+          "w": "frontera",
+          "start": 61.94,
+          "end": 61.94
+        },
+        {
+          "w": "a",
+          "start": 61.94,
+          "end": 62.5
+        },
+        {
+          "w": "trabajar",
+          "start": 62.5,
+          "end": 62.8
+        },
+        {
+          "w": "aquí.",
+          "start": 62.8,
+          "end": 63.24
+        },
+        {
+          "w": "Y",
+          "start": 64,
+          "end": 64.26
+        },
+        {
+          "w": "Papi",
+          "start": 64.26,
+          "end": 64.64
+        },
+        {
+          "w": "grita:",
+          "start": 64.64,
+          "end": 64.94
+        }
+      ]
+    },
+    {
+      "scene": "s9",
+      "beat": "potencia",
+      "speaker": "papi",
+      "text": "¡La rachaaa está activaaa!",
+      "start": 65.28,
+      "end": 67.19,
+      "words": [
+        {
+          "w": "¡La",
+          "start": 65.28,
+          "end": 65.5
+        },
+        {
+          "w": "rachaaa",
+          "start": 65.5,
+          "end": 65.96
+        },
+        {
+          "w": "está",
+          "start": 65.96,
+          "end": 66.48
+        },
+        {
+          "w": "activaaa!",
+          "start": 66.48,
+          "end": 67.04
+        }
+      ]
+    },
+    {
+      "scene": "s10",
+      "beat": "despertar",
+      "speaker": "narrador",
+      "text": "Y suena la alarma. Era un sueño, catracho. Tienes el recibo de luz en la mano… y se fue la luz.",
+      "start": 67.61,
+      "end": 75.33,
+      "words": [
+        {
+          "w": "Y",
+          "start": 67.61,
+          "end": 67.97
+        },
+        {
+          "w": "suena",
+          "start": 67.97,
+          "end": 68.33
+        },
+        {
+          "w": "la",
+          "start": 68.33,
+          "end": 68.71
+        },
+        {
+          "w": "alarma.",
+          "start": 68.71,
+          "end": 69.03
+        },
+        {
+          "w": "Era",
+          "start": 69.67,
+          "end": 69.75
+        },
+        {
+          "w": "un",
+          "start": 69.75,
+          "end": 70.17
+        },
+        {
+          "w": "sueño,",
+          "start": 70.17,
+          "end": 70.47
+        },
+        {
+          "w": "catracho.",
+          "start": 70.67,
+          "end": 71.03
+        },
+        {
+          "w": "Tienes",
+          "start": 72.03,
+          "end": 72.13
+        },
+        {
+          "w": "el",
+          "start": 72.13,
+          "end": 72.45
+        },
+        {
+          "w": "recibo",
+          "start": 72.45,
+          "end": 72.71
+        },
+        {
+          "w": "de",
+          "start": 72.71,
+          "end": 73.07
+        },
+        {
+          "w": "luz",
+          "start": 73.07,
+          "end": 73.07
+        },
+        {
+          "w": "en",
+          "start": 73.07,
+          "end": 73.17
+        },
+        {
+          "w": "la",
+          "start": 73.17,
+          "end": 73.55
+        },
+        {
+          "w": "mano…",
+          "start": 73.55,
+          "end": 73.55
+        },
+        {
+          "w": "y",
+          "start": 74.11,
+          "end": 74.31
+        },
+        {
+          "w": "se",
+          "start": 74.31,
+          "end": 74.59
+        },
+        {
+          "w": "fue",
+          "start": 74.59,
+          "end": 74.75
+        },
+        {
+          "w": "la",
+          "start": 74.75,
+          "end": 75.17
+        },
+        {
+          "w": "luz.",
+          "start": 75.17,
+          "end": 75.17
+        }
+      ]
+    },
+    {
+      "scene": "s11",
+      "beat": "remate",
+      "speaker": "narrador",
+      "text": "Mándaselo al cerote de tu amigo cachureco. ¿Qué otra cosa pasaría?",
+      "start": 75.75,
+      "end": 81.34,
+      "words": [
+        {
+          "w": "Mándaselo",
+          "start": 75.75,
+          "end": 76.75
+        },
+        {
+          "w": "al",
+          "start": 76.75,
+          "end": 77.21
+        },
+        {
+          "w": "cerote",
+          "start": 77.21,
+          "end": 77.67
+        },
+        {
+          "w": "de",
+          "start": 77.67,
+          "end": 77.91
+        },
+        {
+          "w": "tu",
+          "start": 77.91,
+          "end": 78.13
+        },
+        {
+          "w": "amigo",
+          "start": 78.13,
+          "end": 78.43
+        },
+        {
+          "w": "cachureco.",
+          "start": 78.43,
+          "end": 79.15
+        },
+        {
+          "w": "¿Qué",
+          "start": 79.97,
+          "end": 80.19
+        },
+        {
+          "w": "otra",
+          "start": 80.19,
+          "end": 80.49
+        },
+        {
+          "w": "cosa",
+          "start": 80.49,
+          "end": 80.73
+        },
+        {
+          "w": "pasaría?",
+          "start": 80.73,
+          "end": 81.21
+        }
+      ]
+    }
+  ]
+}

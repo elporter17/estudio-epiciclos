@@ -1,0 +1,38 @@
+{
+  "chepe": {
+    "file": "chepe.jpg",
+    "usage": {
+      "input_tokens": 206,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 206
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 550
+    },
+    "cost": 0.01135,
+    "at": "2026-11-16T22:43:43.531Z"
+  },
+  "don_curul": {
+    "file": "don_curul.jpg",
+    "usage": {
+      "input_tokens": 219,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 219
+      },
+      "output_tokens": 344,
+      "output_tokens_details": {
+        "image_tokens": 344,
+        "text_tokens": 0
+      },
+      "total_tokens": 563
+    },
+    "cost": 0.011415,
+    "at": "2026-11-16T22:43:44.519Z"
+  }
+}
