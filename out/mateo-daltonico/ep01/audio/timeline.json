@@ -1,0 +1,1076 @@
+{
+  "series": "mateo-daltonico",
+  "episode": 1,
+  "duration": 84.9,
+  "audio": "episode.wav",
+  "voiceModel": "gpt-4o-mini-tts",
+  "scenes": [
+    {
+      "id": "s1",
+      "beat": "gancho",
+      "start": 0.08,
+      "end": 7.14
+    },
+    {
+      "id": "s2",
+      "beat": "desarrollo",
+      "start": 7.56,
+      "end": 17.82
+    },
+    {
+      "id": "s3",
+      "beat": "desarrollo",
+      "start": 18.24,
+      "end": 26.33
+    },
+    {
+      "id": "s4",
+      "beat": "desarrollo",
+      "start": 26.75,
+      "end": 31.14
+    },
+    {
+      "id": "s5",
+      "beat": "desarrollo",
+      "start": 31.56,
+      "end": 41.41
+    },
+    {
+      "id": "s6",
+      "beat": "desarrollo",
+      "start": 41.83,
+      "end": 49.95
+    },
+    {
+      "id": "s7",
+      "beat": "desarrollo",
+      "start": 50.37,
+      "end": 58.6
+    },
+    {
+      "id": "s8",
+      "beat": "desarrollo",
+      "start": 59.02,
+      "end": 66.14
+    },
+    {
+      "id": "s9",
+      "beat": "desarrollo",
+      "start": 66.56,
+      "end": 74.74
+    },
+    {
+      "id": "s10",
+      "beat": "cierre",
+      "start": 75.44,
+      "end": 83.3
+    }
+  ],
+  "lines": [
+    {
+      "scene": "s1",
+      "beat": "gancho",
+      "speaker": "narrador",
+      "text": "Mateo amaba el fútbol, pero tenía un problema: nunca sabía a quién pasarle el balón.",
+      "start": 0.08,
+      "end": 7.14,
+      "words": [
+        {
+          "w": "Mateo",
+          "start": 0.08,
+          "end": 0.82
+        },
+        {
+          "w": "amaba",
+          "start": 0.82,
+          "end": 1.38
+        },
+        {
+          "w": "el",
+          "start": 1.38,
+          "end": 1.82
+        },
+        {
+          "w": "fútbol,",
+          "start": 1.82,
+          "end": 2.02
+        },
+        {
+          "w": "pero",
+          "start": 2.56,
+          "end": 2.72
+        },
+        {
+          "w": "tenía",
+          "start": 2.72,
+          "end": 3.02
+        },
+        {
+          "w": "un",
+          "start": 3.02,
+          "end": 3.42
+        },
+        {
+          "w": "problema:",
+          "start": 3.42,
+          "end": 3.68
+        },
+        {
+          "w": "nunca",
+          "start": 4.88,
+          "end": 5.02
+        },
+        {
+          "w": "sabía",
+          "start": 5.02,
+          "end": 5.46
+        },
+        {
+          "w": "a",
+          "start": 5.46,
+          "end": 5.98
+        },
+        {
+          "w": "quién",
+          "start": 5.98,
+          "end": 6.04
+        },
+        {
+          "w": "pasarle",
+          "start": 6.04,
+          "end": 6.64
+        },
+        {
+          "w": "el",
+          "start": 6.64,
+          "end": 7
+        },
+        {
+          "w": "balón.",
+          "start": 7,
+          "end": 7.04
+        }
+      ]
+    },
+    {
+      "scene": "s2",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "En su equipo todos llevaban camiseta roja, y los rivales, verde. Para Mateo, las dos se veían casi igual.",
+      "start": 7.56,
+      "end": 17.82,
+      "words": [
+        {
+          "w": "En",
+          "start": 7.56,
+          "end": 7.88
+        },
+        {
+          "w": "su",
+          "start": 7.88,
+          "end": 8.12
+        },
+        {
+          "w": "equipo",
+          "start": 8.12,
+          "end": 8.42
+        },
+        {
+          "w": "todos",
+          "start": 8.88,
+          "end": 9.34
+        },
+        {
+          "w": "llevaban",
+          "start": 9.34,
+          "end": 9.84
+        },
+        {
+          "w": "camiseta",
+          "start": 9.84,
+          "end": 10.42
+        },
+        {
+          "w": "roja,",
+          "start": 10.42,
+          "end": 10.86
+        },
+        {
+          "w": "y",
+          "start": 10.86,
+          "end": 11.74
+        },
+        {
+          "w": "los",
+          "start": 11.74,
+          "end": 12.02
+        },
+        {
+          "w": "rivales,",
+          "start": 12.02,
+          "end": 12.82
+        },
+        {
+          "w": "verde.",
+          "start": 13.36,
+          "end": 13.48
+        },
+        {
+          "w": "Para",
+          "start": 14.4,
+          "end": 14.58
+        },
+        {
+          "w": "Mateo,",
+          "start": 14.58,
+          "end": 15.24
+        },
+        {
+          "w": "las",
+          "start": 15.6,
+          "end": 15.84
+        },
+        {
+          "w": "dos",
+          "start": 15.84,
+          "end": 16.12
+        },
+        {
+          "w": "se",
+          "start": 16.12,
+          "end": 16.6
+        },
+        {
+          "w": "veían",
+          "start": 16.6,
+          "end": 16.9
+        },
+        {
+          "w": "casi",
+          "start": 16.9,
+          "end": 17.36
+        },
+        {
+          "w": "igual.",
+          "start": 17.36,
+          "end": 17.72
+        }
+      ]
+    },
+    {
+      "scene": "s3",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Se pasó el partido regalando balones al otro equipo, y sus amigos se reían. Mateo quería desaparecer.",
+      "start": 18.24,
+      "end": 26.33,
+      "words": [
+        {
+          "w": "Se",
+          "start": 18.24,
+          "end": 18.7
+        },
+        {
+          "w": "pasó",
+          "start": 18.7,
+          "end": 19.04
+        },
+        {
+          "w": "el",
+          "start": 19.04,
+          "end": 19.78
+        },
+        {
+          "w": "partido",
+          "start": 19.78,
+          "end": 19.78
+        },
+        {
+          "w": "regalando",
+          "start": 19.78,
+          "end": 20.48
+        },
+        {
+          "w": "balones",
+          "start": 20.48,
+          "end": 21.02
+        },
+        {
+          "w": "al",
+          "start": 21.02,
+          "end": 21.28
+        },
+        {
+          "w": "otro",
+          "start": 21.28,
+          "end": 21.56
+        },
+        {
+          "w": "equipo,",
+          "start": 21.56,
+          "end": 21.88
+        },
+        {
+          "w": "y",
+          "start": 22.66,
+          "end": 22.82
+        },
+        {
+          "w": "sus",
+          "start": 22.82,
+          "end": 23
+        },
+        {
+          "w": "amigos",
+          "start": 23,
+          "end": 23.28
+        },
+        {
+          "w": "se",
+          "start": 23.28,
+          "end": 23.72
+        },
+        {
+          "w": "reían.",
+          "start": 23.72,
+          "end": 23.92
+        },
+        {
+          "w": "Mateo",
+          "start": 25,
+          "end": 25.12
+        },
+        {
+          "w": "quería",
+          "start": 25.12,
+          "end": 25.48
+        },
+        {
+          "w": "desaparecer.",
+          "start": 25.48,
+          "end": 26.26
+        }
+      ]
+    },
+    {
+      "scene": "s4",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Esa tarde, el entrenador lo llevó con una doctora de los ojos.",
+      "start": 26.75,
+      "end": 31.14,
+      "words": [
+        {
+          "w": "Esa",
+          "start": 26.75,
+          "end": 27.63
+        },
+        {
+          "w": "tarde,",
+          "start": 27.63,
+          "end": 27.79
+        },
+        {
+          "w": "el",
+          "start": 28.13,
+          "end": 28.31
+        },
+        {
+          "w": "entrenador",
+          "start": 28.31,
+          "end": 28.85
+        },
+        {
+          "w": "lo",
+          "start": 28.85,
+          "end": 29.11
+        },
+        {
+          "w": "llevó",
+          "start": 29.11,
+          "end": 29.45
+        },
+        {
+          "w": "con",
+          "start": 29.45,
+          "end": 29.65
+        },
+        {
+          "w": "una",
+          "start": 29.65,
+          "end": 29.87
+        },
+        {
+          "w": "doctora",
+          "start": 29.87,
+          "end": 30.37
+        },
+        {
+          "w": "de",
+          "start": 30.37,
+          "end": 30.51
+        },
+        {
+          "w": "los",
+          "start": 30.51,
+          "end": 30.79
+        },
+        {
+          "w": "ojos.",
+          "start": 30.79,
+          "end": 30.93
+        }
+      ]
+    },
+    {
+      "scene": "s5",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "La doctora le mostró un círculo de puntos de colores y le preguntó qué número veía. Mateo no veía ninguno.",
+      "start": 31.56,
+      "end": 41.41,
+      "words": [
+        {
+          "w": "La",
+          "start": 31.56,
+          "end": 31.82
+        },
+        {
+          "w": "doctora",
+          "start": 31.82,
+          "end": 32.86
+        },
+        {
+          "w": "le",
+          "start": 32.86,
+          "end": 33.08
+        },
+        {
+          "w": "mostró",
+          "start": 33.08,
+          "end": 33.44
+        },
+        {
+          "w": "un",
+          "start": 33.44,
+          "end": 34
+        },
+        {
+          "w": "círculo",
+          "start": 34,
+          "end": 34.1
+        },
+        {
+          "w": "de",
+          "start": 34.1,
+          "end": 34.76
+        },
+        {
+          "w": "puntos",
+          "start": 34.76,
+          "end": 34.76
+        },
+        {
+          "w": "de",
+          "start": 34.76,
+          "end": 35.54
+        },
+        {
+          "w": "colores",
+          "start": 35.54,
+          "end": 35.54
+        },
+        {
+          "w": "y",
+          "start": 35.54,
+          "end": 36.26
+        },
+        {
+          "w": "le",
+          "start": 36.26,
+          "end": 36.48
+        },
+        {
+          "w": "preguntó",
+          "start": 36.48,
+          "end": 37.2
+        },
+        {
+          "w": "qué",
+          "start": 37.2,
+          "end": 37.7
+        },
+        {
+          "w": "número",
+          "start": 37.7,
+          "end": 38.14
+        },
+        {
+          "w": "veía.",
+          "start": 38.14,
+          "end": 38.72
+        },
+        {
+          "w": "Mateo",
+          "start": 39.76,
+          "end": 40.06
+        },
+        {
+          "w": "no",
+          "start": 40.06,
+          "end": 40.6
+        },
+        {
+          "w": "veía",
+          "start": 40.6,
+          "end": 40.88
+        },
+        {
+          "w": "ninguno.",
+          "start": 40.88,
+          "end": 41.3
+        }
+      ]
+    },
+    {
+      "scene": "s6",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Tenía daltonismo. No ve menos: ve algunos colores de otra manera, sobre todo el rojo y el verde.",
+      "start": 41.83,
+      "end": 49.95,
+      "words": [
+        {
+          "w": "Tenía",
+          "start": 41.83,
+          "end": 42.39
+        },
+        {
+          "w": "daltonismo.",
+          "start": 42.39,
+          "end": 43.23
+        },
+        {
+          "w": "No",
+          "start": 44.27,
+          "end": 44.27
+        },
+        {
+          "w": "ve",
+          "start": 44.27,
+          "end": 44.45
+        },
+        {
+          "w": "menos:",
+          "start": 44.45,
+          "end": 44.85
+        },
+        {
+          "w": "ve",
+          "start": 45.49,
+          "end": 45.51
+        },
+        {
+          "w": "algunos",
+          "start": 45.51,
+          "end": 45.99
+        },
+        {
+          "w": "colores",
+          "start": 45.99,
+          "end": 46.37
+        },
+        {
+          "w": "de",
+          "start": 46.37,
+          "end": 46.67
+        },
+        {
+          "w": "otra",
+          "start": 46.67,
+          "end": 46.89
+        },
+        {
+          "w": "manera,",
+          "start": 46.89,
+          "end": 47.17
+        },
+        {
+          "w": "sobre",
+          "start": 47.85,
+          "end": 48.03
+        },
+        {
+          "w": "todo",
+          "start": 48.03,
+          "end": 48.29
+        },
+        {
+          "w": "el",
+          "start": 48.29,
+          "end": 49.03
+        },
+        {
+          "w": "rojo",
+          "start": 49.03,
+          "end": 49.13
+        },
+        {
+          "w": "y",
+          "start": 49.13,
+          "end": 49.49
+        },
+        {
+          "w": "el",
+          "start": 49.49,
+          "end": 49.83
+        },
+        {
+          "w": "verde.",
+          "start": 49.83,
+          "end": 49.83
+        }
+      ]
+    },
+    {
+      "scene": "s7",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Es más común de lo que crees: le pasa a uno de cada doce hombres, y a una de cada doscientas mujeres.",
+      "start": 50.37,
+      "end": 58.6,
+      "words": [
+        {
+          "w": "Es",
+          "start": 50.37,
+          "end": 50.79
+        },
+        {
+          "w": "más",
+          "start": 50.79,
+          "end": 51.39
+        },
+        {
+          "w": "común",
+          "start": 51.39,
+          "end": 51.69
+        },
+        {
+          "w": "de",
+          "start": 51.69,
+          "end": 51.95
+        },
+        {
+          "w": "lo",
+          "start": 51.95,
+          "end": 52.03
+        },
+        {
+          "w": "que",
+          "start": 52.03,
+          "end": 52.31
+        },
+        {
+          "w": "crees:",
+          "start": 52.31,
+          "end": 52.61
+        },
+        {
+          "w": "le",
+          "start": 53.29,
+          "end": 53.45
+        },
+        {
+          "w": "pasa",
+          "start": 53.45,
+          "end": 53.73
+        },
+        {
+          "w": "a",
+          "start": 53.73,
+          "end": 54.17
+        },
+        {
+          "w": "uno",
+          "start": 54.17,
+          "end": 54.27
+        },
+        {
+          "w": "de",
+          "start": 54.27,
+          "end": 54.53
+        },
+        {
+          "w": "cada",
+          "start": 54.53,
+          "end": 54.69
+        },
+        {
+          "w": "doce",
+          "start": 54.69,
+          "end": 55.11
+        },
+        {
+          "w": "hombres,",
+          "start": 55.11,
+          "end": 55.47
+        },
+        {
+          "w": "y",
+          "start": 55.47,
+          "end": 56.19
+        },
+        {
+          "w": "a",
+          "start": 56.19,
+          "end": 56.57
+        },
+        {
+          "w": "una",
+          "start": 56.57,
+          "end": 56.69
+        },
+        {
+          "w": "de",
+          "start": 56.69,
+          "end": 57.15
+        },
+        {
+          "w": "cada",
+          "start": 57.15,
+          "end": 57.31
+        },
+        {
+          "w": "doscientas",
+          "start": 57.31,
+          "end": 57.99
+        },
+        {
+          "w": "mujeres.",
+          "start": 57.99,
+          "end": 58.33
+        }
+      ]
+    },
+    {
+      "scene": "s8",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Su papá le contó que a él le pasaba igual: es hereditario, y viaja en el cromosoma equis.",
+      "start": 59.02,
+      "end": 66.14,
+      "words": [
+        {
+          "w": "Su",
+          "start": 59.02,
+          "end": 59.42
+        },
+        {
+          "w": "papá",
+          "start": 59.42,
+          "end": 59.82
+        },
+        {
+          "w": "le",
+          "start": 59.82,
+          "end": 60.3
+        },
+        {
+          "w": "contó",
+          "start": 60.3,
+          "end": 60.62
+        },
+        {
+          "w": "que",
+          "start": 60.62,
+          "end": 60.86
+        },
+        {
+          "w": "a",
+          "start": 60.86,
+          "end": 61.18
+        },
+        {
+          "w": "él",
+          "start": 61.18,
+          "end": 61.18
+        },
+        {
+          "w": "le",
+          "start": 61.18,
+          "end": 61.54
+        },
+        {
+          "w": "pasaba",
+          "start": 61.54,
+          "end": 61.76
+        },
+        {
+          "w": "igual:",
+          "start": 61.76,
+          "end": 62.12
+        },
+        {
+          "w": "es",
+          "start": 63.06,
+          "end": 63.06
+        },
+        {
+          "w": "hereditario,",
+          "start": 63.06,
+          "end": 63.76
+        },
+        {
+          "w": "y",
+          "start": 63.76,
+          "end": 64.38
+        },
+        {
+          "w": "viaja",
+          "start": 64.38,
+          "end": 64.76
+        },
+        {
+          "w": "en",
+          "start": 64.76,
+          "end": 64.98
+        },
+        {
+          "w": "el",
+          "start": 64.98,
+          "end": 65.24
+        },
+        {
+          "w": "cromosoma",
+          "start": 65.24,
+          "end": 65.64
+        },
+        {
+          "w": "equis.",
+          "start": 65.64,
+          "end": 65.96
+        }
+      ]
+    },
+    {
+      "scene": "s9",
+      "beat": "desarrollo",
+      "speaker": "narrador",
+      "text": "Entonces cambiaron los colores del equipo: azul contra amarillo. Y Mateo volvió a pasar el balón sin dudar.",
+      "start": 66.56,
+      "end": 74.74,
+      "words": [
+        {
+          "w": "Entonces",
+          "start": 66.56,
+          "end": 67.54
+        },
+        {
+          "w": "cambiaron",
+          "start": 67.54,
+          "end": 68.38
+        },
+        {
+          "w": "los",
+          "start": 68.38,
+          "end": 68.78
+        },
+        {
+          "w": "colores",
+          "start": 68.78,
+          "end": 69.08
+        },
+        {
+          "w": "del",
+          "start": 69.08,
+          "end": 69.34
+        },
+        {
+          "w": "equipo:",
+          "start": 69.34,
+          "end": 69.62
+        },
+        {
+          "w": "azul",
+          "start": 70.6,
+          "end": 70.6
+        },
+        {
+          "w": "contra",
+          "start": 70.6,
+          "end": 71.02
+        },
+        {
+          "w": "amarillo.",
+          "start": 71.02,
+          "end": 71.46
+        },
+        {
+          "w": "Y",
+          "start": 71.98,
+          "end": 72.14
+        },
+        {
+          "w": "Mateo",
+          "start": 72.14,
+          "end": 72.54
+        },
+        {
+          "w": "volvió",
+          "start": 72.54,
+          "end": 72.98
+        },
+        {
+          "w": "a",
+          "start": 72.98,
+          "end": 73.36
+        },
+        {
+          "w": "pasar",
+          "start": 73.36,
+          "end": 73.36
+        },
+        {
+          "w": "el",
+          "start": 73.36,
+          "end": 73.8
+        },
+        {
+          "w": "balón",
+          "start": 73.8,
+          "end": 73.9
+        },
+        {
+          "w": "sin",
+          "start": 73.9,
+          "end": 74.34
+        },
+        {
+          "w": "dudar.",
+          "start": 74.34,
+          "end": 74.72
+        }
+      ]
+    },
+    {
+      "scene": "s10",
+      "beat": "cierre",
+      "speaker": "narrador",
+      "text": "¿Conocías el daltonismo? Cuéntanos en los comentarios y comparte este video con alguien que quiera saber cómo se ve el mundo así.",
+      "start": 75.44,
+      "end": 83.3,
+      "words": [
+        {
+          "w": "¿Conocías",
+          "start": 75.44,
+          "end": 76
+        },
+        {
+          "w": "el",
+          "start": 76,
+          "end": 76.24
+        },
+        {
+          "w": "daltonismo?",
+          "start": 76.24,
+          "end": 76.78
+        },
+        {
+          "w": "Cuéntanos",
+          "start": 77.54,
+          "end": 78.08
+        },
+        {
+          "w": "en",
+          "start": 78.08,
+          "end": 78.2
+        },
+        {
+          "w": "los",
+          "start": 78.2,
+          "end": 78.44
+        },
+        {
+          "w": "comentarios",
+          "start": 78.44,
+          "end": 78.92
+        },
+        {
+          "w": "y",
+          "start": 78.92,
+          "end": 79.58
+        },
+        {
+          "w": "comparte",
+          "start": 79.58,
+          "end": 80
+        },
+        {
+          "w": "este",
+          "start": 80,
+          "end": 80.36
+        },
+        {
+          "w": "video",
+          "start": 80.36,
+          "end": 80.62
+        },
+        {
+          "w": "con",
+          "start": 80.62,
+          "end": 80.86
+        },
+        {
+          "w": "alguien",
+          "start": 80.86,
+          "end": 81.14
+        },
+        {
+          "w": "que",
+          "start": 81.14,
+          "end": 81.36
+        },
+        {
+          "w": "quiera",
+          "start": 81.36,
+          "end": 81.62
+        },
+        {
+          "w": "saber",
+          "start": 81.62,
+          "end": 81.94
+        },
+        {
+          "w": "cómo",
+          "start": 81.94,
+          "end": 82.26
+        },
+        {
+          "w": "se",
+          "start": 82.26,
+          "end": 82.52
+        },
+        {
+          "w": "ve",
+          "start": 82.52,
+          "end": 82.56
+        },
+        {
+          "w": "el",
+          "start": 82.56,
+          "end": 82.94
+        },
+        {
+          "w": "mundo",
+          "start": 82.94,
+          "end": 82.94
+        },
+        {
+          "w": "así.",
+          "start": 82.94,
+          "end": 83.22
+        }
+      ]
+    }
+  ]
+}
