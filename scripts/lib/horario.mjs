@@ -47,6 +47,8 @@ const PIEZAS = {
   gta: { workflow: 'gta6.yml', que: 'Reel GTA VI «Faltan N días»' },
   // Semana del lanzamiento de GTA VI (2026-11-11): «¿Cuánto sabes de GTA?», 8 preguntas de data/gta6.json
   gtaquiz: { workflow: R, que: 'Reel: ¿Cuánto sabes de GTA? (quiz de 8 preguntas)', inputs: { formato: 'gtaquiz' } },
+  // Después del lanzamiento (2026-11-25): guía de GTA VI en video, narrada, una por día (scripts/gta6-guias.mjs)
+  gtaguias: { workflow: 'gta6-guias.yml', que: 'Reel: guía de GTA VI (narrada, sin spoilers)' },
   nombres: { workflow: 'nombres.yml', que: 'Nombre o pareja con círculos' },
   famosos: { workflow: 'famosos.yml', que: 'Futbolista dibujado con círculos' },
   // Reenvío de un video ya generado (bot: «🎬 Videos» → 🔁): lleva en inputs el video, su corrida y su archivo
@@ -69,14 +71,16 @@ const SOLO_TT = new Set(['nombres', 'famosos']);
 //    Máximo 6 Reels al día (del 7.º en adelante casi no hay alcance).
 //  · TikTok: lo mejor fue la sátira de Honduras (minidramas, a mano) y noticias; el resto ~370-560 → 6 al día, variados.
 //  · YouTube: el 99,6 % de las vistas son Shorts; los largos casi no suman → solo Shorts (3D y quizzes), 4 al día, sin largo.
+// 2026-11-25: guía de GTA VI a las 12:00 en las 4 redes (pedido del usuario: «siempre a medio día»). Facebook e Instagram
+// quedan con 7 Reels al día
 // 6 videos de datos al día (desde 2026-11-21), todos distintos: tres 3D (12:17 → Instagram, 15:30 → TikTok, 18:30 → Facebook, este con
 // los de Honduras primero) y tres 2D sin IA (10:20 → Facebook, 18:00 → TikTok, 21:10 → Instagram). Así cada red saca uno 3D y uno 2D al
 // día. YouTube publica los tres 3D y dos 2D (los de Facebook e Instagram): 5 subidas, unas 8.000 unidades de las 10.000 de cuota.
 const PLAN = {
-  fb: { '07:45': 'noticiashn', '10:20': 'video2d1', '12:45': 'retos', '15:30': 'debate', '18:30': 'video3d2', '21:00': 'geo' },
-  ig: { '08:30': 'banderas', '12:17': 'video3d1', '15:00': 'retos', '17:30': 'prefieres', '19:45': 'emojis', '21:10': 'video2d2' },
-  tt: { '07:30': 'noticias', '10:00': 'banderas', '13:00': 'debate', '15:30': 'video3d3', '18:00': 'video2d3', '21:30': 'estrella' },
-  yt: { '10:20': 'video2d1', '12:17': 'video3d1', '15:30': 'video3d3', '18:30': 'video3d2', '21:10': 'video2d2' }
+  fb: { '07:45': 'noticiashn', '10:20': 'video2d1', '12:00': 'gtaguias', '12:45': 'retos', '15:30': 'debate', '18:30': 'video3d2', '21:00': 'geo' },
+  ig: { '08:30': 'banderas', '12:00': 'gtaguias', '12:17': 'video3d1', '15:00': 'retos', '17:30': 'prefieres', '19:45': 'emojis', '21:10': 'video2d2' },
+  tt: { '07:30': 'noticias', '10:00': 'banderas', '12:00': 'gtaguias', '13:00': 'debate', '15:30': 'video3d3', '18:00': 'video2d3', '21:30': 'estrella' },
+  yt: { '10:20': 'video2d1', '12:00': 'gtaguias', '12:17': 'video3d1', '15:30': 'video3d3', '18:30': 'video3d2', '21:10': 'video2d2' }
 };
 // Junta los planes: una corrida por hora y pieza, con las redes que la piden
 function juntarPlanes() {
@@ -148,14 +152,14 @@ export const HASTA = { 'gta6.yml': '2026-11-19' };
 
 export const NOMBRES = {
   [R]: 'Reels de quiz y curiosidades', 'curiosidades-facebook.yml': 'Imágenes a Facebook e Instagram', 'curiosidades-tiktok.yml': 'Carruseles a TikTok',
-  'nombres.yml': 'Nombres a TikTok', 'famosos.yml': 'Futbolistas a TikTok', 'gta6.yml': 'Especial GTA VI', 'noticias.yml': 'Noticias del día',
+  'nombres.yml': 'Nombres a TikTok', 'famosos.yml': 'Futbolistas a TikTok', 'gta6.yml': 'Especial GTA VI', 'gta6-guias.yml': 'Guías GTA VI', 'noticias.yml': 'Noticias del día',
   'comentarios.yml': 'Respuestas a comentarios', 'metas.yml': 'Metas semanales de Facebook', 'como-se-hace.yml': 'Cómo se hace', 'youtube-largo.yml': 'Video largo de YouTube', 'video3d.yml': 'Video 3D de datos', 'estadisticas.yml': 'Estadísticas', 'republicar.yml': 'Reenvío de un video', 'vistas.yml': 'Vistas de lo publicado'
 };
 
 // Dónde sale cada cosa (fb = Facebook, ig = Instagram, tt = TikTok). Los Reels con «tiktok: si» también van a TikTok.
 const REDES_WF = {
   [R]: ['fb', 'ig', 'yt'], 'youtube-largo.yml': ['yt'], 'video3d.yml': ['fb', 'ig', 'tt', 'yt'], 'curiosidades-facebook.yml': ['fb', 'ig'], 'curiosidades-tiktok.yml': ['tt'], 'nombres.yml': ['tt'], 'famosos.yml': ['tt'],
-  'gta6.yml': ['fb', 'ig', 'tt'], 'comentarios.yml': ['fb', 'ig'], 'metas.yml': ['fb'], 'como-se-hace.yml': ['fb', 'ig', 'yt'], 'noticias.yml': [], 'estadisticas.yml': [], 'vistas.yml': [], 'republicar.yml': ['fb', 'ig']
+  'gta6.yml': ['fb', 'ig', 'tt'], 'gta6-guias.yml': ['fb', 'ig', 'tt', 'yt'], 'comentarios.yml': ['fb', 'ig'], 'metas.yml': ['fb'], 'como-se-hace.yml': ['fb', 'ig', 'yt'], 'noticias.yml': [], 'estadisticas.yml': [], 'vistas.yml': [], 'republicar.yml': ['fb', 'ig']
 };
 // Con «redes» (el plan de cada red) manda eso; si no, lo de siempre del workflow
 export const redesDe = (workflow, inputs = {}) => inputs.modo === 'render' ? [] : inputs.redes ? inputs.redes.split(',').filter(Boolean) : [...(REDES_WF[workflow] || []), ...(inputs.tiktok === 'si' ? ['tt'] : [])];

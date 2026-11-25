@@ -17,7 +17,7 @@ on:
       cats:
         description: Qué tipo de video
         type: choice
-        options: [dibujos, nombres, famosos, curiosidades-facebook, curiosidades-tiktok, curiosidades-video, youtube-largo, video3d-render, video3d-publicar, idea-render, idea-publicar, comentarios, noticias, gta6, fisica, juegos, pelotas, nuevos]
+        options: [dibujos, nombres, famosos, curiosidades-facebook, curiosidades-tiktok, curiosidades-video, youtube-largo, video3d-render, video3d-publicar, idea-render, idea-publicar, comentarios, noticias, gta6, gta6-guias, fisica, juegos, pelotas, nuevos]
         default: dibujos
       lang:
         description: Idioma del video y la descripción
@@ -162,20 +162,20 @@ jobs:
 
       # Voz del narrador de los Reels (Kokoro, local y sin API; scripts/lib/voz.mjs). El modelo (≈350 MB) va en caché
       - name: Modelo de voz (en caché)
-        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'youtube-largo' || env.CATS_INPUT == 'video3d-render' || env.CATS_INPUT == 'idea-render'
+        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'gta6-guias' || env.CATS_INPUT == 'youtube-largo' || env.CATS_INPUT == 'video3d-render' || env.CATS_INPUT == 'idea-render'
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .tools/kokoro
           key: voz-kokoro-v1.0
       # Kokoro aún no tiene versión para Python 3.14 (el de ubuntu-latest): se usa 3.12
       - name: Python para la voz
-        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'youtube-largo' || env.CATS_INPUT == 'video3d-render' || env.CATS_INPUT == 'idea-render'
+        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'gta6-guias' || env.CATS_INPUT == 'youtube-largo' || env.CATS_INPUT == 'video3d-render' || env.CATS_INPUT == 'idea-render'
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
       - name: Instalar la voz
         continue-on-error: true
-        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'youtube-largo' || env.CATS_INPUT == 'video3d-render' || env.CATS_INPUT == 'idea-render'
+        if: env.CATS_INPUT == 'curiosidades-video' || env.CATS_INPUT == 'gta6-guias' || env.CATS_INPUT == 'youtube-largo' || env.CATS_INPUT == 'video3d-render' || env.CATS_INPUT == 'idea-render'
         run: |
           python -m venv .tools/voz
           .tools/voz/bin/python -m pip install -q kokoro-onnx==${KOKORO_VERSION}
@@ -255,6 +255,8 @@ jobs:
             # Metas semanales de Facebook (metas.yml): «figura» = «fotos,historias» puestas desde el panel (vacías = las guardadas)
             metas) mkdir -p out; IFS=, read -r mf mh <<< "$FIGURA_INPUT"; node scripts/metas.mjs ${mf:+--fotos "$mf"} ${mh:+--historias "$mh"}; exit 0 ;;
             gta6) GTA_TT=$( [ -n "$REDES_INPUT" ] && echo "$R_TT" || echo draft ); if [ "$FIGURA_INPUT" = "lanzamiento" ]; then node scripts/gta6.mjs --solo-lanzamiento --facebook "$R_FB" --instagram "$R_IG" --tiktok "$GTA_TT" --youtube "$R_YT"; else node scripts/gta6.mjs --facebook "$R_FB" --instagram "$R_IG" --tiktok "$GTA_TT" --youtube "$R_YT"; fi; exit 0 ;;
+            # Guías de GTA VI en video (gta6-guias.yml): «figura» = id de una guía concreta (vacío = la siguiente)
+            gta6-guias) node scripts/gta6-guias.mjs ${FIGURA_INPUT:+--id "$FIGURA_INPUT"} --facebook "$R_FB" --instagram "$R_IG" --tiktok "$R_TT" --youtube "$R_YT"; exit 0 ;;
             # Videos 3D: el render de la madrugada y la publicación del mediodía (video3d.yml)
             # Videos desde una idea (ideas.yml): «figura» = el id de la idea
             idea-render) node scripts/idea.mjs --render "$FIGURA_INPUT"; exit 0 ;;

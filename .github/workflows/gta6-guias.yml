@@ -1,0 +1,35 @@
+# Guías de GTA VI en video (scripts/gta6-guias.mjs): un Reel narrado por día con la siguiente guía de
+# data/gta6-guias.json (errores, dinero, policía, capítulo 1 sin spoilers, secretos…). Facebook e Instagram (Reel +
+# historia), TikTok (borrador con narración) y YouTube (Short privado). Las guías ya publicadas vuelven a salir, la más
+# antigua primero, cuando se acaban: hay que ir agregando guías nuevas al JSON.
+name: Guías GTA VI
+
+on:
+  # Horario: lo lanza el relojero (/api/relojero, llamado por cron-job.org cada 10 min) según la programación de Supabase
+  # (respaldo: scripts/lib/horario.mjs, 12:00 hora de Honduras)
+  workflow_dispatch:
+    inputs:
+      redes:
+        description: Redes (fb,ig,tt,yt); vacío = las 4. Lo pone el plan de cada red (scripts/lib/horario.mjs)
+        type: string
+        default: ''
+      guia:
+        description: Id de una guía concreta (vacío = la siguiente que falte)
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  guias:
+    uses: ./.github/workflows/daily.yml
+    with:
+      cats: gta6-guias
+      redes: ${{ inputs.redes }}
+      figura: ${{ inputs.guia }}
+      publish: none
+      # Va a TikTok: el correo trae la descripción para pegarla
+      aviso: true
+    secrets: inherit
