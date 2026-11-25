@@ -7,18 +7,21 @@
 // y bot) y GitHub Actions (noticias y Reels), así que no usa el disco.
 import crypto from 'node:crypto';
 import { put, list, del } from '@vercel/blob';
-import { db } from './db.mjs';
+import { db, directo } from './db.mjs';
 import { enBase, aplicarFijo, filasDeHorario, planFijo, slotDeFila, cargarProgramacion } from './programacion.mjs';
 
 export const blobToken = () => process.env.BLOB_READ_WRITE_TOKEN
   || Object.entries(process.env).find(([k, v]) => k.endsWith('_READ_WRITE_TOKEN') && String(v).startsWith('vercel_blob_rw_'))?.[1];
-export const controlListo = () => !!(blobToken() && process.env.TELEGRAM_BOT_TOKEN);
+// Vercel Blob (el almacén de antes) llegó a su límite del plan gratis hasta el 25-dic-2026: lo del bot (noticias, qué videos vienen, ideas)
+// ahora vive en Supabase (tabla «cola», datos «kv:<clave>»). blobListo() queda solo para lo viejo que aún se lee de Blob
+const blobListo = () => !!(blobToken() && process.env.TELEGRAM_BOT_TOKEN);
+export const controlListo = () => !!process.env.TELEGRAM_BOT_TOKEN || directo();
 const carpeta = () => `control/${crypto.createHash('sha256').update(`potter-control:${process.env.TELEGRAM_BOT_TOKEN}`).digest('hex').slice(0, 24)}`;
 // URL pública fija de una ruta (vercel_blob_rw_<almacén>_<secreto>)
 const urlDe = (p) => `https://${blobToken().split('_')[3].toLowerCase()}.public.blob.vercel-storage.com/${p}`;
 
 async function leerJson(p) {
-  if (!controlListo()) return null;
+  if (!blobListo()) return null;
   try { const r = await fetch(`${urlDe(p)}?v=${Date.now()}`, { cache: 'no-store', signal: AbortSignal.timeout(8000) }); return r.ok ? await r.json() : null; } catch { return null; }
 }
 async function guardarJson(p, data, { fijo = true } = {}) {
@@ -56,7 +59,7 @@ export async function estadoExacto() {
   return estadoBlob();
 }
 async function estadoBlob() {
-  if (!controlListo()) return { fijos: [], dias: {} };
+  if (!blobListo()) return { fijos: [], dias: {} };
   const blobs = []; let cursor;
   do { const r = await list({ prefix: `${carpeta()}/ops/`, token: blobToken(), cursor }); blobs.push(...r.blobs); cursor = r.hasMore ? r.cursor : undefined; } while (cursor);
   const porClave = {};
@@ -115,15 +118,8 @@ export async function migrarProgramacion({ probar = false } = {}) {
 export { hoyHN as hoyControl };
 // Borra lo de hace más de 7 días (lo llama scripts/noticias.mjs una vez al día)
 export async function limpiarViejos() {
-  if (!controlListo()) return;
-  const limite = new Date(Date.now() - 7 * 864e5 - 6 * 3600e3).toISOString().slice(0, 10), viejos = [];
-  let cursor;
-  do {
-    const r = await list({ prefix: `${carpeta()}/`, token: blobToken(), cursor });
-    for (const b of r.blobs) { const f = b.pathname.match(/\/(\d{4}-\d{2}-\d{2})(\/|\.json)/)?.[1]; if (f && f < limite) viejos.push(b.url); }
-    cursor = r.hasMore ? r.cursor : undefined;
-  } while (cursor);
-  if (viejos.length) await del(viejos, { token: blobToken() });
+  const limite = new Date(Date.now() - 7 * 864e5 - 6 * 3600e3).toISOString().slice(0, 10);
+  await db('kv-limpiar', { prefijo: 'noticias:', antes: limite }).catch(() => {});
 }
 
 // ---------- noticias del día ----------
@@ -131,20 +127,13 @@ export async function limpiarViejos() {
 // se lee siempre el último (archivos que no se sobrescriben: nunca llega una copia vieja de la caché)
 export async function guardarNoticias(fecha, items) {
   if (!controlListo()) return;
-  const r = await guardarJson(`${carpeta()}/noticias/${fecha}/${String(Date.now()).padStart(15, '0')}.json`, { fecha, at: Date.now(), items }, { fijo: false });
-  // Las versiones anteriores del mismo día sobran
-  const { blobs } = await list({ prefix: `${carpeta()}/noticias/${fecha}`, token: blobToken() });
-  const viejos = blobs.filter((b) => b.url !== r.url).map((b) => b.url);
-  if (viejos.length) await del(viejos, { token: blobToken() }).catch(() => {});
+  await db('kv-guardar', { clave: `noticias:${fecha}`, valor: { fecha, at: Date.now(), items } });
 }
-// { at, items } de la última vez que se juntaron ese día (at = 0 si es del formato de antes)
+// { at, items } de la última vez que se juntaron ese día (at = 0 si no hay)
 export async function noticiasGuardadas(fecha) {
   if (!controlListo()) return { at: 0, items: [] };
-  const { blobs } = await list({ prefix: `${carpeta()}/noticias/${fecha}`, token: blobToken() });
-  const b = blobs.sort((x, y) => Date.parse(y.uploadedAt) - Date.parse(x.uploadedAt))[0];
-  if (!b) return { at: 0, items: [] };
-  const d = await fetch(b.url, { cache: 'no-store' }).then((r) => r.json()).catch(() => null);
-  return { at: d?.at || Date.parse(b.uploadedAt) || 0, items: d?.items || [] };
+  const d = await db('kv-leer', { clave: `noticias:${fecha}` }).catch(() => null);
+  return { at: d?.at || 0, items: d?.items || [] };
 }
 export async function noticiasDe(fecha) { return (await noticiasGuardadas(fecha)).items; }
 // Las candidatas con tus cambios: primero las que agregaste, luego las fijadas y después el resto en su orden, sin las
@@ -162,23 +151,18 @@ export function noticiasConCambios(items, ops = []) {
 // Cada cambio es un archivo nuevo (control/<id>/ideas/<idea>/<ms>.json) y se lee el último: tocar varios botones seguidos
 // no pisa nada (los archivos fijos tardan hasta un minuto en verse por la caché)
 export async function guardarIdea(id, data) {
-  if (!controlListo()) throw new Error('Falta el almacén o el token del bot');
-  const r = await guardarJson(`${carpeta()}/ideas/${id}/${String(Date.now()).padStart(15, '0')}.json`, { ...data, id, at: Date.now() }, { fijo: false });
-  const { blobs } = await list({ prefix: `${carpeta()}/ideas/${id}/`, token: blobToken() });
-  const viejos = blobs.filter((b) => b.url !== r.url).map((b) => b.url);
-  if (viejos.length) await del(viejos, { token: blobToken() }).catch(() => {});
+  if (!controlListo()) throw new Error('Falta el token del bot');
+  await db('kv-guardar', { clave: `idea:${id}`, valor: { ...data, id, at: Date.now() } });
   return { ...data, id };
 }
 export async function leerIdea(id) {
   if (!controlListo()) return null;
-  const { blobs } = await list({ prefix: `${carpeta()}/ideas/${id}/`, token: blobToken() });
-  const b = blobs.sort((x, y) => y.pathname.localeCompare(x.pathname))[0];
-  return b ? fetch(b.url, { cache: 'no-store' }).then((r) => r.json()).catch(() => null) : null;
+  return db('kv-leer', { clave: `idea:${id}` }).catch(() => null);
 }
 
 // ---------- otros datos para el bot (qué videos vienen…) ----------
-export async function guardarControl(nombre, data) { if (controlListo()) await guardarJson(`${carpeta()}/${nombre}.json`, data); }
-export async function leerControl(nombre) { return leerJson(`${carpeta()}/${nombre}.json`); }
+export async function guardarControl(nombre, data) { if (controlListo()) await db('kv-guardar', { clave: `ctl:${nombre}`, valor: data }); }
+export async function leerControl(nombre) { return controlListo() ? db('kv-leer', { clave: `ctl:${nombre}` }).catch(() => null) : null; }
 
 // ---------- comentarios que contestas tú ----------
 // Lo que decides en Telegram sobre un comentario delicado (responder con tu texto, «me gusta», ocultar) queda en la tabla
@@ -188,20 +172,20 @@ export async function leerControl(nombre) { return leerJson(`${carpeta()}/${nomb
 //   { accion: 'responder' | 'like' | 'ocultar', red: 'facebook' | 'instagram', id, texto?, usuario? }
 export async function encolarComentario(a) {
   try { if (await db('cola-agregar', { tipo: 'comentario', datos: { ...a, at: new Date().toISOString() } })) return; } catch (e) { console.error(`Aviso: cola en Supabase: ${e.message}; va a Blob`); }
-  if (!controlListo()) throw new Error('Falta el almacén o el token del bot');
+  if (!blobListo()) throw new Error('Falta el almacén o el token del bot');
   await guardarJson(`${carpeta()}/comentarios/${String(Date.now()).padStart(15, '0')}.json`, { ...a, at: new Date().toISOString() }, { fijo: false });
 }
 export async function comentariosEnCola() {
   const deBase = ((await db('cola-lista', { tipo: 'comentario' }).catch(() => null)) || []).map((r) => ({ ...r.datos, url: `db:${r.id}` }));
   // La cola vieja de Blob: una vez al día (el «list» de Blob es una operación avanzada)
-  if (!controlListo() || new Date().getUTCHours() !== 14) return deBase.filter((x) => x.accion && x.id);
+  if (!blobListo() || new Date().getUTCHours() !== 14) return deBase.filter((x) => x.accion && x.id);
   const { blobs } = await list({ prefix: `${carpeta()}/comentarios/`, token: blobToken() });
   const out = await Promise.all(blobs.sort((a, b) => a.pathname.localeCompare(b.pathname)).map(async (b) => ({ ...(await fetch(b.url, { cache: 'no-store' }).then((r) => r.json()).catch(() => ({}))), url: b.url })));
   return [...deBase, ...out].filter((x) => x.accion && x.id);
 }
 export async function quitarDeCola(url) {
   if (String(url).startsWith('db:')) { await db('cola-quitar', { id: url.slice(3) }).catch(() => {}); return; }
-  if (controlListo()) await del(url, { token: blobToken() }).catch(() => {});
+  if (blobListo()) await del(url, { token: blobToken() }).catch(() => {});
 }
 
 // ---------- Telegram ----------

@@ -114,6 +114,21 @@ export async function opDirecta(accion, d = {}) {
     // ---------- cola de trabajos (tabla «cola»): las respuestas a comentarios que decides en Telegram ----------
     case 'cola-agregar': { if (!d.tipo || !d.datos) return null; await rest('POST', 'cola', [{ tipo: String(d.tipo), datos: d.datos }], 'return=minimal'); return 1; }
     case 'cola-lista': return rest('GET', `cola?select=id,datos,creado&tipo=eq.${encodeURIComponent(d.tipo || '')}&order=id.asc&limit=200`);
+    // ---------- datos sueltos del bot (clave → valor): noticias del día, qué videos vienen, ideas. Van a «cola» con tipo «kv:<clave>» ----------
+    case 'kv-guardar': {
+      const t = `kv:${d.clave}`;
+      const nuevo = await rest('POST', 'cola', [{ tipo: t, datos: d.valor }], 'return=representation');
+      if (nuevo?.[0]?.id) await rest('DELETE', `cola?tipo=eq.${encodeURIComponent(t)}&id=lt.${+nuevo[0].id}`, null, 'return=minimal'); // primero el nuevo, luego fuera los viejos: nunca queda vacío
+      return 1;
+    }
+    case 'kv-leer': { const r = await rest('GET', `cola?select=datos&tipo=eq.${encodeURIComponent(`kv:${d.clave}`)}&order=id.desc&limit=1`); return r?.[0]?.datos ?? null; }
+    // borra los «kv:<prefijo><AAAA-MM-DD>» con fecha anterior a «antes»
+    case 'kv-limpiar': {
+      const filas = (await rest('GET', `cola?select=id,tipo&tipo=like.${encodeURIComponent(`kv:${d.prefijo}*`)}`)) || [];
+      const viejos = filas.filter((x) => (x.tipo.match(/(\d{4}-\d{2}-\d{2})$/)?.[1] || '9999') < d.antes);
+      for (const v of viejos) await rest('DELETE', `cola?id=eq.${+v.id}`, null, 'return=minimal');
+      return viejos.length;
+    }
     case 'cola-quitar': { if (!d.id) return null; await rest('DELETE', `cola?id=eq.${+d.id}`, null, 'return=minimal'); return 1; }
     // ---------- almacén de videos (Supabase Storage, bucket público «videos»): respaldo cuando Vercel Blob no responde ----------
     // almacen-firmar: devuelve la URL a la que subir el archivo (con un permiso de un solo uso) y la URL pública para verlo
@@ -142,7 +157,7 @@ export async function opDirecta(accion, d = {}) {
     default: throw new Error(`Acción desconocida: ${accion}`);
   }
 }
-export const ACCIONES = ['almacen-firmar', 'almacen-borrar', 'cola-agregar', 'cola-lista', 'cola-quitar', 'candidatas', 'publicadas', 'descartar', 'recientes', 'prog-lista', 'prog-insertar', 'prog-cambiar', 'cambios-lista', 'cambios-agregar', 'envio-buscar', 'envio-agregar', 'envios-lista', 'envio-vistas', 'video-guardar', 'videos-lista', 'video-de', 'video-vistas'];
+export const ACCIONES = ['kv-guardar', 'kv-leer', 'kv-limpiar', 'almacen-firmar', 'almacen-borrar', 'cola-agregar', 'cola-lista', 'cola-quitar', 'candidatas', 'publicadas', 'descartar', 'recientes', 'prog-lista', 'prog-insertar', 'prog-cambiar', 'cambios-lista', 'cambios-agregar', 'envio-buscar', 'envio-agregar', 'envios-lista', 'envio-vistas', 'video-guardar', 'videos-lista', 'video-de', 'video-vistas'];
 // Un renglón de «programacion» con solo las columnas que existen (parcial = para un PATCH)
 const COLS = ['hora', 'pieza', 'fb', 'ig', 'tt', 'yt', 'dias', 'fecha', 'desde', 'hasta', 'inputs', 'activo', 'nota'];
 function filaProg(f, parcial = false) {
