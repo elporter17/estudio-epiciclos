@@ -18,7 +18,10 @@ import { leerEstado, guardarEstado, elegir, pendientes, avisoExtra, hoyHN, AVISO
 
 const o = parseCli({ fecha: { type: 'string' }, turno: { type: 'string', default: 'mediodia' }, guion: { type: 'string' }, 'dry-run': { type: 'boolean', default: false } });
 const fecha = o.fecha || hoyHN(), estado = leerEstado(), turno = TURNOS.includes(o.turno) ? o.turno : 'mediodia';
-if (!o.guion && estado.listos[turno]?.fecha === fecha) { console.log(`Ya hay un video listo para ${fecha} (${turno}): ${estado.listos[turno].titulo}`); process.exit(0); }
+// Un video «listo» cuyo enlace ya no responde (el almacén se suspendió) cuenta como no listo
+const enlaceVivo = async (l) => { try { const r = await fetch(l.download || l.url, { method: 'HEAD', signal: AbortSignal.timeout(15000) }); return r.ok; } catch { return false; } };
+if (!o.guion && estado.listos[turno]?.fecha === fecha && !(await enlaceVivo(estado.listos[turno]))) console.log(`El video listo de ${turno} (${estado.listos[turno].titulo}) ya no se puede bajar: se renderiza de nuevo`);
+else if (!o.guion && estado.listos[turno]?.fecha === fecha) { console.log(`Ya hay un video listo para ${fecha} (${turno}): ${estado.listos[turno].titulo}`); process.exit(0); }
 const g = o.guion ? { archivo: path.resolve(o.guion), ...JSON.parse(fs.readFileSync(path.resolve(o.guion), 'utf8')) } : elegir(fecha, estado, turno);
 if (!g) { avisoExtra('📭 Videos 3D: la cola está vacía; hoy no hay video. Pídeme más guiones.'); console.log('Cola vacía'); process.exit(0); }
 console.error(`Video 3D para ${fecha} (${turno}): ${g.titulo} (${path.basename(g.archivo)})`);

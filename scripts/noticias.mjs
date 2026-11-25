@@ -45,7 +45,7 @@ ${videosDeHoy(slots, fecha)}\n\n${mensajeNoticias(noticiasConCambios(items, ops)
   fs.writeFileSync(ARCHIVO, JSON.stringify({ fecha: new Date().toISOString(), items }, null, 2) + '\n');
   if (rd) fs.writeFileSync(path.join(ROOT, 'data', 'radar-hoy.json'), JSON.stringify(rd, null, 2) + '\n');
   if (controlListo()) {
-    await guardarNoticias(fecha, items);
+    await guardarNoticias(fecha, items).catch((e) => console.error(`No se pudieron guardar las noticias para el bot: ${e.message}`));
     console.log(`Base de noticias: ${await guardarCandidatas(items) ?? 'no disponible'} candidatas guardadas`);
     await publicarProximos(); // qué videos 3D y largo vienen (para el bot)
     await limpiarViejos().catch((e) => console.error(`No se pudo limpiar el almacén: ${e.message}`));

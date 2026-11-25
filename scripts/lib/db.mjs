@@ -115,10 +115,34 @@ export async function opDirecta(accion, d = {}) {
     case 'cola-agregar': { if (!d.tipo || !d.datos) return null; await rest('POST', 'cola', [{ tipo: String(d.tipo), datos: d.datos }], 'return=minimal'); return 1; }
     case 'cola-lista': return rest('GET', `cola?select=id,datos,creado&tipo=eq.${encodeURIComponent(d.tipo || '')}&order=id.asc&limit=200`);
     case 'cola-quitar': { if (!d.id) return null; await rest('DELETE', `cola?id=eq.${+d.id}`, null, 'return=minimal'); return 1; }
+    // ---------- almacén de videos (Supabase Storage, bucket público «videos»): respaldo cuando Vercel Blob no responde ----------
+    // almacen-firmar: devuelve la URL a la que subir el archivo (con un permiso de un solo uso) y la URL pública para verlo
+    case 'almacen-firmar': {
+      const base = `${URL_SB()}/storage/v1`, h = { apikey: KEY(), Authorization: `Bearer ${KEY()}` };
+      const nombre = String(d.nombre || '').replace(/[^\w./-]/g, '_').slice(0, 150); if (!nombre) throw new Error('Falta el nombre del archivo');
+      const b = await fetch(`${base}/bucket`, { method: 'POST', headers: { ...h, 'content-type': 'application/json' }, body: JSON.stringify({ id: 'videos', name: 'videos', public: true, file_size_limit: 52428800 }) });
+      if (!b.ok && b.status !== 409 && !/already exists|Duplicate/i.test(await b.text())) throw new Error(`No se pudo crear el bucket (${b.status})`);
+      const r = await fetch(`${base}/object/upload/sign/videos/${nombre}`, { method: 'POST', headers: { ...h, 'content-type': 'application/json', 'x-upsert': 'true' }, body: '{}' });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || !j.url) throw new Error(`No se pudo firmar la subida (${r.status}): ${JSON.stringify(j).slice(0, 160)}`);
+      return { subir: `${base}${j.url}`, publica: `${base}/object/public/videos/${nombre}`, nombre };
+    }
+    // almacen-borrar: un archivo (nombre) o todo lo que tenga más de «dias» días
+    case 'almacen-borrar': {
+      const base = `${URL_SB()}/storage/v1`, h = { apikey: KEY(), Authorization: `Bearer ${KEY()}`, 'content-type': 'application/json' };
+      let nombres = d.nombre ? [String(d.nombre)] : [];
+      if (!nombres.length) {
+        const r = await fetch(`${base}/object/list/videos`, { method: 'POST', headers: h, body: JSON.stringify({ prefix: '', limit: 500, sortBy: { column: 'created_at', order: 'asc' } }) });
+        const lista = r.ok ? await r.json() : [], limite = Date.now() - (d.dias || 3) * 864e5;
+        nombres = lista.filter((o) => o.name && Date.parse(o.created_at) < limite).map((o) => o.name);
+      }
+      if (nombres.length) await fetch(`${base}/object/videos`, { method: 'DELETE', headers: h, body: JSON.stringify({ prefixes: nombres }) });
+      return nombres.length;
+    }
     default: throw new Error(`Acción desconocida: ${accion}`);
   }
 }
-export const ACCIONES = ['cola-agregar', 'cola-lista', 'cola-quitar', 'candidatas', 'publicadas', 'descartar', 'recientes', 'prog-lista', 'prog-insertar', 'prog-cambiar', 'cambios-lista', 'cambios-agregar', 'envio-buscar', 'envio-agregar', 'envios-lista', 'envio-vistas', 'video-guardar', 'videos-lista', 'video-de', 'video-vistas'];
+export const ACCIONES = ['almacen-firmar', 'almacen-borrar', 'cola-agregar', 'cola-lista', 'cola-quitar', 'candidatas', 'publicadas', 'descartar', 'recientes', 'prog-lista', 'prog-insertar', 'prog-cambiar', 'cambios-lista', 'cambios-agregar', 'envio-buscar', 'envio-agregar', 'envios-lista', 'envio-vistas', 'video-guardar', 'videos-lista', 'video-de', 'video-vistas'];
 // Un renglón de «programacion» con solo las columnas que existen (parcial = para un PATCH)
 const COLS = ['hora', 'pieza', 'fb', 'ig', 'tt', 'yt', 'dias', 'fecha', 'desde', 'hasta', 'inputs', 'activo', 'nota'];
 function filaProg(f, parcial = false) {
