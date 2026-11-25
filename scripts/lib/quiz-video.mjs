@@ -234,6 +234,45 @@ const ESCENAS = {
     bloque(ctx, fit(ctx, e.texto, W - 220, 470, { from: 72, to: 40, peso: 700 }), W / 2, y0 + 25 + dy, 470);
     alfa(ctx, 1);
   },
+  // Paso de una guía (scripts/gta6-guias.mjs): la imagen o el clip de fondo se ven casi enteros; abajo, el número del
+  // paso, la etiqueta, el título en el color del tema, la explicación y un consejo opcional
+  // e: { n, etiqueta, titulo, texto, consejo? }
+  paso(ctx, e, lt) {
+    const x0 = 70, ancho = W - 140, base = e.consejo ? 820 : 900;
+    // Número y etiqueta
+    const s = back(lt / 0.35);
+    escala(ctx, s, x0 + 78, base, () => {
+      ctx.fillStyle = e.tema.acento; ctx.beginPath(); ctx.arc(x0 + 78, base, 78, 0, Math.PI * 2); ctx.fill();
+      ctx.font = font(400, e.n > 9 ? 70 : 92, BLACK); ctx.fillStyle = '#111'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(String(e.n), x0 + 78, base + 6);
+    });
+    if (e.etiqueta) {
+      alfa(ctx, ease((lt - 0.1) / 0.3)); ctx.font = font(400, 34, BLACK); const w = ctx.measureText(e.etiqueta).width + 44;
+      caja(ctx, x0 + 180, base - 34, w, 68, 34, 'rgba(0,0,0,0.55)', e.tema.acento, 3);
+      ctx.font = font(400, 34, BLACK); ctx.fillStyle = '#fff'; ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillText(e.etiqueta, x0 + 202, base + 2); alfa(ctx, 1);
+    }
+    // Título y texto en un panel oscuro que sube
+    const a = ease((lt - 0.2) / 0.35), dy = (1 - a) * 70, y0 = base + 110 + dy, alto = e.consejo ? 340 : 420;
+    alfa(ctx, a);
+    caja(ctx, x0, y0, ancho, alto, 34, 'rgba(0,0,0,0.6)', 'rgba(255,255,255,0.14)', 3);
+    const ft = fit(ctx, e.titulo, ancho - 80, 130, { from: 64, to: 40, peso: 400, fam: BLACK, lh: 1.06 });
+    ctx.font = font(400, ft.size, BLACK); ctx.fillStyle = e.tema.acento; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    ft.lines.forEach((l, i) => ctx.fillText(l, x0 + 40, y0 + 30 + ft.size * 0.9 + i * ft.lh));
+    const ty = y0 + 30 + ft.lines.length * ft.lh + 18, fx = fit(ctx, e.texto, ancho - 80, y0 + alto - 28 - ty, { from: 50, to: 30, peso: 600 });
+    ctx.font = font(fx.peso, fx.size); ctx.fillStyle = '#fff';
+    fx.lines.forEach((l, i) => ctx.fillText(l, x0 + 40, ty + fx.size * 0.86 + i * fx.lh));
+    alfa(ctx, 1);
+    // Consejo (entra un poco después)
+    if (e.consejo) {
+      const c = ease((lt - 0.9) / 0.35); if (c <= 0.01) return;
+      alfa(ctx, c); const cy = y0 + alto + 24 + (1 - c) * 40;
+      caja(ctx, x0, cy, ancho, 120, 28, 'rgba(10,40,60,0.85)', '#6fd3ff', 3);
+      const fc = fit(ctx, `💡 ${e.consejo}`, ancho - 70, 100, { from: 38, to: 26, peso: 600 });
+      ctx.font = font(fc.peso, fc.size); ctx.fillStyle = '#e8f7ff'; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+      const yc = cy + (120 - fc.lines.length * fc.lh) / 2 + fc.size * 0.86;
+      fc.lines.forEach((l, i) => ctx.fillText(l, x0 + 35, yc + i * fc.lh));
+      alfa(ctx, 1);
+    }
+  },
   // Verdadero o falso: la afirmación, dos botones, cuenta atrás y la respuesta
   vf(ctx, e, lt) {
     const revela = lt >= e.piensa, rt = lt - e.piensa;
@@ -672,7 +711,8 @@ export async function renderQuiz({ escenas, out, melodia, estilo = 'pop', semill
     const partes = lista.map((e, i) => {
       const d = e.dur.toFixed(3);
       if (!e.fondo) return `color=c=black:s=${W}x${H}:r=${FPS}:d=${d},format=yuv420p,setsar=1[b${i}]`;
-      const k = 2 + conVideo.indexOf(e); entradas.push('-stream_loop', '-1', '-t', d, '-i', e.fondo);
+      // e.fondoDesde: segundo del clip donde empieza (capturas propias largas: se elige el momento)
+      const k = 2 + conVideo.indexOf(e); entradas.push('-stream_loop', '-1', ...(e.fondoDesde ? ['-ss', String(e.fondoDesde)] : []), '-t', d, '-i', e.fondo);
       return `[${k}:v]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=${FPS},trim=duration=${d},setpts=PTS-STARTPTS,format=yuv420p,setsar=1[b${i}]`;
     });
     const filtro = `${partes.join(';')};${lista.map((_, i) => `[b${i}]`).join('')}concat=n=${lista.length}:v=1:a=0[fondo];[0:v]format=rgba[capa];[fondo][capa]overlay=0:0:format=auto,${color}[v]`;

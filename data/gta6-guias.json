@@ -1,0 +1,170 @@
+{
+  "nota": "Guías de GTA VI en video (scripts/gta6-guias.mjs). Investigado el 2026-11-25, una semana después del lanzamiento (19-11-2026). Solo datos con fuente; sin spoilers de la historia más allá del capítulo 1. «clip»: archivo en assets/gta6/clips/ grabado en la PS5 (botón Crear); si no existe, el paso usa el arte oficial de Rockstar. «grabar»: qué capturar para ese paso. «desde»: segundo del clip donde empieza.",
+  "guias": [
+    {
+      "id": "errores-principiante",
+      "categoria": "errores",
+      "emoji": "⛔",
+      "titulo": "6 errores que te arruinan el inicio de GTA VI",
+      "gancho": ["NO HAGAS ESTO", "EN GTA VI", "Errores de principiante"],
+      "vozIntro": "Seis errores que te arruinan el inicio de GTA Seis. Sin spoilers.",
+      "siguiente": "dinero rápido al empezar",
+      "pasos": [
+        { "titulo": "Patear puertas con alarma", "texto": "El modo Foco marca en rojo las puertas con alarma. Si la abres a patadas, llega la policía.", "consejo": "Rodéala o vuelve cuando puedas forzar la cerradura.", "clip": "errores-1-foco-puerta.mp4", "grabar": "Activar el modo Foco frente a una puerta marcada en rojo." },
+        { "titulo": "Andar con todo el efectivo", "texto": "Si mueres o te arrestan, pierdes el dinero que llevas encima.", "consejo": "Deposítalo en BuckMe en cualquier cajero.", "clip": "errores-2-cajero.mp4", "grabar": "Jason o Lucía usando un cajero." },
+        { "titulo": "Olvidarte de guardar", "texto": "Las misiones no se pueden repetir y no se guarda en mitad de una misión.", "consejo": "Guarda a mano al empezar y al terminar cada capítulo.", "clip": "errores-3-guardar.mp4", "grabar": "El menú de pausa en Juego, Guardar." },
+        { "titulo": "Volver a la zona caliente", "texto": "Donde cometes un delito queda una zona caliente con más policía.", "consejo": "Si vuelves, hazlo con otra ropa y otro coche.", "clip": "errores-4-policia.mp4", "grabar": "Patrullas en una calle, sin violencia en primer plano." },
+        { "titulo": "Dejar la grabación de la cámara", "texto": "Después de un atraco, destruye la grabación de las cámaras en la trastienda.", "consejo": "Lo que ya subió a la nube no se puede borrar.", "clip": "errores-5-camaras.mp4", "grabar": "Una trastienda con monitores de cámaras." },
+        { "titulo": "Morir con el botín encima", "texto": "El botín va en bolsas, dos por personaje, y se pierde si mueres con ellas.", "consejo": "Véndelo pronto a un perista.", "clip": "errores-6-botin.mp4", "grabar": "El personaje cargando una bolsa de botín." }
+      ],
+      "fuentes": [
+        "https://kotaku.com/32-spoiler-free-tips-as-you-hop-into-grand-theft-auto-6-2000758016",
+        "https://www.redbull.com/ie-en/gta-6-beginners-guide",
+        "https://www.gtabase.com/articles/gta-6/how-to-make-money-in-gta-6-full-money-making-guide",
+        "https://beebom.com/how-to-save-game-gta-6/",
+        "https://www.powerpyx.com/?p=367985",
+        "https://www.dexerto.com/wikis/gta-6/wanted-system-explained/"
+      ]
+    },
+    {
+      "id": "dinero-temprano",
+      "categoria": "dinero",
+      "emoji": "💰",
+      "titulo": "Dinero al empezar GTA VI: 5 formas reales",
+      "gancho": ["TUS PRIMEROS", "DÓLARES", "en GTA VI, paso a paso"],
+      "vozIntro": "Cómo conseguir tus primeros dólares en GTA Seis. Cinco formas que recomiendan las guías.",
+      "siguiente": "cómo perder a la policía",
+      "pasos": [
+        { "titulo": "No esperes mucho de las misiones", "texto": "Al principio pagan poco: Gone Fishing da entre 100 y 220 dólares.", "consejo": "Invierte en armas y mejoras; la historia abre mejores negocios.", "clip": "dinero-1-mision.mp4", "grabar": "Jason en el barco de Cal al inicio." },
+        { "titulo": "Busca tesoros en naufragios", "texto": "Después de la misión de Kenton se desbloquea la búsqueda de tesoros bajo el agua. Es de lo más fácil al empezar.", "clip": "dinero-2-buceo.mp4", "grabar": "Buceando junto a un naufragio." },
+        { "titulo": "Roba coches con WAiNK", "texto": "Escanea el coche con la app WAiNK para ver su valor y si tiene alarma, y véndelo en un Pay 'n' Spray.", "consejo": "Mantén arriba en la cruceta para abrir WAiNK.", "clip": "dinero-3-waink.mp4", "grabar": "La app WAiNK escaneando un coche y el Pay 'n' Spray." },
+        { "titulo": "Tiendas pequeñas", "texto": "Gasolineras y tiendas de barrio son poco arriesgadas, pero dejan como mucho un par de miles.", "clip": "dinero-4-tienda.mp4", "grabar": "Fachada de una gasolinera o tienda de barrio." },
+        { "titulo": "Flamencos con cocaína", "texto": "Hay 125 escondidos. Cada uno que destruyes suelta un paquete que se vende a un perista.", "consejo": "Los buenos tienen el pico blanco y negro.", "clip": "dinero-5-flamenco.mp4", "grabar": "Un flamenco de jardín en el modo Foco." }
+      ],
+      "fuentes": [
+        "https://www.gtabase.com/gta-6/missions/gone-fishing",
+        "https://www.svg.com/2321868/how-make-money-fast-gta-6-explained/",
+        "https://kotaku.com/32-spoiler-free-tips-as-you-hop-into-grand-theft-auto-6-2000758016",
+        "https://www.gtabase.com/articles/gta-6/how-to-make-money-in-gta-6-full-money-making-guide",
+        "https://games.gg/grand-theft-auto-vi/guides/all-cocaine-flamingo-locations-in-gta-6/",
+        "https://vandal.elespanol.com/guias/guia-grand-theft-auto-vi-trucos-consejos-y-secretos/coleccionables"
+      ]
+    },
+    {
+      "id": "perder-policia",
+      "categoria": "principiantes",
+      "emoji": "🚔",
+      "titulo": "Cómo perder a la policía en GTA VI",
+      "gancho": ["CÓMO PERDER", "A LA POLICÍA", "en GTA VI"],
+      "vozIntro": "Cómo quitarte las estrellas de búsqueda en GTA Seis.",
+      "siguiente": "los primeros pasos en Leonida",
+      "pasos": [
+        { "titulo": "Sin testigos no hay estrellas", "texto": "Vuelven las seis estrellas, pero la policía solo acude si hay testigos, una alarma o una cámara.", "clip": "policia-1-estrellas.mp4", "grabar": "El indicador de estrellas en pantalla." },
+        { "titulo": "Lee los iconos", "texto": "Bajo las estrellas ves qué saben de ti: tu ropa, tu coche, tu arma, tu cara o que buscan a una pareja.", "clip": "policia-2-iconos.mp4", "grabar": "Los iconos debajo de las estrellas." },
+        { "titulo": "Cambia lo que te delata", "texto": "Cámbiate de ropa, tápate la cara, guarda el arma, cambia de coche y sepárate de tu pareja.", "clip": "policia-3-ropa.mp4", "grabar": "Cambiarse de ropa o de coche." },
+        { "titulo": "Ropa de cambio en el maletero", "texto": "Lleva ropa y armas en el maletero de tu coche para cambiarte rápido en plena huida.", "consejo": "Mantén izquierda en la cruceta para abrir el maletero.", "clip": "policia-4-maletero.mp4", "grabar": "Abrir el maletero y cambiarse." },
+        { "titulo": "Ojo con el rastreador", "texto": "Un icono rojo junto al motor y la gasolina indica un rastreador: si vas despacio, te encuentran.", "consejo": "Escanea antes con WAiNK.", "clip": "policia-5-rastreador.mp4", "grabar": "El tablero del coche con el icono del rastreador." }
+      ],
+      "fuentes": [
+        "https://www.dexerto.com/wikis/gta-6/wanted-system-explained/",
+        "https://www.redbull.com/ie-en/gta-6-beginners-guide",
+        "https://beebom.com/gta-6-tips-and-tricks/",
+        "https://kotaku.com/32-spoiler-free-tips-as-you-hop-into-grand-theft-auto-6-2000758016"
+      ]
+    },
+    {
+      "id": "primeros-pasos",
+      "categoria": "principiantes",
+      "emoji": "🎮",
+      "titulo": "GTA VI: lo que el juego no te explica",
+      "gancho": ["LO QUE GTA VI", "NO TE EXPLICA", "Guía para empezar"],
+      "vozIntro": "Lo que GTA Seis no te explica al empezar.",
+      "siguiente": "el capítulo 1 sin spoilers",
+      "pasos": [
+        { "titulo": "El modo Foco", "texto": "Pulsa los dos sticks: los enemigos salen en rojo, los objetos en amarillo y el dinero en verde.", "clip": "pasos-1-foco.mp4", "grabar": "Activar el modo Foco en la calle." },
+        { "titulo": "Come mientras corres", "texto": "Comer y beber sube la salud, la resistencia y el foco, incluso mientras conduces.", "clip": "pasos-2-comer.mp4", "grabar": "El personaje comiendo o bebiendo." },
+        { "titulo": "Entrena tus estadísticas", "texto": "Las pesas suben la salud, el cardio la resistencia y actividades tranquilas como pescar suben el foco.", "clip": "pasos-3-pesas.mp4", "grabar": "Pesas, correr o pescar." },
+        { "titulo": "RydeMe te ahorra el viaje", "texto": "Es el Uber del juego: pagando 100 dólares más te saltas el trayecto.", "clip": "pasos-4-rydeme.mp4", "grabar": "La app RydeMe en el celular." },
+        { "titulo": "Tu dinero, bajo la tabla", "texto": "No tendrás cuenta bancaria hasta la misión Buck Me: esconde el efectivo bajo la tabla suelta del cuarto de Jason.", "clip": "pasos-5-tabla.mp4", "grabar": "La tabla suelta en el cuarto de Jason." }
+      ],
+      "fuentes": [
+        "https://www.redbull.com/ie-en/gta-6-beginners-guide",
+        "https://kotaku.com/32-spoiler-free-tips-as-you-hop-into-grand-theft-auto-6-2000758016",
+        "https://vandal.elespanol.com/guias/guia-grand-theft-auto-vi-trucos-consejos-y-secretos",
+        "https://www.gtabase.com/missions/gta-6/"
+      ]
+    },
+    {
+      "id": "walkthrough-capitulo-1",
+      "categoria": "mision",
+      "emoji": "🗺️",
+      "titulo": "GTA VI capítulo 1, sin spoilers: qué te espera",
+      "gancho": ["CAPÍTULO 1", "SIN SPOILERS", "Walkthrough de GTA VI"],
+      "vozIntro": "El capítulo uno de GTA Seis, sin spoilers: qué te espera.",
+      "siguiente": "secretos que casi nadie vio",
+      "pasos": [
+        { "titulo": "Prólogo con Lucía", "texto": "Empiezas con Lucía en Hamlet Correctional. Un recuerdo muestra un atraco y una persecución.", "etiqueta": "PRÓLOGO", "clip": "cap1-1-prologo.mp4", "grabar": "El inicio del prólogo (sin la cinemática completa)." },
+        { "titulo": "Gone Fishing", "texto": "Jason y Cal siguen una avioneta en barco para recoger unos paquetes. Algo sale mal.", "etiqueta": "MISIÓN", "clip": "cap1-2-gone-fishing.mp4", "grabar": "Jason conduciendo el barco." },
+        { "titulo": "Gear Up y los encargos de Brian", "texto": "Compras un arma larga en Ammu-Nation y cobras alquileres para Brian por los Cayos.", "etiqueta": "MISIÓN", "clip": "cap1-3-ammunation.mp4", "grabar": "Dentro de Ammu-Nation." },
+        { "titulo": "Island Dreams", "texto": "Guías a un grupo en una inmersión a un naufragio y se desbloquea la búsqueda de tesoros.", "etiqueta": "MISIÓN", "consejo": "Es una de las mejores fuentes de dinero al empezar.", "clip": "cap1-4-naufragio.mp4", "grabar": "La inmersión al naufragio." },
+        { "titulo": "Buck Me", "texto": "Acompañas a Lucía al banco a abrir una cuenta. Desde aquí ya puedes guardar tu dinero.", "etiqueta": "MISIÓN", "consejo": "Antes de irte de Key Lento, haz sus secundarias.", "clip": "cap1-5-banco.mp4", "grabar": "La fachada del banco Fleeca." }
+      ],
+      "fuentes": [
+        "https://www.gtabase.com/missions/gta-6/",
+        "https://www.powerpyx.com/?p=367985",
+        "https://www.dexerto.com/wikis/gta-6/mission-list/",
+        "https://www.gtabase.com/gta-6/missions/gone-fishing",
+        "https://beebom.com/gta-6-prologue/"
+      ]
+    },
+    {
+      "id": "secretos-1",
+      "categoria": "secretos",
+      "emoji": "🔍",
+      "titulo": "5 secretos de GTA VI que casi nadie vio",
+      "gancho": ["5 SECRETOS", "DE GTA VI", "que casi nadie vio"],
+      "vozIntro": "Cinco secretos de GTA Seis que casi nadie vio.",
+      "siguiente": "lo que va del juego en cifras",
+      "pasos": [
+        { "titulo": "El Skunk Ape", "texto": "En el bar Skeeter's de Hamlet hay un folleto de Kirk. Sus misiones son de noche y solo las hace Lucía.", "consejo": "Al final te da un rifle tranquilizante único.", "clip": "secretos-1-skeeters.mp4", "grabar": "El bar Skeeter's de noche." },
+        { "titulo": "El edificio de Dexter", "texto": "En Vice City hay una réplica del edificio de Dexter Morgan, con su barco Slice of Life.", "clip": "secretos-2-dexter.mp4", "grabar": "El edificio y el barco." },
+        { "titulo": "125 flamencos", "texto": "Hay 125 flamencos con cocaína. Destruir 50 desbloquea un truco y con 100 cuentan para el 100 %.", "clip": "secretos-3-flamencos.mp4", "grabar": "Varios flamencos en un jardín." },
+        { "titulo": "255 animales", "texto": "Leonida tiene 255 especies. Para el 100 % hay que estudiar 100 con prismáticos, sin cazarlas.", "clip": "secretos-4-animales.mp4", "grabar": "Mirar un caimán o un ave con prismáticos." },
+        { "titulo": "Los trucos llegan al final", "texto": "Hay 61 trucos, pero solo se activan después de terminar la historia.", "consejo": "Usar uno desactiva el guardado y los trofeos en esa sesión.", "clip": "secretos-5-celular.mp4", "grabar": "El celular del personaje." }
+      ],
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-help-kirk-find-mr-mangrove/",
+        "https://gtaculture.com/guides/gta-6-secrets-and-mysteries",
+        "https://www.thewrap.com/culture-lifestyle/culture/gta-6-dexter-morgan-apartment-easter-egg/",
+        "https://games.gg/grand-theft-auto-vi/guides/all-cocaine-flamingo-locations-in-gta-6/",
+        "https://www.powerpyx.com/?p=368070",
+        "https://www.tweaktown.com/news/114769/gta-6-has-61-cheats-but-youll-have-to-beat-the-story-before-using-any-of-them/index.html",
+        "https://www.redbull.com/us-en/gta-6-cheat-codes"
+      ]
+    },
+    {
+      "id": "cifras-lanzamiento",
+      "categoria": "datos",
+      "emoji": "📊",
+      "titulo": "GTA VI en cifras: su primera semana",
+      "gancho": ["GTA VI", "EN CIFRAS", "Su primera semana"],
+      "vozIntro": "GTA Seis en cifras: así fue su primera semana.",
+      "siguiente": "errores de principiante",
+      "pasos": [
+        { "titulo": "3.790 millones en un día", "texto": "Según Take-Two, es el récord de ventas del primer día en cualquier entretenimiento. GTA V hizo unos 800 millones.", "clip": "cifras-1-ciudad.mp4", "grabar": "Vista aérea de Vice City." },
+        { "titulo": "32,5 millones de unidades", "texto": "Take-Two dice que vendió 32,5 millones de unidades antes del lanzamiento, récord en todas las plataformas.", "clip": "cifras-2-playa.mp4", "grabar": "Ocean Beach de día." },
+        { "titulo": "Un 99 en Metacritic", "texto": "Empata con Zelda: Ocarina of Time como el juego mejor valorado de la historia, con más de 150 reseñas.", "clip": "cifras-3-atardecer.mp4", "grabar": "Un atardecer en Leonida." },
+        { "titulo": "55 trofeos, ninguno se pierde", "texto": "Para el platino se calculan unas 200 horas. La historia sola dura entre 60 y 80.", "clip": "cifras-4-mapa.mp4", "grabar": "El menú del mapa." },
+        { "titulo": "Primer parche", "texto": "El 23 de noviembre llegó la versión 01.002.002: arregla cierres, el autoguardado y búsquedas que no se quitaban.", "clip": "cifras-5-carretera.mp4", "grabar": "Conducir por una carretera." }
+      ],
+      "fuentes": [
+        "https://www.sec.gov/Archives/edgar/data/0000946581/000162828026075217/exhibit9918k.htm",
+        "https://www.take2games.com/ir/news/grand-theft-auto-vi-shatters-entertainment-box-office-records",
+        "https://www.metacritic.com/game/grand-theft-auto-vi/",
+        "https://www.pcguide.com/news/gta-6-metacritic-review-score-ties-long-standing-record-held-by-the-original-ocarina-of-time/",
+        "https://www.powerpyx.com/?p=368070",
+        "https://support.rockstargames.com/articles/sN5pEdFYZdlvijKXd6xpJ/grand-theft-auto-vi-launch-updates-ps5-xbox-series-x-or-s"
+      ]
+    }
+  ]
+}

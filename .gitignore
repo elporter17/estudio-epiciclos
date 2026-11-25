@@ -29,3 +29,7 @@ video3d/public/voz/
 video3d/public/render.json
 video3d/public/musica.wav
 video3d/public/sfx/
+
+# Capturas propias de la PS5 para las guías de GTA VI (pesadas; se copian a mano)
+assets/gta6/clips/
+data/gta6-guias-historial.json

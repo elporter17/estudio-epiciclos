@@ -15,6 +15,8 @@ export const TEMAS = {
   comida: { nombre: 'Comida y bebidas', a: '#8a2f0f', b: '#2e1004', acento: '#ffe066', tags: ['comida', 'cultura'] },
   tecnologia: { nombre: 'Tecnología y videojuegos', a: '#0f4c4c', b: '#051f1f', acento: '#6ff0d0', tags: ['tecnologia', 'videojuegos'] },
   gta: { nombre: 'Cuenta atrás GTA VI', a: '#8a1f6b', b: '#1a0a2e', acento: '#ff9ad5', tags: ['gta6', 'gtavi', 'videojuegos'] },
+  // Guías de GTA VI (scripts/gta6-guias.mjs): azul de noche de Vice City y naranja de atardecer
+  gtaguia: { nombre: 'Guías GTA VI', a: '#12305a', b: '#070b1a', acento: '#ffb347', tags: ['gta6', 'gtavi', 'guiagta6'] },
   prefieres: { nombre: '¿Qué prefieres?', a: '#3a2a6b', b: '#120c2b', acento: '#ffd166', tags: ['queprefieres', 'dilemas'] },
   emojis: { nombre: 'Adivina con emojis', a: '#0f5c6b', b: '#062a31', acento: '#ffe066', tags: ['adivina', 'emojis'] },
   noticias: { nombre: 'Noticias', a: '#1b1b1f', b: '#0a0a0c', acento: '#ffd166', tags: ['noticias'] },
