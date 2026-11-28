@@ -1,0 +1,56 @@
+{
+  "id": "corto-sol-se-apaga",
+  "formato": "corto",
+  "episodio": 42,
+  "titulo": "Si el Sol se apagara de golpe",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "quepasasi",
+    "sol",
+    "ciencia",
+    "curiosidades"
+  ],
+  "descripcion": "Si el Sol desapareciera de golpe, durante 8 minutos y 20 segundos no notarías nada.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Qué pasa si el Sol se apaga de golpe?",
+      "objeto": "comida/orange"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Durante 8 minutos y 20 segundos no notarías nada: es lo que tarda su luz en llegar.",
+      "objeto": "comida/orange",
+      "cantidad": 1,
+      "contador": {
+        "desde": 0,
+        "hasta": 500,
+        "unidad": "segundos"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Después, oscuridad. Y la Tierra dejaría de girar a su alrededor y saldría disparada en línea recta.",
+      "objeto": "comida/lemon",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "En pocos días o semanas, casi todo el planeta estaría bajo cero.",
+      "objeto": "comida/ice-cream-cne",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: una piscina de mercurio. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "La luz del Sol tarda 8 min 20 s; sin su gravedad la Tierra se iría en línea recta; el planeta quedaría bajo cero en días o semanas (estimaciones de 2–3 días a ≈20 días)",
+      "fuente": "Live Science, «What would happen to Earth if the sun suddenly vanished?»; Popular Science"
+    }
+  ],
+  "nota": "Es un escenario imposible (el Sol no puede desaparecer de golpe). Los tiempos de congelación varían según la fuente."
+}

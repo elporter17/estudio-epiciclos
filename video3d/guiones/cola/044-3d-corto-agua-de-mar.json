@@ -1,0 +1,51 @@
+{
+  "id": "corto-agua-de-mar",
+  "formato": "corto",
+  "episodio": 44,
+  "titulo": "Beber agua de mar",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "quepasasi",
+    "cuerpo",
+    "ciencia",
+    "curiosidades"
+  ],
+  "descripcion": "Beber agua de mar no quita la sed: la empeora.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Qué pasa si bebes agua de mar?",
+      "objeto": "comida/glass"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Tus riñones solo pueden hacer orina menos salada que el mar.",
+      "objeto": "comida/glass",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Para sacar la sal, tendrías que perder más agua de la que bebiste.",
+      "objeto": "comida/bottle-oil",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Resultado: más sed. En un naufragio, puede ser peor que no beber nada.",
+      "objeto": "naturaleza/canoe",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: pasar días sin dormir. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Los riñones no pueden producir orina más salada que el agua de mar: se pierde más agua de la que se bebe",
+      "fuente": "NOAA National Ocean Service, «Can you drink seawater?»; USGS Water Science School"
+    }
+  ],
+  "nota": "Beber un sorbo no es mortal; el problema es hacerlo como única fuente de agua."
+}

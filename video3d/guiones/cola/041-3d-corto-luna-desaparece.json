@@ -1,0 +1,51 @@
+{
+  "id": "corto-luna-desaparece",
+  "formato": "corto",
+  "episodio": 41,
+  "titulo": "Si la Luna desapareciera",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "quepasasi",
+    "luna",
+    "ciencia",
+    "curiosidades"
+  ],
+  "descripcion": "Sin la Luna cambiarían las mareas, las noches y, con millones de años, hasta la inclinación de la Tierra.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Qué pasa si la Luna desaparece esta noche?",
+      "objeto": "naturaleza/rock_largeA"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Las mareas bajarían mucho: según varias estimaciones, a cerca de un tercio, porque solo quedaría el empuje del Sol.",
+      "objeto": "naturaleza/canoe",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Las noches serían bastante más oscuras: la Luna es lo más brillante del cielo nocturno.",
+      "objeto": "naturaleza/campfire_logs",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y con millones de años, el eje de la Tierra se movería sin control: la Luna lo mantiene estable.",
+      "objeto": "naturaleza/rock_smallA",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: el Sol se apaga. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Mareas ≈ un tercio (estimaciones varían, algunas dicen menos de la mitad); noches más oscuras; inclinación del eje inestable a escala de millones de años",
+      "fuente": "Live Science, «What would happen if the moon disappeared tomorrow?»; Astronomy.com; Physics World; Laskar, Joutel y Robutel, Nature (1993)"
+    }
+  ],
+  "nota": "Las cifras de las mareas y de la inclinación dependen del modelo; el cambio del eje sería muy lento."
+}

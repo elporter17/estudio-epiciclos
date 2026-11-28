@@ -1,0 +1,51 @@
+{
+  "id": "corto-cuco",
+  "formato": "corto",
+  "episodio": 48,
+  "titulo": "El cuco y su hijo adoptivo",
+  "categoria": "animales",
+  "etiquetas": [
+    "animales",
+    "naturaleza",
+    "curiosidades",
+    "humor"
+  ],
+  "descripcion": "El cuco deja sus huevos en nidos ajenos, y su cría saca del nido los huevos de sus padres adoptivos.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Cuál es el hijo adoptivo más ingrato?",
+      "objeto": "comida/egg"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El cuco pone sus huevos en los nidos de otras aves.",
+      "objeto": "comida/egg",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Al nacer, su cría empuja fuera del nido los huevos de sus «padres».",
+      "objeto": "comida/egg-cup",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y los padres adoptivos lo siguen alimentando, como si fuera suyo.",
+      "objeto": "comida/fries-empty",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: una piscina de miel. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "La cría del cuco común empuja los huevos del anfitrión fuera del nido en sus primeros días; los padres adoptivos siguen alimentándola",
+      "fuente": "National Geographic, «Brood parasitism»; Wikipedia, «Common cuckoo»"
+    }
+  ],
+  "nota": "Ocurre en los primeros días de vida y no en todas las especies de cuco."
+}

@@ -1,0 +1,50 @@
+{
+  "id": "corto-piscina-mercurio",
+  "formato": "corto",
+  "episodio": 43,
+  "titulo": "Una piscina de mercurio",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "quepasasi",
+    "ciencia",
+    "curiosidades",
+    "fisica"
+  ],
+  "descripcion": "En una piscina de mercurio flotarías, pero sería una pésima idea.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Qué pasa si caes en una piscina de mercurio?",
+      "objeto": "piscina"
+    },
+    {
+      "tipo": "piscina",
+      "texto": "Flotarías: el mercurio es unas 13 veces más denso que el agua.",
+      "voz": "Flotarías: el mercurio es unas trece veces más denso que el agua."
+    },
+    {
+      "tipo": "foco",
+      "texto": "Hasta una bola de acero flotaría en él.",
+      "objeto": "moneda",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Pero no sería nada relajante: sus vapores son tóxicos.",
+      "objeto": "comida/can",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: beber agua de mar. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Densidad del mercurio ≈ 13,5 g/cm³ (agua = 1; cuerpo humano ≈ 1; acero ≈ 7,8); sus vapores son tóxicos",
+      "fuente": "Datos estándar de física y toxicología (OMS, «Mercury and health»)"
+    }
+  ],
+  "nota": "Es una cuenta de densidades; no pruebes nada de esto: el mercurio es peligroso."
+}

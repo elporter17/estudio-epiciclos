@@ -1,0 +1,51 @@
+{
+  "id": "corto-piscina-miel",
+  "formato": "corto",
+  "episodio": 49,
+  "titulo": "Una piscina de miel",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "quepasasi",
+    "ciencia",
+    "curiosidades",
+    "humor"
+  ],
+  "descripcion": "En una piscina de miel no te hundirías, pero tampoco podrías nadar.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Qué pasa si caes en una piscina de miel?",
+      "objeto": "comida/honey"
+    },
+    {
+      "tipo": "foco",
+      "texto": "No te hundirías: la miel es más densa que tu cuerpo.",
+      "objeto": "comida/honey",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Pero nadar sería casi imposible: es tan espesa que apenas puedes moverte.",
+      "objeto": "comida/pancakes",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y salir sería lo más pegajoso de tu vida.",
+      "objeto": "comida/cookie",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: cuánto pesa una nube. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Densidad de la miel ≈ 1,4 g/cm³ (cuerpo humano ≈ 1) y viscosidad miles de veces mayor que la del agua",
+      "fuente": "Datos estándar de física de fluidos; USDA, composición de la miel"
+    }
+  ],
+  "nota": "Es una estimación por densidad y viscosidad; no hay estudios con personas en miel."
+}

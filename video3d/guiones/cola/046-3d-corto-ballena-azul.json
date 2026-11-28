@@ -1,0 +1,72 @@
+{
+  "id": "corto-ballena-azul",
+  "formato": "corto",
+  "episodio": 46,
+  "titulo": "La ballena azul es enorme",
+  "categoria": "animales",
+  "etiquetas": [
+    "animales",
+    "ballena",
+    "curiosidades",
+    "naturaleza"
+  ],
+  "descripcion": "La ballena azul es el animal más grande que ha existido.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Qué tan grande es una ballena azul?",
+      "objeto": "comida/fish"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Mide unos 30 metros: más que dos autobuses juntos y casi veinte veces una persona.",
+      "voz": "Mide unos treinta metros: más que dos autobuses juntos y casi veinte veces una persona.",
+      "barras": [
+        {
+          "etiqueta": "Ballena azul",
+          "valor": 30,
+          "texto": "30 m"
+        },
+        {
+          "etiqueta": "Autobús",
+          "valor": 12,
+          "texto": "12 m"
+        },
+        {
+          "etiqueta": "Persona",
+          "valor": 1.7,
+          "texto": "1,7 m"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es el animal más grande que ha existido: puede pesar unas 150 toneladas.",
+      "objeto": "comida/fish",
+      "cantidad": 1,
+      "contador": {
+        "desde": 0,
+        "hasta": 150,
+        "unidad": "toneladas"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y su corazón late muy despacio: entre 2 y 10 veces por minuto cuando bucea.",
+      "objeto": "corazon",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: el sonido más fuerte de la historia. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Ballena azul: 24–30 m (récord ≈ 33 m), ≈ 100–150 t de promedio; corazón de 2–10 latidos por minuto bajo el agua",
+      "fuente": "Britannica; Guinness World Records; NOAA Fisheries"
+    }
+  ],
+  "nota": "El peso varía según la fuente (de 100 a 200 toneladas) y el tamaño exacto del corazón se discute."
+}

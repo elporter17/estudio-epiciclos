@@ -1,0 +1,52 @@
+{
+  "id": "corto-krakatoa",
+  "formato": "corto",
+  "episodio": 47,
+  "titulo": "El sonido más fuerte",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "ciencia",
+    "historia",
+    "curiosidades",
+    "volcanes"
+  ],
+  "descripcion": "La erupción del Krakatoa, en 1883, es el sonido más fuerte del que se tiene registro.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Cuál fue el sonido más fuerte que se ha oído?",
+      "objeto": "naturaleza/cliff_rock"
+    },
+    {
+      "tipo": "foco",
+      "texto": "La erupción del Krakatoa, en Indonesia, en 1883.",
+      "objeto": "naturaleza/cliff_rock",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Se cuenta que se oyó a miles de kilómetros, hasta unos 4.800, aunque esa cifra se discute.",
+      "objeto": "naturaleza/cliff_cave_rock",
+      "cantidad": 1,
+      "voz": "Se cuenta que se oyó a miles de kilómetros, hasta unos cuatro mil ochocientos, aunque esa cifra se discute."
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y su onda de presión dio varias vueltas a la Tierra: los barógrafos del mundo la registraron.",
+      "objeto": "naturaleza/rock_largeA",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: el hijo adoptivo más ingrato. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Krakatoa (1883): oído a ≈3.600 km (Alice Springs) y, según los relatos, a ≈4.800 km (Rodrigues); la onda de presión se registró varias veces alrededor del planeta",
+      "fuente": "Guinness World Records; Discover Magazine, «The Loudest Sound Ever Heard»; Royal Society (1888)"
+    }
+  ],
+  "nota": "La Royal Society (1888) consideró que el sonido en Rodrigues solo se oyó «probablemente». Los decibelios son estimados, no medidos."
+}

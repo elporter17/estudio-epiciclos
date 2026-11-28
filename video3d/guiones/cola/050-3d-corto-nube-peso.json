@@ -1,0 +1,56 @@
+{
+  "id": "corto-nube-peso",
+  "formato": "corto",
+  "episodio": 50,
+  "titulo": "¿Cuánto pesa una nube?",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "curiosidades",
+    "ciencia",
+    "clima",
+    "naturaleza"
+  ],
+  "descripcion": "Una nube de buen tamaño pesa como cien elefantes.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Cuánto pesa una nube?",
+      "objeto": "comida/ice-cream-cne"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Una nube de buen tamaño tiene unas 500 toneladas de agua.",
+      "objeto": "comida/ice-cream-cne",
+      "cantidad": 1,
+      "contador": {
+        "desde": 0,
+        "hasta": 500,
+        "unidad": "toneladas"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Es como cien elefantes flotando sobre tu cabeza.",
+      "objeto": "personajes/character-female-a",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "No se cae porque las gotas son diminutas y el aire que sube las sostiene.",
+      "objeto": "naturaleza/plant_bush",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: hay más. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Cúmulo mediano (≈1 km³): ≈ 500 t de agua ≈ 100 elefantes",
+      "fuente": "USGS, «How much does a cloud weigh?»; Margaret LeMone (NCAR)"
+    }
+  ],
+  "nota": "Es una estimación para un cúmulo de unos 1 km por lado; las nubes grandes pesan mucho más."
+}

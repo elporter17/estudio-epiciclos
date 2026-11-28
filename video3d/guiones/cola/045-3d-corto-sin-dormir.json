@@ -1,0 +1,61 @@
+{
+  "id": "corto-sin-dormir",
+  "formato": "corto",
+  "episodio": 45,
+  "titulo": "Pasar días sin dormir",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "quepasasi",
+    "cuerpo",
+    "sueno",
+    "curiosidades"
+  ],
+  "descripcion": "Con 24 horas despierto tu coordinación ya baja. El récord conocido es de 11 días.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Qué pasa si no duermes?",
+      "objeto": "naturaleza/bed"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Con 24 horas despierto, según un estudio, tu coordinación baja como con 0,1 % de alcohol en la sangre.",
+      "objeto": "naturaleza/bed",
+      "cantidad": 1,
+      "contador": {
+        "desde": 0,
+        "hasta": 24,
+        "unidad": "horas"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "El récord conocido es de 11 días: Randy Gardner, a los 17 años, en 1964.",
+      "objeto": "personajes/character-male-a",
+      "cantidad": 1,
+      "contador": {
+        "desde": 0,
+        "hasta": 264,
+        "unidad": "horas"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Acabó con problemas de memoria, de coordinación y alucinaciones. No lo intentes.",
+      "objeto": "comida/cup-coffee",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: una ballena azul. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "24 h despierto ≈ coordinación como con 0,10 % de alcohol (un estudio del año 2000); Randy Gardner: 264 h (≈11 días) entre dic. 1963 y ene. 1964",
+      "fuente": "Live Science; Discover Magazine; NPR, «Lessons from sleeplessness: the 60th anniversary of Randy Gardner’s world record»"
+    }
+  ],
+  "nota": "La comparación con el alcohol viene de un solo estudio y habla de coordinación y juicio. Guinness ya no registra este récord por riesgo."
+}
