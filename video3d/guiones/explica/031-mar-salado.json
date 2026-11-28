@@ -1,0 +1,446 @@
+{
+  "id": "explica-mar-salado",
+  "motor": "explica",
+  "titulo": "¿Por qué el mar es salado?",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "ciencia",
+    "sabiasque",
+    "mar",
+    "curiosidades",
+    "oceano"
+  ],
+  "descripcion": "Los ríos son de agua dulce, pero el mar es salado. La culpa la tienen la lluvia, las rocas y el sol.",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "cielo",
+      "texto": "¿Por qué el mar es salado, si los ríos que llegan a él son de agua dulce?",
+      "clave": "salado",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.62,
+          0.62,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "corte_paisaje",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 1000,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "marca": true,
+          "x": 0.833,
+          "y": 0.694,
+          "radio": 120,
+          "en": "salado"
+        },
+        {
+          "etiqueta": "agua dulce",
+          "x": 0.3,
+          "y": 0.36,
+          "color": "#2f7fd2",
+          "a": [
+            0.426,
+            0.626
+          ],
+          "en": "dulce"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Todo empieza con la lluvia: es un poquito ácida y desgasta las rocas muy despacio.",
+      "clave": "lluvia",
+      "nota": "un poquito ácida",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "montana",
+          "x": 0.5,
+          "y": 0.76,
+          "ancho": 900,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": 0
+        },
+        {
+          "svg": "nube",
+          "x": 0.5,
+          "y": 0.37,
+          "ancho": 520,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "lluvia"
+        },
+        {
+          "svg": "gotas",
+          "x": 0.5,
+          "y": 0.53,
+          "ancho": 440,
+          "anim": "caer",
+          "sombra": false,
+          "en": "lluvia"
+        },
+        {
+          "etiqueta": "minerales",
+          "x": 0.84,
+          "y": 0.58,
+          "color": "#c97a2b",
+          "a": [
+            0.5,
+            0.823
+          ],
+          "en": "rocas"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Así la roca suelta minerales que los ríos arrastran, poquito a poco, hasta el mar.",
+      "clave": "minerales",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1
+        ],
+        "a": [
+          0.55,
+          0.62,
+          1.2
+        ]
+      },
+      "capas": [
+        {
+          "svg": "corte_paisaje",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 1000,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "svg": "iones",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 360,
+          "anim": "pop",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "minerales"
+        },
+        {
+          "etiqueta": "río",
+          "x": 0.68,
+          "y": 0.7,
+          "color": "#2f7fd2",
+          "a": [
+            0.556,
+            0.628
+          ],
+          "en": "ríos"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "En el mar, el sol evapora el agua, pero la sal no se va: se queda.",
+      "clave": "se queda",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.7,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "agua_mar",
+          "x": 0.5,
+          "y": 0.83,
+          "ancho": 1080,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "sol",
+          "x": 0.8,
+          "y": 0.37,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "sol"
+        },
+        {
+          "svg": "vapor",
+          "x": 0.38,
+          "y": 0.54,
+          "ancho": 330,
+          "anim": "fade",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "evapora"
+        },
+        {
+          "etiqueta": "vapor sin sal",
+          "x": 0.73,
+          "y": 0.55,
+          "color": "#2f7fd2",
+          "a": [
+            0.47,
+            0.52
+          ],
+          "en": "agua"
+        },
+        {
+          "svg": "iones",
+          "x": 0.5,
+          "y": 0.85,
+          "ancho": 520,
+          "anim": "pop",
+          "idle": "latido",
+          "sombra": false,
+          "en": "sal"
+        }
+      ]
+    },
+    {
+      "fondo": "mar",
+      "texto": "Durante millones de años se fue acumulando. La mayor parte es sodio y cloro, como la sal de mesa.",
+      "clave": "millones",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1.08
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "iones",
+          "x": 0.5,
+          "y": 0.53,
+          "ancho": 760,
+          "anim": "pop",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "acumulando"
+        },
+        {
+          "etiqueta": "sodio",
+          "x": 0.18,
+          "y": 0.4,
+          "color": "#6a3fc4",
+          "a": [
+            0.378,
+            0.521
+          ],
+          "en": "sodio"
+        },
+        {
+          "etiqueta": "cloro",
+          "x": 0.2,
+          "y": 0.68,
+          "color": "#2f9e57",
+          "a": [
+            0.469,
+            0.582
+          ],
+          "en": "cloro"
+        },
+        {
+          "svg": "salero",
+          "x": 0.72,
+          "y": 0.79,
+          "ancho": 270,
+          "anim": "slideIn",
+          "desde": "derecha",
+          "idle": "balanceo",
+          "en": "mesa"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Y desde el fondo, las fuentes hidrotermales echan agua muy caliente cargada de minerales.",
+      "clave": "hidrotermales",
+      "camara": {
+        "de": [
+          0.5,
+          0.65,
+          1.15
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "fumarola",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 760,
+          "anim": "crecer",
+          "en": "fondo"
+        },
+        {
+          "burbujas": true,
+          "x": 0.5,
+          "y": 0.51,
+          "ancho": 0.12,
+          "alto": 0.2,
+          "n": 16,
+          "en": "caliente"
+        },
+        {
+          "numero": "hasta 400 °C",
+          "x": 0.74,
+          "y": 0.36,
+          "color": "#d9532b",
+          "tam": 54,
+          "en": "caliente"
+        },
+        {
+          "etiqueta": "minerales",
+          "x": 0.22,
+          "y": 0.42,
+          "color": "#c97a2b",
+          "a": [
+            0.418,
+            0.528
+          ],
+          "en": "minerales"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Hoy, en promedio, el 3,5 % del agua de mar es sal: unos 35 gramos por litro.",
+      "voz": "Hoy, en promedio, el tres coma cinco por ciento del agua de mar es sal: unos treinta y cinco gramos por litro.",
+      "clave": "promedio",
+      "nota": "salinidad",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.08
+        ]
+      },
+      "capas": [
+        {
+          "svg": "jarra",
+          "x": 0.34,
+          "y": 0.62,
+          "ancho": 460,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "numero": "3,5 %",
+          "x": 0.72,
+          "y": 0.4,
+          "color": "#6b4fe0",
+          "tam": 80,
+          "en": "3,5"
+        },
+        {
+          "svg": "cristales_sal",
+          "x": 0.76,
+          "y": 0.73,
+          "ancho": 340,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "sal"
+        },
+        {
+          "numero": "≈ 35 g por litro",
+          "x": 0.5,
+          "y": 0.89,
+          "color": "#1d1d2b",
+          "tam": 52,
+          "en": "gramos"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Ahora ya lo sabes. Síguenos para más cosas que nadie te explicó.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "corte_paisaje": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 800\"><defs><clipPath id=\"k\"><rect width=\"1000\" height=\"800\" rx=\"48\"/></clipPath>\n<linearGradient id=\"c\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#74c4f5\"/><stop offset=\"1\" stop-color=\"#d6f0ff\"/></linearGradient>\n<linearGradient id=\"m\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#2fa0e6\"/><stop offset=\"1\" stop-color=\"#0b4a85\"/></linearGradient></defs>\n<g clip-path=\"url(#k)\"><rect width=\"1000\" height=\"800\" fill=\"url(#c)\"/>\n<path d=\"M380 450 L520 250 L600 330 L680 270 L820 450 Z\" fill=\"#b8c6d6\"/>\n<rect x=\"0\" y=\"440\" width=\"1000\" height=\"360\" fill=\"#a8703f\"/>\n<path d=\"M0 540 Q250 520 500 548 T1000 540 V600 Q700 610 500 596 T0 600 Z\" fill=\"#94603a\"/>\n<path d=\"M0 660 Q300 640 560 670 T1000 660 V800 H0 Z\" fill=\"#7f512f\"/>\n<g fill=\"#c99263\" opacity=\"0.7\"><ellipse cx=\"120\" cy=\"500\" rx=\"16\" ry=\"8\"/><ellipse cx=\"380\" cy=\"620\" rx=\"20\" ry=\"9\"/><ellipse cx=\"240\" cy=\"720\" rx=\"14\" ry=\"7\"/><ellipse cx=\"560\" cy=\"510\" rx=\"12\" ry=\"6\"/></g>\n<path d=\"M0 452 L120 260 L230 110 L300 196 L360 150 L540 452 Z\" fill=\"#8c8178\"/>\n<path d=\"M230 110 L300 196 L360 150 L540 452 L330 452 L290 300 Z\" fill=\"#70665f\"/>\n<path d=\"M230 110 L194 168 L214 160 L232 178 L252 160 L268 172 Z\" fill=\"#ffffff\"/><path d=\"M360 150 L338 178 L352 176 L366 186 L376 170 Z\" fill=\"#ffffff\"/>\n<path d=\"M0 446 H690 C720 446 740 456 760 470 L760 480 H0 Z\" fill=\"#5fbf6a\"/>\n<path d=\"M660 446 C700 446 730 452 760 470 L780 470 C750 450 720 444 690 444 Z\" fill=\"#f1d79a\"/>\n<path d=\"M700 460 C780 500 830 630 1000 690 V460 Z\" fill=\"#f1d79a\"/>\n<path d=\"M690 462 H1000 V690 C830 632 780 504 712 466 Z\" fill=\"url(#m)\"/>\n<path d=\"M690 462 H1000\" stroke=\"#a8e6ff\" stroke-width=\"8\"/>\n<path d=\"M760 486 q20 -8 40 0 t40 0 M860 520 q20 -8 40 0 t40 0\" stroke=\"#7fd0ff\" stroke-width=\"5\" fill=\"none\" opacity=\"0.7\"/>\n<path d=\"M262 300 C300 340 250 380 320 420 C360 446 430 452 520 452 C600 452 650 456 700 460\" fill=\"none\" stroke=\"#2d8fd0\" stroke-width=\"26\" stroke-linecap=\"round\"/>\n<path d=\"M262 300 C300 340 250 380 320 420 C360 446 430 452 520 452 C600 452 650 456 700 460\" fill=\"none\" stroke=\"#6fd0ff\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n<g><rect x=\"584\" y=\"410\" width=\"8\" height=\"34\" fill=\"#7a4e2d\"/><circle cx=\"588\" cy=\"404\" r=\"22\" fill=\"#2f8f4a\"/><rect x=\"624\" y=\"420\" width=\"7\" height=\"26\" fill=\"#7a4e2d\"/><circle cx=\"627\" cy=\"414\" r=\"17\" fill=\"#46b05d\"/></g>\n</g><rect x=\"5\" y=\"5\" width=\"990\" height=\"790\" rx=\"44\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"10\"/></svg>",
+    "nube": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 230\"><g fill=\"#c3ccd8\"><ellipse cx=\"210\" cy=\"160\" rx=\"190\" ry=\"56\"/></g>\n<g fill=\"#eef2f7\"><ellipse cx=\"210\" cy=\"140\" rx=\"180\" ry=\"56\"/><circle cx=\"130\" cy=\"110\" r=\"64\"/><circle cx=\"230\" cy=\"82\" r=\"78\"/><circle cx=\"318\" cy=\"118\" r=\"56\"/></g>\n<path d=\"M40 150 Q210 196 380 150 Q300 200 210 198 Q110 198 40 150 Z\" fill=\"#c3ccd8\"/>\n<ellipse cx=\"196\" cy=\"66\" rx=\"40\" ry=\"20\" fill=\"#ffffff\" opacity=\"0.9\"/></svg>",
+    "gotas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 360\"><g transform=\"translate(60 40) scale(1)\"><path d=\"M0 -30 C12 -12 20 0 20 10 A20 20 0 0 1 -20 10 C-20 0 -12 -12 0 -30 Z\" fill=\"#3b9de8\"/><path d=\"M8 0 A12 12 0 0 1 12 14\" stroke=\"#9ad6ff\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></g><g transform=\"translate(170 20) scale(0.9)\"><path d=\"M0 -30 C12 -12 20 0 20 10 A20 20 0 0 1 -20 10 C-20 0 -12 -12 0 -30 Z\" fill=\"#3b9de8\"/><path d=\"M8 0 A12 12 0 0 1 12 14\" stroke=\"#9ad6ff\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></g><g transform=\"translate(290 50) scale(1.1)\"><path d=\"M0 -30 C12 -12 20 0 20 10 A20 20 0 0 1 -20 10 C-20 0 -12 -12 0 -30 Z\" fill=\"#3b9de8\"/><path d=\"M8 0 A12 12 0 0 1 12 14\" stroke=\"#9ad6ff\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></g><g transform=\"translate(380 30) scale(0.8)\"><path d=\"M0 -30 C12 -12 20 0 20 10 A20 20 0 0 1 -20 10 C-20 0 -12 -12 0 -30 Z\" fill=\"#3b9de8\"/><path d=\"M8 0 A12 12 0 0 1 12 14\" stroke=\"#9ad6ff\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></g><g transform=\"translate(110 160) scale(1.1)\"><path d=\"M0 -30 C12 -12 20 0 20 10 A20 20 0 0 1 -20 10 C-20 0 -12 -12 0 -30 Z\" fill=\"#3b9de8\"/><path d=\"M8 0 A12 12 0 0 1 12 14\" stroke=\"#9ad6ff\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></g><g transform=\"translate(230 140) scale(1)\"><path d=\"M0 -30 C12 -12 20 0 20 10 A20 20 0 0 1 -20 10 C-20 0 -12 -12 0 -30 Z\" fill=\"#3b9de8\"/><path d=\"M8 0 A12 12 0 0 1 12 14\" stroke=\"#9ad6ff\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></g><g transform=\"translate(340 180) scale(0.9)\"><path d=\"M0 -30 C12 -12 20 0 20 10 A20 20 0 0 1 -20 10 C-20 0 -12 -12 0 -30 Z\" fill=\"#3b9de8\"/><path d=\"M8 0 A12 12 0 0 1 12 14\" stroke=\"#9ad6ff\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></g><g transform=\"translate(50 280) scale(0.9)\"><path d=\"M0 -30 C12 -12 20 0 20 10 A20 20 0 0 1 -20 10 C-20 0 -12 -12 0 -30 Z\" fill=\"#3b9de8\"/><path d=\"M8 0 A12 12 0 0 1 12 14\" stroke=\"#9ad6ff\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></g><g transform=\"translate(180 300) scale(1.1)\"><path d=\"M0 -30 C12 -12 20 0 20 10 A20 20 0 0 1 -20 10 C-20 0 -12 -12 0 -30 Z\" fill=\"#3b9de8\"/><path d=\"M8 0 A12 12 0 0 1 12 14\" stroke=\"#9ad6ff\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></g><g transform=\"translate(300 290) scale(1)\"><path d=\"M0 -30 C12 -12 20 0 20 10 A20 20 0 0 1 -20 10 C-20 0 -12 -12 0 -30 Z\" fill=\"#3b9de8\"/><path d=\"M8 0 A12 12 0 0 1 12 14\" stroke=\"#9ad6ff\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></g><g transform=\"translate(400 270) scale(0.8)\"><path d=\"M0 -30 C12 -12 20 0 20 10 A20 20 0 0 1 -20 10 C-20 0 -12 -12 0 -30 Z\" fill=\"#3b9de8\"/><path d=\"M8 0 A12 12 0 0 1 12 14\" stroke=\"#9ad6ff\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></g></svg>",
+    "montana": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 440\"><path d=\"M0 420 L150 170 L260 40 L330 120 L400 80 L600 420 Z\" fill=\"#8c8178\"/>\n<path d=\"M260 40 L330 120 L400 80 L600 420 L380 420 L320 220 Z\" fill=\"#70665f\"/>\n<path d=\"M260 40 L222 100 L244 92 L262 112 L282 92 L298 104 Z\" fill=\"#ffffff\"/><path d=\"M400 80 L378 110 L392 108 L406 118 L416 102 Z\" fill=\"#ffffff\"/>\n<path d=\"M200 221 L209 230 L200 239 L191 230 Z\" fill=\"#f0a35a\"/><path d=\"M260 291 L269 300 L260 309 L251 300 Z\" fill=\"#ffffff\"/><path d=\"M330 241 L339 250 L330 259 L321 250 Z\" fill=\"#9ad1a5\"/><path d=\"M380 321 L389 330 L380 339 L371 330 Z\" fill=\"#f0a35a\"/><path d=\"M160 321 L169 330 L160 339 L151 330 Z\" fill=\"#ffffff\"/><path d=\"M440 351 L449 360 L440 369 L431 360 Z\" fill=\"#9ad1a5\"/><path d=\"M300 351 L309 360 L300 369 L291 360 Z\" fill=\"#ffffff\"/><path d=\"M230 371 L239 380 L230 389 L221 380 Z\" fill=\"#f0a35a\"/><path d=\"M400 261 L409 270 L400 279 L391 270 Z\" fill=\"#ffffff\"/>\n<rect x=\"0\" y=\"410\" width=\"600\" height=\"30\" rx=\"8\" fill=\"#5fbf6a\"/>\n<g fill=\"#9a8f86\"><circle cx=\"560\" cy=\"404\" r=\"9\"/><circle cx=\"530\" cy=\"408\" r=\"6\"/><circle cx=\"80\" cy=\"404\" r=\"8\"/><circle cx=\"110\" cy=\"408\" r=\"5\"/></g></svg>",
+    "iones": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 300\"><circle cx=\"70\" cy=\"80\" r=\"30\" fill=\"#2f9e57\"/><circle cx=\"70\" cy=\"80\" r=\"24\" fill=\"#4cd07a\"/><circle cx=\"61\" cy=\"71\" r=\"8\" fill=\"#ffffff\" opacity=\"0.6\"/><circle cx=\"150\" cy=\"140\" r=\"20\" fill=\"#6a3fc4\"/><circle cx=\"150\" cy=\"140\" r=\"15\" fill=\"#9a6cff\"/><circle cx=\"144\" cy=\"134\" r=\"5\" fill=\"#ffffff\" opacity=\"0.6\"/><circle cx=\"250\" cy=\"70\" r=\"30\" fill=\"#2f9e57\"/><circle cx=\"250\" cy=\"70\" r=\"24\" fill=\"#4cd07a\"/><circle cx=\"241\" cy=\"61\" r=\"8\" fill=\"#ffffff\" opacity=\"0.6\"/><circle cx=\"330\" cy=\"150\" r=\"20\" fill=\"#6a3fc4\"/><circle cx=\"330\" cy=\"150\" r=\"15\" fill=\"#9a6cff\"/><circle cx=\"324\" cy=\"144\" r=\"5\" fill=\"#ffffff\" opacity=\"0.6\"/><circle cx=\"100\" cy=\"230\" r=\"20\" fill=\"#6a3fc4\"/><circle cx=\"100\" cy=\"230\" r=\"15\" fill=\"#9a6cff\"/><circle cx=\"94\" cy=\"224\" r=\"5\" fill=\"#ffffff\" opacity=\"0.6\"/><circle cx=\"210\" cy=\"210\" r=\"30\" fill=\"#2f9e57\"/><circle cx=\"210\" cy=\"210\" r=\"24\" fill=\"#4cd07a\"/><circle cx=\"201\" cy=\"201\" r=\"8\" fill=\"#ffffff\" opacity=\"0.6\"/><circle cx=\"330\" cy=\"250\" r=\"30\" fill=\"#2f9e57\"/><circle cx=\"330\" cy=\"250\" r=\"24\" fill=\"#4cd07a\"/><circle cx=\"321\" cy=\"241\" r=\"8\" fill=\"#ffffff\" opacity=\"0.6\"/><circle cx=\"400\" cy=\"60\" r=\"20\" fill=\"#6a3fc4\"/><circle cx=\"400\" cy=\"60\" r=\"15\" fill=\"#9a6cff\"/><circle cx=\"394\" cy=\"54\" r=\"5\" fill=\"#ffffff\" opacity=\"0.6\"/></svg>",
+    "sol": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\"><defs><radialGradient id=\"g\" cx=\"40%\" cy=\"38%\" r=\"70%\"><stop offset=\"0\" stop-color=\"#fff1a8\"/><stop offset=\"0.55\" stop-color=\"#ffd23f\"/><stop offset=\"1\" stop-color=\"#ffab1f\"/></radialGradient></defs>\n<circle cx=\"200\" cy=\"200\" r=\"150\" fill=\"#ffe27a\" opacity=\"0.25\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(0 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(22.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(45 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(67.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(90 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(112.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(135 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(157.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(180 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(202.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(225 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(247.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(270 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(292.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(315 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(337.5 200 200)\"/>\n<circle cx=\"200\" cy=\"200\" r=\"116\" fill=\"#ffab1f\"/><circle cx=\"200\" cy=\"200\" r=\"106\" fill=\"url(#g)\"/>\n<path d=\"M290 150 A106 106 0 0 1 150 296 A120 120 0 0 0 290 150 Z\" fill=\"#ff9f1c\" opacity=\"0.45\"/>\n<ellipse cx=\"160\" cy=\"150\" rx=\"38\" ry=\"22\" fill=\"#fffbe0\" opacity=\"0.8\" transform=\"rotate(-35 160 150)\"/></svg>",
+    "vapor": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 420\"><path d=\"M60 400 C20 340 100 290 60 230 C20 170 100 120 60 70\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"18\" stroke-linecap=\"round\" opacity=\"0.95\"/><path d=\"M60 20 L86 70 L34 70 Z\" fill=\"#ffffff\" opacity=\"0.95\"/><path d=\"M150 400 C110 340 190 290 150 230 C110 170 190 120 150 70\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"18\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M150 20 L176 70 L124 70 Z\" fill=\"#ffffff\" opacity=\"0.85\"/><path d=\"M240 400 C200 340 280 290 240 230 C200 170 280 120 240 70\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"18\" stroke-linecap=\"round\" opacity=\"0.75\"/><path d=\"M240 20 L266 70 L214 70 Z\" fill=\"#ffffff\" opacity=\"0.75\"/></svg>",
+    "agua_mar": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1080 520\"><defs><linearGradient id=\"m\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#2fa0e6\"/><stop offset=\"1\" stop-color=\"#0b4a85\"/></linearGradient></defs>\n<path d=\"M0 60 Q90 30 180 60 T360 60 T540 60 T720 60 T900 60 T1080 60 V520 H0 Z\" fill=\"url(#m)\"/>\n<path d=\"M0 60 Q90 30 180 60 T360 60 T540 60 T720 60 T900 60 T1080 60\" fill=\"none\" stroke=\"#a8e6ff\" stroke-width=\"10\"/>\n<path d=\"M120 150 q30 -12 60 0 t60 0 M700 190 q30 -12 60 0 t60 0 M400 300 q30 -12 60 0 t60 0\" stroke=\"#7fd0ff\" stroke-width=\"6\" fill=\"none\" opacity=\"0.6\"/></svg>",
+    "cristales_sal": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 260\"><g transform=\"translate(90 200) scale(1)\"><path d=\"M0 -40 L40 -20 L0 0 L-40 -20 Z\" fill=\"#ffffff\"/><path d=\"M-40 -20 L0 0 L0 44 L-40 24 Z\" fill=\"#d7ecf7\"/><path d=\"M40 -20 L0 0 L0 44 L40 24 Z\" fill=\"#b3d6ea\"/><path d=\"M-26 -22 L0 -34 L10 -29 L-16 -17 Z\" fill=\"#ffffff\" opacity=\"0.8\"/></g><g transform=\"translate(170 210) scale(1.1)\"><path d=\"M0 -40 L40 -20 L0 0 L-40 -20 Z\" fill=\"#ffffff\"/><path d=\"M-40 -20 L0 0 L0 44 L-40 24 Z\" fill=\"#d7ecf7\"/><path d=\"M40 -20 L0 0 L0 44 L40 24 Z\" fill=\"#b3d6ea\"/><path d=\"M-26 -22 L0 -34 L10 -29 L-16 -17 Z\" fill=\"#ffffff\" opacity=\"0.8\"/></g><g transform=\"translate(255 200) scale(1)\"><path d=\"M0 -40 L40 -20 L0 0 L-40 -20 Z\" fill=\"#ffffff\"/><path d=\"M-40 -20 L0 0 L0 44 L-40 24 Z\" fill=\"#d7ecf7\"/><path d=\"M40 -20 L0 0 L0 44 L40 24 Z\" fill=\"#b3d6ea\"/><path d=\"M-26 -22 L0 -34 L10 -29 L-16 -17 Z\" fill=\"#ffffff\" opacity=\"0.8\"/></g><g transform=\"translate(335 210) scale(0.9)\"><path d=\"M0 -40 L40 -20 L0 0 L-40 -20 Z\" fill=\"#ffffff\"/><path d=\"M-40 -20 L0 0 L0 44 L-40 24 Z\" fill=\"#d7ecf7\"/><path d=\"M40 -20 L0 0 L0 44 L40 24 Z\" fill=\"#b3d6ea\"/><path d=\"M-26 -22 L0 -34 L10 -29 L-16 -17 Z\" fill=\"#ffffff\" opacity=\"0.8\"/></g><g transform=\"translate(130 140) scale(0.95)\"><path d=\"M0 -40 L40 -20 L0 0 L-40 -20 Z\" fill=\"#ffffff\"/><path d=\"M-40 -20 L0 0 L0 44 L-40 24 Z\" fill=\"#d7ecf7\"/><path d=\"M40 -20 L0 0 L0 44 L40 24 Z\" fill=\"#b3d6ea\"/><path d=\"M-26 -22 L0 -34 L10 -29 L-16 -17 Z\" fill=\"#ffffff\" opacity=\"0.8\"/></g><g transform=\"translate(215 145) scale(1.05)\"><path d=\"M0 -40 L40 -20 L0 0 L-40 -20 Z\" fill=\"#ffffff\"/><path d=\"M-40 -20 L0 0 L0 44 L-40 24 Z\" fill=\"#d7ecf7\"/><path d=\"M40 -20 L0 0 L0 44 L40 24 Z\" fill=\"#b3d6ea\"/><path d=\"M-26 -22 L0 -34 L10 -29 L-16 -17 Z\" fill=\"#ffffff\" opacity=\"0.8\"/></g><g transform=\"translate(300 140) scale(0.9)\"><path d=\"M0 -40 L40 -20 L0 0 L-40 -20 Z\" fill=\"#ffffff\"/><path d=\"M-40 -20 L0 0 L0 44 L-40 24 Z\" fill=\"#d7ecf7\"/><path d=\"M40 -20 L0 0 L0 44 L40 24 Z\" fill=\"#b3d6ea\"/><path d=\"M-26 -22 L0 -34 L10 -29 L-16 -17 Z\" fill=\"#ffffff\" opacity=\"0.8\"/></g><g transform=\"translate(175 85) scale(0.9)\"><path d=\"M0 -40 L40 -20 L0 0 L-40 -20 Z\" fill=\"#ffffff\"/><path d=\"M-40 -20 L0 0 L0 44 L-40 24 Z\" fill=\"#d7ecf7\"/><path d=\"M40 -20 L0 0 L0 44 L40 24 Z\" fill=\"#b3d6ea\"/><path d=\"M-26 -22 L0 -34 L10 -29 L-16 -17 Z\" fill=\"#ffffff\" opacity=\"0.8\"/></g><g transform=\"translate(258 88) scale(0.85)\"><path d=\"M0 -40 L40 -20 L0 0 L-40 -20 Z\" fill=\"#ffffff\"/><path d=\"M-40 -20 L0 0 L0 44 L-40 24 Z\" fill=\"#d7ecf7\"/><path d=\"M40 -20 L0 0 L0 44 L40 24 Z\" fill=\"#b3d6ea\"/><path d=\"M-26 -22 L0 -34 L10 -29 L-16 -17 Z\" fill=\"#ffffff\" opacity=\"0.8\"/></g></svg>",
+    "salero": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 380\"><path d=\"M50 120 L190 120 L206 350 Q206 368 188 368 L52 368 Q34 368 34 350 Z\" fill=\"#e8f6ff\" stroke=\"#9fc7de\" stroke-width=\"6\"/>\n<path d=\"M56 200 L184 200 L196 350 Q196 360 186 360 L54 360 Q44 360 44 350 Z\" fill=\"#ffffff\"/>\n<path d=\"M150 140 L160 340\" stroke=\"#ffffff\" stroke-width=\"14\" stroke-linecap=\"round\" opacity=\"0.8\"/>\n<path d=\"M44 120 Q44 40 120 40 Q196 40 196 120 Z\" fill=\"#b8c2cc\"/><path d=\"M60 110 Q62 56 120 54\" stroke=\"#e3e9ee\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/>\n<rect x=\"36\" y=\"110\" width=\"168\" height=\"22\" rx=\"8\" fill=\"#8f9aa6\"/>\n<g fill=\"#5d6873\"><circle cx=\"100\" cy=\"70\" r=\"6\"/><circle cx=\"140\" cy=\"70\" r=\"6\"/><circle cx=\"120\" cy=\"92\" r=\"6\"/></g></svg>",
+    "fumarola": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 720\"><defs><radialGradient id=\"r\" cx=\"50%\" cy=\"100%\" r=\"60%\"><stop offset=\"0\" stop-color=\"#ff8a3d\"/><stop offset=\"1\" stop-color=\"#ff8a3d\" stop-opacity=\"0\"/></radialGradient></defs>\n<g fill=\"#3c3f4a\" opacity=\"0.92\"><circle cx=\"300\" cy=\"300\" r=\"70\"/><circle cx=\"250\" cy=\"230\" r=\"80\"/><circle cx=\"350\" cy=\"200\" r=\"90\"/><circle cx=\"280\" cy=\"120\" r=\"85\"/><circle cx=\"360\" cy=\"70\" r=\"70\"/></g>\n<g fill=\"#545866\" opacity=\"0.9\"><circle cx=\"270\" cy=\"250\" r=\"40\"/><circle cx=\"330\" cy=\"150\" r=\"46\"/><circle cx=\"300\" cy=\"60\" r=\"36\"/></g>\n<g fill=\"#ffc35a\"><circle cx=\"230\" cy=\"220\" r=\"6\"/><circle cx=\"370\" cy=\"180\" r=\"7\"/><circle cx=\"300\" cy=\"110\" r=\"5\"/><circle cx=\"330\" cy=\"260\" r=\"6\"/><circle cx=\"250\" cy=\"90\" r=\"5\"/></g>\n<path d=\"M0 640 Q150 600 300 620 T600 630 V720 H0 Z\" fill=\"#3a2f2a\"/>\n<path d=\"M200 640 L230 420 L260 360 L340 360 L370 420 L410 640 Z\" fill=\"#4b3d35\"/>\n<path d=\"M300 360 L340 360 L370 420 L410 640 L330 640 Z\" fill=\"#3a2f2a\"/>\n<path d=\"M232 470 L268 476 M246 540 L300 548 M352 450 L380 456 M330 590 L388 598\" stroke=\"#2c241f\" stroke-width=\"10\" stroke-linecap=\"round\"/>\n<path d=\"M290 630 L284 580 L294 540 L288 500\" stroke=\"#ff8a3d\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\"0.85\"/>\n<ellipse cx=\"300\" cy=\"362\" rx=\"44\" ry=\"14\" fill=\"#1e1916\"/><ellipse cx=\"300\" cy=\"360\" rx=\"26\" ry=\"8\" fill=\"#ff8a3d\"/>\n<g fill=\"#e7e0d0\"><rect x=\"96\" y=\"590\" width=\"12\" height=\"60\" rx=\"6\"/><rect x=\"118\" y=\"600\" width=\"12\" height=\"50\" rx=\"6\"/><rect x=\"470\" y=\"596\" width=\"12\" height=\"54\" rx=\"6\"/></g>\n<g fill=\"#e5483a\"><circle cx=\"102\" cy=\"588\" r=\"10\"/><circle cx=\"124\" cy=\"598\" r=\"10\"/><circle cx=\"476\" cy=\"594\" r=\"10\"/></g></svg>",
+    "jarra": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 380 470\"><path d=\"M300 150 Q356 160 356 240 Q356 320 296 330\" fill=\"none\" stroke=\"#cfe6f3\" stroke-width=\"26\" stroke-linecap=\"round\"/>\n<path d=\"M60 40 L320 40 L300 440 Q298 460 278 460 L102 460 Q82 460 80 440 Z\" fill=\"#e8f6ff\" opacity=\"0.6\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/>\n<path d=\"M68 150 L312 150 L300 440 Q298 452 278 452 L102 452 Q88 452 86 440 Z\" fill=\"#2f9be0\" opacity=\"0.9\"/>\n<path d=\"M68 150 L312 150\" stroke=\"#8fd6ff\" stroke-width=\"8\"/>\n<g stroke=\"#ffffff\" stroke-width=\"6\" stroke-linecap=\"round\" opacity=\"0.85\"><path d=\"M270 200 H300\"/><path d=\"M276 260 H298\"/><path d=\"M270 320 H296\"/><path d=\"M276 380 H294\"/></g>\n<path d=\"M100 70 L118 420\" stroke=\"#ffffff\" stroke-width=\"14\" stroke-linecap=\"round\" opacity=\"0.5\"/>\n<rect x=\"50\" y=\"30\" width=\"280\" height=\"18\" rx=\"9\" fill=\"#ffffff\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "La lluvia es ligeramente ácida (lleva CO₂ disuelto) y desgasta las rocas; los iones liberados viajan por ríos y arroyos hasta el océano. Los ríos no saben salados porque la lluvia los renueva",
+      "fuente": "NOAA Ocean Service, «Why is the ocean salty?» (oceanservice.noaa.gov/facts/whysalty.html) y «Why are rivers not salty?» (oceanservice.noaa.gov/facts/riversnotsalty.html)"
+    },
+    {
+      "dato": "Al evaporarse el agua, las sales disueltas se quedan en el mar y se acumulan con el tiempo",
+      "fuente": "USGS Water Science School, «Why is the ocean salty?» (usgs.gov/water-science-school/science/why-ocean-salty)"
+    },
+    {
+      "dato": "Las fuentes hidrotermales del fondo marino son la segunda gran fuente de minerales disueltos; su agua puede llegar a unos 400 °C",
+      "fuente": "NOAA Ocean Service (whysalty.html); NOAA Ocean Exploration, «What is a hydrothermal vent?»; WHOI, «What makes the ocean salty?»"
+    },
+    {
+      "dato": "Los iones más abundantes del agua de mar son el cloruro y el sodio (más del 85 % de lo disuelto); la salinidad media es de unos 35 g por kg (≈ 3,5 %)",
+      "fuente": "NOAA Ocean Service (whysalty.html); USGS Water Science School (why-ocean-salty)"
+    }
+  ],
+  "nota": "«Cloro» en el guion se refiere al ion cloruro (Cl⁻), no al gas cloro; se dice así para que suene natural. La salinidad es ≈ 35 g por kilo de agua de mar; por litro sale algo más (≈ 36 g) porque el agua de mar es un poco más densa, por eso «unos 35 gramos por litro». El cloruro viene en gran parte de los gases volcánicos de la Tierra joven, no solo de las rocas; el video lo simplifica. Los iones dibujados son esquemáticos."
+}

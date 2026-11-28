@@ -1,0 +1,442 @@
+{
+  "id": "explica-tunel-tierra",
+  "motor": "explica",
+  "titulo": "¿Y si caes a través de la Tierra?",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "quepasaria",
+    "fisica",
+    "tierra",
+    "gravedad",
+    "sabiasque"
+  ],
+  "descripcion": "Si cavaras un túnel de lado a lado de la Tierra y saltaras, llegarías al otro lado en unos 38 minutos... y volverías.",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "oscuro",
+      "texto": "¿Qué pasa si saltas a un túnel que atraviesa la Tierra de lado a lado?",
+      "clave": "túnel",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1
+        ],
+        "a": [
+          0.5,
+          0.46,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tierra",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 880,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "persona",
+          "x": 0.5,
+          "y": 0.345,
+          "ancho": 80,
+          "anim": "caer",
+          "idle": "flotar",
+          "en": "saltas"
+        },
+        {
+          "etiqueta": "túnel",
+          "x": 0.2,
+          "y": 0.33,
+          "a": [
+            0.49,
+            0.45
+          ],
+          "en": "túnel"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "La gravedad te jala hacia el centro, y caes cada vez más rápido.",
+      "clave": "gravedad",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1
+        ],
+        "a": [
+          0.5,
+          0.52,
+          1.14
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tierra",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 880,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "viento",
+          "x": 0.5,
+          "y": 0.42,
+          "ancho": 120,
+          "anim": "fade",
+          "en": "caes",
+          "sombra": false
+        },
+        {
+          "svg": "persona",
+          "x": 0.5,
+          "y": 0.46,
+          "ancho": 80,
+          "anim": "fade",
+          "idle": "sacudir",
+          "en": 0
+        },
+        {
+          "svg": "flecha",
+          "x": 0.585,
+          "y": 0.5,
+          "ancho": 50,
+          "anim": "pop",
+          "en": "gravedad"
+        },
+        {
+          "etiqueta": "cada vez más rápido",
+          "x": 0.72,
+          "y": 0.34,
+          "a": [
+            0.53,
+            0.46
+          ],
+          "color": "#d93427",
+          "en": "rápido"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "En el centro vas a casi 8 km por segundo, y desde ahí la gravedad te frena.",
+      "voz": "En el centro vas a casi ocho kilómetros por segundo, y desde ahí la gravedad te frena.",
+      "clave": "centro",
+      "nota": "no pesas nada",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1.05
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1.25
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tierra",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 880,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "persona",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 80,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": 0
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.58,
+          "radio": 125,
+          "en": "centro"
+        },
+        {
+          "numero": "≈ 8 km/s",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#6b4fe0",
+          "en": "8"
+        },
+        {
+          "svg": "flecha",
+          "x": 0.585,
+          "y": 0.6,
+          "ancho": 46,
+          "rot": 180,
+          "anim": "pop",
+          "en": "frena"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Si la Tierra fuera igual por dentro, llegarías al otro lado en 42 minutos. Con su núcleo denso, en 38.",
+      "voz": "Si la Tierra fuera igual por dentro, llegarías al otro lado en cuarenta y dos minutos. Con su núcleo denso, en treinta y ocho.",
+      "clave": "núcleo",
+      "camara": {
+        "de": [
+          0.5,
+          0.56,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tierra",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 880,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "persona",
+          "x": 0.5,
+          "y": 0.81,
+          "ancho": 80,
+          "anim": "slideIn",
+          "desde": "arriba",
+          "idle": "flotar",
+          "en": "llegarías"
+        },
+        {
+          "numero": "42 min",
+          "x": 0.22,
+          "y": 0.89,
+          "color": "#2f7fd2",
+          "en": "42"
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.58,
+          "radio": 235,
+          "en": "núcleo"
+        },
+        {
+          "etiqueta": "núcleo denso",
+          "x": 0.78,
+          "y": 0.36,
+          "a": [
+            0.58,
+            0.53
+          ],
+          "color": "#d93427",
+          "en": "núcleo"
+        },
+        {
+          "numero": "38 min",
+          "x": 0.78,
+          "y": 0.89,
+          "color": "#d93427",
+          "en": "38"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Y si nadie te atrapa, vuelves a caer, y vas y vienes para siempre.",
+      "clave": "para siempre",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1.08
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tierra",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 880,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "vaiven",
+          "x": 0.64,
+          "y": 0.58,
+          "ancho": 80,
+          "anim": "crecer",
+          "en": "vuelves"
+        },
+        {
+          "svg": "persona",
+          "x": 0.5,
+          "y": 0.48,
+          "ancho": 80,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "caer"
+        },
+        {
+          "etiqueta": "ida y vuelta",
+          "x": 0.8,
+          "y": 0.33,
+          "a": [
+            0.66,
+            0.42
+          ],
+          "color": "#2f7fd2",
+          "en": "vienes"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Pero con aire, el roce te frenaría poco a poco y acabarías flotando en el centro.",
+      "clave": "roce",
+      "nota": "fricción",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.52,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "viento",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 560,
+          "anim": "fade",
+          "en": "aire",
+          "sombra": false
+        },
+        {
+          "svg": "persona",
+          "x": 0.5,
+          "y": 0.55,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": 0
+        },
+        {
+          "etiqueta": "roce del aire",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#2f7fd2",
+          "en": "roce"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Y en la vida real es imposible: el centro pasa de 5.000 °C y la presión lo aplasta todo.",
+      "voz": "Y en la vida real es imposible: el centro pasa de cinco mil grados y la presión lo aplasta todo.",
+      "clave": "imposible",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1.18
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tierra",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 880,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "fuego",
+          "x": 0.5,
+          "y": 0.575,
+          "ancho": 220,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "centro"
+        },
+        {
+          "numero": "+5.000 °C",
+          "x": 0.5,
+          "y": 0.87,
+          "color": "#d93427",
+          "en": "5.000"
+        },
+        {
+          "etiqueta": "presión enorme",
+          "x": 0.78,
+          "y": 0.37,
+          "a": [
+            0.6,
+            0.52
+          ],
+          "color": "#1d1d2b",
+          "en": "presión"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Ahora ya lo sabes. Síguenos para más cosas que nadie te explicó.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "tierra": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\">\n<defs>\n<radialGradient id=\"m\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.55\" stop-color=\"#f26b32\"/><stop offset=\"1\" stop-color=\"#c4401f\"/></radialGradient>\n<radialGradient id=\"o\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.3\" stop-color=\"#ffb63e\"/><stop offset=\"1\" stop-color=\"#f38a22\"/></radialGradient>\n<radialGradient id=\"i\" cx=\"42%\" cy=\"38%\" r=\"65%\"><stop offset=\"0\" stop-color=\"#fffbe2\"/><stop offset=\"1\" stop-color=\"#ffd23f\"/></radialGradient>\n<radialGradient id=\"s\" cx=\"36%\" cy=\"30%\" r=\"78%\"><stop offset=\"0.55\" stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\"0.34\"/></radialGradient>\n</defs>\n<circle cx=\"300\" cy=\"300\" r=\"284\" fill=\"#2f86d6\"/>\n<circle cx=\"300\" cy=\"300\" r=\"277\" fill=\"none\" stroke=\"#4fb35a\" stroke-width=\"13\" stroke-dasharray=\"120 70 60 140 90 60 50 110\"/>\n<circle cx=\"300\" cy=\"300\" r=\"269\" fill=\"#8f5634\"/>\n<circle cx=\"300\" cy=\"300\" r=\"259\" fill=\"url(#m)\"/>\n<g fill=\"none\" stroke=\"#ff9259\" stroke-width=\"12\" stroke-linecap=\"round\" opacity=\"0.45\">\n<path d=\"M110 210 Q200 150 260 170\"/><path d=\"M350 120 Q430 140 470 200\"/><path d=\"M95 380 Q130 450 200 480\"/><path d=\"M420 470 Q480 420 500 360\"/>\n</g>\n<circle cx=\"300\" cy=\"300\" r=\"154\" fill=\"url(#o)\"/>\n<g fill=\"none\" stroke=\"#ffd06a\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.55\"><path d=\"M200 250 Q230 205 270 195\"/><path d=\"M380 370 Q360 405 325 410\"/></g>\n<circle cx=\"300\" cy=\"300\" r=\"56\" fill=\"url(#i)\"/>\n<rect x=\"287\" y=\"18\" width=\"26\" height=\"564\" fill=\"#2a2333\"/>\n<rect x=\"287\" y=\"18\" width=\"5\" height=\"564\" fill=\"#4a3f5a\"/>\n<rect x=\"308\" y=\"18\" width=\"5\" height=\"564\" fill=\"#17121e\"/>\n<circle cx=\"300\" cy=\"300\" r=\"284\" fill=\"url(#s)\"/>\n<path d=\"M108 150 A250 250 0 0 1 240 60\" stroke=\"#ffffff\" stroke-opacity=\"0.35\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/>\n<rect x=\"274\" y=\"10\" width=\"52\" height=\"13\" rx=\"6\" fill=\"#aab3c4\"/>\n<rect x=\"274\" y=\"577\" width=\"52\" height=\"13\" rx=\"6\" fill=\"#aab3c4\"/>\n</svg>",
+    "persona": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 170\">\n<g stroke-linecap=\"round\" fill=\"none\">\n<path d=\"M45 106 L39 150\" stroke=\"#2f4fa8\" stroke-width=\"13\"/><path d=\"M55 106 L62 150\" stroke=\"#26408c\" stroke-width=\"13\"/>\n</g>\n<ellipse cx=\"37\" cy=\"156\" rx=\"10\" ry=\"6\" fill=\"#222831\"/><ellipse cx=\"64\" cy=\"156\" rx=\"10\" ry=\"6\" fill=\"#222831\"/>\n<rect x=\"33\" y=\"60\" width=\"34\" height=\"52\" rx=\"14\" fill=\"#ff5a4f\"/>\n<path d=\"M52 60 H53 A14 14 0 0 1 67 74 V98 A14 14 0 0 1 53 112 H52 Z\" fill=\"#e0453b\"/>\n<g stroke-linecap=\"round\" fill=\"none\">\n<path d=\"M40 70 L24 24\" stroke=\"#e8b48c\" stroke-width=\"10\"/><path d=\"M60 70 L76 24\" stroke=\"#e8b48c\" stroke-width=\"10\"/>\n<path d=\"M40 70 L36 58\" stroke=\"#ff5a4f\" stroke-width=\"13\"/><path d=\"M60 70 L64 58\" stroke=\"#e0453b\" stroke-width=\"13\"/>\n</g>\n<circle cx=\"23\" cy=\"20\" r=\"7\" fill=\"#f2c29b\"/><circle cx=\"77\" cy=\"20\" r=\"7\" fill=\"#f2c29b\"/>\n<circle cx=\"50\" cy=\"42\" r=\"19\" fill=\"#f2c29b\"/>\n<path d=\"M31 41 Q31 21 50 21 Q69 21 69 41 Q63 30 50 31 Q37 30 31 41 Z\" fill=\"#3b2a20\"/>\n<circle cx=\"43\" cy=\"44\" r=\"3.2\" fill=\"#222\"/><circle cx=\"57\" cy=\"44\" r=\"3.2\" fill=\"#222\"/>\n<ellipse cx=\"50\" cy=\"53\" rx=\"4\" ry=\"5\" fill=\"#7a2a2a\"/>\n</svg>",
+    "flecha": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 80 300\">\n<path d=\"M40 14 V220\" stroke=\"#b8860b\" stroke-width=\"24\" stroke-linecap=\"round\"/>\n<path d=\"M40 14 V220\" stroke=\"#ffd84a\" stroke-width=\"16\" stroke-linecap=\"round\"/>\n<path d=\"M6 206 L40 290 L74 206 Z\" fill=\"#ffd84a\" stroke=\"#b8860b\" stroke-width=\"5\" stroke-linejoin=\"round\"/>\n</svg>",
+    "vaiven": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 80 700\">\n<path d=\"M40 90 V610\" stroke=\"#ffd84a\" stroke-width=\"14\" stroke-linecap=\"round\" stroke-dasharray=\"34 22\"/>\n<path d=\"M6 100 L40 14 L74 100 Z\" fill=\"#ffd84a\"/>\n<path d=\"M6 600 L40 686 L74 600 Z\" fill=\"#ffd84a\"/>\n</svg>",
+    "viento": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 420\">\n<g fill=\"none\" stroke=\"#ffffff\" stroke-linecap=\"round\">\n<path d=\"M40 400 Q28 260 46 120\" stroke-width=\"10\" opacity=\"0.85\"/>\n<path d=\"M90 360 Q80 240 96 40\" stroke-width=\"7\" opacity=\"0.6\"/>\n<path d=\"M150 410 Q140 300 150 200\" stroke-width=\"9\" opacity=\"0.5\"/>\n<path d=\"M210 380 Q222 250 204 60\" stroke-width=\"7\" opacity=\"0.6\"/>\n<path d=\"M262 400 Q274 270 256 130\" stroke-width=\"10\" opacity=\"0.85\"/>\n</g>\n</svg>",
+    "fuego": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 260\">\n<path d=\"M100 8 C128 70 190 98 182 172 C175 232 132 256 100 256 C68 256 25 232 18 172 C12 112 66 92 76 40 C92 76 108 66 100 8 Z\" fill=\"#ff4d2e\"/>\n<path d=\"M102 70 C120 116 160 136 152 186 C146 224 122 240 100 240 C78 240 52 224 48 186 C44 146 80 132 84 98 C96 122 106 108 102 70 Z\" fill=\"#ff9a2e\"/>\n<path d=\"M100 140 C112 168 132 180 126 208 C122 226 112 234 100 234 C88 234 76 226 74 208 C70 184 92 176 100 140 Z\" fill=\"#fff1a8\"/>\n</svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Con una Tierra de densidad uniforme y sin aire, la caída de lado a lado dura unos 42 minutos (42 min 12 s); con la densidad real (modelo PREM) dura unos 38 minutos (38 min 11 s)",
+      "fuente": "A. R. Klotz, «The gravity tunnel in a non-uniform Earth», American Journal of Physics 83, 231 (2015), doi:10.1119/1.4898780; arXiv:1308.1342"
+    },
+    {
+      "dato": "Sin rozamiento el movimiento es una oscilación: se vuelve a caer y se va y viene; el túnel de gravedad clásico se planteó en 1966",
+      "fuente": "P. W. Cooper, «Through the Earth in forty minutes», Am. J. Phys. 34, 68 (1966); Klotz (2015)"
+    },
+    {
+      "dato": "Velocidad máxima en el centro con densidad uniforme: raíz de g·R ≈ 7,9 km/s",
+      "fuente": "Cálculo propio: √(9,81 m/s² × 6.371 km) ≈ 7,9 km/s; mismo modelo que Cooper (1966)"
+    },
+    {
+      "dato": "El centro de la Tierra está a más de 5.000 °C (estimaciones de unos 5.200 a 5.400 °C)",
+      "fuente": "Anzellini et al., Science 340, 464 (2013); ESRF"
+    }
+  ],
+  "nota": "Los 8 km/s son para la Tierra uniforme (con la densidad real se pasa algo más rápido por el centro). Los 38 y 42 minutos suponen un túnel sin aire ni rozamiento y de polo a polo (sin efecto de la rotación)."
+}

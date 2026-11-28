@@ -1,0 +1,479 @@
+{
+  "id": "explica-microondas",
+  "motor": "explica",
+  "titulo": "¿Cómo funciona un microondas?",
+  "categoria": "comofunciona",
+  "etiquetas": [
+    "comofunciona",
+    "ciencia",
+    "cocina",
+    "microondas",
+    "sabiasque"
+  ],
+  "descripcion": "Sin fuego y sin resistencias: el microondas pone a bailar el agua de la comida.",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "cocina",
+      "texto": "¿Cómo calienta la comida un microondas, si por dentro no hay ni fuego?",
+      "clave": "microondas",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.45,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "microondas",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 900,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "plato",
+          "x": 0.394,
+          "y": 0.64,
+          "ancho": 320,
+          "anim": "pop",
+          "en": "comida"
+        },
+        {
+          "etiqueta": "¿y el fuego?",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#d93427",
+          "en": "fuego"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Adentro tiene un magnetrón: una pieza que fabrica microondas, ondas invisibles parecidas a las de radio.",
+      "clave": "magnetrón",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.72,
+          0.55,
+          1.25
+        ]
+      },
+      "capas": [
+        {
+          "svg": "microondas",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 900,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "plato",
+          "x": 0.394,
+          "y": 0.64,
+          "ancho": 320,
+          "anim": "ninguna"
+        },
+        {
+          "marca": true,
+          "x": 0.787,
+          "y": 0.533,
+          "radio": 120,
+          "en": "magnetrón"
+        },
+        {
+          "etiqueta": "magnetrón",
+          "x": 0.78,
+          "y": 0.38,
+          "a": [
+            0.787,
+            0.475
+          ],
+          "color": "#d93427",
+          "en": "magnetrón"
+        },
+        {
+          "etiqueta": "guía de ondas",
+          "x": 0.5,
+          "y": 0.4,
+          "a": [
+            0.6,
+            0.495
+          ],
+          "color": "#1d1d2b",
+          "en": "ondas"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Esas ondas vibran unos 2.450 millones de veces por segundo. Eso son 2,45 gigahercios.",
+      "voz": "Esas ondas vibran unos dos mil cuatrocientos cincuenta millones de veces por segundo. Eso son dos coma cuarenta y cinco gigahercios.",
+      "clave": "vibran",
+      "camara": {
+        "de": [
+          0.72,
+          0.55,
+          1.25
+        ],
+        "a": [
+          0.42,
+          0.58,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "microondas",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 900,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "plato",
+          "x": 0.394,
+          "y": 0.64,
+          "ancho": 320,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "ondas",
+          "x": 0.394,
+          "y": 0.555,
+          "ancho": 440,
+          "anim": "fade",
+          "idle": "sacudir",
+          "sombra": false,
+          "en": "ondas"
+        },
+        {
+          "numero": "2,45 GHz",
+          "x": 0.4,
+          "y": 0.39,
+          "color": "#6b4fe0",
+          "en": "gigahercios"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Las moléculas de agua de la comida intentan girar con las ondas, chocan entre sí y se calientan.",
+      "clave": "moléculas de agua",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "ondas",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 1000,
+          "anim": "fade",
+          "idle": "flotar",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "molecula",
+          "x": 0.3,
+          "y": 0.46,
+          "ancho": 460,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": "moléculas"
+        },
+        {
+          "svg": "molecula",
+          "x": 0.73,
+          "y": 0.6,
+          "ancho": 420,
+          "rot": 50,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": "agua"
+        },
+        {
+          "svg": "molecula",
+          "x": 0.36,
+          "y": 0.76,
+          "ancho": 440,
+          "rot": -35,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": "girar"
+        },
+        {
+          "etiqueta": "roce = calor",
+          "x": 0.5,
+          "y": 0.89,
+          "color": "#d93427",
+          "en": "calientan"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "La caja de metal y la rejilla de la puerta rebotan las ondas y no las dejan salir.",
+      "clave": "rejilla",
+      "nota": "jaula de Faraday",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1.05
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "microondas",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 900,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "plato",
+          "x": 0.394,
+          "y": 0.64,
+          "ancho": 320,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "ondas",
+          "x": 0.394,
+          "y": 0.555,
+          "ancho": 440,
+          "anim": "ninguna",
+          "idle": "sacudir",
+          "sombra": false
+        },
+        {
+          "etiqueta": "caja de metal",
+          "x": 0.75,
+          "y": 0.38,
+          "a": [
+            0.84,
+            0.46
+          ],
+          "color": "#1d1d2b",
+          "en": "caja"
+        },
+        {
+          "etiqueta": "rejilla",
+          "x": 0.24,
+          "y": 0.85,
+          "a": [
+            0.24,
+            0.68
+          ],
+          "color": "#2f7fd2",
+          "en": "rejilla"
+        },
+        {
+          "svg": "malla",
+          "x": 0.76,
+          "y": 0.85,
+          "ancho": 290,
+          "anim": "pop",
+          "en": "rebotan"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Las ondas dejan zonas calientes y zonas frías, por eso el plato gira: así el calor se reparte.",
+      "clave": "gira",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "plato_arriba",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 680,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "zonas",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 680,
+          "anim": "fade",
+          "sombra": false,
+          "en": "calientes"
+        },
+        {
+          "etiqueta": "caliente",
+          "x": 0.2,
+          "y": 0.34,
+          "a": [
+            0.396,
+            0.533
+          ],
+          "color": "#d93427",
+          "en": "calientes"
+        },
+        {
+          "etiqueta": "frío",
+          "x": 0.2,
+          "y": 0.86,
+          "a": [
+            0.384,
+            0.645
+          ],
+          "color": "#2f7fd2",
+          "en": "frías"
+        },
+        {
+          "svg": "giro",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 880,
+          "anim": "pop",
+          "idle": "latido",
+          "sombra": false,
+          "en": "gira"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Y por eso lo que casi no tiene agua, como el pan muy seco, se calienta mucho menos que la sopa.",
+      "clave": "agua",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1.08
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "taza",
+          "x": 0.73,
+          "y": 0.685,
+          "ancho": 400,
+          "anim": "pop",
+          "en": "agua"
+        },
+        {
+          "svg": "pan",
+          "x": 0.27,
+          "y": 0.69,
+          "ancho": 400,
+          "anim": "pop",
+          "en": "pan"
+        },
+        {
+          "etiqueta": "poca agua",
+          "x": 0.27,
+          "y": 0.84,
+          "color": "#2f7fd2",
+          "en": "seco"
+        },
+        {
+          "svg": "vapor",
+          "x": 0.73,
+          "y": 0.53,
+          "ancho": 200,
+          "anim": "fade",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "sopa"
+        },
+        {
+          "etiqueta": "mucha agua",
+          "x": 0.73,
+          "y": 0.84,
+          "color": "#d93427",
+          "en": "sopa"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Ahora ya lo sabes. Síguenos para más cosas que nadie te explicó.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "microondas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 900 560\">\n<defs>\n<linearGradient id=\"cu\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f4f6f9\"/><stop offset=\"1\" stop-color=\"#cfd5de\"/></linearGradient>\n<radialGradient id=\"in\" cx=\"50%\" cy=\"45%\" r=\"65%\"><stop offset=\"0\" stop-color=\"#fff1c4\"/><stop offset=\"1\" stop-color=\"#f3c66c\"/></radialGradient>\n<pattern id=\"ma\" width=\"16\" height=\"16\" patternUnits=\"userSpaceOnUse\"><circle cx=\"8\" cy=\"8\" r=\"3.4\" fill=\"#1d232c\" opacity=\"0.32\"/></pattern>\n<linearGradient id=\"co\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#b8702e\"/><stop offset=\"0.5\" stop-color=\"#e8a45a\"/><stop offset=\"1\" stop-color=\"#a8642a\"/></linearGradient>\n</defs>\n<rect x=\"60\" y=\"526\" width=\"60\" height=\"22\" rx=\"6\" fill=\"#59616e\"/><rect x=\"780\" y=\"526\" width=\"60\" height=\"22\" rx=\"6\" fill=\"#59616e\"/>\n<rect x=\"10\" y=\"20\" width=\"880\" height=\"516\" rx=\"40\" fill=\"url(#cu)\"/>\n<rect x=\"10\" y=\"20\" width=\"880\" height=\"30\" rx=\"15\" fill=\"#ffffff\" opacity=\"0.6\"/>\n<rect x=\"40\" y=\"50\" width=\"590\" height=\"460\" rx=\"26\" fill=\"#2c3440\"/>\n<rect x=\"80\" y=\"90\" width=\"510\" height=\"380\" rx=\"16\" fill=\"url(#in)\"/>\n<path d=\"M80 90 L140 140 H530 L590 90 M80 470 L140 420 H530 L590 470 M140 140 V420 M530 140 V420\" stroke=\"#d9a650\" stroke-width=\"4\" fill=\"none\" opacity=\"0.7\"/>\n<ellipse cx=\"335\" cy=\"430\" rx=\"205\" ry=\"26\" fill=\"#ffffff\" opacity=\"0.45\" stroke=\"#ffffff\" stroke-width=\"3\"/>\n<rect x=\"80\" y=\"90\" width=\"510\" height=\"380\" rx=\"16\" fill=\"url(#ma)\"/>\n<path d=\"M100 120 L180 120 L110 230 Z\" fill=\"#ffffff\" opacity=\"0.14\"/>\n<rect x=\"594\" y=\"120\" width=\"18\" height=\"320\" rx=\"9\" fill=\"#9aa4b2\"/>\n<rect x=\"650\" y=\"50\" width=\"214\" height=\"460\" rx=\"18\" fill=\"#353f4c\"/>\n<path d=\"M760 120 V72 H560\" stroke=\"#a8b2bf\" stroke-width=\"26\" fill=\"none\" stroke-linejoin=\"round\"/>\n<path d=\"M760 120 V72 H560\" stroke=\"#c5cdd7\" stroke-width=\"8\" fill=\"none\" stroke-linejoin=\"round\"/>\n<rect x=\"716\" y=\"110\" width=\"20\" height=\"130\" rx=\"4\" fill=\"#6b7686\"/><rect x=\"784\" y=\"110\" width=\"20\" height=\"130\" rx=\"4\" fill=\"#6b7686\"/>\n<rect x=\"706\" y=\"130\" width=\"108\" height=\"92\" rx=\"12\" fill=\"url(#co)\"/>\n<path d=\"M712 146 H808 M712 162 H808 M712 178 H808 M712 194 H808 M712 210 H808\" stroke=\"#f4c084\" stroke-width=\"5\"/>\n<circle cx=\"760\" cy=\"176\" r=\"22\" fill=\"#7a4a1e\"/><circle cx=\"760\" cy=\"176\" r=\"10\" fill=\"#c5cdd7\"/>\n<rect x=\"700\" y=\"320\" width=\"120\" height=\"110\" rx=\"10\" fill=\"#566170\"/>\n<path d=\"M716 336 V414 M736 336 V414 M756 336 V414 M776 336 V414 M796 336 V414\" stroke=\"#c9873a\" stroke-width=\"8\"/>\n<path d=\"M820 360 C850 330 850 260 806 236\" stroke=\"#f08a24\" stroke-width=\"6\" fill=\"none\"/>\n<circle cx=\"700\" cy=\"470\" r=\"13\" fill=\"#59616e\"/><circle cx=\"760\" cy=\"470\" r=\"13\" fill=\"#59616e\"/><circle cx=\"820\" cy=\"470\" r=\"13\" fill=\"#59616e\"/>\n</svg>",
+    "plato": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 150\">\n<ellipse cx=\"170\" cy=\"124\" rx=\"162\" ry=\"24\" fill=\"#c9d1dc\"/>\n<ellipse cx=\"170\" cy=\"116\" rx=\"162\" ry=\"24\" fill=\"#f4f6fa\"/>\n<ellipse cx=\"170\" cy=\"116\" rx=\"112\" ry=\"14\" fill=\"#e1e6ee\"/>\n<path d=\"M66 114 C70 50 120 30 170 30 C220 30 270 50 274 114 Z\" fill=\"#d9822b\"/>\n<path d=\"M90 108 C96 64 130 44 170 44 C150 60 130 80 128 108 Z\" fill=\"#f0a24e\"/>\n<circle cx=\"130\" cy=\"84\" r=\"10\" fill=\"#5aa94a\"/><circle cx=\"200\" cy=\"66\" r=\"9\" fill=\"#5aa94a\"/><circle cx=\"226\" cy=\"96\" r=\"10\" fill=\"#4c9640\"/><circle cx=\"170\" cy=\"96\" r=\"8\" fill=\"#e8433a\"/>\n</svg>",
+    "ondas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 300\">\n<g fill=\"none\" stroke-linecap=\"round\">\n<path d=\"M20 50 q 30 -34 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0\" stroke=\"#7fe0ff\" stroke-width=\"10\" opacity=\"0.95\" transform=\"translate(0 0)\"/>\n<path d=\"M20 150 q 30 -34 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0\" stroke=\"#7fe0ff\" stroke-width=\"10\" opacity=\"0.8\" transform=\"translate(30 0)\"/>\n<path d=\"M20 250 q 30 -34 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0\" stroke=\"#7fe0ff\" stroke-width=\"10\" opacity=\"0.95\" transform=\"translate(0 0)\"/>\n</g>\n</svg>",
+    "molecula": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 210\">\n<defs><radialGradient id=\"o\" cx=\"38%\" cy=\"32%\" r=\"70%\"><stop offset=\"0\" stop-color=\"#ff7a6e\"/><stop offset=\"1\" stop-color=\"#c8302a\"/></radialGradient>\n<radialGradient id=\"h\" cx=\"38%\" cy=\"32%\" r=\"70%\"><stop offset=\"0\" stop-color=\"#ffffff\"/><stop offset=\"1\" stop-color=\"#cfd6e0\"/></radialGradient></defs>\n<path d=\"M120 86 L49 142 M120 86 L191 142\" stroke=\"#9aa4b2\" stroke-width=\"18\" stroke-linecap=\"round\"/>\n<circle cx=\"49\" cy=\"146\" r=\"38\" fill=\"url(#h)\"/><circle cx=\"191\" cy=\"146\" r=\"38\" fill=\"url(#h)\"/>\n<circle cx=\"120\" cy=\"84\" r=\"64\" fill=\"url(#o)\"/>\n<path d=\"M104 84 H136\" stroke=\"#ffffff\" stroke-width=\"9\" stroke-linecap=\"round\"/>\n<path d=\"M37 146 H61 M49 134 V158 M179 146 H203 M191 134 V158\" stroke=\"#3d8bff\" stroke-width=\"7\" stroke-linecap=\"round\"/>\n<ellipse cx=\"96\" cy=\"54\" rx=\"16\" ry=\"10\" fill=\"#ffffff\" opacity=\"0.35\"/>\n</svg>",
+    "malla": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 300\">\n<defs><clipPath id=\"l\"><circle cx=\"150\" cy=\"150\" r=\"132\"/></clipPath>\n<pattern id=\"g\" width=\"26\" height=\"26\" patternUnits=\"userSpaceOnUse\"><rect width=\"26\" height=\"26\" fill=\"#2c3440\"/><circle cx=\"13\" cy=\"13\" r=\"7\" fill=\"#f6d58a\"/></pattern></defs>\n<circle cx=\"150\" cy=\"150\" r=\"140\" fill=\"#ffffff\"/>\n<g clip-path=\"url(#l)\"><rect width=\"300\" height=\"300\" fill=\"url(#g)\"/>\n<path d=\"M300 110 q -20 -18 -40 0 t -40 0 t -40 0 Q 150 110 150 150 Q 150 190 180 190 q 20 18 40 0 t 40 0 t 40 0\" stroke=\"#7fe0ff\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/>\n<path d=\"M286 172 L310 190 L286 208 Z\" fill=\"#7fe0ff\"/></g>\n<circle cx=\"150\" cy=\"150\" r=\"136\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"10\"/>\n</svg>",
+    "plato_arriba": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\">\n<circle cx=\"300\" cy=\"306\" r=\"282\" fill=\"#c9d1dc\"/>\n<circle cx=\"300\" cy=\"300\" r=\"282\" fill=\"#f4f6fa\"/>\n<circle cx=\"300\" cy=\"300\" r=\"210\" fill=\"#e1e6ee\"/>\n<circle cx=\"300\" cy=\"300\" r=\"186\" fill=\"#e39a3b\"/>\n<g fill=\"#f2b35e\"><ellipse cx=\"230\" cy=\"230\" rx=\"34\" ry=\"23.799999999999997\"/><ellipse cx=\"360\" cy=\"260\" rx=\"28\" ry=\"19.599999999999998\"/><ellipse cx=\"280\" cy=\"380\" rx=\"30\" ry=\"21\"/><ellipse cx=\"390\" cy=\"370\" rx=\"24\" ry=\"16.799999999999997\"/><ellipse cx=\"200\" cy=\"330\" rx=\"22\" ry=\"15.399999999999999\"/><ellipse cx=\"320\" cy=\"190\" rx=\"20\" ry=\"14\"/></g>\n<g fill=\"#5aa94a\"><circle cx=\"250\" cy=\"300\" r=\"11\"/><circle cx=\"340\" cy=\"330\" r=\"11\"/><circle cx=\"300\" cy=\"240\" r=\"11\"/><circle cx=\"220\" cy=\"380\" r=\"11\"/><circle cx=\"380\" cy=\"220\" r=\"11\"/></g>\n<path d=\"M130 190 A200 200 0 0 1 250 100\" stroke=\"#ffffff\" stroke-width=\"14\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.7\"/>\n</svg>",
+    "zonas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\">\n<defs><radialGradient id=\"c\"><stop offset=\"0\" stop-color=\"#ff2a1a\" stop-opacity=\"0.85\"/><stop offset=\"1\" stop-color=\"#ff2a1a\" stop-opacity=\"0\"/></radialGradient>\n<radialGradient id=\"f\"><stop offset=\"0\" stop-color=\"#2a8bff\" stop-opacity=\"0.85\"/><stop offset=\"1\" stop-color=\"#2a8bff\" stop-opacity=\"0\"/></radialGradient></defs>\n<circle cx=\"200\" cy=\"220\" r=\"100\" fill=\"url(#c)\"/><circle cx=\"420\" cy=\"410\" r=\"85\" fill=\"url(#c)\"/>\n<circle cx=\"410\" cy=\"200\" r=\"90\" fill=\"url(#f)\"/><circle cx=\"190\" cy=\"410\" r=\"85\" fill=\"url(#f)\"/>\n</svg>",
+    "giro": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 760 760\">\n<g fill=\"none\" stroke=\"#ffd84a\" stroke-width=\"22\" stroke-linecap=\"round\">\n<path d=\"M 51 260 A 350 350 0 0 1 500 51\"/>\n<path d=\"M 709 500 A 350 350 0 0 1 260 709\"/>\n</g>\n<path d=\"M486 14 L560 72 L470 92 Z\" fill=\"#ffd84a\"/>\n<path d=\"M274 746 L200 688 L290 668 Z\" fill=\"#ffd84a\"/>\n</svg>",
+    "pan": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 240\">\n<ellipse cx=\"170\" cy=\"222\" rx=\"150\" ry=\"14\" fill=\"#000000\" opacity=\"0.18\"/>\n<path d=\"M40 210 L40 110 C10 100 6 40 60 28 C100 0 160 10 170 30 C180 10 240 0 280 28 C334 40 330 100 300 110 L300 210 Z\" fill=\"#b8742e\"/>\n<path d=\"M58 200 L58 104 C34 96 32 52 70 44 C104 22 154 30 170 52 C186 30 236 22 270 44 C308 52 306 96 282 104 L282 200 Z\" fill=\"#ecd29a\"/>\n<g fill=\"#d4b06e\"><ellipse cx=\"100\" cy=\"90\" rx=\"7\" ry=\"5\"/><ellipse cx=\"140\" cy=\"130\" rx=\"7\" ry=\"5\"/><ellipse cx=\"210\" cy=\"100\" rx=\"7\" ry=\"5\"/><ellipse cx=\"240\" cy=\"150\" rx=\"7\" ry=\"5\"/><ellipse cx=\"120\" cy=\"170\" rx=\"7\" ry=\"5\"/><ellipse cx=\"180\" cy=\"175\" rx=\"7\" ry=\"5\"/><ellipse cx=\"230\" cy=\"70\" rx=\"7\" ry=\"5\"/><ellipse cx=\"90\" cy=\"135\" rx=\"7\" ry=\"5\"/></g>\n<path d=\"M120 60 L135 85 M220 120 L240 128 M150 150 L162 160\" stroke=\"#a8823e\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n</svg>",
+    "taza": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 240\">\n<ellipse cx=\"170\" cy=\"226\" rx=\"130\" ry=\"12\" fill=\"#000000\" opacity=\"0.18\"/>\n<path d=\"M20 70 H320 C316 160 260 220 170 220 C80 220 24 160 20 70 Z\" fill=\"#3d8bff\"/>\n<path d=\"M170 70 H320 C316 160 260 220 170 220 Z\" fill=\"#2f6fd6\"/>\n<ellipse cx=\"170\" cy=\"70\" rx=\"150\" ry=\"30\" fill=\"#2a5bb0\"/>\n<ellipse cx=\"170\" cy=\"72\" rx=\"132\" ry=\"22\" fill=\"#e8742e\"/>\n<ellipse cx=\"140\" cy=\"66\" rx=\"40\" ry=\"8\" fill=\"#ffa25a\" opacity=\"0.8\"/>\n<circle cx=\"200\" cy=\"74\" r=\"7\" fill=\"#5aa94a\"/><circle cx=\"110\" cy=\"78\" r=\"6\" fill=\"#ffffff\" opacity=\"0.7\"/>\n<path d=\"M50 110 C60 150 90 180 120 192\" stroke=\"#ffffff\" stroke-width=\"10\" stroke-linecap=\"round\" fill=\"none\" opacity=\"0.35\"/>\n</svg>",
+    "vapor": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 260\">\n<g fill=\"none\" stroke=\"#ffffff\" stroke-linecap=\"round\" stroke-width=\"14\">\n<path d=\"M50 250 C20 200 80 170 50 120 C30 90 60 60 50 30\" opacity=\"0.8\"/>\n<path d=\"M100 240 C70 190 130 160 100 110 C80 80 110 50 100 10\" opacity=\"0.9\"/>\n<path d=\"M150 250 C120 200 180 170 150 120 C130 90 160 60 150 30\" opacity=\"0.8\"/>\n</g>\n</svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "El magnetrón genera las microondas; los hornos domésticos usan casi siempre 2,45 GHz",
+      "fuente": "FDA, «Microwave Oven Radiation» (Radiation-Emitting Products); Wikipedia, «Microwave oven»"
+    },
+    {
+      "dato": "Las microondas hacen girar las moléculas polares, sobre todo el agua; ese movimiento y los choques producen calor. 2,45 GHz no es una «resonancia» del agua",
+      "fuente": "FDA, «Microwave Oven Radiation»; Wikipedia, «Microwave oven» (Principles)"
+    },
+    {
+      "dato": "La caja metálica y la malla de la puerta (huecos de unos milímetros, mucho menores que la onda de unos 12 cm) mantienen las microondas adentro",
+      "fuente": "FDA, «Microwave Oven Radiation»; Sciencing, «What's that mesh on the inside of your microwave»"
+    },
+    {
+      "dato": "Las ondas forman un patrón de zonas calientes y frías (ondas estacionarias); el plato giratorio las reparte",
+      "fuente": "Wikipedia, «Microwave oven» (Heating characteristics); Interesting Engineering, «How do microwave ovens work»"
+    },
+    {
+      "dato": "Los alimentos secos o con poca agua se calientan menos",
+      "fuente": "FDA, «Microwave Oven Radiation»; Wikipedia, «Microwave oven»"
+    }
+  ],
+  "nota": "Las grasas y el azúcar también absorben algo de energía, por eso no es solo el agua; el texto dice «casi no tiene agua» y «mucho menos». La onda dentro del horno tiene unos 12 cm de longitud (c / 2,45 GHz)."
+}

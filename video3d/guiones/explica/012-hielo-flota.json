@@ -1,0 +1,425 @@
+{
+  "id": "explica-hielo-flota",
+  "motor": "explica",
+  "titulo": "¿Por qué el hielo flota?",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "ciencia",
+    "agua",
+    "fisica",
+    "sabiasque"
+  ],
+  "descripcion": "El agua es rara: al congelarse se expande. Por eso el hielo flota y los peces sobreviven al invierno.",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "cocina",
+      "texto": "Si el hielo es agua, ¿por qué flota encima del agua en vez de hundirse?",
+      "clave": "flota",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.5,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "vaso_hielo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 560,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.5475,
+          "radio": 210,
+          "en": "flota"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Casi todas las sustancias se encogen al volverse sólidas. El agua hace lo contrario.",
+      "clave": "contrario",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1.08
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "botella_liquida",
+          "x": 0.3,
+          "y": 0.6,
+          "ancho": 300,
+          "anim": "pop",
+          "en": "sustancias"
+        },
+        {
+          "svg": "botella_congelada",
+          "x": 0.7,
+          "y": 0.6,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "contrario"
+        },
+        {
+          "etiqueta": "agua",
+          "x": 0.3,
+          "y": 0.86,
+          "color": "#2f7fd2",
+          "en": "sustancias"
+        },
+        {
+          "etiqueta": "hielo",
+          "x": 0.7,
+          "y": 0.86,
+          "color": "#5aa8d6",
+          "en": "contrario"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Al congelarse ocupa cerca de 9% más espacio. Por eso una botella llena puede reventar en el congelador.",
+      "voz": "Al congelarse ocupa cerca de nueve por ciento más espacio. Por eso una botella llena puede reventar en el congelador.",
+      "clave": "espacio",
+      "camara": {
+        "de": [
+          0.6,
+          0.58,
+          1
+        ],
+        "a": [
+          0.66,
+          0.58,
+          1.18
+        ]
+      },
+      "capas": [
+        {
+          "svg": "botella_liquida",
+          "x": 0.3,
+          "y": 0.6,
+          "ancho": 300,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "botella_congelada",
+          "x": 0.7,
+          "y": 0.6,
+          "ancho": 300,
+          "anim": "ninguna",
+          "idle": "sacudir"
+        },
+        {
+          "numero": "+9%",
+          "x": 0.3,
+          "y": 0.36,
+          "color": "#e8483b",
+          "tam": 80,
+          "en": "9%"
+        },
+        {
+          "presion": true,
+          "x": 0.7,
+          "y": 0.62,
+          "radioX": 150,
+          "radioY": 250,
+          "n": 10,
+          "en": "reventar"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "¿La razón? Al congelarse, las moléculas se ordenan en una red llena de huecos.",
+      "clave": "huecos",
+      "nota": "más espacio",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1
+        ],
+        "a": [
+          0.5,
+          0.7,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "moleculas_agua",
+          "x": 0.5,
+          "y": 0.42,
+          "ancho": 470,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": 0.1
+        },
+        {
+          "etiqueta": "agua líquida",
+          "x": 0.22,
+          "y": 0.31,
+          "color": "#2f7fd2",
+          "en": 0.3
+        },
+        {
+          "svg": "moleculas_hielo",
+          "x": 0.5,
+          "y": 0.73,
+          "ancho": 470,
+          "anim": "pop",
+          "en": "ordenan"
+        },
+        {
+          "etiqueta": "hielo",
+          "x": 0.82,
+          "y": 0.6,
+          "color": "#5aa8d6",
+          "en": "red"
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.73,
+          "radio": 70,
+          "en": "huecos"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "La misma agua ocupa más lugar, así que el hielo es menos denso, y por eso flota.",
+      "clave": "denso",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "vaso_hielo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 560,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "etiqueta": "hielo: 0,92 g/cm³",
+          "x": 0.3,
+          "y": 0.33,
+          "a": [
+            0.4,
+            0.5375
+          ],
+          "color": "#5aa8d6",
+          "en": "hielo"
+        },
+        {
+          "etiqueta": "agua: 1 g/cm³",
+          "x": 0.7,
+          "y": 0.88,
+          "a": [
+            0.6,
+            0.72
+          ],
+          "color": "#2f7fd2",
+          "en": "denso"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Por eso, en invierno, los lagos se congelan desde arriba: el hielo forma una tapa encima.",
+      "clave": "arriba",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.52,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "lago",
+          "x": 0.5,
+          "y": 0.635,
+          "ancho": 1080,
+          "anim": "fade",
+          "sombra": true,
+          "en": 0
+        },
+        {
+          "svg": "flecha_frio",
+          "x": 0.3,
+          "y": 0.34,
+          "ancho": 110,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "invierno"
+        },
+        {
+          "svg": "flecha_frio",
+          "x": 0.7,
+          "y": 0.34,
+          "ancho": 110,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "congelan"
+        },
+        {
+          "svg": "hielo_lago",
+          "x": 0.5,
+          "y": 0.635,
+          "ancho": 1080,
+          "anim": "fade",
+          "sombra": false,
+          "en": "arriba"
+        },
+        {
+          "etiqueta": "tapa de hielo",
+          "x": 0.5,
+          "y": 0.35,
+          "a": [
+            0.5,
+            0.445
+          ],
+          "color": "#5aa8d6",
+          "en": "tapa"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Esa tapa aísla, y abajo el agua sigue líquida, cerca de 4 °C. Ahí los peces pasan el invierno.",
+      "voz": "Esa tapa aísla, y abajo el agua sigue líquida, cerca de cuatro grados. Ahí los peces pasan el invierno.",
+      "clave": "peces",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1.08
+        ],
+        "a": [
+          0.5,
+          0.66,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "lago",
+          "x": 0.5,
+          "y": 0.635,
+          "ancho": 1080,
+          "anim": "ninguna",
+          "sombra": true
+        },
+        {
+          "svg": "hielo_lago",
+          "x": 0.5,
+          "y": 0.635,
+          "ancho": 1080,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "numero": "4 °C",
+          "x": 0.73,
+          "y": 0.56,
+          "color": "#2f7fd2",
+          "en": "4"
+        },
+        {
+          "svg": "peces",
+          "x": 0.5,
+          "y": 0.635,
+          "ancho": 1080,
+          "anim": "pop",
+          "sombra": false,
+          "idle": "flotar",
+          "en": "peces"
+        },
+        {
+          "etiqueta": "agua líquida",
+          "x": 0.27,
+          "y": 0.9,
+          "color": "#2f7fd2",
+          "a": [
+            0.38,
+            0.79
+          ],
+          "en": "líquida"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Ahora ya lo sabes. Síguenos para más cosas que nadie te explicó.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "vaso_hielo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 720\"><defs><clipPath id=\"vi\"><path d=\"M64 46 L436 46 L399 660 L101 660 Z\"/></clipPath><clipPath id=\"ag\"><rect x=\"0\" y=\"230\" width=\"500\" height=\"500\"/></clipPath><linearGradient id=\"vg\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#7fd0ff\"/><stop offset=\"1\" stop-color=\"#2a8fdc\"/></linearGradient></defs><path d=\"M58 40 L442 40 L404 680 L96 680 Z\" fill=\"#e8f6ff\" fill-opacity=\"0.35\" stroke=\"#ffffff\" stroke-width=\"10\" stroke-linejoin=\"round\"/><path d=\"M100 660 L400 660 L404 680 L96 680 Z\" fill=\"#ffffff\" opacity=\"0.7\"/><g clip-path=\"url(#vi)\"><rect x=\"0\" y=\"230\" width=\"500\" height=\"500\" fill=\"url(#vg)\"/><g transform=\"rotate(8 155 266)\"><rect x=\"110\" y=\"221\" width=\"90\" height=\"90\" rx=\"14.4\" fill=\"#e9f8ff\" stroke=\"#ffffff\" stroke-width=\"5\"/><rect x=\"122\" y=\"233\" width=\"66\" height=\"66\" rx=\"10.799999999999999\" fill=\"#c6ecff\"/><path d=\"M132 251 L132 277\" stroke=\"#ffffff\" stroke-width=\"9\" stroke-linecap=\"round\"/><path d=\"M170 243 L154 243\" stroke=\"#ffffff\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.8\"/></g><g transform=\"rotate(-10 345 264)\"><rect x=\"302\" y=\"221\" width=\"86\" height=\"86\" rx=\"13.76\" fill=\"#e9f8ff\" stroke=\"#ffffff\" stroke-width=\"5\"/><rect x=\"314\" y=\"233\" width=\"62\" height=\"62\" rx=\"10.32\" fill=\"#c6ecff\"/><path d=\"M324 251 L324 273\" stroke=\"#ffffff\" stroke-width=\"9\" stroke-linecap=\"round\"/><path d=\"M358 243 L346 243\" stroke=\"#ffffff\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.8\"/></g><g transform=\"rotate(3 250 268)\"><rect x=\"203\" y=\"221\" width=\"94\" height=\"94\" rx=\"15.040000000000001\" fill=\"#e9f8ff\" stroke=\"#ffffff\" stroke-width=\"5\"/><rect x=\"215\" y=\"233\" width=\"70\" height=\"70\" rx=\"11.28\" fill=\"#c6ecff\"/><path d=\"M225 251 L225 281\" stroke=\"#ffffff\" stroke-width=\"9\" stroke-linecap=\"round\"/><path d=\"M267 243 L247 243\" stroke=\"#ffffff\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.8\"/></g><g clip-path=\"url(#ag)\"><rect x=\"0\" y=\"230\" width=\"500\" height=\"500\" fill=\"#2a8fdc\" opacity=\"0.35\"/></g><path d=\"M60 230 H440\" stroke=\"#d6f0ff\" stroke-width=\"8\"/><circle cx=\"150\" cy=\"520\" r=\"9\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"3\" opacity=\"0.7\"/><circle cx=\"300\" cy=\"580\" r=\"7\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"3\" opacity=\"0.7\"/><circle cx=\"230\" cy=\"470\" r=\"6\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"3\" opacity=\"0.7\"/><circle cx=\"340\" cy=\"450\" r=\"5\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"3\" opacity=\"0.7\"/><circle cx=\"190\" cy=\"600\" r=\"6\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"3\" opacity=\"0.7\"/></g><path d=\"M92 90 L120 620\" stroke=\"#ffffff\" stroke-width=\"14\" stroke-linecap=\"round\" opacity=\"0.55\"/></svg>",
+    "botella_liquida": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 760\"><defs><clipPath id=\"b\"><path d=\"M135 110 C135 160 70 190 70 260 L70 690 C70 712 86 728 110 728 L210 728 C234 728 250 712 250 690 L250 260 C250 190 185 160 185 110 Z\"/></clipPath></defs><g clip-path=\"url(#b)\"><rect x=\"0\" y=\"0\" width=\"320\" height=\"760\" fill=\"#e8f6ff\" opacity=\"0.35\"/><rect x=\"0\" y=\"250\" width=\"320\" height=\"760\" fill=\"#3fa9f5\"/><rect x=\"0\" y=\"250\" width=\"320\" height=\"10\" fill=\"#ffffff\" opacity=\"0.55\"/><rect x=\"70\" y=\"200\" width=\"20\" height=\"500\" rx=\"10\" fill=\"#ffffff\" opacity=\"0.4\"/></g><path d=\"M135 110 C135 160 70 190 70 260 L70 690 C70 712 86 728 110 728 L210 728 C234 728 250 712 250 690 L250 260 C250 190 185 160 185 110 Z\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><g transform=\"rotate(0 160 98)\"><rect x=\"122\" y=\"92\" width=\"76\" height=\"16\" rx=\"6\" fill=\"#d8e8f2\"/><rect x=\"128\" y=\"46\" width=\"64\" height=\"50\" rx=\"9\" fill=\"#2f7fd2\"/><path d=\"M140 54 V88 M152 54 V88 M164 54 V88 M176 54 V88\" stroke=\"#1f5fa6\" stroke-width=\"5\"/></g></svg>",
+    "botella_congelada": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 760\"><defs><clipPath id=\"b\"><path d=\"M135 110 C135 160 52 186 46 270 C40 360 30 520 40 640 C44 700 70 732 110 732 L210 732 C250 732 276 700 280 640 C290 520 280 360 274 270 C268 186 185 160 185 110 Z\"/></clipPath></defs><g clip-path=\"url(#b)\"><rect x=\"0\" y=\"0\" width=\"320\" height=\"760\" fill=\"#e8f6ff\" opacity=\"0.35\"/><rect x=\"0\" y=\"175\" width=\"320\" height=\"760\" fill=\"#d3f0ff\"/><rect x=\"0\" y=\"175\" width=\"320\" height=\"10\" fill=\"#ffffff\" opacity=\"0.55\"/><path d=\"M100 420 L140 470 L120 530 M220 380 L190 440 L215 500 L195 560 M150 620 L180 660\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"6\" stroke-linecap=\"round\" opacity=\"0.85\"/><rect x=\"70\" y=\"200\" width=\"20\" height=\"500\" rx=\"10\" fill=\"#ffffff\" opacity=\"0.4\"/></g><path d=\"M135 110 C135 160 52 186 46 270 C40 360 30 520 40 640 C44 700 70 732 110 732 L210 732 C250 732 276 700 280 640 C290 520 280 360 274 270 C268 186 185 160 185 110 Z\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><g transform=\"rotate(14 160 64)\"><rect x=\"122\" y=\"58\" width=\"76\" height=\"16\" rx=\"6\" fill=\"#d8e8f2\"/><rect x=\"128\" y=\"12\" width=\"64\" height=\"50\" rx=\"9\" fill=\"#2f7fd2\"/><path d=\"M140 20 V54 M152 20 V54 M164 20 V54 M176 20 V54\" stroke=\"#1f5fa6\" stroke-width=\"5\"/></g></svg>",
+    "moleculas_agua": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 500\"><defs><clipPath id=\"pa\"><circle cx=\"250\" cy=\"250\" r=\"226\"/></clipPath><radialGradient id=\"pag\" cx=\"40%\" cy=\"35%\"><stop offset=\"0\" stop-color=\"#1d4f7c\"/><stop offset=\"1\" stop-color=\"#0d2740\"/></radialGradient></defs><circle cx=\"250\" cy=\"250\" r=\"238\" fill=\"url(#pag)\" stroke=\"#ffffff\" stroke-width=\"12\"/><g clip-path=\"url(#pa)\"><g><circle cx=\"245.7\" cy=\"99.7\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"206.5\" cy=\"95.4\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"227.8\" cy=\"82.3\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"220.8\" cy=\"75.3\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"301\" cy=\"67.9\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"293.2\" cy=\"106.5\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"282\" cy=\"84.2\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"275\" cy=\"77.2\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"340\" cy=\"66.4\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"365\" cy=\"96.9\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"340.6\" cy=\"91.4\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"333.6\" cy=\"84.4\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"85.6\" cy=\"124.2\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"119.6\" cy=\"144.2\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"94.8\" cy=\"147.5\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"87.8\" cy=\"140.5\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"150.6\" cy=\"181.7\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"117.6\" cy=\"160.1\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"142.5\" cy=\"158.1\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"135.5\" cy=\"151.1\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"232.1\" cy=\"129.3\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"235.8\" cy=\"168.5\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"218.6\" cy=\"150.4\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"211.6\" cy=\"143.4\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"258.7\" cy=\"143.1\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"298\" cy=\"146\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"277.2\" cy=\"159.9\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"270.2\" cy=\"152.9\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"329.3\" cy=\"176\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"320.3\" cy=\"137.6\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"339.8\" cy=\"153.3\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"332.8\" cy=\"146.3\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"375.4\" cy=\"148.7\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"405.3\" cy=\"123\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"400.4\" cy=\"147.5\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"393.4\" cy=\"140.5\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"90.9\" cy=\"229.3\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"60.7\" cy=\"204.1\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"85.7\" cy=\"204.9\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"78.7\" cy=\"197.9\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"139.8\" cy=\"210.5\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"171.9\" cy=\"187.6\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"164.8\" cy=\"211.6\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"157.8\" cy=\"204.6\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"181.2\" cy=\"236.4\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"195.2\" cy=\"199.6\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"202.6\" cy=\"223.5\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"195.6\" cy=\"216.5\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"300\" cy=\"185.9\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"319.7\" cy=\"220\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"296.5\" cy=\"210.6\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"289.5\" cy=\"203.6\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"344.9\" cy=\"251.8\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"340.4\" cy=\"212.6\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"358\" cy=\"230.4\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"351\" cy=\"223.4\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"454.3\" cy=\"231.8\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"418.5\" cy=\"248.2\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"430\" cy=\"226\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"423\" cy=\"219\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"60.5\" cy=\"268.3\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"99.4\" cy=\"274.2\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"77.7\" cy=\"286.5\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"70.7\" cy=\"279.5\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"188.7\" cy=\"286.3\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"165.2\" cy=\"317.9\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"164.6\" cy=\"292.9\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"157.6\" cy=\"285.9\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"224.8\" cy=\"292.8\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"205\" cy=\"258.7\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"228.2\" cy=\"268\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"221.2\" cy=\"261\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"291.1\" cy=\"308.9\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"274.2\" cy=\"273.3\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"296.5\" cy=\"284.5\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"289.5\" cy=\"277.5\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"373.5\" cy=\"299.7\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"337.5\" cy=\"315.6\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"349.3\" cy=\"293.6\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"342.3\" cy=\"286.6\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"452.4\" cy=\"302.8\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"417.2\" cy=\"320.6\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"427.8\" cy=\"297.9\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"420.8\" cy=\"290.9\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"106.5\" cy=\"327.4\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"112.6\" cy=\"366.3\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"94.3\" cy=\"349.2\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"87.3\" cy=\"342.2\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"114.6\" cy=\"345.8\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"133\" cy=\"311\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"137.4\" cy=\"335.6\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"130.4\" cy=\"328.6\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"219.1\" cy=\"365.3\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"181.7\" cy=\"352.9\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"205.3\" cy=\"344.5\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"198.3\" cy=\"337.5\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"273.3\" cy=\"323.9\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"304.3\" cy=\"348.2\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"279.3\" cy=\"348.2\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"272.3\" cy=\"341.2\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"356.2\" cy=\"361.8\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"320.9\" cy=\"344.3\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"345.4\" cy=\"339.2\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"338.4\" cy=\"332.2\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"177.8\" cy=\"445.2\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"141.6\" cy=\"429.5\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"165.8\" cy=\"423.2\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"158.8\" cy=\"416.2\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"212.8\" cy=\"450.8\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"188.9\" cy=\"419.5\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"213.1\" cy=\"425.8\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"206.1\" cy=\"418.8\" r=\"5.6\" fill=\"#ff9a8f\"/></g><g><circle cx=\"299.2\" cy=\"428.3\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"260.6\" cy=\"420.2\" r=\"10.4\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"283.1\" cy=\"409.2\" r=\"20\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"276.1\" cy=\"402.2\" r=\"5.6\" fill=\"#ff9a8f\"/></g></g></svg>",
+    "moleculas_hielo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 500\"><defs><clipPath id=\"ph\"><circle cx=\"250\" cy=\"250\" r=\"226\"/></clipPath><radialGradient id=\"phg\" cx=\"40%\" cy=\"35%\"><stop offset=\"0\" stop-color=\"#1d4f7c\"/><stop offset=\"1\" stop-color=\"#0d2740\"/></radialGradient></defs><circle cx=\"250\" cy=\"250\" r=\"238\" fill=\"url(#phg)\" stroke=\"#ffffff\" stroke-width=\"12\"/><g clip-path=\"url(#ph)\"><path d=\"M176 250 L213 185.9\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M102 250 L176 250\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M102 250 L65 185.9\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M102 121.8 L65 185.9\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M102 121.8 L176 121.8\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M176 121.8 L213 185.9\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M176 378.2 L213 314.1\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M102 378.2 L176 378.2\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M102 378.2 L65 314.1\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M102 250 L65 314.1\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M176 250 L213 314.1\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M287 185.9 L324 121.8\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M213 185.9 L287 185.9\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M176 121.8 L213 57.7\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M213 57.7 L287 57.7\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M287 57.7 L324 121.8\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M287 314.1 L324 250\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M213 314.1 L287 314.1\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M287 185.9 L324 250\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M287 442.3 L324 378.2\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M213 442.3 L287 442.3\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M176 378.2 L213 442.3\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M287 314.1 L324 378.2\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M398 250 L435 185.9\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M324 250 L398 250\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M324 121.8 L398 121.8\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M398 121.8 L435 185.9\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M398 378.2 L435 314.1\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M324 378.2 L398 378.2\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><path d=\"M398 250 L435 314.1\" stroke=\"#7fe0ff\" stroke-width=\"5\" stroke-dasharray=\"10 9\" stroke-linecap=\"round\"/><g><circle cx=\"196.3\" cy=\"172.8\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"229.7\" cy=\"172.8\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"213\" cy=\"185.9\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"207.1\" cy=\"180\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"181.5\" cy=\"229.5\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"194.6\" cy=\"260.3\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"176\" cy=\"250\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"170.1\" cy=\"244.1\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"123\" cy=\"247\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"99.8\" cy=\"271.1\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"102\" cy=\"250\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"96.1\" cy=\"244.1\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"75.9\" cy=\"204.1\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"44.7\" cy=\"192.1\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"65\" cy=\"185.9\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"59.1\" cy=\"180\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"89.5\" cy=\"139\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"88.3\" cy=\"105.5\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"102\" cy=\"121.8\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"96.1\" cy=\"115.9\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"155.3\" cy=\"117\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"185.6\" cy=\"102.9\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"176\" cy=\"121.8\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"170.1\" cy=\"115.9\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"209.3\" cy=\"293.2\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"234.2\" cy=\"315.6\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"213\" cy=\"314.1\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"207.1\" cy=\"308.2\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"193.8\" cy=\"366.6\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"182.9\" cy=\"398.3\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"176\" cy=\"378.2\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"170.1\" cy=\"372.3\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"119.6\" cy=\"390.1\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"86.2\" cy=\"392.4\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"102\" cy=\"378.2\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"96.1\" cy=\"372.3\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"60.9\" cy=\"335\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"45.7\" cy=\"305.1\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"65\" cy=\"314.1\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"59.1\" cy=\"308.2\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"303.2\" cy=\"126.2\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"324.7\" cy=\"100.6\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"324\" cy=\"121.8\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"318.1\" cy=\"115.9\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"274.8\" cy=\"168.5\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"306.8\" cy=\"178.3\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"287\" cy=\"185.9\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"281.1\" cy=\"180\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"224.3\" cy=\"39.7\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"227.8\" cy=\"73\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"213\" cy=\"57.7\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"207.1\" cy=\"51.8\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"308\" cy=\"61\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"278.7\" cy=\"77.3\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"287\" cy=\"57.7\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"281.1\" cy=\"51.8\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"329.1\" cy=\"270.6\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"302.8\" cy=\"250\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"324\" cy=\"250\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"318.1\" cy=\"244.1\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"270\" cy=\"326.9\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"278.7\" cy=\"294.5\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"287\" cy=\"314.1\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"281.1\" cy=\"308.2\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"305.6\" cy=\"367.6\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"338.8\" cy=\"362.9\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"324\" cy=\"378.2\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"318.1\" cy=\"372.3\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"289.6\" cy=\"421.2\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"306.8\" cy=\"449.9\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"287\" cy=\"442.3\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"281.1\" cy=\"436.4\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"233.4\" cy=\"436.4\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"213.7\" cy=\"463.5\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"213\" cy=\"442.3\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"207.1\" cy=\"436.4\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"448.4\" cy=\"202.4\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"415.7\" cy=\"194.9\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"435\" cy=\"185.9\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"429.1\" cy=\"180\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"388\" cy=\"268.8\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"382.2\" cy=\"235.8\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"398\" cy=\"250\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"392.1\" cy=\"244.1\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"376.8\" cy=\"119.9\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"404.9\" cy=\"101.7\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"398\" cy=\"121.8\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"392.1\" cy=\"115.9\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"428.4\" cy=\"293.9\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"456.2\" cy=\"312.6\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"435\" cy=\"314.1\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"429.1\" cy=\"308.2\" r=\"4.8\" fill=\"#ff9a8f\"/></g><g><circle cx=\"414\" cy=\"364.3\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"407.6\" cy=\"397.1\" r=\"8.8\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"3\"/><circle cx=\"398\" cy=\"378.2\" r=\"17\" fill=\"#ff5a4a\" stroke=\"#b8322a\" stroke-width=\"3\"/><circle cx=\"392.1\" cy=\"372.3\" r=\"4.8\" fill=\"#ff9a8f\"/></g></g></svg>",
+    "lago": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 1300\"><defs><linearGradient id=\"lg\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#6cc4f0\"/><stop offset=\"1\" stop-color=\"#0f4a7a\"/></linearGradient><linearGradient id=\"tg\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#8a6a4a\"/><stop offset=\"1\" stop-color=\"#5a432e\"/></linearGradient></defs><path d=\"M0 270 L170 270 L110 300 C130 640 260 990 500 1000 C740 990 870 640 890 300 L830 270 L1000 270 L1000 1300 L0 1300 Z\" fill=\"url(#tg)\"/><path d=\"M0 270 L170 270 L150 282 L0 288 Z M830 270 L1000 270 L1000 288 L850 282 Z\" fill=\"#ffffff\"/><path d=\"M0 250 Q60 236 120 250 L175 270 L0 272 Z M1000 250 Q940 236 880 250 L825 270 L1000 272 Z\" fill=\"#f4fbff\"/><path d=\"M110 300 C130 640 260 990 500 1000 C740 990 870 640 890 300 Z\" fill=\"url(#lg)\"/><path d=\"M140 300 H860\" stroke=\"#bfe8ff\" stroke-width=\"8\"/><ellipse cx=\"440\" cy=\"994\" rx=\"34\" ry=\"14\" fill=\"#4a3826\"/><ellipse cx=\"570\" cy=\"990\" rx=\"34\" ry=\"14\" fill=\"#4a3826\"/><ellipse cx=\"505\" cy=\"1000\" rx=\"34\" ry=\"14\" fill=\"#4a3826\"/><path d=\"M385 958 C375 908 399 878 385 828 M401 958 C411 918 393 888 405 858\" fill=\"none\" stroke=\"#3f8f4a\" stroke-width=\"9\" stroke-linecap=\"round\"/><path d=\"M625 956 C615 906 639 876 625 826 M641 956 C651 916 633 886 645 856\" fill=\"none\" stroke=\"#3f8f4a\" stroke-width=\"9\" stroke-linecap=\"round\"/></svg>",
+    "hielo_lago": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 1300\"><defs><clipPath id=\"hc\"><path d=\"M110 300 C130 640 260 990 500 1000 C740 990 870 640 890 300 Z\"/></clipPath></defs><g clip-path=\"url(#hc)\"><rect x=\"0\" y=\"290\" width=\"1000\" height=\"62\" fill=\"#e6f7ff\"/><rect x=\"0\" y=\"342\" width=\"1000\" height=\"10\" fill=\"#9fd8f5\"/><path d=\"M220 300 L250 330 L240 352 M520 296 L500 326 L530 352 M720 300 L700 324\" fill=\"none\" stroke=\"#9fd8f5\" stroke-width=\"5\" stroke-linecap=\"round\"/></g><path d=\"M110 288 H890\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linecap=\"round\"/></svg>",
+    "peces": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 1300\"><g transform=\"translate(390 780) scale(1.1 1.1)\"><path d=\"M-60 0 C-30 -34 30 -34 50 0 C30 34 -30 34 -60 0 Z\" fill=\"#ff8a3d\" stroke=\"#ffffff\" stroke-width=\"4\"/><path d=\"M-56 0 L-96 -28 L-88 0 L-96 28 Z\" fill=\"#ff8a3d\" stroke=\"#ffffff\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M-10 -22 C0 -10 0 10 -10 22\" fill=\"none\" stroke=\"#00000030\" stroke-width=\"5\"/><circle cx=\"28\" cy=\"-6\" r=\"7\" fill=\"#ffffff\"/><circle cx=\"30\" cy=\"-6\" r=\"3.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(640 870) scale(-0.9 0.9)\"><path d=\"M-60 0 C-30 -34 30 -34 50 0 C30 34 -30 34 -60 0 Z\" fill=\"#ffc23d\" stroke=\"#ffffff\" stroke-width=\"4\"/><path d=\"M-56 0 L-96 -28 L-88 0 L-96 28 Z\" fill=\"#ffc23d\" stroke=\"#ffffff\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M-10 -22 C0 -10 0 10 -10 22\" fill=\"none\" stroke=\"#00000030\" stroke-width=\"5\"/><circle cx=\"28\" cy=\"-6\" r=\"7\" fill=\"#ffffff\"/><circle cx=\"30\" cy=\"-6\" r=\"3.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(530 640) scale(0.75 0.75)\"><path d=\"M-60 0 C-30 -34 30 -34 50 0 C30 34 -30 34 -60 0 Z\" fill=\"#ff6b6b\" stroke=\"#ffffff\" stroke-width=\"4\"/><path d=\"M-56 0 L-96 -28 L-88 0 L-96 28 Z\" fill=\"#ff6b6b\" stroke=\"#ffffff\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M-10 -22 C0 -10 0 10 -10 22\" fill=\"none\" stroke=\"#00000030\" stroke-width=\"5\"/><circle cx=\"28\" cy=\"-6\" r=\"7\" fill=\"#ffffff\"/><circle cx=\"30\" cy=\"-6\" r=\"3.5\" fill=\"#1d1d2b\"/></g></svg>",
+    "flecha_frio": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 160 220\"><path d=\"M52 8 H108 V120 H150 L80 212 L10 120 H52 Z\" fill=\"#7fe0ff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "El hielo (≈ 0,917 g/cm³ a 0 °C) es cerca de un 9% menos denso que el agua líquida; al congelarse, el agua aumenta su volumen alrededor de un 9%",
+      "fuente": "HyperPhysics (Georgia State University), «The Expansion of Water Upon Freezing»; USGS Water Science School, «Water Density»"
+    },
+    {
+      "dato": "En el hielo, los puentes de hidrógeno ordenan las moléculas en una red hexagonal abierta, con más espacio entre ellas que en el líquido",
+      "fuente": "Britannica, «Why Does Water Freeze from the Top Down?»; USGS Water Science School"
+    },
+    {
+      "dato": "La mayoría de las sustancias son más densas en estado sólido que líquido; el agua es una excepción",
+      "fuente": "USGS Water Science School, «Water Density»; Britannica"
+    },
+    {
+      "dato": "Los lagos se congelan desde arriba; el agua más densa (≈ 4 °C) queda en el fondo y bajo el hielo los peces sobreviven",
+      "fuente": "Britannica, «Why Does Water Freeze from the Top Down?»; Illinois Physics Van, «Water at 4 deg C»; Maine DEP, «Seasonal Magic» (lecciones sobre lagos)"
+    }
+  ],
+  "nota": "«Cerca de 9%»: según la fuente aparece entre 8 y 10%; 1/0,917 ≈ 1,09. Los 4 °C del fondo son típicos de lagos profundos; en lagos poco profundos el fondo puede estar más frío, y el oxígeno también limita la vida bajo el hielo. «Casi todas las sustancias» se dice a propósito: hay otras excepciones (silicio, galio, bismuto)."
+}

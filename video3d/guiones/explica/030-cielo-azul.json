@@ -1,0 +1,439 @@
+{
+  "id": "explica-cielo-azul",
+  "motor": "explica",
+  "titulo": "¿Por qué el cielo es azul?",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "ciencia",
+    "sabiasque",
+    "cielo",
+    "curiosidades",
+    "fisica"
+  ],
+  "descripcion": "La luz del Sol trae todos los colores, pero el aire desvía sobre todo el azul. Y al atardecer, el rojo gana.",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "cielo",
+      "texto": "¿Por qué el cielo es azul y no blanco, verde o morado?",
+      "clave": "azul",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1
+        ],
+        "a": [
+          0.5,
+          0.48,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "paisaje_dia",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 860,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.505,
+          "radio": 230,
+          "en": "azul"
+        },
+        {
+          "numero": "¿?",
+          "x": 0.8,
+          "y": 0.33,
+          "color": "#6b4fe0",
+          "en": "morado"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "La luz del Sol parece blanca, pero en realidad trae todos los colores mezclados.",
+      "clave": "todos los colores",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1.08
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "sol",
+          "x": 0.2,
+          "y": 0.42,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "Sol"
+        },
+        {
+          "svg": "luz_colores",
+          "x": 0.58,
+          "y": 0.63,
+          "ancho": 860,
+          "anim": "fade",
+          "sombra": false,
+          "en": "blanca"
+        },
+        {
+          "etiqueta": "luz blanca",
+          "x": 0.68,
+          "y": 0.41,
+          "a": [
+            0.375,
+            0.542
+          ],
+          "en": "blanca"
+        },
+        {
+          "etiqueta": "¡todos los colores!",
+          "x": 0.5,
+          "y": 0.9,
+          "a": [
+            0.91,
+            0.726
+          ],
+          "color": "#6b4fe0",
+          "en": "colores"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Al entrar al aire, esa luz choca con moléculas diminutas de nitrógeno y oxígeno.",
+      "clave": "moléculas",
+      "nota": "N₂ y O₂",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "molecula_n",
+          "x": 0.3,
+          "y": 0.48,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "moléculas"
+        },
+        {
+          "svg": "molecula_o",
+          "x": 0.7,
+          "y": 0.57,
+          "ancho": 280,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "diminutas"
+        },
+        {
+          "svg": "molecula_n",
+          "x": 0.32,
+          "y": 0.73,
+          "ancho": 260,
+          "anim": "pop",
+          "idle": "flotar",
+          "rot": 25,
+          "en": "nitrógeno"
+        },
+        {
+          "svg": "molecula_o",
+          "x": 0.72,
+          "y": 0.84,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "flotar",
+          "rot": -20,
+          "en": "oxígeno"
+        },
+        {
+          "etiqueta": "nitrógeno",
+          "x": 0.3,
+          "y": 0.37,
+          "color": "#3f5bd6",
+          "a": [
+            0.3,
+            0.445
+          ],
+          "en": "nitrógeno"
+        },
+        {
+          "etiqueta": "oxígeno",
+          "x": 0.7,
+          "y": 0.67,
+          "color": "#d94848",
+          "a": [
+            0.7,
+            0.605
+          ],
+          "en": "oxígeno"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Y esas moléculas desvían mucho más la luz azul que la roja: es la dispersión de Rayleigh.",
+      "clave": "Rayleigh",
+      "nota": "dispersión",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "dispersion",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 940,
+          "anim": "pop",
+          "sombra": false,
+          "en": "moléculas"
+        },
+        {
+          "etiqueta": "azul: rebota",
+          "x": 0.7,
+          "y": 0.33,
+          "color": "#1f6fe0",
+          "a": [
+            0.467,
+            0.404
+          ],
+          "en": "azul"
+        },
+        {
+          "etiqueta": "rojo: sigue derecho",
+          "x": 0.5,
+          "y": 0.88,
+          "color": "#d93427",
+          "a": [
+            0.861,
+            0.782
+          ],
+          "en": "roja"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Por eso el azul rebota por todo el cielo y nos llega desde todas partes.",
+      "clave": "todas partes",
+      "camara": {
+        "de": [
+          0.5,
+          0.52,
+          1
+        ],
+        "a": [
+          0.5,
+          0.48,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "paisaje_dia",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 860,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "svg": "ondas_azules",
+          "x": 0.5,
+          "y": 0.5,
+          "ancho": 760,
+          "anim": "pop",
+          "idle": "latido",
+          "sombra": false,
+          "en": "rebota"
+        },
+        {
+          "marca": true,
+          "x": 0.48,
+          "y": 0.747,
+          "radio": 80,
+          "en": "llega"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "¿Y el violeta? El Sol manda menos, parte se absorbe arriba y nuestros ojos lo ven peor.",
+      "clave": "violeta",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1
+        ],
+        "a": [
+          0.42,
+          0.55,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "espectro_sol",
+          "x": 0.5,
+          "y": 0.5,
+          "ancho": 860,
+          "anim": "crecer",
+          "en": "Sol"
+        },
+        {
+          "etiqueta": "violeta",
+          "x": 0.2,
+          "y": 0.33,
+          "color": "#7b3fe0",
+          "a": [
+            0.188,
+            0.5
+          ],
+          "en": 0.3
+        },
+        {
+          "marca": true,
+          "x": 0.188,
+          "y": 0.551,
+          "radio": 110,
+          "en": "menos"
+        },
+        {
+          "svg": "ojo",
+          "x": 0.5,
+          "y": 0.8,
+          "ancho": 420,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "idle": "latido",
+          "en": "ojos"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Al atardecer, la luz cruza mucho más aire: el azul se pierde y llegan naranjas y rojos.",
+      "clave": "atardecer",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.4,
+          0.6,
+          1.18
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tierra_aire",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 900,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "etiqueta": "mediodía",
+          "x": 0.76,
+          "y": 0.37,
+          "color": "#2f7fd2",
+          "a": [
+            0.538,
+            0.4
+          ],
+          "en": 0.2
+        },
+        {
+          "etiqueta": "atardecer",
+          "x": 0.26,
+          "y": 0.36,
+          "color": "#d93427",
+          "a": [
+            0.156,
+            0.5579999999999999
+          ],
+          "en": "atardecer"
+        },
+        {
+          "etiqueta": "mucho más aire",
+          "x": 0.42,
+          "y": 0.465,
+          "color": "#1d1d2b",
+          "a": [
+            0.323,
+            0.595
+          ],
+          "en": "mucho"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Ahora ya lo sabes. Síguenos para más cosas que nadie te explicó.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "sol": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\"><defs><radialGradient id=\"g\" cx=\"40%\" cy=\"38%\" r=\"70%\"><stop offset=\"0\" stop-color=\"#fff1a8\"/><stop offset=\"0.55\" stop-color=\"#ffd23f\"/><stop offset=\"1\" stop-color=\"#ffab1f\"/></radialGradient></defs>\n<circle cx=\"200\" cy=\"200\" r=\"150\" fill=\"#ffe27a\" opacity=\"0.25\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(0 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(22.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(45 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(67.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(90 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(112.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(135 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(157.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(180 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(202.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(225 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(247.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(270 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(292.5 200 200)\"/><path d=\"M200 18 L216 72 L184 72 Z\" fill=\"#ffc93c\" stroke=\"#ffc93c\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(315 200 200)\"/><path d=\"M200 38 L212 72 L188 72 Z\" fill=\"#ffdd6b\" stroke=\"#ffdd6b\" stroke-width=\"10\" stroke-linejoin=\"round\" transform=\"rotate(337.5 200 200)\"/>\n<circle cx=\"200\" cy=\"200\" r=\"116\" fill=\"#ffab1f\"/><circle cx=\"200\" cy=\"200\" r=\"106\" fill=\"url(#g)\"/>\n<path d=\"M290 150 A106 106 0 0 1 150 296 A120 120 0 0 0 290 150 Z\" fill=\"#ff9f1c\" opacity=\"0.45\"/>\n<ellipse cx=\"160\" cy=\"150\" rx=\"38\" ry=\"22\" fill=\"#fffbe0\" opacity=\"0.8\" transform=\"rotate(-35 160 150)\"/></svg>",
+    "paisaje_dia": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 900\"><defs><clipPath id=\"k\"><rect width=\"800\" height=\"900\" rx=\"48\"/></clipPath>\n<linearGradient id=\"s\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#2a7fe0\"/><stop offset=\"0.65\" stop-color=\"#8ccfff\"/><stop offset=\"1\" stop-color=\"#d4efff\"/></linearGradient></defs>\n<g clip-path=\"url(#k)\"><rect width=\"800\" height=\"900\" fill=\"url(#s)\"/>\n<circle cx=\"640\" cy=\"150\" r=\"96\" fill=\"#fff6c0\" opacity=\"0.35\"/><circle cx=\"640\" cy=\"150\" r=\"60\" fill=\"#ffe066\"/><circle cx=\"626\" cy=\"136\" r=\"22\" fill=\"#fffbe0\" opacity=\"0.7\"/>\n<g fill=\"#ffffff\"><ellipse cx=\"200\" cy=\"210\" rx=\"110\" ry=\"36\"/><ellipse cx=\"170\" cy=\"188\" rx=\"56\" ry=\"42\"/><ellipse cx=\"232\" cy=\"180\" rx=\"64\" ry=\"48\"/></g>\n<g fill=\"#ffffff\" opacity=\"0.85\"><ellipse cx=\"520\" cy=\"340\" rx=\"84\" ry=\"26\"/><ellipse cx=\"545\" cy=\"318\" rx=\"50\" ry=\"36\"/></g>\n<path d=\"M0 610 Q170 500 360 590 T800 560 V900 H0 Z\" fill=\"#7fcf86\"/>\n<path d=\"M0 700 Q230 610 480 690 T800 670 V900 H0 Z\" fill=\"#46ad5b\"/>\n<path d=\"M0 790 Q300 730 800 800 V900 H0 Z\" fill=\"#3a9650\"/>\n<rect x=\"560\" y=\"610\" width=\"130\" height=\"96\" fill=\"#fff1d6\"/><rect x=\"560\" y=\"610\" width=\"130\" height=\"14\" fill=\"#f1dcb5\"/>\n<path d=\"M548 616 L625 556 L702 616 Z\" fill=\"#e2574c\"/><path d=\"M625 556 L702 616 L660 616 Z\" fill=\"#c4473a\"/>\n<rect x=\"606\" y=\"652\" width=\"34\" height=\"54\" rx=\"4\" fill=\"#8a5a3c\"/><rect x=\"654\" y=\"636\" width=\"26\" height=\"24\" rx=\"3\" fill=\"#8ccfff\"/>\n<rect x=\"160\" y=\"620\" width=\"22\" height=\"80\" rx=\"6\" fill=\"#7a4e2d\"/><circle cx=\"171\" cy=\"590\" r=\"56\" fill=\"#2f8f4a\"/><circle cx=\"150\" cy=\"575\" r=\"34\" fill=\"#46b05d\"/>\n<g transform=\"translate(380 720)\"><rect x=\"-8\" y=\"40\" width=\"7\" height=\"34\" rx=\"3\" fill=\"#2c3e66\"/><rect x=\"2\" y=\"40\" width=\"7\" height=\"34\" rx=\"3\" fill=\"#2c3e66\"/>\n<rect x=\"-17\" y=\"0\" width=\"34\" height=\"46\" rx=\"12\" fill=\"#ff7a59\"/><path d=\"M14 8 L34 -26\" stroke=\"#f2c29b\" stroke-width=\"8\" stroke-linecap=\"round\"/>\n<circle cx=\"0\" cy=\"-16\" r=\"18\" fill=\"#f2c29b\"/><path d=\"M-18 -18 A18 18 0 0 1 16 -24 L6 -22 Z\" fill=\"#4a2e1f\"/></g>\n</g><rect x=\"5\" y=\"5\" width=\"790\" height=\"890\" rx=\"44\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"10\"/></svg>",
+    "luz_colores": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 500\"><defs><linearGradient id=\"f\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#fff\" stop-opacity=\"0.5\"/><stop offset=\"1\" stop-color=\"#fff\" stop-opacity=\"0\"/></linearGradient></defs>\n<path d=\"M20 20 L300 200\" stroke=\"#ffffff\" stroke-opacity=\"0.25\" stroke-width=\"80\" stroke-linecap=\"round\"/>\n<path d=\"M20 20 L300 200\" stroke=\"#ffffff\" stroke-width=\"40\" stroke-linecap=\"round\"/>\n<g opacity=\"0.95\"><path d=\"M300 192 L700 170 L700 214 L300 194.3 Z\" fill=\"#ff4b4b\"/><path d=\"M300 194.3 L700 214 L700 258 L300 196.6 Z\" fill=\"#ff9a1f\"/><path d=\"M300 196.6 L700 258 L700 302 L300 198.9 Z\" fill=\"#ffe047\"/><path d=\"M300 198.9 L700 302 L700 346 L300 201.1 Z\" fill=\"#46d36a\"/><path d=\"M300 201.1 L700 346 L700 390 L300 203.4 Z\" fill=\"#2fa8ff\"/><path d=\"M300 203.4 L700 390 L700 434 L300 205.7 Z\" fill=\"#4d5cff\"/><path d=\"M300 205.7 L700 434 L700 478 L300 208 Z\" fill=\"#a35cff\"/></g><path d=\"M300 192 L700 170 L700 478 L300 208 Z\" fill=\"url(#f)\" opacity=\"0.35\"/>\n<circle cx=\"300\" cy=\"200\" r=\"26\" fill=\"#ffffff\"/><circle cx=\"300\" cy=\"200\" r=\"44\" fill=\"#ffffff\" opacity=\"0.3\"/></svg>",
+    "molecula_n": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 160\"><rect x=\"100\" y=\"70\" width=\"60\" height=\"20\" rx=\"10\" fill=\"#3f5bd6\"/>\n<circle cx=\"80\" cy=\"80\" r=\"62\" fill=\"#3f5bd6\"/><circle cx=\"80\" cy=\"80\" r=\"54\" fill=\"#6f8cff\"/><path d=\"M120 120 A54 54 0 0 1 30 108 A62 62 0 0 0 128 104 Z\" fill=\"#3f5bd6\" opacity=\"0.6\"/><ellipse cx=\"62\" cy=\"58\" rx=\"20\" ry=\"12\" fill=\"#ffffff\" opacity=\"0.65\" transform=\"rotate(-30 62 58)\"/>\n<circle cx=\"180\" cy=\"80\" r=\"62\" fill=\"#3f5bd6\"/><circle cx=\"180\" cy=\"80\" r=\"54\" fill=\"#6f8cff\"/><path d=\"M220 120 A54 54 0 0 1 130 108 A62 62 0 0 0 228 104 Z\" fill=\"#3f5bd6\" opacity=\"0.6\"/><ellipse cx=\"162\" cy=\"58\" rx=\"20\" ry=\"12\" fill=\"#ffffff\" opacity=\"0.65\" transform=\"rotate(-30 162 58)\"/>\n<circle cx=\"130\" cy=\"80\" r=\"5\" fill=\"#ffffff\" opacity=\"0.5\"/></svg>",
+    "molecula_o": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 160\"><rect x=\"100\" y=\"70\" width=\"60\" height=\"20\" rx=\"10\" fill=\"#d94848\"/>\n<circle cx=\"80\" cy=\"80\" r=\"62\" fill=\"#d94848\"/><circle cx=\"80\" cy=\"80\" r=\"54\" fill=\"#ff7b7b\"/><path d=\"M120 120 A54 54 0 0 1 30 108 A62 62 0 0 0 128 104 Z\" fill=\"#d94848\" opacity=\"0.6\"/><ellipse cx=\"62\" cy=\"58\" rx=\"20\" ry=\"12\" fill=\"#ffffff\" opacity=\"0.65\" transform=\"rotate(-30 62 58)\"/>\n<circle cx=\"180\" cy=\"80\" r=\"62\" fill=\"#d94848\"/><circle cx=\"180\" cy=\"80\" r=\"54\" fill=\"#ff7b7b\"/><path d=\"M220 120 A54 54 0 0 1 130 108 A62 62 0 0 0 228 104 Z\" fill=\"#d94848\" opacity=\"0.6\"/><ellipse cx=\"162\" cy=\"58\" rx=\"20\" ry=\"12\" fill=\"#ffffff\" opacity=\"0.65\" transform=\"rotate(-30 162 58)\"/>\n<circle cx=\"130\" cy=\"80\" r=\"5\" fill=\"#ffffff\" opacity=\"0.5\"/></svg>",
+    "dispersion": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 660\"><path d=\"M10 590 L13 590.5 L16 592 L19 594.5 L22 597.8 L25 601.7 L28 606 L31 609.6 L34 610.9 L37 611.7 L40 612 L43 611.7 L46 610.9 L49 609.6 L52 607.8 L55 605.6 L58 602.9 L61 600 L64 596.8 L67 593.4 L70 590 L73 586.6 L76 583.2 L79 580 L82 577.1 L85 574.4 L88 572.2 L91 570.4 L94 569.1 L97 568.3 L100 568 L103 568.3 L106 569.1 L109 570.4 L112 572.2 L115 574.4 L118 577.1 L121 580 L124 583.2 L127 586.6 L130 590 L133 593.4 L136 596.8 L139 600 L142 602.9 L145 605.6 L148 607.8 L151 609.6 L154 610.9 L157 611.7 L160 612 L163 611.7 L166 610.9 L169 609.6 L172 607.8 L175 605.6 L178 602.9 L181 600 L184 596.8 L187 593.4 L190 590 L193 586.6 L196 583.2 L199 580 L202 577.1 L205 574.4 L208 572.2 L211 570.4 L214 569.1 L217 568.3 L220 568 L223 568.3 L226 569.1 L229 570.4 L232 572.2 L235 574.4 L238 577.1 L241 580 L244 583.2 L247 586.6 L250 590 L253 593.4 L256 596.8 L259 600 L262 602.9 L265 605.6 L268 607.8 L271 609.6 L274 610.9 L277 611.7 L280 612 L283 611.7 L286 610.9 L289 609.6 L292 607.8 L295 605.6 L298 602.9 L301 600 L304 596.8 L307 593.4 L310 590 L313 586.6 L316 583.2 L319 580 L322 577.1 L325 574.4 L328 572.2 L331 570.4 L334 569.1 L337 568.3 L340 568 L343 568.3 L346 569.1 L349 570.4 L352 572.2 L355 574.4 L358 577.1 L361 580 L364 583.2 L367 586.6 L370 590 L373 593.4 L376 596.8 L379 600 L382 602.9 L385 605.6 L388 607.8 L391 609.6 L394 610.9 L397 611.7 L400 612 L403 611.7 L406 610.9 L409 609.6 L412 607.8 L415 605.6 L418 602.9 L421 600 L424 596.8 L427 593.4 L430 590 L433 586.6 L436 583.2 L439 580 L442 577.1 L445 574.4 L448 572.2 L451 570.4 L454 569.1 L457 568.3 L460 568 L463 568.3 L466 569.1 L469 570.4 L472 572.2 L475 574.4 L478 577.1 L481 580 L484 583.2 L487 586.6 L490 590 L493 593.4 L496 596.8 L499 600 L502 602.9 L505 605.6 L508 607.8 L511 609.6 L514 610.9 L517 611.7 L520 612 L523 611.7 L526 610.9 L529 609.6 L532 607.8 L535 605.6 L538 602.9 L541 600 L544 596.8 L547 593.4 L550 590 L553 586.6 L556 583.2 L559 580 L562 577.1 L565 574.4 L568 572.2 L571 570.4 L574 569.1 L577 568.3 L580 568 L583 568.3 L586 569.1 L589 570.4 L592 572.2 L595 574.4 L598 577.1 L601 580 L604 583.2 L607 586.6 L610 590 L613 593.4 L616 596.8 L619 600 L622 602.9 L625 605.6 L628 607.8 L631 609.6 L634 610.9 L637 611.7 L640 612 L643 611.7 L646 610.9 L649 609.6 L652 607.8\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"24\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M690 590 L654.8 614 L654.8 566 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M10 590 L13 590.5 L16 592 L19 594.5 L22 597.8 L25 601.7 L28 606 L31 609.6 L34 610.9 L37 611.7 L40 612 L43 611.7 L46 610.9 L49 609.6 L52 607.8 L55 605.6 L58 602.9 L61 600 L64 596.8 L67 593.4 L70 590 L73 586.6 L76 583.2 L79 580 L82 577.1 L85 574.4 L88 572.2 L91 570.4 L94 569.1 L97 568.3 L100 568 L103 568.3 L106 569.1 L109 570.4 L112 572.2 L115 574.4 L118 577.1 L121 580 L124 583.2 L127 586.6 L130 590 L133 593.4 L136 596.8 L139 600 L142 602.9 L145 605.6 L148 607.8 L151 609.6 L154 610.9 L157 611.7 L160 612 L163 611.7 L166 610.9 L169 609.6 L172 607.8 L175 605.6 L178 602.9 L181 600 L184 596.8 L187 593.4 L190 590 L193 586.6 L196 583.2 L199 580 L202 577.1 L205 574.4 L208 572.2 L211 570.4 L214 569.1 L217 568.3 L220 568 L223 568.3 L226 569.1 L229 570.4 L232 572.2 L235 574.4 L238 577.1 L241 580 L244 583.2 L247 586.6 L250 590 L253 593.4 L256 596.8 L259 600 L262 602.9 L265 605.6 L268 607.8 L271 609.6 L274 610.9 L277 611.7 L280 612 L283 611.7 L286 610.9 L289 609.6 L292 607.8 L295 605.6 L298 602.9 L301 600 L304 596.8 L307 593.4 L310 590 L313 586.6 L316 583.2 L319 580 L322 577.1 L325 574.4 L328 572.2 L331 570.4 L334 569.1 L337 568.3 L340 568 L343 568.3 L346 569.1 L349 570.4 L352 572.2 L355 574.4 L358 577.1 L361 580 L364 583.2 L367 586.6 L370 590 L373 593.4 L376 596.8 L379 600 L382 602.9 L385 605.6 L388 607.8 L391 609.6 L394 610.9 L397 611.7 L400 612 L403 611.7 L406 610.9 L409 609.6 L412 607.8 L415 605.6 L418 602.9 L421 600 L424 596.8 L427 593.4 L430 590 L433 586.6 L436 583.2 L439 580 L442 577.1 L445 574.4 L448 572.2 L451 570.4 L454 569.1 L457 568.3 L460 568 L463 568.3 L466 569.1 L469 570.4 L472 572.2 L475 574.4 L478 577.1 L481 580 L484 583.2 L487 586.6 L490 590 L493 593.4 L496 596.8 L499 600 L502 602.9 L505 605.6 L508 607.8 L511 609.6 L514 610.9 L517 611.7 L520 612 L523 611.7 L526 610.9 L529 609.6 L532 607.8 L535 605.6 L538 602.9 L541 600 L544 596.8 L547 593.4 L550 590 L553 586.6 L556 583.2 L559 580 L562 577.1 L565 574.4 L568 572.2 L571 570.4 L574 569.1 L577 568.3 L580 568 L583 568.3 L586 569.1 L589 570.4 L592 572.2 L595 574.4 L598 577.1 L601 580 L604 583.2 L607 586.6 L610 590 L613 593.4 L616 596.8 L619 600 L622 602.9 L625 605.6 L628 607.8 L631 609.6 L634 610.9 L637 611.7 L640 612 L643 611.7 L646 610.9 L649 609.6 L652 607.8\" fill=\"none\" stroke=\"#ff4b4b\" stroke-width=\"16\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M690 590 L654.8 614 L654.8 566 Z\" fill=\"#ff4b4b\" stroke=\"#ff4b4b\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M10 330 L13 330.9 L16 333.2 L19 335.4 L22 335.7 L25 333.3 L28 328 L31 321.9 L34 318.5 L37 318.5 L40 321.9 L43 327.8 L46 334.3 L49 339.6 L52 341.9 L55 340.7 L58 336.3 L61 330 L64 323.7 L67 319.3 L70 318.1 L73 320.4 L76 325.7 L79 332.2 L82 338.1 L85 341.5 L88 341.5 L91 338.1 L94 332.2 L97 325.7 L100 320.4 L103 318.1 L106 319.3 L109 323.7 L112 330 L115 336.3 L118 340.7 L121 341.9 L124 339.6 L127 334.3 L130 327.8 L133 321.9 L136 318.5 L139 318.5 L142 321.9 L145 327.8 L148 334.3 L151 339.6 L154 341.9 L157 340.7 L160 336.3 L163 330 L166 323.7 L169 319.3 L172 318.1 L175 320.4 L178 325.7 L181 332.2 L184 338.1 L187 341.5 L190 341.5 L193 338.1 L196 332.2 L199 325.7 L202 320.4 L205 318.1 L208 319.3 L211 323.7 L214 330 L217 336.3 L220 340.7 L223 341.9 L226 339.6 L229 334.3 L232 327.8 L235 321.9 L238 318.5 L241 318.5\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"20\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M270 330 L243.6 348 L243.6 312 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M10 330 L13 330.9 L16 333.2 L19 335.4 L22 335.7 L25 333.3 L28 328 L31 321.9 L34 318.5 L37 318.5 L40 321.9 L43 327.8 L46 334.3 L49 339.6 L52 341.9 L55 340.7 L58 336.3 L61 330 L64 323.7 L67 319.3 L70 318.1 L73 320.4 L76 325.7 L79 332.2 L82 338.1 L85 341.5 L88 341.5 L91 338.1 L94 332.2 L97 325.7 L100 320.4 L103 318.1 L106 319.3 L109 323.7 L112 330 L115 336.3 L118 340.7 L121 341.9 L124 339.6 L127 334.3 L130 327.8 L133 321.9 L136 318.5 L139 318.5 L142 321.9 L145 327.8 L148 334.3 L151 339.6 L154 341.9 L157 340.7 L160 336.3 L163 330 L166 323.7 L169 319.3 L172 318.1 L175 320.4 L178 325.7 L181 332.2 L184 338.1 L187 341.5 L190 341.5 L193 338.1 L196 332.2 L199 325.7 L202 320.4 L205 318.1 L208 319.3 L211 323.7 L214 330 L217 336.3 L220 340.7 L223 341.9 L226 339.6 L229 334.3 L232 327.8 L235 321.9 L238 318.5 L241 318.5\" fill=\"none\" stroke=\"#2fa8ff\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M270 330 L243.6 348 L243.6 312 Z\" fill=\"#2fa8ff\" stroke=\"#2fa8ff\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M342 238.4 L342.7 235.3 L344.7 232.1 L346.6 228.9 L346.7 225.9 L343.9 223.1 L338.4 220.6 L332.1 218.1 L328.4 215.4 L328.1 212.5 L331.3 209.2 L336.9 205.7 L343.2 202.1 L348.1 198.7 L350.2 195.5 L348.8 192.6 L344.1 190 L337.5 187.5 L331 185.1 L326.3 182.5 L324.8 179.6 L327 176.4 L331.9 173 L338.2 169.4 L343.8 165.9 L346.9 162.6 L346.7 159.6 L343 157 L336.9 154.5 L330.1 152.1 L324.6 149.5 L322 146.7 L322.9 143.7 L327.1 140.3 L333.1 136.7 L339.1 133.2 L343.3 129.8 L344.2 126.7 L341.6 123.9 L336.1 121.4 L329.3 119 L323.2 116.5 L319.5 113.8 L319.2 110.8 L322.4 107.6 L328 104.1 L334.3 100.5 L339.2 97.1 L341.3 93.9 L339.9 91 L335.2 88.4 L328.6 85.9 L322.1 83.5 L317.4 80.9 L316 78 L318.1 74.8 L323 71.4 L329.3 67.8 L334.9 64.3 L338.1 61 L337.8 58 L334.1 55.3\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"20\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M323.7 29.1 L343.9 53.9 L308 57 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M342 238.4 L342.7 235.3 L344.7 232.1 L346.6 228.9 L346.7 225.9 L343.9 223.1 L338.4 220.6 L332.1 218.1 L328.4 215.4 L328.1 212.5 L331.3 209.2 L336.9 205.7 L343.2 202.1 L348.1 198.7 L350.2 195.5 L348.8 192.6 L344.1 190 L337.5 187.5 L331 185.1 L326.3 182.5 L324.8 179.6 L327 176.4 L331.9 173 L338.2 169.4 L343.8 165.9 L346.9 162.6 L346.7 159.6 L343 157 L336.9 154.5 L330.1 152.1 L324.6 149.5 L322 146.7 L322.9 143.7 L327.1 140.3 L333.1 136.7 L339.1 133.2 L343.3 129.8 L344.2 126.7 L341.6 123.9 L336.1 121.4 L329.3 119 L323.2 116.5 L319.5 113.8 L319.2 110.8 L322.4 107.6 L328 104.1 L334.3 100.5 L339.2 97.1 L341.3 93.9 L339.9 91 L335.2 88.4 L328.6 85.9 L322.1 83.5 L317.4 80.9 L316 78 L318.1 74.8 L323 71.4 L329.3 67.8 L334.9 64.3 L338.1 61 L337.8 58 L334.1 55.3\" fill=\"none\" stroke=\"#2fa8ff\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M323.7 29.1 L343.9 53.9 L308 57 Z\" fill=\"#2fa8ff\" stroke=\"#2fa8ff\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M418.4 268.4 L421.2 267.1 L425 266.8 L428.7 266.4 L431.1 264.7 L431.7 260.8 L430.4 254.9 L428.6 248.4 L428.5 243.8 L430.7 241.8 L435.3 242.4 L441.4 244.7 L448 247.6 L453.8 249.5 L457.6 249.2 L459 246.3 L458.3 241 L456.3 234.3 L454.3 227.6 L453.5 222.3 L455 219.4 L458.8 219.2 L464.5 221.1 L471.1 223.9 L477.3 226.3 L481.8 226.8 L484.1 224.8 L484 220.2 L482.3 213.9 L480.1 207 L478.8 201.1 L479.5 197.3 L482.5 196.2 L487.7 197.5 L494.2 200.2 L500.6 202.9 L505.8 204.2 L508.9 203 L509.5 199.3 L508.2 193.4 L506.1 186.5 L504.4 180.1 L504.3 175.6 L506.5 173.5 L511.1 174.1 L517.2 176.5 L523.8 179.3 L529.6 181.2 L533.4 181 L534.8 178.1 L534.1 172.8 L532.1 166.1 L530.1 159.4 L529.3 154.1 L530.8 151.2 L534.6 150.9 L540.3 152.8 L546.9 155.7 L553.1 158 L557.6 158.6 L559.9 156.6 L559.8 152\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"20\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M574.4 127.9 L566.9 159 L542.8 132.2 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M418.4 268.4 L421.2 267.1 L425 266.8 L428.7 266.4 L431.1 264.7 L431.7 260.8 L430.4 254.9 L428.6 248.4 L428.5 243.8 L430.7 241.8 L435.3 242.4 L441.4 244.7 L448 247.6 L453.8 249.5 L457.6 249.2 L459 246.3 L458.3 241 L456.3 234.3 L454.3 227.6 L453.5 222.3 L455 219.4 L458.8 219.2 L464.5 221.1 L471.1 223.9 L477.3 226.3 L481.8 226.8 L484.1 224.8 L484 220.2 L482.3 213.9 L480.1 207 L478.8 201.1 L479.5 197.3 L482.5 196.2 L487.7 197.5 L494.2 200.2 L500.6 202.9 L505.8 204.2 L508.9 203 L509.5 199.3 L508.2 193.4 L506.1 186.5 L504.4 180.1 L504.3 175.6 L506.5 173.5 L511.1 174.1 L517.2 176.5 L523.8 179.3 L529.6 181.2 L533.4 181 L534.8 178.1 L534.1 172.8 L532.1 166.1 L530.1 159.4 L529.3 154.1 L530.8 151.2 L534.6 150.9 L540.3 152.8 L546.9 155.7 L553.1 158 L557.6 158.6 L559.9 156.6 L559.8 152\" fill=\"none\" stroke=\"#2fa8ff\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M574.4 127.9 L566.9 159 L542.8 132.2 Z\" fill=\"#2fa8ff\" stroke=\"#2fa8ff\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M441.1 342.8 L443.9 344.2 L446.6 346.8 L449.3 349.4 L452.2 350.2 L455.5 348.1 L459.2 343.3 L463 337.7 L466.5 334.7 L469.4 335.1 L471.9 339 L474.1 345.2 L476.2 352.1 L478.4 357.7 L481 360.5 L484.2 359.7 L487.8 355.7 L491.6 349.9 L495.5 344.1 L499 340.1 L502.2 339.3 L504.8 342.1 L507.1 347.7 L509.1 354.6 L511.3 360.8 L513.8 364.7 L516.7 365.1 L520.2 362.1 L524 356.7 L527.9 350.6 L531.6 345.8 L534.9 343.9 L537.7 345.5 L540 350.3 L542.1 357 L544.2 363.7 L546.6 368.5 L549.4 370.1 L552.7 368.2 L556.4 363.4 L560.2 357.3 L564 351.9 L567.5 348.9 L570.5 349.3 L572.9 353.2 L575.1 359.4 L577.2 366.3 L579.4 371.9 L582 374.7 L585.2 373.9 L588.8 369.9 L592.6 364.1 L596.5 358.3 L600.1 354.3 L603.2 353.5 L605.8 356.3 L608.1 361.9 L610.1 368.8 L612.3 375 L614.8 378.9 L617.7 379.3 L621.2 376.3\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"20\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M649.1 372 L620.4 386.2 L625.4 350.5 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M441.1 342.8 L443.9 344.2 L446.6 346.8 L449.3 349.4 L452.2 350.2 L455.5 348.1 L459.2 343.3 L463 337.7 L466.5 334.7 L469.4 335.1 L471.9 339 L474.1 345.2 L476.2 352.1 L478.4 357.7 L481 360.5 L484.2 359.7 L487.8 355.7 L491.6 349.9 L495.5 344.1 L499 340.1 L502.2 339.3 L504.8 342.1 L507.1 347.7 L509.1 354.6 L511.3 360.8 L513.8 364.7 L516.7 365.1 L520.2 362.1 L524 356.7 L527.9 350.6 L531.6 345.8 L534.9 343.9 L537.7 345.5 L540 350.3 L542.1 357 L544.2 363.7 L546.6 368.5 L549.4 370.1 L552.7 368.2 L556.4 363.4 L560.2 357.3 L564 351.9 L567.5 348.9 L570.5 349.3 L572.9 353.2 L575.1 359.4 L577.2 366.3 L579.4 371.9 L582 374.7 L585.2 373.9 L588.8 369.9 L592.6 364.1 L596.5 358.3 L600.1 354.3 L603.2 353.5 L605.8 356.3 L608.1 361.9 L610.1 368.8 L612.3 375 L614.8 378.9 L617.7 379.3 L621.2 376.3\" fill=\"none\" stroke=\"#2fa8ff\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M649.1 372 L620.4 386.2 L625.4 350.5 Z\" fill=\"#2fa8ff\" stroke=\"#2fa8ff\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M396 409.7 L396.7 412.7 L396.2 416.5 L395.8 420.2 L397 422.9 L400.7 424.3 L406.7 424.3 L413.5 423.8 L418 424.7 L419.5 427.3 L418 431.6 L414.4 437.2 L410.2 443 L407.2 448.2 L406.7 452 L409.2 454 L414.5 454.4 L421.5 453.8 L428.5 453.3 L433.8 453.7 L436.3 455.7 L435.8 459.4 L432.8 464.7 L428.6 470.5 L425 476.1 L423.5 480.4 L425 483 L429.5 483.9 L436.1 483.5 L443.3 482.9 L449.3 482.8 L452.8 484.2 L453.3 487.4 L451 492.3 L447 498 L443 503.8 L440.7 508.6 L441.2 511.8 L444.7 513.2 L450.7 513.2 L457.9 512.5 L464.5 512.2\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"20\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M471 539.6 L442.2 525.7 L473.4 507.7 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M396 409.7 L396.7 412.7 L396.2 416.5 L395.8 420.2 L397 422.9 L400.7 424.3 L406.7 424.3 L413.5 423.8 L418 424.7 L419.5 427.3 L418 431.6 L414.4 437.2 L410.2 443 L407.2 448.2 L406.7 452 L409.2 454 L414.5 454.4 L421.5 453.8 L428.5 453.3 L433.8 453.7 L436.3 455.7 L435.8 459.4 L432.8 464.7 L428.6 470.5 L425 476.1 L423.5 480.4 L425 483 L429.5 483.9 L436.1 483.5 L443.3 482.9 L449.3 482.8 L452.8 484.2 L453.3 487.4 L451 492.3 L447 498 L443 503.8 L440.7 508.6 L441.2 511.8 L444.7 513.2 L450.7 513.2 L457.9 512.5 L464.5 512.2\" fill=\"none\" stroke=\"#2fa8ff\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M471 539.6 L442.2 525.7 L473.4 507.7 Z\" fill=\"#2fa8ff\" stroke=\"#2fa8ff\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M306.8 411.2 L304.6 413.4 L301.1 415 L297.8 416.7 L296.1 419.1 L296.9 422.9 L300.1 428.1 L304.1 433.6 L305.7 437.8 L304.3 440.5 L299.9 441.5 L293.3 441.4 L286.1 441 L280 441.2 L276.5 442.7 L276.2 445.9 L278.7 450.6 L282.9 456.3 L287 461.9 L289.5 466.6 L289.2 469.8 L285.7 471.4 L279.7 471.5 L272.5 471.1 L265.9 471 L261.4 472 L260 474.7 L261.6 479 L265.4 484.4 L269.8 490.1 L273 495.2 L273.7 499 L271.2 501 L265.9 501.6 L258.9 501.3 L251.9 501 L246.6 501.5 L244.1 503.6 L244.8 507.4 L248.1 512.5 L252.4 518.2 L256.2 523.6\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"20\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M236.4 543.7 L232.9 511.9 L264.7 528.8 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M306.8 411.2 L304.6 413.4 L301.1 415 L297.8 416.7 L296.1 419.1 L296.9 422.9 L300.1 428.1 L304.1 433.6 L305.7 437.8 L304.3 440.5 L299.9 441.5 L293.3 441.4 L286.1 441 L280 441.2 L276.5 442.7 L276.2 445.9 L278.7 450.6 L282.9 456.3 L287 461.9 L289.5 466.6 L289.2 469.8 L285.7 471.4 L279.7 471.5 L272.5 471.1 L265.9 471 L261.4 472 L260 474.7 L261.6 479 L265.4 484.4 L269.8 490.1 L273 495.2 L273.7 499 L271.2 501 L265.9 501.6 L258.9 501.3 L251.9 501 L246.6 501.5 L244.1 503.6 L244.8 507.4 L248.1 512.5 L252.4 518.2 L256.2 523.6\" fill=\"none\" stroke=\"#2fa8ff\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M236.4 543.7 L232.9 511.9 L264.7 528.8 Z\" fill=\"#2fa8ff\" stroke=\"#2fa8ff\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M272 281.2 L269.9 278.9 L268.6 275.3 L267.2 271.9 L264.8 270 L261 270.5 L255.7 273.4 L249.9 277 L245.5 278.3 L243 276.7 L242.3 272.2 L242.8 265.6 L243.7 258.5 L244 252.5 L242.7 248.9 L239.5 248.3 L234.6 250.5 L228.7 254.2 L222.8 258 L217.9 260.2 L214.8 259.6 L213.5 256 L213.7 249.9 L214.6 242.8 L215.2 236.2 L214.5 231.7 L211.9 230.1 L207.6 231.5 L201.9 234.9 L195.9 238.8 L190.6 241.7 L186.8 242.1 L184.9 239.5 L184.7 234.1 L185.5 227.2 L186.3 220.2 L186.1 214.9 L184.2 212.3 L180.4 212.7 L175.1 215.6 L169 219.5 L163.4 222.9 L159 224.3 L156.5 222.7 L155.8 218.2 L156.3 211.6 L157.2 204.4 L157.5 198.4 L156.2 194.8 L153 194.2 L148.1 196.4 L142.2 200.2 L136.3 203.9 L131.4 206.1 L128.3 205.5\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"20\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110.9 180.6 L142.8 179.3 L123.7 209.8 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M272 281.2 L269.9 278.9 L268.6 275.3 L267.2 271.9 L264.8 270 L261 270.5 L255.7 273.4 L249.9 277 L245.5 278.3 L243 276.7 L242.3 272.2 L242.8 265.6 L243.7 258.5 L244 252.5 L242.7 248.9 L239.5 248.3 L234.6 250.5 L228.7 254.2 L222.8 258 L217.9 260.2 L214.8 259.6 L213.5 256 L213.7 249.9 L214.6 242.8 L215.2 236.2 L214.5 231.7 L211.9 230.1 L207.6 231.5 L201.9 234.9 L195.9 238.8 L190.6 241.7 L186.8 242.1 L184.9 239.5 L184.7 234.1 L185.5 227.2 L186.3 220.2 L186.1 214.9 L184.2 212.3 L180.4 212.7 L175.1 215.6 L169 219.5 L163.4 222.9 L159 224.3 L156.5 222.7 L155.8 218.2 L156.3 211.6 L157.2 204.4 L157.5 198.4 L156.2 194.8 L153 194.2 L148.1 196.4 L142.2 200.2 L136.3 203.9 L131.4 206.1 L128.3 205.5\" fill=\"none\" stroke=\"#2fa8ff\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110.9 180.6 L142.8 179.3 L123.7 209.8 Z\" fill=\"#2fa8ff\" stroke=\"#2fa8ff\" stroke-width=\"2\" stroke-linejoin=\"round\"/>\n<g transform=\"translate(269.4 280.4) scale(0.62)\"><rect x=\"100\" y=\"70\" width=\"60\" height=\"20\" rx=\"10\" fill=\"#3f5bd6\"/><circle cx=\"80\" cy=\"80\" r=\"62\" fill=\"#3f5bd6\"/><circle cx=\"80\" cy=\"80\" r=\"54\" fill=\"#6f8cff\"/><ellipse cx=\"62\" cy=\"58\" rx=\"20\" ry=\"12\" fill=\"#fff\" opacity=\"0.65\" transform=\"rotate(-30 62 58)\"/><circle cx=\"180\" cy=\"80\" r=\"62\" fill=\"#3f5bd6\"/><circle cx=\"180\" cy=\"80\" r=\"54\" fill=\"#6f8cff\"/><ellipse cx=\"162\" cy=\"58\" rx=\"20\" ry=\"12\" fill=\"#fff\" opacity=\"0.65\" transform=\"rotate(-30 162 58)\"/></g></svg>",
+    "ondas_azules": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 560\"><path d=\"M110 120 L113.1 119.8 L116.6 120.6 L119.9 120.9 L122.5 119.2 L124.1 114.9 L125.1 108.9 L126.5 103.9 L129.3 102.9 L133.4 105.2 L138.2 109.7 L143 114.2 L147.1 116.6 L149.9 115.6 L151.5 111.2 L152.3 104.6 L153.1 98.1 L154.7 93.6 L157.5 92.6 L161.6 95 L166.4 99.5 L171.2 104 L175.3 106.4 L178.1 105.3 L179.7 100.9 L180.5 94.3 L181.3 87.8 L182.9 83.4 L185.7 82.3 L189.7 84.7 L194.6 89.2 L199.4 93.7 L203.5 96.1 L206.3 95.1\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"17\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M222.8 79 L208.8 98.4 L199.5 73 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M110 120 L113.1 119.8 L116.6 120.6 L119.9 120.9 L122.5 119.2 L124.1 114.9 L125.1 108.9 L126.5 103.9 L129.3 102.9 L133.4 105.2 L138.2 109.7 L143 114.2 L147.1 116.6 L149.9 115.6 L151.5 111.2 L152.3 104.6 L153.1 98.1 L154.7 93.6 L157.5 92.6 L161.6 95 L166.4 99.5 L171.2 104 L175.3 106.4 L178.1 105.3 L179.7 100.9 L180.5 94.3 L181.3 87.8 L182.9 83.4 L185.7 82.3 L189.7 84.7 L194.6 89.2 L199.4 93.7 L203.5 96.1 L206.3 95.1\" fill=\"none\" stroke=\"#1f6fe0\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M222.8 79 L208.8 98.4 L199.5 73 Z\" fill=\"#1f6fe0\" stroke=\"#1f6fe0\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M330 70 L332.3 72.1 L334.2 75.1 L336.3 77.7 L339.4 78.3 L343.6 76.3 L348.5 72.8 L353.1 70.3 L355.8 71.5 L357 76.1 L357.2 82.7 L357.4 89.3 L358.6 93.8 L361.3 95.1 L365.6 93.1 L370.8 89 L376 85 L380.2 82.9 L383 84.2 L384.1 88.8 L384.4 95.4 L384.6 102 L385.8 106.5 L388.5 107.8 L392.8 105.8 L398 101.7 L403.2 97.6 L407.4 95.6 L410.1 96.9 L411.3 101.4 L411.6 108 L411.8 114.6 L413 119.2 L415.7 120.5\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"17\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M438.8 120.7 L415.1 124.6 L426.5 100.1 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M330 70 L332.3 72.1 L334.2 75.1 L336.3 77.7 L339.4 78.3 L343.6 76.3 L348.5 72.8 L353.1 70.3 L355.8 71.5 L357 76.1 L357.2 82.7 L357.4 89.3 L358.6 93.8 L361.3 95.1 L365.6 93.1 L370.8 89 L376 85 L380.2 82.9 L383 84.2 L384.1 88.8 L384.4 95.4 L384.6 102 L385.8 106.5 L388.5 107.8 L392.8 105.8 L398 101.7 L403.2 97.6 L407.4 95.6 L410.1 96.9 L411.3 101.4 L411.6 108 L411.8 114.6 L413 119.2 L415.7 120.5\" fill=\"none\" stroke=\"#1f6fe0\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M438.8 120.7 L415.1 124.6 L426.5 100.1 Z\" fill=\"#1f6fe0\" stroke=\"#1f6fe0\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M560 130 L563 129 L566.6 128.9 L569.8 128.3 L571.9 126 L572.3 121.4 L571.7 115.3 L571.7 110.2 L574.2 108.4 L578.7 109.7 L584.6 112.8 L590.4 115.9 L594.9 117.1 L597.4 115.4 L597.8 110.7 L596.9 104.2 L595.9 97.7 L596.3 93 L598.8 91.2 L603.3 92.5 L609.1 95.6 L615 98.7 L619.5 99.9 L622 98.2 L622.4 93.5 L621.4 87 L620.5 80.4 L620.9 75.7 L623.4 74 L627.9 75.3 L633.7 78.4 L639.6 81.5 L644.1 82.7 L646.6 81\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"17\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M658.3 61.2 L649.8 83.6 L634.3 61.5 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M560 130 L563 129 L566.6 128.9 L569.8 128.3 L571.9 126 L572.3 121.4 L571.7 115.3 L571.7 110.2 L574.2 108.4 L578.7 109.7 L584.6 112.8 L590.4 115.9 L594.9 117.1 L597.4 115.4 L597.8 110.7 L596.9 104.2 L595.9 97.7 L596.3 93 L598.8 91.2 L603.3 92.5 L609.1 95.6 L615 98.7 L619.5 99.9 L622 98.2 L622.4 93.5 L621.4 87 L620.5 80.4 L620.9 75.7 L623.4 74 L627.9 75.3 L633.7 78.4 L639.6 81.5 L644.1 82.7 L646.6 81\" fill=\"none\" stroke=\"#1f6fe0\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M658.3 61.2 L649.8 83.6 L634.3 61.5 Z\" fill=\"#1f6fe0\" stroke=\"#1f6fe0\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M720 300 L716.9 300.2 L713.4 299.4 L710.1 299.1 L707.5 300.8 L705.9 305.1 L704.9 311.1 L703.5 316.1 L700.7 317.1 L696.6 314.8 L691.8 310.3 L687 305.8 L682.9 303.4 L680.1 304.4 L678.5 308.8 L677.7 315.4 L676.9 321.9 L675.3 326.4 L672.5 327.4 L668.4 325 L663.6 320.5 L658.8 316 L654.7 313.6 L651.9 314.7 L650.3 319.1 L649.5 325.7 L648.7 332.2 L647.1 336.6 L644.3 337.7 L640.3 335.3 L635.4 330.8 L630.6 326.3 L626.5 323.9 L623.7 324.9\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"17\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M607.2 341 L621.2 321.6 L630.5 347 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M720 300 L716.9 300.2 L713.4 299.4 L710.1 299.1 L707.5 300.8 L705.9 305.1 L704.9 311.1 L703.5 316.1 L700.7 317.1 L696.6 314.8 L691.8 310.3 L687 305.8 L682.9 303.4 L680.1 304.4 L678.5 308.8 L677.7 315.4 L676.9 321.9 L675.3 326.4 L672.5 327.4 L668.4 325 L663.6 320.5 L658.8 316 L654.7 313.6 L651.9 314.7 L650.3 319.1 L649.5 325.7 L648.7 332.2 L647.1 336.6 L644.3 337.7 L640.3 335.3 L635.4 330.8 L630.6 326.3 L626.5 323.9 L623.7 324.9\" fill=\"none\" stroke=\"#1f6fe0\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M607.2 341 L621.2 321.6 L630.5 347 Z\" fill=\"#1f6fe0\" stroke=\"#1f6fe0\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M200 300 L201.7 302.6 L202.8 306 L204.1 309.1 L206.9 310.4 L211.5 309.6 L217.2 307.5 L222.2 306.2 L224.5 308.1 L224.5 312.9 L223 319.3 L221.5 325.7 L221.5 330.4 L223.8 332.4 L228.4 331.5 L234.5 328.9 L240.5 326.4 L245.2 325.5 L247.5 327.4 L247.4 332.1 L246 338.6 L244.5 345 L244.4 349.7 L246.7 351.6 L251.4 350.8 L257.5 348.2 L263.5 345.6 L268.2 344.8 L270.5 346.7 L270.4 351.4 L268.9 357.9 L267.5 364.3 L267.4 369 L269.7 370.9\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"17\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M291.9 377.1 L268.1 374.7 L285.4 354.1 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M200 300 L201.7 302.6 L202.8 306 L204.1 309.1 L206.9 310.4 L211.5 309.6 L217.2 307.5 L222.2 306.2 L224.5 308.1 L224.5 312.9 L223 319.3 L221.5 325.7 L221.5 330.4 L223.8 332.4 L228.4 331.5 L234.5 328.9 L240.5 326.4 L245.2 325.5 L247.5 327.4 L247.4 332.1 L246 338.6 L244.5 345 L244.4 349.7 L246.7 351.6 L251.4 350.8 L257.5 348.2 L263.5 345.6 L268.2 344.8 L270.5 346.7 L270.4 351.4 L268.9 357.9 L267.5 364.3 L267.4 369 L269.7 370.9\" fill=\"none\" stroke=\"#1f6fe0\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M291.9 377.1 L268.1 374.7 L285.4 354.1 Z\" fill=\"#1f6fe0\" stroke=\"#1f6fe0\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M450 280 L453.1 280.3 L456.4 281.8 L459.6 282.7 L462.4 281.4 L464.8 277.4 L466.8 271.7 L469 267 L472 266.5 L475.6 269.5 L479.5 274.8 L483.5 280.1 L487.1 283.1 L490.1 282.6 L492.4 278.5 L494.3 272.2 L496.3 265.9 L498.6 261.8 L501.5 261.3 L505.1 264.3 L509.1 269.6 L513.1 274.8 L516.6 277.9 L519.6 277.4 L521.9 273.3 L523.9 267 L525.8 260.7 L528.1 256.6 L531.1 256 L534.7 259.1 L538.6 264.4 L542.6 269.6 L546.2 272.7 L549.1 272.2\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"17\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M568.2 259.2 L551 275.9 L546.3 249.3 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M450 280 L453.1 280.3 L456.4 281.8 L459.6 282.7 L462.4 281.4 L464.8 277.4 L466.8 271.7 L469 267 L472 266.5 L475.6 269.5 L479.5 274.8 L483.5 280.1 L487.1 283.1 L490.1 282.6 L492.4 278.5 L494.3 272.2 L496.3 265.9 L498.6 261.8 L501.5 261.3 L505.1 264.3 L509.1 269.6 L513.1 274.8 L516.6 277.9 L519.6 277.4 L521.9 273.3 L523.9 267 L525.8 260.7 L528.1 256.6 L531.1 256 L534.7 259.1 L538.6 264.4 L542.6 269.6 L546.2 272.7 L549.1 272.2\" fill=\"none\" stroke=\"#1f6fe0\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M568.2 259.2 L551 275.9 L546.3 249.3 Z\" fill=\"#1f6fe0\" stroke=\"#1f6fe0\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M90 470 L92.7 471.6 L95.1 474.3 L97.6 476.5 L100.7 476.5 L104.5 473.9 L108.8 469.5 L112.7 466.2 L115.6 467 L117.6 471.3 L119 477.8 L120.4 484.2 L122.3 488.5 L125.2 489.3 L129 486.5 L133.5 481.6 L137.9 476.7 L141.7 474 L144.6 474.8 L146.6 479.1 L148 485.5 L149.3 492 L151.3 496.3 L154.2 497 L158 494.3 L162.4 489.4 L166.9 484.5 L170.7 481.8 L173.6 482.6 L175.6 486.8 L176.9 493.3 L178.3 499.7 L180.3 504 L183.2 504.8\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"17\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M205.9 501.1 L183.3 509 L190.3 482.9 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M90 470 L92.7 471.6 L95.1 474.3 L97.6 476.5 L100.7 476.5 L104.5 473.9 L108.8 469.5 L112.7 466.2 L115.6 467 L117.6 471.3 L119 477.8 L120.4 484.2 L122.3 488.5 L125.2 489.3 L129 486.5 L133.5 481.6 L137.9 476.7 L141.7 474 L144.6 474.8 L146.6 479.1 L148 485.5 L149.3 492 L151.3 496.3 L154.2 497 L158 494.3 L162.4 489.4 L166.9 484.5 L170.7 481.8 L173.6 482.6 L175.6 486.8 L176.9 493.3 L178.3 499.7 L180.3 504 L183.2 504.8\" fill=\"none\" stroke=\"#1f6fe0\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M205.9 501.1 L183.3 509 L190.3 482.9 Z\" fill=\"#1f6fe0\" stroke=\"#1f6fe0\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M640 480 L637.8 477.7 L636.2 474.5 L634.3 471.8 L631.4 470.9 L627 472.5 L621.8 475.6 L617.1 477.7 L614.5 476.2 L613.7 471.6 L614 465 L614.4 458.4 L613.6 453.8 L611 452.3 L606.6 453.9 L601 457.5 L595.5 461.1 L591.1 462.7 L588.5 461.2 L587.7 456.6 L588 450 L588.4 443.4 L587.6 438.8 L585 437.3 L580.6 438.9 L575 442.5 L569.5 446.1 L565.1 447.7 L562.5 446.2 L561.7 441.6 L562.1 435 L562.4 428.4 L561.6 423.8 L559 422.3\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"17\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M536.1 420 L560 418.2 L546.5 441.6 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M640 480 L637.8 477.7 L636.2 474.5 L634.3 471.8 L631.4 470.9 L627 472.5 L621.8 475.6 L617.1 477.7 L614.5 476.2 L613.7 471.6 L614 465 L614.4 458.4 L613.6 453.8 L611 452.3 L606.6 453.9 L601 457.5 L595.5 461.1 L591.1 462.7 L588.5 461.2 L587.7 456.6 L588 450 L588.4 443.4 L587.6 438.8 L585 437.3 L580.6 438.9 L575 442.5 L569.5 446.1 L565.1 447.7 L562.5 446.2 L561.7 441.6 L562.1 435 L562.4 428.4 L561.6 423.8 L559 422.3\" fill=\"none\" stroke=\"#1f6fe0\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M536.1 420 L560 418.2 L546.5 441.6 Z\" fill=\"#1f6fe0\" stroke=\"#1f6fe0\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M380 470 L380.2 473.1 L379.4 476.6 L379.1 479.9 L380.8 482.5 L385.1 484.1 L391.1 485.1 L396.1 486.5 L397.1 489.3 L394.8 493.4 L390.3 498.2 L385.8 503 L383.4 507.1 L384.4 509.9 L388.8 511.5 L395.4 512.3 L401.9 513.1 L406.4 514.7 L407.4 517.5 L405 521.6 L400.5 526.4 L396 531.2 L393.6 535.3 L394.7 538.1 L399.1 539.7 L405.7 540.5 L412.2 541.3 L416.6 542.9 L417.7 545.7 L415.3 549.7 L410.8 554.6 L406.3 559.4 L403.9 563.5 L404.9 566.3\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"17\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M421 582.8 L401.6 568.8 L427 559.5 Z\" fill=\"#ffffff\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M380 470 L380.2 473.1 L379.4 476.6 L379.1 479.9 L380.8 482.5 L385.1 484.1 L391.1 485.1 L396.1 486.5 L397.1 489.3 L394.8 493.4 L390.3 498.2 L385.8 503 L383.4 507.1 L384.4 509.9 L388.8 511.5 L395.4 512.3 L401.9 513.1 L406.4 514.7 L407.4 517.5 L405 521.6 L400.5 526.4 L396 531.2 L393.6 535.3 L394.7 538.1 L399.1 539.7 L405.7 540.5 L412.2 541.3 L416.6 542.9 L417.7 545.7 L415.3 549.7 L410.8 554.6 L406.3 559.4 L403.9 563.5 L404.9 566.3\" fill=\"none\" stroke=\"#1f6fe0\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M421 582.8 L401.6 568.8 L427 559.5 Z\" fill=\"#1f6fe0\" stroke=\"#1f6fe0\" stroke-width=\"2\" stroke-linejoin=\"round\"/></svg>",
+    "espectro_sol": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 440\"><rect x=\"20\" y=\"410\" width=\"660\" height=\"10\" rx=\"5\" fill=\"#ffffff\"/><rect x=\"40\" y=\"212\" width=\"72\" height=\"198\" rx=\"14\" fill=\"#a35cff\"/><rect x=\"90\" y=\"222\" width=\"16\" height=\"184\" rx=\"8\" fill=\"#000000\" opacity=\"0.13\"/><rect x=\"50\" y=\"222\" width=\"12\" height=\"89.1\" rx=\"6\" fill=\"#ffffff\" opacity=\"0.4\"/><rect x=\"132\" y=\"143.6\" width=\"72\" height=\"266.4\" rx=\"14\" fill=\"#4d5cff\"/><rect x=\"182\" y=\"153.6\" width=\"16\" height=\"252.4\" rx=\"8\" fill=\"#000000\" opacity=\"0.13\"/><rect x=\"142\" y=\"153.6\" width=\"12\" height=\"119.9\" rx=\"6\" fill=\"#ffffff\" opacity=\"0.4\"/><rect x=\"224\" y=\"86\" width=\"72\" height=\"324\" rx=\"14\" fill=\"#2fa8ff\"/><rect x=\"274\" y=\"96\" width=\"16\" height=\"310\" rx=\"8\" fill=\"#000000\" opacity=\"0.13\"/><rect x=\"234\" y=\"96\" width=\"12\" height=\"145.8\" rx=\"6\" fill=\"#ffffff\" opacity=\"0.4\"/><rect x=\"316\" y=\"50\" width=\"72\" height=\"360\" rx=\"14\" fill=\"#46d36a\"/><rect x=\"366\" y=\"60\" width=\"16\" height=\"346\" rx=\"8\" fill=\"#000000\" opacity=\"0.13\"/><rect x=\"326\" y=\"60\" width=\"12\" height=\"162\" rx=\"6\" fill=\"#ffffff\" opacity=\"0.4\"/><rect x=\"408\" y=\"60.8\" width=\"72\" height=\"349.2\" rx=\"14\" fill=\"#ffe047\"/><rect x=\"458\" y=\"70.8\" width=\"16\" height=\"335.2\" rx=\"8\" fill=\"#000000\" opacity=\"0.13\"/><rect x=\"418\" y=\"70.8\" width=\"12\" height=\"157.1\" rx=\"6\" fill=\"#ffffff\" opacity=\"0.4\"/><rect x=\"500\" y=\"78.8\" width=\"72\" height=\"331.2\" rx=\"14\" fill=\"#ff9a1f\"/><rect x=\"550\" y=\"88.8\" width=\"16\" height=\"317.2\" rx=\"8\" fill=\"#000000\" opacity=\"0.13\"/><rect x=\"510\" y=\"88.8\" width=\"12\" height=\"149\" rx=\"6\" fill=\"#ffffff\" opacity=\"0.4\"/><rect x=\"592\" y=\"104\" width=\"72\" height=\"306\" rx=\"14\" fill=\"#ff4b4b\"/><rect x=\"642\" y=\"114\" width=\"16\" height=\"292\" rx=\"8\" fill=\"#000000\" opacity=\"0.13\"/><rect x=\"602\" y=\"114\" width=\"12\" height=\"137.7\" rx=\"6\" fill=\"#ffffff\" opacity=\"0.4\"/></svg>",
+    "ojo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -10 360 230\"><path d=\"M20 110 Q180 -20 340 110 Q180 240 20 110 Z\" fill=\"#ffffff\" stroke=\"#2b2b3d\" stroke-width=\"10\" stroke-linejoin=\"round\"/>\n<circle cx=\"180\" cy=\"110\" r=\"62\" fill=\"#3b82d6\"/><circle cx=\"180\" cy=\"110\" r=\"62\" fill=\"none\" stroke=\"#24589b\" stroke-width=\"8\"/><circle cx=\"180\" cy=\"110\" r=\"44\" fill=\"#5aa0ec\" opacity=\"0.5\"/>\n<circle cx=\"180\" cy=\"110\" r=\"28\" fill=\"#141420\"/><circle cx=\"160\" cy=\"88\" r=\"13\" fill=\"#ffffff\"/><circle cx=\"200\" cy=\"128\" r=\"6\" fill=\"#ffffff\" opacity=\"0.7\"/>\n<path d=\"M20 110 Q180 -20 340 110\" fill=\"none\" stroke=\"#2b2b3d\" stroke-width=\"14\" stroke-linecap=\"round\"/>\n<g stroke=\"#2b2b3d\" stroke-width=\"9\" stroke-linecap=\"round\"><path d=\"M80 52 L64 26\"/><path d=\"M130 30 L122 4\"/><path d=\"M180 24 L180 -2\"/><path d=\"M230 30 L238 4\"/><path d=\"M280 52 L296 26\"/></g></svg>",
+    "tierra_aire": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 800\"><defs><clipPath id=\"k\"><rect width=\"800\" height=\"800\" rx=\"48\"/></clipPath>\n<linearGradient id=\"t\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#ffe066\"/><stop offset=\"0.55\" stop-color=\"#ff9a1f\"/><stop offset=\"1\" stop-color=\"#ff3d2e\"/></linearGradient>\n<radialGradient id=\"a\" cx=\"50%\" cy=\"50%\" r=\"50%\"><stop offset=\"0.8\" stop-color=\"#7cc8ff\" stop-opacity=\"0.6\"/><stop offset=\"0.95\" stop-color=\"#7cc8ff\" stop-opacity=\"0.4\"/><stop offset=\"1\" stop-color=\"#7cc8ff\" stop-opacity=\"0\"/></radialGradient></defs>\n<g clip-path=\"url(#k)\"><rect width=\"800\" height=\"800\" fill=\"#141a3a\"/>\n<g fill=\"#ffffff\"><circle cx=\"90\" cy=\"90\" r=\"3\"/><circle cx=\"260\" cy=\"60\" r=\"2\"/><circle cx=\"560\" cy=\"110\" r=\"3\"/><circle cx=\"700\" cy=\"60\" r=\"2\"/><circle cx=\"660\" cy=\"250\" r=\"2\"/><circle cx=\"130\" cy=\"260\" r=\"2\"/></g>\n<circle cx=\"400\" cy=\"1180\" r=\"860\" fill=\"url(#a)\"/>\n<circle cx=\"400\" cy=\"1180\" r=\"730\" fill=\"#2f8fe0\"/>\n<path d=\"M-60 560 Q120 470 300 500 Q380 470 460 490 Q600 460 860 560 V800 H-60 Z\" fill=\"#46ad5b\"/>\n<path d=\"M200 520 Q300 480 380 500 Q440 470 520 500 L560 530 Q420 515 300 540 Z\" fill=\"#3a9650\"/>\n<path d=\"M398 140 L398 440\" stroke=\"#fff6c0\" stroke-width=\"16\" stroke-linecap=\"round\"/>\n<path d=\"M84 400 L388 446\" stroke=\"url(#t)\" stroke-width=\"16\" stroke-linecap=\"round\"/>\n<circle cx=\"398\" cy=\"92\" r=\"54\" fill=\"#ffe066\" opacity=\"0.3\"/><circle cx=\"398\" cy=\"92\" r=\"36\" fill=\"#ffe066\"/><circle cx=\"388\" cy=\"82\" r=\"12\" fill=\"#fffbe0\" opacity=\"0.7\"/><circle cx=\"70\" cy=\"396\" r=\"54\" fill=\"#ff8a1f\" opacity=\"0.3\"/><circle cx=\"70\" cy=\"396\" r=\"36\" fill=\"#ff8a1f\"/><circle cx=\"60\" cy=\"386\" r=\"12\" fill=\"#ffd36b\" opacity=\"0.7\"/>\n<g transform=\"translate(400 458)\"><circle cx=\"0\" cy=\"-34\" r=\"12\" fill=\"#f2c29b\"/><rect x=\"-11\" y=\"-22\" width=\"22\" height=\"26\" rx=\"8\" fill=\"#ff7a59\"/></g>\n</g><rect x=\"5\" y=\"5\" width=\"790\" height=\"790\" rx=\"44\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"10\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "La luz del Sol contiene todos los colores; las moléculas del aire dispersan mucho más las longitudes de onda cortas (azul) que las largas (rojo): dispersión de Rayleigh",
+      "fuente": "NOAA / SciJinks (NASA-NOAA), «Why is the sky blue?», scijinks.gov/blue-sky"
+    },
+    {
+      "dato": "El cielo no se ve violeta porque el Sol emite menos violeta, parte se absorbe en la alta atmósfera y nuestros ojos son menos sensibles a él",
+      "fuente": "SciJinks (scijinks.gov/blue-sky); NOAA National Weather Service Flagstaff, weather.gov/fgz/SkyBlue; Scientific American, «Why is the sky blue?» (A. Del Genio, NASA GISS)"
+    },
+    {
+      "dato": "Al amanecer y al atardecer la luz cruza más atmósfera, se dispersa más el azul y llegan sobre todo naranjas y rojos",
+      "fuente": "Royal Museums Greenwich, «Why is the sky blue?», rmg.co.uk; weather.gov/fgz/SkyBlue"
+    }
+  ],
+  "nota": "Las barras del espectro son una forma aproximada (sin escala) de cuánta luz manda el Sol en cada color. «Rojo: sigue derecho» simplifica: el rojo también se dispersa, solo que mucho menos. Las moléculas de N₂ y O₂ son esquemáticas."
+}

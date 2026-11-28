@@ -1,0 +1,528 @@
+{
+  "id": "explica-inodoro",
+  "motor": "explica",
+  "titulo": "¿Cómo funciona el inodoro?",
+  "categoria": "comofunciona",
+  "etiquetas": [
+    "comofunciona",
+    "casa",
+    "fisica",
+    "sabiasque"
+  ],
+  "descripcion": "Un tubo en S, un sifón y un flotador: así funciona el inodoro sin un solo motor.",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "liso",
+      "texto": "¿Qué pasa de verdad cuando le das a la palanca del inodoro?",
+      "clave": "palanca",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1
+        ],
+        "a": [
+          0.42,
+          0.45,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "inodoro",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "tanque_lleno",
+          "x": 0.3241,
+          "y": 0.4872,
+          "ancho": 258.4,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "agua_reposo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "flotador_arriba",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "marca": true,
+          "x": 0.4683,
+          "y": 0.3645,
+          "radio": 70,
+          "en": "palanca"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Por dentro tiene un tubo con forma de S que siempre guarda un poco de agua.",
+      "clave": "tubo",
+      "nota": "trampa",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.46,
+          0.7,
+          1.2
+        ]
+      },
+      "capas": [
+        {
+          "svg": "inodoro",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "tanque_lleno",
+          "x": 0.3241,
+          "y": 0.4872,
+          "ancho": 258.4,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "agua_reposo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "fade",
+          "sombra": false,
+          "en": "agua"
+        },
+        {
+          "svg": "flotador_arriba",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.7253,
+          "radio": 150,
+          "en": "tubo"
+        },
+        {
+          "etiqueta": "tubo en S",
+          "x": 0.79,
+          "y": 0.86,
+          "a": [
+            0.52,
+            0.7753
+          ],
+          "color": "#2f6fd6",
+          "en": "forma"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Esa agua hace de tapón: no deja que suban los malos olores del drenaje.",
+      "clave": "tapón",
+      "camara": {
+        "de": [
+          0.46,
+          0.7,
+          1.2
+        ],
+        "a": [
+          0.42,
+          0.74,
+          1.28
+        ]
+      },
+      "capas": [
+        {
+          "svg": "inodoro",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "tanque_lleno",
+          "x": 0.3241,
+          "y": 0.4872,
+          "ancho": 258.4,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "agua_reposo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "flotador_arriba",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "olores",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "fade",
+          "sombra": false,
+          "idle": "flotar",
+          "en": "olores"
+        },
+        {
+          "marca": true,
+          "x": 0.45780000000000004,
+          "y": 0.6925,
+          "radio": 70,
+          "en": "tapón"
+        },
+        {
+          "etiqueta": "olores",
+          "x": 0.15,
+          "y": 0.86,
+          "color": "#5a9e2a",
+          "a": [
+            0.2,
+            0.8
+          ],
+          "en": "olores"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Al jalar la palanca, el tanque suelta toda su agua de golpe dentro de la taza.",
+      "clave": "golpe",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1.08
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "inodoro",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "tanque_bajo",
+          "x": 0.3241,
+          "y": 0.5591,
+          "ancho": 258.4,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "agua_reposo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "flotador_abajo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "flechas_descarga",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "fade",
+          "sombra": false,
+          "en": "suelta"
+        },
+        {
+          "burbujas": true,
+          "x": 0.6642,
+          "y": 0.6726,
+          "ancho": 0.17,
+          "alto": 0.08,
+          "n": 14,
+          "en": "taza"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "El agua llena el tubo en S por completo y se forma un sifón que chupa todo hacia el drenaje.",
+      "clave": "sifón",
+      "nota": "succión",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.46,
+          0.7,
+          1.18
+        ]
+      },
+      "capas": [
+        {
+          "svg": "inodoro",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "tanque_bajo",
+          "x": 0.3241,
+          "y": 0.5591,
+          "ancho": 258.4,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "flotador_abajo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "agua_sifon",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "fade",
+          "sombra": false,
+          "en": "llena"
+        },
+        {
+          "svg": "flechas_sifon",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "fade",
+          "sombra": false,
+          "en": "sifón"
+        },
+        {
+          "etiqueta": "sifón",
+          "x": 0.8,
+          "y": 0.86,
+          "a": [
+            0.52,
+            0.7753
+          ],
+          "color": "#2f6fd6",
+          "en": "sifón"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Mientras tanto, el flotador baja, abre la válvula y entra agua nueva al tanque.",
+      "clave": "flotador",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1
+        ],
+        "a": [
+          0.36,
+          0.42,
+          1.25
+        ]
+      },
+      "capas": [
+        {
+          "svg": "inodoro",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "agua_baja",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "flotador_abajo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "marca": true,
+          "x": 0.3335,
+          "y": 0.439,
+          "radio": 60,
+          "en": "flotador"
+        },
+        {
+          "svg": "chorro_relleno",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "fade",
+          "sombra": false,
+          "en": "abre"
+        },
+        {
+          "svg": "tanque_lleno",
+          "x": 0.3241,
+          "y": 0.4872,
+          "ancho": 258.4,
+          "anim": "crecer",
+          "sombra": false,
+          "en": "entra"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Cuando el agua sube, el flotador sube con ella y cierra la válvula. Listo para la próxima.",
+      "clave": "cierra",
+      "camara": {
+        "de": [
+          0.36,
+          0.42,
+          1.25
+        ],
+        "a": [
+          0.5,
+          0.56,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "inodoro",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "tanque_lleno",
+          "x": 0.3241,
+          "y": 0.4872,
+          "ancho": 258.4,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "agua_reposo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "fade",
+          "sombra": false,
+          "en": "Listo"
+        },
+        {
+          "svg": "flotador_arriba",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "pop",
+          "sombra": false,
+          "idle": "flotar",
+          "en": "sube"
+        },
+        {
+          "etiqueta": "válvula cerrada",
+          "x": 0.25,
+          "y": 0.36,
+          "a": [
+            0.2349,
+            0.3836
+          ],
+          "color": "#2fbf71",
+          "en": "cierra"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Ahora ya lo sabes. Síguenos para más cosas que nadie te explicó.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "inodoro": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 900\"><defs><linearGradient id=\"cu\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#dfe7ef\"/><stop offset=\"0.35\" stop-color=\"#ffffff\"/><stop offset=\"1\" stop-color=\"#d3dde8\"/></linearGradient></defs><rect x=\"173\" y=\"868\" width=\"44\" height=\"32\" fill=\"#7c8794\"/><ellipse cx=\"350\" cy=\"872\" rx=\"250\" ry=\"12\" fill=\"#00000030\"/><rect x=\"30\" y=\"50\" width=\"240\" height=\"384\" rx=\"16\" fill=\"url(#cu)\" stroke=\"#9fb2c6\" stroke-width=\"5\"/><rect x=\"20\" y=\"30\" width=\"260\" height=\"32\" rx=\"12\" fill=\"#ffffff\" stroke=\"#9fb2c6\" stroke-width=\"5\"/><rect x=\"252\" y=\"86\" width=\"42\" height=\"14\" rx=\"7\" fill=\"#c3ccd6\" stroke=\"#8796a6\" stroke-width=\"4\"/><rect x=\"48\" y=\"72\" width=\"204\" height=\"336\" rx=\"8\" fill=\"#2c3c50\"/><rect x=\"210\" y=\"200\" width=\"24\" height=\"206\" rx=\"4\" fill=\"#a9b6c4\"/><rect x=\"62\" y=\"132\" width=\"22\" height=\"276\" rx=\"4\" fill=\"#a9b6c4\"/><rect x=\"52\" y=\"108\" width=\"44\" height=\"30\" rx=\"8\" fill=\"#7d8b99\"/><path d=\"M120 432 L578 432 C588 520 562 640 470 716 L466 820 C466 846 488 860 522 870 L122 870 Z\" fill=\"url(#cu)\" stroke=\"#9fb2c6\" stroke-width=\"5\" stroke-linejoin=\"round\"/><path d=\"M540 470 C560 560 530 650 452 712\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"10\" stroke-linecap=\"round\" opacity=\"0.9\"/><rect x=\"276\" y=\"414\" width=\"306\" height=\"20\" rx=\"10\" fill=\"#e9eff5\" stroke=\"#9fb2c6\" stroke-width=\"4\"/><path d=\"M298 436 C300 560 340 640 380 690 L425 690 C500 620 552 560 556 436 Z\" fill=\"#2c3c50\" stroke=\"#7f93a8\" stroke-width=\"5\"/><path d=\"M402 680 L402 712 C402 750 330 760 300 725 C272 692 275 553 240 553 C205 553 195 590 195 630 L195 900\" fill=\"none\" stroke=\"#7f93a8\" stroke-width=\"54\"/><path d=\"M402 680 L402 712 C402 750 330 760 300 725 C272 692 275 553 240 553 C205 553 195 590 195 630 L195 900\" fill=\"none\" stroke=\"#2c3c50\" stroke-width=\"44\"/><rect x=\"210\" y=\"404\" width=\"24\" height=\"52\" fill=\"#2c3c50\"/><rect x=\"210\" y=\"440\" width=\"96\" height=\"16\" fill=\"#2c3c50\"/><path d=\"M204 404 Q222 392 240 404 L240 412 L204 412 Z\" fill=\"#c2414f\"/></svg>",
+    "agua_reposo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 900\"><defs><clipPath id=\"rr\"><rect x=\"240\" y=\"575\" width=\"600\" height=\"900\"/></clipPath><clipPath id=\"rc\"><path d=\"M298 436 C300 560 340 640 380 690 L425 690 C500 620 552 560 556 436 Z\"/></clipPath><linearGradient id=\"rg\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#6cc4ff\"/><stop offset=\"1\" stop-color=\"#1f7fd0\"/></linearGradient></defs><g clip-path=\"url(#rr)\"><path d=\"M298 436 C300 560 340 640 380 690 L425 690 C500 620 552 560 556 436 Z\" fill=\"url(#rg)\"/><path d=\"M402 680 L402 712 C402 750 330 760 300 725 C272 692 275 553 240 553 C205 553 195 590 195 630 L195 900\" fill=\"none\" stroke=\"url(#rg)\" stroke-width=\"44\"/><g clip-path=\"url(#rc)\"><rect x=\"250\" y=\"575\" width=\"350\" height=\"8\" fill=\"#d6f0ff\"/></g></g></svg>",
+    "agua_baja": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 900\"><defs><clipPath id=\"br\"><rect x=\"240\" y=\"655\" width=\"600\" height=\"900\"/></clipPath><clipPath id=\"bc\"><path d=\"M298 436 C300 560 340 640 380 690 L425 690 C500 620 552 560 556 436 Z\"/></clipPath><linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#6cc4ff\"/><stop offset=\"1\" stop-color=\"#1f7fd0\"/></linearGradient></defs><g clip-path=\"url(#br)\"><path d=\"M298 436 C300 560 340 640 380 690 L425 690 C500 620 552 560 556 436 Z\" fill=\"url(#bg)\"/><path d=\"M402 680 L402 712 C402 750 330 760 300 725 C272 692 275 553 240 553 C205 553 195 590 195 630 L195 900\" fill=\"none\" stroke=\"url(#bg)\" stroke-width=\"44\"/><g clip-path=\"url(#bc)\"><rect x=\"250\" y=\"655\" width=\"350\" height=\"8\" fill=\"#d6f0ff\"/></g></g></svg>",
+    "agua_sifon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 900\"><defs><clipPath id=\"sr\"><rect x=\"0\" y=\"520\" width=\"600\" height=\"900\"/></clipPath><clipPath id=\"sc\"><path d=\"M298 436 C300 560 340 640 380 690 L425 690 C500 620 552 560 556 436 Z\"/></clipPath><linearGradient id=\"sg\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#6cc4ff\"/><stop offset=\"1\" stop-color=\"#1f7fd0\"/></linearGradient></defs><g clip-path=\"url(#sr)\"><path d=\"M298 436 C300 560 340 640 380 690 L425 690 C500 620 552 560 556 436 Z\" fill=\"url(#sg)\"/><g clip-path=\"url(#sc)\"><rect x=\"250\" y=\"520\" width=\"350\" height=\"8\" fill=\"#d6f0ff\"/></g></g><path d=\"M402 680 L402 712 C402 750 330 760 300 725 C272 692 275 553 240 553 C205 553 195 590 195 630 L195 900\" fill=\"none\" stroke=\"#2f93e6\" stroke-width=\"44\"/><path d=\"M402 680 L402 712 C402 750 330 760 300 725 C272 692 275 553 240 553 C205 553 195 590 195 630 L195 900\" fill=\"none\" stroke=\"#7fd0ff\" stroke-width=\"8\" stroke-dasharray=\"26 40\" opacity=\"0.8\"/></svg>",
+    "flotador_arriba": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 900\"><path d=\"M96 122 L196 150\" stroke=\"#6d7a88\" stroke-width=\"8\" stroke-linecap=\"round\"/><circle cx=\"96\" cy=\"122\" r=\"8\" fill=\"#4d5966\"/><circle cx=\"196\" cy=\"150\" r=\"27\" fill=\"#ff8a3d\" stroke=\"#c45a1c\" stroke-width=\"5\"/><circle cx=\"187\" cy=\"141\" r=\"8\" fill=\"#ffc59a\"/></svg>",
+    "flotador_abajo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 900\"><path d=\"M96 122 L158 206\" stroke=\"#6d7a88\" stroke-width=\"8\" stroke-linecap=\"round\"/><circle cx=\"96\" cy=\"122\" r=\"8\" fill=\"#4d5966\"/><circle cx=\"158\" cy=\"206\" r=\"27\" fill=\"#ff8a3d\" stroke=\"#c45a1c\" stroke-width=\"5\"/><circle cx=\"149\" cy=\"197\" r=\"8\" fill=\"#ffc59a\"/></svg>",
+    "olores": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 900\"><path d=\"M183 860 C169 820 197 780 183 740 C169 700 197 670 183 630\" fill=\"none\" stroke=\"#9be05a\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.9\"/><path d=\"M195 830 C181 790 209 750 195 710 C181 670 209 640 195 600\" fill=\"none\" stroke=\"#9be05a\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.9\"/><path d=\"M207 800 C193 760 221 720 207 680 C193 640 221 610 207 570\" fill=\"none\" stroke=\"#9be05a\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.9\"/><circle cx=\"188\" cy=\"620\" r=\"9\" fill=\"#9be05a\"/><circle cx=\"208\" cy=\"660\" r=\"7\" fill=\"#9be05a\"/><circle cx=\"181\" cy=\"700\" r=\"6\" fill=\"#9be05a\"/></svg>",
+    "flechas_descarga": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 900\"><path d=\"M222 250 L222 370\" stroke=\"#ffd23f\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M222 395.2 L199.2 359.2 L244.8 359.2 Z\" fill=\"#ffd23f\"/><path d=\"M236 448 L290 448\" stroke=\"#ffd23f\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M315.2 448 L279.2 470.8 L279.2 425.2 Z\" fill=\"#ffd23f\"/><path d=\"M330 470 C340 520 360 560 380 600\" fill=\"none\" stroke=\"#ffd23f\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M391.3 622.5 L354.8 600.5 L395.6 580.1 Z\" fill=\"#ffd23f\"/></svg>",
+    "flechas_sifon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 900\"><path d=\"M440 520 C430 590 412 630 404 690\" fill=\"none\" stroke=\"#ffd23f\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M400.7 715 L382.8 676.3 L428 682.3 Z\" fill=\"#ffd23f\"/><path d=\"M300 722 C282 695 280 630 272 592\" fill=\"none\" stroke=\"#ffd23f\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M266.8 567.3 L296.5 597.9 L251.9 607.3 Z\" fill=\"#ffd23f\"/><path d=\"M195 640 L195 810\" stroke=\"#ffd23f\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M195 835.2 L172.2 799.2 L217.8 799.2 Z\" fill=\"#ffd23f\"/></svg>",
+    "chorro_relleno": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 900\"><path d=\"M100 150 C112 170 112 220 104 330\" fill=\"none\" stroke=\"#bfe8ff\" stroke-width=\"10\" stroke-linecap=\"round\" stroke-dasharray=\"20 14\"/><path d=\"M102.5 350.9 L85.7 319.6 L123.6 322.4 Z\" fill=\"#bfe8ff\"/><circle cx=\"96\" cy=\"122\" r=\"22\" fill=\"none\" stroke=\"#ffd23f\" stroke-width=\"6\"/></svg>",
+    "tanque_lleno": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 204 258\"><rect x=\"0\" y=\"0\" width=\"204\" height=\"258\" rx=\"4\" fill=\"#3fa9f5\" opacity=\"0.72\"/><rect x=\"0\" y=\"0\" width=\"204\" height=\"8\" fill=\"#d6f0ff\" opacity=\"0.9\"/></svg>",
+    "tanque_bajo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 204 40\"><rect x=\"0\" y=\"0\" width=\"204\" height=\"40\" rx=\"4\" fill=\"#3fa9f5\" opacity=\"0.72\"/><rect x=\"0\" y=\"0\" width=\"204\" height=\"8\" fill=\"#d6f0ff\" opacity=\"0.9\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "La curva del inodoro (trampa en S, U, J o P) retiene agua que hace de sello contra los gases del drenaje",
+      "fuente": "Wikipedia, «Flush toilet»; HowStuffWorks, «How Toilets Work»"
+    },
+    {
+      "dato": "Al descargar, el agua del tanque llena la taza y el conducto de la trampa hasta que se forma un sifón que arrastra el contenido al drenaje; cuando entra aire, el sifón se corta (el gorgoteo)",
+      "fuente": "HowStuffWorks, «How Toilets Work» (páginas del sifón y del mecanismo de descarga); Kohler, «How a Toilet Flushes»"
+    },
+    {
+      "dato": "Al vaciarse el tanque, el flotador baja y abre la válvula de llenado; al subir el nivel, el flotador la cierra",
+      "fuente": "HowStuffWorks, «How Toilets Work» (refill mechanism); Family Handyman, «How a Toilet Works»"
+    }
+  ],
+  "nota": "Es el inodoro clásico de tanque con descarga por sifón (el más común en América). Hay modelos de descarga a presión o sin tanque (fluxómetro) que funcionan distinto. Muchos tanques modernos usan un flotador en forma de vaso que sube por el tubo de la válvula en vez de la bola con brazo; el principio es el mismo. En el dibujo, la taza también se rellena por un tubito de la válvula, que no se muestra."
+}

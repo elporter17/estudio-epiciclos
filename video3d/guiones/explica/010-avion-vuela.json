@@ -1,0 +1,421 @@
+{
+  "id": "explica-avion-vuela",
+  "motor": "explica",
+  "titulo": "¿Por qué vuela un avión?",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "comofunciona",
+    "aviones",
+    "fisica",
+    "sabiasque"
+  ],
+  "descripcion": "Un avión de cientos de toneladas se sostiene porque sus alas empujan el aire hacia abajo. Y no, no es por el «tiempo igual».",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "cielo",
+      "texto": "¿Cómo se queda en el aire un avión que pesa cientos de toneladas?",
+      "clave": "toneladas",
+      "camara": {
+        "de": [
+          0.5,
+          0.52,
+          1
+        ],
+        "a": [
+          0.5,
+          0.56,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "avion",
+          "x": 0.5,
+          "y": 0.5,
+          "ancho": 960,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "svg": "flecha_peso",
+          "x": 0.5,
+          "y": 0.73,
+          "ancho": 130,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "pesa"
+        },
+        {
+          "etiqueta": "peso",
+          "x": 0.74,
+          "y": 0.74,
+          "color": "#e8483b",
+          "en": "toneladas"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "El secreto está en el ala. Vista de lado, tiene esta forma curva.",
+      "clave": "ala",
+      "nota": "perfil",
+      "camara": {
+        "de": [
+          0.5,
+          0.56,
+          1.15
+        ],
+        "a": [
+          0.5,
+          0.56,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "ala_perfil",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 1000,
+          "anim": "pop",
+          "sombra": false,
+          "en": "ala"
+        },
+        {
+          "etiqueta": "borde de ataque",
+          "x": 0.27,
+          "y": 0.38,
+          "a": [
+            0.15,
+            0.53
+          ],
+          "color": "#2f6fd6",
+          "en": "lado"
+        },
+        {
+          "etiqueta": "borde de salida",
+          "x": 0.73,
+          "y": 0.72,
+          "a": [
+            0.84,
+            0.575
+          ],
+          "color": "#2f6fd6",
+          "en": "forma"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Y va un poquito inclinada hacia arriba. A eso se le llama ángulo de ataque.",
+      "clave": "ángulo",
+      "nota": "inclinación",
+      "camara": {
+        "de": [
+          0.5,
+          0.56,
+          1
+        ],
+        "a": [
+          0.62,
+          0.56,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "ala_inclinada",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 1000,
+          "anim": "fade",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "angulo",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 1000,
+          "anim": "fade",
+          "sombra": false,
+          "en": "inclinada"
+        },
+        {
+          "etiqueta": "ángulo de ataque",
+          "x": 0.6,
+          "y": 0.75,
+          "a": [
+            0.88,
+            0.585
+          ],
+          "color": "#d99a00",
+          "en": "ángulo"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Así, el ala desvía el aire hacia abajo, y el aire, de rebote, empuja el ala hacia arriba.",
+      "clave": "empuja",
+      "nota": "acción y reacción",
+      "camara": {
+        "de": [
+          0.5,
+          0.56,
+          1.06
+        ],
+        "a": [
+          0.5,
+          0.56,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "ala_inclinada",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 1000,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "flujo",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 1000,
+          "anim": "fade",
+          "sombra": false,
+          "en": "aire"
+        },
+        {
+          "svg": "aire_abajo",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 1000,
+          "anim": "pop",
+          "sombra": false,
+          "en": "abajo"
+        },
+        {
+          "svg": "flecha_sube",
+          "x": 0.47,
+          "y": 0.42,
+          "ancho": 150,
+          "anim": "crecer",
+          "idle": "latido",
+          "en": "arriba"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Arriba del ala, el aire corre más rápido y la presión baja. Abajo, la presión es mayor.",
+      "clave": "presión",
+      "camara": {
+        "de": [
+          0.5,
+          0.56,
+          1
+        ],
+        "a": [
+          0.5,
+          0.56,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "zona_baja",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 1000,
+          "anim": "fade",
+          "sombra": false,
+          "en": "baja"
+        },
+        {
+          "svg": "zona_alta",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 1000,
+          "anim": "fade",
+          "sombra": false,
+          "en": "mayor"
+        },
+        {
+          "svg": "ala_inclinada",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 1000,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "flujo_rapido",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 1000,
+          "anim": "fade",
+          "sombra": false,
+          "en": "corre"
+        },
+        {
+          "etiqueta": "baja presión",
+          "x": 0.3,
+          "y": 0.355,
+          "color": "#2f6fd6",
+          "en": "baja"
+        },
+        {
+          "etiqueta": "alta presión",
+          "x": 0.7,
+          "y": 0.76,
+          "color": "#d93427",
+          "en": "mayor"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Ojo: el aire de arriba no tiene que llegar al mismo tiempo que el de abajo. Eso es un mito.",
+      "clave": "mito",
+      "nota": "falso",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "ala_perfil",
+          "x": 0.5,
+          "y": 0.43,
+          "ancho": 760,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "svg": "reloj",
+          "x": 0.5,
+          "y": 0.7,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": "tiempo"
+        },
+        {
+          "svg": "tache",
+          "x": 0.5,
+          "y": 0.71,
+          "ancho": 330,
+          "anim": "pop",
+          "en": "mito"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Con más velocidad o más inclinación, el ala desvía más aire y el avión se eleva.",
+      "clave": "eleva",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.5,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "avion",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 900,
+          "anim": "slideIn",
+          "desde": "izquierda",
+          "rot": -10,
+          "idle": "flotar",
+          "en": 0.1
+        },
+        {
+          "etiqueta": "más velocidad",
+          "x": 0.3,
+          "y": 0.8,
+          "color": "#2f6fd6",
+          "en": "velocidad"
+        },
+        {
+          "etiqueta": "más inclinación",
+          "x": 0.7,
+          "y": 0.86,
+          "color": "#d99a00",
+          "en": "inclinación"
+        },
+        {
+          "svg": "flecha_sube",
+          "x": 0.5,
+          "y": 0.37,
+          "ancho": 140,
+          "anim": "crecer",
+          "idle": "latido",
+          "en": "eleva"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Ahora ya lo sabes. Síguenos para más cosas que nadie te explicó.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "avion": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 900 330\"><defs><linearGradient id=\"f\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffffff\"/><stop offset=\"0.6\" stop-color=\"#e6edf5\"/><stop offset=\"1\" stop-color=\"#b7c5d6\"/></linearGradient><linearGradient id=\"w\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#c9d4e2\"/><stop offset=\"1\" stop-color=\"#8e9fb5\"/></linearGradient></defs><path d=\"M118 150 L44 26 L104 22 L222 140 Z\" fill=\"#2f6fd6\"/><path d=\"M118 150 L44 26 L66 25 L170 140 Z\" fill=\"#4f8cf0\"/><path d=\"M560 168 L640 168 L700 150 L610 150 Z\" fill=\"#8e9fb5\"/><path d=\"M60 150 C72 132 98 122 150 120 L760 120 C818 120 860 142 880 172 C872 197 832 210 772 210 L222 210 C150 210 96 190 60 150 Z\" fill=\"url(#f)\" stroke=\"#6f8199\" stroke-width=\"5\" stroke-linejoin=\"round\"/><path d=\"M150 182 L860 182\" stroke=\"#2f6fd6\" stroke-width=\"9\"/><path d=\"M190 193 L840 193\" stroke=\"#e8483b\" stroke-width=\"5\"/><path d=\"M812 142 L850 146 C858 150 862 156 864 162 L818 160 Z\" fill=\"#26375a\"/><rect x=\"246\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"272\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"298\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"324\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"350\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"376\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"402\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"428\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"454\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"480\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"506\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"532\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"558\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"584\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"610\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"636\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"662\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"688\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"714\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><rect x=\"740\" y=\"140\" width=\"13\" height=\"18\" rx=\"6\" fill=\"#26375a\"/><path d=\"M108 168 L38 196 L70 202 L196 176 Z\" fill=\"#245bb5\"/><path d=\"M380 186 L520 186 L330 300 L286 300 Z\" fill=\"url(#w)\" stroke=\"#6f8199\" stroke-width=\"5\" stroke-linejoin=\"round\"/><rect x=\"388\" y=\"214\" width=\"112\" height=\"44\" rx=\"22\" fill=\"#e6edf5\" stroke=\"#6f8199\" stroke-width=\"5\"/><ellipse cx=\"496\" cy=\"236\" rx=\"10\" ry=\"19\" fill=\"#26375a\"/><path d=\"M402 226 L470 226\" stroke=\"#ffffff\" stroke-width=\"6\" stroke-linecap=\"round\" opacity=\"0.8\"/><path d=\"M170 130 L740 130\" stroke=\"#ffffff\" stroke-width=\"6\" stroke-linecap=\"round\" opacity=\"0.9\"/></svg>",
+    "flecha_peso": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 140 260\"><path d=\"M48 6 H92 V160 H130 L70 252 L10 160 H48 Z\" fill=\"#e8483b\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M60 18 V150\" stroke=\"#ff8a7f\" stroke-width=\"8\" stroke-linecap=\"round\"/></svg>",
+    "flecha_sube": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 160 300\"><path d=\"M52 292 H108 V116 H150 L80 8 L10 116 H52 Z\" fill=\"#2fbf71\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M66 280 V120\" stroke=\"#7fe3aa\" stroke-width=\"9\" stroke-linecap=\"round\"/></svg>",
+    "ala_perfil": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 700\"><defs><linearGradient id=\"m\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#eef3f8\"/><stop offset=\"0.55\" stop-color=\"#c3cfdc\"/><stop offset=\"1\" stop-color=\"#8d9db1\"/></linearGradient></defs><g transform=\"rotate(0 500 350)\"><path d=\"M850 350 L849.5 349.8 L848.1 349.4 L845.8 348.6 L842.6 347.5 L838.4 346.1 L833.3 344.5 L827.3 342.5 L820.5 340.3 L812.8 337.9 L804.2 335.3 L794.8 332.4 L784.6 329.4 L773.6 326.3 L761.9 323 L749.4 319.6 L736.2 316.1 L722.4 312.6 L708 309.1 L693 305.5 L677.4 302 L661.3 298.5 L644.7 295.1 L627.8 291.8 L610.4 288.6 L592.7 285.6 L574.8 282.7 L556.6 280 L538.2 277.5 L519.7 275.2 L501.2 273.1 L482.6 271.3 L464 269.8 L445.5 268.6 L427.1 267.6 L408.6 267.1 L390.2 267 L372.2 267.4 L354.6 268.2 L337.4 269.4 L320.6 271.1 L304.4 273.2 L288.8 275.7 L273.8 278.5 L259.5 281.7 L246 285.2 L233.2 288.9 L221.2 292.9 L210 297 L199.8 301.4 L190.4 305.8 L182 310.3 L174.5 314.9 L168 319.5 L162.4 324.1 L157.9 328.6 L154.3 333.1 L151.8 337.5 L150.2 341.8 L149.6 346 L150 350 L151.4 353.8 L153.7 357.4 L156.9 360.6 L161 363.5 L166 366.1 L171.8 368.4 L178.5 370.5 L186 372.2 L194.3 373.7 L203.4 374.9 L213.1 375.8 L223.6 376.5 L234.8 376.9 L246.6 377.1 L259.1 377.1 L272.1 377 L285.7 376.6 L299.8 376.1 L314.3 375.5 L329.4 374.7 L344.8 373.9 L360.7 373 L376.9 372.1 L393.4 371.2 L410.3 370.3 L427.3 369.4 L445 368.5 L462.8 367.6 L480.8 366.6 L498.8 365.6 L516.9 364.6 L534.9 363.6 L552.9 362.6 L570.8 361.6 L588.4 360.6 L605.9 359.7 L623.1 358.8 L640 358 L656.5 357.2 L672.6 356.4 L688.3 355.7 L703.5 355.1 L718.1 354.5 L732.1 353.9 L745.6 353.4 L758.3 352.9 L770.4 352.5 L781.7 352.1 L792.3 351.8 L802 351.5 L810.9 351.2 L819 350.9 L826.2 350.7 L832.4 350.5 L837.8 350.4 L842.2 350.2 L845.6 350.1 L848 350.1 L849.5 350 L850 350 Z\" fill=\"url(#m)\" stroke=\"#44546a\" stroke-width=\"7\" stroke-linejoin=\"round\"/><path d=\"M154.3 349.1 L157.9 344.6 L162.4 340.1 L168 335.5 L174.5 330.9 L182 326.3 L190.4 321.8 L199.8 317.4 L210 313 L221.2 308.9 L233.2 304.9 L246 301.2 L259.5 297.7 L273.8 294.5 L288.8 291.7 L304.4 289.2 L320.6 287.1 L337.4 285.4 L354.6 284.2 L372.2 283.4 L390.2 283 L408.6 283.1 L427.1 283.6 L445.5 284.6 L464 285.8 L482.6 287.3 L501.2 289.1 L519.7 291.2 L538.2 293.5 L556.6 296 L574.8 298.7 L592.7 301.6 L610.4 304.6 L627.8 307.8 L644.7 311.1 L661.3 314.5 L677.4 318 L693 321.5 L708 325.1 L722.4 328.6 L736.2 332.1 L749.4 335.6\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.8\"/><path d=\"M330 342 L330 380 M520 336 L520 372\" stroke=\"#7b8ba0\" stroke-width=\"5\" stroke-linecap=\"round\" opacity=\"0.6\"/></g></svg>",
+    "ala_inclinada": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 700\"><defs><linearGradient id=\"m\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#eef3f8\"/><stop offset=\"0.55\" stop-color=\"#c3cfdc\"/><stop offset=\"1\" stop-color=\"#8d9db1\"/></linearGradient></defs><g transform=\"rotate(8 500 350)\"><path d=\"M850 350 L849.5 349.8 L848.1 349.4 L845.8 348.6 L842.6 347.5 L838.4 346.1 L833.3 344.5 L827.3 342.5 L820.5 340.3 L812.8 337.9 L804.2 335.3 L794.8 332.4 L784.6 329.4 L773.6 326.3 L761.9 323 L749.4 319.6 L736.2 316.1 L722.4 312.6 L708 309.1 L693 305.5 L677.4 302 L661.3 298.5 L644.7 295.1 L627.8 291.8 L610.4 288.6 L592.7 285.6 L574.8 282.7 L556.6 280 L538.2 277.5 L519.7 275.2 L501.2 273.1 L482.6 271.3 L464 269.8 L445.5 268.6 L427.1 267.6 L408.6 267.1 L390.2 267 L372.2 267.4 L354.6 268.2 L337.4 269.4 L320.6 271.1 L304.4 273.2 L288.8 275.7 L273.8 278.5 L259.5 281.7 L246 285.2 L233.2 288.9 L221.2 292.9 L210 297 L199.8 301.4 L190.4 305.8 L182 310.3 L174.5 314.9 L168 319.5 L162.4 324.1 L157.9 328.6 L154.3 333.1 L151.8 337.5 L150.2 341.8 L149.6 346 L150 350 L151.4 353.8 L153.7 357.4 L156.9 360.6 L161 363.5 L166 366.1 L171.8 368.4 L178.5 370.5 L186 372.2 L194.3 373.7 L203.4 374.9 L213.1 375.8 L223.6 376.5 L234.8 376.9 L246.6 377.1 L259.1 377.1 L272.1 377 L285.7 376.6 L299.8 376.1 L314.3 375.5 L329.4 374.7 L344.8 373.9 L360.7 373 L376.9 372.1 L393.4 371.2 L410.3 370.3 L427.3 369.4 L445 368.5 L462.8 367.6 L480.8 366.6 L498.8 365.6 L516.9 364.6 L534.9 363.6 L552.9 362.6 L570.8 361.6 L588.4 360.6 L605.9 359.7 L623.1 358.8 L640 358 L656.5 357.2 L672.6 356.4 L688.3 355.7 L703.5 355.1 L718.1 354.5 L732.1 353.9 L745.6 353.4 L758.3 352.9 L770.4 352.5 L781.7 352.1 L792.3 351.8 L802 351.5 L810.9 351.2 L819 350.9 L826.2 350.7 L832.4 350.5 L837.8 350.4 L842.2 350.2 L845.6 350.1 L848 350.1 L849.5 350 L850 350 Z\" fill=\"url(#m)\" stroke=\"#44546a\" stroke-width=\"7\" stroke-linejoin=\"round\"/><path d=\"M154.3 349.1 L157.9 344.6 L162.4 340.1 L168 335.5 L174.5 330.9 L182 326.3 L190.4 321.8 L199.8 317.4 L210 313 L221.2 308.9 L233.2 304.9 L246 301.2 L259.5 297.7 L273.8 294.5 L288.8 291.7 L304.4 289.2 L320.6 287.1 L337.4 285.4 L354.6 284.2 L372.2 283.4 L390.2 283 L408.6 283.1 L427.1 283.6 L445.5 284.6 L464 285.8 L482.6 287.3 L501.2 289.1 L519.7 291.2 L538.2 293.5 L556.6 296 L574.8 298.7 L592.7 301.6 L610.4 304.6 L627.8 307.8 L644.7 311.1 L661.3 314.5 L677.4 318 L693 321.5 L708 325.1 L722.4 328.6 L736.2 332.1 L749.4 335.6\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.8\"/><path d=\"M330 342 L330 380 M520 336 L520 372\" stroke=\"#7b8ba0\" stroke-width=\"5\" stroke-linecap=\"round\" opacity=\"0.6\"/></g></svg>",
+    "angulo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 700\"><path d=\"M93.4 301.3 H985\" stroke=\"#ffffff\" stroke-width=\"6\" stroke-dasharray=\"18 14\" stroke-linecap=\"round\"/><path d=\"M153.4 301.3 L935.7 411.2\" stroke=\"#ffd23f\" stroke-width=\"6\" stroke-dasharray=\"18 14\" stroke-linecap=\"round\"/><path d=\"M943.4 301.3 A790 790 0 0 1 935.7 411.2\" fill=\"none\" stroke=\"#ffd23f\" stroke-width=\"14\" stroke-linecap=\"round\"/><path d=\"M943.4 301.3 L153.4 301.3 L935.7 411.2 Z\" fill=\"#ffd23f\" opacity=\"0.18\"/></svg>",
+    "flujo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 700\"><path d=\"M10 80 C250 80 450 76 600 88 C760 102 880 140 975 180\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M992.4 187.3 L960.9 192.6 L974.2 161.1 Z\" fill=\"#ffffff\" opacity=\"0.85\"/><path d=\"M10 165 C200 165 300 128 480 136 C660 146 820 205 975 265\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M992.6 271.8 L961.3 278 L973.6 246.1 Z\" fill=\"#ffffff\" opacity=\"0.85\"/><path d=\"M10 250 C110 250 170 196 330 186 C520 178 740 240 975 340\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M992.4 347.4 L960.9 352.6 L974.2 321.1 Z\" fill=\"#ffffff\" opacity=\"0.85\"/><path d=\"M10 395 C140 395 230 380 420 398 C620 420 780 462 975 520\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M993.1 525.4 L962.4 534.1 L972.1 501.3 Z\" fill=\"#ffffff\" opacity=\"0.85\"/><path d=\"M10 495 C300 495 560 512 975 600\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M993.5 603.9 L963.5 615 L970.6 581.6 Z\" fill=\"#ffffff\" opacity=\"0.85\"/><path d=\"M10 590 C300 590 620 606 975 675\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M993.6 678.6 L963.8 690.2 L970.3 656.7 Z\" fill=\"#ffffff\" opacity=\"0.85\"/></svg>",
+    "flujo_rapido": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 700\"><path d=\"M10 80 C250 80 450 76 600 88 C760 102 880 140 975 180\" fill=\"none\" stroke=\"#7fe0ff\" stroke-width=\"11\" stroke-linecap=\"round\" stroke-dasharray=\"60 30\"/><path d=\"M996.3 189 L957.8 195.4 L974 156.9 Z\" fill=\"#7fe0ff\"/><path d=\"M10 165 C200 165 300 128 480 136 C660 146 820 205 975 265\" fill=\"none\" stroke=\"#7fe0ff\" stroke-width=\"11\" stroke-linecap=\"round\" stroke-dasharray=\"60 30\"/><path d=\"M996.5 273.3 L958.2 280.9 L973.3 241.9 Z\" fill=\"#7fe0ff\"/><path d=\"M10 250 C110 250 170 196 330 186 C520 178 740 240 975 340\" fill=\"none\" stroke=\"#7fe0ff\" stroke-width=\"11\" stroke-linecap=\"round\" stroke-dasharray=\"60 30\"/><path d=\"M996.3 349 L957.7 355.4 L974.1 316.9 Z\" fill=\"#7fe0ff\"/></svg>",
+    "zona_baja": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 700\"><ellipse cx=\"470\" cy=\"215\" rx=\"380\" ry=\"120\" fill=\"#3d8bff\" fill-opacity=\"0.2\"/><ellipse cx=\"470\" cy=\"215\" rx=\"304\" ry=\"96\" fill=\"#3d8bff\" fill-opacity=\"0.2\"/><ellipse cx=\"470\" cy=\"215\" rx=\"228\" ry=\"72\" fill=\"#3d8bff\" fill-opacity=\"0.2\"/><ellipse cx=\"470\" cy=\"215\" rx=\"152\" ry=\"48\" fill=\"#3d8bff\" fill-opacity=\"0.2\"/></svg>",
+    "zona_alta": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 700\"><ellipse cx=\"500\" cy=\"470\" rx=\"380\" ry=\"110\" fill=\"#ff5a4a\" fill-opacity=\"0.2\"/><ellipse cx=\"500\" cy=\"470\" rx=\"304\" ry=\"88\" fill=\"#ff5a4a\" fill-opacity=\"0.2\"/><ellipse cx=\"500\" cy=\"470\" rx=\"228\" ry=\"66\" fill=\"#ff5a4a\" fill-opacity=\"0.2\"/><ellipse cx=\"500\" cy=\"470\" rx=\"152\" ry=\"44\" fill=\"#ff5a4a\" fill-opacity=\"0.2\"/><path d=\"M300 540 V431\" stroke=\"#ff4d3d\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M278 435 L300 405 L322 435 Z\" fill=\"#ff4d3d\"/><path d=\"M420 554 V443\" stroke=\"#ff4d3d\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M398 447 L420 417 L442 447 Z\" fill=\"#ff4d3d\"/><path d=\"M540 540 V455\" stroke=\"#ff4d3d\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M518 459 L540 429 L562 459 Z\" fill=\"#ff4d3d\"/><path d=\"M660 554 V467\" stroke=\"#ff4d3d\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M638 471 L660 441 L682 471 Z\" fill=\"#ff4d3d\"/></svg>",
+    "aire_abajo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 700\"><path d=\"M770 450 L860 430 L960 600 L1000 580 L975 690 L880 640 L915 625 Z\" fill=\"#7fe0ff\" opacity=\"0.9\" stroke=\"#ffffff\" stroke-width=\"6\" stroke-linejoin=\"round\"/></svg>",
+    "reloj": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 340\"><rect x=\"128\" y=\"8\" width=\"44\" height=\"34\" rx=\"8\" fill=\"#5b6b80\"/><rect x=\"138\" y=\"36\" width=\"24\" height=\"24\" fill=\"#7b8ba0\"/><rect x=\"226\" y=\"62\" width=\"40\" height=\"22\" rx=\"8\" fill=\"#7b8ba0\" transform=\"rotate(40 246 73)\"/><circle cx=\"150\" cy=\"195\" r=\"135\" fill=\"#ffd23f\" stroke=\"#ffffff\" stroke-width=\"10\"/><circle cx=\"150\" cy=\"195\" r=\"108\" fill=\"#fffaf0\"/><path d=\"M150 195 L150 112\" stroke=\"#26375a\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M150 195 L206 222\" stroke=\"#e8483b\" stroke-width=\"9\" stroke-linecap=\"round\"/><path d=\"M150 103 L150 93\" stroke=\"#7b8ba0\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M196 115.3 L201 106.7\" stroke=\"#7b8ba0\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M229.7 149 L238.3 144\" stroke=\"#7b8ba0\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M242 195 L252 195\" stroke=\"#7b8ba0\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M229.7 241 L238.3 246\" stroke=\"#7b8ba0\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M196 274.7 L201 283.3\" stroke=\"#7b8ba0\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M150 287 L150 297\" stroke=\"#7b8ba0\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M104 274.7 L99 283.3\" stroke=\"#7b8ba0\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M70.3 241 L61.7 246\" stroke=\"#7b8ba0\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M58 195 L48 195\" stroke=\"#7b8ba0\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M70.3 149 L61.7 144\" stroke=\"#7b8ba0\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M104 115.3 L99 106.7\" stroke=\"#7b8ba0\" stroke-width=\"7\" stroke-linecap=\"round\"/><circle cx=\"150\" cy=\"195\" r=\"13\" fill=\"#26375a\"/></svg>",
+    "tache": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 300\"><path d=\"M50 50 L250 250 M250 50 L50 250\" stroke=\"#ffffff\" stroke-width=\"64\" stroke-linecap=\"round\"/><path d=\"M50 50 L250 250 M250 50 L50 250\" stroke=\"#e8483b\" stroke-width=\"44\" stroke-linecap=\"round\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "La explicación del «tiempo de tránsito igual» (el aire de arriba debe llegar al mismo tiempo) es falsa; lo que importa es que el ala desvía (gira) el flujo de aire",
+      "fuente": "NASA Glenn Research Center, «Incorrect Lift Theory #1» (grc.nasa.gov/WWW/k-12/airplane/wrong1.html)"
+    },
+    {
+      "dato": "El aire sobre el ala va más rápido y su presión es menor; abajo la presión es mayor. Newton (desviar el aire hacia abajo) y Bernoulli (diferencia de presión) describen lo mismo",
+      "fuente": "NASA Glenn Research Center, Beginner's Guide to Aeronautics: «Bernoulli and Newton» / «What is Lift?»"
+    },
+    {
+      "dato": "La sustentación crece con la velocidad y con el ángulo de ataque (hasta la pérdida)",
+      "fuente": "NASA Glenn Research Center, «The Lift Equation» e «Inclination Effects on Lift»"
+    },
+    {
+      "dato": "Un Airbus A380 puede despegar con hasta 575 t y un Boeing 747-8 con unas 448 t",
+      "fuente": "Guinness World Records; Wikipedia, «List of airliners by maximum takeoff weight»"
+    }
+  ],
+  "nota": "«Cientos de toneladas» vale para aviones grandes (747, A380); un avión pequeño pesa mucho menos. El ángulo de ataque se exagera en el dibujo (8°). Más inclinación da más sustentación solo hasta cierto punto: si se pasa, el ala entra en pérdida."
+}
