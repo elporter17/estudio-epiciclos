@@ -14,6 +14,7 @@ import { ROOT } from './lib/node-env.mjs';
 import { narrar } from './lib/voz.mjs';
 import { pistaMusical } from './lib/musica.mjs';
 import { wavBuffer } from './bounce.mjs';
+import { conBiblioteca } from './lib/biblioteca.mjs';
 
 const o = parseCli({ guion: { type: 'string' } });
 if (!o.guion) throw new Error('Falta --guion');
@@ -84,6 +85,6 @@ const mus = new Float32Array(Math.ceil((t + 0.5) * SR));
 pistaMusical(mus, t, { estilo: g.musica || 'lofi', semilla: [...g.id].reduce((a, c) => a * 31 + c.charCodeAt(0), 7), SR });
 fs.writeFileSync(path.join(PUB, 'musica.wav'), wavBuffer(mus.map((x) => Math.tanh(x * 0.9) * 0.9), SR));
 
-fs.writeFileSync(path.join(PUB, 'render.json'), JSON.stringify({ motor: 'explica', id: g.id, titulo: g.titulo, duracion: t, paleta: g.paleta || {}, dibujos: g.dibujos || {}, escenas, sfx, marca: g.marca || '@potterplay' }, null, 2));
+fs.writeFileSync(path.join(PUB, 'render.json'), JSON.stringify({ motor: 'explica', id: g.id, titulo: g.titulo, duracion: t, paleta: g.paleta || {}, dibujos: conBiblioteca(g.dibujos, g.escenas, ROOT), escenas, sfx, marca: g.marca || '@potterplay' }, null, 2));
 console.log(`${g.titulo}: ${escenas.length} escenas · ${t.toFixed(1)} s`);
 for (const e of escenas) console.log(`  ${e.inicio.toFixed(1).padStart(5)} s · ${(e.fondo || e.tipo || 'escena').padEnd(8)} ${e.dur.toFixed(1)} s · ${e.capas.length} capas`);

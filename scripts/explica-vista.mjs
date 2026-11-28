@@ -9,13 +9,14 @@ import path from 'node:path';
 import { createCanvas, loadImage } from '@napi-rs/canvas';
 import { parseCli } from './lib/cli.mjs';
 import { ROOT } from './lib/node-env.mjs';
+import { conBiblioteca } from './lib/biblioteca.mjs';
 
 const o = parseCli({ guion: { type: 'string' }, salida: { type: 'string' } });
 const archivo = o.guion;
 if (!archivo) throw new Error('Uso: node scripts/explica-vista.mjs --guion guion.json');
 const g = JSON.parse(fs.readFileSync(path.resolve(ROOT, archivo), 'utf8'));
 const salida = path.resolve(ROOT, o.salida || path.join('out', `vista-${g.id}.png`));
-const dibujos = g.dibujos || {};
+const dibujos = conBiblioteca(g.dibujos, g.escenas, ROOT);
 const proporcion = (svg) => { const m = /viewBox="\s*[-\d.]+\s+[-\d.]+\s+([\d.]+)\s+([\d.]+)/.exec(svg || ''); return m ? +m[2] / +m[1] : 1; };
 const img = async (svg, ancho) => loadImage(Buffer.from(svg.replace('<svg ', `<svg width="${ancho}" height="${Math.round(ancho * proporcion(svg))}" `)));
 const FONDO = { cocina: '#3f6688', plano: '#21508f', fabrica: '#28394b', cielo: '#7cc4f2', mar: '#1f8fc4', oscuro: '#1c1645', liso: '#ff9f62' };
