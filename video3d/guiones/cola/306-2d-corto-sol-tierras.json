@@ -1,0 +1,47 @@
+{
+  "id": "corto-sol-tierras",
+  "motor": "2d",
+  "formato": "corto",
+  "episodio": 306,
+  "titulo": "Cuántas Tierras caben en el Sol",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "escala",
+    "espacio",
+    "ciencia",
+    "curiosidades"
+  ],
+  "descripcion": "Dentro del Sol cabrían más de un millón de Tierras.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Cuántas Tierras caben dentro del Sol?",
+      "objeto": "☀️"
+    },
+    {
+      "tipo": "cuadricula",
+      "texto": "Más de un millón: unas 1.300.000 Tierras, si las apretaras como canicas.",
+      "voz": "Más de un millón: unas un millón trescientas mil Tierras, si las apretaras como canicas.",
+      "objeto": "🌍",
+      "lado": 20
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y el Sol ni siquiera es de las estrellas grandes.",
+      "objeto": "⭐",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: el fondo del mar sin mapa. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Volumen del Sol ≈ 1,3 millones de veces el de la Tierra",
+      "fuente": "NASA, «Sun Fact Sheet» (NSSDCA)"
+    }
+  ],
+  "nota": "Es una comparación de volumen. Las estrellas gigantes y supergigantes son mucho más grandes que el Sol."
+}

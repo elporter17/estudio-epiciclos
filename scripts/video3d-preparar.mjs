@@ -34,7 +34,9 @@ if (gancho && iPortada >= 0 && g.escenas[iPortada].texto && g.escenas[iPortada].
 // El tono del video (scripts/lib/tono.mjs): siempre al menos una expresión jocosa. La voz del gancho empieza con
 // «No manches.» o «¿Qué mierda acabo de aprender?» (en pantalla sigue el título), una escena del medio con «Y ojo:»…
 // y el cierre con su frase. Los «explicados» (categoría noticia), solo coloquiales
-g.escenas = guionConTono(g).escenas;
+// Formato «corto» (2026-11-27, plan de YouTube): 20-32 s, el gancho y el cierre vienen escritos en el guion; sin muletillas del tono
+const corto = g.formato === 'corto';
+if (!corto) g.escenas = guionConTono(g).escenas;
 // Picardía (scripts/lib/picardia.mjs): una frase de doble sentido ligero al final de la tercera escena de contenido desde el final
 // (así no choca con la petición de seguir). Se apaga con VIDEO_PICARDIA=0
 const picardia = process.env.VIDEO_PICARDIA === '0' ? null : (g.picardia ?? PICARDIA[g.id]), contenidoP = g.escenas.filter((e) => e.tipo !== 'portada' && e.tipo !== 'cierre' && e.texto);
@@ -47,13 +49,13 @@ let t = 0;
 const escenas = g.escenas.map((e, i) => {
   const voz = audios[i].length / SR, archivo = `voz/${String(i).padStart(2, '0')}.wav`;
   fs.writeFileSync(path.join(PUB, archivo), wavBuffer(audios[i], SR));
-  const r = { ...e, audio: archivo, voz, inicio: t, dur: Math.max(MINIMO[e.tipo] || 3.5, 0.25 + voz + 0.4) };
+  const r = { ...e, audio: archivo, voz, inicio: t, dur: Math.max((MINIMO[e.tipo] || 3.5) * (corto ? 0.6 : 1), 0.25 + voz + 0.4) };
   t += r.dur; return r;
 });
 // Un video no baja de MIN_TOTAL segundos; lo que falte se reparte entre las escenas de contenido. Antes eran 56 s (regla «55 como mínimo»)
 // y, como la voz dura ~35 s, hasta 20 s eran aire muerto (2026-11-22). Ahora 42 s: el gancho y el dato movido a su escena llenan con
 // contenido y el sobrante es poco. Para volver a 56 s: VIDEO_MIN_TOTAL=56
-const MIN_TOTAL = +(process.env.VIDEO_MIN_TOTAL || 42), contenido = escenas.filter((e) => e.tipo !== 'portada' && e.tipo !== 'cierre');
+const MIN_TOTAL = corto ? +(g.minTotal || 20) : +(process.env.VIDEO_MIN_TOTAL || 42), contenido = escenas.filter((e) => e.tipo !== 'portada' && e.tipo !== 'cierre');
 if (t < MIN_TOTAL && contenido.length) { const extra = (MIN_TOTAL - t) / contenido.length; for (const e of contenido) e.dur += extra; t = 0; for (const e of escenas) { e.inicio = t; t += e.dur; } }
 // ---------- efectos de sonido (sintetizados aquí: sin archivos de terceros) ----------
 const ruido = (n, semilla = 1) => { let x = semilla; return Float32Array.from({ length: n }, () => ((x = (x * 16807) % 2147483647) / 2147483647) * 2 - 1); };

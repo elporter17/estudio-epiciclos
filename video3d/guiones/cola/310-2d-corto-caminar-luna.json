@@ -1,0 +1,59 @@
+{
+  "id": "corto-caminar-luna",
+  "motor": "2d",
+  "formato": "corto",
+  "episodio": 310,
+  "titulo": "Caminar a la Luna",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "quepasasi",
+    "espacio",
+    "curiosidades",
+    "luna"
+  ],
+  "descripcion": "Si pudieras caminar hasta la Luna sin parar, ¿cuánto tardarías?",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Cuánto tardarías en llegar a la Luna caminando?",
+      "objeto": "🌕"
+    },
+    {
+      "tipo": "foco",
+      "texto": "La Luna está a unos 384.400 kilómetros. A cinco por hora, son casi 77 mil horas.",
+      "voz": "La Luna está a unos trescientos ochenta y cuatro mil cuatrocientos kilómetros. A cinco por hora, son casi setenta y siete mil horas.",
+      "objeto": "🚶",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Eso es cerca de 9 años caminando sin dormir, sin comer y sin parar un segundo.",
+      "voz": "Eso es cerca de nueve años caminando sin dormir, sin comer y sin parar un segundo.",
+      "objeto": "🥵",
+      "cantidad": 1,
+      "contador": {
+        "desde": 0,
+        "hasta": 9,
+        "unidad": "años"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y el problema no es solo el tiempo: no hay camino.",
+      "objeto": "🚧",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: otro viaje imposible. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Distancia media a la Luna ≈ 384.400 km; a 5 km/h ≈ 76.900 h ≈ 8,8 años sin parar",
+      "fuente": "NASA, «Moon Fact Sheet»; cálculo propio (384.400 ÷ 5 ÷ 24 ÷ 365)"
+    }
+  ],
+  "nota": "Es una cuenta simple a 5 km/h; la distancia a la Luna varía entre ≈363.000 y 405.000 km."
+}

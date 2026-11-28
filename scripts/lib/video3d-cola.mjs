@@ -46,9 +46,15 @@ export function avisoExtra(texto) { fs.mkdirSync(path.join(ROOT, 'out'), { recur
 const ETIQUETAS = { ciencia: ['ciencia', 'datoscientificos'], historia: ['historia', 'sabiasque'], datos: ['datos', 'datoscuriosos'], curiosidad: ['curiosidades', 'sabiasque'], noticia: ['explicado', 'actualidad'], especial: ['gta6', 'videojuegos'], mito: ['mito', 'verdadomito', 'sabiasque'], honduras: ['honduras', 'orgullohondureno', 'catracho'], minihistoria: ['historia', 'minihistoria', 'sabiasque'] };
 // La primera línea lleva el tono del video (scripts/lib/tono.mjs: coloquial o picante; los «explicados», solo coloquial)
 export function textoPost(g) {
+  if (g.formato === 'corto') return textoPostBase(g); // los cortos traen su propia descripción, sin muletilla de tono
   return textoConTono(textoPostBase(g), g.id, { suave: g.categoria === 'noticia' || g.categoria === 'minihistoria' });
 }
 function textoPostBase(g) {
+  if (g.descripcion) return `${g.titulo} ${g.emoji || '🤯'}
+
+${g.descripcion}
+
+${[...(g.etiquetas || ETIQUETAS[g.categoria] || ['datoscuriosos']), 'potterplay', 'shorts'].map((t) => `#${t}`).join(' ')}`;
   const datos = g.escenas.filter((e) => e.tipo !== 'portada' && e.tipo !== 'cierre').slice(0, 5).map((e) => `• ${e.texto}`);
   const tags = [...(g.etiquetas || ETIQUETAS[g.categoria] || ['datoscuriosos']), 'aprende', 'potterplay', 'reels'].map((t) => `#${t}`).join(' ');
   return `${g.titulo} 🤯\n\n${datos.join('\n')}\n\n¿Lo sabías? Cuéntanos en los comentarios 👇\n\n${tags}`;

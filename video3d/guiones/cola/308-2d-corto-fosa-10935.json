@@ -1,0 +1,46 @@
+{
+  "id": "corto-fosa-10935",
+  "motor": "2d",
+  "formato": "corto",
+  "episodio": 308,
+  "titulo": "10.935 metros bajo el mar",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "oceano",
+    "ciencia",
+    "curiosidades",
+    "misterio"
+  ],
+  "descripcion": "En el punto más profundo del mar sí hay vida, y no es la que imaginas.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Qué hay a 10.935 metros bajo el mar?",
+      "objeto": "🔦"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Oscuridad total y una presión que aplastaría un submarino común.",
+      "objeto": "🌑",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y aun así, allí viven animales: pequeños crustáceos y pepinos de mar.",
+      "objeto": "🦐",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: el papá que da a luz. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Se han observado anfípodos y holoturias (pepinos de mar) en el Challenger Deep",
+      "fuente": "NOAA Ocean Exploration y estudios de fauna hadal (anfípodos y holoturias observados en las fosas)"
+    }
+  ],
+  "nota": "La «presión que aplastaría un submarino común» se refiere a los submarinos militares y de turismo normales; hay sumergibles especiales que bajan."
+}

@@ -1,0 +1,70 @@
+{
+  "id": "corto-everest-fosa",
+  "motor": "2d",
+  "formato": "corto",
+  "episodio": 305,
+  "titulo": "El Everest en la fosa",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "escala",
+    "oceano",
+    "ciencia",
+    "curiosidades"
+  ],
+  "descripcion": "Si metieras el Everest en el punto más profundo del mar, su cima quedaría bajo más de 2 kilómetros de agua.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Cabe el Everest en la fosa de las Marianas?",
+      "objeto": "🏔️"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "El Everest mide unos 8.849 metros. La fosa más profunda llega a unos 10.935.",
+      "voz": "El Everest mide unos ocho mil ochocientos cuarenta y nueve metros. La fosa más profunda llega a unos diez mil novecientos treinta y cinco.",
+      "barras": [
+        {
+          "etiqueta": "Everest",
+          "valor": 8849,
+          "texto": "8.849 m",
+          "objeto": "🏔️"
+        },
+        {
+          "etiqueta": "Fosa",
+          "valor": 10935,
+          "texto": "10.935 m",
+          "objeto": "🌊"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Si lo metieras hasta el fondo, su cima quedaría cubierta por más de dos kilómetros de agua.",
+      "objeto": "🌊",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y allá abajo, la presión es unas mil veces la de la superficie.",
+      "objeto": "🗜️",
+      "cantidad": 1,
+      "contador": {
+        "desde": 1,
+        "hasta": 1000,
+        "unidad": "veces"
+      }
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: cuántas Tierras caben en el Sol. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Challenger Deep ≈ 10.935 m (±6 m); Everest ≈ 8.849 m; presión > 1.000 atmósferas",
+      "fuente": "NOAA Ocean Exploration; Guinness World Records; Live Science, «How deep is the Mariana Trench?»"
+    }
+  ],
+  "nota": "La profundidad de la fosa se ha medido varias veces (de 10.935 a 10.994 m según el método)."
+}

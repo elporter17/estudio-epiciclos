@@ -1,0 +1,64 @@
+{
+  "id": "corto-tunel-tierra",
+  "motor": "2d",
+  "formato": "corto",
+  "episodio": 303,
+  "titulo": "Un túnel a través de la Tierra",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "quepasasi",
+    "ciencia",
+    "curiosidades",
+    "tierra"
+  ],
+  "descripcion": "Si cavaras un túnel que cruza la Tierra y te lanzaras, ¿cuánto tardarías en llegar al otro lado?",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Qué pasa si caes por un túnel que atraviesa la Tierra?",
+      "objeto": "🕳️"
+    },
+    {
+      "tipo": "foco",
+      "texto": "Sin aire y con la Tierra igual de densa por dentro, tardarías unos 42 minutos en llegar al otro lado.",
+      "voz": "Sin aire y con la Tierra igual de densa por dentro, tardarías unos cuarenta y dos minutos en llegar al otro lado.",
+      "objeto": "🌍",
+      "cantidad": 1,
+      "contador": {
+        "desde": 0,
+        "hasta": 42,
+        "unidad": "minutos"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Con el centro más denso, como es en realidad, serían unos 38 minutos.",
+      "voz": "Con el centro más denso, como es en realidad, serían unos treinta y ocho minutos.",
+      "objeto": "⏱️",
+      "cantidad": 1,
+      "contador": {
+        "desde": 0,
+        "hasta": 38,
+        "unidad": "minutos"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y con el aire dentro, el viaje se arruinaría: te frenaría mucho.",
+      "objeto": "💨",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: el espacio sin traje. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "42 min con densidad uniforme; ≈38 min con un modelo realista (PREM); con aire, el roce frena mucho el viaje",
+      "fuente": "Klotz (2015), «The gravity tunnel in a non-uniform Earth», Am. J. Phys.; Phys.org, «What if we dug a tunnel through the Earth?»"
+    }
+  ],
+  "nota": "Es un cálculo teórico: nadie puede cavar un túnel así (el calor y la presión lo impiden)."
+}

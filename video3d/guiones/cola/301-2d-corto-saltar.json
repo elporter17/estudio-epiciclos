@@ -1,0 +1,51 @@
+{
+  "id": "corto-saltar",
+  "motor": "2d",
+  "formato": "corto",
+  "episodio": 301,
+  "titulo": "Todos saltando a la vez",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "quepasasi",
+    "ciencia",
+    "curiosidades",
+    "tierra"
+  ],
+  "descripcion": "Ocho mil millones de personas saltando en el mismo segundo: ¿se mueve la Tierra?",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Qué pasa si todos saltamos a la vez?",
+      "objeto": "🌍"
+    },
+    {
+      "tipo": "gente",
+      "texto": "Ocho mil millones de personas, saltando en el mismo segundo.",
+      "cantidad": 36
+    },
+    {
+      "tipo": "foco",
+      "texto": "Según una estimación, la Tierra se movería menos que un átomo, y solo por un instante.",
+      "objeto": "⚛️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Al caer, todo vuelve a su sitio. Tu salto sí empuja al planeta… pero apenas.",
+      "objeto": "🦘",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: caer en el Mar Muerto. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Efecto de un salto de toda la humanidad sobre la Tierra: del orden de una centésima del radio de un átomo de hidrógeno, y temporal (estimación)",
+      "fuente": "Rhett Allain (Southeastern Louisiana University), citado por Live Science, «What If Everyone on Earth Jumped at Once?»"
+    }
+  ],
+  "nota": "Es una estimación con supuestos (altura del salto y reparto de la gente). El orden de magnitud es lo importante: no se podría medir."
+}

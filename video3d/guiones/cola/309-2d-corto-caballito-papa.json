@@ -1,0 +1,46 @@
+{
+  "id": "corto-caballito-papa",
+  "motor": "2d",
+  "formato": "corto",
+  "episodio": 309,
+  "titulo": "El papá caballito de mar",
+  "categoria": "animales",
+  "etiquetas": [
+    "animales",
+    "curiosidades",
+    "naturaleza",
+    "humor"
+  ],
+  "descripcion": "En el caballito de mar, el que queda «embarazado» es el papá.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Quién queda embarazado en el caballito de mar?",
+      "objeto": "🐴"
+    },
+    {
+      "tipo": "foco",
+      "texto": "El macho. Ella deja los huevos en su bolsa, y él se encarga del resto.",
+      "objeto": "🥚",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Él los cuida y él da a luz: según la especie, desde decenas hasta cientos de crías.",
+      "objeto": "👶",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: caminar hasta la Luna. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "En los caballitos de mar (Hippocampus) el macho incuba los huevos en una bolsa y da a luz a las crías",
+      "fuente": "Biología marina (por ejemplo, Smithsonian Ocean y NOAA); conviene cotejar la especie antes de publicar"
+    }
+  ],
+  "nota": "No es el único: lo mismo pasa en otros peces de su familia (peces pipa y dragones de mar)."
+}

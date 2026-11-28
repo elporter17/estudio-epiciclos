@@ -1,0 +1,64 @@
+{
+  "id": "corto-mar-muerto",
+  "motor": "2d",
+  "formato": "corto",
+  "episodio": 302,
+  "titulo": "Caer en el Mar Muerto",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "quepasasi",
+    "ciencia",
+    "curiosidades",
+    "marmuerto"
+  ],
+  "descripcion": "En el Mar Muerto no te hundes. La razón está en la sal.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "Caes al Mar Muerto y no te hundes. ¿Por qué?",
+      "objeto": "🌊"
+    },
+    {
+      "tipo": "comparacion",
+      "texto": "Su agua tiene cerca de 34 % de sal; el mar normal, unos 3,5 %.",
+      "barras": [
+        {
+          "etiqueta": "Mar normal",
+          "valor": 3.5,
+          "texto": "3,5 %",
+          "objeto": "🌊"
+        },
+        {
+          "etiqueta": "Mar Muerto",
+          "valor": 34,
+          "texto": "34 %",
+          "objeto": "🧂"
+        }
+      ]
+    },
+    {
+      "tipo": "foco",
+      "texto": "Esa sal la vuelve más densa que tu cuerpo, así que flotas sin esfuerzo.",
+      "objeto": "🧍",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Eso sí: si te entra en los ojos, arde. Mejor no zambullirte de cabeza.",
+      "objeto": "😖",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: un túnel que cruza la Tierra. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Salinidad del Mar Muerto ≈ 34 % y densidad ≈ 1,24 kg/L, por eso se flota",
+      "fuente": "USGS Water Science School; Wikipedia, «Dead Sea»"
+    }
+  ],
+  "nota": "La salinidad varía según el año y el punto de medición (de 31 a 34 %)."
+}

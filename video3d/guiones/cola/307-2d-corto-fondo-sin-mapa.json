@@ -1,0 +1,52 @@
+{
+  "id": "corto-fondo-sin-mapa",
+  "motor": "2d",
+  "formato": "corto",
+  "episodio": 307,
+  "titulo": "El fondo del mar sin mapa",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "oceano",
+    "ciencia",
+    "curiosidades",
+    "misterio"
+  ],
+  "descripcion": "Conocemos mucho menos del fondo del mar de lo que crees.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Cuánto del fondo del mar conocemos de verdad?",
+      "objeto": "🌊"
+    },
+    {
+      "tipo": "torre",
+      "texto": "Solo cerca del 29 % del fondo marino está mapeado con sonar moderno de alta resolución.",
+      "voz": "Solo cerca del veintinueve por ciento del fondo marino está mapeado con sonar moderno de alta resolución.",
+      "objeto": "🗺️",
+      "cantidad": 29,
+      "contador": {
+        "desde": 0,
+        "hasta": 29,
+        "unidad": "%"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y lo que alguien ha visto con sus propios ojos es mucho menos todavía.",
+      "objeto": "👁️",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: lo que hay a 10.935 metros. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "A abril de 2026, ≈28,7 % del fondo marino mapeado con sonar multihaz de alta resolución",
+      "fuente": "NOAA Ocean Exploration"
+    }
+  ],
+  "nota": "Antes se repetía «más del 80 % sin explorar», una cifra vieja; el dato actual es el del mapeo con sonar."
+}

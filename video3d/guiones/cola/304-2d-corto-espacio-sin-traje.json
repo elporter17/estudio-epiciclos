@@ -1,0 +1,58 @@
+{
+  "id": "corto-espacio-sin-traje",
+  "motor": "2d",
+  "formato": "corto",
+  "episodio": 304,
+  "titulo": "El espacio sin traje",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "quepasasi",
+    "espacio",
+    "ciencia",
+    "curiosidades"
+  ],
+  "descripcion": "¿Qué pasa de verdad si te quedas en el espacio sin traje? Casi nada de lo que muestran las películas.",
+  "destacar": [],
+  "escenas": [
+    {
+      "tipo": "portada",
+      "texto": "¿Cuánto durarías en el espacio sin traje?",
+      "objeto": "🧑‍🚀"
+    },
+    {
+      "tipo": "foco",
+      "texto": "No explotarías: eso es de películas.",
+      "objeto": "💥",
+      "cantidad": 1
+    },
+    {
+      "tipo": "foco",
+      "texto": "Perderías el conocimiento en unos 10 a 15 segundos, cuando la sangre sin oxígeno llega al cerebro.",
+      "voz": "Perderías el conocimiento en unos diez a quince segundos, cuando la sangre sin oxígeno llega al cerebro.",
+      "objeto": "🧠",
+      "cantidad": 1,
+      "contador": {
+        "desde": 0,
+        "hasta": 15,
+        "unidad": "segundos"
+      }
+    },
+    {
+      "tipo": "foco",
+      "texto": "Y tampoco te congelarías al instante: en el vacío casi no se pierde calor.",
+      "objeto": "🧊",
+      "cantidad": 1
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mañana: el Everest en la fosa más profunda. Síguenos: mañana hay otro así."
+    }
+  ],
+  "fuentes": [
+    {
+      "dato": "Sin traje en el vacío: no se explota; se pierde el conocimiento en ≈10–15 s (incidente de 1965 en la NASA: ≈14 s); no se congela al instante",
+      "fuente": "Scientific American, «Survival in space unprotected»; Harvard SITN, «The human body in space»; Live Science"
+    }
+  ],
+  "nota": "El tiempo exacto varía según la fuente (de 9 a 15 s). Sin traje se muere en pocos minutos."
+}
