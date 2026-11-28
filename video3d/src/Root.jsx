@@ -3,6 +3,7 @@
 import { Composition, staticFile, continueRender, delayRender } from 'remotion';
 import { Dato } from './Dato.jsx';
 import { Idea } from './Idea.jsx';
+import { Explica } from './Explica.jsx';
 
 export const FPS = 30;
 
@@ -22,5 +23,6 @@ const leerRender = async () => {
 // filtro de visión; mismo render.json)
 export const Root = () => (<>
   <Composition id="Dato" component={Dato} width={1080} height={1920} fps={FPS} durationInFrames={300} defaultProps={{ render: null }} calculateMetadata={leerRender} />
+  <Composition id="Explica" component={Explica} width={1080} height={1920} fps={FPS} durationInFrames={300} defaultProps={{ render: null }} calculateMetadata={leerRender} />
   <Composition id="Idea" component={Idea} width={1080} height={1920} fps={FPS} durationInFrames={300} defaultProps={{ render: null }} calculateMetadata={leerRender} />
 </>);
