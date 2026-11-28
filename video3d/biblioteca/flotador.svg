@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 280"><rect x="380" y="132" width="230" height="40" rx="20" fill="#f2c39b"/><rect x="380" y="156" width="230" height="16" rx="8" fill="#e3a982"/>
+<ellipse cx="626" cy="150" rx="26" ry="18" fill="#f2c39b"/>
+<path d="M130 120 Q260 104 400 124 L400 178 Q260 196 130 180 Z" fill="#f2c39b"/>
+<path d="M200 116 Q290 104 380 122 L380 180 Q290 192 200 184 Z" fill="#ff5a4d"/><path d="M200 160 Q290 172 380 166 L380 180 Q290 192 200 184 Z" fill="#d8443a"/>
+<circle cx="84" cy="146" r="56" fill="#f2c39b"/><path d="M40 120 Q60 80 110 90 Q90 110 50 160 Z" fill="#4a3426"/><circle cx="96" cy="130" r="7" fill="#3a2a20"/><path d="M90 166 Q104 174 118 164" stroke="#9a4a3a" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M150 124 L200 40" stroke="#f2c39b" stroke-width="26" stroke-linecap="round"/><path d="M270 120 L240 40" stroke="#f2c39b" stroke-width="26" stroke-linecap="round"/>
+<path d="M170 10 L220 46 L270 10 L270 70 L220 100 L170 70 Z" fill="#ffffff"/><path d="M220 46 L270 10 L270 70 L220 100 Z" fill="#e2e8ee"/><g stroke="#9aa4ae" stroke-width="4"><path d="M182 36 L210 54 M182 50 L210 68 M232 54 L258 36 M232 68 L258 50"/></g></svg>

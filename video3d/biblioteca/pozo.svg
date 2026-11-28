@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 1100">
+<rect x="60" y="250" width="580" height="850" fill="#33404f"/>
+<rect x="60" y="250" width="22" height="850" fill="#232c37"/><rect x="618" y="250" width="22" height="850" fill="#232c37"/>
+<rect x="82" y="400" width="536" height="8" fill="#2a3542"/><rect x="82" y="560" width="536" height="8" fill="#2a3542"/><rect x="82" y="720" width="536" height="8" fill="#2a3542"/><rect x="82" y="880" width="536" height="8" fill="#2a3542"/>
+<rect x="130" y="250" width="10" height="830" fill="#8a96a8"/><rect x="390" y="250" width="10" height="830" fill="#8a96a8"/>
+<rect x="420" y="250" width="8" height="830" fill="#6c7788"/><rect x="542" y="250" width="8" height="830" fill="#6c7788"/>
+<rect x="60" y="1060" width="580" height="40" fill="#1b222b"/>
+<rect x="0" y="0" width="700" height="250" rx="14" fill="#4d5a6b"/>
+<rect x="0" y="228" width="700" height="26" fill="#1d1d2b"/>
+<rect x="500" y="62" width="180" height="130" rx="18" fill="#2f7fd2"/>
+<rect x="520" y="90" width="140" height="8" rx="4" fill="#5aa3ea"/><rect x="520" y="115" width="140" height="8" rx="4" fill="#5aa3ea"/><rect x="520" y="140" width="140" height="8" rx="4" fill="#5aa3ea"/><rect x="520" y="165" width="140" height="8" rx="4" fill="#5aa3ea"/>
+<rect x="440" y="120" width="70" height="20" fill="#5d6873"/>
+<circle cx="375" cy="130" r="110" fill="#9aa5b8"/><circle cx="375" cy="130" r="92" fill="#6b7686"/><circle cx="375" cy="130" r="80" fill="#9aa5b8"/>
+<rect x="365" y="55" width="20" height="150" rx="6" fill="#6b7686" transform="rotate(0 375 130)"/><rect x="365" y="55" width="20" height="150" rx="6" fill="#6b7686" transform="rotate(60 375 130)"/><rect x="365" y="55" width="20" height="150" rx="6" fill="#6b7686" transform="rotate(120 375 130)"/>
+<circle cx="375" cy="130" r="26" fill="#2b2f38"/>
+<path d="M258 130 V560" stroke="#c9d1dc" stroke-width="4"/><path d="M265 130 V560" stroke="#c9d1dc" stroke-width="4"/><path d="M272 130 V560" stroke="#c9d1dc" stroke-width="4"/><path d="M478 130 V380" stroke="#c9d1dc" stroke-width="4"/><path d="M485 130 V380" stroke="#c9d1dc" stroke-width="4"/><path d="M492 130 V380" stroke="#c9d1dc" stroke-width="4"/></svg>

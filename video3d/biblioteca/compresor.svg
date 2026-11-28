@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480"><defs><linearGradient id="c" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a2f3a"/><stop offset="0.35" stop-color="#4a5266"/><stop offset="1" stop-color="#1e222b"/></linearGradient></defs>
+<path d="M150 150 Q150 110 120 110 L40 110" fill="none" stroke="#3f8ee8" stroke-width="26" stroke-linecap="round"/>
+<path d="M370 140 Q370 60 440 60 L490 60" fill="none" stroke="#ff3d2e" stroke-width="26" stroke-linecap="round"/>
+<rect x="60" y="400" width="400" height="40" rx="12" fill="#5d6873"/><rect x="80" y="430" width="60" height="40" rx="8" fill="#3c444f"/><rect x="380" y="430" width="60" height="40" rx="8" fill="#3c444f"/>
+<path d="M100 400 V230 Q100 110 260 110 Q420 110 420 230 V400 Z" fill="url(#c)"/>
+<path d="M100 300 H420" stroke="#15181f" stroke-width="10"/>
+<path d="M140 380 V240 Q142 160 220 140" stroke="#7a86a3" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.7"/>
+<rect x="300" y="320" width="90" height="56" rx="10" fill="#15181f"/><circle cx="330" cy="348" r="8" fill="#ffcf4d"/><circle cx="360" cy="348" r="8" fill="#ffcf4d"/></svg>

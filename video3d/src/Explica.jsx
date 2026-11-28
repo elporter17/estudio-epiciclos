@@ -103,7 +103,9 @@ function Capa({ c, f, fps, t, dibujos }) {
   if (c.numero) return (
     <div style={{ position: 'absolute', left: x, top: y, transform: `translate(-50%,-50%) scale(${sp})`, background: c.color || '#1d1d2b', color: '#fff', fontFamily: 'Archivo Black', fontSize: c.tam || 64, padding: '10px 30px', borderRadius: 999, whiteSpace: 'nowrap', boxShadow: '0 8px 0 #00000040' }}>{c.numero}</div>);
 
-  const svg = dibujos[c.svg]; if (!svg) return null;
+  // «colores»: { '#viejo': '#nuevo' } recolorea un dibujo de la biblioteca sin redibujarlo
+  let svg = dibujos[c.svg]; if (!svg) return null;
+  for (const [de, a] of Object.entries(c.colores || {})) svg = svg.split(de).join(a).split(de.toUpperCase()).join(a).split(de.toLowerCase()).join(a);
   const ancho = c.ancho || 500, alto = c.alto || ancho * proporcion(svg);
   const fase = azar(fr, 3) * 6.28;
   let tr = '', op = 1, origen = '50% 50%';

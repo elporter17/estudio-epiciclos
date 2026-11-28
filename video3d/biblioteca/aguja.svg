@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+<path d="M250 40 L282 250 L218 250Z" fill="#e5392f" stroke="#a81f17" stroke-width="5" stroke-linejoin="round"/>
+<path d="M250 460 L282 250 L218 250Z" fill="#e6e9ef" stroke="#8a93a3" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="250" cy="250" r="22" fill="#4a4f5a"/><circle cx="250" cy="250" r="9" fill="#d8dde4"/></svg>

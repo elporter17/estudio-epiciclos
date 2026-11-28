@@ -1,0 +1,7 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 320 520">
+<ellipse cx='150' cy='505' rx='80' ry='12' fill='#000' opacity='0.15'/>
+<path d='M150 500 Q130 330 175 140' stroke='#8a5a32' stroke-width='30' fill='none' stroke-linecap='round'/>
+<path d='M150 500 Q130 330 175 140' stroke='#6e4426' stroke-width='30' fill='none' stroke-dasharray='6 34'/>
+<g fill='#2f8a3e'><path d='M175 140 Q260 90 315 175 Q250 130 175 152Z'/><path d='M175 140 Q90 90 20 170 Q95 125 175 152Z'/><path d='M175 140 Q230 40 300 50 Q235 75 180 150Z'/><path d='M175 140 Q120 40 50 50 Q118 75 172 150Z'/></g>
+<g fill='#24713a'><path d='M175 140 Q200 60 175 10 Q190 70 182 145Z'/><path d='M175 140 Q250 150 280 230 Q235 170 175 150Z'/></g>
+<g fill='#8a5a32'><circle cx='166' cy='152' r='14'/><circle cx='186' cy='156' r='14'/></g></svg>

@@ -1,0 +1,4341 @@
+[
+ {
+  "nombre": "abanico",
+  "descripcion": "abanico · del video «¿Por qué el arcoíris es curvo?» (escena: «Rebota en el fondo de la gota y sale separada en colores.»)",
+  "etiquetas": [
+   "abanico",
+   "ciencia",
+   "arcoiris",
+   "luz",
+   "fisica",
+   "curiosidades"
+  ],
+  "proporcion": 1.192,
+  "origen": "video3d/guiones/explica/077-arcoiris.json"
+ },
+ {
+  "nombre": "agua",
+  "descripcion": "agua · del video «¿Y si la Luna desaparece?» (escena: «Lo primero: las mareas. Hoy la Luna jala los océanos y los hace subir y bajar dos veces al»)",
+  "etiquetas": [
+   "agua",
+   "quepasaria",
+   "luna",
+   "astronomia",
+   "mareas",
+   "sabiasque"
+  ],
+  "proporcion": 0.648,
+  "origen": "video3d/guiones/cola/070-explica-luna.json"
+ },
+ {
+  "nombre": "agua_baja",
+  "descripcion": "agua baja · del video «¿Cómo funciona el inodoro?» (escena: «Mientras tanto, el flotador baja, abre la válvula y entra agua nueva al tanque.»)",
+  "etiquetas": [
+   "agua",
+   "baja",
+   "comofunciona",
+   "casa",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/cola/063-explica-inodoro.json"
+ },
+ {
+  "nombre": "agua_corte",
+  "descripcion": "agua corte · del video «¿Cómo flota un barco de hierro?» (escena: «Tira un clavo al agua y se hunde. Pero un barco con miles de toneladas de hierro flota. ¿C»)",
+  "etiquetas": [
+   "agua",
+   "corte",
+   "ciencia",
+   "fisica",
+   "barcos",
+   "arquimedes",
+   "sabiasque"
+  ],
+  "proporcion": 0.833,
+  "origen": "video3d/guiones/cola/071-explica-barco.json"
+ },
+ {
+  "nombre": "agua_mar",
+  "descripcion": "agua mar · del video «¿Por qué el mar es salado?» (escena: «En el mar, el sol evapora el agua, pero la sal no se va: se queda.»)",
+  "etiquetas": [
+   "agua",
+   "mar",
+   "ciencia",
+   "sabiasque",
+   "curiosidades",
+   "oceano"
+  ],
+  "proporcion": 0.481,
+  "origen": "video3d/guiones/cola/068-explica-mar.json"
+ },
+ {
+  "nombre": "agua_muerto",
+  "descripcion": "agua muerto · del video «¿Qué pasa si caes al Mar Muerto?» (escena: «Existe un lugar donde no te hundes aunque lo intentes: el Mar Muerto.»)",
+  "etiquetas": [
+   "agua",
+   "muerto",
+   "ciencia",
+   "marmuerto",
+   "densidad",
+   "viajes",
+   "curiosidades"
+  ],
+  "proporcion": 0.704,
+  "origen": "video3d/guiones/explica/084-mar-muerto.json"
+ },
+ {
+  "nombre": "agua_reposo",
+  "descripcion": "agua reposo · del video «¿Cómo funciona el inodoro?» (escena: «¿Qué pasa de verdad cuando le das a la palanca del inodoro?»)",
+  "etiquetas": [
+   "agua",
+   "reposo",
+   "comofunciona",
+   "casa",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/cola/063-explica-inodoro.json"
+ },
+ {
+  "nombre": "agua_sifon",
+  "descripcion": "agua sifon · del video «¿Cómo funciona el inodoro?» (escena: «El agua llena el tubo en S por completo y se forma un sifón que chupa todo hacia el drenaj»)",
+  "etiquetas": [
+   "agua",
+   "sifon",
+   "comofunciona",
+   "casa",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/cola/063-explica-inodoro.json"
+ },
+ {
+  "nombre": "aguacate",
+  "descripcion": "aguacate · del video «La baleada: ¿nació en La Ceiba?» (escena: «Hoy se come en todo el país: sencilla, o especial con huevo, aguacate o carne.»)",
+  "etiquetas": [
+   "aguacate",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 1.2,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "aguja",
+  "descripcion": "aguja · del video «¿Cómo funciona una brújula?» (escena: «Tu brújula no apunta al Polo Norte. Y aun así, te saca de cualquier bosque.»)",
+  "etiquetas": [
+   "aguja",
+   "comofunciona",
+   "ciencia",
+   "magnetismo",
+   "brujula",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/071-brujula-norte.json"
+ },
+ {
+  "nombre": "aire_abajo",
+  "descripcion": "aire abajo · del video «¿Por qué vuela un avión?» (escena: «Así, el ala desvía el aire hacia abajo, y el aire, de rebote, empuja el ala hacia arriba.»)",
+  "etiquetas": [
+   "aire",
+   "abajo",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "ala_inclinada",
+  "descripcion": "ala inclinada · del video «¿Por qué vuela un avión?» (escena: «Y va un poquito inclinada hacia arriba. A eso se le llama ángulo de ataque.»)",
+  "etiquetas": [
+   "ala",
+   "inclinada",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "ala_perfil",
+  "descripcion": "ala perfil · del video «¿Por qué vuela un avión?» (escena: «El secreto está en el ala. Vista de lado, tiene esta forma curva.»)",
+  "etiquetas": [
+   "ala",
+   "perfil",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "altar",
+  "descripcion": "altar · del video «Copán: la escalera que habla» (escena: «Su dinastía arrancó en el año 426 con K'inich Yax K'uk' Mo', y tuvo 16 gobernantes.»)",
+  "etiquetas": [
+   "altar",
+   "honduras",
+   "catracho",
+   "copan",
+   "mayas",
+   "historia",
+   "patrimonio"
+  ],
+  "proporcion": 0.469,
+  "origen": "video3d/guiones/explica/202-copan-mayas.json"
+ },
+ {
+  "nombre": "angulo",
+  "descripcion": "angulo · del video «¿Por qué vuela un avión?» (escena: «Y va un poquito inclinada hacia arriba. A eso se le llama ángulo de ataque.»)",
+  "etiquetas": [
+   "angulo",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "arbol",
+  "descripcion": "arbol",
+  "etiquetas": [
+   "arbol"
+  ],
+  "proporcion": 1.4,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "arcoiris",
+  "descripcion": "arcoiris · del video «¿Por qué el arcoíris es curvo?» (escena: «¿Alguna vez viste un arcoíris recto? No existe. La razón está en cada gota de lluvia.»)",
+  "etiquetas": [
+   "arcoiris",
+   "ciencia",
+   "luz",
+   "fisica",
+   "curiosidades"
+  ],
+  "proporcion": 0.52,
+  "origen": "video3d/guiones/explica/077-arcoiris.json"
+ },
+ {
+  "nombre": "arcoiris_completo",
+  "descripcion": "arcoiris completo · del video «¿Por qué el arcoíris es curvo?» (escena: «Las gotas que cumplen ese ángulo forman un círculo alrededor de ese punto.»)",
+  "etiquetas": [
+   "arcoiris",
+   "completo",
+   "ciencia",
+   "luz",
+   "fisica",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/077-arcoiris.json"
+ },
+ {
+  "nombre": "artico",
+  "descripcion": "artico · del video «¿Cómo funciona una brújula?» (escena: «Y ese polo no coincide con el geográfico: está a cientos de kilómetros y se mueve cada año»)",
+  "etiquetas": [
+   "artico",
+   "comofunciona",
+   "ciencia",
+   "magnetismo",
+   "brujula",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/071-brujula-norte.json"
+ },
+ {
+  "nombre": "auto",
+  "descripcion": "auto",
+  "etiquetas": [
+   "auto"
+  ],
+  "proporcion": 0.48,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "aves",
+  "descripcion": "aves · del video «Yojoa: el lago de las 400 aves» (escena: «Más de 400 especies de aves viven alrededor de un solo lago hondureño.»)",
+  "etiquetas": [
+   "aves",
+   "honduras",
+   "catracho",
+   "yojoa",
+   "naturaleza",
+   "sabiasque"
+  ],
+  "proporcion": 0.375,
+  "origen": "video3d/guiones/explica/206-lago-yojoa.json"
+ },
+ {
+  "nombre": "avion",
+  "descripcion": "avion",
+  "etiquetas": [
+   "avion"
+  ],
+  "proporcion": 0.5,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "avion_avion_vuela",
+  "descripcion": "avion · del video «¿Por qué vuela un avión?» (escena: «¿Cómo se queda en el aire un avión que pesa cientos de toneladas?»)",
+  "etiquetas": [
+   "avion",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 0.367,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "azucar",
+  "descripcion": "azucar · del video «¿Por qué se infla el pan?» (escena: «Se comen los azúcares de la harina y eructan gas: dióxido de carbono.»)",
+  "etiquetas": [
+   "azucar",
+   "porque",
+   "ciencia",
+   "cocina",
+   "pan",
+   "levadura",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/072-pan-infla.json"
+ },
+ {
+  "nombre": "bailarin",
+  "descripcion": "bailarin · del video «Garífunas: el viaje a Roatán» (escena: «Y la punta, con tambores y maracas, es el ritmo garífuna que pone a bailar a toda Honduras»)",
+  "etiquetas": [
+   "bailarin",
+   "honduras",
+   "catracho",
+   "garifuna",
+   "historia",
+   "cultura",
+   "sabiasque"
+  ],
+  "proporcion": 1.933,
+  "origen": "video3d/guiones/explica/210-garifunas.json"
+ },
+ {
+  "nombre": "bailarina",
+  "descripcion": "bailarina · del video «Garífunas: el viaje a Roatán» (escena: «Y la punta, con tambores y maracas, es el ritmo garífuna que pone a bailar a toda Honduras»)",
+  "etiquetas": [
+   "bailarina",
+   "honduras",
+   "catracho",
+   "garifuna",
+   "historia",
+   "cultura",
+   "sabiasque"
+  ],
+  "proporcion": 1.813,
+  "origen": "video3d/guiones/explica/210-garifunas.json"
+ },
+ {
+  "nombre": "balancin",
+  "descripcion": "balancin · del video «¿Cómo funciona un ascensor?» (escena: «Funciona como un balancín: cuando la cabina sube, el contrapeso baja, y casi se equilibran»)",
+  "etiquetas": [
+   "balancin",
+   "comofunciona",
+   "ingenieria",
+   "ascensor",
+   "inventos",
+   "curiosidades"
+  ],
+  "proporcion": 0.525,
+  "origen": "video3d/guiones/explica/074-ascensor-contrapeso.json"
+ },
+ {
+  "nombre": "balanza",
+  "descripcion": "balanza · del video «¿Cómo flota un barco de hierro?» (escena: «El barco deja de bajar justo cuando el agua que aparta pesa lo mismo que él.»)",
+  "etiquetas": [
+   "balanza",
+   "ciencia",
+   "fisica",
+   "barcos",
+   "arquimedes",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/cola/071-explica-barco.json"
+ },
+ {
+  "nombre": "baleada",
+  "descripcion": "baleada · del video «La baleada: ¿nació en La Ceiba?» (escena: «¿Sabías que el nombre de la baleada, la reina del desayuno catracho, tiene un origen que n»)",
+  "etiquetas": [
+   "baleada",
+   "honduras",
+   "catracho",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 0.64,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "bandera",
+  "descripcion": "bandera · del video «¿Cómo funciona una brújula?» (escena: «Y ese polo no coincide con el geográfico: está a cientos de kilómetros y se mueve cada año»)",
+  "etiquetas": [
+   "bandera",
+   "comofunciona",
+   "ciencia",
+   "magnetismo",
+   "brujula",
+   "sabiasque"
+  ],
+  "proporcion": 1.375,
+  "origen": "video3d/guiones/explica/071-brujula-norte.json"
+ },
+ {
+  "nombre": "banderines",
+  "descripcion": "banderines · del video «La lluvia de peces de Yoro» (escena: «Allá le dicen la lluvia de peces, y desde 1998 hasta tiene su propio festival.»)",
+  "etiquetas": [
+   "banderines",
+   "honduras",
+   "catracho",
+   "yoro",
+   "lluviadepeces",
+   "misterio",
+   "sabiasque"
+  ],
+  "proporcion": 0.289,
+  "origen": "video3d/guiones/explica/201-lluvia-peces-yoro.json"
+ },
+ {
+  "nombre": "barco",
+  "descripcion": "barco · del video «¿Cómo flota un barco de hierro?» (escena: «Tira un clavo al agua y se hunde. Pero un barco con miles de toneladas de hierro flota. ¿C»)",
+  "etiquetas": [
+   "barco",
+   "ciencia",
+   "fisica",
+   "barcos",
+   "arquimedes",
+   "sabiasque"
+  ],
+  "proporcion": 0.533,
+  "origen": "video3d/guiones/cola/071-explica-barco.json"
+ },
+ {
+  "nombre": "barco_corte",
+  "descripcion": "barco corte · del video «¿Cómo flota un barco de hierro?» (escena: «¿Y cómo pesa tan poco para su tamaño? Por dentro es casi todo aire: una cáscara delgada de»)",
+  "etiquetas": [
+   "barco",
+   "corte",
+   "ciencia",
+   "fisica",
+   "barcos",
+   "arquimedes",
+   "sabiasque"
+  ],
+  "proporcion": 0.588,
+  "origen": "video3d/guiones/cola/071-explica-barco.json"
+ },
+ {
+  "nombre": "barco_hn_garifunas",
+  "descripcion": "barco · del video «Garífunas: el viaje a Roatán» (escena: «En 1797, unas 2.000 personas desembarcaron en Roatán. No llegaron por gusto: venían deport»)",
+  "etiquetas": [
+   "barco",
+   "honduras",
+   "catracho",
+   "garifuna",
+   "historia",
+   "cultura",
+   "sabiasque"
+  ],
+  "proporcion": 0.867,
+  "origen": "video3d/guiones/explica/210-garifunas.json"
+ },
+ {
+  "nombre": "barra_vida",
+  "descripcion": "barra vida · del video «25 años de tu vida, dormido» (escena: «Y un tercio de 75 años son 25 años con los ojos cerrados.»)",
+  "etiquetas": [
+   "barra",
+   "vida",
+   "cuerpo",
+   "sueno",
+   "salud",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 0.224,
+  "origen": "video3d/guiones/explica/109-anos-durmiendo.json"
+ },
+ {
+  "nombre": "barras",
+  "descripcion": "barras · del video «4 bebés por segundo» (escena: «Y en un año, unos 132 millones: más que toda la población de Japón.»)",
+  "etiquetas": [
+   "barras",
+   "mundo",
+   "poblacion",
+   "sabiasque",
+   "numeros",
+   "curiosidades"
+  ],
+  "proporcion": 0.857,
+  "origen": "video3d/guiones/explica/106-bebes-segundo.json"
+ },
+ {
+  "nombre": "barras_caracola",
+  "descripcion": "barras caracola · del video «¿Por qué la caracola suena a mar?» (escena: «Su hueco funciona como caja de resonancia: refuerza algunos tonos y apaga otros.»)",
+  "etiquetas": [
+   "barras",
+   "caracola",
+   "porque",
+   "ciencia",
+   "mitos",
+   "sonido",
+   "curiosidades"
+  ],
+  "proporcion": 0.571,
+  "origen": "video3d/guiones/explica/070-caracola-mar.json"
+ },
+ {
+  "nombre": "barras_ruido",
+  "descripcion": "barras ruido · del video «¿Por qué la caracola suena a mar?» (escena: «Su hueco funciona como caja de resonancia: refuerza algunos tonos y apaga otros.»)",
+  "etiquetas": [
+   "barras",
+   "ruido",
+   "porque",
+   "ciencia",
+   "mitos",
+   "caracola",
+   "sonido",
+   "curiosidades"
+  ],
+  "proporcion": 0.571,
+  "origen": "video3d/guiones/explica/070-caracola-mar.json"
+ },
+ {
+  "nombre": "base_petaloide",
+  "descripcion": "base petaloide",
+  "etiquetas": [
+   "base",
+   "petaloide"
+  ],
+  "proporcion": 1,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "bebe",
+  "descripcion": "bebe · del video «4 bebés por segundo» (escena: «Cuenta conmigo: uno. En ese segundo nacieron unos 4 bebés en el mundo.»)",
+  "etiquetas": [
+   "bebe",
+   "mundo",
+   "poblacion",
+   "sabiasque",
+   "numeros",
+   "curiosidades"
+  ],
+  "proporcion": 1.091,
+  "origen": "video3d/guiones/explica/106-bebes-segundo.json"
+ },
+ {
+  "nombre": "binoculares",
+  "descripcion": "binoculares · del video «Yojoa: el lago de las 400 aves» (escena: «Por eso llegan observadores de aves de todo el mundo, binoculares en mano.»)",
+  "etiquetas": [
+   "binoculares",
+   "honduras",
+   "catracho",
+   "yojoa",
+   "naturaleza",
+   "aves",
+   "sabiasque"
+  ],
+  "proporcion": 0.565,
+  "origen": "video3d/guiones/explica/206-lago-yojoa.json"
+ },
+ {
+  "nombre": "birrete",
+  "descripcion": "birrete · del video «Oxford, más vieja que los aztecas» (escena: «Hay registros de clases en Oxford desde el año 1096.»)",
+  "etiquetas": [
+   "birrete",
+   "historia",
+   "aztecas",
+   "oxford",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 0.733,
+  "origen": "video3d/guiones/explica/108-oxford-aztecas.json"
+ },
+ {
+  "nombre": "bloque_hierro",
+  "descripcion": "bloque hierro · del video «¿Cómo flota un barco de hierro?» (escena: «Aplasta ese hierro en un bloque macizo: es casi 8 veces más denso que el agua y se va dire»)",
+  "etiquetas": [
+   "bloque",
+   "hierro",
+   "ciencia",
+   "fisica",
+   "barcos",
+   "arquimedes",
+   "sabiasque"
+  ],
+  "proporcion": 0.833,
+  "origen": "video3d/guiones/cola/071-explica-barco.json"
+ },
+ {
+  "nombre": "botella_abombada",
+  "descripcion": "botella abombada",
+  "etiquetas": [
+   "botella",
+   "abombada"
+  ],
+  "proporcion": 2.767,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "botella_agua",
+  "descripcion": "botella agua",
+  "etiquetas": [
+   "botella",
+   "agua"
+  ],
+  "proporcion": 2.767,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "botella_congelada",
+  "descripcion": "botella congelada · del video «¿Por qué el hielo flota?» (escena: «Casi todas las sustancias se encogen al volverse sólidas. El agua hace lo contrario.»)",
+  "etiquetas": [
+   "botella",
+   "congelada",
+   "ciencia",
+   "agua",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 2.375,
+  "origen": "video3d/guiones/cola/066-explica-hielo.json"
+ },
+ {
+  "nombre": "botella_gas",
+  "descripcion": "botella gas",
+  "etiquetas": [
+   "botella",
+   "gas"
+  ],
+  "proporcion": 2.767,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "botella_liquida",
+  "descripcion": "botella liquida · del video «¿Por qué el hielo flota?» (escena: «Casi todas las sustancias se encogen al volverse sólidas. El agua hace lo contrario.»)",
+  "etiquetas": [
+   "botella",
+   "liquida",
+   "ciencia",
+   "agua",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 2.375,
+  "origen": "video3d/guiones/cola/066-explica-hielo.json"
+ },
+ {
+  "nombre": "brillo",
+  "descripcion": "brillo · del video «¿Por qué el mar profundo es negro?» (escena: «Pero ahí abajo hay luces. Muchos animales fabrican la suya: se llama bioluminiscencia.»)",
+  "etiquetas": [
+   "brillo",
+   "ciencia",
+   "oceano",
+   "luz",
+   "bioluminiscencia",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/083-fondo-mar.json"
+ },
+ {
+  "nombre": "brujula",
+  "descripcion": "brujula · del video «¿Cómo funciona una brújula?» (escena: «Tu brújula no apunta al Polo Norte. Y aun así, te saca de cualquier bosque.»)",
+  "etiquetas": [
+   "brujula",
+   "comofunciona",
+   "ciencia",
+   "magnetismo",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/071-brujula-norte.json"
+ },
+ {
+  "nombre": "buzo",
+  "descripcion": "buzo · del video «¿Por qué el mar profundo es negro?» (escena: «Bajemos juntos al fondo del mar. Reto: fíjate qué color desaparece primero.»)",
+  "etiquetas": [
+   "buzo",
+   "ciencia",
+   "oceano",
+   "luz",
+   "bioluminiscencia",
+   "sabiasque"
+  ],
+  "proporcion": 0.565,
+  "origen": "video3d/guiones/explica/083-fondo-mar.json"
+ },
+ {
+  "nombre": "cabina",
+  "descripcion": "cabina · del video «¿Cómo funciona un ascensor?» (escena: «¿Cómo sube un ascensor lleno sin que el motor sude? El secreto cuelga del otro lado.»)",
+  "etiquetas": [
+   "cabina",
+   "comofunciona",
+   "ingenieria",
+   "ascensor",
+   "inventos",
+   "curiosidades"
+  ],
+  "proporcion": 1.333,
+  "origen": "video3d/guiones/explica/074-ascensor-contrapeso.json"
+ },
+ {
+  "nombre": "cable_corte",
+  "descripcion": "cable corte · del video «¿Cómo funciona un ascensor?» (escena: «¿Y si un cable falla? Cuelga de varios, con muchísima fuerza de sobra.»)",
+  "etiquetas": [
+   "cable",
+   "corte",
+   "comofunciona",
+   "ingenieria",
+   "ascensor",
+   "inventos",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/074-ascensor-contrapeso.json"
+ },
+ {
+  "nombre": "calendario",
+  "descripcion": "calendario · del video «Millón vs mil millones de segundos» (escena: «Un millón de segundos son 11 días y medio: ni siquiera dos semanas.»)",
+  "etiquetas": [
+   "calendario",
+   "numeros",
+   "matematicas",
+   "sabiasque",
+   "tiempo",
+   "curiosidades"
+  ],
+  "proporcion": 0.653,
+  "origen": "video3d/guiones/cola/073-explica-millon.json"
+ },
+ {
+  "nombre": "cama",
+  "descripcion": "cama · del video «25 años de tu vida, dormido» (escena: «Si vives 75 años, vas a pasar unos 25 dormido. Y es buena noticia.»)",
+  "etiquetas": [
+   "cama",
+   "cuerpo",
+   "sueno",
+   "salud",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 0.578,
+  "origen": "video3d/guiones/explica/109-anos-durmiendo.json"
+ },
+ {
+  "nombre": "camara",
+  "descripcion": "camara · del video «¿Y si sales al espacio sin traje?» (escena: «En 1965, el traje de un técnico de la NASA se despresurizó en una prueba. Estuvo conscient»)",
+  "etiquetas": [
+   "camara",
+   "quepasaria",
+   "espacio",
+   "cuerpohumano",
+   "nasa",
+   "sabiasque"
+  ],
+  "proporcion": 1.067,
+  "origen": "video3d/guiones/cola/065-explica-espacio.json"
+ },
+ {
+  "nombre": "cara",
+  "descripcion": "cara · del video «¿Por qué la cebolla hace llorar?» (escena: «Es volátil: viaja por el aire, llega a tus ojos y los irrita.»)",
+  "etiquetas": [
+   "cara",
+   "ciencia",
+   "cocina",
+   "quimica",
+   "cebolla",
+   "trucos"
+  ],
+  "proporcion": 1.12,
+  "origen": "video3d/guiones/cola/072-explica-cebolla.json"
+ },
+ {
+  "nombre": "caracola",
+  "descripcion": "caracola · del video «¿Por qué la caracola suena a mar?» (escena: «Te mintieron: ese mar que oyes dentro de una caracola no viene del mar.»)",
+  "etiquetas": [
+   "caracola",
+   "porque",
+   "ciencia",
+   "mitos",
+   "sonido",
+   "curiosidades"
+  ],
+  "proporcion": 0.731,
+  "origen": "video3d/guiones/explica/070-caracola-mar.json"
+ },
+ {
+  "nombre": "caracola_corte",
+  "descripcion": "caracola corte · del video «¿Por qué la caracola suena a mar?» (escena: «Ese ruido se cuela por la boca de la caracola y rebota por su espiral.»)",
+  "etiquetas": [
+   "caracola",
+   "corte",
+   "porque",
+   "ciencia",
+   "mitos",
+   "sonido",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/070-caracola-mar.json"
+ },
+ {
+  "nombre": "carne",
+  "descripcion": "carne · del video «La baleada: ¿nació en La Ceiba?» (escena: «Hoy se come en todo el país: sencilla, o especial con huevo, aguacate o carne.»)",
+  "etiquetas": [
+   "carne",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 0.667,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "casa",
+  "descripcion": "casa",
+  "etiquetas": [
+   "casa"
+  ],
+  "proporcion": 0.9,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "casabe",
+  "descripcion": "casabe · del video «Garífunas: el viaje a Roatán» (escena: «En la mesa no faltan el casabe, un pan de yuca rallada, y el hudutu: plátano machucado con»)",
+  "etiquetas": [
+   "casabe",
+   "honduras",
+   "catracho",
+   "garifuna",
+   "historia",
+   "cultura",
+   "sabiasque"
+  ],
+  "proporcion": 0.619,
+  "origen": "video3d/guiones/explica/210-garifunas.json"
+ },
+ {
+  "nombre": "catarata",
+  "descripcion": "catarata · del video «Yojoa: el lago de las 400 aves» (escena: «Y a pocos kilómetros cae Pulhapanzak, una catarata de unos 43 metros.»)",
+  "etiquetas": [
+   "catarata",
+   "honduras",
+   "catracho",
+   "yojoa",
+   "naturaleza",
+   "aves",
+   "sabiasque"
+  ],
+  "proporcion": 1.333,
+  "origen": "video3d/guiones/explica/206-lago-yojoa.json"
+ },
+ {
+  "nombre": "cebolla",
+  "descripcion": "cebolla · del video «¿Por qué la cebolla hace llorar?» (escena: «Spoiler: la cebolla no te hace llorar de tristeza. Te está atacando con química.»)",
+  "etiquetas": [
+   "cebolla",
+   "ciencia",
+   "cocina",
+   "quimica",
+   "trucos"
+  ],
+  "proporcion": 1.15,
+  "origen": "video3d/guiones/cola/072-explica-cebolla.json"
+ },
+ {
+  "nombre": "celular",
+  "descripcion": "celular · del video «¿Cómo sabe el GPS dónde estás?» (escena: «Dato raro: para ubicarte, tu celular no le manda nada al espacio. Solo escucha.»)",
+  "etiquetas": [
+   "celular",
+   "tecnologia",
+   "gps",
+   "satelites",
+   "einstein",
+   "curiosidades"
+  ],
+  "proporcion": 1.818,
+  "origen": "video3d/guiones/explica/082-gps.json"
+ },
+ {
+  "nombre": "celular_mas_celulares_que_person",
+  "descripcion": "celular · del video «Más celulares que personas» (escena: «En el planeta hay más líneas de celular que personas. ¿Cómo cuadra eso?»)",
+  "etiquetas": [
+   "celular",
+   "tecnologia",
+   "celulares",
+   "sabiasque",
+   "numeros",
+   "curiosidades"
+  ],
+  "proporcion": 2,
+  "origen": "video3d/guiones/explica/107-celulares.json"
+ },
+ {
+  "nombre": "celulas",
+  "descripcion": "celulas · del video «¿Por qué la cebolla hace llorar?» (escena: «Sus células guardan dos cosas por separado: compuestos con azufre y unas enzimas.»)",
+  "etiquetas": [
+   "celulas",
+   "ciencia",
+   "cocina",
+   "quimica",
+   "cebolla",
+   "trucos"
+  ],
+  "proporcion": 0.722,
+  "origen": "video3d/guiones/cola/072-explica-cebolla.json"
+ },
+ {
+  "nombre": "celulas_rotas",
+  "descripcion": "celulas rotas · del video «¿Por qué la cebolla hace llorar?» (escena: «Al cortarla, rompes esas células. Todo se mezcla y en segundos se forma un gas irritante.»)",
+  "etiquetas": [
+   "celulas",
+   "rotas",
+   "ciencia",
+   "cocina",
+   "quimica",
+   "cebolla",
+   "trucos"
+  ],
+  "proporcion": 0.722,
+  "origen": "video3d/guiones/cola/072-explica-cebolla.json"
+ },
+ {
+  "nombre": "cerebro",
+  "descripcion": "cerebro · del video «25 años de tu vida, dormido» (escena: «Y no es tiempo perdido: mientras duermes, tu cerebro ordena lo que aprendiste en el día.»)",
+  "etiquetas": [
+   "cerebro",
+   "cuerpo",
+   "sueno",
+   "salud",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 0.765,
+  "origen": "video3d/guiones/explica/109-anos-durmiendo.json"
+ },
+ {
+  "nombre": "cerro_mina",
+  "descripcion": "cerro mina · del video «¿Por qué Tegus está entre cerros?» (escena: «Todo empezó con plata. En 1578 nació aquí un real de minas: un pueblo minero.»)",
+  "etiquetas": [
+   "cerro",
+   "mina",
+   "honduras",
+   "catracho",
+   "tegucigalpa",
+   "historia",
+   "sabiasque"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/205-tegucigalpa-cerros.json"
+ },
+ {
+  "nombre": "cerro_picacho",
+  "descripcion": "cerro picacho · del video «¿Por qué Tegus está entre cerros?» (escena: «Al norte, en el cerro El Picacho, a unos 1.300 metros sobre el mar, el Cristo abre los bra»)",
+  "etiquetas": [
+   "cerro",
+   "picacho",
+   "honduras",
+   "catracho",
+   "tegucigalpa",
+   "historia",
+   "sabiasque"
+  ],
+  "proporcion": 0.875,
+  "origen": "video3d/guiones/explica/205-tegucigalpa-cerros.json"
+ },
+ {
+  "nombre": "cerro_plata",
+  "descripcion": "cerro plata · del video «¿Por qué Tegus está entre cerros?» (escena: «¿Y el nombre? Nadie lo sabe seguro. Una versión popular dice «cerro de plata»; el filólogo»)",
+  "etiquetas": [
+   "cerro",
+   "plata",
+   "honduras",
+   "catracho",
+   "tegucigalpa",
+   "historia",
+   "sabiasque"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/205-tegucigalpa-cerros.json"
+ },
+ {
+  "nombre": "charco",
+  "descripcion": "charco · del video «La lluvia de peces de Yoro» (escena: «Imaginate salir después de una tormenta en Yoro… y encontrar el suelo lleno de pescaditos »)",
+  "etiquetas": [
+   "charco",
+   "honduras",
+   "catracho",
+   "yoro",
+   "lluviadepeces",
+   "misterio",
+   "sabiasque"
+  ],
+  "proporcion": 0.356,
+  "origen": "video3d/guiones/explica/201-lluvia-peces-yoro.json"
+ },
+ {
+  "nombre": "chicle",
+  "descripcion": "chicle · del video «¿Y si te tragas un chicle?» (escena: «Te mintieron: tragarte un chicle no lo deja 7 años pegado en el estómago. Ni cerca.»)",
+  "etiquetas": [
+   "chicle",
+   "mitos",
+   "cuerpo",
+   "salud",
+   "curiosidades",
+   "sabiasque"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/076-chicle.json"
+ },
+ {
+  "nombre": "chispa",
+  "descripcion": "chispa · del video «25 años de tu vida, dormido» (escena: «Y no es tiempo perdido: mientras duermes, tu cerebro ordena lo que aprendiste en el día.»)",
+  "etiquetas": [
+   "chispa",
+   "cuerpo",
+   "sueno",
+   "salud",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/109-anos-durmiendo.json"
+ },
+ {
+  "nombre": "chorro_relleno",
+  "descripcion": "chorro relleno · del video «¿Cómo funciona el inodoro?» (escena: «Mientras tanto, el flotador baja, abre la válvula y entra agua nueva al tanque.»)",
+  "etiquetas": [
+   "chorro",
+   "relleno",
+   "comofunciona",
+   "casa",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/cola/063-explica-inodoro.json"
+ },
+ {
+  "nombre": "ciclo",
+  "descripcion": "ciclo · del video «¿Cómo enfría una nevera?» (escena: «Una válvula lo descomprime, lo enfría de golpe y el ciclo vuelve a empezar.»)",
+  "etiquetas": [
+   "ciclo",
+   "comofunciona",
+   "ciencia",
+   "sabiasque",
+   "nevera",
+   "curiosidades"
+  ],
+  "proporcion": 1.029,
+  "origen": "video3d/guiones/cola/069-explica-nevera.json"
+ },
+ {
+  "nombre": "cien_personas",
+  "descripcion": "cien personas · del video «Más celulares que personas» (escena: «Si el mundo fuera un salón de 100 personas, habría 112 líneas de celular.»)",
+  "etiquetas": [
+   "cien",
+   "personas",
+   "tecnologia",
+   "celulares",
+   "sabiasque",
+   "numeros",
+   "curiosidades"
+  ],
+  "proporcion": 1.167,
+  "origen": "video3d/guiones/explica/107-celulares.json"
+ },
+ {
+  "nombre": "cien_sin",
+  "descripcion": "cien sin · del video «Más celulares que personas» (escena: «Y aun así, de cada 100 personas de 10 años o más, 18 no tienen celular.»)",
+  "etiquetas": [
+   "cien",
+   "sin",
+   "tecnologia",
+   "celulares",
+   "sabiasque",
+   "numeros",
+   "curiosidades"
+  ],
+  "proporcion": 1.167,
+  "origen": "video3d/guiones/explica/107-celulares.json"
+ },
+ {
+  "nombre": "circulos",
+  "descripcion": "circulos · del video «¿Cómo sabe el GPS dónde estás?» (escena: «Con 3 distancias ya sabe dónde estás. El cuarto satélite corrige el reloj de tu celular, q»)",
+  "etiquetas": [
+   "circulos",
+   "tecnologia",
+   "gps",
+   "satelites",
+   "einstein",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/082-gps.json"
+ },
+ {
+  "nombre": "clavo",
+  "descripcion": "clavo · del video «¿Cómo flota un barco de hierro?» (escena: «Tira un clavo al agua y se hunde. Pero un barco con miles de toneladas de hierro flota. ¿C»)",
+  "etiquetas": [
+   "clavo",
+   "ciencia",
+   "fisica",
+   "barcos",
+   "arquimedes",
+   "sabiasque"
+  ],
+  "proporcion": 4,
+  "origen": "video3d/guiones/cola/071-explica-barco.json"
+ },
+ {
+  "nombre": "colinas",
+  "descripcion": "colinas · del video «¿Por qué el arcoíris es curvo?» (escena: «¿Alguna vez viste un arcoíris recto? No existe. La razón está en cada gota de lluvia.»)",
+  "etiquetas": [
+   "colinas",
+   "ciencia",
+   "arcoiris",
+   "luz",
+   "fisica",
+   "curiosidades"
+  ],
+  "proporcion": 0.556,
+  "origen": "video3d/guiones/explica/077-arcoiris.json"
+ },
+ {
+  "nombre": "colores",
+  "descripcion": "colores · del video «¿Por qué el mar profundo es negro?» (escena: «El agua absorbe la luz. Y el rojo se apaga primero: en unos pocos metros ya casi no queda.»)",
+  "etiquetas": [
+   "colores",
+   "ciencia",
+   "oceano",
+   "luz",
+   "bioluminiscencia",
+   "sabiasque"
+  ],
+  "proporcion": 1.286,
+  "origen": "video3d/guiones/explica/083-fondo-mar.json"
+ },
+ {
+  "nombre": "comal",
+  "descripcion": "comal · del video «La baleada: ¿nació en La Ceiba?» (escena: «Todo arranca con una tortilla de harina, grandota y suavecita, recién salida del comal.»)",
+  "etiquetas": [
+   "comal",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 0.464,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "compresor",
+  "descripcion": "compresor · del video «¿Cómo enfría una nevera?» (escena: «Luego el compresor, ese motor que zumba, aprieta el gas y lo pone muy caliente.»)",
+  "etiquetas": [
+   "compresor",
+   "comofunciona",
+   "ciencia",
+   "sabiasque",
+   "nevera",
+   "curiosidades"
+  ],
+  "proporcion": 0.923,
+  "origen": "video3d/guiones/cola/069-explica-nevera.json"
+ },
+ {
+  "nombre": "contrapeso",
+  "descripcion": "contrapeso · del video «¿Cómo funciona un ascensor?» (escena: «¿Cómo sube un ascensor lleno sin que el motor sude? El secreto cuelga del otro lado.»)",
+  "etiquetas": [
+   "contrapeso",
+   "comofunciona",
+   "ingenieria",
+   "ascensor",
+   "inventos",
+   "curiosidades"
+  ],
+  "proporcion": 2.727,
+  "origen": "video3d/guiones/explica/074-ascensor-contrapeso.json"
+ },
+ {
+  "nombre": "copo",
+  "descripcion": "copo · del video «¿Cómo enfría una nevera?» (escena: «¿Cómo enfría una nevera, si por detrás siempre está calientita?»)",
+  "etiquetas": [
+   "copo",
+   "comofunciona",
+   "ciencia",
+   "sabiasque",
+   "nevera",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/069-explica-nevera.json"
+ },
+ {
+  "nombre": "copo_cebolla_llorar",
+  "descripcion": "copo · del video «¿Por qué la cebolla hace llorar?» (escena: «El truco: enfría la cebolla antes de cortarla y usa un cuchillo bien afilado. Sale menos g»)",
+  "etiquetas": [
+   "copo",
+   "ciencia",
+   "cocina",
+   "quimica",
+   "cebolla",
+   "trucos"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/072-explica-cebolla.json"
+ },
+ {
+  "nombre": "corona",
+  "descripcion": "corona · del video «Copán: la escalera que habla» (escena: «Su dinastía arrancó en el año 426 con K'inich Yax K'uk' Mo', y tuvo 16 gobernantes.»)",
+  "etiquetas": [
+   "corona",
+   "honduras",
+   "catracho",
+   "copan",
+   "mayas",
+   "historia",
+   "patrimonio"
+  ],
+  "proporcion": 0.667,
+  "origen": "video3d/guiones/explica/202-copan-mayas.json"
+ },
+ {
+  "nombre": "corte_paisaje",
+  "descripcion": "corte paisaje · del video «¿Por qué el mar es salado?» (escena: «¿Por qué el mar es salado, si los ríos que llegan a él son de agua dulce?»)",
+  "etiquetas": [
+   "corte",
+   "paisaje",
+   "ciencia",
+   "sabiasque",
+   "mar",
+   "curiosidades",
+   "oceano"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/cola/068-explica-mar.json"
+ },
+ {
+  "nombre": "cristales_sal",
+  "descripcion": "cristales sal · del video «¿Por qué el mar es salado?» (escena: «Hoy, en promedio, el 3,5 % del agua de mar es sal: unos 35 gramos por litro.»)",
+  "etiquetas": [
+   "cristales",
+   "sal",
+   "ciencia",
+   "sabiasque",
+   "mar",
+   "curiosidades",
+   "oceano"
+  ],
+  "proporcion": 0.619,
+  "origen": "video3d/guiones/cola/068-explica-mar.json"
+ },
+ {
+  "nombre": "cristo",
+  "descripcion": "cristo · del video «¿Por qué Tegus está entre cerros?» (escena: «Tegucigalpa vive rodeada de cerros. ¿Por qué la capital creció metida en un valle?»)",
+  "etiquetas": [
+   "cristo",
+   "honduras",
+   "catracho",
+   "tegucigalpa",
+   "historia",
+   "sabiasque"
+  ],
+  "proporcion": 1.8,
+  "origen": "video3d/guiones/explica/205-tegucigalpa-cerros.json"
+ },
+ {
+  "nombre": "cubo_agua",
+  "descripcion": "cubo agua · del video «¿Cómo flota un barco de hierro?» (escena: «El barco deja de bajar justo cuando el agua que aparta pesa lo mismo que él.»)",
+  "etiquetas": [
+   "cubo",
+   "agua",
+   "ciencia",
+   "fisica",
+   "barcos",
+   "arquimedes",
+   "sabiasque"
+  ],
+  "proporcion": 1.05,
+  "origen": "video3d/guiones/cola/071-explica-barco.json"
+ },
+ {
+  "nombre": "cuchillo",
+  "descripcion": "cuchillo · del video «¿Por qué la cebolla hace llorar?» (escena: «Spoiler: la cebolla no te hace llorar de tristeza. Te está atacando con química.»)",
+  "etiquetas": [
+   "cuchillo",
+   "ciencia",
+   "cocina",
+   "quimica",
+   "cebolla",
+   "trucos"
+  ],
+  "proporcion": 0.268,
+  "origen": "video3d/guiones/cola/072-explica-cebolla.json"
+ },
+ {
+  "nombre": "cueva",
+  "descripcion": "cueva · del video «Millón vs mil millones de segundos» (escena: «¿Y un billón, un millón de millones? Unos 31.700 años atrás: ni siquiera existía la agricu»)",
+  "etiquetas": [
+   "cueva",
+   "numeros",
+   "matematicas",
+   "sabiasque",
+   "tiempo",
+   "curiosidades"
+  ],
+  "proporcion": 0.76,
+  "origen": "video3d/guiones/cola/073-explica-millon.json"
+ },
+ {
+  "nombre": "curva",
+  "descripcion": "curva · del video «Más celulares que personas» (escena: «De cero a más de 9.000 millones de líneas en unos 40 años. Y la curva sigue subiendo.»)",
+  "etiquetas": [
+   "curva",
+   "tecnologia",
+   "celulares",
+   "sabiasque",
+   "numeros",
+   "curiosidades"
+  ],
+  "proporcion": 0.696,
+  "origen": "video3d/guiones/explica/107-celulares.json"
+ },
+ {
+  "nombre": "desmayo",
+  "descripcion": "desmayo · del video «¿Y si sales al espacio sin traje?» (escena: «En unos 10 a 15 segundos, esa sangre sin oxígeno llega al cerebro y te desmayas.»)",
+  "etiquetas": [
+   "desmayo",
+   "quepasaria",
+   "espacio",
+   "cuerpohumano",
+   "nasa",
+   "sabiasque"
+  ],
+  "proporcion": 1.8,
+  "origen": "video3d/guiones/cola/065-explica-espacio.json"
+ },
+ {
+  "nombre": "digestivo",
+  "descripcion": "digestivo · del video «¿Y si te tragas un chicle?» (escena: «Pero no se queda pegada: el estómago la empuja y viaja por el intestino como cualquier cos»)",
+  "etiquetas": [
+   "digestivo",
+   "mitos",
+   "cuerpo",
+   "salud",
+   "curiosidades",
+   "sabiasque"
+  ],
+  "proporcion": 1.4,
+  "origen": "video3d/guiones/explica/076-chicle.json"
+ },
+ {
+  "nombre": "dispersion",
+  "descripcion": "dispersion · del video «¿Por qué el cielo es azul?» (escena: «Y esas moléculas desvían mucho más la luz azul que la roja: es la dispersión de Rayleigh.»)",
+  "etiquetas": [
+   "dispersion",
+   "ciencia",
+   "sabiasque",
+   "cielo",
+   "curiosidades",
+   "fisica"
+  ],
+  "proporcion": 0.943,
+  "origen": "video3d/guiones/cola/064-explica-cielo.json"
+ },
+ {
+  "nombre": "dos_barras",
+  "descripcion": "dos barras · del video «Oxford, más vieja que los aztecas» (escena: «Entre una fecha y otra hay 229 años: más de lo que México lleva como país independiente.»)",
+  "etiquetas": [
+   "dos",
+   "barras",
+   "historia",
+   "aztecas",
+   "oxford",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 0.417,
+  "origen": "video3d/guiones/explica/108-oxford-aztecas.json"
+ },
+ {
+  "nombre": "dos_ciudades",
+  "descripcion": "dos ciudades · del video «¿Por qué Tegus está entre cerros?» (escena: «Y al otro lado del río está Comayagüela, su ciudad gemela. Desde 1937, juntas forman el Di»)",
+  "etiquetas": [
+   "dos",
+   "ciudades",
+   "honduras",
+   "catracho",
+   "tegucigalpa",
+   "historia",
+   "sabiasque"
+  ],
+  "proporcion": 0.6,
+  "origen": "video3d/guiones/explica/205-tegucigalpa-cerros.json"
+ },
+ {
+  "nombre": "edificio",
+  "descripcion": "edificio · del video «Millón vs mil millones de segundos» (escena: «Otra forma: si un millón de segundos midiera 1 centímetro, mil millones medirían 10 metros»)",
+  "etiquetas": [
+   "edificio",
+   "numeros",
+   "matematicas",
+   "sabiasque",
+   "tiempo",
+   "curiosidades"
+  ],
+  "proporcion": 1.733,
+  "origen": "video3d/guiones/cola/073-explica-millon.json"
+ },
+ {
+  "nombre": "eje",
+  "descripcion": "eje · del video «¿Y si la Luna desaparece?» (escena: «Y lo más raro: la Luna ayuda a mantener estable la inclinación de la Tierra, que hoy ronda»)",
+  "etiquetas": [
+   "eje",
+   "quepasaria",
+   "luna",
+   "astronomia",
+   "mareas",
+   "sabiasque"
+  ],
+  "proporcion": 19,
+  "origen": "video3d/guiones/cola/070-explica-luna.json"
+ },
+ {
+  "nombre": "eje_fantasma",
+  "descripcion": "eje fantasma · del video «¿Y si la Luna desaparece?» (escena: «Sin ella, a lo largo de millones de años, ese eje podría tambalearse mucho más y los clima»)",
+  "etiquetas": [
+   "eje",
+   "fantasma",
+   "quepasaria",
+   "luna",
+   "astronomia",
+   "mareas",
+   "sabiasque"
+  ],
+  "proporcion": 19,
+  "origen": "video3d/guiones/cola/070-explica-luna.json"
+ },
+ {
+  "nombre": "escalinata",
+  "descripcion": "escalinata · del video «Copán: la escalera que habla» (escena: «En Honduras hay una escalera de piedra que cuenta una historia entera, con unos 2.000 glif»)",
+  "etiquetas": [
+   "escalinata",
+   "honduras",
+   "catracho",
+   "copan",
+   "mayas",
+   "historia",
+   "patrimonio"
+  ],
+  "proporcion": 1.167,
+  "origen": "video3d/guiones/explica/202-copan-mayas.json"
+ },
+ {
+  "nombre": "espectro_sol",
+  "descripcion": "espectro sol · del video «¿Por qué el cielo es azul?» (escena: «¿Y el violeta? El Sol manda menos, parte se absorbe arriba y nuestros ojos lo ven peor.»)",
+  "etiquetas": [
+   "espectro",
+   "sol",
+   "ciencia",
+   "sabiasque",
+   "cielo",
+   "curiosidades",
+   "fisica"
+  ],
+  "proporcion": 0.629,
+  "origen": "video3d/guiones/cola/064-explica-cielo.json"
+ },
+ {
+  "nombre": "estacion",
+  "descripcion": "estacion · del video «¿Y si sales al espacio sin traje?» (escena: «¿Qué pasa si sales al espacio sin traje? ¿De verdad explotas?»)",
+  "etiquetas": [
+   "estacion",
+   "quepasaria",
+   "espacio",
+   "cuerpohumano",
+   "nasa",
+   "sabiasque"
+  ],
+  "proporcion": 0.4,
+  "origen": "video3d/guiones/cola/065-explica-espacio.json"
+ },
+ {
+  "nombre": "estela",
+  "descripcion": "estela · del video «Copán: la escalera que habla» (escena: «El más famoso es 18 Conejo, Waxaklajuun Ub'aah K'awiil, que llenó la Gran Plaza de estelas»)",
+  "etiquetas": [
+   "estela",
+   "honduras",
+   "catracho",
+   "copan",
+   "mayas",
+   "historia",
+   "patrimonio"
+  ],
+  "proporcion": 2.286,
+  "origen": "video3d/guiones/explica/202-copan-mayas.json"
+ },
+ {
+  "nombre": "estrellas",
+  "descripcion": "estrellas · del video «¿Y si sales al espacio sin traje?» (escena: «¿Qué pasa si sales al espacio sin traje? ¿De verdad explotas?»)",
+  "etiquetas": [
+   "estrellas",
+   "quepasaria",
+   "espacio",
+   "cuerpohumano",
+   "nasa",
+   "sabiasque"
+  ],
+  "proporcion": 1.778,
+  "origen": "video3d/guiones/cola/065-explica-espacio.json"
+ },
+ {
+  "nombre": "estrellas_luna_desaparece",
+  "descripcion": "estrellas · del video «¿Y si la Luna desaparece?» (escena: «Las noches serían mucho más oscuras: adiós a la luz de luna llena para caminar sin lintern»)",
+  "etiquetas": [
+   "estrellas",
+   "quepasaria",
+   "luna",
+   "astronomia",
+   "mareas",
+   "sabiasque"
+  ],
+  "proporcion": 0.648,
+  "origen": "video3d/guiones/cola/070-explica-luna.json"
+ },
+ {
+  "nombre": "flecha",
+  "descripcion": "flecha",
+  "etiquetas": [
+   "flecha"
+  ],
+  "proporcion": 0.4,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "flecha_calor",
+  "descripcion": "flecha calor · del video «¿Cómo enfría una nevera?» (escena: «El truco: la nevera no fabrica frío. Le saca el calor a lo de adentro y lo tira afuera.»)",
+  "etiquetas": [
+   "flecha",
+   "calor",
+   "comofunciona",
+   "ciencia",
+   "sabiasque",
+   "nevera",
+   "curiosidades"
+  ],
+  "proporcion": 0.571,
+  "origen": "video3d/guiones/cola/069-explica-nevera.json"
+ },
+ {
+  "nombre": "flecha_frio",
+  "descripcion": "flecha frio · del video «¿Por qué el hielo flota?» (escena: «Por eso, en invierno, los lagos se congelan desde arriba: el hielo forma una tapa encima.»)",
+  "etiquetas": [
+   "flecha",
+   "frio",
+   "ciencia",
+   "agua",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.375,
+  "origen": "video3d/guiones/cola/066-explica-hielo.json"
+ },
+ {
+  "nombre": "flecha_giro",
+  "descripcion": "flecha giro · del video «¿Por qué los gatos caen de pie?» (escena: «Un gato cae panza arriba y aterriza de pie. ¿Magia? No: física con bigotes.»)",
+  "etiquetas": [
+   "flecha",
+   "giro",
+   "porque",
+   "animales",
+   "gatos",
+   "ciencia",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/073-gato-cae-de-pie.json"
+ },
+ {
+  "nombre": "flecha_peso",
+  "descripcion": "flecha peso · del video «¿Por qué vuela un avión?» (escena: «¿Cómo se queda en el aire un avión que pesa cientos de toneladas?»)",
+  "etiquetas": [
+   "flecha",
+   "peso",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.857,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "flecha_sube",
+  "descripcion": "flecha sube · del video «¿Por qué vuela un avión?» (escena: «Así, el ala desvía el aire hacia abajo, y el aire, de rebote, empuja el ala hacia arriba.»)",
+  "etiquetas": [
+   "flecha",
+   "sube",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.875,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "flecha_tunel_tierra",
+  "descripcion": "flecha · del video «¿Y si caes a través de la Tierra?» (escena: «La gravedad te jala hacia el centro, y caes cada vez más rápido.»)",
+  "etiquetas": [
+   "flecha",
+   "quepasaria",
+   "fisica",
+   "tierra",
+   "gravedad",
+   "sabiasque"
+  ],
+  "proporcion": 3.75,
+  "origen": "video3d/guiones/cola/062-explica-tunel.json"
+ },
+ {
+  "nombre": "flechas_arriba",
+  "descripcion": "flechas arriba · del video «¿Cómo flota un barco de hierro?» (escena: «Todo lo que entra al agua la aparta. Y esa agua lo empuja hacia arriba: se llama empuje.»)",
+  "etiquetas": [
+   "flechas",
+   "arriba",
+   "ciencia",
+   "fisica",
+   "barcos",
+   "arquimedes",
+   "sabiasque"
+  ],
+  "proporcion": 0.6,
+  "origen": "video3d/guiones/cola/071-explica-barco.json"
+ },
+ {
+  "nombre": "flechas_descarga",
+  "descripcion": "flechas descarga · del video «¿Cómo funciona el inodoro?» (escena: «Al jalar la palanca, el tanque suelta toda su agua de golpe dentro de la taza.»)",
+  "etiquetas": [
+   "flechas",
+   "descarga",
+   "comofunciona",
+   "casa",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/cola/063-explica-inodoro.json"
+ },
+ {
+  "nombre": "flechas_sifon",
+  "descripcion": "flechas sifon · del video «¿Cómo funciona el inodoro?» (escena: «El agua llena el tubo en S por completo y se forma un sifón que chupa todo hacia el drenaj»)",
+  "etiquetas": [
+   "flechas",
+   "sifon",
+   "comofunciona",
+   "casa",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/cola/063-explica-inodoro.json"
+ },
+ {
+  "nombre": "flotador",
+  "descripcion": "flotador · del video «¿Qué pasa si caes al Mar Muerto?» (escena: «Existe un lugar donde no te hundes aunque lo intentes: el Mar Muerto.»)",
+  "etiquetas": [
+   "flotador",
+   "ciencia",
+   "marmuerto",
+   "densidad",
+   "viajes",
+   "curiosidades"
+  ],
+  "proporcion": 0.412,
+  "origen": "video3d/guiones/explica/084-mar-muerto.json"
+ },
+ {
+  "nombre": "flotador_abajo",
+  "descripcion": "flotador abajo · del video «¿Cómo funciona el inodoro?» (escena: «Al jalar la palanca, el tanque suelta toda su agua de golpe dentro de la taza.»)",
+  "etiquetas": [
+   "flotador",
+   "abajo",
+   "comofunciona",
+   "casa",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/cola/063-explica-inodoro.json"
+ },
+ {
+  "nombre": "flotador_arriba",
+  "descripcion": "flotador arriba · del video «¿Cómo funciona el inodoro?» (escena: «¿Qué pasa de verdad cuando le das a la palanca del inodoro?»)",
+  "etiquetas": [
+   "flotador",
+   "arriba",
+   "comofunciona",
+   "casa",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/cola/063-explica-inodoro.json"
+ },
+ {
+  "nombre": "flujo",
+  "descripcion": "flujo · del video «¿Por qué vuela un avión?» (escena: «Así, el ala desvía el aire hacia abajo, y el aire, de rebote, empuja el ala hacia arriba.»)",
+  "etiquetas": [
+   "flujo",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "flujo_rapido",
+  "descripcion": "flujo rapido · del video «¿Por qué vuela un avión?» (escena: «Arriba del ala, el aire corre más rápido y la presión baja. Abajo, la presión es mayor.»)",
+  "etiquetas": [
+   "flujo",
+   "rapido",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "fogata",
+  "descripcion": "fogata · del video «Millón vs mil millones de segundos» (escena: «¿Y un billón, un millón de millones? Unos 31.700 años atrás: ni siquiera existía la agricu»)",
+  "etiquetas": [
+   "fogata",
+   "numeros",
+   "matematicas",
+   "sabiasque",
+   "tiempo",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/073-explica-millon.json"
+ },
+ {
+  "nombre": "freno",
+  "descripcion": "freno · del video «¿Cómo funciona un ascensor?» (escena: «Y si cae muy rápido, un freno muerde los rieles. Lo mostró Elisha Otis en 1854.»)",
+  "etiquetas": [
+   "freno",
+   "comofunciona",
+   "ingenieria",
+   "ascensor",
+   "inventos",
+   "curiosidades"
+  ],
+  "proporcion": 0.867,
+  "origen": "video3d/guiones/explica/074-ascensor-contrapeso.json"
+ },
+ {
+  "nombre": "frijol",
+  "descripcion": "frijol · del video «La baleada: ¿nació en La Ceiba?» (escena: «Otros dicen que el nombre viene de los frijoles, como balitas. Y Tela, El Progreso y San P»)",
+  "etiquetas": [
+   "frijol",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 0.75,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "frijoles",
+  "descripcion": "frijoles · del video «La baleada: ¿nació en La Ceiba?» (escena: «Luego van frijoles rojos molidos, mantequilla y queso duro rallado. Esa es la sencilla.»)",
+  "etiquetas": [
+   "frijoles",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "fuego",
+  "descripcion": "fuego · del video «¿Y si caes a través de la Tierra?» (escena: «Y en la vida real es imposible: el centro pasa de 5.000 °C y la presión lo aplasta todo.»)",
+  "etiquetas": [
+   "fuego",
+   "quepasaria",
+   "fisica",
+   "tierra",
+   "gravedad",
+   "sabiasque"
+  ],
+  "proporcion": 1.3,
+  "origen": "video3d/guiones/cola/062-explica-tunel.json"
+ },
+ {
+  "nombre": "fumarola",
+  "descripcion": "fumarola · del video «¿Por qué el mar es salado?» (escena: «Y desde el fondo, las fuentes hidrotermales echan agua muy caliente cargada de minerales.»)",
+  "etiquetas": [
+   "fumarola",
+   "ciencia",
+   "sabiasque",
+   "mar",
+   "curiosidades",
+   "oceano"
+  ],
+  "proporcion": 1.2,
+  "origen": "video3d/guiones/cola/068-explica-mar.json"
+ },
+ {
+  "nombre": "garza",
+  "descripcion": "garza · del video «Yojoa: el lago de las 400 aves» (escena: «Y en sus orillas y humedales pescan garzas, patos y martines pescadores.»)",
+  "etiquetas": [
+   "garza",
+   "honduras",
+   "catracho",
+   "yojoa",
+   "naturaleza",
+   "aves",
+   "sabiasque"
+  ],
+  "proporcion": 1.556,
+  "origen": "video3d/guiones/explica/206-lago-yojoa.json"
+ },
+ {
+  "nombre": "gato_cabeza",
+  "descripcion": "gato cabeza · del video «¿Por qué los gatos caen de pie?» (escena: «Primero, su oído interno siente hacia dónde está el suelo, como un nivel de burbuja.»)",
+  "etiquetas": [
+   "gato",
+   "cabeza",
+   "porque",
+   "animales",
+   "gatos",
+   "ciencia",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/073-gato-cae-de-pie.json"
+ },
+ {
+  "nombre": "gato_giro",
+  "descripcion": "gato giro · del video «¿Por qué los gatos caen de pie?» (escena: «Entonces gira la cabeza y las patas delanteras, con las traseras bien recogidas.»)",
+  "etiquetas": [
+   "gato",
+   "giro",
+   "porque",
+   "animales",
+   "gatos",
+   "ciencia",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/explica/073-gato-cae-de-pie.json"
+ },
+ {
+  "nombre": "gato_pie",
+  "descripcion": "gato pie · del video «¿Por qué los gatos caen de pie?» (escena: «Un gato cae panza arriba y aterriza de pie. ¿Magia? No: física con bigotes.»)",
+  "etiquetas": [
+   "gato",
+   "pie",
+   "porque",
+   "animales",
+   "gatos",
+   "ciencia",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/explica/073-gato-cae-de-pie.json"
+ },
+ {
+  "nombre": "geometria",
+  "descripcion": "geometria · del video «¿Por qué el arcoíris es curvo?» (escena: «Y cada color sale con un ángulo fijo: unos 42 grados desde el punto opuesto al Sol.»)",
+  "etiquetas": [
+   "geometria",
+   "ciencia",
+   "arcoiris",
+   "luz",
+   "fisica",
+   "curiosidades"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/077-arcoiris.json"
+ },
+ {
+  "nombre": "giro",
+  "descripcion": "giro · del video «¿Cómo funciona un microondas?» (escena: «Las ondas dejan zonas calientes y zonas frías, por eso el plato gira: así el calor se repa»)",
+  "etiquetas": [
+   "giro",
+   "comofunciona",
+   "ciencia",
+   "cocina",
+   "microondas",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/067-explica-microondas.json"
+ },
+ {
+  "nombre": "glifo",
+  "descripcion": "glifo · del video «Copán: la escalera que habla» (escena: «En Honduras hay una escalera de piedra que cuenta una historia entera, con unos 2.000 glif»)",
+  "etiquetas": [
+   "glifo",
+   "honduras",
+   "catracho",
+   "copan",
+   "mayas",
+   "historia",
+   "patrimonio"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/202-copan-mayas.json"
+ },
+ {
+  "nombre": "gluten_red",
+  "descripcion": "gluten red · del video «¿Por qué se infla el pan?» (escena: «El gluten, una red elástica de proteínas, atrapa ese gas como si fueran globitos.»)",
+  "etiquetas": [
+   "gluten",
+   "red",
+   "porque",
+   "ciencia",
+   "cocina",
+   "pan",
+   "levadura",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/072-pan-infla.json"
+ },
+ {
+  "nombre": "gota",
+  "descripcion": "gota",
+  "etiquetas": [
+   "gota"
+  ],
+  "proporcion": 1.4,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "gota_grande",
+  "descripcion": "gota grande · del video «¿Por qué el arcoíris es curvo?» (escena: «La luz del Sol entra en la gota y se dobla: eso es la refracción.»)",
+  "etiquetas": [
+   "gota",
+   "grande",
+   "ciencia",
+   "arcoiris",
+   "luz",
+   "fisica",
+   "curiosidades"
+  ],
+  "proporcion": 1.192,
+  "origen": "video3d/guiones/explica/077-arcoiris.json"
+ },
+ {
+  "nombre": "gotas",
+  "descripcion": "gotas · del video «¿Por qué el mar es salado?» (escena: «Todo empieza con la lluvia: es un poquito ácida y desgasta las rocas muy despacio.»)",
+  "etiquetas": [
+   "gotas",
+   "ciencia",
+   "sabiasque",
+   "mar",
+   "curiosidades",
+   "oceano"
+  ],
+  "proporcion": 0.857,
+  "origen": "video3d/guiones/cola/068-explica-mar.json"
+ },
+ {
+  "nombre": "hielo",
+  "descripcion": "hielo · del video «¿Cómo se forma un rayo?» (escena: «Todo empieza en la nube de tormenta: el aire sube y baja gotas y trocitos de hielo.»)",
+  "etiquetas": [
+   "hielo",
+   "ciencia",
+   "tormentas",
+   "rayos",
+   "clima",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/078-rayo.json"
+ },
+ {
+  "nombre": "hielo_lago",
+  "descripcion": "hielo lago · del video «¿Por qué el hielo flota?» (escena: «Por eso, en invierno, los lagos se congelan desde arriba: el hielo forma una tapa encima.»)",
+  "etiquetas": [
+   "hielo",
+   "lago",
+   "ciencia",
+   "agua",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.3,
+  "origen": "video3d/guiones/cola/066-explica-hielo.json"
+ },
+ {
+  "nombre": "horno",
+  "descripcion": "horno · del video «¿Por qué se infla el pan?» (escena: «Luego, en el horno, el gas se dilata y la masa pega un último estirón.»)",
+  "etiquetas": [
+   "horno",
+   "porque",
+   "ciencia",
+   "cocina",
+   "pan",
+   "levadura",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/072-pan-infla.json"
+ },
+ {
+  "nombre": "hudutu",
+  "descripcion": "hudutu · del video «Garífunas: el viaje a Roatán» (escena: «En la mesa no faltan el casabe, un pan de yuca rallada, y el hudutu: plátano machucado con»)",
+  "etiquetas": [
+   "hudutu",
+   "honduras",
+   "catracho",
+   "garifuna",
+   "historia",
+   "cultura",
+   "sabiasque"
+  ],
+  "proporcion": 0.594,
+  "origen": "video3d/guiones/explica/210-garifunas.json"
+ },
+ {
+  "nombre": "huevo",
+  "descripcion": "huevo · del video «La baleada: ¿nació en La Ceiba?» (escena: «Hoy se come en todo el país: sencilla, o especial con huevo, aguacate o carne.»)",
+  "etiquetas": [
+   "huevo",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 0.818,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "humedad",
+  "descripcion": "humedad · del video «¿Por qué sudamos?» (escena: «Pero si el aire está húmedo, ya va cargado de agua, y tu sudor casi no se evapora.»)",
+  "etiquetas": [
+   "humedad",
+   "cuerpo",
+   "salud",
+   "calor",
+   "ciencia",
+   "curiosidades"
+  ],
+  "proporcion": 0.833,
+  "origen": "video3d/guiones/explica/079-sudor.json"
+ },
+ {
+  "nombre": "iman_v",
+  "descripcion": "iman v · del video «¿Cómo funciona una brújula?» (escena: «La razón: la Tierra entera se porta como un imán gigante.»)",
+  "etiquetas": [
+   "iman",
+   "comofunciona",
+   "ciencia",
+   "magnetismo",
+   "brujula",
+   "sabiasque"
+  ],
+  "proporcion": 3.25,
+  "origen": "video3d/guiones/explica/071-brujula-norte.json"
+ },
+ {
+  "nombre": "inodoro",
+  "descripcion": "inodoro · del video «¿Cómo funciona el inodoro?» (escena: «¿Qué pasa de verdad cuando le das a la palanca del inodoro?»)",
+  "etiquetas": [
+   "inodoro",
+   "comofunciona",
+   "casa",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/cola/063-explica-inodoro.json"
+ },
+ {
+  "nombre": "inodoro_chicle_tragado",
+  "descripcion": "inodoro · del video «¿Y si te tragas un chicle?» (escena: «Y entre 2 y 5 días después sale por el baño, igual que todo lo demás.»)",
+  "etiquetas": [
+   "inodoro",
+   "mitos",
+   "cuerpo",
+   "salud",
+   "curiosidades",
+   "sabiasque"
+  ],
+  "proporcion": 1.267,
+  "origen": "video3d/guiones/explica/076-chicle.json"
+ },
+ {
+  "nombre": "iones",
+  "descripcion": "iones · del video «¿Por qué el mar es salado?» (escena: «Así la roca suelta minerales que los ríos arrastran, poquito a poco, hasta el mar.»)",
+  "etiquetas": [
+   "iones",
+   "ciencia",
+   "sabiasque",
+   "mar",
+   "curiosidades",
+   "oceano"
+  ],
+  "proporcion": 0.652,
+  "origen": "video3d/guiones/cola/068-explica-mar.json"
+ },
+ {
+  "nombre": "isla",
+  "descripcion": "isla · del video «Garífunas: el viaje a Roatán» (escena: «En 1797, unas 2.000 personas desembarcaron en Roatán. No llegaron por gusto: venían deport»)",
+  "etiquetas": [
+   "isla",
+   "honduras",
+   "catracho",
+   "garifuna",
+   "historia",
+   "cultura",
+   "sabiasque"
+  ],
+  "proporcion": 0.667,
+  "origen": "video3d/guiones/explica/210-garifunas.json"
+ },
+ {
+  "nombre": "islote",
+  "descripcion": "islote · del video «Oxford, más vieja que los aztecas» (escena: «Tenochtitlan se fundó en 1325, sobre un islote del lago de Texcoco.»)",
+  "etiquetas": [
+   "islote",
+   "historia",
+   "aztecas",
+   "oxford",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 0.605,
+  "origen": "video3d/guiones/explica/108-oxford-aztecas.json"
+ },
+ {
+  "nombre": "jaguar",
+  "descripcion": "jaguar · del video «Río Plátano: la selva de Honduras» (escena: «Y bajo sus árboles caminan jaguares, tapires y monos.»)",
+  "etiquetas": [
+   "jaguar",
+   "honduras",
+   "catracho",
+   "mosquitia",
+   "rioplatano",
+   "naturaleza",
+   "unesco"
+  ],
+  "proporcion": 0.543,
+  "origen": "video3d/guiones/explica/207-rio-platano.json"
+ },
+ {
+  "nombre": "jarra",
+  "descripcion": "jarra · del video «¿Por qué el mar es salado?» (escena: «Hoy, en promedio, el 3,5 % del agua de mar es sal: unos 35 gramos por litro.»)",
+  "etiquetas": [
+   "jarra",
+   "ciencia",
+   "sabiasque",
+   "mar",
+   "curiosidades",
+   "oceano"
+  ],
+  "proporcion": 1.237,
+  "origen": "video3d/guiones/cola/068-explica-mar.json"
+ },
+ {
+  "nombre": "juncos",
+  "descripcion": "juncos · del video «Yojoa: el lago de las 400 aves» (escena: «Y en sus orillas y humedales pescan garzas, patos y martines pescadores.»)",
+  "etiquetas": [
+   "juncos",
+   "honduras",
+   "catracho",
+   "yojoa",
+   "naturaleza",
+   "aves",
+   "sabiasque"
+  ],
+  "proporcion": 0.3,
+  "origen": "video3d/guiones/explica/206-lago-yojoa.json"
+ },
+ {
+  "nombre": "koala",
+  "descripcion": "koala · del video «25 años de tu vida, dormido» (escena: «Y si te parece mucho, un koala duerme o descansa hasta 22 horas al día.»)",
+  "etiquetas": [
+   "koala",
+   "cuerpo",
+   "sueno",
+   "salud",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 1.032,
+  "origen": "video3d/guiones/explica/109-anos-durmiendo.json"
+ },
+ {
+  "nombre": "ladrillo",
+  "descripcion": "ladrillo · del video «Más celulares que personas» (escena: «Y todo empezó con este ladrillo: la primera llamada fue en 1973 y salió a la venta en 1983»)",
+  "etiquetas": [
+   "ladrillo",
+   "tecnologia",
+   "celulares",
+   "sabiasque",
+   "numeros",
+   "curiosidades"
+  ],
+  "proporcion": 2.7,
+  "origen": "video3d/guiones/explica/107-celulares.json"
+ },
+ {
+  "nombre": "lago",
+  "descripcion": "lago · del video «¿Por qué el hielo flota?» (escena: «Por eso, en invierno, los lagos se congelan desde arriba: el hielo forma una tapa encima.»)",
+  "etiquetas": [
+   "lago",
+   "ciencia",
+   "agua",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.3,
+  "origen": "video3d/guiones/cola/066-explica-hielo.json"
+ },
+ {
+  "nombre": "lago_mapa",
+  "descripcion": "lago mapa · del video «Yojoa: el lago de las 400 aves» (escena: «Es el Lago de Yojoa, el lago natural más grande del país, entre Cortés, Comayagua y Santa »)",
+  "etiquetas": [
+   "lago",
+   "mapa",
+   "honduras",
+   "catracho",
+   "yojoa",
+   "naturaleza",
+   "aves",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/206-lago-yojoa.json"
+ },
+ {
+  "nombre": "lago_yojoa",
+  "descripcion": "lago yojoa · del video «Yojoa: el lago de las 400 aves» (escena: «Más de 400 especies de aves viven alrededor de un solo lago hondureño.»)",
+  "etiquetas": [
+   "lago",
+   "yojoa",
+   "honduras",
+   "catracho",
+   "naturaleza",
+   "aves",
+   "sabiasque"
+  ],
+  "proporcion": 0.72,
+  "origen": "video3d/guiones/explica/206-lago-yojoa.json"
+ },
+ {
+  "nombre": "lagrimas",
+  "descripcion": "lagrimas · del video «¿Por qué la cebolla hace llorar?» (escena: «Tus ojos responden con lágrimas para lavar el irritante. No es drama, es limpieza.»)",
+  "etiquetas": [
+   "lagrimas",
+   "ciencia",
+   "cocina",
+   "quimica",
+   "cebolla",
+   "trucos"
+  ],
+  "proporcion": 0.6,
+  "origen": "video3d/guiones/cola/072-explica-cebolla.json"
+ },
+ {
+  "nombre": "levadura",
+  "descripcion": "levadura · del video «¿Por qué se infla el pan?» (escena: «Reto: adivina quién infla el pan. Pista: está vivo y es diminuto.»)",
+  "etiquetas": [
+   "levadura",
+   "porque",
+   "ciencia",
+   "cocina",
+   "pan",
+   "curiosidades"
+  ],
+  "proporcion": 0.909,
+  "origen": "video3d/guiones/explica/072-pan-infla.json"
+ },
+ {
+  "nombre": "linea_tiempo",
+  "descripcion": "linea tiempo · del video «Millón vs mil millones de segundos» (escena: «Para que lo sientas: hace mil millones de segundos, el calendario decía 1995.»)",
+  "etiquetas": [
+   "linea",
+   "tiempo",
+   "numeros",
+   "matematicas",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 0.17,
+  "origen": "video3d/guiones/cola/073-explica-millon.json"
+ },
+ {
+  "nombre": "lineas_campo",
+  "descripcion": "lineas campo · del video «¿Cómo funciona una brújula?» (escena: «La razón: la Tierra entera se porta como un imán gigante.»)",
+  "etiquetas": [
+   "lineas",
+   "campo",
+   "comofunciona",
+   "ciencia",
+   "magnetismo",
+   "brujula",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/071-brujula-norte.json"
+ },
+ {
+  "nombre": "lluvia",
+  "descripcion": "lluvia · del video «¿Por qué el arcoíris es curvo?» (escena: «Desde un avión, con lluvia abajo y el Sol detrás, a veces se ve el círculo entero.»)",
+  "etiquetas": [
+   "lluvia",
+   "ciencia",
+   "arcoiris",
+   "luz",
+   "fisica",
+   "curiosidades"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/077-arcoiris.json"
+ },
+ {
+  "nombre": "lluvia_hn_lluvia_peces_yoro",
+  "descripcion": "lluvia · del video «La lluvia de peces de Yoro» (escena: «Imaginate salir después de una tormenta en Yoro… y encontrar el suelo lleno de pescaditos »)",
+  "etiquetas": [
+   "lluvia",
+   "honduras",
+   "catracho",
+   "yoro",
+   "lluviadepeces",
+   "misterio",
+   "sabiasque"
+  ],
+  "proporcion": 0.75,
+  "origen": "video3d/guiones/explica/201-lluvia-peces-yoro.json"
+ },
+ {
+  "nombre": "luna",
+  "descripcion": "luna",
+  "etiquetas": [
+   "luna"
+  ],
+  "proporcion": 1,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "lupa",
+  "descripcion": "lupa · del video «La lluvia de peces de Yoro» (escena: «La verdad es que nadie lo ha explicado del todo. Sigue siendo un misterio bien catracho.»)",
+  "etiquetas": [
+   "lupa",
+   "honduras",
+   "catracho",
+   "yoro",
+   "lluviadepeces",
+   "misterio",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/201-lluvia-peces-yoro.json"
+ },
+ {
+  "nombre": "luz_colores",
+  "descripcion": "luz colores · del video «¿Por qué el cielo es azul?» (escena: «La luz del Sol parece blanca, pero en realidad trae todos los colores mezclados.»)",
+  "etiquetas": [
+   "luz",
+   "colores",
+   "ciencia",
+   "sabiasque",
+   "cielo",
+   "curiosidades",
+   "fisica"
+  ],
+  "proporcion": 0.714,
+  "origen": "video3d/guiones/cola/064-explica-cielo.json"
+ },
+ {
+  "nombre": "malla",
+  "descripcion": "malla · del video «¿Cómo funciona un microondas?» (escena: «La caja de metal y la rejilla de la puerta rebotan las ondas y no las dejan salir.»)",
+  "etiquetas": [
+   "malla",
+   "comofunciona",
+   "ciencia",
+   "cocina",
+   "microondas",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/067-explica-microondas.json"
+ },
+ {
+  "nombre": "manchas",
+  "descripcion": "manchas · del video «Yojoa: el lago de las 400 aves» (escena: «Cuidarlo importa: da pesca y turismo a las comunidades de su orilla, pero la contaminación»)",
+  "etiquetas": [
+   "manchas",
+   "honduras",
+   "catracho",
+   "yojoa",
+   "naturaleza",
+   "aves",
+   "sabiasque"
+  ],
+  "proporcion": 0.267,
+  "origen": "video3d/guiones/explica/206-lago-yojoa.json"
+ },
+ {
+  "nombre": "mantequilla",
+  "descripcion": "mantequilla · del video «La baleada: ¿nació en La Ceiba?» (escena: «Luego van frijoles rojos molidos, mantequilla y queso duro rallado. Esa es la sencilla.»)",
+  "etiquetas": [
+   "mantequilla",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "mapa",
+  "descripcion": "mapa · del video «¿Cómo sabe el GPS dónde estás?» (escena: «Por eso se corrige. Si no, tu mapa se iría desviando varios kilómetros por día.»)",
+  "etiquetas": [
+   "mapa",
+   "tecnologia",
+   "gps",
+   "satelites",
+   "einstein",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/082-gps.json"
+ },
+ {
+  "nombre": "mapa_hn",
+  "descripcion": "mapa hn · del video «La baleada: ¿nació en La Ceiba?» (escena: «¿Y el nombre? La versión más contada dice que nació en La Ceiba, en la costa norte.»)",
+  "etiquetas": [
+   "mapa",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 0.564,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "mapa_reserva",
+  "descripcion": "mapa reserva · del video «Río Plátano: la selva de Honduras» (escena: «Es la Reserva de la Biosfera del Río Plátano, en La Mosquitia, cerca del mar Caribe.»)",
+  "etiquetas": [
+   "mapa",
+   "reserva",
+   "honduras",
+   "catracho",
+   "mosquitia",
+   "rioplatano",
+   "naturaleza",
+   "unesco"
+  ],
+  "proporcion": 1.111,
+  "origen": "video3d/guiones/explica/207-rio-platano.json"
+ },
+ {
+  "nombre": "maraca",
+  "descripcion": "maraca · del video «Garífunas: el viaje a Roatán» (escena: «Su idioma, su música y su danza fueron proclamados por la UNESCO en 2001 patrimonio de la »)",
+  "etiquetas": [
+   "maraca",
+   "honduras",
+   "catracho",
+   "garifuna",
+   "historia",
+   "cultura",
+   "sabiasque"
+  ],
+  "proporcion": 1.9,
+  "origen": "video3d/guiones/explica/210-garifunas.json"
+ },
+ {
+  "nombre": "mas",
+  "descripcion": "mas · del video «¿Cómo se forma un rayo?» (escena: «Al chocar se roban cargas eléctricas: arriba quedan las positivas y abajo, las negativas.»)",
+  "etiquetas": [
+   "mas",
+   "ciencia",
+   "tormentas",
+   "rayos",
+   "clima",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/078-rayo.json"
+ },
+ {
+  "nombre": "masa_bol",
+  "descripcion": "masa bol · del video «¿Por qué se infla el pan?» (escena: «Es la levadura: miles de millones de hongos microscópicos escondidos en la masa.»)",
+  "etiquetas": [
+   "masa",
+   "bol",
+   "porque",
+   "ciencia",
+   "cocina",
+   "pan",
+   "levadura",
+   "curiosidades"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/explica/072-pan-infla.json"
+ },
+ {
+  "nombre": "masa_inflada",
+  "descripcion": "masa inflada · del video «¿Por qué se infla el pan?» (escena: «Con miles de burbujas inflándose, la masa duplica su tamaño en un rato.»)",
+  "etiquetas": [
+   "masa",
+   "inflada",
+   "porque",
+   "ciencia",
+   "cocina",
+   "pan",
+   "levadura",
+   "curiosidades"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/explica/072-pan-infla.json"
+ },
+ {
+  "nombre": "medalla",
+  "descripcion": "medalla · del video «Copán: la escalera que habla» (escena: «En 1980, la UNESCO declaró a Copán Patrimonio de la Humanidad. Orgullo catracho.»)",
+  "etiquetas": [
+   "medalla",
+   "honduras",
+   "catracho",
+   "copan",
+   "mayas",
+   "historia",
+   "patrimonio"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/202-copan-mayas.json"
+ },
+ {
+  "nombre": "medalla_hn_rio_platano",
+  "descripcion": "medalla · del video «Río Plátano: la selva de Honduras» (escena: «Por eso, en 1982, la UNESCO la declaró Patrimonio Mundial.»)",
+  "etiquetas": [
+   "medalla",
+   "honduras",
+   "catracho",
+   "mosquitia",
+   "rioplatano",
+   "naturaleza",
+   "unesco"
+  ],
+  "proporcion": 1.3,
+  "origen": "video3d/guiones/explica/207-rio-platano.json"
+ },
+ {
+  "nombre": "medusa",
+  "descripcion": "medusa · del video «¿Por qué el mar profundo es negro?» (escena: «Pero ahí abajo hay luces. Muchos animales fabrican la suya: se llama bioluminiscencia.»)",
+  "etiquetas": [
+   "medusa",
+   "ciencia",
+   "oceano",
+   "luz",
+   "bioluminiscencia",
+   "sabiasque"
+  ],
+  "proporcion": 1.375,
+  "origen": "video3d/guiones/explica/083-fondo-mar.json"
+ },
+ {
+  "nombre": "menos",
+  "descripcion": "menos · del video «¿Cómo se forma un rayo?» (escena: «Al chocar se roban cargas eléctricas: arriba quedan las positivas y abajo, las negativas.»)",
+  "etiquetas": [
+   "menos",
+   "ciencia",
+   "tormentas",
+   "rayos",
+   "clima",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/078-rayo.json"
+ },
+ {
+  "nombre": "microondas",
+  "descripcion": "microondas · del video «¿Cómo funciona un microondas?» (escena: «¿Cómo calienta la comida un microondas, si por dentro no hay ni fuego?»)",
+  "etiquetas": [
+   "microondas",
+   "comofunciona",
+   "ciencia",
+   "cocina",
+   "sabiasque"
+  ],
+  "proporcion": 0.622,
+  "origen": "video3d/guiones/cola/067-explica-microondas.json"
+ },
+ {
+  "nombre": "molecula",
+  "descripcion": "molecula · del video «¿Cómo funciona un microondas?» (escena: «Las moléculas de agua de la comida intentan girar con las ondas, chocan entre sí y se cali»)",
+  "etiquetas": [
+   "molecula",
+   "comofunciona",
+   "ciencia",
+   "cocina",
+   "microondas",
+   "sabiasque"
+  ],
+  "proporcion": 0.875,
+  "origen": "video3d/guiones/cola/067-explica-microondas.json"
+ },
+ {
+  "nombre": "molecula_cebolla_llorar",
+  "descripcion": "molecula · del video «¿Por qué la cebolla hace llorar?» (escena: «Su nombre: syn-propanotial-S-óxido. Sí, hasta el nombre da ganas de llorar.»)",
+  "etiquetas": [
+   "molecula",
+   "ciencia",
+   "cocina",
+   "quimica",
+   "cebolla",
+   "trucos"
+  ],
+  "proporcion": 0.563,
+  "origen": "video3d/guiones/cola/072-explica-cebolla.json"
+ },
+ {
+  "nombre": "molecula_n",
+  "descripcion": "molecula n · del video «¿Por qué el cielo es azul?» (escena: «Al entrar al aire, esa luz choca con moléculas diminutas de nitrógeno y oxígeno.»)",
+  "etiquetas": [
+   "molecula",
+   "ciencia",
+   "sabiasque",
+   "cielo",
+   "curiosidades",
+   "fisica"
+  ],
+  "proporcion": 0.615,
+  "origen": "video3d/guiones/cola/064-explica-cielo.json"
+ },
+ {
+  "nombre": "molecula_o",
+  "descripcion": "molecula o · del video «¿Por qué el cielo es azul?» (escena: «Al entrar al aire, esa luz choca con moléculas diminutas de nitrógeno y oxígeno.»)",
+  "etiquetas": [
+   "molecula",
+   "ciencia",
+   "sabiasque",
+   "cielo",
+   "curiosidades",
+   "fisica"
+  ],
+  "proporcion": 0.615,
+  "origen": "video3d/guiones/cola/064-explica-cielo.json"
+ },
+ {
+  "nombre": "moleculas_agua",
+  "descripcion": "moleculas agua · del video «¿Por qué el hielo flota?» (escena: «¿La razón? Al congelarse, las moléculas se ordenan en una red llena de huecos.»)",
+  "etiquetas": [
+   "moleculas",
+   "agua",
+   "ciencia",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/066-explica-hielo.json"
+ },
+ {
+  "nombre": "moleculas_hielo",
+  "descripcion": "moleculas hielo · del video «¿Por qué el hielo flota?» (escena: «¿La razón? Al congelarse, las moléculas se ordenan en una red llena de huecos.»)",
+  "etiquetas": [
+   "moleculas",
+   "hielo",
+   "ciencia",
+   "agua",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/066-explica-hielo.json"
+ },
+ {
+  "nombre": "montana",
+  "descripcion": "montana · del video «¿Por qué el mar es salado?» (escena: «Todo empieza con la lluvia: es un poquito ácida y desgasta las rocas muy despacio.»)",
+  "etiquetas": [
+   "montana",
+   "ciencia",
+   "sabiasque",
+   "mar",
+   "curiosidades",
+   "oceano"
+  ],
+  "proporcion": 0.733,
+  "origen": "video3d/guiones/cola/068-explica-mar.json"
+ },
+ {
+  "nombre": "montanas_bosque",
+  "descripcion": "montanas bosque · del video «Yojoa: el lago de las 400 aves» (escena: «¿Por qué tantas aves? Lo rodean montañas con bosque nublado, como Cerro Azul Meámbar y San»)",
+  "etiquetas": [
+   "montanas",
+   "bosque",
+   "honduras",
+   "catracho",
+   "yojoa",
+   "naturaleza",
+   "aves",
+   "sabiasque"
+  ],
+  "proporcion": 0.64,
+  "origen": "video3d/guiones/explica/206-lago-yojoa.json"
+ },
+ {
+  "nombre": "motor",
+  "descripcion": "motor · del video «¿Cómo funciona un ascensor?» (escena: «Así el motor solo mueve la diferencia de peso y ahorra un montón de energía.»)",
+  "etiquetas": [
+   "motor",
+   "comofunciona",
+   "ingenieria",
+   "ascensor",
+   "inventos",
+   "curiosidades"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/explica/074-ascensor-contrapeso.json"
+ },
+ {
+  "nombre": "nevera_corte",
+  "descripcion": "nevera corte · del video «¿Cómo enfría una nevera?» (escena: «El truco: la nevera no fabrica frío. Le saca el calor a lo de adentro y lo tira afuera.»)",
+  "etiquetas": [
+   "nevera",
+   "corte",
+   "comofunciona",
+   "ciencia",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 1.667,
+  "origen": "video3d/guiones/cola/069-explica-nevera.json"
+ },
+ {
+  "nombre": "nevera_lado",
+  "descripcion": "nevera lado · del video «¿Cómo enfría una nevera?» (escena: «¿Cómo enfría una nevera, si por detrás siempre está calientita?»)",
+  "etiquetas": [
+   "nevera",
+   "lado",
+   "comofunciona",
+   "ciencia",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 1.667,
+  "origen": "video3d/guiones/cola/069-explica-nevera.json"
+ },
+ {
+  "nombre": "no_clavado",
+  "descripcion": "no clavado · del video «¿Qué pasa si caes al Mar Muerto?» (escena: «Eso sí: si te entra en los ojos o en una herida, arde muchísimo. Y jamás te tires de cabez»)",
+  "etiquetas": [
+   "clavado",
+   "ciencia",
+   "marmuerto",
+   "densidad",
+   "viajes",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/084-mar-muerto.json"
+ },
+ {
+  "nombre": "nube",
+  "descripcion": "nube",
+  "etiquetas": [
+   "nube"
+  ],
+  "proporcion": 0.6,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "nube_mar_salado",
+  "descripcion": "nube · del video «¿Por qué el mar es salado?» (escena: «Todo empieza con la lluvia: es un poquito ácida y desgasta las rocas muy despacio.»)",
+  "etiquetas": [
+   "nube",
+   "ciencia",
+   "sabiasque",
+   "mar",
+   "curiosidades",
+   "oceano"
+  ],
+  "proporcion": 0.548,
+  "origen": "video3d/guiones/cola/068-explica-mar.json"
+ },
+ {
+  "nombre": "nube_tormenta",
+  "descripcion": "nube tormenta · del video «¿Cómo se forma un rayo?» (escena: «Un rayo calienta el aire a unos 30.000 °C: unas cinco veces más que la superficie del Sol.»)",
+  "etiquetas": [
+   "nube",
+   "tormenta",
+   "ciencia",
+   "tormentas",
+   "rayos",
+   "clima",
+   "sabiasque"
+  ],
+  "proporcion": 0.6,
+  "origen": "video3d/guiones/explica/078-rayo.json"
+ },
+ {
+  "nombre": "oido",
+  "descripcion": "oido · del video «¿Por qué los gatos caen de pie?» (escena: «Primero, su oído interno siente hacia dónde está el suelo, como un nivel de burbuja.»)",
+  "etiquetas": [
+   "oido",
+   "porque",
+   "animales",
+   "gatos",
+   "ciencia",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/073-gato-cae-de-pie.json"
+ },
+ {
+  "nombre": "ojo",
+  "descripcion": "ojo · del video «¿Por qué el cielo es azul?» (escena: «¿Y el violeta? El Sol manda menos, parte se absorbe arriba y nuestros ojos lo ven peor.»)",
+  "etiquetas": [
+   "ojo",
+   "ciencia",
+   "sabiasque",
+   "cielo",
+   "curiosidades",
+   "fisica"
+  ],
+  "proporcion": 0.639,
+  "origen": "video3d/guiones/cola/064-explica-cielo.json"
+ },
+ {
+  "nombre": "ojo_mar_muerto",
+  "descripcion": "ojo · del video «¿Qué pasa si caes al Mar Muerto?» (escena: «Eso sí: si te entra en los ojos o en una herida, arde muchísimo. Y jamás te tires de cabez»)",
+  "etiquetas": [
+   "ojo",
+   "ciencia",
+   "marmuerto",
+   "densidad",
+   "viajes",
+   "curiosidades"
+  ],
+  "proporcion": 0.619,
+  "origen": "video3d/guiones/explica/084-mar-muerto.json"
+ },
+ {
+  "nombre": "ola",
+  "descripcion": "ola · del video «¿Por qué la caracola suena a mar?» (escena: «El resultado es un susurro que sube y baja, igualito a unas olas lejanas.»)",
+  "etiquetas": [
+   "ola",
+   "porque",
+   "ciencia",
+   "mitos",
+   "caracola",
+   "sonido",
+   "curiosidades"
+  ],
+  "proporcion": 0.375,
+  "origen": "video3d/guiones/explica/070-caracola-mar.json"
+ },
+ {
+  "nombre": "olores",
+  "descripcion": "olores · del video «¿Cómo funciona el inodoro?» (escena: «Esa agua hace de tapón: no deja que suban los malos olores del drenaje.»)",
+  "etiquetas": [
+   "olores",
+   "comofunciona",
+   "casa",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/cola/063-explica-inodoro.json"
+ },
+ {
+  "nombre": "ondas",
+  "descripcion": "ondas · del video «¿Cómo funciona un microondas?» (escena: «Esas ondas vibran unos 2.450 millones de veces por segundo. Eso son 2,45 gigahercios.»)",
+  "etiquetas": [
+   "ondas",
+   "comofunciona",
+   "ciencia",
+   "cocina",
+   "microondas",
+   "sabiasque"
+  ],
+  "proporcion": 0.652,
+  "origen": "video3d/guiones/cola/067-explica-microondas.json"
+ },
+ {
+  "nombre": "ondas_azules",
+  "descripcion": "ondas azules · del video «¿Por qué el cielo es azul?» (escena: «Por eso el azul rebota por todo el cielo y nos llega desde todas partes.»)",
+  "etiquetas": [
+   "ondas",
+   "azules",
+   "ciencia",
+   "sabiasque",
+   "cielo",
+   "curiosidades",
+   "fisica"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/cola/064-explica-cielo.json"
+ },
+ {
+  "nombre": "ondas_calor",
+  "descripcion": "ondas calor · del video «¿Cómo enfría una nevera?» (escena: «¿Cómo enfría una nevera, si por detrás siempre está calientita?»)",
+  "etiquetas": [
+   "ondas",
+   "calor",
+   "comofunciona",
+   "ciencia",
+   "sabiasque",
+   "nevera",
+   "curiosidades"
+  ],
+  "proporcion": 1.727,
+  "origen": "video3d/guiones/cola/069-explica-nevera.json"
+ },
+ {
+  "nombre": "ondas_caracola_mar",
+  "descripcion": "ondas · del video «¿Por qué la caracola suena a mar?» (escena: «Te mintieron: ese mar que oyes dentro de una caracola no viene del mar.»)",
+  "etiquetas": [
+   "ondas",
+   "porque",
+   "ciencia",
+   "mitos",
+   "caracola",
+   "sonido",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/070-caracola-mar.json"
+ },
+ {
+  "nombre": "ondas_gps",
+  "descripcion": "ondas · del video «¿Cómo sabe el GPS dónde estás?» (escena: «Dato raro: para ubicarte, tu celular no le manda nada al espacio. Solo escucha.»)",
+  "etiquetas": [
+   "ondas",
+   "tecnologia",
+   "gps",
+   "satelites",
+   "einstein",
+   "curiosidades"
+  ],
+  "proporcion": 0.833,
+  "origen": "video3d/guiones/explica/082-gps.json"
+ },
+ {
+  "nombre": "ondas_rayo_trueno",
+  "descripcion": "ondas · del video «¿Cómo se forma un rayo?» (escena: «Ese calor expande el aire de golpe, como una explosión. Ese estruendo es el trueno.»)",
+  "etiquetas": [
+   "ondas",
+   "ciencia",
+   "tormentas",
+   "rayos",
+   "clima",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/078-rayo.json"
+ },
+ {
+  "nombre": "orbita",
+  "descripcion": "orbita · del video «¿Cómo sabe el GPS dónde estás?» (escena: «Allá arriba giran más de 30 satélites GPS, a unos 20.000 kilómetros de altura.»)",
+  "etiquetas": [
+   "orbita",
+   "tecnologia",
+   "gps",
+   "satelites",
+   "einstein",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/082-gps.json"
+ },
+ {
+  "nombre": "oxford",
+  "descripcion": "oxford · del video «Oxford, más vieja que los aztecas» (escena: «Cuando en Oxford ya daban clases, Tenochtitlan ni siquiera existía.»)",
+  "etiquetas": [
+   "oxford",
+   "historia",
+   "aztecas",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 0.938,
+  "origen": "video3d/guiones/explica/108-oxford-aztecas.json"
+ },
+ {
+  "nombre": "padre",
+  "descripcion": "padre · del video «La lluvia de peces de Yoro» (escena: «La tradición dice que es un milagro del padre Subirana, que oró para que a los pobres no l»)",
+  "etiquetas": [
+   "padre",
+   "honduras",
+   "catracho",
+   "yoro",
+   "lluviadepeces",
+   "misterio",
+   "sabiasque"
+  ],
+  "proporcion": 1.765,
+  "origen": "video3d/guiones/explica/201-lluvia-peces-yoro.json"
+ },
+ {
+  "nombre": "paisaje_dia",
+  "descripcion": "paisaje dia · del video «¿Por qué el cielo es azul?» (escena: «¿Por qué el cielo es azul y no blanco, verde o morado?»)",
+  "etiquetas": [
+   "paisaje",
+   "dia",
+   "ciencia",
+   "sabiasque",
+   "cielo",
+   "curiosidades",
+   "fisica"
+  ],
+  "proporcion": 1.125,
+  "origen": "video3d/guiones/cola/064-explica-cielo.json"
+ },
+ {
+  "nombre": "palafitos",
+  "descripcion": "palafitos · del video «Río Plátano: la selva de Honduras» (escena: «Ahí viven pueblos miskitu, pech, tawahka y garífuna, junto a familias mestizas.»)",
+  "etiquetas": [
+   "palafitos",
+   "honduras",
+   "catracho",
+   "mosquitia",
+   "rioplatano",
+   "naturaleza",
+   "unesco"
+  ],
+  "proporcion": 0.578,
+  "origen": "video3d/guiones/explica/207-rio-platano.json"
+ },
+ {
+  "nombre": "palmera",
+  "descripcion": "palmera · del video «Garífunas: el viaje a Roatán» (escena: «Desde Roatán pasaron a tierra firme. Hoy hay pueblos garífunas en la costa norte, y de Bel»)",
+  "etiquetas": [
+   "palmera",
+   "honduras",
+   "catracho",
+   "garifuna",
+   "historia",
+   "cultura",
+   "sabiasque"
+  ],
+  "proporcion": 1.625,
+  "origen": "video3d/guiones/explica/210-garifunas.json"
+ },
+ {
+  "nombre": "pan",
+  "descripcion": "pan · del video «¿Cómo funciona un microondas?» (escena: «Y por eso lo que casi no tiene agua, como el pan muy seco, se calienta mucho menos que la »)",
+  "etiquetas": [
+   "pan",
+   "comofunciona",
+   "ciencia",
+   "cocina",
+   "microondas",
+   "sabiasque"
+  ],
+  "proporcion": 0.706,
+  "origen": "video3d/guiones/cola/067-explica-microondas.json"
+ },
+ {
+  "nombre": "pan_corte",
+  "descripcion": "pan corte · del video «¿Por qué se infla el pan?» (escena: «Cerca de 60 °C la levadura muere, y el gluten y el almidón se endurecen: la esponja queda »)",
+  "etiquetas": [
+   "pan",
+   "corte",
+   "porque",
+   "ciencia",
+   "cocina",
+   "levadura",
+   "curiosidades"
+  ],
+  "proporcion": 0.84,
+  "origen": "video3d/guiones/explica/072-pan-infla.json"
+ },
+ {
+  "nombre": "pan_pan_infla",
+  "descripcion": "pan · del video «¿Por qué se infla el pan?» (escena: «Reto: adivina quién infla el pan. Pista: está vivo y es diminuto.»)",
+  "etiquetas": [
+   "pan",
+   "porque",
+   "ciencia",
+   "cocina",
+   "levadura",
+   "curiosidades"
+  ],
+  "proporcion": 0.6,
+  "origen": "video3d/guiones/explica/072-pan-infla.json"
+ },
+ {
+  "nombre": "peces",
+  "descripcion": "peces · del video «¿Por qué el hielo flota?» (escena: «Esa tapa aísla, y abajo el agua sigue líquida, cerca de 4 °C. Ahí los peces pasan el invie»)",
+  "etiquetas": [
+   "peces",
+   "ciencia",
+   "agua",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.3,
+  "origen": "video3d/guiones/cola/066-explica-hielo.json"
+ },
+ {
+  "nombre": "peces_hn_lluvia_peces_yoro",
+  "descripcion": "peces · del video «La lluvia de peces de Yoro» (escena: «Allá le dicen la lluvia de peces, y desde 1998 hasta tiene su propio festival.»)",
+  "etiquetas": [
+   "peces",
+   "honduras",
+   "catracho",
+   "yoro",
+   "lluviadepeces",
+   "misterio",
+   "sabiasque"
+  ],
+  "proporcion": 1.231,
+  "origen": "video3d/guiones/explica/201-lluvia-peces-yoro.json"
+ },
+ {
+  "nombre": "persona",
+  "descripcion": "persona",
+  "etiquetas": [
+   "persona"
+  ],
+  "proporcion": 2.1,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "persona_espacio_sin_traje",
+  "descripcion": "persona · del video «¿Y si sales al espacio sin traje?» (escena: «¿Qué pasa si sales al espacio sin traje? ¿De verdad explotas?»)",
+  "etiquetas": [
+   "persona",
+   "quepasaria",
+   "espacio",
+   "cuerpohumano",
+   "nasa",
+   "sabiasque"
+  ],
+  "proporcion": 1.8,
+  "origen": "video3d/guiones/cola/065-explica-espacio.json"
+ },
+ {
+  "nombre": "persona_tunel_tierra",
+  "descripcion": "persona · del video «¿Y si caes a través de la Tierra?» (escena: «¿Qué pasa si saltas a un túnel que atraviesa la Tierra de lado a lado?»)",
+  "etiquetas": [
+   "persona",
+   "quepasaria",
+   "fisica",
+   "tierra",
+   "gravedad",
+   "sabiasque"
+  ],
+  "proporcion": 1.7,
+  "origen": "video3d/guiones/cola/062-explica-tunel.json"
+ },
+ {
+  "nombre": "pez",
+  "descripcion": "pez · del video «La lluvia de peces de Yoro» (escena: «La tradición dice que es un milagro del padre Subirana, que oró para que a los pobres no l»)",
+  "etiquetas": [
+   "pez",
+   "honduras",
+   "catracho",
+   "yoro",
+   "lluviadepeces",
+   "misterio",
+   "sabiasque"
+  ],
+  "proporcion": 0.55,
+  "origen": "video3d/guiones/explica/201-lluvia-peces-yoro.json"
+ },
+ {
+  "nombre": "pez_rojo",
+  "descripcion": "pez rojo · del video «¿Por qué el mar profundo es negro?» (escena: «Bajemos juntos al fondo del mar. Reto: fíjate qué color desaparece primero.»)",
+  "etiquetas": [
+   "pez",
+   "rojo",
+   "ciencia",
+   "oceano",
+   "luz",
+   "bioluminiscencia",
+   "sabiasque"
+  ],
+  "proporcion": 0.6,
+  "origen": "video3d/guiones/explica/083-fondo-mar.json"
+ },
+ {
+  "nombre": "piedras_puntas",
+  "descripcion": "piedras puntas · del video «¿Por qué Tegus está entre cerros?» (escena: «¿Y el nombre? Nadie lo sabe seguro. Una versión popular dice «cerro de plata»; el filólogo»)",
+  "etiquetas": [
+   "piedras",
+   "puntas",
+   "honduras",
+   "catracho",
+   "tegucigalpa",
+   "historia",
+   "sabiasque"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/205-tegucigalpa-cerros.json"
+ },
+ {
+  "nombre": "piel_corte",
+  "descripcion": "piel corte · del video «¿Por qué sudamos?» (escena: «Tu piel tiene entre 2 y 4 millones de glándulas sudoríparas: tubitos que sacan agua a la s»)",
+  "etiquetas": [
+   "piel",
+   "corte",
+   "cuerpo",
+   "salud",
+   "calor",
+   "ciencia",
+   "curiosidades"
+  ],
+  "proporcion": 0.778,
+  "origen": "video3d/guiones/explica/079-sudor.json"
+ },
+ {
+  "nombre": "piel_tira",
+  "descripcion": "piel tira · del video «¿Por qué sudamos?» (escena: «El truco está en que se evapore: para volverse vapor, el agua le roba calor a tu piel.»)",
+  "etiquetas": [
+   "piel",
+   "tira",
+   "cuerpo",
+   "salud",
+   "calor",
+   "ciencia",
+   "curiosidades"
+  ],
+  "proporcion": 0.481,
+  "origen": "video3d/guiones/explica/079-sudor.json"
+ },
+ {
+  "nombre": "pin",
+  "descripcion": "pin · del video «¿Cómo funciona una brújula?» (escena: «Y ese polo no coincide con el geográfico: está a cientos de kilómetros y se mueve cada año»)",
+  "etiquetas": [
+   "pin",
+   "comofunciona",
+   "ciencia",
+   "magnetismo",
+   "brujula",
+   "sabiasque"
+  ],
+  "proporcion": 1.429,
+  "origen": "video3d/guiones/explica/071-brujula-norte.json"
+ },
+ {
+  "nombre": "pin_azul",
+  "descripcion": "pin azul · del video «La baleada: ¿nació en La Ceiba?» (escena: «Otros dicen que el nombre viene de los frijoles, como balitas. Y Tela, El Progreso y San P»)",
+  "etiquetas": [
+   "pin",
+   "azul",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 1.4,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "pin_hn_baleada_origen",
+  "descripcion": "pin · del video «La baleada: ¿nació en La Ceiba?» (escena: «¿Y el nombre? La versión más contada dice que nació en La Ceiba, en la costa norte.»)",
+  "etiquetas": [
+   "pin",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 1.4,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "pin_mal",
+  "descripcion": "pin mal · del video «¿Cómo sabe el GPS dónde estás?» (escena: «Por eso se corrige. Si no, tu mapa se iría desviando varios kilómetros por día.»)",
+  "etiquetas": [
+   "pin",
+   "mal",
+   "tecnologia",
+   "gps",
+   "satelites",
+   "einstein",
+   "curiosidades"
+  ],
+  "proporcion": 1.417,
+  "origen": "video3d/guiones/explica/082-gps.json"
+ },
+ {
+  "nombre": "pin_ok",
+  "descripcion": "pin ok · del video «¿Cómo sabe el GPS dónde estás?» (escena: «Por eso se corrige. Si no, tu mapa se iría desviando varios kilómetros por día.»)",
+  "etiquetas": [
+   "pin",
+   "tecnologia",
+   "gps",
+   "satelites",
+   "einstein",
+   "curiosidades"
+  ],
+  "proporcion": 1.417,
+  "origen": "video3d/guiones/explica/082-gps.json"
+ },
+ {
+  "nombre": "pipante",
+  "descripcion": "pipante · del video «Río Plátano: la selva de Honduras» (escena: «En el oriente de Honduras hay una selva donde casi no hay carreteras: ahí se viaja por el »)",
+  "etiquetas": [
+   "pipante",
+   "honduras",
+   "catracho",
+   "mosquitia",
+   "rioplatano",
+   "naturaleza",
+   "unesco"
+  ],
+  "proporcion": 0.34,
+  "origen": "video3d/guiones/explica/207-rio-platano.json"
+ },
+ {
+  "nombre": "plato",
+  "descripcion": "plato · del video «¿Cómo funciona un microondas?» (escena: «¿Cómo calienta la comida un microondas, si por dentro no hay ni fuego?»)",
+  "etiquetas": [
+   "plato",
+   "comofunciona",
+   "ciencia",
+   "cocina",
+   "microondas",
+   "sabiasque"
+  ],
+  "proporcion": 0.441,
+  "origen": "video3d/guiones/cola/067-explica-microondas.json"
+ },
+ {
+  "nombre": "plato_arriba",
+  "descripcion": "plato arriba · del video «¿Cómo funciona un microondas?» (escena: «Las ondas dejan zonas calientes y zonas frías, por eso el plato gira: así el calor se repa»)",
+  "etiquetas": [
+   "plato",
+   "arriba",
+   "comofunciona",
+   "ciencia",
+   "cocina",
+   "microondas",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/067-explica-microondas.json"
+ },
+ {
+  "nombre": "pozo",
+  "descripcion": "pozo · del video «¿Cómo funciona un ascensor?» (escena: «¿Cómo sube un ascensor lleno sin que el motor sude? El secreto cuelga del otro lado.»)",
+  "etiquetas": [
+   "pozo",
+   "comofunciona",
+   "ingenieria",
+   "ascensor",
+   "inventos",
+   "curiosidades"
+  ],
+  "proporcion": 1.571,
+  "origen": "video3d/guiones/explica/074-ascensor-contrapeso.json"
+ },
+ {
+  "nombre": "puente",
+  "descripcion": "puente",
+  "etiquetas": [
+   "puente"
+  ],
+  "proporcion": 0.469,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "puf",
+  "descripcion": "puf · del video «¿Y si la Luna desaparece?» (escena: «Imagina que esta noche la Luna desaparece de golpe. ¿Qué le pasaría a la Tierra?»)",
+  "etiquetas": [
+   "puf",
+   "quepasaria",
+   "luna",
+   "astronomia",
+   "mareas",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/070-explica-luna.json"
+ },
+ {
+  "nombre": "pulmones",
+  "descripcion": "pulmones · del video «¿Y si sales al espacio sin traje?» (escena: «El problema es el oxígeno: sin presión, sale de tu sangre en vez de entrar.»)",
+  "etiquetas": [
+   "pulmones",
+   "quepasaria",
+   "espacio",
+   "cuerpohumano",
+   "nasa",
+   "sabiasque"
+  ],
+  "proporcion": 0.9,
+  "origen": "video3d/guiones/cola/065-explica-espacio.json"
+ },
+ {
+  "nombre": "punto",
+  "descripcion": "punto · del video «Millón vs mil millones de segundos» (escena: «Otra forma: si un millón de segundos midiera 1 centímetro, mil millones medirían 10 metros»)",
+  "etiquetas": [
+   "punto",
+   "numeros",
+   "matematicas",
+   "sabiasque",
+   "tiempo",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/073-explica-millon.json"
+ },
+ {
+  "nombre": "punto_gps",
+  "descripcion": "punto · del video «¿Cómo sabe el GPS dónde estás?» (escena: «Con 3 distancias ya sabe dónde estás. El cuarto satélite corrige el reloj de tu celular, q»)",
+  "etiquetas": [
+   "punto",
+   "tecnologia",
+   "gps",
+   "satelites",
+   "einstein",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/082-gps.json"
+ },
+ {
+  "nombre": "qarawiyyin",
+  "descripcion": "qarawiyyin · del video «Oxford, más vieja que los aztecas» (escena: «Y Oxford tampoco es la más vieja: Al Qarawiyyin, en Marruecos, enseña desde el año 859.»)",
+  "etiquetas": [
+   "qarawiyyin",
+   "historia",
+   "aztecas",
+   "oxford",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 0.737,
+  "origen": "video3d/guiones/explica/108-oxford-aztecas.json"
+ },
+ {
+  "nombre": "queso",
+  "descripcion": "queso · del video «La baleada: ¿nació en La Ceiba?» (escena: «Luego van frijoles rojos molidos, mantequilla y queso duro rallado. Esa es la sencilla.»)",
+  "etiquetas": [
+   "queso",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "rape",
+  "descripcion": "rape · del video «¿Por qué el mar profundo es negro?» (escena: «Pero ahí abajo hay luces. Muchos animales fabrican la suya: se llama bioluminiscencia.»)",
+  "etiquetas": [
+   "rape",
+   "ciencia",
+   "oceano",
+   "luz",
+   "bioluminiscencia",
+   "sabiasque"
+  ],
+  "proporcion": 0.786,
+  "origen": "video3d/guiones/explica/083-fondo-mar.json"
+ },
+ {
+  "nombre": "rayo",
+  "descripcion": "rayo · del video «¿Cómo se forma un rayo?» (escena: «Un rayo calienta el aire a unos 30.000 °C: unas cinco veces más que la superficie del Sol.»)",
+  "etiquetas": [
+   "rayo",
+   "ciencia",
+   "tormentas",
+   "rayos",
+   "clima",
+   "sabiasque"
+  ],
+  "proporcion": 2.5,
+  "origen": "video3d/guiones/explica/078-rayo.json"
+ },
+ {
+  "nombre": "rayo_luz",
+  "descripcion": "rayo luz · del video «¿Por qué el arcoíris es curvo?» (escena: «La luz del Sol entra en la gota y se dobla: eso es la refracción.»)",
+  "etiquetas": [
+   "rayo",
+   "luz",
+   "ciencia",
+   "arcoiris",
+   "fisica",
+   "curiosidades"
+  ],
+  "proporcion": 1.192,
+  "origen": "video3d/guiones/explica/077-arcoiris.json"
+ },
+ {
+  "nombre": "rebote",
+  "descripcion": "rebote · del video «¿Por qué la caracola suena a mar?» (escena: «Ese ruido se cuela por la boca de la caracola y rebota por su espiral.»)",
+  "etiquetas": [
+   "rebote",
+   "porque",
+   "ciencia",
+   "mitos",
+   "caracola",
+   "sonido",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/070-caracola-mar.json"
+ },
+ {
+  "nombre": "rebote_arcoiris_curvo",
+  "descripcion": "rebote · del video «¿Por qué el arcoíris es curvo?» (escena: «Rebota en el fondo de la gota y sale separada en colores.»)",
+  "etiquetas": [
+   "rebote",
+   "ciencia",
+   "arcoiris",
+   "luz",
+   "fisica",
+   "curiosidades"
+  ],
+  "proporcion": 1.192,
+  "origen": "video3d/guiones/explica/077-arcoiris.json"
+ },
+ {
+  "nombre": "regla",
+  "descripcion": "regla · del video «¿Por qué el mar profundo es negro?» (escena: «Por debajo de unos 200 metros queda muy poca luz. Y pasando los 1.000 metros, la del Sol y»)",
+  "etiquetas": [
+   "regla",
+   "ciencia",
+   "oceano",
+   "luz",
+   "bioluminiscencia",
+   "sabiasque"
+  ],
+  "proporcion": 1.667,
+  "origen": "video3d/guiones/explica/083-fondo-mar.json"
+ },
+ {
+  "nombre": "regla_marea",
+  "descripcion": "regla marea · del video «¿Y si la Luna desaparece?» (escena: «Lo primero: las mareas. Hoy la Luna jala los océanos y los hace subir y bajar dos veces al»)",
+  "etiquetas": [
+   "regla",
+   "marea",
+   "quepasaria",
+   "luna",
+   "astronomia",
+   "mareas",
+   "sabiasque"
+  ],
+  "proporcion": 3.5,
+  "origen": "video3d/guiones/cola/070-explica-luna.json"
+ },
+ {
+  "nombre": "reloj",
+  "descripcion": "reloj",
+  "etiquetas": [
+   "reloj"
+  ],
+  "proporcion": 1,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "reloj_avion_vuela",
+  "descripcion": "reloj · del video «¿Por qué vuela un avión?» (escena: «Ojo: el aire de arriba no tiene que llegar al mismo tiempo que el de abajo. Eso es un mito»)",
+  "etiquetas": [
+   "reloj",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.133,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "reloj_koala",
+  "descripcion": "reloj koala · del video «25 años de tu vida, dormido» (escena: «Y si te parece mucho, un koala duerme o descansa hasta 22 horas al día.»)",
+  "etiquetas": [
+   "reloj",
+   "koala",
+   "cuerpo",
+   "sueno",
+   "salud",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/109-anos-durmiendo.json"
+ },
+ {
+  "nombre": "reloj_tercio",
+  "descripcion": "reloj tercio · del video «25 años de tu vida, dormido» (escena: «La cuenta es sencilla: 8 horas de cada 24 son un tercio del día.»)",
+  "etiquetas": [
+   "reloj",
+   "tercio",
+   "cuerpo",
+   "sueno",
+   "salud",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/109-anos-durmiendo.json"
+ },
+ {
+  "nombre": "salero",
+  "descripcion": "salero · del video «¿Por qué el mar es salado?» (escena: «Durante millones de años se fue acumulando. La mayor parte es sodio y cloro, como la sal d»)",
+  "etiquetas": [
+   "salero",
+   "ciencia",
+   "sabiasque",
+   "mar",
+   "curiosidades",
+   "oceano"
+  ],
+  "proporcion": 1.583,
+  "origen": "video3d/guiones/cola/068-explica-mar.json"
+ },
+ {
+  "nombre": "satelite",
+  "descripcion": "satelite · del video «¿Cómo sabe el GPS dónde estás?» (escena: «Dato raro: para ubicarte, tu celular no le manda nada al espacio. Solo escucha.»)",
+  "etiquetas": [
+   "satelite",
+   "tecnologia",
+   "gps",
+   "satelites",
+   "einstein",
+   "curiosidades"
+  ],
+  "proporcion": 0.571,
+  "origen": "video3d/guiones/explica/082-gps.json"
+ },
+ {
+  "nombre": "selva_rio",
+  "descripcion": "selva rio · del video «Río Plátano: la selva de Honduras» (escena: «En el oriente de Honduras hay una selva donde casi no hay carreteras: ahí se viaja por el »)",
+  "etiquetas": [
+   "selva",
+   "rio",
+   "honduras",
+   "catracho",
+   "mosquitia",
+   "rioplatano",
+   "naturaleza",
+   "unesco"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/207-rio-platano.json"
+ },
+ {
+  "nombre": "senora",
+  "descripcion": "senora · del video «La baleada: ¿nació en La Ceiba?» (escena: «Cuenta la leyenda que la señora que las vendía había sobrevivido a un balazo, y la gente d»)",
+  "etiquetas": [
+   "senora",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 1.333,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "silencio",
+  "descripcion": "silencio · del video «¿Por qué la caracola suena a mar?» (escena: «Y en una sala sin ningún ruido, la caracola se queda muda. Sin ruido, no hay mar.»)",
+  "etiquetas": [
+   "silencio",
+   "porque",
+   "ciencia",
+   "mitos",
+   "caracola",
+   "sonido",
+   "curiosidades"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/070-caracola-mar.json"
+ },
+ {
+  "nombre": "sol",
+  "descripcion": "sol",
+  "etiquetas": [
+   "sol"
+  ],
+  "proporcion": 1,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "sol_cielo_azul",
+  "descripcion": "sol · del video «¿Por qué el cielo es azul?» (escena: «La luz del Sol parece blanca, pero en realidad trae todos los colores mezclados.»)",
+  "etiquetas": [
+   "sol",
+   "ciencia",
+   "sabiasque",
+   "cielo",
+   "curiosidades",
+   "fisica"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/064-explica-cielo.json"
+ },
+ {
+  "nombre": "subsuelo",
+  "descripcion": "subsuelo · del video «La lluvia de peces de Yoro» (escena: «Otra: los peces viven en ríos bajo tierra, y con la crecida el agua los empuja hasta la su»)",
+  "etiquetas": [
+   "subsuelo",
+   "honduras",
+   "catracho",
+   "yoro",
+   "lluviadepeces",
+   "misterio",
+   "sabiasque"
+  ],
+  "proporcion": 0.844,
+  "origen": "video3d/guiones/explica/201-lluvia-peces-yoro.json"
+ },
+ {
+  "nombre": "suelo",
+  "descripcion": "suelo · del video «¿Por qué el arcoíris es curvo?» (escena: «Pero el suelo tapa la parte de abajo. Por eso ves solo un arco.»)",
+  "etiquetas": [
+   "suelo",
+   "ciencia",
+   "arcoiris",
+   "luz",
+   "fisica",
+   "curiosidades"
+  ],
+  "proporcion": 0.833,
+  "origen": "video3d/guiones/explica/077-arcoiris.json"
+ },
+ {
+  "nombre": "suelo_noche",
+  "descripcion": "suelo noche · del video «¿Y si la Luna desaparece?» (escena: «Las noches serían mucho más oscuras: adiós a la luz de luna llena para caminar sin lintern»)",
+  "etiquetas": [
+   "suelo",
+   "noche",
+   "quepasaria",
+   "luna",
+   "astronomia",
+   "mareas",
+   "sabiasque"
+  ],
+  "proporcion": 0.389,
+  "origen": "video3d/guiones/cola/070-explica-luna.json"
+ },
+ {
+  "nombre": "tache",
+  "descripcion": "tache · del video «¿Por qué vuela un avión?» (escena: «Ojo: el aire de arriba no tiene que llegar al mismo tiempo que el de abajo. Eso es un mito»)",
+  "etiquetas": [
+   "tache",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "tache_chicle_tragado",
+  "descripcion": "tache · del video «¿Y si te tragas un chicle?» (escena: «Te mintieron: tragarte un chicle no lo deja 7 años pegado en el estómago. Ni cerca.»)",
+  "etiquetas": [
+   "tache",
+   "mitos",
+   "cuerpo",
+   "salud",
+   "curiosidades",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/076-chicle.json"
+ },
+ {
+  "nombre": "tambor",
+  "descripcion": "tambor · del video «Garífunas: el viaje a Roatán» (escena: «Su idioma, su música y su danza fueron proclamados por la UNESCO en 2001 patrimonio de la »)",
+  "etiquetas": [
+   "tambor",
+   "honduras",
+   "catracho",
+   "garifuna",
+   "historia",
+   "cultura",
+   "sabiasque"
+  ],
+  "proporcion": 1.567,
+  "origen": "video3d/guiones/explica/210-garifunas.json"
+ },
+ {
+  "nombre": "tanque_bajo",
+  "descripcion": "tanque bajo · del video «¿Cómo funciona el inodoro?» (escena: «Al jalar la palanca, el tanque suelta toda su agua de golpe dentro de la taza.»)",
+  "etiquetas": [
+   "tanque",
+   "bajo",
+   "comofunciona",
+   "casa",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 0.196,
+  "origen": "video3d/guiones/cola/063-explica-inodoro.json"
+ },
+ {
+  "nombre": "tanque_lleno",
+  "descripcion": "tanque lleno · del video «¿Cómo funciona el inodoro?» (escena: «¿Qué pasa de verdad cuando le das a la palanca del inodoro?»)",
+  "etiquetas": [
+   "tanque",
+   "lleno",
+   "comofunciona",
+   "casa",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.265,
+  "origen": "video3d/guiones/cola/063-explica-inodoro.json"
+ },
+ {
+  "nombre": "tapir",
+  "descripcion": "tapir · del video «Río Plátano: la selva de Honduras» (escena: «Y bajo sus árboles caminan jaguares, tapires y monos.»)",
+  "etiquetas": [
+   "tapir",
+   "honduras",
+   "catracho",
+   "mosquitia",
+   "rioplatano",
+   "naturaleza",
+   "unesco"
+  ],
+  "proporcion": 0.633,
+  "origen": "video3d/guiones/explica/207-rio-platano.json"
+ },
+ {
+  "nombre": "taza",
+  "descripcion": "taza · del video «¿Cómo funciona un microondas?» (escena: «Y por eso lo que casi no tiene agua, como el pan muy seco, se calienta mucho menos que la »)",
+  "etiquetas": [
+   "taza",
+   "comofunciona",
+   "ciencia",
+   "cocina",
+   "microondas",
+   "sabiasque"
+  ],
+  "proporcion": 0.706,
+  "origen": "video3d/guiones/cola/067-explica-microondas.json"
+ },
+ {
+  "nombre": "tele_vieja",
+  "descripcion": "tele vieja · del video «Millón vs mil millones de segundos» (escena: «Para que lo sientas: hace mil millones de segundos, el calendario decía 1995.»)",
+  "etiquetas": [
+   "tele",
+   "vieja",
+   "numeros",
+   "matematicas",
+   "sabiasque",
+   "tiempo",
+   "curiosidades"
+  ],
+  "proporcion": 0.938,
+  "origen": "video3d/guiones/cola/073-explica-millon.json"
+ },
+ {
+  "nombre": "telefonos_112",
+  "descripcion": "telefonos 112 · del video «Más celulares que personas» (escena: «Si el mundo fuera un salón de 100 personas, habría 112 líneas de celular.»)",
+  "etiquetas": [
+   "telefonos",
+   "112",
+   "tecnologia",
+   "celulares",
+   "sabiasque",
+   "numeros",
+   "curiosidades"
+  ],
+  "proporcion": 1.4,
+  "origen": "video3d/guiones/explica/107-celulares.json"
+ },
+ {
+  "nombre": "templo",
+  "descripcion": "templo · del video «Oxford, más vieja que los aztecas» (escena: «Y el Imperio azteca, la Triple Alianza, llegó todavía después: en 1428.»)",
+  "etiquetas": [
+   "templo",
+   "historia",
+   "aztecas",
+   "oxford",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/explica/108-oxford-aztecas.json"
+ },
+ {
+  "nombre": "termometro",
+  "descripcion": "termometro",
+  "etiquetas": [
+   "termometro"
+  ],
+  "proporcion": 2.875,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "termometro_espacio_sin_traje",
+  "descripcion": "termometro · del video «¿Y si sales al espacio sin traje?» (escena: «Tampoco te congelas al instante: el vacío casi no conduce el calor.»)",
+  "etiquetas": [
+   "termometro",
+   "quepasaria",
+   "espacio",
+   "cuerpohumano",
+   "nasa",
+   "sabiasque"
+  ],
+  "proporcion": 3.333,
+  "origen": "video3d/guiones/cola/065-explica-espacio.json"
+ },
+ {
+  "nombre": "tierra",
+  "descripcion": "tierra",
+  "etiquetas": [
+   "tierra"
+  ],
+  "proporcion": 1,
+  "origen": "biblioteca"
+ },
+ {
+  "nombre": "tierra_aire",
+  "descripcion": "tierra aire · del video «¿Por qué el cielo es azul?» (escena: «Al atardecer, la luz cruza mucho más aire: el azul se pierde y llegan naranjas y rojos.»)",
+  "etiquetas": [
+   "tierra",
+   "aire",
+   "ciencia",
+   "sabiasque",
+   "cielo",
+   "curiosidades",
+   "fisica"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/064-explica-cielo.json"
+ },
+ {
+  "nombre": "tierra_corte",
+  "descripcion": "tierra corte · del video «¿Cómo funciona una brújula?» (escena: «Ese magnetismo nace en su núcleo, donde se revuelve hierro fundido a miles de grados.»)",
+  "etiquetas": [
+   "tierra",
+   "corte",
+   "comofunciona",
+   "ciencia",
+   "magnetismo",
+   "brujula",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/071-brujula-norte.json"
+ },
+ {
+  "nombre": "tierra_tunel_tierra",
+  "descripcion": "tierra · del video «¿Y si caes a través de la Tierra?» (escena: «¿Qué pasa si saltas a un túnel que atraviesa la Tierra de lado a lado?»)",
+  "etiquetas": [
+   "tierra",
+   "quepasaria",
+   "fisica",
+   "gravedad",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/062-explica-tunel.json"
+ },
+ {
+  "nombre": "tina",
+  "descripcion": "tina · del video «¿Cómo flota un barco de hierro?» (escena: «El secreto lo descubrió Arquímedes hace más de 2.200 años, según cuentan, en una bañera.»)",
+  "etiquetas": [
+   "tina",
+   "ciencia",
+   "fisica",
+   "barcos",
+   "arquimedes",
+   "sabiasque"
+  ],
+  "proporcion": 0.639,
+  "origen": "video3d/guiones/cola/071-explica-barco.json"
+ },
+ {
+  "nombre": "tocones",
+  "descripcion": "tocones · del video «Río Plátano: la selva de Honduras» (escena: «Pero la tala y la ganadería ilegal se la están comiendo. Hoy es patrimonio en peligro.»)",
+  "etiquetas": [
+   "tocones",
+   "honduras",
+   "catracho",
+   "mosquitia",
+   "rioplatano",
+   "naturaleza",
+   "unesco"
+  ],
+  "proporcion": 0.444,
+  "origen": "video3d/guiones/explica/207-rio-platano.json"
+ },
+ {
+  "nombre": "tormenta",
+  "descripcion": "tormenta · del video «La lluvia de peces de Yoro» (escena: «Imaginate salir después de una tormenta en Yoro… y encontrar el suelo lleno de pescaditos »)",
+  "etiquetas": [
+   "tormenta",
+   "honduras",
+   "catracho",
+   "yoro",
+   "lluviadepeces",
+   "misterio",
+   "sabiasque"
+  ],
+  "proporcion": 0.5,
+  "origen": "video3d/guiones/explica/201-lluvia-peces-yoro.json"
+ },
+ {
+  "nombre": "tortilla",
+  "descripcion": "tortilla · del video «La baleada: ¿nació en La Ceiba?» (escena: «Todo arranca con una tortilla de harina, grandota y suavecita, recién salida del comal.»)",
+  "etiquetas": [
+   "tortilla",
+   "honduras",
+   "catracho",
+   "baleada",
+   "comidahondurena",
+   "laceiba",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "tromba",
+  "descripcion": "tromba · del video «La lluvia de peces de Yoro» (escena: «Una hipótesis: una tromba de agua levanta los peces y la tormenta los deja caer tierra ade»)",
+  "etiquetas": [
+   "tromba",
+   "honduras",
+   "catracho",
+   "yoro",
+   "lluviadepeces",
+   "misterio",
+   "sabiasque"
+  ],
+  "proporcion": 1.607,
+  "origen": "video3d/guiones/explica/201-lluvia-peces-yoro.json"
+ },
+ {
+  "nombre": "tucan",
+  "descripcion": "tucan · del video «Yojoa: el lago de las 400 aves» (escena: «¿Por qué tantas aves? Lo rodean montañas con bosque nublado, como Cerro Azul Meámbar y San»)",
+  "etiquetas": [
+   "tucan",
+   "honduras",
+   "catracho",
+   "yojoa",
+   "naturaleza",
+   "aves",
+   "sabiasque"
+  ],
+  "proporcion": 0.857,
+  "origen": "video3d/guiones/explica/206-lago-yojoa.json"
+ },
+ {
+  "nombre": "vaca",
+  "descripcion": "vaca · del video «Río Plátano: la selva de Honduras» (escena: «Pero la tala y la ganadería ilegal se la están comiendo. Hoy es patrimonio en peligro.»)",
+  "etiquetas": [
+   "vaca",
+   "honduras",
+   "catracho",
+   "mosquitia",
+   "rioplatano",
+   "naturaleza",
+   "unesco"
+  ],
+  "proporcion": 0.75,
+  "origen": "video3d/guiones/explica/207-rio-platano.json"
+ },
+ {
+  "nombre": "vaiven",
+  "descripcion": "vaiven · del video «¿Y si caes a través de la Tierra?» (escena: «Y si nadie te atrapa, vuelves a caer, y vas y vienes para siempre.»)",
+  "etiquetas": [
+   "vaiven",
+   "quepasaria",
+   "fisica",
+   "tierra",
+   "gravedad",
+   "sabiasque"
+  ],
+  "proporcion": 8.75,
+  "origen": "video3d/guiones/cola/062-explica-tunel.json"
+ },
+ {
+  "nombre": "valle_ciudad",
+  "descripcion": "valle ciudad · del video «¿Por qué Tegus está entre cerros?» (escena: «Tegucigalpa vive rodeada de cerros. ¿Por qué la capital creció metida en un valle?»)",
+  "etiquetas": [
+   "valle",
+   "ciudad",
+   "honduras",
+   "catracho",
+   "tegucigalpa",
+   "historia",
+   "sabiasque"
+  ],
+  "proporcion": 0.76,
+  "origen": "video3d/guiones/explica/205-tegucigalpa-cerros.json"
+ },
+ {
+  "nombre": "vapor",
+  "descripcion": "vapor · del video «¿Cómo funciona un microondas?» (escena: «Y por eso lo que casi no tiene agua, como el pan muy seco, se calienta mucho menos que la »)",
+  "etiquetas": [
+   "vapor",
+   "comofunciona",
+   "ciencia",
+   "cocina",
+   "microondas",
+   "sabiasque"
+  ],
+  "proporcion": 1.3,
+  "origen": "video3d/guiones/cola/067-explica-microondas.json"
+ },
+ {
+  "nombre": "vapor_mar_salado",
+  "descripcion": "vapor · del video «¿Por qué el mar es salado?» (escena: «En el mar, el sol evapora el agua, pero la sal no se va: se queda.»)",
+  "etiquetas": [
+   "vapor",
+   "ciencia",
+   "sabiasque",
+   "mar",
+   "curiosidades",
+   "oceano"
+  ],
+  "proporcion": 1.4,
+  "origen": "video3d/guiones/cola/068-explica-mar.json"
+ },
+ {
+  "nombre": "vapor_por_que_sudamos",
+  "descripcion": "vapor · del video «¿Por qué sudamos?» (escena: «El truco está en que se evapore: para volverse vapor, el agua le roba calor a tu piel.»)",
+  "etiquetas": [
+   "vapor",
+   "cuerpo",
+   "salud",
+   "calor",
+   "ciencia",
+   "curiosidades"
+  ],
+  "proporcion": 1.2,
+  "origen": "video3d/guiones/explica/079-sudor.json"
+ },
+ {
+  "nombre": "vapor_verde",
+  "descripcion": "vapor verde · del video «¿Por qué la cebolla hace llorar?» (escena: «Es volátil: viaja por el aire, llega a tus ojos y los irrita.»)",
+  "etiquetas": [
+   "vapor",
+   "verde",
+   "ciencia",
+   "cocina",
+   "quimica",
+   "cebolla",
+   "trucos"
+  ],
+  "proporcion": 1.533,
+  "origen": "video3d/guiones/cola/072-explica-cebolla.json"
+ },
+ {
+  "nombre": "vaso",
+  "descripcion": "vaso · del video «¿Por qué la caracola suena a mar?» (escena: «¿Quieres comprobarlo? Pega un vaso o tu mano ahuecada al oído: también suena a mar.»)",
+  "etiquetas": [
+   "vaso",
+   "porque",
+   "ciencia",
+   "mitos",
+   "caracola",
+   "sonido",
+   "curiosidades"
+  ],
+  "proporcion": 1.385,
+  "origen": "video3d/guiones/explica/070-caracola-mar.json"
+ },
+ {
+  "nombre": "vaso_hielo",
+  "descripcion": "vaso hielo · del video «¿Por qué el hielo flota?» (escena: «Si el hielo es agua, ¿por qué flota encima del agua en vez de hundirse?»)",
+  "etiquetas": [
+   "vaso",
+   "hielo",
+   "ciencia",
+   "agua",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 1.44,
+  "origen": "video3d/guiones/cola/066-explica-hielo.json"
+ },
+ {
+  "nombre": "vaso_mar",
+  "descripcion": "vaso mar · del video «¿Qué pasa si caes al Mar Muerto?» (escena: «Su agua tiene cerca de 34 % de sal. El mar normal, apenas 3,5 %.»)",
+  "etiquetas": [
+   "vaso",
+   "mar",
+   "ciencia",
+   "marmuerto",
+   "densidad",
+   "viajes",
+   "curiosidades"
+  ],
+  "proporcion": 1.4,
+  "origen": "video3d/guiones/explica/084-mar-muerto.json"
+ },
+ {
+  "nombre": "vaso_muerto",
+  "descripcion": "vaso muerto · del video «¿Qué pasa si caes al Mar Muerto?» (escena: «Su agua tiene cerca de 34 % de sal. El mar normal, apenas 3,5 %.»)",
+  "etiquetas": [
+   "vaso",
+   "muerto",
+   "ciencia",
+   "marmuerto",
+   "densidad",
+   "viajes",
+   "curiosidades"
+  ],
+  "proporcion": 1.4,
+  "origen": "video3d/guiones/explica/084-mar-muerto.json"
+ },
+ {
+  "nombre": "vela",
+  "descripcion": "vela · del video «4 bebés por segundo» (escena: «Pero en ese mismo segundo también mueren unas 2 personas.»)",
+  "etiquetas": [
+   "vela",
+   "mundo",
+   "poblacion",
+   "sabiasque",
+   "numeros",
+   "curiosidades"
+  ],
+  "proporcion": 2.25,
+  "origen": "video3d/guiones/explica/106-bebes-segundo.json"
+ },
+ {
+  "nombre": "ventana",
+  "descripcion": "ventana · del video «¿Por qué los gatos caen de pie?» (escena: «Ojo: necesita algo de altura para alcanzar a girar, y aun cayendo de pie puede lastimarse.»)",
+  "etiquetas": [
+   "ventana",
+   "porque",
+   "animales",
+   "gatos",
+   "ciencia",
+   "sabiasque"
+  ],
+  "proporcion": 1.2,
+  "origen": "video3d/guiones/explica/073-gato-cae-de-pie.json"
+ },
+ {
+  "nombre": "viento",
+  "descripcion": "viento · del video «¿Y si caes a través de la Tierra?» (escena: «La gravedad te jala hacia el centro, y caes cada vez más rápido.»)",
+  "etiquetas": [
+   "viento",
+   "quepasaria",
+   "fisica",
+   "tierra",
+   "gravedad",
+   "sabiasque"
+  ],
+  "proporcion": 1.4,
+  "origen": "video3d/guiones/cola/062-explica-tunel.json"
+ },
+ {
+  "nombre": "zona_alta",
+  "descripcion": "zona alta · del video «¿Por qué vuela un avión?» (escena: «Arriba del ala, el aire corre más rápido y la presión baja. Abajo, la presión es mayor.»)",
+  "etiquetas": [
+   "zona",
+   "alta",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "zona_baja",
+  "descripcion": "zona baja · del video «¿Por qué vuela un avión?» (escena: «Arriba del ala, el aire corre más rápido y la presión baja. Abajo, la presión es mayor.»)",
+  "etiquetas": [
+   "zona",
+   "baja",
+   "comofunciona",
+   "aviones",
+   "fisica",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/cola/061-explica-avion.json"
+ },
+ {
+  "nombre": "zonas",
+  "descripcion": "zonas · del video «¿Cómo funciona un microondas?» (escena: «Las ondas dejan zonas calientes y zonas frías, por eso el plato gira: así el calor se repa»)",
+  "etiquetas": [
+   "zonas",
+   "comofunciona",
+   "ciencia",
+   "cocina",
+   "microondas",
+   "sabiasque"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/cola/067-explica-microondas.json"
+ },
+ {
+  "nombre": "zzz",
+  "descripcion": "zzz · del video «25 años de tu vida, dormido» (escena: «Si vives 75 años, vas a pasar unos 25 dormido. Y es buena noticia.»)",
+  "etiquetas": [
+   "zzz",
+   "cuerpo",
+   "sueno",
+   "salud",
+   "sabiasque",
+   "curiosidades"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/109-anos-durmiendo.json"
+ }
+]

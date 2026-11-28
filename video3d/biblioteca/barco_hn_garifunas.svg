@@ -1,0 +1,9 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 600 520">
+<rect x='200' y='50' width='12' height='340' fill='#5a3a24'/><rect x='380' y='90' width='12' height='300' fill='#5a3a24'/>
+<path d='M212 70 Q310 150 296 330 H212 Z' fill='#f4ecd8'/><path d='M250 115 Q312 190 296 330 H264 Q282 220 250 115Z' fill='#d9cdb2'/>
+<path d='M392 105 Q478 175 466 330 H392 Z' fill='#f4ecd8'/><path d='M424 140 Q480 205 466 330 H440 Q456 230 424 140Z' fill='#d9cdb2'/>
+<path d='M212 50 L262 62 L212 74Z' fill='#d93427'/>
+<path d='M30 380 H570 L505 470 H95 Z' fill='#7a4a2c'/><path d='M330 380 H570 L505 470 H330 Z' fill='#5f3820'/>
+<rect x='52' y='394' width='500' height='14' fill='#c98a55'/>
+<g fill='#3a2414'><circle cx='150' cy='430' r='9'/><circle cx='230' cy='430' r='9'/><circle cx='310' cy='430' r='9'/><circle cx='390' cy='430' r='9'/><circle cx='470' cy='430' r='9'/></g>
+<path d='M0 470 Q75 440 150 470 T300 470 T450 470 T600 470 V520 H0Z' fill='#2c86c0'/></svg>

@@ -46,7 +46,8 @@ for (const [i, e] of g.escenas.entries()) {
   for (const c of e.capas || []) {
     const cx = x + (c.x ?? 0.5) * EW, cy = y + (c.y ?? 0.5) * EH;
     if (c.svg) {
-      const svg = dibujos[c.svg]; if (!svg) { errores++; ctx.fillStyle = '#f55'; ctx.fillText(`falta ${c.svg}`, cx - 40, cy); continue; }
+      let svg = dibujos[c.svg]; for (const [de, a] of Object.entries(c.colores || {})) if (svg) svg = svg.split(de).join(a).split(de.toUpperCase()).join(a).split(de.toLowerCase()).join(a);
+      if (!svg) { errores++; ctx.fillStyle = '#f55'; ctx.fillText(`falta ${c.svg}`, cx - 40, cy); continue; }
       const w = (c.ancho || 500) * S, h = (c.alto || (c.ancho || 500) * proporcion(svg)) * S;
       try { ctx.drawImage(await img(svg, Math.round(w * 2)), cx - w / 2, cy - h / 2, w, h); } catch (err) { errores++; }
     } else if (c.etiqueta || c.numero) {

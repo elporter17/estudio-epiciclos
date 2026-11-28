@@ -1,0 +1,11 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 320 580">
+<ellipse cx='160' cy='566' rx='110' ry='12' fill='#000' opacity='0.18'/>
+<path d='M120 160 L66 82' stroke='#6b3f22' stroke-width='22' stroke-linecap='round'/><path d='M200 160 L262 112' stroke='#6b3f22' stroke-width='22' stroke-linecap='round'/>
+<rect x='146' y='120' width='28' height='34' fill='#55301a'/>
+<path d='M112 150 H208 L218 280 H102Z' fill='#ffffff'/><path d='M168 150 H208 L218 280 H172Z' fill='#e3e6ee'/>
+<path d='M102 272 H218 L292 530 Q160 556 28 530Z' fill='#f2c230'/><path d='M168 272 H218 L292 530 Q240 542 196 544Z' fill='#d9a91d'/>
+<path d='M64 410 Q160 432 256 410 L270 452 Q160 476 50 452Z' fill='#1d1d2b'/><path d='M44 470 Q160 494 276 470 L282 492 Q160 516 38 492Z' fill='#ffffff'/>
+<circle cx='160' cy='92' r='44' fill='#6b3f22'/><path d='M160 48 A44 44 0 0 1 160 136 A30 44 0 0 0 160 48Z' fill='#55301a'/>
+<path d='M112 86 Q160 10 208 86 Q160 62 112 86Z' fill='#ffffff'/><path d='M120 70 Q160 30 200 70' stroke='#1d1d2b' stroke-width='8' fill='none'/>
+<circle cx='212' cy='62' r='16' fill='#ffffff'/>
+<g fill='#2a1a10'><circle cx='145' cy='98' r='5'/><circle cx='175' cy='98' r='5'/></g><path d='M146 116 Q160 126 174 116' stroke='#2a1a10' stroke-width='4' fill='none' stroke-linecap='round'/></svg>

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 520"><defs><linearGradient id="m" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2fa0e6"/><stop offset="1" stop-color="#0b4a85"/></linearGradient></defs>
+<path d="M0 60 Q90 30 180 60 T360 60 T540 60 T720 60 T900 60 T1080 60 V520 H0 Z" fill="url(#m)"/>
+<path d="M0 60 Q90 30 180 60 T360 60 T540 60 T720 60 T900 60 T1080 60" fill="none" stroke="#a8e6ff" stroke-width="10"/>
+<path d="M120 150 q30 -12 60 0 t60 0 M700 190 q30 -12 60 0 t60 0 M400 300 q30 -12 60 0 t60 0" stroke="#7fd0ff" stroke-width="6" fill="none" opacity="0.6"/></svg>

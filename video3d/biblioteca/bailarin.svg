@@ -1,0 +1,10 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 300 580">
+<ellipse cx='150' cy='566' rx='90' ry='12' fill='#000' opacity='0.18'/>
+<rect x='104' y='300' width='42' height='250' rx='14' fill='#1d1d2b'/><rect x='154' y='300' width='42' height='250' rx='14' fill='#2c2f45'/>
+<path d='M106 160 L54 240' stroke='#6b3f22' stroke-width='22' stroke-linecap='round'/><path d='M194 160 L246 70' stroke='#6b3f22' stroke-width='22' stroke-linecap='round'/>
+<rect x='136' y='120' width='28' height='34' fill='#55301a'/>
+<path d='M96 148 H204 L210 310 H90Z' fill='#f2c230'/><path d='M150 148 H204 L210 310 H150Z' fill='#d9a91d'/>
+<path d='M96 200 H210 M93 250 H210' stroke='#1d1d2b' stroke-width='10'/>
+<circle cx='150' cy='90' r='44' fill='#6b3f22'/><path d='M150 46 A44 44 0 0 1 150 134 A30 44 0 0 0 150 46Z' fill='#55301a'/>
+<path d='M106 82 Q150 30 194 82 Q150 66 106 82Z' fill='#1d1d2b'/>
+<g fill='#2a1a10'><circle cx='135' cy='96' r='5'/><circle cx='165' cy='96' r='5'/></g><path d='M136 114 Q150 124 164 114' stroke='#2a1a10' stroke-width='4' fill='none' stroke-linecap='round'/></svg>

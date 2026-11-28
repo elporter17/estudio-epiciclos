@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+<defs><clipPath id="l"><circle cx="150" cy="150" r="132"/></clipPath>
+<pattern id="g" width="26" height="26" patternUnits="userSpaceOnUse"><rect width="26" height="26" fill="#2c3440"/><circle cx="13" cy="13" r="7" fill="#f6d58a"/></pattern></defs>
+<circle cx="150" cy="150" r="140" fill="#ffffff"/>
+<g clip-path="url(#l)"><rect width="300" height="300" fill="url(#g)"/>
+<path d="M300 110 q -20 -18 -40 0 t -40 0 t -40 0 Q 150 110 150 150 Q 150 190 180 190 q 20 18 40 0 t 40 0 t 40 0" stroke="#7fe0ff" stroke-width="12" fill="none" stroke-linecap="round"/>
+<path d="M286 172 L310 190 L286 208 Z" fill="#7fe0ff"/></g>
+<circle cx="150" cy="150" r="136" fill="none" stroke="#ffffff" stroke-width="10"/>
+</svg>

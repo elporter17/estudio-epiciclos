@@ -1,0 +1,9 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 640 380">
+<ellipse cx='320' cy='330' rx='310' ry='44' fill='#000' opacity='0.15'/>
+<ellipse cx='320' cy='300' rx='300' ry='60' fill='#f7f4ec'/><ellipse cx='320' cy='296' rx='250' ry='44' fill='#e6e1d4'/>
+<path d='M40 160 H380 Q370 300 210 310 Q50 300 40 160Z' fill='#c9553f'/><path d='M230 160 H380 Q370 300 210 310 Q300 270 230 160Z' fill='#a8402e'/>
+<ellipse cx='210' cy='160' rx='170' ry='38' fill='#f1dfa8'/><ellipse cx='210' cy='160' rx='170' ry='38' fill='none' stroke='#a8402e' stroke-width='8'/>
+<path d='M120 152 Q170 120 230 150 L262 132 L258 170 L230 160 Q170 190 120 160Z' fill='#d9d2c0'/><circle cx='140' cy='154' r='5' fill='#1d1d2b'/>
+<g fill='#5b8a5a'><circle cx='270' cy='170' r='7'/><circle cx='300' cy='158' r='6'/><circle cx='95' cy='170' r='6'/></g>
+<path d='M420 280 Q410 180 500 170 Q590 180 580 280Z' fill='#f2c230'/><path d='M500 170 Q590 180 580 280 H530 Q560 210 500 170Z' fill='#d9a91d'/>
+<path d='M450 230 Q500 210 550 232' stroke='#c4862a' stroke-width='6' fill='none' stroke-linecap='round'/></svg>

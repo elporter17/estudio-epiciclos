@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360">
+<defs><linearGradient id="pl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8f9c"/><stop offset="1" stop-color="#e05a6e"/></linearGradient></defs>
+<path d="M182 112 C120 88 58 140 48 232 C40 304 72 346 122 340 C162 336 184 310 184 268 Z" fill="url(#pl)"/>
+<path d="M218 112 C280 88 342 140 352 232 C360 304 328 346 278 340 C238 336 216 310 216 268 Z" fill="url(#pl)"/>
+<path d="M150 120 C110 130 76 170 70 230" stroke="#ffffff" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.35"/>
+<path d="M250 120 C290 130 324 170 330 230" stroke="#ffffff" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.35"/>
+<path d="M120 336 C150 330 176 306 182 270 L184 330 C170 340 145 342 120 336Z" fill="#c4475c" opacity="0.5"/>
+<path d="M280 336 C250 330 224 306 218 270 L216 330 C230 340 255 342 280 336Z" fill="#c4475c" opacity="0.5"/>
+<g stroke="#f7dede" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M200 20 V130" stroke-width="26"/>
+<path d="M200 128 L160 168 L130 214 M160 168 L150 240 M130 214 L104 250 M130 214 L128 270" stroke-width="12"/>
+<path d="M200 128 L240 168 L270 214 M240 168 L250 240 M270 214 L296 250 M270 214 L272 270" stroke-width="12"/>
+</g>
+<path d="M188 40 H212 M188 62 H212 M188 84 H212 M188 106 H212" stroke="#d9b8b8" stroke-width="5" stroke-linecap="round"/>
+</svg>
