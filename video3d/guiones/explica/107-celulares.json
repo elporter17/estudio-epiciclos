@@ -1,0 +1,133 @@
+{
+  "id": "explica-mas-celulares-que-personas",
+  "motor": "explica",
+  "titulo": "Más celulares que personas",
+  "categoria": "tecnologia",
+  "etiquetas": ["tecnologia", "celulares", "sabiasque", "numeros", "curiosidades"],
+  "descripcion": "Hay unas 112 líneas de celular por cada 100 personas, y aun así casi 1 de cada 5 no tiene teléfono. Cómo cuadra la cuenta, y del ladrillo de 1983 a hoy.",
+  "musica": "synthwave",
+  "paleta": { "a": "#7ee0c3", "b": "#2fa38a" },
+  "escenas": [
+    {
+      "fondo": "plano",
+      "texto": "En el planeta hay más líneas de celular que personas. ¿Cómo cuadra eso?",
+      "clave": "más líneas",
+      "camara": { "de": [0.5, 0.62, 1], "a": [0.55, 0.62, 1.12] },
+      "capas": [
+        { "svg": "persona", "x": 0.3, "y": 0.64, "ancho": 220, "anim": "pop", "en": 0 },
+        { "svg": "celular", "x": 0.6, "y": 0.62, "ancho": 170, "anim": "caer", "rot": -10, "en": "líneas" },
+        { "svg": "celular", "x": 0.75, "y": 0.6, "ancho": 170, "anim": "caer", "rot": 6, "en": "celular" },
+        { "svg": "celular", "x": 0.68, "y": 0.75, "ancho": 170, "anim": "caer", "rot": 14, "en": "personas" },
+        { "numero": "¿?", "x": 0.5, "y": 0.36, "color": "#6b4fe0", "tam": 90, "en": "cuadra" }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Si el mundo fuera un salón de 100 personas, habría 112 líneas de celular.",
+      "voz": "Si el mundo fuera un salón de cien personas, habría ciento doce líneas de celular.",
+      "clave": "112 líneas",
+      "camara": { "de": [0.5, 0.65, 1.1], "a": [0.5, 0.62, 1] },
+      "capas": [
+        { "svg": "cien_personas", "x": 0.27, "y": 0.726, "ancho": 440, "anim": "pop", "en": 0 },
+        { "svg": "telefonos_112", "x": 0.73, "y": 0.7, "ancho": 440, "anim": "crecer", "en": "112" },
+        { "numero": "100", "x": 0.27, "y": 0.52, "color": "#1d1d2b", "en": "100" },
+        { "numero": "112", "x": 0.73, "y": 0.46, "color": "#d93427", "en": "112" }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Y aun así, de cada 100 personas de 10 años o más, 18 no tienen celular.",
+      "voz": "Y aun así, de cada cien personas de diez años o más, dieciocho no tienen celular.",
+      "clave": "18",
+      "nota": "sin celular",
+      "camara": { "de": [0.5, 0.6, 1], "a": [0.5, 0.72, 1.12] },
+      "capas": [
+        { "svg": "cien_sin", "x": 0.5, "y": 0.62, "ancho": 620, "anim": "fade", "en": 0 },
+        { "etiqueta": "82 sí tienen", "x": 0.5, "y": 0.34, "color": "#2fa35a", "en": "personas" },
+        { "etiqueta": "18 no", "x": 0.82, "y": 0.92, "color": "#7a8296", "a": [0.6, 0.79], "en": "18" }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "La cuenta cierra porque muchos cargan 2 o 3 líneas: la personal, la del trabajo y la del chip de viaje.",
+      "voz": "La cuenta cierra porque muchos cargan dos o tres líneas: la personal, la del trabajo y la del chip de viaje.",
+      "clave": "2 o 3",
+      "camara": { "de": [0.5, 0.6, 1.1], "a": [0.5, 0.6, 1] },
+      "capas": [
+        { "svg": "persona", "x": 0.5, "y": 0.64, "ancho": 260, "anim": "pop", "idle": "balanceo", "en": 0 },
+        { "svg": "celular", "x": 0.2, "y": 0.5, "ancho": 150, "anim": "pop", "idle": "flotar", "rot": -12, "en": "personal" },
+        { "svg": "celular", "x": 0.8, "y": 0.5, "ancho": 150, "anim": "pop", "idle": "flotar", "rot": 12, "en": "trabajo" },
+        { "svg": "celular", "x": 0.8, "y": 0.78, "ancho": 150, "anim": "pop", "idle": "flotar", "rot": 8, "en": "chip" },
+        { "etiqueta": "personal", "x": 0.2, "y": 0.36, "color": "#2f7fd2", "en": "personal" },
+        { "etiqueta": "trabajo", "x": 0.8, "y": 0.36, "color": "#d93427", "en": "trabajo" },
+        { "etiqueta": "viaje", "x": 0.8, "y": 0.92, "color": "#6b4fe0", "en": "viaje" }
+      ]
+    },
+    {
+      "fondo": "fabrica",
+      "texto": "Y todo empezó con este ladrillo: la primera llamada fue en 1973 y salió a la venta en 1983.",
+      "voz": "Y todo empezó con este ladrillo: la primera llamada fue en mil novecientos setenta y tres y salió a la venta en mil novecientos ochenta y tres.",
+      "clave": "ladrillo",
+      "camara": { "de": [0.5, 0.6, 1], "a": [0.5, 0.55, 1.12] },
+      "capas": [
+        { "svg": "ladrillo", "x": 0.5, "y": 0.6, "ancho": 270, "anim": "caer", "idle": "balanceo", "en": 0 },
+        { "numero": "1973", "x": 0.22, "y": 0.42, "color": "#2f7fd2", "en": "1973" },
+        { "numero": "1983", "x": 0.78, "y": 0.42, "color": "#d93427", "en": "1983" }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Pesaba casi 800 gramos, como 4 celulares de hoy, y la batería aguantaba 30 minutos de llamada.",
+      "voz": "Pesaba casi ochocientos gramos, como cuatro celulares de hoy, y la batería aguantaba treinta minutos de llamada.",
+      "clave": "800 gramos",
+      "camara": { "de": [0.5, 0.62, 1.08], "a": [0.5, 0.62, 1] },
+      "capas": [
+        { "svg": "ladrillo", "x": 0.27, "y": 0.6, "ancho": 240, "anim": "ninguna" },
+        { "svg": "celular", "x": 0.6, "y": 0.62, "ancho": 130, "anim": "pop", "rot": -8, "en": "como" },
+        { "svg": "celular", "x": 0.69, "y": 0.6, "ancho": 130, "anim": "pop", "rot": -3, "en": "4" },
+        { "svg": "celular", "x": 0.78, "y": 0.6, "ancho": 130, "anim": "pop", "rot": 3, "en": "celulares" },
+        { "svg": "celular", "x": 0.87, "y": 0.62, "ancho": 130, "anim": "pop", "rot": 8, "en": "hoy" },
+        { "numero": "≈ 790 g", "x": 0.27, "y": 0.86, "color": "#1d1d2b", "en": "800" },
+        { "numero": "4 × ≈ 200 g", "x": 0.73, "y": 0.8, "color": "#1d1d2b", "en": "hoy" },
+        { "etiqueta": "batería: 30 min", "x": 0.4, "y": 0.36, "color": "#d93427", "a": [0.27, 0.5], "en": "batería" }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "De cero a más de 9.000 millones de líneas en unos 40 años. Y la curva sigue subiendo.",
+      "voz": "De cero a más de nueve mil millones de líneas en unos cuarenta años. Y la curva sigue subiendo.",
+      "clave": "9.000 millones",
+      "camara": { "de": [0.3, 0.6, 1.1], "a": [0.7, 0.6, 1.1] },
+      "capas": [
+        { "svg": "curva", "x": 0.5, "y": 0.62, "ancho": 920, "anim": "fade", "sombra": false, "en": 0 },
+        { "svg": "ladrillo", "x": 0.14, "y": 0.8, "ancho": 90, "anim": "pop", "en": "cero" },
+        { "svg": "celular", "x": 0.86, "y": 0.4, "ancho": 110, "anim": "pop", "idle": "flotar", "en": "9.000" },
+        { "numero": "1983", "x": 0.16, "y": 0.92, "color": "#2f7fd2", "tam": 50, "en": "cero" },
+        { "numero": "9.200 M", "x": 0.62, "y": 0.36, "color": "#d93427", "en": "millones" }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Cuántas líneas tienes tú? Confiesa en los comentarios y síguenos.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "celular": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 200 400\"><defs><linearGradient id='p' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#5ab0ff'/><stop offset='1' stop-color='#6b4fe0'/></linearGradient></defs><rect x='10' y='10' width='180' height='380' rx='34' fill='#1d1d2b'/><rect x='150' y='10' width='40' height='380' rx='20' fill='#14141f'/><rect x='24' y='34' width='152' height='332' rx='20' fill='url(#p)'/><rect x='72' y='22' width='56' height='12' rx='6' fill='#1d1d2b'/><g fill='#ffffff' opacity='0.85'><rect x='44' y='70' width='40' height='40' rx='10'/><rect x='116' y='70' width='40' height='40' rx='10'/><rect x='44' y='130' width='40' height='40' rx='10'/><rect x='116' y='130' width='40' height='40' rx='10'/></g><path d='M40 320 Q60 250 150 230' stroke='#ffffff' stroke-width='10' fill='none' opacity='0.25' stroke-linecap='round'/></svg>",
+    "ladrillo": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 200 540\"><rect x='120' y='10' width='26' height='130' rx='12' fill='#2a2a2a'/><rect x='30' y='120' width='150' height='410' rx='26' fill='#55534f'/><rect x='140' y='120' width='40' height='410' rx='20' fill='#3f3d3a'/><rect x='50' y='150' width='100' height='46' rx='8' fill='#1f2a20'/><rect x='58' y='158' width='60' height='14' rx='4' fill='#e2493b'/><g fill='#d9d6cc'><rect x='50' y='230' width='26' height='22' rx='5'/><rect x='87' y='230' width='26' height='22' rx='5'/><rect x='124' y='230' width='26' height='22' rx='5'/><rect x='50' y='266' width='26' height='22' rx='5'/><rect x='87' y='266' width='26' height='22' rx='5'/><rect x='124' y='266' width='26' height='22' rx='5'/><rect x='50' y='302' width='26' height='22' rx='5'/><rect x='87' y='302' width='26' height='22' rx='5'/><rect x='124' y='302' width='26' height='22' rx='5'/><rect x='50' y='338' width='26' height='22' rx='5'/><rect x='87' y='338' width='26' height='22' rx='5'/><rect x='124' y='338' width='26' height='22' rx='5'/></g><g fill='#9a978d'><rect x='50' y='380' width='45' height='20' rx='5'/><rect x='105' y='380' width='45' height='20' rx='5'/></g><g stroke='#2a2a2a' stroke-width='5' stroke-linecap='round'><path d='M62 440 H138 M62 458 H138 M62 476 H138'/></g><rect x='40' y='130' width='12' height='380' rx='6' fill='#ffffff' opacity='0.18'/></svg>",
+    "cien_personas": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 600 700\"><defs><pattern id='g' width='60' height='70' patternUnits='userSpaceOnUse'><circle cx='30' cy='20' r='12' fill='#ffffff'/><rect x='15' y='36' width='30' height='28' rx='13' fill='#ffffff'/></pattern></defs><rect width='600' height='700' fill='url(#g)'/></svg>",
+    "telefonos_112": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 600 840\"><defs><pattern id='t' width='60' height='70' patternUnits='userSpaceOnUse'><rect x='17' y='8' width='26' height='52' rx='7' fill='#1d1d2b'/><rect x='21' y='14' width='18' height='38' rx='4' fill='#5ab0ff'/></pattern></defs><rect width='600' height='770' fill='url(#t)'/><rect y='770' width='120' height='70' fill='url(#t)'/></svg>",
+    "cien_sin": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 600 700\"><defs><pattern id='s' width='60' height='70' patternUnits='userSpaceOnUse'><circle cx='30' cy='20' r='12' fill='#2fa35a'/><rect x='15' y='36' width='30' height='28' rx='13' fill='#2fa35a'/><rect x='38' y='40' width='12' height='22' rx='3' fill='#1d1d2b'/></pattern><pattern id='n' width='60' height='70' patternUnits='userSpaceOnUse'><circle cx='30' cy='20' r='12' fill='#9aa5b1'/><rect x='15' y='36' width='30' height='28' rx='13' fill='#9aa5b1'/></pattern></defs><rect width='600' height='560' fill='url(#s)'/><rect y='560' width='120' height='70' fill='url(#s)'/><rect x='120' y='560' width='480' height='70' fill='url(#n)'/><rect y='630' width='600' height='70' fill='url(#n)'/></svg>",
+    "curva": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 920 640\"><path d='M60 40 V580 H900' stroke='#ffffff' stroke-width='8' fill='none' opacity='0.5' stroke-linecap='round'/><path d='M60 580 C260 578 360 560 450 470 C560 340 640 150 900 90 L900 580 Z' fill='#6b4fe0' opacity='0.45'/><path d='M60 580 C260 578 360 560 450 470 C560 340 640 150 900 90' stroke='#a99bff' stroke-width='14' fill='none' stroke-linecap='round'/><circle cx='900' cy='90' r='18' fill='#ffffff'/></svg>"
+  },
+  "fuentes": [
+    { "dato": "9.200 millones de suscripciones móviles en 2025: 112 por cada 100 habitantes", "fuente": "UIT (ITU), Facts and Figures 2025, «Subscriptions» (itu.int/itu-d/reports/statistics/2025/10/15/ff25-subscriptions)" },
+    { "dato": "82 % de las personas de 10 años o más tiene celular (2025)", "fuente": "UIT (ITU), Facts and Figures 2025, «Mobile phone ownership»" },
+    { "dato": "Primera llamada desde un celular portátil: 3 de abril de 1973 (Martin Cooper, Motorola)", "fuente": "IEEE Spectrum, «First portable telephone call made 40 years ago today»" },
+    { "dato": "Motorola DynaTAC 8000X, a la venta en 1983: 1,75 libras (≈ 790 g), 3.995 dólares", "fuente": "TIME, ficha del Motorola DynaTAC 8000X" },
+    { "dato": "Batería de unos 30 minutos de conversación", "fuente": "NBC News, «First cell phone a true 'brick'»" },
+    { "dato": "Un teléfono inteligente actual pesa unos 170 a 230 g", "fuente": "fichas técnicas de fabricantes (p. ej., iPhone 16: 170 g; Galaxy S25 Ultra: 218 g)" }
+  ],
+  "nota": "Hay más líneas (suscripciones) que personas, no más aparatos por persona: mucha gente tiene dos o más chips y hay líneas de módems y relojes. La UIT 2026 ya estima unas 114 por cada 100 y 84 % de dueños; se usan las cifras de 2025, ya consolidadas. «Como 4 celulares de hoy» es aproximado (790 g ÷ ≈ 200 g). La curva de crecimiento es ilustrativa, no un gráfico con datos año por año. «Unos 40 años» va de 1983 (primer celular a la venta) a 2025."
+}

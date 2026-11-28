@@ -1,0 +1,337 @@
+{
+  "id": "explica-chicle-tragado",
+  "motor": "explica",
+  "titulo": "¿Y si te tragas un chicle?",
+  "categoria": "cuerpo",
+  "etiquetas": [
+    "mitos",
+    "cuerpo",
+    "salud",
+    "curiosidades",
+    "sabiasque"
+  ],
+  "descripcion": "El chicle tragado no se queda 7 años en tu estómago. Tu cuerpo no lo digiere, pero sí lo saca en pocos días.",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "liso",
+      "texto": "Te mintieron: tragarte un chicle no lo deja 7 años pegado en el estómago. Ni cerca.",
+      "voz": "Te mintieron: tragarte un chicle no lo deja siete años pegado en el estómago. Ni cerca.",
+      "clave": "mintieron",
+      "nota": "mito",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "chicle",
+          "x": 0.5,
+          "y": 0.52,
+          "ancho": 540,
+          "anim": "pop",
+          "idle": "latido",
+          "en": 0
+        },
+        {
+          "numero": "7 años",
+          "x": 0.5,
+          "y": 0.76,
+          "color": "#1d1d2b",
+          "en": "7"
+        },
+        {
+          "svg": "tache",
+          "x": 0.5,
+          "y": 0.76,
+          "ancho": 190,
+          "anim": "pop",
+          "sombra": false,
+          "en": "estómago"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Lo que sí es cierto: tu cuerpo no logra digerir la goma base, la parte elástica del chicle.",
+      "clave": "goma base",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "chicle",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 520,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": 0
+        },
+        {
+          "etiqueta": "no se digiere",
+          "x": 0.3,
+          "y": 0.36,
+          "a": [
+            0.42,
+            0.56
+          ],
+          "color": "#d93427",
+          "en": "digerir"
+        },
+        {
+          "etiqueta": "goma base",
+          "x": 0.72,
+          "y": 0.42,
+          "a": [
+            0.6,
+            0.6
+          ],
+          "color": "#6b4fe0",
+          "en": "goma"
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.64,
+          "radio": 300,
+          "en": "elástica"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Pero no se queda pegada: el estómago la empuja y viaja por el intestino como cualquier cosa.",
+      "clave": "intestino",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.65,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "digestivo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 560,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "svg": "chicle",
+          "x": 0.535,
+          "y": 0.565,
+          "ancho": 80,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": "estómago"
+        },
+        {
+          "svg": "chicle",
+          "x": 0.5,
+          "y": 0.675,
+          "ancho": 80,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "viaja"
+        },
+        {
+          "etiqueta": "estómago",
+          "x": 0.82,
+          "y": 0.42,
+          "a": [
+            0.58,
+            0.56
+          ],
+          "color": "#d93427",
+          "en": "estómago"
+        },
+        {
+          "etiqueta": "intestino",
+          "x": 0.2,
+          "y": 0.88,
+          "a": [
+            0.45,
+            0.68
+          ],
+          "color": "#c9774a",
+          "en": "intestino"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Y entre 2 y 5 días después sale por el baño, igual que todo lo demás.",
+      "voz": "Y entre dos y cinco días después sale por el baño, igual que todo lo demás.",
+      "clave": "días",
+      "camara": {
+        "de": [
+          0.45,
+          0.55,
+          1.08
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "inodoro",
+          "x": 0.5,
+          "y": 0.68,
+          "ancho": 380,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "reloj",
+          "x": 0.21,
+          "y": 0.4,
+          "ancho": 240,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "2"
+        },
+        {
+          "numero": "2 a 5 días",
+          "x": 0.64,
+          "y": 0.38,
+          "color": "#2f7fd2",
+          "en": "días"
+        },
+        {
+          "svg": "chicle",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 90,
+          "anim": "caer",
+          "en": "sale"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "¿Entonces es peligroso? Solo si tragas muchísimos seguido, sobre todo en niños: pueden formar un tapón. Es rarísimo.",
+      "clave": "rarísimo",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.6,
+          0.65,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "persona",
+          "x": 0.22,
+          "y": 0.66,
+          "ancho": 170,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "chicle",
+          "x": 0.64,
+          "y": 0.71,
+          "ancho": 170,
+          "anim": "pop",
+          "en": "muchísimos"
+        },
+        {
+          "svg": "chicle",
+          "x": 0.8,
+          "y": 0.72,
+          "ancho": 160,
+          "rot": 20,
+          "anim": "pop",
+          "en": "seguido"
+        },
+        {
+          "svg": "chicle",
+          "x": 0.72,
+          "y": 0.63,
+          "ancho": 160,
+          "rot": -15,
+          "anim": "pop",
+          "en": "niños"
+        },
+        {
+          "marca": true,
+          "x": 0.72,
+          "y": 0.69,
+          "radio": 190,
+          "en": "tapón"
+        },
+        {
+          "etiqueta": "muy, muy raro",
+          "x": 0.5,
+          "y": 0.88,
+          "color": "#2f9a4a",
+          "en": "rarísimo"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mito derribado. Síguenos y desmontamos el siguiente juntos.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "paleta": {
+    "a": "#ffb3d1",
+    "b": "#ff7a9e"
+  },
+  "dibujos": {
+    "chicle": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 240\"><path d=\"M40 150 C10 120 30 70 70 70 C80 30 140 20 160 50 C190 20 250 40 250 90 C290 100 290 170 250 185 C240 220 180 230 150 205 C120 230 60 220 60 190 C40 185 35 165 40 150 Z\" fill=\"#ff7eb6\"/><path d=\"M250 90 C290 100 290 170 250 185 C240 220 180 230 150 205 C170 200 230 190 240 160 C255 130 250 110 250 90 Z\" fill=\"#e45a98\"/><path d=\"M78 92 C90 70 120 62 142 72\" fill=\"none\" stroke=\"#ffc2dc\" stroke-width=\"12\" stroke-linecap=\"round\"/><circle cx=\"190\" cy=\"80\" r=\"9\" fill=\"#ffc2dc\"/><path d=\"M100 150 Q130 165 160 148\" fill=\"none\" stroke=\"#e45a98\" stroke-width=\"7\" stroke-linecap=\"round\"/></svg>",
+    "tache": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><g stroke-linecap=\"round\"><path d=\"M30 30 L170 170 M170 30 L30 170\" stroke=\"#7a1410\" stroke-width=\"40\"/><path d=\"M30 30 L170 170 M170 30 L30 170\" stroke=\"#ff3b30\" stroke-width=\"28\"/></g></svg>",
+    "digestivo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 700\"><path d=\"M200 0 H300 V40 Q430 50 450 140 V560 Q450 690 250 700 Q50 690 50 560 V140 Q70 50 200 40 Z\" fill=\"#f1c7a3\"/><path d=\"M300 40 Q430 50 450 140 V560 Q450 690 250 700 V40 Z\" fill=\"#e6b48e\"/><path d=\"M250 20 V200 Q250 230 240 250\" fill=\"none\" stroke=\"#d9707a\" stroke-width=\"26\" stroke-linecap=\"round\"/><path d=\"M230 250 C200 210 260 190 300 215 C370 250 380 330 320 360 C280 380 240 350 250 300 C255 280 240 265 230 250 Z\" fill=\"#ff8a96\"/><path d=\"M320 225 C370 260 370 330 320 360 C340 320 345 270 320 225 Z\" fill=\"#e2626f\"/><path d=\"M140 600 V420 Q140 395 165 395 H335 Q360 395 360 420 V600\" fill=\"none\" stroke=\"#c9774a\" stroke-width=\"30\" stroke-linecap=\"round\"/><path d=\"M300 370 Q320 400 290 420 Q180 420 190 450 Q200 470 300 465 Q320 490 290 505 Q190 505 195 530 Q205 555 300 548 Q315 575 250 580\" fill=\"none\" stroke=\"#f0959e\" stroke-width=\"20\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M140 600 Q150 640 250 640 V680\" fill=\"none\" stroke=\"#c9774a\" stroke-width=\"26\" stroke-linecap=\"round\"/></svg>",
+    "inodoro": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 380\"><rect x=\"40\" y=\"10\" width=\"220\" height=\"130\" rx=\"18\" fill=\"#f4f6fb\"/><rect x=\"200\" y=\"10\" width=\"60\" height=\"130\" rx=\"18\" fill=\"#d5dbe8\"/><rect x=\"70\" y=\"30\" width=\"44\" height=\"14\" rx=\"7\" fill=\"#aab3c4\"/><path d=\"M20 160 H280 Q280 280 180 300 H120 Q20 280 20 160 Z\" fill=\"#f4f6fb\"/><path d=\"M200 160 H280 Q280 280 180 300 H160 Q230 270 230 160 Z\" fill=\"#d5dbe8\"/><rect x=\"10\" y=\"145\" width=\"280\" height=\"26\" rx=\"13\" fill=\"#e2e6f0\"/><ellipse cx=\"150\" cy=\"158\" rx=\"110\" ry=\"10\" fill=\"#7fc4ec\"/><path d=\"M105 300 H195 L210 370 H90 Z\" fill=\"#e2e6f0\"/><path d=\"M170 300 H195 L210 370 H180 Z\" fill=\"#c4cbda\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "El chicle tragado no se queda siete años en el estómago; el cuerpo no digiere la goma base, pero el tubo digestivo la mueve y sale",
+      "fuente": "Mayo Clinic, «Swallowing gum: Is it harmful?» (mayoclinic.org/digestive-system/expert-answers/faq-20058446); Mayo Clinic News Network, «Does gum get stuck in your stomach?»"
+    },
+    {
+      "dato": "En promedio, lo que tragas tarda de 2 a 5 días en salir del cuerpo",
+      "fuente": "Mayo Clinic News Network (Dra. Elizabeth Rajan), «Mayo Clinic Minute: Does gum get stuck in your stomach?»"
+    },
+    {
+      "dato": "Tragar mucho chicle con frecuencia puede causar una obstrucción, sobre todo en niños (con estreñimiento); los casos publicados son raros",
+      "fuente": "Mayo Clinic, faq-20058446; Milov et al., «Chewing gum bezoars of the gastrointestinal tract», Pediatrics 102 (1998)"
+    }
+  ],
+  "nota": "Los 2 a 5 días son el tránsito promedio de cualquier cosa que comes; varía entre personas. El azúcar y los sabores del chicle sí se absorben; lo que no se digiere es la goma base. El dibujo del aparato digestivo es esquemático."
+}

@@ -1,0 +1,123 @@
+{
+  "id": "explica-bebes-por-segundo",
+  "motor": "explica",
+  "titulo": "4 bebés por segundo",
+  "categoria": "mundo",
+  "etiquetas": ["mundo", "poblacion", "sabiasque", "numeros", "curiosidades"],
+  "descripcion": "Cada segundo nacen unos 4 bebés y mueren unas 2 personas. En un minuto se llena un avión, en un día una ciudad y en un año más que todo Japón.",
+  "musica": "pop",
+  "paleta": { "a": "#ffb3c7", "b": "#ff7e9d" },
+  "escenas": [
+    {
+      "fondo": "liso",
+      "texto": "Cuenta conmigo: uno. En ese segundo nacieron unos 4 bebés en el mundo.",
+      "voz": "Cuenta conmigo: uno. En ese segundo nacieron unos cuatro bebés en el mundo.",
+      "clave": "4 bebés",
+      "camara": { "de": [0.5, 0.6, 1.1], "a": [0.5, 0.6, 1] },
+      "capas": [
+        { "svg": "reloj", "x": 0.5, "y": 0.43, "ancho": 300, "anim": "pop", "idle": "latido", "en": 0 },
+        { "numero": "1 s", "x": 0.5, "y": 0.31, "color": "#1d1d2b", "en": "uno" },
+        { "svg": "bebe", "x": 0.18, "y": 0.72, "ancho": 210, "anim": "pop", "idle": "balanceo", "en": "nacieron" },
+        { "svg": "bebe", "x": 0.39, "y": 0.75, "ancho": 210, "anim": "pop", "idle": "balanceo", "en": "unos" },
+        { "svg": "bebe", "x": 0.61, "y": 0.72, "ancho": 210, "anim": "pop", "idle": "balanceo", "en": "4" },
+        { "svg": "bebe", "x": 0.82, "y": 0.75, "ancho": 210, "anim": "pop", "idle": "balanceo", "en": "bebés" },
+        { "numero": "4 por segundo", "x": 0.5, "y": 0.9, "color": "#d93427", "en": "mundo" }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "En un minuto son unos 250: casi un avión de pasajeros lleno de bebés.",
+      "voz": "En un minuto son unos doscientos cincuenta: casi un avión de pasajeros lleno de bebés.",
+      "clave": "avión",
+      "nota": "1 minuto",
+      "camara": { "de": [0.35, 0.58, 1.12], "a": [0.6, 0.58, 1.05] },
+      "capas": [
+        { "svg": "avion", "x": 0.5, "y": 0.58, "ancho": 980, "anim": "slideIn", "desde": "izquierda", "idle": "flotar", "en": 0 },
+        { "numero": "250", "x": 0.5, "y": 0.36, "color": "#d93427", "tam": 90, "en": "250" },
+        { "svg": "bebe", "x": 0.3, "y": 0.8, "ancho": 150, "anim": "pop", "idle": "flotar", "en": "lleno" },
+        { "svg": "bebe", "x": 0.5, "y": 0.82, "ancho": 150, "anim": "pop", "idle": "flotar", "en": "de bebés" },
+        { "svg": "bebe", "x": 0.7, "y": 0.8, "ancho": 150, "anim": "pop", "idle": "flotar", "en": "bebés" }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "En un día, más de 360.000. Es como si cada día apareciera una ciudad nueva.",
+      "voz": "En un día, más de trescientos sesenta mil. Es como si cada día apareciera una ciudad nueva.",
+      "clave": "ciudad",
+      "camara": { "de": [0.5, 0.62, 1], "a": [0.5, 0.64, 1.1] },
+      "capas": [
+        { "svg": "casa", "x": 0.2, "y": 0.56, "ancho": 270, "anim": "pop", "en": 0 },
+        { "svg": "casa", "x": 0.5, "y": 0.53, "ancho": 300, "anim": "pop", "en": "como" },
+        { "svg": "casa", "x": 0.8, "y": 0.56, "ancho": 270, "anim": "pop", "en": "cada" },
+        { "svg": "casa", "x": 0.2, "y": 0.76, "ancho": 270, "anim": "pop", "en": "apareciera" },
+        { "svg": "casa", "x": 0.5, "y": 0.78, "ancho": 300, "anim": "pop", "en": "ciudad" },
+        { "svg": "casa", "x": 0.8, "y": 0.76, "ancho": 270, "anim": "pop", "en": "nueva" },
+        { "numero": "+360.000 al día", "x": 0.5, "y": 0.35, "color": "#d93427", "en": "360.000" }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Y en un año, unos 132 millones: más que toda la población de Japón.",
+      "voz": "Y en un año, unos ciento treinta y dos millones: más que toda la población de Japón.",
+      "clave": "Japón",
+      "nota": "123 millones",
+      "camara": { "de": [0.5, 0.62, 1.08], "a": [0.5, 0.6, 1] },
+      "capas": [
+        { "svg": "barras", "x": 0.5, "y": 0.64, "ancho": 760, "anim": "crecer", "en": 0 },
+        { "numero": "132 M", "x": 0.32, "y": 0.37, "color": "#ff5c8a", "en": "132" },
+        { "numero": "123 M", "x": 0.68, "y": 0.4, "color": "#d93427", "en": "Japón" },
+        { "etiqueta": "bebés en 1 año", "x": 0.3, "y": 0.9, "color": "#ff5c8a", "en": "año" },
+        { "etiqueta": "todo Japón", "x": 0.71, "y": 0.9, "color": "#d93427", "en": "población" },
+        { "svg": "bebe", "x": 0.32, "y": 0.47, "ancho": 130, "anim": "pop", "idle": "balanceo", "sombra": false, "en": "millones" }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Pero en ese mismo segundo también mueren unas 2 personas.",
+      "voz": "Pero en ese mismo segundo también mueren unas dos personas.",
+      "clave": "2 personas",
+      "camara": { "de": [0.5, 0.6, 1], "a": [0.5, 0.6, 1.08] },
+      "capas": [
+        { "svg": "bebe", "x": 0.28, "y": 0.62, "ancho": 300, "anim": "pop", "en": 0 },
+        { "numero": "+4", "x": 0.28, "y": 0.8, "color": "#2fa35a", "tam": 96, "en": 0.3 },
+        { "svg": "vela", "x": 0.72, "y": 0.6, "ancho": 170, "anim": "fade", "idle": "flotar", "en": "mueren" },
+        { "numero": "−2", "x": 0.72, "y": 0.8, "color": "#7a8296", "tam": 96, "en": "2" }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "4 que llegan, 2 que se van: cada segundo somos unos 2 más. Ya pasamos los 8.200 millones.",
+      "voz": "Cuatro que llegan, dos que se van: cada segundo somos unos dos más. Ya pasamos los ocho mil doscientos millones.",
+      "clave": "2 más",
+      "camara": { "de": [0.5, 0.6, 1.1], "a": [0.5, 0.6, 1] },
+      "capas": [
+        { "svg": "tierra", "x": 0.5, "y": 0.6, "ancho": 600, "anim": "pop", "idle": "flotar", "en": 0 },
+        { "numero": "+2 por segundo", "x": 0.5, "y": 0.35, "color": "#2fa35a", "en": "somos" },
+        { "numero": "8.200 millones", "x": 0.5, "y": 0.86, "color": "#1d1d2b", "en": "8.200" },
+        { "svg": "bebe", "x": 0.82, "y": 0.47, "ancho": 150, "anim": "pop", "idle": "flotar", "en": "llegan" },
+        { "svg": "bebe", "x": 0.18, "y": 0.72, "ancho": 150, "anim": "pop", "idle": "flotar", "en": "más" }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Mientras veías esto nacieron más de 100 bebés. Síguenos y bienvenidos todos.",
+      "voz": "Mientras veías esto nacieron más de cien bebés. Síguenos y bienvenidos todos.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "bebe": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 220 240\"><ellipse cx='110' cy='160' rx='82' ry='74' fill='#8fd0ff'/><path d='M40 150 Q110 110 180 150 Q170 200 110 230 Q50 200 40 150 Z' fill='#6cb8f0'/><path d='M60 170 Q110 140 160 170' stroke='#ffffff' stroke-width='8' fill='none' stroke-linecap='round' opacity='0.8'/><circle cx='110' cy='92' r='62' fill='#f7c9a3'/><path d='M150 60 Q172 90 166 120 Q160 80 130 60 Z' fill='#e9ad84'/><path d='M100 32 Q112 14 126 30 Q114 26 112 40' stroke='#7a4e2d' stroke-width='7' fill='none' stroke-linecap='round'/><g stroke='#5a3a24' stroke-width='6' fill='none' stroke-linecap='round'><path d='M80 92 Q90 100 100 92'/><path d='M120 92 Q130 100 140 92'/></g><circle cx='76' cy='114' r='11' fill='#ff9fb0' opacity='0.8'/><circle cx='144' cy='114' r='11' fill='#ff9fb0' opacity='0.8'/><path d='M102 122 Q110 130 118 122' stroke='#c0604e' stroke-width='6' fill='none' stroke-linecap='round'/></svg>",
+    "vela": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 160 360\"><path d='M80 20 Q118 70 104 100 Q96 118 80 118 Q64 118 56 100 Q44 70 80 20 Z' fill='#ffb230'/><path d='M80 60 Q98 88 92 102 Q88 112 80 112 Q72 112 68 102 Q62 88 80 60 Z' fill='#fff1a8'/><path d='M80 116 V136' stroke='#3a2a20' stroke-width='6' stroke-linecap='round'/><rect x='40' y='134' width='80' height='200' rx='12' fill='#f3ead6'/><rect x='92' y='134' width='28' height='200' fill='#dcd0b5'/><path d='M40 150 Q60 162 70 150 Q72 176 60 182' fill='#ffffff' opacity='0.7'/><ellipse cx='80' cy='338' rx='70' ry='16' fill='#9aa5b1'/></svg>",
+    "barras": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 700 600\"><rect x='20' y='572' width='660' height='22' rx='11' fill='#1d1d2b' opacity='0.35'/><rect x='90' y='70' width='220' height='502' rx='18' fill='#ff5c8a'/><rect x='240' y='70' width='70' height='502' fill='#e0436f'/><rect x='110' y='90' width='26' height='460' rx='12' fill='#ffffff' opacity='0.35'/><rect x='390' y='104' width='220' height='468' rx='18' fill='#ffffff'/><rect x='540' y='104' width='70' height='468' fill='#e4e8ee'/><circle cx='500' cy='338' r='62' fill='#d93427'/></svg>"
+  },
+  "fuentes": [
+    { "dato": "Unos 132 millones de nacimientos en 2024 (≈ 4,2 por segundo, ≈ 250 por minuto, ≈ 362.000 al día)", "fuente": "ONU, World Population Prospects 2024 (vía StatisticsTimes, «World death and birth rate»); cálculo: 132,4 M ÷ 365,25 días" },
+    { "dato": "Unos 62 millones de muertes en 2024 (≈ 2 por segundo)", "fuente": "ONU, World Population Prospects 2024 (vía StatisticsTimes); cálculo: 62,4 M ÷ 31,56 M s" },
+    { "dato": "Crecimiento neto ≈ 2,2 personas por segundo", "fuente": "cálculo: 4,2 − 2,0" },
+    { "dato": "Población mundial: 8.200 millones en 2024", "fuente": "ONU, World Population Prospects 2024: Summary of Results" },
+    { "dato": "Japón: unos 123 millones de habitantes (censo del 1 de octubre de 2025)", "fuente": "Ministerio del Interior de Japón, resultados preliminares del censo 2025 (vía People's Daily y nippon.com)" },
+    { "dato": "Un avión grande de pasajeros lleva unos 240 a 300 asientos (p. ej., Boeing 787-8, ≈ 242 en dos clases)", "fuente": "Boeing, ficha técnica del 787" }
+  ],
+  "nota": "Los nacimientos y muertes son estimaciones y proyecciones de la ONU para 2024; cambian un poco cada año. «Casi un avión lleno» compara con un avión grande de unos 250 asientos. Las casas, las barras y los bebés son ilustrativos (las barras sí guardan la proporción 132 : 123). La frase del cierre vale porque el video dura más de 25 s."
+}

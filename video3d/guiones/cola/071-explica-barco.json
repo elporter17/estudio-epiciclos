@@ -1,0 +1,390 @@
+{
+  "id": "explica-barco-hierro",
+  "motor": "explica",
+  "titulo": "¿Cómo flota un barco de hierro?",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "ciencia",
+    "fisica",
+    "barcos",
+    "arquimedes",
+    "sabiasque"
+  ],
+  "descripcion": "Un clavo se hunde, pero un barco de miles de toneladas flota. El truco tiene más de 2.200 años y se llama principio de Arquímedes.",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "cielo",
+      "texto": "Tira un clavo al agua y se hunde. Pero un barco con miles de toneladas de hierro flota. ¿Cómo?",
+      "clave": "flota",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "agua_corte",
+          "x": 0.5,
+          "y": 0.77,
+          "ancho": 1080,
+          "anim": "ninguna",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "clavo",
+          "x": 0.13,
+          "y": 0.88,
+          "ancho": 70,
+          "rot": 75,
+          "anim": "caer",
+          "en": "clavo"
+        },
+        {
+          "svg": "barco",
+          "x": 0.56,
+          "y": 0.522,
+          "ancho": 560,
+          "anim": "slideIn",
+          "desde": "derecha",
+          "idle": "balanceo",
+          "en": "barco"
+        },
+        {
+          "marca": true,
+          "x": 0.56,
+          "y": 0.5,
+          "radio": 300,
+          "en": "flota"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "El secreto lo descubrió Arquímedes hace más de 2.200 años, según cuentan, en una bañera.",
+      "voz": "El secreto lo descubrió Arquímedes hace más de dos mil doscientos años, según cuentan, en una bañera.",
+      "clave": "Arquímedes",
+      "nota": "sabio griego",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tina",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 860,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "numero": "hace +2.200 años",
+          "x": 0.5,
+          "y": 0.38,
+          "color": "#6b4fe0",
+          "tam": 60,
+          "en": "2.200"
+        },
+        {
+          "etiqueta": "¡Eureka!",
+          "x": 0.24,
+          "y": 0.48,
+          "color": "#d9532b",
+          "a": [
+            0.32,
+            0.56
+          ],
+          "en": "bañera"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Todo lo que entra al agua la aparta. Y esa agua lo empuja hacia arriba: se llama empuje.",
+      "clave": "empuje",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "agua_corte",
+          "x": 0.5,
+          "y": 0.77,
+          "ancho": 1080,
+          "anim": "fade",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "barco",
+          "x": 0.5,
+          "y": 0.522,
+          "ancho": 560,
+          "anim": "caer",
+          "idle": "flotar",
+          "en": "entra"
+        },
+        {
+          "etiqueta": "agua apartada",
+          "x": 0.22,
+          "y": 0.7,
+          "color": "#2f7fd2",
+          "a": [
+            0.3,
+            0.59
+          ],
+          "en": "aparta"
+        },
+        {
+          "svg": "flechas_arriba",
+          "x": 0.5,
+          "y": 0.73,
+          "ancho": 520,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "empuja"
+        },
+        {
+          "etiqueta": "empuje",
+          "x": 0.8,
+          "y": 0.84,
+          "color": "#e09a17",
+          "a": [
+            0.66,
+            0.74
+          ],
+          "en": "llama"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "El barco deja de bajar justo cuando el agua que aparta pesa lo mismo que él.",
+      "clave": "pesa",
+      "nota": "principio de Arquímedes",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "balanza",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 900,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "barco",
+          "x": 0.229,
+          "y": 0.628,
+          "ancho": 240,
+          "anim": "caer",
+          "en": "barco"
+        },
+        {
+          "svg": "cubo_agua",
+          "x": 0.771,
+          "y": 0.614,
+          "ancho": 190,
+          "anim": "caer",
+          "en": "aparta"
+        },
+        {
+          "numero": "mismo peso",
+          "x": 0.5,
+          "y": 0.4,
+          "color": "#1d1d2b",
+          "tam": 60,
+          "en": "mismo"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "¿Y cómo pesa tan poco para su tamaño? Por dentro es casi todo aire: una cáscara delgada de hierro rodeando un hueco enorme.",
+      "clave": "aire",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1
+        ],
+        "a": [
+          0.45,
+          0.62,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "barco_corte",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 920,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "etiqueta": "aire",
+          "x": 0.3,
+          "y": 0.82,
+          "color": "#2f7fd2",
+          "a": [
+            0.36,
+            0.665
+          ],
+          "en": "aire"
+        },
+        {
+          "etiqueta": "hierro delgado",
+          "x": 0.7,
+          "y": 0.85,
+          "color": "#d9532b",
+          "a": [
+            0.82,
+            0.69
+          ],
+          "en": "delgada"
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.66,
+          "radio": 150,
+          "en": "hueco"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Aplasta ese hierro en un bloque macizo: es casi 8 veces más denso que el agua y se va directo al fondo.",
+      "voz": "Aplasta ese hierro en un bloque macizo: es casi ocho veces más denso que el agua y se va directo al fondo.",
+      "clave": "macizo",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.62,
+          0.72,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "agua_corte",
+          "x": 0.5,
+          "y": 0.77,
+          "ancho": 1080,
+          "anim": "ninguna",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "barco",
+          "x": 0.27,
+          "y": 0.533,
+          "ancho": 400,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": "hierro"
+        },
+        {
+          "svg": "bloque_hierro",
+          "x": 0.7,
+          "y": 0.9,
+          "ancho": 260,
+          "anim": "caer",
+          "en": "bloque"
+        },
+        {
+          "numero": "≈ 8 × agua",
+          "x": 0.7,
+          "y": 0.4,
+          "color": "#4c555e",
+          "tam": 60,
+          "en": "8"
+        },
+        {
+          "marca": true,
+          "x": 0.7,
+          "y": 0.9,
+          "radio": 170,
+          "en": "fondo"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías? Síguenos para más física escondida en las cosas de todos los días.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "agua_corte": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1080 900\"><defs><linearGradient id=\"a\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#3fb0ee\"/><stop offset=\"1\" stop-color=\"#0c3d70\"/></linearGradient></defs>\n<path d=\"M0 40 Q135 10 270 40 T540 40 T810 40 T1080 40 V900 H0 Z\" fill=\"url(#a)\"/>\n<path d=\"M0 40 Q135 10 270 40 T540 40 T810 40 T1080 40\" fill=\"none\" stroke=\"#b5ecff\" stroke-width=\"12\"/>\n<path d=\"M90 190 q40 -14 80 0 t80 0 M690 260 q40 -14 80 0 t80 0 M330 470 q40 -14 80 0 t80 0 M760 600 q40 -14 80 0 t80 0\" stroke=\"#8fd8ff\" stroke-width=\"7\" fill=\"none\" opacity=\"0.45\"/>\n<path d=\"M0 830 Q200 800 420 828 T820 822 T1080 830 V900 H0 Z\" fill=\"#d9b779\"/><path d=\"M0 860 Q260 840 540 862 T1080 858 V900 H0 Z\" fill=\"#c29b5c\"/></svg>",
+    "barco": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 320\"><rect x=\"330\" y=\"96\" width=\"160\" height=\"78\" rx=\"8\" fill=\"#f4f6f8\"/><rect x=\"452\" y=\"96\" width=\"38\" height=\"78\" fill=\"#d5dbe1\"/>\n<g fill=\"#3b6ea5\"><rect x=\"346\" y=\"114\" width=\"26\" height=\"20\" rx=\"4\"/><rect x=\"384\" y=\"114\" width=\"26\" height=\"20\" rx=\"4\"/><rect x=\"422\" y=\"114\" width=\"26\" height=\"20\" rx=\"4\"/></g>\n<rect x=\"380\" y=\"34\" width=\"44\" height=\"64\" fill=\"#e9b52c\"/><rect x=\"380\" y=\"34\" width=\"44\" height=\"14\" fill=\"#2a2a33\"/><rect x=\"408\" y=\"48\" width=\"16\" height=\"50\" fill=\"#c9971f\"/>\n<rect x=\"150\" y=\"128\" width=\"130\" height=\"46\" rx=\"6\" fill=\"#e07b39\"/><rect x=\"150\" y=\"128\" width=\"130\" height=\"12\" fill=\"#f3a364\"/><rect x=\"186\" y=\"104\" width=\"64\" height=\"26\" rx=\"4\" fill=\"#3b9dd8\"/>\n<path d=\"M30 170 L570 170 L510 302 Q505 312 492 312 L108 312 Q95 312 90 302 Z\" fill=\"#24364f\"/>\n<path d=\"M30 170 L570 170 L548 218 L52 218 Z\" fill=\"#f4f6f8\"/><path d=\"M52 218 L548 218 L540 234 L60 234 Z\" fill=\"#d23c35\"/>\n<path d=\"M60 234 L540 234 L510 302 Q505 312 492 312 L108 312 Q95 312 90 302 Z\" fill=\"#b8322c\"/><path d=\"M420 234 L540 234 L510 302 Q505 312 492 312 L440 312 Z\" fill=\"#94261f\"/>\n<g fill=\"#24364f\"><circle cx=\"110\" cy=\"194\" r=\"7\"/><circle cx=\"150\" cy=\"194\" r=\"7\"/><circle cx=\"190\" cy=\"194\" r=\"7\"/></g></svg>",
+    "clavo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 240\"><rect x=\"4\" y=\"0\" width=\"52\" height=\"16\" rx=\"5\" fill=\"#9aa4ae\"/><rect x=\"4\" y=\"0\" width=\"52\" height=\"6\" rx=\"3\" fill=\"#cfd6dc\"/>\n<path d=\"M20 16 H40 V200 L30 238 L20 200 Z\" fill=\"#8b95a0\"/><path d=\"M30 16 H40 V200 L30 238 Z\" fill=\"#6c7680\"/><rect x=\"23\" y=\"24\" width=\"5\" height=\"160\" rx=\"2\" fill=\"#c8d0d8\"/></svg>",
+    "tina": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 460\"><g fill=\"#3fb0ee\"><path d=\"M96 120 C60 60 40 50 20 70 C50 80 70 110 96 140 Z\"/><path d=\"M640 120 C670 60 700 50 712 72 C684 82 662 112 640 140 Z\"/>\n<circle cx=\"70\" cy=\"40\" r=\"14\"/><circle cx=\"660\" cy=\"34\" r=\"12\"/><circle cx=\"130\" cy=\"20\" r=\"10\"/><circle cx=\"590\" cy=\"24\" r=\"9\"/></g>\n<path d=\"M70 150 Q360 100 650 150 Q640 128 600 128 L120 128 Q80 128 70 150 Z\" fill=\"#8fd8ff\"/>\n<path d=\"M60 150 H660 Q660 330 520 360 H200 Q60 330 60 150 Z\" fill=\"#f4f6f8\"/><path d=\"M500 150 H660 Q660 330 520 360 H470 Q590 300 580 150 Z\" fill=\"#d5dbe1\"/>\n<rect x=\"40\" y=\"136\" width=\"640\" height=\"26\" rx=\"13\" fill=\"#e9eef2\"/><rect x=\"40\" y=\"136\" width=\"640\" height=\"8\" rx=\"4\" fill=\"#ffffff\"/>\n<path d=\"M90 140 Q360 112 630 140\" stroke=\"#3fb0ee\" stroke-width=\"16\" fill=\"none\" stroke-linecap=\"round\"/>\n<g fill=\"#e9b52c\"><path d=\"M180 350 L160 420 Q160 432 176 432 L200 432 L214 356 Z\"/><path d=\"M540 350 L560 420 Q560 432 544 432 L520 432 L506 356 Z\"/></g>\n<g fill=\"#c9971f\"><circle cx=\"180\" cy=\"430\" r=\"14\"/><circle cx=\"540\" cy=\"430\" r=\"14\"/></g></svg>",
+    "flechas_arriba": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 300\"><g transform=\"translate(80 30)\"><rect x=\"-22\" y=\"80\" width=\"44\" height=\"170\" rx=\"12\" fill=\"#ffcf3f\"/><path d=\"M-62 96 L0 0 L62 96 Z\" fill=\"#ffcf3f\"/><rect x=\"2\" y=\"80\" width=\"20\" height=\"170\" rx=\"8\" fill=\"#f0a91e\"/><path d=\"M0 0 L62 96 L0 96 Z\" fill=\"#f0a91e\"/></g><g transform=\"translate(250 0)\"><rect x=\"-22\" y=\"80\" width=\"44\" height=\"200\" rx=\"12\" fill=\"#ffcf3f\"/><path d=\"M-62 96 L0 0 L62 96 Z\" fill=\"#ffcf3f\"/><rect x=\"2\" y=\"80\" width=\"20\" height=\"200\" rx=\"8\" fill=\"#f0a91e\"/><path d=\"M0 0 L62 96 L0 96 Z\" fill=\"#f0a91e\"/></g><g transform=\"translate(420 30)\"><rect x=\"-22\" y=\"80\" width=\"44\" height=\"170\" rx=\"12\" fill=\"#ffcf3f\"/><path d=\"M-62 96 L0 0 L62 96 Z\" fill=\"#ffcf3f\"/><rect x=\"2\" y=\"80\" width=\"20\" height=\"170\" rx=\"8\" fill=\"#f0a91e\"/><path d=\"M0 0 L62 96 L0 96 Z\" fill=\"#f0a91e\"/></g></svg>",
+    "balanza": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 560\"><path d=\"M330 540 L470 540 L440 500 L360 500 Z\" fill=\"#6b4a2e\"/><rect x=\"384\" y=\"150\" width=\"32\" height=\"360\" rx=\"10\" fill=\"#8a6440\"/><rect x=\"400\" y=\"150\" width=\"16\" height=\"360\" fill=\"#6b4a2e\"/>\n<rect x=\"70\" y=\"140\" width=\"660\" height=\"22\" rx=\"11\" fill=\"#c9a24a\"/><rect x=\"70\" y=\"140\" width=\"660\" height=\"8\" rx=\"4\" fill=\"#e7c86f\"/><circle cx=\"400\" cy=\"151\" r=\"26\" fill=\"#e7c86f\"/><circle cx=\"400\" cy=\"151\" r=\"10\" fill=\"#8a6440\"/>\n<g stroke=\"#5a4636\" stroke-width=\"5\"><path d=\"M140 160 L80 330 M140 160 L200 330 M660 160 L600 330 M660 160 L720 330\"/></g>\n<g fill=\"#c9a24a\"><path d=\"M60 330 H220 Q210 372 140 376 Q70 372 60 330 Z\"/><path d=\"M580 330 H740 Q730 372 660 376 Q590 372 580 330 Z\"/></g>\n<g fill=\"#e7c86f\"><rect x=\"56\" y=\"324\" width=\"168\" height=\"12\" rx=\"6\"/><rect x=\"576\" y=\"324\" width=\"168\" height=\"12\" rx=\"6\"/></g></svg>",
+    "cubo_agua": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 210\"><path d=\"M100 10 L190 50 L100 90 L10 50 Z\" fill=\"#8fd8ff\"/><path d=\"M10 50 L100 90 L100 200 L10 160 Z\" fill=\"#3fb0ee\"/><path d=\"M190 50 L100 90 L100 200 L190 160 Z\" fill=\"#1f86c8\"/>\n<path d=\"M30 70 L30 130\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linecap=\"round\" opacity=\"0.6\"/><path d=\"M100 10 L190 50 L100 90 L10 50 Z\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"4\" opacity=\"0.7\"/></svg>",
+    "barco_corte": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 470\"><rect x=\"440\" y=\"80\" width=\"200\" height=\"124\" rx=\"10\" fill=\"#f4f6f8\"/><rect x=\"590\" y=\"80\" width=\"50\" height=\"124\" fill=\"#d5dbe1\"/>\n<g fill=\"#3b6ea5\"><rect x=\"460\" y=\"104\" width=\"34\" height=\"26\" rx=\"5\"/><rect x=\"510\" y=\"104\" width=\"34\" height=\"26\" rx=\"5\"/><rect x=\"560\" y=\"104\" width=\"34\" height=\"26\" rx=\"5\"/></g>\n<rect x=\"500\" y=\"20\" width=\"54\" height=\"62\" fill=\"#e9b52c\"/><rect x=\"500\" y=\"20\" width=\"54\" height=\"14\" fill=\"#2a2a33\"/>\n<path d=\"M30 200 L770 200 L690 440 Q684 456 668 456 L132 456 Q116 456 110 440 Z\" fill=\"#24364f\"/>\n<path d=\"M52 214 L748 214 L676 430 Q672 440 662 440 L138 440 Q128 440 124 430 Z\" fill=\"#e8f4ff\"/>\n<path d=\"M52 214 L748 214 L740 238 L60 238 Z\" fill=\"#d4e7f7\"/>\n<g stroke=\"#9fb8cf\" stroke-width=\"6\" stroke-dasharray=\"14 10\"><path d=\"M260 238 V440 M400 238 V440 M540 238 V440\"/><path d=\"M100 340 H700\"/></g>\n<g fill=\"#ffffff\" opacity=\"0.9\"><circle cx=\"190\" cy=\"290\" r=\"16\"/><circle cx=\"330\" cy=\"390\" r=\"12\"/><circle cx=\"470\" cy=\"300\" r=\"18\"/><circle cx=\"610\" cy=\"380\" r=\"13\"/><circle cx=\"200\" cy=\"400\" r=\"10\"/></g>\n<path d=\"M30 200 L770 200\" stroke=\"#d23c35\" stroke-width=\"12\"/></svg>",
+    "bloque_hierro": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 250\"><path d=\"M150 10 L290 70 L150 130 L10 70 Z\" fill=\"#9aa4ae\"/><path d=\"M10 70 L150 130 L150 240 L10 180 Z\" fill=\"#6c7680\"/><path d=\"M290 70 L150 130 L150 240 L290 180 Z\" fill=\"#4c555e\"/>\n<path d=\"M60 74 L150 112 L240 74\" stroke=\"#c8d0d8\" stroke-width=\"6\" fill=\"none\" opacity=\"0.7\"/><circle cx=\"60\" cy=\"140\" r=\"6\" fill=\"#58616a\"/><circle cx=\"100\" cy=\"170\" r=\"5\" fill=\"#58616a\"/><circle cx=\"220\" cy=\"150\" r=\"6\" fill=\"#3a4148\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Principio de Arquímedes: un cuerpo sumergido recibe un empuje hacia arriba igual al peso del fluido que desaloja; un barco flota cuando desaloja agua que pesa lo mismo que él",
+      "fuente": "Encyclopaedia Britannica, «Archimedes’ principle» (britannica.com/science/Archimedes-principle); NASA Glenn Research Center, «Buoyancy» (grc.nasa.gov)"
+    },
+    {
+      "dato": "Arquímedes de Siracusa vivió hacia 287–212 a. C. (más de 2.200 años); la anécdota de la bañera y el «¡Eureka!» la cuenta Vitruvio y se considera leyenda",
+      "fuente": "Encyclopaedia Britannica, «Archimedes» (britannica.com/biography/Archimedes)"
+    },
+    {
+      "dato": "Densidad del hierro ≈ 7,87 g/cm³, casi 8 veces la del agua (1 g/cm³)",
+      "fuente": "Royal Society of Chemistry, Periodic Table: Iron (rsc.org/periodic-table/element/26/iron)"
+    }
+  ],
+  "nota": "Los barcos modernos son de acero (hierro con un poco de carbono), con densidad parecida (~7,85 g/cm³); se dice «hierro» para simplificar. La bañera y el «¡Eureka!» se marcan como anécdota («según cuentan»): Vitruvio lo relata dos siglos después y no está comprobado. El barco también lleva carga, motores y combustible; lo que importa es su peso total frente al agua que aparta. Dibujos esquemáticos, no a escala."
+}

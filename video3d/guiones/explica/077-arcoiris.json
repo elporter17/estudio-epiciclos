@@ -1,0 +1,512 @@
+{
+  "id": "explica-arcoiris-curvo",
+  "motor": "explica",
+  "titulo": "¿Por qué el arcoíris es curvo?",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "ciencia",
+    "arcoiris",
+    "luz",
+    "fisica",
+    "curiosidades"
+  ],
+  "descripcion": "Cada gota de lluvia devuelve los colores a unos 42° del punto opuesto al Sol. El resultado es un círculo... y el suelo se come la mitad.",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "cielo",
+      "texto": "¿Alguna vez viste un arcoíris recto? No existe. Y la razón se esconde en cada gota de lluvia.",
+      "clave": "recto",
+      "camara": {
+        "de": [
+          0.5,
+          0.56,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.56,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "arcoiris",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 920,
+          "anim": "fade",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "colinas",
+          "x": 0.5,
+          "y": 0.845,
+          "ancho": 1080,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "sombra": false,
+          "en": 0.2
+        },
+        {
+          "numero": "¿recto?",
+          "x": 0.5,
+          "y": 0.36,
+          "color": "#1d1d2b",
+          "en": "recto"
+        },
+        {
+          "svg": "tache",
+          "x": 0.5,
+          "y": 0.36,
+          "ancho": 140,
+          "anim": "pop",
+          "sombra": false,
+          "en": "existe"
+        },
+        {
+          "svg": "gota",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 130,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "gota"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "La luz del Sol entra en la gota y se dobla un poquito: eso se llama refracción.",
+      "clave": "refracción",
+      "camara": {
+        "de": [
+          0.45,
+          0.55,
+          1
+        ],
+        "a": [
+          0.4,
+          0.55,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "gota_grande",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 900,
+          "sombra": false,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "sol",
+          "x": 0.09,
+          "y": 0.5,
+          "ancho": 170,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "Sol"
+        },
+        {
+          "svg": "rayo_luz",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 900,
+          "sombra": false,
+          "anim": "fade",
+          "en": "entra"
+        },
+        {
+          "etiqueta": "se dobla",
+          "x": 0.34,
+          "y": 0.37,
+          "a": [
+            0.343,
+            0.512
+          ],
+          "color": "#6b4fe0",
+          "en": "dobla"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Rebota en el fondo de la gota y sale separada en colores, como en un prisma.",
+      "clave": "colores",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1.1
+        ],
+        "a": [
+          0.4,
+          0.66,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "gota_grande",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 900,
+          "sombra": false,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "rayo_luz",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 900,
+          "sombra": false,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "rebote",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 900,
+          "sombra": false,
+          "anim": "fade",
+          "en": "Rebota"
+        },
+        {
+          "svg": "abanico",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 900,
+          "sombra": false,
+          "anim": "fade",
+          "en": "colores"
+        },
+        {
+          "etiqueta": "rebote",
+          "x": 0.82,
+          "y": 0.86,
+          "a": [
+            0.772,
+            0.705
+          ],
+          "color": "#1d1d2b",
+          "en": "fondo"
+        },
+        {
+          "etiqueta": "colores",
+          "x": 0.32,
+          "y": 0.92,
+          "a": [
+            0.14,
+            0.83
+          ],
+          "color": "#d93427",
+          "en": "separada"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Lo clave: cada color sale con un ángulo fijo, unos 42 grados desde el punto opuesto al Sol.",
+      "voz": "Lo clave: cada color sale con un ángulo fijo, unos cuarenta y dos grados desde el punto opuesto al Sol.",
+      "clave": "ángulo",
+      "nota": "siempre el mismo",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1
+        ],
+        "a": [
+          0.45,
+          0.6,
+          1.08
+        ]
+      },
+      "capas": [
+        {
+          "svg": "geometria",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 1000,
+          "anim": "fade",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "sol",
+          "x": 0.08,
+          "y": 0.6,
+          "ancho": 150,
+          "anim": "pop",
+          "idle": "latido",
+          "en": 0.2
+        },
+        {
+          "svg": "persona",
+          "x": 0.25,
+          "y": 0.716,
+          "ancho": 140,
+          "anim": "pop",
+          "en": 0.3
+        },
+        {
+          "svg": "gota",
+          "x": 0.778,
+          "y": 0.39,
+          "ancho": 80,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "color"
+        },
+        {
+          "numero": "42°",
+          "x": 0.53,
+          "y": 0.625,
+          "color": "#d93427",
+          "tam": 54,
+          "en": "42"
+        },
+        {
+          "etiqueta": "sombra de tu cabeza",
+          "x": 0.7,
+          "y": 0.8,
+          "a": [
+            0.87,
+            0.665
+          ],
+          "color": "#1d1d2b",
+          "en": "opuesto"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Y todas las gotas que cumplen ese ángulo forman un círculo alrededor de ese punto.",
+      "clave": "círculo",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "arcoiris_completo",
+          "x": 0.5,
+          "y": 0.55,
+          "ancho": 760,
+          "anim": "pop",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.55,
+          "radio": 46,
+          "en": "punto"
+        },
+        {
+          "numero": "42°",
+          "x": 0.5,
+          "y": 0.47,
+          "color": "#d93427",
+          "tam": 50,
+          "en": "ángulo"
+        },
+        {
+          "etiqueta": "punto opuesto al Sol",
+          "x": 0.5,
+          "y": 0.86,
+          "a": [
+            0.5,
+            0.56
+          ],
+          "color": "#1d1d2b",
+          "en": "alrededor"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Pero el suelo se mete en medio y tapa la parte de abajo. Por eso ves solo un arco.",
+      "clave": "suelo",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1
+        ],
+        "a": [
+          0.5,
+          0.52,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "arcoiris_completo",
+          "x": 0.5,
+          "y": 0.55,
+          "ancho": 760,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "suelo",
+          "x": 0.5,
+          "y": 0.79,
+          "ancho": 1080,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "sombra": false,
+          "en": "suelo"
+        },
+        {
+          "svg": "persona",
+          "x": 0.2,
+          "y": 0.71,
+          "ancho": 130,
+          "anim": "pop",
+          "en": "ves"
+        },
+        {
+          "etiqueta": "parte escondida",
+          "x": 0.5,
+          "y": 0.86,
+          "a": [
+            0.5,
+            0.74
+          ],
+          "color": "#d93427",
+          "en": "tapa"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "En cambio, desde un avión, con lluvia abajo y el Sol a tu espalda, se puede ver el círculo entero.",
+      "clave": "avión",
+      "nota": "rara vez, pero pasa",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1.08
+        ]
+      },
+      "capas": [
+        {
+          "svg": "avion",
+          "x": 0.5,
+          "y": 0.33,
+          "ancho": 400,
+          "anim": "slideIn",
+          "desde": "izquierda",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "svg": "lluvia",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 480,
+          "anim": "fade",
+          "sombra": false,
+          "en": "lluvia"
+        },
+        {
+          "svg": "arcoiris_completo",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 600,
+          "anim": "pop",
+          "sombra": false,
+          "en": "ver"
+        },
+        {
+          "svg": "nube",
+          "x": 0.16,
+          "y": 0.87,
+          "ancho": 300,
+          "anim": "fade",
+          "idle": "flotar",
+          "en": 0.3
+        },
+        {
+          "svg": "nube",
+          "x": 0.84,
+          "y": 0.89,
+          "ancho": 280,
+          "anim": "fade",
+          "idle": "flotar",
+          "en": 0.5
+        },
+        {
+          "etiqueta": "círculo entero",
+          "x": 0.78,
+          "y": 0.44,
+          "a": [
+            0.74,
+            0.56
+          ],
+          "color": "#6b4fe0",
+          "en": "entero"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Lo sabías o te voló la cabeza? Cuéntanos y síguenos para más.",
+      "clave": "síguenos",
+      "capas": []
+    }
+  ],
+  "paleta": {
+    "a": "#8fd3ff",
+    "b": "#4a8fd8"
+  },
+  "dibujos": {
+    "arcoiris": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 520\"><path d=\"M30 510 A470 470 0 0 1 970 510\" fill=\"none\" stroke=\"#e8402f\" stroke-width=\"23\"/><path d=\"M52 510 A448 448 0 0 1 948 510\" fill=\"none\" stroke=\"#f58a25\" stroke-width=\"23\"/><path d=\"M74 510 A426 426 0 0 1 926 510\" fill=\"none\" stroke=\"#f7d03c\" stroke-width=\"23\"/><path d=\"M96 510 A404 404 0 0 1 904 510\" fill=\"none\" stroke=\"#4cb85a\" stroke-width=\"23\"/><path d=\"M118 510 A382 382 0 0 1 882 510\" fill=\"none\" stroke=\"#3a8fe0\" stroke-width=\"23\"/><path d=\"M140 510 A360 360 0 0 1 860 510\" fill=\"none\" stroke=\"#7a4fd6\" stroke-width=\"23\"/></svg>",
+    "arcoiris_completo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 1000\"><g opacity=\"0.95\"><circle cx=\"500\" cy=\"500\" r=\"485\" fill=\"none\" stroke=\"#e8402f\" stroke-width=\"23\"/><circle cx=\"500\" cy=\"500\" r=\"463\" fill=\"none\" stroke=\"#f58a25\" stroke-width=\"23\"/><circle cx=\"500\" cy=\"500\" r=\"441\" fill=\"none\" stroke=\"#f7d03c\" stroke-width=\"23\"/><circle cx=\"500\" cy=\"500\" r=\"419\" fill=\"none\" stroke=\"#4cb85a\" stroke-width=\"23\"/><circle cx=\"500\" cy=\"500\" r=\"397\" fill=\"none\" stroke=\"#3a8fe0\" stroke-width=\"23\"/><circle cx=\"500\" cy=\"500\" r=\"375\" fill=\"none\" stroke=\"#7a4fd6\" stroke-width=\"23\"/></g></svg>",
+    "colinas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1080 600\"><path d=\"M0 120 Q260 20 520 110 T1080 80 V600 H0 Z\" fill=\"#5cb85c\"/><path d=\"M0 260 Q300 170 640 240 T1080 220 V600 H0 Z\" fill=\"#43a047\"/><path d=\"M0 420 Q350 360 700 410 T1080 400 V600 H0 Z\" fill=\"#2e7d32\"/></svg>",
+    "suelo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1080 900\"><path d=\"M0 60 Q270 0 540 50 T1080 40 V900 H0 Z\" fill=\"#5cb85c\"/><path d=\"M0 260 Q320 190 660 250 T1080 240 V900 H0 Z\" fill=\"#43a047\"/><path d=\"M0 520 Q380 460 740 510 T1080 500 V900 H0 Z\" fill=\"#2e7d32\"/></svg>",
+    "gota_grande": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 620\"><path d=\"M300 40 C330 110 430 200 467 300 A170 170 0 1 1 133 300 C170 200 270 110 300 40 Z\" fill=\"#9fd8ff\" fill-opacity=\"0.55\" stroke=\"#e6f6ff\" stroke-width=\"8\"/><path d=\"M190 300 A120 120 0 0 1 250 220\" fill=\"none\" stroke=\"#ffffff\" stroke-opacity=\"0.7\" stroke-width=\"14\" stroke-linecap=\"round\"/></svg>",
+    "rayo_luz": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 620\"><path d=\"M0 240 H162\" stroke=\"#fffbe0\" stroke-width=\"16\" stroke-linecap=\"round\"/><path d=\"M162 240 L430 449\" stroke=\"#fffbe0\" stroke-width=\"12\" stroke-linecap=\"round\"/></svg>",
+    "rebote": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 620\"><path d=\"M430 449 L190 470\" stroke=\"#fffbe0\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-dasharray=\"26 14\"/><circle cx=\"430\" cy=\"449\" r=\"14\" fill=\"#ffd84a\"/></svg>",
+    "abanico": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 620\"><g stroke-width=\"11\" stroke-linecap=\"round\"><path d=\"M190 470 L4 540\" stroke=\"#e8402f\"/><path d=\"M190 470 L8 562\" stroke=\"#f58a25\"/><path d=\"M190 470 L14 584\" stroke=\"#f7d03c\"/><path d=\"M190 470 L24 604\" stroke=\"#4cb85a\"/><path d=\"M190 470 L40 616\" stroke=\"#3a8fe0\"/><path d=\"M190 470 L58 618\" stroke=\"#7a4fd6\"/></g></svg>",
+    "geometria": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 800\"><path d=\"M0 560 H900\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-dasharray=\"26 18\" stroke-linecap=\"round\" opacity=\"0.9\"/><circle cx=\"900\" cy=\"560\" r=\"22\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"8\"/><circle cx=\"900\" cy=\"560\" r=\"7\" fill=\"#ffffff\"/><g stroke-linecap=\"round\" stroke-width=\"10\"><path d=\"M230 548 L790 44\" stroke=\"#e8402f\"/><path d=\"M230 560 L800 47\" stroke=\"#f7d03c\"/><path d=\"M230 572 L810 50\" stroke=\"#3a8fe0\"/></g><path d=\"M400 560 A170 170 0 0 0 356 446\" fill=\"none\" stroke=\"#ffd84a\" stroke-width=\"10\" stroke-linecap=\"round\"/></svg>",
+    "lluvia": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 400\"><g stroke=\"#e6f6ff\" stroke-width=\"6\" stroke-linecap=\"round\" opacity=\"0.75\"><path d=\"M40 20 L28 70\"/><path d=\"M120 60 L108 110\"/><path d=\"M200 10 L188 60\"/><path d=\"M290 70 L278 120\"/><path d=\"M380 20 L368 70\"/><path d=\"M460 80 L448 130\"/><path d=\"M70 170 L58 220\"/><path d=\"M160 210 L148 260\"/><path d=\"M250 160 L238 210\"/><path d=\"M340 220 L328 270\"/><path d=\"M430 170 L418 220\"/><path d=\"M30 310 L18 360\"/><path d=\"M120 340 L108 390\"/><path d=\"M210 300 L198 350\"/><path d=\"M300 340 L288 390\"/><path d=\"M400 310 L388 360\"/><path d=\"M480 340 L468 390\"/></g></svg>",
+    "tache": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><g stroke-linecap=\"round\"><path d=\"M30 30 L170 170 M170 30 L30 170\" stroke=\"#7a1410\" stroke-width=\"40\"/><path d=\"M30 30 L170 170 M170 30 L30 170\" stroke=\"#ff3b30\" stroke-width=\"28\"/></g></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "La luz se refracta al entrar en la gota, se refleja en su parte trasera y vuelve a refractarse al salir, separándose en colores",
+      "fuente": "NOAA SciJinks, «How is a rainbow formed?»; HyperPhysics (Georgia State University), «Primary rainbow» (hyperphysics.gsu.edu/hbase/atmos/rbowpri.html)"
+    },
+    {
+      "dato": "El arcoíris primario es un arco de unos 42° de radio centrado en el punto antisolar (opuesto al Sol); todas las gotas a ese ángulo forman un círculo",
+      "fuente": "WMO International Cloud Atlas, «Primary rainbow» (cloudatlas.wmo.int); Atmospheric Optics, atoptics.co.uk"
+    },
+    {
+      "dato": "El horizonte corta el círculo, por eso desde el suelo se ve como mucho la mitad; desde un avión o una montaña a veces se ve el círculo completo",
+      "fuente": "Atmospheric Optics (atoptics.co.uk), «Low and high rainbows»; Wikipedia, «Rainbow» (sección «Full-circle rainbow»)"
+    }
+  ],
+  "nota": "Los 42° son para el rojo del arco primario; el violeta sale a unos 40°. El diagrama de la gota es esquemático (los colores se separan en las dos refracciones, no solo al salir). El círculo completo desde un avión necesita lluvia debajo y el Sol detrás; no es frecuente."
+}

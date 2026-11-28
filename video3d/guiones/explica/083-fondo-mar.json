@@ -1,0 +1,402 @@
+{
+  "id": "explica-fondo-mar-oscuro",
+  "motor": "explica",
+  "titulo": "¿Por qué el fondo del mar es oscuro?",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "ciencia",
+    "oceano",
+    "luz",
+    "bioluminiscencia",
+    "sabiasque"
+  ],
+  "descripcion": "Bajamos al fondo del mar para ver cómo el agua se va comiendo los colores, hasta que solo queda la luz que fabrican los animales.",
+  "musica": "electro",
+  "escenas": [
+    {
+      "fondo": "mar",
+      "texto": "Bajemos juntos al fondo del mar. Reto: fíjate qué color desaparece primero.",
+      "clave": "Reto",
+      "camara": {
+        "de": [
+          0.5,
+          0.45,
+          1
+        ],
+        "a": [
+          0.5,
+          0.7,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "buzo",
+          "x": 0.5,
+          "y": 0.52,
+          "ancho": 560,
+          "rot": 18,
+          "anim": "slideIn",
+          "desde": "izquierda",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "burbujas": true,
+          "x": 0.62,
+          "y": 0.4,
+          "ancho": 0.1,
+          "alto": 0.16,
+          "n": 12,
+          "en": "Bajemos"
+        },
+        {
+          "svg": "pez_rojo",
+          "x": 0.3,
+          "y": 0.78,
+          "ancho": 280,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": "color"
+        },
+        {
+          "marca": true,
+          "x": 0.3,
+          "y": 0.78,
+          "radio": 160,
+          "en": "primero"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "El agua absorbe la luz. Y el rojo se apaga primero: en unos pocos metros ya casi no queda.",
+      "clave": "rojo",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.3,
+          0.45,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "colores",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 640,
+          "anim": "crecer",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "marca": true,
+          "x": 0.28,
+          "y": 0.433,
+          "radio": 100,
+          "en": "rojo"
+        },
+        {
+          "etiqueta": "absorbe",
+          "x": 0.78,
+          "y": 0.31,
+          "color": "#2f7fd2",
+          "en": "absorbe"
+        },
+        {
+          "etiqueta": "pocos metros",
+          "x": 0.25,
+          "y": 0.58,
+          "color": "#e63b2e",
+          "a": [
+            0.28,
+            0.475
+          ],
+          "en": "pocos"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Luego se van el naranja, el amarillo y el verde. El azul es el que llega más hondo.",
+      "clave": "azul",
+      "nota": "por eso el mar se ve azul",
+      "camara": {
+        "de": [
+          0.4,
+          0.5,
+          1.1
+        ],
+        "a": [
+          0.7,
+          0.68,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "colores",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 640,
+          "anim": "fade",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "etiqueta": "naranja",
+          "x": 0.18,
+          "y": 0.6,
+          "color": "#f28c28",
+          "a": [
+            0.39,
+            0.5
+          ],
+          "en": "naranja"
+        },
+        {
+          "etiqueta": "verde",
+          "x": 0.4,
+          "y": 0.8,
+          "color": "#2f9e57",
+          "a": [
+            0.61,
+            0.66
+          ],
+          "en": "verde"
+        },
+        {
+          "marca": true,
+          "x": 0.72,
+          "y": 0.77,
+          "radio": 90,
+          "en": "azul"
+        },
+        {
+          "svg": "flecha",
+          "x": 0.9,
+          "y": 0.68,
+          "ancho": 220,
+          "rot": 90,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "hondo"
+        }
+      ]
+    },
+    {
+      "fondo": "mar",
+      "texto": "Por debajo de unos 200 metros queda muy poca luz. Y pasando los 1.000 metros, la del Sol ya no llega.",
+      "voz": "Por debajo de unos doscientos metros queda muy poca luz. Y pasando los mil metros, la del Sol ya no llega.",
+      "clave": "Sol",
+      "nota": "oscuridad total",
+      "camara": {
+        "de": [
+          0.5,
+          0.45,
+          1
+        ],
+        "a": [
+          0.5,
+          0.75,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "regla",
+          "x": 0.3,
+          "y": 0.62,
+          "ancho": 500,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": 0
+        },
+        {
+          "numero": "200 m",
+          "x": 0.72,
+          "y": 0.533,
+          "color": "#1c6aa8",
+          "tam": 64,
+          "en": "200"
+        },
+        {
+          "numero": "1.000 m",
+          "x": 0.72,
+          "y": 0.75,
+          "color": "#1d1d2b",
+          "tam": 64,
+          "en": "1.000"
+        },
+        {
+          "marca": true,
+          "x": 0.3,
+          "y": 0.79,
+          "radio": 130,
+          "en": "Sol"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Pero ahí abajo hay luces. Muchos animales fabrican la suya: se llama bioluminiscencia.",
+      "clave": "bioluminiscencia",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.15
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "rape",
+          "x": 0.42,
+          "y": 0.66,
+          "ancho": 640,
+          "anim": "fade",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "svg": "brillo",
+          "x": 0.621,
+          "y": 0.577,
+          "ancho": 180,
+          "anim": "pop",
+          "idle": "latido",
+          "sombra": false,
+          "en": "luces"
+        },
+        {
+          "svg": "medusa",
+          "x": 0.8,
+          "y": 0.84,
+          "ancho": 220,
+          "anim": "fade",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "animales"
+        },
+        {
+          "burbujas": true,
+          "x": 0.2,
+          "y": 0.45,
+          "ancho": 0.15,
+          "alto": 0.2,
+          "n": 10,
+          "en": "fabrican"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "La usan para cazar, esconderse o encontrar pareja en la oscuridad total.",
+      "clave": "cazar",
+      "camara": {
+        "de": [
+          0.6,
+          0.5,
+          1.12
+        ],
+        "a": [
+          0.45,
+          0.65,
+          1.08
+        ]
+      },
+      "capas": [
+        {
+          "svg": "rape",
+          "x": 0.42,
+          "y": 0.66,
+          "ancho": 640,
+          "anim": "ninguna",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "svg": "brillo",
+          "x": 0.621,
+          "y": 0.577,
+          "ancho": 220,
+          "anim": "ninguna",
+          "idle": "latido",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "etiqueta": "señuelo de luz",
+          "x": 0.38,
+          "y": 0.42,
+          "color": "#1aa88a",
+          "a": [
+            0.62,
+            0.57
+          ],
+          "en": "cazar"
+        },
+        {
+          "svg": "medusa",
+          "x": 0.16,
+          "y": 0.86,
+          "ancho": 200,
+          "anim": "pop",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "esconderse"
+        },
+        {
+          "svg": "medusa",
+          "x": 0.84,
+          "y": 0.84,
+          "ancho": 170,
+          "anim": "pop",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "pareja"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Si te gustó este viaje al fondo, síguenos para el próximo.",
+      "clave": "síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "buzo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 260\"><path d=\"M40 120 L0 80 L10 150 Z\" fill=\"#f2c230\"/><path d=\"M40 150 L0 190 L14 130 Z\" fill=\"#e0a71e\"/>\n<path d=\"M30 118 Q120 100 220 110 L340 120 Q380 124 380 140 Q380 158 340 160 L220 168 Q120 176 30 156 Z\" fill=\"#22252e\"/>\n<rect x=\"150\" y=\"70\" width=\"170\" height=\"44\" rx=\"22\" fill=\"#f2c230\"/><rect x=\"150\" y=\"70\" width=\"170\" height=\"14\" rx=\"7\" fill=\"#ffe27a\"/>\n<path d=\"M260 160 L300 220 L330 214 L300 158 Z\" fill=\"#22252e\"/><circle cx=\"318\" cy=\"222\" r=\"14\" fill=\"#f2c39b\"/>\n<circle cx=\"390\" cy=\"130\" r=\"44\" fill=\"#22252e\"/><rect x=\"380\" y=\"104\" width=\"62\" height=\"40\" rx=\"14\" fill=\"#7fd3f7\" stroke=\"#3a3e4a\" stroke-width=\"8\"/><path d=\"M394 112 L404 112\" stroke=\"#ffffff\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n<path d=\"M340 90 Q360 40 400 50\" stroke=\"#3a3e4a\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+    "colores": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 900\"><rect x=\"0\" y=\"0\" width=\"700\" height=\"24\" rx=\"12\" fill=\"#bfeaff\"/><rect x=\"40\" y=\"20\" width=\"100\" height=\"160\" rx=\"50\" fill=\"#e63b2e\"/><rect x=\"40\" y=\"20\" width=\"34\" height=\"130\" rx=\"17\" fill=\"#ffffff\" opacity=\"0.25\"/><rect x=\"170\" y=\"20\" width=\"100\" height=\"270\" rx=\"50\" fill=\"#f28c28\"/><rect x=\"170\" y=\"20\" width=\"34\" height=\"240\" rx=\"17\" fill=\"#ffffff\" opacity=\"0.25\"/><rect x=\"300\" y=\"20\" width=\"100\" height=\"400\" rx=\"50\" fill=\"#f5d02a\"/><rect x=\"300\" y=\"20\" width=\"34\" height=\"370\" rx=\"17\" fill=\"#ffffff\" opacity=\"0.25\"/><rect x=\"430\" y=\"20\" width=\"100\" height=\"600\" rx=\"50\" fill=\"#4cc35a\"/><rect x=\"430\" y=\"20\" width=\"34\" height=\"570\" rx=\"17\" fill=\"#ffffff\" opacity=\"0.25\"/><rect x=\"560\" y=\"20\" width=\"100\" height=\"860\" rx=\"50\" fill=\"#2f8fe8\"/><rect x=\"560\" y=\"20\" width=\"34\" height=\"830\" rx=\"17\" fill=\"#ffffff\" opacity=\"0.25\"/></svg>",
+    "regla": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 1000\"><defs><linearGradient id=\"p\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#5fc4f2\"/><stop offset=\"0.3\" stop-color=\"#1c6aa8\"/><stop offset=\"0.6\" stop-color=\"#0b2347\"/><stop offset=\"0.8\" stop-color=\"#03070f\"/><stop offset=\"1\" stop-color=\"#000000\"/></linearGradient></defs>\n<rect x=\"40\" y=\"10\" width=\"260\" height=\"980\" rx=\"40\" fill=\"url(#p)\" stroke=\"#ffffff\" stroke-width=\"8\"/>\n<g stroke=\"#ffffff\" stroke-width=\"5\" opacity=\"0.6\"><path d=\"M300 60 H350\"/><path d=\"M300 110 H330\"/><path d=\"M300 160 H350\"/><path d=\"M300 210 H330\"/><path d=\"M300 260 H350\"/><path d=\"M300 310 H330\"/><path d=\"M300 360 H350\"/><path d=\"M300 410 H330\"/><path d=\"M300 460 H350\"/><path d=\"M300 510 H330\"/><path d=\"M300 560 H350\"/><path d=\"M300 610 H330\"/><path d=\"M300 660 H350\"/><path d=\"M300 710 H330\"/><path d=\"M300 760 H350\"/><path d=\"M300 810 H330\"/><path d=\"M300 860 H350\"/><path d=\"M300 910 H330\"/><path d=\"M300 960 H350\"/></g>\n<g stroke=\"#ffd46b\" stroke-width=\"12\" stroke-linecap=\"round\"><path d=\"M40 300 H420\"/><path d=\"M40 800 H420\"/></g>\n<circle cx=\"130\" cy=\"120\" r=\"10\" fill=\"#ffffff\" opacity=\"0.8\"/><circle cx=\"200\" cy=\"200\" r=\"7\" fill=\"#ffffff\" opacity=\"0.6\"/></svg>",
+    "rape": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 440\"><path d=\"M300 110 Q330 20 420 30 Q470 36 470 80\" stroke=\"#5a5f78\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/>\n<path d=\"M120 230 L20 150 L40 230 L20 320 Z\" fill=\"#383d66\"/>\n<path d=\"M110 230 Q130 110 300 110 Q440 110 470 230 Q440 360 300 360 Q140 360 110 230 Z\" fill=\"#4b5180\"/>\n<path d=\"M300 110 Q440 110 470 230 Q440 360 300 360 Q400 300 400 230 Q400 150 300 110 Z\" fill=\"#383d66\"/>\n<path d=\"M330 250 Q420 230 470 250 Q430 330 340 300 Z\" fill=\"#14152a\"/>\n<g fill=\"#f4f6f8\"><path d=\"M350 252 l10 22 l10 -24 Z M378 248 l10 24 l10 -26 Z M406 246 l10 24 l10 -26 Z M434 246 l9 22 l9 -22 Z M360 300 l10 -20 l10 18 Z M392 304 l10 -22 l10 20 Z M424 296 l9 -20 l9 18 Z\"/></g>\n<circle cx=\"360\" cy=\"190\" r=\"26\" fill=\"#f4f6f8\"/><circle cx=\"366\" cy=\"192\" r=\"14\" fill=\"#14152a\"/><circle cx=\"360\" cy=\"186\" r=\"5\" fill=\"#ffffff\"/>\n<path d=\"M220 360 L250 420 L280 360 Z\" fill=\"#383d66\"/><path d=\"M200 140 Q230 100 260 140\" stroke=\"#4c516f\" stroke-width=\"8\" fill=\"none\"/></svg>",
+    "brillo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><defs><radialGradient id=\"b\"><stop offset=\"0\" stop-color=\"#fffbd0\"/><stop offset=\"0.35\" stop-color=\"#9dffe9\"/><stop offset=\"1\" stop-color=\"#5dffd6\" stop-opacity=\"0\"/></radialGradient></defs><circle cx=\"100\" cy=\"100\" r=\"96\" fill=\"url(#b)\"/><circle cx=\"100\" cy=\"100\" r=\"22\" fill=\"#ffffff\"/></svg>",
+    "medusa": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 440\"><defs><radialGradient id=\"m\" cx=\"50%\" cy=\"40%\" r=\"60%\"><stop offset=\"0\" stop-color=\"#e3b8ff\"/><stop offset=\"1\" stop-color=\"#9a5cff\"/></radialGradient></defs>\n<circle cx=\"160\" cy=\"130\" r=\"150\" fill=\"#c58bff\" opacity=\"0.18\"/>\n<g stroke=\"#d6a8ff\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.9\"><path d=\"M90 170 Q70 260 100 330 T90 430\"/><path d=\"M130 175 Q120 270 145 340 T130 420\"/><path d=\"M190 175 Q200 270 175 340 T190 420\"/><path d=\"M230 170 Q250 260 220 330 T230 430\"/></g>\n<path d=\"M40 170 Q40 40 160 40 Q280 40 280 170 Q250 158 220 172 Q190 158 160 172 Q130 158 100 172 Q70 158 40 170 Z\" fill=\"url(#m)\"/>\n<path d=\"M90 90 Q120 60 160 60\" stroke=\"#ffffff\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.6\"/></svg>",
+    "pez_rojo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 180\"><path d=\"M60 90 L0 40 L10 90 L0 140 Z\" fill=\"#a8261d\"/><ellipse cx=\"160\" cy=\"90\" rx=\"110\" ry=\"62\" fill=\"#e63b2e\"/><path d=\"M160 28 Q250 40 270 90 Q250 140 160 152 Q230 90 160 28 Z\" fill=\"#b82c22\"/><path d=\"M130 30 L170 4 L190 34 Z\" fill=\"#a8261d\"/><circle cx=\"220\" cy=\"78\" r=\"13\" fill=\"#ffffff\"/><circle cx=\"224\" cy=\"80\" r=\"7\" fill=\"#1d1d2b\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "El agua absorbe primero las longitudes de onda largas (rojo, naranja); el azul es la que penetra más hondo, y por eso el mar se ve azul",
+      "fuente": "NOAA Ocean Exploration, «How far does light travel in the ocean?» (oceanexplorer.noaa.gov/facts/light-distributed.html); NOAA Ocean Service (oceanservice.noaa.gov/facts/light_travel.html)"
+    },
+    {
+      "dato": "Rara vez hay luz significativa por debajo de 200 m (fin de la zona iluminada); la luz solar no penetra por debajo de unos 1.000 m",
+      "fuente": "NOAA Ocean Service, «How far does light travel in the ocean?»; NOAA JetStream, «Layers of the Ocean» (noaa.gov/jetstream/ocean/layers-of-ocean)"
+    },
+    {
+      "dato": "Muchos animales de las profundidades producen su propia luz (bioluminiscencia) para atraer presas, camuflarse, defenderse o comunicarse; el rape usa un señuelo luminoso",
+      "fuente": "NOAA Ocean Exploration, «What is bioluminescence?» (oceanexplorer.noaa.gov/facts/bioluminescence.html); Smithsonian Ocean, «Bioluminescence» (ocean.si.edu)"
+    }
+  ],
+  "nota": "«En unos pocos metros» para el rojo: en agua clara el rojo se atenúa mucho en los primeros 5–10 m (los buzos lo notan); no desaparece de golpe. Las barras de colores son esquemáticas, no a escala. El agua turbia o costera puede cambiar el orden (allí el verde llega más que el azul). La regla de profundidad no es lineal. La luz del rape la producen bacterias simbióticas en su señuelo; se simplifica como «fabrican la suya»."
+}

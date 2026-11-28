@@ -1,0 +1,391 @@
+{
+  "id": "explica-millon-mil-millones-segundos",
+  "motor": "explica",
+  "titulo": "Millón vs mil millones de segundos",
+  "categoria": "numeros",
+  "etiquetas": [
+    "numeros",
+    "matematicas",
+    "sabiasque",
+    "tiempo",
+    "curiosidades"
+  ],
+  "descripcion": "Un millón de segundos son 11 días y medio. Mil millones son casi 32 años. Por qué dos palabras que suenan casi iguales esconden una diferencia de mil veces.",
+  "musica": "electro",
+  "escenas": [
+    {
+      "fondo": "oscuro",
+      "texto": "Un millón de segundos se van en unas vacaciones. ¿Y mil millones? Agárrate.",
+      "clave": "mil millones",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "reloj",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 520,
+          "anim": "pop",
+          "idle": "latido",
+          "en": 0
+        },
+        {
+          "numero": "1.000.000 s",
+          "x": 0.5,
+          "y": 0.82,
+          "color": "#2f7fd2",
+          "en": "millón"
+        },
+        {
+          "numero": "1.000.000.000 s",
+          "x": 0.5,
+          "y": 0.32,
+          "color": "#d93427",
+          "en": "mil"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Un millón de segundos son 11 días y medio: ni siquiera dos semanas.",
+      "voz": "Un millón de segundos son once días y medio: ni siquiera dos semanas.",
+      "clave": "11 días",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1.08
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "calendario",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 820,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "numero": "11,6 días",
+          "x": 0.5,
+          "y": 0.84,
+          "color": "#2f7fd2",
+          "en": "11"
+        },
+        {
+          "etiqueta": "menos de 2 semanas",
+          "x": 0.5,
+          "y": 0.34,
+          "color": "#1d1d2b",
+          "a": [
+            0.86,
+            0.58
+          ],
+          "en": "semanas"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Ahora súmale tres ceros. Mil millones de segundos son casi 32 años.",
+      "voz": "Ahora súmale tres ceros. Mil millones de segundos son casi treinta y dos años.",
+      "clave": "32 años",
+      "nota": "¡1.000 veces más!",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.55,
+          0.62,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "persona",
+          "x": 0.25,
+          "y": 0.779,
+          "ancho": 130,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "persona",
+          "x": 0.5,
+          "y": 0.757,
+          "ancho": 170,
+          "anim": "pop",
+          "en": "Mil"
+        },
+        {
+          "svg": "persona",
+          "x": 0.75,
+          "y": 0.735,
+          "ancho": 210,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": "32"
+        },
+        {
+          "numero": "31,7 años",
+          "x": 0.5,
+          "y": 0.4,
+          "color": "#d93427",
+          "tam": 80,
+          "en": "casi"
+        },
+        {
+          "etiqueta": "niñez",
+          "x": 0.25,
+          "y": 0.9,
+          "color": "#2f7fd2",
+          "en": 0.3
+        },
+        {
+          "etiqueta": "adultez",
+          "x": 0.75,
+          "y": 0.9,
+          "color": "#d93427",
+          "en": "32"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Para que lo sientas: hace mil millones de segundos, el calendario decía 1995.",
+      "voz": "Para que lo sientas: hace mil millones de segundos, el calendario decía mil novecientos noventa y cinco.",
+      "clave": "1995",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.05
+        ],
+        "a": [
+          0.4,
+          0.6,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "linea_tiempo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 940,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "numero": "hoy",
+          "x": 0.84,
+          "y": 0.5,
+          "color": "#1d1d2b",
+          "en": "hace"
+        },
+        {
+          "numero": "1995",
+          "x": 0.15,
+          "y": 0.5,
+          "color": "#d93427",
+          "en": "1995"
+        },
+        {
+          "svg": "tele_vieja",
+          "x": 0.3,
+          "y": 0.79,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "calendario"
+        },
+        {
+          "etiqueta": "31,7 años atrás",
+          "x": 0.5,
+          "y": 0.4,
+          "color": "#6b4fe0",
+          "en": "millones"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Otra forma: si un millón de segundos midiera 1 centímetro, mil millones medirían 10 metros.",
+      "voz": "Otra forma: si un millón de segundos midiera un centímetro, mil millones medirían diez metros.",
+      "clave": "10 metros",
+      "camara": {
+        "de": [
+          0.45,
+          0.65,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "edificio",
+          "x": 0.66,
+          "y": 0.665,
+          "ancho": 400,
+          "anim": "crecer",
+          "esperar": true,
+          "en": "mil millones"
+        },
+        {
+          "svg": "punto",
+          "x": 0.2,
+          "y": 0.855,
+          "ancho": 26,
+          "anim": "pop",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "marca": true,
+          "x": 0.2,
+          "y": 0.855,
+          "radio": 46,
+          "en": "centímetro"
+        },
+        {
+          "etiqueta": "1 cm",
+          "x": 0.2,
+          "y": 0.74,
+          "color": "#2f7fd2",
+          "a": [
+            0.2,
+            0.84
+          ],
+          "en": "centímetro"
+        },
+        {
+          "svg": "persona",
+          "x": 0.4,
+          "y": 0.83,
+          "ancho": 62,
+          "anim": "pop",
+          "en": "metros"
+        },
+        {
+          "numero": "10 m",
+          "x": 0.66,
+          "y": 0.4,
+          "color": "#d93427",
+          "en": "10"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "¿Y un billón, un millón de millones? Unos 31.700 años atrás: ni siquiera existía la agricultura.",
+      "voz": "¿Y un billón, un millón de millones? Unos treinta y un mil setecientos años atrás: ni siquiera existía la agricultura.",
+      "clave": "agricultura",
+      "nota": "Edad de Piedra",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.5,
+          0.66,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "cueva",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 1000,
+          "anim": "fade",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "fogata",
+          "x": 0.5,
+          "y": 0.78,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "billón"
+        },
+        {
+          "numero": "31.700 años",
+          "x": 0.5,
+          "y": 0.36,
+          "color": "#d93427",
+          "tam": 76,
+          "en": "31.700"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Si esto te voló la cabeza en menos de un millón de segundos, síguenos.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "calendario": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 720 470\"><rect x='10' y='40' width='700' height='420' rx='34' fill='#c9d3de'/><rect x='10' y='30' width='700' height='415' rx='34' fill='#ffffff'/><path d='M10 64 Q10 30 44 30 H676 Q710 30 710 64 V125 H10 Z' fill='#e2493b'/><path d='M10 110 H710 V125 H10 Z' fill='#b9372b'/><g fill='#5a3a3a'><rect x='140' y='8' width='26' height='60' rx='13'/><rect x='554' y='8' width='26' height='60' rx='13'/></g><g fill='#ffcf4d'><rect x='30' y='145' width='84' height='130' rx='14'/><rect x='127' y='145' width='84' height='130' rx='14'/><rect x='224' y='145' width='84' height='130' rx='14'/><rect x='321' y='145' width='84' height='130' rx='14'/><rect x='418' y='145' width='84' height='130' rx='14'/><rect x='515' y='145' width='84' height='130' rx='14'/><rect x='612' y='145' width='84' height='130' rx='14'/><rect x='30' y='292' width='84' height='130' rx='14'/><rect x='127' y='292' width='84' height='130' rx='14'/><rect x='224' y='292' width='84' height='130' rx='14'/><rect x='321' y='292' width='84' height='130' rx='14'/></g><g fill='#e6ecf2'><rect x='418' y='292' width='84' height='130' rx='14'/><rect x='515' y='292' width='84' height='130' rx='14'/><rect x='612' y='292' width='84' height='130' rx='14'/></g><path d='M418 306 Q418 292 432 292 H460 V422 H432 Q418 422 418 408 Z' fill='#ffcf4d'/><g stroke='#e0a020' stroke-width='10' fill='none' stroke-linecap='round' stroke-linejoin='round'><path d='M52 212 L68 228 L94 194'/><path d='M149 212 L165 228 L191 194'/><path d='M246 212 L262 228 L288 194'/><path d='M343 212 L359 228 L385 194'/><path d='M440 212 L456 228 L482 194'/><path d='M537 212 L553 228 L579 194'/><path d='M634 212 L650 228 L676 194'/><path d='M52 359 L68 375 L94 341'/><path d='M149 359 L165 375 L191 341'/><path d='M246 359 L262 375 L288 341'/><path d='M343 359 L359 375 L385 341'/></g></svg>",
+    "linea_tiempo": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 940 160\"><rect x='40' y='66' width='860' height='34' rx='17' fill='#1d1d2b' opacity='0.25'/><rect x='40' y='60' width='860' height='34' rx='17' fill='#ffffff'/><rect x='40' y='60' width='860' height='34' rx='17' fill='none' stroke='#1d1d2b' stroke-width='6'/><g stroke='#1d1d2b' stroke-width='6' stroke-linecap='round'><path d='M180 50 V104'/><path d='M320 50 V104'/><path d='M460 50 V104'/><path d='M600 50 V104'/><path d='M740 50 V104'/></g><circle cx='70' cy='77' r='40' fill='#d93427' stroke='#ffffff' stroke-width='10'/><circle cx='870' cy='77' r='40' fill='#1d1d2b' stroke='#ffffff' stroke-width='10'/><path d='M120 132 H820' stroke='#6b4fe0' stroke-width='10' stroke-linecap='round'/><path d='M140 112 L112 132 L140 152' fill='none' stroke='#6b4fe0' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/></svg>",
+    "tele_vieja": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 320 300\"><path d='M120 60 L80 6 M200 60 L240 6' stroke='#4a4f5a' stroke-width='8' stroke-linecap='round'/><circle cx='80' cy='6' r='6' fill='#4a4f5a'/><circle cx='240' cy='6' r='6' fill='#4a4f5a'/><rect x='70' y='262' width='40' height='30' rx='6' fill='#5a3a24'/><rect x='210' y='262' width='40' height='30' rx='6' fill='#5a3a24'/><rect x='10' y='56' width='300' height='214' rx='30' fill='#a8683c'/><rect x='10' y='56' width='300' height='30' rx='15' fill='#c2814f'/><rect x='34' y='82' width='190' height='160' rx='34' fill='#2b3550'/><path d='M60 110 Q70 96 96 96' stroke='#8fb3ff' stroke-width='10' fill='none' stroke-linecap='round' opacity='0.7'/><g fill='#2b3550'><rect x='38' y='150' width='182' height='8' opacity='0.3'/><rect x='38' y='180' width='182' height='8' opacity='0.3'/></g><circle cx='265' cy='118' r='20' fill='#e8d7b0'/><circle cx='265' cy='172' r='20' fill='#e8d7b0'/><path d='M265 104 V118' stroke='#5a3a24' stroke-width='6' stroke-linecap='round'/><g stroke='#7a4a2a' stroke-width='5' stroke-linecap='round'><path d='M245 212 H285 M245 226 H285'/></g></svg>",
+    "edificio": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 300 520\"><rect x='20' y='30' width='260' height='490' rx='10' fill='#e78a4b'/><rect x='200' y='30' width='80' height='490' fill='#c86d33'/><rect x='10' y='14' width='280' height='30' rx='8' fill='#8d4b26'/><g fill='#cdeeff'><rect x='50' y='80' width='60' height='80' rx='8'/><rect x='130' y='80' width='60' height='80' rx='8'/><rect x='50' y='230' width='60' height='80' rx='8'/><rect x='130' y='230' width='60' height='80' rx='8'/></g><g fill='#9fc7de'><rect x='212' y='80' width='50' height='80' rx='8'/><rect x='212' y='230' width='50' height='80' rx='8'/><rect x='212' y='380' width='50' height='80' rx='8'/></g><rect x='50' y='380' width='60' height='80' rx='8' fill='#cdeeff'/><rect x='126' y='390' width='68' height='130' rx='8' fill='#6a3a20'/><circle cx='182' cy='458' r='6' fill='#ffcf4d'/><g stroke='#8d4b26' stroke-width='8'><path d='M20 190 H280 M20 340 H280'/></g></svg>",
+    "punto": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 40 40\"><circle cx='20' cy='20' r='17' fill='#d93427' stroke='#ffffff' stroke-width='5'/></svg>",
+    "cueva": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 1000 760\"><path d='M0 760 V320 Q40 60 300 30 Q500 0 700 30 Q960 60 1000 320 V760 Z' fill='#5b4636'/><path d='M120 760 V400 Q150 170 360 140 Q500 120 640 140 Q850 170 880 400 V760 Z' fill='#2c2019'/><path d='M120 640 Q500 600 880 640 V760 H120 Z' fill='#3d2e24'/><g fill='#b5532f' opacity='0.85'><path d='M250 300 q30 -30 70 0 q10 30 -10 40 l-10 40 h-12 l-4 -36 h-20 l-4 36 h-12 l-6 -40 q-10 -20 8 -40 z'/><path d='M640 280 q40 -26 90 0 l20 20 q-30 10 -40 30 l-6 40 h-12 l-4 -36 h-30 l-4 36 h-12 l-4 -44 q-14 -20 2 -46 z'/></g><g stroke='#b5532f' stroke-width='8' stroke-linecap='round' opacity='0.85'><path d='M470 250 V330 M450 270 L470 250 L490 270 M440 330 H500'/></g></svg>",
+    "fogata": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 300 300\"><g stroke-linecap='round'><path d='M40 270 L260 210' stroke='#6a3a20' stroke-width='34'/><path d='M40 210 L260 270' stroke='#8d5a33' stroke-width='34'/></g><path d='M150 30 Q230 120 210 190 Q200 236 150 240 Q100 236 90 190 Q74 130 120 90 Q120 140 150 150 Q130 90 150 30 Z' fill='#ff6a2b'/><path d='M150 100 Q200 160 186 200 Q178 228 150 230 Q122 228 114 200 Q106 166 136 140 Q138 176 152 180 Q146 140 150 100 Z' fill='#ffb230'/><path d='M150 160 Q172 190 166 210 Q160 226 150 226 Q138 226 134 210 Q130 190 150 160 Z' fill='#fff1a8'/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "1.000.000 de segundos ≈ 11,6 días (11 días y casi 14 horas)",
+      "fuente": "cálculo: 1.000.000 ÷ 86.400 s por día = 11,57"
+    },
+    {
+      "dato": "1.000.000.000 de segundos ≈ 31,7 años",
+      "fuente": "cálculo: 1.000.000.000 ÷ 31.557.600 s por año juliano (365,25 días) = 31,69"
+    },
+    {
+      "dato": "Hace mil millones de segundos (desde noviembre de 2026) era marzo de 1995",
+      "fuente": "cálculo: noviembre de 2026 − 31,7 años"
+    },
+    {
+      "dato": "Escala: 1 cm por millón → 1.000 cm = 10 m por mil millones",
+      "fuente": "cálculo directo (proporción 1 : 1.000)"
+    },
+    {
+      "dato": "Un billón (10¹²) de segundos ≈ 31.700 años",
+      "fuente": "cálculo: 10¹² ÷ 31.557.600 = 31.688"
+    },
+    {
+      "dato": "La agricultura empezó hace unos 11.000-12.000 años (Neolítico, Creciente Fértil)",
+      "fuente": "National Geographic Education, «The Development of Agriculture»; Encyclopaedia Britannica, «Neolithic»"
+    }
+  ],
+  "nota": "«Billón» se usa en el sentido del español (un millón de millones, 10¹²), no el «billion» inglés (mil millones). El año 1995 vale para un video publicado a fines de 2026; si sale mucho después, la fecha se corre. El punto de 1 cm y el edificio no están a escala exacta (el edificio sería 1.000 veces el punto); la persona sí está más o menos a escala del edificio de 10 m."
+}

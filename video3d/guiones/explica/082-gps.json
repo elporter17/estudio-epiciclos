@@ -1,0 +1,496 @@
+{
+  "id": "explica-gps",
+  "motor": "explica",
+  "titulo": "¿Cómo sabe el GPS dónde estás?",
+  "categoria": "tecnologia",
+  "etiquetas": [
+    "tecnologia",
+    "gps",
+    "satelites",
+    "einstein",
+    "curiosidades"
+  ],
+  "descripcion": "Tu celular no le avisa a nadie dónde estás: escucha relojes en el espacio y hace cuentas. Y sin Einstein, el mapa fallaría.",
+  "musica": "electro",
+  "escenas": [
+    {
+      "fondo": "oscuro",
+      "texto": "Dato raro: para ubicarte, tu celular no le manda nada al espacio. Solo escucha.",
+      "clave": "escucha",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tierra",
+          "x": 0.5,
+          "y": 0.86,
+          "ancho": 900,
+          "anim": "fade",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "svg": "celular",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 220,
+          "anim": "pop",
+          "en": "celular"
+        },
+        {
+          "svg": "satelite",
+          "x": 0.3,
+          "y": 0.36,
+          "ancho": 300,
+          "anim": "slideIn",
+          "desde": "izquierda",
+          "idle": "flotar",
+          "en": "espacio"
+        },
+        {
+          "svg": "ondas",
+          "x": 0.5,
+          "y": 0.5,
+          "ancho": 220,
+          "anim": "pop",
+          "idle": "latido",
+          "sombra": false,
+          "en": "escucha"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Allá arriba giran más de 30 satélites GPS, a unos 20.000 kilómetros de altura.",
+      "voz": "Allá arriba giran más de treinta satélites GPS, a unos veinte mil kilómetros de altura.",
+      "clave": "satélites",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.08
+        ]
+      },
+      "capas": [
+        {
+          "svg": "orbita",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 960,
+          "anim": "fade",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "tierra",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 420,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "satelite",
+          "x": 0.18,
+          "y": 0.48,
+          "ancho": 200,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "30"
+        },
+        {
+          "svg": "satelite",
+          "x": 0.82,
+          "y": 0.45,
+          "ancho": 200,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "satélites"
+        },
+        {
+          "svg": "satelite",
+          "x": 0.5,
+          "y": 0.37,
+          "ancho": 200,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "GPS"
+        },
+        {
+          "svg": "satelite",
+          "x": 0.24,
+          "y": 0.78,
+          "ancho": 200,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "unos"
+        },
+        {
+          "svg": "satelite",
+          "x": 0.78,
+          "y": 0.76,
+          "ancho": 200,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "20.000"
+        },
+        {
+          "numero": "≈ 20.000 km",
+          "x": 0.5,
+          "y": 0.9,
+          "color": "#6b4fe0",
+          "tam": 58,
+          "en": "20.000"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Cada uno transmite sin parar su hora exacta, medida con relojes atómicos.",
+      "clave": "hora exacta",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.45,
+          0.6,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "satelite",
+          "x": 0.5,
+          "y": 0.42,
+          "ancho": 520,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "svg": "ondas",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 300,
+          "rot": 180,
+          "anim": "pop",
+          "idle": "latido",
+          "sombra": false,
+          "en": "transmite"
+        },
+        {
+          "svg": "reloj",
+          "x": 0.5,
+          "y": 0.8,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "hora"
+        },
+        {
+          "etiqueta": "reloj atómico",
+          "x": 0.24,
+          "y": 0.66,
+          "color": "#d9532b",
+          "a": [
+            0.4,
+            0.78
+          ],
+          "en": "relojes"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "La señal tarda unas 7 centésimas de segundo en llegar. Con ese retraso, tu celular calcula la distancia.",
+      "voz": "La señal tarda unas siete centésimas de segundo en llegar. Con ese retraso, tu celular calcula la distancia.",
+      "clave": "retraso",
+      "nota": "tiempo × velocidad de la luz",
+      "camara": {
+        "de": [
+          0.4,
+          0.5,
+          1.12
+        ],
+        "a": [
+          0.6,
+          0.7,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "satelite",
+          "x": 0.3,
+          "y": 0.38,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "svg": "celular",
+          "x": 0.7,
+          "y": 0.78,
+          "ancho": 200,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": "llegar"
+        },
+        {
+          "etiqueta": "señal",
+          "x": 0.62,
+          "y": 0.5,
+          "color": "#2f7fd2",
+          "a": [
+            0.68,
+            0.68
+          ],
+          "en": "señal"
+        },
+        {
+          "numero": "≈ 0,07 s",
+          "x": 0.32,
+          "y": 0.62,
+          "color": "#1d1d2b",
+          "tam": 64,
+          "en": "7"
+        },
+        {
+          "marca": true,
+          "x": 0.7,
+          "y": 0.78,
+          "radio": 140,
+          "en": "distancia"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Con 3 distancias ya sabe dónde estás. El cuarto satélite corrige el reloj de tu celular, que no es tan preciso.",
+      "voz": "Con tres distancias ya sabe dónde estás. El cuarto satélite corrige el reloj de tu celular, que no es tan preciso.",
+      "clave": "cuarto",
+      "nota": "mínimo 4 satélites",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.48,
+          0.6,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "circulos",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 860,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "punto",
+          "x": 0.48,
+          "y": 0.555,
+          "ancho": 110,
+          "anim": "pop",
+          "idle": "latido",
+          "sombra": false,
+          "en": "estás"
+        },
+        {
+          "numero": "3",
+          "x": 0.16,
+          "y": 0.38,
+          "color": "#ff7a59",
+          "tam": 70,
+          "en": "3"
+        },
+        {
+          "numero": "+1",
+          "x": 0.84,
+          "y": 0.38,
+          "color": "#6b4fe0",
+          "tam": 70,
+          "en": "cuarto"
+        },
+        {
+          "etiqueta": "tú",
+          "x": 0.68,
+          "y": 0.88,
+          "color": "#e0483d",
+          "a": [
+            0.49,
+            0.57
+          ],
+          "en": "estás"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Y aquí entra Einstein: allá arriba el reloj se adelanta unos 38 microsegundos cada día.",
+      "voz": "Y aquí entra Einstein: allá arriba el reloj se adelanta unos treinta y ocho microsegundos cada día.",
+      "clave": "Einstein",
+      "nota": "relatividad",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "reloj",
+          "x": 0.3,
+          "y": 0.45,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": 0
+        },
+        {
+          "svg": "satelite",
+          "x": 0.68,
+          "y": 0.42,
+          "ancho": 300,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "arriba"
+        },
+        {
+          "svg": "tierra",
+          "x": 0.5,
+          "y": 0.86,
+          "ancho": 700,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": "Einstein"
+        },
+        {
+          "numero": "+38 µs por día",
+          "x": 0.5,
+          "y": 0.63,
+          "color": "#d9532b",
+          "tam": 60,
+          "en": "38"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Por eso se corrige. Si no, tu mapa se iría desviando varios kilómetros por día.",
+      "clave": "kilómetros",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.55,
+          0.58,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "mapa",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 900,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "pin_ok",
+          "x": 0.36,
+          "y": 0.5,
+          "ancho": 120,
+          "anim": "caer",
+          "en": "corrige"
+        },
+        {
+          "svg": "pin_mal",
+          "x": 0.74,
+          "y": 0.66,
+          "ancho": 120,
+          "anim": "caer",
+          "idle": "sacudir",
+          "en": "desviando"
+        },
+        {
+          "etiqueta": "¡error!",
+          "x": 0.76,
+          "y": 0.82,
+          "color": "#4c555e",
+          "a": [
+            0.74,
+            0.7
+          ],
+          "en": "kilómetros"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Síguenos, y la próxima vez que abras el mapa, acuérdate de Einstein.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "satelite": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 240\"><rect x=\"10\" y=\"80\" width=\"130\" height=\"80\" rx=\"6\" fill=\"#2d5fa8\"/><g stroke=\"#8fc0ff\" stroke-width=\"3\" opacity=\"0.8\"><path d=\"M53 80 V160 M97 80 V160 M10 120 H140\"/></g><rect x=\"10\" y=\"80\" width=\"130\" height=\"18\" rx=\"6\" fill=\"#4b86d6\" opacity=\"0.7\"/><rect x=\"280\" y=\"80\" width=\"130\" height=\"80\" rx=\"6\" fill=\"#2d5fa8\"/><g stroke=\"#8fc0ff\" stroke-width=\"3\" opacity=\"0.8\"><path d=\"M323 80 V160 M367 80 V160 M280 120 H410\"/></g><rect x=\"280\" y=\"80\" width=\"130\" height=\"18\" rx=\"6\" fill=\"#4b86d6\" opacity=\"0.7\"/><rect x=\"140\" y=\"114\" width=\"140\" height=\"12\" fill=\"#9aa4ae\"/>\n<rect x=\"160\" y=\"60\" width=\"100\" height=\"120\" rx=\"12\" fill=\"#e9b52c\"/><rect x=\"220\" y=\"60\" width=\"40\" height=\"120\" rx=\"10\" fill=\"#c9971f\"/><g stroke=\"#a87b12\" stroke-width=\"3\" opacity=\"0.6\"><path d=\"M170 90 H250 M170 120 H250 M170 150 H250\"/></g>\n<path d=\"M190 180 Q210 230 230 180 Z\" fill=\"#cfd6dc\"/><rect x=\"206\" y=\"24\" width=\"8\" height=\"36\" fill=\"#9aa4ae\"/><circle cx=\"210\" cy=\"20\" r=\"10\" fill=\"#ff5a4d\"/></svg>",
+    "celular": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 400\"><rect x=\"10\" y=\"10\" width=\"200\" height=\"380\" rx=\"34\" fill=\"#22252e\"/><rect x=\"24\" y=\"44\" width=\"172\" height=\"300\" rx=\"10\" fill=\"#d8f0e0\"/>\n<path d=\"M24 160 L196 120 M24 260 L196 290 M90 44 L120 344\" stroke=\"#ffffff\" stroke-width=\"14\"/><path d=\"M150 44 Q170 200 196 220\" stroke=\"#9fd2ff\" stroke-width=\"16\" fill=\"none\"/>\n<path d=\"M110 150 C80 150 70 175 70 190 C70 220 110 250 110 250 C110 250 150 220 150 190 C150 175 140 150 110 150 Z\" fill=\"#e0483d\"/><circle cx=\"110\" cy=\"188\" r=\"14\" fill=\"#ffffff\"/>\n<rect x=\"80\" y=\"22\" width=\"60\" height=\"10\" rx=\"5\" fill=\"#3a3e4a\"/><rect x=\"186\" y=\"10\" width=\"24\" height=\"380\" rx=\"20\" fill=\"#000\" opacity=\"0.15\"/></svg>",
+    "ondas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 250\"><path d=\"M101 166 A70 70 0 0 1 199 166\" fill=\"none\" stroke=\"#7fe3ff\" stroke-width=\"16\" stroke-linecap=\"round\" opacity=\"1\"/><path d=\"M59 124 A130 130 0 0 1 241 124\" fill=\"none\" stroke=\"#7fe3ff\" stroke-width=\"16\" stroke-linecap=\"round\" opacity=\"0.75\"/><path d=\"M17 82 A190 190 0 0 1 283 82\" fill=\"none\" stroke=\"#7fe3ff\" stroke-width=\"16\" stroke-linecap=\"round\" opacity=\"0.5\"/><circle cx=\"150\" cy=\"215\" r=\"22\" fill=\"#7fe3ff\"/></svg>",
+    "orbita": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 1000\"><circle cx=\"500\" cy=\"500\" r=\"470\" fill=\"none\" stroke=\"#9fb8ff\" stroke-width=\"6\" stroke-dasharray=\"22 18\" opacity=\"0.7\"/><circle cx=\"500\" cy=\"500\" r=\"400\" fill=\"none\" stroke=\"#9fb8ff\" stroke-width=\"3\" opacity=\"0.3\"/></svg>",
+    "circulos": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 800\"><circle cx=\"300\" cy=\"300\" r=\"230\" fill=\"#ff7a59\" fill-opacity=\"0.22\" stroke=\"#ff7a59\" stroke-width=\"10\"/>\n<circle cx=\"540\" cy=\"330\" r=\"200\" fill=\"#4fc3ff\" fill-opacity=\"0.22\" stroke=\"#4fc3ff\" stroke-width=\"10\"/>\n<circle cx=\"390\" cy=\"560\" r=\"190\" fill=\"#8be06a\" fill-opacity=\"0.22\" stroke=\"#8be06a\" stroke-width=\"10\"/></svg>",
+    "punto": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"46\" fill=\"#ffffff\" opacity=\"0.35\"/><circle cx=\"50\" cy=\"50\" r=\"26\" fill=\"#e0483d\" stroke=\"#ffffff\" stroke-width=\"8\"/></svg>",
+    "mapa": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 720\"><rect x=\"20\" y=\"20\" width=\"680\" height=\"680\" rx=\"40\" fill=\"#e9f2df\"/>\n<path d=\"M20 520 Q200 470 330 540 T700 500 V580 Q520 600 330 620 T20 610 Z\" fill=\"#9fd2ff\"/><rect x=\"460\" y=\"90\" width=\"180\" height=\"150\" rx=\"24\" fill=\"#a9db8a\"/><circle cx=\"520\" cy=\"150\" r=\"26\" fill=\"#6fbf59\"/><circle cx=\"585\" cy=\"190\" r=\"22\" fill=\"#6fbf59\"/>\n<g stroke=\"#ffffff\" stroke-width=\"30\" stroke-linecap=\"round\"><path d=\"M20 300 H700 M240 20 V700 M20 140 L420 40\"/></g><g stroke=\"#ffd46b\" stroke-width=\"12\" stroke-linecap=\"round\"><path d=\"M20 300 H700\"/></g>\n<g fill=\"#d7dccf\"><rect x=\"70\" y=\"350\" width=\"120\" height=\"110\" rx=\"12\"/><rect x=\"290\" y=\"350\" width=\"140\" height=\"100\" rx=\"12\"/><rect x=\"290\" y=\"160\" width=\"120\" height=\"100\" rx=\"12\"/><rect x=\"480\" y=\"350\" width=\"160\" height=\"110\" rx=\"12\"/></g></svg>",
+    "pin_ok": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 170\"><path d=\"M60 4 C26 4 8 30 8 56 C8 96 60 164 60 164 C60 164 112 96 112 56 C112 30 94 4 60 4 Z\" fill=\"#e0483d\"/><circle cx=\"60\" cy=\"56\" r=\"20\" fill=\"#ffffff\"/><path d=\"M60 4 C94 4 112 30 112 56 C112 96 60 164 60 164 C80 110 90 60 60 4 Z\" fill=\"#000\" opacity=\"0.15\"/></svg>",
+    "pin_mal": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 170\"><path d=\"M60 4 C26 4 8 30 8 56 C8 96 60 164 60 164 C60 164 112 96 112 56 C112 30 94 4 60 4 Z\" fill=\"#8a8f9c\"/><circle cx=\"60\" cy=\"56\" r=\"20\" fill=\"#ffffff\"/><path d=\"M60 4 C94 4 112 30 112 56 C112 96 60 164 60 164 C80 110 90 60 60 4 Z\" fill=\"#000\" opacity=\"0.15\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "La constelación GPS tiene más de 30 satélites operativos (31 en los últimos años) en órbitas a unos 20.200 km de altura; transmiten señales con la hora de relojes atómicos y el receptor solo escucha",
+      "fuente": "GPS.gov, «Space Segment» (gps.gov/systems/gps/space)"
+    },
+    {
+      "dato": "El receptor calcula la distancia a cada satélite con el retraso de la señal (viaja a la velocidad de la luz); necesita al menos 4 satélites: 3 para la posición y 1 más para corregir el error de su propio reloj",
+      "fuente": "GPS.gov; NASA Space Place, «How does GPS work?» (spaceplace.nasa.gov/gps)"
+    },
+    {
+      "dato": "Por la relatividad, los relojes de los satélites se adelantan unos 38 µs por día (+45 µs por la menor gravedad, −7 µs por la velocidad); se corrige ajustando su frecuencia antes del lanzamiento. Sin corrección, el error de posición crecería del orden de 10 km por día",
+      "fuente": "Ashby, «Relativity in the Global Positioning System», Living Reviews in Relativity 6 (2003); Penn State GEOG 862, «The Satellite Clock» (e-education.psu.edu/geog862/node/1714); Ohio State, Astronomy 1144 (astronomy.ohio-state.edu)"
+    }
+  ],
+  "nota": "«7 centésimas de segundo»: desde 20.200 km de altura la señal tarda ≈ 0,067 s si el satélite está justo encima; si está cerca del horizonte, ≈ 0,086 s. «3 distancias ya sabe dónde estás» simplifica: 3 esferas dejan 2 puntos y uno se descarta por absurdo; en la práctica el receptor resuelve 4 incógnitas (x, y, z y el error de su reloj). La cifra de «10 km por día» sin corrección es una estimación de divulgación habitual (38 µs × velocidad de la luz ≈ 11 km); por eso se dice «varios kilómetros». Los círculos dibujados son en 2D; en realidad son esferas."
+}

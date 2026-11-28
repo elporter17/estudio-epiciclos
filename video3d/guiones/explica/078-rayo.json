@@ -1,0 +1,503 @@
+{
+  "id": "explica-rayo-trueno",
+  "motor": "explica",
+  "titulo": "¿Cómo se forma un rayo?",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "ciencia",
+    "tormentas",
+    "rayos",
+    "clima",
+    "sabiasque"
+  ],
+  "descripcion": "Hielo que choca, cargas que se separan y una chispa que calienta el aire a unos 30.000 °C. Y el trueno es el aire que explota.",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "liso",
+      "texto": "Un rayo calienta el aire a unos 30.000 °C: cerca de cinco veces más que la superficie del Sol.",
+      "voz": "Un rayo calienta el aire a unos treinta mil grados: cerca de cinco veces más que la superficie del Sol.",
+      "clave": "cinco veces",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "nube_tormenta",
+          "x": 0.5,
+          "y": 0.4,
+          "ancho": 860,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "rayo",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 220,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": "rayo"
+        },
+        {
+          "numero": "30.000 °C",
+          "x": 0.28,
+          "y": 0.87,
+          "color": "#d93427",
+          "en": "30.000"
+        },
+        {
+          "numero": "≈ 5× el Sol",
+          "x": 0.74,
+          "y": 0.87,
+          "color": "#f2a33a",
+          "en": "cinco"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Todo empieza dentro de la nube de tormenta: corrientes de aire suben y bajan gotas y trocitos de hielo.",
+      "clave": "hielo",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "nube_tormenta",
+          "x": 0.5,
+          "y": 0.55,
+          "ancho": 1000,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "svg": "flecha",
+          "x": 0.2,
+          "y": 0.56,
+          "ancho": 170,
+          "rot": -90,
+          "anim": "pop",
+          "en": "suben"
+        },
+        {
+          "svg": "flecha",
+          "x": 0.8,
+          "y": 0.56,
+          "ancho": 170,
+          "rot": 90,
+          "anim": "pop",
+          "en": "bajan"
+        },
+        {
+          "svg": "gota",
+          "x": 0.42,
+          "y": 0.62,
+          "ancho": 60,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "gotas"
+        },
+        {
+          "svg": "gota",
+          "x": 0.6,
+          "y": 0.56,
+          "ancho": 55,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "gotas"
+        },
+        {
+          "svg": "hielo",
+          "x": 0.34,
+          "y": 0.5,
+          "ancho": 90,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "hielo"
+        },
+        {
+          "svg": "hielo",
+          "x": 0.56,
+          "y": 0.45,
+          "ancho": 80,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "trocitos"
+        },
+        {
+          "svg": "hielo",
+          "x": 0.68,
+          "y": 0.62,
+          "ancho": 85,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "hielo"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Al chocar, se roban cargas eléctricas: arriba se juntan las positivas y más abajo, las negativas.",
+      "clave": "cargas",
+      "nota": "cargas eléctricas",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "nube_tormenta",
+          "x": 0.5,
+          "y": 0.55,
+          "ancho": 1000,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "hielo",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 100,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": "chocar"
+        },
+        {
+          "svg": "mas",
+          "x": 0.36,
+          "y": 0.46,
+          "ancho": 80,
+          "anim": "pop",
+          "en": "positivas"
+        },
+        {
+          "svg": "mas",
+          "x": 0.5,
+          "y": 0.43,
+          "ancho": 80,
+          "anim": "pop",
+          "en": "positivas"
+        },
+        {
+          "svg": "mas",
+          "x": 0.64,
+          "y": 0.46,
+          "ancho": 80,
+          "anim": "pop",
+          "en": "positivas"
+        },
+        {
+          "svg": "menos",
+          "x": 0.34,
+          "y": 0.64,
+          "ancho": 80,
+          "anim": "pop",
+          "en": "negativas"
+        },
+        {
+          "svg": "menos",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 80,
+          "anim": "pop",
+          "en": "negativas"
+        },
+        {
+          "svg": "menos",
+          "x": 0.66,
+          "y": 0.64,
+          "ancho": 80,
+          "anim": "pop",
+          "en": "negativas"
+        },
+        {
+          "etiqueta": "positivas",
+          "x": 0.5,
+          "y": 0.33,
+          "a": [
+            0.5,
+            0.41
+          ],
+          "color": "#d93427",
+          "en": "positivas"
+        },
+        {
+          "etiqueta": "negativas",
+          "x": 0.5,
+          "y": 0.82,
+          "a": [
+            0.5,
+            0.68
+          ],
+          "color": "#2f7fd2",
+          "en": "negativas"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Cuando la diferencia se vuelve enorme, el aire ya no aguanta y salta una chispa gigante: el rayo.",
+      "clave": "chispa",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.52,
+          0.66,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "nube_tormenta",
+          "x": 0.5,
+          "y": 0.39,
+          "ancho": 800,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "menos",
+          "x": 0.38,
+          "y": 0.47,
+          "ancho": 64,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "diferencia"
+        },
+        {
+          "svg": "menos",
+          "x": 0.62,
+          "y": 0.47,
+          "ancho": 64,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "enorme"
+        },
+        {
+          "svg": "casa",
+          "x": 0.25,
+          "y": 0.83,
+          "ancho": 280,
+          "anim": "pop",
+          "en": 0.3
+        },
+        {
+          "svg": "arbol",
+          "x": 0.8,
+          "y": 0.81,
+          "ancho": 200,
+          "anim": "crecer",
+          "idle": "balanceo",
+          "en": "aire"
+        },
+        {
+          "svg": "rayo",
+          "x": 0.55,
+          "y": 0.66,
+          "ancho": 260,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": "salta"
+        },
+        {
+          "presion": true,
+          "x": 0.55,
+          "y": 0.66,
+          "radio": 180,
+          "n": 8,
+          "en": "gigante"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Ese calor hace que el aire se expanda de golpe, como una explosión. Ese estruendo es el trueno.",
+      "clave": "trueno",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "rayo",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 240,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": 0
+        },
+        {
+          "presion": true,
+          "x": 0.5,
+          "y": 0.58,
+          "radio": 240,
+          "n": 12,
+          "en": "expanda"
+        },
+        {
+          "svg": "ondas",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 920,
+          "anim": "pop",
+          "idle": "latido",
+          "sombra": false,
+          "en": "estruendo"
+        },
+        {
+          "etiqueta": "¡BUM! = trueno",
+          "x": 0.5,
+          "y": 0.88,
+          "color": "#d93427",
+          "en": "trueno"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "La luz llega casi al instante, pero el sonido tarda unos 3 segundos por kilómetro. Cuenta y sabrás qué tan lejos cayó.",
+      "voz": "La luz llega casi al instante, pero el sonido tarda unos tres segundos por kilómetro. Cuenta y sabrás qué tan lejos cayó.",
+      "clave": "3 segundos",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1.08
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "persona",
+          "x": 0.18,
+          "y": 0.72,
+          "ancho": 150,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "nube_tormenta",
+          "x": 0.76,
+          "y": 0.34,
+          "ancho": 440,
+          "anim": "fade",
+          "en": 0.2
+        },
+        {
+          "svg": "rayo",
+          "x": 0.77,
+          "y": 0.5,
+          "ancho": 140,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": "luz"
+        },
+        {
+          "etiqueta": "luz: al instante",
+          "x": 0.42,
+          "y": 0.44,
+          "color": "#f2a33a",
+          "en": "instante"
+        },
+        {
+          "svg": "reloj",
+          "x": 0.52,
+          "y": 0.61,
+          "ancho": 190,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "Cuenta"
+        },
+        {
+          "etiqueta": "sonido: más lento",
+          "x": 0.56,
+          "y": 0.75,
+          "color": "#2f7fd2",
+          "en": "sonido"
+        },
+        {
+          "numero": "≈ 3 s por km",
+          "x": 0.5,
+          "y": 0.88,
+          "color": "#1d1d2b",
+          "en": "3"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "La próxima tormenta ya no se verá igual. Síguenos si quieres más de estas.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "paleta": {
+    "a": "#46557a",
+    "b": "#141a2b"
+  },
+  "dibujos": {
+    "nube_tormenta": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 300\"><rect x=\"40\" y=\"150\" width=\"420\" height=\"120\" rx=\"60\" fill=\"#363c50\"/><g fill=\"#5d6680\"><circle cx=\"150\" cy=\"140\" r=\"80\"/><circle cx=\"250\" cy=\"100\" r=\"95\"/><circle cx=\"350\" cy=\"140\" r=\"80\"/><circle cx=\"95\" cy=\"190\" r=\"58\"/><circle cx=\"405\" cy=\"190\" r=\"58\"/></g><rect x=\"95\" y=\"140\" width=\"310\" height=\"100\" fill=\"#5d6680\"/><g fill=\"#4a5169\"><circle cx=\"160\" cy=\"222\" r=\"42\"/><circle cx=\"250\" cy=\"230\" r=\"46\"/><circle cx=\"340\" cy=\"222\" r=\"42\"/></g><g fill=\"#7a84a0\"><circle cx=\"230\" cy=\"70\" r=\"40\"/><circle cx=\"160\" cy=\"110\" r=\"30\"/></g></svg>",
+    "rayo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 500\"><path d=\"M120 0 L40 220 H100 L50 500 L170 190 H108 L160 0 Z\" fill=\"#ffd21f\"/><path d=\"M128 20 L70 205 H118 L80 420 L150 205 H96 L144 20 Z\" fill=\"#fff7c2\"/></svg>",
+    "hielo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g stroke=\"#dff3ff\" stroke-width=\"9\" stroke-linecap=\"round\"><path d=\"M50 8 V92\"/><path d=\"M14 29 L86 71\"/><path d=\"M14 71 L86 29\"/></g><g stroke=\"#9fd2f5\" stroke-width=\"6\" stroke-linecap=\"round\" fill=\"none\"><path d=\"M38 16 L50 26 L62 16\"/><path d=\"M38 84 L50 74 L62 84\"/></g><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"#ffffff\"/></svg>",
+    "mas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"46\" fill=\"#e8402f\"/><path d=\"M50 4 A46 46 0 0 1 50 96 Z\" fill=\"#c9301f\"/><path d=\"M50 26 V74 M26 50 H74\" stroke=\"#ffffff\" stroke-width=\"13\" stroke-linecap=\"round\"/></svg>",
+    "menos": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"46\" fill=\"#2f7fd2\"/><path d=\"M50 4 A46 46 0 0 1 50 96 Z\" fill=\"#2165ad\"/><path d=\"M26 50 H74\" stroke=\"#ffffff\" stroke-width=\"13\" stroke-linecap=\"round\"/></svg>",
+    "ondas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\"><g fill=\"none\" stroke=\"#ffffff\" stroke-linecap=\"round\"><path d=\"M190 200 A140 140 0 0 0 190 400\" stroke-width=\"16\" opacity=\"0.9\"/><path d=\"M410 200 A140 140 0 0 1 410 400\" stroke-width=\"16\" opacity=\"0.9\"/><path d=\"M120 140 A220 220 0 0 0 120 460\" stroke-width=\"13\" opacity=\"0.65\"/><path d=\"M480 140 A220 220 0 0 1 480 460\" stroke-width=\"13\" opacity=\"0.65\"/><path d=\"M50 80 A300 300 0 0 0 50 520\" stroke-width=\"10\" opacity=\"0.4\"/><path d=\"M550 80 A300 300 0 0 1 550 520\" stroke-width=\"10\" opacity=\"0.4\"/></g></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Un rayo calienta el aire hasta unos 30.000 °C (54.000 °F), unas cinco veces más que la superficie del Sol; el aire se expande de golpe y produce la onda de choque que oímos como trueno",
+      "fuente": "NOAA NESDIS / SciJinks, «What causes lightning and thunder?»; NOAA National Weather Service, «Understanding Lightning: Thunder» (weather.gov/safety/lightning-science-thunder)"
+    },
+    {
+      "dato": "En la nube de tormenta, las colisiones entre granizo blando (graupel) y cristales de hielo separan cargas; las corrientes ascendentes llevan las positivas arriba y las negativas quedan en la parte media-baja",
+      "fuente": "NOAA National Severe Storms Laboratory, «Severe Weather 101: Lightning» (nssl.noaa.gov/education/svrwx101/lightning)"
+    },
+    {
+      "dato": "El sonido recorre aproximadamente 1 km cada 3 segundos (unos 343 m/s); contando los segundos entre el relámpago y el trueno y dividiendo entre 3 se estima la distancia en km",
+      "fuente": "NOAA National Weather Service, «How far away is lightning?» (weather.gov/safety/lightning-science-thunder)"
+    }
+  ],
+  "nota": "Los 30.000 °C son un pico breve en un canal muy delgado; algunas fuentes de NOAA dan unos 27.700 °C (50.000 °F). La estructura de cargas está simplificada: también suele haber una pequeña zona positiva en la base de la nube. «Cinco veces el Sol» compara con la superficie (unos 5.500 °C)."
+}

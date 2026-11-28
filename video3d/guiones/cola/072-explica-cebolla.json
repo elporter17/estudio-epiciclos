@@ -1,0 +1,433 @@
+{
+  "id": "explica-cebolla-llorar",
+  "motor": "explica",
+  "titulo": "¿Por qué la cebolla hace llorar?",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "ciencia",
+    "cocina",
+    "quimica",
+    "cebolla",
+    "trucos"
+  ],
+  "descripcion": "Cortar cebolla es pelear contra un arma química en miniatura. Te contamos qué gas sale, por qué lloras y dos trucos para evitarlo.",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "cocina",
+      "texto": "Spoiler: la cebolla no te hace llorar de tristeza. Te está atacando con química.",
+      "clave": "atacando",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1.15
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "cebolla",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 520,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": 0
+        },
+        {
+          "svg": "cuchillo",
+          "x": 0.62,
+          "y": 0.42,
+          "ancho": 560,
+          "rot": -18,
+          "anim": "slideIn",
+          "desde": "derecha",
+          "idle": "sacudir",
+          "en": "atacando"
+        },
+        {
+          "etiqueta": "química",
+          "x": 0.22,
+          "y": 0.42,
+          "color": "#2f9e57",
+          "a": [
+            0.38,
+            0.6
+          ],
+          "en": "química"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Sus células guardan dos cosas por separado: compuestos con azufre y unas enzimas.",
+      "clave": "separado",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "celulas",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 960,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "etiqueta": "azufre",
+          "x": 0.22,
+          "y": 0.36,
+          "color": "#d39a12",
+          "a": [
+            0.3,
+            0.475
+          ],
+          "en": "azufre"
+        },
+        {
+          "etiqueta": "enzima",
+          "x": 0.74,
+          "y": 0.36,
+          "color": "#7a46c4",
+          "a": [
+            0.69,
+            0.475
+          ],
+          "en": "enzimas"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Al cortarla, rompes esas células. Todo se mezcla y en segundos se forma un gas irritante.",
+      "clave": "gas",
+      "nota": "irritante",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "celulas_rotas",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 960,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "cuchillo",
+          "x": 0.55,
+          "y": 0.44,
+          "ancho": 600,
+          "rot": 8,
+          "anim": "caer",
+          "en": "cortarla"
+        },
+        {
+          "burbujas": true,
+          "x": 0.5,
+          "y": 0.47,
+          "ancho": 0.7,
+          "alto": 0.2,
+          "n": 22,
+          "en": "mezcla"
+        },
+        {
+          "marca": true,
+          "x": 0.35,
+          "y": 0.62,
+          "radio": 90,
+          "en": "gas"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Su nombre: syn-propanotial-S-óxido. Sí, hasta el nombre da ganas de llorar.",
+      "voz": "Su nombre: sin propanotial ese óxido. Sí, hasta el nombre da ganas de llorar.",
+      "clave": "nombre",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "molecula",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 860,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": 0
+        },
+        {
+          "etiqueta": "azufre",
+          "x": 0.78,
+          "y": 0.72,
+          "color": "#d39a12",
+          "a": [
+            0.662,
+            0.566
+          ],
+          "en": "syn"
+        },
+        {
+          "etiqueta": "oxígeno",
+          "x": 0.8,
+          "y": 0.4,
+          "color": "#c43a30",
+          "a": [
+            0.8,
+            0.517
+          ],
+          "en": "nombre"
+        },
+        {
+          "numero": "C3H6OS",
+          "x": 0.3,
+          "y": 0.78,
+          "color": "#6b4fe0",
+          "tam": 60,
+          "en": "llorar"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Es volátil: viaja por el aire, llega a tus ojos y los irrita.",
+      "clave": "volátil",
+      "camara": {
+        "de": [
+          0.5,
+          0.7,
+          1
+        ],
+        "a": [
+          0.5,
+          0.5,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "cara",
+          "x": 0.5,
+          "y": 0.47,
+          "ancho": 520,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "cebolla",
+          "x": 0.5,
+          "y": 0.84,
+          "ancho": 300,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": "volátil"
+        },
+        {
+          "svg": "vapor_verde",
+          "x": 0.5,
+          "y": 0.68,
+          "ancho": 260,
+          "anim": "fade",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "viaja"
+        },
+        {
+          "marca": true,
+          "x": 0.432,
+          "y": 0.47,
+          "radio": 70,
+          "en": "ojos"
+        },
+        {
+          "marca": true,
+          "x": 0.568,
+          "y": 0.47,
+          "radio": 70,
+          "en": "irrita"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Tus ojos responden con lágrimas para lavar el irritante. No es drama, es limpieza.",
+      "clave": "lavar",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "cara",
+          "x": 0.5,
+          "y": 0.55,
+          "ancho": 580,
+          "anim": "fade",
+          "idle": "latido",
+          "en": 0
+        },
+        {
+          "svg": "lagrimas",
+          "x": 0.5,
+          "y": 0.644,
+          "ancho": 580,
+          "anim": "caer",
+          "sombra": false,
+          "en": "lágrimas"
+        },
+        {
+          "etiqueta": "limpieza",
+          "x": 0.78,
+          "y": 0.36,
+          "color": "#2f7fd2",
+          "a": [
+            0.66,
+            0.54
+          ],
+          "en": "limpieza"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "El truco: enfría la cebolla antes de cortarla y usa un cuchillo bien afilado. Sale menos gas.",
+      "clave": "afilado",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.55,
+          0.62,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "cebolla",
+          "x": 0.5,
+          "y": 0.68,
+          "ancho": 420,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "copo",
+          "x": 0.2,
+          "y": 0.42,
+          "ancho": 220,
+          "anim": "pop",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "enfría"
+        },
+        {
+          "etiqueta": "frío",
+          "x": 0.2,
+          "y": 0.55,
+          "color": "#2f7fd2",
+          "en": "enfría"
+        },
+        {
+          "svg": "cuchillo",
+          "x": 0.66,
+          "y": 0.44,
+          "ancho": 500,
+          "rot": -15,
+          "anim": "slideIn",
+          "desde": "derecha",
+          "en": "cuchillo"
+        },
+        {
+          "etiqueta": "afilado",
+          "x": 0.62,
+          "y": 0.54,
+          "color": "#4c555e",
+          "a": [
+            0.5,
+            0.47
+          ],
+          "en": "afilado"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Compártelo con quien siempre pica la cebolla en tu casa. Y síguenos.",
+      "clave": "síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "cebolla": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 460\"><g stroke=\"#e9d9b8\" stroke-width=\"5\" stroke-linecap=\"round\" fill=\"none\"><path d=\"M170 400 q-10 30 -30 44 M200 404 v46 M230 400 q10 30 30 44 M185 402 q-4 24 -14 40 M215 402 q4 24 14 40\"/></g>\n<path d=\"M200 40 C210 90 240 110 300 150 C380 205 380 330 300 380 C260 405 140 405 100 380 C20 330 20 205 100 150 C160 110 190 90 200 40 Z\" fill=\"#d68a3c\"/>\n<path d=\"M200 40 C210 90 240 110 300 150 C380 205 380 330 300 380 C270 398 230 404 200 404 C280 360 300 250 240 150 C220 110 205 80 200 40 Z\" fill=\"#b8692a\"/>\n<g stroke=\"#a55a22\" stroke-width=\"5\" fill=\"none\" opacity=\"0.7\"><path d=\"M200 60 C150 140 110 250 150 390\"/><path d=\"M200 60 C180 160 170 280 190 400\"/><path d=\"M200 60 C250 140 290 250 250 390\"/></g>\n<path d=\"M120 200 C100 240 100 290 120 320\" stroke=\"#f3b874\" stroke-width=\"16\" fill=\"none\" stroke-linecap=\"round\"/>\n<path d=\"M200 46 C190 20 196 6 204 0 C212 10 214 26 206 46 Z\" fill=\"#7a9a3c\"/></svg>",
+    "cuchillo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 150\"><path d=\"M20 70 L360 40 L360 110 L60 104 Q20 100 20 70 Z\" fill=\"#cfd6dc\"/><path d=\"M20 70 L360 40 L360 64 L40 76 Z\" fill=\"#eef2f5\"/><path d=\"M60 104 L360 110 L360 100 L70 96 Z\" fill=\"#9aa4ae\"/>\n<rect x=\"356\" y=\"36\" width=\"22\" height=\"80\" rx=\"6\" fill=\"#4c555e\"/><path d=\"M378 48 L540 52 Q556 54 556 74 Q556 96 540 98 L378 104 Z\" fill=\"#7a4a2c\"/><path d=\"M378 48 L540 52 Q556 54 556 66 L378 66 Z\" fill=\"#9a6240\"/>\n<g fill=\"#d9b779\"><circle cx=\"420\" cy=\"76\" r=\"7\"/><circle cx=\"480\" cy=\"76\" r=\"7\"/></g></svg>",
+    "celulas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 520\"><rect x=\"0\" y=\"0\" width=\"720\" height=\"520\" rx=\"40\" fill=\"#f6e7c4\"/><rect x=\"30\" y=\"30\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"66\" cy=\"80\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"112\" cy=\"80\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"164\" y=\"30\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"200\" cy=\"80\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"246\" cy=\"80\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"298\" y=\"30\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"334\" cy=\"80\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"380\" cy=\"80\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"432\" y=\"30\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"468\" cy=\"80\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"514\" cy=\"80\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"566\" y=\"30\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"602\" cy=\"80\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"648\" cy=\"80\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"50\" y=\"148\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"86\" cy=\"198\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"132\" cy=\"198\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"184\" y=\"148\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"220\" cy=\"198\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"266\" cy=\"198\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"318\" y=\"148\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"354\" cy=\"198\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"400\" cy=\"198\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"452\" y=\"148\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"488\" cy=\"198\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"534\" cy=\"198\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"586\" y=\"148\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"622\" cy=\"198\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"668\" cy=\"198\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"30\" y=\"266\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"66\" cy=\"316\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"112\" cy=\"316\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"164\" y=\"266\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"200\" cy=\"316\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"246\" cy=\"316\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"298\" y=\"266\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"334\" cy=\"316\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"380\" cy=\"316\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"432\" y=\"266\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"468\" cy=\"316\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"514\" cy=\"316\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"566\" y=\"266\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"602\" cy=\"316\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"648\" cy=\"316\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"50\" y=\"384\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"86\" cy=\"434\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"132\" cy=\"434\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"184\" y=\"384\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"220\" cy=\"434\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"266\" cy=\"434\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"318\" y=\"384\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"354\" cy=\"434\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"400\" cy=\"434\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"452\" y=\"384\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"488\" cy=\"434\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"534\" cy=\"434\" r=\"15\" fill=\"#8e5bd6\"/><rect x=\"586\" y=\"384\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"622\" cy=\"434\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"668\" cy=\"434\" r=\"15\" fill=\"#8e5bd6\"/></svg>",
+    "celulas_rotas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 520\"><rect x=\"0\" y=\"0\" width=\"720\" height=\"520\" rx=\"40\" fill=\"#f6e7c4\"/><path d=\"M30 56 Q30 30 56 30 L80 30 L70 60 L94 70 L82 130 L56 130 Q30 130 30 104 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><path d=\"M106 30 L122 30 Q148 30 148 56 L148 104 Q148 130 122 130 L100 130 L112 82 L96 60 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"84\" cy=\"86\" r=\"22\" fill=\"#9bd36a\" opacity=\"0.85\"/><circle cx=\"76\" cy=\"80\" r=\"9\" fill=\"#f2c230\"/><circle cx=\"94\" cy=\"92\" r=\"9\" fill=\"#8e5bd6\"/><rect x=\"164\" y=\"30\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"200\" cy=\"80\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"246\" cy=\"80\" r=\"15\" fill=\"#8e5bd6\"/><path d=\"M298 56 Q298 30 324 30 L348 30 L338 60 L362 70 L350 130 L324 130 Q298 130 298 104 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><path d=\"M374 30 L390 30 Q416 30 416 56 L416 104 Q416 130 390 130 L368 130 L380 82 L364 60 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"352\" cy=\"86\" r=\"22\" fill=\"#9bd36a\" opacity=\"0.85\"/><circle cx=\"344\" cy=\"80\" r=\"9\" fill=\"#f2c230\"/><circle cx=\"362\" cy=\"92\" r=\"9\" fill=\"#8e5bd6\"/><rect x=\"432\" y=\"30\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"468\" cy=\"80\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"514\" cy=\"80\" r=\"15\" fill=\"#8e5bd6\"/><path d=\"M566 56 Q566 30 592 30 L616 30 L606 60 L630 70 L618 130 L592 130 Q566 130 566 104 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><path d=\"M642 30 L658 30 Q684 30 684 56 L684 104 Q684 130 658 130 L636 130 L648 82 L632 60 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"620\" cy=\"86\" r=\"22\" fill=\"#9bd36a\" opacity=\"0.85\"/><circle cx=\"612\" cy=\"80\" r=\"9\" fill=\"#f2c230\"/><circle cx=\"630\" cy=\"92\" r=\"9\" fill=\"#8e5bd6\"/><rect x=\"50\" y=\"148\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"86\" cy=\"198\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"132\" cy=\"198\" r=\"15\" fill=\"#8e5bd6\"/><path d=\"M184 174 Q184 148 210 148 L234 148 L224 178 L248 188 L236 248 L210 248 Q184 248 184 222 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><path d=\"M260 148 L276 148 Q302 148 302 174 L302 222 Q302 248 276 248 L254 248 L266 200 L250 178 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"238\" cy=\"204\" r=\"22\" fill=\"#9bd36a\" opacity=\"0.85\"/><circle cx=\"230\" cy=\"198\" r=\"9\" fill=\"#f2c230\"/><circle cx=\"248\" cy=\"210\" r=\"9\" fill=\"#8e5bd6\"/><rect x=\"318\" y=\"148\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"354\" cy=\"198\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"400\" cy=\"198\" r=\"15\" fill=\"#8e5bd6\"/><path d=\"M452 174 Q452 148 478 148 L502 148 L492 178 L516 188 L504 248 L478 248 Q452 248 452 222 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><path d=\"M528 148 L544 148 Q570 148 570 174 L570 222 Q570 248 544 248 L522 248 L534 200 L518 178 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"506\" cy=\"204\" r=\"22\" fill=\"#9bd36a\" opacity=\"0.85\"/><circle cx=\"498\" cy=\"198\" r=\"9\" fill=\"#f2c230\"/><circle cx=\"516\" cy=\"210\" r=\"9\" fill=\"#8e5bd6\"/><rect x=\"586\" y=\"148\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"622\" cy=\"198\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"668\" cy=\"198\" r=\"15\" fill=\"#8e5bd6\"/><path d=\"M30 292 Q30 266 56 266 L80 266 L70 296 L94 306 L82 366 L56 366 Q30 366 30 340 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><path d=\"M106 266 L122 266 Q148 266 148 292 L148 340 Q148 366 122 366 L100 366 L112 318 L96 296 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"84\" cy=\"322\" r=\"22\" fill=\"#9bd36a\" opacity=\"0.85\"/><circle cx=\"76\" cy=\"316\" r=\"9\" fill=\"#f2c230\"/><circle cx=\"94\" cy=\"328\" r=\"9\" fill=\"#8e5bd6\"/><rect x=\"164\" y=\"266\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"200\" cy=\"316\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"246\" cy=\"316\" r=\"15\" fill=\"#8e5bd6\"/><path d=\"M298 292 Q298 266 324 266 L348 266 L338 296 L362 306 L350 366 L324 366 Q298 366 298 340 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><path d=\"M374 266 L390 266 Q416 266 416 292 L416 340 Q416 366 390 366 L368 366 L380 318 L364 296 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"352\" cy=\"322\" r=\"22\" fill=\"#9bd36a\" opacity=\"0.85\"/><circle cx=\"344\" cy=\"316\" r=\"9\" fill=\"#f2c230\"/><circle cx=\"362\" cy=\"328\" r=\"9\" fill=\"#8e5bd6\"/><rect x=\"432\" y=\"266\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"468\" cy=\"316\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"514\" cy=\"316\" r=\"15\" fill=\"#8e5bd6\"/><path d=\"M566 292 Q566 266 592 266 L616 266 L606 296 L630 306 L618 366 L592 366 Q566 366 566 340 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><path d=\"M642 266 L658 266 Q684 266 684 292 L684 340 Q684 366 658 366 L636 366 L648 318 L632 296 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"620\" cy=\"322\" r=\"22\" fill=\"#9bd36a\" opacity=\"0.85\"/><circle cx=\"612\" cy=\"316\" r=\"9\" fill=\"#f2c230\"/><circle cx=\"630\" cy=\"328\" r=\"9\" fill=\"#8e5bd6\"/><rect x=\"50\" y=\"384\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"86\" cy=\"434\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"132\" cy=\"434\" r=\"15\" fill=\"#8e5bd6\"/><path d=\"M184 410 Q184 384 210 384 L234 384 L224 414 L248 424 L236 484 L210 484 Q184 484 184 458 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><path d=\"M260 384 L276 384 Q302 384 302 410 L302 458 Q302 484 276 484 L254 484 L266 436 L250 414 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"238\" cy=\"440\" r=\"22\" fill=\"#9bd36a\" opacity=\"0.85\"/><circle cx=\"230\" cy=\"434\" r=\"9\" fill=\"#f2c230\"/><circle cx=\"248\" cy=\"446\" r=\"9\" fill=\"#8e5bd6\"/><rect x=\"318\" y=\"384\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"354\" cy=\"434\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"400\" cy=\"434\" r=\"15\" fill=\"#8e5bd6\"/><path d=\"M452 410 Q452 384 478 384 L502 384 L492 414 L516 424 L504 484 L478 484 Q452 484 452 458 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><path d=\"M528 384 L544 384 Q570 384 570 410 L570 458 Q570 484 544 484 L522 484 L534 436 L518 414 Z\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"506\" cy=\"440\" r=\"22\" fill=\"#9bd36a\" opacity=\"0.85\"/><circle cx=\"498\" cy=\"434\" r=\"9\" fill=\"#f2c230\"/><circle cx=\"516\" cy=\"446\" r=\"9\" fill=\"#8e5bd6\"/><rect x=\"586\" y=\"384\" width=\"118\" height=\"100\" rx=\"26\" fill=\"#fff8e6\" stroke=\"#e2c98f\" stroke-width=\"6\"/><circle cx=\"622\" cy=\"434\" r=\"15\" fill=\"#f2c230\"/><circle cx=\"668\" cy=\"434\" r=\"15\" fill=\"#8e5bd6\"/></svg>",
+    "molecula": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 360\"><g stroke=\"#5a5f6b\" stroke-width=\"16\" stroke-linecap=\"round\"><path d=\"M90 230 L210 160 L330 230 M450 160 L560 90\"/><path d=\"M90 230 L50 300 M90 230 L30 190 M210 160 L210 70 M330 230 L330 315\"/></g>\n<g stroke=\"#5a5f6b\" stroke-width=\"10\" stroke-linecap=\"round\"><path d=\"M337 243 L457 173 M323 217 L443 147\"/></g>\n<g fill=\"#ffffff\" stroke=\"#c9ced6\" stroke-width=\"4\"><circle cx=\"50\" cy=\"300\" r=\"26\"/><circle cx=\"30\" cy=\"190\" r=\"26\"/><circle cx=\"210\" cy=\"70\" r=\"26\"/><circle cx=\"330\" cy=\"315\" r=\"26\"/></g>\n<g fill=\"#4a4f5a\"><circle cx=\"90\" cy=\"230\" r=\"44\"/><circle cx=\"210\" cy=\"160\" r=\"44\"/><circle cx=\"330\" cy=\"230\" r=\"44\"/></g>\n<g fill=\"#6a707c\"><circle cx=\"78\" cy=\"218\" r=\"16\"/><circle cx=\"198\" cy=\"148\" r=\"16\"/><circle cx=\"318\" cy=\"218\" r=\"16\"/></g>\n<circle cx=\"450\" cy=\"160\" r=\"52\" fill=\"#f2c230\"/><circle cx=\"436\" cy=\"146\" r=\"18\" fill=\"#ffe27a\"/>\n<circle cx=\"560\" cy=\"90\" r=\"44\" fill=\"#e0483d\"/><circle cx=\"548\" cy=\"78\" r=\"15\" fill=\"#ff8a7a\"/></svg>",
+    "vapor_verde": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 460\"><path d=\"M50 450 C10 390 90 330 50 270 C10 210 90 150 50 90\" fill=\"none\" stroke=\"#9bd36a\" stroke-width=\"20\" stroke-linecap=\"round\" opacity=\"0.95\"/><circle cx=\"50\" cy=\"60\" r=\"16\" fill=\"#9bd36a\" opacity=\"0.8\"/><path d=\"M150 450 C110 390 190 330 150 270 C110 210 190 150 150 90\" fill=\"none\" stroke=\"#9bd36a\" stroke-width=\"20\" stroke-linecap=\"round\" opacity=\"0.7999999999999999\"/><circle cx=\"150\" cy=\"60\" r=\"14\" fill=\"#9bd36a\" opacity=\"0.8\"/><path d=\"M250 450 C210 390 290 330 250 270 C210 210 290 150 250 90\" fill=\"none\" stroke=\"#9bd36a\" stroke-width=\"20\" stroke-linecap=\"round\" opacity=\"0.6499999999999999\"/><circle cx=\"250\" cy=\"60\" r=\"12\" fill=\"#9bd36a\" opacity=\"0.8\"/></svg>",
+    "cara": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 560\"><path d=\"M90 230 C90 100 160 40 250 40 C340 40 410 100 410 230 L410 320 C410 450 340 520 250 520 C160 520 90 450 90 320 Z\" fill=\"#f2c39b\"/>\n<path d=\"M300 44 C370 60 410 120 410 230 L410 320 C410 450 340 520 250 520 C330 470 360 380 350 260 C344 160 330 90 300 44 Z\" fill=\"#e3a982\"/>\n<path d=\"M80 240 C70 110 150 20 260 24 C360 28 430 100 420 230 C400 160 360 120 300 110 C240 140 160 150 90 160 Z\" fill=\"#4a3426\"/>\n<ellipse cx=\"72\" cy=\"300\" rx=\"26\" ry=\"44\" fill=\"#e3a982\"/><ellipse cx=\"428\" cy=\"300\" rx=\"26\" ry=\"44\" fill=\"#d39874\"/>\n<g fill=\"#ffffff\"><ellipse cx=\"180\" cy=\"280\" rx=\"46\" ry=\"30\"/><ellipse cx=\"320\" cy=\"280\" rx=\"46\" ry=\"30\"/></g>\n<g stroke=\"#e0483d\" stroke-width=\"3\" opacity=\"0.8\" fill=\"none\"><path d=\"M140 276 l18 4 M146 292 l16 -4 M360 276 l-18 4 M354 292 l-16 -4\"/></g>\n<g fill=\"#5a3a24\"><circle cx=\"186\" cy=\"284\" r=\"17\"/><circle cx=\"314\" cy=\"284\" r=\"17\"/></g><g fill=\"#ffffff\"><circle cx=\"192\" cy=\"278\" r=\"6\"/><circle cx=\"320\" cy=\"278\" r=\"6\"/></g>\n<g stroke=\"#4a3426\" stroke-width=\"10\" stroke-linecap=\"round\" fill=\"none\"><path d=\"M128 232 Q180 218 226 240\"/><path d=\"M372 232 Q320 218 274 240\"/></g>\n<path d=\"M250 300 Q236 360 252 372 Q264 376 270 368\" stroke=\"#c98a64\" stroke-width=\"8\" fill=\"none\" stroke-linecap=\"round\"/>\n<path d=\"M200 430 Q250 410 300 430\" stroke=\"#9a4a3a\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/>\n<g fill=\"#ff9a8a\" opacity=\"0.5\"><ellipse cx=\"150\" cy=\"360\" rx=\"30\" ry=\"18\"/><ellipse cx=\"350\" cy=\"360\" rx=\"30\" ry=\"18\"/></g></svg>",
+    "lagrimas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 300\"><g fill=\"#5ab8f0\"><path transform=\"translate(180 10) scale(1)\" d=\"M0 0 C12 24 22 40 22 56 A22 22 0 0 1 -22 56 C-22 40 -12 24 0 0 Z\"/><path transform=\"translate(320 10) scale(1)\" d=\"M0 0 C12 24 22 40 22 56 A22 22 0 0 1 -22 56 C-22 40 -12 24 0 0 Z\"/><path transform=\"translate(172 140) scale(0.8)\" d=\"M0 0 C12 24 22 40 22 56 A22 22 0 0 1 -22 56 C-22 40 -12 24 0 0 Z\"/><path transform=\"translate(330 150) scale(0.8)\" d=\"M0 0 C12 24 22 40 22 56 A22 22 0 0 1 -22 56 C-22 40 -12 24 0 0 Z\"/><path transform=\"translate(178 236) scale(0.6)\" d=\"M0 0 C12 24 22 40 22 56 A22 22 0 0 1 -22 56 C-22 40 -12 24 0 0 Z\"/></g>\n<g fill=\"#c6ecff\"><circle cx=\"190\" cy=\"58\" r=\"6\"/><circle cx=\"330\" cy=\"58\" r=\"6\"/></g></svg>",
+    "copo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 300\"><g stroke=\"#e8f7ff\" stroke-width=\"18\" stroke-linecap=\"round\"><g transform=\"rotate(0 150 150)\"><path d=\"M150 20 V280\"/><path d=\"M150 70 L115 40 M150 70 L185 40 M150 230 L115 260 M150 230 L185 260\"/></g><g transform=\"rotate(60 150 150)\"><path d=\"M150 20 V280\"/><path d=\"M150 70 L115 40 M150 70 L185 40 M150 230 L115 260 M150 230 L185 260\"/></g><g transform=\"rotate(120 150 150)\"><path d=\"M150 20 V280\"/><path d=\"M150 70 L115 40 M150 70 L185 40 M150 230 L115 260 M150 230 L185 260\"/></g></g><circle cx=\"150\" cy=\"150\" r=\"26\" fill=\"#9fdcff\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Al dañar la cebolla, la enzima alinasa actúa sobre compuestos azufrados (sulfóxidos de cisteína) y otra enzima, la sintasa del factor lacrimógeno, forma syn-propanotial-S-óxido; antes del corte ese gas no existe porque las sustancias están separadas",
+      "fuente": "Imai et al., «An onion enzyme that makes the eyes water», Nature 419, 685 (2002); Royal Society of Chemistry, «Propanethial S-oxide» (edu.rsc.org)"
+    },
+    {
+      "dato": "El syn-propanotial-S-óxido es volátil, llega a los ojos y estimula sus nervios sensoriales; los ojos producen lágrimas para eliminar el irritante",
+      "fuente": "Royal Society of Chemistry (edu.rsc.org/magnificent-molecules/propanethial-s-oxide); Library of Congress, «Why does cutting onions make you cry?» (loc.gov/everyday-mysteries)"
+    },
+    {
+      "dato": "Enfriar la cebolla reduce la volatilidad del gas y la actividad enzimática; un cuchillo afilado rompe menos células que uno sin filo",
+      "fuente": "Library of Congress, Everyday Mysteries (loc.gov); Universidad de Bristol, Molecule of the Month «Propanethial S-oxide» (chm.bris.ac.uk/motm/pso)"
+    }
+  ],
+  "nota": "Fórmula C₃H₆OS (CH₃CH₂CH=S⁺–O⁻); el dibujo es un modelo simplificado y no muestra todos los hidrógenos. Se dice «syn» como «sin» en la voz. «Enzimas» en plural: son al menos dos (alinasa y sintasa del factor lacrimógeno). El gas no forma ácido sulfúrico en el ojo (mito común); lo que hace es activar nervios sensoriales. «En segundos»: el factor lacrimógeno se forma muy rápido tras el corte."
+}
