@@ -448,6 +448,14 @@ async function noticiasVideo(hist, enfoque = '') {
   // enfoque «honduras» (prueba de Facebook local): las de Honduras primero, el resto completa hasta 5
   const ordenadas = enfoque === 'honduras' ? [...frescas.filter((n) => n.cat === 'honduras'), ...frescas.filter((n) => n.cat !== 'honduras')] : frescas;
   const elegidas = ordenadas.slice(0, N_REEL);
+  // Siempre una de Honduras (2026-11-28): si el reel no trae ninguna, se toma la mejor de Honduras de la lista o, si no hay,
+  // se buscan las de los últimos 3 días; va en el segundo lugar (la primera sigue siendo la más importante)
+  if (!elegidas.some((n) => n.cat === 'honduras')) {
+    let hn = frescas.find((n) => n.cat === 'honduras');
+    if (!hn) hn = (await juntarNoticias({ horas: 72, max: 80, yaSalieron: titulos, vistos: vistas }).catch(() => [])).find((n) => n.cat === 'honduras' && !elegidas.some((x) => x.link === n.link));
+    if (hn) { elegidas.splice(Math.min(1, elegidas.length), 0, hn); if (elegidas.length > N_REEL) elegidas.pop(); console.error(`Noticias: agregada una de Honduras: ${hn.titulo}`); }
+    else console.error('Noticias: no encontré ninguna de Honduras para hoy');
+  }
   if (elegidas.length < 3) return null;
   // La narración alarga cada escena lo que haga falta (titular + resumen)
   const durNoticia = Math.min(13, Math.max(8.5, 51.5 / elegidas.length));

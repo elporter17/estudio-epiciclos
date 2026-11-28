@@ -42,7 +42,7 @@
           "svg": "persona",
           "x": 0.5,
           "y": 0.345,
-          "ancho": 80,
+          "ancho": 120,
           "anim": "caer",
           "idle": "flotar",
           "en": "saltas"
@@ -96,7 +96,7 @@
           "svg": "persona",
           "x": 0.5,
           "y": 0.46,
-          "ancho": 80,
+          "ancho": 120,
           "anim": "fade",
           "idle": "sacudir",
           "en": 0
@@ -152,7 +152,7 @@
           "svg": "persona",
           "x": 0.5,
           "y": 0.58,
-          "ancho": 80,
+          "ancho": 120,
           "anim": "pop",
           "idle": "sacudir",
           "en": 0
@@ -211,7 +211,7 @@
           "svg": "persona",
           "x": 0.5,
           "y": 0.81,
-          "ancho": 80,
+          "ancho": 120,
           "anim": "slideIn",
           "desde": "arriba",
           "idle": "flotar",
@@ -287,7 +287,7 @@
           "svg": "persona",
           "x": 0.5,
           "y": 0.48,
-          "ancho": 80,
+          "ancho": 120,
           "anim": "pop",
           "idle": "flotar",
           "en": "caer"
@@ -306,7 +306,7 @@
       ]
     },
     {
-      "fondo": "cielo",
+      "fondo": "oscuro",
       "texto": "Pero con aire, el roce te frenaría poco a poco y acabarías flotando en el centro.",
       "clave": "roce",
       "nota": "fricción",
@@ -324,22 +324,28 @@
       },
       "capas": [
         {
-          "svg": "viento",
+          "svg": "tierra",
           "x": 0.5,
-          "y": 0.6,
-          "ancho": 560,
+          "y": 0.58,
+          "ancho": 880,
           "anim": "fade",
-          "en": "aire",
-          "sombra": false
+          "en": 0
         },
         {
           "svg": "persona",
           "x": 0.5,
-          "y": 0.55,
-          "ancho": 300,
+          "y": 0.58,
+          "ancho": 120,
           "anim": "pop",
-          "idle": "sacudir",
+          "idle": "flotar",
           "en": 0
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.58,
+          "radio": 120,
+          "en": "centro"
         },
         {
           "etiqueta": "roce del aire",

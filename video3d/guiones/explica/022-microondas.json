@@ -164,7 +164,7 @@
           "x": 0.4,
           "y": 0.39,
           "color": "#6b4fe0",
-          "en": "gigahercios"
+          "en": "2.450"
         }
       ]
     },
@@ -209,7 +209,6 @@
           "x": 0.73,
           "y": 0.6,
           "ancho": 420,
-          "rot": 50,
           "anim": "pop",
           "idle": "sacudir",
           "en": "agua"
@@ -219,7 +218,6 @@
           "x": 0.36,
           "y": 0.76,
           "ancho": 440,
-          "rot": -35,
           "anim": "pop",
           "idle": "sacudir",
           "en": "girar"

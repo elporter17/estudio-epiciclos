@@ -207,7 +207,7 @@
           "ancho": 150,
           "anim": "crecer",
           "idle": "latido",
-          "en": "arriba"
+          "en": "empuja"
         }
       ]
     },
@@ -244,7 +244,7 @@
           "ancho": 1000,
           "anim": "fade",
           "sombra": false,
-          "en": "mayor"
+          "en": "Abajo"
         },
         {
           "svg": "ala_inclinada",
@@ -275,7 +275,7 @@
           "x": 0.7,
           "y": 0.76,
           "color": "#d93427",
-          "en": "mayor"
+          "en": "Abajo"
         }
       ]
     },

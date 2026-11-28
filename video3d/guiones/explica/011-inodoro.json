@@ -334,7 +334,7 @@
           "ancho": 760,
           "anim": "fade",
           "sombra": false,
-          "en": "llena"
+          "en": 0
         },
         {
           "svg": "flechas_sifon",

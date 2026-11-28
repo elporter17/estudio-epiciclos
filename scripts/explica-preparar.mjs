@@ -54,6 +54,9 @@ const escenas = g.escenas.map((e, i) => {
   const palabras = tiempos(e.texto, voz);
   const dur = Math.max(e.minimo || 2.2, INICIO_VOZ + voz + COLA);
   const capas = (e.capas || []).map((c) => ({ ...c, t: cuando(c.en, palabras) }));
+  // El dibujo principal (la primera capa con dibujo) está desde el inicio, para que ninguna escena empiece vacía; «esperar: true» lo evita
+  const principal = capas.find((c) => c.svg);
+  if (principal && principal.t > 0.4 && !principal.esperar) principal.t = 0.1;
   const r = { ...e, capas, audio: archivo, voz, palabras, inicio: t, dur };
   t += dur; return r;
 });

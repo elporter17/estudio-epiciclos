@@ -54,7 +54,7 @@ function Fondo({ tipo, pal }) {
     <svg width={W} height={H} style={s}>
       <defs><linearGradient id="ci-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#4aa8ef" /><stop offset="1" stopColor="#c8ecff" /></linearGradient></defs>
       <rect width={W} height={H} fill="url(#ci-g)" />
-      {[[220, 380, 1], [800, 600, 0.8], [420, 1000, 1.2], [880, 1300, 0.9]].map(([x, y, k], i) => (<g key={i} fill="#ffffffd8"><ellipse cx={x} cy={y} rx={130 * k} ry={46 * k} /><ellipse cx={x - 60 * k} cy={y - 26 * k} rx={70 * k} ry={52 * k} /><ellipse cx={x + 50 * k} cy={y - 34 * k} rx={84 * k} ry={60 * k} /></g>))}
+      {[[220, 560, 1], [800, 680, 0.8], [420, 1000, 1.2], [880, 1300, 0.9]].map(([x, y, k], i) => (<g key={i} fill="#ffffffd8"><ellipse cx={x} cy={y} rx={130 * k} ry={46 * k} /><ellipse cx={x - 60 * k} cy={y - 26 * k} rx={70 * k} ry={52 * k} /><ellipse cx={x + 50 * k} cy={y - 34 * k} rx={84 * k} ry={60 * k} /></g>))}
     </svg>);
   if (tipo === 'mar') return (
     <svg width={W} height={H} style={s}>
@@ -101,7 +101,7 @@ function Capa({ c, f, fps, t, dibujos }) {
   if (c.burbujas) return <Burbujas c={c} x={x} y={y} t={t} lin={lin} />;
   if (c.marca) return <Marca c={c} x={x} y={y} d={d} />;
   if (c.numero) return (
-    <div style={{ position: 'absolute', left: x, top: y, transform: `translate(-50%,-50%) scale(${sp})`, background: c.color || '#1d1d2b', color: '#fff', fontFamily: 'Archivo Black', fontSize: c.tam || 64, padding: '10px 30px', borderRadius: 999, boxShadow: '0 8px 0 #00000040' }}>{c.numero}</div>);
+    <div style={{ position: 'absolute', left: x, top: y, transform: `translate(-50%,-50%) scale(${sp})`, background: c.color || '#1d1d2b', color: '#fff', fontFamily: 'Archivo Black', fontSize: c.tam || 64, padding: '10px 30px', borderRadius: 999, whiteSpace: 'nowrap', boxShadow: '0 8px 0 #00000040' }}>{c.numero}</div>);
 
   const svg = dibujos[c.svg]; if (!svg) return null;
   const ancho = c.ancho || 500, alto = c.alto || ancho * proporcion(svg);
@@ -221,7 +221,8 @@ function Escena({ e, dibujos, pal, primera }) {
   const f = useCurrentFrame(), { fps } = useVideoConfig(), t = f / fps;
   const cam = e.camara || {}, de = cam.de || [0.5, 0.5, 1], a = cam.a || de;
   const p = interpolate(t, [0, e.dur], [0, 1], { ...clamp, easing: suave });
-  const z = de[2] + (a[2] - de[2]) * p, cx = de[0] + (a[0] - de[0]) * p, cy = de[1] + (a[1] - de[1]) * p;
+  // Zoom máximo 1,15: más cerca, los dibujos grandes se salen del cuadro (revisión del 2026-11-28)
+  const z = Math.min(1.15, de[2] + (a[2] - de[2]) * p), cx = de[0] + (a[0] - de[0]) * p, cy = de[1] + (a[1] - de[1]) * p;
   const tx = Math.min(0, Math.max(W - W * z, W / 2 - cx * W * z)), ty = Math.min(0, Math.max(H - H * z, H / 2 - cy * H * z));
   const golpe = interpolate(f, [0, 10], [1.05, 1], { ...clamp, easing: salida });
   const op = primera ? 1 : interpolate(f, [0, CRUCE], [0, 1], clamp);
