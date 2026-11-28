@@ -87,8 +87,8 @@
         { "svg": "celular", "x": 0.69, "y": 0.6, "ancho": 130, "anim": "pop", "rot": -3, "en": "4" },
         { "svg": "celular", "x": 0.78, "y": 0.6, "ancho": 130, "anim": "pop", "rot": 3, "en": "celulares" },
         { "svg": "celular", "x": 0.87, "y": 0.62, "ancho": 130, "anim": "pop", "rot": 8, "en": "hoy" },
-        { "numero": "≈ 790 g", "x": 0.27, "y": 0.86, "color": "#1d1d2b", "en": "800" },
-        { "numero": "4 × ≈ 200 g", "x": 0.73, "y": 0.8, "color": "#1d1d2b", "en": "hoy" },
+        { "numero": "790 g", "x": 0.27, "y": 0.86, "color": "#1d1d2b", "en": "800" },
+        { "numero": "4 x 200 g", "x": 0.73, "y": 0.8, "color": "#1d1d2b", "en": "hoy" },
         { "etiqueta": "batería: 30 min", "x": 0.4, "y": 0.36, "color": "#d93427", "a": [0.27, 0.5], "en": "batería" }
       ]
     },

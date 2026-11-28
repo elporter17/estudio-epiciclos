@@ -1,0 +1,410 @@
+{
+  "id": "explica-hn-arrecife-bahia",
+  "motor": "explica",
+  "titulo": "El arrecife de Roatán y Utila",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "roatan",
+    "utila",
+    "arrecife",
+    "mar"
+  ],
+  "descripcion": "Las Islas de la Bahía son parte del Sistema Arrecifal Mesoamericano, considerado el segundo arrecife de barrera más grande del mundo. Roatán, Utila, Guanaja… y el tiburón ballena.",
+  "musica": "electro",
+  "escenas": [
+    {
+      "fondo": "mar",
+      "texto": "Bajo el mar hay una muralla viva de unos 1.000 kilómetros… y una punta está en Honduras.",
+      "voz": "Bajo el mar hay una muralla viva de unos mil kilómetros… y una punta está en Honduras.",
+      "clave": "muralla",
+      "camara": {
+        "de": [
+          0.5,
+          0.75,
+          1.15
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "arrecife",
+          "x": 0.5,
+          "y": 0.74,
+          "ancho": 1080,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": 0
+        },
+        {
+          "svg": "peces",
+          "x": 0.5,
+          "y": 0.48,
+          "ancho": 640,
+          "anim": "pop",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "viva"
+        },
+        {
+          "numero": "≈ 1.000 km",
+          "x": 0.5,
+          "y": 0.33,
+          "color": "#e8483b",
+          "en": "1.000"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Es el Sistema Arrecifal Mesoamericano: va de México a Belice, Guatemala y Honduras.",
+      "clave": "Mesoamericano",
+      "camara": {
+        "de": [
+          0.4,
+          0.55,
+          1.1
+        ],
+        "a": [
+          0.55,
+          0.75,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "costa_arrecife",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 800,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "etiqueta": "México",
+          "x": 0.25,
+          "y": 0.5,
+          "color": "#2f6b45",
+          "en": "México"
+        },
+        {
+          "etiqueta": "Belice",
+          "x": 0.25,
+          "y": 0.66,
+          "color": "#2f6b45",
+          "en": "Belice"
+        },
+        {
+          "etiqueta": "Guatemala",
+          "x": 0.27,
+          "y": 0.83,
+          "color": "#2f6b45",
+          "en": "Guatemala"
+        },
+        {
+          "etiqueta": "Honduras",
+          "x": 0.66,
+          "y": 0.87,
+          "color": "#1f3a6e",
+          "en": "Honduras"
+        }
+      ]
+    },
+    {
+      "fondo": "mar",
+      "texto": "Se le considera el segundo arrecife de barrera más grande del mundo, después del de Australia.",
+      "clave": "segundo",
+      "nota": "arrecife de barrera",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.7,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "arrecife",
+          "x": 0.5,
+          "y": 0.74,
+          "ancho": 1080,
+          "anim": "ninguna"
+        },
+        {
+          "numero": "2.º",
+          "x": 0.5,
+          "y": 0.45,
+          "color": "#6b4fe0",
+          "tam": 120,
+          "en": "segundo"
+        },
+        {
+          "etiqueta": "1.º: Gran Barrera (Australia)",
+          "x": 0.5,
+          "y": 0.58,
+          "color": "#1f3a6e",
+          "tam": 36,
+          "en": "Australia"
+        }
+      ]
+    },
+    {
+      "fondo": "mar",
+      "texto": "En Honduras lo tienen las Islas de la Bahía: Utila, Roatán y Guanaja.",
+      "clave": "Bahía",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "isla_roatan",
+          "x": 0.5,
+          "y": 0.47,
+          "ancho": 620,
+          "anim": "pop",
+          "esperar": true,
+          "en": "Roatán"
+        },
+        {
+          "svg": "isla_utila",
+          "x": 0.22,
+          "y": 0.66,
+          "ancho": 400,
+          "anim": "pop",
+          "en": "Utila"
+        },
+        {
+          "svg": "isla_guanaja",
+          "x": 0.79,
+          "y": 0.72,
+          "ancho": 380,
+          "anim": "pop",
+          "en": "Guanaja"
+        },
+        {
+          "etiqueta": "Utila",
+          "x": 0.22,
+          "y": 0.79,
+          "color": "#1f6b8a",
+          "en": "Utila"
+        },
+        {
+          "etiqueta": "Roatán",
+          "x": 0.5,
+          "y": 0.59,
+          "color": "#1f6b8a",
+          "en": "Roatán"
+        },
+        {
+          "etiqueta": "Guanaja",
+          "x": 0.79,
+          "y": 0.86,
+          "color": "#1f6b8a",
+          "en": "Guanaja"
+        }
+      ]
+    },
+    {
+      "fondo": "mar",
+      "texto": "Y en Utila se puede ver al tiburón ballena, el pez más grande del mundo.",
+      "clave": "ballena",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1
+        ],
+        "a": [
+          0.42,
+          0.58,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tiburon_ballena",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 1000,
+          "anim": "slideIn",
+          "desde": "derecha",
+          "idle": "flotar",
+          "esperar": true,
+          "en": "tiburón"
+        },
+        {
+          "svg": "peces",
+          "x": 0.7,
+          "y": 0.82,
+          "ancho": 420,
+          "anim": "pop",
+          "idle": "flotar",
+          "sombra": false,
+          "en": 0.2
+        },
+        {
+          "etiqueta": "el pez más grande",
+          "x": 0.5,
+          "y": 0.38,
+          "color": "#1f3a6e",
+          "en": "pez"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Tranquilo, no come gente: nada con la boca abierta y filtra plancton diminuto.",
+      "clave": "plancton",
+      "camara": {
+        "de": [
+          0.4,
+          0.58,
+          1
+        ],
+        "a": [
+          0.3,
+          0.58,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tiburon_ballena",
+          "x": 0.6,
+          "y": 0.58,
+          "ancho": 1000,
+          "anim": "fade",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "svg": "plancton",
+          "x": 0.15,
+          "y": 0.56,
+          "ancho": 260,
+          "anim": "fade",
+          "idle": "latido",
+          "sombra": false,
+          "en": "boca"
+        },
+        {
+          "marca": true,
+          "x": 0.19,
+          "y": 0.57,
+          "radio": 120,
+          "en": "filtra"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Pero el agua demasiado caliente blanquea los corales. Cuidarlos es tarea de todos.",
+      "clave": "blanquea",
+      "camara": {
+        "de": [
+          0.5,
+          0.65,
+          1
+        ],
+        "a": [
+          0.5,
+          0.72,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "arrecife",
+          "x": 0.5,
+          "y": 0.74,
+          "ancho": 1080,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "termometro",
+          "x": 0.82,
+          "y": 0.42,
+          "ancho": 150,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": "caliente"
+        },
+        {
+          "svg": "coral_blanco",
+          "x": 0.5,
+          "y": 0.74,
+          "ancho": 1080,
+          "anim": "fade",
+          "sombra": false,
+          "en": "blanquea"
+        },
+        {
+          "etiqueta": "coral blanqueado",
+          "x": 0.35,
+          "y": 0.42,
+          "color": "#c9302c",
+          "en": "corales"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Ya buceaste en Roatán, Utila o Guanaja? Cuéntanos y síguenos para más Honduras bajo el agua.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "arrecife": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 620\"><path d=\"M0 620 L0 520 Q250 470 500 500 Q750 530 1000 490 L1000 620Z\" fill=\"#e8d39a\"/><path d=\"M0 620 L0 570 Q300 540 600 560 Q800 575 1000 550 L1000 620Z\" fill=\"#d6be82\"/><path d=\"M130 520 L22 340 Q130 256 238 340Z\" fill=\"#9b59b6\"/><path d=\"M130 520 L70 316 M130 520 L130 292 M130 520 L190 316\" stroke=\"#ffffff\" stroke-opacity=\"0.35\" stroke-width=\"6\"/><path d=\"M300 520 L300 364 M300 442 L248 377 M300 416 L358.5 338 M248 377 L235 325\" stroke=\"#ff7a59\" stroke-width=\"28.6\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M305.2 520 L305.2 377 M305.2 416 L358.5 343.2\" stroke=\"#d9573a\" stroke-width=\"10.4\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M360 525 A110 88 0 0 1 580 525Z\" fill=\"#f2c14e\"/><path d=\"M393 503 Q437 459 470 492 T547 503 M415 470 Q470 437 525 470\" stroke=\"#c99a2e\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M650 520 L650 388 M650 454 L606 399 M650 432 L699.5 366 M606 399 L595 355\" stroke=\"#ff5fa2\" stroke-width=\"24.200000000000003\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M654.4 520 L654.4 399 M654.4 432 L699.5 370.4\" stroke=\"#d6427f\" stroke-width=\"8.8\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M820 520 L730 370 Q820 300 910 370Z\" fill=\"#e8483b\"/><path d=\"M820 520 L770 350 M820 520 L820 330 M820 520 L870 350\" stroke=\"#ffffff\" stroke-opacity=\"0.35\" stroke-width=\"6\"/><path d=\"M860 540 A70 56 0 0 1 1000 540Z\" fill=\"#7cc243\"/><path d=\"M881 526 Q909 498 930 519 T979 526 M895 505 Q930 484 965 505\" stroke=\"#5a9a2a\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M150 545 A60 48 0 0 1 270 545Z\" fill=\"#5ab0e0\"/><path d=\"M168 533 Q192 509 210 527 T252 533 M180 515 Q210 497 240 515\" stroke=\"#3a8bbf\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M560 520 Q570 440 555 400 M580 520 Q600 450 590 410\" stroke=\"#3fae6a\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+    "coral_blanco": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 620\"><path d=\"M0 620 L0 520 Q250 470 500 500 Q750 530 1000 490 L1000 620Z\" fill=\"#e8d39a\"/><path d=\"M0 620 L0 570 Q300 540 600 560 Q800 575 1000 550 L1000 620Z\" fill=\"#d6be82\"/><path d=\"M130 520 L22 340 Q130 256 238 340Z\" fill=\"#f1eee6\"/><path d=\"M130 520 L70 316 M130 520 L130 292 M130 520 L190 316\" stroke=\"#ffffff\" stroke-opacity=\"0.35\" stroke-width=\"6\"/><path d=\"M300 520 L300 364 M300 442 L248 377 M300 416 L358.5 338 M248 377 L235 325\" stroke=\"#f1eee6\" stroke-width=\"28.6\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M305.2 520 L305.2 377 M305.2 416 L358.5 343.2\" stroke=\"#d9d4c8\" stroke-width=\"10.4\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M360 525 A110 88 0 0 1 580 525Z\" fill=\"#f1eee6\"/><path d=\"M393 503 Q437 459 470 492 T547 503 M415 470 Q470 437 525 470\" stroke=\"#d9d4c8\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M650 520 L650 388 M650 454 L606 399 M650 432 L699.5 366 M606 399 L595 355\" stroke=\"#f1eee6\" stroke-width=\"24.200000000000003\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M654.4 520 L654.4 399 M654.4 432 L699.5 370.4\" stroke=\"#d9d4c8\" stroke-width=\"8.8\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M820 520 L730 370 Q820 300 910 370Z\" fill=\"#f1eee6\"/><path d=\"M820 520 L770 350 M820 520 L820 330 M820 520 L870 350\" stroke=\"#ffffff\" stroke-opacity=\"0.35\" stroke-width=\"6\"/><path d=\"M860 540 A70 56 0 0 1 1000 540Z\" fill=\"#f1eee6\"/><path d=\"M881 526 Q909 498 930 519 T979 526 M895 505 Q930 484 965 505\" stroke=\"#d9d4c8\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M150 545 A60 48 0 0 1 270 545Z\" fill=\"#f1eee6\"/><path d=\"M168 533 Q192 509 210 527 T252 533 M180 515 Q210 497 240 515\" stroke=\"#d9d4c8\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M560 520 Q570 440 555 400 M580 520 Q600 450 590 410\" stroke=\"#f1eee6\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+    "peces": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 400\"><g transform=\"translate(140 120) scale(1.1 1.1)\"><path d=\"M-60 0 Q-10 -40 50 0 Q-10 40 -60 0Z\" fill=\"#ffd23f\"/><path d=\"M-55 0 L-90 -26 L-82 0 L-90 26Z\" fill=\"#f29e1d\"/><path d=\"M-20 -26 Q0 0 -20 26\" stroke=\"#f29e1d\" stroke-width=\"8\" fill=\"none\"/><circle cx=\"28\" cy=\"-6\" r=\"7\" fill=\"#fff\"/><circle cx=\"30\" cy=\"-6\" r=\"3.5\" fill=\"#111\"/></g><g transform=\"translate(380 70) scale(0.8 0.8)\"><path d=\"M-60 0 Q-10 -40 50 0 Q-10 40 -60 0Z\" fill=\"#3aa0e0\"/><path d=\"M-55 0 L-90 -26 L-82 0 L-90 26Z\" fill=\"#ffd23f\"/><path d=\"M-20 -26 Q0 0 -20 26\" stroke=\"#ffd23f\" stroke-width=\"8\" fill=\"none\"/><circle cx=\"28\" cy=\"-6\" r=\"7\" fill=\"#fff\"/><circle cx=\"30\" cy=\"-6\" r=\"3.5\" fill=\"#111\"/></g><g transform=\"translate(560 180) scale(1.2 1.2)\"><path d=\"M-60 0 Q-10 -40 50 0 Q-10 40 -60 0Z\" fill=\"#ff7a59\"/><path d=\"M-55 0 L-90 -26 L-82 0 L-90 26Z\" fill=\"#ffffff\"/><path d=\"M-20 -26 Q0 0 -20 26\" stroke=\"#ffffff\" stroke-width=\"8\" fill=\"none\"/><circle cx=\"28\" cy=\"-6\" r=\"7\" fill=\"#fff\"/><circle cx=\"30\" cy=\"-6\" r=\"3.5\" fill=\"#111\"/></g><g transform=\"translate(260 280) scale(0.9 0.9)\"><path d=\"M-60 0 Q-10 -40 50 0 Q-10 40 -60 0Z\" fill=\"#9b59b6\"/><path d=\"M-55 0 L-90 -26 L-82 0 L-90 26Z\" fill=\"#ffd23f\"/><path d=\"M-20 -26 Q0 0 -20 26\" stroke=\"#ffd23f\" stroke-width=\"8\" fill=\"none\"/><circle cx=\"28\" cy=\"-6\" r=\"7\" fill=\"#fff\"/><circle cx=\"30\" cy=\"-6\" r=\"3.5\" fill=\"#111\"/></g><g transform=\"translate(680 320) scale(0.7 0.7)\"><path d=\"M-60 0 Q-10 -40 50 0 Q-10 40 -60 0Z\" fill=\"#ffd23f\"/><path d=\"M-55 0 L-90 -26 L-82 0 L-90 26Z\" fill=\"#3a3a3a\"/><path d=\"M-20 -26 Q0 0 -20 26\" stroke=\"#3a3a3a\" stroke-width=\"8\" fill=\"none\"/><circle cx=\"28\" cy=\"-6\" r=\"7\" fill=\"#fff\"/><circle cx=\"30\" cy=\"-6\" r=\"3.5\" fill=\"#111\"/></g><g transform=\"translate(470 330) scale(0.6 0.6)\"><path d=\"M-60 0 Q-10 -40 50 0 Q-10 40 -60 0Z\" fill=\"#7cc243\"/><path d=\"M-55 0 L-90 -26 L-82 0 L-90 26Z\" fill=\"#3aa0e0\"/><path d=\"M-20 -26 Q0 0 -20 26\" stroke=\"#3aa0e0\" stroke-width=\"8\" fill=\"none\"/><circle cx=\"28\" cy=\"-6\" r=\"7\" fill=\"#fff\"/><circle cx=\"30\" cy=\"-6\" r=\"3.5\" fill=\"#111\"/></g></svg>",
+    "costa_arrecife": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 1000\"><path d=\"M0 0 L300 0 Q330 260 290 470 Q260 640 340 760 Q520 800 800 760 L800 1000 L0 1000Z\" fill=\"#d8c48e\"/><path d=\"M0 0 L240 0 Q260 260 230 470 Q210 640 290 800 Q520 840 800 820 L800 1000 L0 1000Z\" fill=\"#7fb069\"/><path d=\"M370 20 Q400 260 360 470 Q330 620 380 700\" stroke=\"#ff7a59\" stroke-width=\"16\" stroke-dasharray=\"26 16\" stroke-linecap=\"round\" fill=\"none\"/><ellipse cx=\"470\" cy=\"705\" rx=\"30\" ry=\"12\" fill=\"#7fb069\"/><ellipse cx=\"580\" cy=\"690\" rx=\"70\" ry=\"13\" fill=\"#7fb069\"/><ellipse cx=\"700\" cy=\"680\" rx=\"24\" ry=\"12\" fill=\"#7fb069\"/><path d=\"M440 705 H500 M510 690 H650 M676 680 H724\" stroke=\"#ff7a59\" stroke-width=\"6\" stroke-dasharray=\"10 8\"/></svg>",
+    "isla_roatan": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 260\"><ellipse cx=\"230\" cy=\"161.2\" rx=\"220.79999999999998\" ry=\"88.4\" fill=\"#5fd3d0\"/><ellipse cx=\"230\" cy=\"156\" rx=\"174.8\" ry=\"57.2\" fill=\"#f3dc9b\"/><ellipse cx=\"230\" cy=\"145.60000000000002\" rx=\"147.20000000000002\" ry=\"41.6\" fill=\"#4f9a62\"/><ellipse cx=\"211.60000000000002\" cy=\"135.20000000000002\" rx=\"82.8\" ry=\"20.8\" fill=\"#5cab6c\"/><path d=\"M174.8 143 Q180.8 93 170.8 53\" stroke=\"#8a5a33\" stroke-width=\"7\" fill=\"none\"/><path d=\"M170.8 53 q-40 -6 -50 20 q30 -14 50 -20 q40 -10 50 18 q-26 -14 -50 -18 q-20 -30 -46 -26 q30 2 46 26 q16 -34 46 -30 q-30 4 -46 30Z\" fill=\"#3f8a55\"/><path d=\"M285.2 143 Q291.2 93 281.2 53\" stroke=\"#8a5a33\" stroke-width=\"7\" fill=\"none\"/><path d=\"M281.2 53 q-40 -6 -50 20 q30 -14 50 -20 q40 -10 50 18 q-26 -14 -50 -18 q-20 -30 -46 -26 q30 2 46 26 q16 -34 46 -30 q-30 4 -46 30Z\" fill=\"#3f8a55\"/></svg>",
+    "isla_utila": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 220\"><ellipse cx=\"150\" cy=\"136.4\" rx=\"144\" ry=\"74.80000000000001\" fill=\"#5fd3d0\"/><ellipse cx=\"150\" cy=\"132\" rx=\"114\" ry=\"48.4\" fill=\"#f3dc9b\"/><ellipse cx=\"150\" cy=\"123.20000000000002\" rx=\"96\" ry=\"35.2\" fill=\"#4f9a62\"/><ellipse cx=\"138\" cy=\"114.4\" rx=\"54\" ry=\"17.6\" fill=\"#5cab6c\"/><path d=\"M150 121.00000000000001 Q156 71.00000000000001 146 31.000000000000014\" stroke=\"#8a5a33\" stroke-width=\"7\" fill=\"none\"/><path d=\"M146 31.000000000000014 q-40 -6 -50 20 q30 -14 50 -20 q40 -10 50 18 q-26 -14 -50 -18 q-20 -30 -46 -26 q30 2 46 26 q16 -34 46 -30 q-30 4 -46 30Z\" fill=\"#3f8a55\"/></svg>",
+    "isla_guanaja": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 280 220\"><ellipse cx=\"140\" cy=\"136.4\" rx=\"134.4\" ry=\"74.80000000000001\" fill=\"#5fd3d0\"/><ellipse cx=\"140\" cy=\"132\" rx=\"106.4\" ry=\"48.4\" fill=\"#f3dc9b\"/><ellipse cx=\"140\" cy=\"123.20000000000002\" rx=\"89.60000000000001\" ry=\"35.2\" fill=\"#4f9a62\"/><ellipse cx=\"128.8\" cy=\"114.4\" rx=\"50.4\" ry=\"17.6\" fill=\"#5cab6c\"/><path d=\"M126 121.00000000000001 Q132 71.00000000000001 122 31.000000000000014\" stroke=\"#8a5a33\" stroke-width=\"7\" fill=\"none\"/><path d=\"M122 31.000000000000014 q-40 -6 -50 20 q30 -14 50 -20 q40 -10 50 18 q-26 -14 -50 -18 q-20 -30 -46 -26 q30 2 46 26 q16 -34 46 -30 q-30 4 -46 30Z\" fill=\"#3f8a55\"/></svg>",
+    "tiburon_ballena": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 420\"><path d=\"M820 200 L990 60 Q960 200 990 340Z\" fill=\"#44607a\"/><path d=\"M40 220 Q60 120 250 100 Q600 70 840 190 Q600 300 250 320 Q70 320 40 220Z\" fill=\"#4f6f8c\"/><path d=\"M40 220 Q70 300 250 320 Q600 300 840 190 Q600 250 250 260 Q100 260 40 220Z\" fill=\"#dfe8ee\"/><path d=\"M440 92 L520 10 L560 90Z\" fill=\"#44607a\"/><path d=\"M300 290 L250 400 L380 300Z\" fill=\"#44607a\"/><path d=\"M260 110 Q300 200 270 300 M300 108 Q340 200 310 298\" stroke=\"#3d5a74\" stroke-width=\"5\" fill=\"none\"/><path d=\"M44 222 Q90 236 140 230\" stroke=\"#2b3d4f\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"120\" cy=\"185\" r=\"9\" fill=\"#1d2833\"/><circle cx=\"495\" cy=\"242\" r=\"5.3\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"717\" cy=\"209\" r=\"5.5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"673\" cy=\"235\" r=\"9.7\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"686\" cy=\"196\" r=\"9.6\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"682\" cy=\"157\" r=\"5.5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"583\" cy=\"265\" r=\"5.2\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"381\" cy=\"262\" r=\"7.0\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"479\" cy=\"145\" r=\"8.4\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"531\" cy=\"161\" r=\"7.1\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"399\" cy=\"274\" r=\"8.8\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"369\" cy=\"233\" r=\"9.0\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"463\" cy=\"138\" r=\"9.8\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"747\" cy=\"160\" r=\"5.9\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"345\" cy=\"261\" r=\"6.4\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"366\" cy=\"205\" r=\"6.4\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"383\" cy=\"134\" r=\"6.6\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"538\" cy=\"203\" r=\"6.7\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"397\" cy=\"264\" r=\"8.9\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"689\" cy=\"231\" r=\"9.8\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"456\" cy=\"201\" r=\"8.5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"559\" cy=\"152\" r=\"5.6\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"745\" cy=\"238\" r=\"7.2\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"397\" cy=\"290\" r=\"9.8\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"438\" cy=\"182\" r=\"7.3\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"442\" cy=\"188\" r=\"5.1\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"505\" cy=\"202\" r=\"9.9\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"482\" cy=\"152\" r=\"6.2\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"390\" cy=\"299\" r=\"6.1\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"369\" cy=\"261\" r=\"6.9\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"745\" cy=\"217\" r=\"6.0\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"595\" cy=\"153\" r=\"9.2\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"423\" cy=\"138\" r=\"9.2\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"398\" cy=\"190\" r=\"8.5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"388\" cy=\"266\" r=\"9.8\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"678\" cy=\"160\" r=\"7.1\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"470\" cy=\"265\" r=\"9.5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"776\" cy=\"191\" r=\"6.8\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"633\" cy=\"210\" r=\"6.4\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"462\" cy=\"236\" r=\"8.6\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"734\" cy=\"249\" r=\"6.4\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"777\" cy=\"225\" r=\"6.9\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"541\" cy=\"216\" r=\"6.0\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"454\" cy=\"138\" r=\"9.6\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"745\" cy=\"175\" r=\"5.5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"393\" cy=\"209\" r=\"7.3\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"344\" cy=\"250\" r=\"9.0\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"205\" cy=\"151\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"151\" cy=\"173\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"181\" cy=\"148\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"153\" cy=\"194\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"206\" cy=\"151\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"253\" cy=\"172\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"250\" cy=\"172\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"160\" cy=\"191\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"157\" cy=\"150\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"231\" cy=\"164\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"229\" cy=\"141\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"174\" cy=\"194\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"189\" cy=\"149\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/><circle cx=\"178\" cy=\"199\" r=\"5\" fill=\"#ffffff\" fill-opacity=\"0.85\"/></svg>",
+    "plancton": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 300\"><circle cx=\"201\" cy=\"3\" r=\"7.9\" fill=\"#fff6a8\"/><circle cx=\"42\" cy=\"34\" r=\"7.2\" fill=\"#b8f5c8\"/><circle cx=\"297\" cy=\"212\" r=\"4.7\" fill=\"#b8f5c8\"/><circle cx=\"186\" cy=\"197\" r=\"5.3\" fill=\"#fff6a8\"/><circle cx=\"189\" cy=\"126\" r=\"5.3\" fill=\"#b8f5c8\"/><circle cx=\"16\" cy=\"21\" r=\"7.2\" fill=\"#b8f5c8\"/><circle cx=\"254\" cy=\"230\" r=\"4.1\" fill=\"#fff6a8\"/><circle cx=\"49\" cy=\"80\" r=\"4.3\" fill=\"#b8f5c8\"/><circle cx=\"218\" cy=\"245\" r=\"3.2\" fill=\"#b8f5c8\"/><circle cx=\"142\" cy=\"239\" r=\"3.9\" fill=\"#fff6a8\"/><circle cx=\"98\" cy=\"123\" r=\"4.3\" fill=\"#b8f5c8\"/><circle cx=\"242\" cy=\"52\" r=\"3.9\" fill=\"#b8f5c8\"/><circle cx=\"163\" cy=\"165\" r=\"5.1\" fill=\"#fff6a8\"/><circle cx=\"23\" cy=\"224\" r=\"5.4\" fill=\"#b8f5c8\"/><circle cx=\"27\" cy=\"230\" r=\"7.4\" fill=\"#b8f5c8\"/><circle cx=\"116\" cy=\"165\" r=\"6.0\" fill=\"#fff6a8\"/><circle cx=\"259\" cy=\"1\" r=\"5.1\" fill=\"#b8f5c8\"/><circle cx=\"235\" cy=\"172\" r=\"7.0\" fill=\"#b8f5c8\"/><circle cx=\"137\" cy=\"285\" r=\"3.5\" fill=\"#fff6a8\"/><circle cx=\"32\" cy=\"213\" r=\"5.5\" fill=\"#b8f5c8\"/><circle cx=\"65\" cy=\"54\" r=\"5.0\" fill=\"#b8f5c8\"/><circle cx=\"22\" cy=\"278\" r=\"4.3\" fill=\"#fff6a8\"/><circle cx=\"212\" cy=\"94\" r=\"5.3\" fill=\"#b8f5c8\"/><circle cx=\"89\" cy=\"158\" r=\"5.2\" fill=\"#b8f5c8\"/><circle cx=\"178\" cy=\"202\" r=\"5.3\" fill=\"#fff6a8\"/><circle cx=\"37\" cy=\"46\" r=\"3.6\" fill=\"#b8f5c8\"/><circle cx=\"1\" cy=\"66\" r=\"3.2\" fill=\"#b8f5c8\"/><circle cx=\"68\" cy=\"208\" r=\"4.9\" fill=\"#fff6a8\"/><circle cx=\"130\" cy=\"224\" r=\"7.8\" fill=\"#b8f5c8\"/><circle cx=\"95\" cy=\"239\" r=\"6.2\" fill=\"#b8f5c8\"/><circle cx=\"202\" cy=\"193\" r=\"5.9\" fill=\"#fff6a8\"/><circle cx=\"133\" cy=\"83\" r=\"5.3\" fill=\"#b8f5c8\"/><circle cx=\"224\" cy=\"85\" r=\"3.4\" fill=\"#b8f5c8\"/><circle cx=\"290\" cy=\"244\" r=\"3.2\" fill=\"#fff6a8\"/><circle cx=\"264\" cy=\"246\" r=\"6.4\" fill=\"#b8f5c8\"/><circle cx=\"159\" cy=\"83\" r=\"3.8\" fill=\"#b8f5c8\"/><circle cx=\"30\" cy=\"75\" r=\"3.8\" fill=\"#fff6a8\"/><circle cx=\"18\" cy=\"155\" r=\"5.0\" fill=\"#b8f5c8\"/><circle cx=\"180\" cy=\"190\" r=\"4.1\" fill=\"#b8f5c8\"/><circle cx=\"142\" cy=\"36\" r=\"4.1\" fill=\"#fff6a8\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Sistema Arrecifal Mesoamericano: unos 1.000 km frente a México, Belice, Guatemala y Honduras (Islas de la Bahía)",
+      "fuente": "WWF, «Mesoamerican Reef»",
+      "url": "https://wwf.panda.org/knowledge_hub/where_we_work/mesoamerican_reef"
+    },
+    {
+      "dato": "Se le considera el segundo arrecife de barrera más grande del mundo, después de la Gran Barrera de Coral de Australia",
+      "fuente": "Smithsonian, «Healthy Reefs for Healthy People»; WWF",
+      "url": "https://global.si.edu/projects/healthy-reefs-healthy-people"
+    },
+    {
+      "dato": "El tiburón ballena es el pez más grande del mundo, se alimenta filtrando plancton y se avista con frecuencia en Utila",
+      "fuente": "AMNH; NOAA Fisheries, «Whale Shark»; Whale Shark and Oceanic Research Center (Utila)",
+      "url": "https://www.amnh.org/explore/news-blogs/whale-shark-largest-fish"
+    },
+    {
+      "dato": "El calentamiento del agua blanquea los corales; en 2024 el arrecife sufrió un blanqueamiento histórico",
+      "fuente": "Mongabay (2024), informe de Healthy Reefs for Healthy People",
+      "url": "https://news.mongabay.com/2024/12/after-historic-2024-coral-bleaching-hope-remains-for-mesoamerican-reef/"
+    }
+  ],
+  "nota": "«Segundo más grande» es la clasificación habitual (Smithsonian, WWF), pero depende de cómo se mida: la barrera de Nueva Caledonia también se cita a veces como segunda. El largo va de ≈ 1.000 a 1.126 km según la fuente, por eso dice «unos 1.000». «Una punta está en Honduras»: el sistema va de la península de Yucatán hasta las Islas de la Bahía. El mapa de la escena 2 es esquemático. Los avistamientos de tiburón ballena en Utila no están garantizados: dependen de la temporada."
+}

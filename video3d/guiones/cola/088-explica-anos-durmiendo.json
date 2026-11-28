@@ -1,0 +1,129 @@
+{
+  "id": "explica-25-anos-durmiendo",
+  "motor": "explica",
+  "titulo": "25 años de tu vida, dormido",
+  "categoria": "cuerpo",
+  "etiquetas": ["cuerpo", "sueño", "salud", "sabiasque", "curiosidades"],
+  "descripcion": "Si duermes 8 horas al día y vives 75 años, pasas unos 25 durmiendo: un tercio de la vida. Por qué no es tiempo perdido, y quién duerme todavía más.",
+  "musica": "lofi",
+  "paleta": { "a": "#b9a7ff", "b": "#7a5ce0" },
+  "escenas": [
+    {
+      "fondo": "oscuro",
+      "texto": "Si vives 75 años, vas a pasar unos 25 dormido. Y es buena noticia.",
+      "voz": "Si vives setenta y cinco años, vas a pasar unos veinticinco dormido. Y es buena noticia.",
+      "clave": "25",
+      "nota": "años",
+      "camara": { "de": [0.5, 0.62, 1], "a": [0.45, 0.64, 1.12] },
+      "capas": [
+        { "svg": "cama", "x": 0.5, "y": 0.66, "ancho": 900, "anim": "pop", "en": 0 },
+        { "svg": "luna", "x": 0.8, "y": 0.38, "ancho": 200, "anim": "fade", "idle": "flotar", "en": "vives" },
+        { "svg": "zzz", "x": 0.38, "y": 0.47, "ancho": 200, "anim": "pop", "idle": "flotar", "sombra": false, "en": "dormido" },
+        { "numero": "25 años", "x": 0.3, "y": 0.36, "color": "#6b4fe0", "tam": 76, "en": "25" }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "La cuenta es sencilla: 8 horas de cada 24 son un tercio del día.",
+      "voz": "La cuenta es sencilla: ocho horas de cada veinticuatro son un tercio del día.",
+      "clave": "un tercio",
+      "camara": { "de": [0.5, 0.6, 1.1], "a": [0.5, 0.6, 1] },
+      "capas": [
+        { "svg": "reloj_tercio", "x": 0.5, "y": 0.6, "ancho": 660, "anim": "pop", "en": 0 },
+        { "etiqueta": "8 h dormido", "x": 0.82, "y": 0.4, "color": "#1d1d2b", "a": [0.62, 0.53], "en": "8" },
+        { "etiqueta": "16 h despierto", "x": 0.3, "y": 0.84, "color": "#e0a020", "a": [0.38, 0.66], "en": "24" },
+        { "numero": "1/3", "x": 0.5, "y": 0.92, "color": "#6b4fe0", "en": "tercio" }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Y un tercio de 75 años son 25 años con los ojos cerrados.",
+      "voz": "Y un tercio de setenta y cinco años son veinticinco años con los ojos cerrados.",
+      "clave": "ojos cerrados",
+      "camara": { "de": [0.5, 0.6, 1], "a": [0.65, 0.6, 1.12] },
+      "capas": [
+        { "svg": "barra_vida", "x": 0.5, "y": 0.6, "ancho": 980, "anim": "slideIn", "desde": "izquierda", "en": 0 },
+        { "numero": "75 años", "x": 0.5, "y": 0.4, "color": "#1d1d2b", "en": "75" },
+        { "etiqueta": "despierto: 50", "x": 0.34, "y": 0.75, "color": "#e0a020", "en": "tercio" },
+        { "etiqueta": "dormido: 25", "x": 0.83, "y": 0.75, "color": "#1d1d2b", "en": "25" }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Es como dormir de corrido desde el día que naces hasta cumplir 25.",
+      "voz": "Es como dormir de corrido desde el día que naces hasta cumplir veinticinco.",
+      "clave": "de corrido",
+      "camara": { "de": [0.2, 0.66, 1.1], "a": [0.8, 0.62, 1.1] },
+      "capas": [
+        { "svg": "persona", "x": 0.18, "y": 0.79, "ancho": 110, "anim": "pop", "en": 0 },
+        { "svg": "zzz", "x": 0.25, "y": 0.62, "ancho": 120, "anim": "pop", "idle": "flotar", "sombra": false, "en": "naces" },
+        { "svg": "persona", "x": 0.5, "y": 0.76, "ancho": 150, "anim": "pop", "en": "hasta" },
+        { "svg": "zzz", "x": 0.59, "y": 0.56, "ancho": 140, "anim": "pop", "idle": "flotar", "sombra": false, "en": "hasta" },
+        { "svg": "persona", "x": 0.8, "y": 0.73, "ancho": 190, "anim": "pop", "idle": "balanceo", "en": "25" },
+        { "svg": "zzz", "x": 0.9, "y": 0.5, "ancho": 160, "anim": "pop", "idle": "flotar", "sombra": false, "en": "25" },
+        { "etiqueta": "0 años", "x": 0.18, "y": 0.92, "color": "#2f7fd2", "en": "naces" },
+        { "etiqueta": "25 años", "x": 0.8, "y": 0.92, "color": "#6b4fe0", "en": "25" }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Y no es tiempo perdido: mientras duermes, tu cerebro ordena lo que aprendiste en el día.",
+      "clave": "cerebro",
+      "nota": "memoria",
+      "camara": { "de": [0.5, 0.6, 1], "a": [0.5, 0.58, 1.12] },
+      "capas": [
+        { "svg": "cerebro", "x": 0.5, "y": 0.6, "ancho": 680, "anim": "pop", "idle": "latido", "en": 0 },
+        { "svg": "chispa", "x": 0.2, "y": 0.42, "ancho": 120, "anim": "pop", "idle": "flotar", "sombra": false, "en": "ordena" },
+        { "svg": "chispa", "x": 0.82, "y": 0.46, "ancho": 90, "anim": "pop", "idle": "flotar", "sombra": false, "en": "aprendiste" },
+        { "svg": "chispa", "x": 0.78, "y": 0.8, "ancho": 110, "anim": "pop", "idle": "flotar", "sombra": false, "en": "día" }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Y si te parece mucho, un koala duerme o descansa hasta 22 horas al día.",
+      "voz": "Y si te parece mucho, un koala duerme o descansa hasta veintidós horas al día.",
+      "clave": "koala",
+      "camara": { "de": [0.5, 0.62, 1.1], "a": [0.5, 0.62, 1] },
+      "capas": [
+        { "svg": "koala", "x": 0.4, "y": 0.66, "ancho": 620, "anim": "slideIn", "desde": "izquierda", "idle": "balanceo", "en": 0 },
+        { "svg": "reloj_koala", "x": 0.8, "y": 0.4, "ancho": 260, "anim": "pop", "en": "22" },
+        { "numero": "22 h", "x": 0.8, "y": 0.55, "color": "#6b4fe0", "en": "horas" }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Un adulto necesita de 7 a 9 horas. ¿Tú cuántas duermes de verdad?",
+      "voz": "Un adulto necesita de siete a nueve horas. ¿Tú cuántas duermes de verdad?",
+      "clave": "7 a 9",
+      "camara": { "de": [0.5, 0.64, 1], "a": [0.5, 0.64, 1.1] },
+      "capas": [
+        { "svg": "cama", "x": 0.5, "y": 0.72, "ancho": 760, "anim": "fade", "en": 0 },
+        { "svg": "reloj", "x": 0.5, "y": 0.44, "ancho": 280, "anim": "pop", "idle": "sacudir", "en": "horas" },
+        { "numero": "7 a 9 h", "x": 0.5, "y": 0.9, "color": "#1d1d2b", "en": "7" }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Síguenos antes de dormir: mañana hay otro dato para despertarte.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "cama": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 900 520\"><rect x='40' y='120' width='60' height='400' rx='16' fill='#8d5a33'/><rect x='800' y='300' width='60' height='220' rx='16' fill='#8d5a33'/><rect x='60' y='150' width='40' height='300' rx='10' fill='#b47645'/><rect x='90' y='330' width='760' height='110' rx='20' fill='#ffffff'/><rect x='90' y='420' width='760' height='40' rx='10' fill='#7a4a2c'/><ellipse cx='210' cy='300' rx='110' ry='58' fill='#f4f1ff'/><ellipse cx='210' cy='312' rx='100' ry='40' fill='#ddd6ff'/><circle cx='250' cy='262' r='62' fill='#f7c9a3'/><path d='M190 250 Q200 186 262 196 Q318 204 312 250 Q290 222 250 222 Q214 224 190 250 Z' fill='#5a3a24'/><g stroke='#5a3a24' stroke-width='6' fill='none' stroke-linecap='round'><path d='M228 270 Q238 278 248 270'/><path d='M270 270 Q280 278 290 270'/></g><path d='M250 294 Q258 300 266 294' stroke='#c0604e' stroke-width='5' fill='none' stroke-linecap='round'/><path d='M300 290 Q560 240 840 300 L840 420 Q560 440 300 420 Q280 360 300 290 Z' fill='#4f7fe0'/><path d='M300 290 Q560 240 840 300 L840 330 Q560 280 304 320 Z' fill='#7aa2f0'/><g fill='#3a62c0'><circle cx='420' cy='370' r='14'/><circle cx='540' cy='350' r='14'/><circle cx='660' cy='370' r='14'/><circle cx='780' cy='352' r='14'/></g></svg>",
+    "zzz": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 200 200\"><g fill='none' stroke='#ffffff' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'><path d='M20 130 H70 L20 180 H70'/><path d='M90 80 H130 L90 120 H130'/><path d='M150 30 H180 L150 60 H180'/></g></svg>",
+    "reloj_tercio": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 600 600\"><circle cx='300' cy='300' r='290' fill='#1d1d2b'/><circle cx='300' cy='300' r='262' fill='#fff6d6'/><path d='M300 300 L300 38 A262 262 0 0 1 526.9 431 Z' fill='#2b2163'/><path d='M410 150 a40 40 0 1 0 30 60 a32 32 0 1 1 -30 -60 Z' fill='#ffe27a'/><g fill='#e0a020'><circle cx='190' cy='250' r='34'/></g><g stroke='#e0a020' stroke-width='8' stroke-linecap='round'><path d='M190 196 V180 M190 304 V320 M136 250 H120 M244 250 H260 M152 212 L142 202 M228 288 L238 298 M152 288 L142 298 M228 212 L238 202'/></g><g stroke='#8a8070' stroke-width='8' stroke-linecap='round'><path d='M300 46 V70 M554 300 H530 M300 554 V530 M46 300 H70'/></g><circle cx='300' cy='300' r='16' fill='#1d1d2b'/></svg>",
+    "reloj_koala": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 600 600\"><circle cx='300' cy='300' r='290' fill='#1d1d2b'/><circle cx='300' cy='300' r='262' fill='#fff6d6'/><path d='M300 300 L300 38 A262 262 0 1 1 169 73.1 Z' fill='#6b4fe0'/><circle cx='300' cy='300' r='16' fill='#ffffff'/></svg>",
+    "barra_vida": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 980 220\"><rect x='20' y='50' width='940' height='140' rx='40' fill='#000000' opacity='0.15'/><path d='M60 40 H646 V170 H60 Q20 170 20 130 V80 Q20 40 60 40 Z' fill='#ffd35a'/><path d='M646 40 H920 Q960 40 960 80 V130 Q960 170 920 170 H646 Z' fill='#2b2163'/><path d='M333 40 V170' stroke='#e8b830' stroke-width='6' stroke-dasharray='12 10'/><circle cx='180' cy='105' r='34' fill='#ff9f30'/><circle cx='490' cy='105' r='34' fill='#ff9f30'/><path d='M800 72 a36 36 0 1 0 28 58 a28 28 0 1 1 -28 -58 Z' fill='#ffe27a'/><g fill='#ffffff'><circle cx='700' cy='80' r='4'/><circle cx='900' cy='140' r='4'/><circle cx='880' cy='70' r='3'/></g></svg>",
+    "cerebro": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 680 520\"><path d='M330 470 Q330 500 360 500 L380 500 Q400 500 400 470 V420 H330 Z' fill='#e88aa6'/><path d='M120 300 Q60 280 70 210 Q80 140 150 130 Q170 60 250 60 Q300 30 350 60 Q420 30 470 70 Q560 70 580 150 Q640 180 620 260 Q630 340 560 360 Q540 430 460 420 Q400 450 340 420 Q270 450 220 410 Q140 410 120 340 Z' fill='#ff9fbc'/><path d='M350 60 Q340 240 350 420' stroke='#e0708f' stroke-width='12' fill='none' stroke-linecap='round'/><g stroke='#e0708f' stroke-width='10' fill='none' stroke-linecap='round'><path d='M150 200 Q200 170 240 210 Q270 240 310 220'/><path d='M130 290 Q180 260 220 300 Q260 330 300 300'/><path d='M200 120 Q240 140 260 120'/><path d='M400 120 Q440 150 480 120 Q520 110 550 150'/><path d='M400 220 Q450 190 490 230 Q530 260 590 230'/><path d='M410 320 Q460 290 500 330 Q530 350 560 330'/></g><path d='M150 180 Q170 140 220 140' stroke='#ffffff' stroke-width='14' fill='none' stroke-linecap='round' opacity='0.5'/></svg>",
+    "chispa": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 120 120\"><path d='M60 0 Q66 54 120 60 Q66 66 60 120 Q54 66 0 60 Q54 54 60 0 Z' fill='#ffe27a'/></svg>",
+    "koala": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 620 640\"><path d='M380 0 Q420 300 360 640 H460 Q500 300 470 0 Z' fill='#8d5a33'/><path d='M440 0 Q470 300 430 640 H460 Q500 300 470 0 Z' fill='#6a3a20'/><g fill='#4f9a4d'><ellipse cx='520' cy='90' rx='70' ry='34' transform='rotate(-20 520 90)'/><ellipse cx='330' cy='60' rx='60' ry='28' transform='rotate(20 330 60)'/></g><ellipse cx='320' cy='440' rx='150' ry='170' fill='#9aa1ab'/><ellipse cx='300' cy='470' rx='90' ry='110' fill='#c9ced6'/><circle cx='120' cy='170' r='80' fill='#9aa1ab'/><circle cx='120' cy='170' r='48' fill='#e9d9e0'/><circle cx='400' cy='170' r='80' fill='#9aa1ab'/><circle cx='400' cy='170' r='48' fill='#e9d9e0'/><circle cx='260' cy='250' r='150' fill='#a9b0ba'/><ellipse cx='260' cy='280' rx='44' ry='58' fill='#3a3a44'/><path d='M244 250 Q250 236 262 240' stroke='#6a6a78' stroke-width='8' fill='none' stroke-linecap='round'/><g stroke='#3a3a44' stroke-width='9' fill='none' stroke-linecap='round'><path d='M170 230 Q190 246 210 230'/><path d='M310 230 Q330 246 350 230'/></g><path d='M240 352 Q260 362 280 352' stroke='#3a3a44' stroke-width='7' fill='none' stroke-linecap='round'/><path d='M400 330 Q470 320 470 380 Q470 420 410 410 Z' fill='#9aa1ab'/><path d='M400 500 Q480 490 470 550 Q460 590 400 570 Z' fill='#9aa1ab'/><g fill='#3a3a44'><circle cx='462' cy='360' r='8'/><circle cx='466' cy='384' r='8'/><circle cx='458' cy='532' r='8'/><circle cx='460' cy='556' r='8'/></g></svg>"
+  },
+  "fuentes": [
+    { "dato": "Un tercio de la vida durmiendo: 8 h de 24 = 1/3; 75 años ÷ 3 = 25 años", "fuente": "cálculo con 8 h por noche (dentro del rango recomendado de 7-9 h)" },
+    { "dato": "Adultos: 7 a 9 horas de sueño recomendadas", "fuente": "National Sleep Foundation, recomendaciones de 2015 (Hirshkowitz et al., Sleep Health); la AASM pide 7 h o más para adultos" },
+    { "dato": "Durante el sueño el cerebro consolida lo aprendido en el día", "fuente": "Walker y Stickgold (2004), «Sleep-dependent learning and memory consolidation», Neuron" },
+    { "dato": "Un koala duerme o descansa entre 18 y 22 horas al día", "fuente": "Australian Koala Foundation, «Koala ecology» (savethekoala.com)" }
+  ],
+  "nota": "Los 25 años suponen 8 horas diarias y una vida de 75 años; con 7 horas serían unos 22. «Dormir de corrido hasta los 25» es la misma suma vista de otra forma, no algo literal. Los 22 h del koala son el máximo citado y mezclan sueño y reposo."
+}

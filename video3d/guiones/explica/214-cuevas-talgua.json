@@ -1,0 +1,450 @@
+{
+  "id": "explica-hn-cuevas-talgua",
+  "motor": "explica",
+  "titulo": "Las calaveras brillantes de Talgua",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "olancho",
+    "arqueologia",
+    "talgua",
+    "misterio"
+  ],
+  "descripcion": "En las Cuevas de Talgua, en Olancho, hay restos humanos de hace casi 3.000 años cubiertos de calcita. Por qué parecen brillar y cómo se encontraron en 1994.",
+  "musica": "electro",
+  "paleta": {
+    "a": "#6fd6e8",
+    "b": "#2b2163"
+  },
+  "escenas": [
+    {
+      "fondo": "oscuro",
+      "texto": "En una cueva de Olancho hay calaveras que parecen brillar en la oscuridad.",
+      "clave": "brillar",
+      "camara": {
+        "de": [
+          0.5,
+          0.66,
+          1.15
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "cueva_interior",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 1080,
+          "anim": "fade",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "calavera_brillo",
+          "x": 0.38,
+          "y": 0.68,
+          "ancho": 300,
+          "anim": "fade",
+          "idle": "latido",
+          "en": "calaveras"
+        },
+        {
+          "svg": "calavera_brillo",
+          "x": 0.66,
+          "y": 0.72,
+          "ancho": 250,
+          "anim": "fade",
+          "idle": "latido",
+          "en": "parecen"
+        },
+        {
+          "svg": "brillo",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 700,
+          "anim": "fade",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "brillar"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Son las Cuevas de Talgua, cerca de Catacamas, junto al río del mismo nombre.",
+      "clave": "Talgua",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.49,
+          0.7,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "entrada_cueva",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 1080,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "etiqueta": "Catacamas, Olancho",
+          "x": 0.5,
+          "y": 0.36,
+          "color": "#d93427",
+          "en": "Catacamas"
+        },
+        {
+          "etiqueta": "río Talgua",
+          "x": 0.25,
+          "y": 0.9,
+          "color": "#1f6b9a",
+          "en": "río"
+        },
+        {
+          "marca": true,
+          "x": 0.49,
+          "y": 0.73,
+          "radio": 100,
+          "en": "Cuevas"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "En 1994, exploradores hondureños y voluntarios extranjeros hallaron una cámara escondida con restos humanos.",
+      "voz": "En mil novecientos noventa y cuatro, exploradores hondureños y voluntarios extranjeros hallaron una cámara escondida con restos humanos.",
+      "clave": "1994",
+      "camara": {
+        "de": [
+          0.3,
+          0.66,
+          1.1
+        ],
+        "a": [
+          0.6,
+          0.64,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "cueva_interior",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 1080,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "numero": "1994",
+          "x": 0.5,
+          "y": 0.34,
+          "color": "#6b4fe0",
+          "tam": 90,
+          "en": "1994"
+        },
+        {
+          "svg": "linterna",
+          "x": 0.24,
+          "y": 0.74,
+          "ancho": 280,
+          "anim": "slideIn",
+          "desde": "izquierda",
+          "en": "exploradores"
+        },
+        {
+          "svg": "haz",
+          "x": 0.58,
+          "y": 0.7,
+          "ancho": 620,
+          "anim": "fade",
+          "sombra": false,
+          "en": "hallaron"
+        },
+        {
+          "svg": "huesos",
+          "x": 0.72,
+          "y": 0.76,
+          "ancho": 340,
+          "anim": "fade",
+          "en": "restos"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Según el radiocarbono, la mayoría tiene entre 2.500 y casi 3.000 años.",
+      "voz": "Según el radiocarbono, la mayoría tiene entre dos mil quinientos y casi tres mil años.",
+      "clave": "radiocarbono",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "reloj_arena",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 360,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": 0
+        },
+        {
+          "numero": "≈ 3.000 años",
+          "x": 0.5,
+          "y": 0.88,
+          "color": "#2b2163",
+          "tam": 74,
+          "en": "3.000"
+        },
+        {
+          "etiqueta": "entre 900 y 500 a. C.",
+          "x": 0.5,
+          "y": 0.34,
+          "color": "#1d1d2b",
+          "en": "2.500"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "No eran entierros comunes: limpiaban los huesos, los pintaban de rojo y los traían a la cueva.",
+      "clave": "rojo",
+      "camara": {
+        "de": [
+          0.3,
+          0.6,
+          1.1
+        ],
+        "a": [
+          0.6,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "huesos",
+          "x": 0.26,
+          "y": 0.58,
+          "ancho": 440,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "flecha",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 120,
+          "anim": "pop",
+          "sombra": false,
+          "en": "pintaban"
+        },
+        {
+          "svg": "huesos_rojos",
+          "x": 0.74,
+          "y": 0.58,
+          "ancho": 440,
+          "anim": "pop",
+          "en": "rojo"
+        },
+        {
+          "etiqueta": "ocre rojo",
+          "x": 0.74,
+          "y": 0.43,
+          "a": [
+            0.74,
+            0.52
+          ],
+          "color": "#b5452f",
+          "en": "rojo"
+        },
+        {
+          "etiqueta": "entierro secundario",
+          "x": 0.5,
+          "y": 0.8,
+          "color": "#1d1d2b",
+          "en": "entierros"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "¿Y el brillo? Por siglos, el agua que gotea dejó una capa de calcita, un cristal que refleja la luz.",
+      "clave": "calcita",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.5,
+          0.64,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "calavera",
+          "x": 0.5,
+          "y": 0.68,
+          "ancho": 440,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "gotas",
+          "x": 0.5,
+          "y": 0.42,
+          "ancho": 520,
+          "anim": "caer",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "gotea"
+        },
+        {
+          "svg": "calavera_brillo",
+          "x": 0.5,
+          "y": 0.68,
+          "ancho": 500,
+          "anim": "fade",
+          "idle": "latido",
+          "en": "calcita"
+        },
+        {
+          "etiqueta": "calcita",
+          "x": 0.8,
+          "y": 0.88,
+          "a": [
+            0.64,
+            0.74
+          ],
+          "color": "#1f8fa8",
+          "en": "cristal"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "No brillan solas: reflejan la luz de la linterna. Y ese osario hoy está cerrado para protegerlo.",
+      "clave": "linterna",
+      "camara": {
+        "de": [
+          0.4,
+          0.64,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "cueva_interior",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 1080,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "svg": "linterna",
+          "x": 0.22,
+          "y": 0.62,
+          "ancho": 280,
+          "anim": "pop",
+          "en": "brillan"
+        },
+        {
+          "svg": "haz",
+          "x": 0.55,
+          "y": 0.6,
+          "ancho": 560,
+          "anim": "fade",
+          "sombra": false,
+          "en": "luz"
+        },
+        {
+          "svg": "calavera_brillo",
+          "x": 0.74,
+          "y": 0.6,
+          "ancho": 280,
+          "anim": "fade",
+          "idle": "latido",
+          "en": "linterna"
+        },
+        {
+          "etiqueta": "osario protegido",
+          "x": 0.5,
+          "y": 0.88,
+          "color": "#d93427",
+          "en": "cerrado"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Síguenos para más historias de Honduras de esas que se cuentan con la luz apagada.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "cueva_interior": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 1080 1300\"><rect width='1080' height='310' fill='#3b3045'/><path d='M-10 0 L50 120 L110 0Z' fill='#4a3d55'/><path d='M115 0 L175 180 L235 0Z' fill='#3d3247'/><path d='M240 0 L300 240 L360 0Z' fill='#4a3d55'/><path d='M365 0 L425 120 L485 0Z' fill='#3d3247'/><path d='M490 0 L550 180 L610 0Z' fill='#4a3d55'/><path d='M615 0 L675 240 L735 0Z' fill='#3d3247'/><path d='M740 0 L800 120 L860 0Z' fill='#4a3d55'/><path d='M865 0 L925 180 L985 0Z' fill='#3d3247'/><path d='M990 0 L1050 240 L1110 0Z' fill='#4a3d55'/><g transform='translate(0 300)'>\n<path fill-rule='evenodd' d='M0 0 H1080 V1000 H0Z M160 960 Q90 600 200 330 Q320 120 560 140 Q840 150 930 380 Q1010 640 930 960Z' fill='#2e2638'/>\n<path fill-rule='evenodd' d='M0 0 H1080 V1000 H0Z M200 960 Q130 610 240 360 Q350 170 560 180 Q810 190 890 400 Q960 650 890 960Z' fill='#3d3247' opacity='0.85'/>\n\n<path d='M150 900 Q540 840 940 900 V1000 H150Z' fill='#4a3d55'/><path d='M150 930 Q540 880 940 930' stroke='#5c4d68' stroke-width='10' fill='none'/>\n<g fill='#5c4d68'><path d='M300 300 l30 0 l-15 90Z'/><path d='M700 280 l36 0 l-18 110Z'/><path d='M820 420 l24 0 l-12 70Z'/></g></g></svg>",
+    "calavera": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 300 300\">\n<path d='M150 20 C240 20 285 90 280 160 C276 210 250 230 236 240 V270 Q236 292 214 292 H86 Q64 292 64 270 V240 C50 230 24 210 20 160 C15 90 60 20 150 20Z' fill='#e8dcc0'/>\n<path d='M150 20 C240 20 285 90 280 160 C276 210 250 230 236 240 V270 Q236 292 214 292 H170 Q240 200 220 120 Q200 50 150 20Z' fill='#cdbf9e'/>\n<g fill='#2a2233'><ellipse cx='100' cy='160' rx='38' ry='42'/><ellipse cx='200' cy='160' rx='38' ry='42'/><path d='M150 200 L134 232 H166Z'/></g>\n<path d='M100 248 V286 M125 250 V290 M150 250 V290 M175 250 V290 M200 248 V286' stroke='#cdbf9e' stroke-width='6' stroke-linecap='round'/></svg>",
+    "calavera_brillo": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 340 340\">\n<circle cx='170' cy='170' r='166' fill='#9fe8ff' opacity='0.18'/><circle cx='170' cy='170' r='130' fill='#c8f4ff' opacity='0.2'/>\n<g transform='translate(20 22)'>\n<path d='M150 20 C240 20 285 90 280 160 C276 210 250 230 236 240 V270 Q236 292 214 292 H86 Q64 292 64 270 V240 C50 230 24 210 20 160 C15 90 60 20 150 20Z' fill='#eefbff'/>\n<path d='M150 20 C240 20 285 90 280 160 C276 210 250 230 236 240 V270 Q236 292 214 292 H170 Q240 200 220 120 Q200 50 150 20Z' fill='#b9dce8'/>\n<g fill='#2a2233'><ellipse cx='100' cy='160' rx='38' ry='42'/><ellipse cx='200' cy='160' rx='38' ry='42'/><path d='M150 200 L134 232 H166Z'/></g>\n<path d='M100 248 V286 M125 250 V290 M150 250 V290 M175 250 V290 M200 248 V286' stroke='#b9dce8' stroke-width='6' stroke-linecap='round'/>\n<g fill='#ffffff' opacity='0.85'><ellipse cx='70' cy='70' rx='26' ry='12' transform='rotate(-30 70 70)'/><ellipse cx='215' cy='90' rx='20' ry='9' transform='rotate(30 215 90)'/><circle cx='150' cy='50' r='8'/></g></g>\n<path d='M70 34 Q74.68 55.32 96 60 Q74.68 64.68 70 86 Q65.32 64.68 44 60 Q65.32 55.32 70 34Z' fill='#ffffff'/><path d='M280 90 Q283.6 106.4 300 110 Q283.6 113.6 280 130 Q276.4 113.6 260 110 Q276.4 106.4 280 90Z' fill='#ffffff'/><path d='M250 284 Q252.88 297.12 266 300 Q252.88 302.88 250 316 Q247.12 302.88 234 300 Q247.12 297.12 250 284Z' fill='#ffffff'/><path d='M40 236 Q42.52 247.48 54 250 Q42.52 252.52 40 264 Q37.48 252.52 26 250 Q37.48 247.48 40 236Z' fill='#c8f4ff'/></svg>",
+    "brillo": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 700 400\"><path d='M80 60 Q85.4 84.6 110 90 Q85.4 95.4 80 120 Q74.6 95.4 50 90 Q74.6 84.6 80 60Z' fill='#ffffff'/><path d='M240 22 Q243.24 36.76 258 40 Q243.24 43.24 240 58 Q236.76 43.24 222 40 Q236.76 36.76 240 22Z' fill='#c8f4ff'/><path d='M420 86 Q426.12 113.88 454 120 Q426.12 126.12 420 154 Q413.88 126.12 386 120 Q413.88 113.88 420 86Z' fill='#ffffff'/><path d='M600 38 Q603.96 56.04 622 60 Q603.96 63.96 600 82 Q596.04 63.96 578 60 Q596.04 56.04 600 38Z' fill='#c8f4ff'/><path d='M650 272 Q655.04 294.96 678 300 Q655.04 305.04 650 328 Q644.96 305.04 622 300 Q644.96 294.96 650 272Z' fill='#ffffff'/><path d='M160 300 Q163.6 316.4 180 320 Q163.6 323.6 160 340 Q156.4 323.6 140 320 Q156.4 316.4 160 300Z' fill='#c8f4ff'/><path d='M360 334 Q362.88 347.12 376 350 Q362.88 352.88 360 366 Q357.12 352.88 344 350 Q357.12 347.12 360 334Z' fill='#ffffff'/></svg>",
+    "entrada_cueva": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 1000 720\">\n<path d='M0 560 Q160 200 360 260 Q500 60 700 180 Q880 120 1000 400 V720 H0Z' fill='#3f8a4a'/>\n<path d='M500 120 Q620 90 700 180 Q880 120 1000 400 V720 H560 Q640 420 500 120Z' fill='#33733d'/>\n<path d='M380 560 Q380 400 480 390 Q590 380 600 560Z' fill='#7d6a5a'/><path d='M410 560 Q412 430 485 424 Q568 418 570 560Z' fill='#1a1424'/>\n<g fill='#2a6a3a'><circle cx='150' cy='420' r='46'/><circle cx='230' cy='380' r='38'/><circle cx='800' cy='330' r='48'/><circle cx='880' cy='390' r='40'/><circle cx='700' cy='420' r='34'/></g>\n<path d='M0 650 Q250 590 500 640 T1000 610 V720 H0Z' fill='#3da5e8'/><path d='M40 668 Q260 620 480 664 M560 660 Q760 620 960 640' stroke='#ffffff' stroke-width='8' fill='none' opacity='0.6' stroke-linecap='round'/></svg>",
+    "linterna": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 320 180\">\n<rect x='20' y='62' width='190' height='60' rx='18' fill='#4a5060'/><rect x='20' y='92' width='190' height='30' rx='14' fill='#3a3f4d'/>\n<path d='M200 50 H250 L300 30 V154 L250 134 H200Z' fill='#5a6070'/><rect x='290' y='30' width='20' height='124' rx='8' fill='#ffd23f'/>\n<rect x='70' y='54' width='34' height='16' rx='6' fill='#d93427'/></svg>",
+    "haz": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 760 420\"><path d='M0 180 L760 0 V420 L0 240Z' fill='#fff3b0' opacity='0.35'/><path d='M0 195 L760 90 V330 L0 225Z' fill='#fff8d6' opacity='0.4'/></svg>",
+    "huesos": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 420 260\"><ellipse cx='210' cy='238' rx='190' ry='16' fill='#000' opacity='0.2'/><path d='M60 190 L360 80' stroke='#e8dcc0' stroke-width='26' stroke-linecap='round'/><g fill='#e8dcc0'><circle cx='54' cy='178' r='18'/><circle cx='72' cy='194' r='18'/><circle cx='366' cy='92' r='18'/><circle cx='348' cy='76' r='18'/></g><path d='M68 198 L368 88' stroke='#cdbf9e' stroke-width='8' stroke-linecap='round'/><path d='M70 90 L350 200' stroke='#e8dcc0' stroke-width='26' stroke-linecap='round'/><g fill='#e8dcc0'><circle cx='64' cy='78' r='18'/><circle cx='82' cy='94' r='18'/><circle cx='356' cy='212' r='18'/><circle cx='338' cy='196' r='18'/></g><path d='M78 98 L358 208' stroke='#cdbf9e' stroke-width='8' stroke-linecap='round'/><path d='M50 145 L370 140' stroke='#e8dcc0' stroke-width='26' stroke-linecap='round'/><g fill='#e8dcc0'><circle cx='44' cy='133' r='18'/><circle cx='62' cy='149' r='18'/><circle cx='376' cy='152' r='18'/><circle cx='358' cy='136' r='18'/></g><path d='M58 153 L378 148' stroke='#cdbf9e' stroke-width='8' stroke-linecap='round'/><rect x='190' y='100' width='40' height='90' rx='8' fill='#7a5a3a'/><rect x='190' y='100' width='40' height='14' fill='#5a3f26'/></svg>",
+    "huesos_rojos": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 420 260\"><ellipse cx='210' cy='238' rx='190' ry='16' fill='#000' opacity='0.2'/><path d='M60 190 L360 80' stroke='#b5452f' stroke-width='26' stroke-linecap='round'/><g fill='#b5452f'><circle cx='54' cy='178' r='18'/><circle cx='72' cy='194' r='18'/><circle cx='366' cy='92' r='18'/><circle cx='348' cy='76' r='18'/></g><path d='M68 198 L368 88' stroke='#8e3222' stroke-width='8' stroke-linecap='round'/><path d='M70 90 L350 200' stroke='#b5452f' stroke-width='26' stroke-linecap='round'/><g fill='#b5452f'><circle cx='64' cy='78' r='18'/><circle cx='82' cy='94' r='18'/><circle cx='356' cy='212' r='18'/><circle cx='338' cy='196' r='18'/></g><path d='M78 98 L358 208' stroke='#8e3222' stroke-width='8' stroke-linecap='round'/><path d='M50 145 L370 140' stroke='#b5452f' stroke-width='26' stroke-linecap='round'/><g fill='#b5452f'><circle cx='44' cy='133' r='18'/><circle cx='62' cy='149' r='18'/><circle cx='376' cy='152' r='18'/><circle cx='358' cy='136' r='18'/></g><path d='M58 153 L378 148' stroke='#8e3222' stroke-width='8' stroke-linecap='round'/><rect x='190' y='100' width='40' height='90' rx='8' fill='#7a5a3a'/><rect x='190' y='100' width='40' height='14' fill='#5a3f26'/></svg>",
+    "reloj_arena": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 320 480\">\n<rect x='20' y='10' width='280' height='40' rx='14' fill='#8a5a32'/><rect x='20' y='430' width='280' height='40' rx='14' fill='#8a5a32'/>\n<rect x='34' y='50' width='20' height='380' fill='#6e4426'/><rect x='266' y='50' width='20' height='380' fill='#6e4426'/>\n<path d='M70 50 H250 Q250 170 172 240 Q250 310 250 430 H70 Q70 310 148 240 Q70 170 70 50Z' fill='#d8f1ff' opacity='0.85'/>\n<path d='M110 150 H210 Q190 200 160 236 Q130 200 110 150Z' fill='#e9b52c'/>\n<rect x='156' y='236' width='8' height='150' fill='#e9b52c'/>\n<path d='M80 430 Q90 360 160 350 Q230 360 240 430Z' fill='#e9b52c'/><path d='M160 350 Q230 360 240 430 H170Z' fill='#cf9a1d'/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Cuevas del río Talgua, a unos 6 km de Catacamas, Olancho; osario hallado en abril de 1994 por un grupo de hondureños y voluntarios del Cuerpo de Paz",
+      "fuente": "Wikipedia, «Talgua Caves»; Revista Yaxkin (IHAH), «La cueva del río Talgua: el cementerio más antiguo de Honduras» (1997)"
+    },
+    {
+      "dato": "Radiocarbono: la mayoría de los huesos entre 900 y 500 a. C. (≈ 2.500 a 2.900 años); un grupo hasta 1400 a. C.; el sitio se ubica hacia el 1000 a. C. (Preclásico Temprano y Medio)",
+      "fuente": "Wikipedia, «Talgua Caves» (con base en Brady et al., Archaeology, 1995); Revista Yaxkin (IHAH)"
+    },
+    {
+      "dato": "Entierros secundarios: se quitaba la carne, los huesos se pintaban con pigmento rojo (ocre con hematita) y se llevaban en atados a la cueva",
+      "fuente": "Wikipedia, «Talgua Caves»"
+    },
+    {
+      "dato": "El brillo viene de la luz reflejada en la calcita depositada sobre los huesos; el osario está cerrado con una reja y el público solo visita una parte de la cueva",
+      "fuente": "Wikipedia, «Talgua Caves»; Atlas Obscura, «The Cave of the Glowing Skulls»"
+    }
+  ],
+  "nota": "Las calaveras no emiten luz: solo reflejan la de las linternas. «Casi 3.000 años» redondea las fechas de 900 a 500 a. C.; algunos huesos son más antiguos (hasta 1400 a. C.). No se sabe con certeza qué pueblo enterró a estas personas: no es un sitio maya, y se suele pensar en antepasados de los pech o de los lencas. Los dibujos de calaveras y huesos son caricaturas respetuosas, no reproducciones de los restos reales."
+}

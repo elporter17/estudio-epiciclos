@@ -1,0 +1,463 @@
+{
+  "id": "explica-brujula-norte",
+  "motor": "explica",
+  "titulo": "¿Cómo funciona una brújula?",
+  "categoria": "comofunciona",
+  "etiquetas": [
+    "comofunciona",
+    "ciencia",
+    "magnetismo",
+    "brujula",
+    "sabiasque"
+  ],
+  "descripcion": "La Tierra es un imán gigante y la aguja de la brújula, un imancito que se alinea con él. Pero el norte magnético no es el Polo Norte.",
+  "musica": "lofi",
+  "paleta": {
+    "a": "#ffcf6b",
+    "b": "#ff7a3d"
+  },
+  "escenas": [
+    {
+      "fondo": "plano",
+      "texto": "Tu brújula no apunta al Polo Norte. Y aun así, te saca de cualquier bosque.",
+      "clave": "no apunta",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "brujula",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 620,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "aguja",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 620,
+          "anim": "fade",
+          "rot": -14,
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "etiqueta": "¿Polo Norte?",
+          "x": 0.5,
+          "y": 0.33,
+          "a": [
+            0.5,
+            0.43
+          ],
+          "color": "#e5392f",
+          "en": "Polo"
+        },
+        {
+          "svg": "arbol",
+          "x": 0.13,
+          "y": 0.84,
+          "ancho": 210,
+          "anim": "crecer",
+          "en": "bosque"
+        },
+        {
+          "svg": "arbol",
+          "x": 0.87,
+          "y": 0.83,
+          "ancho": 250,
+          "anim": "crecer",
+          "en": "bosque"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "La razón: la Tierra entera se porta como un imán gigante.",
+      "clave": "imán gigante",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tierra",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 480,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "svg": "lineas_campo",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 1000,
+          "anim": "fade",
+          "sombra": false,
+          "en": "imán"
+        },
+        {
+          "svg": "iman_v",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 110,
+          "anim": "pop",
+          "en": "gigante"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Ese magnetismo nace en su núcleo, donde se revuelve hierro fundido a miles de grados.",
+      "clave": "hierro fundido",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.56,
+          0.58,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tierra_corte",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 720,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "etiqueta": "núcleo",
+          "x": 0.24,
+          "y": 0.36,
+          "a": [
+            0.54,
+            0.6
+          ],
+          "color": "#1d1d2b",
+          "en": "núcleo"
+        },
+        {
+          "marca": true,
+          "x": 0.56,
+          "y": 0.58,
+          "radio": 130,
+          "en": "hierro"
+        },
+        {
+          "burbujas": true,
+          "x": 0.6,
+          "y": 0.56,
+          "ancho": 0.12,
+          "alto": 0.08,
+          "n": 8,
+          "en": "revuelve"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "La aguja es un imancito que gira libre y se alinea con ese campo, como una veleta.",
+      "clave": "se alinea",
+      "capas": [
+        {
+          "svg": "brujula",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 600,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "svg": "aguja",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 600,
+          "anim": "pop",
+          "sombra": false,
+          "en": "aguja"
+        },
+        {
+          "etiqueta": "imancito",
+          "x": 0.8,
+          "y": 0.42,
+          "a": [
+            0.5,
+            0.509
+          ],
+          "color": "#e5392f",
+          "en": "imancito"
+        },
+        {
+          "svg": "flecha",
+          "x": 0.2,
+          "y": 0.4,
+          "ancho": 240,
+          "rot": -90,
+          "anim": "pop",
+          "sombra": false,
+          "en": "campo"
+        },
+        {
+          "etiqueta": "campo",
+          "x": 0.2,
+          "y": 0.55,
+          "color": "#2f7fd2",
+          "en": "campo"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Dato raro: el polo que atrae la punta norte de la aguja es, en realidad, un polo sur magnético.",
+      "clave": "polo sur",
+      "capas": [
+        {
+          "svg": "iman_v",
+          "x": 0.3,
+          "y": 0.63,
+          "ancho": 170,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "aguja",
+          "x": 0.7,
+          "y": 0.63,
+          "ancho": 420,
+          "anim": "pop",
+          "sombra": false,
+          "en": "punta"
+        },
+        {
+          "etiqueta": "punta norte",
+          "x": 0.72,
+          "y": 0.36,
+          "a": [
+            0.7,
+            0.538
+          ],
+          "color": "#e5392f",
+          "en": "punta"
+        },
+        {
+          "etiqueta": "sur magnético",
+          "x": 0.3,
+          "y": 0.36,
+          "a": [
+            0.3,
+            0.5
+          ],
+          "color": "#3d7be0",
+          "en": "sur"
+        },
+        {
+          "marca": true,
+          "x": 0.3,
+          "y": 0.53,
+          "radio": 110,
+          "en": "realidad"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Y ese polo no coincide con el geográfico: está a cientos de kilómetros y se mueve cada año.",
+      "clave": "se mueve",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.53,
+          0.6,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "artico",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 800,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "bandera",
+          "x": 0.52,
+          "y": 0.585,
+          "ancho": 130,
+          "anim": "crecer",
+          "en": "geográfico"
+        },
+        {
+          "svg": "pin",
+          "x": 0.62,
+          "y": 0.535,
+          "ancho": 100,
+          "anim": "caer",
+          "en": "cientos"
+        },
+        {
+          "etiqueta": "geográfico",
+          "x": 0.3,
+          "y": 0.36,
+          "a": [
+            0.49,
+            0.6
+          ],
+          "color": "#e5392f",
+          "en": "geográfico"
+        },
+        {
+          "etiqueta": "magnético",
+          "x": 0.76,
+          "y": 0.36,
+          "a": [
+            0.62,
+            0.52
+          ],
+          "color": "#7b4fe0",
+          "en": "kilómetros"
+        },
+        {
+          "marca": true,
+          "x": 0.62,
+          "y": 0.535,
+          "radio": 90,
+          "en": "mueve"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Por eso los mapas traen la declinación: los grados que debes corregir según donde estés.",
+      "clave": "declinación",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.5,
+          0.56,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "brujula",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 600,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "svg": "aguja",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 600,
+          "anim": "fade",
+          "rot": 18,
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "etiqueta": "norte geográfico",
+          "x": 0.28,
+          "y": 0.34,
+          "a": [
+            0.5,
+            0.49
+          ],
+          "color": "#1d1d2b",
+          "en": "mapas"
+        },
+        {
+          "etiqueta": "magnético",
+          "x": 0.78,
+          "y": 0.4,
+          "a": [
+            0.572,
+            0.515
+          ],
+          "color": "#e5392f",
+          "en": "declinación"
+        },
+        {
+          "numero": "corrige",
+          "x": 0.5,
+          "y": 0.89,
+          "color": "#2f7fd2",
+          "tam": 56,
+          "en": "corregir"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Si esto te orientó, síguenos y no te pierdas el próximo.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "brujula": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 500\">\n<circle cx=\"250\" cy=\"250\" r=\"244\" fill=\"#b8862a\"/><circle cx=\"250\" cy=\"250\" r=\"232\" fill=\"#e0a93a\"/>\n<circle cx=\"250\" cy=\"250\" r=\"212\" fill=\"#fdf6e3\"/>\n<path d=\"M250 70 L272 228 L430 250 L272 272 L250 430 L228 272 L70 250 L228 228Z\" fill=\"#efe4c8\"/>\n<path d=\"M250 50 L250 94\" stroke=\"#4a3a2a\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M350 76.8 L339 95.8\" stroke=\"#4a3a2a\" stroke-width=\"6\" stroke-linecap=\"round\"/><path d=\"M423.2 150 L404.2 161\" stroke=\"#4a3a2a\" stroke-width=\"6\" stroke-linecap=\"round\"/><path d=\"M450 250 L406 250\" stroke=\"#4a3a2a\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M423.2 350 L404.2 339\" stroke=\"#4a3a2a\" stroke-width=\"6\" stroke-linecap=\"round\"/><path d=\"M350 423.2 L339 404.2\" stroke=\"#4a3a2a\" stroke-width=\"6\" stroke-linecap=\"round\"/><path d=\"M250 450 L250 406\" stroke=\"#4a3a2a\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M150 423.2 L161 404.2\" stroke=\"#4a3a2a\" stroke-width=\"6\" stroke-linecap=\"round\"/><path d=\"M76.8 350 L95.8 339\" stroke=\"#4a3a2a\" stroke-width=\"6\" stroke-linecap=\"round\"/><path d=\"M50 250 L94 250\" stroke=\"#4a3a2a\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M76.8 150 L95.8 161\" stroke=\"#4a3a2a\" stroke-width=\"6\" stroke-linecap=\"round\"/><path d=\"M150 76.8 L161 95.8\" stroke=\"#4a3a2a\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n<path d=\"M250 16 L270 0 H230Z\" fill=\"#e5392f\"/>\n<path d=\"M120 90 A190 190 0 0 1 200 60\" fill=\"none\" stroke=\"#fff\" stroke-width=\"10\" stroke-linecap=\"round\" opacity=\"0.8\"/></svg>",
+    "aguja": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 500\">\n<path d=\"M250 40 L282 250 L218 250Z\" fill=\"#e5392f\" stroke=\"#a81f17\" stroke-width=\"5\" stroke-linejoin=\"round\"/>\n<path d=\"M250 460 L282 250 L218 250Z\" fill=\"#e6e9ef\" stroke=\"#8a93a3\" stroke-width=\"5\" stroke-linejoin=\"round\"/>\n<circle cx=\"250\" cy=\"250\" r=\"22\" fill=\"#4a4f5a\"/><circle cx=\"250\" cy=\"250\" r=\"9\" fill=\"#d8dde4\"/></svg>",
+    "iman_v": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 160 520\">\n<path d=\"M20 60 Q20 20 60 20 H100 Q140 20 140 60 V260 H20Z\" fill=\"#3d7be0\"/>\n<path d=\"M20 260 H140 V460 Q140 500 100 500 H60 Q20 500 20 460Z\" fill=\"#e5392f\"/>\n<rect x=\"34\" y=\"40\" width=\"16\" height=\"420\" rx=\"8\" fill=\"#fff\" opacity=\"0.35\"/>\n<rect x=\"20\" y=\"254\" width=\"120\" height=\"12\" fill=\"#1d1d2b\" opacity=\"0.25\"/></svg>",
+    "lineas_campo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 800\"><g fill=\"none\" stroke=\"#9fd0ff\" stroke-width=\"7\" stroke-dasharray=\"18 12\" opacity=\"0.8\"><path d=\"M400 160 C290 160 290 640 400 640\" /><path d=\"M400 160 C510 160 510 640 400 640\" /><path d=\"M400 160 C200 160 200 640 400 640\" /><path d=\"M400 160 C600 160 600 640 400 640\" /><path d=\"M400 160 C100 160 100 640 400 640\" /><path d=\"M400 160 C700 160 700 640 400 640\" /><path d=\"M400 160 C0 160 0 640 400 640\" /><path d=\"M400 160 C800 160 800 640 400 640\" /></g><g fill=\"none\" stroke=\"#ffd84d\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M301.5 414 L317.5 390 L333.5 414\"/><path d=\"M466.5 414 L482.5 390 L498.5 414\"/><path d=\"M234 414 L250 390 L266 414\"/><path d=\"M534 414 L550 390 L566 414\"/><path d=\"M159 414 L175 390 L191 414\"/><path d=\"M609 414 L625 390 L641 414\"/><path d=\"M84 414 L100 390 L116 414\"/><path d=\"M684 414 L700 390 L716 414\"/></g></svg>",
+    "tierra_corte": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 500\">\n<circle cx=\"250\" cy=\"250\" r=\"232\" fill=\"#2f8be0\"/>\n<path d=\"M80 150 C120 90 190 110 180 170 C170 230 100 250 90 300 C60 260 50 200 80 150Z M150 360 C200 330 260 370 240 420 C210 450 160 440 150 360Z\" fill=\"#4cb86a\"/>\n<path d=\"M250 250 L250 18 A232 232 0 0 1 482 250Z\" fill=\"#7a4a2c\"/>\n<path d=\"M250 250 L250 32 A218 218 0 0 1 468 250Z\" fill=\"#d9662f\"/>\n<path d=\"M250 250 L250 120 A130 130 0 0 1 380 250Z\" fill=\"#ffa53d\"/>\n<path d=\"M250 250 L250 185 A65 65 0 0 1 315 250Z\" fill=\"#ffe36b\"/>\n<path d=\"M60 230 A190 190 0 0 1 130 90\" fill=\"none\" stroke=\"#fff\" stroke-width=\"10\" stroke-linecap=\"round\" opacity=\"0.4\"/></svg>",
+    "artico": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\">\n<circle cx=\"300\" cy=\"300\" r=\"286\" fill=\"#2f8be0\"/>\n<circle cx=\"300\" cy=\"300\" r=\"200\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"3\" opacity=\"0.35\"/>\n<circle cx=\"300\" cy=\"300\" r=\"110\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"3\" opacity=\"0.35\"/>\n<path d=\"M30 260 C60 160 120 90 200 50 C230 90 180 140 150 170 C120 210 90 250 60 330 C40 310 30 290 30 260Z\" fill=\"#4cb86a\"/>\n<path d=\"M360 26 C450 40 530 100 568 190 C520 200 470 160 430 120 C400 90 370 60 360 26Z\" fill=\"#4cb86a\"/>\n<path d=\"M500 420 C540 380 575 370 580 330 C590 420 540 500 460 550 C450 500 470 450 500 420Z\" fill=\"#4cb86a\"/>\n<path d=\"M120 470 C170 440 230 470 250 530 C200 560 150 540 120 470Z\" fill=\"#4cb86a\"/>\n<path d=\"M300 170 C360 165 420 200 425 260 C440 320 410 390 340 410 C280 430 210 410 190 350 C165 290 200 180 300 170Z\" fill=\"#f4fbff\"/>\n<path d=\"M250 210 C290 200 330 215 345 240\" fill=\"none\" stroke=\"#cfe6f5\" stroke-width=\"10\" stroke-linecap=\"round\"/></svg>",
+    "bandera": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 160 220\"><rect x=\"26\" y=\"10\" width=\"12\" height=\"200\" rx=\"6\" fill=\"#5d6873\"/><path d=\"M38 18 C70 4 100 34 140 20 V90 C100 104 70 74 38 88Z\" fill=\"#e5392f\"/><ellipse cx=\"32\" cy=\"210\" rx=\"26\" ry=\"8\" fill=\"#000\" opacity=\"0.2\"/></svg>",
+    "pin": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 140 200\"><path d=\"M70 196 C40 140 12 110 12 70 A58 58 0 0 1 128 70 C128 110 100 140 70 196Z\" fill=\"#7b4fe0\" stroke=\"#fff\" stroke-width=\"8\"/><circle cx=\"70\" cy=\"70\" r=\"24\" fill=\"#fff\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "El campo magnético terrestre se parece al de un imán de barra y lo genera el movimiento del hierro líquido del núcleo externo (geodinamo)",
+      "fuente": "NOAA NCEI, «Geomagnetism» (ncei.noaa.gov); USGS, «How does a compass work?»"
+    },
+    {
+      "dato": "La aguja de la brújula es un imán que se alinea con la componente horizontal del campo; no apunta exactamente al polo",
+      "fuente": "NOAA NCEI, preguntas frecuentes de geomagnetismo"
+    },
+    {
+      "dato": "El polo magnético cercano al norte geográfico es, físicamente, un polo sur magnético (por eso atrae la punta norte)",
+      "fuente": "West Texas A&M, «Science Questions with Surprising Answers» (C. Baird, 2013); Scientific American, «The Earth has more than one North Pole»"
+    },
+    {
+      "dato": "El polo norte magnético se desplaza: en 2024-2025 estaba cerca de 86° N, a unos cientos de km del polo geográfico, moviéndose hacia Siberia",
+      "fuente": "NOAA / Modelo Magnético Mundial (WMM2025), vía Wikipedia «North magnetic pole»; University of Alaska, «Why compasses don’t point north»"
+    }
+  ],
+  "nota": "En el mapa del Ártico la distancia entre los dos polos está exagerada para que se vea. La declinación cambia según el lugar y el año. El imán dibujado dentro de la Tierra es una analogía: no hay un imán sólido en el núcleo."
+}

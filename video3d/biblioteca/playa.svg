@@ -1,0 +1,5 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 1080 500">
+<path d='M0 60 Q140 20 270 60 T540 60 T810 60 T1080 60 V500 H0Z' fill='#ffffff' opacity='0.8'/>
+<path d='M0 90 Q140 50 270 90 T540 90 T810 90 T1080 90 V500 H0Z' fill='#ecd39a'/>
+<path d='M0 260 Q300 220 600 260 T1080 250 V500 H0Z' fill='#dcbf80'/>
+<g fill='#c9a86a'><circle cx='200' cy='180' r='6'/><circle cx='520' cy='160' r='5'/><circle cx='820' cy='200' r='6'/><circle cx='350' cy='340' r='5'/><circle cx='700' cy='380' r='6'/></g></svg>

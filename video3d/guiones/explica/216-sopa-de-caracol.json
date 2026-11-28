@@ -1,0 +1,375 @@
+{
+  "id": "explica-hn-sopa-de-caracol",
+  "motor": "explica",
+  "titulo": "Sopa de caracol: el hit catracho",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "sopadecaracol",
+    "bandablanca",
+    "punta",
+    "garifuna",
+    "musica"
+  ],
+  "descripcion": "En 1991, «Sopa de caracol» de Banda Blanca llegó al número 1 de las listas latinas de Billboard. Su ritmo es punta, música del pueblo garífuna.",
+  "musica": "dembow",
+  "paleta": {
+    "a": "#ffd36b",
+    "b": "#e8553a"
+  },
+  "escenas": [
+    {
+      "fondo": "liso",
+      "texto": "En 1991, una canción hondureña llegó al número 1 de las listas latinas de Billboard.",
+      "voz": "En mil novecientos noventa y uno, una canción hondureña llegó al número uno de las listas latinas de Billboard.",
+      "clave": "Billboard",
+      "capas": [
+        {
+          "svg": "disco",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 600,
+          "anim": "pop",
+          "en": 0,
+          "idle": "latido"
+        },
+        {
+          "svg": "notas",
+          "x": 0.82,
+          "y": 0.36,
+          "ancho": 200,
+          "anim": "pop",
+          "en": "canción",
+          "idle": "flotar",
+          "sombra": false
+        },
+        {
+          "svg": "notas",
+          "x": 0.18,
+          "y": 0.4,
+          "ancho": 160,
+          "anim": "pop",
+          "en": "hondureña",
+          "idle": "flotar",
+          "sombra": false
+        },
+        {
+          "numero": "#1",
+          "x": 0.5,
+          "y": 0.84,
+          "color": "#d93427",
+          "tam": 120,
+          "en": "número"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Era «Sopa de caracol», de Banda Blanca, un grupo hondureño que tocaba desde 1971.",
+      "voz": "Era Sopa de caracol, de Banda Blanca, un grupo hondureño que tocaba desde mil novecientos setenta y uno.",
+      "clave": "Banda Blanca",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "banda",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 1000,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "notas",
+          "x": 0.2,
+          "y": 0.34,
+          "ancho": 170,
+          "anim": "pop",
+          "en": "Sopa",
+          "idle": "flotar",
+          "sombra": false
+        },
+        {
+          "svg": "notas",
+          "x": 0.8,
+          "y": 0.32,
+          "ancho": 150,
+          "anim": "pop",
+          "en": "Banda",
+          "idle": "flotar",
+          "sombra": false
+        },
+        {
+          "numero": "1971",
+          "x": 0.5,
+          "y": 0.88,
+          "color": "#e8553a",
+          "tam": 70,
+          "en": "1971"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Su ritmo es la punta, música y baile del pueblo garífuna de nuestra costa norte.",
+      "clave": "punta",
+      "nota": "ritmo garífuna",
+      "capas": [
+        {
+          "svg": "tambor",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 400,
+          "anim": "pop",
+          "en": 0,
+          "idle": "latido"
+        },
+        {
+          "svg": "tambor",
+          "x": 0.2,
+          "y": 0.7,
+          "ancho": 250,
+          "anim": "pop",
+          "en": "baile",
+          "idle": "latido"
+        },
+        {
+          "svg": "tambor",
+          "x": 0.8,
+          "y": 0.7,
+          "ancho": 250,
+          "anim": "pop",
+          "en": "garífuna",
+          "idle": "latido"
+        },
+        {
+          "svg": "notas",
+          "x": 0.78,
+          "y": 0.36,
+          "ancho": 160,
+          "anim": "pop",
+          "en": "música",
+          "idle": "flotar",
+          "sombra": false
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Los créditos la dan a Hernán «Chico» Ramos, músico beliceño, y a Pilo Tejeda, la voz de la banda.",
+      "voz": "Los créditos la dan a Hernán, Chico, Ramos, músico beliceño, y a Pilo Tejeda, la voz de la banda.",
+      "clave": "créditos",
+      "capas": [
+        {
+          "svg": "partitura",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 680,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "etiqueta": "Hernán «Chico» Ramos",
+          "x": 0.5,
+          "y": 0.78,
+          "color": "#2f7fd2",
+          "en": "Hernán"
+        },
+        {
+          "etiqueta": "Pilo Tejeda",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#e8553a",
+          "en": "Pilo"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Mezcla garífuna y español, y le canta a la sopa de caracol con leche de coco de la costa.",
+      "clave": "caracol",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "plato_sopa",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 780,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "caracol",
+          "x": 0.76,
+          "y": 0.4,
+          "ancho": 340,
+          "anim": "pop",
+          "en": "caracol",
+          "idle": "flotar"
+        },
+        {
+          "svg": "coco",
+          "x": 0.22,
+          "y": 0.42,
+          "ancho": 260,
+          "anim": "pop",
+          "en": "coco",
+          "idle": "flotar"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Banda Blanca la llevó a festivales y carnavales de México, Chile, España y Estados Unidos.",
+      "clave": "festivales",
+      "capas": [
+        {
+          "svg": "tierra",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 560,
+          "anim": "pop",
+          "en": 0,
+          "idle": "flotar"
+        },
+        {
+          "svg": "avion",
+          "x": 0.5,
+          "y": 0.36,
+          "ancho": 420,
+          "anim": "slideIn",
+          "en": "llevó",
+          "desde": "izquierda"
+        },
+        {
+          "etiqueta": "México",
+          "x": 0.22,
+          "y": 0.82,
+          "color": "#2f7347",
+          "en": "México"
+        },
+        {
+          "etiqueta": "Chile",
+          "x": 0.78,
+          "y": 0.8,
+          "color": "#d93427",
+          "en": "Chile"
+        },
+        {
+          "etiqueta": "España",
+          "x": 0.3,
+          "y": 0.9,
+          "color": "#c88a3a",
+          "en": "España"
+        },
+        {
+          "etiqueta": "Estados Unidos",
+          "x": 0.7,
+          "y": 0.9,
+          "color": "#2f7fd2",
+          "en": "Estados"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "En 2013, Elvis Crespo y Pitbull grabaron su versión. Pero la original sigue siendo bien nuestra.",
+      "voz": "En dos mil trece, Elvis Crespo y Pitbull grabaron su versión. Pero la original sigue siendo bien nuestra.",
+      "clave": "original",
+      "capas": [
+        {
+          "svg": "disco",
+          "x": 0.5,
+          "y": 0.52,
+          "ancho": 480,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "numero": "2013",
+          "x": 0.5,
+          "y": 0.3,
+          "color": "#1d1d2b",
+          "tam": 80,
+          "en": "2013"
+        },
+        {
+          "svg": "banda",
+          "x": 0.5,
+          "y": 0.84,
+          "ancho": 520,
+          "anim": "pop",
+          "en": "original"
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.52,
+          "radio": 270,
+          "en": "versión"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Ya se te movieron los pies? Síguenos para más historias catrachas.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "disco": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 500\"><circle cx=\"250\" cy=\"250\" r=\"240\" fill=\"#1d1d24\"/><circle cx=\"250\" cy=\"250\" r=\"200\" fill=\"none\" stroke=\"#33333d\" stroke-width=\"6\"/><circle cx=\"250\" cy=\"250\" r=\"165\" fill=\"none\" stroke=\"#33333d\" stroke-width=\"6\"/><circle cx=\"250\" cy=\"250\" r=\"130\" fill=\"none\" stroke=\"#33333d\" stroke-width=\"6\"/><path d=\"M120 120 A 185 185 0 0 1 250 65\" stroke=\"#ffffff\" stroke-opacity=\"0.25\" stroke-width=\"14\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"250\" cy=\"250\" r=\"92\" fill=\"#e8553a\"/><path d=\"M250 158 A 92 92 0 0 1 342 250 L250 250 Z\" fill=\"#f27b4f\"/><path d=\"M250 200 L263 236 L301 236 L270 258 L282 294 L250 272 L218 294 L230 258 L199 236 L237 236 Z\" fill=\"#ffd36b\"/><circle cx=\"250\" cy=\"250\" r=\"12\" fill=\"#1d1d24\"/></svg>",
+    "notas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\"><g fill=\"#ffffff\"><rect x=\"120\" y=\"70\" width=\"18\" height=\"230\" /><rect x=\"280\" y=\"40\" width=\"18\" height=\"230\"/><path d=\"M120 70 L298 40 L298 90 L120 120 Z\"/><ellipse cx=\"100\" cy=\"300\" rx=\"48\" ry=\"36\" transform=\"rotate(-20 100 300)\"/><ellipse cx=\"260\" cy=\"270\" rx=\"48\" ry=\"36\" transform=\"rotate(-20 260 270)\"/></g><g fill=\"#1d1d2b\" opacity=\"0.18\"><ellipse cx=\"106\" cy=\"310\" rx=\"40\" ry=\"22\" transform=\"rotate(-20 106 310)\"/><ellipse cx=\"266\" cy=\"280\" rx=\"40\" ry=\"22\" transform=\"rotate(-20 266 280)\"/></g></svg>",
+    "banda": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 800\"><path d=\"M200 0 L120 640 L300 640 Z\" fill=\"#fff4c9\" opacity=\"0.18\"/><path d=\"M800 0 L700 640 L900 640 Z\" fill=\"#fff4c9\" opacity=\"0.18\"/><circle cx=\"200\" cy=\"0\" r=\"30\" fill=\"#f2c230\"/><circle cx=\"800\" cy=\"0\" r=\"30\" fill=\"#f2c230\"/><rect x=\"0\" y=\"640\" width=\"1000\" height=\"160\" fill=\"#5a3320\"/><rect x=\"0\" y=\"640\" width=\"1000\" height=\"26\" fill=\"#8a4b2a\"/><path d=\"M60 690 H940 M30 740 H970\" stroke=\"#4a2918\" stroke-width=\"6\"/><g><rect x=\"90\" y=\"330\" width=\"130\" height=\"300\" rx=\"20\" fill=\"#a0612f\"/><rect x=\"155\" y=\"330\" width=\"65\" height=\"300\" fill=\"#874f24\"/><ellipse cx=\"155\" cy=\"330\" rx=\"65\" ry=\"20\" fill=\"#f3e3c3\"/><path d=\"M95 360 L215 450 L95 540 L215 620 M215 360 L95 450 L215 540\" stroke=\"#3b2a20\" stroke-width=\"7\" fill=\"none\"/><rect x=\"240\" y=\"400\" width=\"100\" height=\"230\" rx=\"18\" fill=\"#a0612f\"/><rect x=\"290\" y=\"400\" width=\"50\" height=\"230\" fill=\"#874f24\"/><ellipse cx=\"290\" cy=\"400\" rx=\"50\" ry=\"16\" fill=\"#f3e3c3\"/><path d=\"M245 430 L335 500 L245 570 M335 430 L245 500 L335 570\" stroke=\"#3b2a20\" stroke-width=\"6\" fill=\"none\"/></g><g><circle cx=\"560\" cy=\"530\" r=\"110\" fill=\"#d93427\"/><circle cx=\"560\" cy=\"530\" r=\"84\" fill=\"#f2efe8\"/><circle cx=\"560\" cy=\"530\" r=\"84\" fill=\"none\" stroke=\"#b5291f\" stroke-width=\"8\"/><rect x=\"420\" y=\"430\" width=\"80\" height=\"50\" rx=\"8\" fill=\"#d93427\"/><ellipse cx=\"460\" cy=\"430\" rx=\"40\" ry=\"12\" fill=\"#f2efe8\"/><path d=\"M650 310 V630\" stroke=\"#9aa3ad\" stroke-width=\"8\"/><ellipse cx=\"650\" cy=\"310\" rx=\"80\" ry=\"14\" fill=\"#f2c230\"/><path d=\"M420 360 V430\" stroke=\"#9aa3ad\" stroke-width=\"6\"/><ellipse cx=\"420\" cy=\"360\" rx=\"60\" ry=\"11\" fill=\"#f2c230\"/></g><g transform=\"rotate(14 850 470)\"><rect x=\"838\" y=\"150\" width=\"26\" height=\"250\" rx=\"6\" fill=\"#5a3320\"/><rect x=\"828\" y=\"120\" width=\"46\" height=\"60\" rx=\"10\" fill=\"#3b2a20\"/><circle cx=\"851\" cy=\"430\" r=\"62\" fill=\"#e8a53a\"/><circle cx=\"851\" cy=\"530\" r=\"85\" fill=\"#e8a53a\"/><path d=\"M851 368 A 62 62 0 0 1 913 430 L 936 530 A 85 85 0 0 1 851 615 Z\" fill=\"#c9852a\"/><circle cx=\"851\" cy=\"470\" r=\"24\" fill=\"#3b2a20\"/><rect x=\"826\" y=\"560\" width=\"50\" height=\"14\" rx=\"4\" fill=\"#3b2a20\"/><path d=\"M845 160 V560 M857 160 V560\" stroke=\"#f2efe8\" stroke-width=\"2\"/></g><g><path d=\"M760 640 L780 600 L800 640\" stroke=\"#2b2b33\" stroke-width=\"6\" fill=\"none\"/></g></svg>",
+    "tambor": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 600\"><rect x=\"70\" y=\"80\" width=\"260\" height=\"480\" rx=\"34\" fill=\"#a0612f\"/><rect x=\"200\" y=\"80\" width=\"130\" height=\"480\" rx=\"10\" fill=\"#874f24\"/><ellipse cx=\"200\" cy=\"80\" rx=\"130\" ry=\"40\" fill=\"#f3e3c3\"/><ellipse cx=\"200\" cy=\"80\" rx=\"130\" ry=\"40\" fill=\"none\" stroke=\"#6b4226\" stroke-width=\"10\"/><path d=\"M80 130 L320 260 L80 390 L320 520 M320 130 L80 260 L320 390 L80 520\" stroke=\"#3b2a20\" stroke-width=\"9\" fill=\"none\"/><rect x=\"70\" y=\"510\" width=\"260\" height=\"30\" fill=\"#6b4226\"/><ellipse cx=\"200\" cy=\"580\" rx=\"150\" ry=\"18\" fill=\"#000000\" fill-opacity=\"0.2\"/></svg>",
+    "partitura": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 520\"><path d=\"M40 40 H620 L660 80 V480 H40 Z\" fill=\"#fbf6e8\"/><path d=\"M620 40 V80 H660 Z\" fill=\"#e3d9bf\"/><rect x=\"40\" y=\"440\" width=\"620\" height=\"40\" fill=\"#efe6cc\"/><g stroke=\"#8a8072\" stroke-width=\"4\"><path d=\"M90 120 H610\"/><path d=\"M90 142 H610\"/><path d=\"M90 164 H610\"/><path d=\"M90 186 H610\"/><path d=\"M90 208 H610\"/><path d=\"M90 290 H610\"/><path d=\"M90 312 H610\"/><path d=\"M90 334 H610\"/><path d=\"M90 356 H610\"/><path d=\"M90 378 H610\"/></g><g fill=\"#1d1d2b\"><ellipse cx=\"150\" cy=\"186\" rx=\"16\" ry=\"12\" transform=\"rotate(-20 150 186)\"/><rect x=\"162\" y=\"106\" width=\"5\" height=\"80\"/><ellipse cx=\"220\" cy=\"164\" rx=\"16\" ry=\"12\" transform=\"rotate(-20 220 164)\"/><rect x=\"232\" y=\"84\" width=\"5\" height=\"80\"/><ellipse cx=\"300\" cy=\"208\" rx=\"16\" ry=\"12\" transform=\"rotate(-20 300 208)\"/><rect x=\"312\" y=\"128\" width=\"5\" height=\"80\"/><ellipse cx=\"380\" cy=\"142\" rx=\"16\" ry=\"12\" transform=\"rotate(-20 380 142)\"/><rect x=\"392\" y=\"62\" width=\"5\" height=\"80\"/><ellipse cx=\"460\" cy=\"186\" rx=\"16\" ry=\"12\" transform=\"rotate(-20 460 186)\"/><rect x=\"472\" y=\"106\" width=\"5\" height=\"80\"/><ellipse cx=\"540\" cy=\"164\" rx=\"16\" ry=\"12\" transform=\"rotate(-20 540 164)\"/><rect x=\"552\" y=\"84\" width=\"5\" height=\"80\"/><ellipse cx=\"170\" cy=\"356\" rx=\"16\" ry=\"12\" transform=\"rotate(-20 170 356)\"/><rect x=\"182\" y=\"276\" width=\"5\" height=\"80\"/><ellipse cx=\"260\" cy=\"334\" rx=\"16\" ry=\"12\" transform=\"rotate(-20 260 334)\"/><rect x=\"272\" y=\"254\" width=\"5\" height=\"80\"/><ellipse cx=\"350\" cy=\"378\" rx=\"16\" ry=\"12\" transform=\"rotate(-20 350 378)\"/><rect x=\"362\" y=\"298\" width=\"5\" height=\"80\"/><ellipse cx=\"430\" cy=\"312\" rx=\"16\" ry=\"12\" transform=\"rotate(-20 430 312)\"/><rect x=\"442\" y=\"232\" width=\"5\" height=\"80\"/><ellipse cx=\"520\" cy=\"356\" rx=\"16\" ry=\"12\" transform=\"rotate(-20 520 356)\"/><rect x=\"532\" y=\"276\" width=\"5\" height=\"80\"/></g></svg>",
+    "plato_sopa": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 560\"><g stroke=\"#ffffff\" stroke-opacity=\"0.7\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"><path d=\"M300 150 Q 270 100 300 60 Q 330 20 300 -10\"/><path d=\"M420 140 Q 390 90 420 50 Q 450 10 420 -20\"/><path d=\"M540 150 Q 510 100 540 60\"/></g><ellipse cx=\"400\" cy=\"250\" rx=\"360\" ry=\"90\" fill=\"#e9e2d6\"/><path d=\"M40 250 Q 60 500 400 520 Q 740 500 760 250 Z\" fill=\"#f4efe6\"/><path d=\"M400 250 H760 Q 740 500 400 520 Z\" fill=\"#ddd4c4\"/><path d=\"M120 455 Q 400 545 680 455\" stroke=\"#2f7fd2\" stroke-width=\"16\" fill=\"none\"/><ellipse cx=\"400\" cy=\"255\" rx=\"320\" ry=\"70\" fill=\"#f3dfa6\"/><ellipse cx=\"420\" cy=\"265\" rx=\"250\" ry=\"48\" fill=\"#ecd08a\"/><g fill=\"#f6d27a\"><rect x=\"190\" y=\"225\" width=\"70\" height=\"40\" rx=\"12\"/><rect x=\"470\" y=\"245\" width=\"80\" height=\"38\" rx=\"12\"/></g><g fill=\"#fff6e0\"><rect x=\"300\" y=\"250\" width=\"70\" height=\"34\" rx=\"10\"/><rect x=\"590\" y=\"225\" width=\"56\" height=\"30\" rx=\"10\"/></g><path d=\"M350 205 Q 420 170 480 215 Q 450 250 380 240 Z\" fill=\"#f2a58e\"/><path d=\"M380 215 Q 420 200 450 222\" stroke=\"#d9705a\" stroke-width=\"8\" fill=\"none\"/><g fill=\"#3f9a5a\"><ellipse cx=\"250\" cy=\"280\" rx=\"18\" ry=\"8\" transform=\"rotate(30 250 280)\"/><ellipse cx=\"560\" cy=\"290\" rx=\"18\" ry=\"8\" transform=\"rotate(-30 560 290)\"/><ellipse cx=\"420\" cy=\"300\" rx=\"16\" ry=\"7\"/></g></svg>",
+    "caracol": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 400\"><path d=\"M60 230 Q 80 120 230 100 Q 380 90 440 170 Q 470 230 420 290 Q 320 360 170 330 Q 70 310 60 230 Z\" fill=\"#f0c9a0\"/><path d=\"M150 118 L165 55 L195 108 Z M220 102 L245 35 L270 98 Z M295 98 L330 40 L345 108 Z M370 120 L420 80 L415 140 Z\" fill=\"#e0b080\"/><circle cx=\"125\" cy=\"215\" r=\"62\" fill=\"#e8b98c\"/><circle cx=\"125\" cy=\"215\" r=\"62\" fill=\"none\" stroke=\"#c98f62\" stroke-width=\"8\"/><circle cx=\"118\" cy=\"212\" r=\"38\" fill=\"none\" stroke=\"#c98f62\" stroke-width=\"7\"/><circle cx=\"112\" cy=\"210\" r=\"16\" fill=\"#c98f62\"/><path d=\"M240 330 Q 310 190 480 190 Q 490 300 400 350 Q 320 380 240 330 Z\" fill=\"#f49b8f\"/><path d=\"M290 325 Q 340 230 450 220 Q 450 300 390 330 Q 340 350 290 325 Z\" fill=\"#fbd2c6\"/><path d=\"M200 140 Q 280 120 360 140\" stroke=\"#fae0c8\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+    "coco": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 380\"><circle cx=\"200\" cy=\"200\" r=\"170\" fill=\"#7a4a2c\"/><path d=\"M200 30 A 170 170 0 0 1 370 200 A 170 170 0 0 1 200 370 Q 300 250 200 30 Z\" fill=\"#5e371f\"/><g fill=\"#3b2418\"><circle cx=\"160\" cy=\"130\" r=\"18\"/><circle cx=\"215\" cy=\"115\" r=\"16\"/><circle cx=\"195\" cy=\"165\" r=\"16\"/></g><path d=\"M90 150 Q 120 90 180 70\" stroke=\"#a06a44\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "«Sopa de caracol» (1991) llegó al n.º 1 de Billboard Top Latin Songs el 16 de marzo de 1991",
+      "fuente": "Wikipedia, «Sopa de Caracol» (con datos de Billboard)"
+    },
+    {
+      "dato": "Créditos de autor: Hernán «Chico» Ramos (cantante beliceño) y Juan Pompilio «Pilo» Tejeda",
+      "fuente": "Wikipedia, «Sopa de Caracol»; Last.fm"
+    },
+    {
+      "dato": "Banda Blanca, grupo hondureño de punta rock formado en 1971",
+      "fuente": "Wikipedia, «Banda Blanca»"
+    },
+    {
+      "dato": "La punta es música garífuna; la letra mezcla garífuna y español; giras por México, Chile, Colombia, España y EE. UU.; Pilo Tejeda es la voz",
+      "fuente": "BBC Mundo (2018), «Qué significa Sopa de caracol…»"
+    },
+    {
+      "dato": "Versión de Elvis Crespo con Pitbull, 2013",
+      "fuente": "Wikipedia, «Sopa de Caracol»"
+    }
+  ],
+  "nota": "La autoría se ha discutido (en 1995 se publicó que Sounds Inc. sería su creador); por eso se dice «los créditos la dan a…». No se cita la letra. Wikipedia sitúa la formación de Banda Blanca en San Pedro Sula; otros la asocian con la costa norte y La Ceiba, por eso no se nombra la ciudad."
+}

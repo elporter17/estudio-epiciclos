@@ -1,0 +1,313 @@
+{
+  "id": "explica-hn-lempira",
+  "motor": "explica",
+  "titulo": "Lempira, el que no se rindió",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "lempira",
+    "lenca",
+    "historia",
+    "heroes"
+  ],
+  "descripcion": "Lempira, líder lenca, resistió a los conquistadores españoles desde el peñol de Cerquín. Su muerte se cuenta en dos versiones, y desde 1931 nuestra moneda lleva su nombre.",
+  "musica": "lofi",
+  "paleta": {
+    "a": "#f4c27a",
+    "b": "#b5452f"
+  },
+  "escenas": [
+    {
+      "fondo": "liso",
+      "texto": "Cada vez que pagas con lempiras, dices el nombre de un hombre que no se rindió.",
+      "clave": "rindió",
+      "capas": [
+        {
+          "svg": "billete",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 860,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "moneda",
+          "x": 0.22,
+          "y": 0.8,
+          "ancho": 270,
+          "anim": "caer",
+          "en": "lempiras"
+        },
+        {
+          "svg": "moneda",
+          "x": 0.78,
+          "y": 0.82,
+          "ancho": 240,
+          "anim": "caer",
+          "en": "nombre"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Lempira fue un líder lenca. En la década de 1530 encabezó la resistencia contra los conquistadores españoles.",
+      "voz": "Lempira fue un líder lenca. En la década de mil quinientos treinta encabezó la resistencia contra los conquistadores españoles.",
+      "clave": "líder lenca",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "guerrero",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 440,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "numero": "1530",
+          "x": 0.8,
+          "y": 0.36,
+          "color": "#7a2f22",
+          "tam": 70,
+          "en": "1530"
+        },
+        {
+          "etiqueta": "resistencia",
+          "x": 0.5,
+          "y": 0.93,
+          "color": "#1d1d2b",
+          "en": "resistencia"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Se hizo fuerte en el peñol de Cerquín, en las montañas del occidente, hoy departamento de Lempira.",
+      "clave": "Cerquín",
+      "capas": [
+        {
+          "svg": "penol",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 980,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "etiqueta": "Peñol de Cerquín",
+          "x": 0.5,
+          "y": 0.36,
+          "color": "#7a2f22",
+          "a": [
+            0.5,
+            0.47
+          ],
+          "en": "Cerquín"
+        },
+        {
+          "etiqueta": "occidente de Honduras",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#2f7347",
+          "en": "occidente"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Según el cronista Herrera, reunió unos 30.000 guerreros de cerca de 200 pueblos.",
+      "voz": "Según el cronista Herrera, reunió unos treinta mil guerreros de cerca de doscientos pueblos.",
+      "clave": "pueblos",
+      "nota": "según Herrera",
+      "capas": [
+        {
+          "svg": "guerrero",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 380,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "guerrero",
+          "x": 0.2,
+          "y": 0.7,
+          "ancho": 260,
+          "anim": "fade",
+          "en": "guerreros"
+        },
+        {
+          "svg": "guerrero",
+          "x": 0.8,
+          "y": 0.7,
+          "ancho": 260,
+          "anim": "fade",
+          "en": "guerreros"
+        },
+        {
+          "numero": "30.000",
+          "x": 0.5,
+          "y": 0.31,
+          "color": "#7a2f22",
+          "tam": 80,
+          "en": "30.000"
+        },
+        {
+          "numero": "200 pueblos",
+          "x": 0.5,
+          "y": 0.92,
+          "color": "#2f7347",
+          "tam": 56,
+          "en": "200"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Su muerte se cuenta de dos formas. Herrera escribió que lo mataron a traición, de un disparo, al llamarlo a conversar.",
+      "clave": "traición",
+      "nota": "versión de Herrera",
+      "capas": [
+        {
+          "svg": "guerrero",
+          "x": 0.4,
+          "y": 0.64,
+          "ancho": 400,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "svg": "pergamino",
+          "x": 0.78,
+          "y": 0.4,
+          "ancho": 300,
+          "anim": "pop",
+          "en": "Herrera"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Otro documento, de 1558, del soldado Rodrigo Ruiz, cuenta que murió en combate.",
+      "voz": "Otro documento, de mil quinientos cincuenta y ocho, del soldado Rodrigo Ruiz, cuenta que murió en combate.",
+      "clave": "combate",
+      "nota": "versión de Ruiz",
+      "capas": [
+        {
+          "svg": "pergamino",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 640,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "numero": "1558",
+          "x": 0.5,
+          "y": 0.32,
+          "color": "#7a2f22",
+          "tam": 80,
+          "en": "1558"
+        },
+        {
+          "etiqueta": "Rodrigo Ruiz",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#1d1d2b",
+          "en": "Rodrigo"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "En 1931 su nombre llegó a nuestra moneda, y su perfil está en el billete de un lempira.",
+      "voz": "En mil novecientos treinta y uno su nombre llegó a nuestra moneda, y su perfil está en el billete de un lempira.",
+      "clave": "billete",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.6,
+          0.6,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "billete",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 900,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "numero": "1931",
+          "x": 0.5,
+          "y": 0.34,
+          "color": "#7a2f22",
+          "tam": 84,
+          "en": "1931"
+        },
+        {
+          "marca": true,
+          "x": 0.67,
+          "y": 0.595,
+          "radio": 120,
+          "en": "perfil"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Que su nombre no se nos olvide. Síguenos para conocer más de nuestra historia.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "billete": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 900 420\"><rect x=\"10\" y=\"10\" width=\"880\" height=\"400\" rx=\"22\" fill=\"#e9a29a\"/><rect x=\"10\" y=\"10\" width=\"880\" height=\"400\" rx=\"22\" fill=\"none\" stroke=\"#b5463c\" stroke-width=\"10\"/><rect x=\"40\" y=\"40\" width=\"820\" height=\"340\" rx=\"12\" fill=\"none\" stroke=\"#c9645a\" stroke-width=\"5\" stroke-dasharray=\"14 8\"/><path d=\"M60 210 Q 160 120 260 210 T 460 210\" stroke=\"#d97f75\" stroke-width=\"8\" fill=\"none\"/><path d=\"M60 250 Q 160 160 260 250 T 460 250\" stroke=\"#d97f75\" stroke-width=\"6\" fill=\"none\"/><circle cx=\"140\" cy=\"110\" r=\"44\" fill=\"#d97f75\"/><circle cx=\"140\" cy=\"110\" r=\"28\" fill=\"#e9a29a\"/><circle cx=\"140\" cy=\"310\" r=\"44\" fill=\"#d97f75\"/><circle cx=\"140\" cy=\"310\" r=\"28\" fill=\"#e9a29a\"/><ellipse cx=\"650\" cy=\"210\" rx=\"150\" ry=\"165\" fill=\"#f6d5cf\"/><ellipse cx=\"650\" cy=\"210\" rx=\"150\" ry=\"165\" fill=\"none\" stroke=\"#b5463c\" stroke-width=\"8\"/><g transform=\"translate(645 220) scale(1.1)\" fill=\"#8f2f27\"><path d=\"M-60 40 C -70 -30 -30 -80 20 -78 C 55 -76 72 -50 72 -25 L 88 2 L 72 8 C 76 20 72 32 64 36 L 66 50 C 56 62 36 62 30 74 L 30 110 L -60 110 C -52 90 -62 70 -60 40 Z\"/><path d=\"M-62 -40 Q -30 -60 70 -50 L 72 -36 Q -20 -44 -64 -24 Z\" opacity=\"0.6\"/><path d=\"M-20 -60 Q -30 -120 -10 -150 Q 0 -110 -8 -62 Z\"/><path d=\"M-40 -52 Q -70 -100 -60 -140 Q -40 -100 -30 -56 Z\"/><path d=\"M0 -64 Q 10 -120 35 -140 Q 25 -100 12 -62 Z\"/></g><rect x=\"300\" y=\"90\" width=\"160\" height=\"16\" rx=\"8\" fill=\"#c9645a\"/><rect x=\"300\" y=\"320\" width=\"160\" height=\"16\" rx=\"8\" fill=\"#c9645a\"/></svg>",
+    "moneda": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\"><circle cx=\"200\" cy=\"200\" r=\"190\" fill=\"#c88a3a\"/><circle cx=\"200\" cy=\"200\" r=\"160\" fill=\"#e0a54c\"/><path d=\"M200 40 A 160 160 0 0 1 200 360 Q 330 200 200 40 Z\" fill=\"#cf9440\"/><circle cx=\"200\" cy=\"200\" r=\"145\" fill=\"none\" stroke=\"#b07530\" stroke-width=\"5\" stroke-dasharray=\"6 8\"/><g transform=\"translate(195 200) scale(1.1)\" fill=\"#9a6224\"><path d=\"M-60 40 C -70 -30 -30 -80 20 -78 C 55 -76 72 -50 72 -25 L 88 2 L 72 8 C 76 20 72 32 64 36 L 66 50 C 56 62 36 62 30 74 L 30 110 L -60 110 C -52 90 -62 70 -60 40 Z\"/><path d=\"M-62 -40 Q -30 -60 70 -50 L 72 -36 Q -20 -44 -64 -24 Z\" opacity=\"0.6\"/><path d=\"M-20 -60 Q -30 -120 -10 -150 Q 0 -110 -8 -62 Z\"/><path d=\"M-40 -52 Q -70 -100 -60 -140 Q -40 -100 -30 -56 Z\"/><path d=\"M0 -64 Q 10 -120 35 -140 Q 25 -100 12 -62 Z\"/></g></svg>",
+    "guerrero": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 900\"><ellipse cx=\"240\" cy=\"870\" rx=\"200\" ry=\"22\" fill=\"#000000\" fill-opacity=\"0.2\"/><rect x=\"398\" y=\"70\" width=\"14\" height=\"800\" rx=\"6\" fill=\"#3b2418\"/><path d=\"M405 8 L382 80 L428 80 Z\" fill=\"#6f7884\"/><path d=\"M405 8 L405 80 L428 80 Z\" fill=\"#555d68\"/><path d=\"M150 260 L95 660 L375 660 L320 260 Z\" fill=\"#7a2f22\"/><path d=\"M235 260 L235 660 L375 660 L320 260 Z\" fill=\"#62251b\"/><rect x=\"175\" y=\"610\" width=\"48\" height=\"235\" rx=\"18\" fill=\"#2a1a2e\"/><rect x=\"250\" y=\"610\" width=\"48\" height=\"235\" rx=\"18\" fill=\"#2a1a2e\"/><ellipse cx=\"195\" cy=\"850\" rx=\"38\" ry=\"16\" fill=\"#2a1a2e\"/><ellipse cx=\"278\" cy=\"850\" rx=\"38\" ry=\"16\" fill=\"#2a1a2e\"/><path d=\"M160 255 Q 235 235 310 255 L300 480 L170 480 Z\" fill=\"#3a2540\"/><path d=\"M235 245 Q 290 245 310 255 L300 480 L235 480 Z\" fill=\"#2a1a2e\"/><path d=\"M160 470 L310 470 L325 620 L145 620 Z\" fill=\"#c9852a\"/><path d=\"M160 500 H312 M155 560 H318\" stroke=\"#7a2f22\" stroke-width=\"10\"/><path d=\"M235 470 L325 620 L235 620 Z\" fill=\"#a86c20\"/><path d=\"M300 275 L398 420\" stroke=\"#2a1a2e\" stroke-width=\"46\" stroke-linecap=\"round\"/><circle cx=\"405\" cy=\"425\" r=\"27\" fill=\"#2a1a2e\"/><path d=\"M170 275 L130 410\" stroke=\"#2a1a2e\" stroke-width=\"46\" stroke-linecap=\"round\"/><circle cx=\"125\" cy=\"430\" r=\"92\" fill=\"#6b3b24\"/><circle cx=\"125\" cy=\"430\" r=\"70\" fill=\"#8a5230\"/><circle cx=\"125\" cy=\"430\" r=\"22\" fill=\"#c9852a\"/><path d=\"M125 360 V500 M55 430 H195\" stroke=\"#5a3320\" stroke-width=\"8\"/><rect x=\"215\" y=\"200\" width=\"40\" height=\"50\" fill=\"#2a1a2e\"/><circle cx=\"235\" cy=\"160\" r=\"54\" fill=\"#2a1a2e\"/><path d=\"M181 160 Q 175 240 200 260 L270 260 Q 295 240 289 160 Z\" fill=\"#2a1a2e\"/><rect x=\"179\" y=\"122\" width=\"112\" height=\"18\" rx=\"6\" fill=\"#c9852a\"/><path d=\"M235 120 Q 215 70 235 20 Q 255 70 235 120 Z\" fill=\"#2f8f6a\"/><path d=\"M210 124 Q 180 85 185 40 Q 215 80 210 124 Z\" fill=\"#d93427\"/><path d=\"M260 124 Q 290 85 285 40 Q 255 80 260 124 Z\" fill=\"#e8a53a\"/><path d=\"M289 160 Q 300 190 286 210\" stroke=\"#f2a35a\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M320 260 L310 470\" stroke=\"#f2a35a\" stroke-width=\"6\" stroke-linecap=\"round\" opacity=\"0.8\"/></svg>",
+    "penol": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 700\"><path d=\"M0 700 L0 560 Q 150 480 260 520 L330 230 Q 345 180 400 175 L640 170 Q 690 175 700 220 L780 520 Q 880 480 1000 540 L1000 700 Z\" fill=\"#7d6a5a\"/><path d=\"M520 172 L640 170 Q 690 175 700 220 L780 520 Q 880 480 1000 540 L1000 700 L560 700 Z\" fill=\"#665445\"/><path d=\"M330 230 Q 345 180 400 175 L640 170 Q 690 175 700 220 Z\" fill=\"#9c8775\"/><path d=\"M380 260 L360 420 M470 230 L460 480 M600 250 L620 470\" stroke=\"#5a4a3c\" stroke-width=\"10\" stroke-linecap=\"round\"/><rect x=\"413\" y=\"186.5\" width=\"14\" height=\"18\" fill=\"#4a2f1d\"/><path d=\"M420 110 L448.8 191 L391.2 191 Z\" fill=\"#2f6b4a\"/><path d=\"M420 110 L448.8 191 L420 191 Z\" fill=\"#245a3d\"/><rect x=\"513\" y=\"185\" width=\"14\" height=\"20\" fill=\"#4a2f1d\"/><path d=\"M520 100 L552 190 L488 190 Z\" fill=\"#2f6b4a\"/><path d=\"M520 100 L552 190 L520 190 Z\" fill=\"#245a3d\"/><rect x=\"613\" y=\"184.25\" width=\"14\" height=\"17\" fill=\"#4a2f1d\"/><path d=\"M620 112 L647.2 188.5 L592.8 188.5 Z\" fill=\"#2f6b4a\"/><path d=\"M620 112 L647.2 188.5 L620 188.5 Z\" fill=\"#245a3d\"/><path d=\"M0 640 Q 250 560 500 620 Q 750 680 1000 600 V700 H0 Z\" fill=\"#3f8a57\"/><rect x=\"83\" y=\"630.5\" width=\"14\" height=\"26\" fill=\"#4a2f1d\"/><path d=\"M90 520 L131.6 637 L48.4 637 Z\" fill=\"#2f6b4a\"/><path d=\"M90 520 L131.6 637 L90 637 Z\" fill=\"#245a3d\"/><rect x=\"173\" y=\"653.5\" width=\"14\" height=\"22\" fill=\"#4a2f1d\"/><path d=\"M180 560 L215.2 659 L144.8 659 Z\" fill=\"#357a4c\"/><path d=\"M180 560 L215.2 659 L180 659 Z\" fill=\"#2a663e\"/><rect x=\"853\" y=\"630.5\" width=\"14\" height=\"26\" fill=\"#4a2f1d\"/><path d=\"M860 520 L901.6 637 L818.4 637 Z\" fill=\"#2f6b4a\"/><path d=\"M860 520 L901.6 637 L860 637 Z\" fill=\"#245a3d\"/><rect x=\"933\" y=\"653.5\" width=\"14\" height=\"22\" fill=\"#4a2f1d\"/><path d=\"M940 560 L975.2 659 L904.8 659 Z\" fill=\"#357a4c\"/><path d=\"M940 560 L975.2 659 L940 659 Z\" fill=\"#2a663e\"/><g fill=\"#ffffff\" opacity=\"0.6\"><ellipse cx=\"230\" cy=\"380\" rx=\"150\" ry=\"30\"/><ellipse cx=\"820\" cy=\"350\" rx=\"160\" ry=\"30\"/></g></svg>",
+    "pergamino": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 560\"><rect x=\"90\" y=\"60\" width=\"520\" height=\"440\" fill=\"#f1e2bd\"/><rect x=\"350\" y=\"60\" width=\"260\" height=\"440\" fill=\"#e6d3a8\"/><rect x=\"60\" y=\"30\" width=\"580\" height=\"50\" rx=\"25\" fill=\"#c9a56a\"/><rect x=\"60\" y=\"480\" width=\"580\" height=\"50\" rx=\"25\" fill=\"#c9a56a\"/><circle cx=\"60\" cy=\"55\" r=\"25\" fill=\"#a8844c\"/><circle cx=\"640\" cy=\"55\" r=\"25\" fill=\"#a8844c\"/><circle cx=\"60\" cy=\"505\" r=\"25\" fill=\"#a8844c\"/><circle cx=\"640\" cy=\"505\" r=\"25\" fill=\"#a8844c\"/><g stroke=\"#8a7350\" stroke-width=\"10\" stroke-linecap=\"round\"><path d=\"M150 130 H550\"/><path d=\"M150 175 H550\"/><path d=\"M150 220 H420\"/><path d=\"M150 265 H550\"/><path d=\"M150 310 H550\"/><path d=\"M150 355 H420\"/><path d=\"M150 400 H550\"/></g><circle cx=\"500\" cy=\"420\" r=\"38\" fill=\"#b5291f\"/><circle cx=\"500\" cy=\"420\" r=\"24\" fill=\"#d93427\"/><g transform=\"rotate(35 620 200)\"><path d=\"M610 40 Q 690 120 640 330 L620 330 Q 600 140 610 40 Z\" fill=\"#ffffff\"/><path d=\"M610 40 Q 640 200 630 330\" stroke=\"#c9c2b0\" stroke-width=\"5\" fill=\"none\"/></g></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Lempira, líder lenca de la resistencia contra la conquista española en la década de 1530, en el peñol de Cerquín (hoy departamento de Lempira)",
+      "fuente": "Encyclopaedia Britannica, «Lempira»; Wikipedia, «Lempira (Lenca ruler)»"
+    },
+    {
+      "dato": "Casi 30.000 guerreros de unos 200 pueblos, según el cronista Antonio de Herrera",
+      "fuente": "Antonio de Herrera y Tordesillas, «Historia general» (1601-1615), citado en Wikipedia"
+    },
+    {
+      "dato": "Versión de Herrera: muerto a traición con un arcabuz al ser llamado a parlamentar",
+      "fuente": "Herrera, citado en Wikipedia y Tunota (2022)"
+    },
+    {
+      "dato": "Versión de Rodrigo Ruiz: murió en combate (probanza de méritos de 1558, Archivo General de Indias, hallada por Mario Felipe Martínez Castillo)",
+      "fuente": "Wikipedia, «Lempira (Lenca ruler)»; Tunota"
+    },
+    {
+      "dato": "La moneda nacional se llama lempira desde 1931 (reemplazó al peso); el billete de 1 lempira lleva su perfil",
+      "fuente": "Banco Central de Honduras; El Heraldo, «Cómo llegó Honduras a tener billete»"
+    }
+  ],
+  "nota": "DOCUMENTADO: líder lenca, resistencia en Cerquín en los años 1530, las dos versiones escritas de su muerte (Herrera y Ruiz) y el nombre de la moneda. Las cifras de guerreros y pueblos son del cronista Herrera, no conteos verificados (por eso «según el cronista»). La moneda se creó por decreto en 1926 y circula desde 1931. Su retrato en los billetes es una imagen idealizada: no existe un retrato real de Lempira. Tono respetuoso, sin bromas."
+}

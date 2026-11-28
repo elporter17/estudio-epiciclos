@@ -1,0 +1,4 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 220 560">
+<circle cx='110' cy='24' r='18' fill='#5a5f73'/><rect x='102' y='24' width='16' height='400' fill='#8a919f'/>
+<circle cx='110' cy='450' r='86' fill='#c4862a'/><path d='M110 364 A86 86 0 0 1 110 536 A60 86 0 0 0 110 364Z' fill='#9a6620'/>
+<ellipse cx='84' cy='420' rx='24' ry='14' fill='#ffffff' opacity='0.4'/></svg>

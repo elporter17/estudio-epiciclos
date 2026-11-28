@@ -1,0 +1,463 @@
+{
+  "id": "explica-hn-baleada-origen",
+  "motor": "explica",
+  "titulo": "La baleada: ¿nació en La Ceiba?",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "baleada",
+    "comidahondureña",
+    "laceiba",
+    "sabiasque"
+  ],
+  "descripcion": "La reina del desayuno catracho: tortilla de harina, frijoles, mantequilla y queso duro. ¿Por qué se llama baleada y de dónde salió? La leyenda de La Ceiba y las otras versiones.",
+  "musica": "dembow",
+  "paleta": {
+    "a": "#ffcf6b",
+    "b": "#f07b3f"
+  },
+  "escenas": [
+    {
+      "fondo": "cocina",
+      "texto": "¿Sabías que el nombre de la baleada, la reina del desayuno catracho, tiene un origen que nadie ha podido comprobar?",
+      "clave": "baleada",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "baleada",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 860,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "numero": "¿?",
+          "x": 0.78,
+          "y": 0.38,
+          "color": "#6b4fe0",
+          "tam": 96,
+          "en": "origen"
+        },
+        {
+          "etiqueta": "sin comprobar",
+          "x": 0.3,
+          "y": 0.82,
+          "color": "#d93427",
+          "en": "comprobar"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Todo arranca con una tortilla de harina, grandota y suavecita, recién salida del comal.",
+      "clave": "tortilla",
+      "nota": "de harina, no de maíz",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1.08
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "comal",
+          "x": 0.5,
+          "y": 0.74,
+          "ancho": 900,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": 0
+        },
+        {
+          "svg": "tortilla",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 560,
+          "anim": "caer",
+          "en": "tortilla"
+        },
+        {
+          "etiqueta": "comal",
+          "x": 0.82,
+          "y": 0.88,
+          "color": "#3a3a46",
+          "a": [
+            0.7,
+            0.8
+          ],
+          "en": "comal"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Luego van frijoles rojos molidos, mantequilla y queso duro rallado. Esa es la sencilla.",
+      "clave": "sencilla",
+      "nota": "la mantequilla catracha es crema",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tortilla",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "ninguna",
+          "en": 0
+        },
+        {
+          "svg": "frijoles",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "pop",
+          "sombra": false,
+          "en": "frijoles"
+        },
+        {
+          "svg": "mantequilla",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "fade",
+          "sombra": false,
+          "en": "mantequilla"
+        },
+        {
+          "svg": "queso",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 760,
+          "anim": "caer",
+          "sombra": false,
+          "en": "queso"
+        },
+        {
+          "etiqueta": "frijoles",
+          "x": 0.2,
+          "y": 0.36,
+          "color": "#5a2218",
+          "a": [
+            0.4,
+            0.5
+          ],
+          "en": "frijoles"
+        },
+        {
+          "etiqueta": "queso duro",
+          "x": 0.78,
+          "y": 0.86,
+          "color": "#c9a227",
+          "a": [
+            0.6,
+            0.66
+          ],
+          "en": "queso"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "¿Y el nombre? La versión más contada dice que nació en La Ceiba, en la costa norte.",
+      "clave": "La Ceiba",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.427,
+          0.55,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "mapa_hn",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 900,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "pin",
+          "x": 0.427,
+          "y": 0.464,
+          "ancho": 100,
+          "anim": "caer",
+          "en": "Ceiba"
+        },
+        {
+          "etiqueta": "La Ceiba",
+          "x": 0.62,
+          "y": 0.36,
+          "color": "#e8433a",
+          "a": [
+            0.427,
+            0.45
+          ],
+          "en": "Ceiba"
+        },
+        {
+          "etiqueta": "costa norte",
+          "x": 0.5,
+          "y": 0.82,
+          "color": "#2f7fd2",
+          "en": "costa"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Cuenta la leyenda que la señora que las vendía había sobrevivido a un balazo, y la gente decía: «vamos donde la baleada».",
+      "clave": "leyenda",
+      "nota": "nadie lo ha comprobado",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "senora",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 640,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "etiqueta": "leyenda popular",
+          "x": 0.5,
+          "y": 0.33,
+          "color": "#6b4fe0",
+          "en": "leyenda"
+        },
+        {
+          "numero": "«donde la baleada»",
+          "x": 0.5,
+          "y": 0.88,
+          "color": "#1d1d2b",
+          "tam": 50,
+          "en": "vamos"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Otros dicen que el nombre viene de los frijoles, como balitas. Y Tela, El Progreso y San Pedro Sula también la reclaman.",
+      "clave": "reclaman",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.3,
+          0.55,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "mapa_hn",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 900,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "svg": "pin",
+          "x": 0.427,
+          "y": 0.464,
+          "ancho": 100,
+          "anim": "ninguna",
+          "en": 0
+        },
+        {
+          "svg": "frijol",
+          "x": 0.78,
+          "y": 0.36,
+          "ancho": 200,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": "frijoles"
+        },
+        {
+          "svg": "pin_azul",
+          "x": 0.341,
+          "y": 0.464,
+          "ancho": 90,
+          "anim": "caer",
+          "en": "Tela"
+        },
+        {
+          "svg": "pin_azul",
+          "x": 0.319,
+          "y": 0.528,
+          "ancho": 90,
+          "anim": "caer",
+          "en": "Progreso"
+        },
+        {
+          "svg": "pin_azul",
+          "x": 0.271,
+          "y": 0.498,
+          "ancho": 90,
+          "anim": "caer",
+          "en": "Pedro"
+        },
+        {
+          "etiqueta": "¿quién fue primero?",
+          "x": 0.5,
+          "y": 0.84,
+          "color": "#2f7fd2",
+          "en": "reclaman"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Hoy se come en todo el país: sencilla, o especial con huevo, aguacate o carne.",
+      "clave": "especial",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1.08
+        ]
+      },
+      "capas": [
+        {
+          "svg": "baleada",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 760,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "huevo",
+          "x": 0.22,
+          "y": 0.79,
+          "ancho": 260,
+          "anim": "caer",
+          "idle": "flotar",
+          "en": "huevo"
+        },
+        {
+          "svg": "aguacate",
+          "x": 0.5,
+          "y": 0.8,
+          "ancho": 190,
+          "anim": "caer",
+          "idle": "balanceo",
+          "en": "aguacate"
+        },
+        {
+          "svg": "carne",
+          "x": 0.79,
+          "y": 0.79,
+          "ancho": 260,
+          "anim": "caer",
+          "idle": "flotar",
+          "en": "carne"
+        },
+        {
+          "etiqueta": "especial",
+          "x": 0.5,
+          "y": 0.35,
+          "color": "#d93427",
+          "en": "especial"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Y vos, la pedís sencilla o con todo? Síguenos para más historias catrachas.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "baleada": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 320\"><path d=\"M36 246 Q250 300 464 246 L458 262 Q250 318 42 262Z\" fill=\"#d9b779\"/><path d=\"M44 228 Q250 268 456 228 L460 250 Q250 296 40 250Z\" fill=\"#5a2218\"/><path d=\"M60 226 Q90 244 120 230 Q150 248 180 234 Q210 250 240 236 Q270 252 300 236 Q330 250 360 234 Q390 248 420 230 Q440 240 450 228 L450 240 Q250 280 50 240Z\" fill=\"#fbf6ea\"/><path d=\"M40 230 Q250 -60 460 230 Q250 262 40 230Z\" fill=\"#f3dfb0\"/><clipPath id=\"t\"><path d=\"M40 230 Q250 -60 460 230 Q250 262 40 230Z\"/></clipPath><ellipse cx=\"250\" cy=\"300\" rx=\"270\" ry=\"130\" fill=\"#e3c68c\" clip-path=\"url(#t)\"/><path d=\"M110 150 Q170 70 260 58\" stroke=\"#fff6dc\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/><ellipse cx=\"150\" cy=\"160\" rx=\"13\" ry=\"9.1\" fill=\"#c58f4a\" opacity=\"0.7\"/><ellipse cx=\"230\" cy=\"110\" rx=\"10\" ry=\"7\" fill=\"#c58f4a\" opacity=\"0.7\"/><ellipse cx=\"300\" cy=\"170\" rx=\"15\" ry=\"10.5\" fill=\"#c58f4a\" opacity=\"0.7\"/><ellipse cx=\"200\" cy=\"200\" rx=\"9\" ry=\"6.3\" fill=\"#c58f4a\" opacity=\"0.7\"/><ellipse cx=\"360\" cy=\"200\" rx=\"11\" ry=\"7.699999999999999\" fill=\"#c58f4a\" opacity=\"0.7\"/><ellipse cx=\"120\" cy=\"205\" rx=\"8\" ry=\"5.6\" fill=\"#c58f4a\" opacity=\"0.7\"/></svg>",
+    "tortilla": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\"><circle cx=\"200\" cy=\"208\" r=\"184\" fill=\"#d9b779\"/><circle cx=\"200\" cy=\"200\" r=\"184\" fill=\"#f3dfb0\"/><circle cx=\"200\" cy=\"200\" r=\"160\" fill=\"none\" stroke=\"#e6c98d\" stroke-width=\"6\"/><path d=\"M60 120 A160 160 0 0 1 150 50\" stroke=\"#fff6dc\" stroke-width=\"14\" fill=\"none\" stroke-linecap=\"round\"/><ellipse cx=\"120\" cy=\"140\" rx=\"14\" ry=\"9.799999999999999\" fill=\"#c58f4a\" opacity=\"0.75\"/><ellipse cx=\"260\" cy=\"120\" rx=\"10\" ry=\"7\" fill=\"#c58f4a\" opacity=\"0.75\"/><ellipse cx=\"300\" cy=\"230\" rx=\"16\" ry=\"11.2\" fill=\"#c58f4a\" opacity=\"0.75\"/><ellipse cx=\"150\" cy=\"280\" rx=\"12\" ry=\"8.399999999999999\" fill=\"#c58f4a\" opacity=\"0.75\"/><ellipse cx=\"220\" cy=\"320\" rx=\"9\" ry=\"6.3\" fill=\"#c58f4a\" opacity=\"0.75\"/><ellipse cx=\"90\" cy=\"220\" rx=\"8\" ry=\"5.6\" fill=\"#c58f4a\" opacity=\"0.75\"/><ellipse cx=\"320\" cy=\"150\" rx=\"7\" ry=\"4.8999999999999995\" fill=\"#c58f4a\" opacity=\"0.75\"/><ellipse cx=\"200\" cy=\"80\" rx=\"8\" ry=\"5.6\" fill=\"#c58f4a\" opacity=\"0.75\"/></svg>",
+    "comal": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 260\"><path d=\"M150 230 Q170 170 200 230Z M250 236 Q280 150 310 236Z M360 230 Q385 175 410 230Z\" fill=\"#f28c28\"/><path d=\"M170 230 Q180 200 192 230Z M268 236 Q280 195 294 236Z M375 230 Q386 205 398 230Z\" fill=\"#ffd24a\"/><ellipse cx=\"280\" cy=\"140\" rx=\"262\" ry=\"80\" fill=\"#22222a\"/><ellipse cx=\"280\" cy=\"128\" rx=\"262\" ry=\"80\" fill=\"#3a3a46\"/><ellipse cx=\"280\" cy=\"128\" rx=\"230\" ry=\"64\" fill=\"#2c2c36\"/><path d=\"M90 110 Q180 70 300 66\" stroke=\"#55556a\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+    "frijoles": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\"><path d=\"M90 190 Q80 110 170 95 Q260 80 305 140 Q340 200 300 270 Q250 330 160 315 Q95 300 90 190Z\" fill=\"#5a2218\"/><path d=\"M110 185 Q105 125 175 112 Q250 100 288 150 Q300 175 290 200 Q250 150 180 150 Q120 155 110 185Z\" fill=\"#7a3324\"/><circle cx=\"160\" cy=\"140\" r=\"9\" fill=\"#9a4a36\"/><circle cx=\"240\" cy=\"250\" r=\"7\" fill=\"#9a4a36\"/><circle cx=\"210\" cy=\"180\" r=\"6\" fill=\"#9a4a36\"/></svg>",
+    "mantequilla": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\"><path d=\"M110 170 Q140 140 170 170 T230 170 T290 170\" stroke=\"#fbf6ea\" stroke-width=\"20\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M120 230 Q150 200 180 230 T240 230 T290 225\" stroke=\"#fbf6ea\" stroke-width=\"20\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M150 280 Q180 255 210 280 T260 275\" stroke=\"#fbf6ea\" stroke-width=\"18\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M115 176 Q140 152 165 176\" stroke=\"#e8e0cc\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+    "queso": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\"><rect x=\"130\" y=\"150\" width=\"16\" height=\"12\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(-30 130 150)\"/><rect x=\"170\" y=\"125\" width=\"20\" height=\"17\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(7 170 125)\"/><rect x=\"215\" y=\"140\" width=\"24\" height=\"12\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(-16 215 140)\"/><rect x=\"260\" y=\"160\" width=\"16\" height=\"17\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(21 260 160)\"/><rect x=\"140\" y=\"205\" width=\"20\" height=\"12\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(-2 140 205)\"/><rect x=\"190\" y=\"195\" width=\"24\" height=\"17\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(-25 190 195)\"/><rect x=\"240\" y=\"210\" width=\"16\" height=\"12\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(12 240 210)\"/><rect x=\"285\" y=\"215\" width=\"20\" height=\"17\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(-11 285 215)\"/><rect x=\"160\" y=\"255\" width=\"24\" height=\"12\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(26 160 255)\"/><rect x=\"210\" y=\"260\" width=\"16\" height=\"17\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(3 210 260)\"/><rect x=\"255\" y=\"265\" width=\"20\" height=\"12\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(-20 255 265)\"/><rect x=\"195\" y=\"300\" width=\"24\" height=\"17\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(17 195 300)\"/><rect x=\"120\" y=\"245\" width=\"16\" height=\"12\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(-6 120 245)\"/><rect x=\"230\" y=\"110\" width=\"20\" height=\"17\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(-29 230 110)\"/><rect x=\"280\" y=\"255\" width=\"24\" height=\"12\" rx=\"4\" fill=\"#fff4cf\" stroke=\"#e3d29a\" stroke-width=\"3\" transform=\"rotate(8 280 255)\"/></svg>",
+    "mapa_hn": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1010 570\"><path d=\"M192 68 L232 45 L272 60 L312 58 L370 66 L416 58 L470 52 L544 32 L600 30 L650 30 L704 22 L750 34 L784 45 L840 70 L900 110 L960 150 L1000 198 L930 225 L864 243 L790 280 L704 324 L640 370 L592 405 L540 410 L496 423 L460 460 L424 504 L380 535 L336 562 L310 548 L288 531 L262 505 L256 486 L240 440 L224 405 L184 398 L144 387 L100 380 L64 369 L30 340 L8 302 L40 270 L70 232 L104 189 L130 160 L160 126 L178 96Z\" fill=\"#1f6b48\" transform=\"translate(10 14)\" opacity=\"0.35\"/><path d=\"M192 68 L232 45 L272 60 L312 58 L370 66 L416 58 L470 52 L544 32 L600 30 L650 30 L704 22 L750 34 L784 45 L840 70 L900 110 L960 150 L1000 198 L930 225 L864 243 L790 280 L704 324 L640 370 L592 405 L540 410 L496 423 L460 460 L424 504 L380 535 L336 562 L310 548 L288 531 L262 505 L256 486 L240 440 L224 405 L184 398 L144 387 L100 380 L64 369 L30 340 L8 302 L40 270 L70 232 L104 189 L130 160 L160 126 L178 96Z\" fill=\"#4fb36b\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M300 300 L420 250 L560 300 L700 270 L800 230\" stroke=\"#3f9a59\" stroke-width=\"22\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.7\"/><path d=\"M150 260 L240 230 L330 260\" stroke=\"#3f9a59\" stroke-width=\"18\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.7\"/><path d=\"M200 90 Q400 80 600 60 Q760 50 900 120\" stroke=\"#7fd08f\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.8\"/></svg>",
+    "pin": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 140\"><path d=\"M50 136 C38 108 8 84 8 50 A42 42 0 0 1 92 50 C92 84 62 108 50 136Z\" fill=\"#e8433a\"/><path d=\"M50 136 C62 108 92 84 92 50 A42 42 0 0 0 50 8 C70 30 74 80 50 136Z\" fill=\"#b52a22\"/><circle cx=\"50\" cy=\"48\" r=\"17\" fill=\"#ffffff\"/></svg>",
+    "pin_azul": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 140\"><path d=\"M50 136 C38 108 8 84 8 50 A42 42 0 0 1 92 50 C92 84 62 108 50 136Z\" fill=\"#2f7fd2\"/><path d=\"M50 136 C62 108 92 84 92 50 A42 42 0 0 0 50 8 C70 30 74 80 50 136Z\" fill=\"#1f5ea8\"/><circle cx=\"50\" cy=\"48\" r=\"17\" fill=\"#ffffff\"/></svg>",
+    "senora": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 560\"><rect x=\"10\" y=\"380\" width=\"400\" height=\"34\" rx=\"8\" fill=\"#9a5b32\"/><rect x=\"30\" y=\"414\" width=\"26\" height=\"140\" fill=\"#7a4526\"/><rect x=\"364\" y=\"414\" width=\"26\" height=\"140\" fill=\"#7a4526\"/><rect x=\"10\" y=\"414\" width=\"400\" height=\"40\" fill=\"#e8433a\"/><path d=\"M10 414 h50 v40 h-50Z M110 414 h50 v40 h-50Z M210 414 h50 v40 h-50Z M310 414 h50 v40 h-50Z\" fill=\"#ffffff\"/><path d=\"M120 380 Q120 250 210 240 Q300 250 300 380Z\" fill=\"#2f8fd6\"/><path d=\"M160 380 Q160 290 210 285 Q260 290 260 380Z\" fill=\"#ffffff\"/><path d=\"M175 300 h70\" stroke=\"#e0e0e0\" stroke-width=\"6\"/><rect x=\"196\" y=\"210\" width=\"28\" height=\"36\" fill=\"#a86a43\"/><circle cx=\"210\" cy=\"170\" r=\"58\" fill=\"#c07c52\"/><path d=\"M152 168 Q150 100 210 98 Q272 100 268 168 Q262 128 210 126 Q160 128 152 168Z\" fill=\"#2b1d16\"/><circle cx=\"210\" cy=\"92\" r=\"26\" fill=\"#2b1d16\"/><circle cx=\"190\" cy=\"172\" r=\"6\" fill=\"#2b1d16\"/><circle cx=\"232\" cy=\"172\" r=\"6\" fill=\"#2b1d16\"/><path d=\"M192 196 Q211 212 230 196\" stroke=\"#2b1d16\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"176\" cy=\"190\" r=\"9\" fill=\"#e48b7a\" opacity=\"0.6\"/><circle cx=\"246\" cy=\"190\" r=\"9\" fill=\"#e48b7a\" opacity=\"0.6\"/><path d=\"M140 300 Q110 340 150 372\" stroke=\"#2f8fd6\" stroke-width=\"30\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M282 300 Q320 330 300 368\" stroke=\"#2f8fd6\" stroke-width=\"30\" fill=\"none\" stroke-linecap=\"round\"/><ellipse cx=\"300\" cy=\"372\" rx=\"70\" ry=\"18\" fill=\"#f3dfb0\"/><ellipse cx=\"300\" cy=\"368\" rx=\"70\" ry=\"16\" fill=\"#f8e9c4\"/><ellipse cx=\"110\" cy=\"378\" rx=\"80\" ry=\"16\" fill=\"#3a3a46\"/></svg>",
+    "huevo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 180\"><path d=\"M30 100 Q20 40 80 36 Q120 10 160 40 Q205 60 190 110 Q180 160 120 150 Q60 165 30 100Z\" fill=\"#ffffff\"/><path d=\"M40 110 Q60 150 120 148 Q170 150 186 112 Q170 140 120 138 Q70 140 40 110Z\" fill=\"#ece8e0\"/><circle cx=\"110\" cy=\"92\" r=\"36\" fill=\"#f5a623\"/><circle cx=\"110\" cy=\"88\" r=\"36\" fill=\"#ffc23d\"/><circle cx=\"98\" cy=\"76\" r=\"9\" fill=\"#ffe08a\"/></svg>",
+    "aguacate": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 240\"><path d=\"M100 10 Q150 10 165 100 Q190 170 160 210 Q130 238 100 236 Q70 238 40 210 Q10 170 35 100 Q50 10 100 10Z\" fill=\"#2f5d1e\"/><path d=\"M100 26 Q140 28 150 104 Q172 168 146 200 Q124 222 100 220 Q76 222 54 200 Q28 168 50 104 Q60 28 100 26Z\" fill=\"#cfe38a\"/><path d=\"M100 26 Q128 28 140 80 Q110 60 70 80 Q78 28 100 26Z\" fill=\"#e4f0a8\"/><circle cx=\"100\" cy=\"150\" r=\"40\" fill=\"#7a4a26\"/><circle cx=\"90\" cy=\"138\" r=\"12\" fill=\"#a06a3e\"/></svg>",
+    "carne": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 160\"><path d=\"M20 90 Q30 30 110 34 Q200 30 222 80 Q230 130 160 138 Q70 150 20 90Z\" fill=\"#7a3b22\"/><path d=\"M40 86 Q50 50 110 52 Q180 50 200 84\" stroke=\"#a5583a\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M60 110 L170 100\" stroke=\"#5e2b17\" stroke-width=\"8\" stroke-linecap=\"round\"/></svg>",
+    "frijol": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 150\"><ellipse cx=\"100\" cy=\"80\" rx=\"88\" ry=\"58\" fill=\"#4a1a12\"/><ellipse cx=\"100\" cy=\"74\" rx=\"86\" ry=\"56\" fill=\"#7a2a1c\"/><path d=\"M40 60 Q80 30 140 40\" stroke=\"#b5584a\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/><ellipse cx=\"100\" cy=\"84\" rx=\"22\" ry=\"8\" fill=\"#f3e6d0\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "La baleada: tortilla de harina con frijoles, mantequilla (crema) y queso; la «sencilla» y la «especial» con huevo, aguacate o carne",
+      "fuente": "El Heraldo, «¿Cómo hacer baleadas hondureñas? Conoce la receta y su historia» (elheraldo.hn/cocina)"
+    },
+    {
+      "dato": "Versiones del origen en La Ceiba (vendedoras de tortillas de harina con frijoles en los años 50-60)",
+      "fuente": "El Heraldo, «Conozca las dos versiones del origen de la baleada» (elheraldo.hn/cocina/1115655)"
+    },
+    {
+      "dato": "La historia de la vendedora que sobrevivió a un balazo se cuenta como relato popular, sin pruebas; otra versión liga el nombre a los frijoles «como balas»",
+      "fuente": "Tu Nota, «¿Sabías por qué la baleada se llama baleada? Descubre el origen de este platillo hondureño»"
+    },
+    {
+      "dato": "Tela, El Progreso y San Pedro Sula también reclaman el origen",
+      "fuente": "Tu Nota (misma nota) y La Prensa, «Día de la baleada» (laprensa.hn)"
+    }
+  ],
+  "nota": "El origen exacto de la baleada y de su nombre NO está documentado. La vendedora «baleada» de La Ceiba es leyenda popular y así se dice en el video; la explicación de los frijoles también es una versión popular. «Mantequilla» en Honduras es la crema ácida (mantequilla rala), no la mantequilla de barra."
+}

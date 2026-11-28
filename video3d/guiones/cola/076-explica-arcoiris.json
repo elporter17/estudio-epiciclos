@@ -15,7 +15,7 @@
   "escenas": [
     {
       "fondo": "cielo",
-      "texto": "¿Alguna vez viste un arcoíris recto? No existe. Y la razón se esconde en cada gota de lluvia.",
+      "texto": "¿Alguna vez viste un arcoíris recto? No existe. La razón está en cada gota de lluvia.",
       "clave": "recto",
       "camara": {
         "de": [
@@ -78,7 +78,7 @@
     },
     {
       "fondo": "oscuro",
-      "texto": "La luz del Sol entra en la gota y se dobla un poquito: eso se llama refracción.",
+      "texto": "La luz del Sol entra en la gota y se dobla: eso es la refracción.",
       "clave": "refracción",
       "camara": {
         "de": [
@@ -135,7 +135,7 @@
     },
     {
       "fondo": "oscuro",
-      "texto": "Rebota en el fondo de la gota y sale separada en colores, como en un prisma.",
+      "texto": "Rebota en el fondo de la gota y sale separada en colores.",
       "clave": "colores",
       "camara": {
         "de": [
@@ -210,8 +210,8 @@
     },
     {
       "fondo": "plano",
-      "texto": "Lo clave: cada color sale con un ángulo fijo, unos 42 grados desde el punto opuesto al Sol.",
-      "voz": "Lo clave: cada color sale con un ángulo fijo, unos cuarenta y dos grados desde el punto opuesto al Sol.",
+      "texto": "Y cada color sale con un ángulo fijo: unos 42 grados desde el punto opuesto al Sol.",
+      "voz": "Y cada color sale con un ángulo fijo: unos cuarenta y dos grados desde el punto opuesto al Sol.",
       "clave": "ángulo",
       "nota": "siempre el mismo",
       "camara": {
@@ -285,7 +285,7 @@
     },
     {
       "fondo": "cielo",
-      "texto": "Y todas las gotas que cumplen ese ángulo forman un círculo alrededor de ese punto.",
+      "texto": "Las gotas que cumplen ese ángulo forman un círculo alrededor de ese punto.",
       "clave": "círculo",
       "camara": {
         "de": [
@@ -339,7 +339,7 @@
     },
     {
       "fondo": "liso",
-      "texto": "Pero el suelo se mete en medio y tapa la parte de abajo. Por eso ves solo un arco.",
+      "texto": "Pero el suelo tapa la parte de abajo. Por eso ves solo un arco.",
       "clave": "suelo",
       "camara": {
         "de": [
@@ -395,7 +395,7 @@
     },
     {
       "fondo": "cielo",
-      "texto": "En cambio, desde un avión, con lluvia abajo y el Sol a tu espalda, se puede ver el círculo entero.",
+      "texto": "Desde un avión, con lluvia abajo y el Sol detrás, a veces se ve el círculo entero.",
       "clave": "avión",
       "nota": "rara vez, pero pasa",
       "camara": {
@@ -437,7 +437,7 @@
           "ancho": 600,
           "anim": "pop",
           "sombra": false,
-          "en": "ver"
+          "en": "círculo"
         },
         {
           "svg": "nube",
@@ -472,7 +472,7 @@
     },
     {
       "tipo": "cierre",
-      "texto": "¿Lo sabías o te voló la cabeza? Cuéntanos y síguenos para más.",
+      "texto": "¿Lo sabías? Cuéntanos y síguenos para más.",
       "clave": "síguenos",
       "capas": []
     }

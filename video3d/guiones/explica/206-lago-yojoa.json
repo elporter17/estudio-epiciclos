@@ -1,0 +1,427 @@
+{
+  "id": "explica-hn-lago-yojoa",
+  "motor": "explica",
+  "titulo": "Yojoa: el lago de las 400 aves",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "yojoa",
+    "naturaleza",
+    "aves",
+    "sabiasque"
+  ],
+  "descripcion": "El Lago de Yojoa es el lago natural más grande de Honduras y uno de los mejores lugares de Centroamérica para ver aves: más de 400 especies. Te contamos por qué, y qué tiene cerca.",
+  "musica": "pop",
+  "paleta": {
+    "a": "#9be08a",
+    "b": "#2f8f6a"
+  },
+  "escenas": [
+    {
+      "fondo": "cielo",
+      "texto": "Más de 400 especies de aves viven alrededor de un solo lago hondureño.",
+      "voz": "Más de cuatrocientas especies de aves viven alrededor de un solo lago hondureño.",
+      "clave": "400",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.56,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "lago_yojoa",
+          "x": 0.5,
+          "y": 0.63,
+          "ancho": 1080,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "svg": "aves",
+          "x": 0.5,
+          "y": 0.315,
+          "ancho": 700,
+          "anim": "pop",
+          "idle": "flotar",
+          "sombra": false,
+          "en": 0.2
+        },
+        {
+          "numero": "+400",
+          "x": 0.5,
+          "y": 0.9,
+          "color": "#2f8f6a",
+          "tam": 84,
+          "en": "400"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Es el Lago de Yojoa, el lago natural más grande del país, entre Cortés, Comayagua y Santa Bárbara.",
+      "clave": "Yojoa",
+      "nota": "el más grande",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "lago_mapa",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 820,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.6,
+          "radio": 150,
+          "en": "natural"
+        },
+        {
+          "etiqueta": "Cortés",
+          "x": 0.42,
+          "y": 0.43,
+          "color": "#3d7a3a",
+          "en": "Cortés"
+        },
+        {
+          "etiqueta": "Comayagua",
+          "x": 0.72,
+          "y": 0.66,
+          "color": "#7a5a2c",
+          "en": "Comayagua"
+        },
+        {
+          "etiqueta": "Santa Bárbara",
+          "x": 0.27,
+          "y": 0.73,
+          "color": "#8a7a1c",
+          "en": "Santa"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "¿Por qué tantas aves? Lo rodean montañas con bosque nublado, como Cerro Azul Meámbar y Santa Bárbara.",
+      "clave": "bosque",
+      "nota": "dos parques nacionales",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.6,
+          0.66,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "montanas_bosque",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 1080,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": 0
+        },
+        {
+          "svg": "tucan",
+          "x": 0.7,
+          "y": 0.74,
+          "ancho": 400,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": "bosque"
+        },
+        {
+          "etiqueta": "Cerro Azul Meámbar",
+          "x": 0.3,
+          "y": 0.36,
+          "a": [
+            0.48,
+            0.47
+          ],
+          "color": "#2f6b45",
+          "tam": 36,
+          "en": "Cerro"
+        },
+        {
+          "etiqueta": "Santa Bárbara",
+          "x": 0.7,
+          "y": 0.36,
+          "a": [
+            0.79,
+            0.52
+          ],
+          "color": "#2f6b45",
+          "tam": 36,
+          "en": "Santa"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Y en sus orillas y humedales pescan garzas, patos y martines pescadores.",
+      "clave": "humedales",
+      "camara": {
+        "de": [
+          0.45,
+          0.66,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "juncos",
+          "x": 0.5,
+          "y": 0.84,
+          "ancho": 1080,
+          "anim": "fade",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "garza",
+          "x": 0.4,
+          "y": 0.71,
+          "ancho": 360,
+          "anim": "slideIn",
+          "desde": "izquierda",
+          "idle": "balanceo",
+          "en": "garzas"
+        },
+        {
+          "svg": "aves",
+          "x": 0.66,
+          "y": 0.36,
+          "ancho": 460,
+          "anim": "pop",
+          "idle": "flotar",
+          "sombra": false,
+          "en": "patos"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Por eso llegan observadores de aves de todo el mundo, binoculares en mano.",
+      "clave": "observadores",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "binoculares",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 620,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "svg": "tucan",
+          "x": 0.5,
+          "y": 0.4,
+          "ancho": 300,
+          "anim": "pop",
+          "sombra": false,
+          "en": "binoculares"
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.4,
+          "radio": 175,
+          "en": "mano"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Y a pocos kilómetros cae Pulhapanzak, una catarata de unos 43 metros.",
+      "voz": "Y a pocos kilómetros cae Pulhapanzak, una catarata de unos cuarenta y tres metros.",
+      "clave": "Pulhapanzak",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.66,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "catarata",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 700,
+          "anim": "caer",
+          "en": 0
+        },
+        {
+          "numero": "43 m",
+          "x": 0.8,
+          "y": 0.4,
+          "color": "#2f7fd2",
+          "tam": 76,
+          "en": "43"
+        },
+        {
+          "burbujas": true,
+          "x": 0.5,
+          "y": 0.82,
+          "ancho": 0.35,
+          "alto": 0.08,
+          "n": 14,
+          "en": "catarata"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Cuidarlo importa: da pesca y turismo a las comunidades de su orilla, pero la contaminación lo amenaza.",
+      "clave": "contaminación",
+      "camara": {
+        "de": [
+          0.5,
+          0.63,
+          1
+        ],
+        "a": [
+          0.5,
+          0.7,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "lago_yojoa",
+          "x": 0.5,
+          "y": 0.63,
+          "ancho": 1080,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "etiqueta": "pesca",
+          "x": 0.25,
+          "y": 0.36,
+          "a": [
+            0.66,
+            0.705
+          ],
+          "color": "#2f7fd2",
+          "en": "pesca"
+        },
+        {
+          "etiqueta": "turismo",
+          "x": 0.72,
+          "y": 0.36,
+          "color": "#e8483b",
+          "en": "turismo"
+        },
+        {
+          "svg": "manchas",
+          "x": 0.42,
+          "y": 0.73,
+          "ancho": 620,
+          "anim": "fade",
+          "sombra": false,
+          "en": "contaminación"
+        },
+        {
+          "presion": true,
+          "x": 0.42,
+          "y": 0.73,
+          "radioX": 330,
+          "radioY": 90,
+          "n": 8,
+          "en": "amenaza"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Ya comiste pescado frito a la orilla del Yojoa? Cuéntanos y síguenos para más rincones catrachos.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "lago_yojoa": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 720\"><path d=\"M0 430 Q120 300 250 260 Q340 230 420 300 Q520 180 640 210 Q760 240 840 320 Q920 280 1000 330 L1000 720 L0 720Z\" fill=\"#5f9a7a\"/><path d=\"M420 300 Q520 180 640 210 Q560 240 520 330Z M840 320 Q920 280 1000 330 L1000 380 Q930 340 880 380Z\" fill=\"#4e8668\"/><path d=\"M0 470 Q200 380 380 420 Q520 450 700 400 Q860 360 1000 420 L1000 720 L0 720Z\" fill=\"#3f8a55\"/><path d=\"M44.76747297700058 439.3499424960755 L62.36747297700058 487.3499424960755 L27.16747297700058 487.3499424960755Z\" fill=\"#2c6a3c\"/><path d=\"M44.76747297700058 439.3499424960755 L62.36747297700058 487.3499424960755 L44.76747297700058 487.3499424960755Z\" fill=\"#245a33\"/><path d=\"M123.43800941664085 423.29256825448454 L141.03800941664085 471.29256825448454 L105.83800941664086 471.29256825448454Z\" fill=\"#2c6a3c\"/><path d=\"M123.43800941664085 423.29256825448454 L141.03800941664085 471.29256825448454 L123.43800941664085 471.29256825448454Z\" fill=\"#245a33\"/><path d=\"M183.47673506475985 406.3134799051624 L201.07673506475984 454.3134799051624 L165.87673506475986 454.3134799051624Z\" fill=\"#2c6a3c\"/><path d=\"M183.47673506475985 406.3134799051624 L201.07673506475984 454.3134799051624 L183.47673506475985 454.3134799051624Z\" fill=\"#245a33\"/><path d=\"M262.25885746876884 404.38482216805113 L279.85885746876886 452.38482216805113 L244.65885746876884 452.38482216805113Z\" fill=\"#2c6a3c\"/><path d=\"M262.25885746876884 404.38482216805113 L279.85885746876886 452.38482216805113 L262.25885746876884 452.38482216805113Z\" fill=\"#245a33\"/><path d=\"M330.3400411583425 425.1787085321869 L347.9400411583425 473.1787085321869 L312.7400411583425 473.1787085321869Z\" fill=\"#2c6a3c\"/><path d=\"M330.3400411583425 425.1787085321869 L347.9400411583425 473.1787085321869 L330.3400411583425 473.1787085321869Z\" fill=\"#245a33\"/><path d=\"M410.37500948066736 448.85974100218874 L427.9750094806674 496.85974100218874 L392.77500948066734 496.85974100218874Z\" fill=\"#2c6a3c\"/><path d=\"M410.37500948066736 448.85974100218874 L427.9750094806674 496.85974100218874 L410.37500948066736 496.85974100218874Z\" fill=\"#245a33\"/><path d=\"M488.2059912504337 447.89592927224174 L505.80599125043375 495.89592927224174 L470.6059912504337 495.89592927224174Z\" fill=\"#2c6a3c\"/><path d=\"M488.2059912504337 447.89592927224174 L505.80599125043375 495.89592927224174 L488.2059912504337 495.89592927224174Z\" fill=\"#245a33\"/><path d=\"M532.0019656464683 465.917875322608 L549.6019656464683 513.917875322608 L514.4019656464683 513.917875322608Z\" fill=\"#2c6a3c\"/><path d=\"M532.0019656464683 465.917875322608 L549.6019656464683 513.917875322608 L532.0019656464683 513.917875322608Z\" fill=\"#245a33\"/><path d=\"M622.1659825025563 455.9462372875387 L639.7659825025563 503.9462372875387 L604.5659825025563 503.9462372875387Z\" fill=\"#2c6a3c\"/><path d=\"M622.1659825025563 455.9462372875387 L639.7659825025563 503.9462372875387 L622.1659825025563 503.9462372875387Z\" fill=\"#245a33\"/><path d=\"M694.8702294879877 430.6541541102722 L712.4702294879877 478.6541541102722 L677.2702294879876 478.6541541102722Z\" fill=\"#2c6a3c\"/><path d=\"M694.8702294879877 430.6541541102722 L712.4702294879877 478.6541541102722 L694.8702294879877 478.6541541102722Z\" fill=\"#245a33\"/><path d=\"M750.738545981003 408.9520606225271 L768.338545981003 456.9520606225271 L733.138545981003 456.9520606225271Z\" fill=\"#2c6a3c\"/><path d=\"M750.738545981003 408.9520606225271 L768.338545981003 456.9520606225271 L750.738545981003 456.9520606225271Z\" fill=\"#245a33\"/><path d=\"M836.9974272717263 416.1248810081871 L854.5974272717264 464.1248810081871 L819.3974272717263 464.1248810081871Z\" fill=\"#2c6a3c\"/><path d=\"M836.9974272717263 416.1248810081871 L854.5974272717264 464.1248810081871 L836.9974272717263 464.1248810081871Z\" fill=\"#245a33\"/><path d=\"M899.5778618763143 408.5992388962391 L917.1778618763143 456.5992388962391 L881.9778618763143 456.5992388962391Z\" fill=\"#2c6a3c\"/><path d=\"M899.5778618763143 408.5992388962391 L917.1778618763143 456.5992388962391 L899.5778618763143 456.5992388962391Z\" fill=\"#245a33\"/><path d=\"M957.4835235915452 430.9207051612313 L975.0835235915453 478.9207051612313 L939.8835235915452 478.9207051612313Z\" fill=\"#2c6a3c\"/><path d=\"M957.4835235915452 430.9207051612313 L975.0835235915453 478.9207051612313 L957.4835235915452 478.9207051612313Z\" fill=\"#245a33\"/><ellipse cx=\"500\" cy=\"540\" rx=\"470\" ry=\"130\" fill=\"#2b8bd0\"/><ellipse cx=\"500\" cy=\"560\" rx=\"430\" ry=\"100\" fill=\"#3aa0e0\"/><path d=\"M200 520 H360 M560 500 H760 M300 580 H520 M640 600 H800\" stroke=\"#bfe6ff\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M640 548 L740 548 L725 570 L655 570Z\" fill=\"#e8483b\"/><rect x=\"684\" y=\"526\" width=\"6\" height=\"24\" fill=\"#5a3a24\"/><path d=\"M690 528 L720 546 L690 546Z\" fill=\"#ffffff\"/><path d=\"M0 720 L0 600 Q120 640 260 690 Q300 705 330 720Z M1000 720 L1000 610 Q880 650 760 700 L740 720Z\" fill=\"#2f6b45\"/><path d=\"M60 690 Q66 640 62 610\" stroke=\"#7fb069\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M90 684 Q96 640 92 620\" stroke=\"#7fb069\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M120 678 Q126 640 122 610\" stroke=\"#7fb069\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M900 690 Q906 640 902 620\" stroke=\"#7fb069\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M930 684 Q936 640 932 610\" stroke=\"#7fb069\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M960 678 Q966 640 962 620\" stroke=\"#7fb069\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+    "aves": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 300\"><path d=\"M72 167.2 Q97.6 148 120 180 Q142.4 148 168 167.2 Q142.4 164 120 189.6 Q97.6 164 72 167.2Z\" fill=\"#26323d\"/><path d=\"M237 73.2 Q270.6 48 300 90 Q329.4 48 363 73.2 Q329.4 69 300 102.6 Q270.6 69 237 73.2Z\" fill=\"#26323d\"/><path d=\"M431 189.6 Q451.8 174 470 200 Q488.2 174 509 189.6 Q488.2 187 470 207.8 Q451.8 187 431 189.6Z\" fill=\"#26323d\"/><path d=\"M556 95.6 Q584.8 74 610 110 Q635.2 74 664 95.6 Q635.2 92 610 120.8 Q584.8 92 556 95.6Z\" fill=\"#26323d\"/><path d=\"M687 221.2 Q704.6 208 720 230 Q735.4 208 753 221.2 Q735.4 219 720 236.6 Q704.6 219 687 221.2Z\" fill=\"#26323d\"/><path d=\"M190 252 Q206 240 220 260 Q234 240 250 252 Q234 250 220 266 Q206 250 190 252Z\" fill=\"#26323d\"/></svg>",
+    "lago_mapa": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 800\"><path d=\"M80 300 Q60 120 260 70 Q480 20 650 120 Q780 220 740 430 Q720 640 520 730 Q300 790 150 650 Q40 520 80 300Z\" fill=\"#8fc47a\"/><path d=\"M80 300 Q60 120 260 70 Q480 20 650 120 Q700 160 720 230 L470 330 L300 330 L90 360Z\" fill=\"#a9d38f\"/><path d=\"M90 360 L300 330 L330 470 L290 720 Q200 700 150 650 Q40 520 90 360Z\" fill=\"#c9dc8a\"/><path d=\"M80 300 Q60 120 260 70 Q480 20 650 120 Q780 220 740 430 Q720 640 520 730 Q300 790 150 650 Q40 520 80 300Z\" fill=\"none\" stroke=\"#5c8f4e\" stroke-width=\"10\"/><path d=\"M90 360 L300 330 L470 330 L720 230 M300 330 L330 470 L290 720\" stroke=\"#ffffff\" stroke-width=\"6\" stroke-dasharray=\"18 12\" fill=\"none\"/><path d=\"M330 300 Q400 240 460 290 Q520 340 500 430 Q490 520 420 540 Q350 550 330 470 Q300 390 330 300Z\" fill=\"#2b8bd0\"/><path d=\"M350 320 Q400 280 445 315 Q490 360 470 440 Q440 510 400 515\" fill=\"none\" stroke=\"#7fcbf5\" stroke-width=\"8\" stroke-linecap=\"round\"/></svg>",
+    "montanas_bosque": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 640\"><path d=\"M0 640 L0 330 L200 120 L360 300 L520 90 L700 280 L840 160 L1000 330 L1000 640Z\" fill=\"#3e7d55\"/><path d=\"M200 120 L360 300 L250 640 L180 640Z M520 90 L700 280 L560 640 L500 640Z M840 160 L1000 330 L1000 640 L880 640Z\" fill=\"#336a47\"/><g fill=\"#ffffff\" fill-opacity=\"0.9\"><ellipse cx=\"220\" cy=\"190\" rx=\"120\" ry=\"34\"/><ellipse cx=\"170\" cy=\"175\" rx=\"60\" ry=\"30\"/><ellipse cx=\"540\" cy=\"160\" rx=\"140\" ry=\"36\"/><ellipse cx=\"600\" cy=\"140\" rx=\"70\" ry=\"34\"/><ellipse cx=\"850\" cy=\"225\" rx=\"110\" ry=\"30\"/></g><circle cx=\"30\" cy=\"527.7533004199358\" r=\"42.3638383323414\" fill=\"#2f7a45\"/><circle cx=\"42\" cy=\"535.7533004199358\" r=\"27.021212629493675\" fill=\"#276a3b\"/><circle cx=\"86\" cy=\"563.4590626878526\" r=\"38.517294657482125\" fill=\"#2f7a45\"/><circle cx=\"98\" cy=\"571.4590626878526\" r=\"23.649387335404754\" fill=\"#276a3b\"/><circle cx=\"142\" cy=\"590.1972825993289\" r=\"44.61338548506319\" fill=\"#2f7a45\"/><circle cx=\"154\" cy=\"598.1972825993289\" r=\"26.321503905903967\" fill=\"#276a3b\"/><circle cx=\"198\" cy=\"586.4814401928015\" r=\"41.127359101558795\" fill=\"#2f7a45\"/><circle cx=\"210\" cy=\"594.4814401928015\" r=\"26.81400998670142\" fill=\"#276a3b\"/><circle cx=\"254\" cy=\"568.1197193087064\" r=\"34.78473666388891\" fill=\"#2f7a45\"/><circle cx=\"266\" cy=\"576.1197193087064\" r=\"22.17699105126667\" fill=\"#276a3b\"/><circle cx=\"310\" cy=\"597.0885870480561\" r=\"35.50518886675127\" fill=\"#2f7a45\"/><circle cx=\"322\" cy=\"605.0885870480561\" r=\"22.813927899114788\" fill=\"#276a3b\"/><circle cx=\"366\" cy=\"577.0757998794579\" r=\"43.29347284931282\" fill=\"#2f7a45\"/><circle cx=\"378\" cy=\"585.0757998794579\" r=\"22.443779162073042\" fill=\"#276a3b\"/><circle cx=\"422\" cy=\"585.8420919343189\" r=\"38.246846238813305\" fill=\"#2f7a45\"/><circle cx=\"434\" cy=\"593.8420919343189\" r=\"23.44549893582007\" fill=\"#276a3b\"/><circle cx=\"478\" cy=\"573.834323523115\" r=\"39.854491563819465\" fill=\"#2f7a45\"/><circle cx=\"490\" cy=\"581.834323523115\" r=\"29.318081677920418\" fill=\"#276a3b\"/><circle cx=\"534\" cy=\"591.3140505957563\" r=\"42.6864505656049\" fill=\"#2f7a45\"/><circle cx=\"546\" cy=\"599.3140505957563\" r=\"24.856561032211175\" fill=\"#276a3b\"/><circle cx=\"590\" cy=\"527.1942913832333\" r=\"40.69847189285065\" fill=\"#2f7a45\"/><circle cx=\"602\" cy=\"535.1942913832333\" r=\"23.500000661064405\" fill=\"#276a3b\"/><circle cx=\"646\" cy=\"596.4921903606592\" r=\"38.841330509472755\" fill=\"#2f7a45\"/><circle cx=\"658\" cy=\"604.4921903606592\" r=\"23.87624155585945\" fill=\"#276a3b\"/><circle cx=\"702\" cy=\"561.5150273268591\" r=\"47.92164191525808\" fill=\"#2f7a45\"/><circle cx=\"714\" cy=\"569.5150273268591\" r=\"23.387133624171838\" fill=\"#276a3b\"/><circle cx=\"758\" cy=\"589.5070182179188\" r=\"46.15670571323426\" fill=\"#2f7a45\"/><circle cx=\"770\" cy=\"597.5070182179188\" r=\"26.25066318393874\" fill=\"#276a3b\"/><circle cx=\"814\" cy=\"538.4206535315752\" r=\"34.00051227400036\" fill=\"#2f7a45\"/><circle cx=\"826\" cy=\"546.4206535315752\" r=\"26.782904417894315\" fill=\"#276a3b\"/><circle cx=\"870\" cy=\"520.8416056630813\" r=\"42.08341931879113\" fill=\"#2f7a45\"/><circle cx=\"882\" cy=\"528.8416056630813\" r=\"28.623958766904252\" fill=\"#276a3b\"/><circle cx=\"926\" cy=\"576.0084065111005\" r=\"44.047677865994046\" fill=\"#2f7a45\"/><circle cx=\"938\" cy=\"584.0084065111005\" r=\"24.469922241522\" fill=\"#276a3b\"/><circle cx=\"982\" cy=\"524.7422916293363\" r=\"35.28578331063909\" fill=\"#2f7a45\"/><circle cx=\"994\" cy=\"532.7422916293363\" r=\"22.584433023672318\" fill=\"#276a3b\"/><rect y=\"600\" width=\"1000\" height=\"40\" fill=\"#245d36\"/></svg>",
+    "tucan": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 360\"><path d=\"M150 330 L160 250 L180 250 L175 330Z\" fill=\"#5a3a24\"/><path d=\"M20 300 Q200 280 400 300\" stroke=\"#7a4a2c\" stroke-width=\"18\" stroke-linecap=\"round\" fill=\"none\"/><ellipse cx=\"140\" cy=\"190\" rx=\"70\" ry=\"100\" fill=\"#1d1d24\"/><path d=\"M90 250 Q60 320 70 340 L110 330 Q120 290 130 270Z\" fill=\"#1d1d24\"/><path d=\"M150 110 Q215 120 200 200 Q180 170 140 165 Q125 130 150 110Z\" fill=\"#ffd23f\"/><path d=\"M150 205 Q175 205 190 215 Q170 228 150 222Z\" fill=\"#e8483b\"/><path d=\"M185 105 Q300 80 380 140 Q300 150 195 150Z\" fill=\"#7cc243\"/><path d=\"M190 128 Q300 120 380 140 Q300 150 195 150Z\" fill=\"#f7941d\"/><path d=\"M330 115 Q370 125 380 140 Q355 140 335 140Z\" fill=\"#e8483b\"/><path d=\"M200 108 Q240 100 260 104 L262 128 Q230 128 200 130Z\" fill=\"#3aa0e0\"/><circle cx=\"170\" cy=\"120\" r=\"14\" fill=\"#9fe08f\"/><circle cx=\"172\" cy=\"120\" r=\"7\" fill=\"#111\"/><circle cx=\"175\" cy=\"117\" r=\"2.5\" fill=\"#fff\"/></svg>",
+    "garza": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 560\"><path d=\"M150 400 L140 540 M200 400 L210 540\" stroke=\"#3a3a3a\" stroke-width=\"8\" stroke-linecap=\"round\"/><ellipse cx=\"180\" cy=\"330\" rx=\"90\" ry=\"70\" fill=\"#f8f9fb\"/><path d=\"M180 300 Q260 330 270 380 Q220 400 170 380Z\" fill=\"#dde3ea\"/><path d=\"M130 300 Q90 220 130 160 Q160 120 140 80\" stroke=\"#f8f9fb\" stroke-width=\"30\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"146\" cy=\"78\" r=\"26\" fill=\"#f8f9fb\"/><path d=\"M160 70 L270 88 L162 92Z\" fill=\"#f2b632\"/><circle cx=\"150\" cy=\"72\" r=\"5\" fill=\"#222\"/><path d=\"M20 520 Q180 490 340 520 L340 560 L20 560Z\" fill=\"#3aa0e0\"/><path d=\"M60 530 H140 M220 528 H300\" stroke=\"#bfe6ff\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>",
+    "juncos": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 300\"><path d=\"M0 300 L0 200 Q500 150 1000 200 L1000 300Z\" fill=\"#3aa0e0\"/><path d=\"M0 240 Q500 200 1000 240\" stroke=\"#bfe6ff\" stroke-width=\"6\" fill=\"none\"/><path d=\"M20 300 Q30 233.45449693792034 24 166.90899387584068\" stroke=\"#88bf68\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"17\" y=\"140.90899387584068\" width=\"13\" height=\"34\" rx=\"6\" fill=\"#8a5a33\"/><path d=\"M66 300 Q76 198.88455960246574 70 97.76911920493149\" stroke=\"#6fa35a\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M112 300 Q122 210.12605921463546 116 120.25211842927092\" stroke=\"#88bf68\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M158 300 Q168 193.06436103136548 162 86.12872206273096\" stroke=\"#6fa35a\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M204 300 Q214 206.11080811253487 208 112.22161622506974\" stroke=\"#88bf68\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"201\" y=\"86.22161622506974\" width=\"13\" height=\"34\" rx=\"6\" fill=\"#8a5a33\"/><path d=\"M250 300 Q260 194.4054862409689 254 88.81097248193782\" stroke=\"#6fa35a\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M296 300 Q306 199.89889657386811 300 99.79779314773623\" stroke=\"#88bf68\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M342 300 Q352 223.4249761607498 346 146.8499523214996\" stroke=\"#6fa35a\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M388 300 Q398 207.4444317801681 392 114.88886356033618\" stroke=\"#88bf68\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"385\" y=\"88.88886356033618\" width=\"13\" height=\"34\" rx=\"6\" fill=\"#8a5a33\"/><path d=\"M434 300 Q444 221.66050630288737 438 143.32101260577474\" stroke=\"#6fa35a\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M480 300 Q490 227.64422356885916 484 155.28844713771832\" stroke=\"#88bf68\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M526 300 Q536 205.89915022337664 530 111.79830044675327\" stroke=\"#6fa35a\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M572 300 Q582 194.64766747754766 576 89.29533495509531\" stroke=\"#88bf68\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"569\" y=\"63.29533495509531\" width=\"13\" height=\"34\" rx=\"6\" fill=\"#8a5a33\"/><path d=\"M618 300 Q628 234.05007435205334 622 168.1001487041067\" stroke=\"#6fa35a\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M664 300 Q674 225.64640351480193 668 151.29280702960386\" stroke=\"#88bf68\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M710 300 Q720 199.1821437705221 714 98.36428754104418\" stroke=\"#6fa35a\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M756 300 Q766 231.55260826972608 760 163.10521653945216\" stroke=\"#88bf68\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"753\" y=\"137.10521653945216\" width=\"13\" height=\"34\" rx=\"6\" fill=\"#8a5a33\"/><path d=\"M802 300 Q812 196.84814285905304 806 93.69628571810608\" stroke=\"#6fa35a\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M848 300 Q858 212.83246506284286 852 125.66493012568571\" stroke=\"#88bf68\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M894 300 Q904 203.0559113567142 898 106.11182271342841\" stroke=\"#6fa35a\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M940 300 Q950 237.15769945302782 944 174.31539890605563\" stroke=\"#88bf68\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"937\" y=\"148.31539890605563\" width=\"13\" height=\"34\" rx=\"6\" fill=\"#8a5a33\"/><path d=\"M986 300 Q996 226.73576889952528 990 153.47153779905057\" stroke=\"#6fa35a\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+    "binoculares": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 260\"><rect x=\"40\" y=\"70\" width=\"150\" height=\"160\" rx=\"40\" fill=\"#2d3440\"/><rect x=\"270\" y=\"70\" width=\"150\" height=\"160\" rx=\"40\" fill=\"#2d3440\"/><rect x=\"120\" y=\"70\" width=\"70\" height=\"160\" rx=\"30\" fill=\"#232933\"/><rect x=\"350\" y=\"70\" width=\"70\" height=\"160\" rx=\"30\" fill=\"#232933\"/><rect x=\"180\" y=\"100\" width=\"100\" height=\"60\" rx=\"14\" fill=\"#3b4452\"/><rect x=\"60\" y=\"20\" width=\"110\" height=\"70\" rx=\"20\" fill=\"#3b4452\"/><rect x=\"290\" y=\"20\" width=\"110\" height=\"70\" rx=\"20\" fill=\"#3b4452\"/><circle cx=\"115\" cy=\"190\" r=\"44\" fill=\"#6fc3f0\"/><circle cx=\"345\" cy=\"190\" r=\"44\" fill=\"#6fc3f0\"/><circle cx=\"100\" cy=\"175\" r=\"14\" fill=\"#ffffff\" fill-opacity=\"0.8\"/><circle cx=\"330\" cy=\"175\" r=\"14\" fill=\"#ffffff\" fill-opacity=\"0.8\"/></svg>",
+    "catarata": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 800\"><path d=\"M0 800 L0 120 Q60 60 180 80 L210 80 L210 640 L0 700Z\" fill=\"#6b5a4a\"/><path d=\"M600 800 L600 130 Q540 60 420 80 L390 80 L390 640 L600 700Z\" fill=\"#5a4b3e\"/><path d=\"M0 120 Q60 60 180 80 L210 80 L210 110 Q100 100 0 160Z M600 130 Q540 60 420 80 L390 80 L390 110 Q500 100 600 170Z\" fill=\"#4f8f4f\"/><circle cx=\"40\" cy=\"90\" r=\"40\" fill=\"#3f8a55\"/><circle cx=\"120\" cy=\"70\" r=\"40\" fill=\"#3f8a55\"/><circle cx=\"480\" cy=\"70\" r=\"40\" fill=\"#3f8a55\"/><circle cx=\"560\" cy=\"100\" r=\"40\" fill=\"#3f8a55\"/><path d=\"M200 70 L400 70 L410 660 L190 660Z\" fill=\"#9fdcff\"/><path d=\"M230 70 L250 660 M290 70 L300 660 M350 70 L345 660 M380 70 L395 660\" stroke=\"#ffffff\" stroke-width=\"12\" stroke-linecap=\"round\"/><path d=\"M200 70 L400 70 L400 96 L200 96Z\" fill=\"#3aa0e0\"/><path d=\"M0 700 Q300 640 600 700 L600 800 L0 800Z\" fill=\"#2b8bd0\"/><g fill=\"#ffffff\"><ellipse cx=\"300\" cy=\"660\" rx=\"170\" ry=\"40\"/><ellipse cx=\"200\" cy=\"676\" rx=\"70\" ry=\"26\"/><ellipse cx=\"410\" cy=\"676\" rx=\"80\" ry=\"26\"/></g><path d=\"M80 740 H200 M400 750 H530\" stroke=\"#bfe6ff\" stroke-width=\"7\" stroke-linecap=\"round\"/></svg>",
+    "manchas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 160\"><g fill=\"#7a6a2e\" fill-opacity=\"0.75\"><ellipse cx=\"120\" cy=\"70\" rx=\"90\" ry=\"30\"/><ellipse cx=\"170\" cy=\"96\" rx=\"60\" ry=\"22\"/><ellipse cx=\"420\" cy=\"80\" rx=\"110\" ry=\"34\"/><ellipse cx=\"500\" cy=\"60\" rx=\"60\" ry=\"20\"/></g><g fill=\"#5f7d2a\" fill-opacity=\"0.7\"><ellipse cx=\"300\" cy=\"110\" rx=\"80\" ry=\"24\"/><ellipse cx=\"80\" cy=\"120\" rx=\"40\" ry=\"14\"/></g></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "El Lago de Yojoa es el lago natural más grande de Honduras y está entre los departamentos de Cortés, Comayagua y Santa Bárbara",
+      "fuente": "Instituto Hondureño de Turismo; Encyclopaedia Britannica, «Lake Yojoa»"
+    },
+    {
+      "dato": "En la cuenca del lago se han reportado más de 400 especies de aves (El Heraldo cita unas 450; otras fuentes turísticas, hasta 500)",
+      "fuente": "El Heraldo, «Lago de Yojoa, el hotspot de aviturismo» (2026); eBird, Lago de Yojoa (hotspots); La Prensa, aviturismo en el Lago de Yojoa"
+    },
+    {
+      "dato": "La cuenca está flanqueada por los parques nacionales Cerro Azul Meámbar y Montaña de Santa Bárbara, con bosque nublado",
+      "fuente": "El Heraldo (2026); ICF Honduras, áreas protegidas"
+    },
+    {
+      "dato": "La catarata de Pulhapanzak (San Buenaventura, Cortés) mide unos 43 m y queda cerca del lago",
+      "fuente": "Instituto Hondureño de Turismo"
+    },
+    {
+      "dato": "La contaminación (aguas residuales, jaulas de tilapia y agricultura) es una amenaza para la calidad del agua del lago",
+      "fuente": "Fadum y Hall, estudio de cuatro décadas del estado trófico del Lago de Yojoa (NSF PAR, 2022); El Heraldo (2022–2023), plan del Gobierno para rescatar el lago"
+    }
+  ],
+  "nota": "«Más de 400» es la cifra prudente: el conteo varía según el área y la fuente (≈ 450 según El Heraldo, 460 registradas en el Honduran Big Day 2026, «unas 500» en notas turísticas). Garzas, patos y martines pescadores son grupos comunes en el lago; el tucán del dibujo representa las aves de bosque de la zona (no se nombra en la narración). Sobre el río de Pulhapanzak, algunas fuentes dicen río Lindo y otras río Amapa; por eso la narración no lo nombra."
+}

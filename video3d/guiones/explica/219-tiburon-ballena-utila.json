@@ -1,0 +1,327 @@
+{
+  "id": "explica-hn-tiburon-ballena-utila",
+  "motor": "explica",
+  "titulo": "El gigante manso de Utila",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "utila",
+    "tiburonballena",
+    "islasdelabahia",
+    "naturaleza"
+  ],
+  "descripcion": "El tiburón ballena es el pez más grande del mundo, come plancton y no ataca a las personas. Utila, en las Islas de la Bahía, es uno de los mejores lugares para verlo.",
+  "musica": "pop",
+  "escenas": [
+    {
+      "fondo": "mar",
+      "texto": "Mide como un bus, tiene una boca enorme… y aun así no le hace daño a nadie.",
+      "clave": "boca enorme",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.4,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tiburon_ballena",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 1000,
+          "anim": "pop",
+          "en": 0,
+          "idle": "flotar"
+        },
+        {
+          "marca": true,
+          "x": 0.14,
+          "y": 0.61,
+          "radio": 90,
+          "en": "boca"
+        }
+      ]
+    },
+    {
+      "fondo": "mar",
+      "texto": "Es el tiburón ballena, el pez más grande del mundo: puede llegar a unos 12 metros.",
+      "voz": "Es el tiburón ballena, el pez más grande del mundo: puede llegar a unos doce metros.",
+      "clave": "más grande",
+      "capas": [
+        {
+          "svg": "tiburon_ballena",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 960,
+          "anim": "slideIn",
+          "en": 0,
+          "desde": "derecha",
+          "idle": "flotar"
+        },
+        {
+          "svg": "buzo",
+          "x": 0.8,
+          "y": 0.76,
+          "ancho": 150,
+          "anim": "pop",
+          "en": "mundo",
+          "idle": "flotar"
+        },
+        {
+          "numero": "12 m",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#1d1d2b",
+          "tam": 90,
+          "en": "12"
+        }
+      ]
+    },
+    {
+      "fondo": "mar",
+      "texto": "No caza personas: abre la boca, traga agua y filtra plancton, animalitos diminutos.",
+      "clave": "plancton",
+      "nota": "filtrador",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.32,
+          0.6,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tiburon_ballena",
+          "x": 0.55,
+          "y": 0.6,
+          "ancho": 900,
+          "anim": "pop",
+          "en": 0,
+          "idle": "flotar"
+        },
+        {
+          "svg": "plancton",
+          "x": 0.2,
+          "y": 0.5,
+          "ancho": 340,
+          "anim": "pop",
+          "en": "plancton",
+          "idle": "flotar",
+          "sombra": false
+        },
+        {
+          "burbujas": true,
+          "x": 0.2,
+          "y": 0.6,
+          "ancho": 0.15,
+          "alto": 0.15,
+          "n": 12,
+          "en": "traga"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Uno de los mejores lugares para verlo está aquí: Utila, en las Islas de la Bahía.",
+      "clave": "Utila",
+      "nota": "Islas de la Bahía",
+      "capas": [
+        {
+          "svg": "isla",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 900,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "etiqueta": "Utila",
+          "x": 0.5,
+          "y": 0.36,
+          "color": "#d93427",
+          "tam": 54,
+          "a": [
+            0.5,
+            0.5
+          ],
+          "en": "Utila"
+        },
+        {
+          "svg": "tiburon_ballena",
+          "x": 0.5,
+          "y": 0.86,
+          "ancho": 440,
+          "anim": "slideIn",
+          "en": "verlo",
+          "desde": "derecha"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Se ve en distintas épocas del año, pero marzo y abril suelen tener más avistamientos.",
+      "clave": "avistamientos",
+      "nota": "temporada alta",
+      "capas": [
+        {
+          "svg": "calendario",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 600,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "etiqueta": "marzo",
+          "x": 0.3,
+          "y": 0.84,
+          "color": "#2f7fd2",
+          "en": "marzo"
+        },
+        {
+          "etiqueta": "abril",
+          "x": 0.7,
+          "y": 0.84,
+          "color": "#2f7fd2",
+          "en": "abril"
+        }
+      ]
+    },
+    {
+      "fondo": "mar",
+      "texto": "Se puede nadar cerca, pero sin tocarlo y dándole espacio: es una especie en peligro.",
+      "clave": "peligro",
+      "nota": "UICN: en peligro",
+      "capas": [
+        {
+          "svg": "tiburon_ballena",
+          "x": 0.5,
+          "y": 0.5,
+          "ancho": 900,
+          "anim": "pop",
+          "en": 0,
+          "idle": "flotar"
+        },
+        {
+          "svg": "buzo",
+          "x": 0.26,
+          "y": 0.74,
+          "ancho": 300,
+          "anim": "slideIn",
+          "en": "nadar",
+          "desde": "izquierda",
+          "idle": "flotar"
+        },
+        {
+          "svg": "buzo",
+          "x": 0.74,
+          "y": 0.82,
+          "ancho": 260,
+          "anim": "slideIn",
+          "en": "espacio",
+          "desde": "derecha",
+          "idle": "flotar"
+        },
+        {
+          "burbujas": true,
+          "x": 0.2,
+          "y": 0.7,
+          "ancho": 0.08,
+          "alto": 0.12,
+          "n": 8,
+          "en": "cerca"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Y cada uno tiene manchas únicas, como una huella digital. Así los identifican los científicos.",
+      "clave": "manchas",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "manchas",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 860,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.6,
+          "radio": 130,
+          "en": "únicas"
+        },
+        {
+          "etiqueta": "huella digital",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#2f7fd2",
+          "en": "huella"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Te animarías a nadar junto a uno? Síguenos para más maravillas de Honduras.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "tiburon_ballena": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 400\"><defs><clipPath id=\"tb-c\"><path d=\"M60 205 C 60 140 140 112 260 105 C 450 95 650 125 800 170 L 880 190 L 880 212 C 720 255 470 292 260 288 C 140 285 60 262 60 205 Z\"/></clipPath></defs><path d=\"M870 192 L 980 50 Q 960 150 930 200 Q 965 260 975 340 L 868 214 Z\" fill=\"#33506d\"/><path d=\"M480 110 L 560 28 Q 585 70 600 122 Z\" fill=\"#33506d\"/><path d=\"M60 205 C 60 140 140 112 260 105 C 450 95 650 125 800 170 L 880 190 L 880 212 C 720 255 470 292 260 288 C 140 285 60 262 60 205 Z\" fill=\"#41678c\"/><g clip-path=\"url(#tb-c)\"><path d=\"M40 215 Q 300 230 900 200 L 900 320 L 40 320 Z\" fill=\"#dde8ef\"/><g fill=\"#ffffff\"><circle cx=\"150\" cy=\"135\" r=\"9\"/><circle cx=\"186\" cy=\"169\" r=\"9\"/><circle cx=\"150\" cy=\"203\" r=\"9\"/><circle cx=\"186\" cy=\"237\" r=\"9\"/><circle cx=\"225\" cy=\"133\" r=\"9\"/><circle cx=\"261\" cy=\"167\" r=\"9\"/><circle cx=\"225\" cy=\"201\" r=\"9\"/><circle cx=\"261\" cy=\"235\" r=\"9\"/><circle cx=\"300\" cy=\"131\" r=\"9\"/><circle cx=\"336\" cy=\"165\" r=\"9\"/><circle cx=\"300\" cy=\"199\" r=\"9\"/><circle cx=\"336\" cy=\"233\" r=\"9\"/><circle cx=\"375\" cy=\"129\" r=\"9\"/><circle cx=\"411\" cy=\"163\" r=\"9\"/><circle cx=\"375\" cy=\"197\" r=\"9\"/><circle cx=\"411\" cy=\"231\" r=\"9\"/><circle cx=\"450\" cy=\"127\" r=\"9\"/><circle cx=\"486\" cy=\"161\" r=\"9\"/><circle cx=\"450\" cy=\"195\" r=\"9\"/><circle cx=\"486\" cy=\"229\" r=\"9\"/><circle cx=\"525\" cy=\"125\" r=\"9\"/><circle cx=\"561\" cy=\"159\" r=\"9\"/><circle cx=\"525\" cy=\"193\" r=\"9\"/><circle cx=\"561\" cy=\"227\" r=\"9\"/><circle cx=\"600\" cy=\"123\" r=\"9\"/><circle cx=\"636\" cy=\"157\" r=\"9\"/><circle cx=\"600\" cy=\"191\" r=\"9\"/><circle cx=\"636\" cy=\"225\" r=\"9\"/><circle cx=\"675\" cy=\"121\" r=\"6\"/><circle cx=\"711\" cy=\"155\" r=\"6\"/><circle cx=\"675\" cy=\"189\" r=\"6\"/><circle cx=\"711\" cy=\"223\" r=\"6\"/><circle cx=\"750\" cy=\"119\" r=\"6\"/><circle cx=\"786\" cy=\"153\" r=\"6\"/><circle cx=\"750\" cy=\"187\" r=\"6\"/><circle cx=\"786\" cy=\"221\" r=\"6\"/></g><path d=\"M150 130 Q 500 120 860 180 M160 165 Q 500 160 860 190\" stroke=\"#ffffff\" stroke-width=\"4\" fill=\"none\" opacity=\"0.6\"/><path d=\"M210 140 Q 200 190 215 230 M240 135 Q 228 190 245 235 M270 132 Q 258 190 275 238\" stroke=\"#2c4a66\" stroke-width=\"5\" fill=\"none\"/></g><path d=\"M62 208 Q 120 222 185 214\" stroke=\"#1d2f42\" stroke-width=\"9\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"125\" cy=\"170\" r=\"8\" fill=\"#1d2f42\"/><path d=\"M330 255 L 410 370 Q 430 330 450 268 Z\" fill=\"#33506d\"/><path d=\"M640 240 L 680 300 L 700 230 Z\" fill=\"#33506d\"/></svg>",
+    "buzo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 240\"><g fill=\"#ffffff\" fill-opacity=\"0.7\"><circle cx=\"40\" cy=\"60\" r=\"12\"/><circle cx=\"26\" cy=\"30\" r=\"8\"/><circle cx=\"44\" cy=\"8\" r=\"6\"/></g><path d=\"M330 120 L410 70 L420 110 L345 140 Z\" fill=\"#f2c230\"/><path d=\"M330 145 L410 170 L400 205 L335 165 Z\" fill=\"#e0a020\"/><rect x=\"150\" y=\"70\" width=\"160\" height=\"40\" rx=\"20\" fill=\"#f2c230\"/><rect x=\"150\" y=\"70\" width=\"160\" height=\"16\" rx=\"8\" fill=\"#ffe27a\"/><path d=\"M90 120 Q 100 95 160 100 L 320 120 Q 340 135 320 150 L 160 160 Q 100 160 90 140 Z\" fill=\"#1d2633\"/><path d=\"M200 150 L 130 200 L 150 210 L 220 160 Z\" fill=\"#1d2633\"/><circle cx=\"80\" cy=\"120\" r=\"34\" fill=\"#1d2633\"/><rect x=\"40\" y=\"105\" width=\"44\" height=\"28\" rx=\"10\" fill=\"#7fcff2\"/><rect x=\"40\" y=\"105\" width=\"44\" height=\"28\" rx=\"10\" fill=\"none\" stroke=\"#2f7fd2\" stroke-width=\"5\"/><path d=\"M84 140 Q 70 160 90 165\" stroke=\"#f2c230\" stroke-width=\"7\" fill=\"none\"/></svg>",
+    "plancton": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\"><g fill=\"#a7f0c9\"><circle cx=\"60\" cy=\"80\" r=\"12\"/><circle cx=\"150\" cy=\"60\" r=\"8\"/><circle cx=\"250\" cy=\"100\" r=\"14\"/><circle cx=\"330\" cy=\"70\" r=\"9\"/><circle cx=\"90\" cy=\"200\" r=\"10\"/><circle cx=\"200\" cy=\"180\" r=\"16\"/><circle cx=\"310\" cy=\"210\" r=\"11\"/><circle cx=\"140\" cy=\"300\" r=\"9\"/><circle cx=\"250\" cy=\"290\" r=\"12\"/><circle cx=\"350\" cy=\"330\" r=\"8\"/><circle cx=\"50\" cy=\"330\" r=\"10\"/></g><g fill=\"#ffd9a6\"><g transform=\"translate(120 130)\"><ellipse rx=\"18\" ry=\"9\"/><path d=\"M-18 0 L-32 -10 M-18 0 L-32 10 M10 -6 L22 -22 M10 6 L22 22\" stroke=\"#ffd9a6\" stroke-width=\"3\"/></g><g transform=\"translate(280 160)\"><ellipse rx=\"18\" ry=\"9\"/><path d=\"M-18 0 L-32 -10 M-18 0 L-32 10 M10 -6 L22 -22 M10 6 L22 22\" stroke=\"#ffd9a6\" stroke-width=\"3\"/></g><g transform=\"translate(200 250)\"><ellipse rx=\"18\" ry=\"9\"/><path d=\"M-18 0 L-32 -10 M-18 0 L-32 10 M10 -6 L22 -22 M10 6 L22 22\" stroke=\"#ffd9a6\" stroke-width=\"3\"/></g><g transform=\"translate(80 260)\"><ellipse rx=\"18\" ry=\"9\"/><path d=\"M-18 0 L-32 -10 M-18 0 L-32 10 M10 -6 L22 -22 M10 6 L22 22\" stroke=\"#ffd9a6\" stroke-width=\"3\"/></g><g transform=\"translate(320 280)\"><ellipse rx=\"18\" ry=\"9\"/><path d=\"M-18 0 L-32 -10 M-18 0 L-32 10 M10 -6 L22 -22 M10 6 L22 22\" stroke=\"#ffd9a6\" stroke-width=\"3\"/></g></g></svg>",
+    "isla": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 900 520\"><ellipse cx=\"450\" cy=\"380\" rx=\"440\" ry=\"120\" fill=\"#7fd6f2\"/><ellipse cx=\"450\" cy=\"370\" rx=\"360\" ry=\"80\" fill=\"#a9e6f7\"/><path d=\"M140 360 Q 180 230 380 220 Q 600 200 760 300 Q 790 350 700 370 Q 450 400 200 385 Q 130 380 140 360 Z\" fill=\"#f3dca0\"/><path d=\"M190 340 Q 220 250 390 240 Q 580 225 720 310 Q 600 345 420 350 Q 260 352 190 340 Z\" fill=\"#4c9a5f\"/><path d=\"M420 350 Q 600 345 720 310 Q 600 250 480 240 Z\" fill=\"#3f8a57\"/><path d=\"M330 260 q 8 -70 -6 -130\" stroke=\"#7a4a2c\" stroke-width=\"12\" fill=\"none\"/><g fill=\"#2f7347\"><path d=\"M324 130 q -60 -10 -80 30 q 40 -30 80 -30Z\"/><path d=\"M324 130 q 60 -20 90 20 q -50 -25 -90 -20Z\"/><path d=\"M324 130 q -20 -50 -60 -60 q 40 10 60 60Z\"/><path d=\"M324 130 q 30 -50 70 -50 q -40 10 -70 50Z\"/></g><path d=\"M470 240 q 8 -70 -6 -130\" stroke=\"#7a4a2c\" stroke-width=\"12\" fill=\"none\"/><g fill=\"#2f7347\"><path d=\"M464 110 q -60 -10 -80 30 q 40 -30 80 -30Z\"/><path d=\"M464 110 q 60 -20 90 20 q -50 -25 -90 -20Z\"/><path d=\"M464 110 q -20 -50 -60 -60 q 40 10 60 60Z\"/><path d=\"M464 110 q 30 -50 70 -50 q -40 10 -70 50Z\"/></g><path d=\"M600 270 q 8 -70 -6 -130\" stroke=\"#7a4a2c\" stroke-width=\"12\" fill=\"none\"/><g fill=\"#2f7347\"><path d=\"M594 140 q -60 -10 -80 30 q 40 -30 80 -30Z\"/><path d=\"M594 140 q 60 -20 90 20 q -50 -25 -90 -20Z\"/><path d=\"M594 140 q -20 -50 -60 -60 q 40 10 60 60Z\"/><path d=\"M594 140 q 30 -50 70 -50 q -40 10 -70 50Z\"/></g><g transform=\"translate(760 420)\"><path d=\"M-60 0 H60 L45 24 H-45 Z\" fill=\"#ffffff\"/><rect x=\"-20\" y=\"-26\" width=\"40\" height=\"26\" fill=\"#d93427\"/><path d=\"M-20 -26 H20\" stroke=\"#ffffff\" stroke-width=\"4\"/></g><path d=\"M80 440 Q 120 425 160 440 M600 470 Q 640 455 680 470\" stroke=\"#ffffff\" stroke-width=\"6\" fill=\"none\"/></svg>",
+    "calendario": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\"><rect x=\"40\" y=\"70\" width=\"520\" height=\"500\" rx=\"30\" fill=\"#ffffff\"/><rect x=\"40\" y=\"70\" width=\"520\" height=\"110\" rx=\"30\" fill=\"#2f7fd2\"/><rect x=\"40\" y=\"140\" width=\"520\" height=\"40\" fill=\"#2f7fd2\"/><rect x=\"140\" y=\"40\" width=\"26\" height=\"70\" rx=\"13\" fill=\"#5d6873\"/><rect x=\"434\" y=\"40\" width=\"26\" height=\"70\" rx=\"13\" fill=\"#5d6873\"/><g><rect x=\"70\" y=\"210\" width=\"100\" height=\"98\" rx=\"14\" fill=\"#e3ebf2\"/><rect x=\"190\" y=\"210\" width=\"100\" height=\"98\" rx=\"14\" fill=\"#e3ebf2\"/><rect x=\"310\" y=\"210\" width=\"100\" height=\"98\" rx=\"14\" fill=\"#f2c230\"/><circle cx=\"360\" cy=\"259\" r=\"26\" fill=\"#41678c\"/><rect x=\"430\" y=\"210\" width=\"100\" height=\"98\" rx=\"14\" fill=\"#f2c230\"/><circle cx=\"480\" cy=\"259\" r=\"26\" fill=\"#41678c\"/><rect x=\"70\" y=\"328\" width=\"100\" height=\"98\" rx=\"14\" fill=\"#e3ebf2\"/><rect x=\"190\" y=\"328\" width=\"100\" height=\"98\" rx=\"14\" fill=\"#e3ebf2\"/><rect x=\"310\" y=\"328\" width=\"100\" height=\"98\" rx=\"14\" fill=\"#e3ebf2\"/><rect x=\"430\" y=\"328\" width=\"100\" height=\"98\" rx=\"14\" fill=\"#e3ebf2\"/><rect x=\"70\" y=\"446\" width=\"100\" height=\"98\" rx=\"14\" fill=\"#e3ebf2\"/><rect x=\"190\" y=\"446\" width=\"100\" height=\"98\" rx=\"14\" fill=\"#e3ebf2\"/><rect x=\"310\" y=\"446\" width=\"100\" height=\"98\" rx=\"14\" fill=\"#e3ebf2\"/><rect x=\"430\" y=\"446\" width=\"100\" height=\"98\" rx=\"14\" fill=\"#e3ebf2\"/></g></svg>",
+    "manchas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 900 600\"><rect x=\"0\" y=\"0\" width=\"900\" height=\"600\" rx=\"60\" fill=\"#41678c\"/><path d=\"M0 0 H900 V120 Q 450 160 0 120 Z\" fill=\"#4a7298\" opacity=\"0.6\"/><g fill=\"#ffffff\"><circle cx=\"60\" cy=\"60\" r=\"14\"/><circle cx=\"112\" cy=\"158\" r=\"26\"/><circle cx=\"64\" cy=\"256\" r=\"22\"/><circle cx=\"116\" cy=\"354\" r=\"18\"/><circle cx=\"68\" cy=\"428\" r=\"14\"/><circle cx=\"100\" cy=\"526\" r=\"26\"/><circle cx=\"156\" cy=\"78\" r=\"18\"/><circle cx=\"188\" cy=\"152\" r=\"14\"/><circle cx=\"160\" cy=\"250\" r=\"26\"/><circle cx=\"192\" cy=\"348\" r=\"22\"/><circle cx=\"164\" cy=\"446\" r=\"18\"/><circle cx=\"196\" cy=\"520\" r=\"14\"/><circle cx=\"252\" cy=\"72\" r=\"22\"/><circle cx=\"284\" cy=\"170\" r=\"18\"/><circle cx=\"236\" cy=\"244\" r=\"14\"/><circle cx=\"288\" cy=\"342\" r=\"26\"/><circle cx=\"240\" cy=\"440\" r=\"22\"/><circle cx=\"292\" cy=\"538\" r=\"18\"/><circle cx=\"328\" cy=\"66\" r=\"26\"/><circle cx=\"380\" cy=\"164\" r=\"22\"/><circle cx=\"332\" cy=\"262\" r=\"18\"/><circle cx=\"364\" cy=\"336\" r=\"14\"/><circle cx=\"336\" cy=\"434\" r=\"26\"/><circle cx=\"368\" cy=\"532\" r=\"22\"/><circle cx=\"424\" cy=\"60\" r=\"14\"/><circle cx=\"456\" cy=\"158\" r=\"26\"/><circle cx=\"428\" cy=\"256\" r=\"22\"/><circle cx=\"460\" cy=\"354\" r=\"18\"/><circle cx=\"412\" cy=\"428\" r=\"14\"/><circle cx=\"464\" cy=\"526\" r=\"26\"/><circle cx=\"500\" cy=\"78\" r=\"18\"/><circle cx=\"552\" cy=\"152\" r=\"14\"/><circle cx=\"504\" cy=\"250\" r=\"26\"/><circle cx=\"556\" cy=\"348\" r=\"22\"/><circle cx=\"508\" cy=\"446\" r=\"18\"/><circle cx=\"540\" cy=\"520\" r=\"14\"/><circle cx=\"596\" cy=\"72\" r=\"22\"/><circle cx=\"628\" cy=\"170\" r=\"18\"/><circle cx=\"600\" cy=\"244\" r=\"14\"/><circle cx=\"632\" cy=\"342\" r=\"26\"/><circle cx=\"604\" cy=\"440\" r=\"22\"/><circle cx=\"636\" cy=\"538\" r=\"18\"/><circle cx=\"692\" cy=\"66\" r=\"26\"/><circle cx=\"724\" cy=\"164\" r=\"22\"/><circle cx=\"676\" cy=\"262\" r=\"18\"/><circle cx=\"728\" cy=\"336\" r=\"14\"/><circle cx=\"680\" cy=\"434\" r=\"26\"/><circle cx=\"732\" cy=\"532\" r=\"22\"/><circle cx=\"768\" cy=\"60\" r=\"14\"/><circle cx=\"820\" cy=\"158\" r=\"26\"/><circle cx=\"772\" cy=\"256\" r=\"22\"/><circle cx=\"804\" cy=\"354\" r=\"18\"/><circle cx=\"776\" cy=\"428\" r=\"14\"/><circle cx=\"808\" cy=\"526\" r=\"26\"/><circle cx=\"864\" cy=\"78\" r=\"18\"/><circle cx=\"896\" cy=\"152\" r=\"14\"/><circle cx=\"868\" cy=\"250\" r=\"26\"/><circle cx=\"900\" cy=\"348\" r=\"22\"/><circle cx=\"852\" cy=\"446\" r=\"18\"/><circle cx=\"904\" cy=\"520\" r=\"14\"/></g><path d=\"M0 230 Q 450 210 900 240 M0 420 Q 450 400 900 430\" stroke=\"#ffffff\" stroke-width=\"8\" fill=\"none\" opacity=\"0.7\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Tiburón ballena (Rhincodon typus): el pez más grande, unos 12 m (puede superar esa medida)",
+      "fuente": "NOAA Fisheries, «Whale Shark»; WWF"
+    },
+    {
+      "dato": "Se alimenta filtrando plancton; inofensivo para las personas",
+      "fuente": "NOAA Fisheries, «Whale Shark»"
+    },
+    {
+      "dato": "Especie en peligro (Endangered) desde 2016",
+      "fuente": "Lista Roja de la UICN, «Rhincodon typus»"
+    },
+    {
+      "dato": "Patrón de manchas único que permite identificar a cada individuo",
+      "fuente": "Wildbook for Whale Sharks / ECOCEAN"
+    },
+    {
+      "dato": "Utila: avistamientos en varias épocas del año, con picos en marzo-abril (y otro en agosto-septiembre)",
+      "fuente": "PADI Blog, «Best time of year to dive Honduras»; Whale Shark & Oceanic Research Center (WSORC), Utila"
+    }
+  ],
+  "nota": "Las temporadas varían cada año; marzo y abril son el pico más citado (PADI, TheTravel), con otro en agosto-septiembre. Utila es «uno de los mejores lugares», no el único. «Como un bus»: un bus urbano mide unos 12 m. Las normas locales piden no tocarlo y guardar distancia."
+}

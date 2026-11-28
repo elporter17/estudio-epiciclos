@@ -1,0 +1,380 @@
+{
+  "id": "explica-hn-la-tigra",
+  "motor": "explica",
+  "titulo": "La Tigra: agua que nace en nubes",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "latigra",
+    "tegucigalpa",
+    "naturaleza",
+    "sabiasque"
+  ],
+  "descripcion": "El Parque Nacional La Tigra, el primero de Honduras (1980), es un bosque nublado que atrapa la neblina y le da agua a la capital. Y antes fue zona minera.",
+  "musica": "lofi",
+  "paleta": {
+    "a": "#cdeed6",
+    "b": "#4f9a6b"
+  },
+  "escenas": [
+    {
+      "fondo": "cielo",
+      "texto": "¿Sabías que parte del agua de Tegucigalpa nace entre las nubes de una montaña?",
+      "clave": "nubes",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "bosque_nublado",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 980,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "neblina",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 1000,
+          "anim": "fade",
+          "en": "nubes",
+          "idle": "flotar",
+          "sombra": false
+        },
+        {
+          "svg": "gota",
+          "x": 0.5,
+          "y": 0.38,
+          "ancho": 120,
+          "anim": "pop",
+          "en": "agua",
+          "idle": "flotar"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Es La Tigra, el primer parque nacional de Honduras, declarado en 1980.",
+      "voz": "Es La Tigra, el primer parque nacional de Honduras, declarado en mil novecientos ochenta.",
+      "clave": "primer parque",
+      "nota": "desde 1980",
+      "capas": [
+        {
+          "svg": "letrero_parque",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 640,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "arbol",
+          "x": 0.15,
+          "y": 0.74,
+          "ancho": 280,
+          "anim": "crecer",
+          "en": "parque"
+        },
+        {
+          "svg": "arbol",
+          "x": 0.85,
+          "y": 0.74,
+          "ancho": 280,
+          "anim": "crecer",
+          "en": "nacional"
+        },
+        {
+          "numero": "1980",
+          "x": 0.5,
+          "y": 0.84,
+          "color": "#2f7347",
+          "tam": 84,
+          "en": "1980"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Es un bosque nublado: la neblina pasa entre los árboles y deja gotitas en hojas y musgo.",
+      "clave": "bosque nublado",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "hoja_gotas",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 780,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "neblina",
+          "x": 0.5,
+          "y": 0.36,
+          "ancho": 1000,
+          "anim": "fade",
+          "en": "neblina",
+          "idle": "flotar",
+          "sombra": false
+        },
+        {
+          "svg": "gota",
+          "x": 0.3,
+          "y": 0.84,
+          "ancho": 90,
+          "anim": "caer",
+          "en": "gotitas"
+        },
+        {
+          "svg": "gota",
+          "x": 0.72,
+          "y": 0.86,
+          "ancho": 80,
+          "anim": "caer",
+          "en": "musgo"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Esas gotas se juntan en quebradas y cascadas que bajan hacia la capital.",
+      "clave": "quebradas",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "cascada",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 600,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "burbujas": true,
+          "x": 0.5,
+          "y": 0.8,
+          "ancho": 0.3,
+          "alto": 0.12,
+          "n": 14,
+          "en": "cascadas"
+        },
+        {
+          "etiqueta": "quebradas",
+          "x": 0.78,
+          "y": 0.34,
+          "color": "#2f7fd2",
+          "a": [
+            0.56,
+            0.5
+          ],
+          "en": "quebradas"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Según quién lo mida, La Tigra aporta entre el 20 y el 30% del agua capitalina.",
+      "voz": "Según quién lo mida, La Tigra aporta entre el veinte y el treinta por ciento del agua capitalina.",
+      "clave": "agua capitalina",
+      "nota": "del 20 al 30%",
+      "capas": [
+        {
+          "svg": "grifo",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 560,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "casa",
+          "x": 0.18,
+          "y": 0.76,
+          "ancho": 270,
+          "anim": "pop",
+          "en": "capitalina"
+        },
+        {
+          "svg": "casa",
+          "x": 0.82,
+          "y": 0.76,
+          "ancho": 270,
+          "anim": "pop",
+          "en": "capitalina"
+        },
+        {
+          "numero": "20 – 30 %",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#2f7fd2",
+          "tam": 80,
+          "en": "20"
+        }
+      ]
+    },
+    {
+      "fondo": "fabrica",
+      "texto": "Pero antes fue tierra minera: desde 1880, la Rosario Mining Company sacó plata y oro en San Juancito.",
+      "voz": "Pero antes fue tierra minera: desde mil ochocientos ochenta, la Rosario Mining Company sacó plata y oro en San Juancito.",
+      "clave": "San Juancito",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.45,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "vagoneta",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 780,
+          "anim": "slideIn",
+          "en": 0,
+          "desde": "izquierda"
+        },
+        {
+          "numero": "1880",
+          "x": 0.5,
+          "y": 0.34,
+          "color": "#c88a3a",
+          "tam": 84,
+          "en": "1880"
+        },
+        {
+          "marca": true,
+          "x": 0.45,
+          "y": 0.5,
+          "radio": 120,
+          "en": "plata"
+        },
+        {
+          "etiqueta": "San Juancito",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#1d1d2b",
+          "en": "San Juancito"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Hace décadas la mina cerró, y hoy el bosque está protegido. Cuidarlo es cuidar el agua de la capital.",
+      "clave": "cuidar",
+      "nota": "parque nacional",
+      "capas": [
+        {
+          "svg": "bosque_nublado",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 980,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "svg": "arbol",
+          "x": 0.14,
+          "y": 0.86,
+          "ancho": 200,
+          "anim": "crecer",
+          "en": "protegido"
+        },
+        {
+          "svg": "arbol",
+          "x": 0.86,
+          "y": 0.86,
+          "ancho": 200,
+          "anim": "crecer",
+          "en": "protegido"
+        },
+        {
+          "svg": "gota",
+          "x": 0.5,
+          "y": 0.38,
+          "ancho": 150,
+          "anim": "pop",
+          "en": "agua",
+          "idle": "latido"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Si ya caminaste por La Tigra, cuéntanos en los comentarios. Síguenos para más de Honduras.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "bosque_nublado": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 800\"><path d=\"M0 420 L180 230 L330 340 L520 150 L720 320 L860 220 L1000 330 L1000 800 L0 800 Z\" fill=\"#6fa58a\"/><path d=\"M520 150 L600 218 L560 230 L520 200 L480 236 L450 214 Z\" fill=\"#dfeee6\"/><path d=\"M0 520 L220 380 L420 470 L640 360 L860 470 L1000 420 L1000 800 L0 800 Z\" fill=\"#4c8a68\"/><rect x=\"83\" y=\"567\" width=\"14\" height=\"44\" fill=\"#4a2f1d\"/><path d=\"M90 380 L160.4 578 L19.599999999999994 578 Z\" fill=\"#2f6b4a\"/><path d=\"M90 380 L160.4 578 L90 578 Z\" fill=\"#245a3d\"/><rect x=\"893\" y=\"564\" width=\"14\" height=\"48\" fill=\"#4a2f1d\"/><path d=\"M900 360 L976.8 576 L823.2 576 Z\" fill=\"#2f6b4a\"/><path d=\"M900 360 L976.8 576 L900 576 Z\" fill=\"#245a3d\"/><rect x=\"208.6\" y=\"560\" width=\"22.8\" height=\"123.5\" fill=\"#5b3a24\"/><circle cx=\"220\" cy=\"560\" r=\"95\" fill=\"#3f8a57\"/><circle cx=\"253.25\" cy=\"579\" r=\"66.5\" fill=\"#2f7347\"/><circle cx=\"186.75\" cy=\"526.75\" r=\"38\" fill=\"#5aa66e\"/><rect x=\"406.8\" y=\"520\" width=\"26.4\" height=\"143\" fill=\"#5b3a24\"/><circle cx=\"420\" cy=\"520\" r=\"110\" fill=\"#3f8a57\"/><circle cx=\"458.5\" cy=\"542\" r=\"77\" fill=\"#2f7347\"/><circle cx=\"381.5\" cy=\"481.5\" r=\"44\" fill=\"#5aa66e\"/><rect x=\"628\" y=\"560\" width=\"24\" height=\"130\" fill=\"#5b3a24\"/><circle cx=\"640\" cy=\"560\" r=\"100\" fill=\"#3f8a57\"/><circle cx=\"675\" cy=\"580\" r=\"70\" fill=\"#2f7347\"/><circle cx=\"605\" cy=\"525\" r=\"40\" fill=\"#5aa66e\"/><rect x=\"809.2\" y=\"600\" width=\"21.599999999999998\" height=\"117\" fill=\"#5b3a24\"/><circle cx=\"820\" cy=\"600\" r=\"90\" fill=\"#3f8a57\"/><circle cx=\"851.5\" cy=\"618\" r=\"62.99999999999999\" fill=\"#2f7347\"/><circle cx=\"788.5\" cy=\"568.5\" r=\"36\" fill=\"#5aa66e\"/><rect x=\"100.4\" y=\"660\" width=\"19.2\" height=\"104\" fill=\"#5b3a24\"/><circle cx=\"110\" cy=\"660\" r=\"80\" fill=\"#357a4c\"/><circle cx=\"138\" cy=\"676\" r=\"56\" fill=\"#2a663e\"/><circle cx=\"82\" cy=\"632\" r=\"32\" fill=\"#4f9a63\"/><rect x=\"319.8\" y=\"690\" width=\"20.4\" height=\"110.5\" fill=\"#5b3a24\"/><circle cx=\"330\" cy=\"690\" r=\"85\" fill=\"#357a4c\"/><circle cx=\"359.75\" cy=\"707\" r=\"59.49999999999999\" fill=\"#2a663e\"/><circle cx=\"300.25\" cy=\"660.25\" r=\"34\" fill=\"#4f9a63\"/><rect x=\"528.6\" y=\"680\" width=\"22.8\" height=\"123.5\" fill=\"#5b3a24\"/><circle cx=\"540\" cy=\"680\" r=\"95\" fill=\"#357a4c\"/><circle cx=\"573.25\" cy=\"699\" r=\"66.5\" fill=\"#2a663e\"/><circle cx=\"506.75\" cy=\"646.75\" r=\"38\" fill=\"#4f9a63\"/><rect x=\"749.8\" y=\"700\" width=\"20.4\" height=\"110.5\" fill=\"#5b3a24\"/><circle cx=\"760\" cy=\"700\" r=\"85\" fill=\"#357a4c\"/><circle cx=\"789.75\" cy=\"717\" r=\"59.49999999999999\" fill=\"#2a663e\"/><circle cx=\"730.25\" cy=\"670.25\" r=\"34\" fill=\"#4f9a63\"/><rect x=\"921\" y=\"690\" width=\"18\" height=\"97.5\" fill=\"#5b3a24\"/><circle cx=\"930\" cy=\"690\" r=\"75\" fill=\"#357a4c\"/><circle cx=\"956.25\" cy=\"705\" r=\"52.5\" fill=\"#2a663e\"/><circle cx=\"903.75\" cy=\"663.75\" r=\"30\" fill=\"#4f9a63\"/><rect x=\"0\" y=\"740\" width=\"1000\" height=\"60\" rx=\"20\" fill=\"#2d5e40\"/><g fill=\"#ffffff\" opacity=\"0.55\"><ellipse cx=\"300\" cy=\"470\" rx=\"260\" ry=\"40\"/><ellipse cx=\"760\" cy=\"430\" rx=\"230\" ry=\"34\"/><ellipse cx=\"520\" cy=\"610\" rx=\"300\" ry=\"38\"/></g></svg>",
+    "neblina": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 300\"><g fill=\"#ffffff\"><ellipse cx=\"200\" cy=\"170\" rx=\"200\" ry=\"70\" opacity=\"0.6\"/><ellipse cx=\"480\" cy=\"140\" rx=\"260\" ry=\"90\" opacity=\"0.55\"/><ellipse cx=\"800\" cy=\"170\" rx=\"200\" ry=\"70\" opacity=\"0.6\"/><ellipse cx=\"350\" cy=\"210\" rx=\"300\" ry=\"60\" opacity=\"0.5\"/><ellipse cx=\"700\" cy=\"220\" rx=\"280\" ry=\"55\" opacity=\"0.5\"/></g></svg>",
+    "letrero_parque": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 600\"><rect x=\"140\" y=\"250\" width=\"40\" height=\"340\" fill=\"#6b4226\"/><rect x=\"520\" y=\"250\" width=\"40\" height=\"340\" fill=\"#6b4226\"/><rect x=\"60\" y=\"70\" width=\"580\" height=\"260\" rx=\"26\" fill=\"#9a6337\"/><rect x=\"60\" y=\"70\" width=\"580\" height=\"260\" rx=\"26\" fill=\"none\" stroke=\"#6b4226\" stroke-width=\"16\"/><path d=\"M60 150 H640 M60 240 H640\" stroke=\"#875530\" stroke-width=\"6\"/><path d=\"M350 100 L420 220 L280 220 Z\" fill=\"#3f8a57\"/><path d=\"M350 140 L440 290 L260 290 Z\" fill=\"#2f7347\"/><rect x=\"340\" y=\"285\" width=\"20\" height=\"30\" fill=\"#5b3a24\"/><circle cx=\"200\" cy=\"200\" r=\"34\" fill=\"#f2c230\"/><path d=\"M470 260 L520 170 L570 260 Z\" fill=\"#dfeee6\"/><path d=\"M0 590 Q 350 560 700 590 L700 600 L0 600 Z\" fill=\"#4c8a68\"/></svg>",
+    "hoja_gotas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 560\"><path d=\"M60 470 Q 80 210 330 110 Q 560 30 650 60 Q 640 300 470 420 Q 300 530 60 470 Z\" fill=\"#3f9a5a\"/><path d=\"M60 470 Q 300 530 470 420 Q 640 300 650 60 Q 520 330 60 470 Z\" fill=\"#2f7d47\"/><path d=\"M70 465 Q 330 320 640 70\" stroke=\"#a9dd9a\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M250 360 L215 240 M360 290 L340 165 M470 215 L470 120 M300 330 L390 400 M420 255 L520 320\" stroke=\"#a9dd9a\" stroke-width=\"6\" stroke-linecap=\"round\"/><g fill=\"#5aa95f\"><circle cx=\"70\" cy=\"500\" r=\"40\"/><circle cx=\"130\" cy=\"520\" r=\"34\"/><circle cx=\"20\" cy=\"520\" r=\"26\"/></g><g><path d=\"M260 210 Q 285 250 285 268 A 25 25 0 0 1 235 268 Q 235 250 260 210 Z\" fill=\"#8fd6ff\"/><circle cx=\"252\" cy=\"262\" r=\"7\" fill=\"#ffffff\"/><path d=\"M430 300 Q 460 345 460 365 A 30 30 0 0 1 400 365 Q 400 345 430 300 Z\" fill=\"#8fd6ff\"/><circle cx=\"420\" cy=\"358\" r=\"8\" fill=\"#ffffff\"/><path d=\"M540 150 Q 560 180 560 193 A 20 20 0 0 1 520 193 Q 520 180 540 150 Z\" fill=\"#8fd6ff\"/><circle cx=\"534\" cy=\"190\" r=\"5\" fill=\"#ffffff\"/></g></svg>",
+    "cascada": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 900\"><path d=\"M0 60 L210 40 L230 760 L0 800 Z\" fill=\"#6b6f7a\"/><path d=\"M0 60 L90 50 L120 780 L0 800 Z\" fill=\"#585b65\"/><path d=\"M600 80 L390 50 L370 760 L600 800 Z\" fill=\"#7d818c\"/><path d=\"M600 80 L520 70 L500 780 L600 800 Z\" fill=\"#6b6f7a\"/><path d=\"M210 40 L390 50 L380 760 L225 760 Z\" fill=\"#7fcff2\"/><path d=\"M250 60 L245 740 M300 50 L300 750 M345 55 L350 745\" stroke=\"#d9f4ff\" stroke-width=\"10\" stroke-linecap=\"round\"/><path d=\"M275 90 L270 700 M325 80 L328 710\" stroke=\"#b5e7fb\" stroke-width=\"6\"/><ellipse cx=\"300\" cy=\"800\" rx=\"290\" ry=\"80\" fill=\"#4aa8d8\"/><ellipse cx=\"300\" cy=\"790\" rx=\"200\" ry=\"45\" fill=\"#7fcff2\"/><g fill=\"#ffffff\"><circle cx=\"230\" cy=\"765\" r=\"28\"/><circle cx=\"280\" cy=\"750\" r=\"34\"/><circle cx=\"340\" cy=\"752\" r=\"30\"/><circle cx=\"385\" cy=\"768\" r=\"24\"/></g><g fill=\"#3f9a5a\"><path d=\"M0 300 Q 90 260 140 330 Q 60 320 0 360 Z\"/><path d=\"M600 380 Q 500 330 450 400 Q 530 390 600 430 Z\"/><path d=\"M0 640 Q 110 600 170 690 Q 70 670 0 710 Z\"/></g><g fill=\"#2f7d47\"><path d=\"M600 160 Q 520 140 480 200 Q 550 190 600 220 Z\"/></g></svg>",
+    "grifo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 560\"><rect x=\"30\" y=\"60\" width=\"120\" height=\"100\" rx=\"16\" fill=\"#8c96a3\"/><rect x=\"30\" y=\"60\" width=\"120\" height=\"50\" rx=\"16\" fill=\"#b8c1cc\"/><path d=\"M150 90 H330 Q 380 90 380 140 V190 H320 V150 H150 Z\" fill=\"#b8c1cc\"/><path d=\"M150 125 H320 V190 H380 V160 Q 380 150 360 150 H150 Z\" fill=\"#8c96a3\"/><rect x=\"210\" y=\"30\" width=\"40\" height=\"60\" rx=\"8\" fill=\"#8c96a3\"/><rect x=\"170\" y=\"10\" width=\"120\" height=\"30\" rx=\"15\" fill=\"#d93427\"/><rect x=\"320\" y=\"188\" width=\"60\" height=\"20\" rx=\"6\" fill=\"#6f7884\"/><path d=\"M330 210 Q 350 360 335 470 L365 470 Q 380 360 370 210 Z\" fill=\"#7fcff2\"/><path d=\"M342 220 Q 356 340 350 460\" stroke=\"#d9f4ff\" stroke-width=\"6\" fill=\"none\"/><ellipse cx=\"350\" cy=\"500\" rx=\"120\" ry=\"34\" fill=\"#4aa8d8\"/><ellipse cx=\"350\" cy=\"494\" rx=\"70\" ry=\"16\" fill=\"#7fcff2\"/></svg>",
+    "vagoneta": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 560\"><rect x=\"0\" y=\"500\" width=\"800\" height=\"22\" fill=\"#5a4a3a\"/><g fill=\"#6b4226\"><rect x=\"40\" y=\"485\" width=\"70\" height=\"20\"/><rect x=\"250\" y=\"485\" width=\"70\" height=\"20\"/><rect x=\"460\" y=\"485\" width=\"70\" height=\"20\"/><rect x=\"670\" y=\"485\" width=\"70\" height=\"20\"/></g><rect x=\"0\" y=\"478\" width=\"800\" height=\"12\" fill=\"#9aa3ad\"/><path d=\"M180 160 Q 250 70 330 120 Q 400 50 470 110 Q 560 60 620 160 Z\" fill=\"#7a6a5c\"/><g fill=\"#f2c230\"><circle cx=\"270\" cy=\"140\" r=\"26\"/><circle cx=\"470\" cy=\"120\" r=\"22\"/><circle cx=\"560\" cy=\"150\" r=\"18\"/></g><g fill=\"#d9dfe6\"><circle cx=\"370\" cy=\"120\" r=\"24\"/><circle cx=\"220\" cy=\"160\" r=\"16\"/><circle cx=\"420\" cy=\"150\" r=\"18\"/></g><g fill=\"#fff7c2\"><circle cx=\"262\" cy=\"132\" r=\"7\"/><circle cx=\"364\" cy=\"112\" r=\"6\"/></g><path d=\"M150 160 H650 L600 420 H200 Z\" fill=\"#8a4b2a\"/><path d=\"M400 160 H650 L600 420 H400 Z\" fill=\"#743c20\"/><rect x=\"135\" y=\"150\" width=\"530\" height=\"30\" rx=\"8\" fill=\"#5a3320\"/><g fill=\"#3b2a20\"><rect x=\"215\" y=\"230\" width=\"370\" height=\"16\"/><rect x=\"230\" y=\"320\" width=\"340\" height=\"16\"/></g><g><circle cx=\"260\" cy=\"450\" r=\"52\" fill=\"#2b2b33\"/><circle cx=\"260\" cy=\"450\" r=\"22\" fill=\"#9aa3ad\"/><circle cx=\"540\" cy=\"450\" r=\"52\" fill=\"#2b2b33\"/><circle cx=\"540\" cy=\"450\" r=\"22\" fill=\"#9aa3ad\"/></g></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Parque Nacional La Tigra, declarado el 1 de enero de 1980 (decreto 976-80), primer parque nacional de Honduras; bosque nublado",
+      "fuente": "Wikipedia, «La Tigra National Park»; ICF Honduras; El Heraldo"
+    },
+    {
+      "dato": "Protegido antes como zona forestal (1952) y zona de reserva (1971)",
+      "fuente": "EcuRed, «Parque Nacional La Tigra»"
+    },
+    {
+      "dato": "Aporta cerca del 30% del agua de Tegucigalpa",
+      "fuente": "La Tribuna, 10/03/2026 (convenio Fundación Terra y Amitigra)"
+    },
+    {
+      "dato": "La Tigra aporta 20-25% del agua de la capital (planta El Picacho)",
+      "fuente": "El Heraldo y La Tribuna, 2026, citando a la UMAPS y al alcalde Juan Diego Zelaya"
+    },
+    {
+      "dato": "New York and Honduras Rosario Mining Company, desde 1880 en San Juancito; oro, plata, cobre y zinc durante unos 74 años",
+      "fuente": "Wikipedia, «Rosario Mining Company» y «San Juancito, Honduras»; Mines and Communities (2006)"
+    }
+  ],
+  "nota": "El porcentaje de agua varía según la fuente y la época: la alcaldía/UMAPS da 20-25% y Amitigra/Fundación Terra 30%; por eso se dice «entre el 20 y el 30%». Algunas fuentes dan 1981 para la declaratoria; la más citada es 1980. La mina cerró hacia 1954 (según la fuente), por eso se dice «hace décadas»."
+}

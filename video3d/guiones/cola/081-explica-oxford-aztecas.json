@@ -1,0 +1,119 @@
+{
+  "id": "explica-oxford-mas-vieja-que-aztecas",
+  "motor": "explica",
+  "titulo": "Oxford, más vieja que los aztecas",
+  "categoria": "historia",
+  "etiquetas": ["historia", "aztecas", "oxford", "sabiasque", "curiosidades"],
+  "descripcion": "En Oxford ya se daban clases en 1096; Tenochtitlan se fundó en 1325 y la Triple Alianza en 1428. Una línea de tiempo para ver la distancia entre las dos.",
+  "musica": "lofi",
+  "escenas": [
+    {
+      "fondo": "cielo",
+      "texto": "Cuando en Oxford ya daban clases, Tenochtitlan ni siquiera existía.",
+      "clave": "ni siquiera",
+      "camara": { "de": [0.5, 0.6, 1], "a": [0.5, 0.6, 1.1] },
+      "capas": [
+        { "svg": "oxford", "x": 0.5, "y": 0.62, "ancho": 760, "anim": "pop", "en": 0 },
+        { "etiqueta": "Oxford", "x": 0.5, "y": 0.86, "color": "#1d1d2b", "en": "Oxford" },
+        { "numero": "Tenochtitlan: ¿?", "x": 0.5, "y": 0.34, "color": "#2fa35a", "tam": 54, "en": "Tenochtitlan" }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Hay registros de clases en Oxford desde el año 1096.",
+      "voz": "Hay registros de clases en Oxford desde el año mil noventa y seis.",
+      "clave": "1096",
+      "nota": "Inglaterra",
+      "camara": { "de": [0.5, 0.58, 1.12], "a": [0.5, 0.62, 1] },
+      "capas": [
+        { "svg": "oxford", "x": 0.5, "y": 0.66, "ancho": 700, "anim": "ninguna" },
+        { "svg": "birrete", "x": 0.75, "y": 0.4, "ancho": 260, "anim": "caer", "idle": "flotar", "en": "clases" },
+        { "numero": "1096", "x": 0.32, "y": 0.4, "color": "#d93427", "tam": 90, "en": "1096" }
+      ]
+    },
+    {
+      "fondo": "mar",
+      "texto": "Tenochtitlan se fundó en 1325, sobre un islote del lago de Texcoco.",
+      "voz": "Tenochtitlan se fundó en mil trescientos veinticinco, sobre un islote del lago de Texcoco.",
+      "clave": "1325",
+      "nota": "229 años después",
+      "camara": { "de": [0.5, 0.65, 1], "a": [0.5, 0.65, 1.12] },
+      "capas": [
+        { "svg": "islote", "x": 0.5, "y": 0.68, "ancho": 860, "anim": "slideIn", "desde": "abajo", "idle": "flotar", "en": 0 },
+        { "numero": "1325", "x": 0.5, "y": 0.4, "color": "#2fa35a", "tam": 90, "en": "1325" },
+        { "etiqueta": "lago de Texcoco", "x": 0.3, "y": 0.9, "color": "#2f7fd2", "en": "lago" }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Entre una fecha y otra hay 229 años: más de lo que México lleva como país independiente.",
+      "voz": "Entre una fecha y otra hay doscientos veintinueve años: más de lo que México lleva como país independiente.",
+      "clave": "229 años",
+      "camara": { "de": [0.5, 0.6, 1.1], "a": [0.5, 0.6, 1] },
+      "capas": [
+        { "svg": "dos_barras", "x": 0.5, "y": 0.62, "ancho": 960, "anim": "slideIn", "desde": "izquierda", "en": 0 },
+        { "etiqueta": "de 1096 a 1325: 229 años", "x": 0.5, "y": 0.42, "color": "#6b4fe0", "en": "229" },
+        { "etiqueta": "México, de 1821 a hoy: 205 años", "x": 0.5, "y": 0.8, "color": "#2fa35a", "en": "México" }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Y el Imperio azteca, la Triple Alianza, llegó todavía después: en 1428.",
+      "voz": "Y el Imperio azteca, la Triple Alianza, llegó todavía después: en mil cuatrocientos veintiocho.",
+      "clave": "Triple Alianza",
+      "camara": { "de": [0.5, 0.62, 1], "a": [0.5, 0.58, 1.12] },
+      "capas": [
+        { "svg": "templo", "x": 0.5, "y": 0.66, "ancho": 820, "anim": "crecer", "en": 0 },
+        { "numero": "1428", "x": 0.5, "y": 0.38, "color": "#d93427", "tam": 90, "en": "1428" }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Y cuando Tenochtitlan cayó, en 1521, Oxford ya llevaba más de 400 años de clases.",
+      "voz": "Y cuando Tenochtitlan cayó, en mil quinientos veintiuno, Oxford ya llevaba más de cuatrocientos años de clases.",
+      "clave": "400 años",
+      "camara": { "de": [0.5, 0.62, 1.08], "a": [0.5, 0.62, 1] },
+      "capas": [
+        { "svg": "templo", "x": 0.73, "y": 0.72, "ancho": 440, "anim": "ninguna", "idle": "sacudir" },
+        { "svg": "oxford", "x": 0.27, "y": 0.66, "ancho": 440, "anim": "pop", "en": "Oxford" },
+        { "numero": "1521", "x": 0.73, "y": 0.52, "color": "#d93427", "en": "1521" },
+        { "numero": "425 años", "x": 0.27, "y": 0.45, "color": "#6b4fe0", "en": "400" }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Y Oxford tampoco es la más vieja: Al Qarawiyyin, en Marruecos, enseña desde el año 859.",
+      "voz": "Y Oxford tampoco es la más vieja: Al Qarawiyyin, en Marruecos, enseña desde el año ochocientos cincuenta y nueve.",
+      "clave": "Marruecos",
+      "nota": "año 859",
+      "camara": { "de": [0.5, 0.6, 1], "a": [0.5, 0.64, 1.1] },
+      "capas": [
+        { "svg": "qarawiyyin", "x": 0.5, "y": 0.64, "ancho": 760, "anim": "pop", "en": 0 },
+        { "numero": "859", "x": 0.5, "y": 0.38, "color": "#2fa35a", "tam": 90, "en": "859" },
+        { "etiqueta": "Fez, Marruecos", "x": 0.5, "y": 0.9, "color": "#1d1d2b", "en": "Marruecos" }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Síguenos y la próxima línea de tiempo te la ganas tú en la sobremesa.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "oxford": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 640 600\"><rect x='0' y='570' width='640' height='30' rx='10' fill='#5f8a4a'/><rect x='40' y='300' width='560' height='272' fill='#d9c08a'/><rect x='440' y='300' width='160' height='272' fill='#c4a56c'/><path d='M30 300 H610 L590 270 H50 Z' fill='#9c7f4f'/><g fill='#d9c08a'><rect x='40' y='250' width='30' height='30'/><rect x='110' y='250' width='30' height='30'/><rect x='180' y='250' width='30' height='30'/><rect x='430' y='250' width='30' height='30'/><rect x='500' y='250' width='30' height='30'/><rect x='570' y='250' width='30' height='30'/></g><rect x='240' y='130' width='160' height='442' fill='#e3cc96'/><rect x='350' y='130' width='50' height='442' fill='#c9ad74'/><path d='M230 130 L320 10 L410 130 Z' fill='#8a6d40'/><path d='M320 10 L410 130 H350 Z' fill='#6e5532'/><g fill='#e3cc96'><path d='M225 130 L240 90 L255 130 Z'/><path d='M385 130 L400 90 L415 130 Z'/></g><circle cx='320' cy='200' r='36' fill='#f5ead0' stroke='#8a6d40' stroke-width='8'/><path d='M320 200 V176 M320 200 L338 210' stroke='#4a3a24' stroke-width='6' stroke-linecap='round'/><path d='M280 572 V440 Q280 400 320 400 Q360 400 360 440 V572 Z' fill='#5a3a24'/><g fill='#3e5d7a'><path d='M80 520 V400 Q80 370 105 370 Q130 370 130 400 V520 Z'/><path d='M170 520 V400 Q170 370 195 370 Q220 370 220 400 V520 Z'/><path d='M420 520 V400 Q420 370 445 370 Q470 370 470 400 V520 Z'/><path d='M510 520 V400 Q510 370 535 370 Q560 370 560 400 V520 Z'/></g><g stroke='#8fb3d9' stroke-width='5'><path d='M105 380 V520 M80 440 H130 M195 380 V520 M170 440 H220 M445 380 V520 M420 440 H470 M535 380 V520 M510 440 H560'/></g></svg>",
+    "birrete": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 300 220\"><path d='M70 100 V160 Q150 200 230 160 V100 Z' fill='#2a2a3a'/><path d='M150 20 L290 80 L150 140 L10 80 Z' fill='#1d1d2b'/><path d='M150 20 L290 80 L150 140 Z' fill='#2c2c40'/><path d='M150 80 L240 110 V170' stroke='#ffcf4d' stroke-width='8' fill='none' stroke-linecap='round'/><path d='M228 170 h24 l-4 34 h-16 z' fill='#ffcf4d'/><circle cx='150' cy='80' r='10' fill='#ffcf4d'/></svg>",
+    "islote": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 860 520\"><ellipse cx='430' cy='440' rx='420' ry='70' fill='#1a6e9a' opacity='0.6'/><path d='M60 430 Q120 360 300 350 Q430 330 560 350 Q760 360 800 430 Q600 470 430 470 Q240 470 60 430 Z' fill='#8bbf5a'/><path d='M60 430 Q240 470 430 470 Q600 470 800 430 Q760 460 430 490 Q120 470 60 430 Z' fill='#6a5a3a'/><path d='M360 360 Q380 300 430 300 Q480 300 500 360 Z' fill='#9a8a70'/><g fill='#3f9a4d'><ellipse cx='430' cy='230' rx='40' ry='80'/><ellipse cx='370' cy='170' rx='32' ry='62' transform='rotate(-25 370 170)'/><ellipse cx='492' cy='160' rx='32' ry='62' transform='rotate(25 492 160)'/><ellipse cx='340' cy='90' rx='24' ry='46' transform='rotate(-10 340 90)'/><ellipse cx='520' cy='80' rx='24' ry='46' transform='rotate(12 520 80)'/></g><g fill='#2d7a3a'><ellipse cx='445' cy='240' rx='16' ry='64'/></g><g fill='#e2493b'><circle cx='340' cy='46' r='12'/><circle cx='520' cy='34' r='12'/><circle cx='400' cy='110' r='10'/></g><g fill='#4a7a3a'><path d='M150 380 q10 -40 20 0 z'/><path d='M680 380 q10 -40 20 0 z'/><path d='M230 360 q8 -30 16 0 z'/></g></svg>",
+    "dos_barras": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 960 400\"><rect x='40' y='90' width='870' height='90' rx='45' fill='#000000' opacity='0.15'/><rect x='40' y='80' width='870' height='90' rx='45' fill='#6b4fe0'/><rect x='40' y='80' width='870' height='30' rx='15' fill='#ffffff' opacity='0.2'/><rect x='40' y='240' width='779' height='90' rx='45' fill='#000000' opacity='0.15'/><rect x='40' y='230' width='779' height='90' rx='45' fill='#2fa35a'/><rect x='40' y='230' width='779' height='30' rx='15' fill='#ffffff' opacity='0.2'/><path d='M819 210 V350 M910 60 V350' stroke='#ffffff' stroke-width='6' stroke-dasharray='14 10'/></svg>",
+    "templo": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 800 560\"><path d='M40 560 H760 L720 470 H80 Z' fill='#b9a27a'/><path d='M80 470 H720 L680 380 H120 Z' fill='#cbb48a'/><path d='M120 380 H680 L640 290 H160 Z' fill='#b9a27a'/><path d='M160 290 H640 L600 200 H200 Z' fill='#cbb48a'/><path d='M720 470 H760 L760 560 Z' fill='#9c865f' opacity='0.6'/><g fill='#8a7350'><path d='M320 200 H390 L380 560 H300 Z'/><path d='M410 200 H480 L500 560 H420 Z'/></g><g stroke='#cbb48a' stroke-width='6'><path d='M302 520 H382 M305 480 H382 M308 440 H383 M311 400 H384 M313 360 H385 M315 320 H386 M318 280 H387 M320 240 H388 M418 520 H498 M418 480 H495 M417 440 H492 M416 400 H489 M415 360 H487 M414 320 H485 M413 280 H483 M412 240 H481'/></g><rect x='220' y='110' width='140' height='90' fill='#e2493b'/><path d='M210 110 H370 L350 70 H230 Z' fill='#b9372b'/><rect x='265' y='150' width='50' height='50' fill='#4a2a1a'/><rect x='440' y='110' width='140' height='90' fill='#3f8ee8'/><path d='M430 110 H590 L570 70 H450 Z' fill='#2a6cc0'/><rect x='485' y='150' width='50' height='50' fill='#1a2a4a'/><g fill='#ffffff' opacity='0.7'><circle cx='240' cy='90' r='6'/><circle cx='290' cy='90' r='6'/><circle cx='340' cy='90' r='6'/><circle cx='460' cy='90' r='6'/><circle cx='510' cy='90' r='6'/><circle cx='560' cy='90' r='6'/></g></svg>",
+    "qarawiyyin": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 760 560\"><rect x='0' y='540' width='760' height='20' rx='8' fill='#b98a5a'/><rect x='560' y='60' width='120' height='480' fill='#f0e2c4'/><rect x='640' y='60' width='40' height='480' fill='#ddc9a2'/><path d='M550 60 H690 L620 10 Z' fill='#2f8a5a'/><rect x='595' y='120' width='50' height='70' rx='25' fill='#2f8a5a'/><rect x='595' y='260' width='50' height='70' rx='25' fill='#2f8a5a'/><rect x='40' y='220' width='560' height='320' fill='#f5e8cc'/><path d='M30 220 H610 L580 170 H60 Z' fill='#2f8a5a'/><path d='M60 170 H580' stroke='#1f6a42' stroke-width='8'/><g stroke='#1f6a42' stroke-width='5'><path d='M100 180 L90 215 M160 180 L150 215 M220 180 L210 215 M280 180 L270 215 M340 180 L330 215 M400 180 L390 215 M460 180 L450 215 M520 180 L510 215'/></g><path d='M240 540 V380 Q240 300 320 290 Q400 300 400 380 V540 Z' fill='#c9873e'/><path d='M262 540 V385 Q262 322 320 314 Q378 322 378 385 V540 Z' fill='#2f8a5a'/><path d='M320 320 V540' stroke='#1f6a42' stroke-width='6'/><g fill='#d9c4a0'><path d='M90 480 V400 Q90 370 120 370 Q150 370 150 400 V480 Z'/><path d='M490 480 V400 Q490 370 520 370 Q550 370 550 400 V480 Z'/></g><path d='M90 260 H550' stroke='#3f8ee8' stroke-width='14'/><path d='M90 260 H550' stroke='#ffffff' stroke-width='4' stroke-dasharray='10 14'/></svg>"
+  },
+  "fuentes": [
+    { "dato": "En Oxford ya se enseñaba en 1096 (no tiene fecha de fundación exacta)", "fuente": "Universidad de Oxford, «History» (ox.ac.uk/about/organisation/history)" },
+    { "dato": "Tenochtitlan se fundó hacia 1325 en un islote del lago de Texcoco; la Triple Alianza (Imperio azteca) se formó en 1428; la ciudad cayó en 1521", "fuente": "National Geographic, «Who were the Aztec?»; Encyclopaedia Britannica, «Tenochtitlán»" },
+    { "dato": "229 años entre 1096 y 1325; 425 años entre 1096 y 1521", "fuente": "cálculo: 1325 − 1096 y 1521 − 1096" },
+    { "dato": "México: independencia consumada en 1821 (205 años en 2026)", "fuente": "Gobierno de México, «Consumación de la Independencia» (27 de septiembre de 1821); cálculo: 2026 − 1821" },
+    { "dato": "Al Qarawiyyin (Fez, Marruecos), fundada en 859: la institución de enseñanza superior más antigua que sigue funcionando", "fuente": "Guinness World Records, «Oldest higher-learning institution, oldest university»" }
+  ],
+  "nota": "1096 es la primera fecha con clases documentadas en Oxford, no una fundación formal. 1325 es la fecha tradicional de fundación de Tenochtitlan (algunos autores dan otras cercanas). México inició la independencia en 1810 y la consumó en 1821: contando desde 1810 serían 216 años, que igual son menos de 229. Al Qarawiyyin nació como mezquita-madrasa y se integró al sistema universitario moderno en 1963. Los dibujos de Oxford, del templo y de Al Qarawiyyin son genéricos, no planos fieles de los edificios."
+}

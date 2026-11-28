@@ -1,0 +1,7 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 320 480">
+<rect x='20' y='10' width='280' height='40' rx='14' fill='#8a5a32'/><rect x='20' y='430' width='280' height='40' rx='14' fill='#8a5a32'/>
+<rect x='34' y='50' width='20' height='380' fill='#6e4426'/><rect x='266' y='50' width='20' height='380' fill='#6e4426'/>
+<path d='M70 50 H250 Q250 170 172 240 Q250 310 250 430 H70 Q70 310 148 240 Q70 170 70 50Z' fill='#d8f1ff' opacity='0.85'/>
+<path d='M110 150 H210 Q190 200 160 236 Q130 200 110 150Z' fill='#e9b52c'/>
+<rect x='156' y='236' width='8' height='150' fill='#e9b52c'/>
+<path d='M80 430 Q90 360 160 350 Q230 360 240 430Z' fill='#e9b52c'/><path d='M160 350 Q230 360 240 430 H170Z' fill='#cf9a1d'/></svg>

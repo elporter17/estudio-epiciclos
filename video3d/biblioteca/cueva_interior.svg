@@ -1,0 +1,6 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 1080 1300"><rect width='1080' height='310' fill='#3b3045'/><path d='M-10 0 L50 120 L110 0Z' fill='#4a3d55'/><path d='M115 0 L175 180 L235 0Z' fill='#3d3247'/><path d='M240 0 L300 240 L360 0Z' fill='#4a3d55'/><path d='M365 0 L425 120 L485 0Z' fill='#3d3247'/><path d='M490 0 L550 180 L610 0Z' fill='#4a3d55'/><path d='M615 0 L675 240 L735 0Z' fill='#3d3247'/><path d='M740 0 L800 120 L860 0Z' fill='#4a3d55'/><path d='M865 0 L925 180 L985 0Z' fill='#3d3247'/><path d='M990 0 L1050 240 L1110 0Z' fill='#4a3d55'/><g transform='translate(0 300)'>
+<path fill-rule='evenodd' d='M0 0 H1080 V1000 H0Z M160 960 Q90 600 200 330 Q320 120 560 140 Q840 150 930 380 Q1010 640 930 960Z' fill='#2e2638'/>
+<path fill-rule='evenodd' d='M0 0 H1080 V1000 H0Z M200 960 Q130 610 240 360 Q350 170 560 180 Q810 190 890 400 Q960 650 890 960Z' fill='#3d3247' opacity='0.85'/>
+
+<path d='M150 900 Q540 840 940 900 V1000 H150Z' fill='#4a3d55'/><path d='M150 930 Q540 880 940 930' stroke='#5c4d68' stroke-width='10' fill='none'/>
+<g fill='#5c4d68'><path d='M300 300 l30 0 l-15 90Z'/><path d='M700 280 l36 0 l-18 110Z'/><path d='M820 420 l24 0 l-12 70Z'/></g></g></svg>

@@ -81,7 +81,7 @@
         { "svg": "bebe", "x": 0.28, "y": 0.62, "ancho": 300, "anim": "pop", "en": 0 },
         { "numero": "+4", "x": 0.28, "y": 0.8, "color": "#2fa35a", "tam": 96, "en": 0.3 },
         { "svg": "vela", "x": 0.72, "y": 0.6, "ancho": 170, "anim": "fade", "idle": "flotar", "en": "mueren" },
-        { "numero": "−2", "x": 0.72, "y": 0.8, "color": "#7a8296", "tam": 96, "en": "2" }
+        { "numero": "-2", "x": 0.72, "y": 0.8, "color": "#7a8296", "tam": 96, "en": "2" }
       ]
     },
     {

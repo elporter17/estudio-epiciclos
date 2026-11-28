@@ -1,0 +1,6 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 600 560">
+<ellipse cx='300' cy='290' rx='285' ry='255' fill='#d42d2d'/><path d='M300 35 A285 255 0 0 1 300 545 A200 255 0 0 0 300 35Z' fill='#a81f22'/>
+<ellipse cx='300' cy='290' rx='245' ry='218' fill='#f6d58a'/><ellipse cx='330' cy='300' rx='190' ry='190' fill='#efc66c'/>
+<ellipse cx='225' cy='290' rx='82' ry='150' fill='#bccf8c'/><ellipse cx='205' cy='290' rx='52' ry='132' fill='#d3e0a8'/>
+<ellipse cx='375' cy='290' rx='82' ry='150' fill='#a9bf7a'/><ellipse cx='395' cy='290' rx='52' ry='132' fill='#98ae6a'/>
+<path d='M268 170 Q250 290 268 410 M332 170 Q350 290 332 410' stroke='#7c8f4c' stroke-width='9' fill='none' stroke-linecap='round'/></svg>

@@ -222,6 +222,21 @@
   "origen": "biblioteca"
  },
  {
+  "nombre": "arco",
+  "descripcion": "arco · del video «El reloj de Comayagua» (escena: «La tradición cuenta que lo hicieron los árabes en España, hacia el año 1100, para la Alham»)",
+  "etiquetas": [
+   "arco",
+   "honduras",
+   "catracho",
+   "comayagua",
+   "historia",
+   "comofunciona",
+   "mitooverdad"
+  ],
+  "proporcion": 1.2,
+  "origen": "video3d/guiones/explica/213-reloj-comayagua.json"
+ },
+ {
   "nombre": "arcoiris",
   "descripcion": "arcoiris · del video «¿Por qué el arcoíris es curvo?» (escena: «¿Alguna vez viste un arcoíris recto? No existe. La razón está en cada gota de lluvia.»)",
   "etiquetas": [
@@ -247,6 +262,20 @@
   ],
   "proporcion": 1,
   "origen": "video3d/guiones/explica/077-arcoiris.json"
+ },
+ {
+  "nombre": "arrecife",
+  "descripcion": "arrecife · del video «El arrecife de Roatán y Utila» (escena: «Bajo el mar hay una muralla viva de unos 1.000 kilómetros… y una punta está en Honduras.»)",
+  "etiquetas": [
+   "arrecife",
+   "honduras",
+   "catracho",
+   "roatan",
+   "utila",
+   "mar"
+  ],
+  "proporcion": 0.62,
+  "origen": "video3d/guiones/explica/208-arrecife-bahia.json"
  },
  {
   "nombre": "artico",
@@ -395,6 +424,22 @@
   "origen": "video3d/guiones/explica/200-baleada.json"
  },
  {
+  "nombre": "banda",
+  "descripcion": "banda · del video «Sopa de caracol: el hit catracho» (escena: «Era «Sopa de caracol», de Banda Blanca, un grupo hondureño que tocaba desde 1971.»)",
+  "etiquetas": [
+   "banda",
+   "honduras",
+   "catracho",
+   "sopadecaracol",
+   "bandablanca",
+   "punta",
+   "garifuna",
+   "musica"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/216-sopa-de-caracol.json"
+ },
+ {
   "nombre": "bandera",
   "descripcion": "bandera · del video «¿Cómo funciona una brújula?» (escena: «Y ese polo no coincide con el geográfico: está a cientos de kilómetros y se mueve cada año»)",
   "etiquetas": [
@@ -407,6 +452,21 @@
   ],
   "proporcion": 1.375,
   "origen": "video3d/guiones/explica/071-brujula-norte.json"
+ },
+ {
+  "nombre": "bandera_hn_guara_roja",
+  "descripcion": "bandera · del video «La guara roja, ave nacional» (escena: «Desde el 28 de junio de 1993 es el ave nacional de Honduras.»)",
+  "etiquetas": [
+   "bandera",
+   "honduras",
+   "catracho",
+   "guararoja",
+   "avenacional",
+   "copan",
+   "naturaleza"
+  ],
+  "proporcion": 0.645,
+  "origen": "video3d/guiones/explica/203-guara-roja.json"
  },
  {
   "nombre": "banderines",
@@ -422,6 +482,21 @@
   ],
   "proporcion": 0.289,
   "origen": "video3d/guiones/explica/201-lluvia-peces-yoro.json"
+ },
+ {
+  "nombre": "banderines_hn_carnaval_ceiba",
+  "descripcion": "banderines · del video «El Carnaval de La Ceiba» (escena: «Es la Feria Isidra, en honor a San Isidro Labrador, el patrono de la ciudad.»)",
+  "etiquetas": [
+   "banderines",
+   "honduras",
+   "catracho",
+   "laceiba",
+   "carnaval",
+   "feriaisidra",
+   "cultura"
+  ],
+  "proporcion": 0.22,
+  "origen": "video3d/guiones/explica/211-carnaval-ceiba.json"
  },
  {
   "nombre": "barco",
@@ -466,6 +541,22 @@
   ],
   "proporcion": 0.867,
   "origen": "video3d/guiones/explica/210-garifunas.json"
+ },
+ {
+  "nombre": "barcos_tormenta",
+  "descripcion": "barcos tormenta · del video «¿Por qué se llama Honduras?» (escena: «¿Sabías que el nombre de Honduras, según la tradición, nació de una tormenta en el mar?»)",
+  "etiquetas": [
+   "barcos",
+   "tormenta",
+   "honduras",
+   "catracho",
+   "historia",
+   "colon",
+   "graciasadios",
+   "sabiasque"
+  ],
+  "proporcion": 0.82,
+  "origen": "video3d/guiones/explica/217-nombre-honduras.json"
  },
  {
   "nombre": "barra_vida",
@@ -552,6 +643,21 @@
   "origen": "video3d/guiones/explica/106-bebes-segundo.json"
  },
  {
+  "nombre": "billete",
+  "descripcion": "billete · del video «Lempira, el que no se rindió» (escena: «Cada vez que pagas con lempiras, dices el nombre de un hombre que no se rindió.»)",
+  "etiquetas": [
+   "billete",
+   "honduras",
+   "catracho",
+   "lempira",
+   "lenca",
+   "historia",
+   "heroes"
+  ],
+  "proporcion": 0.467,
+  "origen": "video3d/guiones/explica/218-lempira.json"
+ },
+ {
   "nombre": "binoculares",
   "descripcion": "binoculares · del video «Yojoa: el lago de las 400 aves» (escena: «Por eso llegan observadores de aves de todo el mundo, binoculares en mano.»)",
   "etiquetas": [
@@ -594,6 +700,22 @@
   ],
   "proporcion": 0.833,
   "origen": "video3d/guiones/cola/071-explica-barco.json"
+ },
+ {
+  "nombre": "bosque_nublado",
+  "descripcion": "bosque nublado · del video «La Tigra: agua que nace en nubes» (escena: «¿Sabías que parte del agua de Tegucigalpa nace entre las nubes de una montaña?»)",
+  "etiquetas": [
+   "bosque",
+   "nublado",
+   "honduras",
+   "catracho",
+   "latigra",
+   "tegucigalpa",
+   "naturaleza",
+   "sabiasque"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/215-la-tigra.json"
  },
  {
   "nombre": "botella_abombada",
@@ -668,6 +790,21 @@
   "origen": "video3d/guiones/explica/083-fondo-mar.json"
  },
  {
+  "nombre": "brillo_hn_cuevas_talgua",
+  "descripcion": "brillo · del video «Las calaveras brillantes de Talgua» (escena: «En una cueva de Olancho hay calaveras que parecen brillar en la oscuridad.»)",
+  "etiquetas": [
+   "brillo",
+   "honduras",
+   "catracho",
+   "olancho",
+   "arqueologia",
+   "talgua",
+   "misterio"
+  ],
+  "proporcion": 0.571,
+  "origen": "video3d/guiones/explica/214-cuevas-talgua.json"
+ },
+ {
   "nombre": "brujula",
   "descripcion": "brujula · del video «¿Cómo funciona una brújula?» (escena: «Tu brújula no apunta al Polo Norte. Y aun así, te saca de cualquier bosque.»)",
   "etiquetas": [
@@ -693,6 +830,37 @@
   ],
   "proporcion": 0.565,
   "origen": "video3d/guiones/explica/083-fondo-mar.json"
+ },
+ {
+  "nombre": "buzo_hn_tiburon_ballena_utila",
+  "descripcion": "buzo · del video «El gigante manso de Utila» (escena: «Es el tiburón ballena, el pez más grande del mundo: puede llegar a unos 12 metros.»)",
+  "etiquetas": [
+   "buzo",
+   "honduras",
+   "catracho",
+   "utila",
+   "tiburonballena",
+   "islasdelabahia",
+   "naturaleza"
+  ],
+  "proporcion": 0.571,
+  "origen": "video3d/guiones/explica/219-tiburon-ballena-utila.json"
+ },
+ {
+  "nombre": "cabeza_jaguar",
+  "descripcion": "cabeza jaguar · del video «La Ciudad Blanca: ¿mito o verdad?» (escena: «En 2015, una expedición halló ahí 52 piezas de piedra, como una figura de hombre-jaguar.»)",
+  "etiquetas": [
+   "cabeza",
+   "jaguar",
+   "honduras",
+   "catracho",
+   "ciudadblanca",
+   "mosquitia",
+   "arqueologia",
+   "misterio"
+  ],
+  "proporcion": 1.04,
+  "origen": "video3d/guiones/explica/209-ciudad-blanca.json"
  },
  {
   "nombre": "cabina",
@@ -724,6 +892,67 @@
   "origen": "video3d/guiones/explica/074-ascensor-contrapeso.json"
  },
  {
+  "nombre": "cabo",
+  "descripcion": "cabo · del video «¿Por qué se llama Honduras?» (escena: «Al doblar un cabo y hallar calma, habría dicho: «Gracias a Dios que hemos salido de estas »)",
+  "etiquetas": [
+   "cabo",
+   "honduras",
+   "catracho",
+   "historia",
+   "colon",
+   "graciasadios",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/explica/217-nombre-honduras.json"
+ },
+ {
+  "nombre": "cafeto",
+  "descripcion": "cafeto · del video «El viaje del café catracho» (escena: «El IHCAFE reconoce 6 regiones de café, como Copán, El Paraíso y Montecillos, donde está Ma»)",
+  "etiquetas": [
+   "cafeto",
+   "honduras",
+   "catracho",
+   "cafe",
+   "ihcafe",
+   "comofunciona",
+   "sabiasque"
+  ],
+  "proporcion": 1.2,
+  "origen": "video3d/guiones/explica/212-cafe.json"
+ },
+ {
+  "nombre": "calavera",
+  "descripcion": "calavera · del video «Las calaveras brillantes de Talgua» (escena: «¿Y el brillo? Por siglos, el agua que gotea dejó una capa de calcita, un cristal que refle»)",
+  "etiquetas": [
+   "calavera",
+   "honduras",
+   "catracho",
+   "olancho",
+   "arqueologia",
+   "talgua",
+   "misterio"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/214-cuevas-talgua.json"
+ },
+ {
+  "nombre": "calavera_brillo",
+  "descripcion": "calavera brillo · del video «Las calaveras brillantes de Talgua» (escena: «En una cueva de Olancho hay calaveras que parecen brillar en la oscuridad.»)",
+  "etiquetas": [
+   "calavera",
+   "brillo",
+   "honduras",
+   "catracho",
+   "olancho",
+   "arqueologia",
+   "talgua",
+   "misterio"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/214-cuevas-talgua.json"
+ },
+ {
   "nombre": "calendario",
   "descripcion": "calendario · del video «Millón vs mil millones de segundos» (escena: «Un millón de segundos son 11 días y medio: ni siquiera dos semanas.»)",
   "etiquetas": [
@@ -736,6 +965,36 @@
   ],
   "proporcion": 0.653,
   "origen": "video3d/guiones/cola/073-explica-millon.json"
+ },
+ {
+  "nombre": "calendario_hn_carnaval_ceiba",
+  "descripcion": "calendario · del video «El Carnaval de La Ceiba» (escena: «Es la Feria Isidra, en honor a San Isidro Labrador, el patrono de la ciudad.»)",
+  "etiquetas": [
+   "calendario",
+   "honduras",
+   "catracho",
+   "laceiba",
+   "carnaval",
+   "feriaisidra",
+   "cultura"
+  ],
+  "proporcion": 1.043,
+  "origen": "video3d/guiones/explica/211-carnaval-ceiba.json"
+ },
+ {
+  "nombre": "calendario_hn_tiburon_ballena_utila",
+  "descripcion": "calendario · del video «El gigante manso de Utila» (escena: «Se ve en distintas épocas del año, pero marzo y abril suelen tener más avistamientos.»)",
+  "etiquetas": [
+   "calendario",
+   "honduras",
+   "catracho",
+   "utila",
+   "tiburonballena",
+   "islasdelabahia",
+   "naturaleza"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/219-tiburon-ballena-utila.json"
  },
  {
   "nombre": "cama",
@@ -778,6 +1037,37 @@
   ],
   "proporcion": 1.12,
   "origen": "video3d/guiones/cola/072-explica-cebolla.json"
+ },
+ {
+  "nombre": "carabela",
+  "descripcion": "carabela · del video «¿Por qué se llama Honduras?» (escena: «Fue en 1502, en el cuarto viaje de Cristóbal Colón, frente a nuestra costa caribe.»)",
+  "etiquetas": [
+   "carabela",
+   "honduras",
+   "catracho",
+   "historia",
+   "colon",
+   "graciasadios",
+   "sabiasque"
+  ],
+  "proporcion": 0.867,
+  "origen": "video3d/guiones/explica/217-nombre-honduras.json"
+ },
+ {
+  "nombre": "caracol",
+  "descripcion": "caracol · del video «Sopa de caracol: el hit catracho» (escena: «Mezcla garífuna y español, y le canta a la sopa de caracol con leche de coco de la costa.»)",
+  "etiquetas": [
+   "caracol",
+   "honduras",
+   "catracho",
+   "sopadecaracol",
+   "bandablanca",
+   "punta",
+   "garifuna",
+   "musica"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/216-sopa-de-caracol.json"
  },
  {
   "nombre": "caracola",
@@ -824,6 +1114,21 @@
   "origen": "video3d/guiones/explica/200-baleada.json"
  },
  {
+  "nombre": "carroza",
+  "descripcion": "carroza · del video «El Carnaval de La Ceiba» (escena: «Un sábado de mayo, una avenida entera de La Ceiba se vuelve pista de baile.»)",
+  "etiquetas": [
+   "carroza",
+   "honduras",
+   "catracho",
+   "laceiba",
+   "carnaval",
+   "feriaisidra",
+   "cultura"
+  ],
+  "proporcion": 0.711,
+  "origen": "video3d/guiones/explica/211-carnaval-ceiba.json"
+ },
+ {
   "nombre": "casa",
   "descripcion": "casa",
   "etiquetas": [
@@ -848,6 +1153,21 @@
   "origen": "video3d/guiones/explica/210-garifunas.json"
  },
  {
+  "nombre": "cascada",
+  "descripcion": "cascada · del video «La Tigra: agua que nace en nubes» (escena: «Esas gotas se juntan en quebradas y cascadas que bajan hacia la capital.»)",
+  "etiquetas": [
+   "cascada",
+   "honduras",
+   "catracho",
+   "latigra",
+   "tegucigalpa",
+   "naturaleza",
+   "sabiasque"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/explica/215-la-tigra.json"
+ },
+ {
   "nombre": "catarata",
   "descripcion": "catarata · del video «Yojoa: el lago de las 400 aves» (escena: «Y a pocos kilómetros cae Pulhapanzak, una catarata de unos 43 metros.»)",
   "etiquetas": [
@@ -863,6 +1183,21 @@
   "origen": "video3d/guiones/explica/206-lago-yojoa.json"
  },
  {
+  "nombre": "catedral",
+  "descripcion": "catedral · del video «El reloj de Comayagua» (escena: «Está en el campanario de la Catedral de Comayagua, la ciudad que fue capital de Honduras.»)",
+  "etiquetas": [
+   "catedral",
+   "honduras",
+   "catracho",
+   "comayagua",
+   "historia",
+   "comofunciona",
+   "mitooverdad"
+  ],
+  "proporcion": 0.975,
+  "origen": "video3d/guiones/explica/213-reloj-comayagua.json"
+ },
+ {
   "nombre": "cebolla",
   "descripcion": "cebolla · del video «¿Por qué la cebolla hace llorar?» (escena: «Spoiler: la cebolla no te hace llorar de tristeza. Te está atacando con química.»)",
   "etiquetas": [
@@ -874,6 +1209,21 @@
   ],
   "proporcion": 1.15,
   "origen": "video3d/guiones/cola/072-explica-cebolla.json"
+ },
+ {
+  "nombre": "cebolla_hn_sopa_de_jutes",
+  "descripcion": "cebolla · del video «La sopa de jutes» (escena: «A la olla van con cebolla, tomate, chile y culantro, y después yuca y guineo verde.»)",
+  "etiquetas": [
+   "cebolla",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 1.1,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
  },
  {
   "nombre": "celular",
@@ -945,6 +1295,37 @@
   ],
   "proporcion": 0.765,
   "origen": "video3d/guiones/explica/109-anos-durmiendo.json"
+ },
+ {
+  "nombre": "cereza",
+  "descripcion": "cereza · del video «El viaje del café catracho» (escena: «Ese cafecito de la mañana empezó siendo una frutita roja en una montaña catracha.»)",
+  "etiquetas": [
+   "cereza",
+   "honduras",
+   "catracho",
+   "cafe",
+   "ihcafe",
+   "comofunciona",
+   "sabiasque"
+  ],
+  "proporcion": 1.1,
+  "origen": "video3d/guiones/explica/212-cafe.json"
+ },
+ {
+  "nombre": "cereza_corte",
+  "descripcion": "cereza corte · del video «El viaje del café catracho» (escena: «Cada cereza guarda 2 semillas. Esas semillas, ya limpias y secas, son los granos de café.»)",
+  "etiquetas": [
+   "cereza",
+   "corte",
+   "honduras",
+   "catracho",
+   "cafe",
+   "ihcafe",
+   "comofunciona",
+   "sabiasque"
+  ],
+  "proporcion": 0.933,
+  "origen": "video3d/guiones/explica/212-cafe.json"
  },
  {
   "nombre": "cerro_mina",
@@ -1019,6 +1400,21 @@
   ],
   "proporcion": 0.8,
   "origen": "video3d/guiones/explica/076-chicle.json"
+ },
+ {
+  "nombre": "chile",
+  "descripcion": "chile · del video «La sopa de jutes» (escena: «A la olla van con cebolla, tomate, chile y culantro, y después yuca y guineo verde.»)",
+  "etiquetas": [
+   "chile",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 0.5,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
  },
  {
   "nombre": "chispa",
@@ -1121,6 +1517,37 @@
   "origen": "video3d/guiones/cola/071-explica-barco.json"
  },
  {
+  "nombre": "coco",
+  "descripcion": "coco · del video «La sopa de jutes» (escena: «Algunas familias le echan leche de coco o plátano maduro. Cada casa tiene su receta.»)",
+  "etiquetas": [
+   "coco",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 0.917,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
+ },
+ {
+  "nombre": "coco_hn_sopa_de_caracol",
+  "descripcion": "coco · del video «Sopa de caracol: el hit catracho» (escena: «Mezcla garífuna y español, y le canta a la sopa de caracol con leche de coco de la costa.»)",
+  "etiquetas": [
+   "coco",
+   "honduras",
+   "catracho",
+   "sopadecaracol",
+   "bandablanca",
+   "punta",
+   "garifuna",
+   "musica"
+  ],
+  "proporcion": 0.95,
+  "origen": "video3d/guiones/explica/216-sopa-de-caracol.json"
+ },
+ {
   "nombre": "colinas",
   "descripcion": "colinas · del video «¿Por qué el arcoíris es curvo?» (escena: «¿Alguna vez viste un arcoíris recto? No existe. La razón está en cada gota de lluvia.»)",
   "etiquetas": [
@@ -1164,6 +1591,21 @@
   "origen": "video3d/guiones/explica/200-baleada.json"
  },
  {
+  "nombre": "comparsa",
+  "descripcion": "comparsa · del video «El Carnaval de La Ceiba» (escena: «Antes del gran día hay carnavalitos: barrio por barrio, la fiesta se arma en la calle.»)",
+  "etiquetas": [
+   "comparsa",
+   "honduras",
+   "catracho",
+   "laceiba",
+   "carnaval",
+   "feriaisidra",
+   "cultura"
+  ],
+  "proporcion": 1.938,
+  "origen": "video3d/guiones/explica/211-carnaval-ceiba.json"
+ },
+ {
   "nombre": "compresor",
   "descripcion": "compresor · del video «¿Cómo enfría una nevera?» (escena: «Luego el compresor, ese motor que zumba, aprieta el gas y lo pone muy caliente.»)",
   "etiquetas": [
@@ -1176,6 +1618,21 @@
   ],
   "proporcion": 0.923,
   "origen": "video3d/guiones/cola/069-explica-nevera.json"
+ },
+ {
+  "nombre": "confeti",
+  "descripcion": "confeti · del video «El Carnaval de La Ceiba» (escena: «Un sábado de mayo, una avenida entera de La Ceiba se vuelve pista de baile.»)",
+  "etiquetas": [
+   "confeti",
+   "honduras",
+   "catracho",
+   "laceiba",
+   "carnaval",
+   "feriaisidra",
+   "cultura"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/explica/211-carnaval-ceiba.json"
  },
  {
   "nombre": "contrapeso",
@@ -1220,6 +1677,22 @@
   "origen": "video3d/guiones/cola/072-explica-cebolla.json"
  },
  {
+  "nombre": "coral_blanco",
+  "descripcion": "coral blanco · del video «El arrecife de Roatán y Utila» (escena: «Pero el agua demasiado caliente blanquea los corales. Cuidarlos es tarea de todos.»)",
+  "etiquetas": [
+   "coral",
+   "blanco",
+   "honduras",
+   "catracho",
+   "roatan",
+   "utila",
+   "arrecife",
+   "mar"
+  ],
+  "proporcion": 0.62,
+  "origen": "video3d/guiones/explica/208-arrecife-bahia.json"
+ },
+ {
   "nombre": "corona",
   "descripcion": "corona · del video «Copán: la escalera que habla» (escena: «Su dinastía arrancó en el año 426 con K'inich Yax K'uk' Mo', y tuvo 16 gobernantes.»)",
   "etiquetas": [
@@ -1248,6 +1721,21 @@
   ],
   "proporcion": 0.8,
   "origen": "video3d/guiones/cola/068-explica-mar.json"
+ },
+ {
+  "nombre": "costa_arrecife",
+  "descripcion": "costa arrecife · del video «El arrecife de Roatán y Utila» (escena: «Es el Sistema Arrecifal Mesoamericano: va de México a Belice, Guatemala y Honduras.»)",
+  "etiquetas": [
+   "costa",
+   "arrecife",
+   "honduras",
+   "catracho",
+   "roatan",
+   "utila",
+   "mar"
+  ],
+  "proporcion": 1.25,
+  "origen": "video3d/guiones/explica/208-arrecife-bahia.json"
  },
  {
   "nombre": "cristales_sal",
@@ -1308,6 +1796,21 @@
   "origen": "video3d/guiones/cola/072-explica-cebolla.json"
  },
  {
+  "nombre": "cuchillo_hn_sopa_de_jutes",
+  "descripcion": "cuchillo · del video «La sopa de jutes» (escena: «Primero se lavan bien los jutes y se les corta la puntita de la concha.»)",
+  "etiquetas": [
+   "cuchillo",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 0.333,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
+ },
+ {
   "nombre": "cueva",
   "descripcion": "cueva · del video «Millón vs mil millones de segundos» (escena: «¿Y un billón, un millón de millones? Unos 31.700 años atrás: ni siquiera existía la agricu»)",
   "etiquetas": [
@@ -1320,6 +1823,37 @@
   ],
   "proporcion": 0.76,
   "origen": "video3d/guiones/cola/073-explica-millon.json"
+ },
+ {
+  "nombre": "cueva_interior",
+  "descripcion": "cueva interior · del video «Las calaveras brillantes de Talgua» (escena: «En una cueva de Olancho hay calaveras que parecen brillar en la oscuridad.»)",
+  "etiquetas": [
+   "cueva",
+   "interior",
+   "honduras",
+   "catracho",
+   "olancho",
+   "arqueologia",
+   "talgua",
+   "misterio"
+  ],
+  "proporcion": 1.204,
+  "origen": "video3d/guiones/explica/214-cuevas-talgua.json"
+ },
+ {
+  "nombre": "culantro",
+  "descripcion": "culantro · del video «La sopa de jutes» (escena: «A la olla van con cebolla, tomate, chile y culantro, y después yuca y guineo verde.»)",
+  "etiquetas": [
+   "culantro",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 1.182,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
  },
  {
   "nombre": "curva",
@@ -1364,6 +1898,22 @@
   "origen": "video3d/guiones/explica/076-chicle.json"
  },
  {
+  "nombre": "disco",
+  "descripcion": "disco · del video «Sopa de caracol: el hit catracho» (escena: «En 1991, una canción hondureña llegó al número 1 de las listas latinas de Billboard.»)",
+  "etiquetas": [
+   "disco",
+   "honduras",
+   "catracho",
+   "sopadecaracol",
+   "bandablanca",
+   "punta",
+   "garifuna",
+   "musica"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/216-sopa-de-caracol.json"
+ },
+ {
   "nombre": "dispersion",
   "descripcion": "dispersion · del video «¿Por qué el cielo es azul?» (escena: «Y esas moléculas desvían mucho más la luz azul que la roja: es la dispersión de Rayleigh.»)",
   "etiquetas": [
@@ -1376,6 +1926,21 @@
   ],
   "proporcion": 0.943,
   "origen": "video3d/guiones/cola/064-explica-cielo.json"
+ },
+ {
+  "nombre": "documento",
+  "descripcion": "documento · del video «El reloj de Comayagua» (escena: «Pero los historiadores no han hallado ni un documento que lo pruebe, y hasta su llegada se»)",
+  "etiquetas": [
+   "documento",
+   "honduras",
+   "catracho",
+   "comayagua",
+   "historia",
+   "comofunciona",
+   "mitooverdad"
+  ],
+  "proporcion": 1.12,
+  "origen": "video3d/guiones/explica/213-reloj-comayagua.json"
  },
  {
   "nombre": "dos_barras",
@@ -1449,6 +2014,54 @@
   ],
   "proporcion": 19,
   "origen": "video3d/guiones/cola/070-explica-luna.json"
+ },
+ {
+  "nombre": "engranaje_chico",
+  "descripcion": "engranaje chico · del video «El reloj de Comayagua» (escena: «Lo que sí se ve es su máquina: hierro forjado, engranajes, cuerdas, pesas y un péndulo.»)",
+  "etiquetas": [
+   "engranaje",
+   "chico",
+   "honduras",
+   "catracho",
+   "comayagua",
+   "historia",
+   "comofunciona",
+   "mitooverdad"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/213-reloj-comayagua.json"
+ },
+ {
+  "nombre": "engranaje_grande",
+  "descripcion": "engranaje grande · del video «El reloj de Comayagua» (escena: «Lo que sí se ve es su máquina: hierro forjado, engranajes, cuerdas, pesas y un péndulo.»)",
+  "etiquetas": [
+   "engranaje",
+   "grande",
+   "honduras",
+   "catracho",
+   "comayagua",
+   "historia",
+   "comofunciona",
+   "mitooverdad"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/213-reloj-comayagua.json"
+ },
+ {
+  "nombre": "entrada_cueva",
+  "descripcion": "entrada cueva · del video «Las calaveras brillantes de Talgua» (escena: «Son las Cuevas de Talgua, cerca de Catacamas, junto al río del mismo nombre.»)",
+  "etiquetas": [
+   "entrada",
+   "cueva",
+   "honduras",
+   "catracho",
+   "olancho",
+   "arqueologia",
+   "talgua",
+   "misterio"
+  ],
+  "proporcion": 0.72,
+  "origen": "video3d/guiones/explica/214-cuevas-talgua.json"
  },
  {
   "nombre": "escalinata",
@@ -1988,6 +2601,129 @@
   "origen": "video3d/guiones/cola/068-explica-mar.json"
  },
  {
+  "nombre": "grano_verde",
+  "descripcion": "grano verde · del video «El viaje del café catracho» (escena: «En el beneficio la despulpan, la dejan fermentar, la lavan y la secan al sol.»)",
+  "etiquetas": [
+   "grano",
+   "verde",
+   "honduras",
+   "catracho",
+   "cafe",
+   "ihcafe",
+   "comofunciona",
+   "sabiasque"
+  ],
+  "proporcion": 0.75,
+  "origen": "video3d/guiones/explica/212-cafe.json"
+ },
+ {
+  "nombre": "granos_tostados",
+  "descripcion": "granos tostados · del video «El viaje del café catracho» (escena: «Al final lo tuestan, lo muelen y el agua caliente saca todo ese sabor a tu taza.»)",
+  "etiquetas": [
+   "granos",
+   "tostados",
+   "honduras",
+   "catracho",
+   "cafe",
+   "ihcafe",
+   "comofunciona",
+   "sabiasque"
+  ],
+  "proporcion": 0.65,
+  "origen": "video3d/guiones/explica/212-cafe.json"
+ },
+ {
+  "nombre": "grifo",
+  "descripcion": "grifo · del video «La Tigra: agua que nace en nubes» (escena: «Según quién lo mida, La Tigra aporta entre el 20 y el 30% del agua capitalina.»)",
+  "etiquetas": [
+   "grifo",
+   "honduras",
+   "catracho",
+   "latigra",
+   "tegucigalpa",
+   "naturaleza",
+   "sabiasque"
+  ],
+  "proporcion": 1.12,
+  "origen": "video3d/guiones/explica/215-la-tigra.json"
+ },
+ {
+  "nombre": "guara",
+  "descripcion": "guara · del video «La guara roja, ave nacional» (escena: «Roja, amarilla y azul, y con un grito que se oye de lejos: así es la guara roja.»)",
+  "etiquetas": [
+   "guara",
+   "honduras",
+   "catracho",
+   "guararoja",
+   "avenacional",
+   "copan",
+   "naturaleza"
+  ],
+  "proporcion": 0.813,
+  "origen": "video3d/guiones/explica/203-guara-roja.json"
+ },
+ {
+  "nombre": "guara_posada",
+  "descripcion": "guara posada · del video «La guara roja, ave nacional» (escena: «Desde el 28 de junio de 1993 es el ave nacional de Honduras.»)",
+  "etiquetas": [
+   "guara",
+   "posada",
+   "honduras",
+   "catracho",
+   "guararoja",
+   "avenacional",
+   "copan",
+   "naturaleza"
+  ],
+  "proporcion": 2.125,
+  "origen": "video3d/guiones/explica/203-guara-roja.json"
+ },
+ {
+  "nombre": "guerrero",
+  "descripcion": "guerrero · del video «Lempira, el que no se rindió» (escena: «Lempira fue un líder lenca. En la década de 1530 encabezó la resistencia contra los conqui»)",
+  "etiquetas": [
+   "guerrero",
+   "honduras",
+   "catracho",
+   "lempira",
+   "lenca",
+   "historia",
+   "heroes"
+  ],
+  "proporcion": 1.8,
+  "origen": "video3d/guiones/explica/218-lempira.json"
+ },
+ {
+  "nombre": "guineo",
+  "descripcion": "guineo · del video «La sopa de jutes» (escena: «A la olla van con cebolla, tomate, chile y culantro, y después yuca y guineo verde.»)",
+  "etiquetas": [
+   "guineo",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 0.5,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
+ },
+ {
+  "nombre": "haz",
+  "descripcion": "haz · del video «Las calaveras brillantes de Talgua» (escena: «En 1994, exploradores hondureños y voluntarios extranjeros hallaron una cámara escondida c»)",
+  "etiquetas": [
+   "haz",
+   "honduras",
+   "catracho",
+   "olancho",
+   "arqueologia",
+   "talgua",
+   "misterio"
+  ],
+  "proporcion": 0.553,
+  "origen": "video3d/guiones/explica/214-cuevas-talgua.json"
+ },
+ {
   "nombre": "hielo",
   "descripcion": "hielo · del video «¿Cómo se forma un rayo?» (escena: «Todo empieza en la nube de tormenta: el aire sube y baja gotas y trocitos de hielo.»)",
   "etiquetas": [
@@ -2014,6 +2750,22 @@
   ],
   "proporcion": 1.3,
   "origen": "video3d/guiones/cola/066-explica-hielo.json"
+ },
+ {
+  "nombre": "hoja_gotas",
+  "descripcion": "hoja gotas · del video «La Tigra: agua que nace en nubes» (escena: «Es un bosque nublado: la neblina pasa entre los árboles y deja gotitas en hojas y musgo.»)",
+  "etiquetas": [
+   "hoja",
+   "gotas",
+   "honduras",
+   "catracho",
+   "latigra",
+   "tegucigalpa",
+   "naturaleza",
+   "sabiasque"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/215-la-tigra.json"
  },
  {
   "nombre": "horno",
@@ -2044,6 +2796,37 @@
   ],
   "proporcion": 0.594,
   "origen": "video3d/guiones/explica/210-garifunas.json"
+ },
+ {
+  "nombre": "huesos",
+  "descripcion": "huesos · del video «Las calaveras brillantes de Talgua» (escena: «En 1994, exploradores hondureños y voluntarios extranjeros hallaron una cámara escondida c»)",
+  "etiquetas": [
+   "huesos",
+   "honduras",
+   "catracho",
+   "olancho",
+   "arqueologia",
+   "talgua",
+   "misterio"
+  ],
+  "proporcion": 0.619,
+  "origen": "video3d/guiones/explica/214-cuevas-talgua.json"
+ },
+ {
+  "nombre": "huesos_rojos",
+  "descripcion": "huesos rojos · del video «Las calaveras brillantes de Talgua» (escena: «No eran entierros comunes: limpiaban los huesos, los pintaban de rojo y los traían a la cu»)",
+  "etiquetas": [
+   "huesos",
+   "rojos",
+   "honduras",
+   "catracho",
+   "olancho",
+   "arqueologia",
+   "talgua",
+   "misterio"
+  ],
+  "proporcion": 0.619,
+  "origen": "video3d/guiones/explica/214-cuevas-talgua.json"
  },
  {
   "nombre": "huevo",
@@ -2145,6 +2928,67 @@
   "origen": "video3d/guiones/explica/210-garifunas.json"
  },
  {
+  "nombre": "isla_guanaja",
+  "descripcion": "isla guanaja · del video «El arrecife de Roatán y Utila» (escena: «En Honduras lo tienen las Islas de la Bahía: Utila, Roatán y Guanaja.»)",
+  "etiquetas": [
+   "isla",
+   "guanaja",
+   "honduras",
+   "catracho",
+   "roatan",
+   "utila",
+   "arrecife",
+   "mar"
+  ],
+  "proporcion": 0.786,
+  "origen": "video3d/guiones/explica/208-arrecife-bahia.json"
+ },
+ {
+  "nombre": "isla_hn_tiburon_ballena_utila",
+  "descripcion": "isla · del video «El gigante manso de Utila» (escena: «Uno de los mejores lugares para verlo está aquí: Utila, en las Islas de la Bahía.»)",
+  "etiquetas": [
+   "isla",
+   "honduras",
+   "catracho",
+   "utila",
+   "tiburonballena",
+   "islasdelabahia",
+   "naturaleza"
+  ],
+  "proporcion": 0.578,
+  "origen": "video3d/guiones/explica/219-tiburon-ballena-utila.json"
+ },
+ {
+  "nombre": "isla_roatan",
+  "descripcion": "isla roatan · del video «El arrecife de Roatán y Utila» (escena: «En Honduras lo tienen las Islas de la Bahía: Utila, Roatán y Guanaja.»)",
+  "etiquetas": [
+   "isla",
+   "roatan",
+   "honduras",
+   "catracho",
+   "utila",
+   "arrecife",
+   "mar"
+  ],
+  "proporcion": 0.565,
+  "origen": "video3d/guiones/explica/208-arrecife-bahia.json"
+ },
+ {
+  "nombre": "isla_utila",
+  "descripcion": "isla utila · del video «El arrecife de Roatán y Utila» (escena: «En Honduras lo tienen las Islas de la Bahía: Utila, Roatán y Guanaja.»)",
+  "etiquetas": [
+   "isla",
+   "utila",
+   "honduras",
+   "catracho",
+   "roatan",
+   "arrecife",
+   "mar"
+  ],
+  "proporcion": 0.733,
+  "origen": "video3d/guiones/explica/208-arrecife-bahia.json"
+ },
+ {
   "nombre": "islote",
   "descripcion": "islote · del video «Oxford, más vieja que los aztecas» (escena: «Tenochtitlan se fundó en 1325, sobre un islote del lago de Texcoco.»)",
   "etiquetas": [
@@ -2188,6 +3032,37 @@
   "origen": "video3d/guiones/cola/068-explica-mar.json"
  },
  {
+  "nombre": "jaula",
+  "descripcion": "jaula · del video «La guara roja, ave nacional» (escena: «Pero en el monte cada vez hay menos: les tumban el bosque y roban los pichones para vender»)",
+  "etiquetas": [
+   "jaula",
+   "honduras",
+   "catracho",
+   "guararoja",
+   "avenacional",
+   "copan",
+   "naturaleza"
+  ],
+  "proporcion": 1.313,
+  "origen": "video3d/guiones/explica/203-guara-roja.json"
+ },
+ {
+  "nombre": "jaula_abierta",
+  "descripcion": "jaula abierta · del video «La guara roja, ave nacional» (escena: «Por eso, desde 2011, en Copán Ruinas crían guaras y las sueltan libres en el parque arqueo»)",
+  "etiquetas": [
+   "jaula",
+   "abierta",
+   "honduras",
+   "catracho",
+   "guararoja",
+   "avenacional",
+   "copan",
+   "naturaleza"
+  ],
+  "proporcion": 1.313,
+  "origen": "video3d/guiones/explica/203-guara-roja.json"
+ },
+ {
   "nombre": "juncos",
   "descripcion": "juncos · del video «Yojoa: el lago de las 400 aves» (escena: «Y en sus orillas y humedales pescan garzas, patos y martines pescadores.»)",
   "etiquetas": [
@@ -2201,6 +3076,37 @@
   ],
   "proporcion": 0.3,
   "origen": "video3d/guiones/explica/206-lago-yojoa.json"
+ },
+ {
+  "nombre": "jute",
+  "descripcion": "jute · del video «La sopa de jutes» (escena: «¿Alguna vez probaste una sopa de jutes? Para muchos catrachos del occidente, esto sabe a c»)",
+  "etiquetas": [
+   "jute",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 1.615,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
+ },
+ {
+  "nombre": "jute_cortado",
+  "descripcion": "jute cortado · del video «La sopa de jutes» (escena: «Primero se lavan bien los jutes y se les corta la puntita de la concha.»)",
+  "etiquetas": [
+   "jute",
+   "cortado",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 1.615,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
  },
  {
   "nombre": "koala",
@@ -2289,6 +3195,22 @@
   "origen": "video3d/guiones/cola/072-explica-cebolla.json"
  },
  {
+  "nombre": "letrero_parque",
+  "descripcion": "letrero parque · del video «La Tigra: agua que nace en nubes» (escena: «Es La Tigra, el primer parque nacional de Honduras, declarado en 1980.»)",
+  "etiquetas": [
+   "letrero",
+   "parque",
+   "honduras",
+   "catracho",
+   "latigra",
+   "tegucigalpa",
+   "naturaleza",
+   "sabiasque"
+  ],
+  "proporcion": 0.857,
+  "origen": "video3d/guiones/explica/215-la-tigra.json"
+ },
+ {
   "nombre": "levadura",
   "descripcion": "levadura · del video «¿Por qué se infla el pan?» (escena: «Reto: adivina quién infla el pan. Pista: está vivo y es diminuto.»)",
   "etiquetas": [
@@ -2301,6 +3223,38 @@
   ],
   "proporcion": 0.909,
   "origen": "video3d/guiones/explica/072-pan-infla.json"
+ },
+ {
+  "nombre": "lidar_selva",
+  "descripcion": "lidar selva · del video «La Ciudad Blanca: ¿mito o verdad?» (escena: «Al quitar los árboles en la computadora, aparecieron plazas, montículos y terraplenes anti»)",
+  "etiquetas": [
+   "lidar",
+   "selva",
+   "honduras",
+   "catracho",
+   "ciudadblanca",
+   "mosquitia",
+   "arqueologia",
+   "misterio"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/209-ciudad-blanca.json"
+ },
+ {
+  "nombre": "lidar_suelo",
+  "descripcion": "lidar suelo · del video «La Ciudad Blanca: ¿mito o verdad?» (escena: «Al quitar los árboles en la computadora, aparecieron plazas, montículos y terraplenes anti»)",
+  "etiquetas": [
+   "lidar",
+   "suelo",
+   "honduras",
+   "catracho",
+   "ciudadblanca",
+   "mosquitia",
+   "arqueologia",
+   "misterio"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/209-ciudad-blanca.json"
  },
  {
   "nombre": "linea_tiempo",
@@ -2317,6 +3271,22 @@
   "origen": "video3d/guiones/cola/073-explica-millon.json"
  },
  {
+  "nombre": "linea_tiempo_hn_ciudad_blanca",
+  "descripcion": "linea tiempo · del video «La Ciudad Blanca: ¿mito o verdad?» (escena: «Eran de una cultura antigua, distinta de los mayas, que vivió ahí entre los años 1000 y 14»)",
+  "etiquetas": [
+   "linea",
+   "tiempo",
+   "honduras",
+   "catracho",
+   "ciudadblanca",
+   "mosquitia",
+   "arqueologia",
+   "misterio"
+  ],
+  "proporcion": 0.244,
+  "origen": "video3d/guiones/explica/209-ciudad-blanca.json"
+ },
+ {
   "nombre": "lineas_campo",
   "descripcion": "lineas campo · del video «¿Cómo funciona una brújula?» (escena: «La razón: la Tierra entera se porta como un imán gigante.»)",
   "etiquetas": [
@@ -2330,6 +3300,21 @@
   ],
   "proporcion": 1,
   "origen": "video3d/guiones/explica/071-brujula-norte.json"
+ },
+ {
+  "nombre": "linterna",
+  "descripcion": "linterna · del video «Las calaveras brillantes de Talgua» (escena: «En 1994, exploradores hondureños y voluntarios extranjeros hallaron una cámara escondida c»)",
+  "etiquetas": [
+   "linterna",
+   "honduras",
+   "catracho",
+   "olancho",
+   "arqueologia",
+   "talgua",
+   "misterio"
+  ],
+  "proporcion": 0.563,
+  "origen": "video3d/guiones/explica/214-cuevas-talgua.json"
  },
  {
   "nombre": "lluvia",
@@ -2400,6 +3385,21 @@
   "origen": "video3d/guiones/cola/064-explica-cielo.json"
  },
  {
+  "nombre": "maduro",
+  "descripcion": "maduro · del video «La sopa de jutes» (escena: «Algunas familias le echan leche de coco o plátano maduro. Cada casa tiene su receta.»)",
+  "etiquetas": [
+   "maduro",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 0.5,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
+ },
+ {
   "nombre": "malla",
   "descripcion": "malla · del video «¿Cómo funciona un microondas?» (escena: «La caja de metal y la rejilla de la puerta rebotan las ondas y no las dejan salir.»)",
   "etiquetas": [
@@ -2427,6 +3427,21 @@
   ],
   "proporcion": 0.267,
   "origen": "video3d/guiones/explica/206-lago-yojoa.json"
+ },
+ {
+  "nombre": "manchas_hn_tiburon_ballena_utila",
+  "descripcion": "manchas · del video «El gigante manso de Utila» (escena: «Y cada uno tiene manchas únicas, como una huella digital. Así los identifican los científi»)",
+  "etiquetas": [
+   "manchas",
+   "honduras",
+   "catracho",
+   "utila",
+   "tiburonballena",
+   "islasdelabahia",
+   "naturaleza"
+  ],
+  "proporcion": 0.667,
+  "origen": "video3d/guiones/explica/219-tiburon-ballena-utila.json"
  },
  {
   "nombre": "mantequilla",
@@ -2487,6 +3502,22 @@
   ],
   "proporcion": 1.111,
   "origen": "video3d/guiones/explica/207-rio-platano.json"
+ },
+ {
+  "nombre": "mapa_viejo",
+  "descripcion": "mapa viejo · del video «La Ciudad Blanca: ¿mito o verdad?» (escena: «En 1940, el explorador Theodore Morde dijo haber hallado la «Ciudad del Dios Mono», pero n»)",
+  "etiquetas": [
+   "mapa",
+   "viejo",
+   "honduras",
+   "catracho",
+   "ciudadblanca",
+   "mosquitia",
+   "arqueologia",
+   "misterio"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/209-ciudad-blanca.json"
  },
  {
   "nombre": "maraca",
@@ -2704,6 +3735,21 @@
   "origen": "video3d/guiones/cola/066-explica-hielo.json"
  },
  {
+  "nombre": "moneda",
+  "descripcion": "moneda · del video «Lempira, el que no se rindió» (escena: «Cada vez que pagas con lempiras, dices el nombre de un hombre que no se rindió.»)",
+  "etiquetas": [
+   "moneda",
+   "honduras",
+   "catracho",
+   "lempira",
+   "lenca",
+   "historia",
+   "heroes"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/218-lempira.json"
+ },
+ {
   "nombre": "montana",
   "descripcion": "montana · del video «¿Por qué el mar es salado?» (escena: «Todo empieza con la lluvia: es un poquito ácida y desgasta las rocas muy despacio.»)",
   "etiquetas": [
@@ -2748,6 +3794,21 @@
   "origen": "video3d/guiones/explica/074-ascensor-contrapeso.json"
  },
  {
+  "nombre": "neblina",
+  "descripcion": "neblina · del video «La Tigra: agua que nace en nubes» (escena: «¿Sabías que parte del agua de Tegucigalpa nace entre las nubes de una montaña?»)",
+  "etiquetas": [
+   "neblina",
+   "honduras",
+   "catracho",
+   "latigra",
+   "tegucigalpa",
+   "naturaleza",
+   "sabiasque"
+  ],
+  "proporcion": 0.3,
+  "origen": "video3d/guiones/explica/215-la-tigra.json"
+ },
+ {
   "nombre": "nevera_corte",
   "descripcion": "nevera corte · del video «¿Cómo enfría una nevera?» (escena: «El truco: la nevera no fabrica frío. Le saca el calor a lo de adentro y lo tira afuera.»)",
   "etiquetas": [
@@ -2788,6 +3849,37 @@
   ],
   "proporcion": 1,
   "origen": "video3d/guiones/explica/084-mar-muerto.json"
+ },
+ {
+  "nombre": "notas",
+  "descripcion": "notas · del video «El Carnaval de La Ceiba» (escena: «Suenan la punta, la marimba y las bandas, y el baile sigue hasta llegar a la playa.»)",
+  "etiquetas": [
+   "notas",
+   "honduras",
+   "catracho",
+   "laceiba",
+   "carnaval",
+   "feriaisidra",
+   "cultura"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/211-carnaval-ceiba.json"
+ },
+ {
+  "nombre": "notas_hn_sopa_de_caracol",
+  "descripcion": "notas · del video «Sopa de caracol: el hit catracho» (escena: «En 1991, una canción hondureña llegó al número 1 de las listas latinas de Billboard.»)",
+  "etiquetas": [
+   "notas",
+   "honduras",
+   "catracho",
+   "sopadecaracol",
+   "bandablanca",
+   "punta",
+   "garifuna",
+   "musica"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/216-sopa-de-caracol.json"
  },
  {
   "nombre": "nube",
@@ -2883,6 +3975,21 @@
   ],
   "proporcion": 0.375,
   "origen": "video3d/guiones/explica/070-caracola-mar.json"
+ },
+ {
+  "nombre": "olla",
+  "descripcion": "olla · del video «La sopa de jutes» (escena: «A la olla van con cebolla, tomate, chile y culantro, y después yuca y guineo verde.»)",
+  "etiquetas": [
+   "olla",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 0.821,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
  },
  {
   "nombre": "olores",
@@ -3115,6 +4222,22 @@
   "origen": "video3d/guiones/explica/072-pan-infla.json"
  },
  {
+  "nombre": "partitura",
+  "descripcion": "partitura · del video «Sopa de caracol: el hit catracho» (escena: «Los créditos la dan a Hernán «Chico» Ramos, músico beliceño, y a Pilo Tejeda, la voz de la»)",
+  "etiquetas": [
+   "partitura",
+   "honduras",
+   "catracho",
+   "sopadecaracol",
+   "bandablanca",
+   "punta",
+   "garifuna",
+   "musica"
+  ],
+  "proporcion": 0.743,
+  "origen": "video3d/guiones/explica/216-sopa-de-caracol.json"
+ },
+ {
   "nombre": "peces",
   "descripcion": "peces · del video «¿Por qué el hielo flota?» (escena: «Esa tapa aísla, y abajo el agua sigue líquida, cerca de 4 °C. Ahí los peces pasan el invie»)",
   "etiquetas": [
@@ -3126,6 +4249,21 @@
   ],
   "proporcion": 1.3,
   "origen": "video3d/guiones/cola/066-explica-hielo.json"
+ },
+ {
+  "nombre": "peces_hn_arrecife_bahia",
+  "descripcion": "peces · del video «El arrecife de Roatán y Utila» (escena: «Bajo el mar hay una muralla viva de unos 1.000 kilómetros… y una punta está en Honduras.»)",
+  "etiquetas": [
+   "peces",
+   "honduras",
+   "catracho",
+   "roatan",
+   "utila",
+   "arrecife",
+   "mar"
+  ],
+  "proporcion": 0.5,
+  "origen": "video3d/guiones/explica/208-arrecife-bahia.json"
  },
  {
   "nombre": "peces_hn_lluvia_peces_yoro",
@@ -3141,6 +4279,51 @@
   ],
   "proporcion": 1.231,
   "origen": "video3d/guiones/explica/201-lluvia-peces-yoro.json"
+ },
+ {
+  "nombre": "pendulo",
+  "descripcion": "pendulo · del video «El reloj de Comayagua» (escena: «Lo que sí se ve es su máquina: hierro forjado, engranajes, cuerdas, pesas y un péndulo.»)",
+  "etiquetas": [
+   "pendulo",
+   "honduras",
+   "catracho",
+   "comayagua",
+   "historia",
+   "comofunciona",
+   "mitooverdad"
+  ],
+  "proporcion": 2.545,
+  "origen": "video3d/guiones/explica/213-reloj-comayagua.json"
+ },
+ {
+  "nombre": "penol",
+  "descripcion": "penol · del video «Lempira, el que no se rindió» (escena: «Se hizo fuerte en el peñol de Cerquín, en las montañas del occidente, hoy departamento de »)",
+  "etiquetas": [
+   "penol",
+   "honduras",
+   "catracho",
+   "lempira",
+   "lenca",
+   "historia",
+   "heroes"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/explica/218-lempira.json"
+ },
+ {
+  "nombre": "pergamino",
+  "descripcion": "pergamino · del video «¿Por qué se llama Honduras?» (escena: «Pero ojo: esa frase no aparece en las cartas de Colón. La contó un cronista décadas despué»)",
+  "etiquetas": [
+   "pergamino",
+   "honduras",
+   "catracho",
+   "historia",
+   "colon",
+   "graciasadios",
+   "sabiasque"
+  ],
+  "proporcion": 0.8,
+  "origen": "video3d/guiones/explica/217-nombre-honduras.json"
  },
  {
   "nombre": "persona",
@@ -3180,6 +4363,21 @@
   "origen": "video3d/guiones/cola/062-explica-tunel.json"
  },
  {
+  "nombre": "pesa",
+  "descripcion": "pesa · del video «El reloj de Comayagua» (escena: «Lo que sí se ve es su máquina: hierro forjado, engranajes, cuerdas, pesas y un péndulo.»)",
+  "etiquetas": [
+   "pesa",
+   "honduras",
+   "catracho",
+   "comayagua",
+   "historia",
+   "comofunciona",
+   "mitooverdad"
+  ],
+  "proporcion": 2.556,
+  "origen": "video3d/guiones/explica/213-reloj-comayagua.json"
+ },
+ {
   "nombre": "pez",
   "descripcion": "pez · del video «La lluvia de peces de Yoro» (escena: «La tradición dice que es un milagro del padre Subirana, que oró para que a los pobres no l»)",
   "etiquetas": [
@@ -3208,6 +4406,21 @@
   ],
   "proporcion": 0.6,
   "origen": "video3d/guiones/explica/083-fondo-mar.json"
+ },
+ {
+  "nombre": "piedra",
+  "descripcion": "piedra · del video «La guara roja, ave nacional» (escena: «Para los mayas estaba ligada al sol. En la cancha de pelota de Copán hay guaras talladas e»)",
+  "etiquetas": [
+   "piedra",
+   "honduras",
+   "catracho",
+   "guararoja",
+   "avenacional",
+   "copan",
+   "naturaleza"
+  ],
+  "proporcion": 0.952,
+  "origen": "video3d/guiones/explica/203-guara-roja.json"
  },
  {
   "nombre": "piedras_puntas",
@@ -3344,6 +4557,36 @@
   "origen": "video3d/guiones/explica/207-rio-platano.json"
  },
  {
+  "nombre": "plancton",
+  "descripcion": "plancton · del video «El arrecife de Roatán y Utila» (escena: «Tranquilo, no come gente: nada con la boca abierta y filtra plancton diminuto.»)",
+  "etiquetas": [
+   "plancton",
+   "honduras",
+   "catracho",
+   "roatan",
+   "utila",
+   "arrecife",
+   "mar"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/208-arrecife-bahia.json"
+ },
+ {
+  "nombre": "plancton_hn_tiburon_ballena_utila",
+  "descripcion": "plancton · del video «El gigante manso de Utila» (escena: «No caza personas: abre la boca, traga agua y filtra plancton, animalitos diminutos.»)",
+  "etiquetas": [
+   "plancton",
+   "honduras",
+   "catracho",
+   "utila",
+   "tiburonballena",
+   "islasdelabahia",
+   "naturaleza"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/219-tiburon-ballena-utila.json"
+ },
+ {
   "nombre": "plato",
   "descripcion": "plato · del video «¿Cómo funciona un microondas?» (escena: «¿Cómo calienta la comida un microondas, si por dentro no hay ni fuego?»)",
   "etiquetas": [
@@ -3373,6 +4616,53 @@
   "origen": "video3d/guiones/cola/067-explica-microondas.json"
  },
  {
+  "nombre": "plato_hn_sopa_de_jutes",
+  "descripcion": "plato · del video «La sopa de jutes» (escena: «¿Alguna vez probaste una sopa de jutes? Para muchos catrachos del occidente, esto sabe a c»)",
+  "etiquetas": [
+   "plato",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 0.656,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
+ },
+ {
+  "nombre": "plato_sopa",
+  "descripcion": "plato sopa · del video «Sopa de caracol: el hit catracho» (escena: «Mezcla garífuna y español, y le canta a la sopa de caracol con leche de coco de la costa.»)",
+  "etiquetas": [
+   "plato",
+   "sopa",
+   "honduras",
+   "catracho",
+   "sopadecaracol",
+   "bandablanca",
+   "punta",
+   "garifuna",
+   "musica"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/explica/216-sopa-de-caracol.json"
+ },
+ {
+  "nombre": "playa",
+  "descripcion": "playa · del video «El Carnaval de La Ceiba» (escena: «Suenan la punta, la marimba y las bandas, y el baile sigue hasta llegar a la playa.»)",
+  "etiquetas": [
+   "playa",
+   "honduras",
+   "catracho",
+   "laceiba",
+   "carnaval",
+   "feriaisidra",
+   "cultura"
+  ],
+  "proporcion": 0.463,
+  "origen": "video3d/guiones/explica/211-carnaval-ceiba.json"
+ },
+ {
   "nombre": "pozo",
   "descripcion": "pozo · del video «¿Cómo funciona un ascensor?» (escena: «¿Cómo sube un ascensor lleno sin que el motor sude? El secreto cuelga del otro lado.»)",
   "etiquetas": [
@@ -3385,6 +4675,21 @@
   ],
   "proporcion": 1.571,
   "origen": "video3d/guiones/explica/074-ascensor-contrapeso.json"
+ },
+ {
+  "nombre": "profundidad",
+  "descripcion": "profundidad · del video «¿Por qué se llama Honduras?» (escena: «Y en español, «honduras» quiere decir eso: profundidades, aguas hondas.»)",
+  "etiquetas": [
+   "profundidad",
+   "honduras",
+   "catracho",
+   "historia",
+   "colon",
+   "graciasadios",
+   "sabiasque"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/explica/217-nombre-honduras.json"
  },
  {
   "nombre": "puente",
@@ -3509,6 +4814,21 @@
   "origen": "video3d/guiones/explica/078-rayo.json"
  },
  {
+  "nombre": "rayo_hn_nombre_honduras",
+  "descripcion": "rayo · del video «¿Por qué se llama Honduras?» (escena: «¿Sabías que el nombre de Honduras, según la tradición, nació de una tormenta en el mar?»)",
+  "etiquetas": [
+   "rayo",
+   "honduras",
+   "catracho",
+   "historia",
+   "colon",
+   "graciasadios",
+   "sabiasque"
+  ],
+  "proporcion": 1.667,
+  "origen": "video3d/guiones/explica/217-nombre-honduras.json"
+ },
+ {
   "nombre": "rayo_luz",
   "descripcion": "rayo luz · del video «¿Por qué el arcoíris es curvo?» (escena: «La luz del Sol entra en la gota y se dobla: eso es la refracción.»)",
   "etiquetas": [
@@ -3521,6 +4841,22 @@
   ],
   "proporcion": 1.192,
   "origen": "video3d/guiones/explica/077-arcoiris.json"
+ },
+ {
+  "nombre": "rayos_lidar",
+  "descripcion": "rayos lidar · del video «La Ciudad Blanca: ¿mito o verdad?» (escena: «En 2012, un avión escaneó la selva con LiDAR: un láser que ve entre los árboles.»)",
+  "etiquetas": [
+   "rayos",
+   "lidar",
+   "honduras",
+   "catracho",
+   "ciudadblanca",
+   "mosquitia",
+   "arqueologia",
+   "misterio"
+  ],
+  "proporcion": 1.55,
+  "origen": "video3d/guiones/explica/209-ciudad-blanca.json"
  },
  {
   "nombre": "rebote",
@@ -3590,6 +4926,22 @@
   "origen": "biblioteca"
  },
  {
+  "nombre": "reloj_arena",
+  "descripcion": "reloj arena · del video «Las calaveras brillantes de Talgua» (escena: «Según el radiocarbono, la mayoría tiene entre 2.500 y casi 3.000 años.»)",
+  "etiquetas": [
+   "reloj",
+   "arena",
+   "honduras",
+   "catracho",
+   "olancho",
+   "arqueologia",
+   "talgua",
+   "misterio"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/explica/214-cuevas-talgua.json"
+ },
+ {
   "nombre": "reloj_avion_vuela",
   "descripcion": "reloj · del video «¿Por qué vuela un avión?» (escena: «Ojo: el aire de arriba no tiene que llegar al mismo tiempo que el de abajo. Eso es un mito»)",
   "etiquetas": [
@@ -3633,6 +4985,52 @@
   "origen": "video3d/guiones/explica/109-anos-durmiendo.json"
  },
  {
+  "nombre": "rio",
+  "descripcion": "rio · del video «La sopa de jutes» (escena: «El jute es un caracol de agua dulce: vive en ríos y quebradas, no en el mar.»)",
+  "etiquetas": [
+   "rio",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 0.62,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
+ },
+ {
+  "nombre": "ruina_blanca",
+  "descripcion": "ruina blanca · del video «La Ciudad Blanca: ¿mito o verdad?» (escena: «Dicen que en lo más profundo de La Mosquitia se esconde una ciudad blanca, perdida en la s»)",
+  "etiquetas": [
+   "ruina",
+   "blanca",
+   "honduras",
+   "catracho",
+   "ciudadblanca",
+   "mosquitia",
+   "arqueologia",
+   "misterio"
+  ],
+  "proporcion": 0.72,
+  "origen": "video3d/guiones/explica/209-ciudad-blanca.json"
+ },
+ {
+  "nombre": "saco",
+  "descripcion": "saco · del video «El viaje del café catracho» (escena: «Ya sin su cascarilla queda el café oro: el grano verde que se exporta en sacos.»)",
+  "etiquetas": [
+   "saco",
+   "honduras",
+   "catracho",
+   "cafe",
+   "ihcafe",
+   "comofunciona",
+   "sabiasque"
+  ],
+  "proporcion": 1.143,
+  "origen": "video3d/guiones/explica/212-cafe.json"
+ },
+ {
   "nombre": "salero",
   "descripcion": "salero · del video «¿Por qué el mar es salado?» (escena: «Durante millones de años se fue acumulando. La mayor parte es sodio y cloro, como la sal d»)",
   "etiquetas": [
@@ -3659,6 +5057,54 @@
   ],
   "proporcion": 0.571,
   "origen": "video3d/guiones/explica/082-gps.json"
+ },
+ {
+  "nombre": "selva_frente",
+  "descripcion": "selva frente · del video «La Ciudad Blanca: ¿mito o verdad?» (escena: «Dicen que en lo más profundo de La Mosquitia se esconde una ciudad blanca, perdida en la s»)",
+  "etiquetas": [
+   "selva",
+   "frente",
+   "honduras",
+   "catracho",
+   "ciudadblanca",
+   "mosquitia",
+   "arqueologia",
+   "misterio"
+  ],
+  "proporcion": 0.4,
+  "origen": "video3d/guiones/explica/209-ciudad-blanca.json"
+ },
+ {
+  "nombre": "selva_noche",
+  "descripcion": "selva noche · del video «La Ciudad Blanca: ¿mito o verdad?» (escena: «Dicen que en lo más profundo de La Mosquitia se esconde una ciudad blanca, perdida en la s»)",
+  "etiquetas": [
+   "selva",
+   "noche",
+   "honduras",
+   "catracho",
+   "ciudadblanca",
+   "mosquitia",
+   "arqueologia",
+   "misterio"
+  ],
+  "proporcion": 0.9,
+  "origen": "video3d/guiones/explica/209-ciudad-blanca.json"
+ },
+ {
+  "nombre": "selva_plana",
+  "descripcion": "selva plana · del video «La Ciudad Blanca: ¿mito o verdad?» (escena: «En 2012, un avión escaneó la selva con LiDAR: un láser que ve entre los árboles.»)",
+  "etiquetas": [
+   "selva",
+   "plana",
+   "honduras",
+   "catracho",
+   "ciudadblanca",
+   "mosquitia",
+   "arqueologia",
+   "misterio"
+  ],
+  "proporcion": 0.36,
+  "origen": "video3d/guiones/explica/209-ciudad-blanca.json"
  },
  {
   "nombre": "selva_rio",
@@ -3728,6 +5174,36 @@
   ],
   "proporcion": 1,
   "origen": "video3d/guiones/cola/064-explica-cielo.json"
+ },
+ {
+  "nombre": "sol_hn_guara_roja",
+  "descripcion": "sol · del video «La guara roja, ave nacional» (escena: «Para los mayas estaba ligada al sol. En la cancha de pelota de Copán hay guaras talladas e»)",
+  "etiquetas": [
+   "sol",
+   "honduras",
+   "catracho",
+   "guararoja",
+   "avenacional",
+   "copan",
+   "naturaleza"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/203-guara-roja.json"
+ },
+ {
+  "nombre": "sombrero",
+  "descripcion": "sombrero · del video «La Ciudad Blanca: ¿mito o verdad?» (escena: «En 1940, el explorador Theodore Morde dijo haber hallado la «Ciudad del Dios Mono», pero n»)",
+  "etiquetas": [
+   "sombrero",
+   "honduras",
+   "catracho",
+   "ciudadblanca",
+   "mosquitia",
+   "arqueologia",
+   "misterio"
+  ],
+  "proporcion": 0.55,
+  "origen": "video3d/guiones/explica/209-ciudad-blanca.json"
  },
  {
   "nombre": "subsuelo",
@@ -3816,6 +5292,22 @@
   "origen": "video3d/guiones/explica/210-garifunas.json"
  },
  {
+  "nombre": "tambor_hn_sopa_de_caracol",
+  "descripcion": "tambor · del video «Sopa de caracol: el hit catracho» (escena: «Su ritmo es la punta, música y baile del pueblo garífuna de nuestra costa norte.»)",
+  "etiquetas": [
+   "tambor",
+   "honduras",
+   "catracho",
+   "sopadecaracol",
+   "bandablanca",
+   "punta",
+   "garifuna",
+   "musica"
+  ],
+  "proporcion": 1.5,
+  "origen": "video3d/guiones/explica/216-sopa-de-caracol.json"
+ },
+ {
   "nombre": "tanque_bajo",
   "descripcion": "tanque bajo · del video «¿Cómo funciona el inodoro?» (escena: «Al jalar la palanca, el tanque suelta toda su agua de golpe dentro de la taza.»)",
   "etiquetas": [
@@ -3873,6 +5365,21 @@
   "origen": "video3d/guiones/cola/067-explica-microondas.json"
  },
  {
+  "nombre": "taza_cafe",
+  "descripcion": "taza cafe · del video «El viaje del café catracho» (escena: «Ese cafecito de la mañana empezó siendo una frutita roja en una montaña catracha.»)",
+  "etiquetas": [
+   "taza",
+   "cafe",
+   "honduras",
+   "catracho",
+   "ihcafe",
+   "comofunciona",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/explica/212-cafe.json"
+ },
+ {
   "nombre": "tele_vieja",
   "descripcion": "tele vieja · del video «Millón vs mil millones de segundos» (escena: «Para que lo sientas: hace mil millones de segundos, el calendario decía 1995.»)",
   "etiquetas": [
@@ -3917,6 +5424,21 @@
   "origen": "video3d/guiones/explica/108-oxford-aztecas.json"
  },
  {
+  "nombre": "templo_hn_guara_roja",
+  "descripcion": "templo · del video «La guara roja, ave nacional» (escena: «Hoy se ven volando otra vez sobre las ruinas mayas, como en los tiempos de los reyes.»)",
+  "etiquetas": [
+   "templo",
+   "honduras",
+   "catracho",
+   "guararoja",
+   "avenacional",
+   "copan",
+   "naturaleza"
+  ],
+  "proporcion": 0.6,
+  "origen": "video3d/guiones/explica/203-guara-roja.json"
+ },
+ {
   "nombre": "termometro",
   "descripcion": "termometro",
   "etiquetas": [
@@ -3938,6 +5460,38 @@
   ],
   "proporcion": 3.333,
   "origen": "video3d/guiones/cola/065-explica-espacio.json"
+ },
+ {
+  "nombre": "tiburon_ballena",
+  "descripcion": "tiburon ballena · del video «El arrecife de Roatán y Utila» (escena: «Y en Utila se puede ver al tiburón ballena, el pez más grande del mundo.»)",
+  "etiquetas": [
+   "tiburon",
+   "ballena",
+   "honduras",
+   "catracho",
+   "roatan",
+   "utila",
+   "arrecife",
+   "mar"
+  ],
+  "proporcion": 0.42,
+  "origen": "video3d/guiones/explica/208-arrecife-bahia.json"
+ },
+ {
+  "nombre": "tiburon_ballena_hn_tiburon_ballena_utila",
+  "descripcion": "tiburon ballena · del video «El gigante manso de Utila» (escena: «Mide como un bus, tiene una boca enorme… y aun así no le hace daño a nadie.»)",
+  "etiquetas": [
+   "tiburon",
+   "ballena",
+   "honduras",
+   "catracho",
+   "utila",
+   "tiburonballena",
+   "islasdelabahia",
+   "naturaleza"
+  ],
+  "proporcion": 0.4,
+  "origen": "video3d/guiones/explica/219-tiburon-ballena-utila.json"
  },
  {
   "nombre": "tierra",
@@ -4006,6 +5560,21 @@
   "origen": "video3d/guiones/cola/071-explica-barco.json"
  },
  {
+  "nombre": "tocon",
+  "descripcion": "tocon · del video «La guara roja, ave nacional» (escena: «Pero en el monte cada vez hay menos: les tumban el bosque y roban los pichones para vender»)",
+  "etiquetas": [
+   "tocon",
+   "honduras",
+   "catracho",
+   "guararoja",
+   "avenacional",
+   "copan",
+   "naturaleza"
+  ],
+  "proporcion": 0.652,
+  "origen": "video3d/guiones/explica/203-guara-roja.json"
+ },
+ {
   "nombre": "tocones",
   "descripcion": "tocones · del video «Río Plátano: la selva de Honduras» (escena: «Pero la tala y la ganadería ilegal se la están comiendo. Hoy es patrimonio en peligro.»)",
   "etiquetas": [
@@ -4019,6 +5588,21 @@
   ],
   "proporcion": 0.444,
   "origen": "video3d/guiones/explica/207-rio-platano.json"
+ },
+ {
+  "nombre": "tomate",
+  "descripcion": "tomate · del video «La sopa de jutes» (escena: «A la olla van con cebolla, tomate, chile y culantro, y después yuca y guineo verde.»)",
+  "etiquetas": [
+   "tomate",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 1,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
  },
  {
   "nombre": "tormenta",
@@ -4049,6 +5633,21 @@
   ],
   "proporcion": 1,
   "origen": "video3d/guiones/explica/200-baleada.json"
+ },
+ {
+  "nombre": "tortillas",
+  "descripcion": "tortillas · del video «La sopa de jutes» (escena: «Se sirve bien calientita, con tortillas, y el jute se sorbe por la puntita que se le cortó»)",
+  "etiquetas": [
+   "tortillas",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 0.531,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
  },
  {
   "nombre": "tromba",
@@ -4096,6 +5695,21 @@
   "origen": "video3d/guiones/explica/207-rio-platano.json"
  },
  {
+  "nombre": "vagoneta",
+  "descripcion": "vagoneta · del video «La Tigra: agua que nace en nubes» (escena: «Pero antes fue tierra minera: desde 1880, la Rosario Mining Company sacó plata y oro en Sa»)",
+  "etiquetas": [
+   "vagoneta",
+   "honduras",
+   "catracho",
+   "latigra",
+   "tegucigalpa",
+   "naturaleza",
+   "sabiasque"
+  ],
+  "proporcion": 0.7,
+  "origen": "video3d/guiones/explica/215-la-tigra.json"
+ },
+ {
   "nombre": "vaiven",
   "descripcion": "vaiven · del video «¿Y si caes a través de la Tierra?» (escena: «Y si nadie te atrapa, vuelves a caer, y vas y vienes para siempre.»)",
   "etiquetas": [
@@ -4137,6 +5751,21 @@
   ],
   "proporcion": 1.3,
   "origen": "video3d/guiones/cola/067-explica-microondas.json"
+ },
+ {
+  "nombre": "vapor_hn_cafe",
+  "descripcion": "vapor · del video «El viaje del café catracho» (escena: «Ese cafecito de la mañana empezó siendo una frutita roja en una montaña catracha.»)",
+  "etiquetas": [
+   "vapor",
+   "honduras",
+   "catracho",
+   "cafe",
+   "ihcafe",
+   "comofunciona",
+   "sabiasque"
+  ],
+  "proporcion": 1.067,
+  "origen": "video3d/guiones/explica/212-cafe.json"
  },
  {
   "nombre": "vapor_mar_salado",
@@ -4281,6 +5910,21 @@
   ],
   "proporcion": 1.4,
   "origen": "video3d/guiones/cola/062-explica-tunel.json"
+ },
+ {
+  "nombre": "yuca",
+  "descripcion": "yuca · del video «La sopa de jutes» (escena: «A la olla van con cebolla, tomate, chile y culantro, y después yuca y guineo verde.»)",
+  "etiquetas": [
+   "yuca",
+   "honduras",
+   "catracho",
+   "sopadejutes",
+   "comidahondurena",
+   "copan",
+   "recetas"
+  ],
+  "proporcion": 0.471,
+  "origen": "video3d/guiones/explica/204-sopa-de-jutes.json"
  },
  {
   "nombre": "zona_alta",

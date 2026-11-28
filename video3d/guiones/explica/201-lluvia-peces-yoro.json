@@ -1,0 +1,411 @@
+{
+  "id": "explica-hn-lluvia-peces-yoro",
+  "motor": "explica",
+  "titulo": "La lluvia de peces de Yoro",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "yoro",
+    "lluviadepeces",
+    "misterio",
+    "sabiasque"
+  ],
+  "descripcion": "Después de una tormenta, el suelo de Yoro amanece lleno de pescaditos vivos. Qué cuenta la gente, la tradición del padre Subirana y las dos hipótesis que hay. Spoiler: nadie lo ha explicado del todo.",
+  "musica": "synthwave",
+  "paleta": {
+    "a": "#3fb6a8",
+    "b": "#1d5e7a"
+  },
+  "escenas": [
+    {
+      "fondo": "oscuro",
+      "texto": "Imaginate salir después de una tormenta en Yoro… y encontrar el suelo lleno de pescaditos vivos.",
+      "clave": "pescaditos",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1
+        ],
+        "a": [
+          0.5,
+          0.68,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tormenta",
+          "x": 0.5,
+          "y": 0.37,
+          "ancho": 800,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "svg": "lluvia",
+          "x": 0.5,
+          "y": 0.56,
+          "ancho": 640,
+          "anim": "caer",
+          "sombra": false,
+          "en": "tormenta"
+        },
+        {
+          "svg": "charco",
+          "x": 0.5,
+          "y": 0.8,
+          "ancho": 1000,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": "suelo"
+        },
+        {
+          "etiqueta": "¡vivos!",
+          "x": 0.8,
+          "y": 0.68,
+          "color": "#e8433a",
+          "a": [
+            0.62,
+            0.8
+          ],
+          "en": "vivos"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Pasa en el departamento de Yoro, casi siempre con las primeras lluvias fuertes de mayo o junio.",
+      "clave": "Yoro",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.383,
+          0.58,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "mapa_hn",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 900,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "pin",
+          "x": 0.383,
+          "y": 0.512,
+          "ancho": 100,
+          "anim": "caer",
+          "en": "Yoro"
+        },
+        {
+          "etiqueta": "Yoro",
+          "x": 0.66,
+          "y": 0.38,
+          "color": "#e8433a",
+          "a": [
+            0.383,
+            0.49800000000000005
+          ],
+          "en": "Yoro"
+        },
+        {
+          "numero": "mayo · junio",
+          "x": 0.5,
+          "y": 0.84,
+          "color": "#1d1d2b",
+          "tam": 56,
+          "en": "mayo"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Allá le dicen la lluvia de peces, y desde 1998 hasta tiene su propio festival.",
+      "voz": "Allá le dicen la lluvia de peces, y desde mil novecientos noventa y ocho hasta tiene su propio festival.",
+      "clave": "festival",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "peces",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 560,
+          "anim": "caer",
+          "en": 0
+        },
+        {
+          "svg": "banderines",
+          "x": 0.5,
+          "y": 0.33,
+          "ancho": 1000,
+          "anim": "slideIn",
+          "desde": "arriba",
+          "sombra": false,
+          "en": "festival"
+        },
+        {
+          "numero": "1998",
+          "x": 0.8,
+          "y": 0.84,
+          "color": "#6b4fe0",
+          "tam": 80,
+          "en": "1998"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "La tradición dice que es un milagro del padre Subirana, que oró para que a los pobres no les faltara comida.",
+      "clave": "tradición",
+      "nota": "misionero del siglo XIX",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.45,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "padre",
+          "x": 0.38,
+          "y": 0.64,
+          "ancho": 440,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "pez",
+          "x": 0.78,
+          "y": 0.5,
+          "ancho": 220,
+          "anim": "caer",
+          "idle": "flotar",
+          "en": "oró"
+        },
+        {
+          "svg": "pez",
+          "x": 0.8,
+          "y": 0.7,
+          "ancho": 180,
+          "anim": "caer",
+          "idle": "flotar",
+          "en": "comida"
+        },
+        {
+          "etiqueta": "según la tradición",
+          "x": 0.5,
+          "y": 0.31,
+          "color": "#6b4fe0",
+          "en": "tradición"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Una hipótesis: una tromba de agua levanta los peces y la tormenta los deja caer tierra adentro.",
+      "clave": "tromba",
+      "nota": "hipótesis 1",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.52,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tromba",
+          "x": 0.36,
+          "y": 0.62,
+          "ancho": 520,
+          "anim": "crecer",
+          "idle": "balanceo",
+          "en": 0
+        },
+        {
+          "svg": "peces",
+          "x": 0.78,
+          "y": 0.62,
+          "ancho": 320,
+          "anim": "caer",
+          "en": "caer"
+        },
+        {
+          "etiqueta": "tromba",
+          "x": 0.72,
+          "y": 0.38,
+          "color": "#2f7fd2",
+          "a": [
+            0.4,
+            0.52
+          ],
+          "en": "tromba"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Otra: los peces viven en ríos bajo tierra, y con la crecida el agua los empuja hasta la superficie.",
+      "clave": "bajo tierra",
+      "nota": "hipótesis 2",
+      "camara": {
+        "de": [
+          0.5,
+          0.66,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "subsuelo",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 980,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": 0
+        },
+        {
+          "svg": "flecha",
+          "x": 0.73,
+          "y": 0.5,
+          "ancho": 200,
+          "rot": -90,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "crecida"
+        },
+        {
+          "etiqueta": "río subterráneo",
+          "x": 0.3,
+          "y": 0.86,
+          "color": "#2f78b0",
+          "a": [
+            0.3,
+            0.73
+          ],
+          "en": "ríos"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "La verdad es que nadie lo ha explicado del todo. Sigue siendo un misterio bien catracho.",
+      "clave": "misterio",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "pez",
+          "x": 0.46,
+          "y": 0.6,
+          "ancho": 520,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "svg": "lupa",
+          "x": 0.62,
+          "y": 0.66,
+          "ancho": 420,
+          "anim": "slideIn",
+          "desde": "derecha",
+          "idle": "balanceo",
+          "en": "explicado"
+        },
+        {
+          "numero": "¿?",
+          "x": 0.5,
+          "y": 0.36,
+          "color": "#6b4fe0",
+          "tam": 110,
+          "en": "misterio"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Si sos de Yoro y lo has visto, contanos abajo. Y síguenos para más misterios de Honduras.",
+      "clave": "síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "tormenta": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 320\"><g transform=\"translate(0 0)\"><ellipse cx=\"320\" cy=\"186\" rx=\"294.40000000000003\" ry=\"90\" fill=\"#3e4656\"/><circle cx=\"192\" cy=\"135\" r=\"90\" fill=\"#4a5366\"/><circle cx=\"358.40000000000003\" cy=\"108\" r=\"108\" fill=\"#555f74\"/><circle cx=\"486.4\" cy=\"150\" r=\"78\" fill=\"#4a5366\"/><ellipse cx=\"320\" cy=\"222\" rx=\"268.8\" ry=\"42.00000000000001\" fill=\"#323947\"/><path d=\"M256 60 Q332.8 24 422.40000000000003 48\" stroke=\"#6f7a92\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/></g><path d=\"M380 230 L340 300 L372 300 L344 320 L420 270 L388 270 L410 230Z\" fill=\"#ffd24a\"/></svg>",
+    "lluvia": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 420\"><path d=\"M30 10 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M491 98 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M59 136 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M309 214 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M217 263 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M257 324 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M343 13 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M113 90 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M365 149 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M260 193 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M44 279 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M119 319 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M440 30 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M32 100 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M122 168 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M251 225 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M493 277 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M247 335 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M352 34 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M191 100 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M410 152 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M308 205 l-16 46\" stroke=\"#9fd3ff\" stroke-width=\"9\" stroke-linecap=\"round\" opacity=\"0.85\"/></svg>",
+    "charco": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 900 320\"><path d=\"M0 120 Q200 90 450 110 Q700 130 900 100 L900 320 L0 320Z\" fill=\"#7a5233\"/><path d=\"M0 150 Q300 130 600 150 Q780 160 900 140 L900 320 L0 320Z\" fill=\"#6a4529\"/><path d=\"M0 110 Q200 80 450 100 Q700 120 900 90 L900 122 Q700 150 450 130 Q200 110 0 140Z\" fill=\"#4f9a4e\"/><ellipse cx=\"450\" cy=\"210\" rx=\"380\" ry=\"80\" fill=\"#3f86b8\"/><ellipse cx=\"450\" cy=\"200\" rx=\"360\" ry=\"66\" fill=\"#5aa6d6\"/><path d=\"M220 180 Q300 160 380 175\" stroke=\"#bfe6ff\" stroke-width=\"8\" fill=\"none\" stroke-linecap=\"round\"/><g transform=\"translate(220 215) rotate(-8) scale(0.9)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#9fb6c6\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#d7e3ea\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#7d95a8\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#7d95a8\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(450 190) rotate(12) scale(0.8)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#b7a27a\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#e8dcc0\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#8c7a55\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#8c7a55\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(650 225) rotate(-15) scale(0.85)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#9fb6c6\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#d7e3ea\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#7d95a8\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#7d95a8\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(560 250) rotate(170) scale(0.6)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#8fb0a0\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#d4e6dc\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#6b8c7c\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#6b8c7c\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(330 255) rotate(190) scale(0.6)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#9fb6c6\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#d7e3ea\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#7d95a8\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#7d95a8\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g></svg>",
+    "mapa_hn": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1010 570\"><path d=\"M192 68 L232 45 L272 60 L312 58 L370 66 L416 58 L470 52 L544 32 L600 30 L650 30 L704 22 L750 34 L784 45 L840 70 L900 110 L960 150 L1000 198 L930 225 L864 243 L790 280 L704 324 L640 370 L592 405 L540 410 L496 423 L460 460 L424 504 L380 535 L336 562 L310 548 L288 531 L262 505 L256 486 L240 440 L224 405 L184 398 L144 387 L100 380 L64 369 L30 340 L8 302 L40 270 L70 232 L104 189 L130 160 L160 126 L178 96Z\" fill=\"#1f6b48\" transform=\"translate(10 14)\" opacity=\"0.35\"/><path d=\"M192 68 L232 45 L272 60 L312 58 L370 66 L416 58 L470 52 L544 32 L600 30 L650 30 L704 22 L750 34 L784 45 L840 70 L900 110 L960 150 L1000 198 L930 225 L864 243 L790 280 L704 324 L640 370 L592 405 L540 410 L496 423 L460 460 L424 504 L380 535 L336 562 L310 548 L288 531 L262 505 L256 486 L240 440 L224 405 L184 398 L144 387 L100 380 L64 369 L30 340 L8 302 L40 270 L70 232 L104 189 L130 160 L160 126 L178 96Z\" fill=\"#4fb36b\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M300 300 L420 250 L560 300 L700 270 L800 230\" stroke=\"#3f9a59\" stroke-width=\"22\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.7\"/><path d=\"M150 260 L240 230 L330 260\" stroke=\"#3f9a59\" stroke-width=\"18\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.7\"/><path d=\"M200 90 Q400 80 600 60 Q760 50 900 120\" stroke=\"#7fd08f\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.8\"/></svg>",
+    "pin": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 140\"><path d=\"M50 136 C38 108 8 84 8 50 A42 42 0 0 1 92 50 C92 84 62 108 50 136Z\" fill=\"#e8433a\"/><path d=\"M50 136 C62 108 92 84 92 50 A42 42 0 0 0 50 8 C70 30 74 80 50 136Z\" fill=\"#b52a22\"/><circle cx=\"50\" cy=\"48\" r=\"17\" fill=\"#ffffff\"/></svg>",
+    "peces": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 640\"><g transform=\"translate(140 110) rotate(-70)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#9fb6c6\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#d7e3ea\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#7d95a8\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#7d95a8\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(360 180) rotate(-105) scale(0.85)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#b7a27a\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#e8dcc0\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#8c7a55\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#8c7a55\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(200 330) rotate(-95) scale(0.9)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#9fb6c6\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#d7e3ea\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#7d95a8\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#7d95a8\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(400 420) rotate(-80) scale(0.75)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#8fb0a0\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#d4e6dc\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#6b8c7c\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#6b8c7c\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(150 540) rotate(-115) scale(0.8)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#b7a27a\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#e8dcc0\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#8c7a55\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#8c7a55\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><path d=\"M60 250 l-10 30\" stroke=\"#9fd3ff\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M470 60 l-10 30\" stroke=\"#9fd3ff\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M300 520 l-10 30\" stroke=\"#9fd3ff\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M470 600 l-10 30\" stroke=\"#9fd3ff\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M60 420 l-10 30\" stroke=\"#9fd3ff\" stroke-width=\"8\" stroke-linecap=\"round\"/></svg>",
+    "banderines": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 900 260\"><path d=\"M10 40 Q450 140 890 40\" stroke=\"#ffffff\" stroke-width=\"6\" fill=\"none\"/><path d=\"M18.888888888888886 60.98765432098765 L98.88888888888889 60.98765432098765 L58.888888888888886 160.98765432098764Z\" fill=\"#e8433a\"/><path d=\"M116.66666666666666 95.55555555555554 L196.66666666666666 95.55555555555554 L156.66666666666666 195.55555555555554Z\" fill=\"#ffc23d\"/><path d=\"M214.44444444444446 120.24691358024691 L294.44444444444446 120.24691358024691 L254.44444444444446 220.2469135802469Z\" fill=\"#2f9e57\"/><path d=\"M312.22222222222223 135.06172839506175 L392.22222222222223 135.06172839506175 L352.22222222222223 235.06172839506175Z\" fill=\"#2f7fd2\"/><path d=\"M410 140 L490 140 L450 240Z\" fill=\"#c04fd6\"/><path d=\"M507.7777777777778 135.06172839506172 L587.7777777777778 135.06172839506172 L547.7777777777778 235.06172839506172Z\" fill=\"#e8433a\"/><path d=\"M605.5555555555555 120.24691358024691 L685.5555555555555 120.24691358024691 L645.5555555555555 220.2469135802469Z\" fill=\"#ffc23d\"/><path d=\"M703.3333333333334 95.55555555555554 L783.3333333333334 95.55555555555554 L743.3333333333334 195.55555555555554Z\" fill=\"#2f9e57\"/><path d=\"M801.1111111111111 60.98765432098766 L881.1111111111111 60.98765432098766 L841.1111111111111 160.98765432098764Z\" fill=\"#2f7fd2\"/></svg>",
+    "padre": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 600\"><path d=\"M70 590 Q60 330 170 290 Q280 330 270 590Z\" fill=\"#3b2f2a\"/><path d=\"M170 300 L170 590\" stroke=\"#2a211d\" stroke-width=\"6\"/><path d=\"M110 590 Q120 420 170 400 Q220 420 230 590\" fill=\"#46382f\"/><path d=\"M140 300 L170 330 L200 300Z\" fill=\"#ffffff\"/><path d=\"M100 360 Q140 420 168 440 M240 360 Q200 420 172 440\" stroke=\"#3b2f2a\" stroke-width=\"34\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M160 420 L170 470 L180 420 Q170 400 160 420Z\" fill=\"#e0b08a\"/><rect x=\"152\" y=\"240\" width=\"36\" height=\"50\" fill=\"#d49f78\"/><circle cx=\"170\" cy=\"190\" r=\"70\" fill=\"#e0b08a\"/><path d=\"M106 214 Q110 290 170 296 Q230 290 234 214 Q220 250 170 254 Q120 250 106 214Z\" fill=\"#9a9a9a\"/><path d=\"M104 170 Q104 118 140 112 Q120 150 116 186Z M236 170 Q236 118 200 112 Q220 150 224 186Z\" fill=\"#8a8a8a\"/><path d=\"M146 184 Q154 178 162 184 M178 184 Q186 178 194 184\" stroke=\"#3b2f2a\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M155 222 Q170 232 185 222\" stroke=\"#3b2f2a\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+    "pez": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 110\"><g transform=\"translate(100 55) scale(-1.1 1.1)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#9fb6c6\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#d7e3ea\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#7d95a8\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#7d95a8\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g></svg>",
+    "tromba": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 900\"><g transform=\"translate(0 0)\"><ellipse cx=\"280\" cy=\"161.2\" rx=\"257.6\" ry=\"78\" fill=\"#3e4656\"/><circle cx=\"168\" cy=\"117\" r=\"78\" fill=\"#4a5366\"/><circle cx=\"313.6\" cy=\"93.6\" r=\"93.6\" fill=\"#555f74\"/><circle cx=\"425.6\" cy=\"130\" r=\"67.60000000000001\" fill=\"#4a5366\"/><ellipse cx=\"280\" cy=\"192.4\" rx=\"235.2\" ry=\"36.400000000000006\" fill=\"#323947\"/><path d=\"M224 52 Q291.2 20.8 369.6 41.6\" stroke=\"#6f7a92\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/></g><path d=\"M170 210 Q230 420 250 600 Q262 760 230 820 L330 820 Q300 760 312 600 Q330 420 390 210Z\" fill=\"#9db2c4\" opacity=\"0.85\"/><path d=\"M220 230 Q260 420 270 600 Q276 740 262 820 L290 820 Q300 600 330 230Z\" fill=\"#c6d6e3\" opacity=\"0.8\"/><path d=\"M200 330 Q280 300 360 330 M215 450 Q280 425 345 450 M232 570 Q280 552 330 570\" stroke=\"#ffffff\" stroke-width=\"7\" fill=\"none\" opacity=\"0.6\" stroke-linecap=\"round\"/><path d=\"M0 820 Q140 790 280 820 Q420 850 560 820 L560 900 L0 900Z\" fill=\"#1f8fc4\"/><path d=\"M0 840 Q140 812 280 840 Q420 868 560 840\" stroke=\"#7fd3f7\" stroke-width=\"8\" fill=\"none\"/><ellipse cx=\"280\" cy=\"822\" rx=\"120\" ry=\"18\" fill=\"#e6f6ff\" opacity=\"0.8\"/><g transform=\"translate(270 470) rotate(-60) scale(0.45)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#9fb6c6\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#d7e3ea\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#7d95a8\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#7d95a8\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(300 640) rotate(-110) scale(0.4)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#b7a27a\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#e8dcc0\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#8c7a55\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#8c7a55\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g></svg>",
+    "subsuelo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 900 760\"><rect x=\"0\" y=\"80\" width=\"900\" height=\"680\" rx=\"30\" fill=\"#8a5c38\"/><rect x=\"0\" y=\"80\" width=\"900\" height=\"70\" fill=\"#4f9a4e\"/><path d=\"M0 150 Q450 180 900 150 L900 200 Q450 230 0 200Z\" fill=\"#7a4f30\"/><path d=\"M0 360 Q450 400 900 360 L900 760 L0 760Z\" fill=\"#6e4a2e\"/><path d=\"M0 560 Q450 590 900 560 L900 760 L0 760Z\" fill=\"#5c3c24\"/><path d=\"M0 540 Q200 470 450 520 Q700 570 900 500 L900 620 Q700 680 450 630 Q200 580 0 650Z\" fill=\"#2f78b0\"/><path d=\"M60 560 Q250 500 450 545 Q650 590 860 530\" stroke=\"#7fc6ef\" stroke-width=\"8\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M560 560 Q590 380 600 150\" stroke=\"#2f78b0\" stroke-width=\"44\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M560 560 Q590 380 600 150\" stroke=\"#5aa6d6\" stroke-width=\"20\" fill=\"none\" stroke-linecap=\"round\"/><ellipse cx=\"600\" cy=\"110\" rx=\"130\" ry=\"32\" fill=\"#5aa6d6\"/><path d=\"M520 100 Q600 70 680 100\" stroke=\"#bfe6ff\" stroke-width=\"6\" fill=\"none\"/><g transform=\"translate(220 570) rotate(185) scale(0.6)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#c9ccd2\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#eceef1\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#9da2ab\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#9da2ab\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(400 585) rotate(170) scale(0.55)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#c9ccd2\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#eceef1\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#9da2ab\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#9da2ab\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(760 560) rotate(195) scale(0.55)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#c9ccd2\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#eceef1\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#9da2ab\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#9da2ab\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g><g transform=\"translate(640 100) rotate(180) scale(0.5)\"><path d=\"M-80 0 Q-30 -40 40 -10 L80 -34 L68 0 L80 34 L40 10 Q-30 40 -80 0Z\" fill=\"#9fb6c6\"/><path d=\"M-76 5 Q-30 30 38 10 L40 6 Q-30 20 -76 5Z\" fill=\"#d7e3ea\"/><path d=\"M-22 -26 Q2 -46 22 -20Z\" fill=\"#7d95a8\"/><path d=\"M-36 -18 Q-28 0 -36 18\" stroke=\"#7d95a8\" stroke-width=\"5\" fill=\"none\"/><circle cx=\"-56\" cy=\"-6\" r=\"8\" fill=\"#ffffff\"/><circle cx=\"-57\" cy=\"-6\" r=\"4.5\" fill=\"#1d1d2b\"/></g></svg>",
+    "lupa": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 320\"><rect x=\"190\" y=\"200\" width=\"44\" height=\"130\" rx=\"18\" fill=\"#6b3f22\" transform=\"rotate(-45 212 265)\"/><circle cx=\"130\" cy=\"130\" r=\"104\" fill=\"#3a3a46\"/><circle cx=\"130\" cy=\"130\" r=\"84\" fill=\"#cfeaff\" opacity=\"0.9\"/><path d=\"M80 90 Q110 60 150 66\" stroke=\"#ffffff\" stroke-width=\"14\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Reportes de peces pequeños vivos en el suelo tras tormentas fuertes en Yoro, entre mayo y julio; festival de la Lluvia de Peces desde 1998",
+      "fuente": "Wikipedia, «Lluvia de peces» (es/en) y El Heraldo, «Honduras: la lluvia de peces, un regalo del cielo para el pueblo»"
+    },
+    {
+      "dato": "La tradición lo atribuye a las oraciones del padre Manuel de Jesús Subirana, misionero español que estuvo en Honduras entre 1856 y 1864",
+      "fuente": "El Heraldo (misma nota); Wikipedia, «Manuel de Jesús Subirana»"
+    },
+    {
+      "dato": "Hipótesis: trombas de agua que levantan peces, o peces de aguas subterráneas que salen con las crecidas; un equipo de National Geographic en los años 70 encontró que los peces no parecían venir del cielo",
+      "fuente": "Live Science, «Lluvia de Peces: When Fish Rain from the Sky» (2013)"
+    }
+  ],
+  "nota": "La causa NO está comprobada; el video presenta las dos hipótesis como hipótesis. El milagro del padre Subirana es tradición popular, no historia comprobada. Las fechas de la visita de Subirana a Yoro varían según la fuente, por eso solo se dice «siglo XIX»."
+}

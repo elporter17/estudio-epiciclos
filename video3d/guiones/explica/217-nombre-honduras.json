@@ -1,0 +1,334 @@
+{
+  "id": "explica-hn-nombre-honduras",
+  "motor": "explica",
+  "titulo": "¿Por qué se llama Honduras?",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "historia",
+    "colon",
+    "graciasadios",
+    "sabiasque"
+  ],
+  "descripcion": "La explicación tradicional: en 1502 Colón salió de una tormenta y dijo «Gracias a Dios que hemos salido de estas honduras». Qué es tradición y qué está documentado.",
+  "musica": "synthwave",
+  "escenas": [
+    {
+      "fondo": "oscuro",
+      "texto": "¿Sabías que el nombre de Honduras, según la tradición, nació de una tormenta en el mar?",
+      "clave": "tormenta",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "barcos_tormenta",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 1000,
+          "anim": "pop",
+          "en": 0,
+          "idle": "balanceo"
+        },
+        {
+          "svg": "rayo",
+          "x": 0.22,
+          "y": 0.4,
+          "ancho": 170,
+          "anim": "pop",
+          "en": "tormenta",
+          "sombra": false
+        },
+        {
+          "svg": "rayo",
+          "x": 0.8,
+          "y": 0.38,
+          "ancho": 140,
+          "anim": "pop",
+          "en": "mar",
+          "sombra": false
+        }
+      ]
+    },
+    {
+      "fondo": "mar",
+      "texto": "Fue en 1502, en el cuarto viaje de Cristóbal Colón, frente a nuestra costa caribe.",
+      "voz": "Fue en mil quinientos dos, en el cuarto viaje de Cristóbal Colón, frente a nuestra costa caribe.",
+      "clave": "cuarto viaje",
+      "capas": [
+        {
+          "svg": "carabela",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 640,
+          "anim": "slideIn",
+          "en": 0,
+          "desde": "izquierda",
+          "idle": "balanceo"
+        },
+        {
+          "numero": "1502",
+          "x": 0.5,
+          "y": 0.34,
+          "color": "#1d1d2b",
+          "tam": 90,
+          "en": "1502"
+        },
+        {
+          "etiqueta": "costa caribe",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#2f7fd2",
+          "en": "costa"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Al doblar un cabo y hallar calma, habría dicho: «Gracias a Dios que hemos salido de estas honduras».",
+      "clave": "honduras",
+      "nota": "tradición",
+      "capas": [
+        {
+          "svg": "cabo",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 1000,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "carabela",
+          "x": 0.28,
+          "y": 0.76,
+          "ancho": 280,
+          "anim": "slideIn",
+          "en": "doblar",
+          "desde": "izquierda",
+          "idle": "balanceo"
+        },
+        {
+          "svg": "sol",
+          "x": 0.82,
+          "y": 0.36,
+          "ancho": 200,
+          "anim": "pop",
+          "en": "calma",
+          "idle": "latido",
+          "sombra": false
+        }
+      ]
+    },
+    {
+      "fondo": "mar",
+      "texto": "Y en español, «honduras» quiere decir eso: profundidades, aguas hondas.",
+      "clave": "profundidades",
+      "camara": {
+        "de": [
+          0.5,
+          0.5,
+          1
+        ],
+        "a": [
+          0.5,
+          0.66,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "profundidad",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 520,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "burbujas": true,
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 0.3,
+          "alto": 0.25,
+          "n": 16,
+          "en": "aguas"
+        },
+        {
+          "etiqueta": "hondo",
+          "x": 0.82,
+          "y": 0.82,
+          "color": "#1d1d2b",
+          "a": [
+            0.6,
+            0.72
+          ],
+          "en": "hondas"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Por eso aquel cabo se llama Gracias a Dios, hoy en la frontera con Nicaragua.",
+      "clave": "Gracias",
+      "nota": "cabo Gracias a Dios",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.4,
+          0.64,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "cabo",
+          "x": 0.5,
+          "y": 0.64,
+          "ancho": 1000,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "marca": true,
+          "x": 0.28,
+          "y": 0.665,
+          "radio": 100,
+          "en": "cabo"
+        },
+        {
+          "etiqueta": "Gracias a Dios",
+          "x": 0.35,
+          "y": 0.86,
+          "color": "#d93427",
+          "a": [
+            0.28,
+            0.7
+          ],
+          "en": "Gracias"
+        },
+        {
+          "etiqueta": "frontera",
+          "x": 0.75,
+          "y": 0.36,
+          "color": "#1d1d2b",
+          "en": "frontera"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Pero ojo: esa frase no aparece en las cartas de Colón. La contó un cronista décadas después.",
+      "clave": "cronista",
+      "nota": "escrito después",
+      "capas": [
+        {
+          "svg": "pergamino",
+          "x": 0.5,
+          "y": 0.58,
+          "ancho": 680,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.58,
+          "radio": 300,
+          "en": "cartas"
+        },
+        {
+          "etiqueta": "Antonio de Herrera",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#8a4b2a",
+          "en": "cronista"
+        }
+      ]
+    },
+    {
+      "fondo": "mar",
+      "texto": "Algunos historiadores creen que el nombre lo usaron antes otros navegantes. Y la región también se llamó Hibueras.",
+      "clave": "Hibueras",
+      "capas": [
+        {
+          "svg": "carabela",
+          "x": 0.3,
+          "y": 0.58,
+          "ancho": 480,
+          "anim": "pop",
+          "en": 0,
+          "idle": "balanceo"
+        },
+        {
+          "svg": "carabela",
+          "x": 0.74,
+          "y": 0.7,
+          "ancho": 380,
+          "anim": "slideIn",
+          "en": "navegantes",
+          "desde": "derecha",
+          "idle": "balanceo"
+        },
+        {
+          "etiqueta": "Hibueras",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#2f7347",
+          "tam": 52,
+          "en": "Hibueras"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Ya sabías por qué nos llamamos así? Síguenos y compártelo con otro catracho.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "barcos_tormenta": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 820\"><g fill=\"#4b4f63\"><ellipse cx=\"260\" cy=\"90\" rx=\"250\" ry=\"80\"/><ellipse cx=\"700\" cy=\"70\" rx=\"300\" ry=\"70\"/><ellipse cx=\"480\" cy=\"130\" rx=\"260\" ry=\"60\"/></g><g fill=\"#363a4d\"><ellipse cx=\"300\" cy=\"140\" rx=\"200\" ry=\"40\"/><ellipse cx=\"760\" cy=\"130\" rx=\"200\" ry=\"40\"/></g><g stroke=\"#9fb4d6\" stroke-width=\"5\" stroke-linecap=\"round\" opacity=\"0.7\"><path d=\"M40 190 l -24 70\"/><path d=\"M102 220 l -24 70\"/><path d=\"M164 250 l -24 70\"/><path d=\"M226 190 l -24 70\"/><path d=\"M288 220 l -24 70\"/><path d=\"M350 250 l -24 70\"/><path d=\"M412 190 l -24 70\"/><path d=\"M474 220 l -24 70\"/><path d=\"M536 250 l -24 70\"/><path d=\"M598 190 l -24 70\"/><path d=\"M660 220 l -24 70\"/><path d=\"M722 250 l -24 70\"/><path d=\"M784 190 l -24 70\"/><path d=\"M846 220 l -24 70\"/><path d=\"M908 250 l -24 70\"/><path d=\"M970 190 l -24 70\"/></g><g transform=\"translate(330 560) rotate(-10) scale(1.05)\"><path d=\"M-200 0 H200 Q 190 60 140 90 H-150 Q -190 60 -200 0 Z\" fill=\"#8a4b2a\"/><path d=\"M0 0 H200 Q 190 60 140 90 H0 Z\" fill=\"#743c20\"/><rect x=\"-210\" y=\"-30\" width=\"70\" height=\"40\" rx=\"6\" fill=\"#8a4b2a\"/><rect x=\"150\" y=\"-20\" width=\"60\" height=\"30\" rx=\"6\" fill=\"#743c20\"/><path d=\"M-200 30 H200\" stroke=\"#5a3320\" stroke-width=\"8\"/><rect x=\"-90\" y=\"-300\" width=\"12\" height=\"300\" fill=\"#5a3320\"/><rect x=\"60\" y=\"-250\" width=\"10\" height=\"250\" fill=\"#5a3320\"/><path d=\"M-170 -270 Q -84 -250 0 -270 Q 10 -170 0 -70 Q -84 -90 -170 -70 Q -160 -170 -170 -270 Z\" fill=\"#f4ecd8\"/><path d=\"M-84 -250 V-90 M-150 -170 H-18\" stroke=\"#d93427\" stroke-width=\"16\"/><path d=\"M10 -230 Q 65 -215 130 -230 Q 138 -160 130 -70 Q 65 -85 10 -70 Q 18 -150 10 -230 Z\" fill=\"#e8dcc0\"/><path d=\"M-84 -300 L-40 -290 L-84 -280 Z\" fill=\"#d93427\"/></g><g transform=\"translate(780 600) rotate(8) scale(0.6)\"><path d=\"M-200 0 H200 Q 190 60 140 90 H-150 Q -190 60 -200 0 Z\" fill=\"#8a4b2a\"/><path d=\"M0 0 H200 Q 190 60 140 90 H0 Z\" fill=\"#743c20\"/><rect x=\"-210\" y=\"-30\" width=\"70\" height=\"40\" rx=\"6\" fill=\"#8a4b2a\"/><rect x=\"150\" y=\"-20\" width=\"60\" height=\"30\" rx=\"6\" fill=\"#743c20\"/><path d=\"M-200 30 H200\" stroke=\"#5a3320\" stroke-width=\"8\"/><rect x=\"-90\" y=\"-300\" width=\"12\" height=\"300\" fill=\"#5a3320\"/><rect x=\"60\" y=\"-250\" width=\"10\" height=\"250\" fill=\"#5a3320\"/><path d=\"M-170 -270 Q -84 -250 0 -270 Q 10 -170 0 -70 Q -84 -90 -170 -70 Q -160 -170 -170 -270 Z\" fill=\"#f4ecd8\"/><path d=\"M-84 -250 V-90 M-150 -170 H-18\" stroke=\"#d93427\" stroke-width=\"16\"/><path d=\"M10 -230 Q 65 -215 130 -230 Q 138 -160 130 -70 Q 65 -85 10 -70 Q 18 -150 10 -230 Z\" fill=\"#e8dcc0\"/><path d=\"M-84 -300 L-40 -290 L-84 -280 Z\" fill=\"#d93427\"/></g><path d=\"M0 600 Q 50 530 100 600 T 200 600 Q 250 530 300 600 T 400 600 Q 450 530 500 600 T 600 600 Q 650 530 700 600 T 800 600 Q 850 530 900 600 T 1000 600 Q 1050 530 1100 600 T 1200 600 V900 H0 Z\" fill=\"#1f5f8a\"/><path d=\"M0 680 Q 50 620 100 680 T 200 680 Q 250 620 300 680 T 400 680 Q 450 620 500 680 T 600 680 Q 650 620 700 680 T 800 680 Q 850 620 900 680 T 1000 680 Q 1050 620 1100 680 T 1200 680 V900 H0 Z\" fill=\"#174a6e\"/><g stroke=\"#ffffff\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.8\"><path d=\"M60 600 q 40 -40 80 0\"/><path d=\"M460 590 q 40 -40 80 0\"/><path d=\"M860 600 q 40 -40 80 0\"/><path d=\"M250 680 q 40 -40 80 0\"/><path d=\"M650 680 q 40 -40 80 0\"/></g><rect x=\"0\" y=\"760\" width=\"1000\" height=\"60\" fill=\"#103650\"/></svg>",
+    "rayo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 500\"><path d=\"M180 0 L40 280 H140 L90 500 L270 200 H160 L230 0 Z\" fill=\"#ffd84a\"/><path d=\"M180 0 L40 280 H100 L200 0 Z\" fill=\"#fff2a6\"/></svg>",
+    "carabela": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 520\"><g transform=\"translate(300 400) rotate(0) scale(1.15)\"><path d=\"M-200 0 H200 Q 190 60 140 90 H-150 Q -190 60 -200 0 Z\" fill=\"#8a4b2a\"/><path d=\"M0 0 H200 Q 190 60 140 90 H0 Z\" fill=\"#743c20\"/><rect x=\"-210\" y=\"-30\" width=\"70\" height=\"40\" rx=\"6\" fill=\"#8a4b2a\"/><rect x=\"150\" y=\"-20\" width=\"60\" height=\"30\" rx=\"6\" fill=\"#743c20\"/><path d=\"M-200 30 H200\" stroke=\"#5a3320\" stroke-width=\"8\"/><rect x=\"-90\" y=\"-300\" width=\"12\" height=\"300\" fill=\"#5a3320\"/><rect x=\"60\" y=\"-250\" width=\"10\" height=\"250\" fill=\"#5a3320\"/><path d=\"M-170 -270 Q -84 -250 0 -270 Q 10 -170 0 -70 Q -84 -90 -170 -70 Q -160 -170 -170 -270 Z\" fill=\"#f4ecd8\"/><path d=\"M-84 -250 V-90 M-150 -170 H-18\" stroke=\"#d93427\" stroke-width=\"16\"/><path d=\"M10 -230 Q 65 -215 130 -230 Q 138 -160 130 -70 Q 65 -85 10 -70 Q 18 -150 10 -230 Z\" fill=\"#e8dcc0\"/><path d=\"M-84 -300 L-40 -290 L-84 -280 Z\" fill=\"#d93427\"/></g><path d=\"M0 480 Q 75 450 150 480 T 300 480 T 450 480 T 600 480 V520 H0 Z\" fill=\"#2f7fd2\"/><path d=\"M0 500 Q 75 475 150 500 T 300 500 T 450 500 T 600 500 V520 H0 Z\" fill=\"#1f5f8a\"/></svg>",
+    "cabo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 700\"><rect x=\"0\" y=\"0\" width=\"1000\" height=\"700\" rx=\"30\" fill=\"#5fc3ef\"/><path d=\"M0 520 Q 250 500 500 520 T 1000 520\" stroke=\"#ffffff\" stroke-opacity=\"0.45\" stroke-width=\"8\" fill=\"none\"/><path d=\"M0 610 Q 250 590 500 610 T 1000 610\" stroke=\"#ffffff\" stroke-opacity=\"0.45\" stroke-width=\"8\" fill=\"none\"/><path d=\"M1000 120 Q 760 150 600 260 Q 420 360 300 400 Q 420 460 640 440 Q 860 420 1000 470 Z\" fill=\"#f3dca0\"/><path d=\"M1000 150 Q 780 180 620 280 Q 460 370 360 400 Q 480 430 660 410 Q 860 395 1000 440 Z\" fill=\"#4c9a5f\"/><path d=\"M1000 260 Q 860 280 760 340 Q 860 380 1000 380 Z\" fill=\"#3f8a57\"/><path d=\"M560 330 q 6 -60 -4 -110\" stroke=\"#7a4a2c\" stroke-width=\"12\" fill=\"none\"/><g fill=\"#2f7347\"><path d=\"M556 220 q -60 -10 -80 30 q 40 -30 80 -30Z\"/><path d=\"M556 220 q 60 -20 90 20 q -50 -25 -90 -20Z\"/><path d=\"M556 220 q -20 -50 -60 -60 q 40 10 60 60Z\"/><path d=\"M556 220 q 30 -50 70 -50 q -40 10 -70 50Z\"/></g><path d=\"M700 260 q 6 -60 -4 -110\" stroke=\"#7a4a2c\" stroke-width=\"12\" fill=\"none\"/><g fill=\"#2f7347\"><path d=\"M696 150 q -60 -10 -80 30 q 40 -30 80 -30Z\"/><path d=\"M696 150 q 60 -20 90 20 q -50 -25 -90 -20Z\"/><path d=\"M696 150 q -20 -50 -60 -60 q 40 10 60 60Z\"/><path d=\"M696 150 q 30 -50 70 -50 q -40 10 -70 50Z\"/></g><path d=\"M840 230 q 6 -60 -4 -110\" stroke=\"#7a4a2c\" stroke-width=\"12\" fill=\"none\"/><g fill=\"#2f7347\"><path d=\"M836 120 q -60 -10 -80 30 q 40 -30 80 -30Z\"/><path d=\"M836 120 q 60 -20 90 20 q -50 -25 -90 -20Z\"/><path d=\"M836 120 q -20 -50 -60 -60 q 40 10 60 60Z\"/><path d=\"M836 120 q 30 -50 70 -50 q -40 10 -70 50Z\"/></g></svg>",
+    "profundidad": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 900\"><rect x=\"40\" y=\"0\" width=\"520\" height=\"900\" rx=\"40\" fill=\"#0d3d5f\"/><rect x=\"40\" y=\"0\" width=\"520\" height=\"300\" rx=\"40\" fill=\"#3aa3d9\"/><rect x=\"40\" y=\"200\" width=\"520\" height=\"300\" fill=\"#1f75a8\"/><rect x=\"40\" y=\"480\" width=\"520\" height=\"260\" fill=\"#155a85\"/><path d=\"M40 60 Q 105 30 170 60 T 300 60 T 430 60 T 560 60\" stroke=\"#ffffff\" stroke-width=\"10\" fill=\"none\"/><path d=\"M40 820 Q 150 760 260 820 Q 380 780 560 830 V860 Q 560 900 520 900 H80 Q 40 900 40 860 Z\" fill=\"#c9b48a\"/><path d=\"M300 120 V700\" stroke=\"#ffffff\" stroke-width=\"14\" stroke-dasharray=\"30 22\"/><path d=\"M250 680 L300 760 L350 680 Z\" fill=\"#ffffff\"/><g><path d=\"M120 400 Q 160 370 200 400 Q 160 430 120 400 Z\" fill=\"#f2c230\"/><path d=\"M200 400 L230 380 L230 420 Z\" fill=\"#f2c230\"/><circle cx=\"140\" cy=\"396\" r=\"4\" fill=\"#1d1d2b\"/></g><g><path d=\"M480 600 Q 440 575 400 600 Q 440 625 480 600 Z\" fill=\"#f27b4f\"/><path d=\"M400 600 L375 584 L375 616 Z\" fill=\"#f27b4f\"/></g><g fill=\"#ffffff\" fill-opacity=\"0.5\"><circle cx=\"420\" cy=\"300\" r=\"10\"/><circle cx=\"440\" cy=\"250\" r=\"7\"/><circle cx=\"425\" cy=\"210\" r=\"5\"/></g></svg>",
+    "pergamino": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 560\"><rect x=\"90\" y=\"60\" width=\"520\" height=\"440\" fill=\"#f1e2bd\"/><rect x=\"350\" y=\"60\" width=\"260\" height=\"440\" fill=\"#e6d3a8\"/><rect x=\"60\" y=\"30\" width=\"580\" height=\"50\" rx=\"25\" fill=\"#c9a56a\"/><rect x=\"60\" y=\"480\" width=\"580\" height=\"50\" rx=\"25\" fill=\"#c9a56a\"/><circle cx=\"60\" cy=\"55\" r=\"25\" fill=\"#a8844c\"/><circle cx=\"640\" cy=\"55\" r=\"25\" fill=\"#a8844c\"/><circle cx=\"60\" cy=\"505\" r=\"25\" fill=\"#a8844c\"/><circle cx=\"640\" cy=\"505\" r=\"25\" fill=\"#a8844c\"/><g stroke=\"#8a7350\" stroke-width=\"10\" stroke-linecap=\"round\"><path d=\"M150 130 H550\"/><path d=\"M150 175 H550\"/><path d=\"M150 220 H420\"/><path d=\"M150 265 H550\"/><path d=\"M150 310 H550\"/><path d=\"M150 355 H420\"/><path d=\"M150 400 H550\"/></g><circle cx=\"500\" cy=\"420\" r=\"38\" fill=\"#b5291f\"/><circle cx=\"500\" cy=\"420\" r=\"24\" fill=\"#d93427\"/><g transform=\"rotate(35 620 200)\"><path d=\"M610 40 Q 690 120 640 330 L620 330 Q 600 140 610 40 Z\" fill=\"#ffffff\"/><path d=\"M610 40 Q 640 200 630 330\" stroke=\"#c9c2b0\" stroke-width=\"5\" fill=\"none\"/></g></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Colón llegó a la costa de Honduras en 1502, en su cuarto viaje; el cabo Gracias a Dios lleva ese nombre por esa travesía",
+      "fuente": "Encyclopaedia Britannica, «Honduras: History»; Wikipedia, «History of Honduras (to 1838)»"
+    },
+    {
+      "dato": "La frase «Gracias a Dios que hemos salido de estas honduras» es la explicación tradicional",
+      "fuente": "Billiken, «Honduras: ¿qué significa el nombre del país?»; Tunota (2022)"
+    },
+    {
+      "dato": "La frase aparece en el relato del cronista Antonio de Herrera, escrito décadas después; Colón no menciona el nombre en sus informes",
+      "fuente": "Tunota (2022), citando a los historiadores Dennis Portillo y Rolando Zelaya"
+    },
+    {
+      "dato": "Otros proponen que el nombre lo usaron antes Juan Díaz de Solís y Vicente Yáñez Pinzón (1508); la región también se llamó Hibueras o Higueras",
+      "fuente": "Tunota (2022), citando a Salomón Sagastume; redhonduras.hn"
+    },
+    {
+      "dato": "«Hondura»: profundidad (y en plural, aguas hondas)",
+      "fuente": "Diccionario de la lengua española (RAE), «hondura»"
+    }
+  ],
+  "nota": "TRADICIÓN: la frase de Colón y que el país tome de ahí su nombre. DOCUMENTADO: el cuarto viaje de 1502 por la costa, el nombre del cabo Gracias a Dios y que la región también se llamó Hibueras. El texto usa «habría dicho» y «según la tradición». La teoría de Solís y Yáñez Pinzón viene de historiadores hondureños y no es consenso."
+}

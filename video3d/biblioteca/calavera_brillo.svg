@@ -1,0 +1,9 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 340 340">
+<circle cx='170' cy='170' r='166' fill='#9fe8ff' opacity='0.18'/><circle cx='170' cy='170' r='130' fill='#c8f4ff' opacity='0.2'/>
+<g transform='translate(20 22)'>
+<path d='M150 20 C240 20 285 90 280 160 C276 210 250 230 236 240 V270 Q236 292 214 292 H86 Q64 292 64 270 V240 C50 230 24 210 20 160 C15 90 60 20 150 20Z' fill='#eefbff'/>
+<path d='M150 20 C240 20 285 90 280 160 C276 210 250 230 236 240 V270 Q236 292 214 292 H170 Q240 200 220 120 Q200 50 150 20Z' fill='#b9dce8'/>
+<g fill='#2a2233'><ellipse cx='100' cy='160' rx='38' ry='42'/><ellipse cx='200' cy='160' rx='38' ry='42'/><path d='M150 200 L134 232 H166Z'/></g>
+<path d='M100 248 V286 M125 250 V290 M150 250 V290 M175 250 V290 M200 248 V286' stroke='#b9dce8' stroke-width='6' stroke-linecap='round'/>
+<g fill='#ffffff' opacity='0.85'><ellipse cx='70' cy='70' rx='26' ry='12' transform='rotate(-30 70 70)'/><ellipse cx='215' cy='90' rx='20' ry='9' transform='rotate(30 215 90)'/><circle cx='150' cy='50' r='8'/></g></g>
+<path d='M70 34 Q74.68 55.32 96 60 Q74.68 64.68 70 86 Q65.32 64.68 44 60 Q65.32 55.32 70 34Z' fill='#ffffff'/><path d='M280 90 Q283.6 106.4 300 110 Q283.6 113.6 280 130 Q276.4 113.6 260 110 Q276.4 106.4 280 90Z' fill='#ffffff'/><path d='M250 284 Q252.88 297.12 266 300 Q252.88 302.88 250 316 Q247.12 302.88 234 300 Q247.12 297.12 250 284Z' fill='#ffffff'/><path d='M40 236 Q42.52 247.48 54 250 Q42.52 252.52 40 264 Q37.48 252.52 26 250 Q37.48 247.48 40 236Z' fill='#c8f4ff'/></svg>

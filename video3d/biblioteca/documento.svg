@@ -1,0 +1,5 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox="0 0 500 560">
+<rect x='70' y='60' width='360' height='440' fill='#f3e3bf'/><rect x='290' y='60' width='140' height='440' fill='#e8d3a6'/>
+<rect x='40' y='30' width='420' height='50' rx='25' fill='#d9bd84'/><rect x='40' y='480' width='420' height='50' rx='25' fill='#d9bd84'/>
+<g fill='#b89a60'><circle cx='40' cy='55' r='25'/><circle cx='460' cy='55' r='25'/><circle cx='40' cy='505' r='25'/><circle cx='460' cy='505' r='25'/></g>
+<rect x='120' y='150' width='260' height='14' rx='7' fill='#c9b48a'/><rect x='120' y='196' width='260' height='14' rx='7' fill='#c9b48a'/><rect x='120' y='242' width='170' height='14' rx='7' fill='#c9b48a'/><rect x='120' y='288' width='260' height='14' rx='7' fill='#c9b48a'/><rect x='120' y='334' width='260' height='14' rx='7' fill='#c9b48a'/><rect x='120' y='380' width='170' height='14' rx='7' fill='#c9b48a'/><rect x='120' y='426' width='260' height='14' rx='7' fill='#c9b48a'/></svg>

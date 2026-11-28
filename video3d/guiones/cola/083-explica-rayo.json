@@ -15,8 +15,8 @@
   "escenas": [
     {
       "fondo": "liso",
-      "texto": "Un rayo calienta el aire a unos 30.000 °C: cerca de cinco veces más que la superficie del Sol.",
-      "voz": "Un rayo calienta el aire a unos treinta mil grados: cerca de cinco veces más que la superficie del Sol.",
+      "texto": "Un rayo calienta el aire a unos 30.000 °C: unas cinco veces más que la superficie del Sol.",
+      "voz": "Un rayo calienta el aire a unos treinta mil grados: unas cinco veces más que la superficie del Sol.",
       "clave": "cinco veces",
       "camara": {
         "de": [
@@ -66,7 +66,7 @@
     },
     {
       "fondo": "oscuro",
-      "texto": "Todo empieza dentro de la nube de tormenta: corrientes de aire suben y bajan gotas y trocitos de hielo.",
+      "texto": "Todo empieza en la nube de tormenta: el aire sube y baja gotas y trocitos de hielo.",
       "clave": "hielo",
       "camara": {
         "de": [
@@ -96,7 +96,7 @@
           "ancho": 170,
           "rot": -90,
           "anim": "pop",
-          "en": "suben"
+          "en": "sube"
         },
         {
           "svg": "flecha",
@@ -105,7 +105,7 @@
           "ancho": 170,
           "rot": 90,
           "anim": "pop",
-          "en": "bajan"
+          "en": "baja"
         },
         {
           "svg": "gota",
@@ -156,7 +156,7 @@
     },
     {
       "fondo": "oscuro",
-      "texto": "Al chocar, se roban cargas eléctricas: arriba se juntan las positivas y más abajo, las negativas.",
+      "texto": "Al chocar se roban cargas eléctricas: arriba quedan las positivas y abajo, las negativas.",
       "clave": "cargas",
       "nota": "cargas eléctricas",
       "camara": {
@@ -262,7 +262,7 @@
     },
     {
       "fondo": "liso",
-      "texto": "Cuando la diferencia se vuelve enorme, el aire ya no aguanta y salta una chispa gigante: el rayo.",
+      "texto": "Cuando la diferencia es enorme, el aire ya no aguanta y salta una chispa gigante: el rayo.",
       "clave": "chispa",
       "camara": {
         "de": [
@@ -340,7 +340,7 @@
     },
     {
       "fondo": "plano",
-      "texto": "Ese calor hace que el aire se expanda de golpe, como una explosión. Ese estruendo es el trueno.",
+      "texto": "Ese calor expande el aire de golpe, como una explosión. Ese estruendo es el trueno.",
       "clave": "trueno",
       "camara": {
         "de": [
@@ -370,7 +370,7 @@
           "y": 0.58,
           "radio": 240,
           "n": 12,
-          "en": "expanda"
+          "en": "expande"
         },
         {
           "svg": "ondas",
@@ -393,8 +393,8 @@
     },
     {
       "fondo": "liso",
-      "texto": "La luz llega casi al instante, pero el sonido tarda unos 3 segundos por kilómetro. Cuenta y sabrás qué tan lejos cayó.",
-      "voz": "La luz llega casi al instante, pero el sonido tarda unos tres segundos por kilómetro. Cuenta y sabrás qué tan lejos cayó.",
+      "texto": "La luz llega al instante; el sonido tarda unos 3 segundos por kilómetro. Cuenta y sabrás a qué distancia cayó.",
+      "voz": "La luz llega al instante; el sonido tarda unos tres segundos por kilómetro. Cuenta y sabrás a qué distancia cayó.",
       "clave": "3 segundos",
       "camara": {
         "de": [
@@ -468,7 +468,7 @@
     },
     {
       "tipo": "cierre",
-      "texto": "La próxima tormenta ya no se verá igual. Síguenos si quieres más de estas.",
+      "texto": "La próxima tormenta no se verá igual. Síguenos para más.",
       "clave": "Síguenos",
       "capas": []
     }

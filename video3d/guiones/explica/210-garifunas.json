@@ -1,0 +1,504 @@
+{
+  "id": "explica-hn-garifunas",
+  "motor": "explica",
+  "titulo": "Garífunas: el viaje a Roatán",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "garifuna",
+    "historia",
+    "cultura",
+    "sabiasque"
+  ],
+  "descripcion": "En 1797 unas 2.000 personas deportadas de San Vicente desembarcaron en Roatán. Así empezó la historia garífuna en Honduras: raíces, punta, casabe y hudutu.",
+  "musica": "pop",
+  "paleta": {
+    "a": "#ffd25a",
+    "b": "#e7792f"
+  },
+  "escenas": [
+    {
+      "fondo": "mar",
+      "texto": "En 1797, unas 2.000 personas desembarcaron en Roatán. No llegaron por gusto: venían deportadas.",
+      "voz": "En mil setecientos noventa y siete, unas dos mil personas desembarcaron en Roatán. No llegaron por gusto: venían deportadas.",
+      "clave": "Roatán",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.55,
+          0.62,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "barco",
+          "x": 0.42,
+          "y": 0.6,
+          "ancho": 720,
+          "anim": "slideIn",
+          "desde": "derecha",
+          "idle": "balanceo",
+          "en": 0
+        },
+        {
+          "numero": "1797",
+          "x": 0.3,
+          "y": 0.33,
+          "color": "#d93427",
+          "tam": 90,
+          "en": "1797"
+        },
+        {
+          "svg": "isla",
+          "x": 0.78,
+          "y": 0.82,
+          "ancho": 420,
+          "anim": "pop",
+          "en": "Roatán"
+        },
+        {
+          "etiqueta": "deportados",
+          "x": 0.66,
+          "y": 0.37,
+          "color": "#1d1d2b",
+          "en": "deportadas"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Venían de San Vicente, en el Caribe. Los británicos los expulsaron tras vencerlos en la guerra.",
+      "clave": "San Vicente",
+      "nota": "Caribe oriental",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1.05
+        ],
+        "a": [
+          0.45,
+          0.62,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "isla",
+          "x": 0.75,
+          "y": 0.44,
+          "ancho": 380,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "etiqueta": "San Vicente",
+          "x": 0.75,
+          "y": 0.33,
+          "color": "#6b4fe0",
+          "en": "Vicente"
+        },
+        {
+          "svg": "flecha",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 380,
+          "anim": "pop",
+          "rot": 150,
+          "sombra": false,
+          "en": "expulsaron"
+        },
+        {
+          "svg": "barco",
+          "x": 0.5,
+          "y": 0.51,
+          "ancho": 220,
+          "anim": "fade",
+          "idle": "balanceo",
+          "en": "británicos"
+        },
+        {
+          "svg": "isla",
+          "x": 0.25,
+          "y": 0.76,
+          "ancho": 420,
+          "anim": "pop",
+          "en": "guerra"
+        },
+        {
+          "etiqueta": "Roatán, Honduras",
+          "x": 0.3,
+          "y": 0.88,
+          "color": "#d93427",
+          "en": "guerra"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Sus raíces son africanas, caribes y arahuacas: una mezcla que nació en las islas del Caribe.",
+      "clave": "raíces",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "arbol",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 560,
+          "anim": "crecer",
+          "en": 0
+        },
+        {
+          "etiqueta": "África",
+          "x": 0.2,
+          "y": 0.4,
+          "a": [
+            0.4,
+            0.47
+          ],
+          "color": "#d93427",
+          "en": "africanas"
+        },
+        {
+          "etiqueta": "caribes",
+          "x": 0.8,
+          "y": 0.4,
+          "a": [
+            0.6,
+            0.47
+          ],
+          "color": "#1e7d4f",
+          "en": "caribes"
+        },
+        {
+          "etiqueta": "arahuacos",
+          "x": 0.5,
+          "y": 0.89,
+          "a": [
+            0.5,
+            0.8
+          ],
+          "color": "#6b4fe0",
+          "en": "arahuacas"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Desde Roatán pasaron a tierra firme: hoy hay pueblos garífunas en toda la costa norte.",
+      "clave": "costa norte",
+      "camara": {
+        "de": [
+          0.35,
+          0.65,
+          1.1
+        ],
+        "a": [
+          0.6,
+          0.62,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "palmera",
+          "x": 0.16,
+          "y": 0.62,
+          "ancho": 300,
+          "anim": "crecer",
+          "idle": "balanceo",
+          "en": 0
+        },
+        {
+          "svg": "casa",
+          "x": 0.43,
+          "y": 0.72,
+          "ancho": 320,
+          "anim": "pop",
+          "en": "firme"
+        },
+        {
+          "svg": "casa",
+          "x": 0.72,
+          "y": 0.75,
+          "ancho": 270,
+          "anim": "pop",
+          "en": "pueblos"
+        },
+        {
+          "svg": "palmera",
+          "x": 0.9,
+          "y": 0.64,
+          "ancho": 250,
+          "anim": "crecer",
+          "idle": "balanceo",
+          "en": "garífunas"
+        },
+        {
+          "etiqueta": "costa norte de Honduras",
+          "x": 0.5,
+          "y": 0.89,
+          "color": "#1d1d2b",
+          "en": "costa"
+        },
+        {
+          "etiqueta": "y en Belice, Guatemala y Nicaragua",
+          "x": 0.5,
+          "y": 0.36,
+          "color": "#6b4fe0",
+          "tam": 34,
+          "en": "norte"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "En 2001, la UNESCO proclamó su idioma, su música y su danza patrimonio de la humanidad.",
+      "voz": "En dos mil uno, la UNESCO proclamó su idioma, su música y su danza patrimonio de la humanidad.",
+      "clave": "UNESCO",
+      "nota": "Obra Maestra",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tambor",
+          "x": 0.36,
+          "y": 0.64,
+          "ancho": 330,
+          "anim": "pop",
+          "idle": "latido",
+          "en": 0
+        },
+        {
+          "svg": "maraca",
+          "x": 0.7,
+          "y": 0.6,
+          "ancho": 170,
+          "anim": "pop",
+          "idle": "sacudir",
+          "rot": 18,
+          "en": "música"
+        },
+        {
+          "svg": "maraca",
+          "x": 0.83,
+          "y": 0.66,
+          "ancho": 150,
+          "anim": "pop",
+          "idle": "sacudir",
+          "rot": -14,
+          "en": "danza"
+        },
+        {
+          "numero": "2001",
+          "x": 0.5,
+          "y": 0.34,
+          "color": "#6b4fe0",
+          "tam": 90,
+          "en": "2001"
+        },
+        {
+          "etiqueta": "idioma · música · danza",
+          "x": 0.5,
+          "y": 0.89,
+          "color": "#d93427",
+          "en": "humanidad"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Y la punta, con tambores y maracas, es el ritmo garífuna que pone a bailar a toda Honduras.",
+      "clave": "punta",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "bailarina",
+          "x": 0.3,
+          "y": 0.55,
+          "ancho": 380,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": 0
+        },
+        {
+          "svg": "bailarin",
+          "x": 0.72,
+          "y": 0.55,
+          "ancho": 340,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": "punta"
+        },
+        {
+          "svg": "tambor",
+          "x": 0.5,
+          "y": 0.84,
+          "ancho": 190,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "tambores"
+        },
+        {
+          "svg": "maraca",
+          "x": 0.8,
+          "y": 0.85,
+          "ancho": 110,
+          "anim": "pop",
+          "idle": "sacudir",
+          "rot": 20,
+          "en": "maracas"
+        },
+        {
+          "etiqueta": "¡a bailar!",
+          "x": 0.5,
+          "y": 0.34,
+          "color": "#1d1d2b",
+          "en": "bailar"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "En la mesa: casabe, un pan de yuca, y hudutu, plátano machucado con sopa de pescado y coco.",
+      "clave": "hudutu",
+      "camara": {
+        "de": [
+          0.3,
+          0.5,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.64,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "casabe",
+          "x": 0.3,
+          "y": 0.44,
+          "ancho": 380,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "etiqueta": "casabe: pan de yuca",
+          "x": 0.33,
+          "y": 0.33,
+          "color": "#1d1d2b",
+          "en": "yuca"
+        },
+        {
+          "svg": "hudutu",
+          "x": 0.5,
+          "y": 0.7,
+          "ancho": 760,
+          "anim": "pop",
+          "en": "hudutu"
+        },
+        {
+          "etiqueta": "plátano machucado",
+          "x": 0.74,
+          "y": 0.55,
+          "a": [
+            0.7,
+            0.71
+          ],
+          "color": "#e0a73a",
+          "en": "machucado"
+        },
+        {
+          "etiqueta": "sopa de pescado y coco",
+          "x": 0.33,
+          "y": 0.87,
+          "a": [
+            0.38,
+            0.68
+          ],
+          "color": "#c9553f",
+          "en": "pescado"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Síguenos y comparte este video con alguien que lleve la cultura garífuna en el corazón.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "barco": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 600 520\">\n<rect x='200' y='50' width='12' height='340' fill='#5a3a24'/><rect x='380' y='90' width='12' height='300' fill='#5a3a24'/>\n<path d='M212 70 Q310 150 296 330 H212 Z' fill='#f4ecd8'/><path d='M250 115 Q312 190 296 330 H264 Q282 220 250 115Z' fill='#d9cdb2'/>\n<path d='M392 105 Q478 175 466 330 H392 Z' fill='#f4ecd8'/><path d='M424 140 Q480 205 466 330 H440 Q456 230 424 140Z' fill='#d9cdb2'/>\n<path d='M212 50 L262 62 L212 74Z' fill='#d93427'/>\n<path d='M30 380 H570 L505 470 H95 Z' fill='#7a4a2c'/><path d='M330 380 H570 L505 470 H330 Z' fill='#5f3820'/>\n<rect x='52' y='394' width='500' height='14' fill='#c98a55'/>\n<g fill='#3a2414'><circle cx='150' cy='430' r='9'/><circle cx='230' cy='430' r='9'/><circle cx='310' cy='430' r='9'/><circle cx='390' cy='430' r='9'/><circle cx='470' cy='430' r='9'/></g>\n<path d='M0 470 Q75 440 150 470 T300 470 T450 470 T600 470 V520 H0Z' fill='#2c86c0'/></svg>",
+    "isla": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 600 400\">\n<ellipse cx='300' cy='335' rx='290' ry='58' fill='#e9cf8f'/><ellipse cx='300' cy='352' rx='280' ry='40' fill='#d6b874'/>\n<path d='M70 330 Q190 170 330 232 Q430 150 545 330Z' fill='#4f9a4a'/><path d='M330 232 Q430 150 545 330 H390 Q410 260 330 232Z' fill='#3b7d3a'/>\n<path d='M190 320 Q178 220 214 140' stroke='#8a5a32' stroke-width='16' fill='none' stroke-linecap='round'/>\n<g fill='#2f8a3e'><path d='M214 140 Q270 110 300 160 Q260 135 214 146Z'/><path d='M214 140 Q160 105 120 150 Q165 128 214 146Z'/><path d='M214 140 Q250 80 300 90 Q250 100 216 144Z'/><path d='M214 140 Q185 75 135 82 Q182 95 212 144Z'/></g></svg>",
+    "palmera": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 320 520\">\n<ellipse cx='150' cy='505' rx='80' ry='12' fill='#000' opacity='0.15'/>\n<path d='M150 500 Q130 330 175 140' stroke='#8a5a32' stroke-width='30' fill='none' stroke-linecap='round'/>\n<path d='M150 500 Q130 330 175 140' stroke='#6e4426' stroke-width='30' fill='none' stroke-dasharray='6 34'/>\n<g fill='#2f8a3e'><path d='M175 140 Q260 90 315 175 Q250 130 175 152Z'/><path d='M175 140 Q90 90 20 170 Q95 125 175 152Z'/><path d='M175 140 Q230 40 300 50 Q235 75 180 150Z'/><path d='M175 140 Q120 40 50 50 Q118 75 172 150Z'/></g>\n<g fill='#24713a'><path d='M175 140 Q200 60 175 10 Q190 70 182 145Z'/><path d='M175 140 Q250 150 280 230 Q235 170 175 150Z'/></g>\n<g fill='#8a5a32'><circle cx='166' cy='152' r='14'/><circle cx='186' cy='156' r='14'/></g></svg>",
+    "tambor": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 300 470\">\n<ellipse cx='150' cy='455' rx='95' ry='14' fill='#000' opacity='0.18'/>\n<path d='M40 62 H260 L232 440 H68 Z' fill='#a8642f'/><path d='M178 62 H260 L232 440 H168Z' fill='#83491f'/>\n<path d='M48 96 L96 260 L142 96 L188 260 L234 96 M96 260 L74 426 M96 260 L130 426 M188 260 L166 426 M188 260 L226 426' stroke='#efdcb4' stroke-width='7' fill='none' stroke-linejoin='round'/>\n<rect x='54' y='250' width='192' height='20' rx='6' fill='#5a3a24'/>\n<ellipse cx='150' cy='440' rx='82' ry='16' fill='#5a3a24'/>\n<ellipse cx='150' cy='62' rx='112' ry='30' fill='#f3e3bf'/><ellipse cx='150' cy='62' rx='112' ry='30' fill='none' stroke='#5a3a24' stroke-width='9'/>\n<ellipse cx='125' cy='55' rx='40' ry='8' fill='#ffffff' opacity='0.45'/></svg>",
+    "maraca": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 200 380\">\n<rect x='86' y='190' width='28' height='180' rx='12' fill='#7a4a2c'/><rect x='100' y='190' width='14' height='180' rx='6' fill='#5f3820'/>\n<ellipse cx='100' cy='110' rx='86' ry='100' fill='#e0a73a'/><path d='M100 10 A86 100 0 0 1 100 210 A60 100 0 0 0 100 10Z' fill='#c4862a'/>\n<g fill='#5a3a24'><circle cx='70' cy='80' r='9'/><circle cx='110' cy='60' r='9'/><circle cx='90' cy='130' r='9'/><circle cx='135' cy='115' r='9'/><circle cx='60' cy='150' r='7'/></g>\n<ellipse cx='68' cy='60' rx='22' ry='12' fill='#fff' opacity='0.35'/></svg>",
+    "bailarina": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 320 580\">\n<ellipse cx='160' cy='566' rx='110' ry='12' fill='#000' opacity='0.18'/>\n<path d='M120 160 L66 82' stroke='#6b3f22' stroke-width='22' stroke-linecap='round'/><path d='M200 160 L262 112' stroke='#6b3f22' stroke-width='22' stroke-linecap='round'/>\n<rect x='146' y='120' width='28' height='34' fill='#55301a'/>\n<path d='M112 150 H208 L218 280 H102Z' fill='#ffffff'/><path d='M168 150 H208 L218 280 H172Z' fill='#e3e6ee'/>\n<path d='M102 272 H218 L292 530 Q160 556 28 530Z' fill='#f2c230'/><path d='M168 272 H218 L292 530 Q240 542 196 544Z' fill='#d9a91d'/>\n<path d='M64 410 Q160 432 256 410 L270 452 Q160 476 50 452Z' fill='#1d1d2b'/><path d='M44 470 Q160 494 276 470 L282 492 Q160 516 38 492Z' fill='#ffffff'/>\n<circle cx='160' cy='92' r='44' fill='#6b3f22'/><path d='M160 48 A44 44 0 0 1 160 136 A30 44 0 0 0 160 48Z' fill='#55301a'/>\n<path d='M112 86 Q160 10 208 86 Q160 62 112 86Z' fill='#ffffff'/><path d='M120 70 Q160 30 200 70' stroke='#1d1d2b' stroke-width='8' fill='none'/>\n<circle cx='212' cy='62' r='16' fill='#ffffff'/>\n<g fill='#2a1a10'><circle cx='145' cy='98' r='5'/><circle cx='175' cy='98' r='5'/></g><path d='M146 116 Q160 126 174 116' stroke='#2a1a10' stroke-width='4' fill='none' stroke-linecap='round'/></svg>",
+    "bailarin": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 300 580\">\n<ellipse cx='150' cy='566' rx='90' ry='12' fill='#000' opacity='0.18'/>\n<rect x='104' y='300' width='42' height='250' rx='14' fill='#1d1d2b'/><rect x='154' y='300' width='42' height='250' rx='14' fill='#2c2f45'/>\n<path d='M106 160 L54 240' stroke='#6b3f22' stroke-width='22' stroke-linecap='round'/><path d='M194 160 L246 70' stroke='#6b3f22' stroke-width='22' stroke-linecap='round'/>\n<rect x='136' y='120' width='28' height='34' fill='#55301a'/>\n<path d='M96 148 H204 L210 310 H90Z' fill='#f2c230'/><path d='M150 148 H204 L210 310 H150Z' fill='#d9a91d'/>\n<path d='M96 200 H210 M93 250 H210' stroke='#1d1d2b' stroke-width='10'/>\n<circle cx='150' cy='90' r='44' fill='#6b3f22'/><path d='M150 46 A44 44 0 0 1 150 134 A30 44 0 0 0 150 46Z' fill='#55301a'/>\n<path d='M106 82 Q150 30 194 82 Q150 66 106 82Z' fill='#1d1d2b'/>\n<g fill='#2a1a10'><circle cx='135' cy='96' r='5'/><circle cx='165' cy='96' r='5'/></g><path d='M136 114 Q150 124 164 114' stroke='#2a1a10' stroke-width='4' fill='none' stroke-linecap='round'/></svg>",
+    "casabe": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 420 260\">\n<ellipse cx='210' cy='190' rx='200' ry='56' fill='#c9a36a'/>\n<ellipse cx='210' cy='160' rx='195' ry='56' fill='#e9d3a4'/><ellipse cx='210' cy='130' rx='190' ry='56' fill='#f3e2bd'/>\n<path d='M210 74 A190 56 0 0 1 400 130 A190 56 0 0 1 210 186Z' fill='#e6cf9f'/>\n<g fill='#cfae73'><circle cx='120' cy='120' r='6'/><circle cx='170' cy='145' r='5'/><circle cx='240' cy='110' r='6'/><circle cx='290' cy='150' r='5'/><circle cx='330' cy='120' r='6'/><circle cx='200' cy='100' r='4'/><circle cx='95' cy='150' r='4'/></g></svg>",
+    "hudutu": "<svg xmlns='http://www.w3.org/2000/svg' viewBox=\"0 0 640 380\">\n<ellipse cx='320' cy='330' rx='310' ry='44' fill='#000' opacity='0.15'/>\n<ellipse cx='320' cy='300' rx='300' ry='60' fill='#f7f4ec'/><ellipse cx='320' cy='296' rx='250' ry='44' fill='#e6e1d4'/>\n<path d='M40 160 H380 Q370 300 210 310 Q50 300 40 160Z' fill='#c9553f'/><path d='M230 160 H380 Q370 300 210 310 Q300 270 230 160Z' fill='#a8402e'/>\n<ellipse cx='210' cy='160' rx='170' ry='38' fill='#f1dfa8'/><ellipse cx='210' cy='160' rx='170' ry='38' fill='none' stroke='#a8402e' stroke-width='8'/>\n<path d='M120 152 Q170 120 230 150 L262 132 L258 170 L230 160 Q170 190 120 160Z' fill='#d9d2c0'/><circle cx='140' cy='154' r='5' fill='#1d1d2b'/>\n<g fill='#5b8a5a'><circle cx='270' cy='170' r='7'/><circle cx='300' cy='158' r='6'/><circle cx='95' cy='170' r='6'/></g>\n<path d='M420 280 Q410 180 500 170 Q590 180 580 280Z' fill='#f2c230'/><path d='M500 170 Q590 180 580 280 H530 Q560 210 500 170Z' fill='#d9a91d'/>\n<path d='M450 230 Q500 210 550 232' stroke='#c4862a' stroke-width='6' fill='none' stroke-linecap='round'/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Unos 2.000 garífunas (las cifras citadas van de 2.026 a 2.027) desembarcaron en Roatán el 12 de abril de 1797, deportados por los británicos desde San Vicente tras la segunda guerra caribe",
+      "fuente": "UNESCO, «Language, dance and music of the Garifuna»; Boletín de Antropología (Universidad de Antioquia); La Prensa (Honduras), sobre el Satuyé y la llegada a Punta Gorda, Roatán"
+    },
+    {
+      "dato": "Población que mezcla raíces africanas e indígenas del Caribe; su idioma es de la familia arahuaca",
+      "fuente": "UNESCO, Lista Representativa del Patrimonio Cultural Inmaterial (ich.unesco.org/en/RL/language-dance-and-music-of-the-garifuna-00001)"
+    },
+    {
+      "dato": "Comunidades garífunas en Honduras, Belice, Guatemala y Nicaragua",
+      "fuente": "UNESCO (expediente compartido por los cuatro países)"
+    },
+    {
+      "dato": "Idioma, danza y música garífunas: proclamados Obra Maestra del Patrimonio Oral e Inmaterial de la Humanidad en 2001 e inscritos en la Lista Representativa en 2008",
+      "fuente": "UNESCO, ich.unesco.org"
+    },
+    {
+      "dato": "Casabe (pan de yuca rallada) y hudutu (plátano machucado en pilón con sopa de pescado en leche de coco)",
+      "fuente": "Gastronomía garífuna tradicional, descrita por la prensa hondureña (La Prensa, El Heraldo)"
+    }
+  ],
+  "nota": "La cifra de deportados varía según la fuente (2.026 o 2.027 desembarcados; más salieron de San Vicente y muchos murieron antes, en la isla de Baliceaux). La UNESCO habla de raíces africanas e indígenas del Caribe y de un idioma arahuaco; la mezcla caribe-arahuaca de los antepasados indígenas la recoge la historiografía. Los dibujos de ropa y comida son genéricos, no trajes ni recetas de una comunidad concreta."
+}

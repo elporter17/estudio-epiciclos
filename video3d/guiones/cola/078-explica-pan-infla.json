@@ -1,0 +1,394 @@
+{
+  "id": "explica-pan-infla",
+  "motor": "explica",
+  "titulo": "¿Por qué se infla el pan?",
+  "categoria": "porque",
+  "etiquetas": [
+    "porque",
+    "ciencia",
+    "cocina",
+    "pan",
+    "levadura",
+    "curiosidades"
+  ],
+  "descripcion": "La levadura se come los azúcares y suelta gas; el gluten lo atrapa como globitos y el horno deja la esponja fija.",
+  "musica": "lofi",
+  "paleta": {
+    "a": "#ffe08a",
+    "b": "#f5a65b"
+  },
+  "escenas": [
+    {
+      "fondo": "cocina",
+      "texto": "Reto: adivina quién infla el pan. Pista: está vivo y es diminuto.",
+      "clave": "vivo",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.55,
+          0.58,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "pan",
+          "x": 0.5,
+          "y": 0.68,
+          "ancho": 700,
+          "anim": "pop",
+          "idle": "latido",
+          "en": 0
+        },
+        {
+          "numero": "¿?",
+          "x": 0.5,
+          "y": 0.4,
+          "color": "#c9553f",
+          "tam": 90,
+          "en": "adivina"
+        },
+        {
+          "svg": "levadura",
+          "x": 0.8,
+          "y": 0.44,
+          "ancho": 180,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "vivo"
+        },
+        {
+          "marca": true,
+          "x": 0.8,
+          "y": 0.44,
+          "radio": 120,
+          "en": "diminuto"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Es la levadura: miles de millones de hongos microscópicos escondidos en la masa.",
+      "clave": "levadura",
+      "nota": "es un hongo",
+      "capas": [
+        {
+          "svg": "masa_bol",
+          "x": 0.5,
+          "y": 0.74,
+          "ancho": 660,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "levadura",
+          "x": 0.25,
+          "y": 0.43,
+          "ancho": 210,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "levadura"
+        },
+        {
+          "svg": "levadura",
+          "x": 0.53,
+          "y": 0.38,
+          "ancho": 150,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "miles"
+        },
+        {
+          "svg": "levadura",
+          "x": 0.78,
+          "y": 0.46,
+          "ancho": 180,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "hongos"
+        },
+        {
+          "etiqueta": "en la masa",
+          "x": 0.5,
+          "y": 0.6,
+          "a": [
+            0.5,
+            0.68
+          ],
+          "color": "#1d1d2b",
+          "en": "masa"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Se comen los azúcares de la harina y eructan gas: dióxido de carbono.",
+      "clave": "gas",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "levadura",
+          "x": 0.48,
+          "y": 0.62,
+          "ancho": 400,
+          "anim": "pop",
+          "idle": "latido",
+          "en": 0
+        },
+        {
+          "svg": "azucar",
+          "x": 0.17,
+          "y": 0.46,
+          "ancho": 150,
+          "anim": "caer",
+          "en": "azúcares"
+        },
+        {
+          "svg": "azucar",
+          "x": 0.2,
+          "y": 0.78,
+          "ancho": 120,
+          "anim": "caer",
+          "en": "harina"
+        },
+        {
+          "burbujas": true,
+          "x": 0.78,
+          "y": 0.5,
+          "ancho": 0.22,
+          "alto": 0.3,
+          "n": 16,
+          "en": "eructan"
+        },
+        {
+          "numero": "CO2",
+          "x": 0.8,
+          "y": 0.8,
+          "color": "#2f7fd2",
+          "tam": 72,
+          "en": "dióxido"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "El gluten, una red elástica de proteínas, atrapa ese gas como si fueran globitos.",
+      "clave": "gluten",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "gluten_red",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 860,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "etiqueta": "red de gluten",
+          "x": 0.5,
+          "y": 0.33,
+          "color": "#c08a1e",
+          "en": "red"
+        },
+        {
+          "presion": true,
+          "x": 0.5,
+          "y": 0.557,
+          "radio": 70,
+          "n": 8,
+          "en": "atrapa"
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.557,
+          "radio": 66,
+          "en": "globitos"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Con miles de burbujas inflándose, la masa duplica su tamaño en un rato.",
+      "clave": "duplica",
+      "capas": [
+        {
+          "svg": "masa_bol",
+          "x": 0.27,
+          "y": 0.7,
+          "ancho": 420,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "masa_inflada",
+          "x": 0.73,
+          "y": 0.7,
+          "ancho": 420,
+          "anim": "crecer",
+          "en": "inflándose"
+        },
+        {
+          "svg": "flecha",
+          "x": 0.5,
+          "y": 0.7,
+          "ancho": 130,
+          "anim": "pop",
+          "sombra": false,
+          "en": "masa"
+        },
+        {
+          "numero": "x2",
+          "x": 0.73,
+          "y": 0.42,
+          "color": "#c9553f",
+          "tam": 90,
+          "en": "duplica"
+        }
+      ]
+    },
+    {
+      "fondo": "fabrica",
+      "texto": "Luego, en el horno, el gas se dilata y la masa pega un último estirón.",
+      "clave": "horno",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.5,
+          0.68,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "horno",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 720,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "presion": true,
+          "x": 0.5,
+          "y": 0.69,
+          "radioX": 140,
+          "radioY": 70,
+          "n": 8,
+          "en": "dilata"
+        },
+        {
+          "etiqueta": "¡estirón!",
+          "x": 0.5,
+          "y": 0.9,
+          "color": "#c9553f",
+          "en": "último"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Cerca de 60 °C la levadura muere, y el gluten y el almidón se endurecen: la esponja queda fija.",
+      "voz": "Cerca de sesenta grados la levadura muere, y el gluten y el almidón se endurecen: la esponja queda fija.",
+      "clave": "fija",
+      "capas": [
+        {
+          "svg": "pan_corte",
+          "x": 0.42,
+          "y": 0.66,
+          "ancho": 680,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "termometro",
+          "x": 0.87,
+          "y": 0.62,
+          "ancho": 110,
+          "anim": "crecer",
+          "en": "60"
+        },
+        {
+          "numero": "60 °C",
+          "x": 0.76,
+          "y": 0.38,
+          "color": "#d93427",
+          "en": "60"
+        },
+        {
+          "etiqueta": "huecos de gas",
+          "x": 0.3,
+          "y": 0.88,
+          "a": [
+            0.36,
+            0.67
+          ],
+          "color": "#1d1d2b",
+          "en": "esponja"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Huele a pan y a ciencia. Síguenos para el próximo bocado de curiosidad.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "pan": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 360\">\n<ellipse cx=\"300\" cy=\"340\" rx=\"270\" ry=\"16\" fill=\"#000\" opacity=\"0.15\"/>\n<path d=\"M40 300 C40 120 140 60 300 60 C460 60 560 120 560 300 Q560 332 528 332 H72 Q40 332 40 300Z\" fill=\"#d98a3a\"/>\n<path d=\"M70 250 C80 140 160 92 300 92 C440 92 520 140 530 250 C470 200 400 180 300 180 C200 180 130 200 70 250Z\" fill=\"#eda957\"/>\n<path d=\"M170 120 L230 190 M270 100 L330 175 M370 104 L430 180\" stroke=\"#b86a24\" stroke-width=\"22\" stroke-linecap=\"round\"/>\n<path d=\"M175 122 L222 178 M275 103 L322 165 M375 107 L422 168\" stroke=\"#f6d08a\" stroke-width=\"9\" stroke-linecap=\"round\"/>\n<path d=\"M110 130 C140 100 180 86 220 82\" fill=\"none\" stroke=\"#fff\" stroke-width=\"10\" stroke-linecap=\"round\" opacity=\"0.5\"/></svg>",
+    "levadura": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 200\">\n<ellipse cx=\"172\" cy=\"58\" rx=\"34\" ry=\"30\" fill=\"#f3d9a4\" stroke=\"#c99a55\" stroke-width=\"6\"/>\n<ellipse cx=\"100\" cy=\"115\" rx=\"84\" ry=\"72\" fill=\"#f3d9a4\" stroke=\"#c99a55\" stroke-width=\"6\"/>\n<circle cx=\"74\" cy=\"104\" r=\"11\" fill=\"#3a2a1a\"/><circle cx=\"124\" cy=\"104\" r=\"11\" fill=\"#3a2a1a\"/>\n<circle cx=\"78\" cy=\"100\" r=\"4\" fill=\"#fff\"/><circle cx=\"128\" cy=\"100\" r=\"4\" fill=\"#fff\"/>\n<path d=\"M78 136 Q99 154 120 136\" fill=\"none\" stroke=\"#3a2a1a\" stroke-width=\"7\" stroke-linecap=\"round\"/>\n<ellipse cx=\"54\" cy=\"130\" rx=\"12\" ry=\"7\" fill=\"#ff9f9f\" opacity=\"0.7\"/><ellipse cx=\"146\" cy=\"130\" rx=\"12\" ry=\"7\" fill=\"#ff9f9f\" opacity=\"0.7\"/>\n<path d=\"M50 70 Q70 52 96 50\" fill=\"none\" stroke=\"#fff\" stroke-width=\"8\" stroke-linecap=\"round\" opacity=\"0.7\"/></svg>",
+    "masa_bol": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 420\"><path d=\"M70 192 C80 120 180 104 300 104 C420 104 520 120 530 192Z\" fill=\"#f6e3c0\"/><path d=\"M120 150 C170 128 230 122 280 122\" fill=\"none\" stroke=\"#fff\" stroke-width=\"10\" stroke-linecap=\"round\" opacity=\"0.7\"/><path d=\"M40 190 H560 C560 330 450 410 300 410 C150 410 40 330 40 190Z\" fill=\"#3d8bd9\"/>\n<ellipse cx=\"300\" cy=\"190\" rx=\"262\" ry=\"22\" fill=\"#5aa3ea\"/>\n<path d=\"M70 250 C120 330 200 370 300 372\" fill=\"none\" stroke=\"#8cc4f5\" stroke-width=\"16\" stroke-linecap=\"round\"/></svg>",
+    "masa_inflada": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 420\"><path d=\"M56 194 C50 30 170 10 300 10 C430 10 550 30 544 194Z\" fill=\"#f6e3c0\"/>\n<circle cx=\"200\" cy=\"110\" r=\"14\" fill=\"#e8cf9e\"/><circle cx=\"360\" cy=\"70\" r=\"10\" fill=\"#e8cf9e\"/><circle cx=\"430\" cy=\"140\" r=\"16\" fill=\"#e8cf9e\"/><circle cx=\"290\" cy=\"150\" r=\"9\" fill=\"#e8cf9e\"/>\n<path d=\"M120 90 C160 50 220 36 270 34\" fill=\"none\" stroke=\"#fff\" stroke-width=\"12\" stroke-linecap=\"round\" opacity=\"0.7\"/><path d=\"M40 190 H560 C560 330 450 410 300 410 C150 410 40 330 40 190Z\" fill=\"#3d8bd9\"/>\n<ellipse cx=\"300\" cy=\"190\" rx=\"262\" ry=\"22\" fill=\"#5aa3ea\"/>\n<path d=\"M70 250 C120 330 200 370 300 372\" fill=\"none\" stroke=\"#8cc4f5\" stroke-width=\"16\" stroke-linecap=\"round\"/></svg>",
+    "azucar": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><path d=\"M100 20 L180 62 L100 104 L20 62Z\" fill=\"#ffffff\"/><path d=\"M20 62 L100 104 V186 L20 144Z\" fill=\"#e3e9f3\"/><path d=\"M180 62 L100 104 V186 L180 144Z\" fill=\"#c6d0e0\"/><circle cx=\"70\" cy=\"60\" r=\"5\" fill=\"#dfe6f0\"/><circle cx=\"120\" cy=\"50\" r=\"4\" fill=\"#dfe6f0\"/><circle cx=\"60\" cy=\"120\" r=\"4\" fill=\"#cdd6e4\"/><circle cx=\"140\" cy=\"130\" r=\"4\" fill=\"#b3bfd2\"/></svg>",
+    "gluten_red": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\"><defs><clipPath id=\"gc\"><circle cx=\"300\" cy=\"300\" r=\"284\"/></clipPath></defs>\n<circle cx=\"300\" cy=\"300\" r=\"290\" fill=\"#f6e3c0\"/>\n<g clip-path=\"url(#gc)\" fill=\"none\" stroke=\"#d9a94a\" stroke-width=\"11\" stroke-linecap=\"round\"><path d=\"M20 90 C120 60 200 120 300 90 C400 60 480 120 580 90\"/><path d=\"M90 20 C60 120 120 200 90 300 C60 400 120 480 90 580\"/><path d=\"M20 174 C120 144 200 204 300 174 C400 144 480 204 580 174\"/><path d=\"M174 20 C144 120 204 200 174 300 C144 400 204 480 174 580\"/><path d=\"M20 258 C120 228 200 288 300 258 C400 228 480 288 580 258\"/><path d=\"M258 20 C228 120 288 200 258 300 C228 400 288 480 258 580\"/><path d=\"M20 342 C120 312 200 372 300 342 C400 312 480 372 580 342\"/><path d=\"M342 20 C312 120 372 200 342 300 C312 400 372 480 342 580\"/><path d=\"M20 426 C120 396 200 456 300 426 C400 396 480 456 580 426\"/><path d=\"M426 20 C396 120 456 200 426 300 C396 400 456 480 426 580\"/><path d=\"M20 510 C120 480 200 540 300 510 C400 480 480 540 580 510\"/><path d=\"M510 20 C480 120 540 200 510 300 C480 400 540 480 510 580\"/></g>\n<circle cx=\"132\" cy=\"132\" r=\"34\" fill=\"#ffffff\" opacity=\"0.75\" stroke=\"#fff\" stroke-width=\"5\"/><circle cx=\"120.1\" cy=\"120.1\" r=\"7.48\" fill=\"#fff\"/><circle cx=\"300\" cy=\"215\" r=\"44\" fill=\"#ffffff\" opacity=\"0.75\" stroke=\"#fff\" stroke-width=\"5\"/><circle cx=\"284.6\" cy=\"199.6\" r=\"9.68\" fill=\"#fff\"/><circle cx=\"468\" cy=\"132\" r=\"30\" fill=\"#ffffff\" opacity=\"0.75\" stroke=\"#fff\" stroke-width=\"5\"/><circle cx=\"457.5\" cy=\"121.5\" r=\"6.6\" fill=\"#fff\"/><circle cx=\"216\" cy=\"300\" r=\"30\" fill=\"#ffffff\" opacity=\"0.75\" stroke=\"#fff\" stroke-width=\"5\"/><circle cx=\"205.5\" cy=\"289.5\" r=\"6.6\" fill=\"#fff\"/><circle cx=\"384\" cy=\"384\" r=\"40\" fill=\"#ffffff\" opacity=\"0.75\" stroke=\"#fff\" stroke-width=\"5\"/><circle cx=\"370\" cy=\"370\" r=\"8.8\" fill=\"#fff\"/><circle cx=\"132\" cy=\"468\" r=\"32\" fill=\"#ffffff\" opacity=\"0.75\" stroke=\"#fff\" stroke-width=\"5\"/><circle cx=\"120.8\" cy=\"456.8\" r=\"7.04\" fill=\"#fff\"/><circle cx=\"468\" cy=\"468\" r=\"36\" fill=\"#ffffff\" opacity=\"0.75\" stroke=\"#fff\" stroke-width=\"5\"/><circle cx=\"455.4\" cy=\"455.4\" r=\"7.92\" fill=\"#fff\"/><circle cx=\"300\" cy=\"468\" r=\"26\" fill=\"#ffffff\" opacity=\"0.75\" stroke=\"#fff\" stroke-width=\"5\"/><circle cx=\"290.9\" cy=\"458.9\" r=\"5.72\" fill=\"#fff\"/><circle cx=\"216\" cy=\"132\" r=\"22\" fill=\"#ffffff\" opacity=\"0.75\" stroke=\"#fff\" stroke-width=\"5\"/><circle cx=\"208.3\" cy=\"124.3\" r=\"4.84\" fill=\"#fff\"/><circle cx=\"468\" cy=\"300\" r=\"26\" fill=\"#ffffff\" opacity=\"0.75\" stroke=\"#fff\" stroke-width=\"5\"/><circle cx=\"458.9\" cy=\"290.9\" r=\"5.72\" fill=\"#fff\"/></svg>",
+    "horno": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\"><defs><radialGradient id=\"hg\" cx=\"50%\" cy=\"70%\" r=\"70%\"><stop offset=\"0\" stop-color=\"#ffb347\"/><stop offset=\"1\" stop-color=\"#7a2a10\"/></radialGradient></defs>\n<rect x=\"30\" y=\"20\" width=\"540\" height=\"560\" rx=\"36\" fill=\"#d8dde4\"/>\n<rect x=\"30\" y=\"20\" width=\"540\" height=\"130\" rx=\"36\" fill=\"#3a3f4a\"/><rect x=\"30\" y=\"110\" width=\"540\" height=\"40\" fill=\"#3a3f4a\"/>\n<circle cx=\"110\" cy=\"85\" r=\"30\" fill=\"#c9cfd8\"/><circle cx=\"200\" cy=\"85\" r=\"30\" fill=\"#c9cfd8\"/><rect x=\"330\" y=\"65\" width=\"190\" height=\"40\" rx=\"10\" fill=\"#1d2128\"/><rect x=\"345\" y=\"76\" width=\"60\" height=\"18\" rx=\"4\" fill=\"#ff6a3d\"/>\n<rect x=\"100\" y=\"180\" width=\"400\" height=\"34\" rx=\"17\" fill=\"#a7afba\"/>\n<rect x=\"80\" y=\"240\" width=\"440\" height=\"300\" rx=\"26\" fill=\"#2a2420\"/>\n<rect x=\"100\" y=\"260\" width=\"400\" height=\"260\" rx=\"18\" fill=\"url(#hg)\"/>\n<path d=\"M170 480 C170 400 220 370 300 370 C380 370 430 400 430 480Z\" fill=\"#e8a24a\"/><path d=\"M230 400 L260 430 M290 390 L320 422 M350 396 L378 426\" stroke=\"#b86a24\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n<rect x=\"140\" y=\"480\" width=\"320\" height=\"14\" rx=\"7\" fill=\"#5d4a3a\"/>\n<path d=\"M120 280 L170 280\" stroke=\"#fff\" stroke-width=\"10\" stroke-linecap=\"round\" opacity=\"0.4\"/></svg>",
+    "pan_corte": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 420\"><ellipse cx=\"250\" cy=\"404\" rx=\"220\" ry=\"12\" fill=\"#000\" opacity=\"0.15\"/>\n<path d=\"M30 360 C20 160 90 40 250 40 C410 40 480 160 470 360 Q470 392 440 392 H60 Q30 392 30 360Z\" fill=\"#b86a24\"/>\n<path d=\"M58 352 C50 180 110 72 250 72 C390 72 450 180 442 352 Q442 366 428 366 H72 Q58 366 58 352Z\" fill=\"#f7e2b5\"/>\n<ellipse cx=\"150\" cy=\"160\" rx=\"26\" ry=\"18\" fill=\"#e2c084\"/><ellipse cx=\"250\" cy=\"130\" rx=\"18\" ry=\"14\" fill=\"#e2c084\"/><ellipse cx=\"340\" cy=\"170\" rx=\"30\" ry=\"22\" fill=\"#e2c084\"/><ellipse cx=\"120\" cy=\"260\" rx=\"20\" ry=\"26\" fill=\"#e2c084\"/><ellipse cx=\"210\" cy=\"230\" rx=\"34\" ry=\"24\" fill=\"#e2c084\"/><ellipse cx=\"310\" cy=\"260\" rx=\"22\" ry=\"16\" fill=\"#e2c084\"/><ellipse cx=\"390\" cy=\"270\" rx=\"24\" ry=\"30\" fill=\"#e2c084\"/><ellipse cx=\"180\" cy=\"320\" rx=\"18\" ry=\"12\" fill=\"#e2c084\"/><ellipse cx=\"270\" cy=\"330\" rx=\"26\" ry=\"16\" fill=\"#e2c084\"/><ellipse cx=\"360\" cy=\"340\" rx=\"14\" ry=\"10\" fill=\"#e2c084\"/><ellipse cx=\"250\" cy=\"190\" rx=\"12\" ry=\"10\" fill=\"#e2c084\"/><ellipse cx=\"100\" cy=\"200\" rx=\"12\" ry=\"9\" fill=\"#e2c084\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "La levadura (Saccharomyces cerevisiae, un hongo unicelular) fermenta los azúcares de la masa y produce dióxido de carbono y etanol",
+      "fuente": "Exploratorium, «The Science of Bread»; Modernist Cuisine, «The science behind each stage of the bread-making process»"
+    },
+    {
+      "dato": "La red de gluten es elástica y atrapa las burbujas de CO2; el almidón ayuda a reforzarla",
+      "fuente": "Modernist Cuisine; Exploratorium"
+    },
+    {
+      "dato": "En el horno el gas y el vapor se expanden («oven spring»); la levadura muere hacia los 60 °C de temperatura interna, el almidón se gelatiniza y el gluten se fija",
+      "fuente": "Sustain / Real Bread Campaign, «Bread science 101» (60-65 °C); The Professional Chef (CIA), «Baking» (60 °C / 140 °F)"
+    }
+  ],
+  "nota": "«Miles de millones»: un sobre de levadura seca trae del orden de decenas de miles de millones de células. Las levaduras dibujadas con cara son una caricatura: son microscópicas. El tiempo de levado (que duplique) depende de la receta y la temperatura. Además de CO2 producen algo de alcohol, que se evapora al hornear."
+}

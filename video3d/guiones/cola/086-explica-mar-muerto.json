@@ -1,0 +1,325 @@
+{
+  "id": "explica-mar-muerto",
+  "motor": "explica",
+  "titulo": "¿Qué pasa si caes al Mar Muerto?",
+  "categoria": "ciencia",
+  "etiquetas": [
+    "ciencia",
+    "marmuerto",
+    "densidad",
+    "viajes",
+    "curiosidades"
+  ],
+  "descripcion": "En el Mar Muerto no te hundes aunque quieras. Te explicamos por qué flotas como corcho y qué no debes hacer nunca ahí.",
+  "musica": "pop",
+  "escenas": [
+    {
+      "fondo": "cielo",
+      "texto": "Existe un lugar donde no te hundes aunque lo intentes: el Mar Muerto.",
+      "clave": "Mar Muerto",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1.12
+        ],
+        "a": [
+          0.45,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "agua_muerto",
+          "x": 0.5,
+          "y": 0.8,
+          "ancho": 1080,
+          "anim": "ninguna",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "flotador",
+          "x": 0.45,
+          "y": 0.621,
+          "ancho": 640,
+          "anim": "caer",
+          "idle": "flotar",
+          "en": "hundes"
+        },
+        {
+          "svg": "sol",
+          "x": 0.82,
+          "y": 0.37,
+          "ancho": 230,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "lugar"
+        },
+        {
+          "etiqueta": "agua supersalada",
+          "x": 0.5,
+          "y": 0.88,
+          "color": "#1b7f86",
+          "en": "Muerto"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Su agua tiene cerca de 34 % de sal. El mar normal, apenas 3,5 %.",
+      "voz": "Su agua tiene cerca de treinta y cuatro por ciento de sal. El mar normal, apenas tres coma cinco por ciento.",
+      "clave": "sal",
+      "nota": "casi 10 veces más",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.62,
+          0.62,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "vaso_muerto",
+          "x": 0.7,
+          "y": 0.66,
+          "ancho": 340,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "vaso_mar",
+          "x": 0.3,
+          "y": 0.66,
+          "ancho": 340,
+          "anim": "pop",
+          "en": "normal"
+        },
+        {
+          "numero": "34 %",
+          "x": 0.7,
+          "y": 0.4,
+          "color": "#d9532b",
+          "tam": 80,
+          "en": "34"
+        },
+        {
+          "numero": "3,5 %",
+          "x": 0.3,
+          "y": 0.4,
+          "color": "#2f7fd2",
+          "tam": 64,
+          "en": "3,5"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Tanta sal la vuelve muy densa: un litro pesa unos 1,24 kilos. Tu cuerpo, litro por litro, pesa menos.",
+      "voz": "Tanta sal la vuelve muy densa: un litro pesa unos uno coma veinticuatro kilos. Tu cuerpo, litro por litro, pesa menos.",
+      "clave": "densa",
+      "camara": {
+        "de": [
+          0.4,
+          0.6,
+          1.1
+        ],
+        "a": [
+          0.6,
+          0.6,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "botella_agua",
+          "x": 0.3,
+          "y": 0.64,
+          "ancho": 250,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": 0
+        },
+        {
+          "numero": "≈ 1,24 kg",
+          "x": 0.3,
+          "y": 0.38,
+          "color": "#1b7f86",
+          "tam": 62,
+          "en": "1,24"
+        },
+        {
+          "svg": "persona",
+          "x": 0.72,
+          "y": 0.66,
+          "ancho": 300,
+          "anim": "slideIn",
+          "desde": "derecha",
+          "en": "cuerpo"
+        },
+        {
+          "etiqueta": "≈ 1 kg por litro",
+          "x": 0.72,
+          "y": 0.4,
+          "color": "#6b4fe0",
+          "a": [
+            0.72,
+            0.5
+          ],
+          "en": "menos"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Por eso flotas sin esfuerzo, como en un colchón. Hasta puedes leer acostado en el agua.",
+      "clave": "sin esfuerzo",
+      "camara": {
+        "de": [
+          0.45,
+          0.62,
+          1
+        ],
+        "a": [
+          0.38,
+          0.55,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "agua_muerto",
+          "x": 0.5,
+          "y": 0.83,
+          "ancho": 1080,
+          "anim": "ninguna",
+          "sombra": false,
+          "en": 0
+        },
+        {
+          "svg": "flotador",
+          "x": 0.45,
+          "y": 0.648,
+          "ancho": 800,
+          "anim": "fade",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "etiqueta": "sin esfuerzo",
+          "x": 0.74,
+          "y": 0.42,
+          "color": "#e09a17",
+          "a": [
+            0.55,
+            0.66
+          ],
+          "en": "esfuerzo"
+        },
+        {
+          "marca": true,
+          "x": 0.32,
+          "y": 0.596,
+          "radio": 110,
+          "en": "leer"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Eso sí: si te entra en los ojos o en una herida, arde muchísimo. Y jamás te tires de cabeza.",
+      "clave": "arde",
+      "nota": "y no la tragues",
+      "camara": {
+        "de": [
+          0.4,
+          0.45,
+          1.1
+        ],
+        "a": [
+          0.6,
+          0.7,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "ojo",
+          "x": 0.38,
+          "y": 0.45,
+          "ancho": 520,
+          "anim": "pop",
+          "idle": "sacudir",
+          "en": 0
+        },
+        {
+          "svg": "gota",
+          "x": 0.62,
+          "y": 0.33,
+          "ancho": 110,
+          "anim": "caer",
+          "en": "entra"
+        },
+        {
+          "etiqueta": "¡arde!",
+          "x": 0.8,
+          "y": 0.5,
+          "color": "#e0332b",
+          "a": [
+            0.5,
+            0.45
+          ],
+          "en": "arde"
+        },
+        {
+          "svg": "no_clavado",
+          "x": 0.6,
+          "y": 0.75,
+          "ancho": 360,
+          "anim": "pop",
+          "idle": "latido",
+          "en": "cabeza"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Síguenos para otro chapuzón de ciencia muy pronto.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "agua_muerto": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1080 760\"><defs><linearGradient id=\"a\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#5fd6c8\"/><stop offset=\"1\" stop-color=\"#1b7f86\"/></linearGradient></defs>\n<path d=\"M0 0 H1080 V70 H0 Z\" fill=\"#d9c08a\"/><path d=\"M0 40 Q180 20 360 40 T720 40 T1080 40 V80 H0 Z\" fill=\"#f4efe2\"/>\n<path d=\"M0 60 Q135 44 270 60 T540 60 T810 60 T1080 60 V760 H0 Z\" fill=\"url(#a)\"/>\n<path d=\"M0 60 Q135 44 270 60 T540 60 T810 60 T1080 60\" fill=\"none\" stroke=\"#c9fff6\" stroke-width=\"10\"/>\n<g fill=\"#ffffff\" opacity=\"0.75\"><ellipse cx=\"120\" cy=\"560\" rx=\"60\" ry=\"18\"/><ellipse cx=\"420\" cy=\"620\" rx=\"80\" ry=\"20\"/><ellipse cx=\"820\" cy=\"580\" rx=\"70\" ry=\"18\"/><circle cx=\"260\" cy=\"420\" r=\"10\"/><circle cx=\"700\" cy=\"460\" r=\"8\"/><circle cx=\"960\" cy=\"380\" r=\"9\"/></g>\n<path d=\"M150 220 q40 -14 80 0 t80 0 M640 300 q40 -14 80 0 t80 0\" stroke=\"#bff5ee\" stroke-width=\"7\" fill=\"none\" opacity=\"0.5\"/></svg>",
+    "flotador": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 680 280\"><rect x=\"380\" y=\"132\" width=\"230\" height=\"40\" rx=\"20\" fill=\"#f2c39b\"/><rect x=\"380\" y=\"156\" width=\"230\" height=\"16\" rx=\"8\" fill=\"#e3a982\"/>\n<ellipse cx=\"626\" cy=\"150\" rx=\"26\" ry=\"18\" fill=\"#f2c39b\"/>\n<path d=\"M130 120 Q260 104 400 124 L400 178 Q260 196 130 180 Z\" fill=\"#f2c39b\"/>\n<path d=\"M200 116 Q290 104 380 122 L380 180 Q290 192 200 184 Z\" fill=\"#ff5a4d\"/><path d=\"M200 160 Q290 172 380 166 L380 180 Q290 192 200 184 Z\" fill=\"#d8443a\"/>\n<circle cx=\"84\" cy=\"146\" r=\"56\" fill=\"#f2c39b\"/><path d=\"M40 120 Q60 80 110 90 Q90 110 50 160 Z\" fill=\"#4a3426\"/><circle cx=\"96\" cy=\"130\" r=\"7\" fill=\"#3a2a20\"/><path d=\"M90 166 Q104 174 118 164\" stroke=\"#9a4a3a\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/>\n<path d=\"M150 124 L200 40\" stroke=\"#f2c39b\" stroke-width=\"26\" stroke-linecap=\"round\"/><path d=\"M270 120 L240 40\" stroke=\"#f2c39b\" stroke-width=\"26\" stroke-linecap=\"round\"/>\n<path d=\"M170 10 L220 46 L270 10 L270 70 L220 100 L170 70 Z\" fill=\"#ffffff\"/><path d=\"M220 46 L270 10 L270 70 L220 100 Z\" fill=\"#e2e8ee\"/><g stroke=\"#9aa4ae\" stroke-width=\"4\"><path d=\"M182 36 L210 54 M182 50 L210 68 M232 54 L258 36 M232 68 L258 50\"/></g></svg>",
+    "vaso_mar": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 420\"><path d=\"M30 20 H270 L248 396 Q246 412 230 412 H70 Q54 412 52 396 Z\" fill=\"#e8f6ff\" opacity=\"0.55\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/>\n<path d=\"M40 110 H260 L248 396 Q246 404 230 404 H70 Q56 404 54 396 Z\" fill=\"#5fd6c8\" opacity=\"0.85\"/><path d=\"M40 110 H260\" stroke=\"#c9fff6\" stroke-width=\"8\"/>\n<path d=\"M64 402 Q150 372 236 402 Z\" fill=\"#ffffff\"/><path d=\"M150 387 Q200 391.5 236 402 L150 402 Z\" fill=\"#dfe8ee\"/><path d=\"M70 130 L84 380\" stroke=\"#ffffff\" stroke-width=\"12\" stroke-linecap=\"round\" opacity=\"0.5\"/></svg>",
+    "vaso_muerto": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 420\"><path d=\"M30 20 H270 L248 396 Q246 412 230 412 H70 Q54 412 52 396 Z\" fill=\"#e8f6ff\" opacity=\"0.55\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/>\n<path d=\"M40 110 H260 L248 396 Q246 404 230 404 H70 Q56 404 54 396 Z\" fill=\"#5fd6c8\" opacity=\"0.85\"/><path d=\"M40 110 H260\" stroke=\"#c9fff6\" stroke-width=\"8\"/>\n<path d=\"M64 402 Q150 172 236 402 Z\" fill=\"#ffffff\"/><path d=\"M150 287 Q200 321.5 236 402 L150 402 Z\" fill=\"#dfe8ee\"/><g fill=\"#ffffff\"><rect x=\"100\" y=\"250\" width=\"16\" height=\"16\" transform=\"rotate(20 108 258)\"/><rect x=\"180\" y=\"200\" width=\"14\" height=\"14\" transform=\"rotate(-15 187 207)\"/><rect x=\"140\" y=\"160\" width=\"12\" height=\"12\"/></g><path d=\"M70 130 L84 380\" stroke=\"#ffffff\" stroke-width=\"12\" stroke-linecap=\"round\" opacity=\"0.5\"/></svg>",
+    "ojo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 260\"><path d=\"M20 140 Q210 -10 400 140 Q210 280 20 140 Z\" fill=\"#ffffff\" stroke=\"#3a2a20\" stroke-width=\"10\" stroke-linejoin=\"round\"/>\n<g stroke=\"#e0483d\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"><path d=\"M50 140 Q90 130 110 150 M60 120 Q90 120 120 110 M360 140 Q330 130 300 150 M350 120 Q320 116 296 110 M70 165 Q100 160 120 175\"/></g>\n<circle cx=\"210\" cy=\"140\" r=\"66\" fill=\"#5b8a3a\"/><circle cx=\"210\" cy=\"140\" r=\"32\" fill=\"#1d1d2b\"/><circle cx=\"190\" cy=\"120\" r=\"14\" fill=\"#ffffff\"/>\n<g stroke=\"#3a2a20\" stroke-width=\"8\" stroke-linecap=\"round\"><path d=\"M90 74 L72 44 M150 46 L142 14 M210 38 V6 M270 46 L278 14 M330 74 L348 44\"/></g></svg>",
+    "no_clavado": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\"><circle cx=\"200\" cy=\"200\" r=\"190\" fill=\"#ffffff\"/>\n<path d=\"M60 300 Q130 280 200 300 T340 300 V330 Q270 350 200 330 T60 330 Z\" fill=\"#5fd6c8\"/>\n<g transform=\"rotate(35 200 190)\"><circle cx=\"200\" cy=\"250\" r=\"26\" fill=\"#2c3550\"/><rect x=\"186\" y=\"120\" width=\"28\" height=\"110\" rx=\"14\" fill=\"#2c3550\"/><path d=\"M190 230 L150 270 M210 230 L250 270\" stroke=\"#2c3550\" stroke-width=\"20\" stroke-linecap=\"round\"/><path d=\"M192 128 L178 50 M208 128 L222 50\" stroke=\"#2c3550\" stroke-width=\"20\" stroke-linecap=\"round\"/></g>\n<circle cx=\"200\" cy=\"200\" r=\"168\" fill=\"none\" stroke=\"#e0332b\" stroke-width=\"40\"/><path d=\"M82 82 L318 318\" stroke=\"#e0332b\" stroke-width=\"40\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Salinidad del Mar Muerto ≈ 34 % (34,2 % en 2011), casi 10 veces la del océano; densidad ≈ 1,24 kg por litro",
+      "fuente": "Wikipedia, «Dead Sea» (datos de salinidad y densidad, con referencias); Encyclopaedia Britannica, «Dead Sea» (britannica.com/place/Dead-Sea)"
+    },
+    {
+      "dato": "Salinidad media del agua de mar ≈ 3,5 % (35 g por kg)",
+      "fuente": "NOAA Ocean Service / USGS Water Science School, «Why is the ocean salty?»"
+    },
+    {
+      "dato": "La densidad del cuerpo humano es cercana a 1 kg/L (algo menos con los pulmones llenos), menor que la del agua del Mar Muerto, por eso se flota con facilidad",
+      "fuente": "Encyclopaedia Britannica, «Dead Sea»; principio de Arquímedes"
+    },
+    {
+      "dato": "Recomendaciones: no zambullirse ni sumergir la cabeza, evitar que el agua entre a ojos y heridas, no tragarla (puede ser peligrosa)",
+      "fuente": "Ministerio de Turismo de Israel / Dead Sea Tourism, recomendaciones de seguridad; Israel Ministry of Health; reportes de ahogamiento en el Mar Muerto por inhalar o tragar agua"
+    }
+  ],
+  "nota": "La salinidad varía con el año y la profundidad (fuentes entre ≈ 31 % y 34 %); por eso «cerca de 34 %». «Casi 10 veces más» compara 34 % con 3,5 %. La densidad del cuerpo varía entre ≈ 0,98 y 1,06 kg/L según el aire en los pulmones y la grasa; «≈ 1 kg por litro» simplifica. Tragar agua del Mar Muerto es peligroso (puede dañar los pulmones si se inhala); por eso la nota «y no la tragues»."
+}

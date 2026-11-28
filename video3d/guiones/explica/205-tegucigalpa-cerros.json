@@ -1,0 +1,374 @@
+{
+  "id": "explica-hn-tegucigalpa-cerros",
+  "motor": "explica",
+  "titulo": "¿Por qué Tegus está entre cerros?",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "tegucigalpa",
+    "historia",
+    "sabiasque"
+  ],
+  "descripcion": "¿Por qué Tegucigalpa está rodeada de cerros? Nació como pueblo minero en 1578. Te contamos qué podría significar su nombre, la historia del Cristo de El Picacho y de su ciudad gemela, Comayagüela.",
+  "musica": "lofi",
+  "paleta": {
+    "a": "#f7c873",
+    "b": "#d9824b"
+  },
+  "escenas": [
+    {
+      "fondo": "cielo",
+      "texto": "Tegucigalpa vive rodeada de cerros. ¿Por qué la capital creció metida en un valle?",
+      "clave": "cerros",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "valle_ciudad",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 1080,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "svg": "cristo",
+          "x": 0.23,
+          "y": 0.449,
+          "ancho": 70,
+          "anim": "pop",
+          "sombra": false,
+          "en": "cerros"
+        },
+        {
+          "marca": true,
+          "x": 0.5,
+          "y": 0.7,
+          "radio": 200,
+          "en": "valle"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Todo empezó con plata. En 1578 nació aquí un real de minas: un pueblo minero.",
+      "voz": "Todo empezó con plata. En mil quinientos setenta y ocho nació aquí un real de minas: un pueblo minero.",
+      "clave": "plata",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1.08
+        ],
+        "a": [
+          0.45,
+          0.62,
+          1.15
+        ]
+      },
+      "capas": [
+        {
+          "svg": "cerro_mina",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 860,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "numero": "1578",
+          "x": 0.5,
+          "y": 0.34,
+          "color": "#7a4a2c",
+          "tam": 80,
+          "en": "1578"
+        },
+        {
+          "etiqueta": "real de minas",
+          "x": 0.72,
+          "y": 0.86,
+          "a": [
+            0.44,
+            0.64
+          ],
+          "color": "#5a3a24",
+          "en": "real"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Las vetas estaban en los cerros cercanos, y el pueblo creció abajo, junto al río Choluteca.",
+      "clave": "Choluteca",
+      "camara": {
+        "de": [
+          0.5,
+          0.58,
+          1
+        ],
+        "a": [
+          0.55,
+          0.68,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "valle_ciudad",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 1080,
+          "anim": "ninguna"
+        },
+        {
+          "svg": "cristo",
+          "x": 0.23,
+          "y": 0.449,
+          "ancho": 70,
+          "anim": "ninguna",
+          "sombra": false
+        },
+        {
+          "etiqueta": "cerros",
+          "x": 0.2,
+          "y": 0.34,
+          "a": [
+            0.2,
+            0.5
+          ],
+          "color": "#2f6b45",
+          "en": "cerros"
+        },
+        {
+          "etiqueta": "río Choluteca",
+          "x": 0.66,
+          "y": 0.88,
+          "a": [
+            0.56,
+            0.753
+          ],
+          "color": "#2f7fd2",
+          "en": "río"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "¿Y el nombre? Nadie lo sabe seguro. Unos dicen «cerro de plata»; el filólogo Alberto Membreño propuso «piedras puntiagudas».",
+      "clave": "nombre",
+      "nota": "hay varias teorías",
+      "camara": {
+        "de": [
+          0.5,
+          0.55,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "numero": "?",
+          "x": 0.5,
+          "y": 0.36,
+          "color": "#6b4fe0",
+          "tam": 90,
+          "en": 0.1
+        },
+        {
+          "svg": "cerro_plata",
+          "x": 0.27,
+          "y": 0.56,
+          "ancho": 440,
+          "anim": "pop",
+          "esperar": true,
+          "en": "Unos"
+        },
+        {
+          "etiqueta": "«cerro de plata»",
+          "x": 0.27,
+          "y": 0.7,
+          "color": "#5b6b7b",
+          "tam": 34,
+          "en": "cerro"
+        },
+        {
+          "svg": "piedras_puntas",
+          "x": 0.73,
+          "y": 0.56,
+          "ancho": 440,
+          "anim": "pop",
+          "en": "Membreño"
+        },
+        {
+          "etiqueta": "«piedras puntiagudas»",
+          "x": 0.73,
+          "y": 0.7,
+          "color": "#7d6f60",
+          "tam": 34,
+          "en": "puntiagudas"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Y en lo alto del cerro El Picacho, el Cristo abre los brazos sobre la ciudad desde 1998.",
+      "voz": "Y en lo alto del cerro El Picacho, el Cristo abre los brazos sobre la ciudad desde mil novecientos noventa y ocho.",
+      "clave": "Picacho",
+      "camara": {
+        "de": [
+          0.5,
+          0.65,
+          1
+        ],
+        "a": [
+          0.5,
+          0.5,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "cerro_picacho",
+          "x": 0.5,
+          "y": 0.68,
+          "ancho": 960,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": 0
+        },
+        {
+          "svg": "cristo",
+          "x": 0.5,
+          "y": 0.437,
+          "ancho": 160,
+          "anim": "caer",
+          "en": "Cristo"
+        },
+        {
+          "etiqueta": "≈ 1.300 m",
+          "x": 0.78,
+          "y": 0.56,
+          "a": [
+            0.56,
+            0.5
+          ],
+          "color": "#2f6b45",
+          "en": "Picacho"
+        },
+        {
+          "numero": "1998",
+          "x": 0.22,
+          "y": 0.34,
+          "color": "#6b4fe0",
+          "en": "1998"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Y al otro lado del río está Comayagüela, su ciudad gemela. Desde 1937, juntas forman el Distrito Central.",
+      "voz": "Y al otro lado del río está Comayagüela, su ciudad gemela. Desde mil novecientos treinta y siete, juntas forman el Distrito Central.",
+      "clave": "gemela",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "dos_ciudades",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 1080,
+          "anim": "fade",
+          "en": 0
+        },
+        {
+          "etiqueta": "Tegucigalpa",
+          "x": 0.25,
+          "y": 0.38,
+          "color": "#2c2266",
+          "en": 0.3
+        },
+        {
+          "etiqueta": "Comayagüela",
+          "x": 0.75,
+          "y": 0.38,
+          "color": "#b5523b",
+          "en": "Comayagüela"
+        },
+        {
+          "svg": "puente",
+          "x": 0.5,
+          "y": 0.68,
+          "ancho": 360,
+          "anim": "crecer",
+          "en": "juntas"
+        },
+        {
+          "numero": "1937",
+          "x": 0.5,
+          "y": 0.86,
+          "color": "#2c2266",
+          "en": "1937"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿Desde qué cerro has visto la capital de noche? Cuéntanos y síguenos para más de Honduras.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "valle_ciudad": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 760\"><path d=\"M0 430 L90 350 L170 260 L230 170 L300 270 L380 320 L470 250 L560 310 L650 230 L740 290 L830 220 L920 290 L1000 260 L1000 760 L0 760Z\" fill=\"#6f9c86\"/><path d=\"M230 170 L300 270 L250 420 Z M470 250 L560 310 L500 420Z M650 230 L740 290 L680 420Z M830 220 L920 290 L860 420Z\" fill=\"#5d8a74\"/><path d=\"M0 560 Q130 410 280 500 Q340 540 380 590 L640 590 Q700 520 800 450 Q900 400 1000 450 L1000 760 L0 760Z\" fill=\"#4a8a5c\"/><path d=\"M0 560 Q130 410 280 500 Q200 520 120 600 L0 640Z M1000 450 Q900 400 800 450 Q880 450 940 520 L1000 520Z\" fill=\"#3f7a50\"/><rect x=\"51\" y=\"528\" width=\"18\" height=\"12\" fill=\"#f5e6c4\"/><path d=\"M49 528L60 520L71 528Z\" fill=\"#b5523b\"/><rect x=\"86\" y=\"503\" width=\"18\" height=\"12\" fill=\"#e98b6d\"/><path d=\"M84 503L95 495L106 503Z\" fill=\"#b5523b\"/><rect x=\"126\" y=\"483\" width=\"18\" height=\"12\" fill=\"#9fc5e8\"/><path d=\"M124 483L135 475L146 483Z\" fill=\"#b5523b\"/><rect x=\"166\" y=\"473\" width=\"18\" height=\"12\" fill=\"#f5e6c4\"/><path d=\"M164 473L175 465L186 473Z\" fill=\"#b5523b\"/><rect x=\"206\" y=\"480\" width=\"18\" height=\"12\" fill=\"#f2c48d\"/><path d=\"M204 480L215 472L226 480Z\" fill=\"#b5523b\"/><rect x=\"241\" y=\"498\" width=\"18\" height=\"12\" fill=\"#f2c48d\"/><path d=\"M239 498L250 490L261 498Z\" fill=\"#b5523b\"/><rect x=\"111\" y=\"533\" width=\"18\" height=\"12\" fill=\"#9fc5e8\"/><path d=\"M109 533L120 525L131 533Z\" fill=\"#b5523b\"/><rect x=\"161\" y=\"518\" width=\"18\" height=\"12\" fill=\"#e98b6d\"/><path d=\"M159 518L170 510L181 518Z\" fill=\"#b5523b\"/><rect x=\"801\" y=\"458\" width=\"18\" height=\"12\" fill=\"#f5e6c4\"/><path d=\"M799 458L810 450L821 458Z\" fill=\"#b5523b\"/><rect x=\"841\" y=\"438\" width=\"18\" height=\"12\" fill=\"#9fc5e8\"/><path d=\"M839 438L850 430L861 438Z\" fill=\"#b5523b\"/><rect x=\"881\" y=\"428\" width=\"18\" height=\"12\" fill=\"#f5e6c4\"/><path d=\"M879 428L890 420L901 428Z\" fill=\"#b5523b\"/><rect x=\"921\" y=\"433\" width=\"18\" height=\"12\" fill=\"#e98b6d\"/><path d=\"M919 433L930 425L941 433Z\" fill=\"#b5523b\"/><rect x=\"956\" y=\"448\" width=\"18\" height=\"12\" fill=\"#f7d06b\"/><path d=\"M954 448L965 440L976 448Z\" fill=\"#b5523b\"/><rect x=\"861\" y=\"473\" width=\"18\" height=\"12\" fill=\"#f7d06b\"/><path d=\"M859 473L870 465L881 473Z\" fill=\"#b5523b\"/><rect x=\"911\" y=\"468\" width=\"18\" height=\"12\" fill=\"#f2c48d\"/><path d=\"M909 468L920 460L931 468Z\" fill=\"#b5523b\"/><rect x=\"951\" y=\"488\" width=\"18\" height=\"12\" fill=\"#f5e6c4\"/><path d=\"M949 488L960 480L971 488Z\" fill=\"#b5523b\"/><path d=\"M240 620 Q500 560 790 610 L790 700 L240 700Z\" fill=\"#d8c48e\"/><rect x=\"330.0\" y=\"532.0\" width=\"47.3\" height=\"83.0\" fill=\"#e8a87c\"/><rect x=\"359.4\" y=\"532.0\" width=\"18.0\" height=\"83.0\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"335.0\" y=\"540.0\" width=\"18.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"335.0\" y=\"554.0\" width=\"18.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"335.0\" y=\"568.0\" width=\"18.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"335.0\" y=\"582.0\" width=\"18.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"335.0\" y=\"596.0\" width=\"18.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"379.3\" y=\"531.8\" width=\"33.0\" height=\"83.2\" fill=\"#c9d8b6\"/><rect x=\"399.8\" y=\"531.8\" width=\"12.5\" height=\"83.2\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"384.3\" y=\"539.8\" width=\"13.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"384.3\" y=\"553.8\" width=\"13.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"384.3\" y=\"567.8\" width=\"13.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"384.3\" y=\"581.8\" width=\"13.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"384.3\" y=\"595.8\" width=\"13.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"414.4\" y=\"560.6\" width=\"44.4\" height=\"54.4\" fill=\"#f6e7c8\"/><rect x=\"441.9\" y=\"560.6\" width=\"16.9\" height=\"54.4\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"419.4\" y=\"568.6\" width=\"17.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"419.4\" y=\"582.6\" width=\"17.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"419.4\" y=\"596.6\" width=\"17.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"460.7\" y=\"577.5\" width=\"46.5\" height=\"37.5\" fill=\"#d9e4ee\"/><rect x=\"489.5\" y=\"577.5\" width=\"17.7\" height=\"37.5\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"465.7\" y=\"585.5\" width=\"18.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"465.7\" y=\"599.5\" width=\"18.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"509.2\" y=\"551.7\" width=\"26.8\" height=\"63.3\" fill=\"#f0b8a0\"/><rect x=\"525.8\" y=\"551.7\" width=\"10.2\" height=\"63.3\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"514.2\" y=\"559.7\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"514.2\" y=\"573.7\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"514.2\" y=\"587.7\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"514.2\" y=\"601.7\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"537.9\" y=\"529.5\" width=\"29.5\" height=\"85.5\" fill=\"#f0b8a0\"/><rect x=\"556.2\" y=\"529.5\" width=\"11.2\" height=\"85.5\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"542.9\" y=\"537.5\" width=\"11.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"542.9\" y=\"551.5\" width=\"11.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"542.9\" y=\"565.5\" width=\"11.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"542.9\" y=\"579.5\" width=\"11.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"542.9\" y=\"593.5\" width=\"11.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"569.4\" y=\"577.0\" width=\"27.9\" height=\"38.0\" fill=\"#c9d8b6\"/><rect x=\"586.7\" y=\"577.0\" width=\"10.6\" height=\"38.0\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"574.4\" y=\"585.0\" width=\"11.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"574.4\" y=\"599.0\" width=\"11.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"599.3\" y=\"525.2\" width=\"32.1\" height=\"89.8\" fill=\"#e8a87c\"/><rect x=\"619.2\" y=\"525.2\" width=\"12.2\" height=\"89.8\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"604.3\" y=\"533.2\" width=\"12.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"604.3\" y=\"547.2\" width=\"12.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"604.3\" y=\"561.2\" width=\"12.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"604.3\" y=\"575.2\" width=\"12.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"604.3\" y=\"589.2\" width=\"12.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"604.3\" y=\"603.2\" width=\"12.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"633.4\" y=\"529.2\" width=\"57.1\" height=\"85.8\" fill=\"#f0b8a0\"/><rect x=\"668.8\" y=\"529.2\" width=\"21.7\" height=\"85.8\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"638.4\" y=\"537.2\" width=\"22.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"638.4\" y=\"551.2\" width=\"22.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"638.4\" y=\"565.2\" width=\"22.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"638.4\" y=\"579.2\" width=\"22.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"638.4\" y=\"593.2\" width=\"22.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><path d=\"M380 760 Q450 690 520 660 Q600 630 700 640 Q780 650 840 620\" stroke=\"#2f8fd6\" stroke-width=\"26\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M420 730 Q470 690 520 672\" stroke=\"#9fd8ff\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M0 760 L0 630 Q150 590 290 670 Q360 715 410 760Z\" fill=\"#2f6b45\"/><path d=\"M1000 760 L1000 640 Q880 610 770 680 Q720 720 700 760Z\" fill=\"#2f6b45\"/><path d=\"M0 760 L0 690 Q120 660 230 720 L260 760Z M1000 760 L1000 700 Q900 690 820 740 L800 760Z\" fill=\"#285c3b\"/><circle cx=\"60\" cy=\"650\" r=\"20\" fill=\"#3b8a4c\"/><circle cx=\"68\" cy=\"654\" r=\"13\" fill=\"#2e7540\"/><circle cx=\"150\" cy=\"640\" r=\"20\" fill=\"#3b8a4c\"/><circle cx=\"158\" cy=\"644\" r=\"13\" fill=\"#2e7540\"/><circle cx=\"240\" cy=\"670\" r=\"20\" fill=\"#3b8a4c\"/><circle cx=\"248\" cy=\"674\" r=\"13\" fill=\"#2e7540\"/><circle cx=\"860\" cy=\"660\" r=\"20\" fill=\"#3b8a4c\"/><circle cx=\"868\" cy=\"664\" r=\"13\" fill=\"#2e7540\"/><circle cx=\"940\" cy=\"650\" r=\"20\" fill=\"#3b8a4c\"/><circle cx=\"948\" cy=\"654\" r=\"13\" fill=\"#2e7540\"/></svg>",
+    "cristo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 180\"><rect x=\"34\" y=\"148\" width=\"32\" height=\"32\" rx=\"2\" fill=\"#cfd6dc\"/><rect x=\"50\" y=\"148\" width=\"16\" height=\"32\" fill=\"#b3bcc4\"/><path d=\"M41 62 L59 62 L67 150 L33 150Z\" fill=\"#f6f8fa\"/><path d=\"M50 62 L59 62 L67 150 L50 150Z\" fill=\"#dde4ea\"/><rect x=\"6\" y=\"58\" width=\"88\" height=\"13\" rx=\"6.5\" fill=\"#f6f8fa\"/><rect x=\"50\" y=\"64\" width=\"44\" height=\"7\" rx=\"3.5\" fill=\"#dde4ea\"/><circle cx=\"50\" cy=\"45\" r=\"12\" fill=\"#f6f8fa\"/><path d=\"M50 33 A12 12 0 0 1 50 57Z\" fill=\"#dde4ea\"/></svg>",
+    "cerro_mina": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 560\"><path d=\"M0 560 L0 380 Q90 250 220 200 Q330 100 440 170 Q560 240 640 330 L700 380 L700 560Z\" fill=\"#9b7a4f\"/><path d=\"M440 170 Q560 240 640 330 L700 380 L700 560 L470 560 Q520 380 440 170Z\" fill=\"#7f6240\"/><path d=\"M220 200 Q330 100 440 170 Q380 150 330 180 Q270 200 220 200Z\" fill=\"#5f9a5a\"/><path d=\"M0 380 Q90 250 220 200 Q150 260 110 330 L0 420Z\" fill=\"#6aa361\"/><path d=\"M230 420 L230 320 Q300 250 370 320 L370 420Z\" fill=\"#2a1f17\"/><path d=\"M222 425 L222 318 L240 318 L240 425Z M360 425 L360 318 L378 318 L378 425Z\" fill=\"#c08a4a\"/><rect x=\"214\" y=\"300\" width=\"172\" height=\"22\" rx=\"4\" fill=\"#d79c55\"/><path d=\"M300 420 L170 560 M330 420 L280 560\" stroke=\"#6b5a4a\" stroke-width=\"8\"/><path d=\"M90 450 L250 450 L232 520 L108 520Z\" fill=\"#7d8a96\"/><path d=\"M170 450 L250 450 L232 520 L170 520Z\" fill=\"#66727e\"/><circle cx=\"130\" cy=\"530\" r=\"16\" fill=\"#3c434a\"/><circle cx=\"212\" cy=\"530\" r=\"16\" fill=\"#3c434a\"/><ellipse cx=\"125\" cy=\"446\" rx=\"30\" ry=\"18\" fill=\"#e9eef3\"/><ellipse cx=\"175\" cy=\"440\" rx=\"34\" ry=\"22\" fill=\"#d6dde4\"/><ellipse cx=\"220\" cy=\"446\" rx=\"26\" ry=\"16\" fill=\"#eef2f6\"/><path d=\"M175 400 L181 420 L200 426 L181 432 L175 452 L169 432 L150 426 L169 420Z\" fill=\"#ffffff\"/><path d=\"M470 260 L520 300 L500 330 M560 330 L600 360\" stroke=\"#dfe6ec\" stroke-width=\"9\" stroke-linecap=\"round\" fill=\"none\"/></svg>",
+    "cerro_plata": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 320\"><path d=\"M20 300 L200 40 L380 300Z\" fill=\"#a9b6c2\"/><path d=\"M200 40 L380 300 L230 300Z\" fill=\"#8795a3\"/><path d=\"M200 40 L250 112 L224 104 L200 130 L176 104 L150 112Z\" fill=\"#f3f6f9\"/><path d=\"M120 200 L160 180 M260 210 L300 240\" stroke=\"#eef3f7\" stroke-width=\"10\" stroke-linecap=\"round\"/><path d=\"M300 70 L306 88 L324 94 L306 100 L300 118 L294 100 L276 94 L294 88Z\" fill=\"#fff\"/><rect x=\"10\" y=\"296\" width=\"380\" height=\"16\" rx=\"8\" fill=\"#6e7b88\"/></svg>",
+    "piedras_puntas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 320\"><path d=\"M40 300 L95 120 L150 300Z\" fill=\"#9a8a78\"/><path d=\"M95 120 L150 300 L105 300Z\" fill=\"#7d6f60\"/><path d=\"M130 300 L205 50 L280 300Z\" fill=\"#b09f8b\"/><path d=\"M205 50 L280 300 L220 300Z\" fill=\"#8e7f6e\"/><path d=\"M250 300 L310 150 L370 300Z\" fill=\"#9a8a78\"/><path d=\"M310 150 L370 300 L320 300Z\" fill=\"#7d6f60\"/><path d=\"M175 150 L200 190 M235 210 L250 240\" stroke=\"#c9bba9\" stroke-width=\"7\" stroke-linecap=\"round\"/><rect x=\"10\" y=\"296\" width=\"380\" height=\"16\" rx=\"8\" fill=\"#6b5e52\"/></svg>",
+    "cerro_picacho": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 700\"><path d=\"M0 700 L0 420 Q150 300 280 200 Q360 120 400 60 Q450 130 540 210 Q680 320 800 380 L800 700Z\" fill=\"#4f925f\"/><path d=\"M400 60 Q450 130 540 210 Q680 320 800 380 L800 700 L430 700 Q470 380 400 60Z\" fill=\"#3f7c4f\"/><rect x=\"360\" y=\"52\" width=\"80\" height=\"16\" rx=\"5\" fill=\"#c9cfd4\"/><path d=\"M120 400 L148 470 L92 470Z\" fill=\"#2c6a3c\"/><path d=\"M120 400 L148 470 L120 470Z\" fill=\"#245a33\"/><rect x=\"116\" y=\"470\" width=\"8\" height=\"14\" fill=\"#6b4a2e\"/><path d=\"M200 350 L228 420 L172 420Z\" fill=\"#2c6a3c\"/><path d=\"M200 350 L228 420 L200 420Z\" fill=\"#245a33\"/><rect x=\"196\" y=\"420\" width=\"8\" height=\"14\" fill=\"#6b4a2e\"/><path d=\"M280 310 L308 380 L252 380Z\" fill=\"#2c6a3c\"/><path d=\"M280 310 L308 380 L280 380Z\" fill=\"#245a33\"/><rect x=\"276\" y=\"380\" width=\"8\" height=\"14\" fill=\"#6b4a2e\"/><path d=\"M180 490 L208 560 L152 560Z\" fill=\"#2c6a3c\"/><path d=\"M180 490 L208 560 L180 560Z\" fill=\"#245a33\"/><rect x=\"176\" y=\"560\" width=\"8\" height=\"14\" fill=\"#6b4a2e\"/><path d=\"M300 450 L328 520 L272 520Z\" fill=\"#2c6a3c\"/><path d=\"M300 450 L328 520 L300 520Z\" fill=\"#245a33\"/><rect x=\"296\" y=\"520\" width=\"8\" height=\"14\" fill=\"#6b4a2e\"/><path d=\"M560 310 L588 380 L532 380Z\" fill=\"#2c6a3c\"/><path d=\"M560 310 L588 380 L560 380Z\" fill=\"#245a33\"/><rect x=\"556\" y=\"380\" width=\"8\" height=\"14\" fill=\"#6b4a2e\"/><path d=\"M640 380 L668 450 L612 450Z\" fill=\"#2c6a3c\"/><path d=\"M640 380 L668 450 L640 450Z\" fill=\"#245a33\"/><rect x=\"636\" y=\"450\" width=\"8\" height=\"14\" fill=\"#6b4a2e\"/><path d=\"M720 410 L748 480 L692 480Z\" fill=\"#2c6a3c\"/><path d=\"M720 410 L748 480 L720 480Z\" fill=\"#245a33\"/><rect x=\"716\" y=\"480\" width=\"8\" height=\"14\" fill=\"#6b4a2e\"/><path d=\"M600 490 L628 560 L572 560Z\" fill=\"#2c6a3c\"/><path d=\"M600 490 L628 560 L600 560Z\" fill=\"#245a33\"/><rect x=\"596\" y=\"560\" width=\"8\" height=\"14\" fill=\"#6b4a2e\"/><path d=\"M700 530 L728 600 L672 600Z\" fill=\"#2c6a3c\"/><path d=\"M700 530 L728 600 L700 600Z\" fill=\"#245a33\"/><rect x=\"696\" y=\"600\" width=\"8\" height=\"14\" fill=\"#6b4a2e\"/><path d=\"M100 550 L128 620 L72 620Z\" fill=\"#2c6a3c\"/><path d=\"M100 550 L128 620 L100 620Z\" fill=\"#245a33\"/><rect x=\"96\" y=\"620\" width=\"8\" height=\"14\" fill=\"#6b4a2e\"/><path d=\"M380 550 L408 620 L352 620Z\" fill=\"#2c6a3c\"/><path d=\"M380 550 L408 620 L380 620Z\" fill=\"#245a33\"/><rect x=\"376\" y=\"620\" width=\"8\" height=\"14\" fill=\"#6b4a2e\"/><path d=\"M0 700 L0 660 Q400 630 800 660 L800 700Z\" fill=\"#d8c48e\"/><rect x=\"20.0\" y=\"672.6\" width=\"33.9\" height=\"17.4\" fill=\"#e8a87c\"/><rect x=\"41.0\" y=\"672.6\" width=\"12.9\" height=\"17.4\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"55.9\" y=\"663.3\" width=\"40.9\" height=\"26.7\" fill=\"#d9e4ee\"/><rect x=\"81.3\" y=\"663.3\" width=\"15.5\" height=\"26.7\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"60.9\" y=\"671.3\" width=\"16.4\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"98.8\" y=\"661.3\" width=\"43.0\" height=\"28.7\" fill=\"#d9e4ee\"/><rect x=\"125.5\" y=\"661.3\" width=\"16.4\" height=\"28.7\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"103.8\" y=\"669.3\" width=\"17.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"143.9\" y=\"651.0\" width=\"31.7\" height=\"39.0\" fill=\"#f0b8a0\"/><rect x=\"163.5\" y=\"651.0\" width=\"12.1\" height=\"39.0\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"148.9\" y=\"659.0\" width=\"12.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"148.9\" y=\"673.0\" width=\"12.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"177.6\" y=\"652.1\" width=\"45.0\" height=\"37.9\" fill=\"#e8a87c\"/><rect x=\"205.5\" y=\"652.1\" width=\"17.1\" height=\"37.9\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"182.6\" y=\"660.1\" width=\"18.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"182.6\" y=\"674.1\" width=\"18.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"224.6\" y=\"665.0\" width=\"43.0\" height=\"25.0\" fill=\"#f6e7c8\"/><rect x=\"251.2\" y=\"665.0\" width=\"16.3\" height=\"25.0\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"229.6\" y=\"673.0\" width=\"17.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"269.6\" y=\"672.5\" width=\"29.6\" height=\"17.5\" fill=\"#f2d4a8\"/><rect x=\"288.0\" y=\"672.5\" width=\"11.3\" height=\"17.5\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"301.2\" y=\"673.0\" width=\"43.2\" height=\"17.0\" fill=\"#f6e7c8\"/><rect x=\"328.0\" y=\"673.0\" width=\"16.4\" height=\"17.0\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"346.4\" y=\"675.5\" width=\"39.1\" height=\"14.5\" fill=\"#c9d8b6\"/><rect x=\"370.7\" y=\"675.5\" width=\"14.9\" height=\"14.5\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"387.5\" y=\"673.8\" width=\"44.5\" height=\"16.2\" fill=\"#f6e7c8\"/><rect x=\"415.1\" y=\"673.8\" width=\"16.9\" height=\"16.2\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"434.0\" y=\"660.6\" width=\"27.0\" height=\"29.4\" fill=\"#e8a87c\"/><rect x=\"450.8\" y=\"660.6\" width=\"10.3\" height=\"29.4\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"439.0\" y=\"668.6\" width=\"10.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"463.1\" y=\"651.8\" width=\"45.4\" height=\"38.2\" fill=\"#f2d4a8\"/><rect x=\"491.2\" y=\"651.8\" width=\"17.3\" height=\"38.2\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"468.1\" y=\"659.8\" width=\"18.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"468.1\" y=\"673.8\" width=\"18.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"510.5\" y=\"664.0\" width=\"27.7\" height=\"26.0\" fill=\"#c9d8b6\"/><rect x=\"527.6\" y=\"664.0\" width=\"10.5\" height=\"26.0\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"515.5\" y=\"672.0\" width=\"11.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"540.1\" y=\"668.7\" width=\"58.5\" height=\"21.3\" fill=\"#e8a87c\"/><rect x=\"576.4\" y=\"668.7\" width=\"22.2\" height=\"21.3\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"545.1\" y=\"676.7\" width=\"23.4\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"600.6\" y=\"660.9\" width=\"38.6\" height=\"29.1\" fill=\"#d9e4ee\"/><rect x=\"624.5\" y=\"660.9\" width=\"14.7\" height=\"29.1\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"605.6\" y=\"668.9\" width=\"15.4\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"641.2\" y=\"670.7\" width=\"44.3\" height=\"19.3\" fill=\"#f6e7c8\"/><rect x=\"668.6\" y=\"670.7\" width=\"16.8\" height=\"19.3\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"646.2\" y=\"678.7\" width=\"17.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"687.5\" y=\"662.8\" width=\"33.9\" height=\"27.2\" fill=\"#f0b8a0\"/><rect x=\"708.5\" y=\"662.8\" width=\"12.9\" height=\"27.2\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"692.5\" y=\"670.8\" width=\"13.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"723.4\" y=\"651.9\" width=\"43.1\" height=\"38.1\" fill=\"#d9e4ee\"/><rect x=\"750.1\" y=\"651.9\" width=\"16.4\" height=\"38.1\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"728.4\" y=\"659.9\" width=\"17.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"728.4\" y=\"673.9\" width=\"17.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"768.4\" y=\"660.7\" width=\"33.3\" height=\"29.3\" fill=\"#f2d4a8\"/><rect x=\"789.1\" y=\"660.7\" width=\"12.7\" height=\"29.3\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"773.4\" y=\"668.7\" width=\"13.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/></svg>",
+    "dos_ciudades": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 600\"><path d=\"M0 420 Q250 400 430 440 L430 600 L0 600Z\" fill=\"#c9b37f\"/><path d=\"M570 440 Q750 400 1000 420 L1000 600 L570 600Z\" fill=\"#c2ab78\"/><rect x=\"20.0\" y=\"288.7\" width=\"28.9\" height=\"151.3\" fill=\"#d9e4ee\"/><rect x=\"37.9\" y=\"288.7\" width=\"11.0\" height=\"151.3\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"25.0\" y=\"296.7\" width=\"11.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"25.0\" y=\"310.7\" width=\"11.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"25.0\" y=\"324.7\" width=\"11.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"25.0\" y=\"338.7\" width=\"11.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"25.0\" y=\"352.7\" width=\"11.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"25.0\" y=\"366.7\" width=\"11.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"25.0\" y=\"380.7\" width=\"11.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"25.0\" y=\"394.7\" width=\"11.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"25.0\" y=\"408.7\" width=\"11.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"25.0\" y=\"422.7\" width=\"11.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"50.9\" y=\"329.3\" width=\"52.8\" height=\"110.7\" fill=\"#f2d4a8\"/><rect x=\"83.7\" y=\"329.3\" width=\"20.1\" height=\"110.7\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"55.9\" y=\"337.3\" width=\"21.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"55.9\" y=\"351.3\" width=\"21.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"55.9\" y=\"365.3\" width=\"21.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"55.9\" y=\"379.3\" width=\"21.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"55.9\" y=\"393.3\" width=\"21.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"55.9\" y=\"407.3\" width=\"21.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"55.9\" y=\"421.3\" width=\"21.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"105.8\" y=\"343.2\" width=\"55.9\" height=\"96.8\" fill=\"#f6e7c8\"/><rect x=\"140.4\" y=\"343.2\" width=\"21.2\" height=\"96.8\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"110.8\" y=\"351.2\" width=\"22.4\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"110.8\" y=\"365.2\" width=\"22.4\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"110.8\" y=\"379.2\" width=\"22.4\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"110.8\" y=\"393.2\" width=\"22.4\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"110.8\" y=\"407.2\" width=\"22.4\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"110.8\" y=\"421.2\" width=\"22.4\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"163.7\" y=\"351.3\" width=\"59.0\" height=\"88.7\" fill=\"#f0b8a0\"/><rect x=\"200.3\" y=\"351.3\" width=\"22.4\" height=\"88.7\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"168.7\" y=\"359.3\" width=\"23.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"168.7\" y=\"373.3\" width=\"23.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"168.7\" y=\"387.3\" width=\"23.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"168.7\" y=\"401.3\" width=\"23.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"168.7\" y=\"415.3\" width=\"23.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"168.7\" y=\"429.3\" width=\"23.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"224.7\" y=\"333.6\" width=\"34.0\" height=\"106.4\" fill=\"#c9d8b6\"/><rect x=\"245.8\" y=\"333.6\" width=\"12.9\" height=\"106.4\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"229.7\" y=\"341.6\" width=\"13.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"229.7\" y=\"355.6\" width=\"13.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"229.7\" y=\"369.6\" width=\"13.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"229.7\" y=\"383.6\" width=\"13.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"229.7\" y=\"397.6\" width=\"13.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"229.7\" y=\"411.6\" width=\"13.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"229.7\" y=\"425.6\" width=\"13.6\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"260.7\" y=\"330.5\" width=\"57.7\" height=\"109.5\" fill=\"#d9e4ee\"/><rect x=\"296.5\" y=\"330.5\" width=\"21.9\" height=\"109.5\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"265.7\" y=\"338.5\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"265.7\" y=\"352.5\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"265.7\" y=\"366.5\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"265.7\" y=\"380.5\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"265.7\" y=\"394.5\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"265.7\" y=\"408.5\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"265.7\" y=\"422.5\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"320.5\" y=\"262.9\" width=\"26.9\" height=\"177.1\" fill=\"#f2d4a8\"/><rect x=\"337.1\" y=\"262.9\" width=\"10.2\" height=\"177.1\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"325.5\" y=\"270.9\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"325.5\" y=\"284.9\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"325.5\" y=\"298.9\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"325.5\" y=\"312.9\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"325.5\" y=\"326.9\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"325.5\" y=\"340.9\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"325.5\" y=\"354.9\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"325.5\" y=\"368.9\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"325.5\" y=\"382.9\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"325.5\" y=\"396.9\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"325.5\" y=\"410.9\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"325.5\" y=\"424.9\" width=\"10.7\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"349.3\" y=\"337.5\" width=\"42.0\" height=\"102.5\" fill=\"#c9d8b6\"/><rect x=\"375.4\" y=\"337.5\" width=\"16.0\" height=\"102.5\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"354.3\" y=\"345.5\" width=\"16.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"354.3\" y=\"359.5\" width=\"16.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"354.3\" y=\"373.5\" width=\"16.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"354.3\" y=\"387.5\" width=\"16.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"354.3\" y=\"401.5\" width=\"16.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"354.3\" y=\"415.5\" width=\"16.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"354.3\" y=\"429.5\" width=\"16.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"393.3\" y=\"220.9\" width=\"57.7\" height=\"219.1\" fill=\"#e8a87c\"/><rect x=\"429.1\" y=\"220.9\" width=\"21.9\" height=\"219.1\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"398.3\" y=\"228.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"242.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"256.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"270.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"284.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"298.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"312.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"326.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"340.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"354.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"368.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"382.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"396.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"410.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"398.3\" y=\"424.9\" width=\"23.1\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"585.0\" y=\"375.8\" width=\"27.4\" height=\"64.2\" fill=\"#dcd3f0\"/><rect x=\"602.0\" y=\"375.8\" width=\"10.4\" height=\"64.2\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"590.0\" y=\"383.8\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"590.0\" y=\"397.8\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"590.0\" y=\"411.8\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"590.0\" y=\"425.8\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"614.4\" y=\"382.6\" width=\"43.7\" height=\"57.4\" fill=\"#cfe0d0\"/><rect x=\"641.5\" y=\"382.6\" width=\"16.6\" height=\"57.4\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"619.4\" y=\"390.6\" width=\"17.5\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"619.4\" y=\"404.6\" width=\"17.5\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"619.4\" y=\"418.6\" width=\"17.5\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"660.1\" y=\"378.4\" width=\"38.7\" height=\"61.6\" fill=\"#e9b38c\"/><rect x=\"684.1\" y=\"378.4\" width=\"14.7\" height=\"61.6\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"665.1\" y=\"386.4\" width=\"15.5\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"665.1\" y=\"400.4\" width=\"15.5\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"665.1\" y=\"414.4\" width=\"15.5\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"665.1\" y=\"428.4\" width=\"15.5\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"700.9\" y=\"363.6\" width=\"42.1\" height=\"76.4\" fill=\"#f3c9b0\"/><rect x=\"727.0\" y=\"363.6\" width=\"16.0\" height=\"76.4\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"705.9\" y=\"371.6\" width=\"16.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"705.9\" y=\"385.6\" width=\"16.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"705.9\" y=\"399.6\" width=\"16.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"705.9\" y=\"413.6\" width=\"16.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"705.9\" y=\"427.6\" width=\"16.8\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"745.0\" y=\"305.9\" width=\"34.7\" height=\"134.1\" fill=\"#f6e2b8\"/><rect x=\"766.5\" y=\"305.9\" width=\"13.2\" height=\"134.1\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"750.0\" y=\"313.9\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"750.0\" y=\"327.9\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"750.0\" y=\"341.9\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"750.0\" y=\"355.9\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"750.0\" y=\"369.9\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"750.0\" y=\"383.9\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"750.0\" y=\"397.9\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"750.0\" y=\"411.9\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"750.0\" y=\"425.9\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"781.7\" y=\"345.1\" width=\"43.1\" height=\"94.9\" fill=\"#f6e2b8\"/><rect x=\"808.4\" y=\"345.1\" width=\"16.4\" height=\"94.9\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"786.7\" y=\"353.1\" width=\"17.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"786.7\" y=\"367.1\" width=\"17.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"786.7\" y=\"381.1\" width=\"17.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"786.7\" y=\"395.1\" width=\"17.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"786.7\" y=\"409.1\" width=\"17.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"786.7\" y=\"423.1\" width=\"17.2\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"826.8\" y=\"354.9\" width=\"33.4\" height=\"85.1\" fill=\"#f6e2b8\"/><rect x=\"847.5\" y=\"354.9\" width=\"12.7\" height=\"85.1\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"831.8\" y=\"362.9\" width=\"13.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"831.8\" y=\"376.9\" width=\"13.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"831.8\" y=\"390.9\" width=\"13.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"831.8\" y=\"404.9\" width=\"13.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"831.8\" y=\"418.9\" width=\"13.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"862.1\" y=\"356.2\" width=\"30.1\" height=\"83.8\" fill=\"#e9b38c\"/><rect x=\"880.8\" y=\"356.2\" width=\"11.4\" height=\"83.8\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"867.1\" y=\"364.2\" width=\"12.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"867.1\" y=\"378.2\" width=\"12.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"867.1\" y=\"392.2\" width=\"12.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"867.1\" y=\"406.2\" width=\"12.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"867.1\" y=\"420.2\" width=\"12.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"894.2\" y=\"336.8\" width=\"34.7\" height=\"103.2\" fill=\"#dcd3f0\"/><rect x=\"915.7\" y=\"336.8\" width=\"13.2\" height=\"103.2\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"899.2\" y=\"344.8\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"899.2\" y=\"358.8\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"899.2\" y=\"372.8\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"899.2\" y=\"386.8\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"899.2\" y=\"400.8\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"899.2\" y=\"414.8\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"899.2\" y=\"428.8\" width=\"13.9\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"930.9\" y=\"306.5\" width=\"27.6\" height=\"133.5\" fill=\"#e9b38c\"/><rect x=\"948.0\" y=\"306.5\" width=\"10.5\" height=\"133.5\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"935.9\" y=\"314.5\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"935.9\" y=\"328.5\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"935.9\" y=\"342.5\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"935.9\" y=\"356.5\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"935.9\" y=\"370.5\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"935.9\" y=\"384.5\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"935.9\" y=\"398.5\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"935.9\" y=\"412.5\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"935.9\" y=\"426.5\" width=\"11.0\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"960.5\" y=\"270.6\" width=\"30.8\" height=\"169.4\" fill=\"#e9b38c\"/><rect x=\"979.6\" y=\"270.6\" width=\"11.7\" height=\"169.4\" fill=\"#000\" fill-opacity=\"0.13\"/><rect x=\"965.5\" y=\"278.6\" width=\"12.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"965.5\" y=\"292.6\" width=\"12.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"965.5\" y=\"306.6\" width=\"12.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"965.5\" y=\"320.6\" width=\"12.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"965.5\" y=\"334.6\" width=\"12.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"965.5\" y=\"348.6\" width=\"12.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"965.5\" y=\"362.6\" width=\"12.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"965.5\" y=\"376.6\" width=\"12.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"965.5\" y=\"390.6\" width=\"12.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"965.5\" y=\"404.6\" width=\"12.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><rect x=\"965.5\" y=\"418.6\" width=\"12.3\" height=\"5\" fill=\"#5b7fa8\" fill-opacity=\"0.35\"/><path d=\"M430 440 Q500 470 570 440 L590 600 L410 600Z\" fill=\"#2f8fd6\"/><path d=\"M450 500 Q500 515 550 500 M440 550 Q500 565 560 550\" stroke=\"#9fd8ff\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"0\" y=\"560\" width=\"1000\" height=\"40\" fill=\"#000\" fill-opacity=\"0.08\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Tegucigalpa nació en 1578 como real de minas (Real de Minas de San Miguel de Tegucigalpa), en el valle del río Choluteca rodeado de montañas",
+      "fuente": "Encyclopaedia Britannica, «Tegucigalpa»; Alcaldía Municipal del Distrito Central"
+    },
+    {
+      "dato": "Origen del nombre: la versión popular lo traduce del náhuatl como «cerro de plata»; Alberto Membreño («Toponimias indígenas de Centroamérica») la rechaza y propone «en las casas de las piedras puntiagudas»; hay otras teorías",
+      "fuente": "Britannica, «Tegucigalpa» (silver mountain); A. Membreño, Toponimias indígenas de Centroamérica; discusión de la lista Nahuat-l (2009)"
+    },
+    {
+      "dato": "Cristo de El Picacho: inaugurado el 16 de enero de 1998, en un cerro a unos 1.320 m sobre el nivel del mar",
+      "fuente": "El Heraldo (2023), «Cristo de El Picacho cumple 25 años»; TuNota (2025), historia del Cristo de El Picacho"
+    },
+    {
+      "dato": "Tegucigalpa y Comayagüela, separadas por el río Choluteca, forman desde 1937 el Distrito Central, capital de Honduras",
+      "fuente": "Alcaldía Municipal del Distrito Central; Britannica, «Tegucigalpa»"
+    }
+  ],
+  "nota": "La etimología de «Tegucigalpa» no está resuelta: «cerro de plata» es la versión más repetida (y la de Britannica), pero lingüistas la discuten; por eso el guion la presenta como «unos dicen» frente a la de Membreño (cuya traducción literal es «en las casas de las piedras puntiagudas»). La altura del cerro solo aparece en la etiqueta («≈ 1.300 m» sobre el nivel del mar); las fuentes dicen 1.320 a 1.327 m. Algunas fuentes fechan el Cristo en 1997 (inicio de la obra); la inauguración fue en enero de 1998. El Distrito Central se creó por reforma constitucional de 1937 (algunas fuentes citan el decreto de 1936)."
+}

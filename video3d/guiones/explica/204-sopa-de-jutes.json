@@ -1,0 +1,446 @@
+{
+  "id": "explica-hn-sopa-de-jutes",
+  "motor": "explica",
+  "titulo": "La sopa de jutes",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "sopadejutes",
+    "comidahondureña",
+    "copan",
+    "recetas"
+  ],
+  "descripcion": "El jute es un caracol de río, y con él se hace una de las sopas más tradicionales del occidente de Honduras. Qué es, dónde se come y cómo se prepara.",
+  "musica": "pop",
+  "paleta": {
+    "a": "#8fd3c8",
+    "b": "#3a8f8a"
+  },
+  "escenas": [
+    {
+      "fondo": "liso",
+      "texto": "¿Alguna vez probaste una sopa de jutes? Para muchos catrachos del occidente, esto sabe a casa.",
+      "clave": "jutes",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "plato",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 900,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "jute",
+          "x": 0.82,
+          "y": 0.38,
+          "ancho": 190,
+          "anim": "caer",
+          "idle": "balanceo",
+          "rot": 18,
+          "en": "jutes"
+        },
+        {
+          "etiqueta": "sabe a casa",
+          "x": 0.3,
+          "y": 0.88,
+          "color": "#d93427",
+          "en": "casa"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "El jute es un caracol de agua dulce: vive en ríos y quebradas, no en el mar.",
+      "clave": "agua dulce",
+      "nota": "no es el caracol de la costa",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.42,
+          0.7,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "rio",
+          "x": 0.5,
+          "y": 0.66,
+          "ancho": 1000,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": 0
+        },
+        {
+          "svg": "jute",
+          "x": 0.5,
+          "y": 0.42,
+          "ancho": 220,
+          "anim": "pop",
+          "idle": "flotar",
+          "en": "caracol"
+        },
+        {
+          "etiqueta": "jutes",
+          "x": 0.8,
+          "y": 0.88,
+          "color": "#3a271c",
+          "a": [
+            0.3,
+            0.83
+          ],
+          "en": "ríos"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "La sopa es típica de Copán y del occidente, aunque en otras partes de Honduras también se hace.",
+      "clave": "Copán",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.3,
+          0.58,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "mapa_hn",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 900,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "pin",
+          "x": 0.134,
+          "y": 0.542,
+          "ancho": 100,
+          "anim": "caer",
+          "en": "Copán"
+        },
+        {
+          "etiqueta": "Copán",
+          "x": 0.3,
+          "y": 0.38,
+          "color": "#e8433a",
+          "a": [
+            0.134,
+            0.5279999999999999
+          ],
+          "en": "Copán"
+        },
+        {
+          "etiqueta": "occidente",
+          "x": 0.24,
+          "y": 0.82,
+          "color": "#2f7fd2",
+          "en": "occidente"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Primero se lavan bien los jutes y se les corta la puntita de la concha.",
+      "clave": "puntita",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.52,
+          1.12
+        ]
+      },
+      "capas": [
+        {
+          "svg": "jute",
+          "x": 0.42,
+          "y": 0.62,
+          "ancho": 360,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "burbujas": true,
+          "x": 0.42,
+          "y": 0.66,
+          "ancho": 0.3,
+          "alto": 0.25,
+          "n": 16,
+          "en": "lavan"
+        },
+        {
+          "svg": "jute_cortado",
+          "x": 0.42,
+          "y": 0.62,
+          "ancho": 360,
+          "anim": "fade",
+          "en": "corta"
+        },
+        {
+          "svg": "cuchillo",
+          "x": 0.72,
+          "y": 0.47,
+          "ancho": 360,
+          "anim": "slideIn",
+          "desde": "derecha",
+          "rot": -12,
+          "en": "corta"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "A la olla van con cebolla, tomate, chile y culantro, y después yuca y guineo verde.",
+      "clave": "olla",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1.06
+        ]
+      },
+      "capas": [
+        {
+          "svg": "olla",
+          "x": 0.5,
+          "y": 0.75,
+          "ancho": 720,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": 0
+        },
+        {
+          "svg": "cebolla",
+          "x": 0.14,
+          "y": 0.36,
+          "ancho": 150,
+          "anim": "caer",
+          "en": "cebolla"
+        },
+        {
+          "svg": "tomate",
+          "x": 0.38,
+          "y": 0.35,
+          "ancho": 160,
+          "anim": "caer",
+          "en": "tomate"
+        },
+        {
+          "svg": "chile",
+          "x": 0.62,
+          "y": 0.35,
+          "ancho": 180,
+          "anim": "caer",
+          "en": "chile"
+        },
+        {
+          "svg": "culantro",
+          "x": 0.86,
+          "y": 0.36,
+          "ancho": 160,
+          "anim": "caer",
+          "en": "culantro"
+        },
+        {
+          "svg": "yuca",
+          "x": 0.28,
+          "y": 0.52,
+          "ancho": 260,
+          "anim": "caer",
+          "rot": -10,
+          "en": "yuca"
+        },
+        {
+          "svg": "guineo",
+          "x": 0.72,
+          "y": 0.52,
+          "ancho": 260,
+          "anim": "caer",
+          "rot": 8,
+          "en": "guineo"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Algunas familias le echan leche de coco o plátano maduro. Cada casa tiene su receta.",
+      "clave": "receta",
+      "camara": {
+        "de": [
+          0.5,
+          0.66,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "olla",
+          "x": 0.5,
+          "y": 0.73,
+          "ancho": 680,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "burbujas": true,
+          "x": 0.5,
+          "y": 0.48,
+          "ancho": 0.4,
+          "alto": 0.12,
+          "n": 14,
+          "en": "familias"
+        },
+        {
+          "svg": "coco",
+          "x": 0.22,
+          "y": 0.4,
+          "ancho": 220,
+          "anim": "caer",
+          "idle": "flotar",
+          "en": "coco"
+        },
+        {
+          "svg": "maduro",
+          "x": 0.76,
+          "y": 0.4,
+          "ancho": 280,
+          "anim": "caer",
+          "idle": "flotar",
+          "en": "plátano"
+        },
+        {
+          "etiqueta": "a tu manera",
+          "x": 0.5,
+          "y": 0.92,
+          "color": "#6b4fe0",
+          "en": "receta"
+        }
+      ]
+    },
+    {
+      "fondo": "cocina",
+      "texto": "Se sirve bien calientita, con tortillas, y el jute se sorbe por la puntita que se le cortó.",
+      "clave": "calientita",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "plato",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 860,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "tortillas",
+          "x": 0.24,
+          "y": 0.85,
+          "ancho": 360,
+          "anim": "slideIn",
+          "desde": "izquierda",
+          "en": "tortillas"
+        },
+        {
+          "svg": "jute_cortado",
+          "x": 0.78,
+          "y": 0.83,
+          "ancho": 220,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": "sorbe"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "¿En tu casa la hacen así o diferente? Contanos, y síguenos para más sabor catracho.",
+      "clave": "síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "plato": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 420\"><ellipse cx=\"320\" cy=\"380\" rx=\"200\" ry=\"30\" fill=\"#000000\" opacity=\"0.2\"/><path d=\"M30 150 Q60 380 320 380 Q580 380 610 150Z\" fill=\"#f4f1ea\"/><path d=\"M430 170 Q600 160 610 150 Q590 330 380 376 Q540 300 430 170Z\" fill=\"#d9d4c8\"/><path d=\"M30 150 Q60 380 320 380\" stroke=\"#2f7fd2\" stroke-width=\"10\" fill=\"none\" opacity=\"0.5\"/><ellipse cx=\"320\" cy=\"150\" rx=\"292\" ry=\"66\" fill=\"#e8e3d8\"/><ellipse cx=\"320\" cy=\"152\" rx=\"262\" ry=\"52\" fill=\"#e0a240\"/><rect x=\"190\" y=\"132\" width=\"80\" height=\"34\" rx=\"12\" fill=\"#f4ead2\"/><rect x=\"380\" y=\"140\" width=\"70\" height=\"30\" rx=\"12\" fill=\"#f4ead2\"/><rect x=\"300\" y=\"160\" width=\"60\" height=\"22\" rx=\"10\" fill=\"#9ac45a\"/><g transform=\"translate(150 150) rotate(-75) scale(0.2)\"><path d=\"M0 -190 Q10 -190 72 110 Q84 172 0 188 Q-84 172 -72 110 Q-10 -190 0 -190Z\" fill=\"#3a271c\"/><path d=\"M0 -190 Q-10 -190 -72 110 Q-84 172 0 188 Q-34 120 -8 -120Z\" fill=\"#5a3d2b\"/><path d=\"M-14 -140 Q0 -126 14 -146\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-23.5 -98 Q0 -84 23.5 -104\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-33 -56 Q0 -42 33 -62\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-42.5 -14 Q0 0 42.5 -20\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-52 28 Q0 42 52 22\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-61.5 70 Q0 84 61.5 64\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-71 112 Q0 126 71 106\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-18 -100 L-40 80\" stroke=\"#8a6a52\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.7\"/><ellipse cx=\"0\" cy=\"168\" rx=\"34\" ry=\"20\" fill=\"#8a7a6c\"/><path d=\"M-34 172 Q-70 196 -88 180 Q-60 166 -30 164Z\" fill=\"#8a7a6c\"/><circle cx=\"-80\" cy=\"176\" r=\"5\" fill=\"#3a3a3a\"/></g><g transform=\"translate(300 128) rotate(-95) scale(0.2)\"><path d=\"M0 -190 Q10 -190 72 110 Q84 172 0 188 Q-84 172 -72 110 Q-10 -190 0 -190Z\" fill=\"#3a271c\"/><path d=\"M0 -190 Q-10 -190 -72 110 Q-84 172 0 188 Q-34 120 -8 -120Z\" fill=\"#5a3d2b\"/><path d=\"M-14 -140 Q0 -126 14 -146\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-23.5 -98 Q0 -84 23.5 -104\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-33 -56 Q0 -42 33 -62\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-42.5 -14 Q0 0 42.5 -20\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-52 28 Q0 42 52 22\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-61.5 70 Q0 84 61.5 64\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-71 112 Q0 126 71 106\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-18 -100 L-40 80\" stroke=\"#8a6a52\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.7\"/><ellipse cx=\"0\" cy=\"168\" rx=\"34\" ry=\"20\" fill=\"#8a7a6c\"/><path d=\"M-34 172 Q-70 196 -88 180 Q-60 166 -30 164Z\" fill=\"#8a7a6c\"/><circle cx=\"-80\" cy=\"176\" r=\"5\" fill=\"#3a3a3a\"/></g><g transform=\"translate(500 156) rotate(-110) scale(0.2)\"><path d=\"M0 -190 Q10 -190 72 110 Q84 172 0 188 Q-84 172 -72 110 Q-10 -190 0 -190Z\" fill=\"#3a271c\"/><path d=\"M0 -190 Q-10 -190 -72 110 Q-84 172 0 188 Q-34 120 -8 -120Z\" fill=\"#5a3d2b\"/><path d=\"M-14 -140 Q0 -126 14 -146\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-23.5 -98 Q0 -84 23.5 -104\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-33 -56 Q0 -42 33 -62\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-42.5 -14 Q0 0 42.5 -20\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-52 28 Q0 42 52 22\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-61.5 70 Q0 84 61.5 64\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-71 112 Q0 126 71 106\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-18 -100 L-40 80\" stroke=\"#8a6a52\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.7\"/><ellipse cx=\"0\" cy=\"168\" rx=\"34\" ry=\"20\" fill=\"#8a7a6c\"/><path d=\"M-34 172 Q-70 196 -88 180 Q-60 166 -30 164Z\" fill=\"#8a7a6c\"/><circle cx=\"-80\" cy=\"176\" r=\"5\" fill=\"#3a3a3a\"/></g><circle cx=\"240\" cy=\"172\" r=\"7\" fill=\"#3f9a4e\"/><circle cx=\"350\" cy=\"138\" r=\"7\" fill=\"#3f9a4e\"/><circle cx=\"460\" cy=\"170\" r=\"7\" fill=\"#3f9a4e\"/><circle cx=\"120\" cy=\"166\" r=\"7\" fill=\"#3f9a4e\"/><circle cx=\"420\" cy=\"128\" r=\"7\" fill=\"#3f9a4e\"/><path d=\"M200 70 Q180 40 200 10 M320 60 Q300 30 320 0 M440 70 Q420 40 440 10\" stroke=\"#ffffff\" stroke-width=\"8\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.7\"/></svg>",
+    "jute": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 420\"><g transform=\"translate(150 205)\"><path d=\"M0 -190 Q10 -190 72 110 Q84 172 0 188 Q-84 172 -72 110 Q-10 -190 0 -190Z\" fill=\"#3a271c\"/><path d=\"M0 -190 Q-10 -190 -72 110 Q-84 172 0 188 Q-34 120 -8 -120Z\" fill=\"#5a3d2b\"/><path d=\"M-14 -140 Q0 -126 14 -146\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-23.5 -98 Q0 -84 23.5 -104\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-33 -56 Q0 -42 33 -62\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-42.5 -14 Q0 0 42.5 -20\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-52 28 Q0 42 52 22\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-61.5 70 Q0 84 61.5 64\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-71 112 Q0 126 71 106\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-18 -100 L-40 80\" stroke=\"#8a6a52\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.7\"/><ellipse cx=\"0\" cy=\"168\" rx=\"34\" ry=\"20\" fill=\"#8a7a6c\"/><path d=\"M-34 172 Q-70 196 -88 180 Q-60 166 -30 164Z\" fill=\"#8a7a6c\"/><circle cx=\"-80\" cy=\"176\" r=\"5\" fill=\"#3a3a3a\"/></g></svg>",
+    "jute_cortado": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 420\"><clipPath id=\"c\"><rect x=\"0\" y=\"98\" width=\"260\" height=\"330\"/></clipPath><g clip-path=\"url(#c)\"><g transform=\"translate(150 205)\"><path d=\"M0 -190 Q10 -190 72 110 Q84 172 0 188 Q-84 172 -72 110 Q-10 -190 0 -190Z\" fill=\"#3a271c\"/><path d=\"M0 -190 Q-10 -190 -72 110 Q-84 172 0 188 Q-34 120 -8 -120Z\" fill=\"#5a3d2b\"/><path d=\"M-14 -140 Q0 -126 14 -146\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-23.5 -98 Q0 -84 23.5 -104\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-33 -56 Q0 -42 33 -62\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-42.5 -14 Q0 0 42.5 -20\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-52 28 Q0 42 52 22\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-61.5 70 Q0 84 61.5 64\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-71 112 Q0 126 71 106\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-18 -100 L-40 80\" stroke=\"#8a6a52\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.7\"/><ellipse cx=\"0\" cy=\"168\" rx=\"34\" ry=\"20\" fill=\"#8a7a6c\"/><path d=\"M-34 172 Q-70 196 -88 180 Q-60 166 -30 164Z\" fill=\"#8a7a6c\"/><circle cx=\"-80\" cy=\"176\" r=\"5\" fill=\"#3a3a3a\"/></g></g><ellipse cx=\"150\" cy=\"99\" rx=\"24\" ry=\"7\" fill=\"#e8d8c0\"/><path d=\"M150 60 v20 M130 70 l10 14 M170 70 l-10 14\" stroke=\"#ffffff\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>",
+    "rio": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 620\"><path d=\"M0 0 H1000 V200 Q800 230 700 300 L300 300 Q200 230 0 200Z\" fill=\"#4f9a4e\"/><path d=\"M0 180 Q200 210 300 290 L0 290Z M1000 180 Q800 210 700 290 L1000 290Z\" fill=\"#3f8a40\"/><path d=\"M0 260 Q500 300 1000 260 V620 H0Z\" fill=\"#2f86bf\"/><path d=\"M0 380 Q500 420 1000 380 V620 H0Z\" fill=\"#256fa3\"/><path d=\"M80 300 Q200 320 320 305 M620 310 Q760 325 900 300\" stroke=\"#9fd8ff\" stroke-width=\"8\" fill=\"none\" stroke-linecap=\"round\"/><ellipse cx=\"260\" cy=\"560\" rx=\"170\" ry=\"70\" fill=\"#7d8590\"/><ellipse cx=\"250\" cy=\"545\" rx=\"150\" ry=\"55\" fill=\"#98a0aa\"/><ellipse cx=\"720\" cy=\"580\" rx=\"200\" ry=\"70\" fill=\"#7d8590\"/><ellipse cx=\"710\" cy=\"565\" rx=\"180\" ry=\"55\" fill=\"#98a0aa\"/><ellipse cx=\"500\" cy=\"470\" rx=\"90\" ry=\"40\" fill=\"#8a929c\"/><g transform=\"translate(200 470) rotate(-70) scale(0.28)\"><path d=\"M0 -190 Q10 -190 72 110 Q84 172 0 188 Q-84 172 -72 110 Q-10 -190 0 -190Z\" fill=\"#3a271c\"/><path d=\"M0 -190 Q-10 -190 -72 110 Q-84 172 0 188 Q-34 120 -8 -120Z\" fill=\"#5a3d2b\"/><path d=\"M-14 -140 Q0 -126 14 -146\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-23.5 -98 Q0 -84 23.5 -104\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-33 -56 Q0 -42 33 -62\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-42.5 -14 Q0 0 42.5 -20\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-52 28 Q0 42 52 22\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-61.5 70 Q0 84 61.5 64\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-71 112 Q0 126 71 106\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-18 -100 L-40 80\" stroke=\"#8a6a52\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.7\"/><ellipse cx=\"0\" cy=\"168\" rx=\"34\" ry=\"20\" fill=\"#8a7a6c\"/><path d=\"M-34 172 Q-70 196 -88 180 Q-60 166 -30 164Z\" fill=\"#8a7a6c\"/><circle cx=\"-80\" cy=\"176\" r=\"5\" fill=\"#3a3a3a\"/></g><g transform=\"translate(320 480) rotate(-100) scale(0.25)\"><path d=\"M0 -190 Q10 -190 72 110 Q84 172 0 188 Q-84 172 -72 110 Q-10 -190 0 -190Z\" fill=\"#3a271c\"/><path d=\"M0 -190 Q-10 -190 -72 110 Q-84 172 0 188 Q-34 120 -8 -120Z\" fill=\"#5a3d2b\"/><path d=\"M-14 -140 Q0 -126 14 -146\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-23.5 -98 Q0 -84 23.5 -104\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-33 -56 Q0 -42 33 -62\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-42.5 -14 Q0 0 42.5 -20\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-52 28 Q0 42 52 22\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-61.5 70 Q0 84 61.5 64\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-71 112 Q0 126 71 106\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-18 -100 L-40 80\" stroke=\"#8a6a52\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.7\"/><ellipse cx=\"0\" cy=\"168\" rx=\"34\" ry=\"20\" fill=\"#8a7a6c\"/><path d=\"M-34 172 Q-70 196 -88 180 Q-60 166 -30 164Z\" fill=\"#8a7a6c\"/><circle cx=\"-80\" cy=\"176\" r=\"5\" fill=\"#3a3a3a\"/></g><g transform=\"translate(680 500) rotate(-80) scale(0.28)\"><path d=\"M0 -190 Q10 -190 72 110 Q84 172 0 188 Q-84 172 -72 110 Q-10 -190 0 -190Z\" fill=\"#3a271c\"/><path d=\"M0 -190 Q-10 -190 -72 110 Q-84 172 0 188 Q-34 120 -8 -120Z\" fill=\"#5a3d2b\"/><path d=\"M-14 -140 Q0 -126 14 -146\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-23.5 -98 Q0 -84 23.5 -104\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-33 -56 Q0 -42 33 -62\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-42.5 -14 Q0 0 42.5 -20\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-52 28 Q0 42 52 22\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-61.5 70 Q0 84 61.5 64\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-71 112 Q0 126 71 106\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-18 -100 L-40 80\" stroke=\"#8a6a52\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.7\"/><ellipse cx=\"0\" cy=\"168\" rx=\"34\" ry=\"20\" fill=\"#8a7a6c\"/><path d=\"M-34 172 Q-70 196 -88 180 Q-60 166 -30 164Z\" fill=\"#8a7a6c\"/><circle cx=\"-80\" cy=\"176\" r=\"5\" fill=\"#3a3a3a\"/></g><g transform=\"translate(800 505) rotate(-60) scale(0.24)\"><path d=\"M0 -190 Q10 -190 72 110 Q84 172 0 188 Q-84 172 -72 110 Q-10 -190 0 -190Z\" fill=\"#3a271c\"/><path d=\"M0 -190 Q-10 -190 -72 110 Q-84 172 0 188 Q-34 120 -8 -120Z\" fill=\"#5a3d2b\"/><path d=\"M-14 -140 Q0 -126 14 -146\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-23.5 -98 Q0 -84 23.5 -104\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-33 -56 Q0 -42 33 -62\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-42.5 -14 Q0 0 42.5 -20\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-52 28 Q0 42 52 22\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-61.5 70 Q0 84 61.5 64\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-71 112 Q0 126 71 106\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-18 -100 L-40 80\" stroke=\"#8a6a52\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.7\"/><ellipse cx=\"0\" cy=\"168\" rx=\"34\" ry=\"20\" fill=\"#8a7a6c\"/><path d=\"M-34 172 Q-70 196 -88 180 Q-60 166 -30 164Z\" fill=\"#8a7a6c\"/><circle cx=\"-80\" cy=\"176\" r=\"5\" fill=\"#3a3a3a\"/></g><g transform=\"translate(500 420) rotate(-90) scale(0.22)\"><path d=\"M0 -190 Q10 -190 72 110 Q84 172 0 188 Q-84 172 -72 110 Q-10 -190 0 -190Z\" fill=\"#3a271c\"/><path d=\"M0 -190 Q-10 -190 -72 110 Q-84 172 0 188 Q-34 120 -8 -120Z\" fill=\"#5a3d2b\"/><path d=\"M-14 -140 Q0 -126 14 -146\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-23.5 -98 Q0 -84 23.5 -104\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-33 -56 Q0 -42 33 -62\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-42.5 -14 Q0 0 42.5 -20\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-52 28 Q0 42 52 22\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-61.5 70 Q0 84 61.5 64\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-71 112 Q0 126 71 106\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-18 -100 L-40 80\" stroke=\"#8a6a52\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.7\"/><ellipse cx=\"0\" cy=\"168\" rx=\"34\" ry=\"20\" fill=\"#8a7a6c\"/><path d=\"M-34 172 Q-70 196 -88 180 Q-60 166 -30 164Z\" fill=\"#8a7a6c\"/><circle cx=\"-80\" cy=\"176\" r=\"5\" fill=\"#3a3a3a\"/></g></svg>",
+    "mapa_hn": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1010 570\"><path d=\"M192 68 L232 45 L272 60 L312 58 L370 66 L416 58 L470 52 L544 32 L600 30 L650 30 L704 22 L750 34 L784 45 L840 70 L900 110 L960 150 L1000 198 L930 225 L864 243 L790 280 L704 324 L640 370 L592 405 L540 410 L496 423 L460 460 L424 504 L380 535 L336 562 L310 548 L288 531 L262 505 L256 486 L240 440 L224 405 L184 398 L144 387 L100 380 L64 369 L30 340 L8 302 L40 270 L70 232 L104 189 L130 160 L160 126 L178 96Z\" fill=\"#1f6b48\" transform=\"translate(10 14)\" opacity=\"0.35\"/><path d=\"M192 68 L232 45 L272 60 L312 58 L370 66 L416 58 L470 52 L544 32 L600 30 L650 30 L704 22 L750 34 L784 45 L840 70 L900 110 L960 150 L1000 198 L930 225 L864 243 L790 280 L704 324 L640 370 L592 405 L540 410 L496 423 L460 460 L424 504 L380 535 L336 562 L310 548 L288 531 L262 505 L256 486 L240 440 L224 405 L184 398 L144 387 L100 380 L64 369 L30 340 L8 302 L40 270 L70 232 L104 189 L130 160 L160 126 L178 96Z\" fill=\"#4fb36b\" stroke=\"#ffffff\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M300 300 L420 250 L560 300 L700 270 L800 230\" stroke=\"#3f9a59\" stroke-width=\"22\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.7\"/><path d=\"M150 260 L240 230 L330 260\" stroke=\"#3f9a59\" stroke-width=\"18\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.7\"/><path d=\"M200 90 Q400 80 600 60 Q760 50 900 120\" stroke=\"#7fd08f\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.8\"/></svg>",
+    "pin": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 140\"><path d=\"M50 136 C38 108 8 84 8 50 A42 42 0 0 1 92 50 C92 84 62 108 50 136Z\" fill=\"#e8433a\"/><path d=\"M50 136 C62 108 92 84 92 50 A42 42 0 0 0 50 8 C70 30 74 80 50 136Z\" fill=\"#b52a22\"/><circle cx=\"50\" cy=\"48\" r=\"17\" fill=\"#ffffff\"/></svg>",
+    "cuchillo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 120\"><path d=\"M20 70 Q120 20 240 40 L240 80 Q120 90 20 70Z\" fill=\"#d8dde3\"/><path d=\"M20 70 Q120 70 240 62 L240 80 Q120 90 20 70Z\" fill=\"#aab2bc\"/><rect x=\"236\" y=\"34\" width=\"110\" height=\"52\" rx=\"18\" fill=\"#6b3f22\"/><circle cx=\"270\" cy=\"60\" r=\"6\" fill=\"#d8c08a\"/><circle cx=\"312\" cy=\"60\" r=\"6\" fill=\"#d8c08a\"/></svg>",
+    "olla": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 460\"><path d=\"M30 140 Q20 400 280 440 Q540 400 530 140Z\" fill=\"#a84a26\"/><path d=\"M380 160 Q520 170 520 160 Q520 380 300 432 Q470 340 380 160Z\" fill=\"#8a3a1c\"/><path d=\"M80 200 Q80 330 180 390\" stroke=\"#c96a40\" stroke-width=\"16\" fill=\"none\" stroke-linecap=\"round\"/><ellipse cx=\"280\" cy=\"140\" rx=\"262\" ry=\"56\" fill=\"#c45a30\"/><ellipse cx=\"280\" cy=\"140\" rx=\"230\" ry=\"42\" fill=\"#e0a240\"/><ellipse cx=\"250\" cy=\"134\" rx=\"160\" ry=\"22\" fill=\"#f0bc5a\"/><path d=\"M20 160 Q-10 160 0 200 Q14 220 34 210\" stroke=\"#a84a26\" stroke-width=\"18\" fill=\"none\"/><path d=\"M540 160 Q570 160 560 200 Q546 220 526 210\" stroke=\"#a84a26\" stroke-width=\"18\" fill=\"none\"/><g transform=\"translate(190 132) rotate(-80) scale(0.2)\"><path d=\"M0 -190 Q10 -190 72 110 Q84 172 0 188 Q-84 172 -72 110 Q-10 -190 0 -190Z\" fill=\"#3a271c\"/><path d=\"M0 -190 Q-10 -190 -72 110 Q-84 172 0 188 Q-34 120 -8 -120Z\" fill=\"#5a3d2b\"/><path d=\"M-14 -140 Q0 -126 14 -146\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-23.5 -98 Q0 -84 23.5 -104\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-33 -56 Q0 -42 33 -62\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-42.5 -14 Q0 0 42.5 -20\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-52 28 Q0 42 52 22\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-61.5 70 Q0 84 61.5 64\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-71 112 Q0 126 71 106\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-18 -100 L-40 80\" stroke=\"#8a6a52\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.7\"/><ellipse cx=\"0\" cy=\"168\" rx=\"34\" ry=\"20\" fill=\"#8a7a6c\"/><path d=\"M-34 172 Q-70 196 -88 180 Q-60 166 -30 164Z\" fill=\"#8a7a6c\"/><circle cx=\"-80\" cy=\"176\" r=\"5\" fill=\"#3a3a3a\"/></g><g transform=\"translate(330 140) rotate(-100) scale(0.2)\"><path d=\"M0 -190 Q10 -190 72 110 Q84 172 0 188 Q-84 172 -72 110 Q-10 -190 0 -190Z\" fill=\"#3a271c\"/><path d=\"M0 -190 Q-10 -190 -72 110 Q-84 172 0 188 Q-34 120 -8 -120Z\" fill=\"#5a3d2b\"/><path d=\"M-14 -140 Q0 -126 14 -146\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-23.5 -98 Q0 -84 23.5 -104\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-33 -56 Q0 -42 33 -62\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-42.5 -14 Q0 0 42.5 -20\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-52 28 Q0 42 52 22\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-61.5 70 Q0 84 61.5 64\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-71 112 Q0 126 71 106\" stroke=\"#7a5640\" stroke-width=\"5\" fill=\"none\"/><path d=\"M-18 -100 L-40 80\" stroke=\"#8a6a52\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.7\"/><ellipse cx=\"0\" cy=\"168\" rx=\"34\" ry=\"20\" fill=\"#8a7a6c\"/><path d=\"M-34 172 Q-70 196 -88 180 Q-60 166 -30 164Z\" fill=\"#8a7a6c\"/><circle cx=\"-80\" cy=\"176\" r=\"5\" fill=\"#3a3a3a\"/></g><circle cx=\"260\" cy=\"126\" r=\"7\" fill=\"#3f9a4e\"/><circle cx=\"380\" cy=\"132\" r=\"6\" fill=\"#3f9a4e\"/><circle cx=\"150\" cy=\"146\" r=\"6\" fill=\"#3f9a4e\"/></svg>",
+    "cebolla": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 220\"><path d=\"M100 20 Q110 60 160 110 Q190 160 150 196 Q100 220 50 196 Q10 160 40 110 Q90 60 100 20Z\" fill=\"#c98ac0\"/><path d=\"M100 30 Q100 100 100 206 M70 80 Q50 150 72 204 M130 80 Q150 150 128 204\" stroke=\"#a8609e\" stroke-width=\"5\" fill=\"none\"/></svg>",
+    "tomate": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><circle cx=\"100\" cy=\"112\" r=\"80\" fill=\"#c22a20\"/><circle cx=\"92\" cy=\"104\" r=\"74\" fill=\"#e8433a\"/><path d=\"M100 30 L116 52 L140 44 L126 64 L146 76 L118 76 L100 92 L84 76 L56 76 L76 64 L62 44 L86 52Z\" fill=\"#3f9a4e\"/><ellipse cx=\"66\" cy=\"90\" rx=\"14\" ry=\"22\" fill=\"#ff8c80\" opacity=\"0.6\"/></svg>",
+    "chile": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 120\"><path d=\"M30 60 Q80 20 170 40 Q210 52 220 70 Q160 90 60 90 Q20 84 30 60Z\" fill=\"#3f9a4e\"/><path d=\"M40 70 Q100 80 200 66\" stroke=\"#5fbd6a\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M212 64 Q230 40 226 20\" stroke=\"#2f7a3a\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+    "culantro": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 260\"><path d=\"M110 250 L110 120 M110 200 L60 120 M110 200 L160 110\" stroke=\"#3f8a40\" stroke-width=\"8\" fill=\"none\"/><path d=\"M110 50 Q144 80 110 110 Q76 80 110 50Z\" fill=\"#4fb35a\"/><path d=\"M60 70 Q94 100 60 130 Q26 100 60 70Z\" fill=\"#4fb35a\"/><path d=\"M160 60 Q194 90 160 120 Q126 90 160 60Z\" fill=\"#4fb35a\"/><path d=\"M85 20 Q119 50 85 80 Q51 50 85 20Z\" fill=\"#4fb35a\"/><path d=\"M140 20 Q174 50 140 80 Q106 50 140 20Z\" fill=\"#4fb35a\"/><path d=\"M40 40 Q74 70 40 100 Q6 70 40 40Z\" fill=\"#4fb35a\"/><path d=\"M180 30 Q214 60 180 90 Q146 60 180 30Z\" fill=\"#4fb35a\"/></svg>",
+    "yuca": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 160\"><path d=\"M20 80 Q60 20 200 34 Q300 48 324 76 Q300 120 200 126 Q60 140 20 80Z\" fill=\"#7a4a26\"/><path d=\"M60 60 Q150 40 260 60 M70 100 Q160 112 270 96\" stroke=\"#5e3619\" stroke-width=\"6\" fill=\"none\"/><ellipse cx=\"34\" cy=\"80\" rx=\"22\" ry=\"46\" fill=\"#f4ead2\"/><ellipse cx=\"34\" cy=\"80\" rx=\"8\" ry=\"16\" fill=\"#e2d4b0\"/></svg>",
+    "guineo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 170\"><path d=\"M20 60 Q160 180 310 60 Q300 110 240 140 Q140 170 60 120 Q30 100 20 60Z\" fill=\"#5aa040\"/><path d=\"M40 70 Q160 160 300 70 Q260 100 170 112 Q90 110 40 70Z\" fill=\"#7fc45a\"/><path d=\"M300 62 L330 30\" stroke=\"#3f7a2a\" stroke-width=\"14\" stroke-linecap=\"round\"/><circle cx=\"22\" cy=\"62\" r=\"8\" fill=\"#3a2a1a\"/></svg>",
+    "coco": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 220\"><circle cx=\"110\" cy=\"120\" r=\"90\" fill=\"#6b4226\"/><path d=\"M40 60 Q60 90 50 130 M80 40 Q100 80 90 140 M150 40 Q140 90 160 150\" stroke=\"#4e2e18\" stroke-width=\"6\" fill=\"none\"/><ellipse cx=\"170\" cy=\"150\" rx=\"66\" ry=\"60\" fill=\"#6b4226\"/><ellipse cx=\"170\" cy=\"150\" rx=\"54\" ry=\"48\" fill=\"#ffffff\"/><ellipse cx=\"170\" cy=\"150\" rx=\"32\" ry=\"28\" fill=\"#eef4f8\"/></svg>",
+    "maduro": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 170\"><path d=\"M20 60 Q160 180 310 60 Q300 110 240 140 Q140 170 60 120 Q30 100 20 60Z\" fill=\"#e8b020\"/><path d=\"M40 70 Q160 160 300 70 Q260 100 170 112 Q90 110 40 70Z\" fill=\"#f6d04a\"/><circle cx=\"120\" cy=\"120\" r=\"9\" fill=\"#3a2a1a\"/><circle cx=\"200\" cy=\"118\" r=\"12\" fill=\"#3a2a1a\"/><ellipse cx=\"250\" cy=\"104\" rx=\"8\" ry=\"5\" fill=\"#3a2a1a\"/><path d=\"M300 62 L330 30\" stroke=\"#3a2a1a\" stroke-width=\"14\" stroke-linecap=\"round\"/></svg>",
+    "tortillas": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 170\"><ellipse cx=\"160\" cy=\"140\" rx=\"140\" ry=\"30\" fill=\"#f2e3b4\" stroke=\"#d7c38c\" stroke-width=\"3\"/><ellipse cx=\"160\" cy=\"124\" rx=\"140\" ry=\"30\" fill=\"#e9d9a6\" stroke=\"#d7c38c\" stroke-width=\"3\"/><ellipse cx=\"160\" cy=\"108\" rx=\"140\" ry=\"30\" fill=\"#f2e3b4\" stroke=\"#d7c38c\" stroke-width=\"3\"/><ellipse cx=\"160\" cy=\"92\" rx=\"140\" ry=\"30\" fill=\"#e9d9a6\" stroke=\"#d7c38c\" stroke-width=\"3\"/><ellipse cx=\"130\" cy=\"84\" rx=\"10\" ry=\"4\" fill=\"#c8a86a\"/><ellipse cx=\"200\" cy=\"92\" rx=\"8\" ry=\"3\" fill=\"#c8a86a\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "Los jutes son caracoles de agua dulce de ríos y quebradas de Copán y otras partes de Honduras; la sopa es tradicional de Copán y popular en el occidente",
+      "fuente": "Buen Provecho (buenprovecho.hn), «¿Conocías la Sopa de Jutes? Un tesoro tradicional de la cocina de Copán»"
+    },
+    {
+      "dato": "Preparación: lavar los jutes, cortarles la punta, sofrito de cebolla, tomate, chile y culantro; yuca y guineo verde; algunas recetas añaden leche de coco y plátano maduro",
+      "fuente": "Buen Provecho (misma nota); comidashondurenas.com, «Sopa de jutes»; recetasdeamerica.com, «Receta de Sopa de Jutes»"
+    },
+    {
+      "dato": "«Jute» como nombre regional del caracol de río en Centroamérica",
+      "fuente": "Jergas de habla hispana, «jute» (Guatemala: caracol de río)"
+    }
+  ],
+  "nota": "No se encontraron fuentes que liguen la sopa de jutes específicamente con Choluteca; las fuentes la ubican en Copán y el occidente («y otras partes de Honduras»), y así se dice en el video. Que el jute se sorbe por la punta cortada es la costumbre popular que explica por qué se corta (las recetas solo dicen que se corta; también se puede sacar de la concha). No confundir con la sopa de caracol de la costa norte, que es de caracol marino."
+}

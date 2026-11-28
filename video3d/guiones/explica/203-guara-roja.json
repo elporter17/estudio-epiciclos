@@ -1,0 +1,407 @@
+{
+  "id": "explica-hn-guara-roja",
+  "motor": "explica",
+  "titulo": "La guara roja, ave nacional",
+  "categoria": "honduras",
+  "etiquetas": [
+    "honduras",
+    "catracho",
+    "guararoja",
+    "avenacional",
+    "copan",
+    "naturaleza"
+  ],
+  "descripcion": "Roja, amarilla y azul: la guara roja es el ave nacional de Honduras desde 1993. Por qué era sagrada para los mayas, por qué quedan pocas en el monte y cómo vuelve a volar sobre las ruinas de Copán.",
+  "musica": "electro",
+  "paleta": {
+    "a": "#7fd6a0",
+    "b": "#2f8f6a"
+  },
+  "escenas": [
+    {
+      "fondo": "cielo",
+      "texto": "Roja, amarilla y azul, y con un grito que se oye de lejos: así es la guara roja.",
+      "clave": "guara roja",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "guara",
+          "x": 0.5,
+          "y": 0.6,
+          "ancho": 920,
+          "anim": "slideIn",
+          "desde": "derecha",
+          "idle": "flotar",
+          "en": 0
+        },
+        {
+          "etiqueta": "roja",
+          "x": 0.74,
+          "y": 0.8,
+          "color": "#e0312b",
+          "a": [
+            0.56,
+            0.66
+          ],
+          "en": "Roja"
+        },
+        {
+          "etiqueta": "amarilla",
+          "x": 0.2,
+          "y": 0.33,
+          "color": "#d99a12",
+          "a": [
+            0.3,
+            0.48
+          ],
+          "en": "amarilla"
+        },
+        {
+          "etiqueta": "azul",
+          "x": 0.16,
+          "y": 0.76,
+          "color": "#2a5bd7",
+          "a": [
+            0.14,
+            0.62
+          ],
+          "en": "azul"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Desde el 28 de junio de 1993 es el ave nacional de Honduras.",
+      "voz": "Desde el veintiocho de junio de mil novecientos noventa y tres es el ave nacional de Honduras.",
+      "clave": "ave nacional",
+      "nota": "Decreto 36-93",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.62,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "guara_posada",
+          "x": 0.25,
+          "y": 0.66,
+          "ancho": 330,
+          "anim": "pop",
+          "idle": "balanceo",
+          "en": 0
+        },
+        {
+          "svg": "bandera",
+          "x": 0.69,
+          "y": 0.55,
+          "ancho": 540,
+          "anim": "slideIn",
+          "desde": "derecha",
+          "en": "nacional"
+        },
+        {
+          "numero": "28 · VI · 1993",
+          "x": 0.66,
+          "y": 0.82,
+          "color": "#1d1d2b",
+          "tam": 58,
+          "en": "28"
+        }
+      ]
+    },
+    {
+      "fondo": "plano",
+      "texto": "Es la guacamaya Ara macao, y en cautiverio puede vivir de 40 a 50 años.",
+      "voz": "Es la guacamaya Ara macao, y en cautiverio puede vivir de cuarenta a cincuenta años.",
+      "clave": "Ara macao",
+      "camara": {
+        "de": [
+          0.4,
+          0.55,
+          1.12
+        ],
+        "a": [
+          0.5,
+          0.6,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "guara_posada",
+          "x": 0.5,
+          "y": 0.62,
+          "ancho": 400,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "numero": "40 a 50 años",
+          "x": 0.5,
+          "y": 0.9,
+          "color": "#d93427",
+          "tam": 64,
+          "en": "40"
+        },
+        {
+          "etiqueta": "Ara macao",
+          "x": 0.22,
+          "y": 0.34,
+          "color": "#6b4fe0",
+          "a": [
+            0.47,
+            0.46
+          ],
+          "en": "Ara"
+        }
+      ]
+    },
+    {
+      "fondo": "oscuro",
+      "texto": "Para los mayas estaba ligada al sol. En la cancha de pelota de Copán hay guaras talladas en piedra.",
+      "clave": "sol",
+      "nota": "ave sagrada",
+      "camara": {
+        "de": [
+          0.5,
+          0.62,
+          1
+        ],
+        "a": [
+          0.5,
+          0.66,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "sol",
+          "x": 0.5,
+          "y": 0.4,
+          "ancho": 340,
+          "anim": "pop",
+          "idle": "latido",
+          "en": 0
+        },
+        {
+          "svg": "piedra",
+          "x": 0.5,
+          "y": 0.72,
+          "ancho": 640,
+          "anim": "crecer",
+          "en": "cancha"
+        },
+        {
+          "etiqueta": "Copán",
+          "x": 0.8,
+          "y": 0.88,
+          "color": "#2e7d5b",
+          "en": "Copán"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Pero en el monte cada vez hay menos: les tumban el bosque y roban los pichones para venderlos.",
+      "clave": "menos",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.64,
+          1.08
+        ]
+      },
+      "capas": [
+        {
+          "svg": "tocon",
+          "x": 0.32,
+          "y": 0.72,
+          "ancho": 560,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "jaula",
+          "x": 0.74,
+          "y": 0.62,
+          "ancho": 340,
+          "anim": "caer",
+          "idle": "balanceo",
+          "en": "pichones"
+        },
+        {
+          "etiqueta": "sin bosque",
+          "x": 0.3,
+          "y": 0.52,
+          "color": "#7a4a26",
+          "en": "bosque"
+        },
+        {
+          "etiqueta": "tráfico ilegal",
+          "x": 0.7,
+          "y": 0.86,
+          "color": "#d93427",
+          "en": "venderlos"
+        }
+      ]
+    },
+    {
+      "fondo": "liso",
+      "texto": "Por eso, desde 2011, en Copán Ruinas crían guaras y las sueltan libres en el parque arqueológico.",
+      "voz": "Por eso, desde el dos mil once, en Copán Ruinas crían guaras y las sueltan libres en el parque arqueológico.",
+      "clave": "libres",
+      "nota": "Macaw Mountain y aliados",
+      "camara": {
+        "de": [
+          0.5,
+          0.64,
+          1.1
+        ],
+        "a": [
+          0.5,
+          0.58,
+          1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "jaula_abierta",
+          "x": 0.3,
+          "y": 0.7,
+          "ancho": 330,
+          "anim": "pop",
+          "en": 0
+        },
+        {
+          "svg": "guara",
+          "x": 0.66,
+          "y": 0.46,
+          "ancho": 520,
+          "anim": "slideIn",
+          "desde": "izquierda",
+          "idle": "flotar",
+          "en": "sueltan"
+        },
+        {
+          "numero": "desde 2011",
+          "x": 0.7,
+          "y": 0.84,
+          "color": "#1d1d2b",
+          "tam": 56,
+          "en": "2011"
+        }
+      ]
+    },
+    {
+      "fondo": "cielo",
+      "texto": "Hoy se ven volando otra vez sobre las ruinas mayas, como en los tiempos de los reyes.",
+      "clave": "volando",
+      "camara": {
+        "de": [
+          0.5,
+          0.6,
+          1
+        ],
+        "a": [
+          0.5,
+          0.55,
+          1.1
+        ]
+      },
+      "capas": [
+        {
+          "svg": "templo",
+          "x": 0.5,
+          "y": 0.8,
+          "ancho": 1000,
+          "anim": "slideIn",
+          "desde": "abajo",
+          "en": 0
+        },
+        {
+          "svg": "guara",
+          "x": 0.34,
+          "y": 0.42,
+          "ancho": 440,
+          "anim": "slideIn",
+          "desde": "izquierda",
+          "idle": "flotar",
+          "en": "volando"
+        },
+        {
+          "svg": "guara",
+          "x": 0.72,
+          "y": 0.55,
+          "ancho": 340,
+          "anim": "slideIn",
+          "desde": "derecha",
+          "idle": "flotar",
+          "en": "ruinas"
+        }
+      ]
+    },
+    {
+      "tipo": "cierre",
+      "texto": "Si ves una guara, cuidala y nunca la compres. Síguenos para más orgullo hondureño.",
+      "clave": "Síguenos",
+      "capas": []
+    }
+  ],
+  "dibujos": {
+    "guara": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 520\"><path d=\"M230 300 L40 500 L90 512 L262 336Z\" fill=\"#e0312b\"/><path d=\"M60 478 L40 500 L90 512 L110 490Z\" fill=\"#2a5bd7\"/><path d=\"M240 320 L120 470 L150 476 L262 340Z\" fill=\"#b5221d\"/><path d=\"M290 250 Q250 120 100 70 Q180 150 190 210 Q220 270 280 300Z\" fill=\"#1d3f9e\" opacity=\"0.8\"/><ellipse cx=\"320\" cy=\"290\" rx=\"130\" ry=\"76\" fill=\"#e0312b\" transform=\"rotate(-18 320 290)\"/><path d=\"M220 330 Q320 380 430 300 Q400 360 300 372 Q240 366 220 330Z\" fill=\"#b5221d\"/><path d=\"M300 260 Q260 90 60 20 Q160 130 170 200 Q210 280 300 300Z\" fill=\"#2a5bd7\"/><path d=\"M300 262 Q275 160 160 100 Q190 160 200 220 Q230 280 300 300Z\" fill=\"#f6c234\"/><path d=\"M300 264 Q290 200 230 170 Q240 230 250 260 Q270 296 300 300Z\" fill=\"#e0312b\"/><path d=\"M120 60 L150 92 M90 52 L130 96\" stroke=\"#1d3f9e\" stroke-width=\"6\"/><path d=\"M380 380 l-10 40 M400 372 l0 40\" stroke=\"#5a5a62\" stroke-width=\"10\" stroke-linecap=\"round\"/><circle cx=\"450\" cy=\"210\" r=\"62\" fill=\"#e0312b\"/><ellipse cx=\"473.56\" cy=\"211.24\" rx=\"32.24\" ry=\"27.28\" fill=\"#f4efe6\"/><path d=\"M456.2 203.8 q12.4 4.96 31 0 M457.44 221.16 q12.4 4.96 28.52 0\" stroke=\"#d9cfc0\" stroke-width=\"3.1\" fill=\"none\"/><circle cx=\"472.32\" cy=\"205.04\" r=\"9.92\" fill=\"#f6e27a\"/><circle cx=\"473.56\" cy=\"205.04\" r=\"5.58\" fill=\"#1d1d2b\"/><path d=\"M498.36 190.16 Q564.7 185.2 550.44 260.84 Q536.8 228.6 503.32 228.6Z\" fill=\"#efe6d6\"/><path d=\"M502.08 228.6 Q530.6 231.08 534.32 255.88 Q513.24 263.32 499.6 244.72Z\" fill=\"#2a2a30\"/></svg>",
+    "guara_posada": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 680\"><path d=\"M128 370 L172 370 L168 660 L134 660Z\" fill=\"#e0312b\"/><path d=\"M134 600 L168 600 L168 660 L134 660Z\" fill=\"#2a5bd7\"/><path d=\"M150 380 L150 640\" stroke=\"#b5221d\" stroke-width=\"6\"/><ellipse cx=\"150\" cy=\"290\" rx=\"74\" ry=\"118\" fill=\"#e0312b\"/><path d=\"M90 330 Q150 420 210 330 Q200 400 150 410 Q100 400 90 330Z\" fill=\"#b5221d\"/><path d=\"M104 230 Q90 340 150 420 Q200 340 196 230Z\" fill=\"#2a5bd7\"/><path d=\"M104 230 Q98 290 118 320 L194 300 Q198 262 196 230Z\" fill=\"#f6c234\"/><path d=\"M104 230 L196 230 Q196 252 150 260 Q108 254 104 230Z\" fill=\"#e0312b\"/><rect x=\"0\" y=\"392\" width=\"320\" height=\"26\" rx=\"13\" fill=\"#7a4a26\"/><path d=\"M250 392 q30 -40 70 -30 q-20 40 -70 30Z M20 418 q-10 40 -20 50 q40 -10 50 -50Z\" fill=\"#3f9a4e\"/><path d=\"M126 396 q-6 18 -16 22 M174 396 q6 18 16 22\" stroke=\"#5a5a62\" stroke-width=\"10\" stroke-linecap=\"round\" fill=\"none\"/><circle cx=\"150\" cy=\"160\" r=\"58\" fill=\"#e0312b\"/><ellipse cx=\"172.04\" cy=\"161.16\" rx=\"30.16\" ry=\"25.52\" fill=\"#f4efe6\"/><path d=\"M155.8 154.2 q11.600000000000001 4.64 29 0 M156.96 170.44 q11.600000000000001 4.64 26.68 0\" stroke=\"#d9cfc0\" stroke-width=\"2.9000000000000004\" fill=\"none\"/><circle cx=\"170.88\" cy=\"155.36\" r=\"9.28\" fill=\"#f6e27a\"/><circle cx=\"172.04\" cy=\"155.36\" r=\"5.22\" fill=\"#1d1d2b\"/><path d=\"M195.24 141.44 Q257.3 136.8 243.96 207.56 Q231.2 177.4 199.88 177.4Z\" fill=\"#efe6d6\"/><path d=\"M198.72 177.4 Q225.4 179.72 228.88 202.92000000000002 Q209.16 209.88 196.4 192.48000000000002Z\" fill=\"#2a2a30\"/></svg>",
+    "bandera": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 620 400\"><rect x=\"10\" y=\"10\" width=\"20\" height=\"390\" rx=\"8\" fill=\"#8d6a48\"/><path d=\"M30 30 Q320 0 600 30 L600 330 Q320 300 30 330Z\" fill=\"#ffffff\"/><path d=\"M30 30 Q320 0 600 30 L600 130 Q320 100 30 130Z\" fill=\"#18b5e3\"/><path d=\"M30 230 Q320 200 600 230 L600 330 Q320 300 30 330Z\" fill=\"#18b5e3\"/><path d=\"M315.0 160.0 L319.9 173.2 L334.0 173.8 L323.0 182.6 L326.8 196.2 L315.0 188.4 L303.2 196.2 L307.0 182.6 L296.0 173.8 L310.1 173.2Z\" fill=\"#18b5e3\"/><path d=\"M255.0 135.0 L259.9 148.2 L274.0 148.8 L263.0 157.6 L266.8 171.2 L255.0 163.4 L243.2 171.2 L247.0 157.6 L236.0 148.8 L250.1 148.2Z\" fill=\"#18b5e3\"/><path d=\"M375.0 135.0 L379.9 148.2 L394.0 148.8 L383.0 157.6 L386.8 171.2 L375.0 163.4 L363.2 171.2 L367.0 157.6 L356.0 148.8 L370.1 148.2Z\" fill=\"#18b5e3\"/><path d=\"M255.0 185.0 L259.9 198.2 L274.0 198.8 L263.0 207.6 L266.8 221.2 L255.0 213.4 L243.2 221.2 L247.0 207.6 L236.0 198.8 L250.1 198.2Z\" fill=\"#18b5e3\"/><path d=\"M375.0 185.0 L379.9 198.2 L394.0 198.8 L383.0 207.6 L386.8 221.2 L375.0 213.4 L363.2 221.2 L367.0 207.6 L356.0 198.8 L370.1 198.2Z\" fill=\"#18b5e3\"/><path d=\"M30 30 Q320 0 600 30 L600 60 Q320 30 30 60Z\" fill=\"#ffffff\" opacity=\"0.15\"/></svg>",
+    "sol": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 300\"><g fill=\"#ffb020\"><path d=\"M150 6 L164 50 L136 50Z\" transform=\"rotate(0 150 150)\"/><path d=\"M150 6 L164 50 L136 50Z\" transform=\"rotate(30 150 150)\"/><path d=\"M150 6 L164 50 L136 50Z\" transform=\"rotate(60 150 150)\"/><path d=\"M150 6 L164 50 L136 50Z\" transform=\"rotate(90 150 150)\"/><path d=\"M150 6 L164 50 L136 50Z\" transform=\"rotate(120 150 150)\"/><path d=\"M150 6 L164 50 L136 50Z\" transform=\"rotate(150 150 150)\"/><path d=\"M150 6 L164 50 L136 50Z\" transform=\"rotate(180 150 150)\"/><path d=\"M150 6 L164 50 L136 50Z\" transform=\"rotate(210 150 150)\"/><path d=\"M150 6 L164 50 L136 50Z\" transform=\"rotate(240 150 150)\"/><path d=\"M150 6 L164 50 L136 50Z\" transform=\"rotate(270 150 150)\"/><path d=\"M150 6 L164 50 L136 50Z\" transform=\"rotate(300 150 150)\"/><path d=\"M150 6 L164 50 L136 50Z\" transform=\"rotate(330 150 150)\"/></g><circle cx=\"150\" cy=\"150\" r=\"88\" fill=\"#ffc83d\"/><circle cx=\"150\" cy=\"150\" r=\"70\" fill=\"#ffd864\"/></svg>",
+    "piedra": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 400\"><rect x=\"30\" y=\"300\" width=\"360\" height=\"90\" rx=\"14\" fill=\"#7d796c\"/><path d=\"M60 300 Q40 140 140 80 Q240 30 320 110 Q380 170 360 300Z\" fill=\"#9a9688\"/><path d=\"M300 110 Q410 140 400 250 Q370 200 320 196Z\" fill=\"#b8b4a6\"/><path d=\"M320 196 Q370 200 400 250 Q350 260 316 236Z\" fill=\"#7d796c\"/><circle cx=\"230\" cy=\"150\" r=\"40\" fill=\"#b8b4a6\"/><circle cx=\"230\" cy=\"150\" r=\"18\" fill=\"#5f5b50\"/><path d=\"M90 220 Q130 180 170 220 Q130 260 90 220Z\" fill=\"none\" stroke=\"#7d796c\" stroke-width=\"10\" stroke-linecap=\"round\"/><path d=\"M80 150 Q110 120 140 140\" stroke=\"#b8b4a6\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M60 340 h300\" stroke=\"#9a9688\" stroke-width=\"8\"/></svg>",
+    "tocon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 460 300\"><ellipse cx=\"230\" cy=\"270\" rx=\"220\" ry=\"26\" fill=\"#5a3a20\" opacity=\"0.4\"/><path d=\"M120 270 L130 120 L310 120 L320 270Z\" fill=\"#7a4a26\"/><path d=\"M140 260 L148 140 M200 266 L204 130 M260 266 L262 132 M300 260 L296 140\" stroke=\"#5e3619\" stroke-width=\"6\"/><ellipse cx=\"220\" cy=\"120\" rx=\"92\" ry=\"30\" fill=\"#e2b77c\"/><ellipse cx=\"220\" cy=\"120\" rx=\"62\" ry=\"19\" fill=\"none\" stroke=\"#b98a52\" stroke-width=\"5\"/><ellipse cx=\"220\" cy=\"120\" rx=\"30\" ry=\"9\" fill=\"none\" stroke=\"#b98a52\" stroke-width=\"5\"/><path d=\"M310 250 L450 210 L455 240 L320 280Z\" fill=\"#6a3f20\"/><ellipse cx=\"452\" cy=\"225\" rx=\"10\" ry=\"16\" fill=\"#e2b77c\"/></svg>",
+    "jaula": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 420\"><rect x=\"30\" y=\"370\" width=\"260\" height=\"34\" rx=\"10\" fill=\"#8d6a48\"/><path d=\"M50 370 L50 170 Q50 40 160 40 Q270 40 270 170 L270 370\" fill=\"none\" stroke=\"#c9962a\" stroke-width=\"10\"/><path d=\"M90 370 L90 78\" stroke=\"#c9962a\" stroke-width=\"8\"/><path d=\"M130 370 L130 102\" stroke=\"#c9962a\" stroke-width=\"8\"/><path d=\"M190 370 L190 102\" stroke=\"#c9962a\" stroke-width=\"8\"/><path d=\"M230 370 L230 78\" stroke=\"#c9962a\" stroke-width=\"8\"/><path d=\"M160 370 L160 60\" stroke=\"#c9962a\" stroke-width=\"8\"/><path d=\"M50 220 H270\" stroke=\"#c9962a\" stroke-width=\"8\"/><circle cx=\"160\" cy=\"30\" r=\"22\" fill=\"none\" stroke=\"#c9962a\" stroke-width=\"10\"/></svg>",
+    "jaula_abierta": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 420\"><rect x=\"30\" y=\"370\" width=\"260\" height=\"34\" rx=\"10\" fill=\"#8d6a48\"/><path d=\"M50 370 L50 170 Q50 40 160 40 Q270 40 270 170 L270 370\" fill=\"none\" stroke=\"#c9962a\" stroke-width=\"10\"/><path d=\"M90 370 L90 78\" stroke=\"#c9962a\" stroke-width=\"8\"/><path d=\"M130 370 L130 102\" stroke=\"#c9962a\" stroke-width=\"8\"/><path d=\"M190 370 L190 102\" stroke=\"#c9962a\" stroke-width=\"8\"/><path d=\"M230 370 L230 78\" stroke=\"#c9962a\" stroke-width=\"8\"/><path d=\"M140 370 L140 230 L60 250 L60 380Z\" fill=\"none\" stroke=\"#e0ad22\" stroke-width=\"8\"/><path d=\"M50 220 H270\" stroke=\"#c9962a\" stroke-width=\"8\"/><circle cx=\"160\" cy=\"30\" r=\"22\" fill=\"none\" stroke=\"#c9962a\" stroke-width=\"10\"/></svg>",
+    "templo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 700 420\"><path d=\"M0 420 L120 160 L580 160 L700 420Z\" fill=\"#8f846f\"/><path d=\"M120 200 H580\" stroke=\"#a99c84\" stroke-width=\"10\"/><path d=\"M100 240 H600\" stroke=\"#a99c84\" stroke-width=\"10\"/><path d=\"M80 280 H620\" stroke=\"#a99c84\" stroke-width=\"10\"/><path d=\"M60 320 H640\" stroke=\"#a99c84\" stroke-width=\"10\"/><path d=\"M40 360 H660\" stroke=\"#a99c84\" stroke-width=\"10\"/><path d=\"M20 400 H680\" stroke=\"#a99c84\" stroke-width=\"10\"/><rect x=\"250\" y=\"60\" width=\"200\" height=\"100\" fill=\"#9d917a\"/><rect x=\"230\" y=\"44\" width=\"240\" height=\"24\" fill=\"#b9ad94\"/><rect x=\"320\" y=\"100\" width=\"60\" height=\"60\" fill=\"#4e4739\"/><path d=\"M0 420 Q60 380 120 420 Z M600 420 Q650 370 700 420Z\" fill=\"#3f9a4e\"/></svg>"
+  },
+  "fuentes": [
+    {
+      "dato": "La guara roja (Ara macao) es el ave nacional de Honduras desde el 28 de junio de 1993 (Decreto 36-93, junto al venado cola blanca como mamífero nacional)",
+      "fuente": "La Prensa, «La guara roja vuela para resurgir en Copán»; Tu Nota, «La guacamaya de Honduras: por qué es el ave nacional» (2022)"
+    },
+    {
+      "dato": "Vive de 40 a 50 años en cautiverio",
+      "fuente": "Zoológico de San Diego, «Scarlet Macaw» (Animals and Plants)"
+    },
+    {
+      "dato": "Para los mayas la guara personificaba al sol; los marcadores de la cancha de juego de pelota de Copán son cabezas de guara",
+      "fuente": "Museo de Escultura de Copán (texto citado por FLAAR Mesoamérica, «Copan Macaw goalstones», 2024); mayaruins.com, «The Great Ballcourt»"
+    },
+    {
+      "dato": "Amenazas: pérdida del bosque y captura ilegal de pichones para venderlos como mascota",
+      "fuente": "10000 Birds, «What is the national bird of Honduras»; Mongabay Latam, «La guacamaya roja vuelve a reinar en el Valle Sagrado de Honduras» (2019)"
+    },
+    {
+      "dato": "Desde 2011, Macaw Mountain y aliados (Asociación Copán, IHAH, World Parrot Trust) crían y liberan guaras en el parque arqueológico de Copán",
+      "fuente": "Mongabay Latam (2019); La Prensa, «Liberación séptima de guacamayas rojas» (2021)"
+    }
+  ],
+  "nota": "Todo es historia/dato documentado. El color azul de la bandera se dibujó en turquesa (decreto de 2022). Algunas notas llaman ejecutivo y otras legislativo al Decreto 36-93; el video no lo especifica. «Sagrada» para los mayas se dice como asociación con el sol, que es lo que sostienen las fuentes."
+}
